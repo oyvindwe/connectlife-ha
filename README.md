@@ -1,2 +1,2 @@
-# connectlife-ha
+# ConnectLife
 ConnectLife integration for Home Assistant
