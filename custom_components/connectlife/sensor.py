@@ -44,9 +44,10 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
         description = status.replace("_", " ")
         self._attr_name = f"{appliance._device_nickname} {description}"
         self._attr_unique_id = f"{appliance.device_id}-{status}"
+        self._handle_coordinator_update()
 
     @callback
     def _handle_coordinator_update(self) -> None:
         """Handle updated data from the coordinator."""
         self._attr_native_value = self.coordinator.appliances[self.device_id].status_list[self.status]
-        self._attr_available = self.coordinator.appliances[self.device_id].offline_state == 1
+        self._attr_available = self.coordinator.appliances[self.device_id]._offline_state == 1
