@@ -29,7 +29,6 @@ async def async_setup_entry(
     await coordinator.async_refresh()
 
     for appliance in coordinator.appliances.values():
-        async_add_entities([ConnectLifeOfflineStateSensor(coordinator, appliance)])
         async_add_entities(
             ConnectLifeStatusSensor(coordinator, appliance, s) for s in appliance.status_list
         )
@@ -50,20 +49,4 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
     def _handle_coordinator_update(self) -> None:
         """Handle updated data from the coordinator."""
         self._attr_native_value = self.coordinator.appliances[self.device_id].status_list[self.status]
-        self.async_write_ha_state()
-
-
-class ConnectLifeOfflineStateSensor(ConnectLifeEntity, SensorEntity):
-    """Sensor class for ConnectLife offline state."""
-
-    def __init__(self, coordinator: ConnectLifeCoordinator, appliance: ConnectLifeAppliance):
-        """Initialize the entity."""
-        super().__init__(coordinator, appliance)
-        self._attr_name = f"{appliance._device_nickname} offline state"
-        self._attr_unique_id = f"{appliance.device_id}-offlineState"
-
-    @callback
-    def _handle_coordinator_update(self) -> None:
-        """Handle updated data from the coordinator."""
-        self._attr_native_value = self.coordinator.appliances[self.device_id].offline_state
-        self.async_write_ha_state()
+        self._attr_available = self.coordinator.appliances[self.device_id].offline_state == 1
