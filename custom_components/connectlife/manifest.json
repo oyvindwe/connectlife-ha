@@ -9,8 +9,8 @@
   "documentation": "https://github.com/oyvindwe/connectlife-ha",
   "homekit": {},
   "iot_class": "cloud_polling",
-  "requirements": ["connectlife==0.0.2"],
+  "requirements": ["connectlife==0.0.3"],
   "ssdp": [],
   "zeroconf": [],
-  "version": "0.0.2"
+  "version": "0.0.3"
 }
