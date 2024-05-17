@@ -1,16 +1,10 @@
 {
   "domain": "connectlife",
   "name": "ConnectLife",
-  "codeowners": [
-    "@oyvindwe"
-  ],
+  "codeowners": ["@oyvindwe"],
   "config_flow": true,
-  "dependencies": [],
   "documentation": "https://github.com/oyvindwe/connectlife-ha",
-  "homekit": {},
   "iot_class": "cloud_polling",
-  "requirements": ["connectlife==0.0.3"],
-  "ssdp": [],
-  "zeroconf": [],
-  "version": "0.0.4"
+  "requirements": ["connectlife==0.0.5"],
+  "version": "0.0.5"
 }
