@@ -7,6 +7,8 @@ from connectlife.appliance import ConnectLifeAppliance
 from homeassistant.exceptions import ConfigEntryAuthFailed
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
+from .const import DOMAIN
+
 _LOGGER = logging.getLogger(__name__)
 
 class ConnectLifeCoordinator(DataUpdateCoordinator):
@@ -16,13 +18,13 @@ class ConnectLifeCoordinator(DataUpdateCoordinator):
 
     def __init__(self, hass, api: ConnectLifeApi):
         """Initialize coordinator."""
+        self.api = api
         super().__init__(
             hass,
             _LOGGER,
-            name="ConnectLife",
+            name=DOMAIN,
             update_interval=timedelta(seconds=60),
         )
-        self.api = api
 
     async def _async_update_data(self):
         """Fetch data from API endpoint."""

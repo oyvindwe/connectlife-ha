@@ -9,7 +9,7 @@ from homeassistant.helpers.device_registry import DeviceInfo
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
 
-class ConnectLifeEntity(CoordinatorEntity):
+class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
     """Generic ConnectLife entity (base class)."""
 
     def __init__(self, coordinator: ConnectLifeCoordinator, appliance: ConnectLifeAppliance):
