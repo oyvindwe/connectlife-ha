@@ -20,6 +20,12 @@ Finally add "ConnectLife" as an integration in the UI, and provide the username 
 
 You appliances and all their status values should show up.
 
+## Issues
+
+### Missing data dictionaries
+
+Please contribute PR with [data dictionary](custom_components/connectlife/data_dictionaries) for your device!
+
 ### Experimental service to set property values
 
 Entity service `connectlife.set_value` can be used to set values. Use with caution, as there is **no** validation
