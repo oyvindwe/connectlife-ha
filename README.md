@@ -18,7 +18,18 @@ After installing, you need to restart Home Assistant.
 
 Finally add "ConnectLife" as an integration in the UI, and provide the username and password for your ConnectLife account.
 
-You appliances and all their status values should show up. So far it is not possible to control any appliance. 
+You appliances and all their status values should show up.
 
-Note that probably only European users can log in using this integration. See discussion in
+### Experimental service to set property values
+
+Entity service `connectlife.set_value` can be used to set values. Use with caution, as there is **no** validation
+if property is writeable, or that the value is legal to set.
+
+1. The service can be accessed from Developer tools -> Services in HomeAssistant UI.
+2. Search for service name "ConnectLife: Set value"
+3. As target, select entity, and enter a ConnectLife sensor entity id.
+
+### Login
+
+Note that users at least in Russia and China can't log in using this integration. See discussion in
 https://github.com/bilan/connectlife-api-connector/issues/25
