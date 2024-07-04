@@ -16,6 +16,7 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
         """Initialize the entity."""
         super().__init__(coordinator)
         self.device_id = appliance.device_id
+        self.puid = appliance.puid
         self._attr_device_info = DeviceInfo(
             identifiers={(DOMAIN, appliance.device_id)},
             model=appliance.device_feature_name,

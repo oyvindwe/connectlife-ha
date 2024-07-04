@@ -17,5 +17,17 @@
                 }
             }
         }
+    },
+    "services": {
+        "set_value": {
+            "name": "Set value",
+            "description": "Sets a value for the status. Use with care.",
+            "fields": {
+                "value": {
+                    "name": "Value",
+                    "description": "Value to set."
+                }
+            }
+        }
     }
 }
