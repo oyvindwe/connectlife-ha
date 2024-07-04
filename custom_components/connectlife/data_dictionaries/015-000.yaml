@@ -1,1001 +1,248 @@
 properties:
   - property: ADO_allowed
-    unknown_value:
-    max_value:
-    hide:
     writable: false
-    state_class:
-    device_class:
-    unit:
   - property: Alarm_auto_dose_refill
-    unknown_value:
-    max_value:
-    hide:
+    icon: mdi:dishwasher-alert
     writable: false
-    state_class:
-    device_class:
-    unit:
   - property: Alarm_clean_the_filters
-    unknown_value:
-    max_value:
-    hide:
+    icon: mdi:dishwasher-alert
     writable: false
-    state_class:
-    device_class:
-    unit:
   - property: Alarm_door_closed
-    unknown_value:
-    max_value:
-    hide:
+    icon: mdi:dishwasher-alert
     writable: false
-    state_class:
-    device_class:
-    unit:
   - property: Alarm_door_opened
-    unknown_value:
-    max_value:
-    hide:
+    icon: mdi:dishwasher-alert
     writable: false
-    state_class:
-    device_class:
-    unit:
   - property: Alarm_preheating_ready
-    unknown_value:
-    max_value:
-    hide:
+    icon: mdi:dishwasher-alert
     writable: false
-    state_class:
-    device_class:
-    unit:
   - property: Alarm_program_done
-    unknown_value:
-    max_value:
-    hide:
+    icon: mdi:dishwasher-alert
     writable: false
-    state_class:
-    device_class:
-    unit:
   - property: Alarm_program_pause
-    unknown_value:
-    max_value:
-    hide:
+    icon: mdi:dishwasher-alert
     writable: false
-    state_class:
-    device_class:
-    unit:
   - property: Alarm_remote_start_canceled
-    unknown_value:
-    max_value:
-    hide:
+    icon: mdi:dishwasher-alert
     writable: false
-    state_class:
-    device_class:
-    unit:
   - property: Alarm_rinse_aid_refill
-    unknown_value:
-    max_value:
-    hide:
+    icon: mdi:dishwasher-alert
     writable: false
-    state_class:
-    device_class:
-    unit:
   - property: Alarm_run_selfcleaning
-    unknown_value:
-    max_value:
-    hide:
+    icon: mdi:dishwasher-alert
     writable: false
-    state_class:
-    device_class:
-    unit:
   - property: Alarm_salt_refill
-    unknown_value:
-    max_value:
-    hide:
+    icon: mdi:dishwasher-alert
     writable: false
-    state_class:
-    device_class:
-    unit:
   - property: Auto_dose_duration
-    unknown_value:
-    max_value:
-    hide:
     writable: false
-    state_class:
     device_class: duration
     unit: min
   - property: Auto_dose_quantity_setting_status
-    unknown_value:
-    max_value:
-    hide:
     writable: false
-    state_class:
-    device_class:
-    unit:
   - property: Auto_dose_refill
-    unknown_value:
-    max_value:
-    hide:
     writable: false
-    state_class:
-    device_class:
-    unit:
   - property: Auto_dose_setting_status
-    unknown_value:
-    max_value:
-    hide:
     writable: true
-    state_class:
-    device_class:
-    unit:
   - property: Child_lock
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Child_lock_setting_status
-    unknown_value:
-    max_value:
-    hide:
     writable: false
-    state_class:
-    device_class:
-    unit:
   - property: Curent_program_duration
-    unknown_value:
-    max_value:
-    hide:
     writable: false
-    state_class:
     device_class: duration
     unit: min
   - property: Curent_program_remaining_time
     unknown_value: 65535
-    max_value:
-    hide:
-    writable:
-    state_class:
     device_class: duration
     unit: min
   - property: Current_program_phase
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Delay_start
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Delay_start_remaining_time
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Delay_start_set_time
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Demo_mode_status
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Device_status
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Display_Brightness_setting_status
     unknown_value: 255
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Display_contrast_setting_status
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Display_logotype_setting_status
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Door_status
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Energy_consumption_in_running_program
     unknown_value: 65535
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Energy_save_setting_status
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Error_F70
-    unknown_value:
-    max_value:
-    hide: "True\t"
-    writable:
-    state_class:
-    device_class:
-    unit:
+    icon: mdi:dishwasher-alert
+    hide: true
   - property: Error_F76
-    unknown_value:
-    max_value:
+    icon: mdi:dishwasher-alert
     hide: true
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Error_f10
-    unknown_value:
-    max_value:
+    icon: mdi:dishwasher-alert
     hide: true
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Error_f11
-    unknown_value:
-    max_value:
+    icon: mdi:dishwasher-alert
     hide: true
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Error_f12
-    unknown_value:
-    max_value:
+    icon: mdi:dishwasher-alert
     hide: true
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Error_f40
-    unknown_value:
-    max_value:
+    icon: mdi:dishwasher-alert
     hide: true
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Error_f41
-    unknown_value:
-    max_value:
+    icon: mdi:dishwasher-alert
     hide: true
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Error_f42
-    unknown_value:
-    max_value:
+    icon: mdi:dishwasher-alert
     hide: true
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Error_f43
-    unknown_value:
-    max_value:
+    icon: mdi:dishwasher-alert
     hide: true
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Error_f44
-    unknown_value:
-    max_value:
+    icon: mdi:dishwasher-alert
     hide: true
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Error_f45
-    unknown_value:
-    max_value:
+    icon: mdi:dishwasher-alert
     hide: true
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Error_f46
-    unknown_value:
-    max_value:
+    icon: mdi:dishwasher-alert
     hide: true
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Error_f52
-    unknown_value:
-    max_value:
+    icon: mdi:dishwasher-alert
     hide: true
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Error_f54
-    unknown_value:
-    max_value:
+    icon: mdi:dishwasher-alert
     hide: true
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Error_f56
-    unknown_value:
-    max_value:
+    icon: mdi:dishwasher-alert
     hide: true
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Error_f61
-    unknown_value:
-    max_value:
+    icon: mdi:dishwasher-alert
     hide: true
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Error_f62
-    unknown_value:
-    max_value:
+    icon: mdi:dishwasher-alert
     hide: true
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Error_f65
-    unknown_value:
-    max_value:
+    icon: mdi:dishwasher-alert
     hide: true
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Error_f67
-    unknown_value:
-    max_value:
+    icon: mdi:dishwasher-alert
     hide: true
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Error_f68
-    unknown_value:
-    max_value:
+    icon: mdi:dishwasher-alert
     hide: true
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Error_f69
-    unknown_value:
-    max_value:
+    icon: mdi:dishwasher-alert
     hide: true
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Error_f72
-    unknown_value:
-    max_value:
+    icon: mdi:dishwasher-alert
     hide: true
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Error_f74
-    unknown_value:
-    max_value:
+    icon: mdi:dishwasher-alert
     hide: true
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Error_f75
-    unknown_value:
-    max_value:
+    icon: mdi:dishwasher-alert
     hide: true
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Error_read_out_1_code
-    unknown_value:
-    max_value:
+    icon: mdi:dishwasher-alert
     hide: true
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Error_read_out_1_cycle
-    unknown_value:
-    max_value:
+    icon: mdi:dishwasher-alert
     hide: true
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Error_read_out_1_status
-    unknown_value:
-    max_value:
+    icon: mdi:dishwasher-alert
     hide: true
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Error_read_out_2_code
-    unknown_value:
-    max_value:
+    icon: mdi:dishwasher-alert
     hide: true
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Error_read_out_2_cycle
-    unknown_value:
-    max_value:
+    icon: mdi:dishwasher-alert
     hide: true
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Error_read_out_2_status
-    unknown_value:
-    max_value:
+    icon: mdi:dishwasher-alert
     hide: true
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Error_read_out_3_code
-    unknown_value:
-    max_value:
+    icon: mdi:dishwasher-alert
     hide: true
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Error_read_out_3_cycle
-    unknown_value:
-    max_value:
+    icon: mdi:dishwasher-alert
     hide: true
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Error_read_out_3_status
-    unknown_value:
-    max_value:
+    icon: mdi:dishwasher-alert
     hide: true
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: FOTA_status
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Fan_sequence_setting_status
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Feedback_volumen_setting_status
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Fill_salt
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: HardPairingStatus
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Heat_pump_setting_status
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: High_temperature_status
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Interior_light_at_power_off_setting_status
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Interior_light_status
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Language_status
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Last_run_program_id
     unknown_value: 255
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: MDO_on_demand
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: MDO_on_demand_allowed
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Notification_volumen_setting_status
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Odor_control_setting
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Pressure_calibration_setting_status
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Remote_control_monitoring_set_commands
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Remote_control_monitoring_set_commands_actions
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Rinse_aid_refill
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Rinse_aid_setting_status
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Sani_Lock
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Sani_Lock_allowed
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Selected_program_Lower_wash_function
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Selected_program_Upper_wash_function
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Selected_program_auto_door_open_function
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Selected_program_dry_function
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Selected_program_extra_drying_function
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Selected_program_id_status
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Selected_program_mode
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Selected_program_storage_function
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Selected_program_uv_function
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Session_pairing_active
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Session_pairing_confirmation
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Session_pairing_status
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Silence_on_demand
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Silence_on_demand_allowed
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Soft_pairing_status
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Speed_on_demand
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Spend_on_demand_allowed
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Storage_mode_allowed
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Storage_mode_on_demand_stat
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Super_rinse_on_demand
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Super_rinse_on_demand_allowed
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Super_rinse_setting_status
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Super_rinse_status
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Tab_setting_status
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Temperature_unit_status
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Time_program_set_duration_status
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Total_energy_consumption
-    unknown_value:
-    max_value:
-    hide:
-    writable:
     state_class: total
     device_class: energy
     unit: kWh
   - property: Total_number_of_cycles
-    unknown_value:
-    max_value:
-    hide:
-    writable:
     state_class: total
-    device_class:
-    unit:
   - property: Total_run_time
-    unknown_value:
-    max_value:
-    hide:
-    writable:
     state_class: total
     device_class: duration
     unit: min
   - property: Total_water_consumption
-    unknown_value:
-    max_value:
-    hide:
-    writable:
     state_class: total
     device_class: water
     unit: L
   - property: UV_mode_on_demand
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: UV_mode_on_demand_allowed
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Water_consumption_in_running_program
     unknown_value: 65535
-    max_value:
-    hide:
-    writable:
     state_class: total
     device_class: water
     unit: L
   - property: Water_hardness_setting_status
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Water_inlet_setting_status
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Water_save_setting_status
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: Water_tank
-    unknown_value:
-    max_value:
-    hide:
-    writable:
-    state_class:
-    device_class:
-    unit:
   - property: daily_energy_kwh
-    unknown_value:
-    max_value:
-    hide:
-    writable:
     state_class: total
     device_class: energy
     unit: kWh
