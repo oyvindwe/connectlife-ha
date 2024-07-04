@@ -1,0 +1,12 @@
+set_value:
+  target:
+    entity:
+      integration: connectlifte
+      domain: sensor
+  fields:
+    value:
+      required: true
+      selector:
+        number:
+          min: 0
+
