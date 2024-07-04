@@ -28,5 +28,15 @@
         }
       }
     }
+  },
+  "entity": {
+    "sensor": {
+      "Alarm_door_closed": {
+        "name": "Door closed"
+      },
+      "Alarm_door_opened": {
+        "name": "Door open"
+      }
+    }
   }
 }

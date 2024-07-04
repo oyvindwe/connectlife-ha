@@ -2,7 +2,7 @@
 import datetime
 import logging
 import voluptuous as vol
-from homeassistant.components.sensor import SensorEntity, SensorStateClass, SensorDeviceClass
+from homeassistant.components.sensor import SensorEntity, SensorStateClass, SensorDeviceClass, SensorEntityDescription
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant, ServiceCall, callback
 from homeassistant.exceptions import ServiceValidationError
@@ -46,29 +46,40 @@ async def async_setup_entry(
 class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
     """Sensor class for ConnectLife arbitrary status."""
 
+    _attr_has_entity_name = True
+
     def __init__(self, coordinator: ConnectLifeCoordinator, appliance: ConnectLifeAppliance, status: str):
         """Initialize the entity."""
         super().__init__(coordinator, appliance)
-        self.status = status
-        description = status.replace("_", " ")
-        self._attr_name = f"{appliance._device_nickname} {description}"
         self._attr_unique_id = f"{appliance.device_id}-{status}"
-        self.dd_entry = Dictionaries.get_dictionary(appliance)[status]
-        self._attr_state_class = self.dd_entry.state_class
-        if self._attr_state_class is None and isinstance(self.coordinator.appliances[self.device_id].status_list[status], int):
-            self._attr_state_class = SensorStateClass.MEASUREMENT
-        self._attr_device_class = self.dd_entry.device_class
-        if self._attr_device_class is None and isinstance(self.coordinator.appliances[self.device_id].status_list[status], datetime.datetime):
-            self._attr_device_class = SensorDeviceClass.TIMESTAMP
-        self._attr_native_unit_of_measurement = self.dd_entry.unit
-        self._attr_entity_registry_visible_default = not self.dd_entry.hide
+        self.status = status
+        dd_entry = Dictionaries.get_dictionary(appliance)[status]
+        self.writable = dd_entry.writable
+        self.max_value = dd_entry.max_value
+        self.unknown_value = dd_entry.unknown_value
+        device_class = dd_entry.device_class
+        if device_class is None and isinstance(self.coordinator.appliances[self.device_id].status_list[status], datetime.datetime):
+            device_class = SensorDeviceClass.TIMESTAMP
+        state_class = dd_entry.state_class
+        if state_class is None and isinstance(self.coordinator.appliances[self.device_id].status_list[status], int):
+            state_class = SensorStateClass.MEASUREMENT
+        self.entity_description = SensorEntityDescription(
+            key=self._attr_unique_id,
+            device_class=device_class,
+            entity_registry_visible_default = not dd_entry.hide,
+            name=status.replace("_", " "),
+            native_unit_of_measurement=dd_entry.unit,
+            icon=dd_entry.icon,
+            state_class=state_class,
+            translation_key = status,
+        )
         self.update_state()
 
     @callback
     def update_state(self):
         if self.status in self.coordinator.appliances[self.device_id].status_list:
             value = self.coordinator.appliances[self.device_id].status_list[self.status]
-            self._attr_native_value = value if value != self.dd_entry.unknown_value else None
+            self._attr_native_value = value if value != self.unknown_value else None
         self._attr_available = self.coordinator.appliances[self.device_id]._offline_state == 1
 
     @callback
@@ -80,12 +91,12 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
     async def async_set_value(self, value: int) -> None:
         """Set value for this sensor."""
         _LOGGER.debug("Setting %s to %d", self.status, value)
-        if self.dd_entry.writable == False:
+        if self.writable == False:
             raise ServiceValidationError(f"{self._attr_name} is read only")
-        elif self.dd_entry.writable is None:
+        elif self.writable is None:
             _LOGGER.warn("%s may not be writable", self._attr_name)
-        if self.dd_entry.max_value is not None and value > self.dd_entry.max_value:
-            raise ServiceValidationError(f"Max value for {self._attr_name} is {self.dd_entry.max_value}")
+        if self.max_value is not None and value > self.max_value:
+            raise ServiceValidationError(f"Max value for {self._attr_name} is {self.max_value}")
         try:
             await self.coordinator.api.update_appliance(self.puid, {self.status: str(value)})
         except LifeConnectError as api_error:

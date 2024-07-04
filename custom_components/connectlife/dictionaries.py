@@ -27,6 +27,7 @@ class Property:
                 _LOGGER.warning("%s has device class, but no unit", self.status)
         else:
             self.device_class = None
+        self.icon = entry["icon"] if "icon" in entry and entry["icon"] else None
 
 
 class Dictionaries:
