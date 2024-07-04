@@ -67,4 +67,4 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
     async def async_set_value(self, value: int) -> None:
         """Set value for this sensor."""
         _LOGGER.debug("Setting %s to %d", self.status, value)
-        await self.coordinator.api.update_appliance(self.device_id, {self.status: str(value)})
+        await self.coordinator.api.update_appliance(self.puid, {self.status: str(value)})
