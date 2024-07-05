@@ -1,60 +1,103 @@
 properties:
   - property: ADO_allowed
-    writable: false
+    sensor:
+      writable: false
   - property: Alarm_auto_dose_refill
+    binary_sensor:
+      device_class: problem
     icon: mdi:dishwasher-alert
-    writable: false
+  - property: Alarm_Autodose_level10
+    binary_sensor:
+      device_class: problem
+    icon: mdi:dishwasher-alert
+  - property: Alarm_Autodose_level20
+    binary_sensor:
+      device_class: problem
+    icon: mdi:dishwasher-alert
+  - property: Alarm_External_autodose_level15
+    binary_sensor:
+      device_class: problem
+    icon: mdi:dishwasher-alert
+  - property: Alarm_External_autodose_level30
+    binary_sensor:
+      device_class: problem
+    icon: mdi:dishwasher-alert
   - property: Alarm_clean_the_filters
+    binary_sensor:
+      device_class: problem
     icon: mdi:dishwasher-alert
-    writable: false
   - property: Alarm_door_closed
+    binary_sensor:
+      device_class: problem
     icon: mdi:dishwasher-alert
-    writable: false
   - property: Alarm_door_opened
+    binary_sensor:
+      device_class: problem
     icon: mdi:dishwasher-alert
-    writable: false
   - property: Alarm_preheating_ready
+    binary_sensor:
+      device_class: problem
     icon: mdi:dishwasher-alert
-    writable: false
   - property: Alarm_program_done
+    binary_sensor:
+      device_class: problem
     icon: mdi:dishwasher-alert
-    writable: false
   - property: Alarm_program_pause
+    binary_sensor:
+      device_class: problem
     icon: mdi:dishwasher-alert
-    writable: false
   - property: Alarm_remote_start_canceled
+    binary_sensor:
+      device_class: problem
     icon: mdi:dishwasher-alert
-    writable: false
   - property: Alarm_rinse_aid_refill
+    binary_sensor:
+      device_class: problem
     icon: mdi:dishwasher-alert
-    writable: false
+  - property: Alarm_Rinse_aid_refill_external
+    binary_sensor:
+      device_class: problem
+    icon: mdi:dishwasher-alert
   - property: Alarm_run_selfcleaning
+    binary_sensor:
+      device_class: problem
     icon: mdi:dishwasher-alert
-    writable: false
   - property: Alarm_salt_refill
+    binary_sensor:
+      device_class: problem
     icon: mdi:dishwasher-alert
-    writable: false
+  - property: Alarm_Sani_program_finished
+    binary_sensor:
+      device_class: problem
+    icon: mdi:dishwasher-alert
   - property: Auto_dose_duration
-    writable: false
-    device_class: duration
-    unit: min
+    sensor:
+      writable: false
+      device_class: duration
+      unit: min
   - property: Auto_dose_quantity_setting_status
-    writable: false
+    sensor:
+      writable: false
   - property: Auto_dose_refill
-    writable: false
+    sensor:
+      writable: false
   - property: Auto_dose_setting_status
-    writable: true
+    sensor:
+      writable: true
   - property: Child_lock
   - property: Child_lock_setting_status
-    writable: false
+    sensor:
+      writable: false
   - property: Curent_program_duration
-    writable: false
-    device_class: duration
-    unit: min
+    sensor:
+      writable: false
+      device_class: duration
+      unit: min
   - property: Curent_program_remaining_time
-    unknown_value: 65535
-    device_class: duration
-    unit: min
+    sensor:
+      unknown_value: 65535
+      device_class: duration
+      unit: min
   - property: Current_program_phase
   - property: Delay_start
   - property: Delay_start_remaining_time
@@ -62,12 +105,20 @@ properties:
   - property: Demo_mode_status
   - property: Device_status
   - property: Display_Brightness_setting_status
-    unknown_value: 255
+    sensor:
+      unknown_value: 255
   - property: Display_contrast_setting_status
   - property: Display_logotype_setting_status
   - property: Door_status
+    sensor:
+      device_class: enum
+      options:
+        0: not_available
+        1: closed
+        2: open
   - property: Energy_consumption_in_running_program
-    unknown_value: 65535
+    sensor:
+      unknown_value: 65535
   - property: Energy_save_setting_status
   - property: Error_F70
     icon: mdi:dishwasher-alert
@@ -172,14 +223,19 @@ properties:
   - property: Fan_sequence_setting_status
   - property: Feedback_volumen_setting_status
   - property: Fill_salt
+    binary_sensor:
+      device_class: problem
+    icon: mdi:dishwasher-alert
   - property: HardPairingStatus
+    hide: true
   - property: Heat_pump_setting_status
   - property: High_temperature_status
   - property: Interior_light_at_power_off_setting_status
   - property: Interior_light_status
   - property: Language_status
   - property: Last_run_program_id
-    unknown_value: 255
+    sensor:
+      unknown_value: 255
   - property: MDO_on_demand
   - property: MDO_on_demand_allowed
   - property: Notification_volumen_setting_status
@@ -218,31 +274,37 @@ properties:
   - property: Temperature_unit_status
   - property: Time_program_set_duration_status
   - property: Total_energy_consumption
-    state_class: total
-    device_class: energy
-    unit: kWh
+    sensor:
+      state_class: total
+      device_class: energy
+      unit: kWh
   - property: Total_number_of_cycles
-    state_class: total
+    sensor:
+      state_class: total
   - property: Total_run_time
-    state_class: total
-    device_class: duration
-    unit: min
+    sensor:
+      state_class: total
+      device_class: duration
+      unit: min
   - property: Total_water_consumption
-    state_class: total
-    device_class: water
-    unit: L
+    sensor:
+      state_class: total
+      device_class: water
+      unit: L
   - property: UV_mode_on_demand
   - property: UV_mode_on_demand_allowed
   - property: Water_consumption_in_running_program
-    unknown_value: 65535
-    state_class: total
-    device_class: water
-    unit: L
+    sensor:
+      unknown_value: 65535
+      state_class: total
+      device_class: water
+      unit: L
   - property: Water_hardness_setting_status
   - property: Water_inlet_setting_status
   - property: Water_save_setting_status
   - property: Water_tank
   - property: daily_energy_kwh
-    state_class: total
-    device_class: energy
-    unit: kWh
+    sensor:
+      state_class: total
+      device_class: energy
+      unit: kWh

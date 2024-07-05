@@ -37,6 +37,14 @@
             },
             "Alarm_door_opened": {
                 "name": "Door open"
+            },
+            "Door_status": {
+                "name": "Door",
+                "state": {
+                    "not_available": "Unavailable",
+                    "closed": "Closed",
+                    "open": "Open"
+                }
             }
         }
     }
