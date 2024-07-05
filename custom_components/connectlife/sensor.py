@@ -13,7 +13,7 @@ from .const import (
     DOMAIN,
 )
 from .coordinator import ConnectLifeCoordinator
-from .dictionaries import Dictionaries
+from .dictionaries import Dictionaries, Property
 from .entity import ConnectLifeEntity
 from connectlife.api import LifeConnectError
 from connectlife.appliance import ConnectLifeAppliance
@@ -31,8 +31,10 @@ async def async_setup_entry(
     """Set up ConnectLife sensors."""
     coordinator = hass.data[DOMAIN][config_entry.entry_id]
     for appliance in coordinator.appliances.values():
+        dictionary = Dictionaries.get_dictionary(appliance)
         async_add_entities(
-            ConnectLifeStatusSensor(coordinator, appliance, s) for s in appliance.status_list
+            ConnectLifeStatusSensor(coordinator, appliance, s, dictionary[s])
+            for s in appliance.status_list if hasattr(dictionary[s], "sensor")
         )
 
     platform = entity_platform.async_get_current_platform()
@@ -48,30 +50,42 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
 
     _attr_has_entity_name = True
 
-    def __init__(self, coordinator: ConnectLifeCoordinator, appliance: ConnectLifeAppliance, status: str):
+    def __init__(
+            self,
+            coordinator: ConnectLifeCoordinator,
+            appliance: ConnectLifeAppliance,
+            status: str,
+            dd_entry: Property
+    ):
         """Initialize the entity."""
         super().__init__(coordinator, appliance)
         self._attr_unique_id = f"{appliance.device_id}-{status}"
         self.status = status
-        dd_entry = Dictionaries.get_dictionary(appliance)[status]
-        self.writable = dd_entry.writable
-        self.max_value = dd_entry.max_value
-        self.unknown_value = dd_entry.unknown_value
-        device_class = dd_entry.device_class
-        if device_class is None and isinstance(self.coordinator.appliances[self.device_id].status_list[status], datetime.datetime):
+        self.writable = dd_entry.sensor.writable
+        self.max_value = dd_entry.sensor.max_value
+        self.unknown_value = dd_entry.sensor.unknown_value
+        device_class = dd_entry.sensor.device_class
+        options = None
+        if device_class == SensorDeviceClass.ENUM:
+            self.options_map = dd_entry.sensor.options
+            options = list(self.options_map.values())
+        elif device_class is None and isinstance(self.coordinator.appliances[self.device_id].status_list[status], datetime.datetime):
             device_class = SensorDeviceClass.TIMESTAMP
-        state_class = dd_entry.state_class
-        if state_class is None and isinstance(self.coordinator.appliances[self.device_id].status_list[status], int):
+        state_class = dd_entry.sensor.state_class
+        if (state_class is None
+                and isinstance(self.coordinator.appliances[self.device_id].status_list[status], int)
+                and device_class != SensorDeviceClass.ENUM):
             state_class = SensorStateClass.MEASUREMENT
         self.entity_description = SensorEntityDescription(
             key=self._attr_unique_id,
             device_class=device_class,
             entity_registry_visible_default = not dd_entry.hide,
-            name=status.replace("_", " "),
-            native_unit_of_measurement=dd_entry.unit,
             icon=dd_entry.icon,
+            name=status.replace("_", " "),
+            native_unit_of_measurement=dd_entry.sensor.unit,
+            options=options,
             state_class=state_class,
-            translation_key = status,
+            translation_key=status,
         )
         self.update_state()
 
@@ -79,6 +93,8 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
     def update_state(self):
         if self.status in self.coordinator.appliances[self.device_id].status_list:
             value = self.coordinator.appliances[self.device_id].status_list[self.status]
+            if self.device_class == SensorDeviceClass.ENUM:
+                value = self.options[value]
             self._attr_native_value = value if value != self.unknown_value else None
         self._attr_available = self.coordinator.appliances[self.device_id]._offline_state == 1
 
