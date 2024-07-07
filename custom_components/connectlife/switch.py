@@ -34,8 +34,6 @@ async def async_setup_entry(
 class ConnectLifeSwitch(ConnectLifeEntity, SwitchEntity):
     """Switch class for ConnectLife."""
 
-    _attr_has_entity_name = True
-
     def __init__(
             self,
             coordinator: ConnectLifeCoordinator,

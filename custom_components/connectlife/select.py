@@ -35,7 +35,6 @@ async def async_setup_entry(
 class ConnectLifeSelect(ConnectLifeEntity, SelectEntity):
     """Select class for ConnectLife."""
 
-    _attr_has_entity_name = True
     _attr_current_option = None
 
     def __init__(

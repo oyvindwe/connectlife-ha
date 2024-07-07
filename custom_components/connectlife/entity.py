@@ -17,6 +17,8 @@ from .coordinator import ConnectLifeCoordinator
 class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
     """Generic ConnectLife entity (base class)."""
 
+    _attr_has_entity_name = True
+
     def __init__(self, coordinator: ConnectLifeCoordinator, appliance: ConnectLifeAppliance):
         """Initialize the entity."""
         super().__init__(coordinator)
