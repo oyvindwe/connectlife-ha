@@ -52,6 +52,19 @@
                 }
             }
         },
+        "humidifier": {
+            "connectlife": {
+                "state_attributes": {
+                    "mode": {
+                        "state": {
+                            "auto": "Auto",
+                            "continuous": "Continuous",
+                            "manual": "Manual"
+                        }
+                    }
+                }
+            }
+        },
         "sensor": {
             "Alarm_door_closed": {
                 "name": "Door closed"
@@ -89,12 +102,12 @@
             }
         },
         "select": {
-            "t_work_mode": {
-                "name": "Work mode",
+            "t_fan_speed": {
+                "name": "Fan speed",
                 "state": {
                     "auto": "Auto",
-                    "continuous": "Continuous",
-                    "manual": "Manual"
+                    "low": "Low",
+                    "high": "High"
                 }
             },
             "t_swing_angle": {

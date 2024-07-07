@@ -28,23 +28,24 @@ properties:
     binary_sensor:
       device_class: problem
   - property: f_humidity
-    climate:
+    humidifier:
       target: current_humidity
   - property: t_fan_speed
-    climate:
-      target: fan_mode
+    select:
       options:
         0: low
         1: high
         2: auto
   - property: t_humidity
-    climate:
+    humidifier:
       target: target_humidity
+      device_class: dehumidifier
   - property: t_power
-    climate:
+    humidifier:
       target: is_on
   - property: t_work_mode
-    select:
+    humidifier:
+      target: mode
       options:
         0: continuous
         1: manual

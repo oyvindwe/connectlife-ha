@@ -68,7 +68,8 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
         if device_class == SensorDeviceClass.ENUM:
             self.options_map = dd_entry.sensor.options
             options = list(self.options_map.values())
-        elif device_class is None and isinstance(self.coordinator.appliances[self.device_id].status_list[status], datetime.datetime):
+        elif (device_class is None
+              and isinstance(self.coordinator.appliances[self.device_id].status_list[status], datetime.datetime)):
             device_class = SensorDeviceClass.TIMESTAMP
         state_class = dd_entry.sensor.state_class
         if (state_class is None
@@ -78,7 +79,7 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
         self.entity_description = SensorEntityDescription(
             key=self._attr_unique_id,
             device_class=device_class,
-            entity_registry_visible_default = not dd_entry.hide,
+            entity_registry_visible_default=not dd_entry.hide,
             icon=dd_entry.icon,
             name=status.replace("_", " "),
             native_unit_of_measurement=dd_entry.sensor.unit,
@@ -99,15 +100,15 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
                     _LOGGER.warning("Got unexpected value %d for %s", value, self.status)
                     value = None
             self._attr_native_value = value if value != self.unknown_value else None
-        self._attr_available = self.coordinator.appliances[self.device_id]._offline_state == 1
+        self._attr_available = self.coordinator.appliances[self.device_id].offline_state == 1
 
     async def async_set_value(self, value: int) -> None:
         """Set value for this sensor."""
         _LOGGER.debug("Setting %s to %d", self.status, value)
-        if self.writable == False:
+        if self.writable is None:
+            _LOGGER.warning("%s may not be writable", self._attr_name)
+        elif not self.writable:
             raise ServiceValidationError(f"{self._attr_name} is read only")
-        elif self.writable is None:
-            _LOGGER.warn("%s may not be writable", self._attr_name)
         if self.max_value is not None and value > self.max_value:
             raise ServiceValidationError(f"Max value for {self._attr_name} is {self.max_value}")
         try:
