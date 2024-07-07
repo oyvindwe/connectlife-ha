@@ -89,9 +89,12 @@
     },
     "select": {
       "t_work_mode": {
-        "auto": "Auto",
-        "continuous": "Continuous",
-        "manual": "Manual"
+        "name": "Work mode",
+        "state": {
+          "auto": "Auto",
+          "continuous": "Continuous",
+          "manual": "Manual"
+        }
       },
       "t_swing_angle": {
         "name": "Swing angle",
