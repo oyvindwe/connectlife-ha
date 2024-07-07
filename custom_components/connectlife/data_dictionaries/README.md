@@ -9,7 +9,7 @@ File name: `<deviceTypeCode>-<deviceFeatureCode>.yaml`
 
 The file contains two top level items:
 - `device_type`: string
-- `properties`: list of [`Property`](#property):
+- `properties`: list of [`Property`](#property)
 
 ## Property
 
@@ -20,7 +20,7 @@ The file contains two top level items:
 | `icon`          | `mdi:eye`, etc.                    | Icon to use for the entity.                                                                       |
 | `binary_sensor` | [BinarySensor](#type-binarysensor) | Create a binary sensor of the property.                                                           |
 | `climate`       | [Climate](#type-climate)           | Map the property to a climate entity for the device.                                              |
-| `humidifier`    | [Humidifier](#type-climate)        | Map the property to a humidifier entity for the device.                                           |
+| `humidifier`    | [Humidifier](#type-humidifier)     | Map the property to a humidifier entity for the device.                                           |
 | `select`        | [Select](#type-select)             | Create a selector of the property.                                                                |
 | `sensor`        | [Sensor](#type-sensor)             | Create a sensor of the property. This is the default.                                             |
 | `switch`        | [Switch](#type-switch)             | Create a Switch of the property.                                                                  |
@@ -56,20 +56,22 @@ Note that `hvac_action` can only be mapped to [pre-defined actions](https://deve
 If a value does not have a sensible mapping, leave it out to set `hvac_action` to `None` for that value, or consider
 mapping to a sensor `enum` instead.
 
-For `fan_mode` and `swing_mode`, remember to add [translation string](#translation-strings).
+For `fan_mode` and `swing_mode`, remember to add [translation strings](#translation-strings).
 
 ## Type `Humidifier`:
 
 Domain `humidifier` can be used to map the property to a target property in a humidifier entity. If at least one property has
 type `humidifier`, a humidifier entity is created for the appliance.
 
-| Item           | Type                            | Description                                                                                                                                                               |
-|----------------|---------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `target`       | string                          | Any  of these [climate entity](https://developers.home-assistant.io/docs/core/entity/humidifier#properties) attributes: `is_on`, `current_humidity`, or `target_humidity` |
-| `options`      | dictionary of integer to string |                                                                                                                                                                           |
-| `device_class` | string                          | Name of any [HumidifierDeviceClass enum](https://developers.home-assistant.io/docs/core/entity/humidifier#available-device-classes)                                       |                                                                                                                         
+| Item           | Type                            | Description                                                                                                                                                                        |
+|----------------|---------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `target`       | string                          | Any  of these [humidifier entity](https://developers.home-assistant.io/docs/core/entity/humidifier#properties) attributes: `is_on`, `current_humidity`, `target_humidity`, `mode`. |
+| `options`      | dictionary of integer to string | Required for `mode`.                                                                                                                                                               |
+| `device_class` | string                          | Name of any [HumidifierDeviceClass enum](https://developers.home-assistant.io/docs/core/entity/humidifier#available-device-classes).                                               |                                                                                                                         
 
 It is sufficient to set `device_class` on one property. The value of the first encountered property is used.
+
+For mode, remember to add [translation strings](#translation-strings).
 
 ## Type `Select`
 
@@ -77,7 +79,7 @@ It is sufficient to set `device_class` on one property. The value of the first e
 |------------|---------------------------------|-------------|
 | `options`  | dictionary of integer to string | Required.   |
 
-For remember to add options to [translation strings](#translation-strings).
+Remember to add options to [translation strings](#translation-strings).
 
 ## Type `Sensor`
 
