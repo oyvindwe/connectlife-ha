@@ -58,6 +58,9 @@
       "Alarm_door_opened": {
         "name": "Door open"
       },
+      "daily_energy_kwh": {
+        "name": "Daily energy consumption"
+      },
       "Door_status": {
         "name": "Door",
         "state": {
@@ -85,6 +88,14 @@
       }
     },
     "select": {
+      "t_work_mode": {
+        "name": "Work mode",
+        "state": {
+          "auto": "Auto",
+          "continuous": "Continuous",
+          "manual": "Manual"
+        }
+      },
       "t_swing_angle": {
         "name": "Swing angle",
         "state": {

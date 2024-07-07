@@ -22,7 +22,9 @@ properties:
         7: medium
         8: middle_high
         9: high
-  - property: t_humidity
+  - property: f_humidity
+    climate:
+      target: current_humidity
   - property: t_power
     climate:
       target: is_on

@@ -19,6 +19,7 @@ from .const import (
     HVAC_ACTION,
     IS_ON,
     SWING_MODE,
+    TARGET_HUMIDITY,
     TARGET_TEMPERATURE,
     TEMPERATURE_UNIT,
 )
@@ -60,8 +61,6 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
     _attr_target_temperature_step = 1
     _attr_temperature_unit = UnitOfTemperature.CELSIUS
     _attr_hvac_mode = None
-    _attr_fan_mode = None
-    _attr_swing_mode = None
     target_map = {}
     fan_mode_map: dict[int, str] = {}
     fan_mode_reverse_map: dict[str, int] = {}
@@ -96,26 +95,31 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
                 self._attr_supported_features |= ClimateEntityFeature.TURN_OFF
                 self._attr_supported_features |= ClimateEntityFeature.TURN_ON
                 hvac_modes.append(HVACMode.OFF)
-            if target == TARGET_TEMPERATURE:
+            elif target == TARGET_HUMIDITY:
+                self._attr_supported_features |= ClimateEntityFeature.TARGET_HUMIDITY
+                self._attr_target_humidity = None
+            elif target == TARGET_TEMPERATURE:
                 self._attr_supported_features |= ClimateEntityFeature.TARGET_TEMPERATURE
-            if target == TEMPERATURE_UNIT:
+                self._attr_target_temperature = None
+            elif target == TEMPERATURE_UNIT:
                 for k, v in data_dictionary[status].climate.options.items():
                     if v == "celsius" or v == "C":
                         self.temperature_unit_map[k] = UnitOfTemperature.CELSIUS
                     elif v == "fahrenheit" or v == "F":
                         self.temperature_unit_map[k] = UnitOfTemperature.FAHRENHEIT
-            if target == FAN_MODE:
+            elif target == FAN_MODE:
                 self.fan_mode_map = data_dictionary[status].climate.options
                 self.fan_mode_reverse_map = {v: k for k, v in self.fan_mode_map.items()}
                 self._attr_fan_modes = list(self.fan_mode_map.values())
                 self._attr_supported_features |= ClimateEntityFeature.FAN_MODE
-            if target == SWING_MODE:
+                self._attr_fan_mode = None
+            elif target == SWING_MODE:
                 self.swing_mode_map = data_dictionary[status].climate.options
                 self.swing_mode_reverse_map = {v: k for k, v in self.swing_mode_map.items()}
                 self._attr_swing_modes = list(self.swing_mode_map.values())
                 self._attr_supported_features |= ClimateEntityFeature.SWING_MODE
-            if target == HVAC_ACTION:
-                # values = set(item.value for item in Fruit)
+                self._attr_swing_mode = None
+            elif target == HVAC_ACTION:
                 actions = set(action.value for action in HVACAction)
                 for (k, v) in data_dictionary[status].climate.options.items():
                     if v in actions:
@@ -164,6 +168,13 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
                 else:
                     setattr(self, f"_attr_{target}", value)
         self._attr_available = self.coordinator.appliances[self.device_id]._offline_state == 1
+
+    async def async_set_humidity(self, humidity):
+        """Set new target humidity."""
+        humidity = round(humidity)
+        await self.coordinator.api.update_appliance(self.puid, {self.target_map[TARGET_HUMIDITY]: humidity})
+        self._attr_target_humidity = humidity
+        self.async_write_ha_state()
 
     async def async_set_temperature(self, **kwargs) -> None:
         """Set new target temperature."""
