@@ -7,7 +7,7 @@ To make a property visible by default, just add the property to the list (withou
 
 File name: `<deviceTypeCode>-<deviceFeatureCode>.yaml`
 
-The file containse to top level items:
+The file contains two top level items:
 - `device_type`: string
 - `properties`: list of [`Property`](#property):
 
@@ -20,11 +20,12 @@ The file containse to top level items:
 | `icon`          | `mdi:eye`, etc.                    | Icon to use for the entity.                                                                       |
 | `binary_sensor` | [BinarySensor](#type-binarysensor) | Create a binary sensor of the property.                                                           |
 | `climate`       | [Climate](#type-climate)           | Map the property to a climate entity for the device.                                              |
+| `humidifier`    | [Humidifier](#type-climate)        | Map the property to a humidifier entity for the device.                                           |
 | `select`        | [Select](#type-select)             | Create a selector of the property.                                                                |
 | `sensor`        | [Sensor](#type-sensor)             | Create a sensor of the property. This is the default.                                             |
 | `switch`        | [Switch](#type-switch)             | Create a Switch of the property.                                                                  |
 
-If a entity mapping is not given, the property is mapped to a sensor entity.
+If an entity mapping is not given, the property is mapped to a sensor entity.
 
 It is not necessary to include items with empty values. A [JSON schema](properties-schema.json) is provided so data dictionaries can be
 validated.
@@ -41,13 +42,13 @@ Domain `binary_sensor` can be used for read only properties where `0` is not ava
 
 ## Type `Climate`:
 
-Domain `climate` can be used to map the property to a target propery in a climate entity. If at least one property has
+Domain `climate` can be used to map the property to a target property in a climate entity. If at least one property has
 type `climate`, a climate entity is created for the appliance.
 
-| Item      | Type                            | Description                                                                                                                                                                                                                                          |
-|-----------|---------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `target`  | string                          | Any  of these [climate entity](https://developers.home-assistant.io/docs/core/entity/climate#properties) attributes: `fan_mode`, `hvac_action`, `swing_mode`, `temperature`, `target_temperature`, `temperature_unit`, or the special target `is_on` |
-| `options` | dictionary of integer to string | Required for `fan_mode`, `hvac_action`, `swing_mode`, and `temperature_unit`                                                                                                                                                                         |
+| Item      | Type                            | Description                                                                                                                                                                                                                                                                                         |
+|-----------|---------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `target`  | string                          | Any  of these [climate entity](https://developers.home-assistant.io/docs/core/entity/climate#properties) attributes: `current_humidity`, `fan_mode`, `hvac_action`, `swing_mode`, `current_temperature`, `target_humidity`, `target_temperature`, `temperature_unit`, or the special target `is_on` |
+| `options` | dictionary of integer to string | Required for `fan_mode`, `hvac_action`, `swing_mode`, and `temperature_unit`                                                                                                                                                                                                                        |
 
 `temperature_unit` defaults to Celsius.
 
@@ -55,7 +56,20 @@ Note that `hvac_action` can only be mapped to [pre-defined actions](https://deve
 If a value does not have a sensible mapping, leave it out to set `hvac_action` to `None` for that value, or consider
 mapping to a sensor `enum` instead.
 
-For `fan_mode` and `swing_mode`, remember to add [transalation string](#translation-strings).
+For `fan_mode` and `swing_mode`, remember to add [translation string](#translation-strings).
+
+## Type `Humidifier`:
+
+Domain `humidifier` can be used to map the property to a target property in a humidifier entity. If at least one property has
+type `humidifier`, a humidifier entity is created for the appliance.
+
+| Item           | Type                            | Description                                                                                                                                                               |
+|----------------|---------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `target`       | string                          | Any  of these [climate entity](https://developers.home-assistant.io/docs/core/entity/humidifier#properties) attributes: `is_on`, `current_humidity`, or `target_humidity` |
+| `options`      | dictionary of integer to string |                                                                                                                                                                           |
+| `device_class` | string                          | Name of any [HumidifierDeviceClass enum](https://developers.home-assistant.io/docs/core/entity/humidifier#available-device-classes)                                       |                                                                                                                         
+
+It is sufficient to set `device_class` on one property. The value of the first encountered property is used.
 
 ## Type `Select`
 
@@ -123,7 +137,7 @@ This goes into  [strings.json](../strings.json) and  [en.json](../translations/e
 }
 ```
 
-Climate modes must be registered as `state_attributes`.  
+Climate and humidifier modes must be registered as `state_attributes`.  
 
 For example, given the following data dictionary:
 ```yaml

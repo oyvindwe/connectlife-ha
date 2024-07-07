@@ -6,12 +6,15 @@ import pkgutil
 from connectlife.appliance import ConnectLifeAppliance
 from homeassistant.const import Platform
 from homeassistant.components.binary_sensor import BinarySensorDeviceClass
+from homeassistant.components.humidifier import HumidifierDeviceClass
 from homeassistant.components.sensor import SensorDeviceClass, SensorStateClass
 from homeassistant.components.switch import SwitchDeviceClass
 
 from .const import (
+    ACTION,
     FAN_MODE,
     HVAC_ACTION,
+    MODE,
     SWING_MODE,
     TEMPERATURE_UNIT,
 )
@@ -35,7 +38,7 @@ WRITABLE = "writable"
 _LOGGER = logging.getLogger(__name__)
 
 
-class BinarySensor():
+class BinarySensor:
     device_class: BinarySensorDeviceClass | None
 
     def __init__(self, name: str, binary_sensor: dict | None):
@@ -45,7 +48,7 @@ class BinarySensor():
             if DEVICE_CLASS in binary_sensor else None
 
 
-class Climate():
+class Climate:
     target: str
     options: dict | None
 
@@ -60,20 +63,37 @@ class Climate():
             _LOGGER.warning("Missing climate.options for %s", name)
 
 
-class Select():
+class Humidifier:
+    target: str
+    options: dict | None
+    device_class: HumidifierDeviceClass | None
+
+    def __init__(self, name: str, humidifier: dict | None):
+        if humidifier is None:
+            humidifier = {}
+        self.target = humidifier[TARGET] if TARGET in humidifier else None
+        if self.target is None:
+            _LOGGER.warning("Missing humidifier.target for for %s", name)
+        self.options = humidifier[OPTIONS] if OPTIONS in humidifier else None
+        if self.options is None and self.target in [ACTION, MODE]:
+            _LOGGER.warning("Missing humidifier.options for %s", name)
+        self.device_class = HumidifierDeviceClass(humidifier[DEVICE_CLASS]) if DEVICE_CLASS in humidifier else None
+
+
+class Select:
     options: dict
 
     def __init__(self, name: str, select: dict):
         if select is None:
             select = {}
-        if not OPTIONS in select:
+        if OPTIONS not in select:
             _LOGGER.warning("Select %s has no options", name)
-            self.options = []
+            self.options = {}
         else:
             self.options = select[OPTIONS]
 
 
-class Sensor():
+class Sensor:
     unknown_value: int | None
     max_value: int | None
     writeable: bool | None
@@ -101,7 +121,7 @@ class Sensor():
                 if self.state_class:
                     _LOGGER.warning("%s has device class enum, but has state_class", name)
                     device_class = None
-                if device_class and not "options" in sensor:
+                if device_class and "options" not in sensor:
                     _LOGGER.warning("%s has device class enum, but no options", name)
                     device_class = None
                 else:
@@ -116,7 +136,7 @@ class Sensor():
         self.device_class = device_class
 
 
-class Switch():
+class Switch:
     device_class: SwitchDeviceClass | None
     off: int
     on: int
@@ -134,11 +154,12 @@ class Property:
     name: str
     icon: str | None
     hide: bool
-    binary_sensor: BinarySensor | None
-    climate: Climate | None
-    sensor: Sensor | None
-    select: Select | None
-    switch: Switch | None
+    binary_sensor: BinarySensor
+    climate: Climate
+    humidifier: Humidifier
+    sensor: Sensor
+    select: Select
+    switch: Switch
 
     def __init__(self, entry: dict):
         self.name = entry[PROPERTY]
@@ -149,6 +170,8 @@ class Property:
             self.binary_sensor = BinarySensor(self.name, entry[Platform.BINARY_SENSOR])
         elif Platform.CLIMATE in entry:
             self.climate = Climate(self.name, entry[Platform.CLIMATE])
+        elif Platform.HUMIDIFIER in entry:
+            self.humidifier = Humidifier(self.name, entry[Platform.HUMIDIFIER])
         elif Platform.SENSOR in entry:
             self.sensor = Sensor(self.name, entry[Platform.SENSOR])
         elif Platform.SELECT in entry:
@@ -173,8 +196,8 @@ class Dictionaries:
         try:
             data = pkgutil.get_data(__name__, f"data_dictionaries/{key}.yaml")
             parsed = yaml.safe_load(data)
-            for property in parsed[PROPERTIES]:
-                dictionary[property[PROPERTY]] = Property(property)
+            for prop in parsed[PROPERTIES]:
+                dictionary[prop[PROPERTY]] = Property(prop)
         except FileNotFoundError:
             _LOGGER.warning("No data dictionary found for %s", key)
         Dictionaries.dictionaries[key] = dictionary

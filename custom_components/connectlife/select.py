@@ -17,6 +17,7 @@ from connectlife.appliance import ConnectLifeAppliance
 
 _LOGGER = logging.getLogger(__name__)
 
+
 async def async_setup_entry(
         hass: HomeAssistant,
         config_entry: ConfigEntry,
@@ -52,10 +53,10 @@ class ConnectLifeSelect(ConnectLifeEntity, SelectEntity):
         self.reverse_options_map = {v: k for k, v in self.options_map.items()}
         self.entity_description = SelectEntityDescription(
             key=self._attr_unique_id,
-            entity_registry_visible_default = not dd_entry.hide,
+            entity_registry_visible_default=not dd_entry.hide,
             icon=dd_entry.icon,
             name=status.replace("_", " "),
-            translation_key = status,
+            translation_key=status,
             options=list(self.options_map.values())
         )
         self.update_state()
@@ -76,4 +77,3 @@ class ConnectLifeSelect(ConnectLifeEntity, SelectEntity):
         await self.coordinator.api.update_appliance(self.puid, {self.status: self.reverse_options_map[option]})
         self._attr_current_option = option
         self.async_write_ha_state()
-

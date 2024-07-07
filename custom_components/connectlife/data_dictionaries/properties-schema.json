@@ -9,7 +9,16 @@
         "device_type": {
           "title": "Device type",
           "type": "string",
-          "examples": ["dishwasher", "hob", "aircondition"]
+          "examples": [
+            "airconditioner",
+            "dehumidifier",
+            "dishwasher",
+            "hob",
+            "hood",
+            "humidifier",
+            "washing_machine",
+            "tumble_dryer"
+          ]
         },
         "properties": {
           "type": "array",
@@ -35,6 +44,12 @@
         "binary_sensor": {
           "$ref": "#/definitions/BinarySensor"
         },
+        "climate": {
+          "$ref": "#/definitions/Climate"
+        },
+        "humidifier": {
+          "$ref": "#/definitions/Humidifier"
+        },
         "select": {
           "$ref": "#/definitions/Select"
         },
@@ -48,7 +63,10 @@
           "type": "string",
           "title": "Icon",
           "description": "Icon to use for the entity.",
-          "examples": ["mdi:alert", "mdi:dishwash-alert"]
+          "examples": [
+            "mdi:alert",
+            "mdi:dishwash-alert"
+          ]
         },
         "hide": {
           "type": "boolean",
@@ -72,7 +90,7 @@
       },
       "title": "BinarySensor"
     },
-    "Climate" : {
+    "Climate": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -85,9 +103,29 @@
             "type": "string"
           },
           "description": "Map of integer to string. Required for targets fan_mode, swing_mode, and temeprature_unit."
+        }
       }
     },
-    "Select" : {
+    "Humidifier": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "target": {
+          "$ref": "#/definitions/HumidifierTarget"
+        },
+        "device_class": {
+          "$ref": "#/definitions/HumidifierDeviceClass"
+        },
+        "options": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Map of integer to string."
+        }
+      }
+    },
+    "Select": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -97,6 +135,7 @@
             "type": "string"
           },
           "description": "Map of integer to string."
+        }
       },
       "required": ["options"]
     },
@@ -114,17 +153,27 @@
         "unit": {
           "type": "string",
           "description": "Required if device_class is set, except not allowed when device_class is enum or ph.",
-          "examples": ["min", "kWh", "L"]
+          "examples": [
+            "min",
+            "kWh",
+            "L"
+          ]
         },
         "unknown_value": {
           "type": "integer",
           "description": "The value used by the API to signal unknown value.",
-          "examples": [255, 65535]
+          "examples": [
+            255,
+            65535
+          ]
         },
         "max_value": {
           "type": "integer",
           "description": "Maximum value (checked when setting property).",
-          "examples": [5, 10]
+          "examples": [
+            5,
+            10
+          ]
         },
         "options": {
           "type": "object",
@@ -145,12 +194,12 @@
         "off": {
           "type": "integer",
           "description": "Off value",
-          "default": "0",
+          "default": "0"
         },
         "on": {
           "type": "integer",
           "description": "On value",
-          "default": "1",
+          "default": "1"
         },
         "device_class": {
           "$ref": "#/definitions/SwitchDeviceClass"
@@ -192,51 +241,42 @@
       ],
       "title": "Device class",
       "description": "Name of any BinarySensorDeviceClass enum."
-    },    "BinarySensorDeviceClass": {
-      "type": "string",
-      "enum": [
-        "battery",
-        "battery_charging",
-        "carbon_monoxide",
-        "cold",
-        "connectivity",
-        "door",
-        "garage_door",
-        "gas",
-        "heat",
-        "light",
-        "lock",
-        "moisture",
-        "motion",
-        "moving",
-        "occupancy",
-        "opening",
-        "plug",
-        "power",
-        "presence",
-        "problem",
-        "running",
-        "safety",
-        "smoke",
-        "sound",
-        "tamper",
-        "update",
-        "vibration",
-        "window"
-      ],
-      "title": "Device class",
-      "description": "Name of any BinarySensorDeviceClass enum."
     },
-    "CLimateTarget": {
+    "ClimateTarget": {
       "type": "string",
       "enum": [
+        "current_humidity",
+        "current_temperature",
         "fan_mode",
+        "hvac_action",
+        "is_on",
         "swing_mode",
-        "temperature_unit",
+        "target_humidity",
+        "target_temperature",
+        "temperature_unit"
       ],
       "title": "Climate target.",
       "description": "Target property of ClimateEntity."
     },
+    "HumidifierTarget": {
+      "type": "string",
+      "enum": [
+        "current_humidity",
+        "mode",
+        "target_humidity",
+        "is_on"
+      ],
+      "title": "Humidifier target.",
+      "description": "Target property of HumidifierEntity."
+    },
+    "HumidifierDeviceClass": {
+      "type": "string",
+      "enum": [
+        "dehumidifier",
+        "humidifier"
+      ],
+      "title": "Humidifier device class."
+      },
     "SensorDeviceClass": {
       "type": "string",
       "enum": [
@@ -304,15 +344,15 @@
       ],
       "title": "State class",
       "description": "Name of any SensorStateClass. Only allowed for integer properties, defaults to measurement."
+    },
+    "SwitchDeviceClass": {
+      "type": "string",
+      "enum": [
+        "outlet",
+        "switch"
+      ],
+      "title": "Device class",
+      "description": "Name of any SwitchDeviceClass enum."
     }
-  },
-  "SwitchDeviceClass": {
-    "type": "string",
-    "enum": [
-      "outlet",
-      "switch"
-    ],
-    "title": "Device class",
-    "description": "Name of any SwitchDeviceClass enum."
   }
 }

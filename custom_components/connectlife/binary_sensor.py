@@ -51,11 +51,11 @@ class ConnectLifeBinaryStatusSensor(ConnectLifeEntity, BinarySensorEntity):
         self.status = status
         self.entity_description = BinarySensorEntityDescription(
             key=self._attr_unique_id,
-            entity_registry_visible_default = not dd_entry.hide,
+            entity_registry_visible_default=not dd_entry.hide,
             icon=dd_entry.icon,
             name=status.replace("_", " "),
-            translation_key = status,
-            device_class = dd_entry.binary_sensor.device_class
+            translation_key=status,
+            device_class=dd_entry.binary_sensor.device_class
         )
         self.update_state()
 
@@ -68,4 +68,4 @@ class ConnectLifeBinaryStatusSensor(ConnectLifeEntity, BinarySensorEntity):
             else:
                 self._attr_is_on = None
                 _LOGGER.warning("Unknown value %d for %s", value, self.status)
-        self._attr_available = self.coordinator.appliances[self.device_id]._offline_state == 1
+        self._attr_available = self.coordinator.appliances[self.device_id].offline_state == 1

@@ -1,17 +1,14 @@
-device_type: aircondition
+device_type: airconditioner
 properties:
   - property: f_temp_in
     climate:
       target: current_temperature
-  - property: oem_host_version
-    sensor:
-      hide: true
   - property: t_beep
-    switch:
+    switch: {}
   - property: t_eco
-    switch:
+    switch: {}
   - property: t_fan_mute
-    switch:
+    switch: {}
   - property: t_fan_speed
     climate:
       target: fan_mode
