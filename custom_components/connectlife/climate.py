@@ -56,7 +56,7 @@ def is_climate(dictionary: dict[str, Property]):
 class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
     """Climate class for ConnectLife."""
 
-    _attr_has_entity_name = True
+    _attr_name = None
     _attr_precision = PRECISION_WHOLE
     _attr_target_temperature_step = 1
     _attr_temperature_unit = UnitOfTemperature.CELSIUS

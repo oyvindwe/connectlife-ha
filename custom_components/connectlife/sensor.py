@@ -49,8 +49,6 @@ async def async_setup_entry(
 class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
     """Sensor class for ConnectLife arbitrary status."""
 
-    _attr_has_entity_name = True
-
     def __init__(
             self,
             coordinator: ConnectLifeCoordinator,
