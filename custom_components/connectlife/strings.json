@@ -30,6 +30,27 @@
     }
   },
   "entity": {
+    "climate": {
+      "connectlife": {
+        "state_attributes": {
+          "fan_mode": {
+            "state": {
+              "middle_low": "Middle low",
+              "middle_high": "Middle high"
+            }
+          },
+          "swing_mode": {
+            "state": {
+              "both_sides": "Both sides",
+              "forward": "Forward",
+              "left": "Left",
+              "right": "Right",
+              "swing": "Swing"
+            }
+          }
+        }
+      }
+    },
     "sensor": {
       "Alarm_door_closed": {
         "name": "Door closed"
@@ -43,6 +64,38 @@
           "not_available": "Unavailable",
           "closed": "Closed",
           "open": "Open"
+        }
+      },
+      "t_sleep": {
+        "name": "Sleep"
+      }
+    },
+    "switch": {
+      "t_eco": {
+        "name": "Eco"
+      },
+      "t_fan_mute": {
+        "name": "Fan mute"
+      },
+      "t_super": {
+        "name": "Super"
+      },
+      "t_tms": {
+        "name": "AI"
+      }
+    },
+    "select": {
+      "t_swing_angle": {
+        "name": "Swing angle",
+        "state": {
+          "swing": "Swing",
+          "auto": "Auto",
+          "angle_1": "Angle 1",
+          "angle_2": "Angle 2",
+          "angle_3": "Angle 3",
+          "angle_4": "Angle 4",
+          "angle_5": "Angle 5",
+          "angle_6": "Angle 6"
         }
       }
     }

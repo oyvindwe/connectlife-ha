@@ -1,21 +1,71 @@
-Data dictionaries for known appliances are located in this directory.
+# Data dictionaries
 
-Appliances without data dictionary will be still be loaded.
+Data dictionaries for known appliances are located in this directory. Appliances without data dictionary will be still
+be loaded, but with a warning in the log. Also, all unknown properties are mapped to hidden status entities.
+
+To make a property visible by default, just add the property to the list (without setting `hide`).
 
 File name: `<deviceTypeCode>-<deviceFeatureCode>.yaml`
 
-List of `properties` with the following items:
+The file containse to top level items:
+- `device_type`: string
+- `properties`: list of [`Property`](#property):
 
-| Item            | Type            | Description                                                                                       |
-|-----------------|-----------------|---------------------------------------------------------------------------------------------------|
-| `property`      | string          | Name of status/property.                                                                          |
-| `hide`          | `true`, `false` | If Home Assistant should initially hide the sensor entity for this property. Defaults to `false`. |
-| `icon`          | `mdi:eye`, etc. | Icon to use for the entity.                                                                       |
-| `sensor`        | Sensor          | Create a sensor of the property. This is the default.                                             |
-| `binary_sensor` | BinarySensor    | Create a binary sensor of the property.                                                           |
+## Property
+
+| Item            | Type                               | Description                                                                                       |
+|-----------------|------------------------------------|---------------------------------------------------------------------------------------------------|
+| `property`      | string                             | Name of status/property.                                                                          |
+| `hide`          | `true`, `false`                    | If Home Assistant should initially hide the sensor entity for this property. Defaults to `false`. |
+| `icon`          | `mdi:eye`, etc.                    | Icon to use for the entity.                                                                       |
+| `binary_sensor` | [BinarySensor](#type-binarysensor) | Create a binary sensor of the property.                                                           |
+| `climate`       | [Climate](#type-climate)           | Map the property to a climate entity for the device.                                              |
+| `select`        | [Select](#type-select)             | Create a selector of the property.                                                                |
+| `sensor`        | [Sensor](#type-sensor)             | Create a sensor of the property. This is the default.                                             |
+| `switch`        | [Switch](#type-switch)             | Create a Switch of the property.                                                                  |
+
+If a entity mapping is not given, the property is mapped to a sensor entity.
+
+It is not necessary to include items with empty values. A [JSON schema](properties-schema.json) is provided so data dictionaries can be
+validated.
+
+## Type `BinarySensor`
+
+Domain `binary_sensor` can be used for read only properties where `0` is not available, `1` is off, and `2` is on. Both
+`0`and `1` is mapped to off.
+
+| Item           | Type                     | Description                                                                                                                                                           |
+|----------------|--------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `device_class` | `power`, `problem`, etc. | For domain `binary_sensor`, name of any [BinarySensorDeviceClass enum](https://developers.home-assistant.io/docs/core/entity/binary-sensor#available-device-classes). | 
 
 
-Type `Sensor`
+## Type `Climate`:
+
+Domain `climate` can be used to map the property to a target propery in a climate entity. If at least one property has
+type `climate`, a climate entity is created for the appliance.
+
+| Item      | Type                            | Description                                                                                                                                                                                                                              |
+|-----------|---------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `target`  | string                          | Any  of these [climate entity](https://developers.home-assistant.io/docs/core/entity/climate) attributes: `fan_mode`, `hvac_action`, `swing_mode`, `temperature`, `target_temperature`, `temperature_unit`, or the special target `is_on` |
+| `options` | dictionary of integer to string | Required for `fan_mode`, `hvac_action`, `swing_mode`, and `temperature_unit`                                                                                                                                                             |
+
+`temperature_unit` defaults to Celsius.
+
+Note that `hvac_action` can only be mapped to [pre-defined actions](https://developers.home-assistant.io/docs/core/entity/climate#hvac-action).
+If a value does not have a sensible mapping, leave it out to set `hvac_action` to `None` for that value, or consider
+mapping to a sensor `enum` instead.
+
+For `fan_mode` and `swing_mode`, remember to add [transalation string](#translation-strings).
+
+## Type `Select`
+
+| Item       | Type                            | Description |
+|------------|---------------------------------|-------------|
+| `options`  | dictionary of integer to string | Required.   |
+
+For remember to add options to [translation strings](#translation-strings).
+
+## Type `Sensor`
 
 | Item            | Type                                       | Description                                                                                                                                                                                                               |
 |-----------------|--------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -27,37 +77,32 @@ Type `Sensor`
 | `unit`          | `min`, `kWh`, `L`, etc.                    | Required if `device_class` is set, except not allowed when `device_class` is `ph` or `enum`.                                                                                                                              |
 | `options`       | dictionary of integer to string            | Required if `device_class` is set to `enum`.                                                                                                                                                                              |
 
-Type `BinarySensor`
+For enum options, remember to add [translation strings](#translation-strings).
 
-| Item           | Type                     | Description                                                                                                                                                           |
-|----------------|--------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `device_class` | `power`, `problem`, etc. | For domain `binary_sensor`, name of any [BinarySensorDeviceClass enum](https://developers.home-assistant.io/docs/core/entity/binary-sensor#available-device-classes). | 
+## Type `Switch`
 
+| Item  | Type    | Description               |
+|-------|---------|---------------------------|
+| `off` | integer | Off value. Defaults to 0. |
+| `on`  | integer | On value. Defaults to 1.  |
 
-Domain `binary_sensor` can be used for read only properties where `0` is not available, `1` is off, and `2` is on. Both
-`0`and `1` is mapped to off.
-
-If none of `sensor` or `binary_sensor` is provided, the property is treated like `sensor`. It is not necessary to
-include items with empty values. A [JSON schema](properties-schema.json) is provided so data dictionaries can be
-validated.
+# Translation strings
 
 By default, sensor entities are named by replacing `_` with ` ` in the property name. However, the property name is also
 the translation key for the property, so it is possible to add a different English entity name as well as provide
 translations by adding the property to [strings.json](../strings.json), and then to any [translations](../translations)
 files.
 
-Options for device class `enum` should always be added.
-
 For example, given the following data dictionary:
 ```yaml
 properties:
-  - property: t_fan_speed
+  - property: Door_status
     sensor:
       device_class: enum
       options:
-        0: low
-        1: high
-        2: auto
+        0: not_available
+        1: closed
+        2: open
 ```
 
 This goes into  [strings.json](../strings.json) and  [en.json](../translations/en.json),
@@ -65,12 +110,53 @@ This goes into  [strings.json](../strings.json) and  [en.json](../translations/e
 {
   "entity": {
     "sensor": {
-      "t_fan_speed": {
-        "name": "Fan speed",
+      "Door_status": {
+        "name": "Door",
         "state": {
-          "low": "Low",
-          "high": "High",
-          "auto": "Auto"
+          "not_available": "Unavailable",
+          "closed": "Closed",
+          "open": "Open"
+        }
+      }
+    }
+  }
+}
+```
+
+Climate modes must be registered as `state_attributes`.  
+
+For example, given the following data dictionary:
+```yaml
+properties:
+  - property: t_fan_speed
+    climate:
+      target: fan_mode
+      options:
+        0: auto
+        5: ultra_low
+        6: low
+        7: medium
+        8: high
+        9: ultra_high
+```
+
+This goes into  [strings.json](../strings.json) and  [en.json](../translations/en.json),
+```json
+{
+  "entity": {
+    "climate": {
+      "connectlife": {
+        "state_attributes": {
+          "fan_mode": {
+            "state": {
+              "auto": "Auto",
+              "ultra_low": "Ultra low",
+              "low": "Low",
+              "medium": "Medium",
+              "high": "High",
+              "ultra_high": "Ultra high"
+            }
+          }
         }
       }
     }

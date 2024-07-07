@@ -4,6 +4,7 @@ import logging
 import voluptuous as vol
 from homeassistant.components.sensor import SensorEntity, SensorStateClass, SensorDeviceClass, SensorEntityDescription
 from homeassistant.config_entries import ConfigEntry
+from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant, ServiceCall, callback
 from homeassistant.exceptions import ServiceValidationError
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
@@ -34,7 +35,7 @@ async def async_setup_entry(
         dictionary = Dictionaries.get_dictionary(appliance)
         async_add_entities(
             ConnectLifeStatusSensor(coordinator, appliance, s, dictionary[s])
-            for s in appliance.status_list if hasattr(dictionary[s], "sensor")
+            for s in appliance.status_list if hasattr(dictionary[s], Platform.SENSOR)
         )
 
     platform = entity_platform.async_get_current_platform()
@@ -94,15 +95,13 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
         if self.status in self.coordinator.appliances[self.device_id].status_list:
             value = self.coordinator.appliances[self.device_id].status_list[self.status]
             if self.device_class == SensorDeviceClass.ENUM:
-                value = self.options[value]
+                if value in self.options_map:
+                    value = self.options_map[value]
+                else:
+                    _LOGGER.warning("Got unexpected value %d for %s", value, self.status)
+                    value = None
             self._attr_native_value = value if value != self.unknown_value else None
         self._attr_available = self.coordinator.appliances[self.device_id]._offline_state == 1
-
-    @callback
-    def _handle_coordinator_update(self) -> None:
-        """Handle updated data from the coordinator."""
-        self.update_state()
-        self.async_write_ha_state()
 
     async def async_set_value(self, value: int) -> None:
         """Set value for this sensor."""
@@ -117,3 +116,5 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
             await self.coordinator.api.update_appliance(self.puid, {self.status: str(value)})
         except LifeConnectError as api_error:
             raise ServiceValidationError(str(api_error)) from api_error
+        self._attr_native_value = value
+        self.async_write_ha_state()
