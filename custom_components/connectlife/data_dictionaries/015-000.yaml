@@ -1,5 +1,7 @@
+device_type: dishwasher
 properties:
   - property: ADO_allowed
+    hide: true
     sensor:
       writable: false
   - property: Alarm_auto_dose_refill
@@ -7,18 +9,22 @@ properties:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_Autodose_level10
+    hide: true
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_Autodose_level20
+    hide: true
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_External_autodose_level15
+    hide: true
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_External_autodose_level30
+    hide: true
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
@@ -27,14 +33,17 @@ properties:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_door_closed
+    hide: true
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_door_opened
+    hide: true
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_preheating_ready
+    hide: true
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
@@ -43,10 +52,12 @@ properties:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_program_pause
+    hide: true
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_remote_start_canceled
+    hide: true
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
@@ -55,6 +66,7 @@ properties:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_Rinse_aid_refill_external
+    hide: true
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
@@ -67,6 +79,7 @@ properties:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_Sani_program_finished
+    hide: true
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
@@ -85,7 +98,9 @@ properties:
     sensor:
       writable: true
   - property: Child_lock
+    hide: true
   - property: Child_lock_setting_status
+    hide: true
     sensor:
       writable: false
   - property: Curent_program_duration
@@ -100,16 +115,24 @@ properties:
       unit: min
   - property: Current_program_phase
   - property: Delay_start
+    hide: true
   - property: Delay_start_remaining_time
+    hide: true
   - property: Delay_start_set_time
+    hide: true
   - property: Demo_mode_status
+    hide: true
   - property: Device_status
   - property: Display_Brightness_setting_status
+    hide: true
     sensor:
       unknown_value: 255
   - property: Display_contrast_setting_status
+    hide: true
   - property: Display_logotype_setting_status
+    hide: true
   - property: Door_status
+    hide: true
     sensor:
       device_class: enum
       options:
@@ -120,6 +143,7 @@ properties:
     sensor:
       unknown_value: 65535
   - property: Energy_save_setting_status
+    hide: true
   - property: Error_F70
     icon: mdi:dishwasher-alert
     hide: true
@@ -220,8 +244,11 @@ properties:
     icon: mdi:dishwasher-alert
     hide: true
   - property: FOTA_status
+    hide: true
   - property: Fan_sequence_setting_status
+    hide: true
   - property: Feedback_volumen_setting_status
+    hide: true
   - property: Fill_salt
     binary_sensor:
       device_class: problem
@@ -229,50 +256,92 @@ properties:
   - property: HardPairingStatus
     hide: true
   - property: Heat_pump_setting_status
+    hide: true
   - property: High_temperature_status
+    hide: true
   - property: Interior_light_at_power_off_setting_status
+    hide: true
   - property: Interior_light_status
+    hide: true
   - property: Language_status
+    hide: true
   - property: Last_run_program_id
     sensor:
       unknown_value: 255
   - property: MDO_on_demand
+    hide: true
   - property: MDO_on_demand_allowed
+    hide: true
   - property: Notification_volumen_setting_status
+    hide: true
   - property: Odor_control_setting
+    hide: true
   - property: Pressure_calibration_setting_status
+    hide: true
   - property: Remote_control_monitoring_set_commands
+    hide: true
   - property: Remote_control_monitoring_set_commands_actions
+    hide: true
   - property: Rinse_aid_refill
+    hide: true
   - property: Rinse_aid_setting_status
+    hide: true
   - property: Sani_Lock
+    hide: true
   - property: Sani_Lock_allowed
+    hide: true
   - property: Selected_program_Lower_wash_function
+    hide: true
   - property: Selected_program_Upper_wash_function
+    hide: true
   - property: Selected_program_auto_door_open_function
+    hide: true
   - property: Selected_program_dry_function
+    hide: true
   - property: Selected_program_extra_drying_function
+    hide: true
   - property: Selected_program_id_status
+    hide: true
   - property: Selected_program_mode
+    hide: true
   - property: Selected_program_storage_function
+    hide: true
   - property: Selected_program_uv_function
+    hide: true
   - property: Session_pairing_active
+    hide: true
   - property: Session_pairing_confirmation
+    hide: true
   - property: Session_pairing_status
+    hide: true
   - property: Silence_on_demand
+    hide: true
   - property: Silence_on_demand_allowed
+    hide: true
   - property: Soft_pairing_status
+    hide: true
   - property: Speed_on_demand
+    hide: true
   - property: Spend_on_demand_allowed
+    hide: true
   - property: Storage_mode_allowed
+    hide: true
   - property: Storage_mode_on_demand_stat
+    hide: true
   - property: Super_rinse_on_demand
+    hide: true
   - property: Super_rinse_on_demand_allowed
+    hide: true
   - property: Super_rinse_setting_status
+    hide: true
   - property: Super_rinse_status
+    hide: true
   - property: Tab_setting_status
+    hide: true
   - property: Temperature_unit_status
+    hide: true
   - property: Time_program_set_duration_status
+    hide: true
   - property: Total_energy_consumption
     sensor:
       state_class: total
@@ -292,18 +361,26 @@ properties:
       device_class: water
       unit: L
   - property: UV_mode_on_demand
+    hide: true
   - property: UV_mode_on_demand_allowed
+    hide: true
   - property: Water_consumption_in_running_program
+    hide: true
     sensor:
       unknown_value: 65535
       state_class: total
       device_class: water
       unit: L
   - property: Water_hardness_setting_status
+    hide: true
   - property: Water_inlet_setting_status
+    hide: true
   - property: Water_save_setting_status
+    hide: true
   - property: Water_tank
+    hide: true
   - property: daily_energy_kwh
+    hide: true
     sensor:
       state_class: total
       device_class: energy

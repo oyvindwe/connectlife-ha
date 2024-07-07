@@ -1,12 +1,17 @@
 """ConnectLife entity base class."""
 
+from abc import abstractmethod
+
+from homeassistant.core import callback
+from homeassistant.helpers.device_registry import DeviceInfo
+from homeassistant.helpers.update_coordinator import CoordinatorEntity
+
+from connectlife.appliance import ConnectLifeAppliance
+
 from .const import (
     DOMAIN,
 )
 from .coordinator import ConnectLifeCoordinator
-from connectlife.appliance import ConnectLifeAppliance
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
 
 class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
@@ -23,3 +28,14 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
             name=appliance.device_nickname,
             suggested_area=appliance.room_name,
         )
+
+    @callback
+    @abstractmethod
+    def update_state(self):
+        """Subclasses implement this to update their state."""
+
+    @callback
+    def _handle_coordinator_update(self) -> None:
+        """Handle updated data from the coordinator."""
+        self.update_state()
+        self.async_write_ha_state()

@@ -6,6 +6,11 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
+        "device_type": {
+          "title": "Device type",
+          "type": "string",
+          "examples": ["dishwasher", "hob", "aircondition"]
+        },
         "properties": {
           "type": "array",
           "items": {
@@ -27,11 +32,17 @@
           "description": "Property name",
           "type": "string"
         },
+        "binary_sensor": {
+          "$ref": "#/definitions/BinarySensor"
+        },
+        "select": {
+          "$ref": "#/definitions/Select"
+        },
         "sensor": {
           "$ref": "#/definitions/Sensor"
         },
-        "binary_sensor": {
-          "$ref": "#/definitions/BinarySensor"
+        "switch": {
+          "$ref": "#/definitions/Switch"
         },
         "icon": {
           "type": "string",
@@ -41,7 +52,8 @@
         },
         "hide": {
           "type": "boolean",
-          "description": "If Home Assistant should initially hide the sensor entity for this property. Defaults to false."
+          "description": "If Home Assistant should initially hide the sensor entity for this property.",
+          "default": false
         }
       },
       "required": [
@@ -59,6 +71,34 @@
         }
       },
       "title": "BinarySensor"
+    },
+    "Climate" : {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "target": {
+          "$ref": "#/definitions/ClimateTarget"
+        },
+        "options": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Map of integer to string. Required for targets fan_mode, swing_mode, and temeprature_unit."
+      }
+    },
+    "Select" : {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "options": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Map of integer to string."
+      },
+      "required": ["options"]
     },
     "Sensor": {
       "type": "object",
@@ -98,6 +138,26 @@
         }
       }
     },
+    "Switch": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "off": {
+          "type": "integer",
+          "description": "Off value",
+          "default": "0",
+        },
+        "on": {
+          "type": "integer",
+          "description": "On value",
+          "default": "1",
+        },
+        "device_class": {
+          "$ref": "#/definitions/SwitchDeviceClass"
+        }
+      },
+      "title": "BinarySensor"
+    },
     "BinarySensorDeviceClass": {
       "type": "string",
       "enum": [
@@ -132,6 +192,50 @@
       ],
       "title": "Device class",
       "description": "Name of any BinarySensorDeviceClass enum."
+    },    "BinarySensorDeviceClass": {
+      "type": "string",
+      "enum": [
+        "battery",
+        "battery_charging",
+        "carbon_monoxide",
+        "cold",
+        "connectivity",
+        "door",
+        "garage_door",
+        "gas",
+        "heat",
+        "light",
+        "lock",
+        "moisture",
+        "motion",
+        "moving",
+        "occupancy",
+        "opening",
+        "plug",
+        "power",
+        "presence",
+        "problem",
+        "running",
+        "safety",
+        "smoke",
+        "sound",
+        "tamper",
+        "update",
+        "vibration",
+        "window"
+      ],
+      "title": "Device class",
+      "description": "Name of any BinarySensorDeviceClass enum."
+    },
+    "CLimateTarget": {
+      "type": "string",
+      "enum": [
+        "fan_mode",
+        "swing_mode",
+        "temperature_unit",
+      ],
+      "title": "Climate target.",
+      "description": "Target property of ClimateEntity."
     },
     "SensorDeviceClass": {
       "type": "string",
@@ -201,5 +305,14 @@
       "title": "State class",
       "description": "Name of any SensorStateClass. Only allowed for integer properties, defaults to measurement."
     }
+  },
+  "SwitchDeviceClass": {
+    "type": "string",
+    "enum": [
+      "outlet",
+      "switch"
+    ],
+    "title": "Device class",
+    "description": "Name of any SwitchDeviceClass enum."
   }
 }
