@@ -44,10 +44,10 @@ Domain `binary_sensor` can be used for read only properties where `0` is not ava
 Domain `climate` can be used to map the property to a target propery in a climate entity. If at least one property has
 type `climate`, a climate entity is created for the appliance.
 
-| Item      | Type                            | Description                                                                                                                                                                                                                              |
-|-----------|---------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `target`  | string                          | Any  of these [climate entity](https://developers.home-assistant.io/docs/core/entity/climate) attributes: `fan_mode`, `hvac_action`, `swing_mode`, `temperature`, `target_temperature`, `temperature_unit`, or the special target `is_on` |
-| `options` | dictionary of integer to string | Required for `fan_mode`, `hvac_action`, `swing_mode`, and `temperature_unit`                                                                                                                                                             |
+| Item      | Type                            | Description                                                                                                                                                                                                                                          |
+|-----------|---------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `target`  | string                          | Any  of these [climate entity](https://developers.home-assistant.io/docs/core/entity/climate#properties) attributes: `fan_mode`, `hvac_action`, `swing_mode`, `temperature`, `target_temperature`, `temperature_unit`, or the special target `is_on` |
+| `options` | dictionary of integer to string | Required for `fan_mode`, `hvac_action`, `swing_mode`, and `temperature_unit`                                                                                                                                                                         |
 
 `temperature_unit` defaults to Celsius.
 
@@ -133,14 +133,14 @@ properties:
       target: fan_mode
       options:
         0: auto
-        5: ultra_low
-        6: low
+        5: low
+        6: medium_low
         7: medium
-        8: high
-        9: ultra_high
+        8: medium_high
+        9: high
 ```
 
-This goes into  [strings.json](../strings.json) and  [en.json](../translations/en.json),
+Strings not in [Home Assistant Core](https://github.com/home-assistant/core/blob/dev/homeassistant/components/climate/strings.json) goes in [strings.json](../strings.json) and  [en.json](../translations/en.json):
 ```json
 {
   "entity": {
@@ -149,12 +149,8 @@ This goes into  [strings.json](../strings.json) and  [en.json](../translations/e
         "state_attributes": {
           "fan_mode": {
             "state": {
-              "auto": "Auto",
-              "ultra_low": "Ultra low",
-              "low": "Low",
-              "medium": "Medium",
-              "high": "High",
-              "ultra_high": "Ultra high"
+              "medium_low": "Medium low",
+              "medium_high": "Medium high"
             }
           }
         }

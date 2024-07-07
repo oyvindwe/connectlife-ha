@@ -1,4 +1,5 @@
 # ConnectLife
+
 ConnectLife integration for Home Assistant
 
 ## Installation
@@ -18,7 +19,7 @@ After installing, you need to restart Home Assistant.
 
 Finally, add "ConnectLife" as an integration in the UI, and provide the username and password for your ConnectLife account.
 
-You appliances and all their status values should show up.
+You device and all their status values should show up.
 
 ## Supported devices
 
@@ -47,9 +48,9 @@ Entity None (<class 'custom_components.connectlife.climate.ConnectLifeClimate'>)
 Missing features:
 - Preset modes (e.g. eco)
 - Setting HVAC mode except to off/auto
+- Min/max temperatures
 
-
-### Experimental service to set property values
+### Experimental service to set property values (sensors only)
 
 Entity service `connectlife.set_value` can be used to set values. Use with caution, as there is **no** validation
 if property is writeable, or that the value is legal to set.
@@ -57,11 +58,6 @@ if property is writeable, or that the value is legal to set.
 1. The service can be accessed from Developer tools -> Services in HomeAssistant UI.
 2. Search for service name "ConnectLife: Set value"
 3. As target, select entity, and enter a ConnectLife sensor entity id.
-
-### Climate device not completed
-
-- HVAC modes
-- Max/min temperatures
 
 ### Login
 
