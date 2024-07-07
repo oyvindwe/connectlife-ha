@@ -137,7 +137,7 @@ This goes into  [strings.json](../strings.json) and  [en.json](../translations/e
 }
 ```
 
-Climate modes must be registered as `state_attributes`.  
+Climate and humidifier modes must be registered as `state_attributes`.  
 
 For example, given the following data dictionary:
 ```yaml
