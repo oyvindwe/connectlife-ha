@@ -61,13 +61,14 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
     _attr_target_temperature_step = 1
     _attr_temperature_unit = UnitOfTemperature.CELSIUS
     _attr_hvac_mode = None
-    target_map = {}
-    fan_mode_map: dict[int, str] = {}
-    fan_mode_reverse_map: dict[str, int] = {}
-    hvac_action_map: dict[int, HVACAction] = {}
-    swing_mode_map: dict[int, str] = {}
-    swing_mode_reverse_map: dict[str, int] = {}
-    temperature_unit_map: dict[int, UnitOfTemperature] = {}
+    unknown_values: dict[str, int]
+    target_map: dict[str, str]
+    fan_mode_map: dict[int, str]
+    fan_mode_reverse_map: dict[str, int]
+    hvac_action_map: dict[int, HVACAction]
+    swing_mode_map: dict[int, str]
+    swing_mode_reverse_map: dict[str, int]
+    temperature_unit_map: dict[int, UnitOfTemperature]
 
     def __init__(
             self,
@@ -84,6 +85,15 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
             name=appliance.device_nickname,
             translation_key=DOMAIN
         )
+
+        self.target_map = {}
+        self.fan_mode_map = {}
+        self.fan_mode_reverse_map = {}
+        self.hvac_action_map = {}
+        self.swing_mode_map = {}
+        self.swing_mode_reverse_map = {}
+        self.temperature_unit_map = {}
+        self.unknown_values = {}
 
         for dd_entry in data_dictionary.values():
             if hasattr(dd_entry, Platform.CLIMATE):
@@ -120,12 +130,13 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
                 self._attr_supported_features |= ClimateEntityFeature.SWING_MODE
                 self._attr_swing_mode = None
             elif target == HVAC_ACTION:
-                actions = set(action.value for action in HVACAction)
+                actions = [action.value for action in HVACAction]
                 for (k, v) in data_dictionary[status].climate.options.items():
                     if v in actions:
                         self.hvac_action_map[k] = HVACAction(v)
                     else:
                         _LOGGER.warning("Not mapping %d to unknown HVACAction %s", k, v)
+            self.unknown_values[status] = data_dictionary[status].climate.unknown_value
 
         self._attr_hvac_modes = hvac_modes
         self.update_state()
@@ -153,19 +164,21 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
                         self._attr_fan_mode = self.fan_mode_map[value]
                     else:
                         self._attr_fan_mode = None
-                        _LOGGER.warning("Got unexpected value %d for %s", value, status)
+                        _LOGGER.warning("Got unexpected value %d for %s (%s)", value, status, self.nickname)
                 elif target == SWING_MODE:
                     if value in self.swing_mode_map:
                         self._attr_swing_mode = self.swing_mode_map[value]
                     else:
                         self._attr_swing_mode = None
-                        _LOGGER.warning("Got unexpected value %d for %s", value, status)
+                        _LOGGER.warning("Got unexpected value %d for %s (%s)", value, status, self.nickname)
                 elif target == TEMPERATURE_UNIT:
                     if value in self.temperature_unit_map:
                         self._attr_temperature_unit = self.temperature_unit_map[value]
                     else:
-                        _LOGGER.warning("Got unexpected value %d for %s", value, status)
+                        _LOGGER.warning("Got unexpected value %d for %s (%s)", value, status, self.nickname)
                 else:
+                    if value == self.unknown_values[status]:
+                        value = None
                     setattr(self, f"_attr_{target}", value)
         self._attr_available = self.coordinator.appliances[self.device_id].offline_state == 1
 

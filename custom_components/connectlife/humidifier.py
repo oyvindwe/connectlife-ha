@@ -2,6 +2,7 @@
 import logging
 
 from homeassistant.components.humidifier import (
+    HumidifierAction,
     HumidifierEntity,
     HumidifierEntityDescription,
     HumidifierEntityFeature,
@@ -12,6 +13,7 @@ from homeassistant.core import HomeAssistant, callback
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
 from .const import (
+    ACTION,
     DOMAIN,
     MODE,
     IS_ON,
@@ -51,9 +53,10 @@ class ConnectLifeHumidifier(ConnectLifeEntity, HumidifierEntity):
     """Humidifier class for ConnectLife."""
 
     _attr_name = None
-    target_map = {}
-    mode_map: dict[int, str] = {}
-    mode_reverse_map: dict[str, int] = {}
+    target_map: dict[str, str]
+    mode_map: dict[int, str]
+    mode_reverse_map: dict[str, int]
+    action_map: dict[int, HumidifierAction]
 
     def __init__(
             self,
@@ -64,6 +67,11 @@ class ConnectLifeHumidifier(ConnectLifeEntity, HumidifierEntity):
         """Initialize the entity."""
         super().__init__(coordinator, appliance)
         self._attr_unique_id = f"{appliance.device_id}-humidifier"
+
+        self.target_map = {}
+        self.mode_map = {}
+        self.mode_reverse_map = {}
+        self.action_map = {}
 
         device_class = None
         for prop in data_dictionary.values():
@@ -84,7 +92,14 @@ class ConnectLifeHumidifier(ConnectLifeEntity, HumidifierEntity):
                 self.target_map[dd_entry.humidifier.target] = dd_entry.name
 
         for target, status in self.target_map.items():
-            if target == MODE:
+            if target == ACTION:
+                actions = [action.value for action in HumidifierAction]
+                for (k, v) in data_dictionary[status].humidifier.options.items():
+                    if v in actions:
+                        self.action_map[k] = HumidifierAction(v)
+                    else:
+                        _LOGGER.warning("Not mapping %d to unknown HumidifierAction %s", k, v)
+            elif target == MODE:
                 self.mode_map = data_dictionary[status].humidifier.options
                 self.mode_reverse_map = {v: k for k, v in self.mode_map.items()}
                 self._attr_available_modes = list(self.mode_map.values())
@@ -101,12 +116,18 @@ class ConnectLifeHumidifier(ConnectLifeEntity, HumidifierEntity):
                 if target == IS_ON:
                     # TODO: Support value mapping
                     self._attr_is_on = value == 1
+                elif target == ACTION:
+                    if value in self.action_map:
+                        self._attr_action = self.action_map[value]
+                    else:
+                        # Map to None as we cannot add custom humidifier actions.
+                        self._attr_action = None
                 elif target == MODE:
                     if value in self.mode_map:
                         self._attr_mode = self.mode_map[value]
                     else:
                         self._attr_mode = None
-                        _LOGGER.warning("Got unexpected value %d for %s", value, status)
+                        _LOGGER.warning("Got unexpected value %d for %s (%s)", value, status, self.nickname)
                 else:
                     setattr(self, f"_attr_{target}", value)
         self._attr_available = self.coordinator.appliances[self.device_id].offline_state == 1

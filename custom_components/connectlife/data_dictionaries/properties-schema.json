@@ -97,12 +97,15 @@
         "target": {
           "$ref": "#/definitions/ClimateTarget"
         },
+        "unknown_value": {
+          "$ref": "#/definitions/UnknownValue"
+        },
         "options": {
           "type": "object",
           "additionalProperties": {
             "type": "string"
           },
-          "description": "Map of integer to string. Required for targets fan_mode, swing_mode, and temeprature_unit."
+          "description": "Map of integer to string. Required for targets fan_mode, swing_mode, and temperature_unit."
         }
       }
     },
@@ -160,12 +163,7 @@
           ]
         },
         "unknown_value": {
-          "type": "integer",
-          "description": "The value used by the API to signal unknown value.",
-          "examples": [
-            255,
-            65535
-          ]
+          "$ref": "#/definitions/UnknownValue"
         },
         "max_value": {
           "type": "integer",
@@ -353,6 +351,14 @@
       ],
       "title": "Device class",
       "description": "Name of any SwitchDeviceClass enum."
+    },
+    "UnknownValue": {
+      "type": "integer",
+      "description": "The value used by the API to signal unknown value.",
+      "examples": [
+        255,
+        65535
+      ]
     }
   }
 }

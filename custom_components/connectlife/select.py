@@ -68,7 +68,7 @@ class ConnectLifeSelect(ConnectLifeEntity, SelectEntity):
             if value in self.options_map:
                 value = self.options_map[value]
             else:
-                _LOGGER.warning("Got unexpected value %d for %s", value, self.status)
+                _LOGGER.warning("Got unexpected value %d for %s (%s)", value, self.status, self.nickname)
                 _value = None
             self._attr_current_option = value
 
