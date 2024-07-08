@@ -22,6 +22,7 @@ properties:
   - property: f_humidity
     climate:
       target: current_humidity
+      unknown_value: 128
   - property: t_power
     climate:
       target: is_on
