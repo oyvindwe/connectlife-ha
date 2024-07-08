@@ -22,21 +22,25 @@ properties:
     binary_sensor:
       device_class: problem
   - property: f_e_waterfull
+    icon: mdi:bucket
     binary_sensor:
       device_class: problem
   - property: f_e_wetsensor
     binary_sensor:
       device_class: problem
   - property: f_humidity
+    icon: mdi:water-percent
     humidifier:
       target: current_humidity
   - property: t_fan_speed
+    icon: mdi:fan
     select:
       options:
         0: low
         1: high
         2: auto
   - property: t_humidity
+    icon: mdi:water-percent
     humidifier:
       target: target_humidity
       device_class: dehumidifier
