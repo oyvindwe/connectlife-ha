@@ -64,10 +64,10 @@ properties:
       device_class: switch
   - property: t_work_mode
     climate:
-      target: hvac_action
+      target: hvac_mode
       options:
-        0: fan
-        1: heating
-        2: cooling
-        3: drying
-        # 4: auto - not supported in Home Assistant
+        0: fan_only
+        1: heat
+        2: cool
+        3: dry
+        4: auto

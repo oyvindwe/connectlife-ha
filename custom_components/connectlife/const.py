@@ -8,6 +8,7 @@ ATTR_KEY = "key"
 
 ACTION = "action"
 HVAC_ACTION = "hvac_action"
+HVAC_MODE = "hvac_mode"
 FAN_MODE = "fan_mode"
 IS_ON = "is_on"
 MODE = "mode"

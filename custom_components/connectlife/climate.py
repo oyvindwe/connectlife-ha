@@ -16,6 +16,7 @@ from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from .const import (
     DOMAIN,
     FAN_MODE,
+    HVAC_MODE,
     HVAC_ACTION,
     IS_ON,
     SWING_MODE,
@@ -66,6 +67,9 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
     fan_mode_map: dict[int, str]
     fan_mode_reverse_map: dict[str, int]
     hvac_action_map: dict[int, HVACAction]
+    hvac_mode_map: dict[int, HVACMode]
+    hvac_mode_reverse_map: dict[HVACMode, int]
+    mapped_hvac_mode: HVACMode | None
     swing_mode_map: dict[int, str]
     swing_mode_reverse_map: dict[str, int]
     temperature_unit_map: dict[int, UnitOfTemperature]
@@ -90,6 +94,9 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
         self.fan_mode_map = {}
         self.fan_mode_reverse_map = {}
         self.hvac_action_map = {}
+        self.hvac_mode_map = {}
+        self.hvac_mode_reverse_map = {}
+        self.mapped_hvac_mode = None
         self.swing_mode_map = {}
         self.swing_mode_reverse_map = {}
         self.temperature_unit_map = {}
@@ -99,7 +106,7 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
             if hasattr(dd_entry, Platform.CLIMATE):
                 self.target_map[dd_entry.climate.target] = dd_entry.name
 
-        hvac_modes = [HVACMode.AUTO]
+        hvac_modes = []
         for target, status in self.target_map.items():
             if target == IS_ON:
                 self._attr_supported_features |= ClimateEntityFeature.TURN_OFF
@@ -117,6 +124,14 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
                         self.temperature_unit_map[k] = UnitOfTemperature.CELSIUS
                     elif v == "fahrenheit" or v == "F":
                         self.temperature_unit_map[k] = UnitOfTemperature.FAHRENHEIT
+            elif target == HVAC_MODE:
+                modes = [mode.value for mode in HVACMode]
+                for (k, v) in data_dictionary[status].climate.options.items():
+                    if v in modes:
+                        mode = HVACMode(v)
+                        self.hvac_mode_map[k] = mode
+                        hvac_modes.append(mode)
+                        self.hvac_mode_reverse_map[mode] = k
             elif target == FAN_MODE:
                 self.fan_mode_map = data_dictionary[status].climate.options
                 self.fan_mode_reverse_map = {v: k for k, v in self.fan_mode_map.items()}
@@ -138,26 +153,38 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
                         _LOGGER.warning("Not mapping %d to unknown HVACAction %s", k, v)
             self.unknown_values[status] = data_dictionary[status].climate.unknown_value
 
+        if HVAC_MODE not in self.target_map:
+            # Assume auto
+            hvac_modes.append(HVACMode.AUTO)
+            if IS_ON not in self.target_map:
+                self._attr_hvac_mode = HVACMode.AUTO
+                self.mapped_hvac_mode = HVACMode.AUTO
+
         self._attr_hvac_modes = hvac_modes
         self.update_state()
 
     @callback
     def update_state(self) -> None:
+        is_on = True
         for target, status in self.target_map.items():
             if status in self.coordinator.appliances[self.device_id].status_list:
                 value = self.coordinator.appliances[self.device_id].status_list[status]
                 if target == IS_ON:
                     # TODO: Support value mapping
                     if value == 0:
-                        self._attr_hvac_mode = HVACMode.OFF
+                        is_on = False
+                elif target == HVAC_MODE:
+                    if value in self.hvac_mode_map:
+                        self.mapped_hvac_mode = self.hvac_mode_map[value]
                     else:
-                        # TODO: Support other modes
-                        self._attr_hvac_mode = HVACMode.AUTO
+                        # Map to None without warning as we cannot add custom HVAC modes.
+                        # TODO: Or map to auto?
+                        self.mapped_hvac_mode = None
                 elif target == HVAC_ACTION:
                     if value in self.hvac_action_map:
                         self._attr_hvac_action = self.hvac_action_map[value]
                     else:
-                        # Map to None as we cannot add custom HVAC actions.
+                        # Map to None without warning as we cannot add custom HVAC actions.
                         self._attr_hvac_action = None
                 elif target == FAN_MODE:
                     if value in self.fan_mode_map:
@@ -180,6 +207,9 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
                     if value == self.unknown_values[status]:
                         value = None
                     setattr(self, f"_attr_{target}", value)
+
+        self._attr_hvac_mode = self.mapped_hvac_mode if is_on else HVACMode.OFF
+
         self._attr_available = self.coordinator.appliances[self.device_id].offline_state == 1
 
     async def async_set_humidity(self, humidity):
@@ -207,7 +237,8 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
         """Turn the entity on."""
         # TODO: Support value mapping
         await self.coordinator.api.update_appliance(self.puid, {self.target_map[IS_ON]: 1})
-        self._attr_hvac_mode = HVACMode.AUTO
+        # Restore hvac_mode
+        self._attr_hvac_mode = self.mapped_hvac_mode
         self.async_write_ha_state()
 
     async def async_turn_off(self):
@@ -221,9 +252,15 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
         """Set the HVAC mode."""
         if hvac_mode == HVACMode.OFF:
             await self.async_turn_off()
-        elif hvac_mode == HVACMode.AUTO:
-            await self.async_turn_on()
-        # self.async_write_ha_state()
+        else:
+            request = {}
+            if IS_ON in self.target_map:
+                # TODO: Support value mapping
+                request[self.target_map[IS_ON]] = 1
+            request[self.target_map[HVAC_MODE]] = self.hvac_mode_reverse_map[hvac_mode]
+            await self.coordinator.api.update_appliance(self.puid, request)
+            self._attr_hvac_mode = hvac_mode
+            self.async_write_ha_state()
 
     async def async_set_fan_mode(self, fan_mode: str) -> None:
         """Set the fan mode."""

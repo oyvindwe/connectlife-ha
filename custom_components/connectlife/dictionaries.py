@@ -14,6 +14,7 @@ from .const import (
     ACTION,
     FAN_MODE,
     HVAC_ACTION,
+    HVAC_MODE,
     MODE,
     SWING_MODE,
     TEMPERATURE_UNIT,
@@ -60,7 +61,7 @@ class Climate:
         if self.target is None:
             _LOGGER.warning("Missing climate.target for for %s", name)
         self.options = climate[OPTIONS] if OPTIONS in climate else None
-        if self.options is None and self.target in [FAN_MODE, HVAC_ACTION, SWING_MODE, TEMPERATURE_UNIT]:
+        if self.options is None and self.target in [FAN_MODE, HVAC_ACTION, HVAC_MODE, SWING_MODE, TEMPERATURE_UNIT]:
             _LOGGER.warning("Missing climate.options for %s", name)
         self.unknown_value = climate[UNKNOWN_VALUE] if UNKNOWN_VALUE in climate and climate[UNKNOWN_VALUE] else None
 
