@@ -51,6 +51,7 @@ class BinarySensor:
 class Climate:
     target: str
     options: dict | None
+    unknown_value: int | None
 
     def __init__(self, name: str, climate: dict | None):
         if climate is None:
@@ -61,6 +62,7 @@ class Climate:
         self.options = climate[OPTIONS] if OPTIONS in climate else None
         if self.options is None and self.target in [FAN_MODE, HVAC_ACTION, SWING_MODE, TEMPERATURE_UNIT]:
             _LOGGER.warning("Missing climate.options for %s", name)
+        self.unknown_value = climate[UNKNOWN_VALUE] if UNKNOWN_VALUE in climate and climate[UNKNOWN_VALUE] else None
 
 
 class Humidifier:
@@ -199,6 +201,6 @@ class Dictionaries:
             for prop in parsed[PROPERTIES]:
                 dictionary[prop[PROPERTY]] = Property(prop)
         except FileNotFoundError:
-            _LOGGER.warning("No data dictionary found for %s", key)
+            _LOGGER.warning("No data dictionary found for %s (%s)", appliance.device_nickname, key)
         Dictionaries.dictionaries[key] = dictionary
         return dictionary

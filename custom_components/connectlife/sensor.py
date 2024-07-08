@@ -97,20 +97,20 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
                 if value in self.options_map:
                     value = self.options_map[value]
                 else:
-                    _LOGGER.warning("Got unexpected value %d for %s", value, self.status)
+                    _LOGGER.warning("Got unexpected value %d for %s (%s)", value, self.status, self.nickname)
                     value = None
             self._attr_native_value = value if value != self.unknown_value else None
         self._attr_available = self.coordinator.appliances[self.device_id].offline_state == 1
 
     async def async_set_value(self, value: int) -> None:
         """Set value for this sensor."""
-        _LOGGER.debug("Setting %s to %d", self.status, value)
+        _LOGGER.debug("Setting %s to %d on %s", self.status, value, self.nickname)
         if self.writable is None:
-            _LOGGER.warning("%s may not be writable", self._attr_name)
+            _LOGGER.warning("%s may not be writable on %s", self._attr_name, self.nickname)
         elif not self.writable:
-            raise ServiceValidationError(f"{self._attr_name} is read only")
+            raise ServiceValidationError(f"{self._attr_name} is read only on {self.nickname}")
         if self.max_value is not None and value > self.max_value:
-            raise ServiceValidationError(f"Max value for {self._attr_name} is {self.max_value}")
+            raise ServiceValidationError(f"Max value for {self._attr_name} is {self.max_value} on {self.nickname}")
         try:
             await self.coordinator.api.update_appliance(self.puid, {self.status: str(value)})
         except LifeConnectError as api_error:
