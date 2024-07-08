@@ -101,6 +101,12 @@ class ConnectLifeHumidifier(ConnectLifeEntity, HumidifierEntity):
                 if target == IS_ON:
                     # TODO: Support value mapping
                     self._attr_is_on = value == 1
+                    # TODO: set action
+                    # if self.device_class == HumidifierDeviceClass.HUMIDIFIER:
+                    #   self._attr_action == HudifierAction.HUMIDIFYING
+                    # elif self.device_class == HumidifierDeviceClass.DEHUMIDIFIER:
+                    #   self._attr_action == HudifierAction.DRYING
+                    # If none of the above two then do not explicitly set the action
                 elif target == MODE:
                     if value in self.mode_map:
                         self._attr_mode = self.mode_map[value]
