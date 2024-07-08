@@ -45,15 +45,17 @@ Domain `binary_sensor` can be used for read only properties where `0` is not ava
 Domain `climate` can be used to map the property to a target property in a climate entity. If at least one property has
 type `climate`, a climate entity is created for the appliance.
 
-| Item            | Type                            | Description                                                                                                                                                                                                                                                                                          |
-|-----------------|---------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `target`        | string                          | Any  of these [climate entity](https://developers.home-assistant.io/docs/core/entity/climate#properties) attributes: `current_humidity`, `fan_mode`, `hvac_action`, `swing_mode`, `current_temperature`, `target_humidity`, `target_temperature`, `temperature_unit`, or the special target `is_on`. |
-| `options`       | dictionary of integer to string | Required for `fan_mode`, `hvac_action`, `swing_mode`, and `temperature_unit`                                                                                                                                                                                                                         |
-| `unknown_value` | integer                         | The value used by the API to signal unknown value.                                                                                                                                                                                                                                                   |
+| Item            | Type                            | Description                                                                                                                                                                                                                                                                                                       |
+|-----------------|---------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `target`        | string                          | Any  of these [climate entity](https://developers.home-assistant.io/docs/core/entity/climate#properties) attributes: `current_humidity`, `fan_mode`, `hvac_action`, `hvac_mode`, `swing_mode`, `current_temperature`, `target_humidity`, `target_temperature`, `temperature_unit`, or the special target `is_on`. |
+| `options`       | dictionary of integer to string | Required for `fan_mode`, `hvac_action`, `hvac_mode`, `swing_mode`, and `temperature_unit`.                                                                                                                                                                                                                        |
+| `unknown_value` | integer                         | The value used by the API to signal unknown value.                                                                                                                                                                                                                                                                |
 
 `temperature_unit` defaults to Celsius.
 
-Note that `hvac_action` can only be mapped to [pre-defined actions](https://developers.home-assistant.io/docs/core/entity/climate#hvac-action).
+`hvac_mode` can only be mapped to [pre-defined modes](https://developers.home-assistant.io/docs/core/entity/climate#hvac-modes).
+
+`hvac_action` can only be mapped to [pre-defined actions](https://developers.home-assistant.io/docs/core/entity/climate#hvac-action).
 If a value does not have a sensible mapping, leave it out to set `hvac_action` to `None` for that value, or consider
 mapping to a sensor `enum` instead.
 
@@ -72,7 +74,7 @@ type `humidifier`, a humidifier entity is created for the appliance.
 
 It is sufficient to set `device_class` on one property. The value of the first encountered property is used.
 
-Note that `action` can only be mapped to [pre-defined actions](https://developers.home-assistant.io/docs/core/entity/humidifier/#action).
+`action` can only be mapped to [pre-defined actions](https://developers.home-assistant.io/docs/core/entity/humidifier/#action).
 If a value does not have a sensible mapping, leave it out to set `action` to `None` for that value, or consider mapping
 to a sensor `enum` instead.
 

@@ -247,6 +247,7 @@
         "current_temperature",
         "fan_mode",
         "hvac_action",
+        "hvac_mode",
         "is_on",
         "swing_mode",
         "target_humidity",
