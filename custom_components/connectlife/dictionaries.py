@@ -1,5 +1,6 @@
 import yaml
 from collections import defaultdict
+from dataclasses import dataclass
 import logging
 import pkgutil
 
@@ -25,12 +26,14 @@ from .const import (
     TEMPERATURE_UNIT,
 )
 
+DEVICE = "device"
 DEVICE_CLASS = "device_class"
 HIDE = "hide"
 ICON = "icon"
 OFF = "off"
 ON = "on"
 OPTIONS = "options"
+PRESETS = "presets"
 PROPERTY = "property"
 PROPERTIES = "properties"
 MAX_VALUE = "max_value"
@@ -275,23 +278,35 @@ class Property:
             self.sensor = Sensor(self.name, {})
 
 
-class Dictionaries:
+@dataclass
+class Dictionary():
     """Data dictionary for a ConnectLife appliance"""
+    # Todo: Refactor Climate dataclass
+    climate: dict[list[dict[str, int]]] | None
+    properties: dict[str, Property]
 
-    dictionaries: dict[str, dict[str, Property]] = {}
+
+class Dictionaries:
+
+    dictionaries: dict[str, Dictionary] = {}
 
     @classmethod
-    def get_dictionary(cls, appliance: ConnectLifeAppliance) -> dict[str, Property]:
+    def get_dictionary(cls, appliance: ConnectLifeAppliance) -> Dictionary:
         key = f"{appliance.device_type_code}-{appliance.device_feature_code}"
-        if key in Dictionaries.dictionaries:
-            return Dictionaries.dictionaries[key]
-        dictionary = defaultdict(lambda: Property({PROPERTY: "default", HIDE: True}))
+        if key in cls.dictionaries:
+            return cls.dictionaries[key]
+        climate: dict[[list[dict[str, int]]]] | None = None
+        properties = defaultdict(lambda: Property({PROPERTY: "default", HIDE: True}))
         try:
             data = pkgutil.get_data(__name__, f"data_dictionaries/{key}.yaml")
             parsed = yaml.safe_load(data)
+            if Platform.CLIMATE in parsed:
+                climate = parsed[Platform.CLIMATE] if Platform.CLIMATE in parsed else None
             for prop in parsed[PROPERTIES]:
-                dictionary[prop[PROPERTY]] = Property(prop)
+                properties[prop[PROPERTY]] = Property(prop)
         except FileNotFoundError:
             _LOGGER.warning("No data dictionary found for %s (%s)", appliance.device_nickname, key)
-        Dictionaries.dictionaries[key] = dictionary
+
+        dictionary = Dictionary(climate=climate, properties=properties)
+        cls.dictionaries[key] = dictionary
         return dictionary

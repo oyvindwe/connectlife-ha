@@ -30,7 +30,7 @@ async def async_setup_entry(
         dictionary = Dictionaries.get_dictionary(appliance)
         async_add_entities(
             ConnectLifeNumberEntity(coordinator, appliance, s, dictionary[s])
-            for s in appliance.status_list if hasattr(dictionary[s], Platform.NUMBER)
+            for s in appliance.status_list if hasattr(dictionary.properties[s], Platform.NUMBER)
         )
 
 

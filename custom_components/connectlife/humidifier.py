@@ -20,7 +20,7 @@ from .const import (
     TARGET_HUMIDITY,
 )
 from .coordinator import ConnectLifeCoordinator
-from .dictionaries import Dictionaries, Property
+from .dictionaries import Dictionaries, Dictionary
 from .entity import ConnectLifeEntity
 from connectlife.appliance import ConnectLifeAppliance
 
@@ -42,8 +42,8 @@ async def async_setup_entry(
     async_add_entities(entities)
 
 
-def is_humidifier(dictionary: dict[str, Property]):
-    for prop in dictionary.values():
+def is_humidifier(dictionary: Dictionary):
+    for prop in dictionary.properties.values():
         if hasattr(prop, Platform.HUMIDIFIER):
             return True
     return False
@@ -62,7 +62,7 @@ class ConnectLifeHumidifier(ConnectLifeEntity, HumidifierEntity):
             self,
             coordinator: ConnectLifeCoordinator,
             appliance: ConnectLifeAppliance,
-            data_dictionary: dict[str, Property]
+            data_dictionary: Dictionary
     ):
         """Initialize the entity."""
         super().__init__(coordinator, appliance)
@@ -74,7 +74,7 @@ class ConnectLifeHumidifier(ConnectLifeEntity, HumidifierEntity):
         self.action_map = {}
 
         device_class = None
-        for prop in data_dictionary.values():
+        for prop in data_dictionary.properties.values():
             if hasattr(prop, Platform.HUMIDIFIER):
                 if prop.humidifier.device_class is not None:
                     device_class = prop.humidifier.device_class
@@ -87,27 +87,27 @@ class ConnectLifeHumidifier(ConnectLifeEntity, HumidifierEntity):
             device_class=device_class,
         )
 
-        for dd_entry in data_dictionary.values():
+        for dd_entry in data_dictionary.properties.values():
             if hasattr(dd_entry, Platform.HUMIDIFIER):
                 self.target_map[dd_entry.humidifier.target] = dd_entry.name
 
         for target, status in self.target_map.items():
             if target == ACTION:
                 actions = [action.value for action in HumidifierAction]
-                for (k, v) in data_dictionary[status].humidifier.options.items():
+                for (k, v) in data_dictionary.properties[status].humidifier.options.items():
                     if v in actions:
                         self.action_map[k] = HumidifierAction(v)
                     else:
                         _LOGGER.warning("Not mapping %d to unknown HumidifierAction %s", k, v)
             elif target == MODE:
-                self.mode_map = data_dictionary[status].humidifier.options
+                self.mode_map = data_dictionary.properties[status].humidifier.options
                 self.mode_reverse_map = {v: k for k, v in self.mode_map.items()}
                 self._attr_available_modes = list(self.mode_map.values())
                 self._attr_supported_features |= HumidifierEntityFeature.MODES
                 self._attr_mode = None
             elif target == TARGET_HUMIDITY:
-                self._attr_min_humidity = data_dictionary[status].humidifier.min_value
-                self._attr_max_humidity = data_dictionary[status].humidifier.max_value
+                self._attr_min_humidity = data_dictionary.properties[status].humidifier.min_value
+                self._attr_max_humidity = data_dictionary.properties[status].humidifier.max_value
 
         self.update_state()
 

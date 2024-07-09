@@ -1,4 +1,12 @@
-device_type: airconditioner
+climate:
+  presets:
+    - preset: eco
+      t_power: 1
+      t_eco: 1
+      t_fan_speed: 0 # auto
+    - preset: ai
+      t_power: 1
+      t_tms: 1
 properties:
   - property: f_temp_in
     climate:

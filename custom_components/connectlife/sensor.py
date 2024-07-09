@@ -34,8 +34,8 @@ async def async_setup_entry(
     for appliance in coordinator.data.values():
         dictionary = Dictionaries.get_dictionary(appliance)
         async_add_entities(
-            ConnectLifeStatusSensor(coordinator, appliance, s, dictionary[s])
-            for s in appliance.status_list if hasattr(dictionary[s], Platform.SENSOR)
+            ConnectLifeStatusSensor(coordinator, appliance, s, dictionary.properties[s])
+            for s in appliance.status_list if hasattr(dictionary.properties[s], Platform.SENSOR)
         )
 
     platform = entity_platform.async_get_current_platform()
