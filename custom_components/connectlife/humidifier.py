@@ -158,3 +158,11 @@ class ConnectLifeHumidifier(ConnectLifeEntity, HumidifierEntity):
         await self.coordinator.api.update_appliance(self.puid, {self.target_map[IS_ON]: 0})
         self._attr_is_on = False
         self.async_write_ha_state()
+
+    async def async_set_mode(self, mode):
+        """Set mode."""
+        await self.coordinator.api.update_appliance(self.puid, {
+            self.target_map[MODE]: self.mode_reverse_map[mode]
+        })
+        self._attr_mode = mode
+        self.async_write_ha_state()
