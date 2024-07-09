@@ -29,6 +29,7 @@ OPTIONS = "options"
 PROPERTY = "property"
 PROPERTIES = "properties"
 MAX_VALUE = "max_value"
+MIN_VALUE = "min_value"
 TARGET = "target"
 STATE_CLASS = "state_class"
 SWITCH = "switch"
@@ -53,6 +54,8 @@ class Climate:
     target: str
     options: dict | None
     unknown_value: int | None
+    min_value: int | dict[str, int]
+    max_value: int | dict[str, int]
 
     def __init__(self, name: str, climate: dict | None):
         if climate is None:
@@ -64,12 +67,15 @@ class Climate:
         if self.options is None and self.target in [FAN_MODE, HVAC_ACTION, HVAC_MODE, SWING_MODE, TEMPERATURE_UNIT]:
             _LOGGER.warning("Missing climate.options for %s", name)
         self.unknown_value = climate[UNKNOWN_VALUE] if UNKNOWN_VALUE in climate and climate[UNKNOWN_VALUE] else None
-
+        self.min_value = climate[MIN_VALUE] if MIN_VALUE in climate else None
+        self.max_value = climate[MAX_VALUE] if MAX_VALUE in climate else None
 
 class Humidifier:
     target: str
     options: dict | None
     device_class: HumidifierDeviceClass | None
+    min_value: int
+    max_value: int
 
     def __init__(self, name: str, humidifier: dict | None):
         if humidifier is None:
@@ -81,6 +87,8 @@ class Humidifier:
         if self.options is None and self.target in [ACTION, MODE]:
             _LOGGER.warning("Missing humidifier.options for %s", name)
         self.device_class = HumidifierDeviceClass(humidifier[DEVICE_CLASS]) if DEVICE_CLASS in humidifier else None
+        self.min_value = humidifier[MIN_VALUE] if MIN_VALUE in humidifier else None
+        self.max_value = humidifier[MAX_VALUE] if MAX_VALUE in humidifier else None
 
 
 class Select:
@@ -98,6 +106,7 @@ class Select:
 
 class Sensor:
     unknown_value: int | None
+    min_value: int | None
     max_value: int | None
     writeable: bool | None
     state_class: SensorStateClass | None
@@ -109,6 +118,8 @@ class Sensor:
         if sensor is None:
             sensor = {}
         self.unknown_value = sensor[UNKNOWN_VALUE] if UNKNOWN_VALUE in sensor and sensor[UNKNOWN_VALUE] else None
+        self.min_value = sensor[MIN_VALUE] if MIN_VALUE in sensor else None
+        self.max_value = sensor[MAX_VALUE] if MAX_VALUE in sensor else None
         self.writable = sensor[WRITABLE] if WRITABLE in sensor else None
         self.max_value = sensor[MAX_VALUE] if MAX_VALUE in sensor and sensor[MAX_VALUE] else None
         self.unit = sensor[UNIT] if UNIT in sensor and sensor[UNIT] else None
@@ -205,3 +216,4 @@ class Dictionaries:
             _LOGGER.warning("No data dictionary found for %s (%s)", appliance.device_nickname, key)
         Dictionaries.dictionaries[key] = dictionary
         return dictionary
+

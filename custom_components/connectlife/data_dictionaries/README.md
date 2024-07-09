@@ -13,7 +13,7 @@ The file contains two top level items:
 
 Each property is mapped to _one_ entity or (in the cases of `climate` and `humidifier`) _one_ target property.
 
-If you change the type of a mapping, the old entity or state attribute will change to unavailable in Home Assistant.
+If you change the type of mapping, the old entity or state attribute will change to unavailable in Home Assistant.
 
 You need to restart Home Assistant to load mapping changes.
 
@@ -51,11 +51,13 @@ Domain `binary_sensor` can be used for read only properties where `0` is not ava
 Domain `climate` can be used to map the property to a target property in a climate entity. If at least one property has
 type `climate`, a climate entity is created for the appliance.
 
-| Item            | Type                            | Description                                                                                                                                                                                                                                                                                                       |
-|-----------------|---------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `target`        | string                          | Any  of these [climate entity](https://developers.home-assistant.io/docs/core/entity/climate#properties) attributes: `current_humidity`, `fan_mode`, `hvac_action`, `hvac_mode`, `swing_mode`, `current_temperature`, `target_humidity`, `target_temperature`, `temperature_unit`, or the special target `is_on`. |
-| `options`       | dictionary of integer to string | Required for `fan_mode`, `hvac_action`, `hvac_mode`, `swing_mode`, and `temperature_unit`.                                                                                                                                                                                                                        |
-| `unknown_value` | integer                         | The value used by the API to signal unknown value.                                                                                                                                                                                                                                                                |
+| Item            | Type                                               | Description                                                                                                                                                                                                                                                                                                       |
+|-----------------|----------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `target`        | string                                             | Any  of these [climate entity](https://developers.home-assistant.io/docs/core/entity/climate#properties) attributes: `current_humidity`, `fan_mode`, `hvac_action`, `hvac_mode`, `swing_mode`, `current_temperature`, `target_humidity`, `target_temperature`, `temperature_unit`, or the special target `is_on`. |
+| `options`       | dictionary of integer to string                    | Required for `fan_mode`, `hvac_action`, `hvac_mode`, `swing_mode`, and `temperature_unit`.                                                                                                                                                                                                                        |
+| `unknown_value` | integer                                            | The value used by the API to signal unknown value.                                                                                                                                                                                                                                                                |
+| `min_value`     | [IntegerOrTemperature](#type-integerortemperature) | Minimum allowed value. Supported for `target_humidity` (integer) and `target_temperature` (temperature).                                                                                                                                                                                                          |
+| `max_value`     | [IntegerOrTemperature](#type-integerortemperature) | Maximum allowed value. Supported for `target_humidity` (integer) and `target_temperature` (temperature).                                                                                                                                                                                                          |
 
 `temperature_unit` defaults to Celsius.
 
@@ -68,10 +70,6 @@ mapping to a sensor `enum` instead.
 For `fan_mode` and `swing_mode`, remember to add options [translation strings](#translation-strings).
 
 Not yet supported target properties:
-- `max_humidity`
-- `max_temp`
-- `min_humidity`
-- `min_temp`
 - `preset_mode`
 
 ## Type `Humidifier`:
@@ -82,7 +80,7 @@ type `humidifier`, a humidifier entity is created for the appliance.
 | Item           | Type                            | Description                                                                                                                                                                                  |
 |----------------|---------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `target`       | string                          | Any  of these [humidifier entity](https://developers.home-assistant.io/docs/core/entity/humidifier#properties) attributes: `action`, `is_on`, `current_humidity`, `target_humidity`, `mode`. |
-| `options`      | dictionary of integer to string | Required for `action` and `mode`.                                                                                                                                                             |
+| `options`      | dictionary of integer to string | Required for `action` and `mode`.                                                                                                                                                            |
 | `device_class` | string                          | Name of any [HumidifierDeviceClass enum](https://developers.home-assistant.io/docs/core/entity/humidifier#available-device-classes).                                                         |                                                                                                                         
 
 It is sufficient to set `device_class` on one property. The value of the first encountered property is used.
@@ -92,10 +90,6 @@ If a value does not have a sensible mapping, leave it out to set `action` to `No
 to a sensor `enum` instead.
 
 For `mode`, remember to add options to [translation strings](#translation-strings).
-
-Not yet supported target properties:
-- `max_humidity`
-- `min_humidity`
 
 ## Type `Select`
 
@@ -110,8 +104,9 @@ Remember to add options to [translation strings](#translation-strings).
 | Item            | Type                                       | Description                                                                                                                                                                                                               |
 |-----------------|--------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `unknown_value` | integer                                    | The value used by the API to signal unknown value.                                                                                                                                                                        |
+| `min_value`     | integer                                    | Minimum value (checked when setting property).                                                                                                                                                                            |
 | `max_value`     | integer                                    | Maximum value (checked when setting property).                                                                                                                                                                            |
-| `writable`      | `true`, `false`                            | If this property is writable (do not set if unknown). Only applies to `sensor`.                                                                                                                                           |
+| `writable`      | `true`, `false`                            | If this property is writable (do not set if unknown).                                                                                                                                                                     |
 | `state_class`   | `measurement`, `total`, `total_increasing` | Name of any [SensorStateClass enum](https://developers.home-assistant.io/docs/core/entity/sensor/#available-state-classes). For integer properties, defaults to `measurement`. Not allowed when `device_class` is `enum`. |
 | `device_class`  | `duration`, `energy`, `water`, etc.        | Name of any [SensorDeviceClass enum](https://developers.home-assistant.io/docs/core/entity/sensor/#available-device-classes).                                                                                             | 
 | `unit`          | `min`, `kWh`, `L`, etc.                    | Required if `device_class` is set, except not allowed when `device_class` is `ph` or `enum`.                                                                                                                              |
@@ -125,6 +120,20 @@ For device class `enum`, remember to add options to [translation strings](#trans
 |-------|---------|---------------------------|
 | `off` | integer | Off value. Defaults to 0. |
 | `on`  | integer | On value. Defaults to 1.  |
+
+## Type `IntegerOrTemperature`
+
+Either just a numeric value, or values in Celsius and/or Fahrenheit.
+
+```yaml
+min_value: 10
+```
+or
+```yaml
+min_value:
+  celsius: 0
+  fahrenheit: 32
+```
 
 # Translation strings
 
