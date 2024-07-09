@@ -209,7 +209,6 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
                     setattr(self, f"_attr_{target}", value)
 
         self._attr_hvac_mode = self.mapped_hvac_mode if is_on else HVACMode.OFF
-
         self._attr_available = self.coordinator.appliances[self.device_id].offline_state == 1
 
     async def async_set_humidity(self, humidity):
@@ -257,7 +256,8 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
             if IS_ON in self.target_map:
                 # TODO: Support value mapping
                 request[self.target_map[IS_ON]] = 1
-            request[self.target_map[HVAC_MODE]] = self.hvac_mode_reverse_map[hvac_mode]
+            if HVAC_MODE in self.target_map:
+                request[self.target_map[HVAC_MODE]] = self.hvac_mode_reverse_map[hvac_mode]
             await self.coordinator.api.update_appliance(self.puid, request)
             self._attr_hvac_mode = hvac_mode
             self.async_write_ha_state()
