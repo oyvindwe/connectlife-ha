@@ -111,9 +111,9 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
         elif not self.writable:
             raise ServiceValidationError(f"{self._attr_name} is read only on {self.nickname}")
         if self.min_value is not None and value < self.min_value:
-            raise ServiceValidationError(f"Max value for {self._attr_name} is {self.max_value} on {self.nickname}")
+            raise ServiceValidationError(f"Minimum value for {self._attr_name} is {self.min_value} on {self.nickname}")
         if self.max_value is not None and value > self.max_value:
-            raise ServiceValidationError(f"Max value for {self._attr_name} is {self.max_value} on {self.nickname}")
+            raise ServiceValidationError(f"Maximum value for {self._attr_name} is {self.max_value} on {self.nickname}")
         try:
             await self.coordinator.api.update_appliance(self.puid, {self.status: str(value)})
         except LifeConnectError as api_error:
