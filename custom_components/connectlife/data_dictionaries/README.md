@@ -11,6 +11,12 @@ The file contains two top level items:
 - `device_type`: string
 - `properties`: list of [`Property`](#property)
 
+Each property is mapped to _one_ entity or (in the cases of `climate` and `humidifier`) _one_ target property.
+
+If you change the type of a mapping, the old entity or state attribute will change to unavailable in Home Assistant.
+
+You need to restart Home Assistant to load mapping changes.
+
 ## Property
 
 | Item            | Type                               | Description                                                                                       |
@@ -59,7 +65,14 @@ type `climate`, a climate entity is created for the appliance.
 If a value does not have a sensible mapping, leave it out to set `hvac_action` to `None` for that value, or consider
 mapping to a sensor `enum` instead.
 
-For `fan_mode` and `swing_mode`, remember to add [translation strings](#translation-strings).
+For `fan_mode` and `swing_mode`, remember to add options [translation strings](#translation-strings).
+
+Not yet supported target properties:
+- `max_humidity`
+- `max_temp`
+- `min_humidity`
+- `min_temp`
+- `preset_mode`
 
 ## Type `Humidifier`:
 
@@ -78,7 +91,11 @@ It is sufficient to set `device_class` on one property. The value of the first e
 If a value does not have a sensible mapping, leave it out to set `action` to `None` for that value, or consider mapping
 to a sensor `enum` instead.
 
-For mode, remember to add [translation strings](#translation-strings).
+For `mode`, remember to add options to [translation strings](#translation-strings).
+
+Not yet supported target properties:
+- `max_humidity`
+- `min_humidity`
 
 ## Type `Select`
 
@@ -100,7 +117,7 @@ Remember to add options to [translation strings](#translation-strings).
 | `unit`          | `min`, `kWh`, `L`, etc.                    | Required if `device_class` is set, except not allowed when `device_class` is `ph` or `enum`.                                                                                                                              |
 | `options`       | dictionary of integer to string            | Required if `device_class` is set to `enum`.                                                                                                                                                                              |
 
-For enum options, remember to add [translation strings](#translation-strings).
+For device class `enum`, remember to add options to [translation strings](#translation-strings).
 
 ## Type `Switch`
 
@@ -183,4 +200,4 @@ Strings not in [Home Assistant Core](https://github.com/home-assistant/core/blob
 }
 ```
 
-*If your appliance is missing, please make a PR to contribute it!*
+**If your appliance is missing, please make a PR to contribute it!**
