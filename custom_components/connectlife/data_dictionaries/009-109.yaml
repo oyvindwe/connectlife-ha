@@ -53,6 +53,12 @@ properties:
   - property: t_temp
     climate:
       target: target_temperature
+      min_value:
+        celsius: 16
+        fahrenheit: 61
+      max_value:
+        celsius: 32
+        fahrenheit: 90
   - property: t_temp_type
     climate:
       target: temperature_unit

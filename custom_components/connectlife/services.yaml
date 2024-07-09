@@ -8,5 +8,4 @@ set_value:
       required: true
       selector:
         number:
-          min: 0
 

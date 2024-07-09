@@ -100,6 +100,12 @@
         "unknown_value": {
           "$ref": "#/definitions/UnknownValue"
         },
+        "max_value": {
+          "$ref": "#/definitions/IntegerOrTemperature"
+        },
+        "min_value": {
+          "$ref": "#/definitions/IntegerOrTemperature"
+        },
         "options": {
           "type": "object",
           "additionalProperties": {
@@ -115,6 +121,12 @@
       "properties": {
         "target": {
           "$ref": "#/definitions/HumidifierTarget"
+        },
+        "min_value": {
+          "type": "integer"
+        },
+        "max_value": {
+          "type": "integer"
         },
         "device_class": {
           "$ref": "#/definitions/HumidifierDeviceClass"
@@ -164,6 +176,14 @@
         },
         "unknown_value": {
           "$ref": "#/definitions/UnknownValue"
+        },
+        "min_value": {
+          "type": "integer",
+          "description": "Minimum value (checked when setting property).",
+          "examples": [
+            0,
+            1
+          ]
         },
         "max_value": {
           "type": "integer",
@@ -360,6 +380,21 @@
         255,
         65535
       ]
+    },
+    "IntegerOrTemperature": {
+      "type": [
+        "integer",
+        "object"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "celsius": {
+          "type": "integer"
+        },
+        "fahrenheit": {
+          "type": "integer"
+        }
+      }
     }
   }
 }

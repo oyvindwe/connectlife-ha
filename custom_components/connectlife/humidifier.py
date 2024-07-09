@@ -105,6 +105,9 @@ class ConnectLifeHumidifier(ConnectLifeEntity, HumidifierEntity):
                 self._attr_available_modes = list(self.mode_map.values())
                 self._attr_supported_features |= HumidifierEntityFeature.MODES
                 self._attr_mode = None
+            elif target == TARGET_HUMIDITY:
+                self._attr_min_humidity = data_dictionary[status].climate.min_value
+                self._attr_max_humidity = data_dictionary[status].climate.max_value
 
         self.update_state()
 
