@@ -60,9 +60,7 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
         super().__init__(coordinator, appliance)
         self._attr_unique_id = f"{appliance.device_id}-{status}"
         self.status = status
-        self.writable = dd_entry.sensor.writable
-        self.min_value = dd_entry.sensor.min_value
-        self.max_value = dd_entry.sensor.max_value
+        self.read_only = dd_entry.sensor.read_only
         self.unknown_value = dd_entry.sensor.unknown_value
         device_class = dd_entry.sensor.device_class
         options = None
@@ -106,14 +104,10 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
     async def async_set_value(self, value: int) -> None:
         """Set value for this sensor."""
         _LOGGER.debug("Setting %s to %d on %s", self.status, value, self.nickname)
-        if self.writable is None:
-            _LOGGER.warning("%s may not be writable on %s", self._attr_name, self.nickname)
-        elif not self.writable:
-            raise ServiceValidationError(f"{self._attr_name} is read only on {self.nickname}")
-        if self.min_value is not None and value < self.min_value:
-            raise ServiceValidationError(f"Minimum value for {self._attr_name} is {self.min_value} on {self.nickname}")
-        if self.max_value is not None and value > self.max_value:
-            raise ServiceValidationError(f"Maximum value for {self._attr_name} is {self.max_value} on {self.nickname}")
+        if self.read_only is None:
+            _LOGGER.warning("%s may be read-only on %s", self._attr_name, self.nickname)
+        elif self.read_only:
+            raise ServiceValidationError(f"{self._attr_name} is read-only on {self.nickname}")
         try:
             await self.coordinator.api.update_appliance(self.puid, {self.status: str(value)})
         except LifeConnectError as api_error:
