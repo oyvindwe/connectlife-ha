@@ -30,7 +30,7 @@ You need to restart Home Assistant to load mapping changes.
 | `number`        | [Number](#type-number)             | Create a number entity of the property.                                                           |
 | `select`        | [Select](#type-select)             | Create a selector of the property.                                                                |
 | `sensor`        | [Sensor](#type-sensor)             | Create a sensor of the property. This is the default.                                             |
-| `switch`        | [Switch](#type-switch)             | Create a Switch of the property.                                                                  |
+| `switch`        | [Switch](#type-switch)             | Create a switch of the property.                                                                  |
 
 If an entity mapping is not given, the property is mapped to a sensor entity.
 
@@ -98,8 +98,8 @@ Number entities can be set by the user.
 
 | Item            | Type                                | Description                                                                                                                   |
 |-----------------|-------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
-| `min_value`     | integer                             | Minimum value (checked when setting property).                                                                                |
-| `max_value`     | integer                             | Maximum value (checked when setting property).                                                                                |
+| `min_value`     | integer                             | Minimum value.                                                                                |
+| `max_value`     | integer                             | Maximum value.                                                                                |
 | `device_class`  | `duration`, `energy`, `water`, etc. | Name of any [NumberDeviceClass enum](https://developers.home-assistant.io/docs/core/entity/number/#available-device-classes). | 
 | `unit`          | `min`, `°C`, `°F`, etc.             | Required if `device_class` is set, except not allowed when `device_class` is `aqi` or `ph`.                                   |
 
