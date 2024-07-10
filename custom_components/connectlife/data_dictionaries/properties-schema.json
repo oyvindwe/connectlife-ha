@@ -140,7 +140,40 @@
         }
       }
     },
-    "Select": {
+    "Number": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "device_class": {
+          "$ref": "#/definitions/NumberDeviceClass"
+        },
+        "unit": {
+          "type": "string",
+          "description": "Required if device_class is set, except not allowed when device_class is AQI or ph.",
+          "examples": [
+            "min",
+            "°C",
+            "°F"
+          ]
+        },
+        "min_value": {
+          "type": "integer",
+          "description": "Minimum allowed value.",
+          "examples": [
+            -40,
+            0
+          ]
+        },
+        "max_value": {
+          "type": "integer",
+          "description": "Maximum allowed value.",
+          "examples": [
+            20,
+            100
+          ]
+        }
+      }
+    },    "Select": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -161,13 +194,14 @@
         "device_class": {
           "$ref": "#/definitions/SensorDeviceClass"
         },
-        "writable": {
+        "read-only": {
           "type": "boolean",
-          "description": "If this property is writable (do not set if unknown)."
+          "description": "If this property is known to be read-only.",
+          "default": false
         },
         "unit": {
           "type": "string",
-          "description": "Required if device_class is set, except not allowed when device_class is enum or ph.",
+          "description": "Required if device_class is set, except not allowed when device_class is aqi, enum or ph.",
           "examples": [
             "min",
             "kWh",
@@ -176,22 +210,6 @@
         },
         "unknown_value": {
           "$ref": "#/definitions/UnknownValue"
-        },
-        "min_value": {
-          "type": "integer",
-          "description": "Minimum value (checked when setting property).",
-          "examples": [
-            0,
-            1
-          ]
-        },
-        "max_value": {
-          "type": "integer",
-          "description": "Maximum value (checked when setting property).",
-          "examples": [
-            5,
-            10
-          ]
         },
         "options": {
           "type": "object",
@@ -302,6 +320,61 @@
         "date",
         "enum",
         "timestamp",
+        "apparent_power",
+        "aqi",
+        "atmospheric_pressure",
+        "battery",
+        "carbon_monoxide",
+        "carbon_dioxide",
+        "current",
+        "data_rate",
+        "data_size",
+        "distance",
+        "duration",
+        "energy",
+        "energy_storage",
+        "frequency",
+        "gas",
+        "humidity",
+        "illuminance",
+        "irradiance",
+        "moisture",
+        "monetary",
+        "nitrogen_dioxide",
+        "nitrogen_monoxide",
+        "nitrous_oxide",
+        "ozone",
+        "ph",
+        "pm1",
+        "pm10",
+        "pm25",
+        "power_factor",
+        "power",
+        "precipitation",
+        "precipitation_intensity",
+        "pressure",
+        "reactive_power",
+        "signal_strength",
+        "sound_pressure",
+        "speed",
+        "sulphur_dioxide",
+        "temperature",
+        "volatile_organic_compounds",
+        "volatile_organic_compounds_parts",
+        "voltage",
+        "volume",
+        "volume_storage",
+        "volume_flow_rate",
+        "water",
+        "weight",
+        "wind_speed"
+      ],
+      "title": "Device class",
+      "description": "Name of any SensorDeviceClass enum."
+    },
+    "NumberDeviceClass": {
+      "type": "string",
+      "enum": [
         "apparent_power",
         "aqi",
         "atmospheric_pressure",

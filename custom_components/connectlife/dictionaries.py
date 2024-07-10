@@ -7,6 +7,7 @@ from connectlife.appliance import ConnectLifeAppliance
 from homeassistant.const import Platform
 from homeassistant.components.binary_sensor import BinarySensorDeviceClass
 from homeassistant.components.humidifier import HumidifierDeviceClass
+from homeassistant.components.number import NumberDeviceClass
 from homeassistant.components.sensor import SensorDeviceClass, SensorStateClass
 from homeassistant.components.switch import SwitchDeviceClass
 
@@ -31,11 +32,11 @@ PROPERTIES = "properties"
 MAX_VALUE = "max_value"
 MIN_VALUE = "min_value"
 TARGET = "target"
+READ_ONLY = "read_only"
 STATE_CLASS = "state_class"
 SWITCH = "switch"
 UNKNOWN_VALUE = "unknown_value"
 UNIT = "unit"
-WRITABLE = "writable"
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -70,6 +71,7 @@ class Climate:
         self.min_value = climate[MIN_VALUE] if MIN_VALUE in climate else None
         self.max_value = climate[MAX_VALUE] if MAX_VALUE in climate else None
 
+
 class Humidifier:
     target: str
     options: dict | None
@@ -91,26 +93,10 @@ class Humidifier:
         self.max_value = humidifier[MAX_VALUE] if MAX_VALUE in humidifier else None
 
 
-class Select:
-    options: dict
-
-    def __init__(self, name: str, select: dict):
-        if select is None:
-            select = {}
-        if OPTIONS not in select:
-            _LOGGER.warning("Select %s has no options", name)
-            self.options = {}
-        else:
-            self.options = select[OPTIONS]
-
-
-class Sensor:
-    unknown_value: int | None
+class Number:
     min_value: int | None
     max_value: int | None
-    writeable: bool | None
-    state_class: SensorStateClass | None
-    device_class: SensorDeviceClass | None
+    device_class: NumberDeviceClass | None
     unit: str | None
     options: list[dict[int, str]] | None
 
@@ -120,8 +106,6 @@ class Sensor:
         self.unknown_value = sensor[UNKNOWN_VALUE] if UNKNOWN_VALUE in sensor and sensor[UNKNOWN_VALUE] else None
         self.min_value = sensor[MIN_VALUE] if MIN_VALUE in sensor else None
         self.max_value = sensor[MAX_VALUE] if MAX_VALUE in sensor else None
-        self.writable = sensor[WRITABLE] if WRITABLE in sensor else None
-        self.max_value = sensor[MAX_VALUE] if MAX_VALUE in sensor and sensor[MAX_VALUE] else None
         self.unit = sensor[UNIT] if UNIT in sensor and sensor[UNIT] else None
         self.state_class = SensorStateClass(sensor[STATE_CLASS]) if STATE_CLASS in sensor else None
 
@@ -140,9 +124,65 @@ class Sensor:
                     device_class = None
                 else:
                     self.options = sensor["options"]
-            elif device_class == SensorDeviceClass.PH:
+            elif device_class == NumberDeviceClass.PH or device_class == NumberDeviceClass.AQI:
                 if self.unit:
-                    _LOGGER.warning("%s has device class ph and unit %s", name, self.unit)
+                    _LOGGER.warning("%s has device class %s and unit %s", name, device_class, self.unit)
+                    self.unit = None
+            elif not self.unit:
+                _LOGGER.warning("%s has device class, but no unit", name)
+                device_class = None
+        self.device_class = device_class
+
+
+class Select:
+    options: dict
+
+    def __init__(self, name: str, select: dict):
+        if select is None:
+            select = {}
+        if OPTIONS not in select:
+            _LOGGER.warning("Select %s has no options", name)
+            self.options = {}
+        else:
+            self.options = select[OPTIONS]
+
+
+class Sensor:
+    unknown_value: int | None
+    min_value: int | None
+    max_value: int | None
+    read_only: bool | None
+    state_class: SensorStateClass | None
+    device_class: SensorDeviceClass | None
+    unit: str | None
+    options: list[dict[int, str]] | None
+
+    def __init__(self, name: str, sensor: dict):
+        if sensor is None:
+            sensor = {}
+        self.unknown_value = sensor[UNKNOWN_VALUE] if UNKNOWN_VALUE in sensor and sensor[UNKNOWN_VALUE] else None
+        self.read_only = sensor[READ_ONLY] if READ_ONLY in sensor else None
+        self.unit = sensor[UNIT] if UNIT in sensor and sensor[UNIT] else None
+        self.state_class = SensorStateClass(sensor[STATE_CLASS]) if STATE_CLASS in sensor else None
+
+        device_class = None
+        if DEVICE_CLASS in sensor:
+            device_class = SensorDeviceClass(sensor[DEVICE_CLASS])
+            if device_class == SensorDeviceClass.ENUM:
+                if self.unit:
+                    _LOGGER.warning("%s has device class enum, but has unit", name)
+                    device_class = None
+                if self.state_class:
+                    _LOGGER.warning("%s has device class enum, but has state_class", name)
+                    device_class = None
+                if device_class and "options" not in sensor:
+                    _LOGGER.warning("%s has device class enum, but no options", name)
+                    device_class = None
+                else:
+                    self.options = sensor["options"]
+            elif device_class == SensorDeviceClass.PH or device_class == SensorDeviceClass.AQI:
+                if self.unit:
+                    _LOGGER.warning("%s has device class %s and unit %s", name, device_class, self.unit)
                     self.unit = None
             elif not self.unit:
                 _LOGGER.warning("%s has device class, but no unit", name)
@@ -171,6 +211,7 @@ class Property:
     binary_sensor: BinarySensor
     climate: Climate
     humidifier: Humidifier
+    number: Number
     sensor: Sensor
     select: Select
     switch: Switch
@@ -186,6 +227,8 @@ class Property:
             self.climate = Climate(self.name, entry[Platform.CLIMATE])
         elif Platform.HUMIDIFIER in entry:
             self.humidifier = Humidifier(self.name, entry[Platform.HUMIDIFIER])
+        elif Platform.NUMBER in entry:
+            self.number = Number(self.name, entry[Platform.NUMBER])
         elif Platform.SENSOR in entry:
             self.sensor = Sensor(self.name, entry[Platform.SENSOR])
         elif Platform.SELECT in entry:
@@ -216,4 +259,3 @@ class Dictionaries:
             _LOGGER.warning("No data dictionary found for %s (%s)", appliance.device_nickname, key)
         Dictionaries.dictionaries[key] = dictionary
         return dictionary
-

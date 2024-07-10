@@ -27,9 +27,10 @@ You need to restart Home Assistant to load mapping changes.
 | `binary_sensor` | [BinarySensor](#type-binarysensor) | Create a binary sensor of the property.                                                           |
 | `climate`       | [Climate](#type-climate)           | Map the property to a climate entity for the device.                                              |
 | `humidifier`    | [Humidifier](#type-humidifier)     | Map the property to a humidifier entity for the device.                                           |
+| `number`        | [Number](#type-number)             | Create a number entity of the property.                                                           |
 | `select`        | [Select](#type-select)             | Create a selector of the property.                                                                |
 | `sensor`        | [Sensor](#type-sensor)             | Create a sensor of the property. This is the default.                                             |
-| `switch`        | [Switch](#type-switch)             | Create a Switch of the property.                                                                  |
+| `switch`        | [Switch](#type-switch)             | Create a switch of the property.                                                                  |
 
 If an entity mapping is not given, the property is mapped to a sensor entity.
 
@@ -91,6 +92,17 @@ to a sensor `enum` instead.
 
 For `mode`, remember to add options to [translation strings](#translation-strings).
 
+## Type `Number`
+
+Number entities can be set by the user.
+
+| Item            | Type                                | Description                                                                                                                   |
+|-----------------|-------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
+| `min_value`     | integer                             | Minimum value.                                                                                |
+| `max_value`     | integer                             | Maximum value.                                                                                |
+| `device_class`  | `duration`, `energy`, `water`, etc. | Name of any [NumberDeviceClass enum](https://developers.home-assistant.io/docs/core/entity/number/#available-device-classes). | 
+| `unit`          | `min`, `°C`, `°F`, etc.             | Required if `device_class` is set, except not allowed when `device_class` is `aqi` or `ph`.                                   |
+
 ## Type `Select`
 
 | Item       | Type                            | Description |
@@ -101,16 +113,17 @@ Remember to add options to [translation strings](#translation-strings).
 
 ## Type `Sensor`
 
+Sensor entities are usually read-only, but this integration provides a `set_value` service that can be applied on 
+the `sensor.connectlife` entities, unless the sensor is set to `read_only: true`.
+
 | Item            | Type                                       | Description                                                                                                                                                                                                               |
 |-----------------|--------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `unknown_value` | integer                                    | The value used by the API to signal unknown value.                                                                                                                                                                        |
-| `min_value`     | integer                                    | Minimum value (checked when setting property).                                                                                                                                                                            |
-| `max_value`     | integer                                    | Maximum value (checked when setting property).                                                                                                                                                                            |
-| `writable`      | `true`, `false`                            | If this property is writable (do not set if unknown).                                                                                                                                                                     |
+| `read_only`     | `true`, `false`                            | If this property is known to be read-only (prevents `set_value` service).                                                                                                                                                 |
 | `state_class`   | `measurement`, `total`, `total_increasing` | Name of any [SensorStateClass enum](https://developers.home-assistant.io/docs/core/entity/sensor/#available-state-classes). For integer properties, defaults to `measurement`. Not allowed when `device_class` is `enum`. |
 | `device_class`  | `duration`, `energy`, `water`, etc.        | Name of any [SensorDeviceClass enum](https://developers.home-assistant.io/docs/core/entity/sensor/#available-device-classes).                                                                                             | 
-| `unit`          | `min`, `kWh`, `L`, etc.                    | Required if `device_class` is set, except not allowed when `device_class` is `ph` or `enum`.                                                                                                                              |
+| `unit`          | `min`, `kWh`, `L`, etc.                    | Required if `device_class` is set, except not allowed when `device_class` is `aqi`, `ph` or `enum`.                                                                                                                       |
 | `options`       | dictionary of integer to string            | Required if `device_class` is set to `enum`.                                                                                                                                                                              |
+| `unknown_value` | integer                                    | The value used by the API to signal unknown value.                                                                                                                                                                        |
 
 For device class `enum`, remember to add options to [translation strings](#translation-strings).
 

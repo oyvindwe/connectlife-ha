@@ -3,7 +3,7 @@ properties:
   - property: ADO_allowed
     hide: true
     sensor:
-      writable: false
+      read-only: true
   - property: Alarm_auto_dose_refill
     binary_sensor:
       device_class: problem
@@ -85,27 +85,27 @@ properties:
     icon: mdi:dishwasher-alert
   - property: Auto_dose_duration
     sensor:
-      writable: false
+      read-only: true
       device_class: duration
       unit: min
   - property: Auto_dose_quantity_setting_status
     sensor:
-      writable: false
+      read-only: true
   - property: Auto_dose_refill
     sensor:
-      writable: false
+      read-only: true
   - property: Auto_dose_setting_status
     sensor:
-      writable: true
+      read-only: true
   - property: Child_lock
     hide: true
   - property: Child_lock_setting_status
     hide: true
     sensor:
-      writable: false
+      read-only: true
   - property: Curent_program_duration
     sensor:
-      writable: false
+      read-only: true
       device_class: duration
       unit: min
   - property: Curent_program_remaining_time
