@@ -153,6 +153,21 @@
             "Bundling_Temperature": {
                 "name": "Bundling temperature"
             },
+            "Current_program_phase": {
+                "state": {
+                    "not_available": "Not available",
+                    "program_not_selected": "Program not selected",
+                    "program_selected": "Program selected",
+                    "delay_start_waiting": "Delay start waiting",
+                    "preheat": "Preheat",
+                    "preheat_finished": "Preheat finished",
+                    "prewash": "Pre-wash",
+                    "main_wash": "Main wash",
+                    "drying": "Drying",
+                    "program_finished": "Finished",
+                    "ventilating": "Ventilating"
+                }
+            },
             "Current_programphase": {
                 "state": {
                     "running": "Running"
@@ -169,6 +184,15 @@
             },
             "Delay_duration_inminutes": {
                 "name": "Delay duration"
+            },
+            "Device_status": {
+                "not_available": "Not available",
+                "idle": "Idle",
+                "running": "Running",
+                "pause": "Pause",
+                "failure": "Failure",
+                "service": "Service",
+                "production": "Production"
             },
             "Door_status": {
                 "name": "Door",
