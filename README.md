@@ -31,7 +31,7 @@ visibility.
 
 | Device name  | Device type     | Device type code | Device feature code | Data dictionary                                                                           |
 |--------------|-----------------|------------------|---------------------|-------------------------------------------------------------------------------------------|
-|              | Dehumidifier    | 007              | 400                 | [Completed, but untested](custom_components/connectlife/data_dictionaries/007-400.yaml)   |
+|              | Dehumidifier    | 007              | 400                 | [Completed](custom_components/connectlife/data_dictionaries/007-400.yaml)                 |
 |              | Air conditioner | 009              | 109                 | [In progress](custom_components/connectlife/data_dictionaries/009-109.yaml)               |
 | W-DW50/60-22 | Dishwasher      | 015              | 000                 | [Most properties completed](custom_components/connectlife/data_dictionaries/015-000.yaml) |
 
