@@ -1,37 +1,59 @@
 # Data dictionaries
 
 Data dictionaries for known appliances are located in this directory. Appliances without data dictionary will be still
-be loaded, but with a warning in the log. Also, all unknown properties are mapped to hidden status entities.
+be loaded, but with a warning in the log. Their properties will all be mapped to [sensor](#type-sensor) entities,
+with `hidden` set to `true` and `state_class` set to `measurement` (to enable
+[long-term statistics](https://developers.home-assistant.io/docs/core/entity/sensor/#long-term-statistics)).
 
-To make a property visible by default, just add the property to the list (without setting `hide`).
+## Create your own mapping file
 
-File name: `<deviceTypeCode>-<deviceFeatureCode>.yaml`
+To map you device, create a file with the name `<deviceTypeCode>-<deviceFeatureCode>.yaml` in this directory. When done,
+or if you need help with the mapping, please open a PR on GitHub with the file!
 
 The file contains two top level items:
 - `device_type`: string
 - `properties`: list of [`Property`](#property)
 
-Each property is mapped to _one_ entity or (in the cases of `climate` and `humidifier`) _one_ target property.
+To make a property visible by default, just add the property to the list. Note that properties you do not map are still
+mapped to [sensor](#type-sensor) entities with `hidden` set to `true` and `state_class` set to `measurement`.
+
+Each property is mapped to _one_ entity or _one_ target property.
 
 If you change the type of mapping, the old entity or state attribute will change to unavailable in Home Assistant.
+You can bulk remove the old entities in on the [entities page](https://my.home-assistant.io/redirect/entities/)
+by filtering on the device and status.
+
+If you change unit or state class for sensors, you will need to fix the history in
+[Home Assistant - Statistics](https://my.home-assistant.io/redirect/developer_statistics/).
 
 You need to restart Home Assistant to load mapping changes.
 
+### Mapping tips and tricks:
+
+- Inspect the existing mappings files in this directory.
+- Change settings in the ConnectLife app while monitoring value changes in Home Assistant. Take a note of which
+  property is changes, what the value is, and what the button or action is named in the ConnectLife app.
+- Be aware that `true`, `false`, `yes`, `no`, `on`, and `off` are all interpreted as boolean values in YAML,
+  and must be quoted (e.g. `"off"`) to be interpreted as a string, e.g. in option lists. Note that some options
+  expects boolean (unquoted) values.
+- Validate your mapping file with the [JSON schema](properties-schema.json).
+- Remember to add translation strings.
+
 ## Property
 
-| Item            | Type                               | Description                                                                                       |
-|-----------------|------------------------------------|---------------------------------------------------------------------------------------------------|
-| `property`      | string                             | Name of status/property.                                                                          |
-| `hide`          | `true`, `false`                    | If Home Assistant should initially hide the sensor entity for this property. Defaults to `false`. |
-| `icon`          | `mdi:eye`, etc.                    | Icon to use for the entity.                                                                       |
-| `binary_sensor` | [BinarySensor](#type-binarysensor) | Create a binary sensor of the property.                                                           |
-| `climate`       | [Climate](#type-climate)           | Map the property to a climate entity for the device.                                              |
-| `humidifier`    | [Humidifier](#type-humidifier)     | Map the property to a humidifier entity for the device.                                           |
-| `number`        | [Number](#type-number)             | Create a number entity of the property.                                                           |
-| `select`        | [Select](#type-select)             | Create a selector of the property.                                                                |
-| `sensor`        | [Sensor](#type-sensor)             | Create a sensor of the property. This is the default.                                             |
-| `switch`        | [Switch](#type-switch)             | Create a switch of the property.                                                                  |
-| `water_heater`  | [WaterHeater](#type-waterheater)   | Map the property to a water heater entity for the device.                                         |
+| Item            | Type                               | Description                                                                                                                                    |
+|-----------------|------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
+| `property`      | string                             | Name of status/property.                                                                                                                       |
+| `hide`          | `true`, `false`                    | If Home Assistant should initially hide the sensor entity for this property. Defaults to `false`, but is set to `true` for unknown properties. |
+| `icon`          | `mdi:eye`, etc.                    | Icon to use for the entity.                                                                                                                    |
+| `binary_sensor` | [BinarySensor](#type-binarysensor) | Create a binary sensor of the property.                                                                                                        |
+| `climate`       | [Climate](#type-climate)           | Map the property to a climate entity for the device.                                                                                           |
+| `humidifier`    | [Humidifier](#type-humidifier)     | Map the property to a humidifier entity for the device.                                                                                        |
+| `number`        | [Number](#type-number)             | Create a number entity of the property.                                                                                                        |
+| `select`        | [Select](#type-select)             | Create a selector of the property.                                                                                                             |
+| `sensor`        | [Sensor](#type-sensor)             | Create a sensor of the property. This is the default.                                                                                          |
+| `switch`        | [Switch](#type-switch)             | Create a switch of the property.                                                                                                               |
+| `water_heater`  | [WaterHeater](#type-waterheater)   | Map the property to a water heater entity for the device.                                                                                      |
 
 If an entity mapping is not given, the property is mapped to a sensor entity.
 
@@ -101,8 +123,8 @@ Number entities can be set by the user.
 
 | Item            | Type                                | Description                                                                                                                   |
 |-----------------|-------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
-| `min_value`     | integer                             | Minimum value.                                                                                |
-| `max_value`     | integer                             | Maximum value.                                                                                |
+| `min_value`     | integer                             | Minimum value.                                                                                                                |
+| `max_value`     | integer                             | Maximum value.                                                                                                                |
 | `device_class`  | `duration`, `energy`, `water`, etc. | Name of any [NumberDeviceClass enum](https://developers.home-assistant.io/docs/core/entity/number/#available-device-classes). | 
 | `unit`          | `min`, `°C`, `°F`, etc.             | Required if `device_class` is set, except not allowed when `device_class` is `aqi` or `ph`.                                   |
 
