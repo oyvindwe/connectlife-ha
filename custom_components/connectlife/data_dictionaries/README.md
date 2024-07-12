@@ -22,9 +22,11 @@ mapping a device!
 Each property is mapped to _one_ entity or _one_ target property.
 
 If you change the type of mapping, the old entity or state attribute will change to unavailable in Home Assistant.
+You can bulk remove the old entities in on the [entities page](https://my.home-assistant.io/redirect/entities/)
+by filtering on the device and status.
 
-If you change unit or state class for sensors, you will need to fix the history in Home Assistant -> Developer Tools
--> Statistics.
+If you change unit or state class for sensors, you will need to fix the history in
+[Home Assistant - Statistics](https://my.home-assistant.io/redirect/developer_statistics/).
 
 You need to restart Home Assistant to load mapping changes.
 
