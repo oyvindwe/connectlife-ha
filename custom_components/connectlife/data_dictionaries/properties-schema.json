@@ -17,7 +17,8 @@
             "hood",
             "humidifier",
             "washing_machine",
-            "tumble_dryer"
+            "tumble_dryer",
+            "water_heater"
           ]
         },
         "properties": {
@@ -50,6 +51,9 @@
         "humidifier": {
           "$ref": "#/definitions/Humidifier"
         },
+        "number": {
+          "$ref": "#/definitions/Number"
+        },
         "select": {
           "$ref": "#/definitions/Select"
         },
@@ -58,6 +62,9 @@
         },
         "switch": {
           "$ref": "#/definitions/Switch"
+        },
+        "water_heater": {
+          "$ref": "#/definitions/WaterHeater"
         },
         "icon": {
           "type": "string",
@@ -173,7 +180,8 @@
           ]
         }
       }
-    },    "Select": {
+    },
+    "Select": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -242,6 +250,31 @@
         }
       },
       "title": "BinarySensor"
+    },
+    "WaterHeater": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "target": {
+          "$ref": "#/definitions/WaterHeaterTarget"
+        },
+        "unknown_value": {
+          "$ref": "#/definitions/UnknownValue"
+        },
+        "max_value": {
+          "$ref": "#/definitions/IntegerOrTemperature"
+        },
+        "min_value": {
+          "$ref": "#/definitions/IntegerOrTemperature"
+        },
+        "options": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Map of integer to string. Required for targets current_operation, state, and temperature_unit."
+        }
+      }
     },
     "BinarySensorDeviceClass": {
       "type": "string",
@@ -445,6 +478,19 @@
       ],
       "title": "Device class",
       "description": "Name of any SwitchDeviceClass enum."
+    },
+    "WaterHeaterTarget": {
+      "type": "string",
+      "enum": [
+        "current_temperature",
+        "current_operation",
+        "is_away_mode_on",
+        "target_temperature",
+        "state",
+        "temperature_unit"
+      ],
+      "title": "Water Heater target.",
+      "description": "Target property of WaterHeaterEntity."
     },
     "UnknownValue": {
       "type": "integer",

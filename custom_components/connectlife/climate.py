@@ -27,6 +27,7 @@ from .const import (
 from .coordinator import ConnectLifeCoordinator
 from .dictionaries import Dictionaries, Property
 from .entity import ConnectLifeEntity
+from .temperature import to_temperature_map, to_unit_of_temperature
 from connectlife.appliance import ConnectLifeAppliance
 
 _LOGGER = logging.getLogger(__name__)
@@ -299,16 +300,3 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
         })
         self._attr_swing_mode = swing_mode
         self.async_write_ha_state()
-
-
-def to_unit_of_temperature(temp: str) -> UnitOfTemperature | None:
-    if temp == "C" or temp == "celsius":
-        return UnitOfTemperature.CELSIUS
-    elif temp == "F" or temp == "fahrenheit":
-        return UnitOfTemperature.FAHRENHEIT
-    else:
-        return None
-
-
-def to_temperature_map(items: dict[str, int] | None) -> dict[UnitOfTemperature, int] | None:
-    return {to_unit_of_temperature(k): v for k, v in items.items()} if items else None

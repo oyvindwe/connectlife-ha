@@ -10,13 +10,17 @@ from homeassistant.components.humidifier import HumidifierDeviceClass
 from homeassistant.components.number import NumberDeviceClass
 from homeassistant.components.sensor import SensorDeviceClass, SensorStateClass
 from homeassistant.components.switch import SwitchDeviceClass
+from homeassistant.components.water_heater import STATE_OFF
 
 from .const import (
     ACTION,
+    CURRENT_OPERATION,
     FAN_MODE,
     HVAC_ACTION,
     HVAC_MODE,
+    IS_AWAY_MODE_ON,
     MODE,
+    STATE,
     SWING_MODE,
     TEMPERATURE_UNIT,
 )
@@ -204,6 +208,35 @@ class Switch:
         self.on = switch[ON] if ON in switch else 1
 
 
+class WaterHeater:
+    target: str
+    options: dict | None
+    unknown_value: int | None
+    min_value: int | dict[str, int]
+    max_value: int | dict[str, int]
+
+    def __init__(self, name: str, water_heater: dict | None):
+        if water_heater is None:
+            water_heater = {}
+        self.target = water_heater[TARGET] if TARGET in water_heater else None
+        if self.target is None:
+            _LOGGER.warning("Missing water_heater.target for for %s", name)
+        self.options = water_heater[OPTIONS] if OPTIONS in water_heater else None
+        if self.options is None and self.target in [CURRENT_OPERATION, IS_AWAY_MODE_ON, STATE, TEMPERATURE_UNIT]:
+            _LOGGER.warning("Missing water_heater.options for %s", name)
+        if self.target == STATE and STATE_OFF not in self.options.values():
+            _LOGGER.warning("Missing state off for water_heater.options for %s", name)
+        if self.target == STATE and len(self.options) < 2:
+            _LOGGER.warning("Require at least 2 valid states in water_heater.options for %s", name)
+        self.unknown_value = (
+            water_heater[UNKNOWN_VALUE]
+            if UNKNOWN_VALUE in water_heater and water_heater[UNKNOWN_VALUE]
+            else None
+        )
+        self.min_value = water_heater[MIN_VALUE] if MIN_VALUE in water_heater else None
+        self.max_value = water_heater[MAX_VALUE] if MAX_VALUE in water_heater else None
+
+
 class Property:
     name: str
     icon: str | None
@@ -215,6 +248,7 @@ class Property:
     sensor: Sensor
     select: Select
     switch: Switch
+    water_heater: WaterHeater
 
     def __init__(self, entry: dict):
         self.name = entry[PROPERTY]
@@ -235,6 +269,8 @@ class Property:
             self.select = Select(self.name, entry[Platform.SELECT])
         elif Platform.SWITCH in entry:
             self.switch = Switch(self.name, entry[Platform.SWITCH])
+        elif Platform.WATER_HEATER in entry:
+            self.water_heater = WaterHeater(self.name, entry[Platform.WATER_HEATER])
         else:
             self.sensor = Sensor(self.name, {})
 
