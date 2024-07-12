@@ -90,11 +90,23 @@
       "t_eco": {
         "name": "Eco"
       },
+      "t_air": {
+        "name": "Air"
+      },
+      "t_beep": {
+        "name": "Beep"
+      },
       "t_fan_mute": {
         "name": "Fan mute"
       },
+      "t_power": {
+        "name": "Power"
+      },
       "t_super": {
         "name": "Super"
+      },
+      "t_sterilization": {
+        "name": "Sterilization"
       },
       "t_tms": {
         "name": "AI"
