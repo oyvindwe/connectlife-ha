@@ -70,11 +70,12 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
         elif (device_class is None
               and isinstance(self.coordinator.appliances[self.device_id].status_list[status], datetime.datetime)):
             device_class = SensorDeviceClass.TIMESTAMP
-        state_class = dd_entry.sensor.state_class
-        if (state_class is None
-                and isinstance(self.coordinator.appliances[self.device_id].status_list[status], int)
-                and device_class != SensorDeviceClass.ENUM):
-            state_class = SensorStateClass.MEASUREMENT
+        state_class = (
+            dd_entry.sensor.state_class
+            if isinstance(self.coordinator.appliances[self.device_id].status_list[status], int)
+               and device_class != SensorDeviceClass.ENUM
+            else None
+        )
         self.entity_description = SensorEntityDescription(
             key=self._attr_unique_id,
             device_class=device_class,
