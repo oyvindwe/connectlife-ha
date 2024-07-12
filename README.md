@@ -21,21 +21,11 @@ Finally, add "ConnectLife" as an integration in the UI, and provide the username
 
 You device and all their status values should show up.
 
-## Supported devices
+## Supported ConncetLife devices
 
 Any unknown device will show up as sensors with names based on their properties. As there are a lot of exposed
 sensors, all unknown sensors are hidden by default. Access the device or entity list to view sensors and change
 visibility.
-
-## Supported Home Assistant entities
-- [Binary sensor](https://developers.home-assistant.io/docs/core/entity/binary-sensor)
-- [Climate](https://developers.home-assistant.io/docs/core/entity/climate)
-- [Humidifier](https://developers.home-assistant.io/docs/core/entity/humidifier)
-- [Number](https://developers.home-assistant.io/docs/core/entity/number)
-- [Select](https://developers.home-assistant.io/docs/core/entity/select)
-- [Sensor](https://developers.home-assistant.io/docs/core/entity/sensor)
-- [Switch](https://developers.home-assistant.io/docs/core/entity/switch)
-- [Water heater](https://developers.home-assistant.io/docs/core/entity/water-heater)
 
 ### Known devices
 
@@ -47,6 +37,37 @@ visibility.
 |              | Heap pump       | 016              | 502                 | [Untested](custom_components/connectlife/data_dictionaries/016-502.yaml)                  |
 
 Please, please, please contribute PRs with [data dictionaries](custom_components/connectlife/data_dictionaries) for your devices!
+
+## Supported Home Assistant entities
+
+ConnectLife properties can be mapped to any of these entity types:
+
+- [Binary sensor](https://developers.home-assistant.io/docs/core/entity/binary-sensor)
+- [Climate](https://developers.home-assistant.io/docs/core/entity/climate)
+- [Humidifier](https://developers.home-assistant.io/docs/core/entity/humidifier)
+- [Number](https://developers.home-assistant.io/docs/core/entity/number)
+- [Select](https://developers.home-assistant.io/docs/core/entity/select)
+- [Sensor](https://developers.home-assistant.io/docs/core/entity/sensor)
+- [Switch](https://developers.home-assistant.io/docs/core/entity/switch)
+- [Water heater](https://developers.home-assistant.io/docs/core/entity/water-heater)
+
+## Service to set property values on sensors
+
+Entity service `connectlife.set_value` can be used to set values. Use with caution, as there is **no** validation
+if property is writeable or that the value is legal to set.
+
+1. The service can be accessed from [Developer tools - Services](https://my.home-assistant.io/redirect/developer_services/).
+2. Search for service name "ConnectLife: Set value"
+3. Select entity as target.
+4. Enter value
+5. Call service.
+
+It is possible to guard against `set_value` by setting `readonly: true` in the data dictionary on the sensor, e.g.
+```yaml
+  - property: f_status 
+    sensor:
+      read_only: true
+```
 
 ## Issues
 
@@ -68,15 +89,6 @@ Missing features:
 - Setting state except to off/one defined state
 - Away mode
 - Setting target_temperature_high/target_temperature_low
-
-### Experimental service to set property values (sensors only)
-
-Entity service `connectlife.set_value` can be used to set values. Use with caution, as there is **no** validation
-if property is writeable, or that the value is legal to set.
-
-1. The service can be accessed from Developer tools -> Services in HomeAssistant UI.
-2. Search for service name "ConnectLife: Set value"
-3. As target, select entity, and enter a ConnectLife sensor entity id.
 
 ### Login
 
