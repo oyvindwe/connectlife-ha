@@ -285,13 +285,22 @@ class Dictionaries:
         key = f"{appliance.device_type_code}-{appliance.device_feature_code}"
         if key in Dictionaries.dictionaries:
             return Dictionaries.dictionaries[key]
-        dictionary = defaultdict(lambda: Property({PROPERTY: "default", HIDE: True}))
         try:
+            dictionary = defaultdict(lambda: Property({PROPERTY: "unknown_property", HIDE: True}))
             data = pkgutil.get_data(__name__, f"data_dictionaries/{key}.yaml")
             parsed = yaml.safe_load(data)
             for prop in parsed[PROPERTIES]:
                 dictionary[prop[PROPERTY]] = Property(prop)
         except FileNotFoundError:
             _LOGGER.warning("No data dictionary found for %s (%s)", appliance.device_nickname, key)
+            dictionary = defaultdict(
+                lambda: Property(
+                    {
+                        PROPERTY: "unknown_device",
+                        HIDE: True,
+                        Platform.SENSOR: {STATE_CLASS: SensorStateClass.MEASUREMENT}
+                    }
+                )
+            )
         Dictionaries.dictionaries[key] = dictionary
         return dictionary
