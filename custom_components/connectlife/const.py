@@ -6,6 +6,9 @@ ATTR_DEVICE = "device"
 ATTR_DESC = "desc"
 ATTR_KEY = "key"
 
+CONF_DEVELOPMENT_MODE = "development_mode"
+CONF_TEST_SERVER_URL = "test_server_url"
+
 ACTION = "action"
 CURRENT_OPERATION = "current_operation"
 HVAC_ACTION = "hvac_action"

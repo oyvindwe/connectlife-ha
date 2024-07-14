@@ -17,6 +17,21 @@
       "already_configured": "[%key:common::config_flow::abort::already_configured_device%]"
     }
   },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "development_mode": "Development mode",
+          "test_server_url": "Test server URL"
+        },
+        "description": "Enable development mode to connect to test server instead of the ConnectLife API."
+      }
+    },
+    "error": {
+      "test_server_invalid": "Invalid test server URL",
+      "test_server_required": "Development mode requires test server URL"
+    }
+  },
   "services": {
     "set_value": {
       "name": "Set value",

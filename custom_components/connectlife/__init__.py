@@ -7,7 +7,7 @@ from homeassistant.const import Platform, CONF_USERNAME, CONF_PASSWORD
 from homeassistant.core import HomeAssistant
 from connectlife.api import ConnectLifeApi
 
-from .const import DOMAIN
+from .const import CONF_DEVELOPMENT_MODE, CONF_TEST_SERVER_URL, DOMAIN
 from .coordinator import ConnectLifeCoordinator
 
 PLATFORMS: list[Platform] = [
@@ -25,16 +25,26 @@ PLATFORMS: list[Platform] = [
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     """Set up ConnectLife from a config entry."""
     hass.data.setdefault(DOMAIN, {})
-
-    api = ConnectLifeApi(entry.data[CONF_USERNAME], entry.data[CONF_PASSWORD])
+    test_server_url = (
+        entry.options.get(CONF_TEST_SERVER_URL)
+       if entry.options.get(CONF_DEVELOPMENT_MODE)
+        else None
+    )
+    api = ConnectLifeApi(entry.data[CONF_USERNAME], entry.data[CONF_PASSWORD], test_server_url)
     await api.login()
     coordinator = ConnectLifeCoordinator(hass, api)
     await coordinator.async_config_entry_first_refresh()
     hass.data[DOMAIN][entry.entry_id] = coordinator
 
+    entry.async_on_unload(entry.add_update_listener(update_listener))
+
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
 
     return True
+
+async def update_listener(hass, entry):
+    """Handle options update."""
+    await hass.config_entries.async_reload(entry.entry_id)
 
 
 async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
