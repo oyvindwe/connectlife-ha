@@ -11,10 +11,9 @@ from .const import DOMAIN
 
 _LOGGER = logging.getLogger(__name__)
 
-class ConnectLifeCoordinator(DataUpdateCoordinator):
-    """ConnectLife coordinator."""
 
-    _appliances: dict[str, ConnectLifeAppliance] = {}
+class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeAppliance]]):
+    """ConnectLife coordinator."""
 
     def __init__(self, hass, api: ConnectLifeApi):
         """Initialize coordinator."""
@@ -33,7 +32,7 @@ class ConnectLifeCoordinator(DataUpdateCoordinator):
             # handled by the data update coordinator.
             async with async_timeout.timeout(10):
                 await self.api.get_appliances()
-                self._appliances = {a.device_id: a for a in self.api.appliances}
+                return {a.device_id: a for a in self.api.appliances}
         except LifeConnectAuthError as err:
             # Raising ConfigEntryAuthFailed will cancel future updates
             # and start a config flow with SOURCE_REAUTH (async_step_reauth)
@@ -41,7 +40,8 @@ class ConnectLifeCoordinator(DataUpdateCoordinator):
         except LifeConnectError as err:
             raise UpdateFailed(f"Error communicating with API: {err}")
 
-    @property
-    def appliances(self) -> dict[str, ConnectLifeAppliance]:
-        """Dictionary of device id, appliance."""
-        return self._appliances
+    async def async_update_device(self, device_id: str, properties: dict[str, int | str]):
+        """Updates the device, and sets the same data in local copy and notify to avoid refetching."""
+        await self.api.update_appliance(self.data[device_id].puid, {k: str(v) for k, v in properties.items()})
+        self.data[device_id].status_list.update(properties)
+        self.async_update_listeners()

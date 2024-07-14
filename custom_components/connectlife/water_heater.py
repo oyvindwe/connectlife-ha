@@ -44,7 +44,7 @@ async def async_setup_entry(
     """Set up ConnectLife sensors."""
     coordinator = hass.data[DOMAIN][config_entry.entry_id]
     entities = []
-    for appliance in coordinator.appliances.values():
+    for appliance in coordinator.data.values():
         dictionary = Dictionaries.get_dictionary(appliance)
         if is_water_heater(dictionary):
             entities.append(ConnectLifeWaterHeater(coordinator, appliance, dictionary))
@@ -108,7 +108,6 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
             if hasattr(dd_entry, Platform.WATER_HEATER):
                 self.target_map[dd_entry.water_heater.target] = dd_entry.name
 
-
         for target, status in self.target_map.items():
             if target == IS_ON:
                 self._attr_supported_features |= WaterHeaterEntityFeature.ON_OFF
@@ -127,7 +126,6 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
                     if unit := to_unit_of_temperature(v):
                         self.temperature_unit_map[k] = unit
             elif target == STATE:
-                # Is state
                 # TODO: map to multiple states
                 self.state_map = data_dictionary[status].water_heater.options
                 self.state_reverse_map = {v: k for k, v in self.state_map.items()}
@@ -160,8 +158,8 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
     @callback
     def update_state(self) -> None:
         for target, status in self.target_map.items():
-            if status in self.coordinator.appliances[self.device_id].status_list:
-                value = self.coordinator.appliances[self.device_id].status_list[status]
+            if status in self.coordinator.data[self.device_id].status_list:
+                value = self.coordinator.data[self.device_id].status_list[status]
                 if target == IS_ON:
                     # TODO: Support value mapping
                     self.is_on = value == 1
@@ -198,13 +196,13 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
                         value = None
                     setattr(self, f"_attr_{target}", value)
 
-        if (self._attr_supported_features & WaterHeaterEntityFeature.ON_OFF):
+        if self._attr_supported_features & WaterHeaterEntityFeature.ON_OFF:
             if not self.is_on:
                 self._attr_current_operation = STATE_OFF
             elif CURRENT_OPERATION not in self.target_map:
                 self._attr_current_operation = STATE_ON
 
-        self._attr_available = self.coordinator.appliances[self.device_id].offline_state == 1
+        self._attr_available = self.coordinator.data[self.device_id].offline_state == 1
 
     def get_temperature_limit(self, temperature_map: [UnitOfTemperature, int]):
         if temperature_map and self._attr_temperature_unit in temperature_map:
@@ -214,51 +212,28 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
 
     async def async_set_temperature(self, **kwargs) -> None:
         """Set new target temperature."""
-        if ATTR_TEMPERATURE in kwargs and TARGET_TEMPERATURE in self.target_map:
-            target_temperature = round(kwargs[ATTR_TEMPERATURE])
-            await self.coordinator.api.update_appliance(
-                self.puid,
-                {
-                    self.target_map[TARGET_TEMPERATURE]:
-                        target_temperature
-                }
-            )
-            self._attr_target_temperature = target_temperature
-            self.async_write_ha_state()
+        if ATTR_TEMPERATURE in kwargs:
+            await self.async_update_device({
+                self.target_map[TARGET_TEMPERATURE]: round(kwargs[ATTR_TEMPERATURE])
+            })
 
     async def async_turn_on(self) -> None:
         """Turn the entity on."""
         # TODO: Support value mapping
-        await self.coordinator.api.update_appliance(self.puid, {self.target_map[IS_ON]: 1})
-        await self.coordinator.async_request_refresh()
+        await self.async_update_device({self.target_map[IS_ON]: 1})
 
     async def async_turn_off(self) -> None:
         """Turn the entity off."""
         # TODO: Support value mapping
-        await self.coordinator.api.update_appliance(self.puid, {self.target_map[IS_ON]: 0})
-        await self.coordinator.async_request_refresh()
+        await self.async_update_device({self.target_map[IS_ON]: 0})
 
     async def async_turn_away_mode_on(self) -> None:
         """Turn on away mode."""
-        await self.coordinator.api.update_appliance(
-            self.puid,
-            {
-                self.target_map[IS_AWAY_MODE_ON]: self.away_mode_on
-            }
-        )
-        self._attr_is_away_mode_on = True
-        self.async_write_ha_state()
+        await self.async_update_device({self.target_map[IS_AWAY_MODE_ON]: self.away_mode_on})
 
     async def async_turn_away_mode_off(self) -> None:
         """Turn on away mode."""
-        await self.coordinator.api.update_appliance(
-            self.puid,
-            {
-                self.target_map[IS_AWAY_MODE_ON]: self.away_mode_off
-            }
-        )
-        self._attr_is_away_mode_on = False
-        self.async_write_ha_state()
+        await self.async_update_device({self.target_map[IS_AWAY_MODE_ON]: self.away_mode_off})
 
     async def async_set_operation_mode(self, operation_mode: str) -> None:
         """Set the operation mode."""
@@ -270,8 +245,6 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
             else:
                 request = {self.target_map[CURRENT_OPERATION]: self.operation_reverse_map[operation_mode]}
                 if self._attr_supported_features & WaterHeaterEntityFeature.ON_OFF:
-                    # TODO: Support value  mapping
+                    # TODO: Support value mapping
                     request[self.target_map[IS_ON]] = 1
-                await self.coordinator.api.update_appliance(self.puid, request)
-                self._attr_current_operation = operation_mode
-                self.async_write_ha_state()
+                await self.async_update_device(request)

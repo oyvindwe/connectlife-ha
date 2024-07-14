@@ -27,7 +27,7 @@ async def async_setup_entry(
 ) -> None:
     """Set up ConnectLife sensors."""
     coordinator = hass.data[DOMAIN][config_entry.entry_id]
-    for appliance in coordinator.appliances.values():
+    for appliance in coordinator.data.values():
         dictionary = Dictionaries.get_dictionary(appliance)
         async_add_entities(
             ConnectLifeBinaryStatusSensor(coordinator, appliance, s, dictionary[s])
@@ -61,11 +61,11 @@ class ConnectLifeBinaryStatusSensor(ConnectLifeEntity, BinarySensorEntity):
 
     @callback
     def update_state(self):
-        if self.status in self.coordinator.appliances[self.device_id].status_list:
-            value = self.coordinator.appliances[self.device_id].status_list[self.status]
+        if self.status in self.coordinator.data[self.device_id].status_list:
+            value = self.coordinator.data[self.device_id].status_list[self.status]
             if value in VALUES:
                 self._attr_is_on = VALUES[value]
             else:
                 self._attr_is_on = None
                 _LOGGER.warning("Unknown value %d for %s", value, self.status)
-        self._attr_available = self.coordinator.appliances[self.device_id].offline_state == 1
+        self._attr_available = self.coordinator.data[self.device_id].offline_state == 1
