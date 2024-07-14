@@ -28,7 +28,7 @@ from .const import (
     TEMPERATURE_UNIT,
 )
 from .coordinator import ConnectLifeCoordinator
-from .dictionaries import Dictionaries, Property
+from .dictionaries import Dictionaries, Dictionary
 from .entity import ConnectLifeEntity
 from .temperature import to_temperature_map, to_unit_of_temperature
 from connectlife.appliance import ConnectLifeAppliance
@@ -51,8 +51,8 @@ async def async_setup_entry(
     async_add_entities(entities)
 
 
-def is_water_heater(dictionary: dict[str, Property]):
-    for prop in dictionary.values():
+def is_water_heater(dictionary: Dictionary):
+    for prop in dictionary.properties.values():
         if hasattr(prop, Platform.WATER_HEATER):
             return True
     return False
@@ -82,7 +82,7 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
             self,
             coordinator: ConnectLifeCoordinator,
             appliance: ConnectLifeAppliance,
-            data_dictionary: dict[str, Property]
+            data_dictionary: Dictionary
     ):
         """Initialize the entity."""
         super().__init__(coordinator, appliance)
@@ -104,7 +104,7 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
         self.max_temperature_map = {}
         self.unknown_values = {}
 
-        for dd_entry in data_dictionary.values():
+        for dd_entry in data_dictionary.properties.values():
             if hasattr(dd_entry, Platform.WATER_HEATER):
                 self.target_map[dd_entry.water_heater.target] = dd_entry.name
 
@@ -119,21 +119,21 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
             elif target == TARGET_TEMPERATURE:
                 self._attr_supported_features |= WaterHeaterEntityFeature.TARGET_TEMPERATURE
                 self._attr_target_temperature = None
-                self.min_temperature_map = to_temperature_map(data_dictionary[status].water_heater.min_value)
-                self.max_temperature_map = to_temperature_map(data_dictionary[status].water_heater.max_value)
+                self.min_temperature_map = to_temperature_map(data_dictionary.properties[status].water_heater.min_value)
+                self.max_temperature_map = to_temperature_map(data_dictionary.properties[status].water_heater.max_value)
             elif target == TEMPERATURE_UNIT:
-                for k, v in data_dictionary[status].water_heater.options.items():
+                for k, v in data_dictionary.properties[status].water_heater.options.items():
                     if unit := to_unit_of_temperature(v):
                         self.temperature_unit_map[k] = unit
             elif target == STATE:
                 # TODO: map to multiple states
-                self.state_map = data_dictionary[status].water_heater.options
+                self.state_map = data_dictionary.properties[status].water_heater.options
                 self.state_reverse_map = {v: k for k, v in self.state_map.items()}
                 self.state_on = filter(lambda v: v != STATE_OFF, self.state_map.values())
                 self._attr_states = list(self.state_map.values())
                 self._attr_state = None
             elif target == CURRENT_OPERATION:
-                self.operation_map = data_dictionary[status].water_heater.options
+                self.operation_map = data_dictionary.properties[status].water_heater.options
                 self.operation_reverse_map = {v: k for k, v in self.operation_map.items()}
                 self._attr_operation_list = list(self.operation_map.values())
                 if IS_ON in self.target_map and STATE_OFF not in self._attr_operation_list:
@@ -142,10 +142,10 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
                 self._attr_current_operation = None
             elif target == IS_AWAY_MODE_ON:
                 self._attr_supported_features |= WaterHeaterEntityFeature.AWAY_MODE
-                reverse = {v: k for k, v in data_dictionary[status].water_heater.options.items()}
+                reverse = {v: k for k, v in data_dictionary.properties[status].water_heater.options.items()}
                 self.away_mode_on = reverse[True]
                 self.away_mode_off = reverse[False]
-            self.unknown_values[status] = data_dictionary[status].water_heater.unknown_value
+            self.unknown_values[status] = data_dictionary.properties[status].water_heater.unknown_value
 
         if TEMPERATURE_UNIT not in self.target_map:
             if min_temp := self.get_temperature_limit(self.min_temperature_map):

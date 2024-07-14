@@ -6,20 +6,8 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "device_type": {
-          "title": "Device type",
-          "type": "string",
-          "examples": [
-            "airconditioner",
-            "dehumidifier",
-            "dishwasher",
-            "hob",
-            "hood",
-            "humidifier",
-            "washing_machine",
-            "tumble_dryer",
-            "water_heater"
-          ]
+        "climate": {
+          "$ref": "#/definitions/ClimateDevice"
         },
         "properties": {
           "type": "array",
@@ -32,6 +20,31 @@
         "properties"
       ],
       "title": "ConnectLife Data Dictionary"
+    },
+    "ClimateDevice": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "presets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Preset"
+          },
+          "description": "List of presets"
+        }
+      }
+    },
+    "Preset": {
+      "type": "object",
+      "properties": {
+        "preset": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {
+        "type": "integer"
+      },
+      "description": "Map of device property names to integer values."
     },
     "Property": {
       "type": "object",

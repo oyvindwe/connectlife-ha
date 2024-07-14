@@ -54,6 +54,11 @@
                             "middle_high": "Middle high"
                         }
                     },
+                    "preset_mode": {
+                        "state": {
+                            "ai": "AI"
+                        }
+                    },
                     "swing_mode": {
                         "state": {
                             "both_sides": "Both sides",

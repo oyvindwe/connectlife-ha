@@ -11,13 +11,14 @@ To map you device, create a file with the name `<deviceTypeCode>-<deviceFeatureC
 or if you need help with the mapping, please open a PR on GitHub with the file!
 
 The file contains two top level items:
-- `device_type`: string
+- `climate`: top level [`Climate`](#presets) configuration.
 - `properties`: list of [`Property`](#property)
 
 To make a property visible by default, just add the property to the list. Note that properties you do not map are still
 mapped to [sensor](#type-sensor) entities with `hidden` set to `true` and `state_class` set to `measurement`.
 
-Each property is mapped to _one_ entity or _one_ target property.
+Each property is mapped to _one_ entity or _one_ target property. In addition, each `climate` preset is mapped to a
+set of properties and values. 
 
 If you change the type of mapping, the old entity or state attribute will change to unavailable in Home Assistant.
 You can bulk remove the old entities in on the [entities page](https://my.home-assistant.io/redirect/entities/)
@@ -93,12 +94,38 @@ type `climate`, a climate entity is created for the appliance.
 If a value does not have a sensible mapping, leave it out to set `hvac_action` to `None` for that value, or consider
 mapping to a sensor `enum` instead.
 
-For `fan_mode` and `swing_mode`, remember to add options [translation strings](#translation-strings).
+For `fan_mode` and `swing_mode`, remember to add [translation strings](#translation-strings) for the options.
 
 Not yet supported target properties:
-- `preset_mode`
 - `target_temperature_high`
 - `target_temperature_low`
+
+### Presets
+
+Presets are defined on the top level `climate`. Presets are simply a map of device properties to their desired value for
+that preset. You may choose to set different properties in different presets. If you do that, the value of the excluded
+properties will not be changed when switching to that preset.
+
+E.g.:
+```yaml
+climate:
+  presets:
+    - preset: eco
+      t_power: 1     # turn on
+      t_eco: 1
+      t_fan_speed: 0 # auto
+    - preset: ai
+      t_power: 1     # turn on
+      t_tms: 1
+```
+
+Remember to add [translation strings](#translation-strings) for preset modes.
+
+Since multiple states may match a given preset, the first matching preset of the list will be displayed in the UI.
+E.g. with the above preset definitions, if `t_eco` is 1, `t_fan_speed` is 0, _and_ `t_tms` is 1, `eco` will be displayed
+as the selected preset. 
+
+Presets only has effect for devices with climate mappings.
 
 ## Type `Humidifier`:
 
@@ -117,7 +144,7 @@ It is sufficient to set `device_class` on one property. The value of the first e
 If a value does not have a sensible mapping, leave it out to set `action` to `None` for that value, or consider mapping
 to a sensor `enum` instead.
 
-For `mode`, remember to add options to [translation strings](#translation-strings).
+For `mode`, remember to add [translation strings](#translation-strings) for the options.
 
 ## Type `Number`
 
@@ -136,7 +163,7 @@ Number entities can be set by the user.
 |------------|---------------------------------|-------------|
 | `options`  | dictionary of integer to string | Required.   |
 
-Remember to add options to [translation strings](#translation-strings).
+Remember to add [translation strings](#translation-strings) for the options.
 
 ## Type `Sensor`
 
@@ -152,7 +179,7 @@ the `sensor.connectlife` entities, unless the sensor is set to `read_only: true`
 | `options`       | dictionary of integer to string            | Required if `device_class` is set to `enum`.                                                                                                                                                                              |
 | `unknown_value` | integer                                    | The value used by the API to signal unknown value.                                                                                                                                                                        |
 
-For device class `enum`, remember to add options to [translation strings](#translation-strings).
+For device class `enum`, remember to add [translation strings](#translation-strings) for the options.
 
 ## Type `Switch`
 
@@ -184,8 +211,8 @@ type `water_heater`, a water heater entity is created for the appliance.
 target, but will not send in the mapped property or value when selecing the "Off" operation in Home Assistant.
 If `current_operation` is not set, `is_on` also adds operation `"on"` to the operation list. 
 
-For `current_operation`, remember to add options [translation strings](#translation-strings). Note that you need to add these under
-`state`, and **not** under `state_attributes`, e.g.:
+For `current_operation`, remember to add [translation strings](#translation-strings) for the options.
+Note that you need to add these under `state`, and **not** under `state_attributes`, e.g.:
 ```json
 {
   "entity": {
@@ -272,7 +299,8 @@ properties:
         9: high
 ```
 
-Strings not in [Home Assistant Core](https://github.com/home-assistant/core/blob/dev/homeassistant/components/climate/strings.json) goes in [strings.json](../strings.json) and  [en.json](../translations/en.json):
+Strings not in Home Assistant ([climate](https://github.com/home-assistant/core/blob/dev/homeassistant/components/climate/strings.json)
+[humidifier](https://github.com/home-assistant/core/blob/dev/homeassistant/components/humidifier/strings.json)) goes in [strings.json](../strings.json) and  [en.json](../translations/en.json):
 ```json
 {
   "entity": {

@@ -30,8 +30,8 @@ async def async_setup_entry(
     for appliance in coordinator.data.values():
         dictionary = Dictionaries.get_dictionary(appliance)
         async_add_entities(
-            ConnectLifeBinaryStatusSensor(coordinator, appliance, s, dictionary[s])
-            for s in appliance.status_list if hasattr(dictionary[s], Platform.BINARY_SENSOR)
+            ConnectLifeBinaryStatusSensor(coordinator, appliance, s, dictionary.properties[s])
+            for s in appliance.status_list if hasattr(dictionary.properties[s], Platform.BINARY_SENSOR)
         )
 
 
