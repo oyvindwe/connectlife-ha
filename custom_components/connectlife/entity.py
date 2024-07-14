@@ -27,6 +27,7 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
         self._attr_device_info = DeviceInfo(
             identifiers={(DOMAIN, appliance.device_id)},
             model=appliance.device_feature_name,
+            hw_version=f'{appliance.device_type_code}-{appliance.device_feature_code}',
             name=appliance.device_nickname,
             suggested_area=appliance.room_name,
         )
