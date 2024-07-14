@@ -37,6 +37,7 @@ properties:
     water_heater:
       target: current_operation
       options:
+        0: "off" # Not sent
         8: auto
         9: eco
         11: performance
