@@ -25,7 +25,7 @@ async def async_setup_entry(
 ) -> None:
     """Set up ConnectLife selectors."""
     coordinator = hass.data[DOMAIN][config_entry.entry_id]
-    for appliance in coordinator.appliances.values():
+    for appliance in coordinator.data.values():
         dictionary = Dictionaries.get_dictionary(appliance)
         async_add_entities(
             ConnectLifeSelect(coordinator, appliance, s, dictionary[s])
@@ -63,8 +63,8 @@ class ConnectLifeSelect(ConnectLifeEntity, SelectEntity):
 
     @callback
     def update_state(self):
-        if self.status in self.coordinator.appliances[self.device_id].status_list:
-            value = self.coordinator.appliances[self.device_id].status_list[self.status]
+        if self.status in self.coordinator.data[self.device_id].status_list:
+            value = self.coordinator.data[self.device_id].status_list[self.status]
             if value in self.options_map:
                 value = self.options_map[value]
             else:
@@ -74,6 +74,4 @@ class ConnectLifeSelect(ConnectLifeEntity, SelectEntity):
 
     async def async_select_option(self, option: str) -> None:
         """Change the selected option."""
-        await self.coordinator.api.update_appliance(self.puid, {self.status: self.reverse_options_map[option]})
-        self._attr_current_option = option
-        self.async_write_ha_state()
+        await self.async_update_device({self.status: self.reverse_options_map[option]})

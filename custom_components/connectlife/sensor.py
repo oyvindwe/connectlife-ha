@@ -5,7 +5,7 @@ import voluptuous as vol
 from homeassistant.components.sensor import SensorEntity, SensorStateClass, SensorDeviceClass, SensorEntityDescription
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant, ServiceCall, callback
+from homeassistant.core import HomeAssistant, callback
 from homeassistant.exceptions import ServiceValidationError
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers import config_validation as cv, entity_platform, service
@@ -31,7 +31,7 @@ async def async_setup_entry(
 ) -> None:
     """Set up ConnectLife sensors."""
     coordinator = hass.data[DOMAIN][config_entry.entry_id]
-    for appliance in coordinator.appliances.values():
+    for appliance in coordinator.data.values():
         dictionary = Dictionaries.get_dictionary(appliance)
         async_add_entities(
             ConnectLifeStatusSensor(coordinator, appliance, s, dictionary[s])
@@ -68,11 +68,11 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
             self.options_map = dd_entry.sensor.options
             options = list(self.options_map.values())
         elif (device_class is None
-              and isinstance(self.coordinator.appliances[self.device_id].status_list[status], datetime.datetime)):
+              and isinstance(self.coordinator.data[self.device_id].status_list[status], datetime.datetime)):
             device_class = SensorDeviceClass.TIMESTAMP
         state_class = dd_entry.sensor.state_class
         if (state_class is None
-                and isinstance(self.coordinator.appliances[self.device_id].status_list[status], int)
+                and isinstance(self.coordinator.data[self.device_id].status_list[status], int)
                 and device_class != SensorDeviceClass.ENUM):
             state_class = SensorStateClass.MEASUREMENT
         self.entity_description = SensorEntityDescription(
@@ -90,8 +90,8 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
 
     @callback
     def update_state(self):
-        if self.status in self.coordinator.appliances[self.device_id].status_list:
-            value = self.coordinator.appliances[self.device_id].status_list[self.status]
+        if self.status in self.coordinator.data[self.device_id].status_list:
+            value = self.coordinator.data[self.device_id].status_list[self.status]
             if self.device_class == SensorDeviceClass.ENUM:
                 if value in self.options_map:
                     value = self.options_map[value]
@@ -99,7 +99,7 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
                     _LOGGER.warning("Got unexpected value %d for %s (%s)", value, self.status, self.nickname)
                     value = None
             self._attr_native_value = value if value != self.unknown_value else None
-        self._attr_available = self.coordinator.appliances[self.device_id].offline_state == 1
+        self._attr_available = self.coordinator.data[self.device_id].offline_state == 1
 
     async def async_set_value(self, value: int) -> None:
         """Set value for this sensor."""
@@ -109,8 +109,6 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
         elif self.read_only:
             raise ServiceValidationError(f"{self._attr_name} is read-only on {self.nickname}")
         try:
-            await self.coordinator.api.update_appliance(self.puid, {self.status: str(value)})
+            await self.async_update_device({self.status: value})
         except LifeConnectError as api_error:
             raise ServiceValidationError(str(api_error)) from api_error
-        self._attr_native_value = value
-        self.async_write_ha_state()

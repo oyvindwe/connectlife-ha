@@ -41,7 +41,7 @@ async def async_setup_entry(
     """Set up ConnectLife sensors."""
     coordinator = hass.data[DOMAIN][config_entry.entry_id]
     entities = []
-    for appliance in coordinator.appliances.values():
+    for appliance in coordinator.data.values():
         dictionary = Dictionaries.get_dictionary(appliance)
         if is_climate(dictionary):
             entities.append(ConnectLifeClimate(coordinator, appliance, dictionary))
@@ -70,7 +70,6 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
     hvac_action_map: dict[int, HVACAction]
     hvac_mode_map: dict[int, HVACMode]
     hvac_mode_reverse_map: dict[HVACMode, int]
-    mapped_hvac_mode: HVACMode | None
     swing_mode_map: dict[int, str]
     swing_mode_reverse_map: dict[str, int]
     temperature_unit_map: dict[int, UnitOfTemperature]
@@ -99,7 +98,6 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
         self.hvac_action_map = {}
         self.hvac_mode_map = {}
         self.hvac_mode_reverse_map = {}
-        self.mapped_hvac_mode = None
         self.swing_mode_map = {}
         self.swing_mode_reverse_map = {}
         self.temperature_unit_map = {}
@@ -165,7 +163,6 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
             hvac_modes.append(HVACMode.AUTO)
             if IS_ON not in self.target_map:
                 self._attr_hvac_mode = HVACMode.AUTO
-                self.mapped_hvac_mode = HVACMode.AUTO
         self._attr_hvac_modes = hvac_modes
 
         if TEMPERATURE_UNIT not in self.target_map:
@@ -179,20 +176,20 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
     @callback
     def update_state(self) -> None:
         is_on = True
+        hvac_mode = HVACMode.AUTO
         for target, status in self.target_map.items():
-            if status in self.coordinator.appliances[self.device_id].status_list:
-                value = self.coordinator.appliances[self.device_id].status_list[status]
+            if status in self.coordinator.data[self.device_id].status_list:
+                value = self.coordinator.data[self.device_id].status_list[status]
                 if target == IS_ON:
                     # TODO: Support value mapping
                     if value == 0:
                         is_on = False
                 elif target == HVAC_MODE:
                     if value in self.hvac_mode_map:
-                        self.mapped_hvac_mode = self.hvac_mode_map[value]
+                        hvac_mode = self.hvac_mode_map[value]
                     else:
                         # Map to None without warning as we cannot add custom HVAC modes.
-                        # TODO: Or map to auto?
-                        self.mapped_hvac_mode = None
+                        hvac_mode = None
                 elif target == HVAC_ACTION:
                     if value in self.hvac_action_map:
                         self._attr_hvac_action = self.hvac_action_map[value]
@@ -225,8 +222,8 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
                         value = None
                     setattr(self, f"_attr_{target}", value)
 
-        self._attr_hvac_mode = self.mapped_hvac_mode if is_on else HVACMode.OFF
-        self._attr_available = self.coordinator.appliances[self.device_id].offline_state == 1
+        self._attr_hvac_mode = hvac_mode if is_on else HVACMode.OFF
+        self._attr_available = self.coordinator.data[self.device_id].offline_state == 1
 
     def get_temperature_limit(self, temperature_map: [UnitOfTemperature, int]):
         if temperature_map and self._attr_temperature_unit in temperature_map:
@@ -236,39 +233,24 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
 
     async def async_set_humidity(self, humidity):
         """Set new target humidity."""
-        humidity = round(humidity)
-        await self.coordinator.api.update_appliance(self.puid, {self.target_map[TARGET_HUMIDITY]: humidity})
-        self._attr_target_humidity = humidity
-        self.async_write_ha_state()
+        await self.async_update_device({self.target_map[TARGET_HUMIDITY]: round(humidity)})
 
     async def async_set_temperature(self, **kwargs) -> None:
         """Set new target temperature."""
-        if ATTR_TEMPERATURE in kwargs and TARGET_TEMPERATURE in self.target_map:
-            target_temperature = round(kwargs[ATTR_TEMPERATURE])
-            await self.coordinator.api.update_appliance(
-                self.puid,
-                {
-                    self.target_map[TARGET_TEMPERATURE]:
-                        target_temperature
-                }
-            )
-            self._attr_target_temperature = target_temperature
-            self.async_write_ha_state()
+        if ATTR_TEMPERATURE in kwargs:
+            await self.async_update_device({
+                self.target_map[TARGET_TEMPERATURE]: round(kwargs[ATTR_TEMPERATURE])
+            })
 
     async def async_turn_on(self):
         """Turn the entity on."""
         # TODO: Support value mapping
-        await self.coordinator.api.update_appliance(self.puid, {self.target_map[IS_ON]: 1})
-        # Restore hvac_mode
-        self._attr_hvac_mode = self.mapped_hvac_mode
-        self.async_write_ha_state()
+        await self.async_update_device({self.target_map[IS_ON]: 1})
 
     async def async_turn_off(self):
         """Turn the entity off."""
         # TODO: Support value mapping
-        await self.coordinator.api.update_appliance(self.puid, {self.target_map[IS_ON]: 0})
-        self._attr_hvac_mode = HVACMode.OFF
-        self.async_write_ha_state()
+        await self.async_update_device({self.target_map[IS_ON]: 0})
 
     async def async_set_hvac_mode(self, hvac_mode: HVACMode) -> None:
         """Set the HVAC mode."""
@@ -276,27 +258,21 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
             await self.async_turn_off()
         else:
             request = {}
-            if IS_ON in self.target_map:
+            if self._attr_supported_features & ClimateEntityFeature.TURN_ON:
                 # TODO: Support value mapping
                 request[self.target_map[IS_ON]] = 1
             if HVAC_MODE in self.target_map:
                 request[self.target_map[HVAC_MODE]] = self.hvac_mode_reverse_map[hvac_mode]
-            await self.coordinator.api.update_appliance(self.puid, request)
-            self._attr_hvac_mode = hvac_mode
-            self.async_write_ha_state()
+            await self.async_update_device(request)
 
     async def async_set_fan_mode(self, fan_mode: str) -> None:
         """Set the fan mode."""
-        await self.coordinator.api.update_appliance(self.puid, {
+        await self.async_update_device({
             self.target_map[FAN_MODE]: self.fan_mode_reverse_map[fan_mode]
         })
-        self._attr_fan_mode = fan_mode
-        self.async_write_ha_state()
 
     async def async_set_swing_mode(self, swing_mode: str) -> None:
         """Set the swing mode."""
-        await self.coordinator.api.update_appliance(self.puid, {
+        await self.async_update_device({
             self.target_map[SWING_MODE]: self.swing_mode_reverse_map[swing_mode]
         })
-        self._attr_swing_mode = swing_mode
-        self.async_write_ha_state()

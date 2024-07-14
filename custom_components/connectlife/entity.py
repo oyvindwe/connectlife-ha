@@ -23,7 +23,6 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
         """Initialize the entity."""
         super().__init__(coordinator)
         self.device_id = appliance.device_id
-        self.puid = appliance.puid
         self.nickname = appliance.device_nickname
         self._attr_device_info = DeviceInfo(
             identifiers={(DOMAIN, appliance.device_id)},
@@ -42,3 +41,6 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
         """Handle updated data from the coordinator."""
         self.update_state()
         self.async_write_ha_state()
+
+    async def async_update_device(self, properties: dict[str, int | str]):
+        await self.coordinator.async_update_device(self.device_id, properties)

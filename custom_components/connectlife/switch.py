@@ -24,7 +24,7 @@ async def async_setup_entry(
 ) -> None:
     """Set up ConnectLife sensors."""
     coordinator = hass.data[DOMAIN][config_entry.entry_id]
-    for appliance in coordinator.appliances.values():
+    for appliance in coordinator.data.values():
         dictionary = Dictionaries.get_dictionary(appliance)
         async_add_entities(
             ConnectLifeSwitch(coordinator, appliance, s, dictionary[s])
@@ -60,25 +60,21 @@ class ConnectLifeSwitch(ConnectLifeEntity, SwitchEntity):
 
     @callback
     def update_state(self):
-        if self.status in self.coordinator.appliances[self.device_id].status_list:
-            value = self.coordinator.appliances[self.device_id].status_list[self.status]
+        if self.status in self.coordinator.data[self.device_id].status_list:
+            value = self.coordinator.data[self.device_id].status_list[self.status]
             if value == self.on:
                 self._attr_is_on = True
             elif value == self.off:
                 self._attr_is_on = False
             else:
                 self._attr_is_on = None
-                _LOGGER.warning("Unknown value %d for %s", value, self.status)
-        self._attr_available = self.coordinator.appliances[self.device_id].offline_state == 1
+                _LOGGER.warning("Unknown value %s for %s", str(value), self.status)
+        self._attr_available = self.coordinator.data[self.device_id].offline_state == 1
 
     async def async_turn_off(self, **kwargs):
         """Turn off."""
-        await self.coordinator.api.update_appliance(self.puid, {self.status: str(self.off)})
-        self._attr_is_on = False
-        self.async_write_ha_state()
+        await self.async_update_device({self.status: self.off})
 
     async def async_turn_on(self, **kwargs):
         """Turn on."""
-        await self.coordinator.api.update_appliance(self.puid, {self.status: str(self.on)})
-        self._attr_is_on = True
-        self.async_write_ha_state()
+        await self.async_update_device({self.status: self.on})

@@ -35,7 +35,7 @@ async def async_setup_entry(
     """Set up ConnectLife sensors."""
     coordinator = hass.data[DOMAIN][config_entry.entry_id]
     entities = []
-    for appliance in coordinator.appliances.values():
+    for appliance in coordinator.data.values():
         dictionary = Dictionaries.get_dictionary(appliance)
         if is_humidifier(dictionary):
             entities.append(ConnectLifeHumidifier(coordinator, appliance, dictionary))
@@ -114,8 +114,8 @@ class ConnectLifeHumidifier(ConnectLifeEntity, HumidifierEntity):
     @callback
     def update_state(self) -> None:
         for target, status in self.target_map.items():
-            if status in self.coordinator.appliances[self.device_id].status_list:
-                value = self.coordinator.appliances[self.device_id].status_list[status]
+            if status in self.coordinator.data[self.device_id].status_list:
+                value = self.coordinator.data[self.device_id].status_list[status]
                 if target == IS_ON:
                     # TODO: Support value mapping
                     self._attr_is_on = value == 1
@@ -133,14 +133,11 @@ class ConnectLifeHumidifier(ConnectLifeEntity, HumidifierEntity):
                         _LOGGER.warning("Got unexpected value %d for %s (%s)", value, status, self.nickname)
                 else:
                     setattr(self, f"_attr_{target}", value)
-        self._attr_available = self.coordinator.appliances[self.device_id].offline_state == 1
+        self._attr_available = self.coordinator.data[self.device_id].offline_state == 1
 
     async def async_set_humidity(self, humidity):
         """Set new target humidity."""
-        humidity = round(humidity)
-        await self.coordinator.api.update_appliance(self.puid, {self.target_map[TARGET_HUMIDITY]: humidity})
-        self._attr_target_humidity = humidity
-        self.async_write_ha_state()
+        await self.async_update_device({self.target_map[TARGET_HUMIDITY]: round(humidity)})
 
     async def async_turn_on(self):
         """Turn the entity on."""
@@ -148,9 +145,7 @@ class ConnectLifeHumidifier(ConnectLifeEntity, HumidifierEntity):
             _LOGGER.warning("Cannot turn on %s without is_on target.", self.nickname)
             return
         # TODO: Support value mapping
-        await self.coordinator.api.update_appliance(self.puid, {self.target_map[IS_ON]: 1})
-        self._attr_is_on = True
-        self.async_write_ha_state()
+        await self.async_update_device({self.target_map[IS_ON]: 1})
 
     async def async_turn_off(self):
         """Turn the entity off."""
@@ -158,14 +153,8 @@ class ConnectLifeHumidifier(ConnectLifeEntity, HumidifierEntity):
             _LOGGER.warning("Cannot turn off %s without is_on target.", self.nickname)
             return
         # TODO: Support value mapping
-        await self.coordinator.api.update_appliance(self.puid, {self.target_map[IS_ON]: 0})
-        self._attr_is_on = False
-        self.async_write_ha_state()
+        await self.async_update_device({self.target_map[IS_ON]: 0})
 
     async def async_set_mode(self, mode):
         """Set mode."""
-        await self.coordinator.api.update_appliance(self.puid, {
-            self.target_map[MODE]: self.mode_reverse_map[mode]
-        })
-        self._attr_mode = mode
-        self.async_write_ha_state()
+        await self.async_update_device({self.target_map[MODE]: self.mode_reverse_map[mode]})
