@@ -8,7 +8,8 @@ properties:
   - property: t_beep
     switch: {}
   - property: t_fan_speed
-    switch: {}
+    # Same as t_air
+    hide: true
   - property: t_sterilization
     switch: {}
   - property: t_vacation
@@ -36,10 +37,10 @@ properties:
     water_heater:
       target: current_operation
       options:
-        0: "off"
-        8: eco
-        9: heat_pump
+        8: auto
+        9: eco
         11: performance
         12: electric
   - property: t_power
-    switch: {}
+    water_heater:
+      target: is_on

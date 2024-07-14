@@ -484,6 +484,7 @@
       "enum": [
         "current_temperature",
         "current_operation",
+        "is_on",
         "is_away_mode_on",
         "target_temperature",
         "state",
