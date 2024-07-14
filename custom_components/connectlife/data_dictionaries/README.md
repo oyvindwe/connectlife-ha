@@ -85,6 +85,8 @@ type `climate`, a climate entity is created for the appliance.
 
 `temperature_unit` defaults to Celsius.
 
+`is_on` is used when setting HVAC mode to on.
+
 `hvac_mode` can only be mapped to [pre-defined modes](https://developers.home-assistant.io/docs/core/entity/climate#hvac-modes).
 
 `hvac_action` can only be mapped to [pre-defined actions](https://developers.home-assistant.io/docs/core/entity/climate#hvac-action).
@@ -164,13 +166,13 @@ For device class `enum`, remember to add options to [translation strings](#trans
 Domain `water_heater` can be used to map the property to a target property in a water heater entity. If at least one property has
 type `water_heater`, a water heater entity is created for the appliance.
 
-| Item            | Type                                               | Description                                                                                                                                                                                                                   |
-|-----------------|----------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `target`        | string                                             | Any  of these [water heater entity](https://developers.home-assistant.io/docs/core/entity/water-heater#properties) attributes: `current_operation`, `current_temperature`, `state`, `target_temperature`, `temperature_unit`. |
-| `options`       | dictionary of integer to string or boolean         | Required for `current_operation`, `is_away_mode_on`, state`, and `temperature_unit`.                                                                                                                                          |
-| `unknown_value` | integer                                            | The value used by the API to signal unknown value.                                                                                                                                                                            |
-| `min_value`     | [IntegerOrTemperature](#type-integerortemperature) | Minimum allowed value. Supported for `target_temperature` (temperature).                                                                                                                                                      |
-| `max_value`     | [IntegerOrTemperature](#type-integerortemperature) | Maximum allowed value. Supported for `target_temperature` (temperature).                                                                                                                                                      |
+| Item            | Type                                               | Description                                                                                                                                                                                                                                                  |
+|-----------------|----------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `target`        | string                                             | Any  of these [water heater entity](https://developers.home-assistant.io/docs/core/entity/water-heater#properties) attributes: `current_operation`, `current_temperature`, `state`, `target_temperature`, `temperature_unit`, or the special target `is_on`. |
+| `options`       | dictionary of integer to string or boolean         | Required for `current_operation`, `is_away_mode_on`, state`, and `temperature_unit`.                                                                                                                                                                         |
+| `unknown_value` | integer                                            | The value used by the API to signal unknown value.                                                                                                                                                                                                           |
+| `min_value`     | [IntegerOrTemperature](#type-integerortemperature) | Minimum allowed value. Supported for `target_temperature` (temperature).                                                                                                                                                                                     |
+| `max_value`     | [IntegerOrTemperature](#type-integerortemperature) | Maximum allowed value. Supported for `target_temperature` (temperature).                                                                                                                                                                                     |
 
 `temperature_unit` defaults to Celsius.
 
@@ -178,7 +180,25 @@ type `water_heater`, a water heater entity is created for the appliance.
 
 `options` for `is_away_mode_on` is a map of integer to boolean.
 
-For `current_operation`, remember to add options [translation strings](#translation-strings).
+`is_on` adds operation `"off"` to the operation list. You may define this option as well on the `current_operation`
+target, but will not send in the mapped property or value when selecing the "Off" operation in Home Assistant.
+If `current_operation` is not set, `is_on` also adds operation `"on"` to the operation list. 
+
+For `current_operation`, remember to add options [translation strings](#translation-strings). Note that you need to add these under
+`state`, and **not** under `state_attributes`, e.g.:
+```json
+{
+  "entity": {
+    "water_heater": {
+      "connectlife": {
+        "state": {
+          "auto": "Auto"
+        }
+      }
+    }
+  }
+}
+```
 
 Not yet supported target properties:
 - `target_temperature_high`

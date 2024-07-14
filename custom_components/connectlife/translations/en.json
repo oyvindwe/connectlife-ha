@@ -135,6 +135,13 @@
                     "angle_6": "Angle 6"
                 }
             }
+        },
+        "water_heater": {
+            "connectlife": {
+                "state": {
+                    "auto": "Auto"
+                }
+            }
         }
     }
 }

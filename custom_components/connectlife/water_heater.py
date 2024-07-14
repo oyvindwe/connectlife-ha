@@ -5,10 +5,16 @@ from homeassistant.components.water_heater import (
     WaterHeaterEntity,
     WaterHeaterEntityEntityDescription,
     WaterHeaterEntityFeature,
-    STATE_OFF
 )
 from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_TEMPERATURE, Platform, PRECISION_WHOLE, UnitOfTemperature
+from homeassistant.const import (
+    ATTR_TEMPERATURE,
+    PRECISION_WHOLE,
+    Platform,
+    STATE_OFF,
+    STATE_ON,
+    UnitOfTemperature,
+)
 from homeassistant.core import HomeAssistant, callback
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
@@ -16,6 +22,7 @@ from .const import (
     CURRENT_OPERATION,
     DOMAIN,
     IS_AWAY_MODE_ON,
+    IS_ON,
     STATE,
     TARGET_TEMPERATURE,
     TEMPERATURE_UNIT,
@@ -59,6 +66,7 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
     _attr_temperature_unit = UnitOfTemperature.CELSIUS
     unknown_values: dict[str, int]
     target_map: dict[str, str]
+    is_on: bool
     operation_map: dict[int, str]
     operation_reverse_map: dict[str, int]
     state_map: dict[int, str]
@@ -100,8 +108,16 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
             if hasattr(dd_entry, Platform.WATER_HEATER):
                 self.target_map[dd_entry.water_heater.target] = dd_entry.name
 
+
         for target, status in self.target_map.items():
-            if target == TARGET_TEMPERATURE:
+            if target == IS_ON:
+                self._attr_supported_features |= WaterHeaterEntityFeature.ON_OFF
+                self.is_on = False
+                if CURRENT_OPERATION not in self.target_map:
+                    self._attr_operation_list = [STATE_OFF, STATE_ON]
+                    self._attr_current_operation = None
+                    self._attr_supported_features |= WaterHeaterEntityFeature.OPERATION_MODE
+            elif target == TARGET_TEMPERATURE:
                 self._attr_supported_features |= WaterHeaterEntityFeature.TARGET_TEMPERATURE
                 self._attr_target_temperature = None
                 self.min_temperature_map = to_temperature_map(data_dictionary[status].water_heater.min_value)
@@ -111,8 +127,8 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
                     if unit := to_unit_of_temperature(v):
                         self.temperature_unit_map[k] = unit
             elif target == STATE:
+                # Is state
                 # TODO: map to multiple states
-                self._attr_supported_features |= WaterHeaterEntityFeature.ON_OFF
                 self.state_map = data_dictionary[status].water_heater.options
                 self.state_reverse_map = {v: k for k, v in self.state_map.items()}
                 self.state_on = filter(lambda v: v != STATE_OFF, self.state_map.values())
@@ -122,6 +138,8 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
                 self.operation_map = data_dictionary[status].water_heater.options
                 self.operation_reverse_map = {v: k for k, v in self.operation_map.items()}
                 self._attr_operation_list = list(self.operation_map.values())
+                if IS_ON in self.target_map and STATE_OFF not in self._attr_operation_list:
+                    self._attr_operation_list.insert(0, STATE_OFF)
                 self._attr_supported_features |= WaterHeaterEntityFeature.OPERATION_MODE
                 self._attr_current_operation = None
             elif target == IS_AWAY_MODE_ON:
@@ -144,6 +162,9 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
         for target, status in self.target_map.items():
             if status in self.coordinator.appliances[self.device_id].status_list:
                 value = self.coordinator.appliances[self.device_id].status_list[status]
+                if target == IS_ON:
+                    # TODO: Support value mapping
+                    self.is_on = value == 1
                 if target == STATE:
                     if value in self.state_map:
                         self._attr_state = self.state_map[value]
@@ -153,6 +174,11 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
                 elif target == CURRENT_OPERATION:
                     if value in self.operation_map:
                         self._attr_current_operation = self.operation_map[value]
+                        if IS_ON not in self.target_map:
+                            if self._attr_current_operation == STATE_OFF:
+                                self.is_on = False
+                            else:
+                                self.is_on = True
                     else:
                         self._attr_current_operation = None
                         _LOGGER.warning("Got unexpected value %d for %s (%s)", value, status, self.nickname)
@@ -171,6 +197,12 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
                     if value == self.unknown_values[status]:
                         value = None
                     setattr(self, f"_attr_{target}", value)
+
+        if (self._attr_supported_features & WaterHeaterEntityFeature.ON_OFF):
+            if not self.is_on:
+                self._attr_current_operation = STATE_OFF
+            elif CURRENT_OPERATION not in self.target_map:
+                self._attr_current_operation = STATE_ON
 
         self._attr_available = self.coordinator.appliances[self.device_id].offline_state == 1
 
@@ -196,25 +228,15 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
 
     async def async_turn_on(self) -> None:
         """Turn the entity on."""
-        await self.coordinator.api.update_appliance(
-            self.puid,
-            {
-                self.target_map[STATE]: self.reverse_state_map[self.state_on]
-            }
-        )
-        self._attr_state = self.state_on
-        self.async_write_ha_state()
+        # TODO: Support value mapping
+        await self.coordinator.api.update_appliance(self.puid, {self.target_map[IS_ON]: 1})
+        await self.coordinator.async_request_refresh()
 
     async def async_turn_off(self) -> None:
         """Turn the entity off."""
-        await self.coordinator.api.update_appliance(
-            self.puid,
-            {
-                self.target_map[STATE]: self.state_reverse_map[STATE_OFF]
-            }
-        )
-        self._attr_state = STATE_OFF
-        self.async_write_ha_state()
+        # TODO: Support value mapping
+        await self.coordinator.api.update_appliance(self.puid, {self.target_map[IS_ON]: 0})
+        await self.coordinator.async_request_refresh()
 
     async def async_turn_away_mode_on(self) -> None:
         """Turn on away mode."""
@@ -240,8 +262,16 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
 
     async def async_set_operation_mode(self, operation_mode: str) -> None:
         """Set the operation mode."""
-        await self.coordinator.api.update_appliance(self.puid, {
-            self.target_map[CURRENT_OPERATION]: self.operation_reverse_map[operation_mode]
-        })
-        self._attr_current_operation = operation_mode
-        self.async_write_ha_state()
+        if operation_mode == STATE_OFF:
+            await self.async_turn_off()
+        else:
+            if operation_mode == STATE_ON and CURRENT_OPERATION not in self.target_map:
+                await self.async_turn_on()
+            else:
+                request = {self.target_map[CURRENT_OPERATION]: self.operation_reverse_map[operation_mode]}
+                if self._attr_supported_features & WaterHeaterEntityFeature.ON_OFF:
+                    # TODO: Support value  mapping
+                    request[self.target_map[IS_ON]] = 1
+                await self.coordinator.api.update_appliance(self.puid, request)
+                self._attr_current_operation = operation_mode
+                self.async_write_ha_state()
