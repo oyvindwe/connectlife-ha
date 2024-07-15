@@ -139,10 +139,14 @@ properties:
     number:
       device_class: temperature
       unit: °C
+      min_value: -30
+      max_value: -5
   - property: freeze_min_temperature
     number:
       device_class: temperature
       unit: °C
+      min_value: -30
+      max_value: -5
   - property: freeze_poweroff_ad
     hide: true
   - property: freeze_poweron_ad
@@ -159,6 +163,8 @@ properties:
     number:
       device_class: temperature
       unit: °C
+      min_value: -30
+      max_value: -5
   - property: frost_state
     hide: true
     binary_sensor: {}
@@ -323,10 +329,14 @@ properties:
     number:
       device_class: temperature
       unit: °C
+      min_value: 0
+      max_value: 8
   - property: refrigerator_min_temperature
     number:
       device_class: temperature
       unit: °C
+      min_value: 0
+      max_value: 8
   - property: refrigerator_poweroff_ad
     hide: true
   - property: refrigerator_poweron_ad
@@ -343,6 +353,8 @@ properties:
     number:
       device_class: temperature
       unit: °C
+      min_value: 0
+      max_value: 8
   - property: reserve45
     hide: true
   - property: reserve46
