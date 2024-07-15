@@ -124,7 +124,11 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
                 self._attr_supported_features |= ClimateEntityFeature.TARGET_HUMIDITY
                 self._attr_target_humidity = None
                 self._attr_min_humidity = data_dictionary.properties[status].climate.min_value
+                if min_temp := self.get_temperature_limit(self.min_temperature_map):
+                    self._attr_min_temp = min_temp
                 self._attr_max_humidity = data_dictionary.properties[status].climate.max_value
+                if max_temp := self.get_temperature_limit(self.max_temperature_map):
+                    self._attr_max_temp = max_temp
             elif target == TARGET_TEMPERATURE:
                 self._attr_supported_features |= ClimateEntityFeature.TARGET_TEMPERATURE
                 self._attr_target_temperature = None
@@ -178,12 +182,6 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
             if IS_ON not in self.target_map:
                 self._attr_hvac_mode = HVACMode.AUTO
         self._attr_hvac_modes = hvac_modes
-
-        if TEMPERATURE_UNIT not in self.target_map:
-            if min_temp := self.get_temperature_limit(self.min_temperature_map):
-                self._attr_min_temp = min_temp
-            if max_temp := self.get_temperature_limit(self.max_temperature_map):
-                self._attr_max_temp = max_temp
 
         self.update_state()
 
