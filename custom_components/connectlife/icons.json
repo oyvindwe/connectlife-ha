@@ -1,0 +1,25 @@
+{
+  "entity": {
+    "climate": {
+      "connectlife": {
+        "state_attributes": {
+          "preset_mode": {
+            "state": {
+              "ai": "mdi:head-cog",
+              "off": "mdi:power"
+            }
+          },
+          "swing_mode": {
+            "state": {
+              "both_sides": "mdi:arrow-left-right",
+              "forward": "mdi:arrow-down",
+              "left": "mdi:arrow-left",
+              "right": "mdi:arrow-right",
+              "swing": "mdi:arrow-oscillating"
+            }
+          }
+        }
+      }
+    }
+  }
+}
