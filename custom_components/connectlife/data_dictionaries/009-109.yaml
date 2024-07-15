@@ -14,7 +14,9 @@ properties:
   - property: t_beep
     switch: {}
   - property: t_eco
-    switch: {}
+    icon: mdi:leaf
+    switch:
+      device_class: switch
   - property: t_fan_mute
     switch: {}
   - property: t_fan_speed
@@ -35,7 +37,16 @@ properties:
     climate:
       target: is_on
   - property: t_sleep
+    icon: mdi:sleep
+    select:
+      options:
+        0: "off"
+        1: general
+        2: for_old
+        3: for_young
+        4: for_kid
   - property: t_super
+    icon: mdi:run-fast
     switch:
       device_class: switch
   - property: t_swing_angle
