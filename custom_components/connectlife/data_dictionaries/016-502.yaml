@@ -23,16 +23,8 @@ properties:
       target: target_temperature
       min_value:
         celsius: 20
-        fahrenheit: 68
       max_value:
         celsius: 65
-        fahrenheit: 149
-  - property: t_temp_type
-    water_heater:
-      target: temperature_unit
-      options:
-        0: celsius
-        1: fahrenheit
   - property: t_work_mode
     water_heater:
       target: current_operation
