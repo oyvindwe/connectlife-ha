@@ -120,7 +120,11 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
                 self._attr_supported_features |= WaterHeaterEntityFeature.TARGET_TEMPERATURE
                 self._attr_target_temperature = None
                 self.min_temperature_map = to_temperature_map(data_dictionary.properties[status].water_heater.min_value)
+                if min_temp := self.get_temperature_limit(self.min_temperature_map):
+                    self._attr_min_temp = min_temp
                 self.max_temperature_map = to_temperature_map(data_dictionary.properties[status].water_heater.max_value)
+                if max_temp := self.get_temperature_limit(self.max_temperature_map):
+                    self._attr_max_temp = max_temp
             elif target == TEMPERATURE_UNIT:
                 for k, v in data_dictionary.properties[status].water_heater.options.items():
                     if unit := to_unit_of_temperature(v):
@@ -146,12 +150,6 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
                 self.away_mode_on = reverse[True]
                 self.away_mode_off = reverse[False]
             self.unknown_values[status] = data_dictionary.properties[status].water_heater.unknown_value
-
-        if TEMPERATURE_UNIT not in self.target_map:
-            if min_temp := self.get_temperature_limit(self.min_temperature_map):
-                self._attr_min_temp = min_temp
-            if max_temp := self.get_temperature_limit(self.max_temperature_map):
-                self._attr_max_temp = max_temp
 
         self.update_state()
 
