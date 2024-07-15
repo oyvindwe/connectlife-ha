@@ -57,17 +57,18 @@
                     "preset_mode": {
                         "state": {
                             "ai": "AI",
+                            "off": "Off",
                             "mute": "Mute",
-                            "eco_mute": "Eco Mute",
+                            "eco_mute": "Eco mute",
                             "super": "Super",
                             "sleep_1": "Sleep 1",
                             "sleep_2": "Sleep 2",
                             "sleep_3": "Sleep 3",
                             "sleep_4": "Sleep 4",
-                            "eco_sleep_1": "Eco Sleep 1",
-                            "eco_sleep_2": "Eco Sleep 2",
-                            "eco_sleep_3": "Eco Sleep 3",
-                            "eco_sleep_4": "Eco Sleep 4"
+                            "eco_sleep_1": "Eco sleep 1",
+                            "eco_sleep_2": "Eco sleep 2",
+                            "eco_sleep_3": "Eco sleep 3",
+                            "eco_sleep_4": "Eco sleep 4"
                         }
                     },
                     "swing_mode": {
@@ -170,9 +171,9 @@
                 "state": {
                     "off": "Off",
                     "general": "General",
-                    "for_old": "For Old",
-                    "for_young": "For Young",
-                    "for_kid": "For Kid"
+                    "for_old": "For old",
+                    "for_young": "For young",
+                    "for_kid": "For kid"
                 }
             }
         },
