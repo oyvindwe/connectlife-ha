@@ -30,6 +30,7 @@ properties:
     humidifier:
       target: current_humidity
   - property: t_fan_speed
+    icon: mdi:fan
     select:
       options:
         0: low

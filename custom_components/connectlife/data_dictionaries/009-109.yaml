@@ -39,6 +39,7 @@ properties:
     switch:
       device_class: switch
   - property: t_swing_angle
+    icon: mdi:arrow-oscillating
     select:
       options:
         0: swing
