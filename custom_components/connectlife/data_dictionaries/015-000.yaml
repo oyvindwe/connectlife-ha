@@ -1,4 +1,3 @@
-device_type: dishwasher
 properties:
   - property: ADO_allowed
     hide: true

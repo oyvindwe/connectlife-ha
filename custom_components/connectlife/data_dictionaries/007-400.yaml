@@ -1,4 +1,3 @@
-device_type: dehumidifier
 properties:
   - property: daily_energy_kwh
     hide: true

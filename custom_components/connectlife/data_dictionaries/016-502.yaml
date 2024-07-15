@@ -1,4 +1,3 @@
-device_type: heat_pump
 properties:
   - property: f_water_tank_temp
     water_heater:
