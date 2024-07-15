@@ -57,7 +57,18 @@
           "preset_mode": {
             "state": {
               "ai": "AI",
-              "off": "Off"
+              "off": "Off",
+              "mute": "Mute",
+              "eco_mute": "Eco Mute",
+              "super": "Super",
+              "sleep_1": "Sleep 1",
+              "sleep_2": "Sleep 2",
+              "sleep_3": "Sleep 3",
+              "sleep_4": "Sleep 4",
+              "eco_sleep_1": "Eco Sleep 1",
+              "eco_sleep_2": "Eco Sleep 2",
+              "eco_sleep_3": "Eco Sleep 3",
+              "eco_sleep_4": "Eco Sleep 4"
             }
           },
           "swing_mode": {
@@ -153,6 +164,16 @@
           "angle_4": "Angle 4",
           "angle_5": "Angle 5",
           "angle_6": "Angle 6"
+        }
+      },
+      "t_sleep": {
+        "name": "Sleep Mode",
+        "state": {
+          "off": "Off",
+          "general": "General",
+          "for_old": "For Old",
+          "for_young": "For Young",
+          "for_kid": "For Kid"
         }
       }
     },
