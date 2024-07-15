@@ -29,7 +29,7 @@ async def async_setup_entry(
     for appliance in coordinator.data.values():
         dictionary = Dictionaries.get_dictionary(appliance)
         async_add_entities(
-            ConnectLifeNumberEntity(coordinator, appliance, s, dictionary[s])
+            ConnectLifeNumberEntity(coordinator, appliance, s, dictionary.properties[s])
             for s in appliance.status_list if hasattr(dictionary.properties[s], Platform.NUMBER)
         )
 
@@ -76,6 +76,6 @@ class ConnectLifeNumberEntity(ConnectLifeEntity, NumberEntity):
         value = int(value)
         _LOGGER.debug("Setting %s to %d on %s", self.status, value, self.nickname)
         try:
-            await self.async_update_device({self.status, value})
+            await self.async_update_device({self.status: value})
         except LifeConnectError as api_error:
             raise ServiceValidationError(str(api_error)) from api_error
