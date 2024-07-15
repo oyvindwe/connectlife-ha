@@ -7,7 +7,6 @@ climate:
       t_sleep: 0
       t_super: 0
     - preset: mute
-      icon: mdi:sprout
       t_power: 1
       t_eco: 0
       t_fan_mute: 1
