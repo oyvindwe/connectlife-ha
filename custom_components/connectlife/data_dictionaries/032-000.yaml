@@ -1,0 +1,310 @@
+properties:
+  - property: AdaptTech_setting
+    # Example value: 2
+  - property: Alarm_1
+    hide: true
+    icon: mdi:tumble-dryer-alert
+    binary_sensor:
+      device_class: problem
+  - property: Alarm_2
+    hide: true
+    icon: mdi:tumble-dryer-alert
+    binary_sensor:
+      device_class: problem
+  - property: Alarm_3
+    hide: true
+    icon: mdi:tumble-dryer-alert
+    binary_sensor:
+      device_class: problem
+  - property: Alarm_4
+    hide: true
+    icon: mdi:tumble-dryer-alert
+    binary_sensor:
+      device_class: problem
+  - property: Alarm_5
+    hide: true
+    icon: mdi:tumble-dryer-alert
+    binary_sensor:
+      device_class: problem
+  - property: Alarm_6
+    hide: true
+    icon: mdi:tumble-dryer-alert
+    binary_sensor:
+      device_class: problem
+  - property: Alarm_7
+    hide: true
+    icon: mdi:tumble-dryer-alert
+    binary_sensor:
+      device_class: problem
+  - property: Alarm_8
+    hide: true
+    icon: mdi:tumble-dryer-alert
+    binary_sensor:
+      device_class: problem
+  - property: Alarm_9
+    hide: true
+    icon: mdi:tumble-dryer-alert
+    binary_sensor:
+      device_class: problem
+  - property: Alarm_10
+    hide: true
+    icon: mdi:tumble-dryer-alert
+    binary_sensor:
+      device_class: problem
+  - property: Alarm_11
+    hide: true
+    icon: mdi:tumble-dryer-alert
+    binary_sensor:
+      device_class: problem
+  - property: Alarm_12
+    hide: true
+    icon: mdi:tumble-dryer-alert
+    binary_sensor:
+      device_class: problem
+  - property: AntiCrease_setting
+    # anti crease 1,2,3 hours
+    sensor:
+      device_class: duration
+      unit: h
+  - property: Appliance_status
+    icon: mdi:tumble-dryer
+    sensor:
+      device_class: enum
+      options:
+        5: "off"
+        6: idle
+        7: running
+  - property: Bundling_Humidity
+    sensor:
+      device_class: humidity
+      unit: "%"
+      unknown_value: 255
+  - property: Bundling_Temperature
+    sensor:
+      device_class: temperature
+      unit: celsius
+      unknown_value: 255
+  - property: Bundling_sensor_setting_status
+    # Example value: 0
+  - property: Child_Lock_status
+    binary_sensor: {}
+  - property: Condensed_watermode
+    hide: true
+  - property: Current_programphase
+    # 1 device off, 3 and 4 program is running no info in app what that means
+    icon: mdi:state-machine
+    sensor:
+      device_class: enum
+      options:
+        1: "off"
+        3: running
+        4: running
+  - property: DelayStart_DelayEnd_duration_inminutes
+    sensor:
+      device_class: duration
+      unit: min
+  - property: DelayStart_DelayEnd_mode
+    binary_sensor: {}
+    hide: true
+  - property: DelayStart_DelayEnd_remaining_timein_minutes
+    sensor:
+      device_class: duration
+      unit: min
+  - property: Delay_duration_inminutes
+    sensor:
+      device_class: duration
+      unit: min
+  - property: Door_status
+    hide: true
+    icon: mdi:square
+    sensor:
+      device_class: enum
+      options:
+        0: not_available
+        1: closed
+        2: open
+  - property: Error_0
+    hide: true
+    icon: mdi:tumble-dryer-alert
+    binary_sensor:
+      device_class: problem
+  - property: Error_1
+    hide: true
+    icon: mdi:tumble-dryer-alert
+    binary_sensor:
+      device_class: problem
+  - property: Error_2
+    hide: true
+    icon: mdi:tumble-dryer-alert
+    binary_sensor:
+      device_class: problem
+  - property: Error_3
+    hide: true
+    icon: mdi:tumble-dryer-alert
+    binary_sensor:
+      device_class: problem
+  - property: Error_4
+    hide: true
+    icon: mdi:tumble-dryer-alert
+    binary_sensor:
+      device_class: problem
+  - property: Error_5
+    hide: true
+    icon: mdi:tumble-dryer-alert
+    binary_sensor:
+      device_class: problem
+  - property: Error_6
+    hide: true
+    icon: mdi:tumble-dryer-alert
+    binary_sensor:
+      device_class: problem
+  - property: Error_7
+    hide: true
+    icon: mdi:tumble-dryer-alert
+    binary_sensor:
+      device_class: problem
+  - property: Error_8
+    hide: true
+    icon: mdi:tumble-dryer-alert
+    binary_sensor:
+      device_class: problem
+  - property: Error_9
+    hide: true
+    icon: mdi:tumble-dryer-alert
+    binary_sensor:
+      device_class: problem
+  - property: Error_10
+    hide: true
+    icon: mdi:tumble-dryer-alert
+    binary_sensor:
+      device_class: problem
+  - property: Error_11
+    hide: true
+    icon: mdi:tumble-dryer-alert
+    binary_sensor:
+      device_class: problem
+  - property: Error_12
+    hide: true
+    icon: mdi:tumble-dryer-alert
+    binary_sensor:
+      device_class: problem
+  - property: Error_13
+    hide: true
+    icon: mdi:tumble-dryer-alert
+    binary_sensor:
+      device_class: problem
+  - property: Error_14
+    hide: true
+    icon: mdi:tumble-dryer-alert
+    binary_sensor:
+      device_class: problem
+  - property: Error_15
+    hide: true
+    icon: mdi:tumble-dryer-alert
+    binary_sensor:
+      device_class: problem
+  - property: Error_16
+    hide: true
+    icon: mdi:tumble-dryer-alert
+    binary_sensor:
+      device_class: problem
+  - property: ExtraDry_setting
+    sensor: {}
+  - property: Float_switch
+    binary_sensor: {}
+  - property: Fota
+    hide: true
+  - property: HardPairingStatus
+    hide: true
+  - property: Humidity_sensor
+    binary_sensor: {}
+    hide: true
+  - property: Logo_setting_status
+    hide: true
+  - property: NTC_sensor_1
+    hide: true
+  - property: NTC_sensor_2
+    hide: true
+  - property: Reed_switch
+    binary_sensor: {}
+    hide: true
+  - property: Remote_control_mode_monitoring
+    binary_sensor: {}
+    hide: true
+  - property: Remote_control_monitoring_set_commands
+    hide: true
+  - property: Remote_control_monitoring_set_commands_actions
+    hide: true
+  - property: Selected_program_AntiCrease_status
+    binary_sensor: {}
+  - property: Selected_program_ExtraDry_status
+    binary_sensor: {}
+  - property: Selected_program_ID
+    icon: mdi:selection-ellipse-arrow-inside
+    sensor:
+      device_class: enum
+      options:
+        0: cotton_storage
+        1: standard
+        2: iron
+        3: mix
+        4: synthetic
+        5: wool
+        6: bed_linen
+        7: time
+        8: baby
+        9: sensitive
+        10: shirts
+        11: sports
+        12: fast89
+        13: extra_hygiene
+        14: remote
+        255: none
+  - property: Selected_program_SteamFinish
+    binary_sensor: {}
+  - property: Selected_program_mode_status
+    hide: true
+    # Example value: 1
+  - property: Selected_programduration_inminutes
+    sensor:
+      device_class: duration
+      unit: min
+  - property: Selected_programremaining_time_inminutes
+    sensor:
+      device_class: duration
+      unit: min
+  - property: Session_pairing_active
+    binary_sensor: {}
+    hide: true
+  - property: Session_pairing_setting
+    hide: true
+  - property: Soft_pairing_setting
+    hide: true
+  - property: Sound_settings
+    hide: true
+    # Example value: 3
+  - property: UTC_DateTime_BDC_DelayStart_DelayEnd_timestamp
+    hide: true
+    sensor:
+      device_class: timestamp
+  - property: Washer_to_Dryer_available_for_hours_v
+    hide: true
+    # Example value: 1
+  - property: Washer_to_Dryer_program_ID
+    hide: true
+    # Example value: 254
+  - property: Washer_to_Dryersetting_status
+    hide: true
+    # Example value: 0
+  - property: Washer_to_dryerwizard_trigger_status
+    hide: true
+    # Example value: 1
+  - property: Water_level_switch
+    binary_sensor: {}
+    hide: true
+  - property: daily_energy_kwh
+    hide: true
+    sensor:
+      state_class: total
+      device_class: energy
+      unit: kWh
