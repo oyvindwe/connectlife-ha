@@ -31,6 +31,11 @@ You need to restart Home Assistant to load mapping changes.
 
 ### Mapping tips and tricks:
 
+- Generate a skeleton file using the [connectlife](https://pypi.org/project/connectlife/) package:
+  ```bash
+  pip install connectlife
+  python -m connectlife.dump --username <username> --password <password> --format dd
+  ``` 
 - Inspect the existing mappings files in this directory.
 - Change settings in the ConnectLife app while monitoring value changes in Home Assistant. Take a note of which
   property is changes, what the value is, and what the button or action is named in the ConnectLife app.
