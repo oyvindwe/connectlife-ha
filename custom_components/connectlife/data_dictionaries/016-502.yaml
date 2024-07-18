@@ -5,7 +5,7 @@ properties:
   - property: t_air
     switch: {}
   - property: t_beep
-    switch: {}
+    hide: true
   - property: t_fan_speed
     # Same as t_air
     hide: true

@@ -20,11 +20,29 @@
     "options": {
         "step": {
             "init": {
+                "menu_options": {
+                    "select_device": "Configure device",
+                    "development": "Configure development mode"
+                }
+            },
+            "select_device": {
+                "data": {
+                    "device": "Select device"
+                },
+                "description": "Configure a device."
+            },
+            "configure_device": {
+                "data": {
+                    "disable_beep": "Disable beep"
+                },
+                "description": "Configure a device."
+            },
+            "development": {
                 "data": {
                     "development_mode": "Development mode",
                     "test_server_url": "Test server URL"
                 },
-                "description": "Enable development mode to connect to a test server instead of the ConnectLife API."
+                "description": "Enable development mode to connect to test server instead of the ConnectLife API."
             }
         },
         "error": {

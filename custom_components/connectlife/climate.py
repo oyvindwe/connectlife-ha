@@ -47,7 +47,12 @@ async def async_setup_entry(
     for appliance in coordinator.data.values():
         dictionary = Dictionaries.get_dictionary(appliance)
         if is_climate(dictionary):
-            entities.append(ConnectLifeClimate(coordinator, appliance, dictionary))
+            entities.append(ConnectLifeClimate(
+                coordinator,
+                appliance,
+                dictionary,
+                config_entry
+            ))
     async_add_entities(entities)
 
 
@@ -84,10 +89,11 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
             self,
             coordinator: ConnectLifeCoordinator,
             appliance: ConnectLifeAppliance,
-            data_dictionary: Dictionary
+            data_dictionary: Dictionary,
+            config_entry: ConfigEntry
     ):
         """Initialize the entity."""
-        super().__init__(coordinator, appliance)
+        super().__init__(coordinator, appliance, config_entry)
         self._attr_unique_id = f"{appliance.device_id}-climate"
 
         self.entity_description = ClimateEntityDescription(
