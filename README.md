@@ -33,6 +33,7 @@ visibility.
 |--------------|-----------------|------------------|---------------------|-------------------------------------------------------------------------------------------|
 |              | Dehumidifier    | 007              | 400                 | [Completed](custom_components/connectlife/data_dictionaries/007-400.yaml)                 |
 |              | Air conditioner | 009              | 104                 | [Completed](custom_components/connectlife/data_dictionaries/009-104.yaml)                 |
+|              | Air conditioner | 009              | 106                 | [Most properties completed](custom_components/connectlife/data_dictionaries/009-106.yaml)                 |
 |              | Air conditioner | 009              | 109                 | [Most properties completed](custom_components/connectlife/data_dictionaries/009-109.yaml) |
 | W-DW50/60-22 | Dishwasher      | 015              | 000                 | [Most properties completed](custom_components/connectlife/data_dictionaries/015-000.yaml) |
 |              | Heat pump       | 016              | 502                 | [Completed](custom_components/connectlife/data_dictionaries/016-502.yaml)                 |
