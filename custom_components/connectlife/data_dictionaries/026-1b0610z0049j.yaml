@@ -1,4 +1,3 @@
-device_type: refridgerator
 properties:
   - property: AIR_FRESHNESS
     hide: true
@@ -83,6 +82,7 @@ properties:
   - property: environment_humidity
     sensor:
       device_class: humidity
+      unit: "%"
   - property: environment_real_temperature
     hide: true
   - property: existing_fuzzy_mode
@@ -183,6 +183,7 @@ properties:
     hide: true
     sensor:
       device_class: humidity
+      unit: "%"
   - property: high_temperature
     hide: true
     sensor:
@@ -203,6 +204,7 @@ properties:
     hide: true
     sensor:
       device_class: humidity
+      unit: "%"
   - property: low_temperature
     hide: true
     sensor:
@@ -232,6 +234,7 @@ properties:
     hide: true
     sensor:
       device_class: humidity
+      unit: "%"
   - property: medium_temperature
     hide: true
     sensor:
@@ -276,14 +279,17 @@ properties:
     hide: true
     sensor:
       device_class: humidity
+      unit: "%"
   - property: real_humidity_b
     hide: true
     sensor:
       device_class: humidity
+      unit: "%"
   - property: real_humidity_c
     hide: true
     sensor:
       device_class: humidity
+      unit: "%"
   - property: refr_defrosting_failure
     hide: true
     binary_sensor:
