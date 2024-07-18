@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import copy
 import logging
 from typing import Any
 
@@ -17,7 +18,7 @@ from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
 from homeassistant.core import callback
 from homeassistant.exceptions import HomeAssistantError
 
-from .const import CONF_DEVELOPMENT_MODE, CONF_TEST_SERVER_URL, DOMAIN
+from .const import CONF_DEVICES, CONF_DEVELOPMENT_MODE, CONF_DISABLE_BEEP, CONF_TEST_SERVER_URL, DOMAIN
 from connectlife.api import ConnectLifeApi
 
 _LOGGER = logging.getLogger(__name__)
@@ -99,14 +100,57 @@ class OptionsFlowHandler(OptionsFlow):
         """Initialize the options flow."""
         self.config_entry = config_entry
 
-    async def async_step_init(self, user_input=None) -> ConfigFlowResult:
+    async def async_step_init(self, user_input=None):
+        return self.async_show_menu(
+            step_id="init",
+            menu_options=["select_device", "development"],
+        )
+
+    async def async_step_select_device(self, user_input: dict[str, Any] | None = None) -> ConfigFlowResult:
+        # Select device to configure
+        if user_input is not None:
+            self._device_id = user_input["device"]
+            return await self.async_step_configure_device()
+
+        coordinator = self.hass.data[DOMAIN][self.config_entry.entry_id]
+        devices = {
+            device.device_id: device.device_nickname
+            for device in sorted(coordinator.data.values(), key=lambda d: d.device_nickname)
+        }
+
+        schema = vol.Schema(
+            {
+                vol.Optional("device"): vol.In(devices),
+            }
+        )
+        return self.async_show_form(step_id="select_device", data_schema=schema)
+
+    async def async_step_configure_device(self, user_input: dict[str, Any] | None = None) -> ConfigFlowResult:
+
+        # Configure the device
+        if user_input is not None:
+            data = self.config_entry.options.copy()
+            data[CONF_DEVICES] = data[CONF_DEVICES].copy() if CONF_DEVICES in data else {}
+            data[CONF_DEVICES][self._device_id] = {CONF_DISABLE_BEEP: user_input[CONF_DISABLE_BEEP]}
+            return self.async_create_entry(title="", data=data)
+
+        devices = self.config_entry.options.get(CONF_DEVICES, {})
+        device = devices[self._device_id] if self._device_id in devices else {}
+        disable_beep = device[CONF_DISABLE_BEEP] if CONF_DISABLE_BEEP in device else False
+        schema = vol.Schema(
+            {
+                vol.Optional(CONF_DISABLE_BEEP, default=disable_beep): bool,
+            }
+        )
+        return self.async_show_form(step_id="configure_device", data_schema=schema)
+
+    async def async_step_development(self, user_input: dict[str, Any] | None = None) -> ConfigFlowResult:
         """Manage the options."""
 
         if user_input is not None:
             errors: dict[str, str] = {}
             development_mode = user_input.get(CONF_DEVELOPMENT_MODE)
             test_server_url = user_input.get(CONF_TEST_SERVER_URL)
-            _LOGGER.debug("development_mode=%s, test_server_url=%s", str(development_mode), test_server_url)
             if test_server_url:
                 try:
                     vol.Schema(vol.Url())(test_server_url)
@@ -114,25 +158,27 @@ class OptionsFlowHandler(OptionsFlow):
                     errors["base"] = "test_server_invalid"
             if development_mode and not test_server_url:
                 errors["base"] = "test_server_required"
-            _LOGGER.debug(errors)
             if errors:
-                return self._show_form(development_mode, test_server_url, errors)
+                schema = vol.Schema(
+                    {
+                        vol.Optional(CONF_DEVELOPMENT_MODE, default=development_mode): bool,
+                        vol.Optional(CONF_TEST_SERVER_URL, description={"suggested_value": test_server_url}): str,
+                    }
+                )
+                return self.async_show_form(step_id="development", data_schema=schema, errors=errors)
 
-            data = {
+            data = copy.deepcopy(self.config_entry.options).update({
                 CONF_DEVELOPMENT_MODE: development_mode,
                 CONF_TEST_SERVER_URL: test_server_url
-            }
+            })
             return self.async_create_entry(title="", data=data)
 
         development_mode = self.config_entry.options.get(CONF_DEVELOPMENT_MODE, False)
         test_server_url = self.config_entry.options.get(CONF_TEST_SERVER_URL, "http://localhost:8080")
-        return self._show_form(development_mode, test_server_url)
-
-    def _show_form(self, development_mode: bool, test_server_url: str, errors: dict[str, str] = None):
         schema = vol.Schema(
             {
                 vol.Optional(CONF_DEVELOPMENT_MODE, default=development_mode): bool,
                 vol.Optional(CONF_TEST_SERVER_URL, description={"suggested_value": test_server_url}): str,
             }
         )
-        return self.async_show_form(step_id="init", data_schema=schema, errors=errors)
+        return self.async_show_form(step_id="development", data_schema=schema)

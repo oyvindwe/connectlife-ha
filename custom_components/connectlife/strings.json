@@ -20,6 +20,24 @@
   "options": {
     "step": {
       "init": {
+        "menu_options": {
+          "select_device": "Configure a device",
+          "development": "Configure development mode"
+        }
+      },
+      "select_device": {
+        "data": {
+          "device": "Select device"
+        },
+        "description": "Configure a device."
+      },
+      "configure_device": {
+        "data": {
+          "disable_beep": "Disable beep"
+        },
+        "description": "Configure a device."
+      },
+      "development": {
         "data": {
           "development_mode": "Development mode",
           "test_server_url": "Test server URL"
