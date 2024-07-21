@@ -63,6 +63,23 @@
     }
   },
   "entity": {
+    "binary_sensor": {
+      "Child_Lock_status": {
+        "name": "Child lock"
+      },
+      "DelayStart_DelayEnd_mode" : {
+        "name":"Delay start"
+      },
+      "Selected_program_AntiCrease_status": {
+        "name": "Anti crease"
+      },
+      "Selected_program_ExtraDry_status": {
+        "name": "Extra dry"
+      },
+      "Selected_program_SteamFinish": {
+        "name": "Steam finish"
+      }
+    },
     "climate": {
       "connectlife": {
         "state_attributes": {
@@ -121,8 +138,37 @@
       "Alarm_door_opened": {
         "name": "Door open"
       },
+      "AntiCrease_setting": {
+        "name": "Anti crease duration"
+      },
+      "Appliance_status": {
+        "state": {
+          "idle": "Idle",
+          "running": "Running"
+        }
+      },
+      "Bundling_Humidity": {
+        "name": "Bundling humidity"
+      },
+      "Bundling_Temperature": {
+        "name": "Bundling temperature"
+      },
+      "Current_programphase": {
+        "state": {
+          "running": "Running"
+        }
+      },
       "daily_energy_kwh": {
         "name": "Daily energy consumption"
+      },
+      "DelayStart_DelayEnd_duration_inminutes" : {
+        "name":"Delay start duration"
+      },
+      "DelayStart_DelayEnd_remaining_timein_minutes" : {
+        "name":"Delay start remaining time"
+      },
+      "Delay_duration_inminutes": {
+        "name": "Delay duration"
       },
       "Door_status": {
         "name": "Door",
@@ -131,6 +177,33 @@
           "closed": "Closed",
           "open": "Open"
         }
+      },
+      "Selected_program_ID": {
+        "name": "Selected program",
+        "state": {
+          "cotton_storage": "Cotton storage",
+          "standard": "Standard",
+          "iron":  "Iron",
+          "mix": "Mix",
+          "synthetic":  "Synthetic",
+          "wool": "Wool",
+          "bed_linen":  "Bed linen",
+          "time": "Time",
+          "baby":  "Baby",
+          "sensitive": "Sensitive",
+          "shirts":  "Shirts",
+          "sports": "Sports",
+          "fast89":  "Fast89",
+          "extra_hygiene": "Extra hygiene",
+          "remote":  "Remote",
+          "none": "None"
+        }
+      },
+      "Selected_programduration_inminutes": {
+        "name": "Duration of selected program"
+      },
+      "Selected_programremaining_time_inminutes": {
+        "name": "Remaining time of selected program"
       },
       "t_sleep": {
         "name": "Sleep"
