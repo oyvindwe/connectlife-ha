@@ -95,7 +95,7 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
             if self.device_class == SensorDeviceClass.ENUM:
                 if value in self.options_map:
                     value = self.options_map[value]
-                else:
+                elif value != self.unknown_value:
                     _LOGGER.warning("Got unexpected value %d for %s (%s)", value, self.status, self.nickname)
                     value = None
             self._attr_native_value = value if value != self.unknown_value else None
