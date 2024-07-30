@@ -38,8 +38,8 @@ visibility.
 |              | Air conditioner | 009              | 109                 | [Completed](custom_components/connectlife/data_dictionaries/009-109.yaml)                 |
 | W-DW50/60-22 | Dishwasher      | 015              | 000                 | [Most properties completed](custom_components/connectlife/data_dictionaries/015-000.yaml) |
 |              | Heat pump       | 016              | 502                 | [Completed](custom_components/connectlife/data_dictionaries/016-502.yaml)                 |
-|              | Refridgerator   | 026              | 1b0610z0049j        | [Completed](custom_components/connectlife/data_dictionaries/026-1b0610z0049j.yaml)        |
-| DPNA83W      | Tumble dryer    | 032              | 000                 | [Untested](custom_components/connectlife/data_dictionaries/032-000.yaml)                  |
+|              | Refrigerator    | 026              | 1b0610z0049j        | [Completed](custom_components/connectlife/data_dictionaries/026-1b0610z0049j.yaml)        |
+| DPNA83W      | Tumble dryer    | 032              | 000                 | [Completed](custom_components/connectlife/data_dictionaries/032-000.yaml)                 |
 
 Please, please, please contribute PRs with [data dictionaries](custom_components/connectlife/data_dictionaries) for your devices!
 
