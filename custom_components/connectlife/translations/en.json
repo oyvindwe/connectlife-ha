@@ -187,13 +187,18 @@
                 "name": "Delay duration"
             },
             "Device_status": {
-                "not_available": "Not available",
-                "idle": "Idle",
-                "running": "Running",
-                "pause": "Pause",
+                "demo_mode": "Demo mode",
                 "failure": "Failure",
+                "idle": "Idle",
+                "iq":  "IQ",
+                "locked": "Locked",
+                "not_available": "Not available",
+                "pause": "Paused",
+                "pause_mode":  "Paused",
+                "production": "Production",
+                "running": "Running",
                 "service": "Service",
-                "production": "Production"
+                "stand_by": "Stand by"
             },
             "Door_status": {
                 "name": "Door",
@@ -229,6 +234,390 @@
             },
             "Selected_programremaining_time_inminutes": {
                 "name": "Remaining time of selected program"
+            },
+            "SL": {
+                "name": "Number of zones"
+            },
+            "SL1_Active_timer": {
+                "name": "Zone 1 active timer",
+                "state": {
+                    "inactive": "Inactive",
+                    "stopwatch": "Stopwatch",
+                    "timer": "Timer"
+                }
+            },
+            "SL1_Alarm_NTC_coil_overheating": {
+                "name": "Zone 1 coil overheating"
+            },
+            "SL1_Alarm_auto_program_notification": {
+                "name": "Zone 1 auto program notification"
+            },
+            "SL1_Alarm_automatic_switch_off_zone": {
+                "name": "Zone 1 automatically switched off"
+            },
+            "SL1_Alarm_timer_ended": {
+                "name": "Zone 1 timer ended"
+            },
+            "SL1_Alarm_zone_turned_off": {
+                "name": "Zone 1 turned off"
+            },
+            "SL1_Bridge_active": {
+                "name": "Zone 1 bridge active"
+            },
+            "SL1_Functions": {
+                "name": "Zone 1 function",
+                "state": {
+                    "none": "None",
+                    "boil": "Boil",
+                    "simmer":  "Simmer",
+                    "keep_warm": "Keep warm",
+                    "wok":  "Wok",
+                    "roast": "Roast",
+                    "grill":  "Grill"
+                }
+            },
+            "SL1_NTC_sensor": {
+                "name": "Zone 1 NTC sensor"
+            },
+            "SL1_Pot_detected": {
+                "name": "Zone 1 pot detected"
+            },
+            "SL1_Power_level": {
+                "name": "Zone 1 power level"
+            },
+            "SL1_Power_level_max": {
+                "name": "Zone 1 max power level"
+            },
+            "SL1_Status": {
+                "name": "Zone 1 status"
+            },
+            "SL1_Zone_shape": {
+                "name": "Zone 1 shape",
+                "state": {
+                    "round": "Round",
+                    "square": "Square",
+                    "rectangle_vertical": "Vertical rectangle ",
+                    "rectangle_horizontal": "Horizontal Rectangle",
+                    "no_shape": "No shape"
+                }
+            },
+            "SL2_Active_timer": {
+                "name": "Zone 2 active timer",
+                "state": {
+                    "inactive": "Inactive",
+                    "stopwatch": "Stopwatch",
+                    "timer": "Timer"
+                }
+            },
+            "SL2_Alarm_NTC_coil_overheating": {
+                "name": "Zone 2 coil overheating"
+            },
+            "SL2_Alarm_auto_program_notification": {
+                "name": "Zone 2 auto program notification"
+            },
+            "SL2_Alarm_automatic_switch_off_zone": {
+                "name": "Zone 2 automatically switched off"
+            },
+            "SL2_Alarm_timer_ended": {
+                "name": "Zone 2 timer ended"
+            },
+            "SL2_Alarm_zone_turned_off": {
+                "name": "Zone 2 turned off"
+            },
+            "SL2_Bridge_active": {
+                "name": "Zone 2 bridge active"
+            },
+            "SL2_Functions": {
+                "name": "Zone 2 function",
+                "state": {
+                    "none": "None",
+                    "boil": "Boil",
+                    "simmer":  "Simmer",
+                    "keep_warm": "Keep warm",
+                    "wok":  "Wok",
+                    "roast": "Roast",
+                    "grill":  "Grill"
+                }
+            },
+            "SL2_NTC_sensor": {
+                "name": "Zone 2 NTC sensor"
+            },
+            "SL2_Pot_detected": {
+                "name": "Zone 2 pot detected"
+            },
+            "SL2_Power_level": {
+                "name": "Zone 2 power level"
+            },
+            "SL2_Power_level_max": {
+                "name": "Zone 2 max power level"
+            },
+            "SL2_Status": {
+                "name": "Zone 2 status"
+            },
+            "SL2_Zone_shape": {
+                "name": "Zone 2 shape",
+                "state": {
+                    "round": "Round",
+                    "square": "Square",
+                    "rectangle_vertical": "Vertical rectangle ",
+                    "rectangle_horizontal": "Horizontal Rectangle",
+                    "no_shape": "No shape"
+                }
+            },
+            "SL3_Active_timer": {
+                "name": "Zone 3 active timer",
+                "state": {
+                    "inactive": "Inactive",
+                    "stopwatch": "Stopwatch",
+                    "timer": "Timer"
+                }
+            },
+            "SL3_Alarm_NTC_coil_overheating": {
+                "name": "Zone 3 coil overheating"
+            },
+            "SL3_Alarm_auto_program_notification": {
+                "name": "Zone 3 auto program notification"
+            },
+            "SL3_Alarm_automatic_switch_off_zone": {
+                "name": "Zone 3 automatically switched off"
+            },
+            "SL3_Alarm_timer_ended": {
+                "name": "Zone 3 timer ended"
+            },
+            "SL3_Alarm_zone_turned_off": {
+                "name": "Zone 3 turned off"
+            },
+            "SL3_Bridge_active": {
+                "name": "Zone 3 bridge active"
+            },
+            "SL3_Functions": {
+                "name": "Zone 3 function",
+                "state": {
+                    "none": "None",
+                    "boil": "Boil",
+                    "simmer":  "Simmer",
+                    "keep_warm": "Keep warm",
+                    "wok":  "Wok",
+                    "roast": "Roast",
+                    "grill":  "Grill"
+                }
+            },
+            "SL3_NTC_sensor": {
+                "name": "Zone 3 NTC sensor"
+            },
+            "SL3_Pot_detected": {
+                "name": "Zone 3 pot detected"
+            },
+            "SL3_Power_level": {
+                "name": "Zone 3 power level"
+            },
+            "SL3_Power_level_max": {
+                "name": "Zone 3 max power level"
+            },
+            "SL3_Status": {
+                "name": "Zone 3 status"
+            },
+            "SL3_Zone_shape": {
+                "name": "Zone 3 shape",
+                "state": {
+                    "round": "Round",
+                    "square": "Square",
+                    "rectangle_vertical": "Vertical rectangle ",
+                    "rectangle_horizontal": "Horizontal Rectangle",
+                    "no_shape": "No shape"
+                }
+            },
+            "SL4_Active_timer": {
+                "name": "Zone 4 active timer",
+                "state": {
+                    "inactive": "Inactive",
+                    "stopwatch": "Stopwatch",
+                    "timer": "Timer"
+                }
+            },
+            "SL4_Alarm_NTC_coil_overheating": {
+                "name": "Zone 4 coil overheating"
+            },
+            "SL4_Alarm_auto_program_notification": {
+                "name": "Zone 4 auto program notification"
+            },
+            "SL4_Alarm_automatic_switch_off_zone": {
+                "name": "Zone 4 automatically switched off"
+            },
+            "SL4_Alarm_timer_ended": {
+                "name": "Zone 4 timer ended"
+            },
+            "SL4_Alarm_zone_turned_off": {
+                "name": "Zone 4 turned off"
+            },
+            "SL4_Bridge_active": {
+                "name": "Zone 4 bridge active"
+            },
+            "SL4_Functions": {
+                "name": "Zone 4 function",
+                "state": {
+                    "none": "None",
+                    "boil": "Boil",
+                    "simmer":  "Simmer",
+                    "keep_warm": "Keep warm",
+                    "wok":  "Wok",
+                    "roast": "Roast",
+                    "grill":  "Grill"
+                }
+            },
+            "SL4_NTC_sensor": {
+                "name": "Zone 4 NTC sensor"
+            },
+            "SL4_Pot_detected": {
+                "name": "Zone 4 pot detected"
+            },
+            "SL4_Power_level": {
+                "name": "Zone 4 power level"
+            },
+            "SL4_Power_level_max": {
+                "name": "Zone 4 max power level"
+            },
+            "SL4_Status": {
+                "name": "Zone 4 status"
+            },
+            "SL4_Zone_shape": {
+                "name": "Zone 4 shape",
+                "state": {
+                    "round": "Round",
+                    "square": "Square",
+                    "rectangle_vertical": "Vertical rectangle ",
+                    "rectangle_horizontal": "Horizontal Rectangle",
+                    "no_shape": "No shape"
+                }
+            },
+            "SL5_Active_timer": {
+                "name": "Zone 5 active timer",
+                "state": {
+                    "inactive": "Inactive",
+                    "stopwatch": "Stopwatch",
+                    "timer": "Timer"
+                }
+            },
+            "SL5_Alarm_NTC_coil_overheating": {
+                "name": "Zone 5 coil overheating"
+            },
+            "SL5_Alarm_auto_program_notification": {
+                "name": "Zone 5 auto program notification"
+            },
+            "SL5_Alarm_automatic_switch_off_zone": {
+                "name": "Zone 5 automatically switched off"
+            },
+            "SL5_Alarm_timer_ended": {
+                "name": "Zone 5 timer ended"
+            },
+            "SL5_Alarm_zone_turned_off": {
+                "name": "Zone 5 turned off"
+            },
+            "SL5_Bridge_active": {
+                "name": "Zone 5 bridge active"
+            },
+            "SL5_Functions": {
+                "name": "Zone 5 function",
+                "state": {
+                    "none": "None",
+                    "boil": "Boil",
+                    "simmer":  "Simmer",
+                    "keep_warm": "Keep warm",
+                    "wok":  "Wok",
+                    "roast": "Roast",
+                    "grill":  "Grill"
+                }
+            },
+            "SL5_NTC_sensor": {
+                "name": "Zone 5 NTC sensor"
+            },
+            "SL5_Pot_detected": {
+                "name": "Zone 5 pot detected"
+            },
+            "SL5_Power_level": {
+                "name": "Zone 5 power level"
+            },
+            "SL5_Power_level_max": {
+                "name": "Zone 5 max power level"
+            },
+            "SL5_Status": {
+                "name": "Zone 5 status"
+            },
+            "SL5_Zone_shape": {
+                "name": "Zone 5 shape",
+                "state": {
+                    "round": "Round",
+                    "square": "Square",
+                    "rectangle_vertical": "Vertical rectangle ",
+                    "rectangle_horizontal": "Horizontal Rectangle",
+                    "no_shape": "No shape"
+                }
+            },
+            "SL6_Active_timer": {
+                "name": "Zone 6 active timer",
+                "state": {
+                    "inactive": "Inactive",
+                    "stopwatch": "Stopwatch",
+                    "timer": "Timer"
+                }
+            },
+            "SL6_Alarm_NTC_coil_overheating": {
+                "name": "Zone 6 coil overheating"
+            },
+            "SL6_Alarm_auto_program_notification": {
+                "name": "Zone 6 auto program notification"
+            },
+            "SL6_Alarm_automatic_switch_off_zone": {
+                "name": "Zone 6 automatically switched off"
+            },
+            "SL6_Alarm_timer_ended": {
+                "name": "Zone 6 timer ended"
+            },
+            "SL6_Alarm_zone_turned_off": {
+                "name": "Zone 6 turned off"
+            },
+            "SL6_Bridge_active": {
+                "name": "Zone 6 bridge active"
+            },
+            "SL6_Functions": {
+                "name": "Zone 6 function",
+                "state": {
+                    "none": "None",
+                    "boil": "Boil",
+                    "simmer":  "Simmer",
+                    "keep_warm": "Keep warm",
+                    "wok":  "Wok",
+                    "roast": "Roast",
+                    "grill":  "Grill"
+                }
+            },
+            "SL6_NTC_sensor": {
+                "name": "Zone 6 NTC sensor"
+            },
+            "SL6_Pot_detected": {
+                "name": "Zone 6 pot detected"
+            },
+            "SL6_Power_level": {
+                "name": "Zone 6 power level"
+            },
+            "SL6_Power_level_max": {
+                "name": "Zone 6 max power level"
+            },
+            "SL6_Status": {
+                "name": "Zone 6 status"
+            },
+            "SL6_Zone_shape": {
+                "name": "Zone 6 shape",
+                "state": {
+                    "round": "Round",
+                    "square": "Square",
+                    "rectangle_vertical": "Vertical rectangle ",
+                    "rectangle_horizontal": "Horizontal Rectangle",
+                    "no_shape": "No shape"
+                }
+            },
+            "Total_time_of_cooking_in_hours" : {
+                "name": "Total time of cooking"
             },
             "t_sleep": {
                 "name": "Sleep"
