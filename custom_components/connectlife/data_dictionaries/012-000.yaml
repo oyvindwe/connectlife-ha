@@ -1,25 +1,37 @@
+# Hood
 properties:
   - property: ActiveModeLightBrightness
+    hide: true
     # Sample value: 0
   - property: ActiveModeLightColorTemperature
+    hide: true
     # Sample value: 0
   - property: ActiveModeLightStatus
-    # Sample value: 0
+    hide: true
+    # Sample value: 2
   - property: ActiveModeMotorLevel
-    # Sample value: 0
+    hide: true
+    # Sample value: 1
   - property: ActiveModeMotorLevelStatus
-    # Sample value: 0
+    hide: true
+    # Sample value: 2
   - property: ActiveModeStatus
-    # Sample value: 0
+    hide: true
+    # Sample value: 2
   - property: AlarmCleanAirEnded
+    hide: true
     # Sample value: 1
   - property: AlarmGreaseFilter
+    hide: true
     # Sample value: 2
   - property: AlarmRecirculationFilter1
+    hide: true
     # Sample value: 1
   - property: AlarmRecirculationFilter2
+    hide: true
     # Sample value: 1
   - property: AlarmTimerEnded
+    hide: true
     # Sample value: 1
   - property: AmbientLightBrightness
     # Sample value: 0
@@ -132,4 +144,8 @@ properties:
   - property: TimerStatus
     # Sample value: 5
   - property: daily_energy_kwh
-    # Sample value: 0
+    hide: true
+    sensor:
+      state_class: total
+      device_class: energy
+      unit: kWh
