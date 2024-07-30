@@ -31,6 +31,7 @@ visibility.
 
 | Device name  | Device type     | Device type code | Device feature code | Data dictionary                                                                           |
 |--------------|-----------------|------------------|---------------------|-------------------------------------------------------------------------------------------|
+|              | Air conditioner | 006              | 201                 | [Completed](custom_components/connectlife/data_dictionaries/006-201.yaml)                 |
 |              | Dehumidifier    | 007              | 400                 | [Completed](custom_components/connectlife/data_dictionaries/007-400.yaml)                 |
 |              | Air conditioner | 009              | 104                 | [Completed](custom_components/connectlife/data_dictionaries/009-104.yaml)                 |
 |              | Air conditioner | 009              | 106                 | [Completed](custom_components/connectlife/data_dictionaries/009-106.yaml)                 |
