@@ -50,13 +50,15 @@ _LOGGER = logging.getLogger(__name__)
 
 class BinarySensor:
     device_class: BinarySensorDeviceClass | None
+    options: dict[number, bool] = {0: False, 1: False, 2: True}
 
     def __init__(self, name: str, binary_sensor: dict | None):
         if binary_sensor is None:
             binary_sensor = {}
         self.device_class = BinarySensorDeviceClass(binary_sensor[DEVICE_CLASS]) \
             if DEVICE_CLASS in binary_sensor else None
-
+        if OPTIONS in binary_sensor:
+            self.options = binary_sensor[OPTIONS]
 
 class Climate:
     target: str

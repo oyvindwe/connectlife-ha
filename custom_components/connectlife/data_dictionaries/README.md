@@ -68,13 +68,23 @@ validated.
 
 ## Type `BinarySensor`
 
-Domain `binary_sensor` can be used for read only properties where `0` is not available, `1` is off, and `2` is on. Both
-`0`and `1` is mapped to off.
+Domain `binary_sensor` can be used for read only properties. By default, `0` and `1` is mapped to off and `2` to on,
+as `0` often implies that the sensor state is not available. For other mappings, provide `options`.
 
-| Item           | Type                     | Description                                                                                                                                                           |
-|----------------|--------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `device_class` | `power`, `problem`, etc. | For domain `binary_sensor`, name of any [BinarySensorDeviceClass enum](https://developers.home-assistant.io/docs/core/entity/binary-sensor#available-device-classes). | 
+| Item           | Type                             | Description                                                                                                                                                           |
+|----------------|----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `device_class` | `power`, `problem`, etc.         | For domain `binary_sensor`, name of any [BinarySensorDeviceClass enum](https://developers.home-assistant.io/docs/core/entity/binary-sensor#available-device-classes). |   
+| `options`      | dictionary of integer to boolean |                                                                                                                                                                       |
 
+Example:
+```yaml
+- property: alarm
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+```
 
 ## Type `Climate`:
 
