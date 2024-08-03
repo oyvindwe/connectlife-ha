@@ -1,0 +1,53 @@
+properties:
+  - property: daily_energy_kwh
+    hide: true
+    sensor:
+      state_class: total
+      device_class: energy
+      unit: kWh
+  - property: f_e_filterclean
+    binary_sensor:
+      device_class: problem
+  - property: f_e_pump
+    binary_sensor:
+      device_class: problem
+  - property: f_e_push
+    binary_sensor:
+      device_class: problem
+  - property: f_e_temp
+    binary_sensor:
+      device_class: problem
+  - property: f_e_tubetemp
+    binary_sensor:
+      device_class: problem
+  - property: f_e_waterfull
+    binary_sensor:
+      device_class: problem
+  - property: f_e_wetsensor
+    binary_sensor:
+      device_class: problem
+  - property: f_humidity
+    humidifier:
+      target: current_humidity
+  - property: t_fan_speed
+    icon: mdi:fan
+    select:
+      options:
+        0: low
+        1: high
+        2: auto
+  - property: t_humidity
+    humidifier:
+      target: target_humidity
+      device_class: dehumidifier
+  - property: t_power
+    humidifier:
+      target: is_on
+  - property: t_work_mode
+    humidifier:
+      target: mode
+      options:
+        0: continuous
+        1: manual
+        2: auto
+        3: clothes_dry
