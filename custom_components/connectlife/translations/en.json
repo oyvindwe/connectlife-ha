@@ -125,7 +125,8 @@
                         "state": {
                             "auto": "Auto",
                             "continuous": "Continuous",
-                            "manual": "Manual"
+                            "manual": "Manual",
+                            "clothes_dry": "Clothes dry"
                         }
                     }
                 }
