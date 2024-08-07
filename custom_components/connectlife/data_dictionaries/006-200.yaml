@@ -21,9 +21,6 @@ properties:
 - property: t_power
   climate:
     target: is_on
-- property: f_temp_in
-  climate:
-    target: current_temperature
 - property: t_temp
   climate:
     target: target_temperature
@@ -61,81 +58,82 @@ properties:
   icon: mdi:speed
   switch:
     device_class: switch
-    
+# Inlet temperature?
+- property: f_temp_in
 # Other properties to be observed over time
-- property: f-filter
-  # Sample value: 0
-- property: f_e_arkgrille
-  # Sample value: 0
-- property: f_e_dwmachine
-  # Sample value: 0
-- property: f_e_incoiltemp
-  # Sample value: 0
-- property: f_e_incom
-  # Sample value: 0
-- property: f_e_indisplay
-  # Sample value: 0
-- property: f_e_ineeprom
-  # Sample value: 0
-- property: f_e_inele
-  # Sample value: 0
-- property: f_e_infanmotor
-  # Sample value: 0
-- property: f_e_inhumidity
-  # Sample value: 0
-- property: f_e_inkeys
-  # Sample value: 0
-- property: f_e_intemp
-  # Sample value: 0
-- property: f_e_invzero
-  # Sample value: 0
-- property: f_e_inwifi
-  # Sample value: 0
-- property: f_e_outcoiltemp
-  # Sample value: 0
-- property: f_e_outeeprom
-  # Sample value: 0
-- property: f_e_outgastemp
-  # Sample value: 0
-- property: f_e_outtemp
-  # Sample value: 0
-- property: f_e_over_cold
-  # Sample value: 0
-- property: f_e_over_hot
-  # Sample value: 0
-- property: f_e_push
-  # Sample value: 0
-- property: f_e_upmachine
-  # Sample value: 0
-- property: f_e_waterfull
-  # Sample value: 0
-- property: f_electricity
-  # Sample value: 0
-- property: f_humidity
-  # Sample value: 0
-- property: f_votage
-  # Sample value: 0
-- property: t_dal
-  # Sample value: 0
-- property: t_demand_response
-  # Sample value: 0
-- property: t_fan_mute
-  # Sample value: 0
-- property: t_fan_speed_s
-  # Sample value: 0
-- property: t_fanspeedCV
-  # Sample value: 0
-- property: t_left_right
-  # Sample value: 0
-- property: t_swing_angle
-  # Sample value: 0
-- property: t_swing_direction
-  # Sample value: 0
-- property: t_swing_follow
-  # Sample value: 0
-- property: t_talr
-  # Sample value: 0
-- property: t_temp_compensate
-  # Sample value: 7
-- property: t_tms
-  # Sample value: 0
+# - property: f-filter
+#   # Sample value: 0
+# - property: f_e_arkgrille
+#   # Sample value: 0
+# - property: f_e_dwmachine
+#   # Sample value: 0
+# - property: f_e_incoiltemp
+#   # Sample value: 0
+# - property: f_e_incom
+#   # Sample value: 0
+# - property: f_e_indisplay
+#   # Sample value: 0
+# - property: f_e_ineeprom
+#   # Sample value: 0
+# - property: f_e_inele
+#   # Sample value: 0
+# - property: f_e_infanmotor
+#   # Sample value: 0
+# - property: f_e_inhumidity
+#   # Sample value: 0
+# - property: f_e_inkeys
+#   # Sample value: 0
+# - property: f_e_intemp
+#   # Sample value: 0
+# - property: f_e_invzero
+#   # Sample value: 0
+# - property: f_e_inwifi
+#   # Sample value: 0
+# - property: f_e_outcoiltemp
+#   # Sample value: 0
+# - property: f_e_outeeprom
+#   # Sample value: 0
+# - property: f_e_outgastemp
+#   # Sample value: 0
+# - property: f_e_outtemp
+#   # Sample value: 0
+# - property: f_e_over_cold
+#   # Sample value: 0
+# - property: f_e_over_hot
+#   # Sample value: 0
+# - property: f_e_push
+#   # Sample value: 0
+# - property: f_e_upmachine
+#   # Sample value: 0
+# - property: f_e_waterfull
+#   # Sample value: 0
+# - property: f_electricity
+#   # Sample value: 0
+# - property: f_humidity
+#   # Sample value: 0
+# - property: f_votage
+#   # Sample value: 0
+# - property: t_dal
+#   # Sample value: 0
+# - property: t_demand_response
+#   # Sample value: 0
+# - property: t_fan_mute
+#   # Sample value: 0
+# - property: t_fan_speed_s
+#   # Sample value: 0
+# - property: t_fanspeedCV
+#   # Sample value: 0
+# - property: t_left_right
+#   # Sample value: 0
+# - property: t_swing_angle
+#   # Sample value: 0
+# - property: t_swing_direction
+#   # Sample value: 0
+# - property: t_swing_follow
+#   # Sample value: 0
+# - property: t_talr
+#   # Sample value: 0
+# - property: t_temp_compensate
+#   # Sample value: 7
+# - property: t_tms
+#   # Sample value: 0
