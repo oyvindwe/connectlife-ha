@@ -16,6 +16,7 @@ properties:
       1: on
 - property: Alarm_NTC_coil_overheating
   hide: true
+  icon: mdi:alert
   binary_sensor:
     device_class: problem
     options:
@@ -104,6 +105,7 @@ properties:
       2: timer
 - property: SL1_Alarm_NTC_coil_overheating
   hide: true
+  icon: mdi:alert
   binary_sensor:
     device_class: problem
     options:
@@ -133,7 +135,7 @@ properties:
     options:
       0: off
       1: on
-- property: SL1_Bridge_active
+- property: SL1_Bridge_function_active
   hide: true
   binary_sensor:
     options:
@@ -190,6 +192,7 @@ properties:
       2: timer
 - property: SL2_Alarm_NTC_coil_overheating
   hide: true
+  icon: mdi:alert
   binary_sensor:
     device_class: problem
     options:
@@ -219,7 +222,7 @@ properties:
     options:
       0: off
       1: on
-- property: SL2_Bridge_active
+- property: SL2_Bridge_function_active
   hide: true
   binary_sensor:
     options:
@@ -276,6 +279,7 @@ properties:
       2: timer
 - property: SL3_Alarm_NTC_coil_overheating
   hide: true
+  icon: mdi:alert
   binary_sensor:
     device_class: problem
     options:
@@ -305,7 +309,7 @@ properties:
     options:
       0: off
       1: on
-- property: SL3_Bridge_active
+- property: SL3_Bridge_function_active
   hide: true
   binary_sensor:
     options:
@@ -362,6 +366,7 @@ properties:
       2: timer
 - property: SL4_Alarm_NTC_coil_overheating
   hide: true
+  icon: mdi:alert
   binary_sensor:
     device_class: problem
     options:
@@ -391,7 +396,7 @@ properties:
     options:
       0: off
       1: on
-- property: SL4_Bridge_active
+- property: SL4_Bridge_function_active
   hide: true
   binary_sensor:
     options:
@@ -448,6 +453,7 @@ properties:
       2: timer
 - property: SL5_Alarm_NTC_coil_overheating
   hide: true
+  icon: mdi:alert
   binary_sensor:
     device_class: problem
     options:
@@ -477,7 +483,7 @@ properties:
     options:
       0: off
       1: on
-- property: SL5_Bridge_active
+- property: SL5_Bridge_function_active
   hide: true
   binary_sensor:
     options:
@@ -534,6 +540,7 @@ properties:
       2: timer
 - property: SL6_Alarm_NTC_coil_overheating
   hide: true
+  icon: mdi:alert
   binary_sensor:
     device_class: problem
     options:
@@ -563,7 +570,7 @@ properties:
     options:
       0: off
       1: on
-- property: SL6_Bridge_active
+- property: SL6_Bridge_function_active
   hide: true
   binary_sensor:
     options:
@@ -616,6 +623,7 @@ properties:
     unit: h
 - property: Zone_number
   # Sample value: 5
+  hide: true
 - property: daily_energy_kwh
   # Sample value: 0
   hide: true

@@ -78,6 +78,150 @@
             },
             "Selected_program_SteamFinish": {
                 "name": "Steam finish"
+            },
+            "SL1_Alarm_auto_program_notification": {
+                "name": "Zone 1 auto program notification"
+            },
+            "SL1_Alarm_automatic_switch_off_zone": {
+                "name": "Zone 1 automatically switched off"
+            },
+            "SL1_Alarm_NTC_coil_overheating": {
+                "name": "Zone 1 coil overheating"
+            },
+            "SL1_Alarm_timer_ended": {
+                "name": "Zone 1 timer ended"
+            },
+            "SL1_Alarm_zone_turned_off": {
+                "name": "Zone 1 turned off"
+            },
+            "SL1_Bridge_function_active": {
+                "name": "Zone 1 bridge active"
+            },
+            "SL1_Pot_detected": {
+                "name": "Zone 1 pot detected"
+            },
+            "SL1_Status": {
+                "name": "Zone 1 status"
+            },
+            "SL2_Alarm_auto_program_notification": {
+                "name": "Zone 2 auto program notification"
+            },
+            "SL2_Alarm_automatic_switch_off_zone": {
+                "name": "Zone 2 automatically switched off"
+            },
+            "SL2_Alarm_NTC_coil_overheating": {
+                "name": "Zone 2 coil overheating"
+            },
+            "SL2_Alarm_timer_ended": {
+                "name": "Zone 2 timer ended"
+            },
+            "SL2_Alarm_zone_turned_off": {
+                "name": "Zone 2 turned off"
+            },
+            "SL2_Bridge_function_active": {
+                "name": "Zone 2 bridge active"
+            },
+            "SL2_Pot_detected": {
+                "name": "Zone 2 pot detected"
+            },
+            "SL2_Status": {
+                "name": "Zone 2 status"
+            },
+            "SL3_Alarm_auto_program_notification": {
+                "name": "Zone 3 auto program notification"
+            },
+            "SL3_Alarm_automatic_switch_off_zone": {
+                "name": "Zone 3 automatically switched off"
+            },
+            "SL3_Alarm_NTC_coil_overheating": {
+                "name": "Zone 3 coil overheating"
+            },
+            "SL3_Alarm_timer_ended": {
+                "name": "Zone 3 timer ended"
+            },
+            "SL3_Alarm_zone_turned_off": {
+                "name": "Zone 3 turned off"
+            },
+            "SL3_Bridge_function_active": {
+                "name": "Zone 3 bridge active"
+            },
+            "SL3_Pot_detected": {
+                "name": "Zone 3 pot detected"
+            },
+            "SL3_Status": {
+                "name": "Zone 3 status"
+            },
+            "SL4_Alarm_auto_program_notification": {
+                "name": "Zone 4 auto program notification"
+            },
+            "SL4_Alarm_automatic_switch_off_zone": {
+                "name": "Zone 4 automatically switched off"
+            },
+            "SL4_Alarm_NTC_coil_overheating": {
+                "name": "Zone 4 coil overheating"
+            },
+            "SL4_Alarm_timer_ended": {
+                "name": "Zone 4 timer ended"
+            },
+            "SL4_Alarm_zone_turned_off": {
+                "name": "Zone 4 turned off"
+            },
+            "SL4_Bridge_function_active": {
+                "name": "Zone 4 bridge active"
+            },
+            "SL4_Pot_detected": {
+                "name": "Zone 4 pot detected"
+            },
+            "SL4_Status": {
+                "name": "Zone 4 status"
+            },
+            "SL5_Alarm_auto_program_notification": {
+                "name": "Zone 5 auto program notification"
+            },
+            "SL5_Alarm_automatic_switch_off_zone": {
+                "name": "Zone 5 automatically switched off"
+            },
+            "SL5_Alarm_NTC_coil_overheating": {
+                "name": "Zone 5 coil overheating"
+            },
+            "SL5_Alarm_timer_ended": {
+                "name": "Zone 5 timer ended"
+            },
+            "SL5_Alarm_zone_turned_off": {
+                "name": "Zone 5 turned off"
+            },
+            "SL5_Bridge_function_active": {
+                "name": "Zone 5 bridge active"
+            },
+            "SL5_Pot_detected": {
+                "name": "Zone 5 pot detected"
+            },
+            "SL5_Status": {
+                "name": "Zone 5 status"
+            },
+            "SL6_Alarm_auto_program_notification": {
+                "name": "Zone 6 auto program notification"
+            },
+            "SL6_Alarm_automatic_switch_off_zone": {
+                "name": "Zone 6 automatically switched off"
+            },
+            "SL6_Alarm_NTC_coil_overheating": {
+                "name": "Zone 6 coil overheating"
+            },
+            "SL6_Alarm_timer_ended": {
+                "name": "Zone 6 timer ended"
+            },
+            "SL6_Alarm_zone_turned_off": {
+                "name": "Zone 6 turned off"
+            },
+            "SL6_Bridge_function_active": {
+                "name": "Zone 6 bridge active"
+            },
+            "SL6_Pot_detected": {
+                "name": "Zone 6 pot detected"
+            },
+            "SL6_Status": {
+                "name": "Zone 6 status"
             }
         },
         "climate": {
@@ -235,9 +379,6 @@
             "Selected_programremaining_time_inminutes": {
                 "name": "Remaining time of selected program"
             },
-            "SL": {
-                "name": "Number of zones"
-            },
             "SL1_Active_timer": {
                 "name": "Zone 1 active timer",
                 "state": {
@@ -245,24 +386,6 @@
                     "stopwatch": "Stopwatch",
                     "timer": "Timer"
                 }
-            },
-            "SL1_Alarm_NTC_coil_overheating": {
-                "name": "Zone 1 coil overheating"
-            },
-            "SL1_Alarm_auto_program_notification": {
-                "name": "Zone 1 auto program notification"
-            },
-            "SL1_Alarm_automatic_switch_off_zone": {
-                "name": "Zone 1 automatically switched off"
-            },
-            "SL1_Alarm_timer_ended": {
-                "name": "Zone 1 timer ended"
-            },
-            "SL1_Alarm_zone_turned_off": {
-                "name": "Zone 1 turned off"
-            },
-            "SL1_Bridge_active": {
-                "name": "Zone 1 bridge active"
             },
             "SL1_Functions": {
                 "name": "Zone 1 function",
@@ -279,17 +402,11 @@
             "SL1_NTC_sensor": {
                 "name": "Zone 1 NTC sensor"
             },
-            "SL1_Pot_detected": {
-                "name": "Zone 1 pot detected"
-            },
             "SL1_Power_level": {
                 "name": "Zone 1 power level"
             },
             "SL1_Power_level_max": {
                 "name": "Zone 1 max power level"
-            },
-            "SL1_Status": {
-                "name": "Zone 1 status"
             },
             "SL1_Zone_shape": {
                 "name": "Zone 1 shape",
@@ -309,24 +426,6 @@
                     "timer": "Timer"
                 }
             },
-            "SL2_Alarm_NTC_coil_overheating": {
-                "name": "Zone 2 coil overheating"
-            },
-            "SL2_Alarm_auto_program_notification": {
-                "name": "Zone 2 auto program notification"
-            },
-            "SL2_Alarm_automatic_switch_off_zone": {
-                "name": "Zone 2 automatically switched off"
-            },
-            "SL2_Alarm_timer_ended": {
-                "name": "Zone 2 timer ended"
-            },
-            "SL2_Alarm_zone_turned_off": {
-                "name": "Zone 2 turned off"
-            },
-            "SL2_Bridge_active": {
-                "name": "Zone 2 bridge active"
-            },
             "SL2_Functions": {
                 "name": "Zone 2 function",
                 "state": {
@@ -342,17 +441,11 @@
             "SL2_NTC_sensor": {
                 "name": "Zone 2 NTC sensor"
             },
-            "SL2_Pot_detected": {
-                "name": "Zone 2 pot detected"
-            },
             "SL2_Power_level": {
                 "name": "Zone 2 power level"
             },
             "SL2_Power_level_max": {
                 "name": "Zone 2 max power level"
-            },
-            "SL2_Status": {
-                "name": "Zone 2 status"
             },
             "SL2_Zone_shape": {
                 "name": "Zone 2 shape",
@@ -372,24 +465,6 @@
                     "timer": "Timer"
                 }
             },
-            "SL3_Alarm_NTC_coil_overheating": {
-                "name": "Zone 3 coil overheating"
-            },
-            "SL3_Alarm_auto_program_notification": {
-                "name": "Zone 3 auto program notification"
-            },
-            "SL3_Alarm_automatic_switch_off_zone": {
-                "name": "Zone 3 automatically switched off"
-            },
-            "SL3_Alarm_timer_ended": {
-                "name": "Zone 3 timer ended"
-            },
-            "SL3_Alarm_zone_turned_off": {
-                "name": "Zone 3 turned off"
-            },
-            "SL3_Bridge_active": {
-                "name": "Zone 3 bridge active"
-            },
             "SL3_Functions": {
                 "name": "Zone 3 function",
                 "state": {
@@ -405,17 +480,11 @@
             "SL3_NTC_sensor": {
                 "name": "Zone 3 NTC sensor"
             },
-            "SL3_Pot_detected": {
-                "name": "Zone 3 pot detected"
-            },
             "SL3_Power_level": {
                 "name": "Zone 3 power level"
             },
             "SL3_Power_level_max": {
                 "name": "Zone 3 max power level"
-            },
-            "SL3_Status": {
-                "name": "Zone 3 status"
             },
             "SL3_Zone_shape": {
                 "name": "Zone 3 shape",
@@ -435,24 +504,6 @@
                     "timer": "Timer"
                 }
             },
-            "SL4_Alarm_NTC_coil_overheating": {
-                "name": "Zone 4 coil overheating"
-            },
-            "SL4_Alarm_auto_program_notification": {
-                "name": "Zone 4 auto program notification"
-            },
-            "SL4_Alarm_automatic_switch_off_zone": {
-                "name": "Zone 4 automatically switched off"
-            },
-            "SL4_Alarm_timer_ended": {
-                "name": "Zone 4 timer ended"
-            },
-            "SL4_Alarm_zone_turned_off": {
-                "name": "Zone 4 turned off"
-            },
-            "SL4_Bridge_active": {
-                "name": "Zone 4 bridge active"
-            },
             "SL4_Functions": {
                 "name": "Zone 4 function",
                 "state": {
@@ -468,17 +519,11 @@
             "SL4_NTC_sensor": {
                 "name": "Zone 4 NTC sensor"
             },
-            "SL4_Pot_detected": {
-                "name": "Zone 4 pot detected"
-            },
             "SL4_Power_level": {
                 "name": "Zone 4 power level"
             },
             "SL4_Power_level_max": {
                 "name": "Zone 4 max power level"
-            },
-            "SL4_Status": {
-                "name": "Zone 4 status"
             },
             "SL4_Zone_shape": {
                 "name": "Zone 4 shape",
@@ -498,24 +543,6 @@
                     "timer": "Timer"
                 }
             },
-            "SL5_Alarm_NTC_coil_overheating": {
-                "name": "Zone 5 coil overheating"
-            },
-            "SL5_Alarm_auto_program_notification": {
-                "name": "Zone 5 auto program notification"
-            },
-            "SL5_Alarm_automatic_switch_off_zone": {
-                "name": "Zone 5 automatically switched off"
-            },
-            "SL5_Alarm_timer_ended": {
-                "name": "Zone 5 timer ended"
-            },
-            "SL5_Alarm_zone_turned_off": {
-                "name": "Zone 5 turned off"
-            },
-            "SL5_Bridge_active": {
-                "name": "Zone 5 bridge active"
-            },
             "SL5_Functions": {
                 "name": "Zone 5 function",
                 "state": {
@@ -531,17 +558,11 @@
             "SL5_NTC_sensor": {
                 "name": "Zone 5 NTC sensor"
             },
-            "SL5_Pot_detected": {
-                "name": "Zone 5 pot detected"
-            },
             "SL5_Power_level": {
                 "name": "Zone 5 power level"
             },
             "SL5_Power_level_max": {
                 "name": "Zone 5 max power level"
-            },
-            "SL5_Status": {
-                "name": "Zone 5 status"
             },
             "SL5_Zone_shape": {
                 "name": "Zone 5 shape",
@@ -561,24 +582,6 @@
                     "timer": "Timer"
                 }
             },
-            "SL6_Alarm_NTC_coil_overheating": {
-                "name": "Zone 6 coil overheating"
-            },
-            "SL6_Alarm_auto_program_notification": {
-                "name": "Zone 6 auto program notification"
-            },
-            "SL6_Alarm_automatic_switch_off_zone": {
-                "name": "Zone 6 automatically switched off"
-            },
-            "SL6_Alarm_timer_ended": {
-                "name": "Zone 6 timer ended"
-            },
-            "SL6_Alarm_zone_turned_off": {
-                "name": "Zone 6 turned off"
-            },
-            "SL6_Bridge_active": {
-                "name": "Zone 6 bridge active"
-            },
             "SL6_Functions": {
                 "name": "Zone 6 function",
                 "state": {
@@ -594,17 +597,11 @@
             "SL6_NTC_sensor": {
                 "name": "Zone 6 NTC sensor"
             },
-            "SL6_Pot_detected": {
-                "name": "Zone 6 pot detected"
-            },
             "SL6_Power_level": {
                 "name": "Zone 6 power level"
             },
             "SL6_Power_level_max": {
                 "name": "Zone 6 max power level"
-            },
-            "SL6_Status": {
-                "name": "Zone 6 status"
             },
             "SL6_Zone_shape": {
                 "name": "Zone 6 shape",
