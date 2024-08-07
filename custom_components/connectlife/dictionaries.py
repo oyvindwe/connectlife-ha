@@ -50,7 +50,7 @@ _LOGGER = logging.getLogger(__name__)
 
 class BinarySensor:
     device_class: BinarySensorDeviceClass | None
-    options: dict[number, bool] = {0: False, 1: False, 2: True}
+    options: dict[int, bool] = {0: False, 1: False, 2: True}
 
     def __init__(self, name: str, binary_sensor: dict | None):
         if binary_sensor is None:
