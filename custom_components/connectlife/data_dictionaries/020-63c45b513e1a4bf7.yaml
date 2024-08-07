@@ -94,6 +94,7 @@ properties:
       8202: on
 - property: SL
   # Sample value: 6
+  # Probably number of zones supported by API, and should be ignored. Zone_number is actual number of zones on hob.
   hide: true
 - property: SL1_Active_timer
   hide: true

@@ -618,6 +618,9 @@
       },
       "t_sleep": {
         "name": "Sleep"
+      },
+      "Zone_number": {
+        "name": "Number of zones"
       }
     },
     "switch": {
