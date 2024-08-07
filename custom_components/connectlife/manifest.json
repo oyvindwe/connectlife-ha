@@ -6,5 +6,5 @@
   "documentation": "https://github.com/oyvindwe/connectlife-ha",
   "iot_class": "cloud_polling",
   "requirements": ["connectlife==0.5.0"],
-  "version": "0.14.0"
+  "version": "0.15.0"
 }
