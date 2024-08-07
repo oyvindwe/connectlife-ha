@@ -106,6 +106,13 @@
       "properties": {
         "device_class": {
           "$ref": "#/definitions/BinarySensorDeviceClass"
+        },
+        "options": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Map of integer to boolean. By default, 0 and 1 is mapped to off (as 0 often implies that the sensor is not available), and 1 to true."
         }
       },
       "title": "BinarySensor"
