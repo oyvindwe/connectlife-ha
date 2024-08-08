@@ -60,6 +60,7 @@ properties:
     device_class: switch
 # Inlet temperature?
 - property: f_temp_in
+  device_class: temperature
 # Other properties to be observed over time
 # - property: f-filter
 #   # Sample value: 0
