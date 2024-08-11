@@ -639,6 +639,9 @@
       "t_power": {
         "name": "Power"
       },
+      "t_sleep": {
+        "name": "Sleep"
+      },
       "t_super": {
         "name": "Super"
       },
