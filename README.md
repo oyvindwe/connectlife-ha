@@ -34,6 +34,7 @@ visibility.
 |              | Air conditioner | 006              | 201                 | [Completed](custom_components/connectlife/data_dictionaries/006-201.yaml)                 |
 |              | Dehumidifier    | 007              | 400                 | [Completed](custom_components/connectlife/data_dictionaries/007-400.yaml)                 |
 |              | Dehumidifier    | 007              | 406                 | [Completed](custom_components/connectlife/data_dictionaries/007-406.yaml)                 |
+|              | Air conditioner | 009              | 100                 | [Under testing](custom_components/connectlife/data_dictionaries/009-100.yaml)             |
 |              | Air conditioner | 009              | 104                 | [Completed](custom_components/connectlife/data_dictionaries/009-104.yaml)                 |
 |              | Air conditioner | 009              | 106                 | [Completed](custom_components/connectlife/data_dictionaries/009-106.yaml)                 |
 |              | Air conditioner | 009              | 109                 | [Completed](custom_components/connectlife/data_dictionaries/009-109.yaml)                 |
@@ -57,6 +58,12 @@ ConnectLife properties can be mapped to any of these entity types:
 - [Sensor](https://developers.home-assistant.io/docs/core/entity/sensor)
 - [Switch](https://developers.home-assistant.io/docs/core/entity/switch)
 - [Water heater](https://developers.home-assistant.io/docs/core/entity/water-heater)
+
+## Disable beeping
+
+Some devices will beep on every configuration change. To disable this, go to the
+[ConnectLife integration](https://my.home-assistant.io/redirect/integration/?domain=connectlife)
+and click "Configure" → "Configure a device" and select the device you want to disable beeping for. 
 
 ## Service to set property values on sensors
 
