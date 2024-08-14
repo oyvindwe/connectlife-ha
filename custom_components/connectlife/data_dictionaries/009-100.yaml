@@ -1,0 +1,140 @@
+climate:
+  presets:
+    - preset: eco
+      t_power: 1
+      t_eco: 1
+      t_fan_mute: 0
+      t_sleep: 0
+      t_super: 0
+    - preset: mute
+      t_power: 1
+      t_eco: 0
+      t_fan_mute: 1
+    - preset: eco_mute
+      t_power: 1
+      t_eco: 1
+      t_fan_mute: 1
+      t_sleep: 0
+      t_super: 0
+    - preset: super
+      t_power: 1
+      t_super: 1
+      t_eco: 0
+      t_fan_mute: 0
+      t_sleep: 0
+    - preset: sleep_1
+      t_power: 1
+      t_eco: 0
+      t_sleep: 1
+      t_fan_mute: 0
+      t_super: 0
+    - preset: sleep_2
+      t_power: 1
+      t_eco: 0
+      t_sleep: 2
+      t_fan_mute: 0
+      t_super: 0
+    - preset: sleep_3
+      t_power: 1
+      t_eco: 0
+      t_sleep: 3
+      t_fan_mute: 0
+      t_super: 0
+    - preset: sleep_4
+      t_power: 1
+      t_eco: 0
+      t_sleep: 4
+      t_fan_mute: 0
+      t_super: 0
+    - preset: eco_sleep_1
+      t_power: 1
+      t_eco: 1  
+      t_sleep: 1
+      t_fan_mute: 0
+      t_super: 0
+    - preset: eco_sleep_2
+      t_power: 1
+      t_eco: 1
+      t_sleep: 2
+      t_fan_mute: 0
+      t_super: 0
+    - preset: eco_sleep_3
+      t_power: 1
+      t_eco: 1
+      t_sleep: 3
+      t_fan_mute: 0
+      t_super: 0
+    - preset: eco_sleep_4
+      t_power: 1
+      t_eco: 1
+      t_sleep: 4
+      t_fan_mute: 0
+      t_super: 0
+properties:
+  - property: f_temp_in
+    climate:
+      target: current_temperature
+  - property: t_eco
+    icon: mdi:leaf
+    switch:
+      device_class: switch
+  - property: t_fan_mute
+    icon: mdi:volume-variant-off
+    switch:
+      device_class: switch
+  - property: t_fan_speed
+    climate:
+      target: fan_mode
+      options:
+        0: auto
+        5: low
+        6: middle_low
+        7: medium
+        8: middle_high
+        9: high
+  - property: t_power
+    climate:
+      target: is_on
+  - property: t_sleep
+    icon: mdi:sleep
+    select:
+      options:
+        0: "off"
+        1: general
+        2: for_old
+        3: for_young
+        4: for_kid
+  - property: t_super
+    icon: mdi:run-fast
+    switch:
+      device_class: switch
+  - property: t_up_down
+    climate:
+      target: swing_mode
+      options:
+        0: "off"
+        1: "on"
+  - property: t_temp
+    climate:
+      target: target_temperature
+      min_value:
+        celsius: 16
+        fahrenheit: 61
+      max_value:
+        celsius: 32
+        fahrenheit: 90
+  - property: t_temp_type
+    climate:
+      target: temperature_unit
+      options:
+        0: celsius
+        1: fahrenheit
+  - property: t_work_mode
+    climate:
+      target: hvac_mode
+      options:
+        0: fan_only
+        1: heat
+        2: cool
+        3: dry
+        4: auto
