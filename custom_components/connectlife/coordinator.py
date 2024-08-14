@@ -9,10 +9,15 @@ from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, Upda
 
 from .const import DOMAIN
 
+MAX_RETRIES = 3
+
 _LOGGER = logging.getLogger(__name__)
 
 class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeAppliance]]):
     """ConnectLife coordinator."""
+
+    # We need initial data, so no retries for first request.
+    error_count = MAX_RETRIES
 
     def __init__(self, hass, api: ConnectLifeApi):
         """Initialize coordinator."""
@@ -31,13 +36,35 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
             # handled by the data update coordinator.
             async with async_timeout.timeout(10):
                 await self.api.get_appliances()
-                return {a.device_id: a for a in self.api.appliances}
+                self.error_count = 0
         except LifeConnectAuthError as err:
             # Raising ConfigEntryAuthFailed will cancel future updates
             # and start a config flow with SOURCE_REAUTH (async_step_reauth)
             raise ConfigEntryAuthFailed from err
+        except TimeoutError as err:
+            self.error_count += 1
+            i = MAX_RETRIES - self.error_count
+            if i > 0:
+                _LOGGER.warning(
+                    "ConnectLife API request timed out, will try %d more %s",
+                    i,
+                    "time" if i == 1 else "times",
+                )
+            else:
+                raise err
         except LifeConnectError as err:
-            raise UpdateFailed(f"Error communicating with API: {err}")
+            self.error_count += 1
+            i = MAX_RETRIES - self.error_count
+            if i > 0:
+                _LOGGER.warning(
+                    "ConnectLife API failed with '%s', will try %d more %s",
+                    err,
+                    i,
+                    "time" if i == 1 else "times",
+                )
+            else:
+                raise UpdateFailed(f"Error communicating with API: {err}")
+        return {a.device_id: a for a in self.api.appliances}
 
     async def async_update_device(self, device_id: str, properties: dict[str, int | str]):
         """Updates the device, and sets the same data in local copy and notify to avoid refetching."""
