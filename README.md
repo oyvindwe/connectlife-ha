@@ -2,6 +2,8 @@
 
 ConnectLife integration for Home Assistant
 
+[![BuyMeCoffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/oyvindwev)
+
 ## Installation
 
 You can install using HACS or download.
