@@ -1,0 +1,634 @@
+# Atag hob
+properties:
+- property: Alarm_Hob_Hood_Started
+  hide: true
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: Alarm_NTC_TC
+  hide: true
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: Alarm_NTC_coil_overheating
+  hide: true
+  icon: mdi:alert
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: Alarm_NTC_power
+  hide: true
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: Alarm_auto_program_notification
+  hide: true
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: Alarm_automatic_switch_off_zone
+  hide: true
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: Alarm_timer_ended
+  hide: true
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: Alarm_voltage
+  hide: true
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: Alarm_zone_turned_off
+  hide: true
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: Child_lock
+  hide: true
+  binary_sensor:
+    device_class: lock
+    options:
+      8131: off
+      8132: on
+- property: Device_status
+  # Sample value: 8018
+  hide: true
+  sensor:
+    device_class: enum
+    options:
+      8011: idle
+      8012: service
+      8013: production
+      8014: demo_mode
+      8015: iq
+      8016: running
+      8017: failure
+      8018: stand_by
+      8019: pause_mode
+      8020: locked
+- property: ECO_mode
+  binary_sensor:
+    options:
+      8201: off
+      8202: on
+- property: SL
+  # Sample value: 6
+  # Probably number of zones supported by API, and should be ignored. Zone_number is actual number of zones on hob.
+  hide: true
+- property: SL1_Active_timer
+  hide: true
+  sensor:
+    device_class: enum
+    options:
+      0: inactive
+      1: stopwatch
+      2: timer
+- property: SL1_Alarm_NTC_coil_overheating
+  hide: true
+  icon: mdi:alert
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: SL1_Alarm_auto_program_notification
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: SL1_Alarm_automatic_switch_off_zone
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: SL1_Alarm_timer_ended
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: SL1_Alarm_zone_turned_off
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: SL1_Bridge_function_active
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: SL1_Functions
+  sensor:
+    device_class: enum
+    options:
+      8166: none
+      8167: boil
+      8168: simmer
+      8169: keep_warm
+      8170: wok
+      8171: roast
+      8172: grill
+- property: SL1_NTC_sensor
+  # Sample value: 0
+  hide: true
+- property: SL1_Pot_detected
+  hide: true
+  binary_sensor:
+    options:
+      8126: on
+      8127: off
+- property: SL1_Power_level
+  # Sample value: 0
+- property: SL1_Power_level_max
+  # Sample value: 13
+  hide: true
+- property: SL1_Status
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: SL1_Zone_shape
+  hide: true
+  sensor:
+    device_class: enum
+    options:
+      8341: round
+      8342: square
+      8343: rectangle_vertical
+      8344: rectangle_horizontal
+      8345: no_shape
+- property: SL2_Active_timer
+  hide: true
+  sensor:
+    device_class: enum
+    options:
+      0: inactive
+      1: stopwatch
+      2: timer
+- property: SL2_Alarm_NTC_coil_overheating
+  hide: true
+  icon: mdi:alert
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: SL2_Alarm_auto_program_notification
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: SL2_Alarm_automatic_switch_off_zone
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: SL2_Alarm_timer_ended
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: SL2_Alarm_zone_turned_off
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: SL2_Bridge_function_active
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: SL2_Functions
+  sensor:
+    device_class: enum
+    options:
+      8166: none
+      8167: boil
+      8168: simmer
+      8169: keep_warm
+      8170: wok
+      8171: roast
+      8172: grill
+- property: SL2_NTC_sensor
+  # Sample value: 0
+  hide: true
+- property: SL2_Pot_detected
+  hide: true
+  binary_sensor:
+    options:
+      8126: on
+      8127: off
+- property: SL2_Power_level
+  # Sample value: 0
+- property: SL2_Power_level_max
+  # Sample value: 13
+  hide: true
+- property: SL2_Status
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: SL2_Zone_shape
+  hide: true
+  sensor:
+    device_class: enum
+    options:
+      8341: round
+      8342: square
+      8343: rectangle_vertical
+      8344: rectangle_horizontal
+      8345: no_shape
+- property: SL3_Active_timer
+  hide: true
+  sensor:
+    device_class: enum
+    options:
+      0: inactive
+      1: stopwatch
+      2: timer
+- property: SL3_Alarm_NTC_coil_overheating
+  hide: true
+  icon: mdi:alert
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: SL3_Alarm_auto_program_notification
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: SL3_Alarm_automatic_switch_off_zone
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: SL3_Alarm_timer_ended
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: SL3_Alarm_zone_turned_off
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: SL3_Bridge_function_active
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: SL3_Functions
+  sensor:
+    device_class: enum
+    options:
+      8166: none
+      8167: boil
+      8168: simmer
+      8169: keep_warm
+      8170: wok
+      8171: roast
+      8172: grill
+- property: SL3_NTC_sensor
+  # Sample value: 0
+  hide: true
+- property: SL3_Pot_detected
+  hide: true
+  binary_sensor:
+    options:
+      8126: on
+      8127: off
+- property: SL3_Power_level
+  # Sample value: 0
+- property: SL3_Power_level_max
+  # Sample value: 13
+  hide: true
+- property: SL3_Status
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: SL3_Zone_shape
+  hide: true
+  sensor:
+    device_class: enum
+    options:
+      8341: round
+      8342: square
+      8343: rectangle_vertical
+      8344: rectangle_horizontal
+      8345: no_shape
+- property: SL4_Active_timer
+  hide: true
+  sensor:
+    device_class: enum
+    options:
+      0: inactive
+      1: stopwatch
+      2: timer
+- property: SL4_Alarm_NTC_coil_overheating
+  hide: true
+  icon: mdi:alert
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: SL4_Alarm_auto_program_notification
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: SL4_Alarm_automatic_switch_off_zone
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: SL4_Alarm_timer_ended
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: SL4_Alarm_zone_turned_off
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: SL4_Bridge_function_active
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: SL4_Functions
+  sensor:
+    device_class: enum
+    options:
+      8166: none
+      8167: boil
+      8168: simmer
+      8169: keep_warm
+      8170: wok
+      8171: roast
+      8172: grill
+- property: SL4_NTC_sensor
+  # Sample value: 0
+  hide: true
+- property: SL4_Pot_detected
+  hide: true
+  binary_sensor:
+    options:
+      8126: on
+      8127: off
+- property: SL4_Power_level
+  # Sample value: 0
+- property: SL4_Power_level_max
+  # Sample value: 13
+  hide: true
+- property: SL4_Status
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: SL4_Zone_shape
+  hide: true
+  sensor:
+    device_class: enum
+    options:
+      8341: round
+      8342: square
+      8343: rectangle_vertical
+      8344: rectangle_horizontal
+      8345: no_shape
+- property: SL5_Active_timer
+  hide: true
+  sensor:
+    device_class: enum
+    options:
+      0: inactive
+      1: stopwatch
+      2: timer
+- property: SL5_Alarm_NTC_coil_overheating
+  hide: true
+  icon: mdi:alert
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: SL5_Alarm_auto_program_notification
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: SL5_Alarm_automatic_switch_off_zone
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: SL5_Alarm_timer_ended
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: SL5_Alarm_zone_turned_off
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: SL5_Bridge_function_active
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: SL5_Functions
+  sensor:
+    device_class: enum
+    options:
+      8166: none
+      8167: boil
+      8168: simmer
+      8169: keep_warm
+      8170: wok
+      8171: roast
+      8172: grill
+- property: SL5_NTC_sensor
+  # Sample value: 0
+  hide: true
+- property: SL5_Pot_detected
+  hide: true
+  binary_sensor:
+    options:
+      8126: on
+      8127: off
+- property: SL5_Power_level
+  # Sample value: 0
+- property: SL5_Power_level_max
+  # Sample value: 13
+  hide: true
+- property: SL5_Status
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: SL5_Zone_shape
+  hide: true
+  sensor:
+    device_class: enum
+    options:
+      8341: round
+      8342: square
+      8343: rectangle_vertical
+      8344: rectangle_horizontal
+      8345: no_shape
+- property: SL6_Active_timer
+  hide: true
+  sensor:
+    device_class: enum
+    options:
+      0: inactive
+      1: stopwatch
+      2: timer
+- property: SL6_Alarm_NTC_coil_overheating
+  hide: true
+  icon: mdi:alert
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: SL6_Alarm_auto_program_notification
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: SL6_Alarm_automatic_switch_off_zone
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: SL6_Alarm_timer_ended
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: SL6_Alarm_zone_turned_off
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: SL6_Bridge_function_active
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: SL6_Functions
+  sensor:
+    device_class: enum
+    options:
+      8166: none
+      8167: boil
+      8168: simmer
+      8169: keep_warm
+      8170: wok
+      8171: roast
+      8172: grill
+- property: SL6_NTC_sensor
+  # Sample value: 0
+  hide: true
+- property: SL6_Pot_detected
+  hide: true
+  binary_sensor:
+    options:
+      8126: on
+      8127: off
+- property: SL6_Power_level
+  # Sample value: 0
+- property: SL6_Power_level_max
+  # Sample value: 13
+  hide: true
+- property: SL6_Status
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: SL6_Zone_shape
+  hide: true
+  sensor:
+    device_class: enum
+    options:
+      8341: round
+      8342: square
+      8343: rectangle_vertical
+      8344: rectangle_horizontal
+      8345: no_shape
+- property: Total_time_of_cooking_in_hours
+  sensor:
+    state_class: total
+    unit: h
+- property: Zone_number
+  # Sample value: 5
+  hide: true
+- property: daily_energy_kwh
+  # Sample value: 0
+  hide: true
+  sensor:
+    state_class: total
+    device_class: energy
+    unit: kWh

@@ -50,13 +50,15 @@ _LOGGER = logging.getLogger(__name__)
 
 class BinarySensor:
     device_class: BinarySensorDeviceClass | None
+    options: dict[int, bool] = {0: False, 1: False, 2: True}
 
     def __init__(self, name: str, binary_sensor: dict | None):
         if binary_sensor is None:
             binary_sensor = {}
         self.device_class = BinarySensorDeviceClass(binary_sensor[DEVICE_CLASS]) \
             if DEVICE_CLASS in binary_sensor else None
-
+        if OPTIONS in binary_sensor:
+            self.options = binary_sensor[OPTIONS]
 
 class Climate:
     target: str
@@ -105,33 +107,18 @@ class Number:
     max_value: int | None
     device_class: NumberDeviceClass | None
     unit: str | None
-    options: list[dict[int, str]] | None
 
-    def __init__(self, name: str, sensor: dict):
-        if sensor is None:
-            sensor = {}
-        self.unknown_value = sensor[UNKNOWN_VALUE] if UNKNOWN_VALUE in sensor and sensor[UNKNOWN_VALUE] else None
-        self.min_value = sensor[MIN_VALUE] if MIN_VALUE in sensor else None
-        self.max_value = sensor[MAX_VALUE] if MAX_VALUE in sensor else None
-        self.unit = sensor[UNIT] if UNIT in sensor and sensor[UNIT] else None
-        self.state_class = SensorStateClass(sensor[STATE_CLASS]) if STATE_CLASS in sensor else None
+    def __init__(self, name: str, number: dict):
+        if number is None:
+            number = {}
+        self.min_value = number[MIN_VALUE] if MIN_VALUE in number else None
+        self.max_value = number[MAX_VALUE] if MAX_VALUE in number else None
+        self.unit = number[UNIT] if UNIT in number and number[UNIT] else None
 
         device_class = None
-        if DEVICE_CLASS in sensor:
-            device_class = SensorDeviceClass(sensor[DEVICE_CLASS])
-            if device_class == SensorDeviceClass.ENUM:
-                if self.unit:
-                    _LOGGER.warning("%s has device class enum, but has unit", name)
-                    device_class = None
-                if self.state_class:
-                    _LOGGER.warning("%s has device class enum, but has state_class", name)
-                    device_class = None
-                if device_class and "options" not in sensor:
-                    _LOGGER.warning("%s has device class enum, but no options", name)
-                    device_class = None
-                else:
-                    self.options = sensor["options"]
-            elif device_class == NumberDeviceClass.PH or device_class == NumberDeviceClass.AQI:
+        if DEVICE_CLASS in number:
+            device_class = NumberDeviceClass(number[DEVICE_CLASS])
+            if device_class == NumberDeviceClass.PH or device_class == NumberDeviceClass.AQI:
                 if self.unit:
                     _LOGGER.warning("%s has device class %s and unit %s", name, device_class, self.unit)
                     self.unit = None
@@ -187,7 +174,7 @@ class Sensor:
                     device_class = None
                 else:
                     self.options = sensor["options"]
-            elif device_class == SensorDeviceClass.PH or device_class == SensorDeviceClass.AQI:
+            elif device_class in [SensorDeviceClass.AQI, SensorDeviceClass.DATE, SensorDeviceClass.PH, SensorDeviceClass.TIMESTAMP]:
                 if self.unit:
                     _LOGGER.warning("%s has device class %s and unit %s", name, device_class, self.unit)
                     self.unit = None

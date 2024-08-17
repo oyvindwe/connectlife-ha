@@ -7,7 +7,6 @@ properties:
     device_class: energy
     unit: kWh
 - property: f_temp_in
-  icon: mdi:temp
   climate:
     target: current_temperature
 - property: t_eco

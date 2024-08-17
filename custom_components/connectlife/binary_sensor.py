@@ -17,8 +17,6 @@ from connectlife.appliance import ConnectLifeAppliance
 
 _LOGGER = logging.getLogger(__name__)
 
-VALUES = {0: False, 1: False, 2: True}
-
 
 async def async_setup_entry(
         hass: HomeAssistant,
@@ -49,6 +47,7 @@ class ConnectLifeBinaryStatusSensor(ConnectLifeEntity, BinarySensorEntity):
         super().__init__(coordinator, appliance)
         self._attr_unique_id = f"{appliance.device_id}-{status}"
         self.status = status
+        self.options = dd_entry.binary_sensor.options
         self.entity_description = BinarySensorEntityDescription(
             key=self._attr_unique_id,
             entity_registry_visible_default=not dd_entry.hide,
@@ -63,8 +62,8 @@ class ConnectLifeBinaryStatusSensor(ConnectLifeEntity, BinarySensorEntity):
     def update_state(self):
         if self.status in self.coordinator.data[self.device_id].status_list:
             value = self.coordinator.data[self.device_id].status_list[self.status]
-            if value in VALUES:
-                self._attr_is_on = VALUES[value]
+            if value in self.options:
+                self._attr_is_on = self.options[value]
             else:
                 self._attr_is_on = None
                 _LOGGER.warning("Unknown value %d for %s", value, self.status)
