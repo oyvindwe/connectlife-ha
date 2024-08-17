@@ -4,12 +4,11 @@ climate:
       t_power: 1
       t_eco: 1
       t_fan_speed: 0 # auto
-    - preset: quiet cooling
+    - preset: mute
       icon: mdi:volume-variant-off
       t_power: 1
       t_fan_mute: 1
       t_fan_speed: 0 # auto
-      t_work_mode: 2
 properties:
   - property: f_temp_in
     climate:
