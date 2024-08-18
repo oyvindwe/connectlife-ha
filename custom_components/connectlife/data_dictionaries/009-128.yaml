@@ -86,7 +86,7 @@ properties:
       unit: BTU/hr
       state_class: measurement
   - property: f_heat_qvalue
-    icon: mdi:weather-sunny
+    icon: mdi:fire
     sensor:
       unit: BTU/hr
       state_class: measurement
