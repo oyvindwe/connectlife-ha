@@ -5,7 +5,6 @@ climate:
       t_eco: 1
       t_fan_speed: 0 # auto
     - preset: mute
-      icon: mdi:volume-variant-off
       t_power: 1
       t_fan_mute: 1
       t_fan_speed: 0 # auto
@@ -77,3 +76,17 @@ properties:
         2: cool
         3: dry
         4: auto
+  - property: f_votage
+    sensor:
+      device_class: voltage
+      unit: V
+  - property: f_cool_qvalue
+    icon: mdi:snowflake
+    sensor:
+      unit: BTU/hr
+      state_class: measurement
+  - property: f_heat_qvalue
+    icon: mdi:weather-sunny
+    sensor:
+      unit: BTU/hr
+      state_class: measurement
