@@ -639,6 +639,9 @@
       "t_power": {
         "name": "Power"
       },
+      "t_purify": {
+        "name": "Purifier"
+      },
       "t_sleep": {
         "name": "Sleep"
       },
@@ -673,6 +676,14 @@
           "angle_5": "Angle 5",
           "angle_6": "Angle 6"
         }
+      },
+      "t_swing_follow": {
+          "name": "AI ventilation",
+          "state": {
+              "off": "Off",
+              "follow": "Follow",
+              "not_follow": "Not Follow"
+          }
       },
       "t_sleep": {
         "name": "Sleep Mode",
