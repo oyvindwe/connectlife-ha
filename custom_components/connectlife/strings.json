@@ -621,6 +621,15 @@
       },
       "Zone_number": {
         "name": "Number of zones"
+      },
+      "f_heat_qvalue": {
+        "name": "Heating"
+      },
+      "f_cool_qvalue": {
+        "name": "Cooling"
+      },
+      "f_votage": {
+        "name": "Measured grid voltage"
       }
     },
     "switch": {
