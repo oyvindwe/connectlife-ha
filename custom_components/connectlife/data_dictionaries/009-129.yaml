@@ -8,33 +8,20 @@ climate:
       t_power: 1
       t_tms: 1
 properties:
-#####################################
-
-  - property: t_temp_type
-    climate:
-      target: temperature_unit
-      options:
-        0: celsius
-        1: fahrenheit
-
   - property: daily_energy_kwh
     hide: true
     sensor:
       state_class: total
       device_class: energy
       unit: kWh
-
   - property: f_votage
     sensor:
       device_class: voltage
       unit: V
-
-
   - property: t_purify
     icon: mdi:air-purifier
     switch:
       device_class: switch
-
   - property: t_swing_follow
     icon: mdi:account-arrow-right
     select:
@@ -42,20 +29,20 @@ properties:
         0: "off"
         1: follow
         2: not_follow
-
   - property: f_cool_qvalue
     sensor:
       unit: BTU/hr
       state_class: measurement
-
   - property: f_heat_qvalue
     icon: mdi:weather-sunny
     sensor:
       unit: BTU/hr
-
-
-
-############################
+  - property: t_temp_type
+    climate:
+      target: temperature_unit
+      options:
+        0: celsius
+        1: fahrenheit
   - property: f_temp_in
     climate:
       target: current_temperature
@@ -115,8 +102,8 @@ properties:
       options:
         0: forward
         1: right
-        2: swing
-        3: both_sides
+        2: both_sides
+        3: swing
         4: left
   - property: t_temp
     climate:

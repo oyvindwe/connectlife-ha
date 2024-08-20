@@ -1,0 +1,707 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Il dispositivo è già configurato"
+        },
+        "error": {
+            "cannot_connect": "Impossibile connettersi",
+            "invalid_auth": "Autenticazione non valida",
+            "unknown": "Errore imprevisto"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "password": "Password",
+                    "username": "Username"
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "menu_options": {
+                    "select_device": "Configura un dispositivo",
+                    "development": "Configura la modalità di sviluppo"
+                }
+            },
+            "select_device": {
+                "data": {
+                    "device": "Seleziona dispositivo"
+                },
+                "description": "Configura un dispositivo."
+            },
+            "configure_device": {
+                "data": {
+                    "disable_beep": "Disattiva beep"
+                },
+                "description": "Configura un dispositivo."
+            },
+            "development": {
+                "data": {
+                    "development_mode": "Modalità di sviluppo",
+                    "test_server_url": "Test server URL"
+                },
+                "description": "Abilita la modalità di sviluppo per connettersi al server di test anziché all'API ConnectLife."
+            }
+        },
+        "error": {
+            "test_server_invalid": "Invalid test server URL",
+            "test_server_required": "La modalità di sviluppo richiede l'URL del server di prova"
+        }
+    },
+    "services": {
+        "set_value": {
+            "name": "Imposta valore",
+            "description": "Imposta un valore per lo stato. Utilizzare con cura.",
+            "fields": {
+                "value": {
+                    "name": "Value",
+                    "description": "Valore da impostare."
+                }
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "Child_Lock_status": {
+                "name": "Blocco bambini"
+            },
+            "DelayStart_DelayEnd_mode": {
+                "name": "Partenza ritardata"
+            },
+            "Selected_program_AntiCrease_status": {
+                "name": "Antipiega"
+            },
+            "Selected_program_ExtraDry_status": {
+                "name": "Extra secco"
+            },
+            "Selected_program_SteamFinish": {
+                "name": "Finitura a vapore"
+            },
+            "SL1_Alarm_auto_program_notification": {
+                "name": "Notifica del programma automatico della zona 1"
+            },
+            "SL1_Alarm_automatic_switch_off_zone": {
+                "name": "La zona 1 si spegne automaticamente"
+            },
+            "SL1_Alarm_NTC_coil_overheating": {
+                "name": "Surriscaldamento della bobina della zona 1"
+            },
+            "SL1_Alarm_timer_ended": {
+                "name": "Il timer della zona 1 è terminato"
+            },
+            "SL1_Alarm_zone_turned_off": {
+                "name": "Zona 1 spenta"
+            },
+            "SL1_Bridge_function_active": {
+                "name": "Ponte della zona 1 attivo"
+            },
+            "SL1_Pot_detected": {
+                "name": "Rilevata pentola zona 1"
+            },
+            "SL1_Status": {
+                "name": "Stato della zona 1"
+            },
+            "SL2_Alarm_auto_program_notification": {
+                "name": "Notifica del programma automatico della zona 2"
+            },
+            "SL2_Alarm_automatic_switch_off_zone": {
+                "name": "La zona 2 si spegne automaticamente"
+            },
+            "SL2_Alarm_NTC_coil_overheating": {
+                "name": "Surriscaldamento della bobina della zona 2"
+            },
+            "SL2_Alarm_timer_ended": {
+                "name": "Il timer della zona 2 è terminato"
+            },
+            "SL2_Alarm_zone_turned_off": {
+                "name": "Zona 2 spenta"
+            },
+            "SL2_Bridge_function_active": {
+                "name": "Ponte della zona 2 attivo"
+            },
+            "SL2_Pot_detected": {
+                "name": "Rilevata pentola zona 2"
+            },
+            "SL2_Status": {
+                "name": "Stato della zona 2"
+            },
+            "SL3_Alarm_auto_program_notification": {
+                "name": "Notifica del programma automatico della zona 3"
+            },
+            "SL3_Alarm_automatic_switch_off_zone": {
+                "name": "La zona 3 si spegne automaticamente"
+            },
+            "SL3_Alarm_NTC_coil_overheating": {
+                "name": "Surriscaldamento della bobina della zona 3"
+            },
+            "SL3_Alarm_timer_ended": {
+                "name": "Il timer della zona 3 è terminato"
+            },
+            "SL3_Alarm_zone_turned_off": {
+                "name": "Zona 3 spenta"
+            },
+            "SL3_Bridge_function_active": {
+                "name": "Ponte della zona 3 attivo"
+            },
+            "SL3_Pot_detected": {
+                "name": "Rilevata pentola zona 3"
+            },
+            "SL3_Status": {
+                "name": "Stato della zona 3"
+            },
+            "SL4_Alarm_auto_program_notification": {
+                "name": "Notifica del programma automatico della zona 4"
+            },
+            "SL4_Alarm_automatic_switch_off_zone": {
+                "name": "La zona 4 si spegne automaticamente"
+            },
+            "SL4_Alarm_NTC_coil_overheating": {
+                "name": "Surriscaldamento della bobina della zona 4"
+            },
+            "SL4_Alarm_timer_ended": {
+                "name": "Il timer della zona 4 è terminato"
+            },
+            "SL4_Alarm_zone_turned_off": {
+                "name": "Zona 4 spenta"
+            },
+            "SL4_Bridge_function_active": {
+                "name": "Ponte della zona 4 attivo"
+            },
+            "SL4_Pot_detected": {
+                "name": "Rilevata pentola zona 4"
+            },
+            "SL4_Status": {
+                "name": "Stato della zona 4"
+            },
+            "SL5_Alarm_auto_program_notification": {
+                "name": "Notifica del programma automatico della zona 5"
+            },
+            "SL5_Alarm_automatic_switch_off_zone": {
+                "name": "La zona 5 si spegne automaticamente"
+            },
+            "SL5_Alarm_NTC_coil_overheating": {
+                "name": "Surriscaldamento della bobina della zona 5"
+            },
+            "SL5_Alarm_timer_ended": {
+                "name": "Il timer della zona 5 è terminato"
+            },
+            "SL5_Alarm_zone_turned_off": {
+                "name": "Zona 5 spenta"
+            },
+            "SL5_Bridge_function_active": {
+                "name": "Ponte della zona 5 attivo"
+            },
+            "SL5_Pot_detected": {
+                "name": "Rilevata pentola zona 5"
+            },
+            "SL5_Status": {
+                "name": "Stato della zona 5"
+            },
+            "SL6_Alarm_auto_program_notification": {
+                "name": "Notifica del programma automatico della zona 6"
+            },
+            "SL6_Alarm_automatic_switch_off_zone": {
+                "name": "La zona 6 si spegne automaticamente"
+            },
+            "SL6_Alarm_NTC_coil_overheating": {
+                "name": "Surriscaldamento della bobina della zona 6"
+            },
+            "SL6_Alarm_timer_ended": {
+                "name": "Il timer della zona 6 è terminato"
+            },
+            "SL6_Alarm_zone_turned_off": {
+                "name": "Zona 6 spenta"
+            },
+            "SL6_Bridge_function_active": {
+                "name": "Ponte della zona 6 attivo"
+            },
+            "SL6_Pot_detected": {
+                "name": "Rilevata pentola zona 6"
+            },
+            "SL6_Status": {
+                "name": "Stato della zona 6"
+            }
+        },
+        "climate": {
+            "connectlife": {
+                "state_attributes": {
+                    "fan_mode": {
+                        "state": {
+                            "middle_low": "Medio bassa",
+                            "middle_high": "Medio alta"
+                        }
+                    },
+                    "preset_mode": {
+                        "state": {
+                            "ai": "AI",
+                            "off": "Off",
+                            "mute": "Mute",
+                            "eco_mute": "Eco mute",
+                            "super": "Super",
+                            "sleep_1": "Sleep 1",
+                            "sleep_2": "Sleep 2",
+                            "sleep_3": "Sleep 3",
+                            "sleep_4": "Sleep 4",
+                            "eco_sleep_1": "Eco sleep 1",
+                            "eco_sleep_2": "Eco sleep 2",
+                            "eco_sleep_3": "Eco sleep 3",
+                            "eco_sleep_4": "Eco sleep 4"
+                        }
+                    },
+                    "swing_mode": {
+                        "state": {
+                            "both_sides": "Solo lati",
+                            "forward": "Dritto",
+                            "left": "Sinistra",
+                            "right": "Destra",
+                            "swing": "Oscillazione"
+                        }
+                    }
+                }
+            }
+        },
+        "humidifier": {
+            "connectlife": {
+                "state_attributes": {
+                    "mode": {
+                        "state": {
+                            "auto": "Auto",
+                            "continuous": "Continuo",
+                            "manual": "Manuale",
+                            "clothes_dry": "Vestiti asciutti"
+                        }
+                    }
+                }
+            }
+        },
+        "sensor": {
+            "Alarm_door_closed": {
+                "name": "Porta chiusa"
+            },
+            "Alarm_door_opened": {
+                "name": "Porta aperta"
+            },
+            "AntiCrease_setting": {
+                "name": "Durata antipiega"
+            },
+            "Appliance_status": {
+                "state": {
+                    "idle": "Idle",
+                    "running": "In esecuzione"
+                }
+            },
+            "Bundling_Humidity": {
+                "name": "Accumulo di umidità"
+            },
+            "Bundling_Temperature": {
+                "name": "Temperatura di fasciatura"
+            },
+            "Current_program_phase": {
+                "state": {
+                    "not_available": "Non disponibile",
+                    "program_not_selected": "Programma non selezionato",
+                    "program_selected": "Programma selezionato",
+                    "delay_start_waiting": "Attesa avvio ritardato",
+                    "preheat": "Preriscaldamento",
+                    "preheat_finished": "Preriscaldamento terminato",
+                    "prewash": "Prelavaggio",
+                    "main_wash": "Lavaggio principale",
+                    "drying": "Asciugatura",
+                    "program_finished": "Terminato",
+                    "ventilating": "Ventilazione"
+                }
+            },
+            "Current_programphase": {
+                "state": {
+                    "running": "In esecuzione"
+                }
+            },
+            "daily_energy_kwh": {
+                "name": "Consumo energetico giornaliero"
+            },
+            "DelayStart_DelayEnd_duration_inminutes": {
+                "name": "Durata avvio ritardato"
+            },
+            "DelayStart_DelayEnd_remaining_timein_minutes": {
+                "name": "Tempo rimanente avvio ritardato"
+            },
+            "Delay_duration_inminutes": {
+                "name": "Durata ritardo"
+            },
+            "Device_status": {
+                "demo_mode": "Modalità demo",
+                "failure": "Guasto",
+                "idle": "Inattivo",
+                "iq": "IQ",
+                "locked": "Bloccato",
+                "not_available": "Non disponibile",
+                "pause": "In pausa",
+                "pause_mode": "In pausa",
+                "production": "Produzione",
+                "running": "In esecuzione",
+                "service": "Servizio",
+                "stand_by": "In attesa"
+            },
+            "Door_status": {
+                "name": "Porta",
+                "state": {
+                    "not_available": "Non disponibile",
+                    "closed": "Chiusa",
+                    "open": "Apera"
+                }
+            },
+            "Selected_program_ID": {
+                "name": "Seleziona programma",
+                "state": {
+                    "cotton_storage": "Conservazione cotone",
+                    "standard": "Standard",
+                    "iron": "Stiratura",
+                    "mix": "Misto",
+                    "synthetic": "Sintetico",
+                    "wool": "Lana",
+                    "bed_linen": "Lenzuola",
+                    "time": "Tempo",
+                    "baby": "Bambino",
+                    "sensitive": "Delicati",
+                    "shirts": "Camice",
+                    "sports": "Sport",
+                    "fast89": "Veloce 89",
+                    "extra_hygiene": "Igiene extra",
+                    "remote": "Remoto",
+                    "none": "Nessuno"
+                }
+            },
+            "Selected_programduration_inminutes": {
+                "name": "Durata del programma selezionato"
+            },
+            "Selected_programremaining_time_inminutes": {
+                "name": "Tempo rimanente del programma selezionato"
+            },
+            "SL1_Active_timer": {
+                "name": "Timer attivo zona 1",
+                "state": {
+                    "inactive": "Inattivo",
+                    "stopwatch": "Cronometro",
+                    "timer": "Timer"
+                }
+            },
+            "SL1_Functions": {
+                "name": "Funzione Zona 1",
+                "state": {
+                    "none": "Nessuno",
+                    "boil": "Bollire",
+                    "simmer": "Sobbollire",
+                    "keep_warm": "Mantieni caldo",
+                    "wok": "Wok",
+                    "roast": "Arrostire",
+                    "grill": "Grigliare"
+                }
+            },
+            "SL1_NTC_sensor": {
+                "name": "Sensore NTC Zona 1"
+            },
+            "SL1_Power_level": {
+                "name": "Livello di potenza Zona 1"
+            },
+            "SL1_Power_level_max": {
+                "name": "Livello di potenza massimo Zona 1"
+            },
+            "SL1_Zone_shape": {
+                "name": "Forma Zona 1",
+                "state": {
+                    "round": "Rotonda",
+                    "square": "Quadrata",
+                    "rectangle_vertical": "Rettangolare verticale",
+                    "rectangle_horizontal": "Rettangolare orizzontale",
+                    "no_shape": "Senza forma"
+                }
+            },
+            "SL2_Active_timer": {
+                "name": "Timer attivo Zona 2",
+                "state": {
+                    "inactive": "Inattivo",
+                    "stopwatch": "Cronometro",
+                    "timer": "Timer"
+                }
+            },
+            "SL2_Functions": {
+                "name": "Funzione Zona 2",
+                "state": {
+                    "none": "Nessuno",
+                    "boil": "Bollire",
+                    "simmer": "Sobbollire",
+                    "keep_warm": "Mantieni caldo",
+                    "wok": "Wok",
+                    "roast": "Arrostire",
+                    "grill": "Grigliare"
+                }
+            },
+            "SL2_NTC_sensor": {
+                "name": "Sensore NTC Zona 2"
+            },
+            "SL2_Power_level": {
+                "name": "Livello di potenza Zona 2"
+            },
+            "SL2_Power_level_max": {
+                "name": "Livello di potenza massimo Zona 2"
+            },
+            "SL2_Zone_shape": {
+                "name": "Forma Zona 2",
+                "state": {
+                    "round": "Rotonda",
+                    "square": "Quadrata",
+                    "rectangle_vertical": "Rettangolare verticale",
+                    "rectangle_horizontal": "Rettangolare orizzontale",
+                    "no_shape": "Senza forma"
+                }
+            },
+            "SL3_Active_timer": {
+                "name": "Timer attivo Zona 3",
+                "state": {
+                    "inactive": "Inattivo",
+                    "stopwatch": "Cronometro",
+                    "timer": "Timer"
+                }
+            },
+            "SL3_Functions": {
+                "name": "Funzione Zona 3",
+                "state": {
+                    "none": "Nessuno",
+                    "boil": "Bollire",
+                    "simmer": "Sobbollire",
+                    "keep_warm": "Mantieni caldo",
+                    "wok": "Wok",
+                    "roast": "Arrostire",
+                    "grill": "Grigliare"
+                }
+            },
+            "SL3_NTC_sensor": {
+                "name": "Sensore NTC Zona 3"
+            },
+            "SL3_Power_level": {
+                "name": "Livello di potenza Zona 3"
+            },
+            "SL3_Power_level_max": {
+                "name": "Livello di potenza massimo Zona 3"
+            },
+            "SL3_Zone_shape": {
+                "name": "Forma Zona 3",
+                "state": {
+                    "round": "Rotonda",
+                    "square": "Quadrata",
+                    "rectangle_vertical": "Rettangolare verticale",
+                    "rectangle_horizontal": "Rettangolare orizzontale",
+                    "no_shape": "Senza forma"
+                }
+            },
+            "SL4_Active_timer": {
+                "name": "Timer attivo Zona 4",
+                "state": {
+                    "inactive": "Inattivo",
+                    "stopwatch": "Cronometro",
+                    "timer": "Timer"
+                }
+            },
+            "SL4_Functions": {
+                "name": "Funzione Zona 4",
+                "state": {
+                    "none": "Nessuno",
+                    "boil": "Bollire",
+                    "simmer": "Sobbollire",
+                    "keep_warm": "Mantieni caldo",
+                    "wok": "Wok",
+                    "roast": "Arrostire",
+                    "grill": "Grigliare"
+                }
+            },
+            "SL4_NTC_sensor": {
+                "name": "Sensore NTC Zona 4"
+            },
+            "SL4_Power_level": {
+                "name": "Livello di potenza Zona 4"
+            },
+            "SL4_Power_level_max": {
+                "name": "Livello di potenza massimo Zona 4"
+            },
+            "SL4_Zone_shape": {
+                "name": "Forma Zona 4",
+                "state": {
+                    "round": "Rotonda",
+                    "square": "Quadrata",
+                    "rectangle_vertical": "Rettangolare verticale",
+                    "rectangle_horizontal": "Rettangolare orizzontale",
+                    "no_shape": "Senza forma"
+                }
+            },
+            "SL5_Active_timer": {
+                "name": "Timer attivo Zona 5",
+                "state": {
+                    "inactive": "Inattivo",
+                    "stopwatch": "Cronometro",
+                    "timer": "Timer"
+                }
+            },
+            "SL5_Functions": {
+                "name": "Funzione Zona 5",
+                "state": {
+                    "none": "Nessuno",
+                    "boil": "Bollire",
+                    "simmer": "Sobbollire",
+                    "keep_warm": "Mantieni caldo",
+                    "wok": "Wok",
+                    "roast": "Arrostire",
+                    "grill": "Grigliare"
+                }
+            },
+            "SL5_NTC_sensor": {
+                "name": "Sensore NTC Zona 5"
+            },
+            "SL5_Power_level": {
+                "name": "Livello di potenza Zona 5"
+            },
+            "SL5_Power_level_max": {
+                "name": "Livello di potenza massimo Zona 5"
+            },
+            "SL5_Zone_shape": {
+                "name": "Forma Zona 5",
+                "state": {
+                    "round": "Rotonda",
+                    "square": "Quadrata",
+                    "rectangle_vertical": "Rettangolare verticale",
+                    "rectangle_horizontal": "Rettangolare orizzontale",
+                    "no_shape": "Senza forma"
+                }
+            },
+            "SL6_Active_timer": {
+                "name": "Timer attivo Zona 6",
+                "state": {
+                    "inactive": "Inattivo",
+                    "stopwatch": "Cronometro",
+                    "timer": "Timer"
+                }
+            },
+            "SL6_Functions": {
+                "name": "Funzione Zona 6",
+                "state": {
+                    "none": "Nessuno",
+                    "boil": "Bollire",
+                    "simmer": "Sobbollire",
+                    "keep_warm": "Mantieni caldo",
+                    "wok": "Wok",
+                    "roast": "Arrostire",
+                    "grill": "Grigliare"
+                }
+            },
+            "SL6_NTC_sensor": {
+                "name": "Sensore NTC Zona 6"
+            },
+            "SL6_Power_level": {
+                "name": "Livello di potenza Zona 6"
+            },
+            "SL6_Power_level_max": {
+                "name": "Livello di potenza massimo Zona 6"
+            },
+            "SL6_Zone_shape": {
+                "name": "Forma Zona 6",
+                "state": {
+                    "round": "Rotonda",
+                    "square": "Quadrata",
+                    "rectangle_vertical": "Rettangolare verticale",
+                    "rectangle_horizontal": "Rettangolare orizzontale",
+                    "no_shape": "Senza forma"
+                }
+            },
+            "Total_time_of_cooking_in_hours": {
+                "name": "Tempo totale di cottura"
+            },
+            "t_sleep": {
+                "name": "Riposo"
+            },
+            "Zone_number": {
+                "name": "Number of zones"
+            }
+        },
+        "switch": {
+            "t_eco": {
+                "name": "Eco"
+            },
+            "t_purify": {
+                "name": "Purificatore dell'aria"
+            },
+            "t_air": {
+                "name": "Air"
+            },
+            "t_beep": {
+                "name": "Beep"
+            },
+            "t_fan_mute": {
+                "name": "Silenzioso"
+            },
+            "t_power": {
+                "name": "Power"
+            },
+            "t_sleep": {
+                "name": "Sleep"
+            },
+            "t_super": {
+                "name": "Super"
+            },
+            "t_sterilization": {
+                "name": "Sterilizzazione"
+            },
+            "t_tms": {
+                "name": "AI"
+            }
+        },
+        "select": {
+            "t_fan_speed": {
+                "name": "Fan speed",
+                "state": {
+                    "auto": "Auto",
+                    "low": "Low",
+                    "high": "High"
+                }
+            },
+            "t_swing_follow": {
+                "name": "AI ventilazione",
+                "state": {
+                    "off": "Spento",
+                    "follow": "Diretta",
+                    "not_follow": "Indiretta"
+                }
+            },
+            "t_swing_angle": {
+                "name": "Flusso d'aria",
+                "state": {
+                    "swing": "Oscillazione",
+                    "auto": "Auto",
+                    "angle_1": "Posizione 1",
+                    "angle_2": "Posizione 2",
+                    "angle_3": "Posizione 3",
+                    "angle_4": "Posizione 4",
+                    "angle_5": "Posizione 5",
+                    "angle_6": "Posizione 6"
+                }
+            },
+            "t_sleep": {
+                "name": "Riposo",
+                "state": {
+                    "off": "Spento",
+                    "general": "Generale",
+                    "for_old": "Per anziani",
+                    "for_young": "Per Giovani",
+                    "for_kid": "Per Bambini"
+                }
+            }
+        },
+        "water_heater": {
+            "connectlife": {
+                "state": {
+                    "auto": "Auto"
+                }
+            }
+        }
+    }
+}
