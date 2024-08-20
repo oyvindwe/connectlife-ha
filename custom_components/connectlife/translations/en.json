@@ -627,6 +627,9 @@
             "t_eco": {
                 "name": "Eco"
             },
+            "t_purify": {
+                "name": "Purifier"
+            },
             "t_air": {
                 "name": "Air"
             },
@@ -659,6 +662,14 @@
                     "auto": "Auto",
                     "low": "Low",
                     "high": "High"
+                }
+            },
+            "t_swing_follow": {
+                "name": "AI ventilation",
+                "state": {
+                    "off": "Off",
+                    "follow": "Follow",
+                    "not_follow": "Not Follow"
                 }
             },
             "t_swing_angle": {
