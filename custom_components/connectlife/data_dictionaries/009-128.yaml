@@ -83,10 +83,10 @@ properties:
   - property: f_cool_qvalue
     icon: mdi:snowflake
     sensor:
-      unit: BTU/hr
+      unit: BTU/h
       state_class: measurement
   - property: f_heat_qvalue
     icon: mdi:fire
     sensor:
-      unit: BTU/hr
+      unit: BTU/h
       state_class: measurement
