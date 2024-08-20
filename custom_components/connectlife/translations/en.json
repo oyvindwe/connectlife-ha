@@ -623,13 +623,13 @@
                 "name": "Number of zones"
             },
             "f_heat_qvalue": {
-              "name": "BTU/Hr Heating"
+              "name": "Heating"
             },
             "f_cool_qvalue": {
-              "name": "BTU/Hr Cooling"
+              "name": "Cooling"
             },
             "f_votage": {
-              "name": "Measured Grid Voltage"
+              "name": "Measured grid voltage"
             }
         },
         "switch": {
