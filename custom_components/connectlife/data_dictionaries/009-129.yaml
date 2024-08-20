@@ -10,6 +10,12 @@ climate:
 properties:
 #####################################
 
+  - property: t_temp_type
+    climate:
+      target: temperature_unit
+      options:
+        0: celsius
+        1: fahrenheit
 
   - property: daily_energy_kwh
     hide: true
