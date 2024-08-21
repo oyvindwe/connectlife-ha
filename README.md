@@ -33,6 +33,7 @@ visibility.
 
 | Device name  | Device type     | Device type code | Device feature code | Data dictionary                                                                           |
 |--------------|-----------------|------------------|---------------------|-------------------------------------------------------------------------------------------|
+| AP10TW1RLR-N | Air conditioner | 006              | 200                 | [Completed](custom_components/connectlife/data_dictionaries/006-200.yaml)                 |
 |              | Air conditioner | 006              | 201                 | [Completed](custom_components/connectlife/data_dictionaries/006-201.yaml)                 |
 |              | Dehumidifier    | 007              | 400                 | [Completed](custom_components/connectlife/data_dictionaries/007-400.yaml)                 |
 |              | Dehumidifier    | 007              | 406                 | [Completed](custom_components/connectlife/data_dictionaries/007-406.yaml)                 |
@@ -40,6 +41,8 @@ visibility.
 |              | Air conditioner | 009              | 104                 | [Completed](custom_components/connectlife/data_dictionaries/009-104.yaml)                 |
 |              | Air conditioner | 009              | 106                 | [Completed](custom_components/connectlife/data_dictionaries/009-106.yaml)                 |
 |              | Air conditioner | 009              | 109                 | [Completed](custom_components/connectlife/data_dictionaries/009-109.yaml)                 |
+|              | Air conditioner | 009              | 128                 | [Completed](custom_components/connectlife/data_dictionaries/009-128.yaml)                 |
+|              | Air conditioner | 009              | 129                 | [Completed](custom_components/connectlife/data_dictionaries/009-129.yaml)                 |
 | W-DW50/60-22 | Dishwasher      | 015              | 000                 | [Most properties completed](custom_components/connectlife/data_dictionaries/015-000.yaml) |
 |              | Heat pump       | 016              | 502                 | [Completed](custom_components/connectlife/data_dictionaries/016-502.yaml)                 |
 |              | Induction hob   | 020              | 63c45b513e1a4bf7    | [Completed](custom_components/connectlife/data_dictionaries/020-63c45b513e1a4bf7.yaml)    |
