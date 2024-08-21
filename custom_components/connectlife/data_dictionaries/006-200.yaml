@@ -1,0 +1,59 @@
+# Portable air conditioner
+properties:
+- property: f_temp_in
+  icon: mdi:temp
+  climate:
+    target: current_temperature
+- property: t_fan_mute
+  hide: true
+  icon: mdi:volume-variant-off
+  switch:
+    device_class: switch
+- property: t_fan_speed
+  climate:
+    target: fan_mode
+    options:
+      0: auto
+      2: low
+      3: medium
+      4: high
+- property: t_power
+  climate:
+    target: is_on
+- property: t_sleep
+  icon: mdi:power-sleep
+  switch:
+    device_class: switch
+- property: t_super
+  icon: mdi:fast-forward
+  switch:
+    device_class: switch
+- property: t_temp
+  climate:
+    target: target_temperature
+    min_value:
+      celsius: 16
+      fahrenheit: 61
+    max_value:
+      celsius: 32
+      fahrenheit: 90
+- property: t_temp_type
+  climate:
+    target: temperature_unit
+    options:
+      0: celsius
+      1: fahrenheit
+- property: t_up_down
+  climate:
+    target: swing_mode
+    options:
+      0: "off"
+      1: "on"
+- property: t_work_mode
+  climate:
+    target: hvac_mode
+    options:
+      0: fan_only
+      2: cool
+      3: dry
+      4: auto
