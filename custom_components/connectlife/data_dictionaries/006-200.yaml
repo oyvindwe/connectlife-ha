@@ -1,20 +1,11 @@
 # Portable air conditioner
 properties:
-- property: daily_energy_kwh
-  hide: true
-  sensor:
-    state_class: total
-    device_class: energy
-    unit: kWh
 - property: f_temp_in
   icon: mdi:temp
   climate:
     target: current_temperature
-- property: t_eco
-  icon: mdi:leaf
-  switch:
-    device_class: switch
 - property: t_fan_mute
+  hide: true
   icon: mdi:volume-variant-off
   switch:
     device_class: switch
@@ -29,8 +20,12 @@ properties:
 - property: t_power
   climate:
     target: is_on
+- property: t_sleep
+  icon: mdi:power-sleep
+  switch:
+    device_class: switch
 - property: t_super
-  icon: mdi:run-fast
+  icon: mdi:fast-forward
   switch:
     device_class: switch
 - property: t_temp
@@ -59,7 +54,6 @@ properties:
     target: hvac_mode
     options:
       0: fan_only
-      1: heat
       2: cool
       3: dry
       4: auto
