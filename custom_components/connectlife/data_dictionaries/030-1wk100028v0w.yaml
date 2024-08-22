@@ -1,0 +1,37 @@
+properties:
+  - property: Child_lock
+    icon: mdi:lock
+    select:
+      options:
+        0: "off"
+        1: "on"
+  - property: Door_status
+    icon: mdi:square-circle
+    sensor:
+      device_class: enum
+      options:
+        0: not_available
+        1: open
+        2: closed
+      read-only: true
+  - property: Drum_Light
+    icon: mdi:lightbulb-on
+    select:
+      options:
+        0: "off"
+        1: "on"
+  - property: machine_status
+    icon: mdi:tumble-dryer
+    sensor:
+      device_class: enum
+      options:
+        0: "off"
+        1: standby
+        2: running
+      read-only: true
+  - property: Selected_program_remaining_time_in_minutes
+    icon: mdi:timer
+    sensor:
+      device_class: duration
+      unit: min
+      read-only: true

@@ -857,6 +857,14 @@
             "low_temperature": {
                 "name": "Low temperature"
             },
+            "machine_status": {
+                "name": "Machine status",
+                "state": {
+                    "off": "Off",
+                    "standby": "Standby",
+                    "running": "Running"
+                }
+            },
             "measured_vibrations": {
                 "name": "Measured vibrations"
             },
@@ -948,6 +956,9 @@
                 "name": "Duration of selected program"
             },
             "selected_programremaining_time_inminutes": {
+                "name": "Remaining time of selected program"
+            },
+            "Selected_program_remaining_time_in_minutes": {
                 "name": "Remaining time of selected program"
             },
             "set_progress_type": {
@@ -1439,6 +1450,19 @@
             }
         },
         "select": {
+            "Child_lock": {
+                "state": {
+                    "off": "Off",
+                    "on": "On"
+                }
+            },
+            "Drum_Light": {
+                "name": "Drum light",
+                "state": {
+                    "off": "Off",
+                    "on": "On"
+                }
+            },
             "t_fan_speed": {
                 "name": "Fan speed",
                 "state": {
