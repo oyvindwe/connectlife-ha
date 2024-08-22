@@ -28,6 +28,7 @@ from .const import (
 
 DEVICE = "device"
 DEVICE_CLASS = "device_class"
+DISABLE = "disable"
 HIDE = "hide"
 ICON = "icon"
 OFF = "off"
@@ -231,6 +232,7 @@ class Property:
     name: str
     icon: str | None
     hide: bool
+    disable: bool
     binary_sensor: BinarySensor
     climate: Climate
     humidifier: Humidifier
@@ -244,6 +246,7 @@ class Property:
         self.name = entry[PROPERTY]
         self.icon = entry[ICON] if ICON in entry and entry[ICON] else None
         self.hide = entry[HIDE] == bool(entry[HIDE]) if HIDE in entry else False
+        self.disable = entry[DISABLE] == bool(entry[DISABLE]) if DISABLE in entry else False
 
         if Platform.BINARY_SENSOR in entry:
             self.binary_sensor = BinarySensor(self.name, entry[Platform.BINARY_SENSOR])

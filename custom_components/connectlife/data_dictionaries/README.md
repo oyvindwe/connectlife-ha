@@ -47,19 +47,20 @@ You need to restart Home Assistant to load mapping changes.
 
 ## Property
 
-| Item            | Type                               | Description                                                                                                                                    |
-|-----------------|------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| `property`      | string                             | Name of status/property.                                                                                                                       |
-| `hide`          | `true`, `false`                    | If Home Assistant should initially hide the sensor entity for this property. Defaults to `false`, but is set to `true` for unknown properties. |
-| `icon`          | `mdi:eye`, etc.                    | Icon to use for the entity.                                                                                                                    |
-| `binary_sensor` | [BinarySensor](#type-binarysensor) | Create a binary sensor of the property.                                                                                                        |
-| `climate`       | [Climate](#type-climate)           | Map the property to a climate entity for the device.                                                                                           |
-| `humidifier`    | [Humidifier](#type-humidifier)     | Map the property to a humidifier entity for the device.                                                                                        |
-| `number`        | [Number](#type-number)             | Create a number entity of the property.                                                                                                        |
-| `select`        | [Select](#type-select)             | Create a selector of the property.                                                                                                             |
-| `sensor`        | [Sensor](#type-sensor)             | Create a sensor of the property. This is the default.                                                                                          |
-| `switch`        | [Switch](#type-switch)             | Create a switch of the property.                                                                                                               |
-| `water_heater`  | [WaterHeater](#type-waterheater)   | Map the property to a water heater entity for the device.                                                                                      |
+| Item            | Type                               | Description                                                                                                                             |
+|-----------------|------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| `property`      | string                             | Name of status/property.                                                                                                                |
+| `disable`       | `true`, `false`                    | If Home Assistant should not create an entity for this property. Defaults to `false`.                                                   |
+| `hide`          | `true`, `false`                    | If Home Assistant should initially hide the entity for this property. Defaults to `false`, but is set to `true` for unknown properties. |
+| `icon`          | `mdi:eye`, etc.                    | Icon to use for the entity.                                                                                                             |
+| `binary_sensor` | [BinarySensor](#type-binarysensor) | Create a binary sensor of the property.                                                                                                 |
+| `climate`       | [Climate](#type-climate)           | Map the property to a climate entity for the device.                                                                                    |
+| `humidifier`    | [Humidifier](#type-humidifier)     | Map the property to a humidifier entity for the device.                                                                                 |
+| `number`        | [Number](#type-number)             | Create a number entity of the property.                                                                                                 |
+| `select`        | [Select](#type-select)             | Create a selector of the property.                                                                                                      |
+| `sensor`        | [Sensor](#type-sensor)             | Create a sensor of the property. This is the default.                                                                                   |
+| `switch`        | [Switch](#type-switch)             | Create a switch of the property.                                                                                                        |
+| `water_heater`  | [WaterHeater](#type-waterheater)   | Map the property to a water heater entity for the device.                                                                               |
 
 If an entity mapping is not given, the property is mapped to a sensor entity.
 

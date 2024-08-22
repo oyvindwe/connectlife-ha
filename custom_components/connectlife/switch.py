@@ -3,6 +3,7 @@ import logging
 
 from homeassistant.components.switch import SwitchEntity, SwitchEntityDescription
 from homeassistant.config_entries import ConfigEntry
+from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant, callback
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
@@ -28,7 +29,7 @@ async def async_setup_entry(
         dictionary = Dictionaries.get_dictionary(appliance)
         async_add_entities(
             ConnectLifeSwitch(coordinator, appliance, s, dictionary.properties[s], config_entry)
-            for s in appliance.status_list if hasattr(dictionary.properties[s], "switch")
+            for s in appliance.status_list if hasattr(dictionary.properties[s], Platform.SWITCH) and not dictionary.properties[s].disable
         )
 
 

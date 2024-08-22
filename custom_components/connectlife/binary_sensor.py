@@ -29,7 +29,7 @@ async def async_setup_entry(
         dictionary = Dictionaries.get_dictionary(appliance)
         async_add_entities(
             ConnectLifeBinaryStatusSensor(coordinator, appliance, s, dictionary.properties[s])
-            for s in appliance.status_list if hasattr(dictionary.properties[s], Platform.BINARY_SENSOR)
+            for s in appliance.status_list if hasattr(dictionary.properties[s], Platform.BINARY_SENSOR) and not dictionary.properties[s].disable
         )
 
 
