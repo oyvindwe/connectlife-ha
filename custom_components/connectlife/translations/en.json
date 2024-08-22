@@ -178,6 +178,14 @@
                     "open": "Open"
                 }
             },
+            "machine_status": {
+                "name": "Machine status",
+	        "state": {
+	            "off": "Off",
+	            "standby": "Standby",
+	            "running": "Running"
+	        }
+            },
             "Selected_program_ID": {
                 "name": "Selected program",
                 "state": {
@@ -203,6 +211,9 @@
                 "name": "Duration of selected program"
             },
             "Selected_programremaining_time_inminutes": {
+                "name": "Remaining time of selected program"
+            },
+            "Selected_program_remaining_time_in_minutes": {
                 "name": "Remaining time of selected program"
             },
             "t_sleep": {
@@ -236,6 +247,19 @@
             }
         },
         "select": {
+            "Child_lock": {
+	        "state": {
+                    "off": "Off",
+                    "on": "On"
+	        }
+            },
+            "Drum_Light": {
+	        "name": "Drum light",
+	        "state": {
+                    "off": "Off",
+                    "on": "On"
+	        }
+            },
             "t_fan_speed": {
                 "name": "Fan speed",
                 "state": {
