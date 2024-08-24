@@ -277,7 +277,7 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
     async def async_turn_on(self):
         """Turn the entity on."""
         # TODO: Support value mapping
-        await self.async_update_device({self.target_map[IS_ON]: 1})
+        await self.async_update_device(self.add_target_temperature({self.target_map[IS_ON]: 1}))
 
     async def async_turn_off(self):
         """Turn the entity off."""
@@ -295,7 +295,7 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
                 request[self.target_map[IS_ON]] = 1
             if HVAC_MODE in self.target_map:
                 request[self.target_map[HVAC_MODE]] = self.hvac_mode_reverse_map[hvac_mode]
-            await self.async_update_device(request)
+            await self.async_update_device(self.add_target_temperature(request))
 
     async def async_set_fan_mode(self, fan_mode: str) -> None:
         """Set the fan mode."""
@@ -314,3 +314,8 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
         await self.async_update_device({
             self.target_map[SWING_MODE]: self.swing_mode_reverse_map[swing_mode]
         })
+
+    def add_target_temperature(self, request: dict[str, int]) -> dict[str, int]:
+        if TARGET_TEMPERATURE in self.target_map and self._attr_target_temperature is not None:
+            request[self.target_map[TARGET_TEMPERATURE]] = round(self._attr_target_temperature)
+        return request
