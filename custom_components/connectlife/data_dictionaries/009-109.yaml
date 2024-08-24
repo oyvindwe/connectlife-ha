@@ -29,6 +29,8 @@ properties:
         7: medium
         8: middle_high
         9: high
+  - property: t_fan_speed_s
+    disable: true
   - property: f_humidity
     climate:
       target: current_humidity
