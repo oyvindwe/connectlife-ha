@@ -90,3 +90,41 @@ properties:
     sensor:
       unit: BTU/h
       state_class: measurement
+  - property: t_fan_speed_s
+    disable: true
+  - property: f_e_arkgrille
+    disable: true
+  - property: f_e_incoiltemp
+    disable: true
+  - property: f_e_incom
+    disable: true
+  - property: f_e_indisplay
+    disable: true
+  - property: f_e_ineeprom
+    disable: true
+  - property: f_e_inele
+    disable: true
+  - property: f_e_infanmotor
+    disable: true
+  - property: f_e_inhumidity
+    disable: true
+  - property: f_e_inkeys
+    disable: true
+  - property: f_e_intemp
+    disable: true
+  - property: f_e_invzero
+    disable: true
+  - property: f_e_inwifi
+    disable: true
+  - property: f_e_outcoiltemp
+    disable: true
+  - property: f_e_outeeprom
+    disable: true
+  - property: f_e_outgastemp
+    disable: true
+  - property: f_e_outtemp
+    disable: true
+  - property: f_e_push
+    disable: true
+  - property: f_ecm
+    disable: true
