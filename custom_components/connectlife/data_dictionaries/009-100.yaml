@@ -138,3 +138,9 @@ properties:
         2: cool
         3: dry
         4: auto
+  - property: daily_energy_kwh
+    sensor:
+      read_only: true
+      state_class: total_increasing
+      device_class: energy
+      unit: kWh
