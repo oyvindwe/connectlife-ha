@@ -41,6 +41,7 @@ visibility.
 |              | Air conditioner | 009              | 104                 | [Completed](custom_components/connectlife/data_dictionaries/009-104.yaml)                 |
 |              | Air conditioner | 009              | 106                 | [Completed](custom_components/connectlife/data_dictionaries/009-106.yaml)                 |
 |              | Air conditioner | 009              | 109                 | [Completed](custom_components/connectlife/data_dictionaries/009-109.yaml)                 |
+|              | Air conditioner | 009              | 117                 | [Under testing](custom_components/connectlife/data_dictionaries/009-117.yaml)             |
 |              | Air conditioner | 009              | 128                 | [Completed](custom_components/connectlife/data_dictionaries/009-128.yaml)                 |
 |              | Air conditioner | 009              | 129                 | [Completed](custom_components/connectlife/data_dictionaries/009-129.yaml)                 |
 | W-DW50/60-22 | Dishwasher      | 015              | 000                 | [Most properties completed](custom_components/connectlife/data_dictionaries/015-000.yaml) |
