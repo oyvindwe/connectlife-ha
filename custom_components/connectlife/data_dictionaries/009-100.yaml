@@ -144,7 +144,7 @@ properties:
       state_class: total_increasing
       device_class: energy
       unit: kWh
-  - property: f_e_arckgrille
+  - property: f_e_arkgrille
     disable: true
   - property: f_e_incoiltemp
     disable: true
