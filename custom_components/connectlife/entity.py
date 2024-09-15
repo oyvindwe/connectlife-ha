@@ -61,3 +61,6 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
         if self._disable_beep:
             properties["t_beep"] = 0
         await self.coordinator.async_update_device(self.device_id, properties)
+
+    def to_translation_key(self, property_name: str) -> str:
+        return property_name.lower().replace(" ", "_")
