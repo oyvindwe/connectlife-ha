@@ -22,21 +22,24 @@ def main(basedir):
                                 option not in ["off", "on", "auto", "low", "medium", "high", "top", "middle", "focus", "diffuse"]
                                 and option not in strings["entity"]["climate"]["connectlife"]["state_attributes"]["fan_mode"]["state"]
                             ):
-                            strings["entity"]["climate"]["connectlife"]["state_attributes"]["fan_mode"]["state"][option] = option
+                            check_option(option, filename)
+                            strings["entity"]["climate"]["connectlife"]["state_attributes"]["fan_mode"]["state"][option] = pretty(option)
                 elif property["climate"]["target"] == "swing_mode":
                     for option in property["climate"]["options"].values():
                         if (
                                 option not in ["off", "on", "both", "vertical", "horizontal"]
                                 and option not in strings["entity"]["climate"]["connectlife"]["state_attributes"]["swing_mode"]["state"]
                             ):
-                            strings["entity"]["climate"]["connectlife"]["state_attributes"]["swing_mode"]["state"][option] = option
+                            check_option(option, filename)
+                            strings["entity"]["climate"]["connectlife"]["state_attributes"]["swing_mode"]["state"][option] = pretty(option)
             elif "humidifier" in property and property["humidifier"]["target"] == "mode":
                 for option in property["humidifier"]["options"].values():
                     if (
                             option not in ["humidifying", "drying", "idle", "off"]
                             and option not in strings["entity"]["humidifier"]["connectlife"]["state_attributes"]["mode"]["state"]
                     ):
-                        strings["entity"]["humidifier"]["connectlife"]["state_attributes"]["state"][option] = option
+                        check_option(option, filename)
+                        strings["entity"]["humidifier"]["connectlife"]["state_attributes"]["state"][option] = pretty(option)
             else:
                 if "disable" in property and property["disable"]:
                     continue
@@ -45,8 +48,9 @@ def main(basedir):
                         if entity_type not in strings["entity"]:
                             strings["entity"][entity_type] = {}
                         name = property["property"]
-                        if name not in strings["entity"][entity_type]:
-                            strings["entity"][entity_type][name] = {"name": name.replace("_", " ")}
+                        key = name.lower()
+                        if key not in strings["entity"][entity_type]:
+                            strings["entity"][entity_type][key] = {"name": pretty(name)}
                         if (
                                 (
                                         (
@@ -61,10 +65,11 @@ def main(basedir):
                             for option in property[entity_type]["options"].values():
                                 if option in ["off", "on"]:
                                     continue
-                                if not "state" in strings["entity"][entity_type][name]:
-                                    strings["entity"][entity_type][name]["state"] = {}
-                                if not option in strings["entity"][entity_type][name]["state"]:
-                                    strings["entity"][entity_type][name]["state"][option] = option
+                                if not "state" in strings["entity"][entity_type][key]:
+                                    strings["entity"][entity_type][key]["state"] = {}
+                                if not option in strings["entity"][entity_type][key]["state"]:
+                                    check_option(option, filename)
+                                    strings["entity"][entity_type][key]["state"][option] = pretty(option)
 
         if "climate" in appliance:
             if "presets" in appliance["climate"]:
@@ -74,12 +79,24 @@ def main(basedir):
                             preset not in ["eco", "away", "boost", "comfort", "home", "sleep", "activity"]
                             and preset not in strings["entity"]["climate"]["connectlife"]["state_attributes"]["preset_mode"]["state"]
                     ):
-                        strings["entity"]["climate"]["connectlife"]["state_attributes"]["preset_mode"]["state"][preset] = preset
+                        check_option(preset, filename)
+                        strings["entity"]["climate"]["connectlife"]["state_attributes"]["preset_mode"]["state"][preset] = pretty(preset)
 
     for (k, v) in strings["entity"].items():
         strings["entity"][k] = dict(sorted(v.items()))
 
     json.dump(strings, open(f'{basedir}/strings.json', 'w'), indent=2)
+
+
+def check_option(option: str, filename: str) -> None:
+    if option != option.lower():
+        print(f"Values must be lowercase: {option} in {filename}")
+        exit(1)
+
+
+def pretty(name: str) -> str:
+    return name.replace("_", " ").capitalize();
+
 
 if __name__ == "__main__":
     main("custom_components/connectlife")

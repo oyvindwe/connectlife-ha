@@ -84,7 +84,7 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
             native_unit_of_measurement=dd_entry.sensor.unit,
             options=options,
             state_class=state_class,
-            translation_key=status,
+            translation_key=status.lower(),
         )
         self.update_state()
 

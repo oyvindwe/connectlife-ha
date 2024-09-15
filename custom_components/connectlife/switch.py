@@ -53,7 +53,7 @@ class ConnectLifeSwitch(ConnectLifeEntity, SwitchEntity):
             entity_registry_visible_default=not dd_entry.hide,
             icon=dd_entry.icon,
             name=status.replace("_", " "),
-            translation_key=status,
+            translation_key=status.lower(),
             device_class=dd_entry.switch.device_class
         )
         self.off = dd_entry.switch.off

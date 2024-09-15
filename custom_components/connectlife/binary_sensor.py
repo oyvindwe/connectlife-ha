@@ -53,7 +53,7 @@ class ConnectLifeBinaryStatusSensor(ConnectLifeEntity, BinarySensorEntity):
             entity_registry_visible_default=not dd_entry.hide,
             icon=dd_entry.icon,
             name=status.replace("_", " "),
-            translation_key=status,
+            translation_key=status.lower(),
             device_class=dd_entry.binary_sensor.device_class
         )
         self.update_state()
