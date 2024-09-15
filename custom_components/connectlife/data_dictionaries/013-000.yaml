@@ -1,426 +1,846 @@
-# oven G800/BIO24 Gorenje BPSA6747A08XWI 
-
-"statusList": {
-  "Adaptive_sense_setting": "2",
-  "Add_moist_now": "0",
-  "AlarmAlmost_finished": "0",
-  "AlarmChild_lockOff": "0",
-  "AlarmChild_lockOn": "0",
-  "AlarmCleanTank": "0",
-  "AlarmDehydrate_ended": "0",
-  "AlarmDemo_activated": "0",
-  "AlarmDescaleStep1": "0",
-  "AlarmDescaleStep2": "0",
-  "AlarmDescaleStep3": "0",
-  "AlarmDescaling_interrupted": "0",
-  "AlarmEmptyTankPause": "0",
-  "AlarmFillTank": "0",
-  "AlarmIncreased_power_consumption": "0",
-  "AlarmKey_lock_on": "0",
-  "AlarmMicrowave_system_finished": "0",
-  "AlarmOven_system_finished": "0",
-  "AlarmPopTankOpened": "0",
-  "AlarmPower_failure_running": "0",
-  "AlarmProbe_lost_connection": "0",
-  "AlarmRemoteStartPowerFailure": "0",
-  "AlarmRemove_probe": "0",
-  "AlarmSabbathAboutToStart": "0",
-  "AlarmSabbathEnded": "0",
-  "AlarmSabbathPostpone": "0",
-  "AlarmSteamClean_finished": "0",
-  "AlarmSteam_interrupted": "0",
-  "AlarmSteam_system_finished": "0",
-  "AlarmTankLevel1": "0",
-  "Alarm_aquaClean_finished": "0",
-  "Alarm_baking_finished": "1",
-  "Alarm_baking_stoped": "0",
-  "Alarm_child_lock_deactivated_on_the_oven": "1",
-  "Alarm_cleaning_suggestion_after_baking_finished": "0",
-  "Alarm_defrost_finished": "0",
-  "Alarm_descaling_needed": "1",
-  "Alarm_door_locked": "0",
-  "Alarm_door_opened": "1",
-  "Alarm_ean_scan_info": "0",
-  "Alarm_empty_and_clean_water_tank": "0",
-  "Alarm_fast_preheat_active": "0",
-  "Alarm_fast_preheating_finished": "1",
-  "Alarm_keepWarm_ended": "0",
-  "Alarm_mw_active": "0",
-  "Alarm_oven_temperature_too_high": "0",
-  "Alarm_oven_usage_reached_set_limit_auto_cleaning_suggested": "0",
-  "Alarm_plateWarm_ended": "0",
-  "Alarm_probe_inserted": "1",
-  "Alarm_probe_temp_reached": "0",
-  "Alarm_pyrolytic_finished": "0",
-  "Alarm_running_time_over_10_or_24_hour_limit_error": "0",
-  "Alarm_sabbath_reminder": "0",
-  "Alarm_sand_timer_1_elapsed": "1",
-  "Alarm_sand_timer_2_elapsed": "0",
-  "Alarm_sand_timer_3_elapsed": "0",
-  "Alarm_set_temperature_reached": "1",
-  "Alarm_steam_fill_alarm": "0",
-  "Alarm_steam_function_active": "0",
-  "Alarm_turn_food": "0",
-  "Alarm_user_interaction_on_appliance_detected": "1",
-  "Alarm_water_tank_is_empty": "0",
-  "Alarm_water_tank_is_missing": "0",
-  "Almost_finished_notification_setting": "0",
-  "Almost_finished_notification_settingTimer_in_minutes": "0",
-  "Ambient_sound_setting": "0",
-  "Auto_fast_preheat": "2",
-  "AutomaticChild_lock_setting": "0",
-  "AutomaticDoor_lock_setting": "0",
-  "AutomaticDoor_lock_setting_allowed": "0",
-  "Automatic_display_brightness_setting": "0",
-  "Automatic_door_closing_at_program_start_setting": "0",
-  "Automatic_door_open_at_program_end_after_time_setting": "0",
-  "Automatic_door_open_at_program_end_after_time_settingTimer_in_minutes": "0",
-  "Automatic_door_open_at_program_end_setting": "0",
-  "Automatic_water_tank_opening_setting": "0",
-  "Baking_steps_intensity_levels": "0",
-  "Baking_steps_intensity_levels_type": "0",
-  "Brand_splash_setting": "0",
-  "Brightness": "3",
-  "CameraLive_feed_current_phase": "0",
-  "CameraLive_feed_status": "0",
-  "CameraPicture_current_phase": "0",
-  "CameraPicture_request": "0",
-  "CameraTime_lapse_current_phase": "0",
-  "CameraTime_lapse_request": "0",
-  "Camera_enable_setting": "0",
-  "Camera_status": "0",
-  "Child_lock": "1",
-  "Cooking_intensity": "0",
-  "Crisp_function_available": "0",
-  "Crisp_function_status": "0",
-  "Current_baking_step": "2",
-  "Current_baking_step2": "0",
-  "Date_format_setting": "0",
-  "Demo_mode": "1",
-  "Descale_status": "0",
-  "DisplayBrightness_setting": "0",
-  "DisplayContrast_setting": "0",
-  "Display_standby": "0",
-  "Display_switch_to_standby_after_minutes": "0",
-  "Door": "1",
-  "Door_lock": "1",
-  "Door_lock_status": "0",
-  "Door_open_notification_setting": "0",
-  "Door_sensor_setting": "0",
-  "Duration_of_clock": "0",
-  "Eco_mode_setting": "0",
-  "Error_0": "1",
-  "Error_1": "1",
-  "Error_10": "1",
-  "Error_11": "1",
-  "Error_12": "1",
-  "Error_13": "1",
-  "Error_14": "1",
-  "Error_15": "1",
-  "Error_16": "1",
-  "Error_17": "1",
-  "Error_18": "1",
-  "Error_19": "1",
-  "Error_2": "1",
-  "Error_20": "1",
-  "Error_21": "1",
-  "Error_22": "1",
-  "Error_23": "1",
-  "Error_24": "1",
-  "Error_25": "1",
-  "Error_26": "1",
-  "Error_27": "1",
-  "Error_28": "1",
-  "Error_29": "1",
-  "Error_3": "1",
-  "Error_30": "1",
-  "Error_31": "1",
-  "Error_32": "0",
-  "Error_33": "0",
-  "Error_34": "0",
-  "Error_35": "0",
-  "Error_36": "0",
-  "Error_37": "0",
-  "Error_38": "0",
-  "Error_39": "0",
-  "Error_4": "1",
-  "Error_40": "0",
-  "Error_5": "1",
-  "Error_6": "1",
-  "Error_7": "1",
-  "Error_8": "1",
-  "Error_9": "1",
-  "Factory_reset": "0",
-  "Fota": "0",
-  "Gratin_available": "0",
-  "Gratin_from_below_functionSet_time_in_seconds": "0",
-  "Gratin_from_below_function_allowed": "0",
-  "Gratin_from_below_function_status": "0",
-  "Gratin_function_Set_time_in_seconds": "0",
-  "Gratin_status": "1",
-  "Gratin_total_allowed_time_in_minutes": "30",
-  "Gratin_total_passed_time_in_minutes": "65535",
-  "Grill_plate_measured_temperature": "2187",
-  "Grill_plate_status": "0",
-  "HOB_warming_zone_power_level": "0",
-  "HOB_warming_zone_status": "0",
-  "HardPairingStatus": "0",
-  "Hide_setting": "0",
-  "Hob_status": "0",
-  "Hob_zone_1_status": "0",
-  "Hob_zone_2_status": "0",
-  "Hob_zone_3_status": "0",
-  "Hob_zone_4_status": "0",
-  "Hob_zone_5_status": "0",
-  "Inactivity_timeout": "0",
-  "Interior_Light_Control_available": "0",
-  "Interior_light": "1",
-  "Key_sound": "2",
-  "Language_status": "0",
-  "LightsBrightness_setting": "0",
-  "LightsColor_temperature_setting": "0",
-  "Lights_duration_setting": "0",
-  "LockPIN_code": "0",
-  "Meat_probe_measured_temperature": "65535",
-  "Meat_probe_set_temperature": "65535",
-  "Meat_probe_status": "1",
-  "Navigation_sound_setting": "0",
-  "Night_modeDisplay_brightness_setting": "0",
-  "Night_modeLight_brightness_setting": "0",
-  "Night_modeVolume_setting": "0",
-  "Night_mode_off_hour": "255",
-  "Night_mode_off_minute": "255",
-  "Night_mode_on_hour": "255",
-  "Night_mode_on_minute": "255",
-  "Night_mode_status": "1",
-  "Notification_pitch_sound_setting": "0",
-  "Notification_sounds_volume_setting": "0",
-  "Oven_measured_temperature": "20",
-  "Oven_temperature_unit": "1",
-  "Oven_temperature_unit_setting": "1",
-  "Oven_usage_value_alarm_limit": "0",
-  "Oven_usage_value_time_since_last_cleaning": "65535",
-  "Permanent_remote_start": "0",
-  "Program_settingsDefault": "0",
-  "Program_settingsStart_key_duation_forMW": "0",
-  "Proximity_sensor_setting": "0",
-  "Proximity_sensor_settingClose_user_detectedDisplay_change_to": "0",
-  "Proximity_sensor_settingClose_user_detectedLight_change_to": "0",
-  "Proximity_sensor_settingDistant_user_detectedDisplay_change_to": "0",
-  "Proximity_sensor_settingDistant_user_detectedLight_change_to": "0",
-  "Remote_control_monitoring": "0",
-  "Remote_control_monitoring_set_commands": "1",
-  "Remote_control_monitoring_set_commands_actions": "0",
-  "Remove_moist_now": "0",
-  "Reset_to_default": "0",
-  "Sabbath_mode_setting": "0",
-  "Sabbath_mode_settingBakingEnd_atHour": "0",
-  "Sabbath_mode_settingBakingEnd_atMinute": "0",
-  "Sabbath_mode_settingBakingStart_atHour": "0",
-  "Sabbath_mode_settingBakingStart_atMinute": "0",
-  "Sabbath_mode_settingCavity_light_during_sabbath": "0",
-  "Sabbath_mode_settingEnd_timeHour": "0",
-  "Sabbath_mode_settingEnd_timeMinute": "0",
-  "Sabbath_mode_settingSet_heater_system": "0",
-  "Sabbath_mode_settingStart_timeHour": "0",
-  "Sabbath_mode_settingStart_timeMinute": "0",
-  "Sabbath_mode_setting_activate_weekly": "0",
-  "Sabbath_mode_status": "1",
-  "Sand_timer_1_duration_hours": "255",
-  "Sand_timer_1_duration_minutes": "255",
-  "Sand_timer_1_duration_seconds": "255",
-  "Sand_timer_1_end_utc_datetime_bdc_timestamp": "16679/02/18T23:47:45",
-  "Sand_timer_1_paused_total_seconds": "65535",
-  "Sand_timer_1_start_utc_datetime_bdc_timestamp": "16679/02/18T23:47:45",
-  "Sand_timer_1_status": "5",
-  "Sand_timer_2_duration_hours": "255",
-  "Sand_timer_2_duration_minutes": "255",
-  "Sand_timer_2_duration_seconds": "255",
-  "Sand_timer_2_end_utc_datetime_bdc_timestamp": "16679/02/18T23:47:45",
-  "Sand_timer_2_paused_total_seconds": "65535",
-  "Sand_timer_2_start_utc_datetime_bdc_timestamp": "16679/02/18T23:47:45",
-  "Sand_timer_2_status": "0",
-  "Sand_timer_3_duration_hours": "255",
-  "Sand_timer_3_duration_minutes": "255",
-  "Sand_timer_3_duration_seconds": "255",
-  "Sand_timer_3_end_utc_datetime_bdc_timestamp": "16679/02/18T23:47:45",
-  "Sand_timer_3_paused_total_seconds": "65535",
-  "Sand_timer_3_start_utc_datetime_bdc_timestamp": "16679/02/18T23:47:45",
-  "Sand_timer_3_status": "7",
-  "Scanned_EAN_code": "-12-500000000000",
-  "Session_pairing_active": "0",
-  "Session_pairing_setting": "0",
-  "Set_time_Hour": "0",
-  "Set_time_Minutes": "0",
-  "Settings_day": "255",
-  "Settings_hour": "21",
-  "Settings_minute": "54",
-  "Settings_month": "255",
-  "Settings_year": "65535",
-  "Shop_mode_setting": "0",
-  "Show_date_setting": "0",
-  "Soft_pairing_setting": "0",
-  "Stage_lights_setting": "0",
-  "Status": "1",
-  "Steam123_0_available": "0",
-  "Steam123_1_available": "0",
-  "Steam123_2_available": "0",
-  "Steam123_3_available": "0",
-  "Steam_123": "0",
-  "Steam_assist_Time_used": "0",
-  "Steam_reduction_at_door_opening_setting": "0",
-  "Steam_reduction_at_program_end_setting": "0",
-  "Steam_shot": "0",
-  "Step1Add_moistStart_at_minute": "0",
-  "Step1Add_moistValve_open_percentage": "0",
-  "Step1Add_moist_status": "0",
-  "Step1Alarm_after_step": "0",
-  "Step1Grill_intensity": "0",
-  "Step1Pause_after_step": "0",
-  "Step1Remove_moistStart_at_minute": "0",
-  "Step1_Steam_assist": "0",
-  "Step1_Steam_assistSet_time_in_minutes": "0",
-  "Step1_Steam_assist_intensity": "0",
-  "Step1_setMulti_level_baking": "0",
-  "Step2Add_moistStart_at_minute": "0",
-  "Step2Add_moistValve_open_percentage": "0",
-  "Step2Add_moist_status": "0",
-  "Step2Alarm_after_step": "0",
-  "Step2Grill_intensity": "0",
-  "Step2Pause_after_step": "0",
-  "Step2Remove_moistStart_at_minute": "0",
-  "Step2_Steam_assist": "0",
-  "Step2_Steam_assistSet_time_in_minutes": "0",
-  "Step2_Steam_assist_intensity": "0",
-  "Step2_setMulti_level_baking": "0",
-  "Step3Add_moistStart_at_minute": "0",
-  "Step3Add_moistValve_open_percentage": "0",
-  "Step3Add_moist_status": "0",
-  "Step3Alarm_after_step": "0",
-  "Step3Grill_intensity": "0",
-  "Step3Pause_after_step": "0",
-  "Step3Remove_moistStart_at_minute": "0",
-  "Step3_Steam_assist": "0",
-  "Step3_Steam_assistSet_time_in_minutes": "0",
-  "Step3_Steam_assist_intensity": "0",
-  "Step3_setMulti_level_baking": "0",
-  "Step4Add_moistStart_at_minute": "0",
-  "Step4Add_moistValve_open_percentage": "0",
-  "Step4Add_moist_status": "0",
-  "Step4Alarm_after_step": "0",
-  "Step4Grill_intensity": "0",
-  "Step4Pause_after_step": "0",
-  "Step4Remove_moistStart_at_minute": "0",
-  "Step4Steam_assist": "0",
-  "Step4Steam_assistSet_time_in_minutes": "0",
-  "Step4Steam_assist_intensity": "0",
-  "Step4_bake_mode": "0",
-  "Step4_duration": "0",
-  "Step4_passed_time": "0",
-  "Step4_remaining_time": "0",
-  "Step4_setMulti_level_baking": "0",
-  "Step4_set_heater_system": "0",
-  "Step4_set_microwave_wattage": "0",
-  "Step4_set_temperature": "0",
-  "Step4_status": "0",
-  "Step4_steam_available": "0",
-  "Step4_time_unit": "0",
-  "Step5Add_moistStart_at_minute": "0",
-  "Step5Add_moistValve_open_percentage": "0",
-  "Step5Add_moist_status": "0",
-  "Step5Alarm_after_step": "0",
-  "Step5Grill_intensity": "0",
-  "Step5Pause_after_step": "0",
-  "Step5Remove_moistStart_at_minute": "0",
-  "Step5Steam_assist": "0",
-  "Step5Steam_assistSet_time_in_minutes": "0",
-  "Step5Steam_assist_intensity": "0",
-  "Step5_bake_mode": "0",
-  "Step5_duration": "0",
-  "Step5_passed_time": "0",
-  "Step5_remaining_time": "0",
-  "Step5_setMulti_level_baking": "0",
-  "Step5_set_heater_system": "0",
-  "Step5_set_microwave_wattage": "0",
-  "Step5_set_temperature": "0",
-  "Step5_status": "0",
-  "Step5_steam_available": "0",
-  "Step5_time_unit": "0",
-  "Step_1_bake_mode": "0",
-  "Step_1_duration": "13",
-  "Step_1_fastpreheat_function": "0",
-  "Step_1_passed_time": "16777215",
-  "Step_1_remaining_time": "16777215",
-  "Step_1_set_heater_system": "9",
-  "Step_1_set_microwave_wattage": "0",
-  "Step_1_set_temperature": "230",
-  "Step_1_status": "1",
-  "Step_1_steam_available": "0",
-  "Step_1_time_unit": "2",
-  "Step_2_bake_mode": "0",
-  "Step_2_duration": "0",
-  "Step_2_passed_time": "16777215",
-  "Step_2_remaining_time": "16777215",
-  "Step_2_set_heater_system": "18",
-  "Step_2_set_microwave_wattage": "0",
-  "Step_2_set_temperature": "255",
-  "Step_2_status": "0",
-  "Step_2_steam_available": "0",
-  "Step_2_time_unit": "2",
-  "Step_3_bake_mode": "0",
-  "Step_3_duration": "16777215",
-  "Step_3_passed_time": "16777215",
-  "Step_3_remaining_time": "16777215",
-  "Step_3_set_heater_system": "0",
-  "Step_3_set_microwave_wattage": "0",
-  "Step_3_set_temperature": "65535",
-  "Step_3_status": "0",
-  "Step_3_steam_available": "0",
-  "Step_3_time_unit": "0",
-  "Step_after_bakeAdd_moistStart_at_minute": "0",
-  "Step_after_bakeAdd_moistValve_open_percentage": "0",
-  "Step_after_bakeAdd_moist_status": "0",
-  "Step_after_bakeRemove_moistStart_at_minute": "0",
-  "Step_after_bake_duration": "16777215",
-  "Step_after_bake_mode": "0",
-  "Step_after_bake_passed_time": "16777215",
-  "Step_after_bake_remaining_Time": "16777215",
-  "Step_after_bake_setMulti_level_baking": "0",
-  "Step_after_bake_set_heater_system": "0",
-  "Step_after_bake_set_temperature": "65535",
-  "Step_after_bake_status": "0",
-  "Step_after_bake_time_unit": "0",
-  "Step_pre_bakeAdd_moistStart_at_minute": "0",
-  "Step_pre_bakeAdd_moistValve_open_percentage": "0",
-  "Step_pre_bakeAdd_moist_status": "0",
-  "Step_pre_bakeRemove_moistStart_at_minute": "0",
-  "Step_pre_bake_duration": "16777215",
-  "Step_pre_bake_mode": "0",
-  "Step_pre_bake_passed_time": "16777215",
-  "Step_pre_bake_remaining_time": "16777215",
-  "Step_pre_bake_setMulti_level_baking": "0",
-  "Step_pre_bake_set_heater_system": "0",
-  "Step_pre_bake_set_temperature": "0",
-  "Step_pre_bake_status": "1",
-  "Step_pre_bake_time_unit": "2",
-  "SummerWinter_timeAutomatic_setting": "0",
-  "Temperature_reached_notification_setting": "0",
-  "Text_size_setting": "0",
-  "TimeDateAutomatic_setting": "0",
-  "Time_format": "2",
-  "Time_zone_setting": "0",
-  "Total_duration_in_seconds": "16777215",
-  "Total_oven_usage_value": "65535",
-  "Total_passed_time_seconds": "16777215",
-  "Total_remaining_time_seconds": "16777215",
-  "Volume": "4",
-  "Volume_setting": "0",
-  "Warming_drawer_power_level": "0",
-  "Warming_drawer_status": "0",
-  "Water_hardness": "3",
-  "Water_tank": "0",
-  "Water_tank_level": "0",
-  "Weight_unit_setting": "0",
-  "Welcome": "0",
-  "daily_energy_kwh": 0
-}
+# Oven
+properties:
+- property: Adaptive_sense_setting
+  # Sample value: 2
+- property: Add_moist_now
+  # Sample value: 0
+- property: AlarmAlmost_finished
+  # Sample value: 0
+- property: AlarmChild_lockOff
+  # Sample value: 0
+- property: AlarmChild_lockOn
+  # Sample value: 0
+- property: AlarmCleanTank
+  # Sample value: 0
+- property: AlarmDehydrate_ended
+  # Sample value: 0
+- property: AlarmDemo_activated
+  # Sample value: 0
+- property: AlarmDescaleStep1
+  # Sample value: 0
+- property: AlarmDescaleStep2
+  # Sample value: 0
+- property: AlarmDescaleStep3
+  # Sample value: 0
+- property: AlarmDescaling_interrupted
+  # Sample value: 0
+- property: AlarmEmptyTankPause
+  # Sample value: 0
+- property: AlarmFillTank
+  # Sample value: 0
+- property: AlarmIncreased_power_consumption
+  # Sample value: 0
+- property: AlarmKey_lock_on
+  # Sample value: 0
+- property: AlarmMicrowave_system_finished
+  # Sample value: 0
+- property: AlarmOven_system_finished
+  # Sample value: 0
+- property: AlarmPopTankOpened
+  # Sample value: 0
+- property: AlarmPower_failure_running
+  # Sample value: 0
+- property: AlarmProbe_lost_connection
+  # Sample value: 0
+- property: AlarmRemoteStartPowerFailure
+  # Sample value: 0
+- property: AlarmRemove_probe
+  # Sample value: 0
+- property: AlarmSabbathAboutToStart
+  # Sample value: 0
+- property: AlarmSabbathEnded
+  # Sample value: 0
+- property: AlarmSabbathPostpone
+  # Sample value: 0
+- property: AlarmSteamClean_finished
+  # Sample value: 0
+- property: AlarmSteam_interrupted
+  # Sample value: 0
+- property: AlarmSteam_system_finished
+  # Sample value: 0
+- property: AlarmTankLevel1
+  # Sample value: 0
+- property: Alarm_aquaClean_finished
+  # Sample value: 0
+- property: Alarm_baking_finished
+  # Sample value: 1
+- property: Alarm_baking_stoped
+  # Sample value: 0
+- property: Alarm_child_lock_deactivated_on_the_oven
+  # Sample value: 1
+- property: Alarm_cleaning_suggestion_after_baking_finished
+  # Sample value: 0
+- property: Alarm_defrost_finished
+  # Sample value: 0
+- property: Alarm_descaling_needed
+  # Sample value: 1
+- property: Alarm_door_locked
+  # Sample value: 0
+- property: Alarm_door_opened
+  # Sample value: 1
+- property: Alarm_ean_scan_info
+  # Sample value: 0
+- property: Alarm_empty_and_clean_water_tank
+  # Sample value: 0
+- property: Alarm_fast_preheat_active
+  # Sample value: 0
+- property: Alarm_fast_preheating_finished
+  # Sample value: 1
+- property: Alarm_keepWarm_ended
+  # Sample value: 0
+- property: Alarm_mw_active
+  # Sample value: 0
+- property: Alarm_oven_temperature_too_high
+  # Sample value: 0
+- property: Alarm_oven_usage_reached_set_limit_auto_cleaning_suggested
+  # Sample value: 0
+- property: Alarm_plateWarm_ended
+  # Sample value: 0
+- property: Alarm_probe_inserted
+  # Sample value: 1
+- property: Alarm_probe_temp_reached
+  # Sample value: 0
+- property: Alarm_pyrolytic_finished
+  # Sample value: 0
+- property: Alarm_running_time_over_10_or_24_hour_limit_error
+  # Sample value: 0
+- property: Alarm_sabbath_reminder
+  # Sample value: 0
+- property: Alarm_sand_timer_1_elapsed
+  # Sample value: 1
+- property: Alarm_sand_timer_2_elapsed
+  # Sample value: 0
+- property: Alarm_sand_timer_3_elapsed
+  # Sample value: 0
+- property: Alarm_set_temperature_reached
+  # Sample value: 1
+- property: Alarm_steam_fill_alarm
+  # Sample value: 0
+- property: Alarm_steam_function_active
+  # Sample value: 0
+- property: Alarm_turn_food
+  # Sample value: 0
+- property: Alarm_user_interaction_on_appliance_detected
+  # Sample value: 1
+- property: Alarm_water_tank_is_empty
+  # Sample value: 0
+- property: Alarm_water_tank_is_missing
+  # Sample value: 0
+- property: Almost_finished_notification_setting
+  # Sample value: 0
+- property: Almost_finished_notification_settingTimer_in_minutes
+  # Sample value: 0
+- property: Ambient_sound_setting
+  # Sample value: 0
+- property: Auto_fast_preheat
+  # Sample value: 2
+- property: AutomaticChild_lock_setting
+  # Sample value: 0
+- property: AutomaticDoor_lock_setting
+  # Sample value: 0
+- property: AutomaticDoor_lock_setting_allowed
+  # Sample value: 0
+- property: Automatic_display_brightness_setting
+  # Sample value: 0
+- property: Automatic_door_closing_at_program_start_setting
+  # Sample value: 0
+- property: Automatic_door_open_at_program_end_after_time_setting
+  # Sample value: 0
+- property: Automatic_door_open_at_program_end_after_time_settingTimer_in_minutes
+  # Sample value: 0
+- property: Automatic_door_open_at_program_end_setting
+  # Sample value: 0
+- property: Automatic_water_tank_opening_setting
+  # Sample value: 0
+- property: Baking_steps_intensity_levels
+  # Sample value: 0
+- property: Baking_steps_intensity_levels_type
+  # Sample value: 0
+- property: Brand_splash_setting
+  # Sample value: 0
+- property: Brightness
+  # Sample value: 3
+- property: CameraLive_feed_current_phase
+  # Sample value: 0
+- property: CameraLive_feed_status
+  # Sample value: 0
+- property: CameraPicture_current_phase
+  # Sample value: 0
+- property: CameraPicture_request
+  # Sample value: 0
+- property: CameraTime_lapse_current_phase
+  # Sample value: 0
+- property: CameraTime_lapse_request
+  # Sample value: 0
+- property: Camera_enable_setting
+  # Sample value: 0
+- property: Camera_status
+  # Sample value: 0
+- property: Child_lock
+  # Sample value: 1
+- property: Cooking_intensity
+  # Sample value: 0
+- property: Crisp_function_available
+  # Sample value: 0
+- property: Crisp_function_status
+  # Sample value: 0
+- property: Current_baking_step
+  # Sample value: 2
+- property: Current_baking_step2
+  # Sample value: 0
+- property: Date_format_setting
+  # Sample value: 0
+- property: Demo_mode
+  # Sample value: 1
+- property: Descale_status
+  # Sample value: 0
+- property: DisplayBrightness_setting
+  # Sample value: 0
+- property: DisplayContrast_setting
+  # Sample value: 0
+- property: Display_standby
+  # Sample value: 0
+- property: Display_switch_to_standby_after_minutes
+  # Sample value: 0
+- property: Door
+  # Sample value: 1
+- property: Door_lock
+  # Sample value: 1
+- property: Door_lock_status
+  # Sample value: 0
+- property: Door_open_notification_setting
+  # Sample value: 0
+- property: Door_sensor_setting
+  # Sample value: 0
+- property: Duration_of_clock
+  # Sample value: 0
+- property: Eco_mode_setting
+  # Sample value: 0
+- property: Error_0
+  # Sample value: 1
+- property: Error_1
+  # Sample value: 1
+- property: Error_10
+  # Sample value: 1
+- property: Error_11
+  # Sample value: 1
+- property: Error_12
+  # Sample value: 1
+- property: Error_13
+  # Sample value: 1
+- property: Error_14
+  # Sample value: 1
+- property: Error_15
+  # Sample value: 1
+- property: Error_16
+  # Sample value: 1
+- property: Error_17
+  # Sample value: 1
+- property: Error_18
+  # Sample value: 1
+- property: Error_19
+  # Sample value: 1
+- property: Error_2
+  # Sample value: 1
+- property: Error_20
+  # Sample value: 1
+- property: Error_21
+  # Sample value: 1
+- property: Error_22
+  # Sample value: 1
+- property: Error_23
+  # Sample value: 1
+- property: Error_24
+  # Sample value: 1
+- property: Error_25
+  # Sample value: 1
+- property: Error_26
+  # Sample value: 1
+- property: Error_27
+  # Sample value: 1
+- property: Error_28
+  # Sample value: 1
+- property: Error_29
+  # Sample value: 1
+- property: Error_3
+  # Sample value: 1
+- property: Error_30
+  # Sample value: 1
+- property: Error_31
+  # Sample value: 1
+- property: Error_32
+  # Sample value: 0
+- property: Error_33
+  # Sample value: 0
+- property: Error_34
+  # Sample value: 0
+- property: Error_35
+  # Sample value: 0
+- property: Error_36
+  # Sample value: 0
+- property: Error_37
+  # Sample value: 0
+- property: Error_38
+  # Sample value: 0
+- property: Error_39
+  # Sample value: 0
+- property: Error_4
+  # Sample value: 1
+- property: Error_40
+  # Sample value: 0
+- property: Error_5
+  # Sample value: 1
+- property: Error_6
+  # Sample value: 1
+- property: Error_7
+  # Sample value: 1
+- property: Error_8
+  # Sample value: 1
+- property: Error_9
+  # Sample value: 1
+- property: Factory_reset
+  # Sample value: 0
+- property: Fota
+  # Sample value: 0
+- property: Gratin_available
+  # Sample value: 0
+- property: Gratin_from_below_functionSet_time_in_seconds
+  # Sample value: 0
+- property: Gratin_from_below_function_allowed
+  # Sample value: 0
+- property: Gratin_from_below_function_status
+  # Sample value: 0
+- property: Gratin_function_Set_time_in_seconds
+  # Sample value: 0
+- property: Gratin_status
+  # Sample value: 1
+- property: Gratin_total_allowed_time_in_minutes
+  # Sample value: 30
+- property: Gratin_total_passed_time_in_minutes
+  # Sample value: 65535
+- property: Grill_plate_measured_temperature
+  # Sample value: 1931
+- property: Grill_plate_status
+  # Sample value: 0
+- property: HOB_warming_zone_power_level
+  # Sample value: 0
+- property: HOB_warming_zone_status
+  # Sample value: 0
+- property: HardPairingStatus
+  # Sample value: 0
+- property: Hide_setting
+  # Sample value: 0
+- property: Hob_status
+  # Sample value: 0
+- property: Hob_zone_1_status
+  # Sample value: 0
+- property: Hob_zone_2_status
+  # Sample value: 0
+- property: Hob_zone_3_status
+  # Sample value: 0
+- property: Hob_zone_4_status
+  # Sample value: 0
+- property: Hob_zone_5_status
+  # Sample value: 0
+- property: Inactivity_timeout
+  # Sample value: 0
+- property: Interior_Light_Control_available
+  # Sample value: 0
+- property: Interior_light
+  # Sample value: 1
+- property: Key_sound
+  # Sample value: 2
+- property: Language_status
+  # Sample value: 0
+- property: LightsBrightness_setting
+  # Sample value: 0
+- property: LightsColor_temperature_setting
+  # Sample value: 0
+- property: Lights_duration_setting
+  # Sample value: 0
+- property: LockPIN_code
+  # Sample value: 0
+- property: Meat_probe_measured_temperature
+  # Sample value: 65535
+- property: Meat_probe_set_temperature
+  # Sample value: 65535
+- property: Meat_probe_status
+  # Sample value: 1
+- property: Navigation_sound_setting
+  # Sample value: 0
+- property: Night_modeDisplay_brightness_setting
+  # Sample value: 0
+- property: Night_modeLight_brightness_setting
+  # Sample value: 0
+- property: Night_modeVolume_setting
+  # Sample value: 0
+- property: Night_mode_off_hour
+  # Sample value: 255
+- property: Night_mode_off_minute
+  # Sample value: 255
+- property: Night_mode_on_hour
+  # Sample value: 255
+- property: Night_mode_on_minute
+  # Sample value: 255
+- property: Night_mode_status
+  # Sample value: 1
+- property: Notification_pitch_sound_setting
+  # Sample value: 0
+- property: Notification_sounds_volume_setting
+  # Sample value: 0
+- property: Oven_measured_temperature
+  # Sample value: 20
+- property: Oven_temperature_unit
+  # Sample value: 1
+- property: Oven_temperature_unit_setting
+  # Sample value: 1
+- property: Oven_usage_value_alarm_limit
+  # Sample value: 0
+- property: Oven_usage_value_time_since_last_cleaning
+  # Sample value: 65535
+- property: Permanent_remote_start
+  # Sample value: 0
+- property: Program_settingsDefault
+  # Sample value: 0
+- property: Program_settingsStart_key_duation_forMW
+  # Sample value: 0
+- property: Proximity_sensor_setting
+  # Sample value: 0
+- property: Proximity_sensor_settingClose_user_detectedDisplay_change_to
+  # Sample value: 0
+- property: Proximity_sensor_settingClose_user_detectedLight_change_to
+  # Sample value: 0
+- property: Proximity_sensor_settingDistant_user_detectedDisplay_change_to
+  # Sample value: 0
+- property: Proximity_sensor_settingDistant_user_detectedLight_change_to
+  # Sample value: 0
+- property: Remote_control_monitoring
+  # Sample value: 0
+- property: Remote_control_monitoring_set_commands
+  # Sample value: 1
+- property: Remote_control_monitoring_set_commands_actions
+  # Sample value: 0
+- property: Remove_moist_now
+  # Sample value: 0
+- property: Reset_to_default
+  # Sample value: 0
+- property: Sabbath_mode_setting
+  # Sample value: 0
+- property: Sabbath_mode_settingBakingEnd_atHour
+  # Sample value: 0
+- property: Sabbath_mode_settingBakingEnd_atMinute
+  # Sample value: 0
+- property: Sabbath_mode_settingBakingStart_atHour
+  # Sample value: 0
+- property: Sabbath_mode_settingBakingStart_atMinute
+  # Sample value: 0
+- property: Sabbath_mode_settingCavity_light_during_sabbath
+  # Sample value: 0
+- property: Sabbath_mode_settingEnd_timeHour
+  # Sample value: 0
+- property: Sabbath_mode_settingEnd_timeMinute
+  # Sample value: 0
+- property: Sabbath_mode_settingSet_heater_system
+  # Sample value: 0
+- property: Sabbath_mode_settingStart_timeHour
+  # Sample value: 0
+- property: Sabbath_mode_settingStart_timeMinute
+  # Sample value: 0
+- property: Sabbath_mode_setting_activate_weekly
+  # Sample value: 0
+- property: Sabbath_mode_status
+  # Sample value: 1
+- property: Sand_timer_1_duration_hours
+  # Sample value: 255
+- property: Sand_timer_1_duration_minutes
+  # Sample value: 255
+- property: Sand_timer_1_duration_seconds
+  # Sample value: 255
+- property: Sand_timer_1_end_utc_datetime_bdc_timestamp
+  # Sample value: 16679/02/18T23:47:45
+- property: Sand_timer_1_paused_total_seconds
+  # Sample value: 65535
+- property: Sand_timer_1_start_utc_datetime_bdc_timestamp
+  # Sample value: 16679/02/18T23:47:45
+- property: Sand_timer_1_status
+  # Sample value: 5
+- property: Sand_timer_2_duration_hours
+  # Sample value: 255
+- property: Sand_timer_2_duration_minutes
+  # Sample value: 255
+- property: Sand_timer_2_duration_seconds
+  # Sample value: 255
+- property: Sand_timer_2_end_utc_datetime_bdc_timestamp
+  # Sample value: 16679/02/18T23:47:45
+- property: Sand_timer_2_paused_total_seconds
+  # Sample value: 65535
+- property: Sand_timer_2_start_utc_datetime_bdc_timestamp
+  # Sample value: 16679/02/18T23:47:45
+- property: Sand_timer_2_status
+  # Sample value: 0
+- property: Sand_timer_3_duration_hours
+  # Sample value: 255
+- property: Sand_timer_3_duration_minutes
+  # Sample value: 255
+- property: Sand_timer_3_duration_seconds
+  # Sample value: 255
+- property: Sand_timer_3_end_utc_datetime_bdc_timestamp
+  # Sample value: 16679/02/18T23:47:45
+- property: Sand_timer_3_paused_total_seconds
+  # Sample value: 65535
+- property: Sand_timer_3_start_utc_datetime_bdc_timestamp
+  # Sample value: 16679/02/18T23:47:45
+- property: Sand_timer_3_status
+  # Sample value: 7
+- property: Scanned_EAN_code
+  # Sample value: -12-500000000000
+- property: Session_pairing_active
+  # Sample value: 0
+- property: Session_pairing_setting
+  # Sample value: 0
+- property: Set_time_Hour
+  # Sample value: 0
+- property: Set_time_Minutes
+  # Sample value: 0
+- property: Settings_day
+  # Sample value: 255
+- property: Settings_hour
+  # Sample value: 10
+- property: Settings_minute
+  # Sample value: 21
+- property: Settings_month
+  # Sample value: 255
+- property: Settings_year
+  # Sample value: 65535
+- property: Shop_mode_setting
+  # Sample value: 0
+- property: Show_date_setting
+  # Sample value: 0
+- property: Soft_pairing_setting
+  # Sample value: 0
+- property: Stage_lights_setting
+  # Sample value: 0
+- property: Status
+  # Sample value: 1
+- property: Steam123_0_available
+  # Sample value: 0
+- property: Steam123_1_available
+  # Sample value: 0
+- property: Steam123_2_available
+  # Sample value: 0
+- property: Steam123_3_available
+  # Sample value: 0
+- property: Steam_123
+  # Sample value: 0
+- property: Steam_assist_Time_used
+  # Sample value: 0
+- property: Steam_reduction_at_door_opening_setting
+  # Sample value: 0
+- property: Steam_reduction_at_program_end_setting
+  # Sample value: 0
+- property: Steam_shot
+  # Sample value: 0
+- property: Step1Add_moistStart_at_minute
+  # Sample value: 0
+- property: Step1Add_moistValve_open_percentage
+  # Sample value: 0
+- property: Step1Add_moist_status
+  # Sample value: 0
+- property: Step1Alarm_after_step
+  # Sample value: 0
+- property: Step1Grill_intensity
+  # Sample value: 0
+- property: Step1Pause_after_step
+  # Sample value: 0
+- property: Step1Remove_moistStart_at_minute
+  # Sample value: 0
+- property: Step1_Steam_assist
+  # Sample value: 0
+- property: Step1_Steam_assistSet_time_in_minutes
+  # Sample value: 0
+- property: Step1_Steam_assist_intensity
+  # Sample value: 0
+- property: Step1_setMulti_level_baking
+  # Sample value: 0
+- property: Step2Add_moistStart_at_minute
+  # Sample value: 0
+- property: Step2Add_moistValve_open_percentage
+  # Sample value: 0
+- property: Step2Add_moist_status
+  # Sample value: 0
+- property: Step2Alarm_after_step
+  # Sample value: 0
+- property: Step2Grill_intensity
+  # Sample value: 0
+- property: Step2Pause_after_step
+  # Sample value: 0
+- property: Step2Remove_moistStart_at_minute
+  # Sample value: 0
+- property: Step2_Steam_assist
+  # Sample value: 0
+- property: Step2_Steam_assistSet_time_in_minutes
+  # Sample value: 0
+- property: Step2_Steam_assist_intensity
+  # Sample value: 0
+- property: Step2_setMulti_level_baking
+  # Sample value: 0
+- property: Step3Add_moistStart_at_minute
+  # Sample value: 0
+- property: Step3Add_moistValve_open_percentage
+  # Sample value: 0
+- property: Step3Add_moist_status
+  # Sample value: 0
+- property: Step3Alarm_after_step
+  # Sample value: 0
+- property: Step3Grill_intensity
+  # Sample value: 0
+- property: Step3Pause_after_step
+  # Sample value: 0
+- property: Step3Remove_moistStart_at_minute
+  # Sample value: 0
+- property: Step3_Steam_assist
+  # Sample value: 0
+- property: Step3_Steam_assistSet_time_in_minutes
+  # Sample value: 0
+- property: Step3_Steam_assist_intensity
+  # Sample value: 0
+- property: Step3_setMulti_level_baking
+  # Sample value: 0
+- property: Step4Add_moistStart_at_minute
+  # Sample value: 0
+- property: Step4Add_moistValve_open_percentage
+  # Sample value: 0
+- property: Step4Add_moist_status
+  # Sample value: 0
+- property: Step4Alarm_after_step
+  # Sample value: 0
+- property: Step4Grill_intensity
+  # Sample value: 0
+- property: Step4Pause_after_step
+  # Sample value: 0
+- property: Step4Remove_moistStart_at_minute
+  # Sample value: 0
+- property: Step4Steam_assist
+  # Sample value: 0
+- property: Step4Steam_assistSet_time_in_minutes
+  # Sample value: 0
+- property: Step4Steam_assist_intensity
+  # Sample value: 0
+- property: Step4_bake_mode
+  # Sample value: 0
+- property: Step4_duration
+  # Sample value: 0
+- property: Step4_passed_time
+  # Sample value: 0
+- property: Step4_remaining_time
+  # Sample value: 0
+- property: Step4_setMulti_level_baking
+  # Sample value: 0
+- property: Step4_set_heater_system
+  # Sample value: 0
+- property: Step4_set_microwave_wattage
+  # Sample value: 0
+- property: Step4_set_temperature
+  # Sample value: 0
+- property: Step4_status
+  # Sample value: 0
+- property: Step4_steam_available
+  # Sample value: 0
+- property: Step4_time_unit
+  # Sample value: 0
+- property: Step5Add_moistStart_at_minute
+  # Sample value: 0
+- property: Step5Add_moistValve_open_percentage
+  # Sample value: 0
+- property: Step5Add_moist_status
+  # Sample value: 0
+- property: Step5Alarm_after_step
+  # Sample value: 0
+- property: Step5Grill_intensity
+  # Sample value: 0
+- property: Step5Pause_after_step
+  # Sample value: 0
+- property: Step5Remove_moistStart_at_minute
+  # Sample value: 0
+- property: Step5Steam_assist
+  # Sample value: 0
+- property: Step5Steam_assistSet_time_in_minutes
+  # Sample value: 0
+- property: Step5Steam_assist_intensity
+  # Sample value: 0
+- property: Step5_bake_mode
+  # Sample value: 0
+- property: Step5_duration
+  # Sample value: 0
+- property: Step5_passed_time
+  # Sample value: 0
+- property: Step5_remaining_time
+  # Sample value: 0
+- property: Step5_setMulti_level_baking
+  # Sample value: 0
+- property: Step5_set_heater_system
+  # Sample value: 0
+- property: Step5_set_microwave_wattage
+  # Sample value: 0
+- property: Step5_set_temperature
+  # Sample value: 0
+- property: Step5_status
+  # Sample value: 0
+- property: Step5_steam_available
+  # Sample value: 0
+- property: Step5_time_unit
+  # Sample value: 0
+- property: Step_1_bake_mode
+  # Sample value: 0
+- property: Step_1_duration
+  # Sample value: 13
+- property: Step_1_fastpreheat_function
+  # Sample value: 0
+- property: Step_1_passed_time
+  # Sample value: 16777215
+- property: Step_1_remaining_time
+  # Sample value: 16777215
+- property: Step_1_set_heater_system
+  # Sample value: 52
+- property: Step_1_set_microwave_wattage
+  # Sample value: 0
+- property: Step_1_set_temperature
+  # Sample value: 230
+- property: Step_1_status
+  # Sample value: 1
+- property: Step_1_steam_available
+  # Sample value: 0
+- property: Step_1_time_unit
+  # Sample value: 2
+- property: Step_2_bake_mode
+  # Sample value: 0
+- property: Step_2_duration
+  # Sample value: 0
+- property: Step_2_passed_time
+  # Sample value: 16777215
+- property: Step_2_remaining_time
+  # Sample value: 16777215
+- property: Step_2_set_heater_system
+  # Sample value: 18
+- property: Step_2_set_microwave_wattage
+  # Sample value: 0
+- property: Step_2_set_temperature
+  # Sample value: 255
+- property: Step_2_status
+  # Sample value: 0
+- property: Step_2_steam_available
+  # Sample value: 0
+- property: Step_2_time_unit
+  # Sample value: 2
+- property: Step_3_bake_mode
+  # Sample value: 0
+- property: Step_3_duration
+  # Sample value: 16777215
+- property: Step_3_passed_time
+  # Sample value: 16777215
+- property: Step_3_remaining_time
+  # Sample value: 16777215
+- property: Step_3_set_heater_system
+  # Sample value: 0
+- property: Step_3_set_microwave_wattage
+  # Sample value: 0
+- property: Step_3_set_temperature
+  # Sample value: 65535
+- property: Step_3_status
+  # Sample value: 0
+- property: Step_3_steam_available
+  # Sample value: 0
+- property: Step_3_time_unit
+  # Sample value: 0
+- property: Step_after_bakeAdd_moistStart_at_minute
+  # Sample value: 0
+- property: Step_after_bakeAdd_moistValve_open_percentage
+  # Sample value: 0
+- property: Step_after_bakeAdd_moist_status
+  # Sample value: 0
+- property: Step_after_bakeRemove_moistStart_at_minute
+  # Sample value: 0
+- property: Step_after_bake_duration
+  # Sample value: 16777215
+- property: Step_after_bake_mode
+  # Sample value: 0
+- property: Step_after_bake_passed_time
+  # Sample value: 16777215
+- property: Step_after_bake_remaining_Time
+  # Sample value: 16777215
+- property: Step_after_bake_setMulti_level_baking
+  # Sample value: 0
+- property: Step_after_bake_set_heater_system
+  # Sample value: 0
+- property: Step_after_bake_set_temperature
+  # Sample value: 65535
+- property: Step_after_bake_status
+  # Sample value: 0
+- property: Step_after_bake_time_unit
+  # Sample value: 0
+- property: Step_pre_bakeAdd_moistStart_at_minute
+  # Sample value: 0
+- property: Step_pre_bakeAdd_moistValve_open_percentage
+  # Sample value: 0
+- property: Step_pre_bakeAdd_moist_status
+  # Sample value: 0
+- property: Step_pre_bakeRemove_moistStart_at_minute
+  # Sample value: 0
+- property: Step_pre_bake_duration
+  # Sample value: 16777215
+- property: Step_pre_bake_mode
+  # Sample value: 0
+- property: Step_pre_bake_passed_time
+  # Sample value: 16777215
+- property: Step_pre_bake_remaining_time
+  # Sample value: 16777215
+- property: Step_pre_bake_setMulti_level_baking
+  # Sample value: 0
+- property: Step_pre_bake_set_heater_system
+  # Sample value: 0
+- property: Step_pre_bake_set_temperature
+  # Sample value: 0
+- property: Step_pre_bake_status
+  # Sample value: 1
+- property: Step_pre_bake_time_unit
+  # Sample value: 2
+- property: SummerWinter_timeAutomatic_setting
+  # Sample value: 0
+- property: Temperature_reached_notification_setting
+  # Sample value: 0
+- property: Text_size_setting
+  # Sample value: 0
+- property: TimeDateAutomatic_setting
+  # Sample value: 0
+- property: Time_format
+  # Sample value: 2
+- property: Time_zone_setting
+  # Sample value: 0
+- property: Total_duration_in_seconds
+  # Sample value: 16777215
+- property: Total_oven_usage_value
+  # Sample value: 65535
+- property: Total_passed_time_seconds
+  # Sample value: 16777215
+- property: Total_remaining_time_seconds
+  # Sample value: 16777215
+- property: Volume
+  # Sample value: 4
+- property: Volume_setting
+  # Sample value: 0
+- property: Warming_drawer_power_level
+  # Sample value: 0
+- property: Warming_drawer_status
+  # Sample value: 0
+- property: Water_hardness
+  # Sample value: 3
+- property: Water_tank
+  # Sample value: 0
+- property: Water_tank_level
+  # Sample value: 0
+- property: Weight_unit_setting
+  # Sample value: 0
+- property: Welcome
+  # Sample value: 0
+- property: daily_energy_kwh
+  # Sample value: 0
