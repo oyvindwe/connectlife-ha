@@ -1,6 +1,6 @@
-# Data dictionaries
+# Mapping files
 
-Data dictionaries for known appliances are located in this directory. Appliances without data dictionary will be still
+Mapping files for known appliances are located in this directory. Appliances without a mapping file will be still
 be loaded, but with a warning in the log. Their properties will all be mapped to [sensor](#type-sensor) entities,
 with `hidden` set to `true` and `state_class` set to `measurement` (to enable
 [long-term statistics](https://developers.home-assistant.io/docs/core/entity/sensor/#long-term-statistics)).
@@ -43,7 +43,11 @@ You need to restart Home Assistant to load mapping changes.
   and must be quoted (e.g. `"off"`) to be interpreted as a string, e.g. in option lists. Note that some options
   expects boolean (unquoted) values.
 - Validate your mapping file with the [JSON schema](properties-schema.json).
-- Remember to add translation strings.
+- Remember to add translation strings. In the base dir of this repo, run the following command to update `strings.json`:
+  ```bash
+  python -m scripts.gen_strings
+  ```
+  and then edit the added strings. Finally, merge the changes into [translations/en.json].
 
 ## Property
 
