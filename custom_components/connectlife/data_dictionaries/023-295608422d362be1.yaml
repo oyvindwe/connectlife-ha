@@ -238,12 +238,12 @@ properties:
         3089: large_grill
         3090: large_grill_fan
         3091: pro_roasting
-        3092: hotairmicro
-        3093: grillfanmicro
+        3092: hot_air_micro
+        3093: grill_fan_micro
         3094: micro
-        3095: hot_air_steam1
-        3096: hot_air_steam2
-        3097: hot_air_steam3
+        3095: hot_air_steam_1
+        3096: hot_air_steam_2
+        3097: hot_air_steam_3
         3098: fast_preheat
         3099: pyro
         3100: defrost
@@ -302,9 +302,9 @@ properties:
         3092: hot_air_micro
         3093: grill_fan_micro
         3094: micro
-        3095: hot_air_steam1
-        3096: hot_air_steam2
-        3097: hot_air_steam3
+        3095: hot_air_steam_1
+        3096: hot_air_steam_2
+        3097: hot_air_steam_3
         3098: fast_preheat
         3099: pyrolysis
         3100: defrost
@@ -360,12 +360,12 @@ properties:
         3089: large_grill
         3090: large_grill_fan
         3091: pro_roasting
-        3092: hotairmicro
-        3093: grillfanmicro
+        3092: hot_air_micro
+        3093: grill_fan_micro
         3094: micro
-        3095: hot_air_steam1
-        3096: hot_air_steam2
-        3097: hot_air_steam3
+        3095: hot_air_steam_1
+        3096: hot_air_steam_2
+        3097: hot_air_steam_3
         3098: fast_preheat
         3099: pyro
         3100: defrost
