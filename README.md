@@ -47,6 +47,7 @@ visibility.
 | W-DW50/60-22 | Dishwasher      | 015              | 000                 |
 |              | Heat pump       | 016              | 502                 |
 |              | Induction hob   | 020              | 63c45b513e1a4bf7    |
+|              | Oven            | 023              | 295608422d362be1    |
 |              | Refrigerator    | 026              | 1b0610z0049j        |
 | DPNA83W      | Tumble dryer    | 032              | 000                 |
 
