@@ -49,6 +49,8 @@ You need to restart Home Assistant to load mapping changes.
   ```
   and then edit the added strings. Finally, merge the changes into [translations/en.json].
 
+Note that translation keys must be lowercase!
+
 ## Property
 
 | Item            | Type                               | Description                                                                                                                             |

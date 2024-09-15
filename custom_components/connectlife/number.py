@@ -61,7 +61,7 @@ class ConnectLifeNumberEntity(ConnectLifeEntity, NumberEntity):
             native_max_value=dd_entry.number.max_value,
             native_min_value=dd_entry.number.min_value,
             native_unit_of_measurement=dd_entry.number.unit,
-            translation_key=status.lower(),
+            translation_key=self.to_translation_key(status),
         )
         self.update_state()
 

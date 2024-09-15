@@ -57,7 +57,7 @@ class ConnectLifeSelect(ConnectLifeEntity, SelectEntity):
             entity_registry_visible_default=not dd_entry.hide,
             icon=dd_entry.icon,
             name=status.replace("_", " "),
-            translation_key=status.lower(),
+            translation_key=self.to_translation_key(status),
             options=list(self.options_map.values())
         )
         self.update_state()

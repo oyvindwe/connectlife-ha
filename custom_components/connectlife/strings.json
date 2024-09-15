@@ -289,7 +289,7 @@
       "frost_state": {
         "name": "Frost state"
       },
-      "humidity sensor_failure": {
+      "humidity_sensor_failure": {
         "name": "Humidity sensor failure"
       },
       "humidity_sensor": {
