@@ -227,7 +227,7 @@
         "device_class": {
           "$ref": "#/definitions/SensorDeviceClass"
         },
-        "read-only": {
+        "read_only": {
           "type": "boolean",
           "description": "If this property is known to be read-only.",
           "default": false

@@ -362,83 +362,83 @@ properties:
       min_value: 0
       max_value: 8
   - property: reserve45
-    hide: true
+    disable: true
   - property: reserve46
-    hide: true
+    disable: true
   - property: reserve47
-    hide: true
+    disable: true
   - property: reserve48
-    hide: true
+    disable: true
   - property: reserve49
-    hide: true
+    disable: true
   - property: reserve50
-    hide: true
+    disable: true
   - property: reserve51
-    hide: true
+    disable: true
   - property: reserve52
-    hide: true
+    disable: true
   - property: reserve53
-    hide: true
+    disable: true
   - property: reserve54
-    hide: true
+    disable: true
   - property: reserve55
-    hide: true
+    disable: true
   - property: reserve56
-    hide: true
+    disable: true
   - property: reserve57
-    hide: true
+    disable: true
   - property: reserve58
-    hide: true
+    disable: true
   - property: reserve59
-    hide: true
+    disable: true
   - property: reserve60
-    hide: true
+    disable: true
   - property: reserve61
-    hide: true
+    disable: true
     sensor:
       unknown_value: 65535
   - property: reserve62
-    hide: true
+    disable: true
     sensor:
       unknown_value: 65535
   - property: reserve63
-    hide: true
+    disable: true
     sensor:
       unknown_value: 65535
   - property: reserve64
-    hide: true
+    disable: true
     sensor:
       unknown_value: 65535
   - property: reserve65
-    hide: true
+    disable: true
     sensor:
       unknown_value: 65535
   - property: reserve66
-    hide: true
+    disable: true
     sensor:
       unknown_value: 65535
   - property: reserve67
-    hide: true
+    disable: true
     sensor:
       unknown_value: 65535
   - property: reserve68
-    hide: true
+    disable: true
     sensor:
       unknown_value: 65535
   - property: reserve69
-    hide: true
+    disable: true
     sensor:
       unknown_value: 65535
   - property: reserve70
-    hide: true
+    disable: true
     sensor:
       unknown_value: 65535
   - property: reserve71
-    hide: true
+    disable: true
     sensor:
       unknown_value: 65535
   - property: reserve72
-    hide: true
+    disable: true
     sensor:
       unknown_value: 65535
   - property: rgb_atmosphere_mode_b_value
