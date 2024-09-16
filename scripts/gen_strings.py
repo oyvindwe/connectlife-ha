@@ -48,7 +48,7 @@ def main(basedir):
                         if entity_type not in strings["entity"]:
                             strings["entity"][entity_type] = {}
                         name = property["property"]
-                        key = name.lower()
+                        key = name.lower().replace(" ", "_")
                         if key not in strings["entity"][entity_type]:
                             strings["entity"][entity_type][key] = {"name": pretty(name)}
                         if (
