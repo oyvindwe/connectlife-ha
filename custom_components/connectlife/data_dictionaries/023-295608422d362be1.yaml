@@ -1,0 +1,419 @@
+properties:
+  - property: Alarm_alarm_time_reached
+    icon: mdi:alarm
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: Alarm_baking_finished
+    icon: mdi:alarm
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: Alarm_descale_now
+    binary_sensor:
+      device_class: problem
+      options:
+        0: off
+        1: on
+  - property: Alarm_preheat_reached
+    icon: mdi:alarm
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: Alarm_steam_empty
+    binary_sensor:
+      device_class: problem
+      options:
+        0: off
+        1: on
+  - property: Alarm_temperature_reached
+    icon: mdi:alarm
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: Alarm_turn_food
+    icon: mdi:alarm
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: Alarm_warning_fastpreheat
+    icon: mdi:heat-wave
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: Alarm_warning_microwave
+    icon: mdi:microwave
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: Alarm_warning_steam
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: Alarm_water_tank_empty
+    binary_sensor:
+      device_class: problem
+      options:
+        0: off
+        1: on
+  - property: Alarm_water_tank_missing
+    binary_sensor:
+      device_class: problem
+      options:
+        0: off
+        1: on
+  - property: Bake_start_utc_datetime_bdc_timestamp
+  - property: Baking_start_time_hour
+    disable: true
+  - property: Baking_start_time_minute
+    disable: true
+  - property: CURRENT_SET_STEP
+    hide: false
+    # 3162
+  - property: Child_lock
+    binary_sensor:
+      device_class: lock
+      options:
+        3191: off
+        3192: on
+  - property: Current_baking_step
+    sensor:
+      device_class: enum
+      options:
+        3251: preheat
+        
+        3252: step_1
+        
+        3253: step_2
+        
+        3254: step_3
+        
+        3018: after_bake_finished
+  - property: Delay_start_status
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: Demo_mode
+    binary_sensor:
+      options:
+        3296: off
+        3297: on
+  - property: Device_status
+    sensor:
+      device_class: enum
+      options:
+        3011: idle
+        3012: running
+        3013: paused
+        3014: production
+        3015: delay_time_waiting
+        3016: error
+        3017: running
+        3018: after_bake_finished
+  - property: Door
+    binary_sensor:
+      device_class: door
+      options:
+        3041: off
+        3042: on
+  - property: Hard_pairing_status
+    hide: true
+    binary_sensor:
+      options:
+        9106: off
+        9107: on
+  - property: Light
+    binary_sensor:
+      device_class: light
+      options:
+        3036: off
+        3037: on
+  - property: Meat_probe_measured_temperature
+    sensor:
+      device_class: temperature
+      unit: °C
+      unknown_value: 0
+  - property: Meat_probe_set_temperature
+    sensor:
+      device_class: temperature
+      unit: °C
+      unknown_value: 0
+  - property: Oven_temperature
+    sensor:
+      device_class: temperature
+      unit: °C
+      unknown_value: 0
+  - property: Preheat
+    binary_sensor:
+      device_class: heat
+      options:
+        0: off
+        1: on
+  - property: Remote_control_mode
+    # Example value: 2
+  - property: Sand_timer1_duration_in_seconds
+    sensor:
+      device_class: duration
+      unit: s
+  - property: Sand_timer1_start_utc_datetime_bdc_timestamp
+    hide: true
+  - property: Sand_timer1_status
+    sensor:
+      device_class: enum
+      options:
+        0: started
+        1: paused
+        2: stopped
+  - property: Sand_timer2_duration_in_seconds
+    sensor:
+      device_class: duration
+      unit: s
+  - property: Sand_timer2_start_utc_datetime_bdc_timestamp
+    hide: true
+  - property: Sand_timer2_status
+    sensor:
+      device_class: enum
+      options:
+        0: started
+        1: paused
+        2: stopped
+  - property: Sand_timer3_duration_in_seconds
+    sensor:
+      device_class: duration
+      unit: s
+  - property: Sand_timer3_start_utc_datetime_bdc_timestamp
+    hide: true
+  - property: Sand_timer3_status
+    sensor:
+      device_class: enum
+      options:
+        0: started
+        1: paused
+        2: stopped
+  - property: Set_progress_type
+    sensor: 
+      device_class: enum
+      options:
+        3401: oven_set
+        3402: mw_set
+        3403: mwc_set
+        3404: st_set
+        3405: stc_set
+        3406: fast_set
+        3407: stage_set
+        3408: culi_set
+        3409: warming
+        3410: defrost
+        3411: cleaning
+        3412: pyrolysis
+        3413: none
+  - property: Status
+    # Example value: 3011
+  - property: Step1_duration
+    # Example value: 30
+    sensor:
+      device_class: duration
+      unit: min
+  - property: Step1_heater_system
+    sensor: 
+      device_class: enum
+      options:
+        3081: hot_air
+        3082: eco_hot_air
+        3083: top_bottom
+        3084: hot_air_bottom
+        3085: bottom_fan
+        3086: bottom
+        3087: top
+        3088: small_grill
+        3089: large_grill
+        3090: large_grill_fan
+        3091: pro_roasting
+        3092: hot_air_micro
+        3093: grill_fan_micro
+        3094: micro
+        3095: hot_air_steam_1
+        3096: hot_air_steam_2
+        3097: hot_air_steam_3
+        3098: fast_preheat
+        3099: pyro
+        3100: defrost
+        3101: keep_warm
+        3102: plates
+        3103: aqua_clean
+        3104: steam_clean
+        3105: regenerate
+        3106: descale
+        3107: microwave_defrost
+        3108: sous_vide
+        3109: low_temp_steam
+        3110: steam
+        3111: quick
+        3112: clean_air
+        3113: defrost_auto
+        3114: sabbath
+        3115: programs
+        3116: warming
+        3117: microwave_clean
+  - property: Step1_remaining_time
+    # Example value: 7
+    sensor:
+      device_class: duration
+      unit: min
+  - property: Step1_set_temperature
+    # Example value: 180
+    sensor:
+      device_class: temperature
+      unit: °C
+  - property: Step1_status
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: Step2_duration
+    # Example value: 6
+    sensor:
+      device_class: duration
+      unit: min
+  - property: Step2_heater_system
+    sensor:
+      device_class: enum
+      options:
+        3081: hot_air
+        3082: eco_hot_air
+        3083: top_bottom
+        3084: hot_air_bottom
+        3085: bottom_fan
+        3086: bottom
+        3087: top
+        3088: small_grill
+        3089: large_grill
+        3090: large_grill_fan
+        3091: pro_roasting
+        3092: hot_air_micro
+        3093: grill_fan_micro
+        3094: micro
+        3095: hot_air_steam_1
+        3096: hot_air_steam_2
+        3097: hot_air_steam_3
+        3098: fast_preheat
+        3099: pyrolysis
+        3100: defrost
+        3101: keep_warm
+        3102: plates
+        3103: aqua_clean
+        3104: steam_clean
+        3105: regenerate
+        3106: descale
+        3107: microwave_defrost
+        3108: sous_vide
+        3109: low_temp_steam
+        3110: steam
+        3111: quick
+        3112: clean_air
+        3113: defrost_auto
+        3114: sabbath
+        3115: programs
+        3116: warming
+        3117: microwave_clean
+  - property: Step2_remaining_time
+    # Example value: 3
+    sensor:
+      device_class: duration
+      unit: min
+  - property: Step2_set_temperature
+    # Example value: 139
+    sensor:
+      device_class: temperature
+      unit: °C
+  - property: Step2_status
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: Step3_duration
+    # Example value: 30
+    sensor:
+      device_class: duration
+      unit: min
+  - property: Step3_heater_system
+    sensor:
+      device_class: enum
+      options:
+        3081: hot_air
+        3082: eco_hot_air
+        3083: top_bottom
+        3084: hot_air_bottom
+        3085: bottom_fan
+        3086: bottom
+        3087: top
+        3088: small_grill
+        3089: large_grill
+        3090: large_grill_fan
+        3091: pro_roasting
+        3092: hot_air_micro
+        3093: grill_fan_micro
+        3094: micro
+        3095: hot_air_steam_1
+        3096: hot_air_steam_2
+        3097: hot_air_steam_3
+        3098: fast_preheat
+        3099: pyro
+        3100: defrost
+        3101: keep_warm
+        3102: plates
+        3103: aqua_clean
+        3104: steam_clean
+        3105: regenerate
+        3106: descale
+        3107: microwave_defrost
+        3108: sous_vide
+        3109: low_temp_steam
+        3110: steam
+        3111: quick
+        3112: clean_air
+        3113: defrost_auto
+        3114: sabbath
+        3115: programs
+        3116: warming
+        3117: microwave_clean
+  - property: Step3_remaining_time
+    # Example value: 1
+    sensor:
+      device_class: duration
+      unit: min
+  - property: Step3_set_temperature
+    # Example value: 100
+    sensor:
+      device_class: temperature
+      unit: °C
+  - property: Step3_status
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: Total_passed_time
+    # Example value: 2
+    sensor:
+      device_class: duration
+      unit: min
+  - property: Total_remaining_time
+    # Example value: 0
+    sensor:
+      device_class: duration
+      unit: min
+  - property: daily_energy_kwh
+    sensor:
+      read_only: true
+      state_class: total_increasing
+      device_class: energy
+      unit: kWh
