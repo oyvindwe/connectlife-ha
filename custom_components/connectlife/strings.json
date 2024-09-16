@@ -289,11 +289,11 @@
       "frost_state": {
         "name": "Frost state"
       },
-      "humidity_sensor_failure": {
-        "name": "Humidity sensor failure"
-      },
       "humidity_sensor": {
         "name": "Humidity sensor"
+      },
+      "humidity_sensor_failure": {
+        "name": "Humidity sensor failure"
       },
       "ice_making_machine_failure": {
         "name": "Ice making machine failure"
