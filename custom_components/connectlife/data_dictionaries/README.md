@@ -20,9 +20,8 @@ mapped to [sensor](#type-sensor) entities with `hidden` set to `true` and `state
 Each property is mapped to _one_ entity or _one_ target property. In addition, each `climate` preset is mapped to a
 set of properties and values. 
 
-If you change the type of mapping, the old entity or state attribute will change to unavailable in Home Assistant.
-You can bulk remove the old entities in on the [entities page](https://my.home-assistant.io/redirect/entities/)
-by filtering on the device and status.
+If you disable or change the type of mapping, old entities will be automatically removed from Home Assistant, while
+state attributes will change to unavailable.
 
 If you change unit or state class for sensors, you will need to fix the history in
 [Home Assistant - Statistics](https://my.home-assistant.io/redirect/developer_statistics/).

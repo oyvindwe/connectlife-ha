@@ -5,6 +5,7 @@ from datetime import timedelta
 from connectlife.api import LifeConnectAuthError, LifeConnectError, ConnectLifeApi
 from connectlife.appliance import ConnectLifeAppliance
 from homeassistant.exceptions import ConfigEntryAuthFailed
+from homeassistant.helpers import device_registry as dr, entity_registry as er, issue_registry as ir
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import DOMAIN
@@ -13,11 +14,13 @@ MAX_RETRIES = 3
 
 _LOGGER = logging.getLogger(__name__)
 
+
 class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeAppliance]]):
     """ConnectLife coordinator."""
 
     # We need initial data, so no retries for first request.
     error_count = MAX_RETRIES
+    entities: list[str] = []
 
     def __init__(self, hass, api: ConnectLifeApi):
         """Initialize coordinator."""
@@ -71,3 +74,50 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
         await self.api.update_appliance(self.data[device_id].puid, {k: str(v) for k, v in properties.items()})
         self.data[device_id].status_list.update(properties)
         self.async_update_listeners()
+
+    def add_entity(self, entity_unique_id: str):
+        """Add known entity."""
+        self.entities.append(entity_unique_id)
+
+    async def cleanup_removed_entities(self) -> None:
+        """
+        Cleanup entity registry for entities converted to a different entity
+        type or set to disabled in the mapping file, and create issues for
+        unavailable devices.
+        """
+
+        device_reg = dr.async_get(self.hass)
+        entity_reg = er.async_get(self.hass)
+        unavailable_devices: dict[str, dr.DeviceEntry] = {}
+        for entity in er.async_entries_for_config_entry(
+                entity_reg, self.config_entry.entry_id
+        ):
+            if entity.unique_id not in self.entities:
+                device = device_reg.async_get(entity.device_id)
+                for (domain, device_id) in device.identifiers:
+                    if domain == DOMAIN:
+                        if device_id in self.data:
+                            _LOGGER.info("Entity %s is no longer mapped, removing", entity.unique_id)
+                            entity_reg.async_remove(entity.entity_id)
+                        else:
+                            unavailable_devices[device_id] = device
+        for device_id, device in unavailable_devices.items():
+            _LOGGER.warning("Unavailable device: %s", device.name)
+            ir.async_create_issue(
+                self.hass,
+                DOMAIN,
+                f"unavailable_device.{device_id}",
+                data={
+                    "device_id": device.id,
+                    "device_name": device.name,
+                },
+                is_fixable=True,
+                severity=ir.IssueSeverity.WARNING,
+                translation_key="unavailable_device",
+                translation_placeholders={
+                    "device_name": device.name,
+                },
+            )
+        for device_id in self.data:
+            # Self repair
+            ir.async_delete_issue(self.hass, DOMAIN, f"unavailable_device.{device_id}")

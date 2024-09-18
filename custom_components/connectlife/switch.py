@@ -45,8 +45,7 @@ class ConnectLifeSwitch(ConnectLifeEntity, SwitchEntity):
             config_entry: ConfigEntry
     ):
         """Initialize the entity."""
-        super().__init__(coordinator, appliance, config_entry)
-        self._attr_unique_id = f"{appliance.device_id}-{status}"
+        super().__init__(coordinator, appliance, status, config_entry)
         self.status = status
         self.entity_description = SwitchEntityDescription(
             key=self._attr_unique_id,
