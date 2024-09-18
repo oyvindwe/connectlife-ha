@@ -17,6 +17,30 @@
       "already_configured": "[%key:common::config_flow::abort::already_configured_device%]"
     }
   },
+  "issues": {
+    "unavailable_device": {
+      "title": "{device_name} no longer available",
+      "fix_flow": {
+        "abort": {
+          "issue_ignored": "Ignored \"{device_name} no longer available\". The device and all its entities will still be listed in the regiestry."
+        },
+        "step": {
+          "init": {
+            "title": "{device_name} no longer available",
+            "description": "The device \"{device_name}\" is now longer available in your ConnectLife account. If you no longer have this device, you can delete it from Home Assistant.",
+            "menu_options": {
+              "ignore": "Ignore",
+              "remove": "Remove"
+            }
+          },
+          "remove": {
+            "title": "Remove {device_name}",
+            "description": "The device \"{device_name}\" and all its entities will be removed from Home Assistant."
+          }
+        }
+      }
+    }
+  },
   "options": {
     "step": {
       "init": {

@@ -44,8 +44,7 @@ class ConnectLifeBinaryStatusSensor(ConnectLifeEntity, BinarySensorEntity):
             dd_entry: Property
     ):
         """Initialize the entity."""
-        super().__init__(coordinator, appliance)
-        self._attr_unique_id = f"{appliance.device_id}-{status}"
+        super().__init__(coordinator, appliance, status)
         self.status = status
         self.options = dd_entry.binary_sensor.options
         self.entity_description = BinarySensorEntityDescription(

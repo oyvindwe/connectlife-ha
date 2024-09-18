@@ -27,11 +27,13 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
             self,
             coordinator: ConnectLifeCoordinator,
             appliance: ConnectLifeAppliance,
+            entity_name: str,
             config_entry: ConfigEntry = None):
         """Initialize the entity."""
         super().__init__(coordinator)
         self.device_id = appliance.device_id
         self.nickname = appliance.device_nickname
+        self._attr_unique_id = f'{appliance.device_id}-{entity_name}'
         self._attr_device_info = DeviceInfo(
             identifiers={(DOMAIN, appliance.device_id)},
             model=appliance.device_feature_name,
@@ -39,6 +41,7 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
             name=appliance.device_nickname,
             suggested_area=appliance.room_name,
         )
+        coordinator.add_entity(self._attr_unique_id)
         if config_entry and CONF_DEVICES in config_entry.options:
             devices = config_entry.options[CONF_DEVICES]
             if self.device_id in devices:

@@ -93,8 +93,7 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
             config_entry: ConfigEntry
     ):
         """Initialize the entity."""
-        super().__init__(coordinator, appliance, config_entry)
-        self._attr_unique_id = f"{appliance.device_id}-climate"
+        super().__init__(coordinator, appliance, "climate", config_entry)
 
         self.entity_description = ClimateEntityDescription(
             key=self._attr_unique_id,
