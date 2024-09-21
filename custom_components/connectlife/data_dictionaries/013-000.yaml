@@ -1,371 +1,884 @@
 # Oven
 properties:
 - property: Adaptive_sense_setting
-  # Sample value: 2
+  unavailable: 0
+  hide: true
+  switch:
+    "off": 1
+    "on": 2
+    command:
+      name: Adaptive_sense_setting_cmd
+      adjust: 1
 - property: Add_moist_now
-  # Sample value: 0
+  unavailable: 0
+  hide: true
+  binary_sensor: {}
 - property: AlarmAlmost_finished
-  # Sample value: 0
+  unavailable: 0
+  hide: true
+  binary_sensor: {}
 - property: AlarmChild_lockOff
-  # Sample value: 0
+  icon: mdi:lock
+  unavailable: 0
+  hide: true
+  binary_sensor: {}
 - property: AlarmChild_lockOn
-  # Sample value: 0
+  icon: mdi:lock
+  unavailable: 0
+  hide: true
+  binary_sensor: {}
 - property: AlarmCleanTank
-  # Sample value: 0
+  unavailable: 0
+  binary_sensor:
+    device_class: problem
 - property: AlarmDehydrate_ended
-  # Sample value: 0
+  unavailable: 0
+  binary_sensor: {}
+  hide: true
 - property: AlarmDemo_activated
-  # Sample value: 0
+  unavailable: 0
+  disable: true
 - property: AlarmDescaleStep1
-  # Sample value: 0
+  unavailable: 0
+  binary_sensor: {}
+  hide: true
 - property: AlarmDescaleStep2
-  # Sample value: 0
+  unavailable: 0
+  binary_sensor: {}
+  hide: true
 - property: AlarmDescaleStep3
-  # Sample value: 0
+  unavailable: 0
+  binary_sensor: {}
+  hide: true
 - property: AlarmDescaling_interrupted
-  # Sample value: 0
+  unavailable: 0
+  binary_sensor: {}
+  hide: true
 - property: AlarmEmptyTankPause
-  # Sample value: 0
+  unavailable: 0
+  binary_sensor: {}
+  hide: true
 - property: AlarmFillTank
-  # Sample value: 0
+  unavailable: 0
+  binary_sensor:
+    device_class: problem
 - property: AlarmIncreased_power_consumption
-  # Sample value: 0
+  unavailable: 0
+  binary_sensor: {}
+  hide: true
 - property: AlarmKey_lock_on
-  # Sample value: 0
+  icon: mdi:lock
+  unavailable: 0
+  binary_sensor: {}
+  hide: true
 - property: AlarmMicrowave_system_finished
-  # Sample value: 0
+  unavailable: 0
+  binary_sensor: {}
+  hide: true
 - property: AlarmOven_system_finished
-  # Sample value: 0
+  unavailable: 0
+  binary_sensor: {}
+  hide: true
 - property: AlarmPopTankOpened
-  # Sample value: 0
+  unavailable: 0
+  binary_sensor: {}
+  hide: true
 - property: AlarmPower_failure_running
-  # Sample value: 0
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
 - property: AlarmProbe_lost_connection
-  # Sample value: 0
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
 - property: AlarmRemoteStartPowerFailure
-  # Sample value: 0
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
 - property: AlarmRemove_probe
-  # Sample value: 0
+  unavailable: 0
+  hide: true
+  binary_sensor: {}
 - property: AlarmSabbathAboutToStart
-  # Sample value: 0
+  unavailable: 0
+  hide: true
+  binary_sensor: {}
 - property: AlarmSabbathEnded
-  # Sample value: 0
+  unavailable: 0
+  hide: true
+  binary_sensor: {}
 - property: AlarmSabbathPostpone
-  # Sample value: 0
+  unavailable: 0
+  hide: true
+  binary_sensor: {}
 - property: AlarmSteamClean_finished
-  # Sample value: 0
+  unavailable: 0
+  hide: true
+  binary_sensor: {}
 - property: AlarmSteam_interrupted
-  # Sample value: 0
+  unavailable: 0
+  hide: true
+  binary_sensor: {}
 - property: AlarmSteam_system_finished
-  # Sample value: 0
+  unavailable: 0
+  hide: true
+  binary_sensor: {}
 - property: AlarmTankLevel1
-  # Sample value: 0
+  unavailable: 0
+  hide: true
+  binary_sensor: {}
 - property: Alarm_aquaClean_finished
-  # Sample value: 0
+  unavailable: 0
+  hide: true
+  binary_sensor: {}
 - property: Alarm_baking_finished
-  # Sample value: 1
+  unavailable: 0
+  binary_sensor: {}
 - property: Alarm_baking_stoped
-  # Sample value: 0
+  unavailable: 0
+  hide: true
+  binary_sensor: {}
 - property: Alarm_child_lock_deactivated_on_the_oven
-  # Sample value: 1
+  icon: mdi:lock
+  unavailable: 0
+  hide: true
+  binary_sensor: {}
 - property: Alarm_cleaning_suggestion_after_baking_finished
-  # Sample value: 0
+  unavailable: 0
+  hide: true
+  binary_sensor: {}
 - property: Alarm_defrost_finished
-  # Sample value: 0
+  unavailable: 0
+  binary_sensor: {}
 - property: Alarm_descaling_needed
-  # Sample value: 1
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
 - property: Alarm_door_locked
-  # Sample value: 0
+  unavailable: 0
+  hide: true
+  binary_sensor: {}
 - property: Alarm_door_opened
-  # Sample value: 1
+  unavailable: 0
+  hide: true
+  binary_sensor: {}
 - property: Alarm_ean_scan_info
-  # Sample value: 0
+  unavailable: 0
+  hide: true
+  binary_sensor: {}
 - property: Alarm_empty_and_clean_water_tank
-  # Sample value: 0
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
 - property: Alarm_fast_preheat_active
-  # Sample value: 0
+  unavailable: 0
+  hide: true
+  binary_sensor: {}
 - property: Alarm_fast_preheating_finished
-  # Sample value: 1
+  unavailable: 0
+  binary_sensor: {}
 - property: Alarm_keepWarm_ended
-  # Sample value: 0
+  unavailable: 0
+  hide: true
+  binary_sensor: {}
 - property: Alarm_mw_active
-  # Sample value: 0
+  unavailable: 0
+  hide: true
+  binary_sensor: {}
 - property: Alarm_oven_temperature_too_high
-  # Sample value: 0
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
 - property: Alarm_oven_usage_reached_set_limit_auto_cleaning_suggested
-  # Sample value: 0
+  unavailable: 0
+  hide: true
+  binary_sensor: {}
 - property: Alarm_plateWarm_ended
-  # Sample value: 0
+  unavailable: 0
+  hide: true
+  binary_sensor: {}
 - property: Alarm_probe_inserted
-  # Sample value: 1
+  unavailable: 0
+  hide: true
+  binary_sensor: {}
 - property: Alarm_probe_temp_reached
-  # Sample value: 0
+  unavailable: 0
+  binary_sensor:
+    device_class: heat
 - property: Alarm_pyrolytic_finished
-  # Sample value: 0
+  unavailable: 0
+  hide: true
+  binary_sensor: {}
 - property: Alarm_running_time_over_10_or_24_hour_limit_error
-  # Sample value: 0
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
 - property: Alarm_sabbath_reminder
-  # Sample value: 0
+  unavailable: 0
+  hide: true
+  binary_sensor: {}
 - property: Alarm_sand_timer_1_elapsed
-  # Sample value: 1
+  icon: mdi:timer-alert
+  unavailable: 0
+  hide: true
+  binary_sensor: {}
 - property: Alarm_sand_timer_2_elapsed
-  # Sample value: 0
+  icon: mdi:timer-alert
+  unavailable: 0
+  hide: true
+  binary_sensor: {}
 - property: Alarm_sand_timer_3_elapsed
-  # Sample value: 0
+  icon: mdi:timer-alert
+  unavailable: 0
+  hide: true
+  binary_sensor: {}
 - property: Alarm_set_temperature_reached
-  # Sample value: 1
+  unavailable: 0
+  binary_sensor:
+    device_class: heat
 - property: Alarm_steam_fill_alarm
-  # Sample value: 0
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
 - property: Alarm_steam_function_active
-  # Sample value: 0
+  unavailable: 0
+  hide: true
+  binary_sensor: {}
 - property: Alarm_turn_food
-  # Sample value: 0
+  unavailable: 0
+  binary_sensor: {}
 - property: Alarm_user_interaction_on_appliance_detected
-  # Sample value: 1
+  unavailable: 0
+  hide: true
+  binary_sensor: {}
 - property: Alarm_water_tank_is_empty
-  # Sample value: 0
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
 - property: Alarm_water_tank_is_missing
-  # Sample value: 0
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
 - property: Almost_finished_notification_setting
-  # Sample value: 0
+  hide: true
 - property: Almost_finished_notification_settingTimer_in_minutes
-  # Sample value: 0
+  hide: true
+  sensor:
+    device_class: duration
+    unit: min
 - property: Ambient_sound_setting
   # Sample value: 0
 - property: Auto_fast_preheat
-  # Sample value: 2
+  unavailable: 0
+  hide: true
+  switch:
+    "off": 1
+    "on": 2
+    command:
+      name: Auto_fast_preheat_cmd
+      adjust: 1
 - property: AutomaticChild_lock_setting
+  hide: true
   # Sample value: 0
 - property: AutomaticDoor_lock_setting
+  hide: true
   # Sample value: 0
 - property: AutomaticDoor_lock_setting_allowed
+  hide: true
   # Sample value: 0
 - property: Automatic_display_brightness_setting
+  hide: true
   # Sample value: 0
 - property: Automatic_door_closing_at_program_start_setting
+  hide: true
   # Sample value: 0
 - property: Automatic_door_open_at_program_end_after_time_setting
+  hide: true
   # Sample value: 0
 - property: Automatic_door_open_at_program_end_after_time_settingTimer_in_minutes
+  hide: true
   # Sample value: 0
 - property: Automatic_door_open_at_program_end_setting
+  hide: true
   # Sample value: 0
 - property: Automatic_water_tank_opening_setting
+  hide: true
   # Sample value: 0
 - property: Baking_steps_intensity_levels
-  # Sample value: 0
+  #unavailable: 0
+  hide: true
+  select:
+    options:
+      0: none
+      1: "1"
+      2: "2"
+      3: "3"
+    command:
+      name: Baking_steps_intensity_levels_cmd
 - property: Baking_steps_intensity_levels_type
-  # Sample value: 0
+  #unavailable: 0
+  hide: true
+  select:
+    options:
+      0: none
+      1: not_used
+      2: low_mid_high
+      3: rare_medium_well_done
+    command:
+      name: Baking_steps_intensity_levels_type_cmd
 - property: Brand_splash_setting
   # Sample value: 0
+  hide: true
 - property: Brightness
   # Sample value: 3
+  unavailable: 0
+  select:
+    options:
+      1: "0"
+      2: "1"
+      3: "2"
+      4: "3"
+      5: "4"
+      6: "5"
+    command:
+      name: Brightness_cmd
+      adjust: 1
 - property: CameraLive_feed_current_phase
   # Sample value: 0
+  hide: true
 - property: CameraLive_feed_status
   # Sample value: 0
+  hide: true
 - property: CameraPicture_current_phase
   # Sample value: 0
+  hide: true
 - property: CameraPicture_request
   # Sample value: 0
+  hide: true
 - property: CameraTime_lapse_current_phase
   # Sample value: 0
+  hide: true
 - property: CameraTime_lapse_request
   # Sample value: 0
+  hide: true
 - property: Camera_enable_setting
   # Sample value: 0
+  hide: true
 - property: Camera_status
   # Sample value: 0
+  hide: true
 - property: Child_lock
-  # Sample value: 1
+  icon: mdi:lock
+  hide: true
+  unavailable: 0
+  switch:
+    "off": 1
+    "on": 2
+    command:
+      name: Child_lock_cmd
+      adjust: 1
 - property: Cooking_intensity
-  # Sample value: 0
+  unavailable: 0
+  select:
+    options:
+      1: "1"
+      2: "2"
+      3: "3"
+      4: "4"
+    command:
+      name: Cooking_intensity
+      adjust: 1
 - property: Crisp_function_available
   # Sample value: 0
+  hide: true
 - property: Crisp_function_status
   # Sample value: 0
+  hide: true
 - property: Current_baking_step
-  # Sample value: 2
+  unavailable: 0
+  sensor:
+    device_class: enum
+    options:
+      1: pre_bake
+      2: step_1
+      3: step_2
+      4: step_3
+      5: after_bake
+      6: special
 - property: Current_baking_step2
   # Sample value: 0
+  hide: true
 - property: Date_format_setting
   # Sample value: 0
+  hide: true
 - property: Demo_mode
-  # Sample value: 1
+  unavailable: 0
+  switch:
+    "off": 1
+    "on": 2
+    command:
+      name: Demo_mode_cmd
+      adjust: 1
 - property: Descale_status
-  # Sample value: 0
+  hide: true
 - property: DisplayBrightness_setting
   # Sample value: 0
+  hide: true
 - property: DisplayContrast_setting
   # Sample value: 0
+  hide: true
 - property: Display_standby
-  # Sample value: 0
+  unavailable: 0
+  switch:
+    "off": 1
+    "on": 2
+    command:
+      name: Display_standby_cmd
+      adjust: 1
 - property: Display_switch_to_standby_after_minutes
-  # Sample value: 0
+  sensor:
+    device_class: enum
+    options:
+      0: 5_min
+      1: 15_min
+      2: 30_min
 - property: Door
-  # Sample value: 1
+  unavailable: 0
+  binary_sensor:
+    device_class: door
 - property: Door_lock
-  # Sample value: 1
+  unavailable: 0
+  binary_sensor:
+    device_class: lock
 - property: Door_lock_status
   # Sample value: 0
+  hide: true
 - property: Door_open_notification_setting
   # Sample value: 0
+  hide: true
 - property: Door_sensor_setting
   # Sample value: 0
+  hide: true
 - property: Duration_of_clock
   # Sample value: 0
+  hide: true
 - property: Eco_mode_setting
   # Sample value: 0
+  hide: true
 - property: Error_0
-  # Sample value: 1
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
 - property: Error_1
-  # Sample value: 1
-- property: Error_10
-  # Sample value: 1
-- property: Error_11
-  # Sample value: 1
-- property: Error_12
-  # Sample value: 1
-- property: Error_13
-  # Sample value: 1
-- property: Error_14
-  # Sample value: 1
-- property: Error_15
-  # Sample value: 1
-- property: Error_16
-  # Sample value: 1
-- property: Error_17
-  # Sample value: 1
-- property: Error_18
-  # Sample value: 1
-- property: Error_19
-  # Sample value: 1
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
 - property: Error_2
-  # Sample value: 1
-- property: Error_20
-  # Sample value: 1
-- property: Error_21
-  # Sample value: 1
-- property: Error_22
-  # Sample value: 1
-- property: Error_23
-  # Sample value: 1
-- property: Error_24
-  # Sample value: 1
-- property: Error_25
-  # Sample value: 1
-- property: Error_26
-  # Sample value: 1
-- property: Error_27
-  # Sample value: 1
-- property: Error_28
-  # Sample value: 1
-- property: Error_29
-  # Sample value: 1
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
 - property: Error_3
-  # Sample value: 1
-- property: Error_30
-  # Sample value: 1
-- property: Error_31
-  # Sample value: 1
-- property: Error_32
-  # Sample value: 0
-- property: Error_33
-  # Sample value: 0
-- property: Error_34
-  # Sample value: 0
-- property: Error_35
-  # Sample value: 0
-- property: Error_36
-  # Sample value: 0
-- property: Error_37
-  # Sample value: 0
-- property: Error_38
-  # Sample value: 0
-- property: Error_39
-  # Sample value: 0
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
 - property: Error_4
-  # Sample value: 1
-- property: Error_40
-  # Sample value: 0
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
 - property: Error_5
-  # Sample value: 1
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
 - property: Error_6
-  # Sample value: 1
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
 - property: Error_7
-  # Sample value: 1
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
 - property: Error_8
-  # Sample value: 1
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
 - property: Error_9
-  # Sample value: 1
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
+- property: Error_10
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
+- property: Error_11
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
+- property: Error_12
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
+- property: Error_13
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
+- property: Error_14
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
+- property: Error_15
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
+- property: Error_16
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
+- property: Error_17
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
+- property: Error_18
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
+- property: Error_19
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
+- property: Error_20
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
+- property: Error_21
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
+- property: Error_22
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
+- property: Error_23
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
+- property: Error_24
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
+- property: Error_25
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
+- property: Error_26
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
+- property: Error_27
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
+- property: Error_28
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
+- property: Error_29
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
+- property: Error_30
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
+- property: Error_31
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
+- property: Error_32
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
+- property: Error_33
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
+- property: Error_34
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
+- property: Error_35
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
+- property: Error_36
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
+- property: Error_37
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
+- property: Error_38
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
+- property: Error_39
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
+- property: Error_40
+  unavailable: 0
+  hide: true
+  binary_sensor:
+    device_class: problem
 - property: Factory_reset
   # Sample value: 0
+  hide: true
+  sensor:
+    read_only: true
 - property: Fota
-  # Sample value: 0
+  hide: true
+  unavailable: 0
+  sensor:
+    device_class: enum
+    options:
+      0: not_available
+      1: waiting_for_confirmation
+      2: in_progress
+      3: finished
+      4: confirm_fota
+- property: Fota_cmd
+  hide: true
+  switch: {}
 - property: Gratin_available
-  # Sample value: 0
+  unavailable: 0
+  binary_sensor: {}
 - property: Gratin_from_below_functionSet_time_in_seconds
-  # Sample value: 0
+  hide: true
+  number:
+    device_class: duration
+    unit: s
 - property: Gratin_from_below_function_allowed
-  # Sample value: 0
+  hide: true
+  unavailable: 0
+  binary_sensor: {}
 - property: Gratin_from_below_function_status
-  # Sample value: 0
+  hide: true
+  unavailable: 0
+  binary_sensor: {}
 - property: Gratin_function_Set_time_in_seconds
-  # Sample value: 0
+  hide: true
+  number:
+    device_class: duration
+    unit: s
 - property: Gratin_status
-  # Sample value: 1
+  hide: true
+  unavailable: 0
+  binary_sensor: {}
 - property: Gratin_total_allowed_time_in_minutes
-  # Sample value: 30
+  sensor:
+    device_class: duration
+    unit: min
 - property: Gratin_total_passed_time_in_minutes
-  # Sample value: 65535
+  hide: true
+  sensor:
+    device_class: duration
+    unit: min
+    unknown_value: 65535
 - property: Grill_plate_measured_temperature
-  # Sample value: 1931
+  # Sample values: 1931 and 4484 - are these in 1/10?
+  sensor:
+    device_class: temperature
+    unit: property.Oven_temperature_unit
 - property: Grill_plate_status
-  # Sample value: 0
+  unavailable: 0
+  binary_sensor: {}
 - property: HOB_warming_zone_power_level
-  # Sample value: 0
+  unavailable: 0
+  sensor:
+    device_class: enum
+    options:
+      1: low
+      2: medium
+      3: high
 - property: HOB_warming_zone_status
-  # Sample value: 0
+  unavailable: 0
+  binary_sensor: {}
 - property: HardPairingStatus
-  # Sample value: 0
+  hide: true
+  sensor:
+    device_class: enum
+    options:
+      0: not_active
+      1: active
+      2: unpair_all_users
+      3: reserved
 - property: Hide_setting
-  # Sample value: 0
+  unavailable: 0
+  hide: true
+  switch:
+    "off": 1
+    "on": 2
+    command:
+      name: Hide_setting_set
+      adjust: 1
 - property: Hob_status
-  # Sample value: 0
+  unavailable: 0
+  binary_sensor: {}
 - property: Hob_zone_1_status
-  # Sample value: 0
+  unavailable: 0
+  sensor:
+    device_class: enum
+    options:
+      1: "off"
+      2: "on"
+      3: "off_hot"
 - property: Hob_zone_2_status
-  # Sample value: 0
+  unavailable: 0
+  sensor:
+    device_class: enum
+    options:
+      1: "off"
+      2: "on"
+      3: "off_hot"
 - property: Hob_zone_3_status
-  # Sample value: 0
+  unavailable: 0
+  sensor:
+    device_class: enum
+    options:
+      1: "off"
+      2: "on"
+      3: "off_hot"
 - property: Hob_zone_4_status
-  # Sample value: 0
+  unavailable: 0
+  sensor:
+    device_class: enum
+    options:
+      1: "off"
+      2: "on"
+      3: "off_hot"
 - property: Hob_zone_5_status
-  # Sample value: 0
+  unavailable: 0
+  sensor:
+    device_class: enum
+    options:
+      1: "off"
+      2: "on"
+      3: "off_hot"
 - property: Inactivity_timeout
+  hide: true
   # Sample value: 0
 - property: Interior_Light_Control_available
-  # Sample value: 0
+  unavailable: 0
+  binary_sensor: {}
 - property: Interior_light
-  # Sample value: 1
+  icon: mdi:lightbulb
+  unavailable: 0
+  switch:
+    device_class: switch
+    "off": 1
+    "on": 2
+    command:
+      name: Interior_light_cmd
+      adjust: 1
 - property: Key_sound
-  # Sample value: 2
+  hide: true
+  unavailable: 0
+  switch:
+    "off": 1
+    "on": 2
+    command:
+      name: Key_sound_cmd
+      adjust: 1
 - property: Language_status
-  # Sample value: 0
+  unavailable: 0
+  hide: true
+  select:
+    options:
+      1: english
+      2: simplified_chinese
+    command:
+      name: Language
+      adjust: 1
 - property: LightsBrightness_setting
+  hide: true
   # Sample value: 0
 - property: LightsColor_temperature_setting
+  hide: true
   # Sample value: 0
 - property: Lights_duration_setting
+  hide: true
   # Sample value: 0
 - property: LockPIN_code
+  hide: true
   # Sample value: 0
 - property: Meat_probe_measured_temperature
-  # Sample value: 65535
+  sensor:
+    device_class: temperature
+    unit: property.Oven_temperature_unit
+    unknown_value: 65535
 - property: Meat_probe_set_temperature
-  # Sample value: 65535
+  sensor:
+    device_class: temperature
+    unit: property.Oven_temperature_unit
+    unknown_value: 65535
 - property: Meat_probe_status
-  # Sample value: 1
+  unavailable: 0
+  sensor:
+    device_class: enum
+    options:
+      1: not_active
+      2: active_oven
+      3: active_hob
 - property: Navigation_sound_setting
   # Sample value: 0
 - property: Night_modeDisplay_brightness_setting
@@ -375,13 +888,21 @@ properties:
 - property: Night_modeVolume_setting
   # Sample value: 0
 - property: Night_mode_off_hour
-  # Sample value: 255
+  hide: true
+  sensor:
+    unknown_value: 255
 - property: Night_mode_off_minute
-  # Sample value: 255
+  hide: true
+  sensor:
+    unknown_value: 255
 - property: Night_mode_on_hour
-  # Sample value: 255
+  hide: true
+  sensor:
+    unknown_value: 255
 - property: Night_mode_on_minute
-  # Sample value: 255
+  hide: true
+  sensor:
+    unknown_value: 255
 - property: Night_mode_status
   # Sample value: 1
 - property: Notification_pitch_sound_setting
@@ -391,9 +912,17 @@ properties:
 - property: Oven_measured_temperature
   # Sample value: 20
 - property: Oven_temperature_unit
-  # Sample value: 1
+  hide: true
+  unavailable: 0
+  select:
+    options:
+      1: celsius
+      2: fahrenheit
+    command:
+      name: Oven_temperature_unit_setting_cmd
+      adjust: 1
 - property: Oven_temperature_unit_setting
-  # Sample value: 1
+  disable: true
 - property: Oven_usage_value_alarm_limit
   # Sample value: 0
 - property: Oven_usage_value_time_since_last_cleaning
