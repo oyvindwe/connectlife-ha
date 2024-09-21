@@ -57,7 +57,7 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
             dd_entry: Property
     ):
         """Initialize the entity."""
-        super().__init__(coordinator, appliance, status)
+        super().__init__(coordinator, appliance, status, Platform.SENSOR)
         self.status = status
         self.read_only = dd_entry.sensor.read_only
         self.unknown_value = dd_entry.sensor.unknown_value

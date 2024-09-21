@@ -3,6 +3,7 @@
 from abc import abstractmethod
 
 from homeassistant.config_entries import ConfigEntry
+from homeassistant.const import Platform
 from homeassistant.core import callback
 from homeassistant.helpers.device_registry import DeviceInfo
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
@@ -28,6 +29,7 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
             coordinator: ConnectLifeCoordinator,
             appliance: ConnectLifeAppliance,
             entity_name: str,
+            platform: Platform,
             config_entry: ConfigEntry = None):
         """Initialize the entity."""
         super().__init__(coordinator)
@@ -41,7 +43,7 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
             name=appliance.device_nickname,
             suggested_area=appliance.room_name,
         )
-        coordinator.add_entity(self._attr_unique_id)
+        coordinator.add_entity(self._attr_unique_id, platform)
         if config_entry and CONF_DEVICES in config_entry.options:
             devices = config_entry.options[CONF_DEVICES]
             if self.device_id in devices:

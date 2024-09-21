@@ -66,7 +66,7 @@ class ConnectLifeHumidifier(ConnectLifeEntity, HumidifierEntity):
             config_entry: ConfigEntry,
     ):
         """Initialize the entity."""
-        super().__init__(coordinator, appliance, "humidifier", config_entry)
+        super().__init__(coordinator, appliance, "humidifier", Platform.HUMIDIFIER, config_entry)
 
         self.target_map = {}
         self.mode_map = {}

@@ -47,7 +47,7 @@ class ConnectLifeSelect(ConnectLifeEntity, SelectEntity):
             config_entry: ConfigEntry,
     ):
         """Initialize the entity."""
-        super().__init__(coordinator, appliance, status, config_entry)
+        super().__init__(coordinator, appliance, status, Platform.SELECT, config_entry)
         self.status = status
         self.options_map = dd_entry.select.options
         self.reverse_options_map = {v: k for k, v in self.options_map.items()}

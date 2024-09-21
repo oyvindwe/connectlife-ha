@@ -86,7 +86,7 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
             config_entry: ConfigEntry,
     ):
         """Initialize the entity."""
-        super().__init__(coordinator, appliance, "waterheater", config_entry)
+        super().__init__(coordinator, appliance, "waterheater", Platform.WATER_HEATER, config_entry)
 
         self.entity_description = WaterHeaterEntityEntityDescription(
             key=self._attr_unique_id,
