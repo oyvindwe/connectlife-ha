@@ -71,6 +71,13 @@ climate:
       t_fan_mute: 0
       t_super: 0
 properties:
+  - property: daily_energy_kwh
+    hide: true
+    sensor:
+      read_only: true
+      state_class: total_increasing
+      device_class: energy
+      unit: kWh
   - property: f_temp_in
     climate:
       target: current_temperature

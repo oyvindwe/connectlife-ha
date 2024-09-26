@@ -626,9 +626,9 @@ properties:
   # Sample value: 5
   hide: true
 - property: daily_energy_kwh
-  # Sample value: 0
   hide: true
   sensor:
-    state_class: total
+    read_only: true
+    state_class: total_increasing
     device_class: energy
     unit: kWh

@@ -28,7 +28,8 @@ properties:
   - property: daily_energy_kwh
     hide: true
     sensor:
-      state_class: total
+      read_only: true
+      state_class: total_increasing
       device_class: energy
       unit: kWh
   - property: date_display_format_status
