@@ -1,6 +1,6 @@
 """Provides number entities for ConnectLife."""
 import logging
-from homeassistant.components.number import NumberEntity, NumberDeviceClass, NumberEntityDescription
+from homeassistant.components.number import NumberEntity, NumberEntityDescription
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant, callback
@@ -15,6 +15,7 @@ from .dictionaries import Dictionaries, Property
 from .entity import ConnectLifeEntity
 from connectlife.api import LifeConnectError
 from connectlife.appliance import ConnectLifeAppliance
+from .utils import is_entity
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -30,7 +31,11 @@ async def async_setup_entry(
         dictionary = Dictionaries.get_dictionary(appliance)
         async_add_entities(
             ConnectLifeNumberEntity(coordinator, appliance, s, dictionary.properties[s], config_entry)
-            for s in appliance.status_list if hasattr(dictionary.properties[s], Platform.NUMBER) and not dictionary.properties[s].disable
+            for s in appliance.status_list if is_entity(
+                Platform.NUMBER,
+                dictionary.properties[s],
+                appliance.status_list[s]
+            )
         )
 
 
