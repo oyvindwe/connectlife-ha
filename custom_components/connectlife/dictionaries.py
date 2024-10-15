@@ -26,11 +26,14 @@ from .const import (
     TEMPERATURE_UNIT,
 )
 
+ADJUST = "adjust"
+COMMAND = "command"
 DEVICE = "device"
 DEVICE_CLASS = "device_class"
 DISABLE = "disable"
 HIDE = "hide"
 ICON = "icon"
+NAME = "name"
 OFF = "off"
 ON = "on"
 OPTIONS = "options"
@@ -132,6 +135,8 @@ class Number:
 
 class Select:
     options: dict
+    command_name: str | None
+    command_adjust: int = 0
 
     def __init__(self, name: str, select: dict):
         if select is None:
@@ -141,6 +146,8 @@ class Select:
             self.options = {}
         else:
             self.options = select[OPTIONS]
+        self.command_name = select[COMMAND][NAME] if COMMAND in select and NAME in select[COMMAND] else None
+        self.command_adjust = select[COMMAND][ADJUST] if COMMAND in select and ADJUST in select[COMMAND] else 0
 
 
 class Sensor:
@@ -190,6 +197,8 @@ class Switch:
     device_class: SwitchDeviceClass | None
     off: int
     on: int
+    command_name: str | None
+    command_adjust: int = 0
 
     def __init__(self, name: str, switch: dict):
         if switch is None:
@@ -198,6 +207,8 @@ class Switch:
             if DEVICE_CLASS in switch else None
         self.off = switch[OFF] if OFF in switch else 0
         self.on = switch[ON] if ON in switch else 1
+        self.command_name = switch[COMMAND][NAME] if COMMAND in switch and NAME in switch[COMMAND] else None
+        self.command_adjust = switch[COMMAND][ADJUST] if COMMAND in switch and ADJUST in switch[COMMAND] else 0
 
 
 class WaterHeater:

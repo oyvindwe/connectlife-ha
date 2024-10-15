@@ -126,6 +126,22 @@
       },
       "title": "BinarySensor"
     },
+    "Command": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Use this property instead to change state."
+        },
+        "adjust": {
+          "type": "integer",
+          "description": "When changing state, adjust the request value by substracting this value. Used when the command values are offset from the property values.",
+          "default": 0
+        }
+      },
+      "title": "Command"
+    },
     "Climate": {
       "type": "object",
       "additionalProperties": false,
@@ -220,6 +236,9 @@
             "type": "string"
           },
           "description": "Map of integer to string."
+        },
+        "command": {
+          "$ref": "#/definitions/Command"
         }
       },
       "required": ["options"]
@@ -276,6 +295,9 @@
         },
         "device_class": {
           "$ref": "#/definitions/SwitchDeviceClass"
+        },
+        "command": {
+          "$ref": "#/definitions/Command"
         }
       },
       "title": "BinarySensor"
