@@ -14,6 +14,7 @@ from .coordinator import ConnectLifeCoordinator
 from .dictionaries import Dictionaries, Property
 from .entity import ConnectLifeEntity
 from connectlife.appliance import ConnectLifeAppliance
+from .utils import is_entity
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -29,7 +30,11 @@ async def async_setup_entry(
         dictionary = Dictionaries.get_dictionary(appliance)
         async_add_entities(
             ConnectLifeSelect(coordinator, appliance, s, dictionary.properties[s], config_entry)
-            for s in appliance.status_list if hasattr(dictionary.properties[s], Platform.SELECT) and not dictionary.properties[s].disable
+            for s in appliance.status_list if is_entity(
+                Platform.SELECT,
+                dictionary.properties[s],
+                appliance.status_list[s]
+            )
         )
 
 

@@ -97,6 +97,10 @@
           "type": "boolean",
           "description": "If Home Assistant should not create an entity for this property.",
           "default": false
+        },
+        "unavailable": {
+          "type": "integer",
+          "description": "If the property has this value, it is not available on the device, and no entity is created."
         }
       },
       "required": [

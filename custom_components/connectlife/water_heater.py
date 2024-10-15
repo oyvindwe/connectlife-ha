@@ -30,7 +30,7 @@ from .const import (
 from .coordinator import ConnectLifeCoordinator
 from .dictionaries import Dictionaries, Dictionary
 from .entity import ConnectLifeEntity
-from .temperature import to_temperature_map, to_unit_of_temperature
+from .utils import to_temperature_map, to_unit_of_temperature
 from connectlife.appliance import ConnectLifeAppliance
 
 _LOGGER = logging.getLogger(__name__)

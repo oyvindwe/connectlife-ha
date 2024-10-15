@@ -1,4 +1,19 @@
-from homeassistant.const import UnitOfTemperature
+import datetime as dt
+
+from homeassistant.const import Platform, UnitOfTemperature
+
+from .dictionaries import Property
+
+
+def is_entity(platform: Platform, property: Property, value: float | int | str | dt.datetime | None):
+    return (
+            hasattr(property, platform)
+            and not property.disable
+            and (
+                    property.unavailable is None
+                    or value != property.unavailable
+            )
+    )
 
 
 def to_unit_of_temperature(temp: str) -> UnitOfTemperature | None:

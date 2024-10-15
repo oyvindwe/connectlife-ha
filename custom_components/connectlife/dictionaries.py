@@ -43,6 +43,7 @@ TARGET = "target"
 READ_ONLY = "read_only"
 STATE_CLASS = "state_class"
 SWITCH = "switch"
+UNAVAILABLE = "unavailable"
 UNKNOWN_VALUE = "unknown_value"
 UNIT = "unit"
 
@@ -233,6 +234,7 @@ class Property:
     icon: str | None
     hide: bool
     disable: bool
+    unavailable: int | None
     binary_sensor: BinarySensor
     climate: Climate
     humidifier: Humidifier
@@ -247,6 +249,7 @@ class Property:
         self.icon = entry[ICON] if ICON in entry and entry[ICON] else None
         self.hide = entry[HIDE] == bool(entry[HIDE]) if HIDE in entry else False
         self.disable = entry[DISABLE] == bool(entry[DISABLE]) if DISABLE in entry else False
+        self.unavailable = entry[UNAVAILABLE] if UNAVAILABLE in entry else None
 
         if Platform.BINARY_SENSOR in entry:
             self.binary_sensor = BinarySensor(self.name, entry[Platform.BINARY_SENSOR])

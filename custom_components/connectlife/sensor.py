@@ -18,6 +18,7 @@ from .dictionaries import Dictionaries, Property
 from .entity import ConnectLifeEntity
 from connectlife.api import LifeConnectError
 from connectlife.appliance import ConnectLifeAppliance
+from .utils import is_entity
 
 SERVICE_SET_VALUE = "set_value"
 
@@ -35,7 +36,11 @@ async def async_setup_entry(
         dictionary = Dictionaries.get_dictionary(appliance)
         async_add_entities(
             ConnectLifeStatusSensor(coordinator, appliance, s, dictionary.properties[s])
-            for s in appliance.status_list if hasattr(dictionary.properties[s], Platform.SENSOR) and not dictionary.properties[s].disable
+            for s in appliance.status_list if is_entity(
+                Platform.SENSOR,
+                dictionary.properties[s],
+                appliance.status_list[s]
+            )
         )
 
     platform = entity_platform.async_get_current_platform()

@@ -30,7 +30,7 @@ from .const import (
 from .coordinator import ConnectLifeCoordinator
 from .dictionaries import Dictionaries, Dictionary
 from .entity import ConnectLifeEntity
-from .temperature import to_temperature_map, to_unit_of_temperature
+from .utils import to_temperature_map, to_unit_of_temperature
 from connectlife.appliance import ConnectLifeAppliance
 
 _LOGGER = logging.getLogger(__name__)
@@ -119,7 +119,7 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
             if hasattr(dd_entry, Platform.CLIMATE):
                 self.target_map[dd_entry.climate.target] = dd_entry.name
 
-        hvac_modes = []
+        hvac_modes: list[HVACMode] = []
         for target, status in self.target_map.items():
             if target == IS_ON:
                 self._attr_supported_features |= ClimateEntityFeature.TURN_OFF
