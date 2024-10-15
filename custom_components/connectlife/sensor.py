@@ -10,9 +10,7 @@ from homeassistant.exceptions import ServiceValidationError
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers import config_validation as cv, entity_platform, service
 
-from .const import (
-    DOMAIN,
-)
+from .const import DOMAIN
 from .coordinator import ConnectLifeCoordinator
 from .dictionaries import Dictionaries, Property
 from .entity import ConnectLifeEntity

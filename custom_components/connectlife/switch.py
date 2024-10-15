@@ -7,14 +7,13 @@ from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant, callback
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
-from .const import (
-    DOMAIN,
-)
+from connectlife.appliance import ConnectLifeAppliance
+
+from .const import DOMAIN
 from .coordinator import ConnectLifeCoordinator
 from .dictionaries import Dictionaries, Property
 from .entity import ConnectLifeEntity
 from .utils import is_entity
-from connectlife.appliance import ConnectLifeAppliance
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -52,6 +51,11 @@ class ConnectLifeSwitch(ConnectLifeEntity, SwitchEntity):
         """Initialize the entity."""
         super().__init__(coordinator, appliance, status, Platform.SWITCH, config_entry)
         self.status = status
+        self.command_name = dd_entry.switch.command_name if dd_entry.switch.command_name else status
+        self.off = dd_entry.switch.off
+        self.on = dd_entry.switch.on
+        self.command_off = self.off - dd_entry.switch.command_adjust
+        self.command_on = self.on - dd_entry.switch.command_adjust
         self.entity_description = SwitchEntityDescription(
             key=self._attr_unique_id,
             entity_registry_visible_default=not dd_entry.hide,
@@ -60,8 +64,6 @@ class ConnectLifeSwitch(ConnectLifeEntity, SwitchEntity):
             translation_key=self.to_translation_key(status),
             device_class=dd_entry.switch.device_class
         )
-        self.off = dd_entry.switch.off
-        self.on = dd_entry.switch.on
         self.update_state()
 
     @callback
@@ -79,8 +81,14 @@ class ConnectLifeSwitch(ConnectLifeEntity, SwitchEntity):
 
     async def async_turn_off(self, **kwargs):
         """Turn off."""
-        await self.async_update_device({self.status: self.off})
+        await self.async_update_device(
+            {self.command_name: self.command_off},
+            {self.status: self.off},
+        )
 
     async def async_turn_on(self, **kwargs):
         """Turn on."""
-        await self.async_update_device({self.status: self.on})
+        await self.async_update_device(
+            {self.command_name: self.command_on},
+            {self.status: self.on}
+        )

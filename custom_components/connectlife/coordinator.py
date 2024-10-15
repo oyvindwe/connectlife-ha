@@ -71,9 +71,9 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
                 raise UpdateFailed(f"Error communicating with API: {err}")
         return {a.device_id: a for a in self.api.appliances}
 
-    async def async_update_device(self, device_id: str, properties: dict[str, int | str]):
-        """Updates the device, and sets the same data in local copy and notify to avoid refetching."""
-        await self.api.update_appliance(self.data[device_id].puid, {k: str(v) for k, v in properties.items()})
+    async def async_update_device(self, device_id: str, command: dict[str, int | str], properties: dict[str, int | str]):
+        """Updates the device, and sets the properties in local copy and notify to avoid refetching."""
+        await self.api.update_appliance(self.data[device_id].puid, {k: str(v) for k, v in command.items()})
         self.data[device_id].status_list.update(properties)
         self.async_update_listeners()
 

@@ -7,9 +7,7 @@ from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant, callback
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
-from .const import (
-    DOMAIN,
-)
+from .const import DOMAIN
 from .coordinator import ConnectLifeCoordinator
 from .dictionaries import Dictionaries, Property
 from .entity import ConnectLifeEntity
@@ -56,6 +54,8 @@ class ConnectLifeSelect(ConnectLifeEntity, SelectEntity):
         self.status = status
         self.options_map = dd_entry.select.options
         self.reverse_options_map = {v: k for k, v in self.options_map.items()}
+        self.command_name = dd_entry.select.command_name if dd_entry.select.command_name else status
+        self.command_adjust = dd_entry.select.command_adjust
         self.entity_description = SelectEntityDescription(
             key=self._attr_unique_id,
             entity_registry_visible_default=not dd_entry.hide,
@@ -79,4 +79,7 @@ class ConnectLifeSelect(ConnectLifeEntity, SelectEntity):
 
     async def async_select_option(self, option: str) -> None:
         """Change the selected option."""
-        await self.async_update_device({self.status: self.reverse_options_map[option]})
+        await self.async_update_device(
+            {self.command_name: self.reverse_options_map[option] - self.command_adjust},
+            {self.status: self.reverse_options_map[option]}
+        )

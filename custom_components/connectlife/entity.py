@@ -62,10 +62,12 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
         self.update_state()
         self.async_write_ha_state()
 
-    async def async_update_device(self, properties: dict[str, int | str]):
+    async def async_update_device(self, command: dict[str, int | str], properties: dict[str, int | str] = None):
+        if properties is None:
+            properties = command.copy()
         if self._disable_beep:
-            properties["t_beep"] = 0
-        await self.coordinator.async_update_device(self.device_id, properties)
+            command["t_beep"] = 0
+        await self.coordinator.async_update_device(self.device_id, command, properties)
 
     def to_translation_key(self, property_name: str) -> str:
         return property_name.lower().replace(" ", "_")

@@ -7,9 +7,7 @@ from homeassistant.core import HomeAssistant, callback
 from homeassistant.exceptions import ServiceValidationError
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
-from .const import (
-    DOMAIN,
-)
+from .const import DOMAIN
 from .coordinator import ConnectLifeCoordinator
 from .dictionaries import Dictionaries, Property
 from .entity import ConnectLifeEntity
