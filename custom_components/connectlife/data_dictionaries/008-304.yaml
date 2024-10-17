@@ -20,6 +20,7 @@ properties:
     climate:
       target: fan_mode
       options:
+        0: auto
         2: low
         3: medium
         4: high
