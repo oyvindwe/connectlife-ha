@@ -1,10 +1,7 @@
 properties:
   - property: Child_lock
     icon: mdi:lock
-    select:
-      options:
-        0: "off"
-        1: "on"
+    switch: {}
   - property: Door_status
     icon: mdi:square-circle
     sensor:
@@ -16,10 +13,7 @@ properties:
       read-only: true
   - property: Drum_Light
     icon: mdi:lightbulb-on
-    select:
-      options:
-        0: "off"
-        1: "on"
+    switch: {}
   - property: machine_status
     icon: mdi:tumble-dryer
     sensor:
