@@ -1415,6 +1415,10 @@
             "automatic_ice_making": {
                 "name": "Automatic ice making"
             },
+            "Child_lock": {},
+            "Drum_Light": {
+                "name": "Drum light"
+            },
             "holiday_mode": {
                 "name": "Holiday mode"
             },
@@ -1450,19 +1454,6 @@
             }
         },
         "select": {
-            "Child_lock": {
-                "state": {
-                    "off": "Off",
-                    "on": "On"
-                }
-            },
-            "Drum_Light": {
-                "name": "Drum light",
-                "state": {
-                    "off": "Off",
-                    "on": "On"
-                }
-            },
             "t_fan_speed": {
                 "name": "Fan speed",
                 "state": {
