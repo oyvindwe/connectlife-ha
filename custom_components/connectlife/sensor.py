@@ -12,11 +12,11 @@ from homeassistant.helpers import config_validation as cv, entity_platform, serv
 
 from .const import DOMAIN
 from .coordinator import ConnectLifeCoordinator
-from .dictionaries import Dictionaries, Property
+from .dictionaries import Dictionaries, Dictionary, Property
 from .entity import ConnectLifeEntity
 from connectlife.api import LifeConnectError
 from connectlife.appliance import ConnectLifeAppliance
-from .utils import is_entity
+from .utils import is_entity, to_unit
 
 SERVICE_SET_VALUE = "set_value"
 
@@ -33,11 +33,11 @@ async def async_setup_entry(
     for appliance in coordinator.data.values():
         dictionary = Dictionaries.get_dictionary(appliance)
         async_add_entities(
-            ConnectLifeStatusSensor(coordinator, appliance, s, dictionary.properties[s])
+            ConnectLifeStatusSensor(coordinator, appliance, s, dictionary.properties[s], dictionary)
             for s in appliance.status_list if is_entity(
                 Platform.SENSOR,
                 dictionary.properties[s],
-                appliance.status_list[s]
+                appliance.status_list[s],
             )
         )
 
@@ -57,7 +57,8 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
             coordinator: ConnectLifeCoordinator,
             appliance: ConnectLifeAppliance,
             status: str,
-            dd_entry: Property
+            dd_entry: Property,
+            dictionary: Dictionary,
     ):
         """Initialize the entity."""
         super().__init__(coordinator, appliance, status, Platform.SENSOR)
@@ -83,7 +84,11 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
             entity_registry_visible_default=not dd_entry.hide,
             icon=dd_entry.icon,
             name=status.replace("_", " "),
-            native_unit_of_measurement=dd_entry.sensor.unit,
+            native_unit_of_measurement=to_unit(
+                dd_entry.sensor.unit,
+                appliance=appliance,
+                dictionary=dictionary
+            ),
             options=options,
             state_class=state_class,
             translation_key=self.to_translation_key(status),

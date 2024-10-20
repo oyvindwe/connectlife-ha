@@ -9,11 +9,11 @@ from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
 from .const import DOMAIN
 from .coordinator import ConnectLifeCoordinator
-from .dictionaries import Dictionaries, Property
+from .dictionaries import Dictionaries, Dictionary, Property
 from .entity import ConnectLifeEntity
 from connectlife.api import LifeConnectError
 from connectlife.appliance import ConnectLifeAppliance
-from .utils import is_entity
+from .utils import is_entity, to_unit
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -28,7 +28,7 @@ async def async_setup_entry(
     for appliance in coordinator.data.values():
         dictionary = Dictionaries.get_dictionary(appliance)
         async_add_entities(
-            ConnectLifeNumberEntity(coordinator, appliance, s, dictionary.properties[s], config_entry)
+            ConnectLifeNumberEntity(coordinator, appliance, s, dictionary.properties[s], config_entry, dictionary)
             for s in appliance.status_list if is_entity(
                 Platform.NUMBER,
                 dictionary.properties[s],
@@ -49,6 +49,7 @@ class ConnectLifeNumberEntity(ConnectLifeEntity, NumberEntity):
             status: str,
             dd_entry: Property,
             config_entry: ConfigEntry,
+            dictionary: Dictionary,
     ):
         """Initialize the entity."""
         super().__init__(coordinator, appliance, status, Platform.NUMBER, config_entry)
@@ -62,7 +63,11 @@ class ConnectLifeNumberEntity(ConnectLifeEntity, NumberEntity):
             name=status.replace("_", " "),
             native_max_value=dd_entry.number.max_value,
             native_min_value=dd_entry.number.min_value,
-            native_unit_of_measurement=dd_entry.number.unit,
+            native_unit_of_measurement=to_unit(
+                dd_entry.number.unit,
+                appliance=appliance,
+                dictionary=dictionary
+            ),
             translation_key=self.to_translation_key(status),
         )
         self.update_state()

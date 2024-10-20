@@ -30,7 +30,7 @@ from .const import (
 from .coordinator import ConnectLifeCoordinator
 from .dictionaries import Dictionaries, Dictionary
 from .entity import ConnectLifeEntity
-from .utils import to_temperature_map, to_unit_of_temperature
+from .utils import to_temperature_map, normalize_temperature_unit
 from connectlife.appliance import ConnectLifeAppliance
 
 _LOGGER = logging.getLogger(__name__)
@@ -141,7 +141,7 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
                 self.max_temperature_map = to_temperature_map(data_dictionary.properties[status].climate.max_value)
             elif target == TEMPERATURE_UNIT:
                 for k, v in data_dictionary.properties[status].climate.options.items():
-                    if unit := to_unit_of_temperature(v):
+                    if unit := normalize_temperature_unit(v):
                         self.temperature_unit_map[k] = unit
             elif target == HVAC_MODE:
                 modes = [mode.value for mode in HVACMode]

@@ -21,6 +21,7 @@ from .const import (
     HVAC_MODE,
     IS_AWAY_MODE_ON,
     MODE,
+    PROPERTY,
     STATE,
     SWING_MODE,
     TEMPERATURE_UNIT,
@@ -38,7 +39,6 @@ OFF = "off"
 ON = "on"
 OPTIONS = "options"
 PRESETS = "presets"
-PROPERTY = "property"
 PROPERTIES = "properties"
 MAX_VALUE = "max_value"
 MIN_VALUE = "min_value"
