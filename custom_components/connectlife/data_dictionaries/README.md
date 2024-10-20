@@ -171,12 +171,12 @@ For `mode`, remember to add [translation strings](#translation-strings) for the 
 
 Number entities can be set by the user.
 
-| Item            | Type                                | Description                                                                                                                   |
-|-----------------|-------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
-| `min_value`     | integer                             | Minimum value.                                                                                                                |
-| `max_value`     | integer                             | Maximum value.                                                                                                                |
-| `device_class`  | `duration`, `energy`, `water`, etc. | Name of any [NumberDeviceClass enum](https://developers.home-assistant.io/docs/core/entity/number/#available-device-classes). | 
-| `unit`          | `min`, `°C`, `°F`, etc.             | Required if `device_class` is set, except not allowed when `device_class` is `aqi` or `ph`.                                   |
+| Item            | Type                                            | Description                                                                                                                   |
+|-----------------|-------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
+| `min_value`     | integer                                         | Minimum value.                                                                                                                |
+| `max_value`     | integer                                         | Maximum value.                                                                                                                |
+| `device_class`  | `duration`, `energy`, `water`, etc.             | Name of any [NumberDeviceClass enum](https://developers.home-assistant.io/docs/core/entity/number/#available-device-classes). | 
+| `unit`          | `min`, `°C`, `°F`, etc., _or_ `property.<name>` | Required if `device_class` is set, except not allowed when `device_class` is `aqi` or `ph`.                                   |
 
 ## Type `Select`
 
@@ -191,14 +191,14 @@ Remember to add [translation strings](#translation-strings) for the options.
 Sensor entities are usually read-only, but this integration provides a `set_value` service that can be applied on 
 the `sensor.connectlife` entities, unless the sensor is set to `read_only: true`.
 
-| Item            | Type                                       | Description                                                                                                                                                                                                               |
-|-----------------|--------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `read_only`     | `true`, `false`                            | If this property is known to be read-only (prevents `set_value` service).                                                                                                                                                 |
-| `state_class`   | `measurement`, `total`, `total_increasing` | Name of any [SensorStateClass enum](https://developers.home-assistant.io/docs/core/entity/sensor/#available-state-classes). For integer properties, defaults to `measurement`. Not allowed when `device_class` is `enum`. |
-| `device_class`  | `duration`, `energy`, `water`, etc.        | Name of any [SensorDeviceClass enum](https://developers.home-assistant.io/docs/core/entity/sensor/#available-device-classes).                                                                                             | 
-| `unit`          | `min`, `kWh`, `L`, etc.                    | Required if `device_class` is set, except not allowed when `device_class` is `aqi`, `ph` or `enum`.                                                                                                                       |
-| `options`       | dictionary of integer to string            | Required if `device_class` is set to `enum`.                                                                                                                                                                              |
-| `unknown_value` | integer                                    | The value used by the API to signal unknown value.                                                                                                                                                                        |
+| Item            | Type                                            | Description                                                                                                                                                                                                               |
+|-----------------|-------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `read_only`     | `true`, `false`                                 | If this property is known to be read-only (prevents `set_value` service).                                                                                                                                                 |
+| `state_class`   | `measurement`, `total`, `total_increasing`      | Name of any [SensorStateClass enum](https://developers.home-assistant.io/docs/core/entity/sensor/#available-state-classes). For integer properties, defaults to `measurement`. Not allowed when `device_class` is `enum`. |
+| `device_class`  | `duration`, `energy`, `water`, etc.             | Name of any [SensorDeviceClass enum](https://developers.home-assistant.io/docs/core/entity/sensor/#available-device-classes).                                                                                             | 
+| `unit`          | `min`, `kWh`, `L`, etc., _or_ `property.<name>` | Required if `device_class` is set, except not allowed when `device_class` is `aqi`, `ph` or `enum`.                                                                                                                       |
+| `options`       | dictionary of integer to string                 | Required if `device_class` is set to `enum`.                                                                                                                                                                              |
+| `unknown_value` | integer                                         | The value used by the API to signal unknown value.                                                                                                                                                                        |
 
 For device class `enum`, remember to add [translation strings](#translation-strings) for the options.
 
@@ -265,6 +265,38 @@ min_value:
   celsius: 0
   fahrenheit: 32
 ```
+
+## Units
+
+Some devices have support for switching temperature unit between Celsius and Fahrenheit. For _Climate_ and _Water heater_
+entities, this is controlled by setting target `temperature_unit`. For _Number_ and _Sensor_ entities, `unit` can be set
+to `property.<name>`, where `<name>` must be a property in the same mapping file that is one of:
+- A _Climate_ entity with target `temperature_unit`
+- A _Select_ entity
+- A _Sensor_ entity with `device_type: enum`
+
+When `unit` is mapped to a property, unit is set to the value of the given property _during initialisation_, after
+mapping the numeric mapping to the translation _key_ (in the YAML mapping file, _not_ `strings.json`).
+
+For example, this will set the unit of `Meat_probe_measured_temperature` to Celsius if `Oven_temperature_unit` is `1`
+when the component is loaded:
+```yaml
+- property: Meat_probe_measured_temperature
+  sensor:
+    device_class: temperature
+    unit: property.Oven_temperature_unit
+- property: Oven_temperature_unit
+  select:
+    options:
+      1: celsius
+      2: fahrenheit
+```
+
+If the temperature unit is changed on the device, the integration must be reloaded, and
+long term statistics must be repaired.
+
+Note that units `°C`, `C`, `celsius`, and `Celsius` are normalized to `UnitOfTemperature.CELSIUS`, and units
+`°F`, `F`, `fahrenheit`, and `Fahrenheit` are normalized to `UnitOfTemperature.FAHRENHEIT`.
 
 # Translation strings
 
