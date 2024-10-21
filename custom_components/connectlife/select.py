@@ -7,13 +7,12 @@ from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant, callback
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
-from .const import (
-    DOMAIN,
-)
+from .const import DOMAIN
 from .coordinator import ConnectLifeCoordinator
 from .dictionaries import Dictionaries, Property
 from .entity import ConnectLifeEntity
 from connectlife.appliance import ConnectLifeAppliance
+from .utils import is_entity
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -29,7 +28,11 @@ async def async_setup_entry(
         dictionary = Dictionaries.get_dictionary(appliance)
         async_add_entities(
             ConnectLifeSelect(coordinator, appliance, s, dictionary.properties[s], config_entry)
-            for s in appliance.status_list if hasattr(dictionary.properties[s], Platform.SELECT)
+            for s in appliance.status_list if is_entity(
+                Platform.SELECT,
+                dictionary.properties[s],
+                appliance.status_list[s]
+            )
         )
 
 
@@ -47,17 +50,18 @@ class ConnectLifeSelect(ConnectLifeEntity, SelectEntity):
             config_entry: ConfigEntry,
     ):
         """Initialize the entity."""
-        super().__init__(coordinator, appliance, config_entry)
-        self._attr_unique_id = f"{appliance.device_id}-{status}"
+        super().__init__(coordinator, appliance, status, Platform.SELECT, config_entry)
         self.status = status
         self.options_map = dd_entry.select.options
         self.reverse_options_map = {v: k for k, v in self.options_map.items()}
+        self.command_name = dd_entry.select.command_name if dd_entry.select.command_name else status
+        self.command_adjust = dd_entry.select.command_adjust
         self.entity_description = SelectEntityDescription(
             key=self._attr_unique_id,
             entity_registry_visible_default=not dd_entry.hide,
             icon=dd_entry.icon,
             name=status.replace("_", " "),
-            translation_key=status,
+            translation_key=self.to_translation_key(status),
             options=list(self.options_map.values())
         )
         self.update_state()
@@ -75,4 +79,7 @@ class ConnectLifeSelect(ConnectLifeEntity, SelectEntity):
 
     async def async_select_option(self, option: str) -> None:
         """Change the selected option."""
-        await self.async_update_device({self.status: self.reverse_options_map[option]})
+        await self.async_update_device(
+            {self.command_name: self.reverse_options_map[option] - self.command_adjust},
+            {self.status: self.reverse_options_map[option]}
+        )

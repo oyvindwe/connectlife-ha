@@ -90,8 +90,17 @@
         },
         "hide": {
           "type": "boolean",
-          "description": "If Home Assistant should initially hide the sensor entity for this property.",
+          "description": "If Home Assistant should initially hide the entity for this property.",
           "default": false
+        },
+        "disable": {
+          "type": "boolean",
+          "description": "If Home Assistant should not create an entity for this property.",
+          "default": false
+        },
+        "unavailable": {
+          "type": "integer",
+          "description": "If the property has this value, it is not available on the device, and no entity is created."
         }
       },
       "required": [
@@ -106,9 +115,32 @@
       "properties": {
         "device_class": {
           "$ref": "#/definitions/BinarySensorDeviceClass"
+        },
+        "options": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Map of integer to boolean. By default, 0 and 1 is mapped to off (as 0 often implies that the sensor is not available), and 1 to true."
         }
       },
       "title": "BinarySensor"
+    },
+    "Command": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Use this property instead to change state."
+        },
+        "adjust": {
+          "type": "integer",
+          "description": "When changing state, adjust the request value by substracting this value. Used when the command values are offset from the property values.",
+          "default": 0
+        }
+      },
+      "title": "Command"
     },
     "Climate": {
       "type": "object",
@@ -204,6 +236,9 @@
             "type": "string"
           },
           "description": "Map of integer to string."
+        },
+        "command": {
+          "$ref": "#/definitions/Command"
         }
       },
       "required": ["options"]
@@ -215,7 +250,7 @@
         "device_class": {
           "$ref": "#/definitions/SensorDeviceClass"
         },
-        "read-only": {
+        "read_only": {
           "type": "boolean",
           "description": "If this property is known to be read-only.",
           "default": false
@@ -260,6 +295,9 @@
         },
         "device_class": {
           "$ref": "#/definitions/SwitchDeviceClass"
+        },
+        "command": {
+          "$ref": "#/definitions/Command"
         }
       },
       "title": "BinarySensor"

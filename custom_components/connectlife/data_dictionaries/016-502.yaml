@@ -1,4 +1,11 @@
 properties:
+  - property: daily_energy_kwh
+    hide: true
+    sensor:
+      read_only: true
+      state_class: total_increasing
+      device_class: energy
+      unit: kWh
   - property: f_water_tank_temp
     water_heater:
       target: current_temperature

@@ -8,6 +8,13 @@ climate:
       t_power: 1
       t_tms: 1
 properties:
+  - property: daily_energy_kwh
+    hide: true
+    sensor:
+      read_only: true
+      state_class: total_increasing
+      device_class: energy
+      unit: kWh
   - property: f_temp_in
     climate:
       target: current_temperature
@@ -29,6 +36,8 @@ properties:
         7: medium
         8: middle_high
         9: high
+  - property: t_fan_speed_s
+    disable: true
   - property: f_humidity
     climate:
       target: current_humidity

@@ -30,7 +30,7 @@ from .const import (
 from .coordinator import ConnectLifeCoordinator
 from .dictionaries import Dictionaries, Dictionary
 from .entity import ConnectLifeEntity
-from .temperature import to_temperature_map, to_unit_of_temperature
+from .utils import to_temperature_map, normalize_temperature_unit
 from connectlife.appliance import ConnectLifeAppliance
 
 _LOGGER = logging.getLogger(__name__)
@@ -86,8 +86,7 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
             config_entry: ConfigEntry,
     ):
         """Initialize the entity."""
-        super().__init__(coordinator, appliance, config_entry)
-        self._attr_unique_id = f"{appliance.device_id}-waterheater"
+        super().__init__(coordinator, appliance, "waterheater", Platform.WATER_HEATER, config_entry)
 
         self.entity_description = WaterHeaterEntityEntityDescription(
             key=self._attr_unique_id,
@@ -128,7 +127,7 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
                     self._attr_max_temp = max_temp
             elif target == TEMPERATURE_UNIT:
                 for k, v in data_dictionary.properties[status].water_heater.options.items():
-                    if unit := to_unit_of_temperature(v):
+                    if unit := normalize_temperature_unit(v):
                         self.temperature_unit_map[k] = unit
             elif target == STATE:
                 # TODO: map to multiple states

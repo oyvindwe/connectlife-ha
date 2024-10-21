@@ -2,7 +2,7 @@ properties:
   - property: ADO_allowed
     hide: true
     sensor:
-      read-only: true
+      read_only: true
   - property: Alarm_auto_dose_refill
     binary_sensor:
       device_class: problem
@@ -84,35 +84,51 @@ properties:
     icon: mdi:dishwasher-alert
   - property: Auto_dose_duration
     sensor:
-      read-only: true
+      read_only: true
       device_class: duration
       unit: min
   - property: Auto_dose_quantity_setting_status
     sensor:
-      read-only: true
+      read_only: true
   - property: Auto_dose_refill
     sensor:
-      read-only: true
+      read_only: true
   - property: Auto_dose_setting_status
     sensor:
-      read-only: true
+      read_only: true
   - property: Child_lock
     hide: true
   - property: Child_lock_setting_status
     hide: true
     sensor:
-      read-only: true
+      read_only: true
   - property: Curent_program_duration
     sensor:
-      read-only: true
+      read_only: true
       device_class: duration
       unit: min
   - property: Curent_program_remaining_time
+    icon: mdi:progress-clock
     sensor:
       unknown_value: 65535
       device_class: duration
       unit: min
   - property: Current_program_phase
+    icon: mdi:state-machine
+    sensor:
+      device_class: enum
+      options:
+        0: not_available
+        1: program_not_selected
+        2: program_selected
+        3: delay_start_waiting
+        4: preheat
+        5: preheat_finished
+        6: prewash
+        7: main_wash
+        8: drying
+        9: program_finished
+        10: ventilating
   - property: Delay_start
     hide: true
   - property: Delay_start_remaining_time
@@ -122,6 +138,16 @@ properties:
   - property: Demo_mode_status
     hide: true
   - property: Device_status
+    sensor:
+      device_class: enum
+      options:
+        0: not_available
+        1: idle
+        2: running
+        3: pause
+        4: failure
+        5: service
+        6: production
   - property: Display_Brightness_setting_status
     hide: true
     sensor:
@@ -381,6 +407,7 @@ properties:
   - property: daily_energy_kwh
     hide: true
     sensor:
-      state_class: total
+      read_only: true
+      state_class: total_increasing
       device_class: energy
       unit: kWh

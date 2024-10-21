@@ -10,14 +10,13 @@ from homeassistant.exceptions import ServiceValidationError
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers import config_validation as cv, entity_platform, service
 
-from .const import (
-    DOMAIN,
-)
+from .const import DOMAIN
 from .coordinator import ConnectLifeCoordinator
-from .dictionaries import Dictionaries, Property
+from .dictionaries import Dictionaries, Dictionary, Property
 from .entity import ConnectLifeEntity
 from connectlife.api import LifeConnectError
 from connectlife.appliance import ConnectLifeAppliance
+from .utils import is_entity, to_unit
 
 SERVICE_SET_VALUE = "set_value"
 
@@ -34,8 +33,12 @@ async def async_setup_entry(
     for appliance in coordinator.data.values():
         dictionary = Dictionaries.get_dictionary(appliance)
         async_add_entities(
-            ConnectLifeStatusSensor(coordinator, appliance, s, dictionary.properties[s])
-            for s in appliance.status_list if hasattr(dictionary.properties[s], Platform.SENSOR)
+            ConnectLifeStatusSensor(coordinator, appliance, s, dictionary.properties[s], dictionary)
+            for s in appliance.status_list if is_entity(
+                Platform.SENSOR,
+                dictionary.properties[s],
+                appliance.status_list[s],
+            )
         )
 
     platform = entity_platform.async_get_current_platform()
@@ -54,11 +57,11 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
             coordinator: ConnectLifeCoordinator,
             appliance: ConnectLifeAppliance,
             status: str,
-            dd_entry: Property
+            dd_entry: Property,
+            dictionary: Dictionary,
     ):
         """Initialize the entity."""
-        super().__init__(coordinator, appliance)
-        self._attr_unique_id = f"{appliance.device_id}-{status}"
+        super().__init__(coordinator, appliance, status, Platform.SENSOR)
         self.status = status
         self.read_only = dd_entry.sensor.read_only
         self.unknown_value = dd_entry.sensor.unknown_value
@@ -81,10 +84,14 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
             entity_registry_visible_default=not dd_entry.hide,
             icon=dd_entry.icon,
             name=status.replace("_", " "),
-            native_unit_of_measurement=dd_entry.sensor.unit,
+            native_unit_of_measurement=to_unit(
+                dd_entry.sensor.unit,
+                appliance=appliance,
+                dictionary=dictionary
+            ),
             options=options,
             state_class=state_class,
-            translation_key=status,
+            translation_key=self.to_translation_key(status),
         )
         self.update_state()
 
@@ -95,7 +102,7 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
             if self.device_class == SensorDeviceClass.ENUM:
                 if value in self.options_map:
                     value = self.options_map[value]
-                else:
+                elif value != self.unknown_value:
                     _LOGGER.warning("Got unexpected value %d for %s (%s)", value, self.status, self.nickname)
                     value = None
             self._attr_native_value = value if value != self.unknown_value else None
