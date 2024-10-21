@@ -67,6 +67,9 @@
       "Child_Lock_status": {
         "name": "Child lock"
       },
+      "Clean_Filter": {
+        "name": "Clean filter"
+      },
       "DelayStart_DelayEnd_mode" : {
         "name":"Delay start"
       },
@@ -78,6 +81,9 @@
       },
       "Selected_program_SteamFinish": {
         "name": "Steam finish"
+      },
+      "Waterbox_Full": {
+        "name": "Waterbox full"
       }
     },
     "climate": {
@@ -221,9 +227,15 @@
       }
     },
     "switch": {
+      "AntiCrease": {
+        "name": "Anti crease"
+      },
       "Child_lock": {},
       "Drum_Light": {
         "name": "Drum light"
+      },
+      "mute": {
+        "name": "Mute"
       },
       "t_eco": {
         "name": "Eco"
@@ -251,6 +263,14 @@
       }
     },
     "select": {
+      "Dry_Level": {
+        "name": "Drying level",
+        "state": {
+          "1": "1",
+          "2": "2",
+          "3": "3"
+        }
+      },
       "t_fan_speed": {
         "name": "Fan speed",
         "state": {
