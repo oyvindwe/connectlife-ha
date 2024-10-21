@@ -14,11 +14,11 @@ properties:
       device_class: enum
       options:
         0: idle
-        1: delay
+        1: delay_start_waiting
         2: running
         3: running
         4: anti_crease
-        5: finished
+        5: program_finished
       read-only: true
   - property: Door_status
     icon: mdi:square-circle

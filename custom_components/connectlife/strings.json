@@ -761,6 +761,7 @@
       "current_program_phase": {
         "state": {
           "not_available": "Not available",
+          "idle": "Idle",
           "program_not_selected": "Program not selected",
           "program_selected": "Program selected",
           "delay_start_waiting": "Delay start waiting",
@@ -768,6 +769,8 @@
           "preheat_finished": "Preheat finished",
           "prewash": "Pre-wash",
           "main_wash": "Main wash",
+          "running": "Running",
+          "anti_crease": "Anti crease",
           "drying": "Drying",
           "program_finished": "Finished",
           "ventilating": "Ventilating"
@@ -776,15 +779,6 @@
       "current_programphase": {
         "state": {
           "running": "Running"
-        }
-      },
-      "Current_program_phase": {
-        "state": {
-          "idle": "Idle",
-          "delay": "Delay",
-          "running": "Running",
-          "anti_crease": "Anti crease",
-          "finished": "Finished"
         }
       },
       "daily_energy_kwh": {
