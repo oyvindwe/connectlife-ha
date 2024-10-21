@@ -247,6 +247,9 @@
             "child_lock_status": {
                 "name": "Child lock"
             },
+            "Clean_Filter": {
+                "name": "Clean filter"
+            },
             "delay_start_status": {
                 "name": "Delay start status"
             },
@@ -639,6 +642,9 @@
             },
             "vibration_sensor_fault": {
                 "name": "Vibration sensor fault"
+            },
+            "Waterbox_Full": {
+                "name": "Waterbox full"
             },
             "water_level_switch": {
                 "name": "Water level switch"
@@ -1412,6 +1418,9 @@
             }
         },
         "switch": {
+            "AntiCrease": {
+                "name": "Anti crease"
+            },
             "automatic_ice_making": {
                 "name": "Automatic ice making"
             },
@@ -1421,6 +1430,9 @@
             },
             "holiday_mode": {
                 "name": "Holiday mode"
+            },
+            "mute": {
+              "name": "Mute"
             },
             "t_air": {
                 "name": "Air"
@@ -1454,6 +1466,14 @@
             }
         },
         "select": {
+            "Dry_Level": {
+                "name": "Drying level",
+                "state": {
+                    "1": "1",
+                    "2": "2",
+                    "3": "3"
+                }
+            },
             "t_fan_speed": {
                 "name": "Fan speed",
                 "state": {
