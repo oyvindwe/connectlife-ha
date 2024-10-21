@@ -247,6 +247,12 @@
       "child_lock_status": {
         "name": "Child lock"
       },
+      "Clean_Filter": {
+        "name": "Clean filter"
+      },
+      "DelayStart_DelayEnd_mode" : {
+        "name":"Delay start"
+      },
       "delay_start_status": {
         "name": "Delay start status"
       },
@@ -466,6 +472,10 @@
       "selected_program_steamfinish": {
         "name": "Steam finish"
       },
+<<<<<<< HEAD
+      "Waterbox_Full": {
+        "name": "Waterbox full"
+=======
       "session_pairing_active": {
         "name": "Session pairing active"
       },
@@ -642,6 +652,7 @@
       },
       "water_level_switch": {
         "name": "Water level switch"
+>>>>>>> main
       }
     },
     "climate": {
@@ -772,6 +783,15 @@
           "running": "Running"
         }
       },
+      "Current_program_phase": {
+        "state": {
+          "idle": "Idle",
+          "delay": "Delay",
+          "running": "Running",
+          "anti_crease": "Anti crease",
+          "finished": "Finished"
+        }
+      },
       "daily_energy_kwh": {
         "name": "Daily energy consumption"
       },
@@ -815,6 +835,17 @@
           "open": "Open"
         }
       },
+<<<<<<< HEAD
+      "machine_status": {
+        "name": "Machine status",
+	"state": {
+	  "off": "Off",
+	  "standby": "Standby",
+	  "running": "Running"
+	}
+      },
+      "Selected_program_ID": {
+=======
       "energy_consumption_in_running_program": {
         "name": "Energy consumption in running program"
       },
@@ -924,6 +955,7 @@
         }
       },
       "selected_program_id": {
+>>>>>>> main
         "name": "Selected program",
         "state": {
           "cotton_storage": "Cotton storage",
@@ -950,6 +982,10 @@
       "selected_programremaining_time_inminutes": {
         "name": "Remaining time of selected program"
       },
+<<<<<<< HEAD
+      "Selected_program_remaining_time_in_minutes": {
+        "name": "Remaining time of selected program"
+=======
       "set_progress_type": {
         "name": "Set progress type",
         "state": {
@@ -1356,6 +1392,7 @@
       },
       "step3_set_temperature": {
         "name": "Step3 set temperature"
+>>>>>>> main
       },
       "t_sleep": {
         "name": "Sleep"
@@ -1401,11 +1438,26 @@
       }
     },
     "switch": {
+<<<<<<< HEAD
+      "AntiCrease": {
+        "name": "Anti crease"
+      },
+      "Child_lock": {},
+      "Drum_Light": {
+        "name": "Drum light"
+      },
+      "mute": {
+        "name": "Mute"
+      },
+      "t_eco": {
+        "name": "Eco"
+=======
       "automatic_ice_making": {
         "name": "Automatic ice making"
       },
       "holiday_mode": {
         "name": "Holiday mode"
+>>>>>>> main
       },
       "t_air": {
         "name": "Air"
@@ -1439,6 +1491,14 @@
       }
     },
     "select": {
+      "Dry_Level": {
+        "name": "Drying level",
+        "state": {
+          "1": "1",
+          "2": "2",
+          "3": "3"
+        }
+      },
       "t_fan_speed": {
         "name": "Fan speed",
         "state": {
