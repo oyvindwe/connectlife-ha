@@ -8,6 +8,18 @@ properties:
   - property: Clean_Filter
     icon: mdi:brush-variant
     binary_sensor: {}
+  - property: Current_program_phase
+    icon: mdi:tumble-dryer
+    sensor:
+      device_class: enum
+      options:
+        0: idle
+        1: delay
+        2: running
+        3: running
+        4: anti_crease
+        5: finished
+      read-only: true
   - property: Door_status
     icon: mdi:square-circle
     sensor:

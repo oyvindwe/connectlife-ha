@@ -778,6 +778,15 @@
                     "running": "Running"
                 }
             },
+            "Current_program_phase": {
+                "state": {
+                    "idle": "Idle",
+                    "delay": "Delay",
+                    "running": "Running",
+                    "anti_crease": "Anti crease",
+                    "finished": "Finished"
+                }
+            },
             "daily_energy_kwh": {
                 "name": "Daily energy consumption"
             },
