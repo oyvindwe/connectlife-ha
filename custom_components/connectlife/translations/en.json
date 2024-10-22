@@ -247,7 +247,7 @@
             "child_lock_status": {
                 "name": "Child lock"
             },
-            "Clean_Filter": {
+            "clean_filter": {
                 "name": "Clean filter"
             },
             "delay_start_status": {
@@ -643,11 +643,11 @@
             "vibration_sensor_fault": {
                 "name": "Vibration sensor fault"
             },
-            "Waterbox_Full": {
-                "name": "Waterbox full"
-            },
             "water_level_switch": {
                 "name": "Water level switch"
+            },
+            "waterbox_full": {
+                "name": "Waterbox full"
             }
         },
         "climate": {
@@ -761,7 +761,6 @@
             "current_program_phase": {
                 "state": {
                     "not_available": "Not available",
-                    "idle": "Idle",
                     "program_not_selected": "Program not selected",
                     "program_selected": "Program selected",
                     "delay_start_waiting": "Delay start waiting",
@@ -769,11 +768,12 @@
                     "preheat_finished": "Preheat finished",
                     "prewash": "Pre-wash",
                     "main_wash": "Main wash",
-                    "running": "Running",
-                    "anti_crease": "Anti crease",
                     "drying": "Drying",
                     "program_finished": "Finished",
-                    "ventilating": "Ventilating"
+                    "ventilating": "Ventilating",
+                    "idle": "Idle",
+                    "running": "Running",
+                    "anti_crease": "Anti crease"
                 }
             },
             "current_programphase": {
@@ -970,13 +970,13 @@
                     "none": "None"
                 }
             },
+            "selected_program_remaining_time_in_minutes": {
+                "name": "Remaining time of selected program"
+            },
             "selected_programduration_inminutes": {
                 "name": "Duration of selected program"
             },
             "selected_programremaining_time_inminutes": {
-                "name": "Remaining time of selected program"
-            },
-            "Selected_program_remaining_time_in_minutes": {
                 "name": "Remaining time of selected program"
             },
             "set_progress_type": {
@@ -1430,14 +1430,16 @@
             }
         },
         "switch": {
-            "AntiCrease": {
+            "anticrease": {
                 "name": "Anti crease"
             },
             "automatic_ice_making": {
                 "name": "Automatic ice making"
             },
-            "Child_lock": {},
-            "Drum_Light": {
+            "child_lock": {
+                "name": "Child lock"
+            },
+            "drum_light": {
                 "name": "Drum light"
             },
             "holiday_mode": {
