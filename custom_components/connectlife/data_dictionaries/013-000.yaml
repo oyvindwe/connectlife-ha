@@ -881,12 +881,20 @@ properties:
       3: active_hob
 - property: Navigation_sound_setting
   # Sample value: 0
+  hide: true
+  unavailable: 0
 - property: Night_modeDisplay_brightness_setting
   # Sample value: 0
+  hide: true
+  unavailable: 0
 - property: Night_modeLight_brightness_setting
   # Sample value: 0
+  hide: true
+  unavailable: 0
 - property: Night_modeVolume_setting
   # Sample value: 0
+  hide: true
+  unavailable: 0
 - property: Night_mode_off_hour
   hide: true
   sensor:
@@ -904,13 +912,23 @@ properties:
   sensor:
     unknown_value: 255
 - property: Night_mode_status
-  # Sample value: 1
+  unavailable: 0
+  switch:
+    "off": 1
+    "on": 2
+    command:
+      name: Night_mode_status_cmd
+      adjust: 1
 - property: Notification_pitch_sound_setting
-  # Sample value: 0
+  unavailable: 0
+  hide: true
 - property: Notification_sounds_volume_setting
-  # Sample value: 0
+  unavailable: 0
+  hide: true
 - property: Oven_measured_temperature
-  # Sample value: 20
+  sensor:
+    device_class: temperature
+    unit: property.Oven_temperature_unit
 - property: Oven_temperature_unit
   hide: true
   unavailable: 0
@@ -925,150 +943,350 @@ properties:
   disable: true
 - property: Oven_usage_value_alarm_limit
   # Sample value: 0
+  hide: true
 - property: Oven_usage_value_time_since_last_cleaning
-  # Sample value: 65535
+  sensor:
+    unknown_value: 65535
+    #device_class: duration
+    #unit: min? H?
 - property: Permanent_remote_start
   # Sample value: 0
+  hide: true
 - property: Program_settingsDefault
   # Sample value: 0
+  hide: true
 - property: Program_settingsStart_key_duation_forMW
   # Sample value: 0
+  hide: true
 - property: Proximity_sensor_setting
   # Sample value: 0
+  hide: true
 - property: Proximity_sensor_settingClose_user_detectedDisplay_change_to
   # Sample value: 0
+  hide: true
 - property: Proximity_sensor_settingClose_user_detectedLight_change_to
   # Sample value: 0
+  hide: true
 - property: Proximity_sensor_settingDistant_user_detectedDisplay_change_to
   # Sample value: 0
+  hide: true
 - property: Proximity_sensor_settingDistant_user_detectedLight_change_to
   # Sample value: 0
+  hide: true
 - property: Remote_control_monitoring
-  # Sample value: 0
+  hide: true
+  binary_sensor:
+    options:
+      0: not_active
+      1: active
 - property: Remote_control_monitoring_set_commands
-  # Sample value: 1
+  hide: true
+  binary_sensor:
+    options:
+      0: not_active
+      1: active
 - property: Remote_control_monitoring_set_commands_actions
-  # Sample value: 0
+  hide: true
+  binary_sensor:
+    options:
+      0: not_active
+      1: active
 - property: Remove_moist_now
   # Sample value: 0
+  disable: true
 - property: Reset_to_default
   # Sample value: 0
+  disable: true
 - property: Sabbath_mode_setting
   # Sample value: 0
+  hide: true
 - property: Sabbath_mode_settingBakingEnd_atHour
   # Sample value: 0
+  hide: true
 - property: Sabbath_mode_settingBakingEnd_atMinute
   # Sample value: 0
+  hide: true
 - property: Sabbath_mode_settingBakingStart_atHour
   # Sample value: 0
+  hide: true
 - property: Sabbath_mode_settingBakingStart_atMinute
   # Sample value: 0
+  hide: true
 - property: Sabbath_mode_settingCavity_light_during_sabbath
   # Sample value: 0
+  hide: true
 - property: Sabbath_mode_settingEnd_timeHour
   # Sample value: 0
+  hide: true
 - property: Sabbath_mode_settingEnd_timeMinute
   # Sample value: 0
+  hide: true
 - property: Sabbath_mode_settingSet_heater_system
   # Sample value: 0
+  hide: true
 - property: Sabbath_mode_settingStart_timeHour
   # Sample value: 0
+  hide: true
 - property: Sabbath_mode_settingStart_timeMinute
   # Sample value: 0
+  hide: true
 - property: Sabbath_mode_setting_activate_weekly
   # Sample value: 0
+  hide: true
 - property: Sabbath_mode_status
-  # Sample value: 1
+  unavailable: 0
+  binary_sensor: {}
 - property: Sand_timer_1_duration_hours
-  # Sample value: 255
+  hide: true
+  sensor:
+    unknown_value: 255
 - property: Sand_timer_1_duration_minutes
-  # Sample value: 255
+  hide: true
+  sensor:
+    unknown_value: 255
 - property: Sand_timer_1_duration_seconds
-  # Sample value: 255
+  hide: true
+  sensor:
+    unknown_value: 255
 - property: Sand_timer_1_end_utc_datetime_bdc_timestamp
   # Sample value: 16679/02/18T23:47:45
+  hide: true
+  sensor:
+    device_class: timestamp
 - property: Sand_timer_1_paused_total_seconds
-  # Sample value: 65535
+  hide: true
+  sensor:
+    device_class: duration
+    unit: s
+    unknown_value: 65535
 - property: Sand_timer_1_start_utc_datetime_bdc_timestamp
   # Sample value: 16679/02/18T23:47:45
+  hide: true
+  sensor:
+    device_class: timestamp
 - property: Sand_timer_1_status
-  # Sample value: 5
+  hide: true
+  unavailable: 0
+  sensor:
+    device_class: enum
+    options:
+      1: not_active
+      2: running
+      3: paused
+      4: stopped
+      5: ended
+- property: Sand_timer_1_status_cmd
+  # unavailable: only if Sand_timer_1_status is available
+  hide: true
+  select:
+    options:
+      0: start
+      1: stop
+      2: pause
+      3: cancel
 - property: Sand_timer_2_duration_hours
-  # Sample value: 255
+  hide: true
+  sensor:
+    unknown_value: 255
 - property: Sand_timer_2_duration_minutes
-  # Sample value: 255
+  hide: true
+  sensor:
+    unknown_value: 255
 - property: Sand_timer_2_duration_seconds
-  # Sample value: 255
+  hide: true
+  sensor:
+    unknown_value: 255
 - property: Sand_timer_2_end_utc_datetime_bdc_timestamp
   # Sample value: 16679/02/18T23:47:45
+  hide: true
+  sensor:
+    device_class: timestamp
 - property: Sand_timer_2_paused_total_seconds
-  # Sample value: 65535
+  hide: true
+  sensor:
+    device_class: duration
+    unit: s
+    unknown_value: 65535
 - property: Sand_timer_2_start_utc_datetime_bdc_timestamp
   # Sample value: 16679/02/18T23:47:45
+  hide: true
+  sensor:
+    device_class: timestamp
 - property: Sand_timer_2_status
-  # Sample value: 0
+  hide: true
+  unavailable: 0
+  sensor:
+    device_class: enum
+    options:
+      1: not_active
+      2: running
+      3: paused
+      4: stopped
+      5: ended
+- property: Sand_timer_2_status_cmd
+  # unavailable: only if Sand_timer_2_status is available
+  hide: true
+  select:
+    options:
+      0: start
+      1: stop
+      2: pause
+      3: cancel
 - property: Sand_timer_3_duration_hours
-  # Sample value: 255
+  hide: true
+  sensor:
+    unknown_value: 255
 - property: Sand_timer_3_duration_minutes
-  # Sample value: 255
+  hide: true
+  sensor:
+    unknown_value: 255
 - property: Sand_timer_3_duration_seconds
-  # Sample value: 255
+  hide: true
+  sensor:
+    unknown_value: 255
 - property: Sand_timer_3_end_utc_datetime_bdc_timestamp
   # Sample value: 16679/02/18T23:47:45
+  hide: true
+  sensor:
+    device_class: timestamp
 - property: Sand_timer_3_paused_total_seconds
-  # Sample value: 65535
+  hide: true
+  sensor:
+    device_class: duration
+    unit: s
+    unknown_value: 65535
 - property: Sand_timer_3_start_utc_datetime_bdc_timestamp
   # Sample value: 16679/02/18T23:47:45
+  hide: true
+  sensor:
+    device_class: timestamp
 - property: Sand_timer_3_status
-  # Sample value: 7
+  # Sample value: 7 - what is this?
+  hide: true
+  unavailable: 0
+  sensor:
+    device_class: enum
+    options:
+      1: not_active
+      2: running
+      3: paused
+      4: stopped
+      5: ended
+- property: Sand_timer_3_status_cmd
+  # unavailable: only if Sand_timer_3_status is available
+  hide: true
+  select:
+    options:
+      0: start
+      1: stop
+      2: pause
+      3: cancel
 - property: Scanned_EAN_code
   # Sample value: -12-500000000000
+  disable: true
 - property: Session_pairing_active
-  # Sample value: 0
+  hide: true
+  sensor:
+    device_class: enum
+    options:
+      0: no_active_session
+      1: request_denied
+      2: session_is_active
+      3: close_session
 - property: Session_pairing_setting
-  # Sample value: 0
+  hide: true
+  binary_sensor:
+    options:
+      0: "off"
+      1: "on"
 - property: Set_time_Hour
   # Sample value: 0
+  hide: true
 - property: Set_time_Minutes
   # Sample value: 0
+  hide: true
 - property: Settings_day
   # Sample value: 255
+  hide: true
 - property: Settings_hour
   # Sample value: 10
+  hide: true
 - property: Settings_minute
   # Sample value: 21
+  hide: true
 - property: Settings_month
-  # Sample value: 255
+  hide: true
+  sensor:
+    unknown_value: 255
 - property: Settings_year
-  # Sample value: 65535
+  hide: true
+  sensor:
+    unknown_value: 65535
 - property: Shop_mode_setting
   # Sample value: 0
+  hide: true
 - property: Show_date_setting
   # Sample value: 0
+  hide: true
 - property: Soft_pairing_setting
-  # Sample value: 0
+  hide: true
+  binary_sensor:
+    options:
+      0: "off"
+      1: "on"
 - property: Stage_lights_setting
   # Sample value: 0
+  hide: true
 - property: Status
-  # Sample value: 1
+  sensor:
+    device_class: enum
+    options:
+      0: not_avaliable
+      1: idle
+      2: running
+      3: pause
+      4: production
+      5: delay_time_waiting
+      6: error
 - property: Steam123_0_available
-  # Sample value: 0
+  unavailable: 0
+  binary_sensor: {}
 - property: Steam123_1_available
-  # Sample value: 0
+  unavailable: 0
+  binary_sensor: {}
 - property: Steam123_2_available
-  # Sample value: 0
+  unavailable: 0
+  binary_sensor: {}
 - property: Steam123_3_available
-  # Sample value: 0
+  unavailable: 0
+  binary_sensor: {}
 - property: Steam_123
-  # Sample value: 0
+  unavailable: 0
+  select:
+    options:
+      1: steam123_0
+      2: steam123_1
+      3: steam123_2
+      4: steam123_3
+    command:
+      name: Steam_123_cmd
+      adjust: 1
 - property: Steam_assist_Time_used
   # Sample value: 0
+  hide: true
+  sensor:
+    #device_class: duration
+    #unit: <unknown>
 - property: Steam_reduction_at_door_opening_setting
   # Sample value: 0
+  hide: true
 - property: Steam_reduction_at_program_end_setting
   # Sample value: 0
+  hide: true
 - property: Steam_shot
-  # Sample value: 0
+  hide: true
+  unavailable: 0
+  binary_sensor: {}
 - property: Step1Add_moistStart_at_minute
   # Sample value: 0
 - property: Step1Add_moistValve_open_percentage
