@@ -39,6 +39,15 @@ properties:
         1: 1
         2: 2
         3: 3
+  - property: Selected_program_remaining_time_in_minutes
+    icon: mdi:timer
+    sensor:
+      device_class: duration
+      unit: min
+      read-only: true
+  - property: Waterbox_Full
+    icon: mdi:water-alert
+    binary_sensor: {}
   - property: machine_status
     icon: mdi:tumble-dryer
     sensor:
@@ -51,12 +60,4 @@ properties:
   - property: mute
     icon: mdi:volume-mute
     switch: {}
-  - property: Selected_program_remaining_time_in_minutes
-    icon: mdi:timer
-    sensor:
-      device_class: duration
-      unit: min
-      read-only: true
-  - property: Waterbox_Full
-    icon: mdi:water-alert
-    binary_sensor: {}
+
