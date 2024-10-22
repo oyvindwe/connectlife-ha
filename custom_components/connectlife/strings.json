@@ -247,6 +247,9 @@
       "child_lock_status": {
         "name": "Child lock"
       },
+      "clean_filter": {
+        "name": "Clean filter"
+      },
       "delay_start_status": {
         "name": "Delay start status"
       },
@@ -642,6 +645,9 @@
       },
       "water_level_switch": {
         "name": "Water level switch"
+      },
+      "waterbox_full": {
+        "name": "Waterbox full"
       }
     },
     "climate": {
@@ -764,7 +770,12 @@
           "main_wash": "Main wash",
           "drying": "Drying",
           "program_finished": "Finished",
-          "ventilating": "Ventilating"
+          "ventilating": "Ventilating",
+          "idle": "Idle",
+          "running": "Running",
+          "anti_crease": "Anti crease",
+          "delay": "Delay",
+          "finished": "Finished"
         }
       },
       "current_programphase": {
@@ -857,6 +868,14 @@
       "low_temperature": {
         "name": "Low temperature"
       },
+      "machine_status": {
+        "name": "Machine status",
+        "state": {
+          "off": "Off",
+          "standby": "Standby",
+          "running": "Running"
+        }
+      },
       "measured_vibrations": {
         "name": "Measured vibrations"
       },
@@ -943,6 +962,9 @@
           "remote": "Remote",
           "none": "None"
         }
+      },
+      "selected_program_remaining_time_in_minutes": {
+        "name": "Remaining time of selected program"
       },
       "selected_programduration_inminutes": {
         "name": "Duration of selected program"
@@ -1401,11 +1423,23 @@
       }
     },
     "switch": {
+      "anticrease": {
+        "name": "Anti crease"
+      },
       "automatic_ice_making": {
         "name": "Automatic ice making"
       },
+      "child_lock": {
+        "name": "Child lock"
+      },
+      "drum_light": {
+        "name": "Drum light"
+      },
       "holiday_mode": {
         "name": "Holiday mode"
+      },
+      "mute": {
+        "name": "Mute"
       },
       "t_air": {
         "name": "Air"
@@ -1439,6 +1473,14 @@
       }
     },
     "select": {
+      "dry_level": {
+        "name": "Drying level",
+        "state": {
+          "1": "1",
+          "2": "2",
+          "3": "3"
+        }
+      },
       "t_fan_speed": {
         "name": "Fan speed",
         "state": {

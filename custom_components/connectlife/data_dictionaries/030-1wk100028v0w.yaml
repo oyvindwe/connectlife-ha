@@ -1,0 +1,63 @@
+properties:
+  - property: AntiCrease
+    icon: mdi:iron
+    switch: {}
+  - property: Child_lock
+    icon: mdi:lock
+    switch: {}
+  - property: Clean_Filter
+    icon: mdi:brush-variant
+    binary_sensor: {}
+  - property: Current_program_phase
+    icon: mdi:tumble-dryer
+    sensor:
+      device_class: enum
+      options:
+        0: idle
+        1: delay_start_waiting
+        2: running
+        3: running
+        4: anti_crease
+        5: program_finished
+      read-only: true
+  - property: Door_status
+    icon: mdi:square-circle
+    sensor:
+      device_class: enum
+      options:
+        0: not_available
+        1: open
+        2: closed
+      read-only: true
+  - property: Drum_Light
+    icon: mdi:lightbulb-on
+    switch: {}
+  - property: Dry_Level
+    icon: mdi:weather-sunny
+    select:
+      options:
+        1: 1
+        2: 2
+        3: 3
+  - property: Selected_program_remaining_time_in_minutes
+    icon: mdi:timer
+    sensor:
+      device_class: duration
+      unit: min
+      read-only: true
+  - property: Waterbox_Full
+    icon: mdi:water-alert
+    binary_sensor: {}
+  - property: machine_status
+    icon: mdi:tumble-dryer
+    sensor:
+      device_class: enum
+      options:
+        0: "off"
+        1: standby
+        2: running
+      read-only: true
+  - property: mute
+    icon: mdi:volume-mute
+    switch: {}
+
