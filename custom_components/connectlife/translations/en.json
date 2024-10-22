@@ -1473,7 +1473,7 @@
             }
         },
         "select": {
-            "dry_Level": {
+            "dry_level": {
                 "name": "Drying level",
                 "state": {
                     "1": "1",
