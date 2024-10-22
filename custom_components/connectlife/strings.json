@@ -773,7 +773,9 @@
           "ventilating": "Ventilating",
           "idle": "Idle",
           "running": "Running",
-          "anti_crease": "Anti crease"
+          "anti_crease": "Anti crease",
+          "delay": "Delay",
+          "finished": "Finished"
         }
       },
       "current_programphase": {

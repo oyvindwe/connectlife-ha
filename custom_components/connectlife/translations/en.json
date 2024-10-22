@@ -773,21 +773,14 @@
                     "ventilating": "Ventilating",
                     "idle": "Idle",
                     "running": "Running",
-                    "anti_crease": "Anti crease"
+                    "anti_crease": "Anti crease",
+                    "delay": "Delay",
+                    "finished": "Finished"
                 }
             },
             "current_programphase": {
                 "state": {
                     "running": "Running"
-                }
-            },
-            "current_program_phase": {
-                "state": {
-                    "idle": "Idle",
-                    "delay": "Delay",
-                    "running": "Running",
-                    "anti_crease": "Anti crease",
-                    "finished": "Finished"
                 }
             },
             "daily_energy_kwh": {
