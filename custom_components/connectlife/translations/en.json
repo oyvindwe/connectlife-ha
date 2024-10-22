@@ -781,7 +781,7 @@
                     "running": "Running"
                 }
             },
-            "Current_program_phase": {
+            "current_program_phase": {
                 "state": {
                     "idle": "Idle",
                     "delay": "Delay",
@@ -1480,7 +1480,7 @@
             }
         },
         "select": {
-            "Dry_Level": {
+            "dry_Level": {
                 "name": "Drying level",
                 "state": {
                     "1": "1",
