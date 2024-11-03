@@ -1,0 +1,145 @@
+climate:
+  presets:
+    - preset: Bedtime
+      t_power: 1
+      t_work_mode: 2
+      t_fan_speed: 3
+      t_temp: 64
+properties:
+  - property: daily_energy_kwh
+    hide: true
+    sensor:
+      read_only: true
+      state_class: total_increasing
+      device_class: energy
+      unit: kWh
+  - property: f_temp_in
+    climate:
+      target: current_temperature
+  - property: t_fan_speed
+    climate:
+      target: fan_mode
+      options:
+        0: auto
+        2: low
+        3: medium
+        4: high
+  - property: f_humidity
+    climate:
+      target: current_humidity
+      unknown_value: 128
+  - property: t_power
+    climate:
+      target: is_on
+  - property: t_sleep
+    icon: mdi:power-sleep
+    switch:
+      device_class: switch
+  - property: t_temp
+    climate:
+      target: target_temperature
+      min_value:
+        celsius: 16
+        fahrenheit: 61
+      max_value:
+        celsius: 32
+        fahrenheit: 90
+  - property: t_temp_type
+    climate:
+      target: temperature_unit
+      options:
+        0: celsius
+        1: fahrenheit
+  - property: t_work_mode
+    climate:
+      target: hvac_mode
+      options:
+        0: fan_only
+        2: cool
+        3: dry
+        5: eco
+  # - property: t_beep
+  #   disable: true
+  # - property: t_eco
+  #   disable: true
+  # - property: t_fan_mute
+  #   disable: true
+  # - property: t_fan_speed_s
+  #   disable: true
+  # - property: t_tms
+  #   disable: true
+  # - property: t_super
+  #   disable: true
+  # - property: t_swing_angle
+  #   disable: true
+  # - property: t_swing_follow
+  #   disable: true
+  # - property: t_swing_direction
+  #   disable: true
+  # - property: t_up_down    
+  #   disable: true
+
+  # - property: f_e_arkgrille
+  #   disable: true
+  # - property: f_e_dwmachine
+  #   disable: true  
+  # - property: f_e_incoiltemp
+  #   disable: true
+  # - property: f_e_incom
+  #   disable: true
+  # - property: f_e_indisplay
+  #   disable: true
+  # - property: f_e_ineeprom
+  #   disable: true
+  # - property: f_e_inele
+  #   disable: true
+  # - property: f_e_infanmotor
+  #   disable: true
+  # - property: f_e_inhumidity
+  #   disable: true
+  # - property: f_e_inkeys
+  #   disable: true
+  # - property: f_e_intemp
+  #   disable: true
+  # - property: f_e_invzero
+  #   disable: true
+  # - property: f_e_inwifi
+  #   disable: true
+  # - property: f_e_outcoiltemp
+  #   disable: true
+  # - property: f_e_outeeprom
+  #   disable: true
+  # - property: f_e_outgastemp
+  #   disable: true
+  # - property: f_e_outtemp
+  #   disable: true
+  # - property: f_e_over_cold
+  #   disable: true
+  # - property: f_e_over_hot
+  #   disable: true
+  # - property: f_e_push
+  #   disable: true
+  # - property: f_e_upmachine
+  #   disable: true
+  # - property: f_e_waterfull
+  #   disable: true
+  # - property: f_ecm
+  #   disable: true
+  # - property: f_electricity
+  #   disable: true
+  # - property: f_filter
+  #   disable: true
+  # - property: f_filter_2
+  #   disable: true
+  # - property: measured_grid_voltage
+  #   disable: true
+  # - property: t_dal
+  #   disable: true
+  # - property: t_talr
+  #   disable: true
+  # - property: t_demand_response
+  #   disable: true
+  # - property: t_fanspeedcv
+  #   disable: true
+  # - property: t_temp_compensate
+  #   disable: true
