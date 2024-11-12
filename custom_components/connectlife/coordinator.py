@@ -39,7 +39,7 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
         try:
             # Note: asyncio.TimeoutError and aiohttp.ClientError are already
             # handled by the data update coordinator.
-            async with async_timeout.timeout(10):
+            async with async_timeout.timeout(30):
                 await self.api.get_appliances()
                 self.error_count = 0
         except LifeConnectAuthError as err:
