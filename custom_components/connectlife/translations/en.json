@@ -1439,7 +1439,7 @@
                 "name": "Holiday mode"
             },
             "mute": {
-              "name": "Mute"
+                "name": "Mute"
             },
             "t_air": {
                 "name": "Air"
@@ -1518,6 +1518,35 @@
                     "off": "Off",
                     "follow": "Follow",
                     "not_follow": "Not Follow"
+                }
+            },
+            "selected_program_id": {
+                "name": "Selected Programm",
+                "state": {
+                    "auto": "Auto",
+                    "remote": "Remote Controll",
+                    "anti_allergy": "Allergy Care",
+                    "refresh": "Refresh",
+                    "sports": "Sportswear",
+                    "towels": "Towels",
+                    "time": "Time Dry",
+                    "cotton": "Cotton",
+                    "baby": "Baby Care",
+                    "synthetic": "Synthetics",
+                    "wool": "Wool",
+                    "delicates": "Delicates",
+                    "fast30": "Quick 30´",
+                    "shirts": "Shirts",
+                    "bed_linen": "Bedding",
+                    "down": "Down"
+                }
+            },
+            "dry_time": {
+                "name": "Drying Target",
+                "state": {
+                    "wardrobe": "Wardrobe",
+                    "pre-ironing": "Pre Ironing",
+                    "extra_dry": "Extra Dry"
                 }
             }
         },
