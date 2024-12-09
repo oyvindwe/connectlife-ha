@@ -1,0 +1,524 @@
+# Washing Machine
+properties:
+- property:  slotdry
+  # Sample value: 0
+- property: Actions
+  # Sample value: 0
+- property: AirDryFlag
+  # Sample value: 0
+- property: AirWashTime
+  # Sample value: 0
+- property: AntiCrease
+  icon: mdi:iron
+  switch: { }
+  # Sample value: 0
+- property: AntiCrease_flag
+  # Sample value: 0
+- property: ApplicationPermissions
+  # Sample value: 2
+- property: AquaPreserve
+  # Sample value: 0
+- property: AquaPreserve_Flag
+  # Sample value: 0
+- property: AutoDose
+  switch: { }
+  # Sample value: 0
+- property: AutoDoseType
+  # Sample value: 0
+- property: AutoDose_flag
+  # Sample value: 0
+- property: AutoTubClean
+  switch: { }
+  # Sample value: 0
+- property: BathingWaterPumpState
+  # Sample value: 0
+- property: BathingWaterPump_Rinse
+  # Sample value: 0
+- property: BathingWaterPump_Wash
+  # Sample value: 0
+- property: Cancle_DelayEnd
+  # Sample value: 0
+- property: Child_lock
+  icon: mdi:lock
+  switch: { }
+  # Sample value: 0
+- property: Childlock_flag
+  # Sample value: 0
+- property: Childlock_newfuntion
+  # Sample value: 0
+- property: Childlock_pause
+  # Sample value: 0
+- property: ColdWash
+  # Sample value: 0
+- property: Compartment_Inuse
+  # Sample value: 0
+- property: Compartment_switch
+  # Sample value: 0
+- property: CurProgDetergentDosage
+  # Sample value: 0
+- property: CurProgDetergentDosageNo_Auto
+  # Sample value: 0
+- property: CurProgSoftnerDosage
+  # Sample value: 0
+- property: CurProgSoftnerDosageNo_Auto
+  # Sample value: 0
+- property: CurrentProgram_High_WaterLevel_InflowTime
+  # Sample value: 0
+- property: CurrentProgram_High_WaterLevel_Starting_WaterLevelValue
+  # Sample value: 0
+- property: CurrentProgram_Low_WaterLevel_InflowTime
+  # Sample value: 0
+- property: CurrentProgram_Medium_WaterLevel_InflowTime
+  # Sample value: 0
+- property: CurrentProgram_Medium_WaterLevel_Starting_WaterLevelValue
+  # Sample value: 0
+- property: Current_program_phase
+  # Sample value: 0
+- property: Dat3
+  # Sample value: 0
+- property: Data1
+  # Sample value: 0
+- property: Data2
+  # Sample value: 0
+- property: Data4
+  # Sample value: 0
+- property: Data5
+  # Sample value: 0
+- property: DefaultSpinSpeed
+  # Sample value: 14
+- property: DelayEndTime
+  # Sample value: 0
+- property: DelayEndTime_Minute
+  # Sample value: 0
+- property: Detergent
+  # Sample value: 1
+- property: DetergentStandardDosage
+  # Sample value: 0
+- property: DetergentStandardDosage_flag
+  # Sample value: 0
+- property: Detergent_display
+  # Sample value: 1
+- property: Detergent_flag
+  # Sample value: 0
+- property: Detergent_state
+  # Sample value: 0
+- property: Door_status
+  sensor:
+    device_class: enum
+    options:
+      0: not_available
+      1: closed
+      2: open
+  # Sample value: 1
+- property: Dose_Detergent_amount
+  # Sample value: 1
+- property: Dose_Softener_amount
+  # Sample value: 1
+- property: DownLight
+  # Sample value: 0
+- property: DownLight_LightTime
+  # Sample value: 0
+- property: Downloadprogram
+  # Sample value: 0
+- property: DrumCleanCycle_RunsNumber
+  # Sample value: 0
+- property: DrumCleanFlag
+  # Sample value: 0
+- property: DrumCleanSwitch
+  # Sample value: 0
+- property: DrumCleanWashCount
+  # Sample value: 0
+- property: DryLeve_flag
+  # Sample value: 0
+- property: DryMode_flag
+  # Sample value: 0
+- property: DryModel
+  # Sample value: 0
+- property: DryOpen_DefaultSpinSpeed
+  # Sample value: 14
+- property: DryingSwitch
+  # Sample value: 0
+- property: EcoMode
+  # Sample value: 0
+- property: Electricit_consumption_decimal
+  # Sample value: 1
+- property: Electricit_consumption_int
+  # Sample value: 1
+- property: Energy_estimate
+  # Sample value: 100
+- property: EnterPerformanceMode_dry1_ConditionType
+  # Sample value: 0
+- property: EnterPerformanceMode_dry1_MainWashTime
+  # Sample value: 0
+- property: EnterPerformanceMode_wash1_ConditionType
+  # Sample value: 0
+- property: EnterPerformanceMode_wash1_MainWashTime
+  # Sample value: 0
+- property: EnterPerformanceMode_wash2_ConditionType
+  # Sample value: 0
+- property: EnterPerformanceMode_wash2_MainWashTime
+  # Sample value: 0
+- property: ExtraRinseNum
+  # Sample value: 0
+- property: ExtraRinseNum_Flag
+  # Sample value: 0
+- property: Extra_Rinse
+  # Sample value: 0
+- property: Favour_program_ID
+  # Sample value: 0
+- property: Filterclean_dry
+  # Sample value: 0
+- property: Filterclean_wash
+  # Sample value: 0
+- property: FlexibleSpinTime_Flag
+  # Sample value: 1
+- property: Fluffysoft
+  # Sample value: 0
+- property: Half_Load
+  # Sample value: 0
+- property: Hard_pairing_commond
+  # Sample value: 0
+- property: Hard_pairing_status
+  # Sample value: 0
+- property: ID1
+  # Sample value: 0
+- property: ID2
+  # Sample value: 0
+- property: ID3
+  # Sample value: 0
+- property: ID4
+  # Sample value: 0
+- property: ID5
+  # Sample value: 0
+- property: IntensiveWash
+  # Sample value: 0
+- property: Intensive_flag
+  # Sample value: 0
+- property: Language
+  # Sample value: 0
+- property: Last_completed_running_process
+  # Sample value: 0
+- property: LidOpenFlag
+  # Sample value: 0
+- property: MainWashTimeList
+  # Sample value: 0
+- property: MainWashTimeUseIndex
+  # Sample value: 6
+- property: No_AutoDoseSwitch
+  # Sample value: 0
+- property: OTA_Num1
+  # Sample value: 0
+- property: OTA_Sucess
+  # Sample value: 0
+- property: OnceWaterInRinse_Time
+  # Sample value: 0
+- property: PerformanceMode_Flag
+  # Sample value: 0
+- property: PerformanceMode_MainWashTime
+  # Sample value: 0
+- property: PowerSaveDeleteTime
+  # Sample value: 0
+- property: Power_Save
+  # Sample value: 0
+- property: PreSoak
+  # Sample value: 0
+- property: PreSoakFlag
+  # Sample value: 0
+- property: Prewash
+  # Sample value: 0
+- property: Program_end_to_shutdown_time_in_minutes
+  # Sample value: 0
+- property: PumCleanRemaintime
+  # Sample value: 0
+- property: PumCleanTotaltime
+  # Sample value: 0
+- property: PumCleanflag
+  # Sample value: 0
+- property: QuickerMode
+  # Sample value: 0
+- property: Quiet_model
+  # Sample value: 0
+- property: RinseNum
+  # Sample value: 1
+- property: RinseNum_ContainExtraRinse
+  # Sample value: 0
+- property: RinseNum_Index
+  # Sample value: 0
+- property: ScreenSaverTime
+  # Sample value: 0
+- property: Selected _programID_OTA
+  # Sample value: 0
+- property: Selected_program_ID
+  # Sample value: 9
+- property: Selected_program_Water_Add
+  # Sample value: 0
+- property: Selected_program_remaining_time_in_minutes
+  # Sample value: 1
+- property: Selected_program_total_running_time_in_minutes
+  # Sample value: 1
+- property: Selected_program_total_time_in_minutes
+  # Sample value: 1
+- property: Session_pairing_commond
+  # Sample value: 0
+- property: Session_pairing_states
+  # Sample value: 0
+- property: SingleAirDry
+  # Sample value: 0
+- property: SkipDelayProcess
+  # Sample value: 0
+- property: Softener
+  # Sample value: 1
+- property: Softener Compartment
+  # Sample value: 0
+- property: SoftenerCompartment_flag
+  # Sample value: 0
+- property: Softener_state
+  # Sample value: 0
+- property: Softer_display
+  # Sample value: 1
+- property: Softer_flag
+  # Sample value: 0
+- property: SoftnerStandardDosage
+  # Sample value: 0
+- property: SoftnerStandardDosage_flag
+  # Sample value: 0
+- property: SoilLeverFlag
+  # Sample value: 0
+- property: Soil_Lever
+  # Sample value: 2
+- property: Sound_setting
+  # Sample value: 3
+- property: SpinSpeedUseIndex
+  # Sample value: 0
+- property: Spin_speed_rpm
+  # Sample value: 8
+- property: Spintime_Index
+  # Sample value: 0
+- property: Stain_removal
+  # Sample value: 0
+- property: StandardElectricitConsumption_int
+  # Sample value: 0
+- property: StandardElectricitconsumption_decimal
+  # Sample value: 0
+- property: StandardWaterConsumption_decimal
+  # Sample value: 0
+- property: StandardWaterConsumption_int
+  # Sample value: 0
+- property: Steam
+  # Sample value: 0
+- property: Temp_Index
+  # Sample value: 0
+- property: Temp_wave
+  # Sample value: 0
+- property: Temp_wave_flag
+  # Sample value: 0
+- property: Temperature_0_DefaultMainWashTime
+  # Sample value: 0
+- property: Temperature_2_DefaultMainWashTime
+  # Sample value: 0
+- property: Temperature_3_DefaultMainWashTime
+  # Sample value: 0
+- property: Temperature_4_DefaultMainWashTime
+  # Sample value: 0
+- property: Temperature_6_DefaultMainWashTime
+  # Sample value: 0
+- property: Temperature_9_DefaultMainWashTime
+  # Sample value: 0
+- property: Temperature_Default_DefaultMainWashTime
+  # Sample value: 202
+- property: Testdata_data
+  # Sample value: 0
+- property: Testdata_month
+  # Sample value: 0
+- property: Testdata_year
+  # Sample value: 0
+- property: Time_Save
+  # Sample value: 0
+- property: UV_Light
+  # Sample value: 0
+- property: WarmWaterWashing
+  # Sample value: 0
+- property: WashingTimeIndex
+  # Sample value: 0
+- property: WashingWizzard_Cloth
+  # Sample value: 0
+- property: WashingWizzard_Cloth_colour
+  # Sample value: 0
+- property: WashingWizzard_Cloth_colour_fifth
+  # Sample value: 0
+- property: WashingWizzard_Cloth_colour_fourth
+  # Sample value: 0
+- property: WashingWizzard_Cloth_colour_second
+  # Sample value: 0
+- property: WashingWizzard_Cloth_colour_third
+  # Sample value: 0
+- property: WashingWizzard_Cloth_dirty
+  # Sample value: 0
+- property: WashingWizzard_Cloth_dirty_first
+  # Sample value: 0
+- property: WashingWizzard_Cloth_dirty_second
+  # Sample value: 0
+- property: WashingWizzard_Cloth_dirty_third
+  # Sample value: 0
+- property: WashingWizzard_Cloth_olour_first
+  # Sample value: 0
+- property: WashingWizzard_Cloth_sensitive
+  # Sample value: 0
+- property: WashingWizzard_Cloth_sensitive_first
+  # Sample value: 0
+- property: WashingWizzard_Cloth_sensitive_second
+  # Sample value: 0
+- property: WashingWizzard_Cloth_sensitive_third
+  # Sample value: 0
+- property: WashingWizzard_Cloth_stains_eighth
+  # Sample value: 0
+- property: WashingWizzard_Cloth_stains_fifth
+  # Sample value: 0
+- property: WashingWizzard_Cloth_stains_first
+  # Sample value: 0
+- property: WashingWizzard_Cloth_stains_fourth
+  # Sample value: 0
+- property: WashingWizzard_Cloth_stains_ninth
+  # Sample value: 0
+- property: WashingWizzard_Cloth_stains_second
+  # Sample value: 0
+- property: WashingWizzard_Cloth_stains_seventh
+  # Sample value: 0
+- property: WashingWizzard_Cloth_stains_sixth
+  # Sample value: 0
+- property: WashingWizzard_Cloth_stains_third
+  # Sample value: 0
+- property: WashingWizzard_ClothingType
+  # Sample value: 0
+- property: WashingWizzard_ClothingType_eighth
+  # Sample value: 0
+- property: WashingWizzard_ClothingType_eleventh
+  # Sample value: 0
+- property: WashingWizzard_ClothingType_fifth
+  # Sample value: 0
+- property: WashingWizzard_ClothingType_first
+  # Sample value: 0
+- property: WashingWizzard_ClothingType_fourth
+  # Sample value: 0
+- property: WashingWizzard_ClothingType_ninth
+  # Sample value: 0
+- property: WashingWizzard_ClothingType_second
+  # Sample value: 0
+- property: WashingWizzard_ClothingType_seventh
+  # Sample value: 0
+- property: WashingWizzard_ClothingType_sixth
+  # Sample value: 0
+- property: WashingWizzard_ClothingType_tenth
+  # Sample value: 0
+- property: WashingWizzard_ClothingType_third
+  # Sample value: 0
+- property: WashingWizzard_ClothingType_thirteenth
+  # Sample value: 0
+- property: WashingWizzard_ClothingType_twelfth
+  # Sample value: 0
+- property: WashingWizzard_flag
+  # Sample value: 0
+- property: Washing_drying_linkage_flag
+  # Sample value: 0
+- property: Washing_drying_linkage_state
+  # Sample value: 0
+- property: WaterLevel
+  # Sample value: 0
+- property: WaterLevelFlag
+  # Sample value: 0
+- property: WaterLevelIndex
+  # Sample value: 0
+- property: Water_consumption_decimal
+  # Sample value: 66
+- property: Water_consumption_int
+  sensor:
+    read_only: true
+    state_class: total_increasing
+    device_class: water
+    unit: L
+  # Sample value: 58
+- property: Water_hardness_setting
+  # Sample value: 0
+- property: WindDrying
+  # Sample value: 0
+- property: WindDryingFlag
+  # Sample value: 0
+- property: Zibian_program_ID
+  # Sample value: 0
+- property: add_clothes_check
+  # Sample value: 0
+- property: daily_energy_kwh
+  sensor:
+    read_only: true
+    state_class: total_increasing
+    device_class: energy
+    unit: kWh
+  # Sample value: 0
+- property: delay_actions_flag
+  # Sample value: 0
+- property: delayclose_flag
+  # Sample value: 0
+- property: dry_lever
+  # Sample value: 0
+- property: dry_time
+  # Sample value: 0
+- property: error_code
+  # Sample value: 0
+- property: hottime
+  # Sample value: 0
+- property: machine_status
+  # Sample value: 0
+- property: mainwashtime
+  # Sample value: 0
+- property: mainwashtime_flag
+  # Sample value: 0
+- property: mian_wash_time
+  # Sample value: 52
+- property: mute
+  # Sample value: 0
+- property: once strong step time
+  # Sample value: 0
+- property: once_rinse_step_time
+  # Sample value: 5
+- property: order_time_minimum_hour
+  # Sample value: 1
+- property: parse_lib_ota
+  # Sample value: 0
+- property: parse_lib_ver
+  # Sample value: 20241114
+- property: rinse_flag
+  # Sample value: 0
+- property: softener_tank
+  # Sample value: 0
+- property: speed_flag
+  # Sample value: 0
+- property: spin_time
+  # Sample value: 0
+- property: stoprunning_flag
+  # Sample value: 0
+- property: tankclean
+  # Sample value: 0
+- property: temp_runing_flag
+  # Sample value: 0
+- property: temperature
+  # Sample value: 9
+- property: time_autoflag
+  # Sample value: 0
+- property: timezone
+  # Sample value: 0
+- property: washFunction1
+  # Sample value: 0
+- property: wash_step_time_drain_water_spin_and_stop
+  # Sample value: 7
+- property: washing_machine_type
+  # Sample value: 0
+- property: washing_machine_type_kg
+  # Sample value: 24
+- property: washing_machine_type_max_speed
+  # Sample value: 14
+- property: washing_program_kg
+  # Sample value: 0
+- property: washingtime
+  # Sample value: 0
+- property: waterlevel_runing_flag
+  # Sample value: 0
