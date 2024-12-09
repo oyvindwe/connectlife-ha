@@ -31,25 +31,31 @@ visibility.
 
 ### Known devices
 
-| Device name  | Device type     | Device type code | Device feature code |
-|--------------|-----------------|------------------|---------------------|
-| AP10TW1RLR-N | Air conditioner | 006              | 200                 |
-|              | Air conditioner | 006              | 201                 |
-|              | Dehumidifier    | 007              | 400                 |
-|              | Dehumidifier    | 007              | 406                 |
-|              | Air conditioner | 009              | 100                 |
-|              | Air conditioner | 009              | 104                 |
-|              | Air conditioner | 009              | 106                 |
-|              | Air conditioner | 009              | 109                 |
-|              | Air conditioner | 009              | 117                 |
-|              | Air conditioner | 009              | 128                 |
-|              | Air conditioner | 009              | 129                 |
-| W-DW50/60-22 | Dishwasher      | 015              | 000                 |
-|              | Heat pump       | 016              | 502                 |
-|              | Induction hob   | 020              | 63c45b513e1a4bf7    |
-|              | Oven            | 023              | 295608422d362be1    |
-|              | Refrigerator    | 026              | 1b0610z0049j        |
-| DPNA83W      | Tumble dryer    | 032              | 000                 |
+| Device name     | Device type     | Device type code | Device feature code |
+|-----------------|-----------------|------------------|---------------------|
+| AP10TW1RLR-N    | Air conditioner | 006              | 200                 |
+|                 | Air conditioner | 006              | 201                 |
+|                 | Dehumidifier    | 007              | 400                 |
+|                 | Dehumidifier    | 007              | 406                 |
+|                 | Air conditionr  | 008              | 304                 |
+|                 | Air conditioner | 009              | 100                 |
+|                 | Air conditioner | 009              | 104                 |
+|                 | Air conditioner | 009              | 106                 |
+|                 | Air conditioner | 009              | 109                 |
+|                 | Air conditioner | 009              | 117                 |
+|                 | Air conditioner | 009              | 128                 |
+|                 | Air conditioner | 009              | 129                 |
+|                 | Hood            | 012              | 000                 |
+| W-DW50/60-22    | Dishwasher      | 015              | 000                 |
+|                 | Heat pump       | 016              | 502                 |
+|                 | Induction hob   | 020              | 63c45b513e1a4bf7    |
+|                 | Oven            | 023              | 295608422d362be1    |
+| WFSE1214-MVW002 | Washing machine | 025              | 1wj120389v0b        |
+|                 | Refrigerator    | 026              | 1b0610z0049j        |
+| DH3S802BW3      | Tumble dryer    | 030              | 1wk080066v0w        |
+| DH5S102BW       | Tumble dryer    | 030              | 1wk100028v0w        |
+| DHSE10          | Tumble dryer    | 030              | 1wk100130v0f        |
+| DPNA83W         | Tumble dryer    | 032              | 000                 |
 
 Please, please, please contribute PRs with [mapping files](custom_components/connectlife/data_dictionaries) for your devices!
 
