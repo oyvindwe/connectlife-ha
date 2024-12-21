@@ -3,7 +3,6 @@ import logging
 
 from homeassistant.components.water_heater import (
     WaterHeaterEntity,
-    WaterHeaterEntityEntityDescription,
     WaterHeaterEntityFeature,
 )
 from homeassistant.config_entries import ConfigEntry
@@ -16,6 +15,7 @@ from homeassistant.const import (
     UnitOfTemperature,
 )
 from homeassistant.core import HomeAssistant, callback
+from homeassistant.helpers.entity import EntityDescription
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
 from .const import (
@@ -34,6 +34,10 @@ from .utils import to_temperature_map, normalize_temperature_unit
 from connectlife.appliance import ConnectLifeAppliance
 
 _LOGGER = logging.getLogger(__name__)
+
+
+class WaterHeaterEntityDescription(EntityDescription, frozen_or_thawed=True):
+    """Class to avoid incompatibility with Home Assistant 2025.1."""
 
 
 async def async_setup_entry(
@@ -88,7 +92,7 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
         """Initialize the entity."""
         super().__init__(coordinator, appliance, "waterheater", Platform.WATER_HEATER, config_entry)
 
-        self.entity_description = WaterHeaterEntityEntityDescription(
+        self.entity_description = WaterHeaterEntityDescription(
             key=self._attr_unique_id,
             name=appliance.device_nickname,
             translation_key=DOMAIN
