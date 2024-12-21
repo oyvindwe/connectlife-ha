@@ -46,7 +46,7 @@ You need to restart Home Assistant to load mapping changes.
   ```bash
   python -m scripts.gen_strings
   ```
-  and then edit the added strings. Finally, merge the changes into [translations/en.json].
+  and then edit the added strings. Finally, merge the changes into [translations/en.json](translations/en.json).
 
 Note that translation keys must be lowercase!
 
