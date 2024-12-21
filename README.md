@@ -47,6 +47,7 @@ visibility.
 |                 | Air conditioner | 009              | 129                 |
 |                 | Hood            | 012              | 000                 |
 | W-DW50/60-22    | Dishwasher      | 015              | 000                 |
+| W-DW50/60-22    | Dishwasher      | 015              | dishwasher-60.2     |
 |                 | Heat pump       | 016              | 502                 |
 |                 | Induction hob   | 020              | 63c45b513e1a4bf7    |
 |                 | Oven            | 023              | 295608422d362be1    |
