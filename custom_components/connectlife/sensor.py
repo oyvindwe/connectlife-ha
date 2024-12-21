@@ -15,7 +15,7 @@ from .coordinator import ConnectLifeCoordinator
 from .dictionaries import Dictionaries, Dictionary, Property
 from .entity import ConnectLifeEntity
 from connectlife.api import LifeConnectError
-from connectlife.appliance import ConnectLifeAppliance
+from connectlife.appliance import ConnectLifeAppliance, MAX_DATETIME
 from .utils import is_entity, to_unit
 
 SERVICE_SET_VALUE = "set_value"
@@ -73,6 +73,8 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
         elif (device_class is None
               and isinstance(self.coordinator.data[self.device_id].status_list[status], datetime.datetime)):
             device_class = SensorDeviceClass.TIMESTAMP
+        if device_class == SensorDeviceClass.TIMESTAMP and self.unknown_value is None:
+            self.unknown_value = MAX_DATETIME
         state_class = dd_entry.sensor.state_class
         if (state_class is None
                 and isinstance(self.coordinator.data[self.device_id].status_list[status], int)
