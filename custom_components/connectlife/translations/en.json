@@ -844,6 +844,14 @@
             "f_votage": {
                 "name": "Measured grid voltage"
             },
+            "feedback_volumen_setting_status": {
+                "state": {
+					"mute": "Mute",
+                    "low": "Low",
+                    "mid": "Mid",
+                    "high": "High"
+                }
+            },
             "freeze_real_temperature": {
                 "name": "Freezer real temperature"
             },
@@ -1222,6 +1230,24 @@
                     "rectangle_vertical": "Vertical rectangle",
                     "rectangle_horizontal": "Horizontal Rectangle",
                     "no_shape": "No shape"
+                }
+            },
+            "selected_program_id_status": {
+                "state": {
+					"auto": "Auto",
+                    "eco": "Eco",
+                    "one_hour": "1 hour",
+                    "intensive": "Intensive",
+                    "glass": "Glass",
+                    "hygiene": "Hygiene",
+                    "night": "Night",
+                    "clean": "Clean"
+                }
+            },
+            "selected_program_mode": {
+                "state": {
+					"normal": "Normal",
+                    "fast": "Fast"
                 }
             },
             "step1_duration": {
