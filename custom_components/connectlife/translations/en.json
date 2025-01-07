@@ -84,6 +84,16 @@
                     "description": "Value to set."
                 }
             }
+        },
+        "set_action": {
+            "name": "Set action",
+            "description": "Sets action for device. Use with care.",
+            "fields": {
+                "action": {
+                    "name": "Action",
+                    "description": "Action to set."
+                }
+            }
         }
     },
     "entity": {

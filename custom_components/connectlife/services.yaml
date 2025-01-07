@@ -8,4 +8,22 @@ set_value:
       required: true
       selector:
         number:
+set_action:
+  target:
+    device:
+      integration: connectlife
+  fields:
+    action:
+      required: true
+      selector:
+        select:
+          options:
+            - label: stop
+              value: 1
+            - label: start
+              value: 2
+            - label: pause
+              value: 3
+            - label: open_door
+              value: 4
 
