@@ -19,11 +19,11 @@ set_action:
         select:
           options:
             - label: stop
-              value: 1
+              value: "1"
             - label: start
-              value: 2
+              value: "2"
             - label: pause
-              value: 3
+              value: "3"
             - label: open_door
-              value: 4
+              value: "4"
 
