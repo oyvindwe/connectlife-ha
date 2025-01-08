@@ -97,7 +97,13 @@ properties:
     sensor:
       read_only: true
   - property: Child_lock
-    hide: true
+    unavailable: 0
+    switch:
+      "off": 1
+      "on": 2
+      command:
+        name: Child_lock_cmd
+        adjust: 1
   - property: Child_lock_setting_status
     hide: true
     sensor:
@@ -157,7 +163,6 @@ properties:
   - property: Display_logotype_setting_status
     hide: true
   - property: Door_status
-    hide: true
     sensor:
       device_class: enum
       options:
@@ -306,7 +311,7 @@ properties:
   - property: Remote_control_monitoring_set_commands
     hide: true
   - property: Remote_control_monitoring_set_commands_actions
-    hide: true
+    binary_sensor:
   - property: Rinse_aid_refill
     hide: true
   - property: Rinse_aid_setting_status

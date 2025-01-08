@@ -448,6 +448,9 @@
       "remote_control_mode_monitoring": {
         "name": "Remote control mode monitoring"
       },
+      "remote_control_monitoring_set_commands_actions": {
+        "name": "Remote control"
+      },
       "rx_failure": {
         "name": "RX failure"
       },
