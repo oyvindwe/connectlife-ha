@@ -114,9 +114,9 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
         """Set value for this sensor."""
         _LOGGER.debug("Setting %s to %d on %s", self.status, value, self.nickname)
         if self.read_only is None:
-            _LOGGER.warning("%s may be read-only on %s", self._attr_name, self.nickname)
+            _LOGGER.warning("%s may be read-only on %s", self.entity_description.name, self.nickname)
         elif self.read_only:
-            raise ServiceValidationError(f"{self._attr_name} is read-only on {self.nickname}")
+            raise ServiceValidationError(f"{self.entity_description.name} is read-only on {self.nickname}")
         try:
             await self.async_update_device({self.status: value})
         except LifeConnectError as api_error:
