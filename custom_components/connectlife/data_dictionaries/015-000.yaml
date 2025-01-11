@@ -185,7 +185,7 @@ properties:
       options:
         1: off
         2: on
-    icon: 'mdi:folder-open-outline'
+    icon: "mdi:folder-open-outline"
   - property: Energy_consumption_in_running_program
     sensor:
       unknown_value: 65535
@@ -340,7 +340,7 @@ properties:
   - property: High_temperature_status
     hide: true
   - property: Interior_light_at_power_off_setting_status
-    hide: true
+    binary_sensor:
   - property: Interior_light_status
     hide: true
   - property: Language_status
@@ -419,11 +419,15 @@ properties:
   - property: Super_rinse_on_demand_allowed
     hide: true
   - property: Super_rinse_setting_status
-    hide: true
+    switch:
+      "off": 1
+      "on": 2
   - property: Super_rinse_status
     hide: true
   - property: Tab_setting_status
-    hide: true
+    switch:
+      "off": 1
+      "on": 2
   - property: Temperature_unit_status
     hide: true
   - property: Time_program_set_duration_status
