@@ -19,16 +19,15 @@ properties:
         3: running
         4: anti_crease
         5: program_finished
-      read-only: true
+      read_only: true
   - property: Door_status
+    unavailable: 0
     icon: mdi:square-circle
-    sensor:
-      device_class: enum
+    binary_sensor:
+      device_class: door
       options:
-        0: not_available
-        1: open
-        2: closed
-      read-only: true
+        1: on
+        2: off
   - property: Drum_Light
     icon: mdi:lightbulb-on
     switch: {}
@@ -36,15 +35,15 @@ properties:
     icon: mdi:weather-sunny
     select:
       options:
-        1: 1
-        2: 2
-        3: 3
+        1: "1"
+        2: "2"
+        3: "3"
   - property: Selected_program_remaining_time_in_minutes
     icon: mdi:timer
     sensor:
       device_class: duration
       unit: min
-      read-only: true
+      read_only: true
   - property: Waterbox_Full
     icon: mdi:water-alert
     binary_sensor: {}
@@ -56,7 +55,7 @@ properties:
         0: "off"
         1: standby
         2: running
-      read-only: true
+      read_only: true
   - property: mute
     icon: mdi:volume-mute
     switch: {}

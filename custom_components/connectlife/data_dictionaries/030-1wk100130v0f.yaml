@@ -31,20 +31,20 @@ properties:
       3: running
       4: anti_crease
       5: program_finished
-    read-only: true
+    read_only: true
   # Sample value: 0
 - property: DelayEndTime_Hour
   # Sample value: 0
 - property: DelayEndTime_Minute
   # Sample value: 0
 - property: Door_status
-  sensor:
-    device_class: enum
+  unavailable: 0
+  binary_sensor:
+    device_class: door
     options:
-      0: not_available
-      1: closed
-      2: open
-  # Sample value: 1
+      1: off
+      2: on
+  icon: mdi:square-circle
 - property: DownLight_LightTime
   # Sample value: 0
 - property: Drum_Light
