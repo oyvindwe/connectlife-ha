@@ -17,13 +17,9 @@ set_action:
       required: true
       selector:
         select:
+          translation_key: actions
           options:
-            - label: stop
-              value: "1"
-            - label: start
-              value: "2"
-            - label: pause
-              value: "3"
-            - label: open_door
-              value: "4"
-
+            - "1"
+            - "2"
+            - "3"
+            - "4"

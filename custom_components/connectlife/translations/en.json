@@ -74,6 +74,16 @@
             "test_server_required": "Development mode requires test server URL"
         }
     },
+    "selector": {
+        "actions": {
+            "options": {
+                "1": "Start",
+                "2": "Stop",
+                "3": "Pause",
+                "4": "Open door"
+            }
+        }
+    },
     "services": {
         "set_value": {
             "name": "Set value",
