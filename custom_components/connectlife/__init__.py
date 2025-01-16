@@ -6,10 +6,12 @@ from homeassistant.exceptions import ConfigEntryError
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import Platform, CONF_USERNAME, CONF_PASSWORD
 from homeassistant.core import HomeAssistant
+from homeassistant.helpers import config_validation as cv
 from connectlife.api import ConnectLifeApi, LifeConnectAuthError
 
 from .const import CONF_DEVELOPMENT_MODE, CONF_TEST_SERVER_URL, DOMAIN
 from .coordinator import ConnectLifeCoordinator
+from .services import async_setup_services
 
 PLATFORMS: list[Platform] = [
     Platform.BINARY_SENSOR,
@@ -21,6 +23,16 @@ PLATFORMS: list[Platform] = [
     Platform.SWITCH,
     Platform.WATER_HEATER,
 ]
+
+CONFIG_SCHEMA = cv.config_entry_only_config_schema(DOMAIN)
+
+
+async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
+    """Set up ConnectLife."""
+
+    await async_setup_services(hass)
+
+    return True
 
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:

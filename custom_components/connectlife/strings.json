@@ -74,6 +74,16 @@
       "test_server_required": "Development mode requires test server URL"
     }
   },
+  "selector": {
+    "actions": {
+      "options": {
+        "1": "Start",
+        "2": "Stop",
+        "3": "Pause",
+        "4": "Open door"
+      }
+    }
+  },
   "services": {
     "set_value": {
       "name": "Set value",
@@ -82,6 +92,16 @@
         "value": {
           "name": "Value",
           "description": "Value to set."
+        }
+      }
+    },
+    "set_action": {
+      "name": "Set action",
+      "description": "Sets action for device. Use with care.",
+      "fields": {
+        "action": {
+          "name": "Action",
+          "description": "Action to set."
         }
       }
     }

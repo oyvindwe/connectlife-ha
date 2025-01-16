@@ -8,4 +8,18 @@ set_value:
       required: true
       selector:
         number:
-
+set_action:
+  target:
+    device:
+      integration: connectlife
+  fields:
+    action:
+      required: true
+      selector:
+        select:
+          translation_key: actions
+          options:
+            - "1"
+            - "2"
+            - "3"
+            - "4"
