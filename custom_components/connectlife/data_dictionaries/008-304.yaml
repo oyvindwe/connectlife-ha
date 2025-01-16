@@ -1,6 +1,6 @@
 climate:
   presets:
-    - preset: Bedtime
+    - preset: bedtime
       t_power: 1
       t_work_mode: 2
       t_fan_speed: 3

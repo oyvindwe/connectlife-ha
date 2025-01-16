@@ -115,14 +115,14 @@ properties:
       device_class: duration
       unit: min
   - property: Door_status
+    unavailable: 0
     hide: true
     icon: mdi:square
-    sensor:
-      device_class: enum
+    binary_sensor:
+      device_class: door
       options:
-        0: not_available
-        1: closed
-        2: open
+        1: off
+        2: on
   - property: Error_0
     hide: true
     icon: mdi:tumble-dryer-alert

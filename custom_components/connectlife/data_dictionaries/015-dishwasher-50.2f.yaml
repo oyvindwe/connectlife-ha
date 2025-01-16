@@ -157,8 +157,12 @@ properties:
     icon: mdi:information
     hide: true
   - property: Door_status
+    unavailable: 0
     binary_sensor:
       device_class: door
+      options:
+        1: off
+        2: on
     icon: 'mdi:folder-open-outline'
   - property: Energy_consumption_in_running_program
     sensor:

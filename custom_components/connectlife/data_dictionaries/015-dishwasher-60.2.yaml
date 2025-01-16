@@ -118,13 +118,14 @@ properties:
   - property: Display_logotype_setting_status
     hide: true
   - property: Door_status
+    unavailable: 0
     hide: true
-    sensor:
-      device_class: enum
+    binary_sensor:
+      device_class: door
       options:
-        0: not_available
-        1: closed
-        2: open
+        1: off
+        2: on
+    icon: 'mdi:folder-open-outline'
   - property: Energy_consumption_in_running_program
     sensor:
       unknown_value: 65535
