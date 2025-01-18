@@ -120,8 +120,9 @@ properties:
         name: Auto_dose_quantity_setting
         adjust: 1
   - property: Auto_dose_refill
-    sensor:
-      read_only: true
+    binary_sensor:
+      device_class: problem
+    icon: mdi:dishwasher-alert
   - property: Auto_dose_setting_status
     unavailable: 0
     switch:
