@@ -1,4 +1,5 @@
 """Provides number entities for ConnectLife."""
+
 import logging
 from homeassistant.components.number import NumberEntity, NumberEntityDescription
 from homeassistant.config_entries import ConfigEntry
@@ -19,20 +20,26 @@ _LOGGER = logging.getLogger(__name__)
 
 
 async def async_setup_entry(
-        hass: HomeAssistant,
-        config_entry: ConfigEntry,
-        async_add_entities: AddEntitiesCallback,
+    hass: HomeAssistant,
+    config_entry: ConfigEntry,
+    async_add_entities: AddEntitiesCallback,
 ) -> None:
     """Set up ConnectLife number entities."""
     coordinator = hass.data[DOMAIN][config_entry.entry_id]
     for appliance in coordinator.data.values():
         dictionary = Dictionaries.get_dictionary(appliance)
         async_add_entities(
-            ConnectLifeNumberEntity(coordinator, appliance, s, dictionary.properties[s], config_entry, dictionary)
-            for s in appliance.status_list if is_entity(
-                Platform.NUMBER,
+            ConnectLifeNumberEntity(
+                coordinator,
+                appliance,
+                s,
                 dictionary.properties[s],
-                appliance.status_list[s]
+                config_entry,
+                dictionary,
+            )
+            for s in appliance.status_list
+            if is_entity(
+                Platform.NUMBER, dictionary.properties[s], appliance.status_list[s]
             )
         )
 
@@ -43,13 +50,13 @@ class ConnectLifeNumberEntity(ConnectLifeEntity, NumberEntity):
     _attr_native_step = 1
 
     def __init__(
-            self,
-            coordinator: ConnectLifeCoordinator,
-            appliance: ConnectLifeAppliance,
-            status: str,
-            dd_entry: Property,
-            config_entry: ConfigEntry,
-            dictionary: Dictionary,
+        self,
+        coordinator: ConnectLifeCoordinator,
+        appliance: ConnectLifeAppliance,
+        status: str,
+        dd_entry: Property,
+        config_entry: ConfigEntry,
+        dictionary: Dictionary,
     ):
         """Initialize the entity."""
         super().__init__(coordinator, appliance, status, Platform.NUMBER, config_entry)
@@ -64,11 +71,10 @@ class ConnectLifeNumberEntity(ConnectLifeEntity, NumberEntity):
             native_max_value=dd_entry.number.max_value,
             native_min_value=dd_entry.number.min_value,
             native_unit_of_measurement=to_unit(
-                dd_entry.number.unit,
-                appliance=appliance,
-                dictionary=dictionary
+                dd_entry.number.unit, appliance=appliance, dictionary=dictionary
             ),
             translation_key=self.to_translation_key(status),
+            entity_category=dd_entry.entity_category,
         )
         self.update_state()
 

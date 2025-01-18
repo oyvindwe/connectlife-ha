@@ -1,4 +1,5 @@
 """Provides a selector for ConnectLife."""
+
 import logging
 
 from homeassistant.components.select import SelectEntity, SelectEntityDescription
@@ -18,20 +19,21 @@ _LOGGER = logging.getLogger(__name__)
 
 
 async def async_setup_entry(
-        hass: HomeAssistant,
-        config_entry: ConfigEntry,
-        async_add_entities: AddEntitiesCallback,
+    hass: HomeAssistant,
+    config_entry: ConfigEntry,
+    async_add_entities: AddEntitiesCallback,
 ) -> None:
     """Set up ConnectLife selectors."""
     coordinator = hass.data[DOMAIN][config_entry.entry_id]
     for appliance in coordinator.data.values():
         dictionary = Dictionaries.get_dictionary(appliance)
         async_add_entities(
-            ConnectLifeSelect(coordinator, appliance, s, dictionary.properties[s], config_entry)
-            for s in appliance.status_list if is_entity(
-                Platform.SELECT,
-                dictionary.properties[s],
-                appliance.status_list[s]
+            ConnectLifeSelect(
+                coordinator, appliance, s, dictionary.properties[s], config_entry
+            )
+            for s in appliance.status_list
+            if is_entity(
+                Platform.SELECT, dictionary.properties[s], appliance.status_list[s]
             )
         )
 
@@ -42,19 +44,21 @@ class ConnectLifeSelect(ConnectLifeEntity, SelectEntity):
     _attr_current_option = None
 
     def __init__(
-            self,
-            coordinator: ConnectLifeCoordinator,
-            appliance: ConnectLifeAppliance,
-            status: str,
-            dd_entry: Property,
-            config_entry: ConfigEntry,
+        self,
+        coordinator: ConnectLifeCoordinator,
+        appliance: ConnectLifeAppliance,
+        status: str,
+        dd_entry: Property,
+        config_entry: ConfigEntry,
     ):
         """Initialize the entity."""
         super().__init__(coordinator, appliance, status, Platform.SELECT, config_entry)
         self.status = status
         self.options_map = dd_entry.select.options
         self.reverse_options_map = {v: k for k, v in self.options_map.items()}
-        self.command_name = dd_entry.select.command_name if dd_entry.select.command_name else status
+        self.command_name = (
+            dd_entry.select.command_name if dd_entry.select.command_name else status
+        )
         self.command_adjust = dd_entry.select.command_adjust
         self.entity_description = SelectEntityDescription(
             key=self._attr_unique_id,
@@ -62,7 +66,8 @@ class ConnectLifeSelect(ConnectLifeEntity, SelectEntity):
             icon=dd_entry.icon,
             name=status.replace("_", " "),
             translation_key=self.to_translation_key(status),
-            options=list(self.options_map.values())
+            options=list(self.options_map.values()),
+            entity_category=dd_entry.entity_category,
         )
         self.update_state()
 
@@ -73,7 +78,12 @@ class ConnectLifeSelect(ConnectLifeEntity, SelectEntity):
             if value in self.options_map:
                 value = self.options_map[value]
             else:
-                _LOGGER.warning("Got unexpected value %d for %s (%s)", value, self.status, self.nickname)
+                _LOGGER.warning(
+                    "Got unexpected value %d for %s (%s)",
+                    value,
+                    self.status,
+                    self.nickname,
+                )
                 _value = None
             self._attr_current_option = value
 
@@ -81,5 +91,5 @@ class ConnectLifeSelect(ConnectLifeEntity, SelectEntity):
         """Change the selected option."""
         await self.async_update_device(
             {self.command_name: self.reverse_options_map[option] - self.command_adjust},
-            {self.status: self.reverse_options_map[option]}
+            {self.status: self.reverse_options_map[option]},
         )

@@ -11,6 +11,7 @@ To map you device, create a file with the name `<deviceTypeCode>-<deviceFeatureC
 or if you need help with the mapping, please open a PR on GitHub with the file!
 
 The file contains two top level items:
+
 - `climate`: top level [`Climate`](#presets) configuration.
 - `properties`: list of [`Property`](#property)
 
@@ -18,7 +19,7 @@ To make a property visible by default, just add the property to the list. Note t
 mapped to [sensor](#type-sensor) entities with `hidden` set to `true` and `state_class` set to `measurement`.
 
 Each property is mapped to _one_ entity or _one_ target property. In addition, each `climate` preset is mapped to a
-set of properties and values. 
+set of properties and values.
 
 If you disable or change the type of mapping, old entities will be automatically removed from Home Assistant, while
 state attributes will change to unavailable.
@@ -28,13 +29,15 @@ If you change unit or state class for sensors, you will need to fix the history 
 
 You need to restart Home Assistant to load mapping changes.
 
-### Mapping tips and tricks:
+### Mapping tips and tricks
 
 - Generate a skeleton file using the [connectlife](https://pypi.org/project/connectlife/) package:
+
   ```bash
   pip install connectlife
   python -m connectlife.dump --username <username> --password <password> --format dd
-  ``` 
+  ```
+
 - Inspect the existing mappings files in this directory.
 - Change settings in the ConnectLife app while monitoring value changes in Home Assistant. Take a note of which
   property is changes, what the value is, and what the button or action is named in the ConnectLife app.
@@ -43,29 +46,32 @@ You need to restart Home Assistant to load mapping changes.
   expects boolean (unquoted) values.
 - Validate your mapping file with the [JSON schema](properties-schema.json).
 - Remember to add translation strings. In the base dir of this repo, run the following command to update `strings.json`:
+
   ```bash
   python -m scripts.gen_strings
   ```
+
   and then edit the added strings. Finally, merge the changes into [translations/en.json](translations/en.json).
 
 Note that translation keys must be lowercase!
 
 ## Property
 
-| Item            | Type                               | Description                                                                                                                             |
-|-----------------|------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| `property`      | string                             | Name of status/property.                                                                                                                |
-| `disable`       | `true`, `false`                    | If Home Assistant should not create an entity for this property. Defaults to `false`.                                                   |
-| `hide`          | `true`, `false`                    | If Home Assistant should initially hide the entity for this property. Defaults to `false`, but is set to `true` for unknown properties. |
-| `icon`          | `mdi:eye`, etc.                    | Icon to use for the entity.                                                                                                             |
-| `binary_sensor` | [BinarySensor](#type-binarysensor) | Create a binary sensor of the property.                                                                                                 |
-| `climate`       | [Climate](#type-climate)           | Map the property to a climate entity for the device.                                                                                    |
-| `humidifier`    | [Humidifier](#type-humidifier)     | Map the property to a humidifier entity for the device.                                                                                 |
-| `number`        | [Number](#type-number)             | Create a number entity of the property.                                                                                                 |
-| `select`        | [Select](#type-select)             | Create a selector of the property.                                                                                                      |
-| `sensor`        | [Sensor](#type-sensor)             | Create a sensor of the property. This is the default.                                                                                   |
-| `switch`        | [Switch](#type-switch)             | Create a switch of the property.                                                                                                        |
-| `water_heater`  | [WaterHeater](#type-waterheater)   | Map the property to a water heater entity for the device.                                                                               |
+| Item                       | Type                               | Description                                                                                                                                                                                                                                                                            |
+|----------------------------|------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `property`                 | string                             | Name of status/property.                                                                                                                                                                                                                                                               |
+| `disable`                  | `true`, `false`                    | If Home Assistant should not create an entity for this property. Defaults to `false`.                                                                                                                                                                                                  |
+| `hide`                     | `true`, `false`                    | If Home Assistant should initially hide the entity for this property. Defaults to `false`, but is set to `true` for unknown properties.                                                                                                                                                |
+| `icon`                     | `mdi:eye`, etc.                    | Icon to use for the entity.                                                                                                                                                                                                                                                            |
+| `entity_category`          | `config`, `diagnostic`             | Whether the entity should be considered a diagnostics or config entity. Defaults to `None`. [More info in HA docs](https://developers.home-assistant.io/docs/core/entity/#registry-properties:~:text=automatic%20device%20registration.-,entity_category,-EntityCategory%20%7C%20None) |
+| `binary_sensor`            | [BinarySensor](#type-binarysensor) | Create a binary sensor of the property.                                                                                                                                                                                                                                                |
+| `climate`                  | [Climate](#type-climate)           | Map the property to a climate entity for the device.                                                                                                                                                                                                                                   |
+| `humidifier`               | [Humidifier](#type-humidifier)     | Map the property to a humidifier entity for the device.                                                                                                                                                                                                                                |
+| `number`                   | [Number](#type-number)             | Create a number entity of the property.                                                                                                                                                                                                                                                |
+| `select`                   | [Select](#type-select)             | Create a selector of the property.                                                                                                                                                                                                                                                     |
+| `sensor`                   | [Sensor](#type-sensor)             | Create a sensor of the property. This is the default.                                                                                                                                                                                                                                  |
+| `switch`                   | [Switch](#type-switch)             | Create a switch of the property.                                                                                                                                                                                                                                                       |
+| `water_heater`             | [WaterHeater](#type-waterheater)   | Map the property to a water heater entity for the device.                                                                                                                                                                                                                              |
 
 If an entity mapping is not given, the property is mapped to a sensor entity.
 
@@ -79,10 +85,11 @@ as `0` often implies that the sensor state is not available. For other mappings,
 
 | Item           | Type                             | Description                                                                                                                                                           |
 |----------------|----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `device_class` | `power`, `problem`, etc.         | For domain `binary_sensor`, name of any [BinarySensorDeviceClass enum](https://developers.home-assistant.io/docs/core/entity/binary-sensor#available-device-classes). |   
+| `device_class` | `power`, `problem`, etc.         | For domain `binary_sensor`, name of any [BinarySensorDeviceClass enum](https://developers.home-assistant.io/docs/core/entity/binary-sensor#available-device-classes). |
 | `options`      | dictionary of integer to boolean |                                                                                                                                                                       |
 
 Example:
+
 ```yaml
 - property: alarm
   binary_sensor:
@@ -92,7 +99,7 @@ Example:
       1: on
 ```
 
-## Type `Climate`:
+## Type `Climate`
 
 Domain `climate` can be used to map the property to a target property in a climate entity. If at least one property has
 type `climate`, a climate entity is created for the appliance.
@@ -118,6 +125,7 @@ mapping to a sensor `enum` instead.
 For `fan_mode` and `swing_mode`, remember to add [translation strings](#translation-strings) for the options.
 
 Not yet supported target properties:
+
 - `target_temperature_high`
 - `target_temperature_low`
 
@@ -128,6 +136,7 @@ that preset. You may choose to set different properties in different presets. If
 properties will not be changed when switching to that preset.
 
 E.g.:
+
 ```yaml
 climate:
   presets:
@@ -144,11 +153,11 @@ Remember to add [translation strings](#translation-strings) for preset modes.
 
 Since multiple states may match a given preset, the first matching preset of the list will be displayed in the UI.
 E.g. with the above preset definitions, if `t_eco` is 1, `t_fan_speed` is 0, _and_ `t_tms` is 1, `eco` will be displayed
-as the selected preset. 
+as the selected preset.
 
 Presets only has effect for devices with climate mappings.
 
-## Type `Humidifier`:
+## Type `Humidifier`
 
 Domain `humidifier` can be used to map the property to a target property in a humidifier entity. If at least one property has
 type `humidifier`, a humidifier entity is created for the appliance.
@@ -157,7 +166,7 @@ type `humidifier`, a humidifier entity is created for the appliance.
 |----------------|---------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `target`       | string                          | Any  of these [humidifier entity](https://developers.home-assistant.io/docs/core/entity/humidifier#properties) attributes: `action`, `is_on`, `current_humidity`, `target_humidity`, `mode`. |
 | `options`      | dictionary of integer to string | Required for `action` and `mode`.                                                                                                                                                            |
-| `device_class` | string                          | Name of any [HumidifierDeviceClass enum](https://developers.home-assistant.io/docs/core/entity/humidifier#available-device-classes).                                                         |                                                                                                                         
+| `device_class` | string                          | Name of any [HumidifierDeviceClass enum](https://developers.home-assistant.io/docs/core/entity/humidifier#available-device-classes).                                                         |
 
 It is sufficient to set `device_class` on one property. The value of the first encountered property is used.
 
@@ -175,7 +184,7 @@ Number entities can be set by the user.
 |-----------------|-------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
 | `min_value`     | integer                                         | Minimum value.                                                                                                                |
 | `max_value`     | integer                                         | Maximum value.                                                                                                                |
-| `device_class`  | `duration`, `energy`, `water`, etc.             | Name of any [NumberDeviceClass enum](https://developers.home-assistant.io/docs/core/entity/number/#available-device-classes). | 
+| `device_class`  | `duration`, `energy`, `water`, etc.             | Name of any [NumberDeviceClass enum](https://developers.home-assistant.io/docs/core/entity/number/#available-device-classes). |
 | `unit`          | `min`, `°C`, `°F`, etc., _or_ `property.<name>` | Required if `device_class` is set, except not allowed when `device_class` is `aqi` or `ph`.                                   |
 
 ## Type `Select`
@@ -188,14 +197,14 @@ Remember to add [translation strings](#translation-strings) for the options.
 
 ## Type `Sensor`
 
-Sensor entities are usually read-only, but this integration provides a `set_value` service that can be applied on 
+Sensor entities are usually read-only, but this integration provides a `set_value` service that can be applied on
 the `sensor.connectlife` entities, unless the sensor is set to `read_only: true`.
 
 | Item            | Type                                            | Description                                                                                                                                                                                                               |
 |-----------------|-------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `read_only`     | `true`, `false`                                 | If this property is known to be read-only (prevents `set_value` service).                                                                                                                                                 |
 | `state_class`   | `measurement`, `total`, `total_increasing`      | Name of any [SensorStateClass enum](https://developers.home-assistant.io/docs/core/entity/sensor/#available-state-classes). For integer properties, defaults to `measurement`. Not allowed when `device_class` is `enum`. |
-| `device_class`  | `duration`, `energy`, `water`, etc.             | Name of any [SensorDeviceClass enum](https://developers.home-assistant.io/docs/core/entity/sensor/#available-device-classes).                                                                                             | 
+| `device_class`  | `duration`, `energy`, `water`, etc.             | Name of any [SensorDeviceClass enum](https://developers.home-assistant.io/docs/core/entity/sensor/#available-device-classes).                                                                                             |
 | `unit`          | `min`, `kWh`, `L`, etc., _or_ `property.<name>` | Required if `device_class` is set, except not allowed when `device_class` is `aqi`, `ph` or `enum`.                                                                                                                       |
 | `options`       | dictionary of integer to string                 | Required if `device_class` is set to `enum`.                                                                                                                                                                              |
 | `unknown_value` | integer                                         | The value used by the API to signal unknown value.                                                                                                                                                                        |
@@ -209,7 +218,7 @@ For device class `enum`, remember to add [translation strings](#translation-stri
 | `off` | integer | Off value. Defaults to 0. |
 | `on`  | integer | On value. Defaults to 1.  |
 
-## Type `WaterHeater`:
+## Type `WaterHeater`
 
 Domain `water_heater` can be used to map the property to a target property in a water heater entity. If at least one property has
 type `water_heater`, a water heater entity is created for the appliance.
@@ -217,7 +226,7 @@ type `water_heater`, a water heater entity is created for the appliance.
 | Item            | Type                                               | Description                                                                                                                                                                                                                                                  |
 |-----------------|----------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `target`        | string                                             | Any  of these [water heater entity](https://developers.home-assistant.io/docs/core/entity/water-heater#properties) attributes: `current_operation`, `current_temperature`, `state`, `target_temperature`, `temperature_unit`, or the special target `is_on`. |
-| `options`       | dictionary of integer to string or boolean         | Required for `current_operation`, `is_away_mode_on`, state`, and `temperature_unit`.                                                                                                                                                                         |
+| `options`       | dictionary of integer to string or boolean         | Required for `current_operation`, `is_away_mode_on`, state`, and`temperature_unit`.                                                                                                                                                                         |
 | `unknown_value` | integer                                            | The value used by the API to signal unknown value.                                                                                                                                                                                                           |
 | `min_value`     | [IntegerOrTemperature](#type-integerortemperature) | Minimum allowed value. Supported for `target_temperature` (temperature).                                                                                                                                                                                     |
 | `max_value`     | [IntegerOrTemperature](#type-integerortemperature) | Maximum allowed value. Supported for `target_temperature` (temperature).                                                                                                                                                                                     |
@@ -230,10 +239,11 @@ type `water_heater`, a water heater entity is created for the appliance.
 
 `is_on` adds operation `"off"` to the operation list. You may define this option as well on the `current_operation`
 target, but will not send in the mapped property or value when selecing the "Off" operation in Home Assistant.
-If `current_operation` is not set, `is_on` also adds operation `"on"` to the operation list. 
+If `current_operation` is not set, `is_on` also adds operation `"on"` to the operation list.
 
 For `current_operation`, remember to add [translation strings](#translation-strings) for the options.
 Note that you need to add these under `state`, and **not** under `state_attributes`, e.g.:
+
 ```json
 {
   "entity": {
@@ -249,6 +259,7 @@ Note that you need to add these under `state`, and **not** under `state_attribut
 ```
 
 Not yet supported target properties:
+
 - `target_temperature_high`
 - `target_temperature_low`
 
@@ -259,7 +270,9 @@ Either just a numeric value, or values in Celsius and/or Fahrenheit.
 ```yaml
 min_value: 10
 ```
+
 or
+
 ```yaml
 min_value:
   celsius: 0
@@ -271,6 +284,7 @@ min_value:
 Some devices have support for switching temperature unit between Celsius and Fahrenheit. For _Climate_ and _Water heater_
 entities, this is controlled by setting target `temperature_unit`. For _Number_ and _Sensor_ entities, `unit` can be set
 to `property.<name>`, where `<name>` must be a property in the same mapping file that is one of:
+
 - A _Climate_ entity with target `temperature_unit`
 - A _Select_ entity
 - A _Sensor_ entity with `device_type: enum`
@@ -280,6 +294,7 @@ mapping the numeric mapping to the translation _key_ (in the YAML mapping file, 
 
 For example, this will set the unit of `Meat_probe_measured_temperature` to Celsius if `Oven_temperature_unit` is `1`
 when the component is loaded:
+
 ```yaml
 - property: Meat_probe_measured_temperature
   sensor:
@@ -300,12 +315,13 @@ Note that units `°C`, `C`, `celsius`, and `Celsius` are normalized to `UnitOfTe
 
 # Translation strings
 
-By default, sensor entities are named by replacing `_` with ` ` in the property name. However, the property name is also
+By default, sensor entities are named by replacing `_` with `` in the property name. However, the property name is also
 the translation key for the property, so it is possible to add a different English entity name as well as provide
 translations by adding the property to [strings.json](../strings.json), and then to any [translations](../translations)
 files.
 
 For example, given the following data dictionary:
+
 ```yaml
 properties:
   - property: Door_status
@@ -318,6 +334,7 @@ properties:
 ```
 
 This goes into  [strings.json](../strings.json) and  [en.json](../translations/en.json),
+
 ```json
 {
   "entity": {
@@ -335,9 +352,10 @@ This goes into  [strings.json](../strings.json) and  [en.json](../translations/e
 }
 ```
 
-Climate and humidifier modes must be registered as `state_attributes`.  
+Climate and humidifier modes must be registered as `state_attributes`.
 
 For example, given the following data dictionary:
+
 ```yaml
 properties:
   - property: t_fan_speed
@@ -354,6 +372,7 @@ properties:
 
 Strings not in Home Assistant ([climate](https://github.com/home-assistant/core/blob/dev/homeassistant/components/climate/strings.json)
 [humidifier](https://github.com/home-assistant/core/blob/dev/homeassistant/components/humidifier/strings.json)) goes in [strings.json](../strings.json) and  [en.json](../translations/en.json):
+
 ```json
 {
   "entity": {
