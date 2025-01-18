@@ -1,7 +1,11 @@
 """Provides a binary sensor for ConnectLife."""
+
 import logging
 
-from homeassistant.components.binary_sensor import BinarySensorEntity, BinarySensorEntityDescription
+from homeassistant.components.binary_sensor import (
+    BinarySensorEntity,
+    BinarySensorEntityDescription,
+)
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant, callback
@@ -18,20 +22,23 @@ _LOGGER = logging.getLogger(__name__)
 
 
 async def async_setup_entry(
-        hass: HomeAssistant,
-        config_entry: ConfigEntry,
-        async_add_entities: AddEntitiesCallback,
+    hass: HomeAssistant,
+    config_entry: ConfigEntry,
+    async_add_entities: AddEntitiesCallback,
 ) -> None:
     """Set up ConnectLife sensors."""
     coordinator = hass.data[DOMAIN][config_entry.entry_id]
     for appliance in coordinator.data.values():
         dictionary = Dictionaries.get_dictionary(appliance)
         async_add_entities(
-            ConnectLifeBinaryStatusSensor(coordinator, appliance, s, dictionary.properties[s])
-            for s in appliance.status_list if is_entity(
+            ConnectLifeBinaryStatusSensor(
+                coordinator, appliance, s, dictionary.properties[s]
+            )
+            for s in appliance.status_list
+            if is_entity(
                 Platform.BINARY_SENSOR,
                 dictionary.properties[s],
-                appliance.status_list[s]
+                appliance.status_list[s],
             )
         )
 
@@ -40,11 +47,11 @@ class ConnectLifeBinaryStatusSensor(ConnectLifeEntity, BinarySensorEntity):
     """Sensor class for ConnectLife arbitrary status."""
 
     def __init__(
-            self,
-            coordinator: ConnectLifeCoordinator,
-            appliance: ConnectLifeAppliance,
-            status: str,
-            dd_entry: Property
+        self,
+        coordinator: ConnectLifeCoordinator,
+        appliance: ConnectLifeAppliance,
+        status: str,
+        dd_entry: Property,
     ):
         """Initialize the entity."""
         super().__init__(coordinator, appliance, status, Platform.BINARY_SENSOR)
@@ -56,7 +63,8 @@ class ConnectLifeBinaryStatusSensor(ConnectLifeEntity, BinarySensorEntity):
             icon=dd_entry.icon,
             name=status.replace("_", " "),
             translation_key=self.to_translation_key(status),
-            device_class=dd_entry.binary_sensor.device_class
+            device_class=dd_entry.binary_sensor.device_class,
+            entity_category=dd_entry.entity_category,
         )
         self.update_state()
 

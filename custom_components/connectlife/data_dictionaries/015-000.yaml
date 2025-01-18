@@ -194,102 +194,135 @@ properties:
   - property: Error_F70
     icon: mdi:dishwasher-alert
     hide: true
+    entity_category: diagnostic
   - property: Error_F76
     icon: mdi:dishwasher-alert
     hide: true
+    entity_category: diagnostic
   - property: Error_f10
     icon: mdi:dishwasher-alert
     hide: true
+    entity_category: diagnostic
   - property: Error_f11
     icon: mdi:dishwasher-alert
     hide: true
+    entity_category: diagnostic
   - property: Error_f12
     icon: mdi:dishwasher-alert
     hide: true
+    entity_category: diagnostic
   - property: Error_f40
     icon: mdi:dishwasher-alert
     hide: true
+    entity_category: diagnostic
   - property: Error_f41
     icon: mdi:dishwasher-alert
     hide: true
+    entity_category: diagnostic
   - property: Error_f42
     icon: mdi:dishwasher-alert
     hide: true
+    entity_category: diagnostic
   - property: Error_f43
     icon: mdi:dishwasher-alert
     hide: true
+    entity_category: diagnostic
   - property: Error_f44
     icon: mdi:dishwasher-alert
     hide: true
+    entity_category: diagnostic
   - property: Error_f45
     icon: mdi:dishwasher-alert
     hide: true
+    entity_category: diagnostic
   - property: Error_f46
     icon: mdi:dishwasher-alert
     hide: true
+    entity_category: diagnostic
   - property: Error_f52
     icon: mdi:dishwasher-alert
     hide: true
+    entity_category: diagnostic
   - property: Error_f54
     icon: mdi:dishwasher-alert
     hide: true
+    entity_category: diagnostic
   - property: Error_f56
     icon: mdi:dishwasher-alert
     hide: true
+    entity_category: diagnostic
   - property: Error_f61
     icon: mdi:dishwasher-alert
     hide: true
+    entity_category: diagnostic
   - property: Error_f62
     icon: mdi:dishwasher-alert
     hide: true
+    entity_category: diagnostic
   - property: Error_f65
     icon: mdi:dishwasher-alert
     hide: true
+    entity_category: diagnostic
   - property: Error_f67
     icon: mdi:dishwasher-alert
     hide: true
+    entity_category: diagnostic
   - property: Error_f68
     icon: mdi:dishwasher-alert
     hide: true
+    entity_category: diagnostic
   - property: Error_f69
     icon: mdi:dishwasher-alert
     hide: true
+    entity_category: diagnostic
   - property: Error_f72
     icon: mdi:dishwasher-alert
     hide: true
+    entity_category: diagnostic
   - property: Error_f74
     icon: mdi:dishwasher-alert
     hide: true
+    entity_category: diagnostic
   - property: Error_f75
     icon: mdi:dishwasher-alert
     hide: true
+    entity_category: diagnostic
   - property: Error_read_out_1_code
     icon: mdi:dishwasher-alert
     hide: true
+    entity_category: diagnostic
   - property: Error_read_out_1_cycle
     icon: mdi:dishwasher-alert
     hide: true
+    entity_category: diagnostic
   - property: Error_read_out_1_status
     icon: mdi:dishwasher-alert
     hide: true
+    entity_category: diagnostic
   - property: Error_read_out_2_code
     icon: mdi:dishwasher-alert
     hide: true
+    entity_category: diagnostic
   - property: Error_read_out_2_cycle
     icon: mdi:dishwasher-alert
     hide: true
+    entity_category: diagnostic
   - property: Error_read_out_2_status
     icon: mdi:dishwasher-alert
     hide: true
+    entity_category: diagnostic
   - property: Error_read_out_3_code
     icon: mdi:dishwasher-alert
     hide: true
+    entity_category: diagnostic
   - property: Error_read_out_3_cycle
     icon: mdi:dishwasher-alert
     hide: true
+    entity_category: diagnostic
   - property: Error_read_out_3_status
     icon: mdi:dishwasher-alert
     hide: true
+    entity_category: diagnostic
   - property: FOTA_status
     hide: true
   - property: Fan_sequence_setting_status

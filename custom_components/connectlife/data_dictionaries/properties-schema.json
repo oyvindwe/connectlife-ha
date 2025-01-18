@@ -101,6 +101,14 @@
         "unavailable": {
           "type": "integer",
           "description": "If the property has this value, it is not available on the device, and no entity is created."
+        },
+        "device_category": {
+          "type": "string",
+          "description": "https://developers.home-assistant.io/docs/core/entity/#registry-properties:~:text=automatic%20device%20registration.-,entity_category,-EntityCategory%20%7C%20None",
+          "enum": [
+            "config",
+            "diagnostic"
+          ]
         }
       },
       "required": [
@@ -241,7 +249,9 @@
           "$ref": "#/definitions/Command"
         }
       },
-      "required": ["options"]
+      "required": [
+        "options"
+      ]
     },
     "Sensor": {
       "type": "object",
@@ -397,7 +407,7 @@
         "humidifier"
       ],
       "title": "Humidifier device class."
-      },
+    },
     "SensorDeviceClass": {
       "type": "string",
       "enum": [
