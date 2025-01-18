@@ -358,7 +358,13 @@ properties:
   - property: High_temperature_status
     hide: true
   - property: Interior_light_at_power_off_setting_status
-    binary_sensor:
+    unavailable: 0
+    switch:
+      "off": 1
+      "on": 2
+      command:
+        name: Interior_light_at_power_off_setting
+        adjust: 1
   - property: Interior_light_status
     hide: true
   - property: Language_status
