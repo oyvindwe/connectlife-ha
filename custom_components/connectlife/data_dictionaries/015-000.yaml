@@ -387,7 +387,9 @@ properties:
   - property: Remote_control_monitoring_set_commands_actions
     binary_sensor:
   - property: Rinse_aid_refill
-    hide: true
+    binary_sensor:
+      device_class: problem
+    icon: mdi:dishwasher-alert
   - property: Rinse_aid_setting_status
     hide: true
   - property: Sani_Lock
