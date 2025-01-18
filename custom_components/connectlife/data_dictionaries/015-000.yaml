@@ -439,15 +439,23 @@ properties:
   - property: Super_rinse_on_demand_allowed
     hide: true
   - property: Super_rinse_setting_status
+    unavailable: 0
     switch:
       "off": 1
       "on": 2
+      command:
+        name: Super_rinse_setting
+        adjust: 1
   - property: Super_rinse_status
     hide: true
   - property: Tab_setting_status
+    unavailable: 0
     switch:
       "off": 1
       "on": 2
+      command:
+        name: Tab_setting
+        adjust: 1
   - property: Temperature_unit_status
     hide: true
   - property: Time_program_set_duration_status
