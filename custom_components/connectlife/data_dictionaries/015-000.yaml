@@ -4,80 +4,98 @@ properties:
     sensor:
       read_only: true
   - property: Alarm_auto_dose_refill
+    entity_category: diagnostic
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_Autodose_level10
+    entity_category: diagnostic
     hide: true
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_Autodose_level20
+    entity_category: diagnostic
     hide: true
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_External_autodose_level15
+    entity_category: diagnostic
     hide: true
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_External_autodose_level30
+    entity_category: diagnostic
     hide: true
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_clean_the_filters
+    entity_category: diagnostic
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_door_closed
+    entity_category: diagnostic
     hide: true
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_door_opened
+    entity_category: diagnostic
     hide: true
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_preheating_ready
+    entity_category: diagnostic
     hide: true
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_program_done
+    entity_category: diagnostic
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_program_pause
+    entity_category: diagnostic
     hide: true
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_remote_start_canceled
+    entity_category: diagnostic
     hide: true
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_rinse_aid_refill
+    entity_category: diagnostic
+    hide: true
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_Rinse_aid_refill_external
+    entity_category: diagnostic
     hide: true
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_run_selfcleaning
+    entity_category: diagnostic
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_salt_refill
+    entity_category: diagnostic
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_Sani_program_finished
+    entity_category: diagnostic
     hide: true
     binary_sensor:
       device_class: problem
