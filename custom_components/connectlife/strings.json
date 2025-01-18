@@ -766,14 +766,8 @@
       "auto_dose_duration": {
         "name": "Auto dose duration"
       },
-      "auto_dose_quantity_setting_status": {
-        "name": "Auto dose quantity setting"
-      },
       "auto_dose_refill": {
         "name": "Auto dose refill"
-      },
-      "auto_dose_setting_status": {
-        "name": "Auto dose setting"
       },
       "bundling_humidity": {
         "name": "Bundling humidity"
@@ -981,9 +975,6 @@
       },
       "notification_volumen_setting_status": {
         "name": "Notification volume"
-      },
-      "odor_control_setting": {
-        "name": "Odor control setting"
       },
       "oven_temperature": {
         "name": "Oven temperature"
@@ -1561,6 +1552,9 @@
       "anticrease": {
         "name": "Anti crease"
       },
+      "auto_dose_setting_status": {
+        "name": "Auto dose"
+      },
       "autodose": {
         "name": "Auto dose"
       },
@@ -1584,6 +1578,9 @@
       },
       "natural_dry": {
         "name": "Natural dry"
+      },
+      "odor_control_setting": {
+        "name": "Odor control"
       },
       "t_air": {
         "name": "Air"
@@ -1617,6 +1614,9 @@
       }
     },
     "select": {
+      "auto_dose_quantity_setting_status": {
+        "name": "Auto dose quantity"
+      },
       "dry_level": {
         "name": "Drying level",
         "state": {

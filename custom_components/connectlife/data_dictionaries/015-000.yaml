@@ -88,14 +88,30 @@ properties:
       device_class: duration
       unit: min
   - property: Auto_dose_quantity_setting_status
-    sensor:
-      read_only: true
+    unavailable: 0
+    select:
+      options:
+        1: "0"
+        2: "15"
+        3: "20"
+        4: "25"
+        5: "30"
+        6: "35"
+        7: "40"
+      command:
+        name: Auto_dose_quantity_setting
+        adjust: 1
   - property: Auto_dose_refill
     sensor:
       read_only: true
   - property: Auto_dose_setting_status
-    sensor:
-      read_only: true
+    unavailable: 0
+    switch:
+      "off": 1
+      "on": 2
+      command:
+        name: Auto_dose_setting
+        adjust: 1
   - property: Child_lock
     unavailable: 0
     switch:
@@ -306,7 +322,13 @@ properties:
   - property: Notification_volumen_setting_status
     hide: true
   - property: Odor_control_setting
-    hide: true
+    unavailable: 0
+    switch:
+      "off": 1
+      "on": 2
+      command:
+        name: Oder_control_setting
+        adjust: 1
   - property: Pressure_calibration_setting_status
     hide: true
   - property: Remote_control_monitoring_set_commands
