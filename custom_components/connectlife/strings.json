@@ -104,6 +104,16 @@
           "description": "Action to set."
         }
       }
+    },
+    "update": {
+      "name": "Update device",
+      "description": "Updates all properties defined in the data field.",
+      "fields": {
+        "data": {
+          "name": "Data",
+          "description": "Properties that should be updated"
+        }
+      }
     }
   },
   "entity": {

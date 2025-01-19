@@ -23,3 +23,15 @@ set_action:
             - "2"
             - "3"
             - "4"
+update:
+  target:
+    device:
+      integration: connectlife
+  fields:
+    data:
+      required: true
+      example: |
+        Delay_start_status: 1
+        Delay_start_time: 4
+      selector:
+        object:
