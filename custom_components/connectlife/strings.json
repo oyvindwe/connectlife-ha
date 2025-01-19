@@ -77,8 +77,8 @@
   "selector": {
     "actions": {
       "options": {
-        "1": "Start",
-        "2": "Stop",
+        "1": "Stop",
+        "2": "Start",
         "3": "Pause",
         "4": "Open door"
       }

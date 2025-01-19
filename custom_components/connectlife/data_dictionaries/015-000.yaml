@@ -4,80 +4,98 @@ properties:
     sensor:
       read_only: true
   - property: Alarm_auto_dose_refill
+    entity_category: diagnostic
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_Autodose_level10
+    entity_category: diagnostic
     hide: true
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_Autodose_level20
+    entity_category: diagnostic
     hide: true
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_External_autodose_level15
+    entity_category: diagnostic
     hide: true
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_External_autodose_level30
+    entity_category: diagnostic
     hide: true
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_clean_the_filters
+    entity_category: diagnostic
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_door_closed
+    entity_category: diagnostic
     hide: true
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_door_opened
+    entity_category: diagnostic
     hide: true
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_preheating_ready
+    entity_category: diagnostic
     hide: true
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_program_done
+    entity_category: diagnostic
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_program_pause
+    entity_category: diagnostic
     hide: true
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_remote_start_canceled
+    entity_category: diagnostic
     hide: true
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_rinse_aid_refill
+    entity_category: diagnostic
+    hide: true
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_Rinse_aid_refill_external
+    entity_category: diagnostic
     hide: true
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_run_selfcleaning
+    entity_category: diagnostic
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_salt_refill
+    entity_category: diagnostic
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_Sani_program_finished
+    entity_category: diagnostic
     hide: true
     binary_sensor:
       device_class: problem
@@ -102,8 +120,9 @@ properties:
         name: Auto_dose_quantity_setting
         adjust: 1
   - property: Auto_dose_refill
-    sensor:
-      read_only: true
+    binary_sensor:
+      device_class: problem
+    icon: mdi:dishwasher-alert
   - property: Auto_dose_setting_status
     unavailable: 0
     switch:
@@ -185,7 +204,7 @@ properties:
       options:
         1: off
         2: on
-    icon: 'mdi:folder-open-outline'
+    icon: mdi:folder-open-outline
   - property: Energy_consumption_in_running_program
     sensor:
       unknown_value: 65535
@@ -340,7 +359,13 @@ properties:
   - property: High_temperature_status
     hide: true
   - property: Interior_light_at_power_off_setting_status
-    hide: true
+    unavailable: 0
+    switch:
+      "off": 1
+      "on": 2
+      command:
+        name: Interior_light_at_power_off_setting
+        adjust: 1
   - property: Interior_light_status
     hide: true
   - property: Language_status
@@ -369,7 +394,9 @@ properties:
   - property: Remote_control_monitoring_set_commands_actions
     binary_sensor:
   - property: Rinse_aid_refill
-    hide: true
+    binary_sensor:
+      device_class: problem
+    icon: mdi:flare
   - property: Rinse_aid_setting_status
     hide: true
   - property: Sani_Lock
@@ -419,11 +446,23 @@ properties:
   - property: Super_rinse_on_demand_allowed
     hide: true
   - property: Super_rinse_setting_status
-    hide: true
+    unavailable: 0
+    switch:
+      "off": 1
+      "on": 2
+      command:
+        name: Super_rinse_setting
+        adjust: 1
   - property: Super_rinse_status
     hide: true
   - property: Tab_setting_status
-    hide: true
+    unavailable: 0
+    switch:
+      "off": 1
+      "on": 2
+      command:
+        name: Tab_setting
+        adjust: 1
   - property: Temperature_unit_status
     hide: true
   - property: Time_program_set_duration_status
