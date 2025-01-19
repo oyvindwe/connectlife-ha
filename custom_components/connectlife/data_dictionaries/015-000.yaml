@@ -204,7 +204,7 @@ properties:
       options:
         1: off
         2: on
-    icon: "mdi:folder-open-outline"
+    icon: mdi:folder-open-outline
   - property: Energy_consumption_in_running_program
     sensor:
       unknown_value: 65535
@@ -396,7 +396,7 @@ properties:
   - property: Rinse_aid_refill
     binary_sensor:
       device_class: problem
-    icon: mdi:dishwasher-alert
+    icon: mdi:flare
   - property: Rinse_aid_setting_status
     hide: true
   - property: Sani_Lock
