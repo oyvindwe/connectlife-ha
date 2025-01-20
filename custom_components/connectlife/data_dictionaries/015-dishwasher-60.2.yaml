@@ -1,50 +1,61 @@
 properties:
   - property: Alarm_auto_dose_refill
+    entity_category: diagnostic
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_clean_the_filters
+    entity_category: diagnostic
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_door_closed
+    entity_category: diagnostic
     hide: true
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_door_opened
+    entity_category: diagnostic
     hide: true
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_preheating_ready
+    entity_category: diagnostic
     hide: true
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_program_done
+    entity_category: diagnostic
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_program_pause
+    entity_category: diagnostic
     hide: true
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_remote_start_canceled
+    entity_category: diagnostic
     hide: true
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_rinse_aid_refill
+    entity_category: diagnostic
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_run_selfcleaning
+    entity_category: diagnostic
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Alarm_salt_refill
+    entity_category: diagnostic
     binary_sensor:
       device_class: problem
     icon: mdi:dishwasher-alert
@@ -141,103 +152,134 @@ properties:
       options:
         1: off
         2: on
-    icon: 'mdi:folder-open-outline'
+    icon: mdi:folder-open-outline
   - property: Energy_consumption_in_running_program
     sensor:
       unknown_value: 65535
   - property: Energy_save_setting_status
     hide: true
   - property: Error_f10
+    entity_category: diagnostic
     icon: mdi:dishwasher-alert
     hide: true
   - property: Error_f11
+    entity_category: diagnostic
     icon: mdi:dishwasher-alert
     hide: true
   - property: Error_f12
+    entity_category: diagnostic
     icon: mdi:dishwasher-alert
     hide: true
   - property: Error_f40
+    entity_category: diagnostic
     icon: mdi:dishwasher-alert
     hide: true
   - property: Error_f41
+    entity_category: diagnostic
     icon: mdi:dishwasher-alert
     hide: true
   - property: Error_f42
+    entity_category: diagnostic
     icon: mdi:dishwasher-alert
     hide: true
   - property: Error_f43
+    entity_category: diagnostic
     icon: mdi:dishwasher-alert
     hide: true
   - property: Error_f44
+    entity_category: diagnostic
     icon: mdi:dishwasher-alert
     hide: true
   - property: Error_f45
+    entity_category: diagnostic
     icon: mdi:dishwasher-alert
     hide: true
   - property: Error_f46
+    entity_category: diagnostic
     icon: mdi:dishwasher-alert
     hide: true
   - property: Error_f52
+    entity_category: diagnostic
     icon: mdi:dishwasher-alert
     hide: true
   - property: Error_f54
+    entity_category: diagnostic
     icon: mdi:dishwasher-alert
     hide: true
   - property: Error_f56
+    entity_category: diagnostic
     icon: mdi:dishwasher-alert
     hide: true
   - property: Error_f61
+    entity_category: diagnostic
     icon: mdi:dishwasher-alert
     hide: true
   - property: Error_f62
+    entity_category: diagnostic
     icon: mdi:dishwasher-alert
     hide: true
   - property: Error_f65
+    entity_category: diagnostic
     icon: mdi:dishwasher-alert
     hide: true
   - property: Error_f67
+    entity_category: diagnostic
     icon: mdi:dishwasher-alert
     hide: true
   - property: Error_f68
+    entity_category: diagnostic
     icon: mdi:dishwasher-alert
     hide: true
   - property: Error_f69
+    entity_category: diagnostic
     icon: mdi:dishwasher-alert
     hide: true
   - property: Error_f72
+    entity_category: diagnostic
     icon: mdi:dishwasher-alert
     hide: true
   - property: Error_f74
+    entity_category: diagnostic
     icon: mdi:dishwasher-alert
     hide: true
   - property: Error_f75
+    entity_category: diagnostic
     icon: mdi:dishwasher-alert
     hide: true
   - property: Error_read_out_1_code
+    entity_category: diagnostic
     icon: mdi:dishwasher-alert
     hide: true
   - property: Error_read_out_1_cycle
+    entity_category: diagnostic
     icon: mdi:dishwasher-alert
     hide: true
   - property: Error_read_out_1_status
+    entity_category: diagnostic
     icon: mdi:dishwasher-alert
     hide: true
   - property: Error_read_out_2_code
+    entity_category: diagnostic
     icon: mdi:dishwasher-alert
     hide: true
   - property: Error_read_out_2_cycle
+    entity_category: diagnostic
     icon: mdi:dishwasher-alert
     hide: true
   - property: Error_read_out_2_status
+    entity_category: diagnostic
     icon: mdi:dishwasher-alert
     hide: true
   - property: Error_read_out_3_code
+    entity_category: diagnostic
     icon: mdi:dishwasher-alert
     hide: true
   - property: Error_read_out_3_cycle
+    entity_category: diagnostic
     icon: mdi:dishwasher-alert
     hide: true
   - property: Error_read_out_3_status
+    entity_category: diagnostic
     icon: mdi:dishwasher-alert
     hide: true
   - property: FOTA_status
@@ -257,7 +299,13 @@ properties:
   - property: High_temperature_status
     hide: true
   - property: Interior_light_at_power_off_setting_status
-    hide: true
+    unavailable: 0
+    switch:
+      "off": 1
+      "on": 2
+      command:
+        name: Interior_light_at_power_off_setting
+        adjust: 1
   - property: Interior_light_status
     hide: true
   - property: Language_status
@@ -282,7 +330,9 @@ properties:
   - property: Remote_control_monitoring_set_commands_actions
     hide: true
   - property: Rinse_aid_refill
-    hide: true
+    binary_sensor:
+      device_class: problem
+    icon: mdi:flare
   - property: Rinse_aid_setting_status
     hide: true
   - property: Selected_program_auto_door_open_function
@@ -308,11 +358,22 @@ properties:
   - property: Soft_pairing_status
     hide: true
   - property: Super_rinse_setting_status
-    hide: true
+    unavailable: 0
+    switch:
+      "off": 1
+      "on": 2
+      command:
+        name: Super_rinse_setting
+        adjust: 1
   - property: Super_rinse_status
     hide: true
   - property: Tab_setting_status
-    hide: true
+    switch:
+      "off": 1
+      "on": 2
+      command:
+        name: Tab_setting
+        adjust: 1
   - property: Temperature_unit_status
     hide: true
   - property: Time_program_set_duration_status
