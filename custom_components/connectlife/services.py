@@ -59,18 +59,20 @@ async def async_setup_services(hass: HomeAssistant) -> None:
             coordinators[device_id] = hass.data[DOMAIN][config_entry.entry_id]
         return coordinators
 
-    async def async_set_action(call: ServiceCall) -> None:
-        """Set action on device."""
-        coordinators = await collect_coordinators(call.data[ATTR_DEVICE_ID])
+    async def _async_update(devices: list[str], data: dict[str, any]) -> None:
+        """Update properties on device."""
+        coordinators = await collect_coordinators(devices)
         for device_id, coordinator in coordinators.items():
-            _LOGGER.debug(
-                "Setting Actions to %d on %s", call.data[ATTR_ACTION], device_id
-            )
+            _LOGGER.debug(f"Updating {device_id} with data: {data}")
             # TODO: Consider trigging a data update to avoid waiting for next poll to update state.
             #       Make sure to only do this once per coordinater.
-            await coordinator.async_update_device(
-                device_id, {"Actions": call.data[ATTR_ACTION]}, {}
-            )
+            await coordinator.async_update_device(device_id, data, {})
+
+    async def async_set_action(call: ServiceCall) -> None:
+        """Set action on device."""
+        await _async_update(
+            call.data[ATTR_DEVICE_ID], {"Actions": call.data[ATTR_ACTION]}
+        )
 
     hass.services.async_register(
         DOMAIN,
@@ -87,13 +89,8 @@ async def async_setup_services(hass: HomeAssistant) -> None:
     )
 
     async def async_update(call: ServiceCall) -> None:
-        """Update properties on device."""
-        coordinators = await collect_coordinators(call.data[ATTR_DEVICE_ID])
-        for device_id, coordinator in coordinators.items():
-            _LOGGER.debug(f"Updating {device_id} with data: {call.data[ATTR_DATA]}")
-            # TODO: Consider trigging a data update to avoid waiting for next poll to update state.
-            #       Make sure to only do this once per coordinater.
-            await coordinator.async_update_device(device_id, call.data[ATTR_DATA], {})
+        """Action handler for updating properties on device."""
+        await _async_update(call.data[ATTR_DEVICE_ID], call.data[ATTR_DATA])
 
     hass.services.async_register(
         DOMAIN,
