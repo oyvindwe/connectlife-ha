@@ -18,7 +18,7 @@ from .const import DOMAIN
 ATTR_ACTION = "action"
 ATTR_DATA = "data"
 SERVICE_SET_ACTION = "set_action"
-SERVICE_UPDATE = "UPDATE"
+SERVICE_UPDATE = "update"
 
 _LOGGER = logging.getLogger(__name__)
 
