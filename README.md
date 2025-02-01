@@ -53,6 +53,7 @@ visibility.
 |                   | Induction hob   | 020              | 63c45b513e1a4bf7    |
 |                   | Oven            | 023              | 295608422d362be1    |
 | WFSE1214-MVW002   | Washing machine | 025              | 1wj120389v0b        |
+| WF3S1114-LVW004   | Washing machine | 025              | 1wj105246v0w        |
 |                   | Refrigerator    | 026              | 1b0610z0049j        |
 | DH3S802BW3        | Tumble dryer    | 030              | 1wk080066v0w        |
 | DH5S102BW         | Tumble dryer    | 030              | 1wk100028v0w        |
