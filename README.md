@@ -37,7 +37,8 @@ visibility.
 |                   | Air conditioner | 006              | 201                 |
 |                   | Dehumidifier    | 007              | 400                 |
 |                   | Dehumidifier    | 007              | 406                 |
-|                   | Air conditionr  | 008              | 304                 |
+|                   | Air conditioner | 008              | 301                 |
+|                   | Air conditioner | 008              | 304                 |
 |                   | Air conditioner | 009              | 100                 |
 |                   | Air conditioner | 009              | 104                 |
 |                   | Air conditioner | 009              | 106                 |
@@ -49,6 +50,7 @@ visibility.
 | W-DW50/60-22      | Dishwasher      | 015              | 000                 |
 | Gorenje GS673B60W | Dishwasher      | 015              | dishwasher-50.2f    |
 | W-DW50/60-22      | Dishwasher      | 015              | dishwasher-60.2f    |
+|                   | Dishwasher      | 015              | dishwasher-60.3     |
 |                   | Heat pump       | 016              | 502                 |
 |                   | Induction hob   | 020              | 63c45b513e1a4bf7    |
 |                   | Oven            | 023              | 295608422d362be1    |
