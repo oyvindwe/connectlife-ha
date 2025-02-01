@@ -7,6 +7,6 @@
   "integration_type": "hub",
   "iot_class": "cloud_polling",
   "issue_tracker": "https://github.com/oyvindwe/connectlife-ha/issues",
-  "requirements": ["connectlife==0.5.3"],
+  "requirements": ["connectlife==0.5.4"],
   "version": "0.22.1"
 }
