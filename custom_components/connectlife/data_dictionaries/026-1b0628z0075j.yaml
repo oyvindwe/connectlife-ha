@@ -1,0 +1,637 @@
+properties:
+  - property: ai_energy_mode_switch
+    hide: true
+  - property: AIR_FRESHNESS
+    hide: true
+  - property: alarm_key
+    hide: true
+  - property: alarm_sound_volume
+    hide: true
+  - property: ali_wifi_fault_flag
+    hide: true
+  - property: automatic_ice_making
+    switch: {}
+  - property: camera_state
+    hide: true
+  - property: charcoal_filter_expiration_alarm
+    hide: true
+    binary_sensor:
+      device_class: problem
+  - property: charcoal_filter_surplus_time
+    hide: true
+    binary_sensor:
+      device_class: problem
+  - property: charcoal_filter_time_reset
+    hide: true
+    binary_sensor:
+      device_class: problem
+  - property: child_lock_open_alarm
+    hide: true
+    binary_sensor:
+      device_class: problem
+  - property: child_lock_open_door_sound_alarm
+    hide: true
+    binary_sensor:
+      device_class: problem
+  - property: child_lock_switch_exist
+    hide: true
+    binary_sensor:
+      device_class: problem
+  - property: child_lock_switch_status
+    hide: true
+    binary_sensor:
+      device_class: problem
+  - property: commodity_inspection
+    hide: true
+  - property: compressor_condition
+    hide: true
+  - property: compressor_frequency
+    hide: true
+  - property: daily_energy_consumption
+    hide: true
+    sensor:
+      read_only: true
+      state_class: total_increasing
+      device_class: energy
+      unit: kWh
+  - property: date_display_format_status
+    hide: true
+  - property: date_format_status
+    hide: true
+  - property: date_time_format_day_state
+    hide: true
+  - property: date_time_format_month_state
+    hide: true
+  - property: date_time_format_year_state
+    hide: true
+  - property: dbd_clean_mode
+    hide: true
+  - property: debacilli_mode
+    hide: true
+  - property: display_panel_ronshen
+    hide: true
+  - property: displayboard_brand
+    hide: true
+  - property: displayboard_key_setting
+    hide: true
+  - property: displayboard_type
+    hide: true
+  - property: displayboard_version
+    hide: true
+  - property: door_close_light_status
+    hide: true
+  - property: door_close_ui_display_status
+    hide: true
+  - property: door_num_four_color
+    hide: true
+  - property: door_num_one_color
+    hide: true
+  - property: door_num_three_color
+    hide: true
+  - property: door_num_two_color
+    hide: true
+  - property: door_open_light_status
+    hide: true
+  - property: door_open_ui_display_status
+    hide: true
+  - property: electric_current
+    hide: true
+  - property: electric_energy_one_tenths_value
+    hide: true
+  - property: electric_energy_percentile_thousands_value
+    hide: true
+  - property: envi_temp_sens_head_failure
+    hide: true
+  - property: environment_humidity
+    sensor:
+      device_class: humidity
+      unit: "%"
+  - property: environment_real_temperature
+    sensor:
+      device_class: temperature
+      unit: °C
+  - property: existing_fuzzy_mode
+    hide: true
+  - property: existing_holiday_mode
+    hide: true
+  - property: existing_lock_fresh_mode
+    hide: true
+  - property: existing_save_mode
+    hide: true
+  - property: existing_sf_mode
+    hide: true
+  - property: existing_sr_mode
+    hide: true
+  - property: fast_store_mode_exist
+    hide: true
+  - property: fast_store_mode_status
+    hide: true
+  - property: filter_alarm_time
+    hide: true
+  - property: filter_state
+    hide: true
+  - property: free_defrosting_failure
+    hide: true
+    binary_sensor:
+      device_class: problem
+  - property: free_evap_temp_sens_head_failure
+    hide: true
+    binary_sensor:
+      device_class: problem
+  - property: free_fan_failure
+    hide: true
+    binary_sensor:
+      device_class: problem
+  - property: free_key
+    hide: true
+  - property: free_room
+    hide: true
+  - property: free_room_open
+    hide: true
+  - property: free_room_open_2
+    hide: true
+  - property: free_room_over_temp_alarm_failure
+    hide: true
+    binary_sensor:
+      device_class: problem
+  - property: free_temp_sens_head_failure
+    hide: true
+    binary_sensor:
+      device_class: problem
+  - property: freeze_door_open_time
+    hide: true
+  - property: freeze_max_temperature
+    sensor:
+      device_class: temperature
+      unit: °C
+  - property: freeze_min_temperature
+    sensor:
+      device_class: temperature
+      unit: °C
+  - property: freeze_poweroff_ad
+    hide: true
+    binary_sensor:
+  - property: freeze_poweron_ad
+    hide: true
+    binary_sensor:
+  - property: freeze_real_temperature
+    sensor:
+      device_class: temperature
+      unit: °C
+  - property: freeze_sensor_real_temperature
+    sensor:
+      device_class: temperature
+      unit: °C
+  - property: freeze_temperature
+    number:
+      device_class: temperature
+      unit: °C
+      min_value: -24
+      max_value: -14
+  - property: frost_state
+    hide: true
+    binary_sensor: {}
+  - property: froze_convert_to_refri_switch_status
+    hide: true
+  - property: fruit_vegetables_temperature
+    hide: true
+    sensor:
+      device_class: temperature
+      unit: °C
+  - property: fuzzy_mode
+    hide: true
+    binary_sensor:
+    # 0
+  - property: gold_water_supply_mode
+    hide: true
+    binary_sensor:
+  - property: high_humidity
+    hide: true
+    binary_sensor:
+  - property: high_temperature
+    hide: true
+    binary_sensor:
+  - property: holiday_mode
+    switch: {}
+  - property: humidity sensor_failure
+    hide: true
+    binary_sensor:
+      device_class: problem
+  - property: ice_making_machine_failure
+    hide: true
+    binary_sensor:
+      device_class: problem
+  - property: ice_making_b_switch_status
+    switch: {}
+  - property: ice_making_state
+    switch: {}
+  - property: low_humidity
+    hide: true
+    sensor:
+      device_class: humidity
+      unit: "%"
+  - property: low_temperature
+    hide: true
+    sensor:
+      device_class: temperature
+      unit: °C
+  - property: low_wine_area_c_evaporator_fault
+    hide: true
+    binary_sensor:
+      device_class: problem
+  - property: low_wine_area_c_fan_fault
+    hide: true
+    binary_sensor:
+      device_class: problem
+  - property: low_wine_area_c_humdy_fault
+    hide: true
+    binary_sensor:
+      device_class: problem
+  - property: low_wine_area_c_temp_fault
+    hide: true
+    binary_sensor:
+      device_class: problem
+  - property: measured_vibrations
+    hide: true
+    sensor:
+      state_class: measurement
+  - property: medium_humidity
+    hide: true
+    sensor:
+      device_class: humidity
+      unit: "%"
+  - property: medium_temperature
+    hide: true
+    sensor:
+      device_class: temperature
+      unit: °C
+  - property: mid_wine_area_b_evaporator_fault
+    hide: true
+    binary_sensor:
+      device_class: problem
+  - property: mid_wine_area_b_fan_fault
+    hide: true
+    binary_sensor:
+      device_class: problem
+  - property: mid_wine_area_b_humdy_fault
+    hide: true
+    binary_sensor:
+      device_class: problem
+  - property: mid_wine_area_b_temp_fault
+    hide: true
+    binary_sensor:
+      device_class: problem
+  - property: ODOR_SENSOR_FAULT_FLAG
+    hide: true
+  - property: ODOR_SENSOR_NO_DISTURB_MODE_STATUS
+    hide: true
+  - property: ODOR_SENSOR_SENSITIVITY
+    hide: true
+  - property: ODOR_SENSOR_SWITHC_STATUS
+    hide: true
+  - property: open_freeze_door_alarm
+    hide: true
+    binary_sensor:
+      device_class: problem
+  - property: open_refrigerator_door_alarm
+    hide: true
+    binary_sensor:
+      device_class: problem
+  - property: open_the_door_alarm
+    hide: true
+    binary_sensor:
+      device_class: problem
+  - property: open_variation_door_alarm
+    hide: true
+    binary_sensor:
+      device_class: problem
+  - property: quiet_mode_status
+    hide: true
+    binary_sensor: {}
+  - property: real_humidity
+    hide: true
+    sensor:
+      device_class: humidity
+      unit: "%"
+  - property: real_humidity_b
+    hide: true
+    sensor:
+      device_class: humidity
+      unit: "%"
+  - property: real_humidity_c
+    hide: true
+    sensor:
+      device_class: humidity
+      unit: "%"
+  - property: refrigerator_defrosting_failure
+    hide: true
+    binary_sensor:
+      device_class: problem
+  - property: refrigerator_dry_wet_room_sens_failure
+    hide: true
+    binary_sensor:
+      device_class: problem
+  - property: refrigerator_evap_temp_sens_head_failure
+    hide: true
+    binary_sensor:
+      device_class: problem
+  - property: refrigerator_fan_failure
+    hide: true
+    binary_sensor:
+      device_class: problem
+  - property: refrigerator_key
+    hide: true
+  - property: refrigerator_room
+    hide: true
+  - property: refrigerator_room_open
+    hide: true
+    binary_sensor: {}
+  - property: refrigerator_room_over_temp_alarm
+    hide: true
+    binary_sensor:
+      device_class: problem
+  - property: refrigerator_temp_sens_head_failure
+    hide: true
+    binary_sensor:
+      device_class: problem
+  - property: refrigerator_var_room_sens_failure
+    hide: true
+    binary_sensor:
+      device_class: problem
+  - property: refrigerator_door_open_time
+    hide: true
+  - property: refrigerator_freeze_swith
+    hide: true
+  - property: refrigerator_freeze_swith_state
+    hide: true
+  - property: refrigerator_max_temperature
+    sensor:
+      device_class: temperature
+      unit: °C
+  - property: refrigerator_min_temperature
+    sensor:
+      device_class: temperature
+      unit: °C
+  - property: refrigerator_poweroff_ad
+    hide: true
+  - property: refrigerator_poweron_ad
+    hide: true
+  - property: refrigerator_real_temperature
+    sensor:
+      device_class: temperature
+      unit: °C
+  - property: refrigerator_sensor_real_temperature
+    sensor:
+      device_class: temperature
+      unit: °C
+  - property: refrigerator_temperature
+    number:
+      device_class: temperature
+      unit: °C
+      min_value: 2
+      max_value: 8
+  - property: rgb_atmosphere_mode_b_value
+    hide: true
+  - property: rgb_atmosphere_mode_g_value
+    hide: true
+  - property: rgb_atmosphere_mode_r_value
+    hide: true
+  - property: rgb_function_mode_b_value
+    hide: true
+  - property: rgb_function_mode_g_value
+    hide: true
+  - property: rgb_function_mode_r_value
+    hide: true
+  - property: rgb_light_atmosphere_brightness
+    hide: true
+  - property: rgb_light_atmosphere_on_time
+    hide: true
+  - property: rgb_light_function_brightness
+    hide: true
+  - property: rgb_light_function_on_time
+    hide: true
+  - property: rgb_light_normal_brightness
+    hide: true
+  - property: rgb_light_normal_on_time
+    hide: true
+  - property: rgb_light_state
+    hide: true
+  - property: rgb_normal_mode_b_value
+    hide: true
+  - property: rgb_normal_mode_g_value
+    hide: true
+  - property: rgb_normal_mode_r_value
+    hide: true
+  - property: right_free_sensor_failure
+    hide: true
+  - property: run_status_flag_5
+    hide: true
+  - property: running_status
+  - property: running_status3
+    hide: true
+  - property: rx_failure
+    hide: true
+    binary_sensor:
+      device_class: problem
+  - property: sabbath_mode_status
+    hide: true
+    binary_sensor: {}
+  - property: sabbath_mode_switch_status
+    hide: true
+    binary_sensor: {}
+  - property: save_mode
+    switch: {}
+    binary_sensor: {}
+  - property: screen_display_brightness
+    hide: true
+  - property: screen_display_lock
+    hide: true
+  - property: screen_to_clock_time
+    hide: true
+  - property: screen_to_standby_time
+    hide: true
+  - property: sensor_failure_status
+    hide: true
+  - property: sensor_failure_status2
+    hide: true
+  - property: sf_mode
+    switch: {}
+  - property: sf_sr_mutex_mode
+    switch: {}
+  - property: shelf_light_a_state
+    hide: true
+  - property: shelf_light_atmosphere_brightness
+    hide: true
+  - property: shelf_light_atmosphere_mode_brightness
+    hide: true
+  - property: shelf_light_b_state
+    hide: true
+  - property: shelf_light_c_state
+    hide: true
+  - property: shelf_light_function_mode_brightness
+    hide: true
+  - property: shelf_light_function_on_time
+    hide: true
+  - property: shelf_light_normal_on_time
+    hide: true
+  - property: show_mode
+    hide: true
+  - property: special_space
+    hide: true
+  - property: sr_mode
+    switch: {}
+  - property: standby_mode_state
+    hide: true
+  - property: standby_mode_valid
+    hide: true
+  - property: STERI_PURI_CYCLE_FLAG
+    hide: true
+  - property: super_water_supply_mode
+    hide: true
+  - property: temp_auto_ctrl_mode_exist
+    hide: true
+  - property: temp_auto_ctrl_mode_state
+    hide: true
+  - property: temperature_room_judge
+    hide: true
+    sensor:
+      device_class: temperature
+      unit: °C
+  - property: temperature_unit
+    hide: true
+  - property: theme_color
+    hide: true
+  - property: tx_failure
+    hide: true
+    binary_sensor:
+      device_class: problem
+  - property: unfreeze_run_status
+    hide: true
+  - property: unfreeze_switch_status
+    hide: true
+  - property: unpair_all_users
+    hide: true
+  - property: up_wine_area_a_evaporator_fault
+    hide: true
+  - property: up_wine_area_a_fan_fault
+    hide: true
+  - property: up_wine_area_a_humdy_fault
+    hide: true
+  - property: up_wine_area_a_temp_fault
+    hide: true
+  - property: user_debacilli_mode
+    hide: true
+  - property: vacuum_on_off_status
+    hide: true
+    binary_sensor: {}
+  - property: var_room_open_2
+    hide: true
+  - property: var_room_over_temp_alarm
+    hide: true
+  - property: vari_evap_temp_sens_head_failure
+    hide: true
+    binary_sensor:
+      device_class: problem
+  - property: vari_key
+    hide: true
+  - property: vari_room
+    hide: true
+  - property: vari_room_open
+    hide: true
+  - property: vari_temp_sens_head_failure
+    hide: true
+    binary_sensor:
+      device_class: problem
+  - property: variable_fan_failure_status
+    hide: true
+  - property: variable_heater_failure_status
+    hide: true
+  - property: variable_temperature_space
+    hide: true
+  - property: variation_door_open_time
+    hide: true
+  - property: variation_max_temperature
+    hide: true
+    sensor:
+      device_class: temperature
+      unit: °C
+  - property: variation_min_temperature
+    hide: true
+    sensor:
+      device_class: temperature
+      unit: °C
+  - property: variation_poweroff_ad
+    hide: true
+  - property: variation_poweron_ad
+    hide: true
+  - property: variation_real_temperature
+    hide: true
+    sensor:
+      device_class: temperature
+      unit: °C
+  - property: variation_sensor_real_temperature
+    hide: true
+    sensor:
+      device_class: temperature
+      unit: °C
+  - property: variation_temperature
+    hide: true
+    sensor:
+      device_class: temperature
+      unit: °C
+  - property: vibration_alarm
+    hide: true
+    binary_sensor:
+      device_class: problem
+  - property: vibration_sensor_fault
+    hide: true
+    binary_sensor:
+      device_class: problem
+  - property: water_box_alarm_switch_state
+    hide: true
+  - property: water_box_lack_status
+    hide: true
+  - property: water_box_mode_status
+    hide: true
+  - property: water_filter_surplus_time
+    hide: true
+  - property: water_filter_time_reset
+    hide: true
+  - property: water_tank_install_state
+    hide: true
+  - property: wet_and_dry_space
+    hide: true
+  - property: wifi_fault_flag
+    hide: true
+  - property: wifi_handshake_fault_flag
+    hide: true
+  - property: wifi_next_sendtime
+    hide: true
+  - property: wifi_rx_fault_flag
+    hide: true
+  - property: wifi_setting
+    hide: true
+  - property: wifi_tx_fault_flag
+    hide: true
+  - property: will_fresh_light_status
+    hide: true
+  - property: will_fress_light_exist
+    hide: true
+  - property: will_light_market_mode_state
+    hide: true
+  - property: will_light_mode_exist
+    hide: true
+  - property: will_light_mode_state
+    hide: true
+  - property: will_light_switch_state
+    hide: true
+  - property: wine_area_switch_status
+    hide: true
+  - property: wine_light
+    hide: true
+  - property: wine_sensor_failure_flag
+    hide: true
+  - property: work_mode1
+    hide: true
+  - property: work_mode2
+    hide: true
