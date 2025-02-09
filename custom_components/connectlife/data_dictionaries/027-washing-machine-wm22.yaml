@@ -1,0 +1,443 @@
+# Washing machine WPNA84A2TSWIFI/PL
+properties:
+- property: Selected_program_remaining_time_in_minutes
+  sensor:
+    read_only: true
+    device_class: duration
+    unit: min
+    icon: 'mdi:update'
+- property: Selected_program_duration_in_minutes
+  sensor:
+    read_only: true
+    device_class: duration
+    unit: min
+    icon: 'mdi:timer'
+- property: Door_status
+  sensor:
+    read_only: true
+    device_class: enum
+    icon: 'mdi:door'
+    options:
+      0: not_available
+      1: open
+      2: closed
+      3: closed_when_running
+- property: Status
+  sensor:
+    read_only: true
+    device_class: enum
+    icon: 'mdi:washing-machine'
+    options:
+      0: off
+      1: standby
+      6: running
+- property: Current_temperature
+  sensor:
+    read_only: true
+    device_class: temperature
+    unit: °C
+    icon: 'mdi:thermometer'
+- property: ADS_Dirtiness_setting_status
+  # Sample value: 2
+- property: ADS_Settings_Current_Program_Detergent_setting_status
+  # Sample value: 2
+- property: ADS_Settings_Current_Program_Softener_setting_status
+  # Sample value: 2
+- property: Adapt_sense_setting_status
+  # Sample value: 2
+- property: Add_on_program_download_ID
+  # Sample value: 254
+- property: Add_on_program_download_status
+  # Sample value: 1
+- property: Add_program_to_device
+  # Sample value: 0
+- property: Air_dry_function_status
+  # Sample value: 0
+- property: Air_shower_setting_status
+  # Sample value: 0
+- property: Alarm_1
+  # Sample value: 1
+- property: Alarm_10
+  # Sample value: 1
+- property: Alarm_11
+  # Sample value: 1
+- property: Alarm_12
+  # Sample value: 1
+- property: Alarm_13
+  # Sample value: 1
+- property: Alarm_14
+  # Sample value: 1
+- property: Alarm_15
+  # Sample value: 1
+- property: Alarm_16
+  # Sample value: 1
+- property: Alarm_17
+  # Sample value: 0
+- property: Alarm_18
+  # Sample value: 0
+- property: Alarm_19
+  # Sample value: 0
+- property: Alarm_2
+  # Sample value: 1
+- property: Alarm_20
+  # Sample value: 0
+- property: Alarm_21
+  # Sample value: 0
+- property: Alarm_22
+  # Sample value: 0
+- property: Alarm_3
+  # Sample value: 1
+- property: Alarm_4
+  # Sample value: 1
+- property: Alarm_5
+  # Sample value: 1
+- property: Alarm_6
+  # Sample value: 0
+- property: Alarm_7
+  # Sample value: 0
+- property: Alarm_8
+  # Sample value: 0
+- property: Alarm_9
+  # Sample value: 1
+- property: Auto_Super_rinse_setting_status
+  # Sample value: 0
+- property: Auto_dose_Compartment1_amount_setting
+  # Sample value: 0
+- property: Auto_dose_Compartment1_status_102
+  # Sample value: 0
+- property: Auto_dose_Compartment1_tank_amount
+  # Sample value: 0
+- property: Auto_dose_Compartment2_amount_setting
+  # Sample value: 0
+- property: Auto_dose_Compartment2_status_102
+  # Sample value: 0
+- property: Auto_dose_Compartment2_tank_amount
+  # Sample value: 0
+- property: Auto_dose_drawer_status
+  # Sample value: 0
+- property: Auto_dose_system_setting_status
+  # Sample value: 0
+- property: Brightness_setting
+  # Sample value: 0
+- property: Can_upload_WiFi_program
+  # Sample value: 2
+- property: Child_lock_setting_status
+  # Sample value: 2
+- property: Child_lock_status_status
+  # Sample value: 1
+- property: Color_sensor_setting_status
+  # Sample value: 0
+- property: Compartment1_type_setting_status
+  # Sample value: 0
+- property: Compartment2_type_setting_status
+  # Sample value: 0
+- property: Current_temperature
+  # Sample value: 255
+- property: Current_washing_program_phase_2
+  # Sample value: 1
+- property: Current_washing_program_phase_status
+  # Sample value: 15
+- property: Current_water_level
+  # Sample value: 65535
+- property: Darhcdq
+  # Sample value: 65535
+- property: Delay_start_remaining_time_in_minutes
+  # Sample value: 65535
+- property: Delaystart_delayend_mode_status
+  # Sample value: 1
+- property: Delaystart_delayend_remaining_time_in_minutes
+  # Sample value: 65535
+- property: Delaystart_delayend_timestamp_status
+  # Sample value: 16679/02/18T23:47:45
+- property: Demo_mode_status
+  # Sample value: 0
+- property: Detergent_amount_status
+  # Sample value: 0
+- property: Detergent_indicator
+  # Sample value: 0
+- property: Dose_assist_recommended_detergent_quantity_unit_status
+  # Sample value: 1
+- property: Dose_assist_recommended_low_concenatration_detergent_quantity
+  # Sample value: 65535
+- property: Dose_assist_status
+  # Sample value: 0
+- property: Drum_light_setting_status
+  # Sample value: 0
+- property: Eco_score_type
+  # Sample value: 0
+- property: Error_0
+  # Sample value: 1
+- property: Error_1
+  # Sample value: 1
+- property: Error_10
+  # Sample value: 1
+- property: Error_11
+  # Sample value: 1
+- property: Error_12
+  # Sample value: 1
+- property: Error_12_1
+  # Sample value: 1
+- property: Error_12_10
+  # Sample value: 1
+- property: Error_12_11
+  # Sample value: 1
+- property: Error_12_12
+  # Sample value: 1
+- property: Error_12_13
+  # Sample value: 1
+- property: Error_12_14
+  # Sample value: 1
+- property: Error_12_15
+  # Sample value: 1
+- property: Error_12_16
+  # Sample value: 1
+- property: Error_12_17
+  # Sample value: 0
+- property: Error_12_18
+  # Sample value: 1
+- property: Error_12_2
+  # Sample value: 1
+- property: Error_12_3
+  # Sample value: 1
+- property: Error_12_4
+  # Sample value: 1
+- property: Error_12_5
+  # Sample value: 1
+- property: Error_12_6
+  # Sample value: 1
+- property: Error_12_7
+  # Sample value: 1
+- property: Error_12_8
+  # Sample value: 1
+- property: Error_12_9
+  # Sample value: 1
+- property: Error_13
+  # Sample value: 1
+- property: Error_13_1
+  # Sample value: 1
+- property: Error_13_2
+  # Sample value: 1
+- property: Error_13_3
+  # Sample value: 1
+- property: Error_14
+  # Sample value: 0
+- property: Error_15
+  # Sample value: 1
+- property: Error_16
+  # Sample value: 0
+- property: Error_17
+  # Sample value: 0
+- property: Error_18
+  # Sample value: 0
+- property: Error_19
+  # Sample value: 0
+- property: Error_2
+  # Sample value: 1
+- property: Error_20
+  # Sample value: 0
+- property: Error_21
+  # Sample value: 0
+- property: Error_22
+  # Sample value: 1
+- property: Error_23
+  # Sample value: 1
+- property: Error_24
+  # Sample value: 1
+- property: Error_25
+  # Sample value: 0
+- property: Error_26
+  # Sample value: 0
+- property: Error_27
+  # Sample value: 0
+- property: Error_28
+  # Sample value: 0
+- property: Error_29
+  # Sample value: 0
+- property: Error_3
+  # Sample value: 1
+- property: Error_30
+  # Sample value: 0
+- property: Error_31
+  # Sample value: 0
+- property: Error_32
+  # Sample value: 0
+- property: Error_33
+  # Sample value: 0
+- property: Error_34
+  # Sample value: 0
+- property: Error_35
+  # Sample value: 0
+- property: Error_36
+  # Sample value: 1
+- property: Error_37
+  # Sample value: 1
+- property: Error_38
+  # Sample value: 0
+- property: Error_38_1
+  # Sample value: 0
+- property: Error_39
+  # Sample value: 0
+- property: Error_4
+  # Sample value: 0
+- property: Error_40
+  # Sample value: 1
+- property: Error_41
+  # Sample value: 1
+- property: Error_42
+  # Sample value: 1
+- property: Error_43
+  # Sample value: 1
+- property: Error_44
+  # Sample value: 1
+- property: Error_45
+  # Sample value: 0
+- property: Error_46
+  # Sample value: 0
+- property: Error_47
+  # Sample value: 0
+- property: Error_48
+  # Sample value: 1
+- property: Error_49
+  # Sample value: 1
+- property: Error_5
+  # Sample value: 0
+- property: Error_50
+  # Sample value: 0
+- property: Error_51
+  # Sample value: 0
+- property: Error_52
+  # Sample value: 0
+- property: Error_6
+  # Sample value: 1
+- property: Error_7
+  # Sample value: 1
+- property: Error_7_1
+  # Sample value: 1
+- property: Error_7_2
+  # Sample value: 0
+- property: Error_8
+  # Sample value: 1
+- property: Error_89
+  # Sample value: 1
+- property: Error_9
+  # Sample value: 1
+- property: Error_90
+  # Sample value: 1
+- property: Error_9_1
+  # Sample value: 0
+- property: Extra_rinse_status
+  # Sample value: 0
+- property: Fota
+  # Sample value: 4
+- property: HardPairingStatus
+  # Sample value: 0
+- property: Language_setting
+  # Sample value: 0
+- property: Liquid_unit_setting_status
+  # Sample value: 0
+- property: Logo_setting_status
+  # Sample value: 0
+- property: Max_RPM_allowed_stat
+  # Sample value: 0
+- property: Night_start_setting_status_102
+  # Sample value: 0
+- property: No_sound_status
+  # Sample value: 1
+- property: Number_of_rinses
+  # Sample value: 254
+- property: Power_save_status
+  # Sample value: 0
+- property: Remote_control_mode_monitoring
+  # Sample value: 1
+- property: Remote_control_monitoring_set_commands
+  # Sample value: 1
+- property: Remote_control_monitoring_set_commands_actions
+  # Sample value: 0
+- property: Selected_program_Disinfection
+  # Sample value: 0
+- property: Selected_program_Eco_Disinfection
+  # Sample value: 0
+- property: Selected_program_Eco_Small_load
+  # Sample value: 0
+- property: Selected_program_Eco_score
+  # Sample value: 0
+- property: Selected_program_Green_leaves_AntiCrease
+  # Sample value: 0
+- property: Selected_program_Green_leaves_Entry_steam
+  # Sample value: 0
+- property: Selected_program_Green_leaves_Prewash
+  # Sample value: 0
+- property: Selected_program_Intensive_mode
+  # Sample value: 0
+- property: Selected_program_Night_mode
+  # Sample value: 0
+- property: Selected_program_Small_load_status
+  # Sample value: 0
+- property: Selected_program_Super_rinse
+  # Sample value: 0
+- property: Selected_program_Water_add
+  # Sample value: 0
+- property: Selected_program_anticrease_status
+  # Sample value: 1
+- property: Selected_program_entry_steam_status
+  # Sample value: 1
+- property: Selected_program_id_status
+  # Sample value: 2
+- property: Selected_program_load_status
+  # Sample value: 0
+- property: Selected_program_mode2_status
+  # Sample value: 0
+- property: Selected_program_mode_status
+  # Sample value: 4
+- property: Selected_program_prewash_status
+  # Sample value: 1
+- property: Selected_program_rinse_hold_status
+  # Sample value: 1
+- property: Selected_program_set_temperature_status
+  # Sample value: 4
+- property: Selected_program_washing_spin_speed_rpm_status
+  # Sample value: 8
+- property: Selected_program_water_pluse_status
+  # Sample value: 1
+- property: Session_pairing_active
+  # Sample value: 0
+- property: Session_pairing_status
+  # Sample value: 0
+- property: Smart_sync_setting_status
+  # Sample value: 0
+- property: Soft_pairing_status
+  # Sample value: 0
+- property: Softener_amount_status
+  # Sample value: 0
+- property: Softener_indicator
+  # Sample value: 0
+- property: Sound_setting_status
+  # Sample value: 3
+- property: Stain_program_Set_clothes_type_status
+  # Sample value: 0
+- property: Stain_program_Set_stain_status
+  # Sample value: 0
+- property: StopAddGoAllowed
+  # Sample value: 2
+- property: Stopaddgo_status
+  # Sample value: 1
+- property: Temperature_unit_setting_status
+  # Sample value: 0
+- property: Time_program_Set_time_status
+  # Sample value: 0
+- property: Time_save_status
+  # Sample value: 0
+- property: Turbidity_sensor_setting_status
+  # Sample value: 0
+- property: Units_setting_status
+  # Sample value: 0
+- property: View_size_setting_status
+  # Sample value: 0
+- property: Volume_setting
+  # Sample value: 0
+- property: Water_hardness_setting_status
+  # Sample value: 2
+- property: Weight_unit_setting_status
+  # Sample value: 0
+- property: daily_energy_kwh
+  # Sample value: 0
