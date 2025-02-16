@@ -37,6 +37,26 @@ properties:
     device_class: temperature
     unit: °C
     icon: 'mdi:thermometer'
+- property: Selected_program_id_status
+  sensor:
+  read_only: true
+  device_class: enum
+  icon: 'mdi:playlist-check'
+  options:
+    0: eco_40_60
+    1: white_cotton
+    2: color
+    3: wool_manual
+    4: mix_synthetic
+    5: extra_hygiene
+    6: fast_20
+    7: intensive_59_32
+    9: sport
+    10: baby
+    12: shirts
+    13: drum_cleaning
+    14: spinning_draining
+    16: rinsing_softening
 - property: ADS_Dirtiness_setting_status
   # Sample value: 2
 - property: ADS_Settings_Current_Program_Detergent_setting_status
@@ -381,8 +401,6 @@ properties:
   # Sample value: 1
 - property: Selected_program_entry_steam_status
   # Sample value: 1
-- property: Selected_program_id_status
-  # Sample value: 2
 - property: Selected_program_load_status
   # Sample value: 0
 - property: Selected_program_mode2_status
