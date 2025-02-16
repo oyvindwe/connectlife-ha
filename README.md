@@ -54,6 +54,7 @@ visibility.
 |                   | Heat pump       | 016              | 502                 |
 |                   | Induction hob   | 020              | 63c45b513e1a4bf7    |
 |                   | Oven            | 023              | 295608422d362be1    |
+| WDSE1214-EVAJMW   | Washing machine | 025              | 1wj120261v0w        |
 | WFSE1214-MVW002   | Washing machine | 025              | 1wj120389v0b        |
 | WF3S1114-LVW004   | Washing machine | 025              | 1wj105246v0w        |
 |                   | Refrigerator    | 026              | 1b0610z0049j        |
