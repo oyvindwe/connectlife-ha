@@ -1556,6 +1556,42 @@
       },
       "zone_number": {
         "name": "Number of zones"
+      },
+      "Selected_program_id_status": {
+        "name": "Selected program",
+        "state": {
+          "eco_40_60": "Eco 40-60",
+          "white_cotton": "White Cotton",
+          "color": "Color",
+          "wool_manual": "Wool & Manual",
+          "mix_synthetic": "Mix/Synthetic",
+          "extra_hygiene": "Extra Hygiene",
+          "fast_20": "Fast 20'",
+          "intensive_59_32": "Intensive 59'/32'",
+          "sport": "Sport",
+          "baby": "Baby",
+          "shirts": "Shirts",
+          "drum_cleaning": "Drum Cleaning",
+          "spinning_draining": "Spinning & Draining",
+          "rinsing_softening": "Rinsing & Softening"
+        }
+      },
+      "Status": {
+        "name": "Device status",
+        "state": {
+          "off": "Off",
+          "standby": "Standby",
+          "running": "Running"
+        }
+      },
+      "Door_status": {
+        "name": "Door status",
+        "state": {
+          "not_available": "Not Available",
+          "open": "Open",
+          "closed": "Closed",
+          "closed_when_running": "Closed when running"
+        }
       }
     },
     "switch": {
