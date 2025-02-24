@@ -23,7 +23,10 @@ properties:
   - property: ali_wifi_fault_flag
     hide: true
   - property: automatic_ice_making
-    binary_sensor: {}
+    binary_sensor:
+      options:
+        0: off
+        1: on
     # Sample value: 1
   - property: camera_state
     hide: true
@@ -122,20 +125,38 @@ properties:
       unit: °C
     # Sample value: 18
   - property: existing_fuzzy_mode
-    binary_sensor: {}
+    binary_sensor:
+      options:
+        0: off
+        1: on
   - property: existing_holiday_mode
-    binary_sensor: {}
+    binary_sensor:
+      options:
+        0: off
+        1: on
     # Sample value: 1
   - property: existing_lock_fresh_mode
-    binary_sensor: {}
+    binary_sensor:
+      options:
+        0: off
+        1: on
   - property: existing_save_mode
-    binary_sensor: {}
+    binary_sensor:
+      options:
+        0: off
+        1: on
     # Sample value: 1
   - property: existing_sf_mode
-    binary_sensor: {}
+    binary_sensor:
+      options:
+        0: off
+        1: on
     # Sample value: 1
   - property: existing_sr_mode
-    binary_sensor: {}
+    binary_sensor:
+      options:
+        0: off
+        1: on
     # Sample value: 1
   - property: fast_store_mode_exist
     hide: true
@@ -268,10 +289,16 @@ properties:
   - property: ice_making_normal_status
     hide: true
   - property: ice_making_state # Ice Off
-    binary_sensor: {}
+    binary_sensor:
+      options:
+        0: off
+        1: on
     # Sample value: 1
   - property: ice_making_stop_status
-    binary_sensor: {}
+    binary_sensor:
+      options:
+        0: off
+        1: on
     # Sample value: 1
   - property: ice_room_actual_temp
     hide: true
@@ -511,7 +538,10 @@ properties:
   - property: sabbath_mode_switch_status
     hide: true
   - property: save_mode # Eco mode
-    binary_sensor: {}
+    binary_sensor:
+      options:
+        0: off
+        1: on
   - property: screen_display_brightness
     hide: true
   - property: screen_display_lock
@@ -531,7 +561,10 @@ properties:
   - property: sensor_failure_status2
     hide: true
   - property: sf_mode # Freezer Super Freeze
-    binary_sensor: {}
+    binary_sensor:
+      options:
+        0: off
+        1: on
   - property: sf_sr_mutex_mode
     # Sample value: 1
   - property: shelf_light_atmosphere_brightness
@@ -553,7 +586,10 @@ properties:
   - property: special_space
     hide: true
   - property: sr_mode # Fridge Super Cool
-    binary_sensor: {}
+    binary_sensor:
+      options:
+        0: off
+        1: on
   - property: standby_mode_state
     hide: true
   - property: standby_mode_valid
