@@ -1074,7 +1074,21 @@
           "glass": "Glass",
           "hygiene": "Hygiene",
           "night": "Night",
-          "clean": "Clean"
+          "clean": "Clean",
+          "eco_40_60": "Eco 40-60",
+          "white_cotton": "White Cotton",
+          "color": "Color",
+          "wool_manual": "Wool & Manual",
+          "mix_synthetic": "Mix/Synthetic",
+          "extra_hygiene": "Extra Hygiene",
+          "fast_20": "Fast 20'",
+          "intensive_59_32": "Intensive 59'/32'",
+          "sport": "Sport",
+          "baby": "Baby",
+          "shirts": "Shirts",
+          "drum_cleaning": "Drum Cleaning",
+          "spinning_draining": "Spinning & Draining",
+          "rinsing_softening": "Rinsing & Softening"
         }
       },
       "selected_program_mode": {
@@ -1556,6 +1570,12 @@
       },
       "zone_number": {
         "name": "Number of zones"
+      },
+      "status": {
+        "name": "Device status"
+      },
+      "door_status": {
+        "name": "Door status"
       }
     },
     "switch": {
