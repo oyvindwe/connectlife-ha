@@ -1572,10 +1572,21 @@
         "name": "Number of zones"
       },
       "status": {
-        "name": "Device status"
+        "name": "Device status",
+        "state": {
+          "off": "Off",
+          "standby": "Standby",
+          "running": "Running"
+        }
       },
       "door_status": {
-        "name": "Door status"
+        "name": "Door status",
+        "state": {
+          "not_available": "Not Available",
+          "open": "Open",
+          "closed": "Closed",
+          "closed_when_running": "Closed when running"
+        }
       }
     },
     "switch": {
