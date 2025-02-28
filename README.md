@@ -54,8 +54,10 @@ visibility.
 |                   | Heat pump       | 016              | 502                 |
 |                   | Induction hob   | 020              | 63c45b513e1a4bf7    |
 |                   | Oven            | 023              | 295608422d362be1    |
+| WDSE1214-EVAJMW   | Washing machine | 025              | 1wj120261v0w        |
 | WFSE1214-MVW002   | Washing machine | 025              | 1wj120389v0b        |
 | WF3S1114-LVW004   | Washing machine | 025              | 1wj105246v0w        |
+| RS818N4TIE1       | Refrigerator    | 026              | 1b0628z0146j        |
 |                   | Refrigerator    | 026              | 1b0610z0049j        |
 | DH3S802BW3        | Tumble dryer    | 030              | 1wk080066v0w        |
 | DH5S102BW         | Tumble dryer    | 030              | 1wk100028v0w        |
@@ -121,9 +123,13 @@ Missing features:
 
 ### Login
 
-You have to create a ConnectLife account with username/password. SSO using other identity providers is not supported.
-Appliances can be shared with multiple accounts, so this should not be a blocker.
-See https://github.com/oyvindwe/connectlife-ha/issues/99 for more info.
+You have to create a ConnectLife account with username/password. SSO using other identity providers is not supported (See https://github.com/oyvindwe/connectlife-ha/issues/99).
+
+To work around this issue, you can do the following:
+1. In the ConnectLife mobile app, create a new account using an email and password (needs to be a different email to your SSO account as that is now occupied by that SSO).
+2. Still in the mobile app, switch accounts back to your SSO account, go to the device/s you have already setup in your SSO account, select them 1 by 1, scrolling to the bottom to get to the "Share Device" option and adding your new email to the shared accounts list.
+3. In the connectlife-ha integration within Home Assistant, use the email and password from the new account you set up, which will now have the device(s) shared with it.
+4. Forget your new email version of your account exists, you don't have to accept device shares or use that account for any other reason.
 
 Note that users at least in Russia and China can't log in using this integration. See discussion in
 https://github.com/bilan/connectlife-api-connector/issues/25
