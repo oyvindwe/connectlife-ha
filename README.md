@@ -59,6 +59,7 @@ visibility.
 | WF3S1114-LVW004   | Washing machine | 025              | 1wj105246v0w        |
 | RS818N4TIE1       | Refrigerator    | 026              | 1b0628z0146j        |
 |                   | Refrigerator    | 026              | 1b0610z0049j        |
+| WPNA84A2TSWIFI    | Washing machine | 027              | wm22                |
 | DH3S802BW3        | Tumble dryer    | 030              | 1wk080066v0w        |
 | DH5S102BW         | Tumble dryer    | 030              | 1wk100028v0w        |
 | DHSE10            | Tumble dryer    | 030              | 1wk100130v0f        |
