@@ -11,6 +11,7 @@ def main(basedir):
     device_dir = f'{basedir}/data_dictionaries'
     filenames = list(filter(lambda f: f[-5:] == ".yaml", [f for f in listdir(device_dir) if isfile(join(device_dir, f))]))
     for filename in filenames:
+        print(f"Generating strings from {filename}")
         with (open(f'{basedir}/data_dictionaries/{filename}') as f):
             appliance = yaml.safe_load(f)
         for property in appliance["properties"]:
@@ -69,7 +70,7 @@ def main(basedir):
                                 if not option in strings["entity"][entity_type][key]["state"]:
                                     if include_option(option, filename):
                                         strings["entity"][entity_type][key]["state"][option] = pretty(option)
-                            if not strings["entity"][entity_type][key]["state"]:
+                            if "state" in strings["entity"][entity_type][key] and not strings["entity"][entity_type][key]["state"]:
                                 del(strings["entity"][entity_type][key]["state"])
 
         if "climate" in appliance:

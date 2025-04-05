@@ -228,6 +228,11 @@ properties:
   # Sample value: 0
 - property: Program_end_to_shutdown_time_in_minutes
   # Sample value: 0
+  sensor:
+    read_only: true
+    device_class: duration
+    unit: min
+  icon: 'mdi:timer'
 - property: PumCleanRemaintime
   # Sample value: 0
 - property: PumCleanTotaltime
@@ -253,11 +258,23 @@ properties:
 - property: Selected_program_Water_Add
   # Sample value: 0
 - property: Selected_program_remaining_time_in_minutes
-  # Sample value: 1
+  sensor:
+    read_only: true
+    device_class: duration
+    unit: min
+  icon: 'mdi:update'
 - property: Selected_program_total_running_time_in_minutes
-  # Sample value: 1
+  sensor:
+    read_only: true
+    device_class: duration
+    unit: min
+  icon: 'mdi:timer'
 - property: Selected_program_total_time_in_minutes
-  # Sample value: 1
+  sensor:
+    read_only: true
+    device_class: duration
+    unit: min
+  icon: 'mdi:timer'
 - property: Session_pairing_commond
   # Sample value: 0
 - property: Session_pairing_states
