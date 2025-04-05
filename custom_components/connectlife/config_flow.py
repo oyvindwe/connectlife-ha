@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import copy
 import logging
 from typing import Any
 
@@ -82,7 +81,7 @@ class ConnectLifeConfigFlow(ConfigFlow, domain=DOMAIN):
             config_entry: ConfigEntry,
     ) -> OptionsFlow:
         """Get the options flow for this handler."""
-        return OptionsFlowHandler(config_entry)
+        return OptionsFlowHandler()
 
 
 class CannotConnect(HomeAssistantError):
@@ -95,10 +94,6 @@ class InvalidAuth(HomeAssistantError):
 
 class OptionsFlowHandler(OptionsFlow):
     """Handles options flow for the component."""
-
-    def __init__(self, config_entry: ConfigEntry) -> None:
-        """Initialize the options flow."""
-        self.config_entry = config_entry
 
     async def async_step_init(self, user_input=None):
         return self.async_show_menu(
@@ -167,10 +162,9 @@ class OptionsFlowHandler(OptionsFlow):
                 )
                 return self.async_show_form(step_id="development", data_schema=schema, errors=errors)
 
-            data = copy.deepcopy(self.config_entry.options).update({
-                CONF_DEVELOPMENT_MODE: development_mode,
-                CONF_TEST_SERVER_URL: test_server_url
-            })
+            data = self.config_entry.options.copy()
+            data[CONF_DEVELOPMENT_MODE] = development_mode
+            data[CONF_TEST_SERVER_URL] = test_server_url
             return self.async_create_entry(title="", data=data)
 
         development_mode = self.config_entry.options.get(CONF_DEVELOPMENT_MODE, False)
