@@ -191,7 +191,7 @@ properties:
     sensor:
       state_class: total
       device_class: energy
-      unit: hWh
+      unit: kWh
     icon: mdi:lightning-bolt-outline
     hide: false
   - property: Energy_save_setting_status
