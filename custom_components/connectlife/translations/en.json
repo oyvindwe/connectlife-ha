@@ -1587,6 +1587,13 @@
           "closed": "Closed",
           "closed_when_running": "Closed when running"
         }
+      },
+      "delaystart_delayend_mode_status": {
+        "name": "Delay start status",
+        "state": {
+          "off": "Off",
+          "On": "On"
+        }
       }
     },
     "switch": {

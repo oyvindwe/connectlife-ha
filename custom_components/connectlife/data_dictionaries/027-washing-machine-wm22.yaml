@@ -1,5 +1,19 @@
 # Washing machine WPNA84A2TSWIFI/PL
 properties:
+- property: Delay_start_remaining_time_in_minutes
+  sensor:
+    read_only: true
+    device_class: duration
+    unit: min
+    icon: 'mdi:update'
+- property: Delaystart_delayend_mode_status
+  sensor:
+    read_only: true
+    device_class: enum
+    icon: 'mdi:timer'
+    options:
+      1: off
+      3: on
 - property: Selected_program_remaining_time_in_minutes
   sensor:
     read_only: true
@@ -161,10 +175,6 @@ properties:
   # Sample value: 65535
 - property: Darhcdq
   # Sample value: 65535
-- property: Delay_start_remaining_time_in_minutes
-  # Sample value: 65535
-- property: Delaystart_delayend_mode_status
-  # Sample value: 1
 - property: Delaystart_delayend_remaining_time_in_minutes
   # Sample value: 65535
 - property: Delaystart_delayend_timestamp_status
