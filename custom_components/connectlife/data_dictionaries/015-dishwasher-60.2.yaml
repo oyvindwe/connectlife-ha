@@ -155,6 +155,10 @@ properties:
     icon: mdi:folder-open-outline
   - property: Energy_consumption_in_running_program
     sensor:
+      state_class: total
+      device_class: energy
+      unit: kWh
+      multiplier: 0.1
       unknown_value: 65535
   - property: Energy_save_setting_status
     hide: true

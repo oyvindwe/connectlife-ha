@@ -286,6 +286,15 @@
         },
         "state_class": {
           "$ref": "#/definitions/SensorStateClass"
+        },
+        "multiplier": {
+          "type": "number",
+          "description": "Multiplier to be used if the native API value does not match a supportet unit in Home Assistant",
+          "examples": [
+            "0.1",
+            "10"
+          ],
+          "default": "1"
         }
       }
     },
