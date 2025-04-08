@@ -271,14 +271,38 @@
       "alarm_zone_turned_off": {
         "name": "Zone turned off"
       },
+      "auto_dose_refill": {
+        "name": "Auto dose refill"
+      },
+      "automatic_ice_making": {
+        "name": "Automatic ice making"
+      },
       "charcoal_filter_expiration_alarm": {
         "name": "Charcoal filter expiration alarm"
+      },
+      "charcoal_filter_surplus_time": {
+        "name": "Charcoal filter surplus time"
+      },
+      "charcoal_filter_time_reset": {
+        "name": "Charcoal filter time reset"
       },
       "child_lock": {
         "name": "Child lock"
       },
+      "child_lock_open_alarm": {
+        "name": "Child lock open alarm"
+      },
+      "child_lock_open_door_sound_alarm": {
+        "name": "Child lock open door sound alarm"
+      },
       "child_lock_status": {
         "name": "Child lock"
+      },
+      "child_lock_switch_exist": {
+        "name": "Child lock switch exist"
+      },
+      "child_lock_switch_status": {
+        "name": "Child lock switch status"
       },
       "clean_filter": {
         "name": "Clean filter"
@@ -303,6 +327,9 @@
       },
       "eco_mode": {
         "name": "ECO mode"
+      },
+      "envi_temp_sens_head_failure": {
+        "name": "Envi temp sens head failure"
       },
       "error_0": {
         "name": "Error 0"
@@ -355,6 +382,24 @@
       "error_9": {
         "name": "Error 9"
       },
+      "existing_fuzzy_mode": {
+        "name": "Existing fuzzy mode"
+      },
+      "existing_holiday_mode": {
+        "name": "Existing holiday mode"
+      },
+      "existing_lock_fresh_mode": {
+        "name": "Existing lock fresh mode"
+      },
+      "existing_save_mode": {
+        "name": "Existing save mode"
+      },
+      "existing_sf_mode": {
+        "name": "Existing SF mode"
+      },
+      "existing_sr_mode": {
+        "name": "Existing SR mode"
+      },
       "f_e_filterclean": {
         "name": "Filter clean"
       },
@@ -391,17 +436,38 @@
       "free_fan_failure": {
         "name": "Freezer fan failure"
       },
+      "free_room_open": {
+        "name": "Free room open"
+      },
       "free_room_over_temp_alarm_failure": {
         "name": "Freezer room over temp alarm failure"
       },
       "free_temp_sens_head_failure": {
         "name": "Freezer temp sens head failure"
       },
+      "freeze_poweroff_ad": {
+        "name": "Freeze poweroff ad"
+      },
+      "freeze_poweron_ad": {
+        "name": "Freeze poweron ad"
+      },
       "frost_state": {
         "name": "Frost state"
       },
+      "fuzzy_mode": {
+        "name": "Fuzzy mode"
+      },
+      "gold_water_supply_mode": {
+        "name": "Gold water supply mode"
+      },
       "hard_pairing_status": {
         "name": "Hard pairing status"
+      },
+      "high_humidity": {
+        "name": "High humidity"
+      },
+      "high_temperature": {
+        "name": "High temperature"
       },
       "humidity_sensor": {
         "name": "Humidity sensor"
@@ -411,6 +477,21 @@
       },
       "ice_making_machine_failure": {
         "name": "Ice making machine failure"
+      },
+      "ice_making_state": {
+        "name": "Ice making state"
+      },
+      "ice_making_stop_status": {
+        "name": "Ice making stop status"
+      },
+      "ice_sensor_failure_flag": {
+        "name": "Ice sensor failure flag"
+      },
+      "ice_temperature_sensor_header_failure_flag": {
+        "name": "Ice temperature sensor header failure flag"
+      },
+      "inlet_pipe_temp_sens_head_failure": {
+        "name": "Inlet pipe temp sens head failure"
       },
       "light": {
         "name": "Light"
@@ -484,11 +565,38 @@
       "refr_var_room_sens_failure": {
         "name": "Refrigerator var room sens failure"
       },
+      "refrigerator_defrosting_failure": {
+        "name": "Refrigerator defrosting failure"
+      },
+      "refrigerator_dry_wet_room_sens_failure": {
+        "name": "Refrigerator dry wet room sens failure"
+      },
+      "refrigerator_evap_temp_sens_head_failure": {
+        "name": "Refrigerator evap temp sens head failure"
+      },
+      "refrigerator_fan_failure": {
+        "name": "Refrigerator fan failure"
+      },
+      "refrigerator_room_open": {
+        "name": "Refrigerator room open"
+      },
+      "refrigerator_room_over_temp_alarm": {
+        "name": "Refrigerator room over temp alarm"
+      },
+      "refrigerator_temp_sens_head_failure": {
+        "name": "Refrigerator temp sens head failure"
+      },
+      "refrigerator_var_room_sens_failure": {
+        "name": "Refrigerator var room sens failure"
+      },
       "remote_control_mode_monitoring": {
         "name": "Remote control mode monitoring"
       },
       "remote_control_monitoring_set_commands_actions": {
         "name": "Remote control"
+      },
+      "right_free_sensor_failure": {
+        "name": "Right free sensor failure"
       },
       "rinse_aid_refill": {
         "name": "Rinse aid refill"
@@ -519,6 +627,9 @@
       },
       "session_pairing_active": {
         "name": "Session pairing active"
+      },
+      "sf_mode": {
+        "name": "SF mode"
       },
       "sl1_alarm_auto_program_notification": {
         "name": "Zone 1 auto program notification"
@@ -664,6 +775,9 @@
       "sl6_status": {
         "name": "Zone 6 status"
       },
+      "sr_mode": {
+        "name": "SR mode"
+      },
       "step1_status": {
         "name": "Step 1 status"
       },
@@ -773,6 +887,9 @@
           "running": "Running"
         }
       },
+      "applicationpermissions": {
+        "name": "Application permissions"
+      },
       "auto_dose_duration": {
         "name": "Auto dose duration"
       },
@@ -821,7 +938,11 @@
           "running": "Running",
           "anti_crease": "Anti crease",
           "delay": "Delay",
-          "finished": "Finished"
+          "finished": "Finished",
+          "weigh": "Weigh",
+          "wash": "Wash",
+          "rinse": "Rinse",
+          "spin-dry": "Spin-dry"
         }
       },
       "current_programphase": {
@@ -829,8 +950,14 @@
           "running": "Running"
         }
       },
+      "daily_energy_consumption": {
+        "name": "Daily energy consumption"
+      },
       "daily_energy_kwh": {
         "name": "Daily energy consumption"
+      },
+      "defaultspinspeed": {
+        "name": "Default spin speed"
       },
       "delay_duration_inminutes": {
         "name": "Delay duration"
@@ -841,11 +968,17 @@
       "delay_start_set_time": {
         "name": "Delay start set time"
       },
+      "delayendtime": {
+        "name": "Delay end time"
+      },
       "delaystart_delayend_duration_inminutes": {
         "name": "Delay start duration"
       },
       "delaystart_delayend_remaining_timein_minutes": {
         "name": "Delay start remaining time"
+      },
+      "detergent_display": {
+        "name": "Detergent display"
       },
       "device_status": {
         "state": {
@@ -876,11 +1009,32 @@
       "display_logotype_setting_status": {
         "name": "Display logotype"
       },
+      "door_status": {
+        "name": "Door status",
+        "state": {
+          "not_available": "Not available",
+          "open": "Open",
+          "other": "Other",
+          "closed": "Closed"
+        }
+      },
+      "electricit_consumption_decimal": {
+        "name": "Electricit consumption decimal"
+      },
+      "electricit_consumption_int": {
+        "name": "Electricit consumption int"
+      },
       "energy_consumption_in_running_program": {
         "name": "Energy consumption in running program"
       },
+      "energy_estimate": {
+        "name": "Energy estimate"
+      },
       "environment_humidity": {
         "name": "Environment humidity"
+      },
+      "environment_real_temperature": {
+        "name": "Environment real temperature"
       },
       "error_read_out_1_code": {
         "name": "Error read out 1 code"
@@ -923,6 +1077,15 @@
           "mid": "Mid",
           "high": "High"
         }
+      },
+      "flexiblespintime_flag": {
+        "name": "Flexible spin time flag"
+      },
+      "freeze_max_temperature": {
+        "name": "Freeze max temperature"
+      },
+      "freeze_min_temperature": {
+        "name": "Freeze min temperature"
       },
       "freeze_real_temperature": {
         "name": "Freezer real temperature"
@@ -968,6 +1131,9 @@
           "running": "Running"
         }
       },
+      "mainwashtimeuseindex": {
+        "name": "Main wash time use index"
+      },
       "measured_vibrations": {
         "name": "Measured vibrations"
       },
@@ -983,14 +1149,26 @@
       "medium_temperature": {
         "name": "Medium temperature"
       },
+      "mian_wash_time": {
+        "name": "Main wash time"
+      },
       "notification_volumen_setting_status": {
         "name": "Notification volume"
+      },
+      "order_time_minimum_hour": {
+        "name": "Order time minimum hour"
       },
       "oven_temperature": {
         "name": "Oven temperature"
       },
+      "parse_lib_ver": {
+        "name": "Parse lib ver"
+      },
       "pressure_calibration_setting_status": {
         "name": "Pressure calibration"
+      },
+      "program_end_to_shutdown_time_in_minutes": {
+        "name": "Program end to shutdown time in minutes"
       },
       "real_humidity": {
         "name": "Real humidity"
@@ -1001,6 +1179,12 @@
       "real_humidity_c": {
         "name": "Real humidity c"
       },
+      "refrigerator_max_temperature": {
+        "name": "Refrigerator max temperature"
+      },
+      "refrigerator_min_temperature": {
+        "name": "Refrigerator min temperature"
+      },
       "refrigerator_real_temperature": {
         "name": "Refrigerator real temperature"
       },
@@ -1009,6 +1193,12 @@
       },
       "rinse_aid_setting_status": {
         "name": "Rinse aid"
+      },
+      "rinsenum": {
+        "name": "Rinse num"
+      },
+      "running_status": {
+        "name": "Running status"
       },
       "sand_timer1_duration_in_seconds": {
         "name": "Sand timer1 duration in seconds"
@@ -1100,6 +1290,12 @@
       },
       "selected_program_remaining_time_in_minutes": {
         "name": "Remaining time of selected program"
+      },
+      "selected_program_total_running_time_in_minutes": {
+        "name": "Selected program total running time"
+      },
+      "selected_program_total_time_in_minutes": {
+        "name": "Selected program total time"
       },
       "selected_programduration_inminutes": {
         "name": "Duration of selected program"
@@ -1359,6 +1555,21 @@
           "no_shape": "No shape"
         }
       },
+      "softer_display": {
+        "name": "Softer display"
+      },
+      "sound_setting": {
+        "name": "Sound setting"
+      },
+      "spin_speed_rpm": {
+        "name": "Spin speed rpm"
+      },
+      "spin_time": {
+        "name": "Spin time"
+      },
+      "spintime_index": {
+        "name": "Spin time index"
+      },
       "step1_duration": {
         "name": "Step1 duration"
       },
@@ -1520,6 +1731,12 @@
       "t_sleep": {
         "name": "Sleep"
       },
+      "temperature": {
+        "name": "Temperature"
+      },
+      "temperature_default_defaultmainwashtime": {
+        "name": "Temperature default default main wash time"
+      },
       "temperature_room_judge": {
         "name": "Temperature room judge"
       },
@@ -1547,11 +1764,29 @@
       "utc_datetime_bdc_delaystart_delayend_timestamp": {
         "name": "BDC DelayStart DelayEnd"
       },
+      "variation_max_temperature": {
+        "name": "Variation max temperature"
+      },
+      "variation_min_temperature": {
+        "name": "Variation min temperature"
+      },
       "variation_real_temperature": {
         "name": "Variation real temperature"
       },
       "variation_sensor_real_temperature": {
         "name": "Variation sensor real temperature"
+      },
+      "variation_temperature": {
+        "name": "Variation temperature"
+      },
+      "washing_machine_type_kg": {
+        "name": "Washing machine type kg"
+      },
+      "washing_machine_type_max_speed": {
+        "name": "Washing machine type max speed"
+      },
+      "water_consumption": {
+        "name": "Water consumption"
       },
       "water_consumption_in_running_program": {
         "name": "Water consumption in running program"
@@ -1621,6 +1856,15 @@
       "holiday_mode": {
         "name": "Holiday mode"
       },
+      "ice_making_b_switch_status": {
+        "name": "Ice making B switch status"
+      },
+      "ice_making_state": {
+        "name": "Ice making state"
+      },
+      "interior_light_at_power_off_setting_status": {
+        "name": "Interior light at power off setting status"
+      },
       "mute": {
         "name": "Mute"
       },
@@ -1629,6 +1873,27 @@
       },
       "odor_control_setting": {
         "name": "Odor control"
+      },
+      "prewash": {
+        "name": "Prewash"
+      },
+      "save_mode": {
+        "name": "Save mode"
+      },
+      "sf_mode": {
+        "name": "SF mode"
+      },
+      "sf_sr_mutex_mode": {
+        "name": "SF SR mutex mode"
+      },
+      "sr_mode": {
+        "name": "SR mode"
+      },
+      "steam": {
+        "name": "Steam"
+      },
+      "super_rinse_setting_status": {
+        "name": "Super rinse setting status"
       },
       "t_air": {
         "name": "Air"
@@ -1659,6 +1924,9 @@
       },
       "t_tms": {
         "name": "AI"
+      },
+      "tab_setting_status": {
+        "name": "Tab setting status"
       }
     },
     "select": {
@@ -1680,6 +1948,9 @@
           "pre-ironing": "Pre-ironing",
           "extra_dry": "Extra dry"
         }
+      },
+      "extrarinsenum": {
+        "name": "Extra rinse num"
       },
       "lightbrightness": {
         "name": "Light brightness"
@@ -1707,7 +1978,22 @@
           "fast30": "Quick 30",
           "shirts": "Shirts",
           "bed_linen": "Bed linen",
-          "down": "Down"
+          "down": "Down",
+          "cotton_dry": "Cotton dry",
+          "synthetic_dry": "Synthetic dry",
+          "drum_cleaning": "Drum cleaning",
+          "eco_40_60": "Eco 40 60",
+          "fast15": "Fast15",
+          "spin-dry": "Spin-dry",
+          "rinse_spin": "Rinse spin",
+          "clean_dry_60": "Clean dry 60",
+          "power49": "Power49"
+        }
+      },
+      "spin_speed_rpm": {
+        "name": "Spin speed",
+        "state": {
+          "none": "None"
         }
       },
       "t_fan_speed": {
@@ -1747,6 +2033,12 @@
           "off": "Off",
           "follow": "Follow",
           "not_follow": "Not Follow"
+        }
+      },
+      "temperature": {
+        "name": "Temperature",
+        "state": {
+          "cold": "Cold"
         }
       }
     },
