@@ -1592,7 +1592,7 @@
         "name": "Delay start status",
         "state": {
           "off": "Off",
-          "On": "On"
+          "on": "On"
         }
       }
     },
