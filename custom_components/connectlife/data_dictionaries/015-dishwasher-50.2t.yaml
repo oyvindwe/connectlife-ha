@@ -192,6 +192,8 @@ properties:
       state_class: total
       device_class: energy
       unit: kWh
+      multiplier: 0.1
+      unknown_value: 65535
     icon: mdi:lightning-bolt-outline
     hide: false
   - property: Energy_save_setting_status

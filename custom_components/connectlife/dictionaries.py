@@ -42,6 +42,7 @@ PROPERTY = "property"
 PROPERTIES = "properties"
 MAX_VALUE = "max_value"
 MIN_VALUE = "min_value"
+MULTIPLIER = "multiplier"
 TARGET = "target"
 READ_ONLY = "read_only"
 STATE_CLASS = "state_class"
@@ -129,6 +130,7 @@ class Humidifier:
 class Number:
     min_value: int | None
     max_value: int | None
+    multiplier: float | None
     device_class: NumberDeviceClass | None
     unit: str | None
 
@@ -138,6 +140,7 @@ class Number:
         self.min_value = number[MIN_VALUE] if MIN_VALUE in number else None
         self.max_value = number[MAX_VALUE] if MAX_VALUE in number else None
         self.unit = number[UNIT] if UNIT in number and number[UNIT] else None
+        self.multiplier = number[MULTIPLIER] if MULTIPLIER in number else None
 
         device_class = None
         if DEVICE_CLASS in number:
@@ -189,6 +192,7 @@ class Sensor:
     unknown_value: int | None
     min_value: int | None
     max_value: int | None
+    multiplier: float | None
     read_only: bool | None
     state_class: SensorStateClass | None
     device_class: SensorDeviceClass | None
@@ -205,6 +209,7 @@ class Sensor:
         )
         self.read_only = sensor[READ_ONLY] if READ_ONLY in sensor else None
         self.unit = sensor[UNIT] if UNIT in sensor and sensor[UNIT] else None
+        self.multiplier = sensor[MULTIPLIER] if MULTIPLIER in sensor else None
         self.state_class = (
             SensorStateClass(sensor[STATE_CLASS]) if STATE_CLASS in sensor else None
         )

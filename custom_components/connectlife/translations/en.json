@@ -87,7 +87,7 @@
   "services": {
     "set_value": {
       "name": "Set value",
-      "description": "Sets a value for the status. Use with care.",
+      "description": "Sets a value for the status. Use with care. Does not apply multiplier when setting.",
       "fields": {
         "value": {
           "name": "Value",

@@ -73,6 +73,7 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
         super().__init__(coordinator, appliance, status, Platform.SENSOR)
         self.status = status
         self.read_only = dd_entry.sensor.read_only
+        self.multiplier = dd_entry.sensor.multiplier
         self.unknown_value = dd_entry.sensor.unknown_value
 
         device_class = dd_entry.sensor.device_class
@@ -126,7 +127,12 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
                         self.nickname,
                     )
                     value = None
-            self._attr_native_value = value if value != self.unknown_value else None
+            if value == self.unknown_value:
+                self._attr_native_value = None
+            else:
+                if self.multiplier is not None:
+                    value *= self.multiplier
+                self._attr_native_value = value
         self._attr_available = self.coordinator.data[self.device_id].offline_state == 1
 
     async def async_set_value(self, value: int) -> None:
