@@ -41,6 +41,7 @@ visibility.
 |                   | Air conditioner | 008              | 304                 |
 |                   | Air conditioner | 009              | 100                 |
 |                   | Air conditioner | 009              | 104                 |
+| AS-09TW2RLDTT00   | Air conditioner | 009              | 105                 |
 |                   | Air conditioner | 009              | 106                 |
 |                   | Air conditioner | 009              | 109                 |
 |                   | Air conditioner | 009              | 117                 |
