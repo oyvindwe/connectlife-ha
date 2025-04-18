@@ -6,50 +6,6 @@ climate:
       t_fan_speed: 3
       t_temp: 64
 properties:
-  - property: daily_energy_kwh
-    hide: true
-    sensor:
-      read_only: true
-      state_class: total_increasing
-      device_class: energy
-      unit: kWh
-  - property: f_temp_in
-    climate:
-      target: current_temperature
-  - property: t_fan_speed
-    climate:
-      target: fan_mode
-      options:
-        0: auto
-        2: low
-        3: medium
-        4: high
-  - property: f_humidity
-    climate:
-      target: current_humidity
-      unknown_value: 128
-  - property: t_power
-    climate:
-      target: is_on
-  - property: t_sleep
-    icon: mdi:power-sleep
-    switch:
-      device_class: switch
-  - property: t_temp
-    climate:
-      target: target_temperature
-      min_value:
-        celsius: 16
-        fahrenheit: 61
-      max_value:
-        celsius: 32
-        fahrenheit: 90
-  - property: t_temp_type
-    climate:
-      target: temperature_unit
-      options:
-        0: celsius
-        1: fahrenheit
   - property: t_work_mode
     climate:
       target: hvac_mode
