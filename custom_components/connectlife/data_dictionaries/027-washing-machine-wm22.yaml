@@ -5,72 +5,72 @@ properties:
     read_only: true
     device_class: duration
     unit: min
-    icon: 'mdi:update'
+  icon: 'mdi:update'
 - property: Delaystart_delayend_mode_status
   sensor:
     read_only: true
     device_class: enum
-    icon: 'mdi:timer'
     options:
-      1: off
-      3: on
+      1: "off"
+      3: "on"
+  icon: 'mdi:timer'
 - property: Selected_program_remaining_time_in_minutes
   sensor:
     read_only: true
     device_class: duration
     unit: min
-    icon: 'mdi:update'
+  icon: 'mdi:update'
 - property: Selected_program_duration_in_minutes
   sensor:
     read_only: true
     device_class: duration
     unit: min
-    icon: 'mdi:timer'
+  icon: 'mdi:timer'
 - property: Door_status
   sensor:
     read_only: true
     device_class: enum
-    icon: 'mdi:door'
     options:
       0: not_available
       1: open
       2: closed
       3: closed_when_running
+  icon: 'mdi:door'
 - property: Status
   sensor:
     read_only: true
     device_class: enum
-    icon: 'mdi:washing-machine'
     options:
-      0: off
+      0: "off"
       1: standby
       6: running
+  icon: 'mdi:washing-machine'
 - property: Current_temperature
   sensor:
     read_only: true
     device_class: temperature
     unit: °C
-    icon: 'mdi:thermometer'
+  icon: 'mdi:thermometer'
 - property: Selected_program_id_status
   sensor:
-  read_only: true
-  device_class: enum
+    read_only: true
+    device_class: enum
+    options:
+      0: eco_40_60
+      1: white_cotton
+      2: color
+      3: wool_manual
+      4: mix_synthetic
+      5: extra_hygiene
+      6: fast_20
+      7: intensive_59_32
+      9: sport
+      10: baby
+      12: shirts
+      13: drum_cleaning
+      14: spinning_draining
+      16: rinsing_softening
   icon: 'mdi:playlist-check'
-  options:
-    0: eco_40_60
-    1: white_cotton
-    2: color
-    3: wool_manual
-    4: mix_synthetic
-    5: extra_hygiene
-    6: fast_20
-    7: intensive_59_32
-    9: sport
-    10: baby
-    12: shirts
-    13: drum_cleaning
-    14: spinning_draining
-    16: rinsing_softening
 - property: ADS_Dirtiness_setting_status
   # Sample value: 2
 - property: ADS_Settings_Current_Program_Detergent_setting_status

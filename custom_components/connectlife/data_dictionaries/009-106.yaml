@@ -19,13 +19,13 @@ properties:
     climate:
       target: current_temperature
   - property: t_beep
-    switch: {}
+    switch:
   - property: t_eco
     icon: mdi:leaf
     switch:
       device_class: switch
   - property: t_fan_mute
-    switch: {}
+    switch:
   - property: t_fan_speed
     climate:
       target: fan_mode

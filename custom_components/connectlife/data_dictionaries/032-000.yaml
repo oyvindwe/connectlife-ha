@@ -87,7 +87,7 @@ properties:
   - property: Bundling_sensor_setting_status
     # Example value: 0
   - property: Child_Lock_status
-    binary_sensor: {}
+    binary_sensor: 
   - property: Condensed_watermode
     hide: true
   - property: Current_programphase
@@ -104,7 +104,7 @@ properties:
       device_class: duration
       unit: min
   - property: DelayStart_DelayEnd_mode
-    binary_sensor: {}
+    binary_sensor: 
     hide: true
   - property: DelayStart_DelayEnd_remaining_timein_minutes
     sensor:
@@ -209,15 +209,15 @@ properties:
     binary_sensor:
       device_class: problem
   - property: ExtraDry_setting
-    sensor: {}
+    sensor: 
   - property: Float_switch
-    binary_sensor: {}
+    binary_sensor: 
   - property: Fota
     hide: true
   - property: HardPairingStatus
     hide: true
   - property: Humidity_sensor
-    binary_sensor: {}
+    binary_sensor: 
     hide: true
   - property: Logo_setting_status
     hide: true
@@ -226,19 +226,19 @@ properties:
   - property: NTC_sensor_2
     hide: true
   - property: Reed_switch
-    binary_sensor: {}
+    binary_sensor: 
     hide: true
   - property: Remote_control_mode_monitoring
-    binary_sensor: {}
+    binary_sensor: 
     hide: true
   - property: Remote_control_monitoring_set_commands
     hide: true
   - property: Remote_control_monitoring_set_commands_actions
     hide: true
   - property: Selected_program_AntiCrease_status
-    binary_sensor: {}
+    binary_sensor: 
   - property: Selected_program_ExtraDry_status
-    binary_sensor: {}
+    binary_sensor: 
   - property: Selected_program_ID
     icon: mdi:selection-ellipse-arrow-inside
     sensor:
@@ -261,7 +261,7 @@ properties:
         14: remote
         255: none
   - property: Selected_program_SteamFinish
-    binary_sensor: {}
+    binary_sensor: 
   - property: Selected_program_mode_status
     hide: true
     # Example value: 1
@@ -274,7 +274,7 @@ properties:
       device_class: duration
       unit: min
   - property: Session_pairing_active
-    binary_sensor: {}
+    binary_sensor:
     hide: true
   - property: Session_pairing_setting
     hide: true
@@ -300,7 +300,7 @@ properties:
     hide: true
     # Example value: 1
   - property: Water_level_switch
-    binary_sensor: {}
+    binary_sensor:
     hide: true
   - property: daily_energy_kwh
     hide: true

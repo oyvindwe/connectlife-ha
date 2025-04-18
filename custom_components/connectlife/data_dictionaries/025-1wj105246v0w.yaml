@@ -4,12 +4,11 @@ properties:
   sensor:
     read_only: true
     device_class: enum
-    icon: 'mdi:shield-check'
+  icon: 'mdi:shield-check'
 - property: Current_program_phase
   sensor:
     read_only: true
     device_class: enum
-    icon: 'mdi:progress-wrench'
     options:
       0: not_available
       1: program_not_selected
@@ -27,6 +26,7 @@ properties:
       13: anti_crease
       14: delay
       15: finished
+  icon: 'mdi:progress-wrench'
 - property: daily_energy_kwh
   sensor:
     read_only: true

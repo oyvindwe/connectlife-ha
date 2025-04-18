@@ -1,6 +1,6 @@
 properties:
   - property: ADO_allowed
-    binary_sensor: {}
+    binary_sensor:
     hide: false
   - property: Alarm_auto_dose_refill
     entity_category: diagnostic

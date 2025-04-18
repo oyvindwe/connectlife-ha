@@ -1,18 +1,18 @@
 {
-  "$schema": "http://json-schema.org/draft-06/schema#",
-  "$ref": "#/definitions/ConnectLifeDataDictionary",
-  "definitions": {
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$ref": "#/$defs/ConnectLifeDataDictionary",
+  "$defs": {
     "ConnectLifeDataDictionary": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
         "climate": {
-          "$ref": "#/definitions/ClimateDevice"
+          "$ref": "#/$defs/ClimateDevice"
         },
         "properties": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Property"
+            "$ref": "#/$defs/Property"
           }
         }
       },
@@ -28,7 +28,7 @@
         "presets": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Preset"
+            "$ref": "#/$defs/Preset"
           },
           "description": "List of presets"
         }
@@ -56,28 +56,28 @@
           "type": "string"
         },
         "binary_sensor": {
-          "$ref": "#/definitions/BinarySensor"
+          "$ref": "#/$defs/BinarySensor"
         },
         "climate": {
-          "$ref": "#/definitions/Climate"
+          "$ref": "#/$defs/Climate"
         },
         "humidifier": {
-          "$ref": "#/definitions/Humidifier"
+          "$ref": "#/$defs/Humidifier"
         },
         "number": {
-          "$ref": "#/definitions/Number"
+          "$ref": "#/$defs/Number"
         },
         "select": {
-          "$ref": "#/definitions/Select"
+          "$ref": "#/$defs/Select"
         },
         "sensor": {
-          "$ref": "#/definitions/Sensor"
+          "$ref": "#/$defs/Sensor"
         },
         "switch": {
-          "$ref": "#/definitions/Switch"
+          "$ref": "#/$defs/Switch"
         },
         "water_heater": {
-          "$ref": "#/definitions/WaterHeater"
+          "$ref": "#/$defs/WaterHeater"
         },
         "icon": {
           "type": "string",
@@ -118,16 +118,16 @@
       "description": "Defines a property for an appliance."
     },
     "BinarySensor": {
-      "type": "object",
+      "type": ["object", "null"],
       "additionalProperties": false,
       "properties": {
         "device_class": {
-          "$ref": "#/definitions/BinarySensorDeviceClass"
+          "$ref": "#/$defs/BinarySensorDeviceClass"
         },
         "options": {
           "type": "object",
           "additionalProperties": {
-            "type": "string"
+            "type": "boolean"
           },
           "description": "Map of integer to boolean. By default, 0 and 1 is mapped to off (as 0 often implies that the sensor is not available), and 1 to true."
         }
@@ -155,16 +155,16 @@
       "additionalProperties": false,
       "properties": {
         "target": {
-          "$ref": "#/definitions/ClimateTarget"
+          "$ref": "#/$defs/ClimateTarget"
         },
         "unknown_value": {
-          "$ref": "#/definitions/UnknownValue"
+          "$ref": "#/$defs/UnknownValue"
         },
         "max_value": {
-          "$ref": "#/definitions/IntegerOrTemperature"
+          "$ref": "#/$defs/IntegerOrTemperature"
         },
         "min_value": {
-          "$ref": "#/definitions/IntegerOrTemperature"
+          "$ref": "#/$defs/IntegerOrTemperature"
         },
         "options": {
           "type": "object",
@@ -180,7 +180,7 @@
       "additionalProperties": false,
       "properties": {
         "target": {
-          "$ref": "#/definitions/HumidifierTarget"
+          "$ref": "#/$defs/HumidifierTarget"
         },
         "min_value": {
           "type": "integer"
@@ -189,7 +189,7 @@
           "type": "integer"
         },
         "device_class": {
-          "$ref": "#/definitions/HumidifierDeviceClass"
+          "$ref": "#/$defs/HumidifierDeviceClass"
         },
         "options": {
           "type": "object",
@@ -205,7 +205,7 @@
       "additionalProperties": false,
       "properties": {
         "device_class": {
-          "$ref": "#/definitions/NumberDeviceClass"
+          "$ref": "#/$defs/NumberDeviceClass"
         },
         "unit": {
           "type": "string",
@@ -246,7 +246,7 @@
           "description": "Map of integer to string."
         },
         "command": {
-          "$ref": "#/definitions/Command"
+          "$ref": "#/$defs/Command"
         }
       },
       "required": [
@@ -254,11 +254,11 @@
       ]
     },
     "Sensor": {
-      "type": "object",
+      "type": ["object", "null" ],
       "additionalProperties": false,
       "properties": {
         "device_class": {
-          "$ref": "#/definitions/SensorDeviceClass"
+          "$ref": "#/$defs/SensorDeviceClass"
         },
         "read_only": {
           "type": "boolean",
@@ -275,7 +275,7 @@
           ]
         },
         "unknown_value": {
-          "$ref": "#/definitions/UnknownValue"
+          "$ref": "#/$defs/UnknownValue"
         },
         "options": {
           "type": "object",
@@ -285,7 +285,7 @@
           "description": "Map of integer to string. Required if device_class is set to enum."
         },
         "state_class": {
-          "$ref": "#/definitions/SensorStateClass"
+          "$ref": "#/$defs/SensorStateClass"
         },
         "multiplier": {
           "type": "number",
@@ -294,29 +294,29 @@
             "0.1",
             "10"
           ],
-          "default": "1"
+          "default": 1
         }
       }
     },
     "Switch": {
-      "type": "object",
+      "type": ["object", "null"],
       "additionalProperties": false,
       "properties": {
         "off": {
           "type": "integer",
           "description": "Off value",
-          "default": "0"
+          "default": 0
         },
         "on": {
           "type": "integer",
           "description": "On value",
-          "default": "1"
+          "default": 1
         },
         "device_class": {
-          "$ref": "#/definitions/SwitchDeviceClass"
+          "$ref": "#/$defs/SwitchDeviceClass"
         },
         "command": {
-          "$ref": "#/definitions/Command"
+          "$ref": "#/$defs/Command"
         }
       },
       "title": "BinarySensor"
@@ -326,23 +326,23 @@
       "additionalProperties": false,
       "properties": {
         "target": {
-          "$ref": "#/definitions/WaterHeaterTarget"
+          "$ref": "#/$defs/WaterHeaterTarget"
         },
         "unknown_value": {
-          "$ref": "#/definitions/UnknownValue"
+          "$ref": "#/$defs/UnknownValue"
         },
         "max_value": {
-          "$ref": "#/definitions/IntegerOrTemperature"
+          "$ref": "#/$defs/IntegerOrTemperature"
         },
         "min_value": {
-          "$ref": "#/definitions/IntegerOrTemperature"
+          "$ref": "#/$defs/IntegerOrTemperature"
         },
         "options": {
           "type": "object",
           "additionalProperties": {
-            "type": "string"
+            "type": ["string", "boolean"]
           },
-          "description": "Map of integer to string. Required for targets current_operation, state, and temperature_unit."
+          "description": "Map of integer to string or boolean. Required for targets current_operation (string), state (string), temperature_unit (string), and is_away_mode_on (boolean)."
         }
       }
     },

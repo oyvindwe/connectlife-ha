@@ -1,13 +1,13 @@
 properties:
   - property: AntiCrease
     icon: mdi:iron
-    switch: {}
+    switch: 
   - property: Child_lock
     icon: mdi:lock
-    switch: {}
+    switch: 
   - property: Clean_Filter
     icon: mdi:brush-variant
-    binary_sensor: {}
+    binary_sensor: 
   - property: Current_program_phase
     icon: mdi:tumble-dryer
     sensor:
@@ -30,7 +30,7 @@ properties:
         2: off
   - property: Drum_Light
     icon: mdi:lightbulb-on
-    switch: {}
+    switch:
   - property: Dry_Level
     icon: mdi:weather-sunny
     select:
@@ -46,7 +46,7 @@ properties:
       read_only: true
   - property: Waterbox_Full
     icon: mdi:water-alert
-    binary_sensor: {}
+    binary_sensor:
   - property: machine_status
     icon: mdi:tumble-dryer
     sensor:
@@ -58,5 +58,5 @@ properties:
       read_only: true
   - property: mute
     icon: mdi:volume-mute
-    switch: {}
+    switch:
 

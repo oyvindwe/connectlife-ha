@@ -10,14 +10,14 @@ properties:
     water_heater:
       target: current_temperature
   - property: t_air
-    switch: {}
+    switch:
   - property: t_beep
     hide: true
   - property: t_fan_speed
     # Same as t_air
     hide: true
   - property: t_sterilization
-    switch: {}
+    switch:
   - property: t_vacation
     water_heater:
       target: is_away_mode_on
