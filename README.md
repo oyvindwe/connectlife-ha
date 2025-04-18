@@ -34,6 +34,7 @@ Default mapping files are provided for the following device types:
 | Device type              | Device type code                                                |
 |--------------------------|-----------------------------------------------------------------|
 | Portable air conditioner | [006](custom_components/connectlife/data_dictionaries/006.yaml) |
+| Dehumidifier             | [007](custom_components/connectlife/data_dictionaries/007.yaml) |
 
 Any devices of these types will use the default mapping file, but it may not be fully functional until a
 feature-specific mapping file is provided.
