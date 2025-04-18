@@ -1,13 +1,13 @@
 # Mapping files
 
-Mapping files for known appliances are located in this directory. Appliances without a mapping file will be still
+Mapping files for known appliances are located in this directory. Appliances without a mapping file will still
 be loaded, but with a warning in the log. Their properties will all be mapped to [sensor](#type-sensor) entities,
 with `hidden` set to `true` and `state_class` set to `measurement` (to enable
 [long-term statistics](https://developers.home-assistant.io/docs/core/entity/sensor/#long-term-statistics)).
 
 ## Default mapping files
 
-It is possible to define a default mapping file for each _device type_ (e.g. `006.yaml` for portable airconditioners),
+It is possible to define a default mapping file for each _device type_ (e.g. `006.yaml` for portable air conditioners),
 with overrides in _feature_ specific files (e.g. `006-200.yaml` or `006-201.yaml`) for properties that has different
 mappings for the different variants.
 
@@ -40,6 +40,19 @@ If you change unit or state class for sensors, you will need to fix the history 
 
 You need to restart Home Assistant to load mapping changes.
 
+## Supported Home Assistant entities
+
+ConnectLife properties can be mapped to any of these entity types:
+
+- [Binary sensor](https://developers.home-assistant.io/docs/core/entity/binary-sensor)
+- [Climate](https://developers.home-assistant.io/docs/core/entity/climate)
+- [Humidifier](https://developers.home-assistant.io/docs/core/entity/humidifier)
+- [Number](https://developers.home-assistant.io/docs/core/entity/number)
+- [Select](https://developers.home-assistant.io/docs/core/entity/select)
+- [Sensor](https://developers.home-assistant.io/docs/core/entity/sensor)
+- [Switch](https://developers.home-assistant.io/docs/core/entity/switch)
+- [Water heater](https://developers.home-assistant.io/docs/core/entity/water-heater)
+
 ### Mapping tips and tricks
 
 - Generate a skeleton file using the [connectlife](https://pypi.org/project/connectlife/) package:
@@ -53,8 +66,8 @@ You need to restart Home Assistant to load mapping changes.
 - Change settings in the ConnectLife app while monitoring value changes in Home Assistant. Take a note of which
   property is changes, what the value is, and what the button or action is named in the ConnectLife app.
 - Be aware that `true`, `false`, `yes`, `no`, `on`, and `off` are all interpreted as boolean values in YAML,
-  and must be quoted (e.g. `"off"`) to be interpreted as a string, e.g. in option lists. Note that some options
-  expects boolean (unquoted) values.
+  and must be quoted (e.g. `"off"`) to be interpreted as a string, e.g., in option lists. Note that some options
+  expect boolean (unquoted) values.
 - Validate your mapping file with the [JSON schema](properties-schema.json).
 - Remember to add translation strings. In the base dir of this repo, run the following command to update `strings.json`:
 
@@ -62,7 +75,7 @@ You need to restart Home Assistant to load mapping changes.
   python -m scripts.gen_strings
   ```
 
-  and then edit the added strings. Finally, merge the changes into [translations/en.json](translations/en.json).
+  and then edit the added strings. Finally, merge the changes into [translations/en.json](../translations/en.json).
 
 Note that translation keys must be lowercase!
 
@@ -91,7 +104,7 @@ validated.
 
 ## Type `BinarySensor`
 
-Domain `binary_sensor` can be used for read only properties. By default, `0` and `1` is mapped to off and `2` to on,
+Domain `binary_sensor` can be used for read-only properties. By default, `0` and `1` is mapped to off and `2` to on,
 as `0` often implies that the sensor state is not available. For other mappings, provide `options`.
 
 | Item           | Type                             | Description                                                                                                                                                           |
@@ -163,7 +176,7 @@ climate:
 Remember to add [translation strings](#translation-strings) for preset modes.
 
 Since multiple states may match a given preset, the first matching preset of the list will be displayed in the UI.
-E.g. with the above preset definitions, if `t_eco` is 1, `t_fan_speed` is 0, _and_ `t_tms` is 1, `eco` will be displayed
+E.g., with the above preset definitions, if `t_eco` is 1, `t_fan_speed` is 0, _and_ `t_tms` is 1, `eco` will be displayed
 as the selected preset.
 
 Presets only has effect for devices with climate mappings.
@@ -250,7 +263,7 @@ type `water_heater`, a water heater entity is created for the appliance.
 `options` for `is_away_mode_on` is a map of integer to boolean.
 
 `is_on` adds operation `"off"` to the operation list. You may define this option as well on the `current_operation`
-target, but will not send in the mapped property or value when selecing the "Off" operation in Home Assistant.
+target, but will not send in the mapped property or value when selecting the "Off" operation in Home Assistant.
 If `current_operation` is not set, `is_on` also adds operation `"on"` to the operation list.
 
 For `current_operation`, remember to add [translation strings](#translation-strings) for the options.
@@ -277,7 +290,7 @@ Not yet supported target properties:
 
 ## Type `IntegerOrTemperature`
 
-Either just a numeric value, or values in Celsius and/or Fahrenheit.
+Either just a numeric value or values in Celsius and/or Fahrenheit.
 
 ```yaml
 min_value: 10
@@ -301,7 +314,7 @@ to `property.<name>`, where `<name>` must be a property in the same mapping file
 - A _Select_ entity
 - A _Sensor_ entity with `device_type: enum`
 
-When `unit` is mapped to a property, unit is set to the value of the given property _during initialisation_, after
+When `unit` is mapped to a property, unit is set to the value of the given property _during initialization_, after
 mapping the numeric mapping to the translation _key_ (in the YAML mapping file, _not_ `strings.json`).
 
 For example, this will set the unit of `Meat_probe_measured_temperature` to Celsius if `Oven_temperature_unit` is `1`
@@ -345,7 +358,7 @@ properties:
         2: open
 ```
 
-This goes into  [strings.json](../strings.json) and  [en.json](../translations/en.json),
+This goes into [strings.json](../strings.json) and [en.json](../translations/en.json),
 
 ```json
 {
@@ -383,7 +396,7 @@ properties:
 ```
 
 Strings not in Home Assistant ([climate](https://github.com/home-assistant/core/blob/dev/homeassistant/components/climate/strings.json)
-[humidifier](https://github.com/home-assistant/core/blob/dev/homeassistant/components/humidifier/strings.json)) goes in [strings.json](../strings.json) and  [en.json](../translations/en.json):
+[humidifier](https://github.com/home-assistant/core/blob/dev/homeassistant/components/humidifier/strings.json)) goes in [strings.json](../strings.json) and [en.json](../translations/en.json):
 
 ```json
 {
