@@ -5,6 +5,17 @@ be loaded, but with a warning in the log. Their properties will all be mapped to
 with `hidden` set to `true` and `state_class` set to `measurement` (to enable
 [long-term statistics](https://developers.home-assistant.io/docs/core/entity/sensor/#long-term-statistics)).
 
+## Default mapping files
+
+It is possible to define a default mapping file for each _device type_ (e.g. `006.yaml` for portable airconditioners),
+with overrides in _feature_ specific files (e.g. `006-200.yaml` or `006-201.yaml`) for properties that has different
+mappings for the different variants.
+
+It's not a problem to add a property that only exists for some feature variants to a default mapping file, they
+will just be ignored for feature variants that don't expose that property.
+
+**Note:** The top level `climate` section is not supported in the default mapping files.
+
 ## Create your own mapping file
 
 To map you device, create a file with the name `<deviceTypeCode>-<deviceFeatureCode>.yaml` in this directory. When done,
