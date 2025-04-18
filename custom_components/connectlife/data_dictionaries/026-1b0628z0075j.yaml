@@ -10,7 +10,7 @@ properties:
   - property: ali_wifi_fault_flag
     hide: true
   - property: automatic_ice_making
-    switch: {}
+    switch:
   - property: camera_state
     hide: true
   - property: charcoal_filter_expiration_alarm
@@ -190,7 +190,7 @@ properties:
       max_value: -14
   - property: frost_state
     hide: true
-    binary_sensor: {}
+    binary_sensor:
   - property: froze_convert_to_refri_switch_status
     hide: true
   - property: fruit_vegetables_temperature
@@ -212,7 +212,7 @@ properties:
     hide: true
     binary_sensor:
   - property: holiday_mode
-    switch: {}
+    switch:
   - property: humidity sensor_failure
     hide: true
     binary_sensor:
@@ -222,9 +222,9 @@ properties:
     binary_sensor:
       device_class: problem
   - property: ice_making_b_switch_status
-    switch: {}
+    switch:
   - property: ice_making_state
-    switch: {}
+    switch:
   - property: low_humidity
     hide: true
     sensor:
@@ -307,7 +307,7 @@ properties:
       device_class: problem
   - property: quiet_mode_status
     hide: true
-    binary_sensor: {}
+    binary_sensor:
   - property: real_humidity
     hide: true
     sensor:
@@ -345,7 +345,7 @@ properties:
     hide: true
   - property: refrigerator_room_open
     hide: true
-    binary_sensor: {}
+    binary_sensor:
   - property: refrigerator_room_over_temp_alarm
     hide: true
     binary_sensor:
@@ -435,13 +435,12 @@ properties:
       device_class: problem
   - property: sabbath_mode_status
     hide: true
-    binary_sensor: {}
+    binary_sensor:
   - property: sabbath_mode_switch_status
     hide: true
-    binary_sensor: {}
+    binary_sensor:
   - property: save_mode
-    switch: {}
-    binary_sensor: {}
+    switch:
   - property: screen_display_brightness
     hide: true
   - property: screen_display_lock
@@ -455,9 +454,9 @@ properties:
   - property: sensor_failure_status2
     hide: true
   - property: sf_mode
-    switch: {}
+    switch:
   - property: sf_sr_mutex_mode
-    switch: {}
+    switch:
   - property: shelf_light_a_state
     hide: true
   - property: shelf_light_atmosphere_brightness
@@ -479,7 +478,7 @@ properties:
   - property: special_space
     hide: true
   - property: sr_mode
-    switch: {}
+    switch:
   - property: standby_mode_state
     hide: true
   - property: standby_mode_valid
@@ -523,7 +522,7 @@ properties:
     hide: true
   - property: vacuum_on_off_status
     hide: true
-    binary_sensor: {}
+    binary_sensor:
   - property: var_room_open_2
     hide: true
   - property: var_room_over_temp_alarm

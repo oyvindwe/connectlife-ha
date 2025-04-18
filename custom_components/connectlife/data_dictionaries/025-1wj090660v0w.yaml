@@ -2,7 +2,7 @@
 properties:
   - property: Child_lock
     icon: mdi:lock
-    switch: {}
+    switch:
   - property: Current_program_phase
     icon: mdi:state-machine
     sensor:
@@ -125,7 +125,7 @@ properties:
         1: "on"
   - property: Steam
     icon: mdi:heat-wave
-    switch: {}
+    switch:
   - property: temperature
     icon: mdi:thermometer-lines
     select:

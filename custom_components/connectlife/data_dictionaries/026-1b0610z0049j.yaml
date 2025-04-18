@@ -20,7 +20,7 @@ properties:
   - property: ali_wifi_fault_flag
     hide: true
   - property: automatic_ice_making
-    switch: {}
+    switch:
   - property: charcoal_filter_expiration_alarm
     hide: true
     binary_sensor:
@@ -168,7 +168,7 @@ properties:
       max_value: -5
   - property: frost_state
     hide: true
-    binary_sensor: {}
+    binary_sensor:
   - property: froze_convert_to_refri_switch_status
     hide: true
   - property: fruit_vegetables_temperature
@@ -192,7 +192,7 @@ properties:
       unit: °C
   - property: holiday_mode
     hide: true
-    switch: {}
+    switch:
   - property: humidity sensor_failure
     hide: true
     binary_sensor:
@@ -275,7 +275,7 @@ properties:
       device_class: problem
   - property: quiet_mode_status
     hide: true
-    binary_sensor: {}
+    binary_sensor:
   - property: real_humidity
     hide: true
     sensor:
@@ -313,7 +313,7 @@ properties:
     hide: true
   - property: refr_room_open
     hide: true
-    binary_sensor: {}
+    binary_sensor:
   - property: refr_room_over_temp_alarm
     hide: true
     binary_sensor:
@@ -487,13 +487,13 @@ properties:
       device_class: problem
   - property: sabbath_mode_status
     hide: true
-    binary_sensor: {}
+    binary_sensor:
   - property: sabbath_mode_switch_status
     hide: true
-    binary_sensor: {}
+    binary_sensor:
   - property: save_mode
     hide: true
-    binary_sensor: {}
+    binary_sensor:
   - property: screen_display_brightness
     hide: true
   - property: screen_display_lock
@@ -573,7 +573,7 @@ properties:
     hide: true
   - property: vacuum_on_off_status
     hide: true
-    binary_sensor: {}
+    binary_sensor:
   - property: var_room_open_2
     hide: true
   - property: var_room_over_temp_alarm

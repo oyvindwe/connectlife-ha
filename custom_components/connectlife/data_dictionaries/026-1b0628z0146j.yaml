@@ -526,7 +526,7 @@ properties:
   - property: run_status_flag_5
     hide: true
   - property: running_status
-    sensor: {}
+    sensor:
   - property: running_status3
     hide: true
   - property: rx_failure
