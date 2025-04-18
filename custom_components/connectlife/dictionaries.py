@@ -385,6 +385,14 @@ class Dictionaries:
         climate: dict[[list[dict[str, int]]]] | None = None
         properties = defaultdict(lambda: Property({PROPERTY: "default", HIDE: True}))
         try:
+            data = pkgutil.get_data(__name__, f"data_dictionaries/{appliance.device_type_code}.yaml")
+            parsed = yaml.safe_load(data)
+            # TODO: Support default climate section
+            for prop in parsed[PROPERTIES]:
+                properties[prop[PROPERTY]] = Property(prop)
+        except FileNotFoundError:
+            pass
+        try:
             data = pkgutil.get_data(__name__, f"data_dictionaries/{key}.yaml")
             parsed = yaml.safe_load(data)
             if Platform.CLIMATE in parsed:
