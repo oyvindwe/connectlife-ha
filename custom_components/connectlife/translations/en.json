@@ -950,6 +950,9 @@
           "running": "Running"
         }
       },
+      "current_temperature": {
+        "name": "Current temperature"
+      },
       "daily_energy_consumption": {
         "name": "Daily energy consumption"
       },
@@ -965,6 +968,9 @@
       "delay_start_remaining_time": {
         "name": "Delay start remaining time"
       },
+      "delay_start_remaining_time_in_minutes": {
+        "name": "Delay start remaining time in minutes"
+      },
       "delay_start_set_time": {
         "name": "Delay start set time"
       },
@@ -973,6 +979,13 @@
       },
       "delaystart_delayend_duration_inminutes": {
         "name": "Delay start duration"
+      },
+      "delaystart_delayend_mode_status": {
+        "name": "Delay start status",
+        "state": {
+          "off": "Off",
+          "on": "On"
+        }
       },
       "delaystart_delayend_remaining_timein_minutes": {
         "name": "Delay start remaining time"
@@ -1014,8 +1027,9 @@
         "state": {
           "not_available": "Not available",
           "open": "Open",
-          "other": "Other",
-          "closed": "Closed"
+          "closed": "Closed",
+          "closed_when_running": "Closed when running",
+          "other": "Other"
         }
       },
       "electricit_consumption_decimal": {
@@ -1232,6 +1246,9 @@
           "paused": "Paused",
           "stopped": "Stopped"
         }
+      },
+      "selected_program_duration_in_minutes": {
+        "name": "Selected program duration"
       },
       "selected_program_id": {
         "name": "Selected program",
@@ -1570,6 +1587,14 @@
       "spintime_index": {
         "name": "Spin time index"
       },
+      "status": {
+        "name": "Device status",
+        "state": {
+          "off": "Off",
+          "standby": "Standby",
+          "running": "Running"
+        }
+      },
       "step1_duration": {
         "name": "Step1 duration"
       },
@@ -1805,30 +1830,6 @@
       },
       "zone_number": {
         "name": "Number of zones"
-      },
-      "status": {
-        "name": "Device status",
-        "state": {
-          "off": "Off",
-          "standby": "Standby",
-          "running": "Running"
-        }
-      },
-      "door_status": {
-        "name": "Door status",
-        "state": {
-          "not_available": "Not Available",
-          "open": "Open",
-          "closed": "Closed",
-          "closed_when_running": "Closed when running"
-        }
-      },
-      "delaystart_delayend_mode_status": {
-        "name": "Delay start status",
-        "state": {
-          "off": "Off",
-          "on": "On"
-        }
       }
     },
     "switch": {
@@ -2033,6 +2034,12 @@
           "off": "Off",
           "follow": "Follow",
           "not_follow": "Not Follow"
+        }
+      },
+      "temperature": {
+        "name": "Temperature",
+        "state": {
+          "cold": "Cold"
         }
       }
     },
