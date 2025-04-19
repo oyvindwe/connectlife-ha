@@ -10,15 +10,12 @@
           "$ref": "#/$defs/ClimateDevice"
         },
         "properties": {
-          "type": "array",
+          "type": ["array", "null"],
           "items": {
             "$ref": "#/$defs/Property"
           }
         }
       },
-      "required": [
-        "properties"
-      ],
       "title": "ConnectLife Data Dictionary"
     },
     "ClimateDevice": {
