@@ -400,8 +400,56 @@
       "existing_sr_mode": {
         "name": "Existing SR mode"
       },
+      "f_e_arkgrille": {
+        "name": "Cabinet grille protection alarm"
+      },
       "f_e_filterclean": {
         "name": "Filter clean"
+      },
+      "f_e_incoiltemp": {
+        "name": "Indoor coil temperature sensor failure"
+      },
+      "f_e_incom": {
+        "name": "Indoor/outdoor communication failure"
+      },
+      "f_e_indisplay": {
+        "name": "Communication failure between indoor control panel and display panel"
+      },
+      "f_e_ineeprom": {
+        "name": "Indoor control board EEPROM error"
+      },
+      "f_e_inele": {
+        "name": "Communication failure between indoor control panel and indoor power panel"
+      },
+      "f_e_infanmotor": {
+        "name": "Indoor fan motor abnormal operation failure"
+      },
+      "f_e_inhumidity": {
+        "name": "Indoor humidity sensor failure"
+      },
+      "f_e_inkeys": {
+        "name": "Communication failure between indoor control panel and keypad"
+      },
+      "f_e_intemp": {
+        "name": "Indoor temperature sensor failure"
+      },
+      "f_e_invzero": {
+        "name": "Indoor voltage zero-crossing detection fault"
+      },
+      "f_e_inwifi": {
+        "name": "Communication failure between WIFI control panel and indoor control panel"
+      },
+      "f_e_outcoiltemp": {
+        "name": "Outdoor coil temperature sensor failure"
+      },
+      "f_e_outeeprom": {
+        "name": "Outdoor EEPROM error"
+      },
+      "f_e_outgastemp": {
+        "name": "Exhaust temperature sensor failure"
+      },
+      "f_e_outtemp": {
+        "name": "Outdoor ambient temperature sensor failure"
       },
       "f_e_pump": {
         "name": "Pump"
@@ -787,6 +835,9 @@
       "step3_status": {
         "name": "Step 3 status"
       },
+      "t_beep": {
+        "name": "Beep"
+      },
       "tab_setting_status": {
         "name": "Tab setting"
       },
@@ -843,6 +894,9 @@
             }
           },
           "swing_mode": {
+            "state": {}
+          },
+          "swing_horizontal_mode": {
             "state": {
               "both_sides": "Both sides",
               "forward": "Forward",
@@ -850,9 +904,6 @@
               "right": "Right",
               "swing": "Swing"
             }
-          },
-          "swing_horizontal_mode": {
-            "state": {}
           }
         }
       }
