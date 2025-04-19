@@ -428,7 +428,7 @@
         "name": "Indoor humidity sensor failure"
       },
       "f_e_inkeys": {
-        "name": "Communication failure between indoor control panel and keypad\n"
+        "name": "Communication failure between indoor control panel and keypad"
       },
       "f_e_intemp": {
         "name": "Indoor temperature sensor failure"
@@ -437,7 +437,7 @@
         "name": "Indoor voltage zero-crossing detection fault"
       },
       "f_e_inwifi": {
-        "name": "Communication failure between WIFI control panel and indoor control panel\n"
+        "name": "Communication failure between WIFI control panel and indoor control panel"
       },
       "f_e_outcoiltemp": {
         "name": "Outdoor coil temperature sensor failure"
@@ -449,7 +449,7 @@
         "name": "Exhaust temperature sensor failure"
       },
       "f_e_outtemp": {
-        "name": "Outdoor ambient temperature sensor failure\n"
+        "name": "Outdoor ambient temperature sensor failure"
       },
       "f_e_pump": {
         "name": "Pump"
