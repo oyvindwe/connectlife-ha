@@ -116,7 +116,7 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
         self.unknown_values = {}
 
         for dd_entry in data_dictionary.properties.values():
-            if hasattr(dd_entry, Platform.CLIMATE):
+            if hasattr(dd_entry, Platform.CLIMATE) and dd_entry.name in appliance.status_list:
                 self.target_map[dd_entry.climate.target] = dd_entry.name
 
         hvac_modes: list[HVACMode] = []

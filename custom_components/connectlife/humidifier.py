@@ -88,7 +88,7 @@ class ConnectLifeHumidifier(ConnectLifeEntity, HumidifierEntity):
         )
 
         for dd_entry in data_dictionary.properties.values():
-            if hasattr(dd_entry, Platform.HUMIDIFIER):
+            if hasattr(dd_entry, Platform.HUMIDIFIER) and dd_entry.name in appliance.status_list:
                 self.target_map[dd_entry.humidifier.target] = dd_entry.name
 
         for target, status in self.target_map.items():
