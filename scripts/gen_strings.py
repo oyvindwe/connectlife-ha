@@ -33,6 +33,14 @@ def main(basedir):
                                 ):
                                 if include_option(option, filename):
                                     strings["entity"]["climate"]["connectlife"]["state_attributes"]["swing_mode"]["state"][option] = pretty(option)
+                    elif property["climate"]["target"] == "swing_horizontal_mode":
+                        for option in property["climate"]["options"].values():
+                            if (
+                                    option not in ["off", "auto", "fullrange"]
+                                    and option not in strings["entity"]["climate"]["connectlife"]["state_attributes"]["swing_horizontal_mode"]["state"]
+                                ):
+                                if include_option(option, filename):
+                                    strings["entity"]["climate"]["connectlife"]["state_attributes"]["swing_horizontal_mode"]["state"][option] = pretty(option)
                 elif "humidifier" in property and property["humidifier"]["target"] == "mode":
                     for option in property["humidifier"]["options"].values():
                         if (

@@ -850,6 +850,9 @@
               "right": "Right",
               "swing": "Swing"
             }
+          },
+          "swing_horizontal_mode": {
+            "state": {}
           }
         }
       }
