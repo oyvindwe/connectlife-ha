@@ -387,6 +387,7 @@
         "hvac_action",
         "hvac_mode",
         "is_on",
+        "swing_horizontal_mode",
         "swing_mode",
         "target_humidity",
         "target_temperature",

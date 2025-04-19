@@ -23,6 +23,7 @@ from .const import (
     PRESET,
     PRESETS,
     SWING_MODE,
+    SWING_HORIZONTAL_MODE,
     TARGET_HUMIDITY,
     TARGET_TEMPERATURE,
     TEMPERATURE_UNIT,
@@ -110,6 +111,8 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
         self.preset_map = {}
         self.swing_mode_map = {}
         self.swing_mode_reverse_map = {}
+        self.swing_horizontal_mode_map = {}
+        self.swing_horizontal_mode_reverse_map = {}
         self.temperature_unit_map = {}
         self.min_temperature_map = {}
         self.max_temperature_map = {}
@@ -163,6 +166,12 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
                 self._attr_swing_modes = list(self.swing_mode_map.values())
                 self._attr_supported_features |= ClimateEntityFeature.SWING_MODE
                 self._attr_swing_mode = None
+            elif target == SWING_HORIZONTAL_MODE:
+                self.swing_horizontal_mode_map = data_dictionary.properties[status].climate.options
+                self.swing_horizontal_mode_reverse_map = {v: k for k, v in self.swing_horizontal_mode_map.items()}
+                self._attr_swing_horizontal_modes = list(self.swing_horizontal_mode_map.values())
+                self._attr_supported_features |= ClimateEntityFeature.SWING_HORIZONTAL_MODE
+                self._attr_swing_horizontal_mode = None
             elif target == HVAC_ACTION:
                 actions = [action.value for action in HVACAction]
                 for (k, v) in data_dictionary.properties[status].climate.options.items():
@@ -312,6 +321,12 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
         """Set the swing mode."""
         await self.async_update_device({
             self.target_map[SWING_MODE]: self.swing_mode_reverse_map[swing_mode]
+        })
+
+    async def async_set_swing_horizontal_mode(self, swing_horizontal_mode: str) -> None:
+        """Set the swing mode."""
+        await self.async_update_device({
+            self.target_map[SWING_MODE]: self.swing_horizontal_mode_map[swing_horizontal_mode]
         })
 
     def add_target_temperature(self, request: dict[str, int]) -> dict[str, int]:
