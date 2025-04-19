@@ -206,7 +206,7 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
 
         self._attr_available = self.coordinator.data[self.device_id].offline_state == 1
 
-    def get_temperature_limit(self, temperature_map: [UnitOfTemperature, int]):
+    def get_temperature_limit(self, temperature_map: dict[UnitOfTemperature, int] | None):
         if temperature_map and self._attr_temperature_unit in temperature_map:
             return temperature_map[self._attr_temperature_unit]
         else:

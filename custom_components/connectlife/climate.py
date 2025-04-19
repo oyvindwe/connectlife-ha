@@ -129,16 +129,16 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
                 self._attr_supported_features |= ClimateEntityFeature.TARGET_HUMIDITY
                 self._attr_target_humidity = None
                 self._attr_min_humidity = data_dictionary.properties[status].climate.min_value
-                if min_temp := self.get_temperature_limit(self.min_temperature_map):
-                    self._attr_min_temp = min_temp
                 self._attr_max_humidity = data_dictionary.properties[status].climate.max_value
-                if max_temp := self.get_temperature_limit(self.max_temperature_map):
-                    self._attr_max_temp = max_temp
             elif target == TARGET_TEMPERATURE:
                 self._attr_supported_features |= ClimateEntityFeature.TARGET_TEMPERATURE
                 self._attr_target_temperature = None
                 self.min_temperature_map = to_temperature_map(data_dictionary.properties[status].climate.min_value)
+                if min_temp := self.get_temperature_limit(self.min_temperature_map):
+                    self._attr_min_temp = min_temp
                 self.max_temperature_map = to_temperature_map(data_dictionary.properties[status].climate.max_value)
+                if max_temp := self.get_temperature_limit(self.max_temperature_map):
+                    self._attr_max_temp = max_temp
             elif target == TEMPERATURE_UNIT:
                 for k, v in data_dictionary.properties[status].climate.options.items():
                     if unit := normalize_temperature_unit(v):
@@ -256,7 +256,7 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
         self._attr_hvac_mode = hvac_mode if is_on else HVACMode.OFF
         self._attr_available = self.coordinator.data[self.device_id].offline_state == 1
 
-    def get_temperature_limit(self, temperature_map: [UnitOfTemperature, int]):
+    def get_temperature_limit(self, temperature_map: dict[UnitOfTemperature, int] | None):
         if temperature_map and self._attr_temperature_unit in temperature_map:
             return temperature_map[self._attr_temperature_unit]
         else:
