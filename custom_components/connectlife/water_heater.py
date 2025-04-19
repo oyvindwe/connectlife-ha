@@ -109,7 +109,7 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
         self.unknown_values = {}
 
         for dd_entry in data_dictionary.properties.values():
-            if hasattr(dd_entry, Platform.WATER_HEATER):
+            if hasattr(dd_entry, Platform.WATER_HEATER) and dd_entry in appliance.status_list:
                 self.target_map[dd_entry.water_heater.target] = dd_entry.name
 
         for target, status in self.target_map.items():
