@@ -2007,12 +2007,6 @@
       "extrarinsenum": {
         "name": "Extra rinse num"
       },
-      "lightbrightness": {
-        "name": "Light brightness"
-      },
-      "lightcolortemperature": {
-        "name": "Light colort emperature"
-      },
       "motorlevel": {
         "name": "Motor level"
       },
@@ -2113,6 +2107,12 @@
       },
       "freeze_temperature": {
         "name": "Freezeer temperature"
+      },
+      "lightbrightness": {
+        "name": "Light brightness"
+      },
+      "lightcolortemperature": {
+        "name": "Light color temperature"
       },
       "refrigerator_max_temperature": {
         "name": "Refrigerator max temperature"
