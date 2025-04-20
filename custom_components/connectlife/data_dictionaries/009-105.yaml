@@ -1,0 +1,82 @@
+# AS-09TW2RLDTT00 - Hisense AC
+climate:
+  presets:
+    - preset: eco
+      t_power: 1
+      t_eco: 1
+      t_fan_mute: 0
+      t_sleep: 0
+      t_super: 0
+    - preset: mute
+      t_power: 1
+      t_eco: 0
+      t_fan_mute: 1
+    - preset: eco_mute
+      t_power: 1
+      t_eco: 1
+      t_fan_mute: 1
+      t_sleep: 0
+      t_super: 0
+    - preset: super
+      t_power: 1
+      t_super: 1
+      t_eco: 0
+      t_fan_mute: 0
+      t_sleep: 0
+    - preset: sleep_1
+      t_power: 1
+      t_eco: 0
+      t_sleep: 1
+      t_fan_mute: 0
+      t_super: 0
+    - preset: sleep_2
+      t_power: 1
+      t_eco: 0
+      t_sleep: 2
+      t_fan_mute: 0
+      t_super: 0
+    - preset: sleep_3
+      t_power: 1
+      t_eco: 0
+      t_sleep: 3
+      t_fan_mute: 0
+      t_super: 0
+    - preset: sleep_4
+      t_power: 1
+      t_eco: 0
+      t_sleep: 4
+      t_fan_mute: 0
+      t_super: 0
+    - preset: eco_sleep_1
+      t_power: 1
+      t_eco: 1
+      t_sleep: 1
+      t_fan_mute: 0
+      t_super: 0
+    - preset: eco_sleep_2
+      t_power: 1
+      t_eco: 1
+      t_sleep: 2
+      t_fan_mute: 0
+      t_super: 0
+    - preset: eco_sleep_3
+      t_power: 1
+      t_eco: 1
+      t_sleep: 3
+      t_fan_mute: 0
+      t_super: 0
+    - preset: eco_sleep_4
+      t_power: 1
+      t_eco: 1
+      t_sleep: 4
+      t_fan_mute: 0
+      t_super: 0
+properties:
+  - property: t_work_mode
+    climate:
+      target: hvac_mode
+      options:
+        0: fan_only
+        2: cool
+        3: dry
+        4: auto
