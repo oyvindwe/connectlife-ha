@@ -1,0 +1,125 @@
+properties:
+  - property: ActiveModeLightBrightness
+    # Sample value: 0
+  - property: ActiveModeLightColorTemperature
+    # Sample value: 0
+  - property: ActiveModeLightStatus
+    # Sample value: 0
+  - property: ActiveModeMotorLevel
+    # Sample value: 0
+  - property: ActiveModeMotorLevelStatus
+    # Sample value: 0
+  - property: ActiveModeStatus
+    # Sample value: 0
+  - property: AlarmCleanAirEnded
+    # Sample value: 1
+  - property: AlarmGreaseFilter
+    # Sample value: 2
+  - property: AlarmRecirculationFilter1
+    # Sample value: 1
+  - property: AlarmRecirculationFilter2
+    # Sample value: 1
+  - property: AlarmTimerEnded
+    # Sample value: 1
+  - property: AmbientLightBrightness
+    # Sample value: 0
+  - property: AmbientLightColorTemperature
+    # Sample value: 0
+  - property: AmbientLightStatus
+    # Sample value: 0
+  - property: CirculationModeStatus
+    # Sample value: 1
+  - property: CleanAirActivePassedHours
+    # Sample value: 0
+  - property: CleanAirActiveTotalHours
+    # Sample value: 24
+  - property: CleanAirDurationOfCycleInMinutes
+    # Sample value: 10
+  - property: CleanAirMotorLevel
+    # Sample value: 1
+  - property: CleanAirRunCycleEveryNumberOfMinutes
+    # Sample value: 0
+  - property: CleanAirStartTime
+    # Sample value: 0002/11/30T00:00:00
+  - property: CleanAirStatus
+    # Sample value: 1
+  - property: DeviceStatus
+    # Sample value: 1
+  - property: FotaStatus
+    # Sample value: 0
+  - property: GreaseFilterCleaningIntervalInHours
+    # Sample value: 30
+  - property: GreaseFilterStatus
+    # Sample value: 2
+  - property: GreaseFilterUsedHours
+    # Sample value: 145
+  - property: HardPairingStatus
+    # Sample value: 0
+  - property: LightBrightness
+    number:
+      unit: "%"
+    icon: mdi:lightbulb-on-outline
+  - property: LightColorTemperature
+    number:
+      unit: "%"
+    icon: mdi:lightbulb-variant-outline
+  - property: LightStatus
+  - property: MotorLevel
+    select:
+      options:
+        0: "0"
+        1: "1"
+        2: "2"
+        3: "3"
+        4: "4"
+        5: "5"
+  - property: ProximitySensor
+    # Sample value: 0
+  - property: ProximitySensorReactionTime
+    # Sample value: 0
+  - property: ProximitySensorSensitivity
+    # Sample value: 0
+  - property: ProximitySensorStatus
+    # Sample value: 0
+  - property: RFPairingStatus
+    # Sample value: 0
+  - property: RecirculationFilter1LifetimeInHours
+    # Sample value: 120
+  - property: RecirculationFilter1Status
+    # Sample value: 1
+  - property: RecirculationFilter1Type
+    # Sample value: 2
+  - property: RecirculationFilter1UsedHours
+    # Sample value: 0
+  - property: RecirculationFilter2LifetimeInHours
+    # Sample value: 0
+  - property: RecirculationFilter2Status
+    # Sample value: 1
+  - property: RecirculationFilter2Type
+    # Sample value: 1
+  - property: RecirculationFilter2UsedHours
+    # Sample value: 0
+  - property: RemoteControlMonitoringSetCommands
+    # Sample value: 2
+  - property: RemoteControlMonitoringSetCommandsActions
+    # Sample value: 0
+  - property: SessionPairing
+    # Sample value: 0
+  - property: SessionPairingActive
+    # Sample value: 0
+  - property: SessionPairingConfirmation
+    # Sample value: 0
+  - property: SoftPairing
+    # Sample value: 0
+  - property: TimerEndTime
+    # Sample value: 0002/11/30T00:00:00
+  - property: TimerPausedTime
+    # Sample value: 0002/11/30T00:00:00
+  - property: TimerPausedTotalSeconds
+    # Sample value: 0
+  - property: TimerStartTime
+    # Sample value: 0002/11/30T00:00:00
+  - property: TimerStatus
+    # Sample value: 5
+  - property: daily_energy_kwh
+    # Sample value: 0
