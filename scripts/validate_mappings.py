@@ -26,10 +26,13 @@ def main(basedir):
         print(f"Validating {filename}")
         with open(f"{device_dir}/{filename}", "r") as f:
             mappings_yaml = yaml.safe_load(f)
-        mappings_json = JSON(mappings_yaml)
-        result = schema.evaluate(mappings_json)
-        if not result.valid:
-            pprint.pp(result.output("basic")["errors"])
+        if mappings_yaml is None:
+            print("Empty mapping file")
+        else:
+            mappings_json = JSON(mappings_yaml)
+            result = schema.evaluate(mappings_json)
+            if not result.valid:
+                pprint.pp(result.output("basic")["errors"])
 
 if __name__ == "__main__":
     main("custom_components/connectlife")
