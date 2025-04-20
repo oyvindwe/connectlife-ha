@@ -1,0 +1,304 @@
+# Tumble dryer
+properties:
+  - property: Actions
+    # Sample value: 0
+    hide: true
+  - property: AntiCrease
+    icon: mdi:iron
+    switch:
+  - property: ApplicationPermissions
+    # Sample value: 2
+    hide: true
+  - property: Aromatherapy
+    # Sample value: 0
+    hide: true
+  - property: Auxiliary_heat
+    # Sample value: 0
+    hide: true
+  - property: Child_lock
+    icon: mdi:lock
+    switch:
+  - property: Clean_Filter
+    icon: mdi:brush-variant
+    binary_sensor:
+  - property: Current_program_phase
+    icon: mdi:tumble-dryer
+    sensor:
+      device_class: enum
+      options:
+        0: idle
+        1: delay_start_waiting
+        2: running
+        3: running
+        4: anti_crease
+        5: program_finished
+      read_only: true
+    # Sample value: 0
+  - property: DelayEndTime_Hour
+    # Sample value: 0
+    hide: true
+  - property: DelayEndTime_Minute
+    # Sample value: 0
+    hide: true
+  - property: Door_status
+    unavailable: 0
+    binary_sensor:
+      device_class: door
+      options:
+        1: off
+        2: on
+    icon: mdi:square-circle
+  - property: DownLight_LightTime
+    # Sample value: 0
+    hide: true
+  - property: Drum_Light
+    icon: mdi:lightbulb-on
+    switch:
+  - property: Dry_Level
+    icon: mdi:weather-sunny
+    select:
+      options:
+        1: low
+        2: medium
+        3: high
+  - property: Dry_Level_show
+    # Sample value: 0
+    hide: true
+  - property: DryingWizzard_ClothesDryLevel
+    # Sample value: 0
+    hide: true
+  - property: DryingWizzard_ClothesDryLevel1
+    # Sample value: 0
+    hide: true
+  - property: DryingWizzard_ClothesDryTarget
+    # Sample value: 0
+    hide: true
+  - property: DryingWizzard_ClothesDryTarget1
+    # Sample value: 0
+    hide: true
+  - property: DryingWizzard_ClothesMaterialCharacteristics
+    # Sample value: 0
+    hide: true
+  - property: DryingWizzard_ClothesMaterialCharacteristics_first
+    # Sample value: 0
+    hide: true
+  - property: DryingWizzard_ClothesMaterialCharacteristics_second
+    # Sample value: 0
+    hide: true
+  - property: DryingWizzard_ClothesMaterialCharacteristics_third
+    # Sample value: 0
+    hide: true
+  - property: DryingWizzard_ClothingType
+    # Sample value: 0
+    hide: true
+  - property: DryingWizzard_ClothingType_eighth
+    # Sample value: 0
+    hide: true
+  - property: DryingWizzard_ClothingType_eleventh
+    # Sample value: 0
+    hide: true
+  - property: DryingWizzard_ClothingType_fifth
+    # Sample value: 0
+    hide: true
+  - property: DryingWizzard_ClothingType_first
+    # Sample value: 0
+    hide: true
+  - property: DryingWizzard_ClothingType_fourth
+    # Sample value: 0
+    hide: true
+  - property: DryingWizzard_ClothingType_ninth
+    # Sample value: 0
+    hide: true
+  - property: DryingWizzard_ClothingType_second
+    # Sample value: 0
+    hide: true
+  - property: DryingWizzard_ClothingType_seventh
+    # Sample value: 0
+    hide: true
+  - property: DryingWizzard_ClothingType_sixth
+    # Sample value: 0
+    hide: true
+  - property: DryingWizzard_ClothingType_tenth
+    # Sample value: 0
+    hide: true
+  - property: DryingWizzard_ClothingType_third
+    # Sample value: 0
+    hide: true
+  - property: DryingWizzard_ClothingType_thirteenth
+    # Sample value: 0
+    hide: true
+  - property: DryingWizzard_ClothingType_twelfth
+    # Sample value: 0
+    hide: true
+  - property: Electricit_consumption_decimal
+    # Sample value: 0
+  - property: Electricit_consumption_int
+    # Sample value: 0
+  - property: Favour_program_ID
+    # Sample value: 0
+  - property: Hard_pairing_commond
+    # Sample value: 0
+  - property: Hard_pairing_status
+    # Sample value: 0
+  - property: Ion_Refresh
+    # Sample value: 0
+  - property: Iron_Dry_Time
+    # Sample value: 145
+  - property: Language
+    # Sample value: 0
+  - property: Natural_Dry
+    icon: mdi:hair-dryer
+    switch:
+  - property: Night_Dry
+    # Sample value: 0
+  - property: Pause_AntiCrease_flag
+    # Sample value: 0
+  - property: QuickerMode
+    # Sample value: 0
+  - property: ScreenSaverTime
+    # Sample value: 0
+  - property: Selected_program_ID
+    icon: mdi:selection-ellipse-arrow-inside
+    select:
+      options:
+        1: auto
+        2: anti_allergy
+        3: refresh
+        4: sports
+        5: towels
+        7: time
+        8: cotton
+        9: baby
+        10: synthetic
+        11: wool
+        12: delicates
+        13: fast30
+        17: shirts
+        18: bed_linen
+        19: down
+  - property: Selected_program_remaining_time_in_minutes
+    sensor:
+      device_class: duration
+      unit: min
+      read_only: true
+    icon: mdi:timer
+  - property: Selected_program_total_running_time_in_minutes
+    sensor:
+      read_only: true
+      device_class: duration
+      unit: min
+    icon: mdi:timer
+  - property: Selected_program_total_time_in_minutes
+    sensor:
+      read_only: true
+      device_class: duration
+      unit: min
+    icon: mdi:timer
+  - property: Session_pairing_commond
+    # Sample value: 0
+    hide: true
+  - property: Session_pairing_states
+    # Sample value: 0
+    hide: true
+  - property: Sound_setting
+    # Sample value: 0
+    hide: true
+  - property: StandardElectricitConsumption_int
+    # Sample value: 0
+    hide: true
+  - property: StandardElectricitconsumption_decimal
+    # Sample value: 0
+    hide: true
+  - property: Steam
+    # Sample value: 0
+    hide: true
+  - property: SteamEngineLackWaterState
+    # Sample value: 0
+    hide: true
+  - property: Store_Dry_Time
+    # Sample value: 235
+    hide: true
+  - property: UV_Sterilization
+    # Sample value: 0
+    hide: true
+  - property: Waterbox_Full
+    icon: mdi:water-alert
+    binary_sensor:
+      device_class: problem
+  - property: Wear_Dry_Time
+    # Sample value: 220
+    hide: true
+  - property: currrent_dry_level_time
+    # Sample value: 12
+    hide: true
+  - property: daily_energy_kwh
+    # Sample value: 0
+    sensor:
+      read_only: true
+      state_class: total_increasing
+      device_class: energy
+      unit: kWh
+    hide: true
+  - property: default_dry_level
+    # Sample value: 1
+    hide: true
+  - property: delay_close_dryer_time
+    # Sample value: 0
+    hide: true
+  - property: delay_time_hour_min
+    # Sample value: 4
+    hide: true
+  - property: dry_time
+    # Sample value: 220
+    hide: true
+  - property: drying_linkage_order
+    # Sample value: 0
+    hide: true
+  - property: drying_linkage_preheat_time
+    # Sample value: 0
+    hide: true
+  - property: drying_linkage_programid
+    # Sample value: 0
+    hide: true
+  - property: drying_washing_linkage_state
+    # Sample value: 0
+    hide: true
+  - property: energy
+    # Sample value: 73
+    hide: true
+  - property: error_code
+    # Sample value: 0
+    hide: true
+  - property: machine_status
+    icon: mdi:tumble-dryer
+    sensor:
+      device_class: enum
+      options:
+        0: "off"
+        1: standby
+        2: running
+      read_only: true
+  - property: mute
+    icon: mdi:volume-mute
+    switch:
+  - property: parse_lib_ver
+    # Sample value: 20241030
+    hide: true
+  - property: stoprunning_flag
+    # Sample value: 0
+    hide: true
+  - property: support_preheat_state
+    # Sample value: 1
+    hide: true
+  - property: temperature
+    # Sample value: 2
+    hide: true
+  - property: timezone
+    # Sample value: 0
+    hide: true
+  - property: washing_machine_type
+    # Sample value: 0
+    hide: true
+  - property: washing_machine_type_kg
+    # Sample value: 0
+    hide: true
