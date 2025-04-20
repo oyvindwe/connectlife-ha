@@ -1,0 +1,630 @@
+properties:
+  - property: ADO_allowed
+    binary_sensor:
+    hide: true
+  - property: Alarm_auto_dose_refill
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+    icon: mdi:dishwasher-alert
+  - property: Alarm_Autodose_level10
+    entity_category: diagnostic
+    hide: true
+    binary_sensor:
+      device_class: problem
+    icon: mdi:dishwasher-alert
+  - property: Alarm_Autodose_level20
+    entity_category: diagnostic
+    hide: true
+    binary_sensor:
+      device_class: problem
+    icon: mdi:dishwasher-alert
+  - property: Alarm_External_autodose_level15
+    entity_category: diagnostic
+    hide: true
+    binary_sensor:
+      device_class: problem
+    icon: mdi:dishwasher-alert
+  - property: Alarm_External_autodose_level30
+    entity_category: diagnostic
+    hide: true
+    binary_sensor:
+      device_class: problem
+    icon: mdi:dishwasher-alert
+  - property: Alarm_Rinse_aid_refill_external
+    entity_category: diagnostic
+    hide: true
+    binary_sensor:
+      device_class: problem
+    icon: mdi:dishwasher-alert
+  - property: Alarm_clean_the_filters
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+    icon: mdi:dishwasher-alert
+  - property: Alarm_door_closed
+    entity_category: diagnostic
+    binary_sensor:
+    icon: mdi:dishwasher
+    hide: true
+  - property: Alarm_door_opened
+    entity_category: diagnostic
+    binary_sensor:
+    icon: mdi:dishwasher
+    hide: true
+  - property: Alarm_preheating_ready
+    entity_category: diagnostic
+    binary_sensor:
+    icon: mdi:dishwasher
+    hide: true
+  - property: Alarm_program_done
+    entity_category: diagnostic
+    binary_sensor:
+    icon: mdi:dishwasher
+    hide: true
+  - property: Alarm_program_pause
+    entity_category: diagnostic
+    binary_sensor:
+    icon: mdi:dishwasher
+    hide: true
+  - property: Alarm_remote_start_canceled
+    entity_category: diagnostic
+    binary_sensor:
+    icon: mdi:dishwasher
+    hide: true
+  - property: Alarm_rinse_aid_refill
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+    icon: mdi:dishwasher-alert
+    hide: true
+  - property: Alarm_run_selfcleaning
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+    icon: mdi:dishwasher-alert
+  - property: Alarm_salt_refill
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+    icon: mdi:dishwasher-alert
+  - property: Alarm_Sani_program_finished
+    entity_category: diagnostic
+    hide: true
+    binary_sensor:
+    icon: mdi:dishwasher
+  - property: Auto_dose_duration
+    sensor:
+      read_only: true
+      device_class: duration
+      unit: min
+  - property: Auto_dose_quantity_setting_status
+    unavailable: 0
+    select:
+      options:
+        1: "0"
+        2: "15"
+        3: "20"
+        4: "25"
+        5: "30"
+        6: "35"
+        7: "40"
+      command:
+        name: Auto_dose_quantity_setting
+        adjust: 1
+  - property: Auto_dose_refill
+    binary_sensor:
+      device_class: problem
+    icon: mdi:dishwasher-alert
+  - property: Auto_dose_setting_status
+    unavailable: 0
+    switch:
+      "off": 1
+      "on": 2
+      command:
+        name: Auto_dose_setting
+        adjust: 1
+  - property: Child_lock
+    unavailable: 0
+    switch:
+      "off": 1
+      "on": 2
+      command:
+        name: Child_lock_cmd
+        adjust: 1
+  - property: Child_lock_setting_status
+    sensor:
+      read_only: true
+    icon: mdi:information
+    hide: true
+  - property: Curent_program_duration
+    sensor:
+      unknown_value: 65535
+      read_only: true
+      device_class: duration
+      unit: min
+    icon: mdi:update
+  - property: Curent_program_remaining_time
+    icon: mdi:progress-clock
+    sensor:
+      unknown_value: 65535
+      device_class: duration
+      unit: min
+  - property: Current_program_phase
+    sensor:
+      device_class: enum
+      options:
+        0: not_available
+        1: program_not_selected
+        2: program_selected
+        3: delay_start_waiting
+        4: preheat
+        5: preheat_finished
+        6: prewash
+        7: main_wash
+        8: drying
+        9: program_finished
+        10: ventilating
+    icon: mdi:state-machine
+  - property: Delay_start
+    binary_sensor:
+      device_class: running
+    icon: mdi:timer-play
+    hide: true
+  - property: Delay_start_remaining_time
+    sensor:
+      device_class: duration
+      unit: min
+    icon: mdi:timer
+    hide: true
+  - property: Delay_start_set_time
+    sensor:
+      device_class: duration
+      unit: h
+    icon: mdi:timer-edit
+    hide: true
+  - property: Demo_mode_status
+    hide: true
+  - property: Device_status
+    sensor:
+      device_class: enum
+      options:
+        0: not_available
+        1: idle
+        2: running
+        3: pause
+        4: failure
+        5: service
+        6: production
+    icon: mdi:dishwasher
+  - property: Display_Brightness_setting_status
+    sensor:
+      unknown_value: 255
+      read_only: true
+    icon: mdi:information
+    hide: true
+  - property: Display_contrast_setting_status
+    sensor:
+      read_only: true
+    icon: mdi:information
+    hide: true
+  - property: Display_logotype_setting_status
+    sensor:
+      read_only: true
+    icon: mdi:information
+    hide: true
+  - property: Door_status
+    unavailable: 0
+    binary_sensor:
+      device_class: door
+      options:
+        1: off
+        2: on
+    icon: mdi:folder-open-outline
+  - property: Energy_consumption_in_running_program
+    sensor:
+      state_class: total
+      device_class: energy
+      unit: kWh
+      multiplier: 0.1
+      unknown_value: 65535
+    icon: mdi:lightning-bolt-outline
+  - property: Energy_save_setting_status
+    hide: true
+  - property: Error_F70
+    icon: mdi:dishwasher-alert
+    hide: true
+    entity_category: diagnostic
+  - property: Error_F76
+    icon: mdi:dishwasher-alert
+    hide: true
+    entity_category: diagnostic
+  - property: Error_f10
+    icon: mdi:dishwasher-alert
+    hide: true
+    entity_category: diagnostic
+  - property: Error_f11
+    icon: mdi:dishwasher-alert
+    hide: true
+    entity_category: diagnostic
+  - property: Error_f12
+    icon: mdi:dishwasher-alert
+    hide: true
+    entity_category: diagnostic
+  - property: Error_f40
+    icon: mdi:dishwasher-alert
+    hide: true
+    entity_category: diagnostic
+  - property: Error_f41
+    icon: mdi:dishwasher-alert
+    hide: true
+    entity_category: diagnostic
+  - property: Error_f42
+    icon: mdi:dishwasher-alert
+    hide: true
+    entity_category: diagnostic
+  - property: Error_f43
+    icon: mdi:dishwasher-alert
+    hide: true
+    entity_category: diagnostic
+  - property: Error_f44
+    icon: mdi:dishwasher-alert
+    hide: true
+    entity_category: diagnostic
+  - property: Error_f45
+    icon: mdi:dishwasher-alert
+    hide: true
+    entity_category: diagnostic
+  - property: Error_f46
+    icon: mdi:dishwasher-alert
+    hide: true
+    entity_category: diagnostic
+  - property: Error_f52
+    icon: mdi:dishwasher-alert
+    hide: true
+    entity_category: diagnostic
+  - property: Error_f54
+    icon: mdi:dishwasher-alert
+    hide: true
+    entity_category: diagnostic
+  - property: Error_f56
+    icon: mdi:dishwasher-alert
+    hide: true
+    entity_category: diagnostic
+  - property: Error_f61
+    icon: mdi:dishwasher-alert
+    hide: true
+    entity_category: diagnostic
+  - property: Error_f62
+    icon: mdi:dishwasher-alert
+    hide: true
+    entity_category: diagnostic
+  - property: Error_f65
+    icon: mdi:dishwasher-alert
+    hide: true
+    entity_category: diagnostic
+  - property: Error_f67
+    icon: mdi:dishwasher-alert
+    hide: true
+    entity_category: diagnostic
+  - property: Error_f68
+    icon: mdi:dishwasher-alert
+    hide: true
+    entity_category: diagnostic
+  - property: Error_f69
+    icon: mdi:dishwasher-alert
+    hide: true
+    entity_category: diagnostic
+  - property: Error_f72
+    icon: mdi:dishwasher-alert
+    hide: true
+    entity_category: diagnostic
+  - property: Error_f74
+    icon: mdi:dishwasher-alert
+    hide: true
+    entity_category: diagnostic
+  - property: Error_f75
+    icon: mdi:dishwasher-alert
+    hide: true
+    entity_category: diagnostic
+  - property: Error_read_out_1_code
+    sensor:
+      unknown_value: 255
+    icon: mdi:dishwasher-alert
+    hide: true
+    entity_category: diagnostic
+  - property: Error_read_out_1_cycle
+    sensor:
+      unknown_value: 65535
+    icon: mdi:dishwasher-alert
+    hide: true
+    entity_category: diagnostic
+  - property: Error_read_out_1_status
+    icon: mdi:dishwasher-alert
+    hide: true
+    entity_category: diagnostic
+  - property: Error_read_out_2_code
+    sensor:
+      unknown_value: 255
+    icon: mdi:dishwasher-alert
+    hide: true
+    entity_category: diagnostic
+  - property: Error_read_out_2_cycle
+    sensor:
+      unknown_value: 65535
+    icon: mdi:dishwasher-alert
+    hide: true
+    entity_category: diagnostic
+  - property: Error_read_out_2_status
+    icon: mdi:dishwasher-alert
+    hide: true
+    entity_category: diagnostic
+  - property: Error_read_out_3_code
+    sensor:
+      unknown_value: 255
+    icon: mdi:dishwasher-alert
+    hide: true
+    entity_category: diagnostic
+  - property: Error_read_out_3_cycle
+    sensor:
+      unknown_value: 65535
+    icon: mdi:dishwasher-alert
+    hide: true
+    entity_category: diagnostic
+  - property: Error_read_out_3_status
+    icon: mdi:dishwasher-alert
+    hide: true
+    entity_category: diagnostic
+  - property: FOTA_status
+    hide: true
+  - property: Fan_sequence_setting_status
+    sensor:
+      read_only: true
+    icon: mdi:information
+    hide: true
+  - property: Feedback_volumen_setting_status
+    sensor:
+      device_class: enum
+      options:
+        1: mute
+        2: low
+        3: mid
+        4: high
+    icon: mdi:volume-low
+    hide: true
+  - property: Fill_salt
+    binary_sensor:
+      device_class: problem
+    icon: mdi:dishwasher-alert
+  - property: HardPairingStatus
+    hide: true
+  - property: Heat_pump_setting_status
+    sensor:
+      read_only: true
+    icon: mdi:information
+    hide: true
+  - property: High_temperature_status
+    hide: true
+  - property: Interior_light_at_power_off_setting_status
+    unavailable: 0
+    switch:
+      "off": 1
+      "on": 2
+      command:
+        name: Interior_light_at_power_off_setting
+        adjust: 1
+  - property: Interior_light_status
+    sensor:
+      read_only: true
+    icon: mdi:information
+    hide: true
+  - property: Language_status
+    sensor:
+      read_only: true
+    icon: mdi:information
+    hide: true
+  - property: Last_run_program_id
+    sensor:
+      unknown_value: 255
+  - property: MDO_on_demand
+    hide: true
+  - property: MDO_on_demand_allowed
+    hide: true
+  - property: Notification_volumen_setting_status
+    sensor:
+      read_only: true
+    icon: mdi:information
+    hide: true
+  - property: Odor_control_setting
+    unavailable: 0
+    switch:
+      "off": 1
+      "on": 2
+      command:
+        name: Oder_control_setting
+        adjust: 1
+  - property: Pressure_calibration_setting_status
+    sensor:
+      read_only: true
+    icon: mdi:information
+    hide: true
+  - property: Remote_control_monitoring_set_commands
+    hide: true
+  - property: Remote_control_monitoring_set_commands_actions
+    hide: true
+  - property: Rinse_aid_refill
+    binary_sensor:
+      device_class: problem
+    icon: mdi:flare
+  - property: Rinse_aid_setting_status
+    sensor:
+      device_class: enum
+      options:
+        0: "-2"
+        1: "-1"
+        2: "0"
+        3: "1"
+        4: "2"
+        5: "3"
+        6: "4"
+        7: "5"
+    icon: mdi:white-balance-sunny
+    hide: true
+  - property: Sani_Lock
+    hide: true
+  - property: Sani_Lock_allowed
+    hide: true
+  - property: Selected_program_Lower_wash_function
+    hide: true
+  - property: Selected_program_Upper_wash_function
+    hide: true
+  - property: Selected_program_auto_door_open_function
+    binary_sensor:
+      device_class: door
+    icon: mdi:folder-open-outline
+    hide: true
+  - property: Selected_program_dry_function
+    hide: true
+  - property: Selected_program_extra_drying_function
+    hide: true
+  - property: Selected_program_id_status
+    sensor:
+      device_class: enum
+      options:
+        0: auto
+        1: eco
+        2: one_hour
+        3: intensive
+        4: glass
+        5: hygiene
+        6: night
+        7: clean
+    icon: mdi:clipboard-list
+  - property: Selected_program_mode
+    sensor:
+      device_class: enum
+      options:
+        0: "0"
+        1: "1"
+        2: normal
+        3: "3"
+        4: fast
+    icon: mdi:cube-outline
+  - property: Selected_program_storage_function
+    hide: true
+  - property: Selected_program_uv_function
+    hide: true
+  - property: Session_pairing_active
+    hide: true
+  - property: Session_pairing_confirmation
+    hide: true
+  - property: Session_pairing_status
+    hide: true
+  - property: Silence_on_demand
+    hide: true
+  - property: Silence_on_demand_allowed
+    hide: true
+  - property: Soft_pairing_status
+    hide: true
+  - property: Speed_on_demand
+    hide: true
+  - property: Spend_on_demand_allowed
+    hide: true
+  - property: Storage_mode_allowed
+    hide: true
+  - property: Storage_mode_on_demand_stat
+    hide: true
+  - property: Super_rinse_on_demand
+    hide: true
+  - property: Super_rinse_on_demand_allowed
+    hide: true
+  - property: Super_rinse_setting_status
+    unavailable: 0
+    switch:
+      "off": 1
+      "on": 2
+      command:
+        name: Super_rinse_setting
+        adjust: 1
+  - property: Super_rinse_status
+    hide: true
+  - property: Tab_setting_status
+    unavailable: 0
+    switch:
+      "off": 1
+      "on": 2
+      command:
+        name: Tab_setting
+        adjust: 1
+  - property: Temperature_unit_status
+    hide: true
+  - property: Time_program_set_duration_status
+    hide: true
+  - property: Total_energy_consumption
+    sensor:
+      state_class: total
+      device_class: energy
+      unit: kWh
+    icon: mdi:lightning-bolt
+  - property: Total_number_of_cycles
+    sensor:
+      state_class: total
+  - property: Total_run_time
+    sensor:
+      state_class: total
+      device_class: duration
+      unit: h
+    icon: mdi:timer-sand-full
+  - property: Total_water_consumption
+    sensor:
+      state_class: total
+      device_class: water
+      unit: L
+    icon: mdi:water
+  - property: UV_mode_on_demand
+    hide: true
+  - property: UV_mode_on_demand_allowed
+    hide: true
+  - property: Water_consumption_in_running_program
+    sensor:
+      unknown_value: 65535
+      state_class: total
+      device_class: water
+      unit: L
+    hide: true
+    icon: mdi:water-outline
+  - property: Water_hardness_setting_status
+    sensor:
+      device_class: enum
+      options:
+        1: "0.0-0.9 mmol/L"
+        2: "1.0-1.4 mmol/L"
+        3: "1.5-2.0 mmol/L"
+        4: "2.1-2.5 mmol/L"
+        5: "2.6-3.4 mmol/L"
+        6: "3.5-4.3 mmol/L"
+        7: "4.4-5.2 mmol/L"
+        8: "5.3-7.0 mmol/L"
+        9: "7.1-8.8 mmol/L"
+        10: "8.9+ mmol/L"
+    icon: mdi:water-opacity
+    hide: true
+  - property: Water_inlet_setting_status
+    sensor:
+      read_only: true
+    icon: mdi:information
+    hide: true
+  - property: Water_save_setting_status
+    sensor:
+      read_only: true
+    icon: mdi:information
+    hide: true
+  - property: Water_tank
+    hide: true
+  - property: daily_energy_kwh
+    sensor:
+      read_only: true
+      state_class: total_increasing
+      device_class: energy
+      unit: kWh
+    icon: mdi:lightning-bolt-outline
