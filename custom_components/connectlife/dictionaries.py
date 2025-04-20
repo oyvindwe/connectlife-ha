@@ -388,7 +388,7 @@ class Dictionaries:
             data = pkgutil.get_data(__name__, f"data_dictionaries/{appliance.device_type_code}.yaml")
             parsed = yaml.safe_load(data)
             # TODO: Support default climate section
-            if PROPERTIES in parsed and parsed[PROPERTIES] is not None:
+            if parsed is not None and PROPERTIES in parsed and parsed[PROPERTIES] is not None:
                 for prop in parsed[PROPERTIES]:
                     properties[prop[PROPERTY]] = Property(prop)
         except FileNotFoundError:
@@ -396,13 +396,14 @@ class Dictionaries:
         try:
             data = pkgutil.get_data(__name__, f"data_dictionaries/{key}.yaml")
             parsed = yaml.safe_load(data)
-            if Platform.CLIMATE in parsed:
-                climate = (
-                    parsed[Platform.CLIMATE] if Platform.CLIMATE in parsed else None
-                )
-            if PROPERTIES in parsed and parsed[PROPERTIES] is not None:
-                for prop in parsed[PROPERTIES]:
-                    properties[prop[PROPERTY]] = Property(prop)
+            if parsed is not None:
+                if Platform.CLIMATE in parsed:
+                    climate = (
+                        parsed[Platform.CLIMATE] if Platform.CLIMATE in parsed else None
+                    )
+                if PROPERTIES in parsed and parsed[PROPERTIES] is not None:
+                    for prop in parsed[PROPERTIES]:
+                        properties[prop[PROPERTY]] = Property(prop)
         except FileNotFoundError:
             _LOGGER.warning(
                 "No data dictionary found for %s (%s)", appliance.device_nickname, key
