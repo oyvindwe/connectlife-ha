@@ -298,6 +298,9 @@
       "child_lock_status": {
         "name": "Child lock"
       },
+      "child_lock_status_status": {
+        "name": "Child lock"
+      },
       "child_lock_switch_exist": {
         "name": "Child lock switch exist"
       },
@@ -399,6 +402,9 @@
       },
       "existing_sr_mode": {
         "name": "Existing SR mode"
+      },
+      "extra_rinse_status": {
+        "name": "Extra rinse"
       },
       "f_e_arkgrille": {
         "name": "Cabinet grille protection alarm"
@@ -667,11 +673,26 @@
       "selected_program_auto_door_open_function": {
         "name": "Selected program auto door open"
       },
+      "selected_program_disinfection": {
+        "name": "Program option disinfection"
+      },
+      "selected_program_entry_steam_status": {
+        "name": "Program option entry steam"
+      },
       "selected_program_extradry_status": {
         "name": "Extra dry"
       },
+      "selected_program_prewash_status": {
+        "name": "Program option prewash"
+      },
+      "selected_program_rinse_hold_status": {
+        "name": "Program option rinse hold"
+      },
       "selected_program_steamfinish": {
         "name": "Steam finish"
+      },
+      "selected_program_water_pluse_status": {
+        "name": "Program option water plus"
       },
       "session_pairing_active": {
         "name": "Session pairing active"
@@ -834,6 +855,12 @@
       },
       "step3_status": {
         "name": "Step 3 status"
+      },
+      "stopaddgo_status": {
+        "name": "Stop-Add-Go active"
+      },
+      "stopaddgoallowed": {
+        "name": "Stop-Add-Go allowed"
       },
       "t_beep": {
         "name": "Beep"
@@ -1041,6 +1068,9 @@
           "on": "On"
         }
       },
+      "delaystart_delayend_remaining_time_in_minutes": {
+        "name": "Delay start remaining time"
+      },
       "delaystart_delayend_remaining_timein_minutes": {
         "name": "Delay start remaining time"
       },
@@ -1083,7 +1113,8 @@
           "open": "Open",
           "closed": "Closed",
           "closed_when_running": "Closed when running",
-          "other": "Other"
+          "other": "Other",
+          "locked": "Locked"
         }
       },
       "electricit_consumption_decimal": {
@@ -1349,7 +1380,11 @@
           "shirts": "Shirts",
           "drum_cleaning": "Drum Cleaning",
           "spinning_draining": "Spinning & Draining",
-          "rinsing_softening": "Rinsing & Softening"
+          "rinsing_softening": "Rinsing & Softening",
+          "no_program_selected": "No program selected",
+          "pet_hair_removal": "Pet hair removal",
+          "draining": "Draining",
+          "down_feathers": "Down feathers"
         }
       },
       "selected_program_mode": {
@@ -1359,14 +1394,47 @@
           "fast": "Fast"
         }
       },
+      "selected_program_mode_status": {
+        "name": "Selected program mode",
+        "state": {
+          "not_available": "Not available",
+          "normal": "Normal",
+          "fast": "Fast",
+          "extra_fast": "Extra fast"
+        }
+      },
       "selected_program_remaining_time_in_minutes": {
         "name": "Remaining time of selected program"
+      },
+      "selected_program_set_temperature_status": {
+        "name": "Program temperature",
+        "state": {
+          "not_available": "Not available",
+          "cold": "Cold",
+          "20_c": "20 °C",
+          "30_c": "30 °C",
+          "40_c": "40 °C",
+          "60_c": "60 °C"
+        }
       },
       "selected_program_total_running_time_in_minutes": {
         "name": "Selected program total running time"
       },
       "selected_program_total_time_in_minutes": {
         "name": "Selected program total time"
+      },
+      "selected_program_washing_spin_speed_rpm_status": {
+        "name": "Program washing spin speed",
+        "state": {
+          "not_available": "Not available",
+          "no_spin": "No spin",
+          "0_rpm": "0 rpm",
+          "800_rpm": "800 rpm",
+          "400_rpm": "400 rpm",
+          "1000_rpm": "1000 rpm",
+          "1200_rpm": "1200 rpm",
+          "1400_rpm": "1400 rpm"
+        }
       },
       "selected_programduration_inminutes": {
         "name": "Duration of selected program"
