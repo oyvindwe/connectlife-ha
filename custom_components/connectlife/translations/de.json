@@ -404,7 +404,7 @@
         "name": "Aktueller SR-Modus"
       },
       "extra_rinse_status": {
-        "name": "Extra-Spülung"
+        "name": "Programmoption Extra-Spülung"
       },
       "f_e_arkgrille": {
         "name": "Schutzalarm für Kabinengrill"
@@ -668,31 +668,31 @@
         "name": "Sparmodus"
       },
       "selected_program_anticrease_status": {
-        "name": "Knitterschutz"
+        "name": "Programmoption Knitterschutz"
       },
       "selected_program_auto_door_open_function": {
         "name": "Automatische Türöffnung"
       },
       "selected_program_disinfection": {
-        "name": "Desinfektion"
+        "name": "Programmoption Desinfektion"
       },
       "selected_program_entry_steam_status": {
-        "name": "Dampffunktion"
+        "name": "Programmoption Dampf"
       },
       "selected_program_extradry_status": {
-        "name": "Extra-Trocken"
+        "name": "Programmoption Extra Trocken"
       },
       "selected_program_prewash_status": {
-        "name": "Vorwäsche"
+        "name": "Programmoption Vorwäsche"
       },
       "selected_program_rinse_hold_status": {
-        "name": "Spülstopp"
+        "name": "Programmoption Spülstopp"
       },
       "selected_program_steamfinish": {
-        "name": "Dampffinish"
+        "name": "Programmoption Dampffinish"
       },
       "selected_program_water_pluse_status": {
-        "name": "Wasser Plus"
+        "name": "Programmoption Wasser Plus"
       },
       "session_pairing_active": {
         "name": "Sitzungskopplung aktiv"
@@ -987,7 +987,7 @@
         "name": "Kindersicherungseinstellung"
       },
       "curent_program_duration": {
-        "name": "Aktuelle Programmdauer"
+        "name": "Programmdauer aktuell"
       },
       "curent_program_remaining_time": {
         "name": "Verbleibende Zeit des aktuellen Programms"
@@ -1041,19 +1041,19 @@
         "name": "Täglicher Energieverbrauch in kWh"
       },
       "defaultspinspeed": {
-        "name": "Standard-Schleudergeschwindigkeit"
+        "name": "Schleuderdrehzahl Standard"
       },
       "delay_duration_inminutes": {
-        "name": "Verzögerungsdauer"
+        "name": "Startverzögerung"
       },
       "delay_start_remaining_time": {
-        "name": "Verbleibende Zeit bis zum verzögerten Start"
+        "name": "Startverzögerung Verbleibend"
       },
       "delay_start_remaining_time_in_minutes": {
-        "name": "Verbleibende Zeit bis zum verzögerten Start (Minuten)"
+        "name": "Startverzögerung Verbleibend"
       },
       "delay_start_set_time": {
-        "name": "Eingestellte Zeit für verzögerten Start"
+        "name": "Startverzögerung"
       },
       "delayendtime": {
         "name": "Verzögerungsendzeit"
@@ -1062,17 +1062,17 @@
         "name": "Verzögerungsdauer"
       },
       "delaystart_delayend_mode_status": {
-        "name": "Verzögerungsstatus",
+        "name": "Startverzögerung",
         "state": {
           "off": "Aus",
           "on": "An"
         }
       },
       "delaystart_delayend_remaining_time_in_minutes": {
-        "name": "Verbleibende Verzögerungszeit"
+        "name": "Gesamtlaufzeit Verbleibend (verzögerter Start)"
       },
       "delaystart_delayend_remaining_timein_minutes": {
-        "name": "Verbleibende Verzögerungszeit"
+        "name": "Gesamtlaufzeit Verbleibend (verzögerter Start)"
       },
       "detergent_display": {
         "name": "Waschmittelanzeige"
@@ -1333,10 +1333,10 @@
         }
       },
       "selected_program_duration_in_minutes": {
-        "name": "Dauer des ausgewählten Programms"
+        "name": "Programmdauer Gesamt"
       },
       "selected_program_id": {
-        "name": "Ausgewähltes Programm",
+        "name": "Programm",
         "state": {
           "cotton_storage": "Baumwollspeicherung",
           "standard": "Standard",
@@ -1357,7 +1357,7 @@
         }
       },
       "selected_program_id_status": {
-        "name": "Ausgewähltes Programm",
+        "name": "Programm",
         "state": {
           "auto": "Automatisch",
           "eco": "Eco",
@@ -1388,14 +1388,14 @@
         }
       },
       "selected_program_mode": {
-        "name": "Modus des ausgewählten Programms",
+        "name": "Programm Modus",
         "state": {
           "normal": "Normal",
           "fast": "Schnell"
         }
       },
       "selected_program_mode_status": {
-        "name": "Modus des ausgewählten Programms",
+        "name": "Programm Modus",
         "state": {
           "not_available": "Nicht verfügbar",
           "normal": "Normal",
@@ -1404,10 +1404,10 @@
         }
       },
       "selected_program_remaining_time_in_minutes": {
-        "name": "Verbleibende Zeit des ausgewählten Programms"
+        "name": "Programmdauer Verbleibend"
       },
       "selected_program_set_temperature_status": {
-        "name": "Programmtemperatur",
+        "name": "Programm Temperatur",
         "state": {
           "not_available": "Nicht verfügbar",
           "cold": "Kalt",
@@ -1418,13 +1418,13 @@
         }
       },
       "selected_program_total_running_time_in_minutes": {
-        "name": "Gesamtlaufzeit des ausgewählten Programms"
+        "name": "Programmdauer Gesamt"
       },
       "selected_program_total_time_in_minutes": {
-        "name": "Gesamtlaufzeit des ausgewählten Programms"
+        "name": "Programmdauer Gesamt"
       },
       "selected_program_washing_spin_speed_rpm_status": {
-        "name": "Schleudergeschwindigkeit des Waschprogramms",
+        "name": "Programm Schleuderdrehzahl",
         "state": {
           "not_available": "Nicht verfügbar",
           "no_spin": "Kein Schleudern",
@@ -1437,10 +1437,10 @@
         }
       },
       "selected_programduration_inminutes": {
-        "name": "Dauer des ausgewählten Programms"
+        "name": "Programmdauer Gesamt"
       },
       "selected_programremaining_time_inminutes": {
-        "name": "Verbleibende Zeit des ausgewählten Programms"
+        "name": "Programmdauer Verbleibend"
       },
       "set_progress_type": {
         "name": "Fortschrittstyp einstellen",
@@ -2080,7 +2080,7 @@
         "name": "Motorleistung"
       },
       "selected_program_id": {
-        "name": "Ausgewähltes Programm",
+        "name": "Programm",
         "state": {
           "auto": "Automatisch",
           "anti_allergy": "Anti-Allergie",
