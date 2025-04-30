@@ -1069,10 +1069,10 @@
         }
       },
       "delaystart_delayend_remaining_time_in_minutes": {
-        "name": "Gesamtlaufzeit Verbleibend (verzögerter Start)"
+        "name": "Startverzögerung Gesamtlaufzeit Verbleibend"
       },
       "delaystart_delayend_remaining_timein_minutes": {
-        "name": "Gesamtlaufzeit Verbleibend (verzögerter Start)"
+        "name": "Startverzögerung Gesamtlaufzeit Verbleibend"
       },
       "detergent_display": {
         "name": "Waschmittelanzeige"
