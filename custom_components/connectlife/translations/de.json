@@ -1,0 +1,2206 @@
+{
+  "config": {
+    "abort": {
+      "already_configured": "Gerät ist bereits konfiguriert"
+    },
+    "error": {
+      "cannot_connect": "Verbindung fehlgeschlagen",
+      "invalid_auth": "Ungültige Authentifizierung",
+      "unknown": "Unerwarteter Fehler"
+    },
+    "step": {
+      "user": {
+        "data": {
+          "password": "Passwort",
+          "username": "Benutzername"
+        }
+      }
+    }
+  },
+  "issues": {
+    "unavailable_device": {
+      "title": "{device_name} nicht mehr verfügbar",
+      "fix_flow": {
+        "abort": {
+          "issue_ignored": "\"{device_name} nicht mehr verfügbar\" wurde ignoriert. Das Gerät und alle zugehörigen Einträge bleiben im Verzeichnis."
+        },
+        "step": {
+          "init": {
+            "title": "{device_name} nicht mehr verfügbar",
+            "description": "Das Gerät \"{device_name}\" ist nicht mehr in deinem ConnectLife-Konto verfügbar. Wenn du das Gerät nicht mehr besitzt, kannst du es aus Home Assistant entfernen.",
+            "menu_options": {
+              "ignore": "Ignorieren",
+              "remove": "Entfernen"
+            }
+          },
+          "remove": {
+            "title": "{device_name} entfernen",
+            "description": "Das Gerät \"{device_name}\" und alle zugehörigen Entitäten werden aus Home Assistant entfernt."
+          }
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "menu_options": {
+          "select_device": "Gerät konfigurieren",
+          "development": "Entwicklungsmodus konfigurieren"
+        }
+      },
+      "select_device": {
+        "data": {
+          "device": "Gerät auswählen"
+        },
+        "description": "Ein Gerät konfigurieren."
+      },
+      "configure_device": {
+        "data": {
+          "disable_beep": "Signalton deaktivieren"
+        },
+        "description": "Ein Gerät konfigurieren."
+      },
+      "development": {
+        "data": {
+          "development_mode": "Entwicklungsmodus",
+          "test_server_url": "Test-Server-URL"
+        },
+        "description": "Aktiviere den Entwicklungsmodus, um eine Verbindung zum Testserver anstelle der ConnectLife-API herzustellen."
+      }
+    },
+    "error": {
+      "test_server_invalid": "Ungültige Test-Server-URL",
+      "test_server_required": "Entwicklungsmodus erfordert eine Test-Server-URL"
+    }
+  },
+  "selector": {
+    "actions": {
+      "options": {
+        "1": "Stopp",
+        "2": "Start",
+        "3": "Pause",
+        "4": "Tür öffnen"
+      }
+    }
+  },
+  "services": {
+    "set_value": {
+      "name": "Wert setzen",
+      "description": "Setzt einen Wert für den Status. Vorsicht bei der Verwendung. Es wird kein Multiplikator angewendet.",
+      "fields": {
+        "value": {
+          "name": "Wert",
+          "description": "Zu setzender Wert."
+        }
+      }
+    },
+    "set_action": {
+      "name": "Aktion setzen",
+      "description": "Setzt eine Aktion für das Gerät. Vorsicht bei der Verwendung.",
+      "fields": {
+        "action": {
+          "name": "Aktion",
+          "description": "Zu setzende Aktion."
+        }
+      }
+    },
+    "update": {
+      "name": "Gerät aktualisieren",
+      "description": "Aktualisiert alle Eigenschaften, die im Datenfeld definiert sind.",
+      "fields": {
+        "data": {
+          "name": "Daten",
+          "description": "Eigenschaften, die aktualisiert werden sollen"
+        }
+      }
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "ado_allowed": {
+        "name": "ADO erlaubt"
+      },
+      "alarm_1": {
+        "name": "Alarm 1"
+      },
+      "alarm_10": {
+        "name": "Alarm 10"
+      },
+      "alarm_11": {
+        "name": "Alarm 11"
+      },
+      "alarm_12": {
+        "name": "Alarm 12"
+      },
+      "alarm_2": {
+        "name": "Alarm 2"
+      },
+      "alarm_3": {
+        "name": "Alarm 3"
+      },
+      "alarm_4": {
+        "name": "Alarm 4"
+      },
+      "alarm_5": {
+        "name": "Alarm 5"
+      },
+      "alarm_6": {
+        "name": "Alarm 6"
+      },
+      "alarm_7": {
+        "name": "Alarm 7"
+      },
+      "alarm_8": {
+        "name": "Alarm 8"
+      },
+      "alarm_9": {
+        "name": "Alarm 9"
+      },
+      "alarm_alarm_time_reached": {
+        "name": "Alarmzeit erreicht"
+      },
+      "alarm_auto_dose_refill": {
+        "name": "Automatische Dosierung auffüllen"
+      },
+      "alarm_auto_program_notification": {
+        "name": "Automatische Programmbenachrichtigung"
+      },
+      "alarm_autodose_level10": {
+        "name": "Automatische Dosierung Stufe 10"
+      },
+      "alarm_autodose_level20": {
+        "name": "Automatische Dosierung Stufe 20"
+      },
+      "alarm_automatic_switch_off_zone": {
+        "name": "Automatische Abschaltung der Zone"
+      },
+      "alarm_baking_finished": {
+        "name": "Backvorgang abgeschlossen"
+      },
+      "alarm_clean_the_filters": {
+        "name": "Filter reinigen"
+      },
+      "alarm_descale_now": {
+        "name": "Jetzt entkalken"
+      },
+      "alarm_door_closed": {
+        "name": "Tür geschlossen"
+      },
+      "alarm_door_opened": {
+        "name": "Tür geöffnet"
+      },
+      "alarm_external_autodose_level15": {
+        "name": "Externe automatische Dosierung Stufe 15"
+      },
+      "alarm_external_autodose_level30": {
+        "name": "Externe automatische Dosierung Stufe 30"
+      },
+      "alarm_hob_hood_started": {
+        "name": "Kochfeldhaube gestartet"
+      },
+      "alarm_ntc_coil_overheating": {
+        "name": "NTC-Spule überhitzt"
+      },
+      "alarm_ntc_power": {
+        "name": "NTC Leistung"
+      },
+      "alarm_ntc_tc": {
+        "name": "NTC TC"
+      },
+      "alarm_preheat_reached": {
+        "name": "Vorheiztemperatur erreicht"
+      },
+      "alarm_preheating_ready": {
+        "name": "Vorheizen abgeschlossen"
+      },
+      "alarm_program_done": {
+        "name": "Programm abgeschlossen"
+      },
+      "alarm_program_pause": {
+        "name": "Programm pausiert"
+      },
+      "alarm_remote_start_canceled": {
+        "name": "Fernstart abgebrochen"
+      },
+      "alarm_rinse_aid_refill": {
+        "name": "Klarspüler nachfüllen"
+      },
+      "alarm_rinse_aid_refill_external": {
+        "name": "Externe Klarspüler-Nachfüllung"
+      },
+      "alarm_run_selfcleaning": {
+        "name": "Selbstreinigung starten"
+      },
+      "alarm_salt_refill": {
+        "name": "Salz nachfüllen"
+      },
+      "alarm_sani_program_finished": {
+        "name": "Sanitärprogramm abgeschlossen"
+      },
+      "alarm_steam_empty": {
+        "name": "Dampf leer"
+      },
+      "alarm_temperature_reached": {
+        "name": "Temperatur erreicht"
+      },
+      "alarm_timer_ended": {
+        "name": "Timer abgelaufen"
+      },
+      "alarm_turn_food": {
+        "name": "Essen wenden"
+      },
+      "alarm_voltage": {
+        "name": "Spannung"
+      },
+      "alarm_warning_fastpreheat": {
+        "name": "Warnung: Schnelles Vorheizen"
+      },
+      "alarm_warning_microwave": {
+        "name": "Warnung: Mikrowelle"
+      },
+      "alarm_warning_steam": {
+        "name": "Warnung: Dampf"
+      },
+      "alarm_water_tank_empty": {
+        "name": "Wassertank leer"
+      },
+      "alarm_water_tank_missing": {
+        "name": "Wassertank fehlt"
+      },
+      "alarm_zone_turned_off": {
+        "name": "Zone ausgeschaltet"
+      },
+      "auto_dose_refill": {
+        "name": "Automatische Dosierung nachfüllen"
+      },
+      "automatic_ice_making": {
+        "name": "Automatische Eisherstellung"
+      },
+      "charcoal_filter_expiration_alarm": {
+        "name": "Aktivkohlefilter Ablaufwarnung"
+      },
+      "charcoal_filter_surplus_time": {
+        "name": "Aktivkohlefilter Restzeit"
+      },
+      "charcoal_filter_time_reset": {
+        "name": "Aktivkohlefilter Zeit zurücksetzen"
+      },
+      "child_lock": {
+        "name": "Kindersicherung"
+      },
+      "child_lock_open_alarm": {
+        "name": "Kindersicherung offen Alarm"
+      },
+      "child_lock_open_door_sound_alarm": {
+        "name": "Türton-Alarm bei geöffneter Kindersicherung"
+      },
+      "child_lock_status": {
+        "name": "Kindersicherung"
+      },
+      "child_lock_status_status": {
+        "name": "Kindersicherung"
+      },
+      "child_lock_switch_exist": {
+        "name": "Kindersicherungsschalter vorhanden"
+      },
+      "child_lock_switch_status": {
+        "name": "Kindersicherung"
+      },
+      "clean_filter": {
+        "name": "Filter reinigen"
+      },
+      "delay_start": {
+        "name": "Verzögerter Start"
+      },
+      "delay_start_status": {
+        "name": "Verzögerter Start"
+      },
+      "delaystart_delayend_mode": {
+        "name": "Modus für verzögerten Start"
+      },
+      "demo_mode": {
+        "name": "Demo-Modus"
+      },
+      "door": {
+        "name": "Tür"
+      },
+      "door_status": {
+        "name": "Türstatus"
+      },
+      "eco_mode": {
+        "name": "ECO-Modus"
+      },
+      "envi_temp_sens_head_failure": {
+        "name": "Umgebungstemperatursensor-Fehler"
+      },
+      "error_0": {
+        "name": "Fehler 0"
+      },
+      "error_1": {
+        "name": "Fehler 1"
+      },
+      "error_10": {
+        "name": "Fehler 10"
+      },
+      "error_11": {
+        "name": "Fehler 11"
+      },
+      "error_12": {
+        "name": "Fehler 12"
+      },
+      "error_13": {
+        "name": "Fehler 13"
+      },
+      "error_14": {
+        "name": "Fehler 14"
+      },
+      "error_15": {
+        "name": "Fehler 15"
+      },
+      "error_16": {
+        "name": "Fehler 16"
+      },
+      "error_2": {
+        "name": "Fehler 2"
+      },
+      "error_3": {
+        "name": "Fehler 3"
+      },
+      "error_4": {
+        "name": "Fehler 4"
+      },
+      "error_5": {
+        "name": "Fehler 5"
+      },
+      "error_6": {
+        "name": "Fehler 6"
+      },
+      "error_7": {
+        "name": "Fehler 7"
+      },
+      "error_8": {
+        "name": "Fehler 8"
+      },
+      "error_9": {
+        "name": "Fehler 9"
+      },
+      "existing_fuzzy_mode": {
+        "name": "Aktueller Fuzzy-Modus"
+      },
+      "existing_holiday_mode": {
+        "name": "Aktueller Urlaubsmodus"
+      },
+      "existing_lock_fresh_mode": {
+        "name": "Aktueller Lock-Fresh-Modus"
+      },
+      "existing_save_mode": {
+        "name": "Aktueller Sparmodus"
+      },
+      "existing_sf_mode": {
+        "name": "Aktueller SF-Modus"
+      },
+      "existing_sr_mode": {
+        "name": "Aktueller SR-Modus"
+      },
+      "extra_rinse_status": {
+        "name": "Programmoption Extra-Spülung"
+      },
+      "f_e_arkgrille": {
+        "name": "Schutzalarm für Kabinengrill"
+      },
+      "f_e_filterclean": {
+        "name": "Filter reinigen"
+      },
+      "f_e_incoiltemp": {
+        "name": "Fehler beim Innenspulen-Temperatursensor"
+      },
+      "f_e_incom": {
+        "name": "Kommunikationsfehler zwischen Innen- und Außeneinheit"
+      },
+      "f_e_indisplay": {
+        "name": "Kommunikationsfehler zwischen Steuerpanel und Display"
+      },
+      "f_e_ineeprom": {
+        "name": "EEPROM-Fehler der Innensteuerplatine"
+      },
+      "f_e_inele": {
+        "name": "Kommunikationsfehler zwischen Innensteuerpanel und Innenstrompanel"
+      },
+      "f_e_infanmotor": {
+        "name": "Fehlfunktion des Innenlüftermotors"
+      },
+      "f_e_inhumidity": {
+        "name": "Fehler des Innenluftfeuchtigkeitssensors"
+      },
+      "f_e_inkeys": {
+        "name": "Kommunikationsfehler zwischen Innensteuerpanel und Tastatur"
+      },
+      "f_e_intemp": {
+        "name": "Fehler des Innentemperatursensors"
+      },
+      "f_e_invzero": {
+        "name": "Fehler bei der Nullspannungserkennung im Innenbereich"
+      },
+      "f_e_inwifi": {
+        "name": "Kommunikationsfehler zwischen WLAN-Steuerpanel und Innensteuerpanel"
+      },
+      "f_e_outcoiltemp": {
+        "name": "Fehler des Außenspulen-Temperatursensors"
+      },
+      "f_e_outeeprom": {
+        "name": "EEPROM-Fehler im Außenbereich"
+      },
+      "f_e_outgastemp": {
+        "name": "Fehler des Ablufttemperatursensors"
+      },
+      "f_e_outtemp": {
+        "name": "Fehler des Außentemperatursensors"
+      },
+      "f_e_pump": {
+        "name": "Pumpe"
+      },
+      "f_e_push": {
+        "name": "Drücken"
+      },
+      "f_e_temp": {
+        "name": "Temperatur"
+      },
+      "f_e_tubetemp": {
+        "name": "Temperatur der Röhre"
+      },
+      "f_e_waterfull": {
+        "name": "Wasser voll"
+      },
+      "f_e_wetsensor": {
+        "name": "Feuchtigkeitssensor"
+      },
+      "fill_salt": {
+        "name": "Salz nachfüllen"
+      },
+      "float_switch": {
+        "name": "Schwimmerschalter"
+      },
+      "free_defrosting_failure": {
+        "name": "Fehler bei der Gefrierfach-Abtauung"
+      },
+      "free_evap_temp_sens_head_failure": {
+        "name": "Fehler des Verdampfertemperatursensors im Gefrierbereich"
+      },
+      "free_fan_failure": {
+        "name": "Fehlfunktion des Gefrierfach-Lüfters"
+      },
+      "free_room_open": {
+        "name": "Gefrierraum offen"
+      },
+      "free_room_over_temp_alarm_failure": {
+        "name": "Fehlalarm: Übertemperatur im Gefrierraum"
+      },
+      "free_temp_sens_head_failure": {
+        "name": "Fehler des Gefrierraumtemperatursensors"
+      },
+      "freeze_poweroff_ad": {
+        "name": "Energiesparmodus für Gefrieren deaktiviert"
+      },
+      "freeze_poweron_ad": {
+        "name": "Energiesparmodus für Gefrieren aktiviert"
+      },
+      "frost_state": {
+        "name": "Froststatus"
+      },
+      "fuzzy_mode": {
+        "name": "Fuzzy-Modus"
+      },
+      "gold_water_supply_mode": {
+        "name": "Gold-Wasserversorgungsmodus"
+      },
+      "hard_pairing_status": {
+        "name": "Status der festen Kopplung"
+      },
+      "high_humidity": {
+        "name": "Hohe Luftfeuchtigkeit"
+      },
+      "high_temperature": {
+        "name": "Hohe Temperatur"
+      },
+      "humidity_sensor": {
+        "name": "Luftfeuchtigkeitssensor"
+      },
+      "humidity_sensor_failure": {
+        "name": "Fehler des Luftfeuchtigkeitssensors"
+      },
+      "ice_making_machine_failure": {
+        "name": "Fehler der Eisherstellungsmaschine"
+      },
+      "ice_making_state": {
+        "name": "Status der Eisherstellung"
+      },
+      "ice_making_stop_status": {
+        "name": "Status der gestoppten Eisherstellung"
+      },
+      "ice_sensor_failure_flag": {
+        "name": "Fehlerflag des Eissensors"
+      },
+      "ice_temperature_sensor_header_failure_flag": {
+        "name": "Fehlerflag des Eis-Temperatursensors"
+      },
+      "inlet_pipe_temp_sens_head_failure": {
+        "name": "Fehler des Einlassrohr-Temperatursensors"
+      },
+      "light": {
+        "name": "Licht"
+      },
+      "low_wine_area_c_evaporator_fault": {
+        "name": "Fehler des Verdampfers in Bereich C der Weinlagerung"
+      },
+      "low_wine_area_c_fan_fault": {
+        "name": "Fehler des Lüfters in Bereich C der Weinlagerung"
+      },
+      "low_wine_area_c_humdy_fault": {
+        "name": "Fehler der Luftfeuchtigkeitsregelung in Bereich C der Weinlagerung"
+      },
+      "low_wine_area_c_temp_fault": {
+        "name": "Fehler der Temperaturregelung in Bereich C der Weinlagerung"
+      },
+      "mid_wine_area_b_evaporator_fault": {
+        "name": "Fehler des Verdampfers in Bereich B der Weinlagerung"
+      },
+      "mid_wine_area_b_fan_fault": {
+        "name": "Fehler des Lüfters in Bereich B der Weinlagerung"
+      },
+      "mid_wine_area_b_humdy_fault": {
+        "name": "Fehler der Luftfeuchtigkeitsregelung in Bereich B der Weinlagerung"
+      },
+      "mid_wine_area_b_temp_fault": {
+        "name": "Fehler der Temperaturregelung in Bereich B der Weinlagerung"
+      },
+      "open_freeze_door_alarm": {
+        "name": "Alarm: Gefrierfachtür offen"
+      },
+      "open_refrigerator_door_alarm": {
+        "name": "Alarm: Kühlschranktür offen"
+      },
+      "open_the_door_alarm": {
+        "name": "Alarm: Tür offen"
+      },
+      "open_variation_door_alarm": {
+        "name": "Alarm: Variabler Türbereich offen"
+      },
+      "preheat": {
+        "name": "Vorheizen"
+      },
+      "quiet_mode_status": {
+        "name": "Status des Leisemodus"
+      },
+      "reed_switch": {
+        "name": "Reed-Schalter"
+      },
+      "refr_defrosting_failure": {
+        "name": "Fehlfunktion der Kühlschrank-Abtauung"
+      },
+      "refr_dry_wet_room_sens_failure": {
+        "name": "Fehler des Kühlschrank-Feuchtigkeitsraumsensors"
+      },
+      "refr_evap_temp_sens_head_failure": {
+        "name": "Fehler des Kühlschrank-Verdampfertemperatursensors"
+      },
+      "refr_fan_failure": {
+        "name": "Fehlfunktion des Kühlschranklüfters"
+      },
+      "refr_room_open": {
+        "name": "Kühlschrankraum offen"
+      },
+      "refr_room_over_temp_alarm": {
+        "name": "Temperaturalarm im Kühlschrankraum"
+      },
+      "refr_temp_sens_head_failure": {
+        "name": "Fehler des Kühlschranktemperatursensors"
+      },
+      "refr_var_room_sens_failure": {
+        "name": "Fehler des variablen Kühlschrankraum-Sensors"
+      },
+      "refrigerator_defrosting_failure": {
+        "name": "Fehler bei der Abtauung des Kühlschranks"
+      },
+      "refrigerator_dry_wet_room_sens_failure": {
+        "name": "Fehler des Feuchtigkeitsraumsensors im Kühlschrank"
+      },
+      "refrigerator_evap_temp_sens_head_failure": {
+        "name": "Fehler des Verdampfertemperatursensors im Kühlschrank"
+      },
+      "refrigerator_fan_failure": {
+        "name": "Fehlfunktion des Kühlschranklüfters"
+      },
+      "refrigerator_room_open": {
+        "name": "Kühlschrankraum offen"
+      },
+      "refrigerator_room_over_temp_alarm": {
+        "name": "Temperaturalarm im Kühlschrankraum"
+      },
+      "refrigerator_temp_sens_head_failure": {
+        "name": "Fehler des Kühlschranktemperatursensors"
+      },
+      "refrigerator_var_room_sens_failure": {
+        "name": "Fehler des variablen Kühlschrankraum-Sensors"
+      },
+      "remote_control_mode_monitoring": {
+        "name": "Fernsteuerungsmodus-Überwachung"
+      },
+      "remote_control_monitoring_set_commands_actions": {
+        "name": "Fernsteuerung"
+      },
+      "right_free_sensor_failure": {
+        "name": "Fehlfunktion des rechten Gefriersensors"
+      },
+      "rinse_aid_refill": {
+        "name": "Klarspüler nachfüllen"
+      },
+      "rx_failure": {
+        "name": "RX-Fehler"
+      },
+      "sabbath_mode_status": {
+        "name": "Sabbatmodus-Status"
+      },
+      "sabbath_mode_switch_status": {
+        "name": "Sabbatmodus-Schalterstatus"
+      },
+      "save_mode": {
+        "name": "Sparmodus"
+      },
+      "selected_program_anticrease_status": {
+        "name": "Programmoption Knitterschutz"
+      },
+      "selected_program_auto_door_open_function": {
+        "name": "Automatische Türöffnung"
+      },
+      "selected_program_disinfection": {
+        "name": "Programmoption Desinfektion"
+      },
+      "selected_program_entry_steam_status": {
+        "name": "Programmoption Dampf"
+      },
+      "selected_program_extradry_status": {
+        "name": "Programmoption Extra Trocken"
+      },
+      "selected_program_prewash_status": {
+        "name": "Programmoption Vorwäsche"
+      },
+      "selected_program_rinse_hold_status": {
+        "name": "Programmoption Spülstopp"
+      },
+      "selected_program_steamfinish": {
+        "name": "Programmoption Dampffinish"
+      },
+      "selected_program_water_pluse_status": {
+        "name": "Programmoption Wasser Plus"
+      },
+      "session_pairing_active": {
+        "name": "Sitzungskopplung aktiv"
+      },
+      "sf_mode": {
+        "name": "SF-Modus"
+      },
+      "sl1_alarm_auto_program_notification": {
+        "name": "Automatische Programmbenachrichtigung Zone 1"
+      },
+      "sl1_alarm_automatic_switch_off_zone": {
+        "name": "Zone 1 automatisch ausgeschaltet"
+      },
+      "sl1_alarm_ntc_coil_overheating": {
+        "name": "Zone 1 Spulenüberhitzung"
+      },
+      "sl1_alarm_timer_ended": {
+        "name": "Zone 1 Timer beendet"
+      },
+      "sl1_alarm_zone_turned_off": {
+        "name": "Zone 1 ausgeschaltet"
+      },
+      "sl1_bridge_function_active": {
+        "name": "Zone 1 Brückenfunktion aktiv"
+      },
+      "sl1_pot_detected": {
+        "name": "Zone 1 Topf erkannt"
+      },
+      "sl1_status": {
+        "name": "Zone 1 Status"
+      },
+      "sl2_alarm_auto_program_notification": {
+        "name": "Automatische Programmbenachrichtigung Zone 2"
+      },
+      "sl2_alarm_automatic_switch_off_zone": {
+        "name": "Zone 2 automatisch ausgeschaltet"
+      },
+      "sl2_alarm_ntc_coil_overheating": {
+        "name": "Zone 2 Spulenüberhitzung"
+      },
+      "sl2_alarm_timer_ended": {
+        "name": "Zone 2 Timer beendet"
+      },
+      "sl2_alarm_zone_turned_off": {
+        "name": "Zone 2 ausgeschaltet"
+      },
+      "sl2_bridge_function_active": {
+        "name": "Zone 2 Brückenfunktion aktiv"
+      },
+      "sl2_pot_detected": {
+        "name": "Zone 2 Topf erkannt"
+      },
+      "sl2_status": {
+        "name": "Zone 2 Status"
+      },
+      "sl3_alarm_auto_program_notification": {
+        "name": "Automatische Programmbenachrichtigung Zone 3"
+      },
+      "sl3_alarm_automatic_switch_off_zone": {
+        "name": "Zone 3 automatisch ausgeschaltet"
+      },
+      "sl3_alarm_ntc_coil_overheating": {
+        "name": "Zone 3 Spulenüberhitzung"
+      },
+      "sl3_alarm_timer_ended": {
+        "name": "Zone 3 Timer beendet"
+      },
+      "sl3_alarm_zone_turned_off": {
+        "name": "Zone 3 ausgeschaltet"
+      },
+      "sl3_bridge_function_active": {
+        "name": "Zone 3 Brückenfunktion aktiv"
+      },
+      "sl3_pot_detected": {
+        "name": "Zone 3 Topf erkannt"
+      },
+      "sl3_status": {
+        "name": "Zone 3 Status"
+      },
+      "sl4_alarm_auto_program_notification": {
+        "name": "Automatische Programmbenachrichtigung Zone 4"
+      },
+      "sl4_alarm_automatic_switch_off_zone": {
+        "name": "Zone 4 automatisch ausgeschaltet"
+      },
+      "sl4_alarm_ntc_coil_overheating": {
+        "name": "Zone 4 Spulenüberhitzung"
+      },
+      "sl4_alarm_timer_ended": {
+        "name": "Zone 4 Timer beendet"
+      },
+      "sl4_alarm_zone_turned_off": {
+        "name": "Zone 4 ausgeschaltet"
+      },
+      "sl4_bridge_function_active": {
+        "name": "Zone 4 Brückenfunktion aktiv"
+      },
+      "sl4_pot_detected": {
+        "name": "Zone 4 Topf erkannt"
+      },
+      "sl4_status": {
+        "name": "Zone 4 Status"
+      },
+      "sl5_alarm_auto_program_notification": {
+        "name": "Automatische Programmbenachrichtigung Zone 5"
+      },
+      "sl5_alarm_automatic_switch_off_zone": {
+        "name": "Zone 5 automatisch ausgeschaltet"
+      },
+      "sl5_alarm_ntc_coil_overheating": {
+        "name": "Zone 5 Spulenüberhitzung"
+      },
+      "sl5_alarm_timer_ended": {
+        "name": "Zone 5 Timer beendet"
+      },
+      "sl5_alarm_zone_turned_off": {
+        "name": "Zone 5 ausgeschaltet"
+      },
+      "sl5_bridge_function_active": {
+        "name": "Zone 5 Brückenfunktion aktiv"
+      },
+      "sl5_pot_detected": {
+        "name": "Zone 5 Topf erkannt"
+      },
+      "sl5_status": {
+        "name": "Zone 5 Status"
+      },
+      "sl6_alarm_auto_program_notification": {
+        "name": "Automatische Programmbenachrichtigung Zone 6"
+      },
+      "sl6_alarm_automatic_switch_off_zone": {
+        "name": "Zone 6 automatisch ausgeschaltet"
+      },
+      "sl6_alarm_ntc_coil_overheating": {
+        "name": "Zone 6 Spulenüberhitzung"
+      },
+      "sl6_alarm_timer_ended": {
+        "name": "Zone 6 Timer beendet"
+      },
+      "sl6_alarm_zone_turned_off": {
+        "name": "Zone 6 ausgeschaltet"
+      },
+      "sl6_bridge_function_active": {
+        "name": "Zone 6 Brückenfunktion aktiv"
+      },
+      "sl6_pot_detected": {
+        "name": "Zone 6 Topf erkannt"
+      },
+      "sl6_status": {
+        "name": "Zone 6 Status"
+      },
+      "sr_mode": {
+        "name": "SR-Modus"
+      },
+      "step1_status": {
+        "name": "Schritt 1 Status"
+      },
+      "step2_status": {
+        "name": "Schritt 2 Status"
+      },
+      "step3_status": {
+        "name": "Schritt 3 Status"
+      },
+      "stopaddgo_status": {
+        "name": "Stop-Add-Go aktiv"
+      },
+      "stopaddgoallowed": {
+        "name": "Stop-Add-Go erlaubt"
+      },
+      "t_beep": {
+        "name": "Signalton"
+      },
+      "tab_setting_status": {
+        "name": "Tab-Einstellung"
+      },
+      "tx_failure": {
+        "name": "TX-Fehler"
+      },     
+      "vacuum_on_off_status": {
+        "name": "Staubsauger Ein/Aus Status"
+      },
+      "vari_evap_temp_sens_head_failure": {
+        "name": "Fehler des Verdampfertemperatursensors (Vari)"
+      },
+      "vari_temp_sens_head_failure": {
+        "name": "Fehler des Temperatursensors (Vari)"
+      },
+      "vibration_alarm": {
+        "name": "Vibrationsalarm"
+      },
+      "vibration_sensor_fault": {
+        "name": "Fehler des Vibrationssensors"
+      },
+      "water_level_switch": {
+        "name": "Wasserstandsschalter"
+      },
+      "waterbox_full": {
+        "name": "Wasserbehälter voll"
+      }
+    },
+    "climate": {
+      "connectlife": {
+        "state_attributes": {
+          "fan_mode": {
+            "state": {
+              "middle_low": "Mittel niedrig",
+              "middle_high": "Mittel hoch"
+            }
+          },
+          "preset_mode": {
+            "state": {
+              "ai": "KI",
+              "off": "Aus",
+              "mute": "Stumm",
+              "eco_mute": "Eco-Stumm",
+              "super": "Super",
+              "sleep_1": "Schlafmodus 1",
+              "sleep_2": "Schlafmodus 2",
+              "sleep_3": "Schlafmodus 3",
+              "sleep_4": "Schlafmodus 4",
+              "eco_sleep_1": "Eco-Schlafmodus 1",
+              "eco_sleep_2": "Eco-Schlafmodus 2",
+              "eco_sleep_3": "Eco-Schlafmodus 3",
+              "eco_sleep_4": "Eco-Schlafmodus 4",
+              "bedtime": "Schlafenszeit"
+            }
+          },
+          "swing_mode": {
+            "state": {}
+          },
+          "swing_horizontal_mode": {
+            "state": {
+              "both_sides": "Beide Seiten",
+              "forward": "Vorwärts",
+              "left": "Links",
+              "right": "Rechts",
+              "swing": "Schwenken"
+            }
+          }
+        }
+      }
+    },  
+    "humidifier": {
+      "connectlife": {
+        "state_attributes": {
+          "mode": {
+            "state": {
+              "auto": "Automatisch",
+              "continuous": "Kontinuierlich",
+              "manual": "Manuell",
+              "clothes_dry": "Kleidung trocknen"
+            }
+          }
+        }
+      }
+    },  
+    "sensor": {
+      "ado_allowed": {
+        "name": "ADO erlaubt"
+      },
+      "alarm_door_closed": {
+        "name": "Tür geschlossen"
+      },
+      "alarm_door_opened": {
+        "name": "Tür geöffnet"
+      },
+      "anticrease_setting": {
+        "name": "Anti-Knitter-Dauer"
+      },
+      "appliance_status": {
+        "state": {
+          "idle": "Leerlauf",
+          "running": "Läuft"
+        }
+      },
+      "applicationpermissions": {
+        "name": "Anwendungsberechtigungen"
+      },
+      "auto_dose_duration": {
+        "name": "Automatische Dosierungsdauer"
+      },
+      "auto_dose_refill": {
+        "name": "Automatische Dosierung nachfüllen"
+      },
+      "bundling_humidity": {
+        "name": "Bündelfeuchtigkeit"
+      },
+      "bundling_temperature": {
+        "name": "Bündeltemperatur"
+      },
+      "child_lock_setting_status": {
+        "name": "Kindersicherungseinstellung"
+      },
+      "curent_program_duration": {
+        "name": "Programmdauer aktuell"
+      },
+      "curent_program_remaining_time": {
+        "name": "Verbleibende Zeit des aktuellen Programms"
+      },
+      "current_baking_step": {
+        "name": "Aktueller Backschritt",
+        "state": {
+          "preheat": "Vorheizen",
+          "step_1": "Schritt 1",
+          "step_2": "Schritt 2",
+          "step_3": "Schritt 3",
+          "after_bake_finished": "Nach dem Backen abgeschlossen"
+        }
+      },
+      "current_program_phase": {
+        "state": {
+          "not_available": "Nicht verfügbar",
+          "program_not_selected": "Kein Programm ausgewählt",
+          "program_selected": "Programm ausgewählt",
+          "delay_start_waiting": "Verzögerter Start wartet",
+          "preheat": "Vorheizen",
+          "preheat_finished": "Vorheizen abgeschlossen",
+          "prewash": "Vorwäsche",
+          "main_wash": "Hauptwäsche",
+          "drying": "Trocknen",
+          "program_finished": "Abgeschlossen",
+          "ventilating": "Lüften",
+          "idle": "Leerlauf",
+          "running": "Läuft",
+          "anti_crease": "Anti-Knitter",
+          "delay": "Verzögerung",
+          "finished": "Abgeschlossen",
+          "weigh": "Wiegen",
+          "wash": "Waschen",
+          "rinse": "Spülen",
+          "spin-dry": "Schleudern"
+        }
+      },
+      "current_programphase": {
+        "state": {
+          "running": "Läuft"
+        }
+      },
+      "current_temperature": {
+        "name": "Aktuelle Temperatur"
+      },
+      "daily_energy_consumption": {
+        "name": "Täglicher Energieverbrauch"
+      },
+      "daily_energy_kwh": {
+        "name": "Täglicher Energieverbrauch in kWh"
+      },
+      "defaultspinspeed": {
+        "name": "Schleuderdrehzahl Standard"
+      },
+      "delay_duration_inminutes": {
+        "name": "Startverzögerung"
+      },
+      "delay_start_remaining_time": {
+        "name": "Startverzögerung Verbleibend"
+      },
+      "delay_start_remaining_time_in_minutes": {
+        "name": "Startverzögerung Verbleibend"
+      },
+      "delay_start_set_time": {
+        "name": "Startverzögerung"
+      },
+      "delayendtime": {
+        "name": "Verzögerungsendzeit"
+      },
+      "delaystart_delayend_duration_inminutes": {
+        "name": "Verzögerungsdauer"
+      },
+      "delaystart_delayend_mode_status": {
+        "name": "Startverzögerung",
+        "state": {
+          "off": "Aus",
+          "on": "An"
+        }
+      },
+      "delaystart_delayend_remaining_time_in_minutes": {
+        "name": "Startverzögerung Gesamtlaufzeit Verbleibend"
+      },
+      "delaystart_delayend_remaining_timein_minutes": {
+        "name": "Startverzögerung Gesamtlaufzeit Verbleibend"
+      },
+      "detergent_display": {
+        "name": "Waschmittelanzeige"
+      },
+      "device_status": {
+        "state": {
+          "demo_mode": "Demo-Modus",
+          "failure": "Fehler",
+          "idle": "Leerlauf",
+          "iq": "IQ",
+          "locked": "Gesperrt",
+          "not_available": "Nicht verfügbar",
+          "pause": "Pausiert",
+          "pause_mode": "Pausenmodus",
+          "production": "Produktion",
+          "running": "Läuft",
+          "service": "Service",
+          "stand_by": "Standby",
+          "paused": "Pausiert",
+          "delay_time_waiting": "Verzögerungszeit wartet",
+          "error": "Fehler",
+          "after_bake_finished": "Nach dem Backen abgeschlossen"
+        }
+      },
+      "display_brightness_setting_status": {
+        "name": "Bildschirmhelligkeit"
+      },
+      "display_contrast_setting_status": {
+        "name": "Bildschirmkontrast"
+      },
+      "display_logotype_setting_status": {
+        "name": "Bildschirm-Logotyp"
+      },
+      "door_status": {
+        "name": "Tür",
+        "state": {
+          "not_available": "Nicht verfügbar",
+          "open": "Geöffnet",
+          "closed": "Geschlossen",
+          "closed_when_running": "Geschlossen während des Betriebs",
+          "other": "Andere",
+          "locked": "Verriegelt"
+        }
+      },
+      "electricit_consumption_decimal": {
+        "name": "Stromverbrauch (Dezimal)"
+      },
+      "electricit_consumption_int": {
+        "name": "Stromverbrauch (Ganzzahl)"
+      },
+      "energy_consumption_in_running_program": {
+        "name": "Energieverbrauch im laufenden Programm"
+      },
+      "energy_estimate": {
+        "name": "Energieabschätzung"
+      },
+      "environment_humidity": {
+        "name": "Umgebungsfeuchtigkeit"
+      },
+      "environment_real_temperature": {
+        "name": "Reale Umgebungstemperatur"
+      },
+      "error_read_out_1_code": {
+        "name": "Fehlercode 1 auslesen"
+      },
+      "error_read_out_1_cycle": {
+        "name": "Fehlerzyklus 1 auslesen"
+      },
+      "error_read_out_2_code": {
+        "name": "Fehlercode 2 auslesen"
+      },
+      "error_read_out_2_cycle": {
+        "name": "Fehlerzyklus 2 auslesen"
+      },
+      "error_read_out_3_code": {
+        "name": "Fehlercode 3 auslesen"
+      },
+      "error_read_out_3_cycle": {
+        "name": "Fehlerzyklus 3 auslesen"
+      },
+      "extradry_setting": {
+        "name": "ExtraTrocken-Einstellung"
+      },
+      "f_cool_qvalue": {
+        "name": "Kühlung"
+      },
+      "f_heat_qvalue": {
+        "name": "Heizung"
+      },
+      "f_votage": {
+        "name": "Gemessene Netzspannung"
+      },
+      "fan_sequence_setting_status": {
+        "name": "Lüftersequenz"
+      },
+      "feedback_volumen_setting_status": {
+        "name": "Feedback-Lautstärke",
+        "state": {
+          "mute": "Stumm",
+          "low": "Niedrig",
+          "mid": "Mittel",
+          "high": "Hoch"
+        }
+      },
+      "flexiblespintime_flag": {
+        "name": "Flexible Schleuderzeit"
+      },
+      "freeze_max_temperature": {
+        "name": "Maximale Gefriertemperatur"
+      },
+      "freeze_min_temperature": {
+        "name": "Minimale Gefriertemperatur"
+      },
+      "freeze_real_temperature": {
+        "name": "Reale Gefriertemperatur"
+      },
+      "freeze_sensor_real_temperature": {
+        "name": "Reale Gefriersensor-Temperatur"
+      },
+      "fruit_vegetables_temperature": {
+        "name": "Frucht- und Gemüse-Temperatur"
+      },
+      "heat_pump_setting_status": {
+        "name": "Wärmepumpe"
+      },
+      "high_humidity": {
+        "name": "Hohe Luftfeuchtigkeit"
+      },
+      "high_temperature": {
+        "name": "Hohe Temperatur"
+      },
+      "interior_light_at_power_off_setting_status": {
+        "name": "Innenbeleuchtung bei ausgeschaltetem Gerät"
+      },
+      "interior_light_status": {
+        "name": "Innenbeleuchtungsstatus"
+      },
+      "language_status": {
+        "name": "Sprache"
+      },
+      "last_run_program_id": {
+        "name": "Letztes ausgeführtes Programm"
+      },
+      "low_humidity": {
+        "name": "Niedrige Luftfeuchtigkeit"
+      },
+      "low_temperature": {
+        "name": "Niedrige Temperatur"
+      },
+      "machine_status": {
+        "name": "Maschinenstatus",
+        "state": {
+          "off": "Aus",
+          "standby": "Standby",
+          "running": "Läuft"
+        }
+      },
+      "mainwashtimeuseindex": {
+        "name": "Nutzungsindex der Hauptwaschzeit"
+      },
+      "measured_vibrations": {
+        "name": "Gemessene Vibrationen"
+      },
+      "meat_probe_measured_temperature": {
+        "name": "Gemessene Temperatur der Fleischsonde"
+      },
+      "meat_probe_set_temperature": {
+        "name": "Eingestellte Temperatur der Fleischsonde"
+      },
+      "medium_humidity": {
+        "name": "Mittlere Luftfeuchtigkeit"
+      },
+      "medium_temperature": {
+        "name": "Mittlere Temperatur"
+      },
+      "mian_wash_time": {
+        "name": "Hauptwaschzeit"
+      },
+      "notification_volumen_setting_status": {
+        "name": "Benachrichtigungslautstärke"
+      },
+      "order_time_minimum_hour": {
+        "name": "Mindestbestellzeit in Stunden"
+      },
+      "oven_temperature": {
+        "name": "Ofentemperatur"
+      },
+      "parse_lib_ver": {
+        "name": "Bibliotheksversion analysieren"
+      },
+      "pressure_calibration_setting_status": {
+        "name": "Druckkalibrierung"
+      },
+      "program_end_to_shutdown_time_in_minutes": {
+        "name": "Zeit bis zum Herunterfahren nach Programmende (Minuten)"
+      },
+      "real_humidity": {
+        "name": "Reale Luftfeuchtigkeit"
+      },
+      "real_humidity_b": {
+        "name": "Reale Luftfeuchtigkeit B"
+      },
+      "real_humidity_c": {
+        "name": "Reale Luftfeuchtigkeit C"
+      },
+      "refrigerator_max_temperature": {
+        "name": "Maximale Kühlschranktemperatur"
+      },
+      "refrigerator_min_temperature": {
+        "name": "Minimale Kühlschranktemperatur"
+      },
+      "refrigerator_real_temperature": {
+        "name": "Reale Kühlschranktemperatur"
+      },
+      "refrigerator_sensor_real_temperature": {
+        "name": "Reale Sensor-Temperatur des Kühlschranks"
+      },
+      "rinse_aid_setting_status": {
+        "name": "Klarspüler"
+      },
+      "rinsenum": {
+        "name": "Anzahl der Spülgänge"
+      },
+      "running_status": {
+        "name": "Laufstatus"
+      },
+      "sand_timer1_duration_in_seconds": {
+        "name": "Sanduhr 1 Dauer in Sekunden"
+      },
+      "sand_timer1_status": {
+        "name": "Status der Sanduhr 1",
+        "state": {
+          "started": "Gestartet",
+          "paused": "Pausiert",
+          "stopped": "Gestoppt"
+        }
+      },
+      "sand_timer2_duration_in_seconds": {
+        "name": "Dauer der Sanduhr 2"
+      },
+      "sand_timer2_status": {
+        "name": "Status der Sanduhr 2",
+        "state": {
+          "started": "Gestartet",
+          "paused": "Pausiert",
+          "stopped": "Gestoppt"
+        }
+      },
+      "sand_timer3_duration_in_seconds": {
+        "name": "Dauer der Sanduhr 3"
+      },
+      "sand_timer3_status": {
+        "name": "Status der Sanduhr 3",
+        "state": {
+          "started": "Gestartet",
+          "paused": "Pausiert",
+          "stopped": "Gestoppt"
+        }
+      },
+      "selected_program_duration_in_minutes": {
+        "name": "Programmdauer Gesamt"
+      },
+      "selected_program_id": {
+        "name": "Programm",
+        "state": {
+          "cotton_storage": "Baumwollspeicherung",
+          "standard": "Standard",
+          "iron": "Bügeln",
+          "mix": "Mischprogramm",
+          "synthetic": "Synthetik",
+          "wool": "Wolle",
+          "bed_linen": "Bettwäsche",
+          "time": "Zeitprogramm",
+          "baby": "Babymodus",
+          "sensitive": "Sensitiv",
+          "shirts": "Hemdprogramm",
+          "sports": "Sportmodus",
+          "fast89": "Schnell 89",
+          "extra_hygiene": "Extra Hygiene",
+          "remote": "Fernsteuerung",
+          "none": "Kein Programm"
+        }
+      },
+      "selected_program_id_status": {
+        "name": "Programm",
+        "state": {
+          "auto": "Automatisch",
+          "eco": "Eco",
+          "one_hour": "1 Stunde",
+          "intensive": "Intensiv",
+          "glass": "Glas",
+          "hygiene": "Hygiene",
+          "night": "Nacht",
+          "clean": "Reinigung",
+          "eco_40_60": "Eco 40-60",
+          "white_cotton": "Weiße Baumwolle",
+          "color": "Farbig",
+          "wool_manual": "Wolle & Manuell",
+          "mix_synthetic": "Mix/Synthetik",
+          "extra_hygiene": "Extra Hygiene",
+          "fast_20": "Schnell 20'",
+          "intensive_59_32": "Intensiv 59'/32'",
+          "sport": "Sport",
+          "baby": "Baby",
+          "shirts": "Hemden",
+          "drum_cleaning": "Trommelreinigung",
+          "spinning_draining": "Schleudern & Abpumpen",
+          "rinsing_softening": "Spülen & Weichspülen",
+          "no_program_selected": "Kein Programm ausgewählt",
+          "pet_hair_removal": "Tierhaarentfernung",
+          "draining": "Abpumpen",
+          "down_feathers": "Daunenfedern"
+        }
+      },
+      "selected_program_mode": {
+        "name": "Programm Modus",
+        "state": {
+          "normal": "Normal",
+          "fast": "Schnell"
+        }
+      },
+      "selected_program_mode_status": {
+        "name": "Programm Modus",
+        "state": {
+          "not_available": "Nicht verfügbar",
+          "normal": "Normal",
+          "fast": "Schnell",
+          "extra_fast": "Extra Schnell"
+        }
+      },
+      "selected_program_remaining_time_in_minutes": {
+        "name": "Programmdauer Verbleibend"
+      },
+      "selected_program_set_temperature_status": {
+        "name": "Programm Temperatur",
+        "state": {
+          "not_available": "Nicht verfügbar",
+          "cold": "Kalt",
+          "20_c": "20 °C",
+          "30_c": "30 °C",
+          "40_c": "40 °C",
+          "60_c": "60 °C"
+        }
+      },
+      "selected_program_total_running_time_in_minutes": {
+        "name": "Programmdauer Gesamt"
+      },
+      "selected_program_total_time_in_minutes": {
+        "name": "Programmdauer Gesamt"
+      },
+      "selected_program_washing_spin_speed_rpm_status": {
+        "name": "Programm Schleuderdrehzahl",
+        "state": {
+          "not_available": "Nicht verfügbar",
+          "no_spin": "Kein Schleudern",
+          "0_rpm": "0 U/min",
+          "800_rpm": "800 U/min",
+          "400_rpm": "400 U/min",
+          "1000_rpm": "1000 U/min",
+          "1200_rpm": "1200 U/min",
+          "1400_rpm": "1400 U/min"
+        }
+      },
+      "selected_programduration_inminutes": {
+        "name": "Programmdauer Gesamt"
+      },
+      "selected_programremaining_time_inminutes": {
+        "name": "Programmdauer Verbleibend"
+      },
+      "set_progress_type": {
+        "name": "Fortschrittstyp einstellen",
+        "state": {
+          "oven_set": "Ofen eingestellt",
+          "mw_set": "Mikrowelle eingestellt",
+          "mwc_set": "Mikrowelle-Kombi eingestellt",
+          "st_set": "Dampf eingestellt",
+          "stc_set": "Dampf-Kombi eingestellt",
+          "fast_set": "Schnelleinstellung",
+          "stage_set": "Stufenmodus",
+          "culi_set": "Kochmodus",
+          "warming": "Aufwärmen",
+          "defrost": "Auftauen",
+          "cleaning": "Reinigung",
+          "pyrolysis": "Pyrolyse",
+          "none": "Kein Modus"
+        }
+      },
+      "sl1_active_timer": {
+        "name": "Aktiver Timer für Zone 1",
+        "state": {
+          "inactive": "Inaktiv",
+          "stopwatch": "Stoppuhr",
+          "timer": "Timer"
+        }
+      },
+      "sl1_functions": {
+        "name": "Funktion für Zone 1",
+        "state": {
+          "none": "Keine",
+          "boil": "Kochen",
+          "simmer": "Sanft köcheln",
+          "keep_warm": "Warmhalten",
+          "wok": "Wok",
+          "roast": "Braten",
+          "grill": "Grillen"
+        }
+      },
+      "sl1_ntc_sensor": {
+        "name": "NTC-Sensor für Zone 1"
+      },
+      "sl1_power_level": {
+        "name": "Leistungsstufe für Zone 1"
+      },
+      "sl1_power_level_max": {
+        "name": "Maximale Leistungsstufe Zone 1"
+      },
+      "sl1_zone_shape": {
+        "name": "Form von Zone 1",
+        "state": {
+          "round": "Rund",
+          "square": "Quadratisch",
+          "rectangle_vertical": "Vertikales Rechteck",
+          "rectangle_horizontal": "Horizontales Rechteck",
+          "no_shape": "Keine Form"
+        }
+      },
+      "sl2_active_timer": {
+        "name": "Aktiver Timer für Zone 2",
+        "state": {
+          "inactive": "Inaktiv",
+          "stopwatch": "Stoppuhr",
+          "timer": "Timer"
+        }
+      },
+      "sl2_functions": {
+        "name": "Funktion für Zone 2",
+        "state": {
+          "none": "Keine",
+          "boil": "Kochen",
+          "simmer": "Sanft köcheln",
+          "keep_warm": "Warmhalten",
+          "wok": "Wok",
+          "roast": "Braten",
+          "grill": "Grillen"
+        }
+      },
+      "sl2_ntc_sensor": {
+        "name": "NTC-Sensor für Zone 2"
+      },
+      "sl2_power_level": {
+        "name": "Leistungsstufe für Zone 2"
+      },
+      "sl2_power_level_max": {
+        "name": "Maximale Leistungsstufe Zone 2"
+      },
+      "sl2_zone_shape": {
+        "name": "Form von Zone 2",
+        "state": {
+          "round": "Rund",
+          "square": "Quadratisch",
+          "rectangle_vertical": "Vertikales Rechteck",
+          "rectangle_horizontal": "Horizontales Rechteck",
+          "no_shape": "Keine Form"
+        }
+      },
+      "sl3_active_timer": {
+        "name": "Aktiver Timer für Zone 3",
+        "state": {
+          "inactive": "Inaktiv",
+          "stopwatch": "Stoppuhr",
+          "timer": "Timer"
+        }
+      },
+      "sl3_functions": {
+        "name": "Funktion für Zone 3",
+        "state": {
+          "none": "Keine",
+          "boil": "Kochen",
+          "simmer": "Sanft köcheln",
+          "keep_warm": "Warmhalten",
+          "wok": "Wok",
+          "roast": "Braten",
+          "grill": "Grillen"
+        }
+      },
+      "sl3_ntc_sensor": {
+        "name": "NTC-Sensor für Zone 3"
+      },
+      "sl3_power_level": {
+        "name": "Leistungsstufe für Zone 3"
+      },
+      "sl3_power_level_max": {
+        "name": "Maximale Leistungsstufe Zone 3"
+      },
+      "sl3_zone_shape": {
+        "name": "Form von Zone 3",
+        "state": {
+          "round": "Rund",
+          "square": "Quadratisch",
+          "rectangle_vertical": "Vertikales Rechteck",
+          "rectangle_horizontal": "Horizontales Rechteck",
+          "no_shape": "Keine Form"
+        }
+      },
+      "sl4_active_timer": {
+        "name": "Aktiver Timer für Zone 4",
+        "state": {
+          "inactive": "Inaktiv",
+          "stopwatch": "Stoppuhr",
+          "timer": "Timer"
+        }
+      },
+      "sl4_functions": {
+        "name": "Funktion für Zone 4",
+        "state": {
+          "none": "Keine",
+          "boil": "Kochen",
+          "simmer": "Sanft köcheln",
+          "keep_warm": "Warmhalten",
+          "wok": "Wok",
+          "roast": "Braten",
+          "grill": "Grillen"
+        }
+      },
+      "sl4_ntc_sensor": {
+        "name": "NTC-Sensor für Zone 4"
+      },
+      "sl4_power_level": {
+        "name": "Leistungsstufe für Zone 4"
+      },
+      "sl4_power_level_max": {
+        "name": "Maximale Leistungsstufe Zone 4"
+      },
+      "sl4_zone_shape": {
+        "name": "Form von Zone 4",
+        "state": {
+          "round": "Rund",
+          "square": "Quadratisch",
+          "rectangle_vertical": "Vertikales Rechteck",
+          "rectangle_horizontal": "Horizontales Rechteck",
+          "no_shape": "Keine Form"
+        }
+      },
+      "sl5_active_timer": {
+        "name": "Aktiver Timer für Zone 5",
+        "state": {
+          "inactive": "Inaktiv",
+          "stopwatch": "Stoppuhr",
+          "timer": "Timer"
+        }
+      },
+      "sl5_functions": {
+        "name": "Funktion für Zone 5",
+        "state": {
+          "none": "Keine",
+          "boil": "Kochen",
+          "simmer": "Sanft köcheln",
+          "keep_warm": "Warmhalten",
+          "wok": "Wok",
+          "roast": "Braten",
+          "grill": "Grillen"
+        }
+      },
+      "sl5_ntc_sensor": {
+        "name": "NTC-Sensor für Zone 5"
+      },
+      "sl5_power_level": {
+        "name": "Leistungsstufe für Zone 5"
+      },
+      "sl5_power_level_max": {
+        "name": "Maximale Leistungsstufe Zone 5"
+      },
+      "sl5_zone_shape": {
+        "name": "Form von Zone 5",
+        "state": {
+          "round": "Rund",
+          "square": "Quadratisch",
+          "rectangle_vertical": "Vertikales Rechteck",
+          "rectangle_horizontal": "Horizontales Rechteck",
+          "no_shape": "Keine Form"
+        }
+      },
+      "sl6_active_timer": {
+        "name": "Aktiver Timer für Zone 6",
+        "state": {
+          "inactive": "Inaktiv",
+          "stopwatch": "Stoppuhr",
+          "timer": "Timer"
+        }
+      },
+      "sl6_functions": {
+        "name": "Funktion für Zone 6",
+        "state": {
+          "none": "Keine",
+          "boil": "Kochen",
+          "simmer": "Sanft köcheln",
+          "keep_warm": "Warmhalten",
+          "wok": "Wok",
+          "roast": "Braten",
+          "grill": "Grillen"
+        }
+      },
+      "sl6_ntc_sensor": {
+        "name": "NTC-Sensor für Zone 6"
+      },
+      "sl6_power_level": {
+        "name": "Leistungsstufe für Zone 6"
+      },
+      "sl6_power_level_max": {
+        "name": "Maximale Leistungsstufe Zone 6"
+      },
+      "sl6_zone_shape": {
+        "name": "Form von Zone 6",
+        "state": {
+          "round": "Rund",
+          "square": "Quadratisch",
+          "rectangle_vertical": "Vertikales Rechteck",
+          "rectangle_horizontal": "Horizontales Rechteck",
+          "no_shape": "Keine Form"
+        }
+      },
+      "softer_display": {
+        "name": "Sanfte Anzeige"
+      },
+      "sound_setting": {
+        "name": "Klangeinstellung"
+      },
+      "spin_speed_rpm": {
+        "name": "Schleudergeschwindigkeit (U/min)"
+      },
+      "spin_time": {
+        "name": "Schleuderzeit"
+      },
+      "spintime_index": {
+        "name": "Schleuderzeit-Index"
+      },
+      "status": {
+        "name": "Gerätestatus",
+        "state": {
+          "off": "Aus",
+          "on": "Ein",
+          "standby": "Standby",
+          "running": "Läuft"
+        }
+      },
+      "step1_duration": {
+        "name": "Dauer Schritt 1"
+      },
+      "step1_heater_system": {
+        "name": "Heizsystem Schritt 1",
+        "state": {
+          "hot_air": "Heißluft",
+          "eco_hot_air": "Eco-Heißluft",
+          "top_bottom": "Ober-/Unterhitze",
+          "hot_air_bottom": "Heißluft unten",
+          "bottom_fan": "Unterhitze mit Ventilator",
+          "bottom": "Unterhitze",
+          "top": "Oberhitze",
+          "small_grill": "Kleiner Grill",
+          "large_grill": "Großer Grill",
+          "large_grill_fan": "Großer Grill mit Ventilator",
+          "pro_roasting": "Pro-Braten",
+          "hotairmicro": "Heißluft-Mikrowelle",
+          "grillfanmicro": "Grillventilator-Mikrowelle",
+          "micro": "Mikrowelle",
+          "hot_air_steam_1": "Heißluft-Dampf 1",
+          "hot_air_steam_2": "Heißluft-Dampf 2",
+          "hot_air_steam_3": "Heißluft-Dampf 3",
+          "fast_preheat": "Schnelles Vorheizen",
+          "pyro": "Pyrolyse",
+          "defrost": "Auftauen",
+          "keep_warm": "Warmhalten",
+          "plates": "Tellerwärmer",
+          "aqua_clean": "Aqua-Clean",
+          "steam_clean": "Dampf-Reinigung",
+          "regenerate": "Regenerieren",
+          "descale": "Entkalken",
+          "microwave_defrost": "Mikrowellen-Auftauen",
+          "sous_vide": "Sous-Vide",
+          "low_temp_steam": "Niedrigtemperatur-Dampf",
+          "steam": "Dampf",
+          "quick": "Schnell",
+          "clean_air": "Luft-Reinigung",
+          "defrost_auto": "Automatisches Auftauen",
+          "sabbath": "Sabbatmodus",
+          "programs": "Programme",
+          "warming": "Aufwärmen",
+          "microwave_clean": "Mikrowellen-Reinigung",
+          "hot_air_micro": "Heißluft-Mikrowelle",
+          "grill_fan_micro": "Grillventilator-Mikrowelle"
+        }
+      },
+      "step1_remaining_time": {
+        "name": "Verbleibende Zeit Schritt 1"
+      },
+      "step1_set_temperature": {
+        "name": "Eingestellte Temperatur Schritt 1"
+      },
+      "step2_duration": {
+        "name": "Dauer Schritt 2"
+      },
+      "step2_heater_system": {
+        "name": "Heizsystem Schritt 2",
+        "state": {
+          "hot_air": "Heißluft",
+          "eco_hot_air": "Eco-Heißluft",
+          "top_bottom": "Ober-/Unterhitze",
+          "hot_air_bottom": "Heißluft unten",
+          "bottom_fan": "Unterhitze mit Ventilator",
+          "bottom": "Unterhitze",
+          "top": "Oberhitze",
+          "small_grill": "Kleiner Grill",
+          "large_grill": "Großer Grill",
+          "large_grill_fan": "Großer Grill mit Ventilator",
+          "pro_roasting": "Pro-Braten",
+          "hot_air_micro": "Heißluft-Mikrowelle",
+          "grill_fan_micro": "Grillventilator-Mikrowelle",
+          "micro": "Mikrowelle",
+          "hot_air_steam_1": "Heißluft-Dampf 1",
+          "hot_air_steam_2": "Heißluft-Dampf 2",
+          "hot_air_steam_3": "Heißluft-Dampf 3",
+          "fast_preheat": "Schnelles Vorheizen",
+          "pyrolysis": "Pyrolyse",
+          "defrost": "Auftauen",
+          "keep_warm": "Warmhalten",
+          "plates": "Tellerwärmer",
+          "aqua_clean": "Aqua-Clean",
+          "steam_clean": "Dampf-Reinigung",
+          "regenerate": "Regenerieren",
+          "descale": "Entkalken",
+          "microwave_defrost": "Mikrowellen-Auftauen",
+          "sous_vide": "Sous-Vide",
+          "low_temp_steam": "Niedrigtemperatur-Dampf",
+          "steam": "Dampf",
+          "quick": "Schnell",
+          "clean_air": "Luft-Reinigung",
+          "defrost_auto": "Automatisches Auftauen",
+          "sabbath": "Sabbatmodus",
+          "programs": "Programme",
+          "warming": "Aufwärmen",
+          "microwave_clean": "Mikrowellen-Reinigung"
+        }
+      },
+      "step2_remaining_time": {
+        "name": "Verbleibende Zeit Schritt 2"
+      },
+      "step2_set_temperature": {
+        "name": "Eingestellte Temperatur Schritt 2"
+      },
+      "step3_duration": {
+        "name": "Dauer Schritt 3"
+      },
+      "step3_heater_system": {
+        "name": "Heizsystem Schritt 3",
+        "state": {
+          "hot_air": "Heißluft",
+          "eco_hot_air": "Eco-Heißluft",
+          "top_bottom": "Ober-/Unterhitze",
+          "hot_air_bottom": "Heißluft unten",
+          "bottom_fan": "Unterhitze mit Ventilator",
+          "bottom": "Unterhitze",
+          "top": "Oberhitze",
+          "small_grill": "Kleiner Grill",
+          "large_grill": "Großer Grill",
+          "large_grill_fan": "Großer Grill mit Ventilator",
+          "pro_roasting": "Pro-Braten",
+          "hot_air_micro": "Heißluft-Mikrowelle",
+          "grill_fan_micro": "Grillventilator-Mikrowelle",
+          "micro": "Mikrowelle",
+          "hot_air_steam_1": "Heißluft-Dampf 1",
+          "hot_air_steam_2": "Heißluft-Dampf 2",
+          "hot_air_steam_3": "Heißluft-Dampf 3",
+          "fast_preheat": "Schnelles Vorheizen",
+          "pyro": "Pyrolyse",
+          "defrost": "Auftauen",
+          "keep_warm": "Warmhalten",
+          "plates": "Tellerwärmer",
+          "aqua_clean": "Aqua-Clean",
+          "steam_clean": "Dampf-Reinigung",
+          "regenerate": "Regenerieren",
+          "descale": "Entkalken",
+          "microwave_defrost": "Mikrowellen-Auftauen",
+          "sous_vide": "Sous-Vide",
+          "low_temp_steam": "Niedrigtemperatur-Dampf",
+          "steam": "Dampf",
+          "quick": "Schnell",
+          "clean_air": "Luft-Reinigung",
+          "defrost_auto": "Automatisches Auftauen",
+          "sabbath": "Sabbatmodus",
+          "programs": "Programme",
+          "warming": "Aufwärmen",
+          "microwave_clean": "Mikrowellen-Reinigung"
+        }
+      },
+      "step3_remaining_time": {
+        "name": "Verbleibende Zeit Schritt 3"
+      },
+      "step3_set_temperature": {
+        "name": "Eingestellte Temperatur Schritt 3"
+      },
+      "super_rinse_setting_status": {
+        "name": "Super-Spülung"
+      },
+      "t_sleep": {
+        "name": "Schlafmodus"
+      },
+      "temperature": {
+        "name": "Temperatur"
+      },
+      "temperature_default_defaultmainwashtime": {
+        "name": "Standardtemperatur für Hauptwaschzeit"
+      },
+      "temperature_room_judge": {
+        "name": "Temperaturraum-Beurteilung"
+      },
+      "total_energy_consumption": {
+        "name": "Gesamter Energieverbrauch"
+      },
+      "total_number_of_cycles": {
+        "name": "Gesamtanzahl der Zyklen"
+      },
+      "total_passed_time": {
+        "name": "Gesamte vergangene Zeit"
+      },
+      "total_remaining_time": {
+        "name": "Gesamte verbleibende Zeit"
+      },
+      "total_run_time": {
+        "name": "Gesamtlaufzeit"
+      },
+      "total_time_of_cooking_in_hours": {
+        "name": "Gesamte Kochzeit"
+      },
+      "total_water_consumption": {
+        "name": "Gesamter Wasserverbrauch"
+      },
+      "utc_datetime_bdc_delaystart_delayend_timestamp": {
+        "name": "BDC Verzögerungsstart Verzögerungsende"
+      },
+      "variation_max_temperature": {
+        "name": "Maximale Temperatur der Variation"
+      },
+      "variation_min_temperature": {
+        "name": "Minimale Temperatur der Variation"
+      },
+      "variation_real_temperature": {
+        "name": "Reale Temperatur der Variation"
+      },
+      "variation_sensor_real_temperature": {
+        "name": "Reale Sensortemperatur der Variation"
+      },
+      "variation_temperature": {
+        "name": "Temperatur der Variation"
+      },
+      "washing_machine_type_kg": {
+        "name": "Waschmaschinentyp (kg)"
+      },
+      "washing_machine_type_max_speed": {
+        "name": "Maximale Geschwindigkeit des Waschmaschinentyps"
+      },
+      "water_consumption": {
+        "name": "Wasserverbrauch"
+      },
+      "water_consumption_in_running_program": {
+        "name": "Wasserverbrauch im laufenden Programm"
+      },
+      "water_consumption_int": {
+        "name": "Wasserverbrauch"
+      },
+      "water_hardness_setting_status": {
+        "name": "Wasserhärte"
+      },
+      "water_inlet_setting_status": {
+        "name": "Wasserzulauf"
+      },
+      "water_save_setting_status": {
+        "name": "Wassersparmodus"
+      },
+      "zone_number": {
+        "name": "Anzahl der Zonen"
+      }
+    },
+    "switch": {
+      "anticrease": {
+        "name": "Anti-Knitter"
+      },
+      "auto_dose_setting_status": {
+        "name": "Automatische Dosierung"
+      },
+      "autodose": {
+        "name": "Automatische Dosierung"
+      },
+      "automatic_ice_making": {
+        "name": "Automatische Eisherstellung"
+      },
+      "autotubclean": {
+        "name": "Automatische Trommelreinigung"
+      },
+      "child_lock": {
+        "name": "Kindersicherung"
+      },
+      "drum_light": {
+        "name": "Trommelbeleuchtung"
+      },
+      "holiday_mode": {
+        "name": "Urlaubsmodus"
+      },
+      "ice_making_b_switch_status": {
+        "name": "Status der Eisherstellung B"
+      },
+      "ice_making_state": {
+        "name": "Status der Eisherstellung"
+      },
+      "interior_light_at_power_off_setting_status": {
+        "name": "Innenbeleuchtung bei ausgeschaltetem Gerät"
+      },
+      "mute": {
+        "name": "Stumm"
+      },
+      "natural_dry": {
+        "name": "Natürliches Trocknen"
+      },
+      "odor_control_setting": {
+        "name": "Geruchskontrolle"
+      },
+      "prewash": {
+        "name": "Vorwäsche"
+      },
+      "save_mode": {
+        "name": "Sparmodus"
+      },
+      "sf_mode": {
+        "name": "SF-Modus"
+      },
+      "sf_sr_mutex_mode": {
+        "name": "SF-SR-Mutex-Modus"
+      },
+      "sr_mode": {
+        "name": "SR-Modus"
+      },
+      "steam": {
+        "name": "Dampf"
+      },
+      "super_rinse_setting_status": {
+        "name": "Super-Spülung"
+      },
+      "t_air": {
+        "name": "Luft"
+      },
+      "t_beep": {
+        "name": "Signalton"
+      },
+      "t_eco": {
+        "name": "Eco"
+      },
+      "t_fan_mute": {
+        "name": "Lüfter-Stummschaltung"
+      },
+      "t_power": {
+        "name": "Leistung"
+      },
+      "t_purify": {
+        "name": "Luftreiniger"
+      },
+      "t_sleep": {
+        "name": "Schlafmodus"
+      },
+      "t_sterilization": {
+        "name": "Sterilisation"
+      },
+      "t_super": {
+        "name": "Super"
+      },
+      "t_tms": {
+        "name": "KI"
+      },
+      "tab_setting_status": {
+        "name": "Tab-Einstellung"
+      }
+    },
+    "select": {
+      "auto_dose_quantity_setting_status": {
+        "name": "Automatische Dosierungsmenge"
+      },
+      "dry_level": {
+        "name": "Trocknungsstufe",
+        "state": {
+          "low": "Niedrig",
+          "medium": "Mittel",
+          "high": "Hoch"
+        }
+      },
+      "dry_time": {
+        "name": "Trocknungszeit",
+        "state": {
+          "wardrobe": "Schranktrocken",
+          "pre-ironing": "Vor Bügeln",
+          "extra_dry": "Extra Trocken"
+        }
+      },
+      "extrarinsenum": {
+        "name": "Zusätzliche Spülgänge"
+      },
+      "motorlevel": {
+        "name": "Motorleistung"
+      },
+      "selected_program_id": {
+        "name": "Programm",
+        "state": {
+          "auto": "Automatisch",
+          "anti_allergy": "Anti-Allergie",
+          "refresh": "Auffrischen",
+          "sports": "Sport",
+          "towels": "Handtücher",
+          "time": "Zeitprogramm",
+          "cotton": "Baumwolle",
+          "baby": "Babyprogramm",
+          "synthetic": "Synthetik",
+          "wool": "Wolle",
+          "delicates": "Feinwäsche",
+          "fast30": "Schnell 30'",
+          "shirts": "Hemdprogramm",
+          "bed_linen": "Bettwäsche",
+          "down": "Daunen",
+          "cotton_dry": "Baumwolle trocken",
+          "synthetic_dry": "Synthetik trocken",
+          "drum_cleaning": "Trommelreinigung",
+          "eco_40_60": "Eco 40-60",
+          "fast15": "Schnell 15'",
+          "spin-dry": "Schleudern & Trocknen",
+          "rinse_spin": "Spülen & Schleudern",
+          "clean_dry_60": "Sauber & Trocken 60'",
+          "power49": "Power 49'"
+        }
+      },
+      "spin_speed_rpm": {
+        "name": "Schleudergeschwindigkeit",
+        "state": {
+          "none": "Keine"
+        }
+      },
+      "t_fan_speed": {
+        "name": "Lüftergeschwindigkeit",
+        "state": {
+          "auto": "Automatisch",
+          "low": "Niedrig",
+          "high": "Hoch"
+        }
+      },
+      "t_sleep": {
+        "name": "Schlafmodus",
+        "state": {
+          "off": "Aus",
+          "general": "Allgemein",
+          "for_old": "Für ältere Menschen",
+          "for_young": "Für junge Menschen",
+          "for_kid": "Für Kinder"
+        }
+      },
+      "t_swing_angle": {
+        "name": "Schwenkwinkel",
+        "state": {
+          "swing": "Schwenken",
+          "auto": "Automatisch",
+          "angle_1": "Winkel 1",
+          "angle_2": "Winkel 2",
+          "angle_3": "Winkel 3",
+          "angle_4": "Winkel 4",
+          "angle_5": "Winkel 5",
+          "angle_6": "Winkel 6"
+        }
+      },
+      "t_swing_follow": {
+        "name": "KI-Belüftung",
+        "state": {
+          "off": "Aus",
+          "follow": "Folgen",
+          "not_follow": "Nicht folgen"
+        }
+      },
+      "temperature": {
+        "name": "Temperatur",
+        "state": {
+          "cold": "Kalt"
+        }
+      }
+    },
+    "water_heater": {
+      "connectlife": {
+        "state": {
+          "auto": "Automatisch"
+        }
+      }
+    },
+    "number": {
+      "freeze_max_temperature": {
+        "name": "Maximale Gefriertemperatur"
+      },
+      "freeze_min_temperature": {
+        "name": "Minimale Gefriertemperatur"
+      },
+      "freeze_temperature": {
+        "name": "Gefriertemperatur"
+      },
+      "lightbrightness": {
+        "name": "Lichthelligkeit"
+      },
+      "lightcolortemperature": {
+        "name": "Lichtfarbtemperatur"
+      },
+      "refrigerator_max_temperature": {
+        "name": "Maximale Kühlschranktemperatur"
+      },
+      "refrigerator_min_temperature": {
+        "name": "Minimale Kühlschranktemperatur"
+      },
+      "refrigerator_temperature": {
+        "name": "Kühlschranktemperatur"
+      },
+      "variation_max_temperature": {
+        "name": "Maximale Temperaturvariation"
+      },
+      "variation_min_temperature": {
+        "name": "Minimale Temperaturvariation"
+      },
+      "variation_temperature": {
+        "name": "Temperaturvariation"
+      }
+    }
+  }
+}
