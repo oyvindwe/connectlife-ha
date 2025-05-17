@@ -1,16 +1,49 @@
 # Hisense 483L French Door Refrigerator HRCD483TBW
 properties:
+- property: ice_making_state
+  # Ice Maker status
+  binary_sensor:
+    options:
+      0: off
+      1: on
 - property: automatic_ice_making
   # Ice Maker switch
   switch:
     on: 1
     off: 0
 - property: existing_save_mode
-  # Sample value: 1
+  # Eco mode status
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: save_mode
+  # Eco mode switch
+  switch:
+    on: 1
+    off: 0
 - property: existing_sf_mode
-  # Sample value: 1
+  # Super Freeze status
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: sf_mode
+  # Super Freeze mode switch
+  switch:
+    on: 1
+    off: 0
 - property: existing_sr_mode
-  # Sample value: 1
+  # Super Cool status
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: sr_mode
+  # Super Cool mode switch
+  switch:
+    on: 1
+    off: 0
 - property: freeze_real_temperature
   # This meassures the temperature in the freezer (bottom left)
   sensor:
@@ -41,21 +74,6 @@ properties:
       unit: property.temperature_unit # Reference the temperature_unit property
       min_value: property.refrigerator_min_temperature
       max_value: property.refrigerator_max_temperature
-- property: save_mode
-  # Eco mode switch
-  switch:
-    on: 1
-    off: 0
-- property: sf_mode
-  # Super Freeze mode switch
-  switch:
-    on: 1
-    off: 0
-- property: sr_mode
-  # Super Cool mode switch
-  switch:
-    on: 1
-    off: 0
 - property: temperature_unit
   # This sets the Unit
   select:
