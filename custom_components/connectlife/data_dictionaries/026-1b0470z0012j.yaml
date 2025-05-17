@@ -76,5 +76,5 @@ properties:
   number:
       device_class: temperature
       unit: property.temperature_unit
-      min_value: property: variation_min_temperature
-      max_value: property: variation_max_temperature
+      min_value: property.variation_min_temperature
+      max_value: property.variation_max_temperature
