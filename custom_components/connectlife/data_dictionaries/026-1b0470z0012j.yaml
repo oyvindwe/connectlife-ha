@@ -1,98 +1,938 @@
 # Hisense 483L French Door Refrigerator HRCD483TBW
 properties:
-- property: ice_making_state
-  # Ice Maker status
-  binary_sensor:
-    options:
-      0: off
-      1: on
+- property: AIR_FRESHNESS
+  hide: true
+  # Sample value: 0
+- property: Kettle_overflow_alarm
+  hide: true
+  # Sample value: 0
+- property: ODOR_SENSOR_FAULT_FLAG
+  hide: true
+  # Sample value: 0
+- property: ODOR_SENSOR_NO_DISTURB_MODE_STATUS
+  hide: true
+  # Sample value: 0
+- property: ODOR_SENSOR_SENSITIVITY
+  hide: true
+  # Sample value: 0
+- property: ODOR_SENSOR_SWITHC_STATUS
+  hide: true
+  # Sample value: 0
+- property: STERI_PURI_CYCLE_FLAG
+  hide: true
+  # Sample value: 0
+- property: ai_energy_mode_switch
+  hide: true
+  # Sample value: 0
+- property: alarm_key
+  hide: true
+  # Sample value: 0
+- property: alarm_sound_volume
+  hide: true
+  # Sample value: 0
+- property: ali_wifi_fault_flag
+  hide: true
+  # Sample value: 0
 - property: automatic_ice_making
-  # Ice Maker switch
-  switch:
-    on: 1
-    off: 0
+  # Sample value: 1
+- property: camera_state
+  hide: true
+  # Sample value: 0
+- property: charcoal_filter_expiration_alarm
+  hide: true
+  # Sample value: 0
+- property: charcoal_filter_surplus_time
+  hide: true
+  # Sample value: 0
+- property: charcoal_filter_time_reset
+  hide: true
+  # Sample value: 0
+- property: child_lock_open_alarm
+  hide: true
+  # Sample value: 0
+- property: child_lock_open_door_sound_alarm
+  hide: true
+  # Sample value: 0
+- property: child_lock_switch_exist
+  hide: true
+  # Sample value: 1
+- property: child_lock_switch_status
+  hide: true
+  # Sample value: 0
+- property: clean_mode_switch_status
+  hide: true
+  # Sample value: 0
+- property: commodity_inspection
+  hide: true
+  # Sample value: 0
+- property: compressor_condition
+  hide: true
+  # Sample value: 0
+- property: compressor_frequency
+  hide: true
+  # Sample value: 0
+- property: condensation_fan_failure_status
+  hide: true
+  # Sample value: 0
+- property: control_failure_status
+  hide: true
+  # Sample value: 0
+- property: cool_c
+  hide: true
+  # Sample value: 0
+- property: cool_f
+  hide: true
+  # Sample value: 0
+- property: cool_fan_speed
+  hide: true
+  # Sample value: 0
+- property: cool_r
+  hide: true
+  # Sample value: 0
+- property: custard_room
+  hide: true
+  # Sample value: 0
+- property: daily_energy_kwh
+  hide: true
+  # Sample value: 0
+- property: date_format_status
+  hide: true
+  # Sample value: 0
+- property: date_time_format_day_state
+  hide: true
+  # Sample value: 0
+- property: date_time_format_month_state
+  hide: true
+  # Sample value: 0
+- property: date_time_format_year_state
+  hide: true
+  # Sample value: 0
+- property: dbd_clean_mode
+  hide: true
+  # Sample value: 0
+- property: debacilli_mode
+  hide: true
+  # Sample value: 0
+- property: display_panel_ronshen
+  hide: true
+  # Sample value: 1
+- property: displayboard_brand
+  hide: true
+  # Sample value: 3
+- property: displayboard_key_setting
+  hide: true
+  # Sample value: 0
+- property: displayboard_type
+  hide: true
+  # Sample value: 62
+- property: displayboard_version
+  hide: true
+  # Sample value: 1
+- property: door_close_light_status
+  hide: true
+  # Sample value: 0
+- property: door_close_ui_display_status
+  hide: true
+  # Sample value: 0
+- property: door_num_four_color
+  hide: true
+  # Sample value: 0
+- property: door_num_one_color
+  hide: true
+  # Sample value: 0
+- property: door_num_three_color
+  hide: true
+  # Sample value: 0
+- property: door_num_two_color
+  hide: true
+  # Sample value: 0
+- property: door_open_light_status
+  hide: true
+  # Sample value: 0
+- property: door_open_ui_display_status
+  hide: true
+  # Sample value: 0
+- property: electric_current
+  hide: true
+  # Sample value: 0
+- property: electric_energy_one_tenths_value
+  hide: true
+  # Sample value: 0
+- property: electric_energy_percentile_thousands_value
+  hide: true
+  # Sample value: 0
+- property: envi_temp_sens_head_failure
+  hide: true
+  # Sample value: 0
+- property: environment_humidity
+  hide: true
+  # Sample value: 60
+- property: environment_real_temperature
+  hide: true
+  # Sample value: 17
+- property: existing_fuzzy_mode
+  hide: true
+  # Sample value: 0
+- property: existing_holiday_mode
+  hide: true
+  # Sample value: 0
+- property: existing_lock_fresh_mode
+  hide: true
+  # Sample value: 0
 - property: existing_save_mode
-  # Eco mode status
-  binary_sensor:
-    options:
-      0: off
-      1: on
-- property: save_mode
-  # Eco mode switch
-  switch:
-    on: 1
-    off: 0
+  hide: true
+  # Sample value: 1
 - property: existing_sf_mode
-  # Super Freeze status
-  binary_sensor:
-    options:
-      0: off
-      1: on
-- property: sf_mode
-  # Super Freeze mode switch
-  switch:
-    on: 1
-    off: 0
+  hide: true
+  # Sample value: 1
 - property: existing_sr_mode
-  # Super Cool status
-  binary_sensor:
-    options:
-      0: off
-      1: on
-- property: sr_mode
-  # Super Cool mode switch
-  switch:
-    on: 1
-    off: 0
+  hide: true
+  # Sample value: 1
+- property: fast_store_mode_exist
+  hide: true
+  # Sample value: 0
+- property: fast_store_mode_status
+  hide: true
+  # Sample value: 0
+- property: filter_alarm_time
+  hide: true
+  # Sample value: 0
+- property: filter_state
+  hide: true
+  # Sample value: 0
+- property: free_defrosting_failure
+  hide: true
+  # Sample value: 0
+- property: free_evap_temp_sens_head_failure
+  hide: true
+  # Sample value: 0
+- property: free_fan_failure
+  hide: true
+  # Sample value: 0
+- property: free_key
+  hide: true
+  # Sample value: 0
+- property: free_room
+  hide: true
+  # Sample value: 1
+- property: free_room_open
+  hide: true
+  # Sample value: 0
+- property: free_room_open_2
+  hide: true
+  # Sample value: 0
+- property: free_room_over_temp_alarm_failure
+  hide: true
+  # Sample value: 0
+- property: free_temp_sens_head_failure
+  hide: true
+  # Sample value: 0
+- property: freeri_fan_speed
+  hide: true
+  # Sample value: 0
+- property: freeze_door_open_time
+  hide: true
+  # Sample value: 0
+- property: freeze_drawer_room_temp
+  hide: true
+  # Sample value: -40
+- property: freeze_fan_speed
+  hide: true
+  # Sample value: 0
+- property: freeze_max_temperature
+  hide: true
+  # Sample value: -13
+- property: freeze_min_temperature
+  hide: true
+  # Sample value: -24
+- property: freeze_poweroff_ad
+  hide: true
+  # Sample value: 0
+- property: freeze_poweron_ad
+  hide: true
+  # Sample value: 0
 - property: freeze_real_temperature
-  # This meassures the temperature in the freezer (bottom left)
-  sensor:
-      device_class: temperature
-      unit: property.temperature_unit
+  hide: true
+  # Sample value: -20
 - property: freeze_sensor_real_temperature
-  # Sample value: -14
+  hide: true
+  # Sample value: -19
 - property: freeze_temperature
-  # This sets the temperature in the freezer (bottom left)
-  number:
-      device_class: temperature
-      unit: property.temperature_unit
-      min_value: property.freeze_min_temperature
-      max_value: property.freeze_max_temperature    
+  # This shows the temperature set in the freezer (bottom left)
+  sensor:
+    device_class: temperature
+    unit: property.temperature_unit
+- property: frize_temp_2_degree_above_starting_point
+  hide: true
+  # Sample value: 0
+- property: frost_state
+  hide: true
+  # Sample value: 0
+- property: froze_convert_to_refri_switch_status
+  hide: true
+  # Sample value: 0
+- property: fruit_vegetables_temperature
+  hide: true
+  # Sample value: 0
+- property: fuzzy_mode
+  hide: true
+  # Sample value: 0
+- property: gold_water_supply_mode
+  hide: true
+  # Sample value: 0
+- property: high_humidity
+  hide: true
+  # Sample value: 0
+- property: high_temperature
+  hide: true
+  # Sample value: 0
+- property: holiday_mode
+  hide: true
+  # Sample value: 0
+- property: human_on_off_status
+  hide: true
+  # Sample value: 0
+- property: human_sense_light_status
+  hide: true
+  # Sample value: 0
+- property: human_sense_ui_display_state
+  hide: true
+  # Sample value: 0
+- property: human_sensor_switch_exist
+  hide: true
+  # Sample value: 0
+- property: humanbody_sensor_switch_status
+  hide: true
+  # Sample value: 0
+- property: humdy_test_switch_state
+  hide: true
+  # Sample value: 0
+- property: humidity sensor_failure
+  hide: true
+  # Sample value: 0
+- property: ice_machine_actual_temp
+  hide: true
+  # Sample value: 0
+- property: ice_make_room_alarm
+  hide: true
+  # Sample value: 0
+- property: ice_make_room_switch
+  hide: true
+  # Sample value: 0
+- property: ice_making_b_switch_status
+  hide: true
+  # Sample value: 0
+- property: ice_making_fast_status
+  hide: true
+  # Sample value: 0
+- property: ice_making_full_status
+  hide: true
+  # Sample value: 0
+- property: ice_making_machine_failure
+  hide: true
+  # Sample value: 0
+- property: ice_making_normal_status
+  hide: true
+  # Sample value: 0
+- property: ice_making_state
+  # Ice Maker
+  binary_sensor:
+      options:
+        0: off
+        1: on
+- property: ice_making_stop_status
+  hide: true
+  # Sample value: 1
+- property: ice_room_actual_temp
+  hide: true
+  # Sample value: 0
+- property: ice_sensor_failure_flag
+  hide: true
+  # Sample value: 0
+- property: ice_temperature_sensor_header_failure_flag
+  hide: true
+  # Sample value: 0
+- property: inlet_pipe_temp_sens_head_failure
+  hide: true
+  # Sample value: 0
+- property: ion_preservation_switch
+  hide: true
+  # Sample value: 0
+- property: kettle_install_status
+  hide: true
+  # Sample value: 0
+- property: key_press_sound_volume
+  hide: true
+  # Sample value: 0
+- property: language_select
+  hide: true
+  # Sample value: 0
+- property: load_operation_status2
+  hide: true
+  # Sample value: 0
+- property: lock_fresh_mode
+  hide: true
+  # Sample value: 0
+- property: lock_key
+  hide: true
+  # Sample value: 0
+- property: low_humidity
+  hide: true
+  # Sample value: 0
+- property: low_temperature
+  hide: true
+  # Sample value: 0
+- property: low_wine_area_c_evaporator_fault
+  hide: true
+  # Sample value: 0
+- property: low_wine_area_c_fan_fault
+  hide: true
+  # Sample value: 0
+- property: low_wine_area_c_humdy_fault
+  hide: true
+  # Sample value: 0
+- property: low_wine_area_c_temp_fault
+  hide: true
+  # Sample value: 0
+- property: lumin_value_of_interior_light
+  hide: true
+  # Sample value: 0
+- property: mainboard_type
+  hide: true
+  # Sample value: 49
+- property: mainboard_version
+  hide: true
+  # Sample value: 1
+- property: market_mode_exist
+  hide: true
+  # Sample value: 0
+- property: medium_humidity
+  hide: true
+  # Sample value: 0
+- property: medium_temperature
+  hide: true
+  # Sample value: 0
+- property: micro_water_supply_mode
+  hide: true
+  # Sample value: 0
+- property: mid_wine_area_b_evaporator_fault
+  hide: true
+  # Sample value: 0
+- property: mid_wine_area_b_fan_fault
+  hide: true
+  # Sample value: 0
+- property: mid_wine_area_b_humdy_fault
+  hide: true
+  # Sample value: 0
+- property: mid_wine_area_b_temp_fault
+  hide: true
+  # Sample value: 0
+- property: mode_key
+  hide: true
+  # Sample value: 0
+- property: model_type
+  hide: true
+  # Sample value: 26
+- property: monitor
+  hide: true
+  # Sample value: 0
+- property: monitor_set
+  hide: true
+  # Sample value: 0
+- property: monitor_set_act
+  hide: true
+  # Sample value: 0
+- property: night_mode_end_hour
+  hide: true
+  # Sample value: 0
+- property: night_mode_light_dark_level
+  hide: true
+  # Sample value: 0
+- property: night_mode_screen_dark_level
+  hide: true
+  # Sample value: 0
+- property: night_mode_start_hour
+  hide: true
+  # Sample value: -40
+- property: night_mode_start_min
+  hide: true
+  # Sample value: 0
+- property: normal_sound_size
+  hide: true
+  # Sample value: 0
+- property: not_active
+  hide: true
+  # Sample value: 1
+- property: open_freeze_door_alarm
+  hide: true
+  # Sample value: 0
+- property: open_refrigerator_door_alarm
+  hide: true
+  # Sample value: 0
+- property: open_the_door_alarm
+  hide: true
+  # Sample value: 0
+- property: open_variation_door_alarm
+  hide: true
+  # Sample value: 0
+- property: pairing
+  hide: true
+  # Sample value: 0
+- property: pairing_active
+  hide: true
+  # Sample value: 0
+- property: party_mode_switch_status
+  hide: true
+  # Sample value: 0
+- property: power_one_tenths_value
+  hide: true
+  # Sample value: 0
+- property: power_value
+  hide: true
+  # Sample value: 0
+- property: power_voltage
+  hide: true
+  # Sample value: 0
+- property: quiet_mode_status
+  hide: true
+  # Sample value: 0
+- property: real_humidity
+  hide: true
+  # Sample value: 0
+- property: ref_light
+  hide: true
+  # Sample value: 0
+- property: refi_temp_2_degree_above_starting_point
+  hide: true
+  # Sample value: 0
+- property: refr_defrosting_failure
+  hide: true
+  # Sample value: 0
+- property: refr_dry_wet_room_sens_failure
+  hide: true
+  # Sample value: 0
+- property: refr_evap_temp_sens_head_failure
+  hide: true
+  # Sample value: 0
+- property: refr_fan_failure
+  hide: true
+  # Sample value: 0
+- property: refr_key
+  hide: true
+  # Sample value: 0
+- property: refr_room
+  hide: true
+  # Sample value: 1
+- property: refr_room_open
+  hide: true
+  # Sample value: 0
+- property: refr_room_over_temp_alarm
+  hide: true
+  # Sample value: 0
+- property: refr_temp_sens_head_failure
+  hide: true
+  # Sample value: 0
+- property: refr_var_room_sens_failure
+  hide: true
+  # Sample value: 0
+- property: refrigerator_door_open_time
+  hide: true
+  # Sample value: 0
+- property: refrigerator_freeze_swith
+  hide: true
+  # Sample value: 0
+- property: refrigerator_freeze_swith_state
+  hide: true
+  # Sample value: 0
 - property: refrigerator_max_temperature
+  hide: true
   # Sample value: 9
 - property: refrigerator_min_temperature
+  hide: true
   # Sample value: 2
+- property: refrigerator_poweroff_ad
+  hide: true
+  # Sample value: 0
+- property: refrigerator_poweron_ad
+  hide: true
+  # Sample value: 0
 - property: refrigerator_real_temperature
-  # This meassures the temperature in the fridge
-  sensor:
-      device_class: temperature
-      unit: property.temperature_unit # Reference the temperature_unit property
+  hide: true
+  # Sample value: 6
+- property: refrigerator_sensor_real_temperature
+  hide: true
+  # Sample value: -1
 - property: refrigerator_temperature
-  # This sets the temperature in the fridge
-  number:
-      device_class: temperature
-      unit: property.temperature_unit # Reference the temperature_unit property
-      min_value: property.refrigerator_min_temperature
-      max_value: property.refrigerator_max_temperature
+  # This shows the temperature set in the fridge (top)
+  sensor:
+    device_class: temperature
+    unit: property.temperature_unit
+- property: rgb_atmosphere_mode_b_value
+  hide: true
+  # Sample value: 0
+- property: rgb_atmosphere_mode_g_value
+  hide: true
+  # Sample value: 0
+- property: rgb_atmosphere_mode_r_value
+  hide: true
+  # Sample value: 0
+- property: rgb_function_mode_b_value
+  hide: true
+  # Sample value: 0
+- property: rgb_function_mode_g_value
+  hide: true
+  # Sample value: 0
+- property: rgb_function_mode_r_value
+  hide: true
+  # Sample value: 0
+- property: rgb_light_atmosphere_brightness
+  hide: true
+  # Sample value: 0
+- property: rgb_light_atmosphere_on_time
+  hide: true
+  # Sample value: 0
+- property: rgb_light_function_brightness
+  hide: true
+  # Sample value: 0
+- property: rgb_light_function_on_time
+  hide: true
+  # Sample value: 0
+- property: rgb_light_normal_brightness
+  hide: true
+  # Sample value: 0
+- property: rgb_light_normal_on_time
+  hide: true
+  # Sample value: 0
+- property: rgb_normal_mode_b_value
+  hide: true
+  # Sample value: 0
+- property: rgb_normal_mode_g_value
+  hide: true
+  # Sample value: 0
+- property: rgb_normal_mode_r_value
+  hide: true
+  # Sample value: 0
+- property: right_free_sensor_failure
+  hide: true
+  # Sample value: 0
+- property: run_status_flag_5
+  hide: true
+  # Sample value: 0
+- property: running_status
+  hide: true
+  # Sample value: 0
+- property: running_status3
+  hide: true
+  # Sample value: 0
+- property: rx_failure
+  hide: true
+  # Sample value: 0
+- property: sabbath_mode_status
+  hide: true
+  # Sample value: 0
+- property: sabbath_mode_switch_status
+  hide: true
+  # Sample value: 0
+- property: save_mode
+  # Eco mode
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: screen_display_brightness
+  hide: true
+  # Sample value: 0
+- property: screen_display_lock
+  hide: true
+  # Sample value: 0
+- property: screen_to_clock_time
+  hide: true
+  # Sample value: 0
+- property: screen_to_standby_time
+  hide: true
+  # Sample value: 0
+- property: second_ice_maker_full_status
+  hide: true
+  # Sample value: 0
+- property: second_ice_maker_init_fault
+  hide: true
+  # Sample value: 0
+- property: second_ice_maker_sensor_fault
+  hide: true
+  # Sample value: 0
+- property: sensor_failure_status
+  hide: true
+  # Sample value: 0
+- property: sensor_failure_status2
+  hide: true
+  # Sample value: 0
+- property: sf_mode
+  # Super Freeze
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: sf_sr_mutex_mode
+  hide: true
+  # Sample value: 1
+- property: shelf_light_atmosphere_brightness
+  hide: true
+  # Sample value: 0
+- property: shelf_light_atmosphere_mode_brightness
+  hide: true
+  # Sample value: 0
+- property: shelf_light_b_state
+  hide: true
+  # Sample value: 0
+- property: shelf_light_function_mode_brightness
+  hide: true
+  # Sample value: 0
+- property: shelf_light_function_on_time
+  hide: true
+  # Sample value: 0
+- property: shelf_light_normal_on_time
+  hide: true
+  # Sample value: 0
+- property: show_mode
+  hide: true
+  # Sample value: 0
+- property: special_space
+  hide: true
+  # Sample value: 0
+- property: sr_mode
+  # Super Cool
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: standby_mode_state
+  hide: true
+  # Sample value: 0
+- property: standby_mode_valid
+  hide: true
+  # Sample value: 0
+- property: status_fan_c_switch
+  hide: true
+  # Sample value: 0
+- property: status_fan_f_switch
+  hide: true
+  # Sample value: 0
+- property: status_fan_ln_switch
+  hide: true
+  # Sample value: 0
+- property: status_fan_r_switch
+  hide: true
+  # Sample value: 0
+- property: status_heater_c_switch
+  hide: true
+  # Sample value: 0
+- property: status_heater_f_switch
+  hide: true
+  # Sample value: 0
+- property: status_heater_r_switch
+  hide: true
+  # Sample value: 0
+- property: super_water_supply_mode
+  hide: true
+  # Sample value: 0
+- property: temp_auto_ctrl_mode_exist
+  hide: true
+  # Sample value: 0
+- property: temp_auto_ctrl_mode_state
+  hide: true
+  # Sample value: 0
+- property: temperature_room_judge
+  hide: true
+  # Sample value: 19
 - property: temperature_unit
-  # This sets the Unit
-  select:
+  # This shows the Unit
+  sensor:
+      device_class: enum
       options:
         0: celsius   # Map value 0 from the API to 'celsius'
         1: fahrenheit # Map value 1 from the API to 'fahrenheit'
+- property: theme_color
+  hide: true
+  # Sample value: 0
+- property: tx_failure
+  hide: true
+  # Sample value: 0
+- property: unfreeze_run_status
+  hide: true
+  # Sample value: 0
+- property: unfreeze_switch_status
+  hide: true
+  # Sample value: 0
+- property: unpair_all_users
+  hide: true
+  # Sample value: 0
+- property: up_wine_area_a_evaporator_fault
+  hide: true
+  # Sample value: 0
+- property: up_wine_area_a_fan_fault
+  hide: true
+  # Sample value: 0
+- property: up_wine_area_a_humdy_fault
+  hide: true
+  # Sample value: 0
+- property: up_wine_area_a_temp_fault
+  hide: true
+  # Sample value: 0
+- property: user_debacilli_mode
+  hide: true
+  # Sample value: 0
+- property: uv_steri_status
+  hide: true
+  # Sample value: 0
+- property: vacuum_on_off_status
+  hide: true
+  # Sample value: 0
+- property: var_room_open_2
+  hide: true
+  # Sample value: 0
+- property: var_room_over_temp_alarm
+  hide: true
+  # Sample value: 0
+- property: vari_evap_temp_sens_head_failure
+  hide: true
+  # Sample value: 0
+- property: vari_fan_speed
+  hide: true
+  # Sample value: 0
+- property: vari_key
+  hide: true
+  # Sample value: 0
+- property: vari_room
+  hide: true
+  # Sample value: 0
+- property: vari_room_open
+  hide: true
+  # Sample value: 0
+- property: vari_temp_2_degree_above_starting_point
+  hide: true
+  # Sample value: 0
+- property: vari_temp_sens_head_failure
+  hide: true
+  # Sample value: 0
+- property: variable_fan_failure_status
+  hide: true
+  # Sample value: 0
+- property: variable_heater_failure_status
+  hide: true
+  # Sample value: 0
+- property: variable_temperature_space 
+  hide: true
+  # Sample value: 0
+- property: variation_door_open_time
+  hide: true
+  # Sample value: 0
 - property: variation_max_temperature
+  hide: true
   # Sample value: 5
 - property: variation_min_temperature
+  hide: true
   # Sample value: -18
+- property: variation_poweroff_ad
+  hide: true
+  # Sample value: 0
+- property: variation_poweron_ad
+  hide: true
+  # Sample value: 0
 - property: variation_real_temperature
-  # This meassures the temperature in the MyChoice (bottom right)
-  sensor:
-      device_class: temperature
-      unit: property.temperature_unit
+  hide: true
+  # Sample value: -11
+- property: variation_sensor_real_temperature
+  hide: true
+  # Sample value: -40
 - property: variation_temperature
-  # This sets the temperature in the MyChoice (bottom right)
-  number:
-      device_class: temperature
-      unit: property.temperature_unit
-      min_value.property.variation_min_temperature
-      max_value.property.variation_max_temperature
+  # This shows the temperature set in the MyChoice (bottom right)
+  sensor:
+    device_class: temperature
+    unit: property.temperature_unit
+- property: vibration_alarm
+  hide: true
+  # Sample value: 0
+- property: vibration_sensor_fault
+  hide: true
+  # Sample value: 0
+- property: water_box_alarm_switch_state
+  hide: true
+  # Sample value: 0
+- property: water_box_lack_status
+  hide: true
+  # Sample value: 0
+- property: water_box_mode_status
+  hide: true
+  # Sample value: 0
+- property: water_fill_actual_temp
+  hide: true
+  # Sample value: 0
+- property: water_filter_surplus_time
+  hide: true
+  # Sample value: 0
+- property: water_filter_time_reset
+  hide: true
+  # Sample value: 0
+- property: water_heat_switch
+  hide: true
+  # Sample value: 0
+- property: water_tank_install_state
+  hide: true
+  # Sample value: 0
+- property: wet_and_dry_space
+  hide: true
+  # Sample value: 0
+- property: wifi_fault_flag
+  hide: true
+  # Sample value: 0
+- property: wifi_handshake_fault_flag
+  hide: true
+  # Sample value: 0
+- property: wifi_next_sendtime
+  hide: true
+  # Sample value: 0
+- property: wifi_rx_fault_flag
+  hide: true
+  # Sample value: 0
+- property: wifi_setting
+  hide: true
+  # Sample value: 0
+- property: wifi_tx_fault_flag
+  hide: true
+  # Sample value: 0
+- property: wild_vegetable_heat_switch
+  hide: true
+  # Sample value: 0
+- property: will_fresh_light_status
+  hide: true
+  # Sample value: 0
+- property: will_fress_light_exist
+  hide: true
+  # Sample value: 0
+- property: will_light_market_mode_state
+  hide: true
+  # Sample value: 0
+- property: will_light_mode_exist
+  hide: true
+  # Sample value: 0
+- property: will_light_mode_state
+  hide: true
+  # Sample value: 0
+- property: will_light_switch_state
+  hide: true
+  # Sample value: 0
+- property: wine_b_switch__area
+  hide: true
+  # Sample value: 0
+- property: wine_light
+  hide: true
+  # Sample value: 0
+- property: wine_sensor_failure_flag
+  hide: true
+  # Sample value: 0
+- property: work_mode1
+  hide: true
+  # Sample value: 0
+- property: work_mode2
+  hide: true
+  # Sample value: 0
