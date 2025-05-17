@@ -1,0 +1,80 @@
+# Hisense 483L French Door Refrigerator HRCD483TBW
+properties:
+- property: automatic_ice_making
+  # Ice Maker switch
+  switch:
+    on: 1
+    off: 0
+- property: existing_save_mode
+  # Sample value: 1
+- property: existing_sf_mode
+  # Sample value: 1
+- property: existing_sr_mode
+  # Sample value: 1
+- property: freeze_real_temperature
+  # This meassures the temperature in the freezer (bottom left)
+  sensor:
+      device_class: temperature
+      unit: property.temperature_unit
+- property: freeze_sensor_real_temperature
+  # Sample value: -14
+- property: freeze_temperature
+  # This sets the temperature in the freezer (bottom left)
+  number:
+      device_class: temperature
+      unit: property.temperature_unit
+      min_value: property.freeze_min_temperature
+      max_value: property.freeze_max_temperature    
+- property: refrigerator_max_temperature
+  # Sample value: 9
+- property: refrigerator_min_temperature
+  # Sample value: 2
+- property: refrigerator_real_temperature
+  # This meassures the temperature in the fridge
+  sensor:
+      device_class: temperature
+      unit: property.temperature_unit # Reference the temperature_unit property
+- property: refrigerator_temperature
+  # This sets the temperature in the fridge
+  number:
+      device_class: temperature
+      unit: property.temperature_unit # Reference the temperature_unit property
+      min_value: property.refrigerator_min_temperature
+      max_value: property.refrigerator_max_temperature
+- property: save_mode
+  # Eco mode switch
+  switch:
+    on: 1
+    off: 0
+- property: sf_mode
+  # Super Freeze mode switch
+  switch:
+    on: 1
+    off: 0
+- property: sr_mode
+  # Super Cool mode switch
+  switch:
+    on: 1
+    off: 0
+- property: temperature_unit
+  # This sets the Unit
+  select:
+      options:
+        0: celsius   # Map value 0 from the API to 'celsius'
+        1: fahrenheit # Map value 1 from the API to 'fahrenheit'
+- property: variation_max_temperature
+  # Sample value: 5
+- property: variation_min_temperature
+  # Sample value: -18
+- property: variation_real_temperature
+  # This meassures the temperature in the MyChoice (bottom right)
+  sensor:
+      device_class: temperature
+      unit: property.temperature_unit
+- property: variation_temperature
+  # This sets the temperature in the MyChoice (bottom right)
+  number:
+      device_class: temperature
+      unit: property.temperature_unit
+      min_value: property: variation_min_temperature
+      max_value: property: variation_max_temperature
