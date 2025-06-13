@@ -520,14 +520,16 @@ properties:
         name: Selected_program_id
     icon: mdi:clipboard-list
   - property: Selected_program_mode
-    sensor:
-      device_class: enum
+    unavailable: 0
+    select:
       options:
-        0: "0"
-        1: "1"
+        1: none
         2: normal
-        3: "3"
-        4: fast
+        3: green
+        4: speed
+        5: night
+      command:
+        name: Program_mode
     icon: mdi:cube-outline
   - property: Selected_program_storage_function
     hide: true

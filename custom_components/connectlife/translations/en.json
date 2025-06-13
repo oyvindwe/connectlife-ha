@@ -1970,6 +1970,14 @@
       }
     },
     "select": {
+      "selected_program_mode": {
+        "name": "Mode",
+        "state": {
+          "normal": "Normal",
+          "speed": "Speed",
+          "night": "Night"
+        }
+      },
       "rinse_aid_setting_status": {
         "name": "Rinse aid"
       },
@@ -2046,7 +2054,7 @@
         }
       },
       "selected_program_id_status": {
-        "name": "Selected program",
+        "name": "Program",
         "state": {
           "eco": "Eco",
           "auto": "Auto",
