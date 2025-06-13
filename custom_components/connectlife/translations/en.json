@@ -1247,9 +1247,6 @@
       "refrigerator_sensor_real_temperature": {
         "name": "Refrigerator sensor real temperature"
       },
-      "rinse_aid_setting_status": {
-        "name": "Rinse aid"
-      },
       "rinsenum": {
         "name": "Rinse num"
       },
@@ -1973,6 +1970,9 @@
       }
     },
     "select": {
+      "rinse_aid_setting_status": {
+        "name": "Rinse aid"
+      },
       "feedback_volumen_setting_status": {
         "name": "Feedback volume",
         "state": {
