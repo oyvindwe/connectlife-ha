@@ -170,6 +170,6 @@ properties:
   - property: Steam
     icon: mdi:heat-wave
     switch:
-  - property: extraRinse
+  - property: Extra_Rinse
     icon: mdi:water-sync
     switch:
