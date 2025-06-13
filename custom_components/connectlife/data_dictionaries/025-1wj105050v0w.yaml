@@ -71,7 +71,7 @@ properties:
         0: "off"
         1: "standby"
         2: "running"
-        3: "paused"
+        3: "pause"
 
   - property: Selected_program_ID
     icon: mdi:tshirt-crew
@@ -87,12 +87,17 @@ properties:
         9: "eco_40_60"
         10: "wool"
         11: "fast15"
+        12: "mix"
         14: "spin-dry"
         16: "baby"
         20: "rinse_spin"
+        21: "delicates"
         22: "clean_dry_60"
+        24: "shirts"
         41: "power49"
         42: "auto"
+        44: "bed_linen"
+        45: "jeans"
 
   - property: Selected_program_remaining_time_in_minutes
     icon: mdi:timer-sand
@@ -164,4 +169,7 @@ properties:
 
   - property: Steam
     icon: mdi:heat-wave
+    switch:
+  - property: extraRinse
+    icon: mdi:water-sync
     switch:
