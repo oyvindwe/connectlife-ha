@@ -2046,14 +2046,17 @@
         }
       },
       "selected_program_id_status": {
-        "eco": "Eco",
-        "auto": "Auto",
-        "intensive": "Intensive",
-        "quick_pro": "Quick pro",
-        "time_program": "Time program",
-        "hygiene": "Hygiene",
-        "rinse_and_hold": "Rinse and hold",
-        "self_cleaning": "Self cleaning"
+        "name": "Selected program",
+        "state": {
+          "eco": "Eco",
+          "auto": "Auto",
+          "intensive": "Intensive",
+          "quick_pro": "Quick pro",
+          "time_program": "Time program",
+          "hygiene": "Hygiene",
+          "rinse_and_hold": "Rinse and hold",
+          "self_cleaning": "Self cleaning"
+        }
       },
       "spin_speed_rpm": {
         "name": "Spin speed",
