@@ -1280,7 +1280,10 @@
           "shirts": "Shirts",
           "drum_cleaning": "Drum Cleaning",
           "spinning_draining": "Spinning & Draining",
-          "rinsing_softening": "Rinsing & Softening"
+          "rinsing_softening": "Rinsing & Softening",
+					"jeans": "Jeans",
+					"bedding": "Bedding",
+					"mix": "Mix"
         }
       },
       "selected_program_mode": {
@@ -1879,6 +1882,9 @@
       "prewash": {
         "name": "Prewash"
       },
+	  "extrarinse": {
+		"name": "Extra rinse"
+	  }
       "save_mode": {
         "name": "Save mode"
       },
@@ -1989,7 +1995,9 @@
           "spin-dry": "Spin-dry",
           "rinse_spin": "Rinse spin",
           "clean_dry_60": "Clean dry 60",
-          "power49": "Power49"
+          "power49": "Power49",
+		  "mix": "Mix",
+		  "jeans": "Jeans"
         }
       },
       "spin_speed_rpm": {
