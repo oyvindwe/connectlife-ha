@@ -1137,15 +1137,6 @@
       "fan_sequence_setting_status": {
         "name": "Fan sequence"
       },
-      "feedback_volumen_setting_status": {
-        "name": "Feedback volume",
-        "state": {
-          "mute": "Mute",
-          "low": "Low",
-          "mid": "Mid",
-          "high": "High"
-        }
-      },
       "flexiblespintime_flag": {
         "name": "Flexible spin time flag"
       },
@@ -1219,15 +1210,6 @@
       },
       "mian_wash_time": {
         "name": "Main wash time"
-      },
-      "notification_volumen_setting_status": {
-        "name": "Notification volume",
-        "state": {
-          "mute": "Mute",
-          "low": "Low",
-          "mid": "Mid",
-          "high": "High"
-        }
       },
       "order_time_minimum_hour": {
         "name": "Order time minimum hour"
@@ -1991,6 +1973,24 @@
       }
     },
     "select": {
+      "feedback_volumen_setting_status": {
+        "name": "Feedback volume",
+        "state": {
+          "mute": "Mute",
+          "low": "Low",
+          "mid": "Mid",
+          "high": "High"
+        }
+      },
+      "notification_volumen_setting_status": {
+        "name": "Notification volume",
+        "state": {
+          "mute": "Mute",
+          "low": "Low",
+          "mid": "Mid",
+          "high": "High"
+        }
+      },
       "auto_dose_quantity_setting_status": {
         "name": "Auto dose quantity"
       },
