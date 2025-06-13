@@ -516,9 +516,9 @@ properties:
         5: hygiene
         6: rinse_and_hold
         7: self_cleaning
+      command:
+        name: Selected_program_id
     icon: mdi:clipboard-list
-    command:
-      name: Selected_program_id
   - property: Selected_program_mode
     sensor:
       device_class: enum
