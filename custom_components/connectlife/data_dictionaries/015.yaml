@@ -99,6 +99,7 @@ properties:
       device_class: duration
       unit: min
   - property: Auto_dose_quantity_setting_status
+    entity_category: config
     unavailable: 0
     select:
       options:
@@ -117,6 +118,7 @@ properties:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Auto_dose_setting_status
+    entity_category: config
     unavailable: 0
     switch:
       "off": 1
@@ -125,6 +127,7 @@ properties:
         name: Auto_dose_setting
         adjust: 1
   - property: Child_lock
+    entity_category: config
     unavailable: 0
     switch:
       "off": 1
@@ -409,6 +412,7 @@ properties:
   - property: High_temperature_status
     hide: true
   - property: Interior_light_at_power_off_setting_status
+    entity_category: config
     unavailable: 0
     switch:
       "off": 1
@@ -447,6 +451,7 @@ properties:
         adjust: 1
     icon: mdi:information
   - property: Odor_control_setting
+    entity_category: config
     unavailable: 0
     switch:
       "off": 1
@@ -468,6 +473,7 @@ properties:
       device_class: problem
     icon: mdi:flare
   - property: Rinse_aid_setting_status
+    entity_category: config
     unavailable: 0
     select:
       options:
@@ -551,6 +557,7 @@ properties:
   - property: Super_rinse_on_demand_allowed
     hide: true
   - property: Super_rinse_setting_status
+    entity_category: config
     unavailable: 0
     switch:
       "off": 1
@@ -561,6 +568,7 @@ properties:
   - property: Super_rinse_status
     hide: true
   - property: Tab_setting_status
+    entity_category: config
     unavailable: 0
     switch:
       "off": 1
