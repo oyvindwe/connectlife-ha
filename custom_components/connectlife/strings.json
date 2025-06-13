@@ -1221,7 +1221,13 @@
         "name": "Main wash time"
       },
       "notification_volumen_setting_status": {
-        "name": "Notification volume"
+        "name": "Notification volume",
+        "state": {
+          "mute": "Mute",
+          "low": "Low",
+          "mid": "Mid",
+          "high": "High"
+        }
       },
       "order_time_minimum_hour": {
         "name": "Order time minimum hour"

@@ -383,15 +383,18 @@ properties:
     icon: mdi:information
     hide: true
   - property: Feedback_volumen_setting_status
-    sensor:
-      device_class: enum
+    entity_category: config
+    unavailable: 0
+    select:
       options:
-        1: mute
-        2: low
-        3: mid
-        4: high
+        1: "mute"
+        2: "low"
+        3: "mid"
+        4: "high"
     icon: mdi:volume-low
-    hide: true
+    command:
+      name: Feedback_volumen_setting
+      adjust: 1
   - property: Fill_salt
     binary_sensor:
       device_class: problem
@@ -431,10 +434,18 @@ properties:
   - property: MDO_on_demand_allowed
     hide: true
   - property: Notification_volumen_setting_status
-    sensor:
-      read_only: true
+    entity_category: config
+    unavailable: 0
+    select:
+      options:
+        1: "mute"
+        2: "low"
+        3: "mid"
+        4: "high"
+      command:
+        name: Notification_volumen_setting
+        adjust: 1
     icon: mdi:information
-    hide: true
   - property: Odor_control_setting
     unavailable: 0
     switch:
