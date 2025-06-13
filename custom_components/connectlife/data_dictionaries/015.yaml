@@ -523,9 +523,7 @@ properties:
     unavailable: 0
     select:
       options:
-        1: none
         2: normal
-        3: green
         4: speed
         5: night
       command:
