@@ -506,18 +506,19 @@ properties:
   - property: Selected_program_extra_drying_function
     hide: true
   - property: Selected_program_id_status
-    sensor:
-      device_class: enum
+    select:
       options:
-        0: auto
-        1: eco
-        2: one_hour
-        3: intensive
-        4: glass
+        0: eco
+        1: auto
+        2: intensive
+        3: quick_pro
+        4: time_program
         5: hygiene
-        6: night
-        7: clean
+        6: rinse_and_hold
+        7: self_cleaning
     icon: mdi:clipboard-list
+    command:
+      name: Selected_program_id
   - property: Selected_program_mode
     sensor:
       device_class: enum
