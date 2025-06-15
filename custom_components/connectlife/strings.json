@@ -400,56 +400,8 @@
       "existing_sr_mode": {
         "name": "Existing SR mode"
       },
-      "f_e_arkgrille": {
-        "name": "Cabinet grille protection alarm"
-      },
       "f_e_filterclean": {
         "name": "Filter clean"
-      },
-      "f_e_incoiltemp": {
-        "name": "Indoor coil temperature sensor failure"
-      },
-      "f_e_incom": {
-        "name": "Indoor/outdoor communication failure"
-      },
-      "f_e_indisplay": {
-        "name": "Communication failure between indoor control panel and display panel"
-      },
-      "f_e_ineeprom": {
-        "name": "Indoor control board EEPROM error"
-      },
-      "f_e_inele": {
-        "name": "Communication failure between indoor control panel and indoor power panel"
-      },
-      "f_e_infanmotor": {
-        "name": "Indoor fan motor abnormal operation failure"
-      },
-      "f_e_inhumidity": {
-        "name": "Indoor humidity sensor failure"
-      },
-      "f_e_inkeys": {
-        "name": "Communication failure between indoor control panel and keypad"
-      },
-      "f_e_intemp": {
-        "name": "Indoor temperature sensor failure"
-      },
-      "f_e_invzero": {
-        "name": "Indoor voltage zero-crossing detection fault"
-      },
-      "f_e_inwifi": {
-        "name": "Communication failure between WIFI control panel and indoor control panel"
-      },
-      "f_e_outcoiltemp": {
-        "name": "Outdoor coil temperature sensor failure"
-      },
-      "f_e_outeeprom": {
-        "name": "Outdoor EEPROM error"
-      },
-      "f_e_outgastemp": {
-        "name": "Exhaust temperature sensor failure"
-      },
-      "f_e_outtemp": {
-        "name": "Outdoor ambient temperature sensor failure"
       },
       "f_e_pump": {
         "name": "Pump"
@@ -835,9 +787,6 @@
       "step3_status": {
         "name": "Step 3 status"
       },
-      "t_beep": {
-        "name": "Beep"
-      },
       "tab_setting_status": {
         "name": "Tab setting"
       },
@@ -894,9 +843,6 @@
             }
           },
           "swing_mode": {
-            "state": {}
-          },
-          "swing_horizontal_mode": {
             "state": {
               "both_sides": "Both sides",
               "forward": "Forward",
@@ -1004,9 +950,6 @@
           "running": "Running"
         }
       },
-      "current_temperature": {
-        "name": "Current temperature"
-      },
       "daily_energy_consumption": {
         "name": "Daily energy consumption"
       },
@@ -1022,9 +965,6 @@
       "delay_start_remaining_time": {
         "name": "Delay start remaining time"
       },
-      "delay_start_remaining_time_in_minutes": {
-        "name": "Delay start remaining time in minutes"
-      },
       "delay_start_set_time": {
         "name": "Delay start set time"
       },
@@ -1033,13 +973,6 @@
       },
       "delaystart_delayend_duration_inminutes": {
         "name": "Delay start duration"
-      },
-      "delaystart_delayend_mode_status": {
-        "name": "Delay start status",
-        "state": {
-          "off": "Off",
-          "on": "On"
-        }
       },
       "delaystart_delayend_remaining_timein_minutes": {
         "name": "Delay start remaining time"
@@ -1081,9 +1014,8 @@
         "state": {
           "not_available": "Not available",
           "open": "Open",
-          "closed": "Closed",
-          "closed_when_running": "Closed when running",
-          "other": "Other"
+          "other": "Other",
+          "closed": "Closed"
         }
       },
       "electricit_consumption_decimal": {
@@ -1127,6 +1059,12 @@
       },
       "f_cool_qvalue": {
         "name": "Cooling"
+      },
+      "f_dimmer": {
+        "name": "Dimmer"
+      },
+      "f_electricity": {
+        "name": "Electricity Consumption"
       },
       "f_heat_qvalue": {
         "name": "Heating"
@@ -1300,9 +1238,6 @@
           "paused": "Paused",
           "stopped": "Stopped"
         }
-      },
-      "selected_program_duration_in_minutes": {
-        "name": "Selected program duration"
       },
       "selected_program_id": {
         "name": "Selected program",
@@ -1641,14 +1576,6 @@
       "spintime_index": {
         "name": "Spin time index"
       },
-      "status": {
-        "name": "Device status",
-        "state": {
-          "off": "Off",
-          "standby": "Standby",
-          "running": "Running"
-        }
-      },
       "step1_duration": {
         "name": "Step1 duration"
       },
@@ -1884,6 +1811,30 @@
       },
       "zone_number": {
         "name": "Number of zones"
+      },
+      "status": {
+        "name": "Device status",
+        "state": {
+          "off": "Off",
+          "standby": "Standby",
+          "running": "Running"
+        }
+      },
+      "door_status": {
+        "name": "Door status",
+        "state": {
+          "not_available": "Not Available",
+          "open": "Open",
+          "closed": "Closed",
+          "closed_when_running": "Closed when running"
+        }
+      },
+      "delaystart_delayend_mode_status": {
+        "name": "Delay start status",
+        "state": {
+          "off": "Off",
+          "on": "On"
+        }
       }
     },
     "switch": {
@@ -2007,6 +1958,12 @@
       "extrarinsenum": {
         "name": "Extra rinse num"
       },
+      "lightbrightness": {
+        "name": "Light brightness"
+      },
+      "lightcolortemperature": {
+        "name": "Light colort emperature"
+      },
       "motorlevel": {
         "name": "Motor level"
       },
@@ -2107,12 +2064,6 @@
       },
       "freeze_temperature": {
         "name": "Freezeer temperature"
-      },
-      "lightbrightness": {
-        "name": "Light brightness"
-      },
-      "lightcolortemperature": {
-        "name": "Light color temperature"
       },
       "refrigerator_max_temperature": {
         "name": "Refrigerator max temperature"

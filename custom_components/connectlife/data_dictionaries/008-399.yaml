@@ -1,0 +1,107 @@
+# Ultraslim AC - AWUS1225TW
+properties:
+- property: daily_energy_kwh
+  hide: true
+  sensor:
+    read_only: true
+    state_class: total_increasing
+    device_class: energy
+    unit: kWh
+- property: f_temp_in
+  icon: mdi:temp
+  climate:
+    target: current_temperature
+- property: t_fan_speed
+  climate:
+    target: fan_mode
+    options:
+      1: auto
+      2: low
+      3: medium
+      4: high
+- property: t_power
+  climate:
+    target: is_on
+- property: t_dimmer
+  icon: mdi:lightbulb-on
+  switch:
+    device_class: switch
+- property: t_sleep
+  icon: mdi:sleep
+  switch:
+    device_class: switch
+- property: t_temp
+  climate:
+    target: target_temperature
+    min_value:
+      celsius: 16
+      fahrenheit: 61
+    max_value:
+      celsius: 30
+      fahrenheit: 86
+- property: t_temp_type
+  climate:
+    target: temperature_unit
+    options:
+      0: celsius
+      1: fahrenheit
+- property: t_work_mode
+  climate:
+    target: hvac_mode
+    options:
+      0: fan_only
+      2: cool
+      3: dry
+      5: eco
+- property: t_super
+  switch:
+    device_class: switch
+  icon: mdi:run-fast
+- property: t_fan_mute
+  switch:
+    device_class: switch
+  icon: mdi:volume-variant-off
+- property: t_up_down
+  climate:
+    target: swing_mode
+    options:
+      0: "off"
+      1: "on"
+- property: f_electricity
+  sensor:
+    device_class: energy
+    read_only: true
+    unit: kWh
+    state_class: total_increasing
+- property: f_e_push
+  binary_sensor:
+    device_class: problem
+  hide: true
+- property: f_e_intemp
+  binary_sensor:
+    device_class: problem
+    options:
+      0: false
+      1: true
+  hide: true
+- property: f_e_ineeprom
+  binary_sensor:
+    device_class: problem
+    options:
+      0: false
+      1: true
+  hide: true
+- property: f_e_incom
+  binary_sensor:
+    device_class: problem
+    options:
+      0: false
+      1: true
+  hide: true
+- property: f_e_incoiltemp
+  binary_sensor:
+    device_class: problem
+    options:
+      0: false
+      1: true
+  hide: true
