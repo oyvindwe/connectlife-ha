@@ -15,10 +15,10 @@ properties:
   climate:
     target: fan_mode
     options:
-      1: auto
-      2: low
-      3: medium
-      4: high
+      0: auto
+      5: low
+      7: medium
+      9: high
 - property: t_power
   climate:
     target: is_on
