@@ -1128,7 +1128,7 @@
         "state": {
           "off": "Off",
           "standby": "Standby",
-		  "paused": "Paused",
+	  "pause": "Paused",
           "running": "Running"
         }
       },
