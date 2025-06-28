@@ -76,6 +76,8 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
         self.multiplier = dd_entry.sensor.multiplier
         self.unknown_value = dd_entry.sensor.unknown_value
 
+        self.combine_with = getattr(dd_entry, "combine_with", None)
+
         device_class = dd_entry.sensor.device_class
         options = None
         if device_class == SensorDeviceClass.ENUM:
@@ -116,6 +118,23 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
     def update_state(self):
         if self.status in self.coordinator.data[self.device_id].status_list:
             value = self.coordinator.data[self.device_id].status_list[self.status]
+            
+            if self.combine_with:
+            other_status = self.combine_with
+            other_value = self.coordinator.data[self.device_id].status_list.get(other_status)
+            if isinstance(value, int) and isinstance(other_value, int):
+                value = value + (other_value / 100)
+            else:
+                _LOGGER.warning(
+                    "Cannot combine %s with %s for %s (%s), unexpected types: %s and %s",
+                    self.status,
+                    other_status,
+                    self.nickname,
+                    self.device_id,
+                    type(value),
+                    type(other_value),
+                )
+            
             if self.device_class == SensorDeviceClass.ENUM:
                 if value in self.options_map:
                     value = self.options_map[value]
@@ -127,12 +146,14 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
                         self.nickname,
                     )
                     value = None
+                    
             if value == self.unknown_value:
                 self._attr_native_value = None
             else:
                 if self.multiplier is not None:
                     value *= self.multiplier
                 self._attr_native_value = value
+                
         self._attr_available = self.coordinator.data[self.device_id].offline_state == 1
 
     async def async_set_value(self, value: int) -> None:
