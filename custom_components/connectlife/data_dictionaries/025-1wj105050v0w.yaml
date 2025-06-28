@@ -117,11 +117,11 @@ properties:
     icon: mdi:flash
     sensor:
       device_class: energy
-      unit: Wh
+      unit: kWh
       read_only: true
-      state_class: total
 
   - property: Electricit_consumption_int
+    combine_with: Electricit_consumption_decimal
     icon: mdi:flash
     sensor:
       device_class: energy
