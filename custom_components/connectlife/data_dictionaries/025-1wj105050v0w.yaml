@@ -125,7 +125,7 @@ properties:
     icon: mdi:flash
     sensor:
       device_class: energy
-      unit: Wh
+      unit: kWh
       read_only: true
       state_class: total_increasing
 
