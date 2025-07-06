@@ -467,7 +467,7 @@ properties:
   - property: Remote_control_monitoring_set_commands
     hide: true
   - property: Remote_control_monitoring_set_commands_actions
-    hide: true
+    binary_sensor:
   - property: Rinse_aid_refill
     binary_sensor:
       device_class: problem
