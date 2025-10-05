@@ -99,6 +99,7 @@ properties:
       device_class: duration
       unit: min
   - property: Auto_dose_quantity_setting_status
+    entity_category: config
     unavailable: 0
     select:
       options:
@@ -117,6 +118,7 @@ properties:
       device_class: problem
     icon: mdi:dishwasher-alert
   - property: Auto_dose_setting_status
+    entity_category: config
     unavailable: 0
     switch:
       "off": 1
@@ -125,6 +127,7 @@ properties:
         name: Auto_dose_setting
         adjust: 1
   - property: Child_lock
+    entity_category: config
     unavailable: 0
     switch:
       "off": 1
@@ -383,15 +386,18 @@ properties:
     icon: mdi:information
     hide: true
   - property: Feedback_volumen_setting_status
-    sensor:
-      device_class: enum
+    entity_category: config
+    unavailable: 0
+    select:
       options:
-        1: mute
-        2: low
-        3: mid
-        4: high
+        1: "mute"
+        2: "low"
+        3: "mid"
+        4: "high"
     icon: mdi:volume-low
-    hide: true
+    command:
+      name: Feedback_volumen_setting
+      adjust: 1
   - property: Fill_salt
     binary_sensor:
       device_class: problem
@@ -406,6 +412,7 @@ properties:
   - property: High_temperature_status
     hide: true
   - property: Interior_light_at_power_off_setting_status
+    entity_category: config
     unavailable: 0
     switch:
       "off": 1
@@ -431,11 +438,20 @@ properties:
   - property: MDO_on_demand_allowed
     hide: true
   - property: Notification_volumen_setting_status
-    sensor:
-      read_only: true
+    entity_category: config
+    unavailable: 0
+    select:
+      options:
+        1: "mute"
+        2: "low"
+        3: "mid"
+        4: "high"
+      command:
+        name: Notification_volumen_setting
+        adjust: 1
     icon: mdi:information
-    hide: true
   - property: Odor_control_setting
+    entity_category: config
     unavailable: 0
     switch:
       "off": 1
@@ -451,25 +467,27 @@ properties:
   - property: Remote_control_monitoring_set_commands
     hide: true
   - property: Remote_control_monitoring_set_commands_actions
-    hide: true
+    binary_sensor:
   - property: Rinse_aid_refill
     binary_sensor:
       device_class: problem
     icon: mdi:flare
   - property: Rinse_aid_setting_status
-    sensor:
-      device_class: enum
+    entity_category: config
+    unavailable: 0
+    select:
       options:
-        0: "-2"
-        1: "-1"
+        1: "TAB"
         2: "0"
         3: "1"
         4: "2"
         5: "3"
         6: "4"
         7: "5"
+      command:
+        name: Rinse_aid_setting
+        adjust: 1
     icon: mdi:white-balance-sunny
-    hide: true
   - property: Sani_Lock
     hide: true
   - property: Sani_Lock_allowed
@@ -488,27 +506,28 @@ properties:
   - property: Selected_program_extra_drying_function
     hide: true
   - property: Selected_program_id_status
-    sensor:
-      device_class: enum
+    select:
       options:
-        0: auto
-        1: eco
-        2: one_hour
-        3: intensive
-        4: glass
+        0: eco
+        1: auto
+        2: intensive
+        3: quick_pro
+        4: time_program
         5: hygiene
-        6: night
-        7: clean
+        6: rinse_and_hold
+        7: self_cleaning
+      command:
+        name: Selected_program_id
     icon: mdi:clipboard-list
   - property: Selected_program_mode
-    sensor:
-      device_class: enum
+    unavailable: 0
+    select:
       options:
-        0: "0"
-        1: "1"
         2: normal
-        3: "3"
-        4: fast
+        4: speed
+        5: night
+      command:
+        name: Program_mode
     icon: mdi:cube-outline
   - property: Selected_program_storage_function
     hide: true
@@ -539,6 +558,7 @@ properties:
   - property: Super_rinse_on_demand_allowed
     hide: true
   - property: Super_rinse_setting_status
+    entity_category: config
     unavailable: 0
     switch:
       "off": 1
@@ -549,6 +569,7 @@ properties:
   - property: Super_rinse_status
     hide: true
   - property: Tab_setting_status
+    entity_category: config
     unavailable: 0
     switch:
       "off": 1
