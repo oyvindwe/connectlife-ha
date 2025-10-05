@@ -1,6 +1,6 @@
 [project]
 name = "connectlife-ha"
-version = "0.25.0"
+version = "0.26.0"
 description = "Custom Home Assistant component for ConnectLife devices"
 readme = "README.md"
 requires-python = ">=3.13.2"
