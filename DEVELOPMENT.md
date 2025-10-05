@@ -45,5 +45,7 @@ python -m connectlife.test_server -d dumps
 ```
 
 Configure the integration to access the test server:
+
 ![img.png](img.png)
+
 ![img_1.png](img_1.png)
