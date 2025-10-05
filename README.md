@@ -109,3 +109,7 @@ To work around this issue, you can do the following:
 
 Note that users at least in Russia and China can't log in using this integration. See discussion in
 https://github.com/bilan/connectlife-api-connector/issues/25
+
+## Contributing
+
+See [DEVELOPMENT.md](DEVELOPMENT.md).

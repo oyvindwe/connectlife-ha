@@ -34,3 +34,16 @@ uv run python -m scripts.gen_strings
 ```bash
 uv run python -m scripts.validate_mappings
 ```
+
+## Use a test server
+
+Clone https://github.com/oyvindwe/connectlife/
+
+In your local `connectlife` repo:
+```bash
+python -m connectlife.test_server -d dumps
+```
+
+Configure the integration to access the test server:
+![img.png](img.png)
+![img_1.png](img_1.png)
