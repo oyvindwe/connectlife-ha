@@ -1,0 +1,95 @@
+properties:
+  - property: Selected_program_ID
+    select:
+      name: Program
+      icon: 'mdi:tumble-dryer'
+      options:
+        '1': Auto
+        '2': Allergy Care
+        '3': Refresh
+        '4': Sportswear
+        '5': Towels
+        '7': Time Dry
+        '8': Cotton
+        '9': Baby Care
+        '10': Synthetics
+        '11': Wool
+        '13': Quick 30'
+        '17': Shirts
+        '18': Bedding
+        '19': Down
+        '28': ECO
+  - property: dry_time
+    select:
+      name: Timed dry (min)
+      icon: 'mdi:timer'
+      options:
+        '1': Cupboard
+        '2': Iron
+        '3': Extra dry
+        '5': 5 min
+        '10': 10 min
+        '15': 15 min
+  - property: DelayEndTime_Hour
+    number:
+      name: Delay end hour
+      icon: 'mdi:clock-end'
+      min: 0
+      max: 24
+      step: 1
+  - property: AntiCrease
+    switch:
+      name: Anti Crease
+      icon: 'mdi:tshirt-crew-outline'
+      'on': 1
+      'off': 0
+  - property: Drum_Light
+    switch:
+      name: Drum light
+      icon: 'mdi:lightbulb'
+      'on': 1
+      'off': 0
+  - property: mute
+    switch:
+      name: Mute beeps
+      icon: 'mdi:volume-mute'
+      'on': 1
+      'off': 0
+  - property: Child_lock
+    switch:
+      name: Child lock
+      icon: 'mdi:hand-back-right-off'
+      'on': 1
+      'off': 0
+  - property: Dry_Level
+    select:
+      name: Dryness level
+      icon: 'mdi:hair-dryer-outline'
+      options:
+        '1': Low
+        '2': Middle
+        '3': High
+  - property: Selected_program_total_time_in_minutes
+    sensor:
+      name: Program total time
+      device_class: duration
+      state_class: measurement
+      unit: min
+  - property: Selected_program_remaining_time_in_minutes
+    sensor:
+      name: Remaining time
+      device_class: duration
+      state_class: measurement
+      unit: min
+  - property: Selected_program_total_running_time_in_minutes
+    sensor:
+      name: Running time
+      device_class: duration
+      state_class: measurement
+      unit: min
+  - property: energy
+    sensor:
+      name: Cycle Energy consumption
+      device_class: energy
+      state_class: measurement
+      unit: Wh
