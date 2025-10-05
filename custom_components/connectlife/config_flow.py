@@ -95,7 +95,9 @@ class InvalidAuth(HomeAssistantError):
 class OptionsFlowHandler(OptionsFlow):
     """Handles options flow for the component."""
 
-    async def async_step_init(self, user_input=None):
+    _device_id: str | None = None
+
+    async def async_step_init(self, user_input=None) -> ConfigFlowResult:
         return self.async_show_menu(
             step_id="init",
             menu_options=["select_device", "development"],
