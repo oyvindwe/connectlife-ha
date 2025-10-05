@@ -99,16 +99,25 @@ Missing features:
 
 ### Login
 
-You have to create a ConnectLife account with username/password. SSO using other identity providers is not supported (See https://github.com/oyvindwe/connectlife-ha/issues/99).
+Note that users at least in Russia and China can't log in using this integration. See discussion in
+https://github.com/bilan/connectlife-api-connector/issues/25
 
-To work around this issue, you can do the following:
+You have to create a ConnectLife account with username/password. Login with SSO using 3rd party identity providers
+(Google, Apple, etc.) is not supported (See https://github.com/oyvindwe/connectlife-ha/issues/99).
+
+There are two workarounds is you have logged in using a 3rd party identity provider: 
+
+#### Set password on current user account
+
+1. In the ConnectLife mobile app select "Disconnect" and then "Forget password?"
+2. Set new password via reset link received via email.
+
+#### Using a second account
+
 1. In the ConnectLife mobile app, create a new account using an email and password (needs to be a different email to your SSO account as that is now occupied by that SSO).
 2. Still in the mobile app, switch accounts back to your SSO account, go to the device/s you have already setup in your SSO account, select them 1 by 1, scrolling to the bottom to get to the "Share Device" option and adding your new email to the shared accounts list.
 3. In the connectlife-ha integration within Home Assistant, use the email and password from the new account you set up, which will now have the device(s) shared with it.
 4. Forget your new email version of your account exists, you don't have to accept device shares or use that account for any other reason.
-
-Note that users at least in Russia and China can't log in using this integration. See discussion in
-https://github.com/bilan/connectlife-api-connector/issues/25
 
 ## Contributing
 
