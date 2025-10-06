@@ -22,7 +22,7 @@
       "title": "{device_name} no longer available",
       "fix_flow": {
         "abort": {
-          "issue_ignored": "Ignored \"{device_name} no longer available\". The device and all its entities will still be listed in the regiestry."
+          "issue_ignored": "Ignored \"{device_name} no longer available\". The device and all its entities will still be listed in the registry."
         },
         "step": {
           "init": {
