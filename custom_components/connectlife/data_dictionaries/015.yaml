@@ -223,7 +223,7 @@ properties:
     icon: mdi:folder-open-outline
   - property: Energy_consumption_in_running_program
     sensor:
-      state_class: total
+      state_class: total_increasing
       device_class: energy
       unit: kWh
       multiplier: 0.1
@@ -588,7 +588,7 @@ properties:
   - property: Water_consumption_in_running_program
     sensor:
       unknown_value: 65535
-      state_class: total
+      state_class: total_increasing
       device_class: water
       unit: L
     hide: true
