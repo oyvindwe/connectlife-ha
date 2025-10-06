@@ -317,6 +317,7 @@ class WaterHeater:
 class Property:
     name: str
     icon: str | None
+    combine_with: str | None
     hide: bool
     disable: bool
     unavailable: int | None
@@ -343,6 +344,7 @@ class Property:
             if ENTITY_CATEGORY in entry
             else None
         )
+        self.combine_with = entry.get("combine_with")
 
         if Platform.BINARY_SENSOR in entry:
             self.binary_sensor = BinarySensor(self.name, entry[Platform.BINARY_SENSOR])
@@ -385,25 +387,14 @@ class Dictionaries:
         climate: dict[[list[dict[str, int]]]] | None = None
         properties = defaultdict(lambda: Property({PROPERTY: "default", HIDE: True}))
         try:
-            data = pkgutil.get_data(__name__, f"data_dictionaries/{appliance.device_type_code}.yaml")
-            parsed = yaml.safe_load(data)
-            # TODO: Support default climate section
-            if parsed is not None and PROPERTIES in parsed and parsed[PROPERTIES] is not None:
-                for prop in parsed[PROPERTIES]:
-                    properties[prop[PROPERTY]] = Property(prop)
-        except FileNotFoundError:
-            pass
-        try:
             data = pkgutil.get_data(__name__, f"data_dictionaries/{key}.yaml")
             parsed = yaml.safe_load(data)
-            if parsed is not None:
-                if Platform.CLIMATE in parsed:
-                    climate = (
-                        parsed[Platform.CLIMATE] if Platform.CLIMATE in parsed else None
-                    )
-                if PROPERTIES in parsed and parsed[PROPERTIES] is not None:
-                    for prop in parsed[PROPERTIES]:
-                        properties[prop[PROPERTY]] = Property(prop)
+            if Platform.CLIMATE in parsed:
+                climate = (
+                    parsed[Platform.CLIMATE] if Platform.CLIMATE in parsed else None
+                )
+            for prop in parsed[PROPERTIES]:
+                properties[prop[PROPERTY]] = Property(prop)
         except FileNotFoundError:
             _LOGGER.warning(
                 "No data dictionary found for %s (%s)", appliance.device_nickname, key

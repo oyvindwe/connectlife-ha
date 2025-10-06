@@ -1,0 +1,175 @@
+#WashingMachine
+properties:
+  - property: Child_lock
+    icon: mdi:lock
+    switch:
+  - property: ApplicationPermissions
+    icon: mdi:remote
+    sensor:
+      device_class: enum
+      options:
+        2: "off"
+        3: "on"
+  - property: Current_program_phase
+    icon: mdi:state-machine
+    sensor:
+      device_class: enum
+      options:
+        0: not_available
+        1: weigh
+        2: prewash
+        3: wash
+        4: rinse
+        7: spin-dry
+        8: drying
+        10: finished
+      read_only: true
+
+  - property: Detergent_display
+    icon: mdi:alpha-d-circle-outline
+    sensor:
+      device_class: enum
+      options:
+        0: "off"
+        1: "on"
+  - property: Detergent_state
+    icon: mdi:alpha-d-circle-outline
+    binary_sensor:
+      read_only: true
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Softer_display
+    icon: mdi:alpha-s-circle-outline
+    sensor:
+      device_class: enum
+      options:
+        0: "off"
+        1: "on"
+  - property: Softener_state
+    icon: mdi:alpha-s-circle-outline
+    binary_sensor:
+      read_only: true
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Door_status
+    icon: mdi:door-closed
+    sensor:
+      device_class: enum
+      options:
+        1: "open"
+        3: "closed"
+
+  - property: machine_status
+    icon: mdi:washing-machine
+    sensor:
+      device_class: enum
+      options:
+        0: "off"
+        1: "standby"
+        2: "running"
+        3: "pause"
+
+  - property: Selected_program_ID
+    icon: mdi:tshirt-crew
+    select:
+      options:
+        1: "cotton_dry"
+        2: "synthetic_dry"
+        4: "refresh"
+        5: "anti_allergy"
+        6: "drum_cleaning"
+        7: "cotton"
+        8: "synthetic"
+        9: "eco_40_60"
+        10: "wool"
+        11: "fast15"
+        12: "mix"
+        14: "spin-dry"
+        16: "baby"
+        20: "rinse_spin"
+        21: "delicates"
+        22: "clean_dry_60"
+        24: "shirts"
+        41: "power49"
+        42: "auto"
+        44: "bed_linen"
+        45: "jeans"
+
+  - property: Selected_program_remaining_time_in_minutes
+    icon: mdi:timer-sand
+    sensor:
+      device_class: duration
+      unit: min
+      read_only: true
+
+  - property: Selected_program_total_time_in_minutes
+    icon: mdi:timer-outline
+    sensor:
+      device_class: duration
+      unit: min
+      read_only: true
+
+  - property: Energy_estimate
+    icon: mdi:flash
+    sensor:
+      device_class: energy
+      unit: Wh
+      read_only: true
+      state_class: total
+
+  - property: Electricit_consumption_int
+    icon: mdi:flash
+    sensor:
+      device_class: energy
+      unit: Wh
+      read_only: true
+      state_class: total_increasing
+
+  - property: Water_consumption_int
+    icon: mdi:water
+    sensor:
+      device_class: water
+      unit: L
+      read_only: true
+      state_class: total_increasing
+
+  - property: temperature
+    icon: mdi:thermometer
+    select:
+      options:
+        0: "cold"
+        2: "20"
+        3: "30"
+        4: "40"
+        6: "60"
+        9: "90"
+
+  - property: Spin_speed_rpm
+    icon: mdi:rotate-right
+    select:
+      options:
+        14: "1400"
+        12: "1200"
+        10: "1000"
+        8: "800"
+        6: "600"
+        0: "none"
+
+  - property: mute
+    icon: mdi:volume-variant-off
+    switch:
+
+  - property: Prewash
+    icon: mdi:numeric-1-circle-outline
+    switch:
+
+  - property: Steam
+    icon: mdi:heat-wave
+    switch:
+  - property: Extra_Rinse
+    icon: mdi:water-sync
+    switch:
