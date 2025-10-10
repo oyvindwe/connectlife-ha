@@ -1,0 +1,76 @@
+# Tumble dryer model DHSE80-BEW001
+properties:
+  - property: Actions
+    # Sample value: 0
+    hide: true
+  - property: Clean_Filter
+    icon: mdi:brush-variant
+    binary_sensor:
+  - property: Current_program_phase
+    icon: mdi:tumble-dryer
+    sensor:
+      device_class: enum
+      options:
+        0: idle
+        1: delay_start_waiting
+        2: running
+        3: running
+        4: anti_crease
+        5: program_finished
+      read_only: true
+    # Sample value: 0
+  - property: Selected_program_ID
+    sensor:
+      read_only: true
+      device_class: enum
+      options:
+        1: auto
+        2: anti_allergy
+        3: refresh
+        4: sports
+        5: towels
+        7: time
+        8: cotton
+        9: baby
+        10: synthetic
+        11: wool
+        12: delicates
+        13: fast30
+        17: shirts
+        18: bed_linen
+        19: down
+    icon: mdi:playlist-check
+  - property: Selected_program_remaining_time_in_minutes
+    sensor:
+      device_class: duration
+      unit: min
+      read_only: true
+    icon: mdi:timer
+  - property: Selected_program_total_running_time_in_minutes
+    sensor:
+      read_only: true
+      device_class: duration
+      unit: min
+    icon: mdi:timer
+  - property: Sound_setting
+    # Sample value: 0
+    hide: true
+  - property: Waterbox_Full
+    icon: mdi:water-alert
+    binary_sensor:
+      device_class: problem
+  - property: error_code
+    # Sample value: 0
+    hide: true
+  - property: machine_status
+    icon: mdi:tumble-dryer
+    sensor:
+      device_class: enum
+      options:
+        0: "off"
+        1: standby
+        2: running
+      read_only: true
+  - property: mute
+    icon: mdi:volume-mute
+    switch:
