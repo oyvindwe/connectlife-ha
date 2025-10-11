@@ -1,0 +1,128 @@
+#WashingMachine WF5S9045BW
+properties:
+#----------------------Sensors----------------------
+  - property: Current_program_phase
+    icon: mdi:state-machine
+    sensor:
+      device_class: enum
+      options:
+        0: not_available
+        1: weigh
+        2: prewash
+        3: wash
+        4: rinse
+        7: spin-dry
+        8: drying
+        10: finished
+      read_only: true
+  - property: Detergent_display
+    icon: mdi:alpha-d-circle-outline
+    sensor:
+      device_class: enum
+      options:
+        1: "Off"
+        0: "On"
+  - property: Softer_display
+    icon: mdi:alpha-s-circle-outline
+    sensor:
+      device_class: enum
+      options:
+        1: "Off"
+        0: "On"
+  - property: Door_status
+    icon: mdi:washing-machine
+    sensor:
+      device_class: enum
+      options:
+        1: "Unlocked"
+        3: "Locked"
+  - property: machine_status
+    icon: "mdi:washing-machine"
+    sensor:
+      device_class: enum
+      options:
+        0: "Off"
+        1: "Standby"
+        2: "Running"
+      read_only: true
+#----------------------Selects----------------------
+  - property: Selected_program_ID
+    icon: mdi:tshirt-crew
+    select:
+      options:
+        42: "Auto"
+        15: "Allergy care"
+        16: "Baby"
+        24: "Shirts"
+        18: "Sportswear"
+        14: "Spin-dry"
+        6: "Drum cleaning"
+        9: "Eco 40 60"
+        7: "Cotton"
+        8: "Synthetic"
+        10: "Wool"
+        41: "Power 49"
+        11: "Fast 15"
+  - property: temperature
+    icon: mdi:thermometer-lines
+    select:
+      options:
+        0: "cold"
+        2: "20"
+        3: "30"
+        4: "40"
+        6: "60"
+        9: "90"
+  - property: Spin_speed_rpm
+    icon: mdi:rotate-right
+    select:
+      options:
+        14: "1400"
+        12: "1200"
+        10: "1000"
+        8: "800"
+        6: "600"
+        0: "0"
+  - property: Detergent
+    icon: mdi:chart-bubble
+    select:
+      options:
+        0: "Off"
+        1: "Auto"
+        2: "Less"
+        3: "Standard"
+        4: "More"
+  - property: Softener
+    icon: mdi:flower-tulip-outline
+    select:
+      options:
+        0: "Off"
+        1: "Auto"
+        2: "Less"
+        3: "Standard"
+        4: "More"
+#----------------------Switches----------------------
+  - property: Prewash
+    icon: mdi:numeric-1-circle-outline
+    switch:
+      options:
+        0: "Off"
+        1: "On"
+  - property: Extra_Rinse
+    icon: mdi:tray-plus
+    switch:
+      options:
+        0: "Off"
+        1: "On"
+  - property: Steam
+    icon: mdi:kettle-steam-outline
+    switch:
+      options:
+        0: "Off"
+        1: "On"
+  - property: Time_Save
+    icon: mdi:run-fast
+    switch:
+      options:
+        0: "Off"
+        1: "On"
