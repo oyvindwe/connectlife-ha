@@ -1,0 +1,86 @@
+# Washing machine WF3S1043BW3
+properties:
+- property: Current_program_phase
+  icon: 'mdi:washing-machine'
+  sensor:
+    read_only: true
+    device_class: enum
+    options:
+      0: not_available
+      1: program_not_selected
+      2: program_selected
+      3: delay_start_waiting
+      4: preheat
+      5: preheat_finished
+      6: prewash
+      7: main_wash
+      8: drying
+      9: program_finished
+      10: ventilating
+      11: idle
+      12: running
+      13: anti_crease
+      14: delay
+      15: finished
+- property: DefaultSpinSpeed
+  sensor:
+    read_only: true
+    unit: rpm
+  icon: 'mdi:speedometer'
+- property: Door_status
+  sensor:
+    read_only: true
+    device_class: enum
+    options:
+      0: not_available
+      1: open
+      2: other
+      3: closed
+  icon: 'mdi:door'
+- property: machine_status
+  sensor:
+    read_only: true
+    device_class: enum
+    options:
+      0: "off"
+      1: standby
+      2: running
+  icon: 'mdi:washing-machine'
+- property: Selected_program_ID
+  sensor:
+    read_only: true
+    device_class: enum
+    options:
+      0: cotton_storage
+      1: standard
+      2: iron
+      3: mix
+      4: synthetic
+      5: wool
+      6: bed_linen
+      7: time
+      8: baby
+      9: sensitive
+      10: shirts
+      11: sports
+      12: fast89
+      13: extra_hygiene
+      14: remote
+      15: none
+  icon: 'mdi:playlist-check'
+- property: Selected_program_remaining_time_in_minutes
+  sensor:
+    read_only: true
+    device_class: duration
+    unit: min
+  icon: 'mdi:timer'
+  - property: Selected_program_total_time_in_minutes
+  sensor:
+    read_only: true
+    device_class: duration
+    unit: min
+  icon: 'mdi:timer'
+- property: mute
+  hide: true
+- property: tankclean
+  hide: true
