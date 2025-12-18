@@ -70,3 +70,10 @@ climate:
       t_sleep: 4
       t_super: 0
       preset: eco_sleep_4
+properties:
+  - property: f_energy
+    sensor:
+      device_class: power
+      read_only: true
+      unit: kW
+      multiplier: 0.1
