@@ -71,7 +71,7 @@ climate:
       t_super: 0
       preset: eco_sleep_4
 properties:
-  - property: f_energy
+  - property: f_electricity
     sensor:
       device_class: power
       read_only: true
