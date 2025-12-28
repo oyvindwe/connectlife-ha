@@ -1029,7 +1029,33 @@
         "name": "Delay start set time"
       },
       "delayendtime": {
-        "name": "Delay end time"
+        "name": "Delay end time",
+        "state": {
+          "none": "None",
+          "2_hours": "2 hours",
+          "3_hours": "3 hours",
+          "4_hours": "4 hours",
+          "5_hours": "5 hours",
+          "6_hours": "6 hours",
+          "7_hours": "7 hours",
+          "8_hours": "8 hours",
+          "9_hours": "9 hours",
+          "10_hours": "10 hours",
+          "11_hours": "11 hours",
+          "12_hours": "12 hours",
+          "13_hours": "13 hours",
+          "14_hours": "14 hours",
+          "15_hours": "15 hours",
+          "16_hours": "16 hours",
+          "17_hours": "17 hours",
+          "18_hours": "18 hours",
+          "19_hours": "19 hours",
+          "20_hours": "20 hours",
+          "21_hours": "21 hours",
+          "22_hours": "22 hours",
+          "23_hours": "23 hours",
+          "24_hours": "24 hours"
+        }
       },
       "delaystart_delayend_duration_inminutes": {
         "name": "Delay start duration"
@@ -1103,6 +1129,27 @@
       },
       "environment_real_temperature": {
         "name": "Environment real temperature"
+      },
+      "error_code": {
+        "name": "Error code",
+        "state": {
+          "none": "None",
+          "error_f01": "F01 - Water inflow fault",
+          "error_f03": "F03 - Water drain fault",
+          "error_f04": "F04 - Electronic module fault",
+          "error_f05": "F05 - Electronic module fault",
+          "error_f06": "F06 - Electronic module fault",
+          "error_f07": "F07 - Electronic module fault",
+          "error_f13": "F13 - Door lock fault",
+          "error_f14": "F14 - Door unlock fault",
+          "error_f15": "F15 - Abnormal drying",
+          "error_f16": "F16 - Abnormal drying",
+          "error_f17": "F17 - Abnormal drying",
+          "error_f18": "F18 - Abnormal drying",
+          "error_f23": "F23 - Electronic module fault",
+          "error_f24": "F24 - Water level overflow",
+          "error_unb": "UNB - Unbalance alert"
+        }
       },
       "error_read_out_1_code": {
         "name": "Error read out 1 code"
@@ -1988,6 +2035,35 @@
       "auto_dose_quantity_setting_status": {
         "name": "Auto dose quantity"
       },
+      "delayendtime": {
+        "name": "Delay end time",
+        "state": {
+          "none": "None",
+          "2_hours": "2 hours",
+          "3_hours": "3 hours",
+          "4_hours": "4 hours",
+          "5_hours": "5 hours",
+          "6_hours": "6 hours",
+          "7_hours": "7 hours",
+          "8_hours": "8 hours",
+          "9_hours": "9 hours",
+          "10_hours": "10 hours",
+          "11_hours": "11 hours",
+          "12_hours": "12 hours",
+          "13_hours": "13 hours",
+          "14_hours": "14 hours",
+          "15_hours": "15 hours",
+          "16_hours": "16 hours",
+          "17_hours": "17 hours",
+          "18_hours": "18 hours",
+          "19_hours": "19 hours",
+          "20_hours": "20 hours",
+          "21_hours": "21 hours",
+          "22_hours": "22 hours",
+          "23_hours": "23 hours",
+          "24_hours": "24 hours"
+        }
+      },
       "dry_level": {
         "name": "Drying level",
         "state": {
@@ -1999,13 +2075,23 @@
       "dry_time": {
         "name": "Dry time",
         "state": {
+          "none": "None",
           "wardrobe": "Wardrobe",
           "pre-ironing": "Pre-ironing",
-          "extra_dry": "Extra dry"
+          "extra_dry": "Extra dry",
+          "30_min": "30 minutes",
+          "60_min": "60 minutes",
+          "90_min": "90 minutes",
+          "120_min": "2 hours",
+          "180_min": "3 hours",
+          "240_min": "4 hours"
         }
       },
       "extrarinsenum": {
-        "name": "Extra rinse num"
+        "name": "Extra rinse num",
+        "state": {
+          "none": "None"
+        }
       },
       "motorlevel": {
         "name": "Motor level"
@@ -2013,36 +2099,42 @@
       "selected_program_id": {
         "name": "Selected program",
         "state": {
-          "auto": "Auto",
           "anti_allergy": "Anti allergy",
-          "refresh": "Refresh",
-          "sports": "Sports",
-          "towels": "Towels",
-          "time": "Time",
-          "cotton": "Cotton",
+          "auto": "Auto",
           "baby": "Baby",
-          "synthetic": "Synthetics",
-          "wool": "Wool",
-          "delicates": "Delicates",
-          "fast30": "Quick 30",
-          "shirts": "Shirts",
           "bed_linen": "Bed linen",
-          "down": "Down",
+          "clean_dry_60": "Clean dry 60",
+          "cotton": "Cotton",
           "cotton_dry": "Cotton dry",
-          "synthetic_dry": "Synthetic dry",
+          "delicates": "Delicates",
+          "down": "Down",
           "drum_cleaning": "Drum cleaning",
           "eco_40_60": "Eco 40 60",
           "fast15": "Fast15",
-          "spin-dry": "Spin-dry",
+          "fast30": "Quick 30",
+          "power49": "Power 49",
+          "refresh": "Refresh",
           "rinse_spin": "Rinse spin",
-          "clean_dry_60": "Clean dry 60",
-          "power49": "Power49"
+          "shirts": "Shirts",
+          "spin-dry": "Spin-dry",
+          "sports": "Sports",
+          "synthetic": "Synthetics",
+          "synthetic_dry": "Synthetic dry",
+          "time": "Time",
+          "towels": "Towels",
+          "wool": "Wool"
         }
       },
       "spin_speed_rpm": {
         "name": "Spin speed",
         "state": {
-          "none": "None"
+          "off": "Off",
+            "600": "600 RPM",
+            "800": "800 RPM",
+            "1000": "1000 RPM",
+            "1200": "1200 RPM",
+            "1400": "1400 RPM",
+            "1600": "1600 RPM"
         }
       },
       "t_fan_speed": {

@@ -265,10 +265,10 @@
                 "name": "Waarschuwing houtskoolfilter verlopen"
             },
             "child_lock": {
-                "name": "Kinderbeveiliging"
+                "name": "Kinderslot"
             },
             "child_lock_status": {
-                "name": "Kinderbeveiliging"
+                "name": "Kinderslot status"
             },
             "clean_filter": {
                 "name": "Filter reinigen"
@@ -289,7 +289,7 @@
                 "name": "Deur"
             },
             "door_status": {
-                "name": "Deur"
+                "name": "Deur status"
             },
             "eco_mode": {
                 "name": "ECO-modus"
@@ -763,6 +763,13 @@
                     "running": "Actief"
                 }
             },
+            "applicationpermissions": {
+                "name": "Bediening op afstand",
+                "state": {
+                    "not_granted": "Niet toegestaan",
+                    "granted": "Toegestaan"
+                }
+            },
             "auto_dose_duration": {
                 "name": "Auto doseer duur"
             },
@@ -776,7 +783,7 @@
                 "name": "Bundel temperatuur"
             },
             "child_lock_setting_status": {
-                "name": "Kinderbeveiliging instelling"
+                "name": "Kinderslot instelling"
             },
             "curent_program_duration": {
                 "name": "Huidige programmaduur"
@@ -791,10 +798,11 @@
                     "step_1": "Stap 1",
                     "step_2": "Stap 2",
                     "step_3": "Stap 3",
-                    "after_bake_finished": "Na het bakken voltooid"
+                    "after_bake_finished": "Na bakken voltooid"
                 }
             },
             "current_program_phase": {
+                "name": "Huidige programma fase",
                 "state": {
                     "not_available": "Niet beschikbaar",
                     "program_not_selected": "Programma niet geselecteerd",
@@ -804,6 +812,7 @@
                     "preheat_finished": "Voorverwarmen voltooid",
                     "prewash": "Voorwas",
                     "main_wash": "Hoofdwas",
+                    "wash": "Wassen",
                     "drying": "Drogen",
                     "program_finished": "Voltooid",
                     "ventilating": "Ventileren",
@@ -811,7 +820,9 @@
                     "running": "Actief",
                     "anti_crease": "Anti-kreuk",
                     "delay": "Uitgesteld",
-                    "finished": "Voltooid"
+                    "finished": "Voltooid",
+                    "rinse": "Spoelen",
+                    "spin-dry": "Centrifugeren"
                 }
             },
             "current_programphase": {
@@ -866,11 +877,42 @@
             "display_logotype_setting_status": {
                 "name": "Logotype display"
             },
+            "door_status": {
+                "name": "Deur status",
+                "state": {
+                    "not_available": "Niet beschikbaar",
+                    "open": "Ontgrendeld",
+                    "closed": "Vergrendeld",
+                    "closed_when_running": "Vergrendeld tijdens draaien",
+                    "other": "Anders"
+                }
+            },
             "energy_consumption_in_running_program": {
                 "name": "Energieverbruik in huidig programma"
             },
             "environment_humidity": {
                 "name": "Omgevingsvochtigheid"
+            },
+            "error_code": {
+                "name": "Foutmelding",
+                "state": {
+                "none": "Geen",
+                    "error_f01": "F01 - Watertoevoer fout",
+                    "error_f03": "F03 - Waterafvoer fout",
+                    "error_f04": "F04 - Electronische module fout",
+                    "error_f05": "F05 - Electronische module fout",
+                    "error_f06": "F06 - Electronische module fout",
+                    "error_f07": "F07 - Electronische module fout",
+                    "error_f13": "F13 - Deurvergrendeling fout",
+                    "error_f14": "F14 - Deurontgrendeling fout",
+                    "error_f15": "F15 - Abnormaal drogen",
+                    "error_f16": "F16 - Abnormaal drogen",
+                    "error_f17": "F17 - Abnormaal drogen",
+                    "error_f18": "F18 - Abnormaal drogen",
+                    "error_f23": "F23 - Electronische module fout",
+                    "error_f24": "F24 - Water overloop pleil",
+                    "error_unb": "UNB - Onbalansalarm"
+                }
             },
             "error_read_out_1_code": {
                 "name": "Foutcode uitlezen 1"
@@ -1035,23 +1077,40 @@
             },
             "selected_program_id": {
                 "name": "Geselecteerd programma",
-                "state": {
+                "state": {                    
+                    "anti_allergy": "Anti-allergie",
+                    "auto": "Auto",
+                    "baby": "Baby Care",
+                    "bed_linen": "Bedlinnen",
+                    "clean_dry_60": "Was en droog 60'",
+                    "cotton": "Katoen",
+                    "cotton_dry": "Katoen droog",
                     "cotton_storage": "Katoen opslag",
-                    "standard": "Standaard",
+                    "delicates": "Delicaat",
+                    "down": "Dons",
+                    "drum_cleaning": "Trommelreiniging",
+                    "eco_40_60": "Eco 40-60",
+                    "extra_hygiene": "Extra hygiëne",
+                    "fast15": "Snel 15'",
+                    "fast30": "Snel 30'",
+                    "fast89": "Snel 89'",
                     "iron": "Strijken",
                     "mix": "Mix",
-                    "synthetic": "Synthetisch",
-                    "wool": "Wol",
-                    "bed_linen": "Bedlinnen",
-                    "time": "Tijd",
-                    "baby": "Baby",
+                    "none": "Geen",
+                    "power49": "Power 49'",
+                    "refresh": "Opfrissen",
+                    "remote": "Op afstand",
+                    "rinse_spin": "Spoelen & centrifugeren",
                     "sensitive": "Gevoelig",
                     "shirts": "Shirts",
+                    "spin-dry": "Centrifugeren",
                     "sports": "Sport",
-                    "fast89": "Snel89",
-                    "extra_hygiene": "Extra hygiëne",
-                    "remote": "Afstandsbediening",
-                    "none": "Geen"
+                    "standard": "Standaard",
+                    "synthetic": "Synthetisch",
+                    "synthetic_dry": "Synthetisch droog",
+                    "time": "Tijd",
+                    "towels": "Handdoeken",
+                    "wool": "Wol"
                 }
             },
             "selected_program_id_status": {
@@ -1335,6 +1394,29 @@
                     "no_shape": "Geen vorm"
                 }
             },
+            "softer_display": {
+                "name": "Softer display"
+            },
+            "sound_setting": {
+                "name": "Geluidsinstelling"
+            },
+            "spin_speed_rpm": {
+                "name": "Centrifugesnelheid RPM"
+            },
+            "spin_time": {
+                "name": "Centrifugetijd"
+            },
+            "spintime_index": {
+                "name": "Centrifugetijd index"
+            },
+            "status": {
+                "name": "Apparaat status",
+                "state": {
+                    "off": "Uit",
+                    "standby": "Standby",
+                    "running": "Draait"
+                }
+            },
             "step1_duration": {
                 "name": "Stap 1 duur"
             },
@@ -1529,11 +1611,14 @@
             "variation_sensor_real_temperature": {
                 "name": "Werkelijke variatiesensortemperatuur"
             },
+            "water_consumption_decimal": {
+                "name": "Waterverbruik decimaal"
+            },
             "water_consumption_in_running_program": {
                 "name": "Waterverbruik in huidig programma"
             },
             "water_consumption_int": {
-                "name": "Waterverbruik"
+                "name": "Waterverbruik int"
             },
             "water_hardness_setting_status": {
                 "name": "Waterhardheid"
@@ -1565,7 +1650,7 @@
                 "name": "Automatisch trommel reinigen"
             },
             "child_lock": {
-                "name": "Kinderbeveiliging"
+                "name": "Kinderslot"
             },
             "drum_light": {
                 "name": "Trommelverlichting"
@@ -1574,13 +1659,19 @@
                 "name": "Vakantiemodus"
             },
             "mute": {
-                "name": "Stil"
+                "name": "Geluidssignalen dempen"
             },
             "natural_dry": {
                 "name": "Natuurlijk drogen"
             },
             "odor_control_setting": {
                 "name": "Geurcontrole"
+            },
+            "prewash": {
+                "name": "Voorwas"
+            },
+            "steam": {
+                "name": "Stoom"
             },
             "t_air": {
                 "name": "Lucht"
@@ -1617,6 +1708,35 @@
             "auto_dose_quantity_setting_status": {
                 "name": "Auto doseer hoeveelheid"
             },
+            "delayendtime": {
+                "name": "Einduitstel",
+                "state": {
+                    "none": "Geen",
+                    "2_hours": "2 uur",
+                    "3_hours": "3 uur",
+                    "4_hours": "4 uur",
+                    "5_hours": "5 uur",
+                    "6_hours": "6 uur",
+                    "7_hours": "7 uur",
+                    "8_hours": "8 uur",
+                    "9_hours": "9 uur",
+                    "10_hours": "10 uur",
+                    "11_hours": "11 uur",
+                    "12_hours": "12 uur",
+                    "13_hours": "13 uur",
+                    "14_hours": "14 uur",
+                    "15_hours": "15 uur",
+                    "16_hours": "16 uur",
+                    "17_hours": "17 uur",
+                    "18_hours": "18 uur",
+                    "19_hours": "19 uur",
+                    "20_hours": "20 uur",
+                    "21_hours": "21 uur",
+                    "22_hours": "22 uur",
+                    "23_hours": "23 uur",
+                    "24_hours": "24 uur"
+                }
+            },
             "dry_level": {
                 "name": "Droogniveau",
                 "state": {
@@ -1626,11 +1746,24 @@
                 }
             },
             "dry_time": {
-                "name": "Droogtijd",
+                "name": "Drogen",
                 "state": {
-                    "wardrobe": "Kast",
-                    "pre-ironing": "Voor-strijken",
-                    "extra_dry": "Extra droog"
+                    "off":"Uit",
+                    "wardrobe": "Kastdroog",
+                    "pre-ironing": "Strijkdroog",
+                    "extra_dry": "Extra droog",
+                    "30_min": "30 minuten",
+                    "60_min": "60 minuten",
+                    "90_min": "90 minuten",
+                    "120_min": "2 uur",
+                    "180_min": "3 uur",
+                    "240_min": "4 uur"
+                }
+            },
+            "extrarinsenum": {
+                "name": "Extra spoelen",
+                "state": {
+                    "none": "Geen"
                 }
             },
             "lightbrightness": {
@@ -1644,22 +1777,52 @@
             },
             "selected_program_id": {
                 "name": "Geselecteerd programma",
-                "state": {
-                    "auto": "Auto",
+                "state": {                    
                     "anti_allergy": "Anti-allergie",
-                    "refresh": "Vernieuwen",
-                    "sports": "Sport",
-                    "towels": "Handdoeken",
-                    "time": "Tijd",
-                    "cotton": "Katoen",
-                    "baby": "Baby",
-                    "synthetic": "Synthetisch",
-                    "wool": "Wol",
-                    "delicates": "Fijn",
-                    "fast30": "Snel 30",
-                    "shirts": "Shirts",
+                    "auto": "Auto",
+                    "baby": "Baby Care",
                     "bed_linen": "Bedlinnen",
-                    "down": "Dons"
+                    "clean_dry_60": "Was en droog 60'",
+                    "cotton": "Katoen",
+                    "cotton_dry": "Katoen droog",
+                    "cotton_storage": "Katoen opslag",
+                    "delicates": "Delicaat",
+                    "down": "Dons",
+                    "drum_cleaning": "Trommelreiniging",
+                    "eco_40_60": "Eco 40-60",
+                    "extra_hygiene": "Extra hygiëne",
+                    "fast15": "Snel 15'",
+                    "fast30": "Snel 30'",
+                    "fast89": "Snel 89'",
+                    "iron": "Strijken",
+                    "mix": "Mix",
+                    "none": "Geen",
+                    "power49": "Power 49'",
+                    "refresh": "Opfrissen",
+                    "remote": "Op afstand",
+                    "rinse_spin": "Spoelen & centrifugeren",
+                    "sensitive": "Gevoelig",
+                    "shirts": "Shirts",
+                    "spin-dry": "Centrifugeren",
+                    "sports": "Sport",
+                    "standard": "Standaard",
+                    "synthetic": "Synthetisch",
+                    "synthetic_dry": "Synthetisch droog",
+                    "time": "Tijd",
+                    "towels": "Handdoeken",
+                    "wool": "Wol"
+                }
+            },
+            "spin_speed_rpm": {
+                "name": "Centrifugeren",
+                "state": {
+                    "off": "uit",
+                    "600": "600 toeren",
+                    "800": "800 toeren",
+                    "1000": "1000 toeren",
+                    "1200": "1200 toeren",
+                    "1400": "1400 toeren",
+                    "1600": "1600 toeren"
                 }
             },
             "t_fan_speed": {
@@ -1699,6 +1862,12 @@
                     "off": "Uit",
                     "follow": "Volgen",
                     "not_follow": "Niet volgen"
+                }
+            },
+            "temperature": {
+                "name": "Temperatuur",
+                "state": {
+                "cold": "Koud"
                 }
             }
         },
