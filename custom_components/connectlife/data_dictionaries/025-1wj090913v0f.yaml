@@ -221,6 +221,7 @@ properties:
     #unit: kWh
   icon: 'mdi:lightning-bolt'
 - property: Electricit_consumption_int
+  hide: true
   sensor:
     read_only: true
     device_class: energy
@@ -639,6 +640,7 @@ properties:
 #    unit: L
 #    multiplier: .1
 - property: Water_consumption_int
+  hide: true
   sensor:
     read_only: true
   # state_class: total_increasing
