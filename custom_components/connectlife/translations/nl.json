@@ -400,6 +400,9 @@
       "existing_sr_mode": {
         "name": "Bestaande SR mode"
       },
+      "extra_rinse": {
+        "name": "Spoelen+"
+      },
       "f_e_arkgrille": {
         "name": "Kastrooster alarmbeveiliging"
       },
@@ -1228,7 +1231,8 @@
         "state": {
           "off": "Uit",
           "standby": "Standby",
-          "running": "Draait"
+          "running": "Draait",
+          "paused": "Gepauzeerd"
         }
       },
       "mainwashtime": {

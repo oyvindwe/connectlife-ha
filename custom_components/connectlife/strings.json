@@ -400,6 +400,9 @@
       "existing_sr_mode": {
         "name": "Existing SR mode"
       },
+      "extra_rinse": {
+        "name": "Extra Rinse"
+      },
       "f_e_arkgrille": {
         "name": "Cabinet grille protection alarm"
       },
@@ -1221,7 +1224,8 @@
         "state": {
           "off": "Off",
           "standby": "Standby",
-          "running": "Running"
+          "running": "Running",
+          "paused": "Paused"
         }
       },
       "mainwashtime": {
