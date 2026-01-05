@@ -134,6 +134,7 @@ properties:
   select:
     options:
       0: "none"
+      1: "1_hour"
       2: "2_hours"
       3: "3_hours"
       4: "4_hours"

@@ -2054,6 +2054,7 @@
         "name": "Einduitstel",
         "state": {
           "none": "Geen",
+          "1_hour": "1 uur",
           "2_hours": "2 uur",
           "3_hours": "3 uur",
           "4_hours": "4 uur",

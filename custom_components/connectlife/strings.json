@@ -2030,6 +2030,7 @@
         "name": "Delayendtime",
         "state": {
           "none": "None",
+          "1_hour": "1 hour",
           "2_hours": "2 hours",
           "3_hours": "3 hours",
           "4_hours": "4 hours",
