@@ -488,7 +488,7 @@ properties:
 - property: Sound_setting
   sensor:
     read_only: true
-    device_class: enum
+#    device_class: enum
   icon: 'mdi:volume-high'
 - property: SpinRange
   # Sample value: 0
