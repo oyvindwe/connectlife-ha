@@ -1094,9 +1094,9 @@
         "name": "Deur status",
         "state": {
           "not_available": "Niet beschikbaar",
-          "open": "Ontgrendeld",
-          "closed": "Vergrendeld",
-          "closed_when_running": "Vergrendeld tijdens draaien",
+          "open": "Open",
+          "closed": "Gesloten",
+          "closed_when_running": "Gesloten tijdens draaien",
           "other": "Anders"
         }
       },

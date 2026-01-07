@@ -1113,6 +1113,8 @@
           "open": "Open",
           "closed": "Closed",
           "closed_when_running": "Closed when running",
+          "locked": "Locked",
+          "unlocked": "Unlocked",
           "other": "Other"
         }
       },
