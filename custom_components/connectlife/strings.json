@@ -942,7 +942,11 @@
         }
       },
       "applicationpermissions": {
-        "name": "Application permissions"
+        "name": "Application permissions",
+        "state": {
+          "disabled": "Disabled",
+          "enabled": "Enabled"
+        }
       },
       "auto_dose_duration": {
         "name": "Auto dose duration"
@@ -1047,6 +1051,13 @@
       "detergent_display": {
         "name": "Detergent display"
       },
+      "detergent_state": {
+        "name": "Detergent state",
+        "state": {
+          "ok": "Ok",
+          "low_level": "Low level"
+        }
+      },
       "device_status": {
         "state": {
           "demo_mode": "Demo mode",
@@ -1103,6 +1114,9 @@
       },
       "environment_real_temperature": {
         "name": "Environment real temperature"
+      },
+      "error_code": {
+        "name": "Error code"
       },
       "error_read_out_1_code": {
         "name": "Error read out 1 code"
@@ -1626,6 +1640,13 @@
           "no_shape": "No shape"
         }
       },
+      "softener_state": {
+        "name": "Softener state",
+        "state": {
+          "ok": "Ok",
+          "low_level": "Low level"
+        }
+      },
       "softer_display": {
         "name": "Softer display"
       },
@@ -1867,6 +1888,9 @@
       "water_consumption": {
         "name": "Water consumption"
       },
+      "water_consumption_decimal": {
+        "name": "Water consumption decimal"
+      },
       "water_consumption_in_running_program": {
         "name": "Water consumption in running program"
       },
@@ -1907,6 +1931,9 @@
       },
       "drum_light": {
         "name": "Drum light"
+      },
+      "extra_rinse": {
+        "name": "Extra rinse"
       },
       "holiday_mode": {
         "name": "Holiday mode"
@@ -1988,6 +2015,16 @@
       "auto_dose_quantity_setting_status": {
         "name": "Auto dose quantity"
       },
+      "detergent": {
+        "name": "Detergent",
+        "state": {
+          "none": "None",
+          "auto": "Auto",
+          "less": "Less",
+          "normal": "Normal",
+          "more": "More"
+        }
+      },
       "dry_level": {
         "name": "Drying level",
         "state": {
@@ -2001,7 +2038,8 @@
         "state": {
           "wardrobe": "Wardrobe",
           "pre-ironing": "Pre-ironing",
-          "extra_dry": "Extra dry"
+          "extra_dry": "Extra dry",
+          "none": "None"
         }
       },
       "extrarinsenum": {
@@ -2036,13 +2074,27 @@
           "spin-dry": "Spin-dry",
           "rinse_spin": "Rinse spin",
           "clean_dry_60": "Clean dry 60",
-          "power49": "Power49"
+          "power49": "Power49",
+          "mix": "Mix",
+          "jeans": "Jeans",
+          "hand_wash": "Hand wash"
+        }
+      },
+      "softener": {
+        "name": "Softener",
+        "state": {
+          "none": "None",
+          "auto": "Auto",
+          "less": "Less",
+          "normal": "Normal",
+          "more": "More"
         }
       },
       "spin_speed_rpm": {
         "name": "Spin speed",
         "state": {
-          "none": "None"
+          "none": "None",
+          "no spin-dry": "No spin-dry"
         }
       },
       "t_fan_speed": {
@@ -2087,7 +2139,11 @@
       "temperature": {
         "name": "Temperature",
         "state": {
-          "cold": "Cold"
+          "cold": "Cold",
+          "20\u00b0c": "20\u00b0C",
+          "30\u00b0c": "30\u00b0C",
+          "40\u00b0c": "40\u00b0C",
+          "60\u00b0c": "60\u00b0C"
         }
       }
     },
@@ -2099,6 +2155,9 @@
       }
     },
     "number": {
+      "delayendtime": {
+        "name": "Delay end time"
+      },
       "freeze_max_temperature": {
         "name": "Freezeer max temperature"
       },
