@@ -400,6 +400,9 @@
       "existing_sr_mode": {
         "name": "Existing SR mode"
       },
+      "extra_rinse": {
+        "name": "Extra Rinse"
+      },
       "f_e_arkgrille": {
         "name": "Cabinet grille protection alarm"
       },
@@ -942,7 +945,11 @@
         }
       },
       "applicationpermissions": {
-        "name": "Application permissions"
+        "name": "Application permissions",
+        "state": {
+          "not_granted": "Not granted",
+          "granted": "Granted"
+        }
       },
       "auto_dose_duration": {
         "name": "Auto dose duration"
@@ -1104,6 +1111,27 @@
       "environment_real_temperature": {
         "name": "Environment real temperature"
       },
+      "error_code": {
+        "name": "Error code",
+        "state": {
+          "none": "None",
+          "error_f01": "F01 - Water inflow fault",
+          "error_f03": "F03 - Water drain fault",
+          "error_f04": "F04 - Electronic module fault",
+          "error_f05": "F05 - Electronic module fault",
+          "error_f06": "F06 - Electronic module fault",
+          "error_f07": "F07 - Electronic module fault",
+          "error_f13": "F13 - Door lock fault",
+          "error_f14": "F14 - Door unlock fault",
+          "error_f15": "F15 - Abnormal drying",
+          "error_f16": "F16 - Abnormal drying",
+          "error_f17": "F17 - Abnormal drying",
+          "error_f18": "F18 - Abnormal drying",
+          "error_f23": "F23 - Electronic module fault",
+          "error_f24": "F24 - Water level overflow",
+          "error_unb": "UNB - Unbalance alert"
+        }
+      },
       "error_read_out_1_code": {
         "name": "Error read out 1 code"
       },
@@ -1196,8 +1224,12 @@
         "state": {
           "off": "Off",
           "standby": "Standby",
-          "running": "Running"
+          "running": "Running",
+          "paused": "Paused"
         }
+      },
+      "mainwashtime": {
+        "name": "Mainwashtime"
       },
       "mainwashtimeuseindex": {
         "name": "Main wash time use index"
@@ -1228,6 +1260,9 @@
       },
       "oven_temperature": {
         "name": "Oven temperature"
+      },
+      "parse_lib_ota": {
+        "name": "Parse lib ota"
       },
       "parse_lib_ver": {
         "name": "Parse lib ver"
@@ -1867,6 +1902,9 @@
       "water_consumption": {
         "name": "Water consumption"
       },
+      "water_consumption_decimal": {
+        "name": "Water consumption decimal"
+      },
       "water_consumption_in_running_program": {
         "name": "Water consumption in running program"
       },
@@ -1988,6 +2026,36 @@
       "auto_dose_quantity_setting_status": {
         "name": "Auto dose quantity"
       },
+      "delayendtime": {
+        "name": "Delayendtime",
+        "state": {
+          "none": "None",
+          "1_hour": "1 hour",
+          "2_hours": "2 hours",
+          "3_hours": "3 hours",
+          "4_hours": "4 hours",
+          "5_hours": "5 hours",
+          "6_hours": "6 hours",
+          "7_hours": "7 hours",
+          "8_hours": "8 hours",
+          "9_hours": "9 hours",
+          "10_hours": "10 hours",
+          "11_hours": "11 hours",
+          "12_hours": "12 hours",
+          "13_hours": "13 hours",
+          "14_hours": "14 hours",
+          "15_hours": "15 hours",
+          "16_hours": "16 hours",
+          "17_hours": "17 hours",
+          "18_hours": "18 hours",
+          "19_hours": "19 hours",
+          "20_hours": "20 hours",
+          "21_hours": "21 hours",
+          "22_hours": "22 hours",
+          "23_hours": "23 hours",
+          "24_hours": "24 hours"
+        }
+      },
       "dry_level": {
         "name": "Drying level",
         "state": {
@@ -2001,11 +2069,20 @@
         "state": {
           "wardrobe": "Wardrobe",
           "pre-ironing": "Pre-ironing",
-          "extra_dry": "Extra dry"
+          "extra_dry": "Extra dry",
+          "30_min": "30 min",
+          "60_min": "60 min",
+          "90_min": "90 min",
+          "120_min": "120 min",
+          "180_min": "180 min",
+          "240_min": "240 min"
         }
       },
       "extrarinsenum": {
-        "name": "Extra rinse num"
+        "name": "Extra rinse num",
+        "state": {
+          "none": "None"
+        }
       },
       "motorlevel": {
         "name": "Motor level"
