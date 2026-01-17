@@ -276,6 +276,7 @@ properties:
   sensor:
     read_only: true
     device_class: energy
+    state_class: total
     unit: kWh
     multiplier: 0.01
   icon: 'mdi:flash'
@@ -284,6 +285,7 @@ properties:
   sensor:
     read_only: true
     device_class: energy
+    state_class: total
     unit: kWh
   icon: 'mdi:flash'
 - property: Energy_estimate
@@ -920,7 +922,7 @@ properties:
   entity_category: diagnostic
   sensor:
     read_only: true
-  icon: 'mdi: alert-circle'
+  icon: 'mdi:alert-circle'
 - property: extra_soft
   hide: true
   # Sample value: 0
