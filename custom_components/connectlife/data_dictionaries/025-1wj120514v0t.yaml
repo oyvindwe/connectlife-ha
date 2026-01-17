@@ -1024,10 +1024,11 @@ properties:
   select:
     options:
       0: cold
-      20: 20°c
-      30: 30°c
-      40: 40°c
-      60: 60°c
+      2: 20°c
+      3: 30°c
+      4: 40°c
+      6: 60°c
+      9: 90°c
   icon: 'mdi:thermometer'
 - property: time_autoflag
   hide: true
