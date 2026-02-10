@@ -27,21 +27,21 @@ class UnavailableDeviceRepairFlow(RepairsFlow):
         return self.async_show_menu(
             step_id="init",
             menu_options=["remove", "ignore"],
-            description_placeholders=self.data,
+            description_placeholders=self.data,  # type: ignore[arg-type]
         )
 
     async def async_step_remove(
             self, user_input: dict[str, str] | None = None
     ) -> data_entry_flow.FlowResult:
         """Handle the confirm step of a fix flow."""
-        if user_input is not None:
+        if user_input is not None and self.data is not None:
             _LOGGER.info("Removing device %s", self.data["device_name"])
-            dr.async_get(self.hass).async_remove_device(self.data["device_id"])
+            dr.async_get(self.hass).async_remove_device(str(self.data["device_id"]))
             return self.async_create_entry(title="", data={})
 
         return self.async_show_form(
             step_id="remove",
-            description_placeholders=self.data
+            description_placeholders=self.data  # type: ignore[arg-type]
         )
 
     async def async_step_ignore(
@@ -51,7 +51,7 @@ class UnavailableDeviceRepairFlow(RepairsFlow):
         ir.async_get(self.hass).async_ignore(DOMAIN, self.issue_id, True)
         return self.async_abort(
             reason="issue_ignored",
-            description_placeholders=self.data
+            description_placeholders=self.data  # type: ignore[arg-type]
         )
 
 
@@ -63,3 +63,4 @@ async def async_create_fix_flow(
     """Create flow."""
     if issue_id.startswith("unavailable_device."):
         return UnavailableDeviceRepairFlow(issue_id, data)
+    raise ValueError(f"Unknown issue: {issue_id}")

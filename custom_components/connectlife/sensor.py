@@ -77,8 +77,9 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
         self.unknown_value = dd_entry.sensor.unknown_value
 
         device_class = dd_entry.sensor.device_class
+        self.options_map: dict[int, str] | None = None
         options = None
-        if device_class == SensorDeviceClass.ENUM:
+        if device_class == SensorDeviceClass.ENUM and dd_entry.sensor.options is not None:
             self.options_map = dd_entry.sensor.options
             options = list(self.options_map.values())
         elif device_class is None and isinstance(
@@ -116,7 +117,7 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
     def update_state(self):
         if self.status in self.coordinator.data[self.device_id].status_list:
             value = self.coordinator.data[self.device_id].status_list[self.status]
-            if self.device_class == SensorDeviceClass.ENUM:
+            if self.device_class == SensorDeviceClass.ENUM and self.options_map is not None:
                 if value in self.options_map:
                     value = self.options_map[value]
                 elif value != self.unknown_value:
@@ -130,8 +131,8 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
             if value == self.unknown_value:
                 self._attr_native_value = None
             else:
-                if self.multiplier is not None:
-                    value *= self.multiplier
+                if self.multiplier is not None and value is not None:
+                    value *= self.multiplier  # type: ignore[operator]
                 self._attr_native_value = value
         self._attr_available = self.coordinator.data[self.device_id].offline_state == 1
 

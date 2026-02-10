@@ -72,11 +72,11 @@ class BinarySensor:
 
 
 class Climate:
-    target: str
-    options: dict | None
+    target: str | None
+    options: dict
     unknown_value: int | None
-    min_value: int | dict[str, int]
-    max_value: int | dict[str, int]
+    min_value: int | dict[str, int] | None
+    max_value: int | dict[str, int] | None
 
     def __init__(self, name: str, climate: dict | None):
         if climate is None:
@@ -84,8 +84,8 @@ class Climate:
         self.target = climate[TARGET] if TARGET in climate else None
         if self.target is None:
             _LOGGER.warning("Missing climate.target for for %s", name)
-        self.options = climate[OPTIONS] if OPTIONS in climate else None
-        if self.options is None and self.target in [
+        self.options = climate[OPTIONS] if OPTIONS in climate else {}
+        if not self.options and self.target in [
             FAN_MODE,
             HVAC_ACTION,
             HVAC_MODE,
@@ -103,11 +103,11 @@ class Climate:
 
 
 class Humidifier:
-    target: str
-    options: dict | None
+    target: str | None
+    options: dict
     device_class: HumidifierDeviceClass | None
-    min_value: int
-    max_value: int
+    min_value: int | None
+    max_value: int | None
 
     def __init__(self, name: str, humidifier: dict | None):
         if humidifier is None:
@@ -115,8 +115,8 @@ class Humidifier:
         self.target = humidifier[TARGET] if TARGET in humidifier else None
         if self.target is None:
             _LOGGER.warning("Missing humidifier.target for for %s", name)
-        self.options = humidifier[OPTIONS] if OPTIONS in humidifier else None
-        if self.options is None and self.target in [ACTION, MODE]:
+        self.options = humidifier[OPTIONS] if OPTIONS in humidifier else {}
+        if not self.options and self.target in [ACTION, MODE]:
             _LOGGER.warning("Missing humidifier.options for %s", name)
         self.device_class = (
             HumidifierDeviceClass(humidifier[DEVICE_CLASS])
@@ -197,7 +197,7 @@ class Sensor:
     state_class: SensorStateClass | None
     device_class: SensorDeviceClass | None
     unit: str | None
-    options: list[dict[int, str]] | None
+    options: dict[int, str] | None
 
     def __init__(self, name: str, sensor: dict):
         if sensor is None:
@@ -279,11 +279,11 @@ class Switch:
 
 
 class WaterHeater:
-    target: str
-    options: dict | None
+    target: str | None
+    options: dict
     unknown_value: int | None
-    min_value: int | dict[str, int]
-    max_value: int | dict[str, int]
+    min_value: int | dict[str, int] | None
+    max_value: int | dict[str, int] | None
 
     def __init__(self, name: str, water_heater: dict | None):
         if water_heater is None:
@@ -291,8 +291,8 @@ class WaterHeater:
         self.target = water_heater[TARGET] if TARGET in water_heater else None
         if self.target is None:
             _LOGGER.warning("Missing water_heater.target for for %s", name)
-        self.options = water_heater[OPTIONS] if OPTIONS in water_heater else None
-        if self.options is None and self.target in [
+        self.options = water_heater[OPTIONS] if OPTIONS in water_heater else {}
+        if not self.options and self.target in [
             CURRENT_OPERATION,
             IS_AWAY_MODE_ON,
             STATE,
@@ -369,7 +369,7 @@ class Dictionary:
     """Data dictionary for a ConnectLife appliance"""
 
     # Todo: Refactor Climate dataclass
-    climate: dict[list[dict[str, int]]] | None
+    climate: dict | None
     properties: dict[str, Property]
 
 
@@ -382,10 +382,12 @@ class Dictionaries:
         key = f"{appliance.device_type_code}-{appliance.device_feature_code}"
         if key in cls.dictionaries:
             return cls.dictionaries[key]
-        climate: dict[[list[dict[str, int]]]] | None = None
+        climate: dict | None = None
         properties = defaultdict(lambda: Property({PROPERTY: "default", HIDE: True}))
         try:
             data = pkgutil.get_data(__name__, f"data_dictionaries/{appliance.device_type_code}.yaml")
+            if data is None:
+                raise FileNotFoundError
             parsed = yaml.safe_load(data)
             # TODO: Support default climate section
             if parsed is not None and PROPERTIES in parsed and parsed[PROPERTIES] is not None:
@@ -395,6 +397,8 @@ class Dictionaries:
             pass
         try:
             data = pkgutil.get_data(__name__, f"data_dictionaries/{key}.yaml")
+            if data is None:
+                raise FileNotFoundError
             parsed = yaml.safe_load(data)
             if parsed is not None:
                 if Platform.CLIMATE in parsed:

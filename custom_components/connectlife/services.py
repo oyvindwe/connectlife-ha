@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import logging
+from typing import Any
+
 import voluptuous as vol
 
 from homeassistant.config_entries import ConfigEntry, ConfigEntryState
@@ -59,7 +61,7 @@ async def async_setup_services(hass: HomeAssistant) -> None:
             coordinators[device_id] = hass.data[DOMAIN][config_entry.entry_id]
         return coordinators
 
-    async def _async_update(devices: list[str], data: dict[str, any]) -> None:
+    async def _async_update(devices: list[str], data: dict[str, Any]) -> None:
         """Update properties on device."""
         coordinators = await collect_coordinators(devices)
         for device_id, coordinator in coordinators.items():

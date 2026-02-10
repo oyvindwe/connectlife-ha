@@ -34,7 +34,7 @@ async def validate_input(data: dict[str, Any]) -> dict[str, Any]:
     """Validate the user input allows us to connect."""
 
     test_server_url = data[CONF_TEST_SERVER_URL] if CONF_TEST_SERVER_URL in data else None
-    api = ConnectLifeApi(data[CONF_USERNAME], data[CONF_PASSWORD], test_server_url)
+    api = ConnectLifeApi(data[CONF_USERNAME], data[CONF_PASSWORD], test_server_url)  # type: ignore[arg-type]
 
     if not await api.authenticate():
         raise InvalidAuth
@@ -150,7 +150,7 @@ class OptionsFlowHandler(OptionsFlow):
             test_server_url = user_input.get(CONF_TEST_SERVER_URL)
             if test_server_url:
                 try:
-                    vol.Schema(vol.Url())(test_server_url)
+                    vol.Schema(vol.Url())(test_server_url)  # type: ignore[call-arg]
                 except vol.Invalid:
                     errors["base"] = "test_server_invalid"
             if development_mode and not test_server_url:

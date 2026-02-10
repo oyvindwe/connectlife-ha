@@ -68,8 +68,8 @@ class ConnectLifeNumberEntity(ConnectLifeEntity, NumberEntity):
             entity_registry_visible_default=not dd_entry.hide,
             icon=dd_entry.icon,
             name=status.replace("_", " "),
-            native_max_value=dd_entry.number.max_value,
-            native_min_value=dd_entry.number.min_value,
+            native_max_value=dd_entry.number.max_value,  # type: ignore[arg-type]
+            native_min_value=dd_entry.number.min_value,  # type: ignore[arg-type]
             native_unit_of_measurement=to_unit(
                 dd_entry.number.unit, appliance=appliance, dictionary=dictionary
             ),

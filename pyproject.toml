@@ -12,4 +12,11 @@ dependencies = [
 dev = [
     "jschon==0.11.1",
     "pyyaml>=6.0.3",
+    "pyright>=1.1.391",
+    "homeassistant-stubs>=2024.12.0",
 ]
+
+[tool.pyright]
+pythonVersion = "3.13"
+include = ["custom_components/connectlife"]
+typeCheckingMode = "basic"

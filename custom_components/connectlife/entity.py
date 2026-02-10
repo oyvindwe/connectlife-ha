@@ -22,6 +22,7 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
     """Generic ConnectLife entity (base class)."""
 
     _attr_has_entity_name = True
+    _attr_unique_id: str
     _disable_beep = False
 
     def __init__(
@@ -30,7 +31,7 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
             appliance: ConnectLifeAppliance,
             entity_name: str,
             platform: Platform,
-            config_entry: ConfigEntry = None):
+            config_entry: ConfigEntry | None = None):
         """Initialize the entity."""
         super().__init__(coordinator)
         self.device_id = appliance.device_id
@@ -62,7 +63,7 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
         self.update_state()
         self.async_write_ha_state()
 
-    async def async_update_device(self, command: dict[str, int | str], properties: dict[str, int | str] = None):
+    async def async_update_device(self, command: dict[str, int], properties: dict[str, int] | None = None):
         if properties is None:
             properties = command.copy()
         if self._disable_beep:

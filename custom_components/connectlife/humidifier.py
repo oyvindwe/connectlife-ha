@@ -88,7 +88,7 @@ class ConnectLifeHumidifier(ConnectLifeEntity, HumidifierEntity):
         )
 
         for dd_entry in data_dictionary.properties.values():
-            if hasattr(dd_entry, Platform.HUMIDIFIER) and dd_entry.name in appliance.status_list:
+            if hasattr(dd_entry, Platform.HUMIDIFIER) and dd_entry.name in appliance.status_list and dd_entry.humidifier.target is not None:
                 self.target_map[dd_entry.humidifier.target] = dd_entry.name
 
         for target, status in self.target_map.items():
@@ -106,8 +106,8 @@ class ConnectLifeHumidifier(ConnectLifeEntity, HumidifierEntity):
                 self._attr_supported_features |= HumidifierEntityFeature.MODES
                 self._attr_mode = None
             elif target == TARGET_HUMIDITY:
-                self._attr_min_humidity = data_dictionary.properties[status].humidifier.min_value
-                self._attr_max_humidity = data_dictionary.properties[status].humidifier.max_value
+                self._attr_min_humidity = data_dictionary.properties[status].humidifier.min_value  # type: ignore[assignment]
+                self._attr_max_humidity = data_dictionary.properties[status].humidifier.max_value  # type: ignore[assignment]
 
         self.update_state()
 
