@@ -9,10 +9,12 @@ set_value:
       selector:
         number:
 set_action:
-  target:
-    device:
-      integration: connectlife
   fields:
+    device_id:
+      required: true
+      selector:
+        device:
+          integration: connectlife
     action:
       required: true
       selector:
@@ -24,10 +26,12 @@ set_action:
             - "3"
             - "4"
 update:
-  target:
-    device:
-      integration: connectlife
   fields:
+    device_id:
+      required: true
+      selector:
+        device:
+          integration: connectlife
     data:
       required: true
       example: |
