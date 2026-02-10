@@ -1,5 +1,6 @@
 import async_timeout
 import logging
+from collections.abc import Mapping
 from datetime import timedelta
 
 from connectlife.api import LifeConnectAuthError, LifeConnectError, ConnectLifeApi
@@ -71,7 +72,7 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
                 raise UpdateFailed(f"Error communicating with API: {err}")
         return {a.device_id: a for a in self.api.appliances}
 
-    async def async_update_device(self, device_id: str, command: dict[str, int | str], properties: dict[str, int | str]):
+    async def async_update_device(self, device_id: str, command: Mapping[str, int | str], properties: Mapping[str, int | str]):
         """Updates the device, and sets the properties in local copy and notify to avoid refetching."""
         await self.api.update_appliance(self.data[device_id].puid, {k: str(v) for k, v in command.items()})
         self.data[device_id].status_list.update(properties)
@@ -95,7 +96,11 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
                 entity_reg, self.config_entry.entry_id
         ):
             if entity.unique_id not in self.entities or entity.domain != self.entities[entity.unique_id]:
+                if entity.device_id is None:
+                    continue
                 device = device_reg.async_get(entity.device_id)
+                if device is None:
+                    continue
                 for (domain, device_id) in device.identifiers:
                     if domain == DOMAIN and device_id in self.data:
                         _LOGGER.info(
@@ -122,7 +127,7 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
                             severity=ir.IssueSeverity.WARNING,
                             translation_key="unavailable_device",
                             translation_placeholders={
-                                "device_name": device.name,
+                                "device_name": device.name or "",
                             },
                         )
                     else:

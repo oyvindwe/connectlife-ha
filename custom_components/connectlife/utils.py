@@ -33,12 +33,14 @@ def to_unit(unit: str | None, appliance: ConnectLifeAppliance, dictionary: Dicti
                     unit = unit_climate.options[unit_value]
             elif is_entity(Platform.SENSOR, unit_property, unit_value):
                 unit_sensor = unit_property.sensor
-                if unit_sensor.device_class == SensorDeviceClass.ENUM and unit_value in unit_sensor.options:
-                    unit = unit_sensor.options[unit_value]
+                if unit_sensor.device_class == SensorDeviceClass.ENUM and unit_sensor.options is not None and unit_value in unit_sensor.options:
+                    unit = unit_sensor.options[unit_value]  # type: ignore[index]
             elif is_entity(Platform.SELECT, unit_property, unit_value):
                 unit_select = unit_property.select
                 if unit_value in unit_select.options:
                     unit = unit_select.options[unit_value]
+    if unit is None:
+        return None
     return normalize_temperature_unit(unit)
 
 
@@ -51,5 +53,7 @@ def normalize_temperature_unit(unit: str) -> UnitOfTemperature | str:
     return unit
 
 
-def to_temperature_map(items: dict[str, int] | None) -> dict[UnitOfTemperature, int] | None:
-    return {normalize_temperature_unit(k): v for k, v in items.items()} if items else None
+def to_temperature_map(items: int | dict[str, int] | None) -> dict[str, int]:
+    if isinstance(items, dict):
+        return {normalize_temperature_unit(k): v for k, v in items.items()}
+    return {}

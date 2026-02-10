@@ -68,7 +68,7 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
     _attr_name = None
     _attr_precision = PRECISION_WHOLE
     _attr_temperature_unit = UnitOfTemperature.CELSIUS
-    unknown_values: dict[str, int]
+    unknown_values: dict[str, int | None]
     target_map: dict[str, str]
     is_on: bool
     operation_map: dict[int, str]
@@ -79,8 +79,8 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
     away_mode_off: int
     state_on: str
     temperature_unit_map: dict[int, UnitOfTemperature]
-    min_temperature_map: dict[UnitOfTemperature: int]
-    max_temperature_map: dict[UnitOfTemperature: int]
+    min_temperature_map: dict[str, int]
+    max_temperature_map: dict[str, int]
 
     def __init__(
             self,
@@ -92,7 +92,7 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
         """Initialize the entity."""
         super().__init__(coordinator, appliance, "waterheater", Platform.WATER_HEATER, config_entry)
 
-        self.entity_description = WaterHeaterEntityDescription(
+        self.entity_description = WaterHeaterEntityDescription(  # type: ignore[assignment]
             key=self._attr_unique_id,
             name=appliance.device_nickname,
             translation_key=DOMAIN
@@ -109,7 +109,7 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
         self.unknown_values = {}
 
         for dd_entry in data_dictionary.properties.values():
-            if hasattr(dd_entry, Platform.WATER_HEATER) and dd_entry in appliance.status_list:
+            if hasattr(dd_entry, Platform.WATER_HEATER) and dd_entry in appliance.status_list and dd_entry.water_heater.target is not None:
                 self.target_map[dd_entry.water_heater.target] = dd_entry.name
 
         for target, status in self.target_map.items():
@@ -131,13 +131,14 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
                     self._attr_max_temp = max_temp
             elif target == TEMPERATURE_UNIT:
                 for k, v in data_dictionary.properties[status].water_heater.options.items():
-                    if unit := normalize_temperature_unit(v):
+                    unit = normalize_temperature_unit(v)
+                    if isinstance(unit, UnitOfTemperature):
                         self.temperature_unit_map[k] = unit
             elif target == STATE:
                 # TODO: map to multiple states
                 self.state_map = data_dictionary.properties[status].water_heater.options
                 self.state_reverse_map = {v: k for k, v in self.state_map.items()}
-                self.state_on = filter(lambda v: v != STATE_OFF, self.state_map.values())
+                self.state_on = next(v for v in self.state_map.values() if v != STATE_OFF)
                 self._attr_states = list(self.state_map.values())
                 self._attr_state = None
             elif target == CURRENT_OPERATION:
@@ -167,7 +168,7 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
                     self.is_on = value == 1
                 if target == STATE:
                     if value in self.state_map:
-                        self._attr_state = self.state_map[value]
+                        self._attr_state = self.state_map[value]  # type: ignore[assignment]
                     else:
                         self._attr_state = None
                         _LOGGER.warning("Got unexpected value %d for %s (%s)", value, status, self.nickname)
@@ -206,7 +207,7 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
 
         self._attr_available = self.coordinator.data[self.device_id].offline_state == 1
 
-    def get_temperature_limit(self, temperature_map: dict[UnitOfTemperature, int] | None):
+    def get_temperature_limit(self, temperature_map: dict[str, int]) -> int | None:
         if temperature_map and self._attr_temperature_unit in temperature_map:
             return temperature_map[self._attr_temperature_unit]
         else:

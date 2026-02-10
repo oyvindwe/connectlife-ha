@@ -35,6 +35,12 @@ uv run python -m scripts.gen_strings
 uv run python -m scripts.validate_mappings
 ```
 
+## Type checking
+
+```bash
+uv run pyright
+```
+
 ## Use a test server
 
 Clone https://github.com/oyvindwe/connectlife/
