@@ -271,6 +271,9 @@
       "alarm_zone_turned_off": {
         "name": "Zone turned off"
       },
+      "ali_wifi_fault_flag": {
+        "name": "Ali wifi fault flag"
+      },
       "auto_dose_refill": {
         "name": "Auto dose refill"
       },
@@ -306,6 +309,12 @@
       },
       "clean_filter": {
         "name": "Clean filter"
+      },
+      "condensation_fan_failure_status": {
+        "name": "Condensation fan failure status"
+      },
+      "control_failure_status": {
+        "name": "Control failure status"
       },
       "delay_start": {
         "name": "Delay start"
@@ -485,7 +494,7 @@
         "name": "Freezer fan failure"
       },
       "free_room_open": {
-        "name": "Free room open"
+        "name": "Freezer room open"
       },
       "free_room_over_temp_alarm_failure": {
         "name": "Freezer room over temp alarm failure"
@@ -523,8 +532,14 @@
       "humidity_sensor_failure": {
         "name": "Humidity sensor failure"
       },
+      "ice_make_room_alarm": {
+        "name": "Ice make room alarm"
+      },
       "ice_making_machine_failure": {
         "name": "Ice making machine failure"
+      },
+      "ice_making_normal_status": {
+        "name": "Ice making normal status"
       },
       "ice_making_state": {
         "name": "Ice making state"
@@ -543,6 +558,9 @@
       },
       "light": {
         "name": "Light"
+      },
+      "lock_fresh_mode": {
+        "name": "Lock fresh mode"
       },
       "low_wine_area_c_evaporator_fault": {
         "name": "Low wine area c evaporator fault"
@@ -677,7 +695,10 @@
         "name": "Session pairing active"
       },
       "sf_mode": {
-        "name": "SF mode"
+        "name": "Super freeze mode"
+      },
+      "sf_sr_mutex_mode": {
+        "name": "SF SR mutex mode"
       },
       "sl1_alarm_auto_program_notification": {
         "name": "Zone 1 auto program notification"
@@ -824,7 +845,7 @@
         "name": "Zone 6 status"
       },
       "sr_mode": {
-        "name": "SR mode"
+        "name": "Super refrigerating mode"
       },
       "step1_status": {
         "name": "Step 1 status"
@@ -1146,8 +1167,14 @@
           "high": "High"
         }
       },
+      "filter_state": {
+        "name": "Water filter life remaining"
+      },
       "flexiblespintime_flag": {
         "name": "Flexible spin time flag"
+      },
+      "freeze_door_open_time": {
+        "name": "Freezer door open duration"
       },
       "freeze_max_temperature": {
         "name": "Freeze max temperature"
@@ -1160,6 +1187,9 @@
       },
       "freeze_sensor_real_temperature": {
         "name": "Freezer sensor real temperature"
+      },
+      "freeze_temperature": {
+        "name": "Freezer temperature"
       },
       "fruit_vegetables_temperature": {
         "name": "Fruit vegetables temperature"
@@ -1247,6 +1277,9 @@
       "real_humidity_c": {
         "name": "Real humidity c"
       },
+      "refrigerator_door_open_time": {
+        "name": "Refrigerator door open duration"
+      },
       "refrigerator_max_temperature": {
         "name": "Refrigerator max temperature"
       },
@@ -1258,6 +1291,9 @@
       },
       "refrigerator_sensor_real_temperature": {
         "name": "Refrigerator sensor real temperature"
+      },
+      "refrigerator_temperature": {
+        "name": "Refrigerator temperature"
       },
       "rinse_aid_setting_status": {
         "name": "Rinse aid"
@@ -1936,13 +1972,13 @@
         "name": "Save mode"
       },
       "sf_mode": {
-        "name": "SF mode"
+        "name": "Super freeze mode"
       },
       "sf_sr_mutex_mode": {
         "name": "SF SR mutex mode"
       },
       "sr_mode": {
-        "name": "SR mode"
+        "name": "Super refrigerating mode"
       },
       "steam": {
         "name": "Steam"
@@ -2088,6 +2124,13 @@
         "name": "Temperature",
         "state": {
           "cold": "Cold"
+        }
+      },
+      "temperature_unit": {
+        "name": "Temperature unit",
+        "state": {
+          "celsius": "°C",
+          "fahrenheit": "°F"
         }
       }
     },
