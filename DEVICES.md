@@ -28,6 +28,7 @@
 | WDSE1214-EVAJMW   | Washing machine          | 025              | 1wj120261v0w         |
 | WFSE1214-MVW002   | Washing machine          | 025              | 1wj120389v0b         |
 | WF3S1114-LVW004   | Washing machine          | 025              | 1wj105246v0w         |
+| RF793N4SAFE       | Refrigerator             | 026              | 1b0610z0043j         |
 |                   | Refrigerator             | 026              | 1b0610z0049j         |
 |                   | Refrigerator             | 026              | 1b0628z0075j         |
 | RS818N4TIE1       | Refrigerator             | 026              | 1b0628z0146j         |

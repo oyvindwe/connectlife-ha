@@ -1,0 +1,1001 @@
+properties:
+- property: AIR_FRESHNESS # Unsupported
+  disable: true
+- property: Kettle_overflow_alarm # Unsupported
+  disable: true
+- property: ODOR_SENSOR_FAULT_FLAG # Unsupported
+  disable: true
+- property: ODOR_SENSOR_NO_DISTURB_MODE_STATUS # Unsupported
+  disable: true
+- property: ODOR_SENSOR_SENSITIVITY # Unsupported
+  disable: true
+- property: ODOR_SENSOR_SWITHC_STATUS # Unsupported
+  disable: true
+- property: STERI_PURI_CYCLE_FLAG # Unsupported
+  disable: true
+- property: ai_energy_mode_switch # Unsupported
+  disable: true
+- property: alarm_key
+  disable: true
+- property: alarm_sound_volume
+  disable: true
+- property: ali_wifi_fault_flag # May be supported
+  hide: true
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: automatic_ice_making # May be supported
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: camera_state # Unsupported
+  disable: true
+- property: charcoal_filter_expiration_alarm # Unsupported 
+  disable: true
+- property: charcoal_filter_surplus_time # Unsupported
+  disable: true
+- property: charcoal_filter_time_reset # Unsupported 
+  disable: true
+- property: child_lock_open_alarm # Unsupported 
+  disable: true
+- property: child_lock_open_door_sound_alarm # Unsupported 
+  disable: true
+- property: child_lock_switch_exist  # Is child lock switch supported. No
+  disable: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: child_lock_switch_status # Child lock switch status, relevant if child_lock_switch_exist = 1
+  disable: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: clean_mode_switch_status # Unsupported 
+  disable: true
+- property: commodity_inspection # Unsupported 
+  disable: true
+- property: compressor_condition # May be supported
+  hide: true
+- property: compressor_frequency # Unsupported 
+  disable: true
+- property: condensation_fan_failure_status # May be supported
+  hide: true
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: control_failure_status # May be supported
+  hide: true
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: cool_c # Unsupported 
+  disable: true
+- property: cool_f # Unsupported
+  disable: true
+- property: cool_fan_speed # Unsupported
+  disable: true
+- property: cool_r # Unsupported
+  disable: true
+- property: custard_room # Custard room presence : no 
+  disable: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: daily_energy_kwh # Unsupported
+  disable: true
+- property: date_format_status # Unsupported
+  disable: true
+- property: date_time_format_day_state # Unsupported
+  disable: true
+- property: date_time_format_month_state # Unsupported
+  disable: true
+- property: date_time_format_year_state # Unsupported
+  disable: true
+- property: dbd_clean_mode # Unsupported
+  disable: true
+- property: debacilli_mode # Unsupported
+  disable: true
+- property: display_panel_ronshen # Ronshen brand display panel  
+  disable: true
+- property: displayboard_brand # Display board brand
+  disable: true
+- property: displayboard_key_setting
+  disable: true
+- property: displayboard_type # Display board type
+  disable: true
+- property: displayboard_version # Display board version
+  disable: true
+- property: door_close_light_status # Unsupported 
+  disable: true
+- property: door_close_ui_display_status # Unsupported 
+  disable: true
+- property: door_num_four_color # Unsupported 
+  disable: true
+- property: door_num_one_color # Unsupported 
+  disable: true
+- property: door_num_three_color # Unsupported 
+  disable: true
+- property: door_num_two_color # Unsupported 
+  disable: true
+- property: door_open_light_status
+  disable: true
+  # Sample value: 0
+- property: door_open_ui_display_status # Unsupported 
+  disable: true
+- property: electric_current # Unsupported
+  disable: true
+- property: electric_energy_one_tenths_value # Unsupported
+  disable: true
+- property: electric_energy_percentile_thousands_value # Unsupported
+  disable: true
+- property: envi_temp_sens_head_failure # May be supported
+  hide: true
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: environment_humidity # Environment humidity
+  hide: true
+  sensor:
+    read_only: true
+    device_class: humidity
+    unit: "%"
+- property: environment_real_temperature # Environment temperature. Fixed unit celsius, not affected by temperature_unit
+  hide: true
+  sensor:
+    read_only: true
+    device_class: temperature
+    unit: celsius
+- property: existing_fuzzy_mode # Is fuzzy mode supported. No
+  disable: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: existing_holiday_mode # Is holiday mode supported. No
+  disable: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: existing_lock_fresh_mode # Is lock fresh mode supported. No
+  disable: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: existing_save_mode # Is eco mode supported. Yes
+  disable: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: existing_sf_mode # Is super freeze mode supported. Yes
+  disable: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: existing_sr_mode # Is super refrigerating mode supported. Yes
+  disable: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: fast_store_mode_exist # Is fast store mode supported. No
+  disable: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: fast_store_mode_status # Fast store mode status, relevant if fast_store_mode_exist = 1
+  disable: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: filter_alarm_time
+  hide: true
+  # Sample value: 0
+- property: filter_state # Percentage of water filter life remaining
+  hide: true
+  sensor:
+    read_only: true
+    unit: "%"
+- property: free_defrosting_failure # May be supported
+  hide: true
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: free_evap_temp_sens_head_failure # May be supported
+  hide: true
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: free_fan_failure # May be supported
+  hide: true
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: free_key
+  hide: true
+  # Sample value: 0
+- property: free_room # Freezer room presence : yes
+  disable: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: free_room_open # Freezer door opened
+  hide: true
+  binary_sensor:
+    device_class: door
+    options:
+      0: off
+      1: on
+- property: free_room_open_2 # Unsupported
+  disable: true
+- property: free_room_over_temp_alarm_failure # May be supported
+  hide: true
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: free_temp_sens_head_failure # May be supported
+  hide: true
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: freeri_fan_speed # Unsupported 
+  disable: true
+- property: freeze_door_open_time # Freezer door open duration in seconds
+  hide: true
+  sensor:
+    read_only: true
+    device_class: duration
+    unit: s
+- property: freeze_drawer_room_temp # Unsupported 
+  disable: true
+- property: freeze_fan_speed # Unsupported 
+  disable: true
+- property: freeze_max_temperature # Freezer maximum temperature
+  hide: true
+  sensor:
+    read_only: true
+    device_class: temperature
+    unit: property.temperature_unit
+- property: freeze_min_temperature # Freezer minimum temperature
+  hide: true
+  sensor:
+    read_only: true
+    device_class: temperature
+    unit: property.temperature_unit
+- property: freeze_poweroff_ad
+  hide: true
+  # Sample value: 0
+- property: freeze_poweron_ad
+  hide: true
+  # Sample value: 0
+- property: freeze_real_temperature # Freezer actual temperature. Fixed unit celsius, not affected by temperature_unit
+  hide: true
+  sensor:
+    read_only: true
+    device_class: temperature
+    unit: celsius
+- property: freeze_sensor_real_temperature # Freezer sensor actual temperature (?). Fixed unit celsius, not affected by temperature_unit
+  hide: true
+  sensor:
+    read_only: true
+    device_class: temperature
+    unit: celsius
+- property: freeze_temperature # Freezer set temperature
+  hide: true
+  sensor:
+    read_only: true
+    device_class: temperature
+    unit: property.temperature_unit
+- property: freezing_powerdown_temp_alarm
+  disable: true
+  # Sample value: 0
+- property: frize_temp_2_degree_above_starting_point
+  disable: true
+  # Sample value: 0
+- property: frost_state
+  disable: true
+  # Sample value: 0
+- property: froze_convert_to_refri_switch_status # Unsupported
+  disable: true
+- property: fruit_vegetables_temperature # Unsupported
+  disable: true
+- property: fuzzy_mode # Fuzzy mode. Relevant if existing_fuzzy_mode = 1
+  disable: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: gold_water_supply_mode # Unsupported
+  disable: true
+- property: high_humidity
+  disable: true
+  # Sample value: 0
+- property: high_temperature
+  disable: true
+  # Sample value: 0
+- property: holiday_mode # Holiday mode, relevant if existing_holiday_mode = 1
+  disable: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: human_on_off_status # Unsupported 
+  disable: true
+- property: human_sense_light_status # Unsupported
+  disable: true
+- property: human_sense_ui_display_state # Unsupported
+  disable: true
+- property: human_sensor_switch_exist # Unsupported
+  disable: true
+- property: humanbody_sensor_switch_status # Unsupported
+  disable: true
+- property: humdy_test_switch_state
+  disable: true
+  # Sample value: 0
+- property: humidity sensor_failure # May be supported
+  hide: true
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: ice_machine_actual_temp # Unsupported 
+  disable: true
+- property: ice_make_room_alarm
+  hide: true
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: ice_make_room_switch
+  hide: true
+  # Sample value: 0
+- property: ice_making_b_switch_status
+  hide: true
+  # Sample value: 0
+- property: ice_making_fast_status
+  hide: true
+  # Sample value: 0
+- property: ice_making_full_status
+  hide: true
+  # Sample value: 0
+- property: ice_making_machine_failure # May be supported 
+  hide: true
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: ice_making_normal_status
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: ice_making_state # Ice making enabled
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: ice_making_stop_status # Device is currently not making ice
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: ice_room_actual_temp # Unsupported
+  disable: true
+- property: ice_sensor_failure_flag # May be supported
+  hide: true
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: ice_temperature_sensor_header_failure_flag # May be supported
+  hide: true
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: inlet_pipe_temp_sens_head_failure # May be supported
+  hide: true
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: ion_preservation_switch # Unsupported 
+  disable: true
+- property: kettle_install_status # Unsupported
+  disable: true
+- property: key_press_sound_volume # Unsupported
+  disable: true
+- property: language_select # Unsupported
+  disable: true
+- property: load_operation_status2 # Unsupported
+  disable: true
+- property: lock_fresh_mode # Relevant if existing_lock_fresh_mode = 1
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: lock_key
+  disable: true
+  # Sample value: 0
+- property: low_humidity
+  disable: true
+  # Sample value: 0
+- property: low_temperature
+  disable: true
+  # Sample value: 0
+- property: low_wine_area_c_evaporator_fault # Unsupported
+  disable: true
+- property: low_wine_area_c_fan_fault # Unsupported
+  disable: true
+- property: low_wine_area_c_humdy_fault # Unsupported
+  disable: true
+- property: low_wine_area_c_temp_fault # Unsupported
+  disable: true
+- property: lumin_value_of_interior_light # Unsupported
+  disable: true
+- property: mainboard_type # Mainboard type   
+  disable: true
+- property: mainboard_version # Mainboard version 
+  disable: true
+- property: market_mode_exist # Is market mode supported. Unsupported
+  disable: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: medium_humidity # Unsupported
+  disable: true
+- property: medium_temperature # Unsupported
+  disable: true
+- property: micro_water_supply_mode # Unsupported
+  disable: true
+- property: mid_wine_area_b_evaporator_fault # Unsupported
+  disable: true
+- property: mid_wine_area_b_fan_fault # Unsupported
+  disable: true
+- property: mid_wine_area_b_humdy_fault # Unsupported
+  disable: true
+- property: mid_wine_area_b_temp_fault # Unsupported
+  disable: true
+- property: mode_key
+  disable: true
+  # Sample value: 0
+- property: model_type # Model type 
+  disable: true
+  sensor:
+    read_only: true
+- property: monitor
+  disable: true
+  # Sample value: 0
+- property: monitor_set
+  disable: true
+  # Sample value: 0
+- property: monitor_set_act
+  disable: true
+  # Sample value: 0
+- property: night_mode_end_hour # Unsupported 
+  disable: true
+- property: night_mode_light_dark_level # Unsupported 
+  disable: true
+- property: night_mode_screen_dark_level # Unsupported 
+  disable: true
+- property: night_mode_start_hour # Unsupported 
+  disable: true
+- property: night_mode_start_min # Unsupported 
+  disable: true
+- property: normal_sound_size
+  disable: true
+  # Sample value: 0
+- property: not_active
+  disable: true
+  # Sample value: 1
+- property: open_freeze_door_alarm # Unsupported
+  disable: true
+- property: open_refrigerator_door_alarm # Unsupported
+  disable: true
+- property: open_the_door_alarm # Unsupported
+  disable: true
+- property: open_variation_door_alarm # Unsupported
+  disable: true
+- property: pairing
+  disable: true
+  # Sample value: 0
+- property: pairing_active
+  disable: true
+  # Sample value: 0
+- property: party_mode_switch_status
+  disable: true
+  # Sample value: 0
+- property: power_one_tenths_value # Unsupported
+  disable: true
+- property: power_value # Unsupported
+  disable: true
+- property: power_voltage # Unsupported
+  disable: true
+- property: quiet_mode_status # Unsupported
+  disable: true
+- property: real_humidity # Unsupported
+  disable: true
+- property: ref_light
+  disable: true
+  # Sample value: 0
+- property: refi_temp_2_degree_above_starting_point
+  disable: true
+  # Sample value: 0
+- property: refr_defrosting_failure # May be supported
+  hide: true
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: refr_dry_wet_room_sens_failure # May be supported
+  hide: true
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: refr_evap_temp_sens_head_failure # May be supported
+  hide: true
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: refr_fan_failure # May be supported
+  hide: true
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: refr_key
+  hide: true
+  # Sample value: 0
+- property: refr_room # Refrigerator room presence : yes
+  disable: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: refr_room_open # Refrigerator door opened
+  hide: true
+  binary_sensor:
+    device_class: door
+    options:
+      0: off
+      1: on
+- property: refr_room_over_temp_alarm # Refrigerator over temperature alarm
+  hide: true
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: refr_temp_sens_head_failure # May be supported
+  hide: true
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: refr_var_room_sens_failure # May be supported
+  hide: true
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: refrigerator_door_open_time # Refrigerator door open duration in seconds
+  hide: true
+  sensor:
+    read_only: true
+    device_class: duration
+    unit: s
+- property: refrigerator_freeze_swith
+  hide: true
+  # Sample value: 0
+- property: refrigerator_freeze_swith_state
+  hide: true
+  # Sample value: 0
+- property: refrigerator_max_temperature # Refrigerator maximum temperature
+  hide: true
+  sensor:
+    read_only: true
+    device_class: temperature
+    unit: property.temperature_unit
+- property: refrigerator_min_temperature # Refrigerator minimum temperature 
+  hide: true
+  sensor:
+    read_only: true
+    device_class: temperature
+    unit: property.temperature_unit
+- property: refrigerator_poweroff_ad
+  hide: true
+  # Sample value: 0
+- property: refrigerator_poweron_ad
+  hide: true
+  # Sample value: 0
+- property: refrigerator_real_temperature # Refrigerator actual temperature. Fixed unit celsius, not affected by temperature_unit
+  hide: true
+  sensor:
+    read_only: true
+    device_class: temperature
+    unit: celsius
+- property: refrigerator_sensor_real_temperature  # Unsupported
+  disable: true
+- property: refrigerator_temperature # Refrigerator set temperature
+  hide: true
+  sensor:
+    read_only: true
+    device_class: temperature
+    unit: property.temperature_unit
+- property: rgb_atmosphere_mode_b_value # Unsupported 
+  disable: true
+- property: rgb_atmosphere_mode_g_value # Unsupported
+  disable: true
+- property: rgb_atmosphere_mode_r_value # Unsupported
+  disable: true
+- property: rgb_function_mode_b_value # Unsupported
+  disable: true
+- property: rgb_function_mode_g_value # Unsupported
+  disable: true
+- property: rgb_function_mode_r_value # Unsupported
+  disable: true
+- property: rgb_light_atmosphere_brightness # Unsupported
+  disable: true
+- property: rgb_light_atmosphere_on_time # Unsupported
+  disable: true
+- property: rgb_light_function_brightness # Unsupported
+  disable: true
+- property: rgb_light_function_on_time # Unsupported
+  disable: true
+- property: rgb_light_normal_brightness # Unsupported
+  disable: true
+- property: rgb_light_normal_on_time # Unsupported
+  disable: true
+- property: rgb_normal_mode_b_value # Unsupported
+  disable: true
+- property: rgb_normal_mode_g_value # Unsupported
+  disable: true
+- property: rgb_normal_mode_r_value # Unsupported
+  disable: true
+- property: right_free_sensor_failure
+  hide: true
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: run_status_flag_5
+  disable: true
+  # Sample value: 0
+- property: running_status
+  disable: true
+  # Sample value: 0
+- property: running_status3
+  disable: true
+  # Sample value: 0
+- property: rx_failure
+  hide: true
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: sabbath_mode_status
+  disable: true
+  # Sample value: 0
+- property: sabbath_mode_switch_status
+  disable: true
+  # Sample value: 0
+- property: save_mode # Eco mode enabled, relevant if existing_save_mode = 1
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: screen_display_brightness # Unsupported
+  disable: true
+- property: screen_display_lock # Unsupported
+  disable: true
+- property: screen_to_clock_time # Unsupported
+  disable: true
+- property: screen_to_standby_time # Unsupported
+  disable: true
+- property: second_ice_maker_full_status
+  disable: true
+  # Sample value: 0
+- property: second_ice_maker_init_fault
+  disable: true
+  # Sample value: 0
+- property: second_ice_maker_sensor_fault
+  disable: true
+  # Sample value: 0
+- property: sensor_failure_status
+  disable: true
+  # Sample value: 0
+- property: sensor_failure_status2
+  disable: true
+  # Sample value: 0
+- property: sf_mode # Super freeze mode enabled, relevant if existing_sf_mode = 1
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: sf_sr_mutex_mode # Super freeze and super refrigerating are mutually exclusive 
+  disable: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: shelf_light_atmosphere_brightness # Unsupported 
+  disable: true
+- property: shelf_light_atmosphere_mode_brightness # Unsupported 
+  disable: true
+- property: shelf_light_b_state # Unsupported 
+  disable: true
+- property: shelf_light_function_mode_brightness # Unsupported 
+  disable: true
+- property: shelf_light_function_on_time # Unsupported 
+  disable: true
+- property: show_mode
+  disable: true
+  # Sample value: 0
+- property: special_space
+  disable: true
+  # Sample value: 0
+- property: sr_mode # Super refrigerating mode enabled, relevant if existing_sr_mode = 1
+  hide: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: standby_mode_state # Unsupported
+  disable: true
+- property: standby_mode_valid # Unsupported
+  disable: true
+- property: status_fan_c_switch # Unsupported
+  disable: true
+- property: status_fan_f_switch # Unsupported
+  disable: true
+- property: status_fan_ln_switch # Unsupported
+  disable: true
+- property: status_fan_r_switch # Unsupported
+  disable: true
+- property: status_heater_c_switch # Unsupported
+  disable: true
+- property: status_heater_f_switch # Unsupported
+  disable: true
+- property: status_heater_r_switch # Unsupported
+  disable: true
+- property: super_water_supply_mode # Unsupported
+  disable: true
+- property: temp_auto_ctrl_mode_exist # Is temperature auto control mode supported. Unsupported
+  disable: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+  # Sample value: 0
+- property: temp_auto_ctrl_mode_state # Temperature auto control mode, relevant if temp_auto_ctrl_mode_exist = 1
+  disable: true
+  # Sample value: 0
+- property: temperature_room_judge # Unknown value meaning. Fixed unit celsius, not affected by temperature_unit
+  hide: true
+  sensor:
+    read_only: true
+    device_class: temperature
+    unit: celsius
+- property: temperature_unit # Temperature unit 
+  hide: true
+  select:
+    options:
+      0: celsius
+      1: fahrenheit
+- property: theme_color # Unsupported
+  disable: true
+- property: tx_failure
+  hide: true
+  binary_sensor:
+    device_class: problem
+    options:
+      0: off
+      1: on
+- property: unfreeze_run_status # May be supported
+  hide: true
+- property: unfreeze_switch_status # May be supported
+  hide: true
+- property: unpair_all_users
+  disable: true
+  # Sample value: 0
+- property: up_wine_area_a_evaporator_fault # Unsupported
+  disable: true
+- property: up_wine_area_a_fan_fault # Unsupported
+  disable: true
+- property: up_wine_area_a_humdy_fault # Unsupported
+  disable: true
+- property: up_wine_area_a_temp_fault # Unsupported
+  disable: true
+- property: user_debacilli_mode
+  disable: true
+  # Sample value: 0
+- property: uv_steri_status # Unsupported
+  disable: true
+- property: vacuum_on_off_status # Unsupported
+  disable: true
+- property: var_room_open_2 # Unsupported
+  disable: true
+- property: var_room_over_temp_alarm # Unsupported
+  disable: true
+- property: vari_evap_temp_sens_head_failure # Unsupported
+  disable: true
+- property: vari_fan_speed # Unsupported
+  disable: true
+- property: vari_key # Unsupported
+  disable: true
+- property: vari_room # Varible room presence : no
+  disable: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: vari_room_open # Unsupported
+  disable: true
+- property: vari_temp_2_degree_above_starting_point # Unsupported
+  disable: true
+- property: vari_temp_sens_head_failure # Unsupported
+  disable: true
+- property: variable_fan_failure_status # Unsupported
+  disable: true
+- property: variable_heater_failure_status # Unsupported
+  disable: true
+- property: variable_temperature_space # Unsupported
+  disable: true
+- property: variation_door_open_time # Unsupported
+  disable: true
+- property: variation_max_temperature # Variation maximum temperature
+  hide: true
+  sensor:
+    read_only: true
+    device_class: temperature
+    unit: property.temperature_unit
+- property: variation_min_temperature # Variation minimum temperature
+  hide: true
+  sensor:
+    read_only: true
+    device_class: temperature
+    unit: property.temperature_unit
+- property: variation_poweroff_ad
+  disable: true
+  # Sample value: 0
+- property: variation_poweron_ad
+  disable: true
+  # Sample value: 0
+- property: variation_real_temperature # Unsupported 
+  disable: true
+- property: variation_sensor_real_temperature # Unsupported 
+  disable: true
+- property: variation_temperature # Unsupported 
+  disable: true
+- property: vibration_alarm # Unsupported 
+  disable: true
+- property: vibration_sensor_fault # Unsupported 
+  disable: true
+- property: water_box_alarm_switch_state
+  disable: true
+  # Sample value: 0
+- property: water_box_lack_status
+  disable: true
+  # Sample value: 0
+- property: water_box_mode_status
+  disable: true
+  # Sample value: 0
+- property: water_fill_actual_temp # Unsupported 
+  disable: true
+- property: water_filter_surplus_time
+  disable: true
+  # Sample value: 0
+- property: water_filter_time_reset
+  disable: true
+  # Sample value: 0
+- property: water_heat_switch # Unsupported 
+  disable: true
+- property: water_tank_install_state
+  disable: true
+  # Sample value: 0
+- property: wet_and_dry_space # Unsupported 
+  disable: true
+- property: wifi_fault_flag
+  hide: true
+  # Sample value: 0
+- property: wifi_handshake_fault_flag
+  hide: true
+  # Sample value: 0
+- property: wifi_next_sendtime
+  hide: true
+  # Sample value: 0
+- property: wifi_rx_fault_flag
+  hide: true
+  # Sample value: 0
+- property: wifi_setting
+  hide: true
+  # Sample value: 0
+- property: wifi_tx_fault_flag
+  hide: true
+  # Sample value: 0
+- property: wild_vegetable_heat_switch # Unsupported
+  disable: true
+- property: will_fresh_light_status # Unsupported
+  disable: true
+- property: will_fress_light_exist # Is fresh light supported. No 
+  disable: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: will_light_market_mode_state # Unsupported
+  disable: true
+- property: will_light_mode_exist # Is light mode supported. No 
+  disable: true
+  binary_sensor:
+    options:
+      0: off
+      1: on
+- property: will_light_mode_state # Unsupported
+  disable: true
+- property: will_light_switch_state # Unsupported
+  disable: true
+- property: wine_b_switch__area # Unsupported
+  disable: true
+- property: wine_light # Unsupported
+  disable: true
+- property: wine_sensor_failure_flag # Unsupported
+  disable: true
+- property: work_mode1
+  disable: true
+  # Sample value: 0
+- property: work_mode2
+  disable: true
+  # Sample value: 0
