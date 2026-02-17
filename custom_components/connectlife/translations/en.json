@@ -1137,15 +1137,6 @@
       "fan_sequence_setting_status": {
         "name": "Fan sequence"
       },
-      "feedback_volumen_setting_status": {
-        "name": "Feedback volume",
-        "state": {
-          "mute": "Mute",
-          "low": "Low",
-          "mid": "Mid",
-          "high": "High"
-        }
-      },
       "flexiblespintime_flag": {
         "name": "Flexible spin time flag"
       },
@@ -1220,9 +1211,6 @@
       "mian_wash_time": {
         "name": "Main wash time"
       },
-      "notification_volumen_setting_status": {
-        "name": "Notification volume"
-      },
       "order_time_minimum_hour": {
         "name": "Order time minimum hour"
       },
@@ -1258,9 +1246,6 @@
       },
       "refrigerator_sensor_real_temperature": {
         "name": "Refrigerator sensor real temperature"
-      },
-      "rinse_aid_setting_status": {
-        "name": "Rinse aid"
       },
       "rinsenum": {
         "name": "Rinse num"
@@ -1918,7 +1903,7 @@
         "name": "Ice making state"
       },
       "interior_light_at_power_off_setting_status": {
-        "name": "Interior light at power off setting status"
+        "name": "Interior light at power off"
       },
       "mute": {
         "name": "Mute"
@@ -1948,7 +1933,7 @@
         "name": "Steam"
       },
       "super_rinse_setting_status": {
-        "name": "Super rinse setting status"
+        "name": "Super rinse"
       },
       "t_air": {
         "name": "Air"
@@ -1981,10 +1966,39 @@
         "name": "AI"
       },
       "tab_setting_status": {
-        "name": "Tab setting status"
+        "name": "Detergent TAB"
       }
     },
     "select": {
+      "selected_program_mode": {
+        "name": "Mode",
+        "state": {
+          "normal": "Normal",
+          "speed": "Speed",
+          "night": "Night"
+        }
+      },
+      "rinse_aid_setting_status": {
+        "name": "Rinse aid"
+      },
+      "feedback_volumen_setting_status": {
+        "name": "Feedback volume",
+        "state": {
+          "mute": "Mute",
+          "low": "Low",
+          "mid": "Mid",
+          "high": "High"
+        }
+      },
+      "notification_volumen_setting_status": {
+        "name": "Notification volume",
+        "state": {
+          "mute": "Mute",
+          "low": "Low",
+          "mid": "Mid",
+          "high": "High"
+        }
+      },
       "auto_dose_quantity_setting_status": {
         "name": "Auto dose quantity"
       },
@@ -2037,6 +2051,19 @@
           "rinse_spin": "Rinse spin",
           "clean_dry_60": "Clean dry 60",
           "power49": "Power49"
+        }
+      },
+      "selected_program_id_status": {
+        "name": "Program",
+        "state": {
+          "eco": "Eco",
+          "auto": "Auto",
+          "intensive": "Intensive",
+          "quick_pro": "Quick pro",
+          "time_program": "Time program",
+          "hygiene": "Hygiene",
+          "rinse_and_hold": "Rinse and hold",
+          "self_cleaning": "Self cleaning"
         }
       },
       "spin_speed_rpm": {
