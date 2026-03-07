@@ -27,6 +27,7 @@
 |                   | Washing machine          | 025              | 1wj105246v0w         |
 | WDSE1214-EVAJMW   | Washing machine          | 025              | 1wj120261v0w         |
 | WFSE1214-MVW002   | Washing machine          | 025              | 1wj120389v0b         |
+| WFSE1114-LVW002   | Washing machine          | 025              | 1wj105219v0w         |
 | WF3S1114-LVW004   | Washing machine          | 025              | 1wj105246v0w         |
 |                   | Refrigerator             | 026              | 1b0610z0049j         |
 |                   | Refrigerator             | 026              | 1b0628z0075j         |
