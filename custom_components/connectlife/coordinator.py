@@ -1,3 +1,4 @@
+import asyncio
 import async_timeout
 import logging
 from collections.abc import Mapping
@@ -6,11 +7,14 @@ from datetime import timedelta
 from connectlife.api import LifeConnectAuthError, LifeConnectError, ConnectLifeApi
 from connectlife.appliance import ConnectLifeAppliance
 from homeassistant.const import Platform
+from homeassistant.core import callback
 from homeassistant.exceptions import ConfigEntryAuthFailed
 from homeassistant.helpers import device_registry as dr, entity_registry as er, issue_registry as ir
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import DOMAIN
+
+DEBOUNCE_REFRESH_DELAY = 5
 
 MAX_RETRIES = 3
 
@@ -76,7 +80,23 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
         """Updates the device, and sets the properties in local copy and notify to avoid refetching."""
         await self.api.update_appliance(self.data[device_id].puid, {k: str(v) for k, v in command.items()})
         self.data[device_id].status_list.update(properties)
-        self.async_update_listeners()
+        self.async_set_updated_data(self.data)
+        self._schedule_debounced_refresh()
+
+    @callback
+    def _schedule_debounced_refresh(self) -> None:
+        """Schedule a debounced refresh to confirm state from the API."""
+        if hasattr(self, "_debounced_refresh_task") and self._debounced_refresh_task is not None:
+            self._debounced_refresh_task.cancel()
+        self._debounced_refresh_task = asyncio.create_task(self._debounced_refresh())
+
+    async def _debounced_refresh(self) -> None:
+        """Wait briefly then refresh data from the API."""
+        try:
+            await asyncio.sleep(DEBOUNCE_REFRESH_DELAY)
+            await self.async_request_refresh()
+        except asyncio.CancelledError:
+            pass
 
     def add_entity(self, entity_unique_id: str, platform: Platform):
         """Add known entity."""

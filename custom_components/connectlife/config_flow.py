@@ -109,7 +109,10 @@ class OptionsFlowHandler(OptionsFlow):
             self._device_id = user_input["device"]
             return await self.async_step_configure_device()
 
-        coordinator = self.hass.data[DOMAIN][self.config_entry.entry_id]
+        domain_data = self.hass.data.get(DOMAIN, {})
+        coordinator = domain_data.get(self.config_entry.entry_id)
+        if coordinator is None:
+            return self.async_abort(reason="not_loaded")
         devices = {
             device.device_id: device.device_nickname
             for device in sorted(coordinator.data.values(), key=lambda d: d.device_nickname)
