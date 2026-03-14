@@ -4,14 +4,15 @@ from __future__ import annotations
 
 import logging
 
+import async_timeout
 from homeassistant.exceptions import ConfigEntryError
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import Platform, CONF_USERNAME, CONF_PASSWORD
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers import config_validation as cv
 from homeassistant.helpers.typing import ConfigType
-from connectlife.api import ConnectLifeApi, LifeConnectAuthError
 
+from .api import ConnectLifeApi, LifeConnectAuthError
 from .const import CONF_DEVELOPMENT_MODE, CONF_TEST_SERVER_URL, DOMAIN
 from .coordinator import ConnectLifeCoordinator
 from .services import async_setup_services
@@ -52,9 +53,12 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     )
     api = ConnectLifeApi(entry.data[CONF_USERNAME], entry.data[CONF_PASSWORD], test_server_url)  # type: ignore[arg-type]
     try:
-        await api.login()
+        async with async_timeout.timeout(60):
+            await api.login()
     except LifeConnectAuthError as ex:
         raise ConfigEntryError from ex
+    except TimeoutError as ex:
+        raise ConfigEntryError("Timed out while logging in to ConnectLife") from ex
     coordinator = ConnectLifeCoordinator(hass, api)
     await coordinator.async_config_entry_first_refresh()
     hass.data[DOMAIN][entry.entry_id] = coordinator

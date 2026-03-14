@@ -12,8 +12,8 @@ from .const import DOMAIN
 from .coordinator import ConnectLifeCoordinator
 from .dictionaries import Dictionaries, Dictionary, Property
 from .entity import ConnectLifeEntity
-from connectlife.api import LifeConnectError
 from connectlife.appliance import ConnectLifeAppliance
+from .api import LifeConnectError
 from .utils import is_entity, to_unit
 
 _LOGGER = logging.getLogger(__name__)
