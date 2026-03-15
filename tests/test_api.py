@@ -236,21 +236,16 @@ class ConnectLifeApiTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(api._access_token, "replacement-access-token")
         self.assertFalse(requests)
 
-    async def test_appliances_request_tries_gateway_before_bapi(self) -> None:
+    async def test_update_appliance_uses_bapi(self) -> None:
         api = ConnectLifeApi("user@example.com", "secret")
         api._access_token = "cached-access-token"
         api._expires = dt.datetime.now() + dt.timedelta(minutes=5)
 
         requests = [
             (
-                "GET",
-                API_MODULE.GATEWAY_DEVICES_URL,
-                FakeResponse(500, {"error": "gateway unavailable"}),
-            ),
-            (
-                "GET",
+                "POST",
                 api.appliances_url,
-                FakeResponse(200, [{"deviceId": "device-1"}]),
+                FakeResponse(200, {"ok": True}),
             ),
         ]
 
@@ -259,9 +254,8 @@ class ConnectLifeApiTests(unittest.IsolatedAsyncioTestCase):
             "ClientSession",
             new=FakeClientSessionFactory(requests),
         ):
-            result = await api.get_appliances_json()
+            await api.update_appliance("puid-1", {"t_temp": "22"})
 
-        self.assertEqual(result, [{"deviceId": "device-1"}])
         self.assertFalse(requests)
 
 
