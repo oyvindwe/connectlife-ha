@@ -2,13 +2,18 @@
 
 from __future__ import annotations
 
+import base64
 import datetime as dt
+import hashlib
 import json
 import logging
 import asyncio
-from typing import Any, Sequence
+from typing import Any, Sequence, cast
 
 import aiohttp
+from cryptography.hazmat.primitives import serialization
+from cryptography.hazmat.primitives.asymmetric import padding
+from cryptography.hazmat.primitives.asymmetric.rsa import RSAPublicKey
 
 from connectlife.appliance import ConnectLifeAppliance
 
@@ -17,6 +22,31 @@ _LOGGER = logging.getLogger(__name__)
 TRANSIENT_STATUSES = frozenset({401, 403, 500, 502, 503, 504})
 AUTH_TRANSIENT_STATUSES = frozenset({500, 502, 503, 504})
 BAPI_USER_AGENT = "connectlife-api-connector 2.1.4"
+GATEWAY_USER_AGENT = "Runner/2.0.6 (iPhone; iOS 17.2.1; Scale/3.00)"
+GATEWAY_BASE_URL = "https://clife-eu-gateway.hijuconn.com"
+GATEWAY_UPDATE_URL = f"{GATEWAY_BASE_URL}/device/pu/property/set"
+GATEWAY_APP_ID = "47110565134383"
+GATEWAY_APP_SECRET = "yOzhz6junYno-nmULM3Wr7PU_dpSZN22ZdluvVWZ4uW5ZwwG8fIGCHTbrhcnU-iv"
+GATEWAY_LANGUAGE_ID = "12"
+GATEWAY_TIMEZONE = "1.0"
+GATEWAY_VERSION = "5.0"
+GATEWAY_SIGN_SUFFIX = "D9519A4B756946F081B7BB5B5E8D1197"
+GATEWAY_INVALID_ACCESS_TOKEN = 100026
+GATEWAY_PUBLIC_KEY = cast(
+    RSAPublicKey,
+    serialization.load_pem_public_key(
+    b"""-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyyWrNG6q475HIHu7sMVu
+vHof6vlgPeixmxa4EL/UsvVvHPz33NnWoQetQqit9TBNzUjMXw0KlY9PXM4iqHUU
+U+dSyNDq1jZWIiJ2C2FccppswJtIKL3NRMFvT9PFh6NlP/4FUcQKojgKFbF7Kacc
+JPKYHlwaO7qgoIjLxAHlSOXGpucJcOkPzT2EqsSVnW8sn8kenvNmghXDayhgxsh6
+AyxK4kehJplEnmX/iYCfNoFXknGcLqFWYccgBz3fybvx30C/0IgU1980L8QsUAv5
+esZmN8ugnbRgLRxKRlkQQLxQAiZMZdKTAx665YflT3YMHJvEFE8c2XFgoxHzSMc4
+BwIDAQAB
+-----END PUBLIC KEY-----
+"""
+    ),
+)
 
 
 class LifeConnectError(Exception):
@@ -104,6 +134,16 @@ class ConnectLifeApi:
             "properties": properties,
         }
         await self._fetch_access_token()
+        try:
+            await self._update_gateway_appliance(data, retry_on_reauth=True)
+            return
+        except LifeConnectAuthError:
+            raise
+        except (LifeConnectError, aiohttp.ClientError, TimeoutError) as err:
+            _LOGGER.warning(
+                "ConnectLife update failed via HijuConn gateway, falling back to bapi: %s",
+                err,
+            )
         await self._update_bapi_appliance(data)
 
     async def _request_appliances_json(self, *, retry_on_reauth: bool) -> Any:
@@ -352,6 +392,71 @@ class ConnectLifeApi:
                 body = await response.json()
                 self._set_token_state(body)
 
+    async def _update_gateway_appliance(
+        self,
+        data: dict[str, Any],
+        *,
+        retry_on_reauth: bool,
+    ) -> None:
+        await self._request_gateway_json(
+            GATEWAY_UPDATE_URL,
+            payload=data,
+            retry_on_reauth=retry_on_reauth,
+        )
+
+    async def _request_gateway_json(
+        self,
+        url: str,
+        *,
+        payload: dict[str, Any],
+        retry_on_reauth: bool,
+    ) -> dict[str, Any]:
+        request_data = self._gateway_request_data(payload)
+
+        async with self._client_session() as session:
+            async with session.post(
+                url,
+                json=request_data,
+                headers={"User-Agent": GATEWAY_USER_AGENT},
+            ) as response:
+                if response.status != 200:
+                    body = await self._read_response_body(response)
+                    raise self._response_error(
+                        "Unexpected response from HijuConn gateway: status={status}",
+                        response,
+                        body,
+                        endpoint=url,
+                    )
+                body = await self._json(response)
+
+        gateway_response = body.get("response")
+        if not isinstance(gateway_response, dict):
+            raise LifeConnectError(
+                "Unexpected response from HijuConn gateway: missing 'response'",
+                endpoint=url,
+            )
+
+        result_code = gateway_response.get("resultCode")
+        if result_code in (0, "0", None):
+            return gateway_response
+
+        error_code = gateway_response.get("errorCode")
+        error_desc = gateway_response.get("errorDesc") or "Unknown gateway error"
+        if retry_on_reauth and error_code == GATEWAY_INVALID_ACCESS_TOKEN:
+            _LOGGER.warning("HijuConn gateway access token rejected, retrying full login")
+            await self.login()
+            return await self._request_gateway_json(
+                url,
+                payload=payload,
+                retry_on_reauth=False,
+            )
+
+        error_type = LifeConnectAuthError if error_code == GATEWAY_INVALID_ACCESS_TOKEN else LifeConnectError
+        raise error_type(
+            f"Unexpected response from HijuConn gateway: code={error_code} description='{error_desc}'",
+            endpoint=url,
+        )
+
     def _set_token_state(self, response: dict[str, Any]) -> None:
         self._access_token = self._require_auth_field(response, "access_token")
         expires_in = int(self._require_auth_field(response, "expires_in"))
@@ -372,6 +477,36 @@ class ConnectLifeApi:
         if self._access_token is None:
             raise LifeConnectAuthError("Missing 'access_token' in response")
         return self._access_token
+
+    def _gateway_request_data(self, payload: dict[str, Any]) -> dict[str, Any]:
+        timestamp = str(int(dt.datetime.now().timestamp() * 1000))
+        request_data: dict[str, Any] = {
+            "accessToken": self._require_access_token(),
+            "appId": GATEWAY_APP_ID,
+            "appSecret": GATEWAY_APP_SECRET,
+            "languageId": GATEWAY_LANGUAGE_ID,
+            "randStr": hashlib.md5(timestamp.encode()).hexdigest(),
+            "timeStamp": timestamp,
+            "timezone": GATEWAY_TIMEZONE,
+            "version": GATEWAY_VERSION,
+        }
+        request_data.update(payload)
+        request_data["sign"] = self._sign_gateway_request(request_data)
+        return request_data
+
+    @staticmethod
+    def _sign_gateway_request(payload: dict[str, Any]) -> str:
+        unsigned_items = []
+        for key in sorted(k for k in payload if k != "sign"):
+            value = payload[key]
+            if isinstance(value, (dict, list)):
+                value = json.dumps(value, separators=(",", ":"))
+            unsigned_items.append(f"{key}={value}")
+        digest = hashlib.sha256(
+            f"{'&'.join(unsigned_items)}{GATEWAY_SIGN_SUFFIX}".encode()
+        ).digest()
+        encrypted = GATEWAY_PUBLIC_KEY.encrypt(digest, padding.PKCS1v15())
+        return base64.b64encode(encrypted).decode()
 
     def _client_session(self) -> aiohttp.ClientSession:
         return aiohttp.ClientSession(timeout=self.request_timeout)

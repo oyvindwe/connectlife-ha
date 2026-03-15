@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.13.2"
 dependencies = [
     "connectlife==0.5.4",
+    "cryptography>=45.0.0",
 ]
 
 [dependency-groups]

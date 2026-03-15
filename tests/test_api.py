@@ -236,12 +236,20 @@ class ConnectLifeApiTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(api._access_token, "replacement-access-token")
         self.assertFalse(requests)
 
-    async def test_update_appliance_uses_bapi(self) -> None:
+    async def test_update_appliance_uses_gateway_before_bapi(self) -> None:
         api = ConnectLifeApi("user@example.com", "secret")
         api._access_token = "cached-access-token"
         api._expires = dt.datetime.now() + dt.timedelta(minutes=5)
 
         requests = [
+            (
+                "POST",
+                API_MODULE.GATEWAY_UPDATE_URL,
+                FakeResponse(
+                    200,
+                    {"response": {"resultCode": 1, "errorCode": 101005, "errorDesc": "randStr check fail."}},
+                ),
+            ),
             (
                 "POST",
                 api.appliances_url,
