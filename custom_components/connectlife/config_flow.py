@@ -5,6 +5,7 @@ from __future__ import annotations
 import logging
 from typing import Any
 
+import async_timeout
 import voluptuous as vol
 
 from homeassistant.config_entries import (
@@ -17,8 +18,8 @@ from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
 from homeassistant.core import callback
 from homeassistant.exceptions import HomeAssistantError
 
+from .api import ConnectLifeApi, LifeConnectAuthError, LifeConnectError
 from .const import CONF_DEVICES, CONF_DEVELOPMENT_MODE, CONF_DISABLE_BEEP, CONF_TEST_SERVER_URL, DOMAIN
-from connectlife.api import ConnectLifeApi
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -36,8 +37,16 @@ async def validate_input(data: dict[str, Any]) -> dict[str, Any]:
     test_server_url = data[CONF_TEST_SERVER_URL] if CONF_TEST_SERVER_URL in data else None
     api = ConnectLifeApi(data[CONF_USERNAME], data[CONF_PASSWORD], test_server_url)  # type: ignore[arg-type]
 
-    if not await api.authenticate():
-        raise InvalidAuth
+    try:
+        async with async_timeout.timeout(60):
+            await api.login()
+            await api.get_appliances()
+    except LifeConnectAuthError as exc:
+        raise InvalidAuth from exc
+    except TimeoutError as exc:
+        raise CannotConnect from exc
+    except LifeConnectError as exc:
+        raise CannotConnect from exc
 
     # If you cannot connect:
     # throw CannotConnect

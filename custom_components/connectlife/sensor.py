@@ -20,8 +20,8 @@ from .const import DOMAIN
 from .coordinator import ConnectLifeCoordinator
 from .dictionaries import Dictionaries, Dictionary, Property
 from .entity import ConnectLifeEntity
-from connectlife.api import LifeConnectError
 from connectlife.appliance import ConnectLifeAppliance, MAX_DATETIME
+from .api import LifeConnectError
 from .utils import is_entity, to_unit
 
 SERVICE_SET_VALUE = "set_value"
