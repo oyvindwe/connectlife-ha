@@ -950,6 +950,9 @@
       "auto_dose_refill": {
         "name": "Auto dose refill"
       },
+      "autodose_flag": {
+        "name": "Autodose available"
+      },
       "bundling_humidity": {
         "name": "Bundling humidity"
       },
@@ -1044,8 +1047,40 @@
       "delaystart_delayend_remaining_timein_minutes": {
         "name": "Delay start remaining time"
       },
+      "detergent": {
+        "name": "Detergent",
+        "state": {
+          "less": "Less",
+          "standard": "Standard",
+          "more": "More"
+        }
+      },
       "detergent_display": {
         "name": "Detergent display"
+      },
+      "detergentstandarddosage": {
+        "name": "Detergentstandarddosage",
+        "state": {
+          "10ml": "10 ml",
+          "15ml": "15 ml",
+          "20ml": "20 ml",
+          "25ml": "25 ml",
+          "30ml": "30 ml",
+          "35ml": "35 ml",
+          "40ml": "40 ml",
+          "45ml": "45 ml",
+          "50ml": "50 ml",
+          "55ml": "55 ml",
+          "60ml": "60 ml",
+          "65ml": "65 ml",
+          "70ml": "70 ml",
+          "75ml": "75 ml",
+          "80ml": "80 ml",
+          "85ml": "85 ml",
+          "90ml": "90 ml",
+          "95ml": "95 ml",
+          "100ml": "100 ml"
+        }
       },
       "device_status": {
         "state": {
@@ -1626,8 +1661,40 @@
           "no_shape": "No shape"
         }
       },
+      "softener": {
+        "name": "Softener",
+        "state": {
+          "less": "Less",
+          "standard": "Standard",
+          "more": "More"
+        }
+      },
       "softer_display": {
         "name": "Softer display"
+      },
+      "softnerstandarddosage": {
+        "name": "Softnerstandarddosage",
+        "state": {
+          "10ml": "10 ml",
+          "15ml": "15 ml",
+          "20ml": "20 ml",
+          "25ml": "25 ml",
+          "30ml": "30 ml",
+          "35ml": "35 ml",
+          "40ml": "40 ml",
+          "45ml": "45 ml",
+          "50ml": "50 ml",
+          "55ml": "55 ml",
+          "60ml": "60 ml",
+          "65ml": "65 ml",
+          "70ml": "70 ml",
+          "75ml": "75 ml",
+          "80ml": "80 ml",
+          "85ml": "85 ml",
+          "90ml": "90 ml",
+          "95ml": "95 ml",
+          "100ml": "100 ml"
+        }
       },
       "sound_setting": {
         "name": "Sound setting"
@@ -1905,6 +1972,12 @@
       "child_lock": {
         "name": "Child lock"
       },
+      "coldwash": {
+        "name": "Cold wash"
+      },
+      "downlight": {
+        "name": "Drum Light"
+      },
       "drum_light": {
         "name": "Drum light"
       },
@@ -2001,7 +2074,17 @@
         "state": {
           "wardrobe": "Wardrobe",
           "pre-ironing": "Pre-ironing",
-          "extra_dry": "Extra dry"
+          "extra_dry": "Extra dry",
+          "iron": "Iron",
+          "cupboard": "Cupboard"
+        }
+      },
+      "drymodel": {
+        "name": "Drying mode",
+        "state": {
+          "wash": "Wash",
+          "wash_and_dry": "Wash and dry",
+          "dry_only": "Dry only"
         }
       },
       "extrarinsenum": {
@@ -2036,13 +2119,33 @@
           "spin-dry": "Spin-dry",
           "rinse_spin": "Rinse spin",
           "clean_dry_60": "Clean dry 60",
-          "power49": "Power49"
+          "power49": "Power49",
+          "allergy_care": "Allergy care",
+          "wash_and_dry_49": "Wash and dry 49",
+          "bedding": "Bedding",
+          "power_30": "Power 30",
+          "pets": "Pets",
+          "full_load_49": "Full load 49"
         }
       },
       "spin_speed_rpm": {
         "name": "Spin speed",
         "state": {
           "none": "None"
+        }
+      },
+      "stain_removal": {
+        "name": "Stain removal",
+        "state": {
+          "wine": "Wine",
+          "grass": "Grass",
+          "soil": "Soil",
+          "coffee": "Coffee",
+          "milk": "Milk",
+          "juice": "Juice",
+          "sweat": "Sweat",
+          "blood": "Blood",
+          "oil": "Oil"
         }
       },
       "t_fan_speed": {
