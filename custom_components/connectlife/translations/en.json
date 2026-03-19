@@ -1059,7 +1059,7 @@
         "name": "Detergent display"
       },
       "detergentstandarddosage": {
-        "name": "Detergentstandarddosage",
+        "name": "Detergent standard dosage",
         "state": {
           "10ml": "10 ml",
           "15ml": "15 ml",
@@ -1673,7 +1673,7 @@
         "name": "Softer display"
       },
       "softnerstandarddosage": {
-        "name": "Softnerstandarddosage",
+        "name": "Softner standard dosage",
         "state": {
           "10ml": "10 ml",
           "15ml": "15 ml",
