@@ -68,14 +68,6 @@ properties:
       90: "90ml"
       95: "95ml"
       100: "100ml"
-- property: Detergent_display
-  readonly: true
-  icon: mdi:alpha-d-circle-outline
-  sensor:
-    device_class: enum
-    options:
-      0: "off"
-      1: "on"
 - property: Door_status
   readonly: true
   icon: mdi:washing-machine
@@ -165,15 +157,6 @@ properties:
       2: "less"
       3: "standard"
       4: "more"
-- property: Softer_display
-  readonly: true
-  hide: true
-  icon: mdi:alpha-s-circle-outline
-  sensor:
-    device_class: enum
-    options:
-      0: "off"
-      1: "on"
 - property: SoftnerStandardDosage
   icon: mdi:tray-plus
   sensor:
@@ -685,6 +668,10 @@ properties:
 ### NOT USEFULL
 
 
+- property: Detergent_display
+  disable: true
+- property: Softer_display
+  disable: true
 - property: CurProgDetergentDosage
   disable: true
 - property: CurProgDetergentDosageNo_Auto
