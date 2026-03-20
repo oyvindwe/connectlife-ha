@@ -51,7 +51,7 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
             self.error_count += 1
             i = MAX_RETRIES - self.error_count
             if i > 0:
-                _LOGGER.warning(
+                _LOGGER.debug(
                     "ConnectLife API request timed out, will try %d more %s",
                     i,
                     "time" if i == 1 else "times",
@@ -62,7 +62,7 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
             self.error_count += 1
             i = MAX_RETRIES - self.error_count
             if i > 0:
-                _LOGGER.warning(
+                _LOGGER.debug(
                     "ConnectLife API failed with '%s', will try %d more %s",
                     err,
                     i,
