@@ -5,7 +5,7 @@ description = "Custom Home Assistant component for ConnectLife devices"
 readme = "README.md"
 requires-python = ">=3.13.2"
 dependencies = [
-    "connectlife==0.5.4",
+    "connectlife==0.6.0",
 ]
 
 [dependency-groups]
