@@ -39,8 +39,9 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
     async def _async_update_data(self):
         """Fetch data from API endpoint."""
         try:
-            # Note: asyncio.TimeoutError and aiohttp.ClientError are already
-            # handled by the data update coordinator.
+            # Note: aiohttp.ClientError is already handled by the data update
+            # coordinator. TimeoutError is retried here so the UI gets the
+            # same user-facing retry message as other ConnectLife API errors.
             async with async_timeout.timeout(30):
                 await self.api.get_appliances()
                 self.error_count = 0
