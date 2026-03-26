@@ -690,7 +690,7 @@ wheels = [
 
 [[package]]
 name = "connectlife-ha"
-version = "0.26.3"
+version = "0.26.4"
 source = { virtual = "." }
 dependencies = [
     { name = "connectlife" },
