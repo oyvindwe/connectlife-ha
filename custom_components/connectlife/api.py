@@ -3,8 +3,9 @@
 from __future__ import annotations
 
 import logging
-from typing import Sequence
+from typing import Any, Sequence
 
+import aiohttp
 from connectlife.api import ConnectLifeApi as UpstreamConnectLifeApi
 from connectlife.api import LifeConnectAuthError, LifeConnectError
 from connectlife.appliance import ConnectLifeAppliance
@@ -14,6 +15,26 @@ _LOGGER = logging.getLogger(__name__)
 
 class ConnectLifeApi(UpstreamConnectLifeApi):
     """ConnectLife API wrapper for compatibility fixes not yet released upstream."""
+
+    async def get_appliances_json(self) -> Any:
+        """Fetch appliances with friendlier fallback logging."""
+        await self._fetch_access_token()
+        try:
+            return await self._request_appliances_json(retry_on_reauth=True)
+        except LifeConnectAuthError:
+            raise
+        except (aiohttp.ClientError, TimeoutError):
+            _LOGGER.warning(
+                "ConnectLife appliance list request failed via bapi, trying HijuConn gateway..."
+            )
+            return await self._request_gateway_appliances_json(retry_on_reauth=True)
+        except LifeConnectError as err:
+            if not self._should_fallback_to_gateway(err):
+                raise
+            _LOGGER.warning(
+                "ConnectLife appliance list request failed via bapi, trying HijuConn gateway..."
+            )
+            return await self._request_gateway_appliances_json(retry_on_reauth=True)
 
     async def get_appliances(self) -> Sequence[ConnectLifeAppliance]:
         """Fetch appliances and tolerate payloads without a status list."""

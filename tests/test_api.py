@@ -57,6 +57,59 @@ def _appliance_payload(
 class ConnectLifeApiCompatibilityTests(unittest.IsolatedAsyncioTestCase):
     """Compatibility coverage for malformed appliance payloads."""
 
+    async def test_get_appliances_json_logs_generic_fallback_message_after_timeout(self) -> None:
+        api = ConnectLifeApi("user@example.com", "secret")
+
+        with (
+            patch.object(ConnectLifeApi, "_fetch_access_token", new=AsyncMock()),
+            patch.object(
+                ConnectLifeApi,
+                "_request_appliances_json",
+                new=AsyncMock(side_effect=TimeoutError()),
+            ),
+            patch.object(
+                ConnectLifeApi,
+                "_request_gateway_appliances_json",
+                new=AsyncMock(return_value=[]),
+            ),
+            self.assertLogs(API_MODULE.__name__, level="WARNING") as captured,
+        ):
+            result = await api.get_appliances_json()
+
+        self.assertEqual(result, [])
+        self.assertEqual(
+            captured.output[0],
+            f"WARNING:{API_MODULE.__name__}:ConnectLife appliance list request failed via bapi, trying HijuConn gateway...",
+        )
+
+    async def test_get_appliances_json_logs_generic_fallback_message_after_bapi_error(self) -> None:
+        api = ConnectLifeApi("user@example.com", "secret")
+
+        with (
+            patch.object(ConnectLifeApi, "_fetch_access_token", new=AsyncMock()),
+            patch.object(
+                ConnectLifeApi,
+                "_request_appliances_json",
+                new=AsyncMock(
+                    side_effect=API_MODULE.LifeConnectError("backend unavailable", status=500)
+                ),
+            ),
+            patch.object(ConnectLifeApi, "_should_fallback_to_gateway", return_value=True),
+            patch.object(
+                ConnectLifeApi,
+                "_request_gateway_appliances_json",
+                new=AsyncMock(return_value=[]),
+            ),
+            self.assertLogs(API_MODULE.__name__, level="WARNING") as captured,
+        ):
+            result = await api.get_appliances_json()
+
+        self.assertEqual(result, [])
+        self.assertEqual(
+            captured.output[0],
+            f"WARNING:{API_MODULE.__name__}:ConnectLife appliance list request failed via bapi, trying HijuConn gateway...",
+        )
+
     async def test_get_appliances_uses_empty_status_list_when_missing(self) -> None:
         api = ConnectLifeApi("user@example.com", "secret")
 
