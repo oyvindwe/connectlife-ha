@@ -79,6 +79,10 @@ It is possible to guard against `set_value` by setting `read_only: true` in the 
       read_only: true
 ```
 
+## Polling delay
+
+The integration polls the ConnectLife API every 60 seconds to avoid overloading the API and risking being banned. When a command is sent from Home Assistant, only the properties included in that command are updated immediately in the HA UI. Any side effects on other properties (e.g., turning on an AC may also change fan mode or current temperature) will not appear until the next poll. Changes made outside Home Assistant (e.g., from the ConnectLife mobile app or physical device controls) may also take up to 60 seconds to appear.
+
 ## Issues
 
 ### Climate entities
