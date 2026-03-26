@@ -11,6 +11,7 @@ from homeassistant.helpers import device_registry as dr, entity_registry as er, 
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import DOMAIN
+from .messages import format_retry_message
 
 MAX_RETRIES = 3
 
@@ -38,8 +39,9 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
     async def _async_update_data(self):
         """Fetch data from API endpoint."""
         try:
-            # Note: asyncio.TimeoutError and aiohttp.ClientError are already
-            # handled by the data update coordinator.
+            # Note: aiohttp.ClientError is already handled by the data update
+            # coordinator. TimeoutError is retried here so the UI gets the
+            # same user-facing retry message as other ConnectLife API errors.
             async with async_timeout.timeout(30):
                 await self.api.get_appliances()
                 self.error_count = 0
@@ -57,7 +59,7 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
                     "time" if i == 1 else "times",
                 )
             else:
-                raise err
+                raise UpdateFailed(format_retry_message(err)) from err
         except LifeConnectError as err:
             self.error_count += 1
             i = MAX_RETRIES - self.error_count
@@ -69,7 +71,7 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
                     "time" if i == 1 else "times",
                 )
             else:
-                raise UpdateFailed(f"Error communicating with API: {err}")
+                raise UpdateFailed(format_retry_message(err)) from err
         return {a.device_id: a for a in self.api.appliances}
 
     async def async_update_device(self, device_id: str, command: Mapping[str, int | str], properties: Mapping[str, int | str]):
