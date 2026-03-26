@@ -10,8 +10,8 @@ from homeassistant.const import Platform, CONF_USERNAME, CONF_PASSWORD
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers import config_validation as cv
 from homeassistant.helpers.typing import ConfigType
-from connectlife.api import ConnectLifeApi, LifeConnectAuthError
 
+from .api import ConnectLifeApi, LifeConnectAuthError
 from .const import CONF_DEVELOPMENT_MODE, CONF_TEST_SERVER_URL, DOMAIN
 from .coordinator import ConnectLifeCoordinator
 from .services import async_setup_services

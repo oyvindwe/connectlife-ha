@@ -3,13 +3,13 @@ import logging
 from collections.abc import Mapping
 from datetime import timedelta
 
-from connectlife.api import LifeConnectAuthError, LifeConnectError, ConnectLifeApi
 from connectlife.appliance import ConnectLifeAppliance
 from homeassistant.const import Platform
 from homeassistant.exceptions import ConfigEntryAuthFailed
 from homeassistant.helpers import device_registry as dr, entity_registry as er, issue_registry as ir
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
+from .api import LifeConnectAuthError, LifeConnectError, ConnectLifeApi
 from .const import DOMAIN
 
 MAX_RETRIES = 3

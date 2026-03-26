@@ -17,8 +17,8 @@ from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
 from homeassistant.core import callback
 from homeassistant.exceptions import HomeAssistantError
 
+from .api import ConnectLifeApi
 from .const import CONF_DEVICES, CONF_DEVELOPMENT_MODE, CONF_DISABLE_BEEP, CONF_TEST_SERVER_URL, DOMAIN
-from connectlife.api import ConnectLifeApi
 
 _LOGGER = logging.getLogger(__name__)
 

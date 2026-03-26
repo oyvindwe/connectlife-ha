@@ -16,11 +16,11 @@ from homeassistant.exceptions import ServiceValidationError
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers import config_validation as cv, entity_platform
 
+from .api import LifeConnectError
 from .const import DOMAIN
 from .coordinator import ConnectLifeCoordinator
 from .dictionaries import Dictionaries, Dictionary, Property
 from .entity import ConnectLifeEntity
-from connectlife.api import LifeConnectError
 from connectlife.appliance import ConnectLifeAppliance, MAX_DATETIME
 from .utils import is_entity, to_unit
 
