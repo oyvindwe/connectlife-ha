@@ -2023,6 +2023,16 @@
       }
     },
     "select": {
+      "actions": {
+        "name": "Actions",
+        "state": {
+          "none": "None",
+          "stop": "Stop",
+          "start": "Start",
+          "pause": "Pause",
+          "open_door": "Open door"
+        }
+      },
       "auto_dose_quantity_setting_status": {
         "name": "Auto dose quantity"
       },

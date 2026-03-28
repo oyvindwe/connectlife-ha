@@ -2048,6 +2048,16 @@
       }
     },
     "select": {
+      "actions": {
+        "name": "Acties",
+        "state": {
+          "none": "Geen",
+          "stop": "Stop",
+          "start": "Start",
+          "pause": "Pauze",
+          "open_door": "Deur openen"
+        }
+      },
       "auto_dose_quantity_setting_status": {
         "name": "Auto doseer hoeveelheid"
       },
