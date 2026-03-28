@@ -18,7 +18,15 @@ properties:
 
 - property: Actions
   # Sample value: 0
-  disabled: true
+  # Control the machine with the options below.
+  icon: mdi:play-pause
+  select:
+    device_class: enum
+    options:
+      0: none
+      1: stop
+      2: start
+      3: pause
 
 - property: Add_water_flag
   # Sample value: 0
