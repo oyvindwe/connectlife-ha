@@ -80,6 +80,7 @@ properties:
   sensor: # Sample value: 10
     read_only: true
     unit: rpm
+    multiplier: 100
   icon: 'mdi:speedometer'
 - property: temperature
   sensor:   # Sample value: 2
