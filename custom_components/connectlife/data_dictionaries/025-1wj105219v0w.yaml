@@ -15,6 +15,7 @@ properties:
   #  device_class: enum
   icon: 'mdi:shield-check'
 - property: Current_program_phase
+  icon: mdi:state-machine
   sensor:
     read_only: true
     device_class: enum
@@ -61,12 +62,14 @@ properties:
     multiplier: 100
   icon: 'mdi:speedometer'
 - property: Electricit_consumption_decimal
+  icon: mdi:lightning-bolt
   sensor: # Sample value: 27
     read_only: true
     device_class: energy
     state_class: total
     unit: kWh
 - property: Energy_estimate
+  icon: mdi:lightning-bolt
   sensor: # Sample value: 30
     read_only: true
     device_class: energy
@@ -168,6 +171,7 @@ properties:
     unit: rpm
   icon: 'mdi:speedometer'
 - property: Temperature_Default_DefaultMainWashTime
+  icon: mdi:clock-outline
   sensor: # Sample value: 200
     read_only: true
     device_class: duration

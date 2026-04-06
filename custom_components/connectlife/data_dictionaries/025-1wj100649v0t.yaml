@@ -6,6 +6,7 @@ properties:
     device_class: enum
   icon: 'mdi:shield-check'
 - property: Current_program_phase
+  icon: mdi:state-machine
   sensor:
     read_only: true
     device_class: enum
@@ -27,11 +28,13 @@ properties:
       14: delay
       15: finished
 - property: Electricit_consumption_decimal
+  icon: mdi:lightning-bolt
   sensor:
     read_only: true
     device_class: energy
     unit: kWh
 - property: Energy_estimate
+  icon: mdi:lightning-bolt
   sensor:
     read_only: true
     device_class: energy
@@ -84,6 +87,7 @@ properties:
     unit: °C
   icon: 'mdi:thermometer'
 - property: Temperature_Default_DefaultMainWashTime
+  icon: mdi:clock-outline
   sensor:
     read_only: true
     device_class: duration

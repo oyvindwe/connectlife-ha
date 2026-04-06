@@ -1,6 +1,7 @@
 # Washing Machine
 properties:
 - property: AntiCrease
+  icon: mdi:iron
   switch:
 - property: AutoDose
   icon: mdi:tray-arrow-up
@@ -68,17 +69,20 @@ properties:
       56: "pets"
       57: "full_load_49"
 - property: Selected_program_remaining_time_in_minutes
+  icon: mdi:update
   sensor:
     device_class: duration
     unit: min
     read_only: true
 - property: Selected_program_total_time_in_minutes
+  icon: mdi:timer
   hide: true
   sensor:
     device_class: duration
     unit: min
     read_only: true
 - property: Selected_program_total_running_time_in_minutes
+  icon: mdi:timer
   hide: true
   sensor:
     device_class: duration
