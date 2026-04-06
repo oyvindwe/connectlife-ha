@@ -3,7 +3,6 @@ properties:
 - property: ApplicationPermissions
   sensor:
     read_only: true
-    device_class: enum
   icon: 'mdi:shield-check'
 - property: Current_program_phase
   icon: mdi:state-machine
@@ -30,7 +29,6 @@ properties:
 - property: FlexibleSpinTime_Flag
   sensor:
     read_only: true
-    device_class: enum
   icon: 'mdi:timer-cog'
 - property: RinseNum
   sensor:
@@ -62,7 +60,6 @@ properties:
 - property: Sound_setting
   sensor:
     read_only: true
-    device_class: enum
   icon: 'mdi:volume-high'
 - property: Spin_speed_rpm
   sensor:

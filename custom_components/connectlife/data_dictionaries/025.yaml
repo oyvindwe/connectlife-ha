@@ -208,9 +208,11 @@ properties:
     icon: mdi:iron
     switch: {}
   - property: AutoDose
+    icon: mdi:tray-arrow-up
     entity_category: config
     switch: {}
   - property: AutoTubClean
+    icon: mdi:auto-fix
     entity_category: config
     switch: {}
   - property: AirDryFlag
@@ -1053,7 +1055,6 @@ properties:
   - property: Current_program_phase
     icon: mdi:state-machine
     sensor:
-      device_class: enum
       read_only: true
   - property: ExtraRinseNum
     hide: true
