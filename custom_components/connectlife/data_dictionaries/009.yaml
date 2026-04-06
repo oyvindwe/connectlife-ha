@@ -1,10 +1,4 @@
 properties:
-  - property: daily_energy_kwh
-    sensor:
-      device_class: energy
-      read_only: true
-      unit: kWh
-      state_class: total_increasing
   - property: f_cool_qvalue
     sensor:
       unit: BTU/h

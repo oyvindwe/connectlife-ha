@@ -25,13 +25,6 @@ properties:
     hide: true
     binary_sensor:
       device_class: problem
-  - property: daily_energy_kwh
-    hide: true
-    sensor:
-      read_only: true
-      state_class: total_increasing
-      device_class: energy
-      unit: kWh
   - property: date_display_format_status
     hide: true
   - property: date_format_status

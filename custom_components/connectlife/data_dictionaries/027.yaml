@@ -468,5 +468,3 @@ properties:
   # Sample value: 2
 - property: Weight_unit_setting_status
   # Sample value: 0
-- property: daily_energy_kwh
-  # Sample value: 0

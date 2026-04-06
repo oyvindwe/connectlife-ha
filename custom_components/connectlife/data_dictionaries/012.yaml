@@ -121,5 +121,3 @@ properties:
     # Sample value: 0002/11/30T00:00:00
   - property: TimerStatus
     # Sample value: 5
-  - property: daily_energy_kwh
-    # Sample value: 0

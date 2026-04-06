@@ -621,10 +621,3 @@ properties:
     hide: true
   - property: Water_tank
     hide: true
-  - property: daily_energy_kwh
-    sensor:
-      read_only: true
-      state_class: total_increasing
-      device_class: energy
-      unit: kWh
-    icon: mdi:lightning-bolt-outline
