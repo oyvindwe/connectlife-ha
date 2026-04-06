@@ -1,7 +1,6 @@
 # Washing machine WF3S1043BW3
 properties:
 - property: Current_program_phase
-  icon: 'mdi:washing-machine'
   sensor:
     read_only: true
     device_class: enum
@@ -49,4 +48,3 @@ properties:
     read_only: true
     device_class: duration
     unit: min
-  icon: 'mdi:timer'

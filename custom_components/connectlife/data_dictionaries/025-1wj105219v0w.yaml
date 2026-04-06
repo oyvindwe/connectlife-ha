@@ -1,8 +1,8 @@
 # Washing Machine WFSE1114-LVW002
 properties:
-- property:  slotdry_flag
+- property: slotdry_flag
   hide: true
-- property:  slotdry_flag1
+- property: slotdry_flag1
   hide: true
 - property: APPControl_flag
   hide: true
@@ -35,7 +35,6 @@ properties:
       13: anti_crease
       14: delay
       15: finished
-  icon: 'mdi:progress-wrench'
 - property: DefaultSpinSpeed
   sensor:
     read_only: true
@@ -67,14 +66,12 @@ properties:
     device_class: energy
     state_class: total
     unit: kWh
-  icon: 'mdi:flash'
 - property: Energy_estimate
   sensor: # Sample value: 30
     read_only: true
     device_class: energy
     state_class: total
     unit: kWh
-  icon: 'mdi:chart-box'
 - property: ExtraRinseNum
   hide: true
 - property: FlexibleSpinTime_Flag
@@ -175,7 +172,6 @@ properties:
     read_only: true
     device_class: duration
     unit: min
-  icon: 'mdi:heat-wave'
 - property: WashStepFinishNotifySwitch
   hide: true
 - property: WashingTime_UseIndex

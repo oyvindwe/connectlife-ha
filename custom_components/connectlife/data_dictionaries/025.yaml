@@ -1051,6 +1051,10 @@ properties:
     hide: true
     entity_category: diagnostic
   - property: Current_program_phase
+    icon: mdi:state-machine
+    sensor:
+      device_class: enum
+      read_only: true
   - property: ExtraRinseNum
     hide: true
     entity_category: diagnostic

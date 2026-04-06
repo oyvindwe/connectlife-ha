@@ -1,4 +1,4 @@
-# Washing machine WF3S1043BW3
+# Washing machine WFQR1014
 properties:
 - property: ApplicationPermissions
   sensor:
@@ -31,13 +31,11 @@ properties:
     read_only: true
     device_class: energy
     unit: kWh
-  icon: 'mdi:flash'
 - property: Energy_estimate
   sensor:
     read_only: true
     device_class: energy
     unit: kWh
-  icon: 'mdi:chart-box'
 - property: FlexibleSpinTime_Flag
   sensor:
     read_only: true
@@ -90,7 +88,6 @@ properties:
     read_only: true
     device_class: duration
     unit: min
-  icon: 'mdi:heat-wave'
 - property: DryOpen_DefaultSpinSpeed
   hide: true
 - property: ExtraRinseNum

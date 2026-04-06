@@ -18,7 +18,6 @@ properties:
         7: spin-dry
       read_only: true
   - property: Detergent_display
-    icon: mdi:alpha-d-circle-outline
     binary_sensor:
       options:
         0: false
@@ -33,7 +32,6 @@ properties:
         2: "2"
         3: "3"
   - property: RinseNum
-    icon: mdi:tray-plus
     sensor:
       device_class: enum
       options:
@@ -61,25 +59,21 @@ properties:
         41: "power49"
         42: "auto"
   - property: Selected_program_remaining_time_in_minutes
-    icon: mdi:camera-timer
     sensor:
       device_class: duration
       unit: min
       read_only: true
   - property: Selected_program_total_time_in_minutes
-    icon: mdi:camera-timer
     sensor:
       device_class: duration
       unit: min
       read_only: true
   - property: Selected_program_total_running_time_in_minutes
-    icon: mdi:camera-timer
     sensor:
       device_class: duration
       unit: min
       read_only: true
   - property: Softer_display
-    icon: mdi:alpha-s-circle-outline
     binary_sensor:
       options:
         0: false
@@ -98,7 +92,7 @@ properties:
         6: "60"
         9: "90"
   - property: Spin_speed_rpm
-    icon: mdi:thermometer-lines
+    icon: mdi:rotate-3d-variant
     select:
       options:
         14: "1400"
@@ -108,13 +102,11 @@ properties:
         60: "600"
         0: "none"
   - property: spintime_index
-    icon: mdi:camera-timer
     sensor:
       device_class: duration
       unit: min
       read_only: true
   - property: Water_consumption_int
-    icon: mdi:water-pump
     sensor:
       state_class: total_increasing
       device_class: water

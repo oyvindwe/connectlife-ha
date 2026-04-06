@@ -15,7 +15,6 @@ properties:
   # 1 = active, 0 = inactive
   switch:
     device_class: switch
-  icon: 'mdi:account-outline'
   #icon_on: 'mdi:account-lock'
 
 - property: Current_program_phase
@@ -35,7 +34,6 @@ properties:
       10: finished
 
 - property: DefaultSpinSpeed
-  icon: 'mdi:rotate-3d-variant'
   sensor:
     read_only: true
     device_class: enum
@@ -48,7 +46,6 @@ properties:
       14: "1400"
 
 - property: DelayEndTime
-  icon: mdi:clock-end
   select:
     options:
       0: "none"
@@ -105,7 +102,6 @@ properties:
     read_only: true
     device_class: power_factor
 #    unit: '%'
-  icon: 'mdi:chart-box'
 
 - property: ExtraRinseNum
   icon: mdi:tray-plus
@@ -144,14 +140,12 @@ properties:
     read_only: true
     device_class: duration
     unit: min
-  icon: 'mdi:clock-outline'
 
 - property: Selected_program_total_time_in_minutes
   sensor:
     read_only: true
     device_class: duration
     unit: min
-  icon: 'mdi:clock-outline'
 
 - property: Sound_setting
   # Sample value: 3 
@@ -219,7 +213,6 @@ properties:
     read_only: true
     device_class: duration
     unit: min
-  icon: 'mdi:clock-outline'
 
 - property: temperature
   icon: mdi:thermometer-lines
