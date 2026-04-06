@@ -66,7 +66,7 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
     async def async_update_device(self, command: dict[str, int], properties: dict[str, int] | None = None):
         if properties is None:
             properties = command.copy()
-        if self._disable_beep:
+        if self._disable_beep and "t_beep" in self.coordinator.data[self.device_id].status_list:
             command["t_beep"] = 0
         await self.coordinator.async_update_device(self.device_id, command, properties)
 
