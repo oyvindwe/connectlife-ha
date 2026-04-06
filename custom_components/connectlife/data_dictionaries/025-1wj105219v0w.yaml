@@ -42,13 +42,6 @@ properties:
     device_class: energy
     state_class: total
     unit: kWh
-- property: Energy_estimate
-  icon: mdi:lightning-bolt
-  sensor: # Sample value: 30
-    read_only: true
-    device_class: energy
-    state_class: total
-    unit: kWh
 - property: Program_end_to_shutdown_time_in_minutes
   sensor:
     read_only: true
@@ -88,12 +81,6 @@ properties:
     read_only: true
     unit: rpm
   icon: 'mdi:speedometer'
-- property: Temperature_Default_DefaultMainWashTime
-  icon: mdi:clock-outline
-  sensor: # Sample value: 200
-    read_only: true
-    device_class: duration
-    unit: min
 - property: temperature
   sensor:   # Sample value: 2
     read_only: true
