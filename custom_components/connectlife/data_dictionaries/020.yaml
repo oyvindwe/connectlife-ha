@@ -625,10 +625,3 @@ properties:
   - property: Zone_number
     # Sample value: 5
     hide: true
-  - property: daily_energy_kwh
-    hide: true
-    sensor:
-      read_only: true
-      state_class: total_increasing
-      device_class: energy
-      unit: kWh

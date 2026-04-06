@@ -14,6 +14,7 @@ from .const import DOMAIN
 from .messages import format_retry_message
 
 MAX_RETRIES = 3
+ENERGY_UPDATE_INTERVAL = timedelta(minutes=10)
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -135,3 +136,37 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
                     else:
                         # Self repair
                         ir.async_delete_issue(self.hass, DOMAIN, f"unavailable_device.{device_id}")
+
+
+class ConnectLifeEnergyCoordinator(DataUpdateCoordinator[dict[str, float | None]]):
+    """ConnectLife energy coordinator. Polls daily energy usage every 10 minutes."""
+
+    def __init__(self, hass, api: ConnectLifeApi, appliance_coordinator: ConnectLifeCoordinator):
+        """Initialize energy coordinator."""
+        self.api = api
+        self.appliance_coordinator = appliance_coordinator
+        super().__init__(
+            hass,
+            _LOGGER,
+            name=f"{DOMAIN}_energy",
+            update_interval=ENERGY_UPDATE_INTERVAL,
+        )
+
+    async def _async_update_data(self) -> dict[str, float | None]:
+        """Fetch daily energy for all appliances."""
+        result: dict[str, float | None] = {}
+        for device_id, appliance in self.appliance_coordinator.data.items():
+            try:
+                result[device_id] = await self.api.get_daily_energy_kwh(
+                    appliance.puid,
+                    appliance.device_type_code,
+                    appliance.device_feature_code,
+                )
+            except Exception:
+                _LOGGER.debug(
+                    "Failed to fetch daily energy for %s",
+                    appliance.device_nickname,
+                    exc_info=True,
+                )
+                result[device_id] = None
+        return result

@@ -64,8 +64,6 @@ properties:
     hide: true
   - property: custard_room
     hide: true
-  - property: daily_energy_kwh
-    hide: true
   - property: date_format_status
     hide: true
   - property: date_time_format_day_state

@@ -231,14 +231,6 @@ properties:
   - property: currrent_dry_level_time
     # Sample value: 12
     hide: true
-  - property: daily_energy_kwh
-    # Sample value: 0
-    sensor:
-      read_only: true
-      state_class: total_increasing
-      device_class: energy
-      unit: kWh
-    hide: true
   - property: default_dry_level
     # Sample value: 1
     hide: true

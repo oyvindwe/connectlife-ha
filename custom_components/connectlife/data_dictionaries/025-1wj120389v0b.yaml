@@ -464,13 +464,6 @@ properties:
   # Sample value: 0
 - property: add_clothes_check
   # Sample value: 0
-- property: daily_energy_kwh
-  sensor:
-    read_only: true
-    state_class: total_increasing
-    device_class: energy
-    unit: kWh
-  # Sample value: 0
 - property: delay_actions_flag
   # Sample value: 0
 - property: delayclose_flag

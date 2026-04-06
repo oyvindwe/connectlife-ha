@@ -27,13 +27,6 @@ properties:
       14: delay
       15: finished
   icon: 'mdi:progress-wrench'
-- property: daily_energy_kwh
-  sensor:
-    read_only: true
-    state_class: total_increasing
-    device_class: energy
-    unit: kWh
-  icon: 'mdi:lightning-bolt'
 - property: DefaultSpinSpeed
   sensor:
     read_only: true

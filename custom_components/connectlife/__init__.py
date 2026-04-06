@@ -4,16 +4,16 @@ from __future__ import annotations
 
 import logging
 
-from homeassistant.exceptions import ConfigEntryError
+from homeassistant.exceptions import ConfigEntryError, ConfigEntryNotReady
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import Platform, CONF_USERNAME, CONF_PASSWORD
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers import config_validation as cv
 from homeassistant.helpers.typing import ConfigType
-from connectlife.api import ConnectLifeApi, LifeConnectAuthError
+from connectlife.api import ConnectLifeApi, LifeConnectAuthError, LifeConnectError
 
 from .const import CONF_DEVELOPMENT_MODE, CONF_TEST_SERVER_URL, DOMAIN
-from .coordinator import ConnectLifeCoordinator
+from .coordinator import ConnectLifeCoordinator, ConnectLifeEnergyCoordinator
 from .services import async_setup_services
 
 PLATFORMS: list[Platform] = [
@@ -55,9 +55,14 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         await api.login()
     except LifeConnectAuthError as ex:
         raise ConfigEntryError from ex
+    except LifeConnectError as ex:
+        raise ConfigEntryNotReady from ex
     coordinator = ConnectLifeCoordinator(hass, api)
     await coordinator.async_config_entry_first_refresh()
+    energy_coordinator = ConnectLifeEnergyCoordinator(hass, api, coordinator)
+    await energy_coordinator.async_config_entry_first_refresh()
     hass.data[DOMAIN][entry.entry_id] = coordinator
+    hass.data[DOMAIN][f"{entry.entry_id}_energy"] = energy_coordinator
 
     entry.async_on_unload(entry.add_update_listener(update_listener))
 
@@ -79,5 +84,6 @@ async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
 
     if unload_ok := await hass.config_entries.async_unload_platforms(entry, PLATFORMS):
         hass.data[DOMAIN].pop(entry.entry_id)
+        hass.data[DOMAIN].pop(f"{entry.entry_id}_energy", None)
 
     return unload_ok
