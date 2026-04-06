@@ -25,10 +25,17 @@
 |                   | Heat pump                | 016              | 502                  |
 |                   | Induction hob            | 020              | 63c45b513e1a4bf7     |
 |                   | Oven                     | 023              | 295608422d362be1     |
-|                   | Washing machine          | 025              | 1wj105246v0w         |
+|                   | Washing machine          | 025              | 1wj090660v0w         |
+| WD3S9043BB3       | Washing machine          | 025              | 1wj090913v0f         |
+| WFQR1014          | Washing machine          | 025              | 1wj100649v0t         |
+| WF3S1043BW3       | Washing machine          | 025              | 1wj100722v0w         |
+| HWFS1015AB        | Washing machine          | 025              | 1wj100923v0f         |
+| WFSE1114-LVW002   | Washing machine          | 025              | 1wj105219v0w         |
+| WF3S1114-LVW004   | Washing machine          | 025              | 1wj105246v0w         |
+| WD5I1045BWQ       | Washing machine          | 025              | 1wj105552v0w         |
 | WDSE1214-EVAJMW   | Washing machine          | 025              | 1wj120261v0w         |
 | WFSE1214-MVW002   | Washing machine          | 025              | 1wj120389v0b         |
-| WF3S1114-LVW004   | Washing machine          | 025              | 1wj105246v0w         |
+|                   | Washing machine          | 025              | 1wj120407v0w         |
 |                   | Refrigerator             | 026              | 1b0610z0049j         |
 |                   | Refrigerator             | 026              | 1b0628z0075j         |
 | RS818N4TIE1       | Refrigerator             | 026              | 1b0628z0146j         |

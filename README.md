@@ -38,10 +38,12 @@ Default mapping files are provided for the following device types:
 | Window air conditioner   | [008](custom_components/connectlife/data_dictionaries/008.yaml) |
 | Air conditioner          | [009](custom_components/connectlife/data_dictionaries/009.yaml) |
 | Hood                     | [012](custom_components/connectlife/data_dictionaries/012.yaml) |
+| Oven                     | [013](custom_components/connectlife/data_dictionaries/013.yaml) |
 | Dishwasher               | [015](custom_components/connectlife/data_dictionaries/015.yaml) |
 | Heat pump                | [016](custom_components/connectlife/data_dictionaries/016.yaml) |
 | Induction hob            | [020](custom_components/connectlife/data_dictionaries/020.yaml) |
 | Oven                     | [023](custom_components/connectlife/data_dictionaries/023.yaml) |
+| Washing machine          | [025](custom_components/connectlife/data_dictionaries/025.yaml) |
 | Washing machine          | [027](custom_components/connectlife/data_dictionaries/027.yaml) |
 | Tumble dryer             | [030](custom_components/connectlife/data_dictionaries/030.yaml) |
 | Tumble dryer             | [032](custom_components/connectlife/data_dictionaries/032.yaml) |

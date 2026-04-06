@@ -1,0 +1,234 @@
+# Freestanding washing-drying machine WD3S9043BB3 (WD3S9014-SVW003, 025-1wj090913v0f)
+properties:
+- property: ApplicationPermissions
+  # 1 = not granted (No remote control allowed), 3 = granted (Remote control allowed) ?
+  sensor:
+    read_only: true
+    device_class: enum
+    options:
+      1: "not_granted"
+      3: "granted"
+  icon: 'mdi:shield-check'
+  entity_category: diagnostic
+
+- property: Child_lock
+  # 1 = active, 0 = inactive
+  switch:
+    device_class: switch
+  icon: 'mdi:account-outline'
+  #icon_on: 'mdi:account-lock'
+
+- property: Current_program_phase
+  # Machine falls back to the first option from the selected program after machine is completed. Usually option 3 for washing program. 7 for spin-dry only program. 8 for drying only program. Dont know why.
+  icon: mdi:state-machine
+  sensor:
+    read_only: true
+    device_class: enum
+    options:
+      0: not_available
+      1: weigh
+      2: prewash
+      3: wash
+      4: rinse
+      7: spin-dry
+      8: drying
+      10: finished
+
+- property: DefaultSpinSpeed
+  icon: 'mdi:rotate-3d-variant'
+  sensor:
+    read_only: true
+    device_class: enum
+    options:
+      0: "off"
+      6: "600"
+      8: "800"
+      10: "1000"
+      12: "1200"
+      14: "1400"
+
+- property: DelayEndTime
+  icon: mdi:clock-end
+  select:
+    options:
+      0: "none"
+      1: "1_hour"
+      2: "2_hours"
+      3: "3_hours"
+      4: "4_hours"
+      5: "5_hours"
+      6: "6_hours"
+      7: "7_hours"
+      8: "8_hours"
+      9: "9_hours"
+      10: "10_hours"
+      11: "11_hours"
+      12: "12_hours"
+      13: "13_hours"
+      14: "14_hours"
+      15: "15_hours"
+      16: "16_hours"
+      17: "17_hours"
+      18: "18_hours"
+      19: "19_hours"
+      20: "20_hours"
+      21: "21_hours"
+      22: "22_hours"
+      23: "23_hours"
+      24: "24_hours"
+
+- property: DryOpen_DefaultSpinSpeed
+  # Sample value: 14
+  icon: 'mdi:rotate-3d-variant'
+  sensor:
+    read_only: true
+    device_class: enum
+    options:
+      0: "off"
+      6: "600"
+      8: "800"
+      10: "1000"
+      12: "1200"
+      14: "1400"
+
+- property: Electricit_consumption_int
+  hide: true
+  sensor:
+    read_only: true
+    device_class: energy
+    unit: kWh
+  icon: 'mdi:lightning-bolt'
+
+- property: Energy_estimate
+  # Estimates power consumption (0%-100%) for the selected program and options in 10 percentage steps, based on selected program options.
+  sensor:
+    read_only: true
+    device_class: power_factor
+#    unit: '%'
+  icon: 'mdi:chart-box'
+
+- property: ExtraRinseNum
+  icon: mdi:tray-plus
+  select:
+    options:
+      0: "none"
+      1: "+1"
+      2: "+2"
+      3: "+3"
+
+- property: Selected_program_ID
+  # Sample value: 41 (Power 49')
+  icon: 'mdi:washing-machine'
+  select:
+    options:
+      1: "cotton_dry"
+      2: "synthetic_dry"
+      4: "refresh"
+      5: "anti_allergy"
+      6: "drum_cleaning"
+      7: "cotton"
+      8: "synthetic"
+      9: "eco_40_60"
+      10: "wool"
+      11: "fast15"
+      14: "spin-dry"
+      16: "baby"
+      20: "rinse_spin"
+      22: "clean_dry_60"
+      41: "power49"
+      42: "auto"
+
+- property: Selected_program_total_running_time_in_minutes
+  # Sample value: 49
+  sensor:
+    read_only: true
+    device_class: duration
+    unit: min
+  icon: 'mdi:clock-outline'
+
+- property: Selected_program_total_time_in_minutes
+  sensor:
+    read_only: true
+    device_class: duration
+    unit: min
+  icon: 'mdi:clock-outline'
+
+- property: Sound_setting
+  # Sample value: 3 
+  sensor:
+    read_only: true
+  icon: 'mdi:volume-high'
+
+- property: Spin_speed_rpm
+  # Sample value: 12 (1200 rpm)
+  icon: 'mdi:rotate-3d-variant'
+  select:
+    options:
+      0: "off"
+      6: "600"
+      8: "800"
+      10: "1000"
+      12: "1200"
+      14: "1400"
+
+- property: Steam
+  # Sample value: 0
+  icon: mdi:heat-wave
+  switch:
+    device_class: switch
+
+- property: Water_consumption_int
+  # Not sure what the value actually represents
+  hide: true
+  sensor:
+    read_only: true
+    state_class: total_increasing
+    device_class: water
+    unit: L
+  #  multiplier: .1 # don't know if needed
+
+- property: dry_time
+  # Sample value: 3
+  icon: 'mdi:tumble-dryer'
+  select:
+    options:
+      0: "off"
+      1: "pre-ironing"
+      2: "extra_dry"
+      3: "wardrobe"
+      30: "30_min"
+      60: "60_min"
+      90: "90_min"
+      120: "120_min"
+      180: "180_min"
+      240: "240_min"
+
+- property: machine_status
+  sensor: # Need to change to select to enable pause and resume functionality?
+    read_only: true
+    device_class: enum
+    options:
+      0: "off"
+      1: standby
+      2: running
+      3: paused
+  icon: 'mdi:washing-machine'
+
+- property: spin_time
+  sensor:
+    read_only: true
+    device_class: duration
+    unit: min
+  icon: 'mdi:clock-outline'
+
+- property: temperature
+  icon: mdi:thermometer-lines
+  select:
+    options:
+      0: "cold"
+      2: "20"
+      3: "30"
+      4: "40"
+      6: "60"
+      9: "90"
+

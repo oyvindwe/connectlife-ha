@@ -496,6 +496,9 @@
       "demo_mode": {
         "name": "Demo mode"
       },
+      "detergent_display": {
+        "name": "Detergent display"
+      },
       "door": {
         "name": "Door"
       },
@@ -651,6 +654,9 @@
       },
       "existing_sr_mode": {
         "name": "Existing SR mode"
+      },
+      "extra_rinse": {
+        "name": "Extra rinse"
       },
       "f_e_arkgrille": {
         "name": "Cabinet grille protection alarm"
@@ -1111,6 +1117,9 @@
       "soft_pairing_setting": {
         "name": "Soft pairing setting"
       },
+      "softer_display": {
+        "name": "Softener display"
+      },
       "sr_mode": {
         "name": "SR mode"
       },
@@ -1278,13 +1287,24 @@
         }
       },
       "applicationpermissions": {
-        "name": "Application permissions"
+        "name": "Application permissions",
+        "state": {
+          "not_granted": "Not granted",
+          "granted": "Granted"
+        }
       },
       "auto_dose_duration": {
         "name": "Auto dose duration"
       },
       "auto_dose_refill": {
         "name": "Auto dose refill"
+      },
+      "autodose_flag": {
+        "name": "Auto dose flag",
+        "state": {
+          "unavailable": "Unavailable",
+          "available": "Available"
+        }
       },
       "bundling_humidity": {
         "name": "Bundling humidity"
@@ -1390,8 +1410,40 @@
       "delaystart_delayend_remaining_timein_minutes": {
         "name": "Delay start remaining time"
       },
+      "detergent": {
+        "name": "Detergent",
+        "state": {
+          "less": "Less",
+          "standard": "Standard",
+          "more": "More"
+        }
+      },
       "detergent_display": {
         "name": "Detergent display"
+      },
+      "detergentstandarddosage": {
+        "name": "Detergent standard dosage",
+        "state": {
+          "10ml": "10 ml",
+          "15ml": "15 ml",
+          "20ml": "20 ml",
+          "25ml": "25 ml",
+          "30ml": "30 ml",
+          "35ml": "35 ml",
+          "40ml": "40 ml",
+          "45ml": "45 ml",
+          "50ml": "50 ml",
+          "55ml": "55 ml",
+          "60ml": "60 ml",
+          "65ml": "65 ml",
+          "70ml": "70 ml",
+          "75ml": "75 ml",
+          "80ml": "80 ml",
+          "85ml": "85 ml",
+          "90ml": "90 ml",
+          "95ml": "95 ml",
+          "100ml": "100 ml"
+        }
       },
       "device_status": {
         "state": {
@@ -1440,6 +1492,9 @@
           "other": "Other"
         }
       },
+      "dryopen_defaultspinspeed": {
+        "name": "Dry open default spin speed"
+      },
       "electricit_consumption_decimal": {
         "name": "Electricit consumption decimal"
       },
@@ -1457,6 +1512,26 @@
       },
       "environment_real_temperature": {
         "name": "Environment real temperature"
+      },
+      "error_code": {
+        "name": "Error code",
+        "state": {
+          "none": "None",
+          "error_f01": "Error f01",
+          "error_f03": "Error f03",
+          "error_f04": "Error f04",
+          "error_f05": "Error f05",
+          "error_f06": "Error f06",
+          "error_f07": "Error f07",
+          "error_f13": "Error f13",
+          "error_f14": "Error f14",
+          "error_f15": "Error f15",
+          "error_f16": "Error f16",
+          "error_f17": "Error f17",
+          "error_f18": "Error f18",
+          "error_f23": "Error f23",
+          "error_f24": "Error f24"
+        }
       },
       "error_read_out_1_code": {
         "name": "Error read out 1 code"
@@ -1619,8 +1694,12 @@
         "state": {
           "off": "Off",
           "standby": "Standby",
-          "running": "Running"
+          "running": "Running",
+          "paused": "Paused"
         }
+      },
+      "mainwashtime": {
+        "name": "Main wash time"
       },
       "mainwashtimeuseindex": {
         "name": "Main wash time use index"
@@ -1688,8 +1767,11 @@
       "oven_usage_value_time_since_last_cleaning": {
         "name": "Oven usage value time since last cleaning"
       },
+      "parse_lib_ota": {
+        "name": "Parse lib OTA"
+      },
       "parse_lib_ver": {
-        "name": "Parse lib ver"
+        "name": "Parse lib version"
       },
       "pressure_calibration_setting_status": {
         "name": "Pressure calibration"
@@ -1717,6 +1799,9 @@
       },
       "refrigerator_sensor_real_temperature": {
         "name": "Refrigerator sensor real temperature"
+      },
+      "remaining_time_of_selected_program": {
+        "name": "Remaining time of selected program"
       },
       "rinse_aid_setting_status": {
         "name": "Rinse aid"
@@ -2202,8 +2287,40 @@
           "no_shape": "No shape"
         }
       },
+      "softener": {
+        "name": "Softener",
+        "state": {
+          "less": "Less",
+          "standard": "Standard",
+          "more": "More"
+        }
+      },
       "softer_display": {
-        "name": "Softer display"
+        "name": "Softener display"
+      },
+      "softnerstandarddosage": {
+        "name": "Softener standard dosage",
+        "state": {
+          "10ml": "10 ml",
+          "15ml": "15 ml",
+          "20ml": "20 ml",
+          "25ml": "25 ml",
+          "30ml": "30 ml",
+          "35ml": "35 ml",
+          "40ml": "40 ml",
+          "45ml": "45 ml",
+          "50ml": "50 ml",
+          "55ml": "55 ml",
+          "60ml": "60 ml",
+          "65ml": "65 ml",
+          "70ml": "70 ml",
+          "75ml": "75 ml",
+          "80ml": "80 ml",
+          "85ml": "85 ml",
+          "90ml": "90 ml",
+          "95ml": "95 ml",
+          "100ml": "100 ml"
+        }
       },
       "sound_setting": {
         "name": "Sound setting"
@@ -3115,6 +3232,9 @@
       "water_consumption": {
         "name": "Water consumption"
       },
+      "water_consumption_decimal": {
+        "name": "Water consumption decimal"
+      },
       "water_consumption_in_running_program": {
         "name": "Water consumption in running program"
       },
@@ -3169,6 +3289,9 @@
       "child_lock": {
         "name": "Child lock"
       },
+      "coldwash": {
+        "name": "Cold wash"
+      },
       "crisp_function_status": {
         "name": "Crisp function status"
       },
@@ -3177,6 +3300,9 @@
       },
       "display_standby": {
         "name": "Display standby"
+      },
+      "downlight": {
+        "name": "Down light"
       },
       "drum_light": {
         "name": "Drum light"
@@ -3293,7 +3419,9 @@
           "stop_finish": "Stop finish",
           "add_duration": "Add duration",
           "add_gratin": "Add gratin",
-          "steam_shot": "Steam shot"
+          "steam_shot": "Steam shot",
+          "none": "None",
+          "stop": "Stop"
         }
       },
       "auto_dose_quantity_setting_status": {
@@ -3320,6 +3448,36 @@
       "cooking_intensity": {
         "name": "Cooking intensity"
       },
+      "delayendtime": {
+        "name": "Delay end time",
+        "state": {
+          "none": "None",
+          "1_hour": "1 hour",
+          "2_hours": "2 hours",
+          "3_hours": "3 hours",
+          "4_hours": "4 hours",
+          "5_hours": "5 hours",
+          "6_hours": "6 hours",
+          "7_hours": "7 hours",
+          "8_hours": "8 hours",
+          "9_hours": "9 hours",
+          "10_hours": "10 hours",
+          "11_hours": "11 hours",
+          "12_hours": "12 hours",
+          "13_hours": "13 hours",
+          "14_hours": "14 hours",
+          "15_hours": "15 hours",
+          "16_hours": "16 hours",
+          "17_hours": "17 hours",
+          "18_hours": "18 hours",
+          "19_hours": "19 hours",
+          "20_hours": "20 hours",
+          "21_hours": "21 hours",
+          "22_hours": "22 hours",
+          "23_hours": "23 hours",
+          "24_hours": "24 hours"
+        }
+      },
       "dry_level": {
         "name": "Drying level",
         "state": {
@@ -3333,11 +3491,30 @@
         "state": {
           "wardrobe": "Wardrobe",
           "pre-ironing": "Pre-ironing",
-          "extra_dry": "Extra dry"
+          "extra_dry": "Extra dry",
+          "30_min": "30 min",
+          "60_min": "60 min",
+          "90_min": "90 min",
+          "120_min": "120 min",
+          "180_min": "180 min",
+          "240_min": "240 min",
+          "iron": "Iron",
+          "cupboard": "Cupboard"
+        }
+      },
+      "drymodel": {
+        "name": "Dry model",
+        "state": {
+          "wash": "Wash",
+          "wash_and_dry": "Wash and dry",
+          "dry_only": "Dry only"
         }
       },
       "extrarinsenum": {
-        "name": "Extra rinse num"
+        "name": "Extra rinse",
+        "state": {
+          "none": "None"
+        }
       },
       "language_status": {
         "name": "Language",
@@ -3409,13 +3586,33 @@
           "spin-dry": "Spin-dry",
           "rinse_spin": "Rinse spin",
           "clean_dry_60": "Clean dry 60",
-          "power49": "Power49"
+          "power49": "Power49",
+          "allergy_care": "Allergy care",
+          "wash_and_dry_49": "Wash and dry 49",
+          "bedding": "Bedding",
+          "power_30": "Power 30",
+          "pets": "Pets",
+          "full_load_49": "Full load 49"
         }
       },
       "spin_speed_rpm": {
         "name": "Spin speed",
         "state": {
           "none": "None"
+        }
+      },
+      "stain_removal": {
+        "name": "Stain removal",
+        "state": {
+          "wine": "Wine",
+          "grass": "Grass",
+          "soil": "Soil",
+          "coffee": "Coffee",
+          "milk": "Milk",
+          "juice": "Juice",
+          "sweat": "Sweat",
+          "blood": "Blood",
+          "oil": "Oil"
         }
       },
       "steam_123": {

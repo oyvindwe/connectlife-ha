@@ -1,0 +1,235 @@
+# Washing Machine WFSE1114-LVW002
+properties:
+- property:  slotdry_flag
+  hide: true
+- property:  slotdry_flag1
+  hide: true
+- property: APPControl_flag
+  hide: true
+- property: Add_water_flag
+  hide: true
+- property: ApplicationPermissions
+  hide: true
+  #sensor:
+  #  read_only: true
+  #  device_class: enum
+  icon: 'mdi:shield-check'
+- property: Current_program_phase
+  sensor:
+    read_only: true
+    device_class: enum
+    options:
+      0: not_available
+      1: program_not_selected
+      2: program_selected
+      3: delay_start_waiting
+      4: preheat
+      5: preheat_finished
+      6: prewash
+      7: main_wash
+      8: drying
+      9: program_finished
+      10: ventilating
+      11: idle
+      12: running
+      13: anti_crease
+      14: delay
+      15: finished
+  icon: 'mdi:progress-wrench'
+- property: DefaultSpinSpeed
+  sensor:
+    read_only: true
+    unit: rpm
+    multiplier: 100
+  icon: 'mdi:speedometer'
+- property: Detergent_BuyNotifySwitch
+  hide: true
+- property: Detergent_LeftML
+  hide: true
+- property: Detergent_LeftNum
+  hide: true
+- property: Detergent_TotalML
+  hide: true
+- property: Detergent_TotalNum
+  hide: true
+- property: DryFilterRemindFlag
+  hide: true
+- property: DryOpen_DefaultSpinSpeed
+  # Sample value: 14
+  sensor:
+    read_only: true
+    unit: rpm
+    multiplier: 100
+  icon: 'mdi:speedometer'
+- property: Electricit_consumption_decimal
+  sensor: # Sample value: 27
+    read_only: true
+    device_class: energy
+    state_class: total
+    unit: kWh
+  icon: 'mdi:flash'
+- property: Energy_estimate
+  sensor: # Sample value: 30
+    read_only: true
+    device_class: energy
+    state_class: total
+    unit: kWh
+  icon: 'mdi:chart-box'
+- property: ExtraRinseNum
+  hide: true
+- property: FlexibleSpinTime_Flag
+  hide: true
+  #sensor: # Sample value: 1
+  #  read_only: true
+  #  device_class: enum
+  icon: 'mdi:timer-cog'
+- property: Fluffysoft_flag
+  hide: true
+- property: Fluffysoft_flag1
+  hide: true
+- property: Function1_UseIndex
+  hide: true
+- property: GentleDry_Flag
+  hide: true
+- property: Gentle_Dry
+  hide: true
+- property: GetCurrentCityInfoFlag
+  hide: true
+- property: InitializationprogramID
+  hide: true
+- property: NightMode_Flag
+  hide: true
+- property: PrewashStepFinishNotifySwitch
+  hide: true
+- property: ProgramFunctionValueID
+  hide: true
+- property: Program_end_to_shutdown_time_in_minutes
+  sensor:
+    read_only: true
+    device_class: duration
+    unit: min
+  icon: 'mdi:timer'
+  hide: true
+- property: RinseNum
+  sensor: # Sample value: 2
+    read_only: true
+    unit: times
+  icon: 'mdi:reload'
+- property: RinseStepFinishNotifySwitch
+  hide: true
+- property: SaveElectricitValue_Int
+  hide: true
+- property: SaveElectricitValue__Decimal
+  hide: true
+- property: Selected_program_ID
+  sensor: # Sample value: 9
+    read_only: true
+    device_class: enum
+    options:
+      0: cotton_storage
+      1: standard
+      2: iron
+      3: mix
+      4: synthetic
+      5: wool
+      6: bed_linen
+      7: time
+      8: baby
+      9: sensitive
+      10: shirts
+      11: sports
+      12: fast89
+      13: extra_hygiene
+      14: remote
+      15: none
+  icon: 'mdi:playlist-check'
+- property: Softener_BuyNotifySwitch
+  hide: true
+- property: Softener_LeftML
+  hide: true
+- property: Softener_LeftNum
+  hide: true
+- property: Softener_TotalML
+  hide: true
+- property: Softener_TotalNum
+  hide: true
+- property: Sound_setting
+  hide: true
+  #sensor: # Sample value: 3
+  #  read_only: true
+  #  device_class: enum
+  icon: 'mdi:volume-high'
+- property: SpinRange
+  hide: true
+- property: SpinStepFinishNotifySwitch
+  hide: true
+- property: SpinTime_UseIndex
+  hide: true
+- property: Spin_speed_rpm
+  sensor: # Sample value: 10
+    read_only: true
+    unit: rpm
+  icon: 'mdi:speedometer'
+- property: Temperature_Default_DefaultMainWashTime
+  sensor: # Sample value: 200
+    read_only: true
+    device_class: duration
+    unit: min
+  icon: 'mdi:heat-wave'
+- property: WashStepFinishNotifySwitch
+  hide: true
+- property: WashingTime_UseIndex
+  hide: true
+- property: Water_estimate
+  hide: true
+- property: Weight_RunningEnd
+  hide: true
+- property: Weight_StartRunning
+  hide: true
+- property: aquapreserve_runing_flag
+  hide: true
+- property: cancel_delayend_flag
+  hide: true
+- property: detergent_Soften_settingflag
+  hide: true
+- property: dry_time
+  hide: true
+- property: extra_soft
+  hide: true
+- property: extra_soft_hideflag
+  hide: true
+- property: extrasoft_runing_flag
+  hide: true
+- property: isCloudProgramFlag
+  hide: true
+- property: ispower_flag
+  hide: true
+- property: onlyrinse_model
+  hide: true
+- property: onlyspin_model
+  hide: true
+- property: onlywash_model
+  hide: true
+- property: presoak_index
+  hide: true
+- property: presoak_runing_flag
+  hide: true
+- property: runing_zero_flag
+  hide: true
+- property: spintime_flag
+  hide: true
+- property: tankclean_flag
+  hide: true
+- property: tankclean_flag1
+  hide: true
+- property: temperature
+  sensor:   # Sample value: 2
+    read_only: true
+    device_class: temperature
+    unit: °C
+    multiplier: 10
+  icon: 'mdi:thermometer'
+- property: washingtime_presoak_flag
+  hide: true
+- property: washingtime_waterlevel_flag
+  hide: true
