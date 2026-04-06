@@ -818,6 +818,9 @@ properties:
   - property: slotdry
     hide: true
     entity_category: diagnostic
+  - property: " slotdry"
+    hide: true
+    entity_category: diagnostic
   - property: softener_tank
     hide: true
     entity_category: diagnostic
@@ -1034,7 +1037,13 @@ properties:
   - property: slotdry_flag
     hide: true
     entity_category: diagnostic
+  - property: " slotdry_flag"
+    hide: true
+    entity_category: diagnostic
   - property: slotdry_flag1
+    hide: true
+    entity_category: diagnostic
+  - property: " slotdry_flag1"
     hide: true
     entity_category: diagnostic
   - property: spintime_flag
