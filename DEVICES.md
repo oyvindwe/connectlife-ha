@@ -16,6 +16,7 @@
 |                   | Air conditioner          | 009              | 128                  |
 |                   | Air conditioner          | 009              | 129                  |
 |                   | Hood                     | 012              | 000                  |
+|                   | Oven                     | 013              | 000                  |
 | W-DW50/60-22      | Dishwasher               | 015              | 000                  |
 | Gorenje GS673B60W | Dishwasher               | 015              | dishwasher-50.2f     |
 |                   | Dishwasher               | 015              | dishwasher-50.2t     |
