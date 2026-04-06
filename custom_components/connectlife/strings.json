@@ -3245,7 +3245,10 @@
         "name": "Water hardness"
       },
       "water_hardness_setting_status": {
-        "name": "Water hardness"
+        "name": "Water hardness",
+        "state": {
+          "not_set": "Not set"
+        }
       },
       "water_inlet_setting_status": {
         "name": "Water inlet"
