@@ -235,6 +235,12 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
                     else:
                         self._attr_swing_mode = None
                         _LOGGER.warning("Got unexpected value %d for %s (%s)", value, status, self.nickname)
+                elif target == SWING_HORIZONTAL_MODE:
+                    if value in self.swing_horizontal_mode_map:
+                        self._attr_swing_horizontal_mode = self.swing_horizontal_mode_map[value]
+                    else:
+                        self._attr_swing_horizontal_mode = None
+                        _LOGGER.warning("Got unexpected value %d for %s (%s)", value, status, self.nickname)
                 elif target == TEMPERATURE_UNIT:
                     if value in self.temperature_unit_map:
                         self._attr_temperature_unit = self.temperature_unit_map[value]
@@ -325,9 +331,9 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
         })
 
     async def async_set_swing_horizontal_mode(self, swing_horizontal_mode: str) -> None:
-        """Set the swing mode."""
+        """Set the swing horizontal mode."""
         await self.async_update_device({
-            self.target_map[SWING_MODE]: self.swing_horizontal_mode_map[swing_horizontal_mode]
+            self.target_map[SWING_HORIZONTAL_MODE]: self.swing_horizontal_mode_reverse_map[swing_horizontal_mode]
         })
 
     def add_target_temperature(self, request: dict[str, int]) -> dict[str, int]:
