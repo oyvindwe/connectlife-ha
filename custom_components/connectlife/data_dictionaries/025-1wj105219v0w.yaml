@@ -1,9 +1,5 @@
-# Washing machine WF3S1043BW3
+# Washing Machine WFSE1114-LVW002
 properties:
-- property: ApplicationPermissions
-  sensor:
-    read_only: true
-  icon: 'mdi:shield-check'
 - property: Current_program_phase
   icon: mdi:state-machine
   sensor:
@@ -26,17 +22,40 @@ properties:
       13: anti_crease
       14: delay
       15: finished
-- property: FlexibleSpinTime_Flag
+- property: DefaultSpinSpeed
   sensor:
     read_only: true
-  icon: 'mdi:timer-cog'
-- property: RinseNum
+    unit: rpm
+    multiplier: 100
+  icon: 'mdi:speedometer'
+- property: DryOpen_DefaultSpinSpeed
+  # Sample value: 14
   sensor:
+    read_only: true
+    unit: rpm
+    multiplier: 100
+  icon: 'mdi:speedometer'
+- property: Electricit_consumption_decimal
+  icon: mdi:lightning-bolt
+  sensor: # Sample value: 27
+    read_only: true
+    device_class: energy
+    state_class: total
+    unit: kWh
+- property: Program_end_to_shutdown_time_in_minutes
+  sensor:
+    read_only: true
+    device_class: duration
+    unit: min
+  icon: 'mdi:timer'
+  hide: true
+- property: RinseNum
+  sensor: # Sample value: 2
     read_only: true
     unit: times
   icon: 'mdi:reload'
 - property: Selected_program_ID
-  sensor:
+  sensor: # Sample value: 9
     read_only: true
     device_class: enum
     options:
@@ -57,37 +76,15 @@ properties:
       14: remote
       15: none
   icon: 'mdi:playlist-check'
-- property: Sound_setting
-  sensor:
-    read_only: true
-  icon: 'mdi:volume-high'
 - property: Spin_speed_rpm
-  sensor:
+  sensor: # Sample value: 10
     read_only: true
     unit: rpm
   icon: 'mdi:speedometer'
 - property: temperature
-  sensor:
+  sensor:   # Sample value: 2
     read_only: true
     device_class: temperature
     unit: °C
+    multiplier: 10
   icon: 'mdi:thermometer'
-- property: Temperature_Default_DefaultMainWashTime
-  icon: mdi:clock-outline
-  sensor:
-    read_only: true
-    device_class: duration
-    unit: min
-- property: DryOpen_DefaultSpinSpeed
-  hide: true
-- property: ExtraRinseNum
-  hide: true
-- property: Program_end_to_shutdown_time_in_minutes
-  sensor:
-    read_only: true
-    device_class: duration
-    unit: min
-  icon: 'mdi:timer'
-  hide: true
-- property: dry_time
-  hide: true

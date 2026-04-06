@@ -1,0 +1,1085 @@
+# Washing Machine
+properties:
+  - property: Door_status
+    icon: mdi:door
+    unavailable: 0
+    sensor:
+      device_class: enum
+      read_only: true
+      options:
+        1: open
+        2: other
+        3: closed
+  - property: machine_status
+    icon: mdi:washing-machine
+    sensor:
+      device_class: enum
+      read_only: true
+      options:
+        0: "off"
+        1: standby
+        2: running
+  - property: Detergent_display
+    icon: mdi:spray
+    binary_sensor:
+      options:
+        0: false
+        1: true
+  - property: Softer_display
+    icon: mdi:water
+    binary_sensor:
+      options:
+        0: false
+        1: true
+  - property: Selected_program_remaining_time_in_minutes
+    icon: mdi:update
+    sensor:
+      device_class: duration
+      unit: min
+      read_only: true
+  - property: Remaining_time_of_selected_program
+    icon: mdi:update
+    sensor:
+      device_class: duration
+      unit: min
+      read_only: true
+  - property: Selected_program_total_time_in_minutes
+    icon: mdi:timer
+    sensor:
+      device_class: duration
+      unit: min
+      read_only: true
+  - property: Selected_program_total_running_time_in_minutes
+    icon: mdi:timer
+    sensor:
+      device_class: duration
+      unit: min
+      read_only: true
+  - property: Energy_estimate
+    icon: mdi:lightning-bolt
+    sensor:
+      device_class: energy
+      unit: kWh
+      read_only: true
+      state_class: total
+  - property: Electricit_consumption_int
+    icon: mdi:lightning-bolt
+    sensor:
+      device_class: energy
+      unit: kWh
+      read_only: true
+      state_class: total_increasing
+  - property: Electricit_consumption_decimal
+    icon: mdi:lightning-bolt
+    sensor:
+      device_class: energy
+      unit: kWh
+      read_only: true
+  - property: Water_consumption_int
+    icon: mdi:water
+    sensor:
+      device_class: water
+      unit: L
+      read_only: true
+      state_class: total_increasing
+  - property: Water_consumption
+    icon: mdi:water
+    sensor:
+      device_class: water
+      unit: L
+      read_only: true
+      state_class: total_increasing
+  - property: Daily_energy_consumption
+    icon: mdi:lightning-bolt
+    sensor:
+      device_class: energy
+      unit: kWh
+      read_only: true
+      state_class: total_increasing
+  - property: mainwashtime
+    icon: mdi:clock-outline
+    sensor:
+      device_class: duration
+      unit: min
+      read_only: true
+  - property: mian_wash_time
+    icon: mdi:clock-outline
+    sensor:
+      device_class: duration
+      unit: min
+      read_only: true
+  - property: Temperature_Default_DefaultMainWashTime
+    icon: mdi:clock-outline
+    entity_category: diagnostic
+    sensor:
+      device_class: duration
+      unit: min
+      read_only: true
+  - property: MainWashTimeUseIndex
+    icon: mdi:clock
+    entity_category: diagnostic
+    sensor:
+      read_only: true
+  - property: spin_time
+    icon: mdi:timer-sand
+    sensor:
+      device_class: duration
+      unit: min
+      read_only: true
+  - property: spintime_index
+    icon: mdi:timer-sand
+    sensor:
+      device_class: duration
+      unit: min
+      read_only: true
+  - property: Program_end_to_shutdown_time_in_minutes
+    icon: mdi:timer
+    entity_category: diagnostic
+    sensor:
+      device_class: duration
+      unit: min
+      read_only: true
+  - property: DelayEndTime
+    icon: mdi:clock-outline
+    sensor:
+      device_class: duration
+      unit: min
+      read_only: true
+  - property: order_time_minimum_hour
+    icon: mdi:clock-start
+    entity_category: diagnostic
+    sensor:
+      device_class: duration
+      unit: h
+      read_only: true
+  - property: washing_machine_type_kg
+    icon: mdi:weight-kilogram
+    entity_category: diagnostic
+    sensor:
+      device_class: weight
+      unit: kg
+      read_only: true
+  - property: washing_machine_type_max_speed
+    icon: mdi:gauge
+    entity_category: diagnostic
+    sensor:
+      read_only: true
+      unit: rpm
+  - property: DefaultSpinSpeed
+    icon: mdi:speedometer
+    entity_category: diagnostic
+    sensor:
+      read_only: true
+      unit: rpm
+  - property: RinseNum
+    icon: mdi:reload
+    sensor:
+      read_only: true
+  - property: parse_lib_ver
+    icon: mdi:code-json
+    sensor:
+      read_only: true
+    entity_category: diagnostic
+  - property: Actions
+    icon: mdi:play-pause
+    select:
+      options:
+        0: none
+        1: stop
+        2: start
+        3: pause
+  - property: Child_lock
+    icon: mdi:lock
+    entity_category: config
+    switch: {}
+  - property: mute
+    icon: mdi:volume-variant-off
+    entity_category: config
+    switch:
+      device_class: switch
+  - property: Prewash
+    icon: mdi:numeric-1-circle-outline
+    switch:
+      device_class: switch
+  - property: Steam
+    icon: mdi:heat-wave
+    switch: {}
+  - property: AntiCrease
+    icon: mdi:iron
+    switch: {}
+  - property: AutoDose
+    icon: mdi:tray-arrow-up
+    entity_category: config
+    switch: {}
+  - property: AutoTubClean
+    icon: mdi:auto-fix
+    entity_category: config
+    switch: {}
+  - property: AirDryFlag
+    hide: true
+    entity_category: diagnostic
+  - property: AirWashTime
+    hide: true
+    entity_category: diagnostic
+  - property: AntiCrease_flag
+    hide: true
+    entity_category: diagnostic
+  - property: AquaPreserve
+    hide: true
+    entity_category: diagnostic
+  - property: AquaPreserve_Flag
+    hide: true
+    entity_category: diagnostic
+  - property: AutoDoseType
+    hide: true
+    entity_category: diagnostic
+  - property: AutoDose_flag
+    hide: true
+    entity_category: diagnostic
+  - property: BathingWaterPumpState
+    hide: true
+    entity_category: diagnostic
+  - property: BathingWaterPump_Rinse
+    hide: true
+    entity_category: diagnostic
+  - property: BathingWaterPump_Wash
+    hide: true
+    entity_category: diagnostic
+  - property: Cancle_DelayEnd
+    hide: true
+    entity_category: diagnostic
+  - property: Childlock_flag
+    hide: true
+    entity_category: diagnostic
+  - property: Childlock_newfuntion
+    hide: true
+    entity_category: diagnostic
+  - property: Childlock_pause
+    hide: true
+    entity_category: diagnostic
+  - property: ColdWash
+    hide: true
+    entity_category: diagnostic
+  - property: Compartment_Inuse
+    hide: true
+    entity_category: diagnostic
+  - property: Compartment_switch
+    hide: true
+    entity_category: diagnostic
+  - property: CurProgDetergentDosage
+    hide: true
+    entity_category: diagnostic
+  - property: CurProgDetergentDosageNo_Auto
+    hide: true
+    entity_category: diagnostic
+  - property: CurProgSoftnerDosage
+    hide: true
+    entity_category: diagnostic
+  - property: CurProgSoftnerDosageNo_Auto
+    hide: true
+    entity_category: diagnostic
+  - property: CurrentProgram_High_WaterLevel_InflowTime
+    hide: true
+    entity_category: diagnostic
+  - property: CurrentProgram_High_WaterLevel_Starting_WaterLevelValue
+    hide: true
+    entity_category: diagnostic
+  - property: CurrentProgram_Low_WaterLevel_InflowTime
+    hide: true
+    entity_category: diagnostic
+  - property: CurrentProgram_Medium_WaterLevel_InflowTime
+    hide: true
+    entity_category: diagnostic
+  - property: CurrentProgram_Medium_WaterLevel_Starting_WaterLevelValue
+    hide: true
+    entity_category: diagnostic
+  - property: D1_program_ID
+    hide: true
+    entity_category: diagnostic
+  - property: D2_program_ID
+    hide: true
+    entity_category: diagnostic
+  - property: D3_program_ID
+    hide: true
+    entity_category: diagnostic
+  - property: Dat3
+    hide: true
+    entity_category: diagnostic
+  - property: Data1
+    hide: true
+    entity_category: diagnostic
+  - property: Data2
+    hide: true
+    entity_category: diagnostic
+  - property: Data4
+    hide: true
+    entity_category: diagnostic
+  - property: Data5
+    hide: true
+    entity_category: diagnostic
+  - property: DelayEndTime_Minute
+    hide: true
+    entity_category: diagnostic
+  - property: Detergent
+    hide: true
+    entity_category: diagnostic
+  - property: DetergentStandardDosage
+    hide: true
+    entity_category: diagnostic
+  - property: DetergentStandardDosage_flag
+    hide: true
+    entity_category: diagnostic
+  - property: Detergent_flag
+    hide: true
+    entity_category: diagnostic
+  - property: Detergent_state
+    hide: true
+    entity_category: diagnostic
+  - property: Dose_Detergent_amount
+    hide: true
+    entity_category: diagnostic
+  - property: Dose_Softener_amount
+    hide: true
+    entity_category: diagnostic
+  - property: DownLight
+    hide: true
+    entity_category: diagnostic
+  - property: DownLight_LightTime
+    hide: true
+    entity_category: diagnostic
+  - property: Downloadprogram
+    hide: true
+    entity_category: diagnostic
+  - property: DrumCleanCycle_RunsNumber
+    hide: true
+    entity_category: diagnostic
+  - property: DrumCleanFlag
+    hide: true
+    entity_category: diagnostic
+  - property: DrumCleanSwitch
+    hide: true
+    entity_category: diagnostic
+  - property: DrumCleanWashCount
+    hide: true
+    entity_category: diagnostic
+  - property: DryLeve_flag
+    hide: true
+    entity_category: diagnostic
+  - property: DryMode_flag
+    hide: true
+    entity_category: diagnostic
+  - property: DryModel
+    hide: true
+    entity_category: diagnostic
+  - property: DryingSwitch
+    hide: true
+    entity_category: diagnostic
+  - property: EcoMode
+    hide: true
+    entity_category: diagnostic
+  - property: EnterPerformanceMode_dry1_ConditionType
+    hide: true
+    entity_category: diagnostic
+  - property: EnterPerformanceMode_dry1_MainWashTime
+    hide: true
+    entity_category: diagnostic
+  - property: EnterPerformanceMode_wash1_ConditionType
+    hide: true
+    entity_category: diagnostic
+  - property: EnterPerformanceMode_wash1_MainWashTime
+    hide: true
+    entity_category: diagnostic
+  - property: EnterPerformanceMode_wash2_ConditionType
+    hide: true
+    entity_category: diagnostic
+  - property: EnterPerformanceMode_wash2_MainWashTime
+    hide: true
+    entity_category: diagnostic
+  - property: ExtraRinseNum_Flag
+    hide: true
+    entity_category: diagnostic
+  - property: Extra_Rinse
+    hide: true
+    entity_category: diagnostic
+  - property: Favour_program_ID
+    hide: true
+    entity_category: diagnostic
+  - property: Filterclean_dry
+    hide: true
+    entity_category: diagnostic
+  - property: Filterclean_dryCount
+    hide: true
+    entity_category: diagnostic
+  - property: Filterclean_dryFlag
+    hide: true
+    entity_category: diagnostic
+  - property: Filterclean_wash
+    hide: true
+    entity_category: diagnostic
+  - property: Filterclean_washCount
+    hide: true
+    entity_category: diagnostic
+  - property: Filterclean_washFlag
+    hide: true
+    entity_category: diagnostic
+  - property: Fluffysoft
+    hide: true
+    entity_category: diagnostic
+  - property: Half_Load
+    hide: true
+    entity_category: diagnostic
+  - property: Hard_pairing_commond
+    hide: true
+    entity_category: diagnostic
+  - property: Hard_pairing_status
+    hide: true
+    entity_category: diagnostic
+  - property: ID1
+    hide: true
+    entity_category: diagnostic
+  - property: ID2
+    hide: true
+    entity_category: diagnostic
+  - property: ID3
+    hide: true
+    entity_category: diagnostic
+  - property: ID4
+    hide: true
+    entity_category: diagnostic
+  - property: ID5
+    hide: true
+    entity_category: diagnostic
+  - property: IntensiveWash
+    hide: true
+    entity_category: diagnostic
+  - property: Intensive_flag
+    hide: true
+    entity_category: diagnostic
+  - property: Language
+    hide: true
+    entity_category: diagnostic
+  - property: Last_completed_running_process
+    hide: true
+    entity_category: diagnostic
+  - property: LidOpenFlag
+    hide: true
+    entity_category: diagnostic
+  - property: MainWashTimeList
+    hide: true
+    entity_category: diagnostic
+  - property: No_AutoDoseSwitch
+    hide: true
+    entity_category: diagnostic
+  - property: OTA_Num1
+    hide: true
+    entity_category: diagnostic
+  - property: OTA_Sucess
+    hide: true
+    entity_category: diagnostic
+  - property: OnceWaterInRinse_Time
+    hide: true
+    entity_category: diagnostic
+  - property: PerformanceMode_Flag
+    hide: true
+    entity_category: diagnostic
+  - property: PerformanceMode_MainWashTime
+    hide: true
+    entity_category: diagnostic
+  - property: PowerSaveDeleteTime
+    hide: true
+    entity_category: diagnostic
+  - property: Power_Save
+    hide: true
+    entity_category: diagnostic
+  - property: PreSoak
+    hide: true
+    entity_category: diagnostic
+  - property: PreSoakFlag
+    hide: true
+    entity_category: diagnostic
+  - property: PumCleanRemaintime
+    hide: true
+    entity_category: diagnostic
+  - property: PumCleanTotaltime
+    hide: true
+    entity_category: diagnostic
+  - property: PumCleanflag
+    hide: true
+    entity_category: diagnostic
+  - property: QuickerMode
+    hide: true
+    entity_category: diagnostic
+  - property: Quiet_model
+    hide: true
+    entity_category: diagnostic
+  - property: RinseNum_ContainExtraRinse
+    hide: true
+    entity_category: diagnostic
+  - property: RinseNum_Index
+    hide: true
+    entity_category: diagnostic
+  - property: ScreenSaverTime
+    hide: true
+    entity_category: diagnostic
+  - property: Selected _programID_OTA
+    hide: true
+    entity_category: diagnostic
+  - property: Selected_program_Water_Add
+    hide: true
+    entity_category: diagnostic
+  - property: Session_pairing_commond
+    hide: true
+    entity_category: diagnostic
+  - property: Session_pairing_states
+    hide: true
+    entity_category: diagnostic
+  - property: SingleAirDry
+    hide: true
+    entity_category: diagnostic
+  - property: SkipDelayProcess
+    hide: true
+    entity_category: diagnostic
+  - property: Softener
+    hide: true
+    entity_category: diagnostic
+  - property: Softener Compartment
+    hide: true
+    entity_category: diagnostic
+  - property: SoftenerCompartment_flag
+    hide: true
+    entity_category: diagnostic
+  - property: Softener_state
+    hide: true
+    entity_category: diagnostic
+  - property: Softer_flag
+    hide: true
+    entity_category: diagnostic
+  - property: SoftnerStandardDosage
+    hide: true
+    entity_category: diagnostic
+  - property: SoftnerStandardDosage_flag
+    hide: true
+    entity_category: diagnostic
+  - property: SoilLeverFlag
+    hide: true
+    entity_category: diagnostic
+  - property: Soil_Lever
+    hide: true
+    entity_category: diagnostic
+  - property: SpinSpeedUseIndex
+    hide: true
+    entity_category: diagnostic
+  - property: Spintime_Index
+    hide: true
+    entity_category: diagnostic
+  - property: Stain_removal
+    hide: true
+    entity_category: diagnostic
+  - property: StandardElectricitConsumption_int
+    hide: true
+    entity_category: diagnostic
+  - property: StandardElectricitconsumption_decimal
+    hide: true
+    entity_category: diagnostic
+  - property: StandardWaterConsumption_decimal
+    hide: true
+    entity_category: diagnostic
+  - property: StandardWaterConsumption_int
+    hide: true
+    entity_category: diagnostic
+  - property: Temp_Index
+    hide: true
+    entity_category: diagnostic
+  - property: Temp_wave
+    hide: true
+    entity_category: diagnostic
+  - property: Temp_wave_flag
+    hide: true
+    entity_category: diagnostic
+  - property: Temperature_0_DefaultMainWashTime
+    hide: true
+    entity_category: diagnostic
+  - property: Temperature_2_DefaultMainWashTime
+    hide: true
+    entity_category: diagnostic
+  - property: Temperature_3_DefaultMainWashTime
+    hide: true
+    entity_category: diagnostic
+  - property: Temperature_4_DefaultMainWashTime
+    hide: true
+    entity_category: diagnostic
+  - property: Temperature_6_DefaultMainWashTime
+    hide: true
+    entity_category: diagnostic
+  - property: Temperature_9_DefaultMainWashTime
+    hide: true
+    entity_category: diagnostic
+  - property: Testdata_data
+    hide: true
+    entity_category: diagnostic
+  - property: Testdata_month
+    hide: true
+    entity_category: diagnostic
+  - property: Testdata_year
+    hide: true
+    entity_category: diagnostic
+  - property: Time_Save
+    hide: true
+    entity_category: diagnostic
+  - property: UV_Light
+    hide: true
+    entity_category: diagnostic
+  - property: WarmWaterWashing
+    hide: true
+    entity_category: diagnostic
+  - property: WashingTimeIndex
+    hide: true
+    entity_category: diagnostic
+  - property: WashingWizzard_Cloth
+    hide: true
+    entity_category: diagnostic
+  - property: WashingWizzard_Cloth_colour
+    hide: true
+    entity_category: diagnostic
+  - property: WashingWizzard_Cloth_colour_fifth
+    hide: true
+    entity_category: diagnostic
+  - property: WashingWizzard_Cloth_colour_fourth
+    hide: true
+    entity_category: diagnostic
+  - property: WashingWizzard_Cloth_colour_second
+    hide: true
+    entity_category: diagnostic
+  - property: WashingWizzard_Cloth_colour_third
+    hide: true
+    entity_category: diagnostic
+  - property: WashingWizzard_Cloth_dirty
+    hide: true
+    entity_category: diagnostic
+  - property: WashingWizzard_Cloth_dirty_first
+    hide: true
+    entity_category: diagnostic
+  - property: WashingWizzard_Cloth_dirty_second
+    hide: true
+    entity_category: diagnostic
+  - property: WashingWizzard_Cloth_dirty_third
+    hide: true
+    entity_category: diagnostic
+  - property: WashingWizzard_Cloth_olour_first
+    hide: true
+    entity_category: diagnostic
+  - property: WashingWizzard_Cloth_sensitive
+    hide: true
+    entity_category: diagnostic
+  - property: WashingWizzard_Cloth_sensitive_first
+    hide: true
+    entity_category: diagnostic
+  - property: WashingWizzard_Cloth_sensitive_second
+    hide: true
+    entity_category: diagnostic
+  - property: WashingWizzard_Cloth_sensitive_third
+    hide: true
+    entity_category: diagnostic
+  - property: WashingWizzard_Cloth_stains_eighth
+    hide: true
+    entity_category: diagnostic
+  - property: WashingWizzard_Cloth_stains_fifth
+    hide: true
+    entity_category: diagnostic
+  - property: WashingWizzard_Cloth_stains_first
+    hide: true
+    entity_category: diagnostic
+  - property: WashingWizzard_Cloth_stains_fourth
+    hide: true
+    entity_category: diagnostic
+  - property: WashingWizzard_Cloth_stains_ninth
+    hide: true
+    entity_category: diagnostic
+  - property: WashingWizzard_Cloth_stains_second
+    hide: true
+    entity_category: diagnostic
+  - property: WashingWizzard_Cloth_stains_seventh
+    hide: true
+    entity_category: diagnostic
+  - property: WashingWizzard_Cloth_stains_sixth
+    hide: true
+    entity_category: diagnostic
+  - property: WashingWizzard_Cloth_stains_third
+    hide: true
+    entity_category: diagnostic
+  - property: WashingWizzard_ClothingType
+    hide: true
+    entity_category: diagnostic
+  - property: WashingWizzard_ClothingType_eighth
+    hide: true
+    entity_category: diagnostic
+  - property: WashingWizzard_ClothingType_eleventh
+    hide: true
+    entity_category: diagnostic
+  - property: WashingWizzard_ClothingType_fifth
+    hide: true
+    entity_category: diagnostic
+  - property: WashingWizzard_ClothingType_first
+    hide: true
+    entity_category: diagnostic
+  - property: WashingWizzard_ClothingType_fourth
+    hide: true
+    entity_category: diagnostic
+  - property: WashingWizzard_ClothingType_ninth
+    hide: true
+    entity_category: diagnostic
+  - property: WashingWizzard_ClothingType_second
+    hide: true
+    entity_category: diagnostic
+  - property: WashingWizzard_ClothingType_seventh
+    hide: true
+    entity_category: diagnostic
+  - property: WashingWizzard_ClothingType_sixth
+    hide: true
+    entity_category: diagnostic
+  - property: WashingWizzard_ClothingType_tenth
+    hide: true
+    entity_category: diagnostic
+  - property: WashingWizzard_ClothingType_third
+    hide: true
+    entity_category: diagnostic
+  - property: WashingWizzard_ClothingType_thirteenth
+    hide: true
+    entity_category: diagnostic
+  - property: WashingWizzard_ClothingType_twelfth
+    hide: true
+    entity_category: diagnostic
+  - property: WashingWizzard_flag
+    hide: true
+    entity_category: diagnostic
+  - property: Washing_drying_linkage_flag
+    hide: true
+    entity_category: diagnostic
+  - property: Washing_drying_linkage_state
+    hide: true
+    entity_category: diagnostic
+  - property: WaterLevel
+    hide: true
+    entity_category: diagnostic
+  - property: WaterLevelFlag
+    hide: true
+    entity_category: diagnostic
+  - property: WaterLevelIndex
+    hide: true
+    entity_category: diagnostic
+  - property: Water_consumption_decimal
+    hide: true
+    entity_category: diagnostic
+  - property: Water_hardness_setting
+    hide: true
+    entity_category: diagnostic
+  - property: WindDrying
+    hide: true
+    entity_category: diagnostic
+  - property: WindDryingFlag
+    hide: true
+    entity_category: diagnostic
+  - property: Zibian_program_ID
+    hide: true
+    entity_category: diagnostic
+  - property: add_clothes_check
+    hide: true
+    entity_category: diagnostic
+  - property: delay_actions_flag
+    hide: true
+    entity_category: diagnostic
+  - property: delayclose_flag
+    hide: true
+    entity_category: diagnostic
+  - property: dry_lever
+    hide: true
+    entity_category: diagnostic
+  - property: error_code
+    hide: true
+    entity_category: diagnostic
+  - property: hottime
+    hide: true
+    entity_category: diagnostic
+  - property: mainwashtime_flag
+    hide: true
+    entity_category: diagnostic
+  - property: once strong step time
+    hide: true
+    entity_category: diagnostic
+  - property: once_rinse_step_time
+    hide: true
+    entity_category: diagnostic
+  - property: parse_lib_ota
+    hide: true
+    entity_category: diagnostic
+  - property: rinse_flag
+    hide: true
+    entity_category: diagnostic
+  - property: slotdry
+    hide: true
+    entity_category: diagnostic
+  - property: softener_tank
+    hide: true
+    entity_category: diagnostic
+  - property: speed_flag
+    hide: true
+    entity_category: diagnostic
+  - property: stoprunning_flag
+    hide: true
+    entity_category: diagnostic
+  - property: tankclean
+    hide: true
+    entity_category: diagnostic
+  - property: temp_runing_flag
+    hide: true
+    entity_category: diagnostic
+  - property: time_autoflag
+    hide: true
+    entity_category: diagnostic
+  - property: timezone
+    hide: true
+    entity_category: diagnostic
+  - property: washFunction1
+    hide: true
+    entity_category: diagnostic
+  - property: wash_step_time_drain_water_spin_and_stop
+    hide: true
+    entity_category: diagnostic
+  - property: washing_machine_type
+    hide: true
+    entity_category: diagnostic
+  - property: washing_program_kg
+    hide: true
+    entity_category: diagnostic
+  - property: washingtime
+    hide: true
+    entity_category: diagnostic
+  - property: waterlevel_runing_flag
+    hide: true
+    entity_category: diagnostic
+  - property: APPControl_flag
+    hide: true
+    entity_category: diagnostic
+  - property: Add_water_flag
+    hide: true
+    entity_category: diagnostic
+  - property: AnCreae_Mux
+    hide: true
+    entity_category: diagnostic
+  - property: ApplicationPermissions
+    hide: true
+    entity_category: diagnostic
+  - property: BathingWaterPump_Flag
+    hide: true
+    entity_category: diagnostic
+  - property: Detergent_BuyNotifySwitch
+    hide: true
+    entity_category: diagnostic
+  - property: Detergent_LeftML
+    hide: true
+    entity_category: diagnostic
+  - property: Detergent_LeftNum
+    hide: true
+    entity_category: diagnostic
+  - property: Detergent_TotalML
+    hide: true
+    entity_category: diagnostic
+  - property: Detergent_TotalNum
+    hide: true
+    entity_category: diagnostic
+  - property: Detergent_UseIndex
+    hide: true
+    entity_category: diagnostic
+  - property: DoseAid
+    hide: true
+    entity_category: diagnostic
+  - property: DryFilterRemindFlag
+    hide: true
+    entity_category: diagnostic
+  - property: DryOpen_DefaultSpinSpeed
+    hide: true
+    entity_category: diagnostic
+  - property: FlexibleSpinTime_Flag
+    hide: true
+    entity_category: diagnostic
+  - property: Fluffysoft_flag
+    hide: true
+    entity_category: diagnostic
+  - property: Fluffysoft_flag1
+    hide: true
+    entity_category: diagnostic
+  - property: Function1_UseIndex
+    hide: true
+    entity_category: diagnostic
+  - property: GentleDry_Flag
+    hide: true
+    entity_category: diagnostic
+  - property: Gentle_Dry
+    hide: true
+    entity_category: diagnostic
+  - property: GetCurrentCityInfoFlag
+    hide: true
+    entity_category: diagnostic
+  - property: InitializationprogramID
+    hide: true
+    entity_category: diagnostic
+  - property: LoadLevel
+    hide: true
+    entity_category: diagnostic
+  - property: NightMode_Flag
+    hide: true
+    entity_category: diagnostic
+  - property: PrewashStepFinishNotifySwitch
+    hide: true
+    entity_category: diagnostic
+  - property: ProgramFunctionValueID
+    hide: true
+    entity_category: diagnostic
+  - property: RinseStepFinishNotifySwitch
+    hide: true
+    entity_category: diagnostic
+  - property: SaveElectricitValue_Int
+    hide: true
+    entity_category: diagnostic
+  - property: SaveElectricitValue__Decimal
+    hide: true
+    entity_category: diagnostic
+  - property: Softener_BuyNotifySwitch
+    hide: true
+    entity_category: diagnostic
+  - property: Softener_LeftML
+    hide: true
+    entity_category: diagnostic
+  - property: Softener_LeftNum
+    hide: true
+    entity_category: diagnostic
+  - property: Softener_TotalML
+    hide: true
+    entity_category: diagnostic
+  - property: Softener_TotalNum
+    hide: true
+    entity_category: diagnostic
+  - property: Softner_UseIndex
+    hide: true
+    entity_category: diagnostic
+  - property: Sound_setting
+    hide: true
+    entity_category: diagnostic
+  - property: SpinRange
+    hide: true
+    entity_category: diagnostic
+  - property: SpinStepFinishNotifySwitch
+    hide: true
+    entity_category: diagnostic
+  - property: SpinTime_UseIndex
+    hide: true
+    entity_category: diagnostic
+  - property: WashStepFinishNotifySwitch
+    hide: true
+    entity_category: diagnostic
+  - property: WashingTime_UseIndex
+    hide: true
+    entity_category: diagnostic
+  - property: Water_estimate
+    hide: true
+    entity_category: diagnostic
+  - property: Weight_RunningEnd
+    hide: true
+    entity_category: diagnostic
+  - property: Weight_StartRunning
+    hide: true
+    entity_category: diagnostic
+  - property: aquapreserve_runing_flag
+    hide: true
+    entity_category: diagnostic
+  - property: cancel_delayend_flag
+    hide: true
+    entity_category: diagnostic
+  - property: detergent_Soften_settingflag
+    hide: true
+    entity_category: diagnostic
+  - property: extra_soft
+    hide: true
+    entity_category: diagnostic
+  - property: extra_soft_hideflag
+    hide: true
+    entity_category: diagnostic
+  - property: extrasoft_runing_flag
+    hide: true
+    entity_category: diagnostic
+  - property: isCloudProgramFlag
+    hide: true
+    entity_category: diagnostic
+  - property: ispower_flag
+    hide: true
+    entity_category: diagnostic
+  - property: onlyrinse_model
+    hide: true
+    entity_category: diagnostic
+  - property: onlyspin_model
+    hide: true
+    entity_category: diagnostic
+  - property: onlywash_model
+    hide: true
+    entity_category: diagnostic
+  - property: presoak_index
+    hide: true
+    entity_category: diagnostic
+  - property: presoak_runing_flag
+    hide: true
+    entity_category: diagnostic
+  - property: runing_zero_flag
+    hide: true
+    entity_category: diagnostic
+  - property: slotdry_flag
+    hide: true
+    entity_category: diagnostic
+  - property: slotdry_flag1
+    hide: true
+    entity_category: diagnostic
+  - property: spintime_flag
+    hide: true
+    entity_category: diagnostic
+  - property: tankclean_flag
+    hide: true
+    entity_category: diagnostic
+  - property: tankclean_flag1
+    hide: true
+    entity_category: diagnostic
+  - property: washingtime_presoak_flag
+    hide: true
+    entity_category: diagnostic
+  - property: washingtime_waterlevel_flag
+    hide: true
+    entity_category: diagnostic
+  - property: Current_program_phase
+    icon: mdi:state-machine
+    sensor:
+      read_only: true
+  - property: ExtraRinseNum
+    hide: true
+    entity_category: diagnostic
+  - property: Filterclean_washCound
+    hide: true
+    entity_category: diagnostic
+  - property: Machine_status
+    hide: true
+    entity_category: diagnostic
+  - property: Selected_programID_OTA
+    hide: true
+    entity_category: diagnostic
+  - property: Selected_program_ID
+    hide: true
+    entity_category: diagnostic
+  - property: Spin_speed_rpm
+    hide: true
+    entity_category: diagnostic
+  - property: dry_time
+    hide: true
+    entity_category: diagnostic
+  - property: once_strong_step_time
+    hide: true
+    entity_category: diagnostic
+  - property: temperature
+    hide: true
+    entity_category: diagnostic
