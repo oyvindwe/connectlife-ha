@@ -509,6 +509,7 @@ properties:
         2: normal
         3: "3"
         4: fast
+        7: "7"
     icon: mdi:cube-outline
   - property: Selected_program_storage_function
     hide: true
@@ -597,6 +598,7 @@ properties:
     sensor:
       device_class: enum
       options:
+        0: not_set
         1: "0.0-0.9 mmol/L"
         2: "1.0-1.4 mmol/L"
         3: "1.5-2.0 mmol/L"
