@@ -1,6 +1,4 @@
 properties:
-  - property: environment_real_temperature
-    hide: true
   - property: freeze_max_temperature
     number:
       device_class: temperature

@@ -1,7 +1,5 @@
 # HISENSE American Side by Side Refrigerator RQ5P470SEIE
 properties:
-  - property: automatic_ice_making
-    hide: true
   - property: freeze_temperature
     number:
       device_class: temperature
