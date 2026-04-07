@@ -11,8 +11,10 @@ from homeassistant.helpers import device_registry as dr, entity_registry as er, 
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import DOMAIN
+from .messages import format_retry_message
 
 MAX_RETRIES = 3
+ENERGY_UPDATE_INTERVAL = timedelta(minutes=10)
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -38,8 +40,9 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
     async def _async_update_data(self):
         """Fetch data from API endpoint."""
         try:
-            # Note: asyncio.TimeoutError and aiohttp.ClientError are already
-            # handled by the data update coordinator.
+            # Note: aiohttp.ClientError is already handled by the data update
+            # coordinator. TimeoutError is retried here so the UI gets the
+            # same user-facing retry message as other ConnectLife API errors.
             async with async_timeout.timeout(30):
                 await self.api.get_appliances()
                 self.error_count = 0
@@ -51,25 +54,25 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
             self.error_count += 1
             i = MAX_RETRIES - self.error_count
             if i > 0:
-                _LOGGER.warning(
+                _LOGGER.debug(
                     "ConnectLife API request timed out, will try %d more %s",
                     i,
                     "time" if i == 1 else "times",
                 )
             else:
-                raise err
+                raise UpdateFailed(format_retry_message(err)) from err
         except LifeConnectError as err:
             self.error_count += 1
             i = MAX_RETRIES - self.error_count
             if i > 0:
-                _LOGGER.warning(
+                _LOGGER.debug(
                     "ConnectLife API failed with '%s', will try %d more %s",
                     err,
                     i,
                     "time" if i == 1 else "times",
                 )
             else:
-                raise UpdateFailed(f"Error communicating with API: {err}")
+                raise UpdateFailed(format_retry_message(err)) from err
         return {a.device_id: a for a in self.api.appliances}
 
     async def async_update_device(self, device_id: str, command: Mapping[str, int | str], properties: Mapping[str, int | str]):
@@ -133,3 +136,37 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
                     else:
                         # Self repair
                         ir.async_delete_issue(self.hass, DOMAIN, f"unavailable_device.{device_id}")
+
+
+class ConnectLifeEnergyCoordinator(DataUpdateCoordinator[dict[str, float | None]]):
+    """ConnectLife energy coordinator. Polls daily energy usage every 10 minutes."""
+
+    def __init__(self, hass, api: ConnectLifeApi, appliance_coordinator: ConnectLifeCoordinator):
+        """Initialize energy coordinator."""
+        self.api = api
+        self.appliance_coordinator = appliance_coordinator
+        super().__init__(
+            hass,
+            _LOGGER,
+            name=f"{DOMAIN}_energy",
+            update_interval=ENERGY_UPDATE_INTERVAL,
+        )
+
+    async def _async_update_data(self) -> dict[str, float | None]:
+        """Fetch daily energy for all appliances."""
+        result: dict[str, float | None] = {}
+        for device_id, appliance in self.appliance_coordinator.data.items():
+            try:
+                result[device_id] = await self.api.get_daily_energy_kwh(
+                    appliance.puid,
+                    appliance.device_type_code,
+                    appliance.device_feature_code,
+                )
+            except Exception:
+                _LOGGER.debug(
+                    "Failed to fetch daily energy for %s",
+                    appliance.device_nickname,
+                    exc_info=True,
+                )
+                result[device_id] = None
+        return result

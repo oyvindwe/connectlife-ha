@@ -18,11 +18,8 @@ uv run python -m scripts.validate_mappings
 # Regenerate strings.json from data dictionaries
 uv run python -m scripts.gen_strings
 
-# Run API library tests (in the connectlife submodule)
-python -m pytest connectlife/connectlife/tests/
-
 # Run the test server for local development
-python -m connectlife.test_server -d dumps  # from the connectlife/ submodule directory
+uv run python -m connectlife.test_server -d <dumps_dir>
 
 # Type check
 uv run pyright
@@ -74,9 +71,9 @@ Device-level platforms (climate, humidifier, water_heater) create one entity per
 - **Command vs property**: Select and switch support separate `command` property names with optional `adjust` offset for devices where the write property differs from the status property
 - **`is_entity()` utility** (`utils.py`): gates entity creation — checks platform match, not disabled, and not in unavailable state
 
-### connectlife Submodule
+### connectlife API Library
 
-Git submodule at `connectlife/` — the API library published to PyPI as `connectlife`. Contains `ConnectLifeApi` (OAuth2 client), `ConnectLifeAppliance` (data model), and a test server (`dumps/test_server.py`).
+The API library is published to PyPI as `connectlife` and developed in a separate repo: https://github.com/oyvindwe/connectlife. Contains `ConnectLifeApi` (OAuth2 client), `ConnectLifeAppliance` (data model), and a test server.
 
 ## Adding New Device Mappings
 

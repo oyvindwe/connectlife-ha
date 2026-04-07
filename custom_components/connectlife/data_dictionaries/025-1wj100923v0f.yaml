@@ -1,5 +1,10 @@
-# WashingMachine
+#WashingMachine 025-1wj100923v0f
 properties:
+  - property: AutoTubClean
+    switch:
+  - property: Child_lock
+    icon: mdi:lock
+    switch:
   - property: Current_program_phase
     icon: mdi:state-machine
     sensor:
@@ -11,8 +16,6 @@ properties:
         3: wash
         4: rinse
         7: spin-dry
-        8: drying
-        10: finished
       read_only: true
   - property: Detergent_display
     icon: mdi:spray
@@ -20,20 +23,6 @@ properties:
       options:
         0: false
         1: true
-  - property: Electricit_consumption_int
-    icon: mdi:lightning-bolt
-    sensor:
-      read_only: true
-      state_class: total_increasing
-      device_class: energy
-      unit: kWh
-  - property: Energy_estimate
-    icon: mdi:lightning-bolt
-    sensor:
-      read_only: true
-      state_class: total
-      device_class: energy
-      unit: kWh
   - property: ExtraRinseNum
     icon: mdi:tray-plus
     entity_category: diagnostic
@@ -95,6 +84,9 @@ properties:
       options:
         0: false
         1: true
+  - property: Steam
+    icon: mdi:heat-wave
+    switch:
   - property: temperature
     icon: mdi:thermometer-lines
     select:
@@ -121,3 +113,9 @@ properties:
       device_class: duration
       unit: min
       read_only: true
+  - property: Water_consumption_int
+    icon: mdi:water
+    sensor:
+      state_class: total_increasing
+      device_class: water
+      unit: L

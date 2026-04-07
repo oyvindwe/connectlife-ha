@@ -1,4 +1,4 @@
-# Washing machine WF3S1043BW3
+# Washing machine WFQR1014
 properties:
 - property: ApplicationPermissions
   sensor:
@@ -26,6 +26,18 @@ properties:
       13: anti_crease
       14: delay
       15: finished
+- property: Electricit_consumption_decimal
+  icon: mdi:lightning-bolt
+  sensor:
+    read_only: true
+    device_class: energy
+    unit: kWh
+- property: Energy_estimate
+  icon: mdi:lightning-bolt
+  sensor:
+    read_only: true
+    device_class: energy
+    unit: kWh
 - property: FlexibleSpinTime_Flag
   sensor:
     read_only: true
@@ -36,6 +48,7 @@ properties:
     unit: times
   icon: 'mdi:reload'
 - property: Selected_program_ID
+  icon: mdi:playlist-check
   sensor:
     read_only: true
     device_class: enum
@@ -56,7 +69,6 @@ properties:
       13: extra_hygiene
       14: remote
       15: none
-  icon: 'mdi:playlist-check'
 - property: Sound_setting
   sensor:
     read_only: true
@@ -81,13 +93,6 @@ properties:
 - property: DryOpen_DefaultSpinSpeed
   hide: true
 - property: ExtraRinseNum
-  hide: true
-- property: Program_end_to_shutdown_time_in_minutes
-  sensor:
-    read_only: true
-    device_class: duration
-    unit: min
-  icon: 'mdi:timer'
   hide: true
 - property: dry_time
   hide: true

@@ -1,0 +1,129 @@
+# Washing Machine
+properties:
+- property: AntiCrease
+  icon: mdi:iron
+  switch:
+- property: AutoDose
+  icon: mdi:tray-arrow-up
+  switch:
+- property: AutoDose_flag
+  hide: true
+  icon: mdi:tray-arrow-up
+  sensor:
+    device_class: enum
+    options:
+      0: "unavailable"
+      1: "available"
+- property: Child_lock
+  icon: mdi:lock
+  switch:
+- property: Current_program_phase
+  icon: mdi:state-machine
+  sensor:
+    read_only: true
+    device_class: enum
+    options:
+      0: not_available
+      1: weigh
+      2: prewash
+      3: wash
+      4: rinse
+      7: spin-dry
+      8: drying
+      10: finished
+      11: delay
+- property: ExtraRinseNum
+  icon: mdi:tray-plus
+  entity_category: diagnostic
+  select:
+    options:
+      0: "0"
+      1: "1"
+      2: "2"
+      3: "3"
+      4: "4"
+      5: "5"
+- property: Selected_program_ID
+  icon: mdi:tshirt-crew
+  select:
+    options:
+      1: "cotton_dry"
+      2: "synthetic_dry"
+      4: "refresh"
+      5: "anti_allergy"
+      6: "drum_cleaning"
+      7: "cotton"
+      8: "synthetic"
+      9: "eco_40_60"
+      10: "wool"
+      11: "fast15"
+      14: "spin-dry"
+      15: "allergy_care"
+      16: "baby"
+      20: "rinse_spin"
+      22: "wash_and_dry_49"
+      41: "power49"
+      42: "auto"
+      44: "bedding"
+      52: "power_30"
+      56: "pets"
+      57: "full_load_49"
+- property: Selected_program_remaining_time_in_minutes
+  icon: mdi:update
+  sensor:
+    device_class: duration
+    unit: min
+    read_only: true
+- property: Selected_program_total_time_in_minutes
+  icon: mdi:timer
+  hide: true
+  sensor:
+    device_class: duration
+    unit: min
+    read_only: true
+- property: Selected_program_total_running_time_in_minutes
+  icon: mdi:timer
+  hide: true
+  sensor:
+    device_class: duration
+    unit: min
+    read_only: true
+- property: Spin_speed_rpm
+  icon: mdi:rotate-3d-variant
+  select:
+    options:
+      14: "1400"
+      12: "1200"
+      10: "1000"
+      80: "800"
+      60: "600"
+      0: "none"
+- property: Steam
+  icon: mdi:heat-wave
+  switch:
+- property: dry_time
+  icon: mdi:tumble-dryer
+  select:
+    options:
+      1: "iron"
+      2: "cupboard"
+      3: "extra_dry"
+      30: "30"
+      40: "40"
+      50: "50"
+      60: "60"
+      90: "90"
+      120: "120"
+      180: "180"
+      240: "240"
+- property: temperature
+  icon: mdi:thermometer-lines
+  select:
+    options:
+      0: "cold"
+      2: "20"
+      3: "30"
+      4: "40"
+      6: "60"
+      9: "90"
+

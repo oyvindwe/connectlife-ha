@@ -1,12 +1,5 @@
 # Window air conditioner
 properties:
-  - property: daily_energy_kwh
-    hide: true
-    sensor:
-      read_only: true
-      state_class: total_increasing
-      device_class: energy
-      unit: kWh
   - property: f_humidity
     climate:
       target: current_humidity
