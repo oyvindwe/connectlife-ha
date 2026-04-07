@@ -42,8 +42,8 @@
 |                      | Refrigerator             | 026              | 1b0330z0079j           |
 | HRCD483TBW           | Refrigerator             | 026              | 1b0470z0012j           |
 | RQ5P470SEIE          | Refrigerator             | 026              | 1b0470z0026j           |
-|                      | Refrigerator             | 026              | 1b0610z0049j           |
 | RF793N4SAFE          | Refrigerator             | 026              | 1b0610z0043j           |
+|                      | Refrigerator             | 026              | 1b0610z0049j           |
 |                      | Refrigerator             | 026              | 1b0628z0075j           |
 | RS818N4TIE1          | Refrigerator             | 026              | 1b0628z0146j           |
 | WPNA84A2TSWIFI       | Washing machine          | 027              | washing-machine-wm22   |
