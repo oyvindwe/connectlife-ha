@@ -44,6 +44,7 @@ Default mapping files are provided for the following device types:
 | Induction hob            | [020](custom_components/connectlife/data_dictionaries/020.yaml) |
 | Oven                     | [023](custom_components/connectlife/data_dictionaries/023.yaml) |
 | Washing machine          | [025](custom_components/connectlife/data_dictionaries/025.yaml) |
+| Refrigerator             | [026](custom_components/connectlife/data_dictionaries/026.yaml) |
 | Washing machine          | [027](custom_components/connectlife/data_dictionaries/027.yaml) |
 | Tumble dryer             | [030](custom_components/connectlife/data_dictionaries/030.yaml) |
 | Tumble dryer             | [032](custom_components/connectlife/data_dictionaries/032.yaml) |

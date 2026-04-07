@@ -1,0 +1,109 @@
+properties:
+  - property: automatic_ice_making
+    hide: true
+    binary_sensor:
+      options:
+        0: false
+        1: true
+  - property: environment_humidity
+    hide: true
+    sensor:
+      read_only: true
+      device_class: humidity
+      unit: "%"
+  - property: environment_real_temperature
+    hide: true
+    sensor:
+      read_only: true
+      device_class: temperature
+      unit: celsius
+  - property: freeze_max_temperature
+    hide: true
+    sensor:
+      read_only: true
+      device_class: temperature
+      unit: property.temperature_unit
+  - property: freeze_min_temperature
+    hide: true
+    sensor:
+      read_only: true
+      device_class: temperature
+      unit: property.temperature_unit
+  - property: freeze_real_temperature
+    hide: true
+    sensor:
+      read_only: true
+      device_class: temperature
+      unit: celsius
+  - property: freeze_sensor_real_temperature
+    hide: true
+    sensor:
+      read_only: true
+      device_class: temperature
+      unit: celsius
+  - property: freeze_temperature
+    hide: true
+    sensor:
+      read_only: true
+      device_class: temperature
+      unit: property.temperature_unit
+  - property: refrigerator_max_temperature
+    hide: true
+    sensor:
+      read_only: true
+      device_class: temperature
+      unit: property.temperature_unit
+  - property: refrigerator_min_temperature
+    hide: true
+    sensor:
+      read_only: true
+      device_class: temperature
+      unit: property.temperature_unit
+  - property: refrigerator_real_temperature
+    hide: true
+    sensor:
+      read_only: true
+      device_class: temperature
+      unit: celsius
+  - property: refrigerator_temperature
+    hide: true
+    sensor:
+      read_only: true
+      device_class: temperature
+      unit: property.temperature_unit
+  - property: save_mode
+    hide: true
+    binary_sensor:
+      options:
+        0: false
+        1: true
+  - property: sf_mode
+    hide: true
+    binary_sensor:
+      options:
+        0: false
+        1: true
+  - property: sr_mode
+    hide: true
+    binary_sensor:
+      options:
+        0: false
+        1: true
+  - property: temperature_room_judge
+    hide: true
+    sensor:
+      read_only: true
+      device_class: temperature
+      unit: celsius
+  - property: variation_max_temperature
+    hide: true
+    sensor:
+      read_only: true
+      device_class: temperature
+      unit: property.temperature_unit
+  - property: variation_min_temperature
+    hide: true
+    sensor:
+      read_only: true
+      device_class: temperature
+      unit: property.temperature_unit

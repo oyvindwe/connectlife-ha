@@ -1,10 +1,7 @@
-# HISENSE American Side by Side Refrigerator RS 818 N 4 TIE 1
+# HISENSE American Side by Side Refrigerator RQ5P470SEIE
 properties:
   - property: automatic_ice_making
-    binary_sensor:
-      options:
-        0: false
-        1: true
+    hide: true
   - property: existing_fuzzy_mode
     binary_sensor:
       options:
@@ -38,32 +35,40 @@ properties:
   - property: free_room_open
     binary_sensor:
       device_class: door
+  - property: freeze_door_open_time
+    sensor:
+      device_class: duration
+      unit: s
   - property: freeze_temperature
     number:
       device_class: temperature
       unit: °C
-      min_value: -24
+      min_value: -18
       max_value: -14
-  - property: ice_making_state
+  - property: humidity sensor_failure
     binary_sensor:
-      options:
-        0: false
-        1: true
-  - property: ice_making_stop_status
-    binary_sensor:
-      options:
-        0: false
-        1: true
+      device_class: problem
   - property: mainboard_type
   - property: mainboard_version
+  - property: open_freeze_door_alarm
+    binary_sensor:
+      device_class: problem
+  - property: open_refrigerator_door_alarm
+    binary_sensor:
+      device_class: problem
+  - property: open_the_door_alarm
+    binary_sensor:
+      device_class: problem
+  - property: open_variation_door_alarm
+    binary_sensor:
+      device_class: problem
   - property: refr_room_open
     binary_sensor:
       device_class: door
-  - property: refrigerator_sensor_real_temperature
-    hide: true
+  - property: refrigerator_door_open_time
     sensor:
-      device_class: temperature
-      unit: °C
+      device_class: duration
+      unit: s
   - property: refrigerator_temperature
     number:
       device_class: temperature
@@ -86,8 +91,36 @@ properties:
       options:
         0: false
         1: true
-  - property: variation_temperature
-    hide: true
+  - property: vari_room_open
+    binary_sensor:
+      device_class: door
+  - property: variation_door_open_time
+    sensor:
+      device_class: duration
+      unit: s
+  - property: variation_max_temperature
     sensor:
       device_class: temperature
       unit: °C
+  - property: variation_min_temperature
+    sensor:
+      device_class: temperature
+      unit: °C
+  - property: variation_real_temperature
+    sensor:
+      device_class: temperature
+      unit: °C
+  - property: variation_sensor_real_temperature
+    sensor:
+      device_class: temperature
+      unit: °C
+  - property: variation_temperature
+    number:
+      device_class: temperature
+      unit: °C
+      min_value: -18
+      max_value: -14
+  - property: vibration_alarm
+    hide: true
+    binary_sensor:
+      device_class: vibration

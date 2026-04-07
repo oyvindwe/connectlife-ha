@@ -39,7 +39,10 @@
 | WFSE1214-MVW002      | Washing machine          | 025              | 1wj120389v0b           |
 |                      | Washing machine          | 025              | 1wj120407v0w           |
 | WF5i1214-RVW002      | Washing machine          | 025              | 1wj120560v0w           |
+| HRCD483TBW           | Refrigerator             | 026              | 1b0470z0012j           |
+| RQ5P470SEIE          | Refrigerator             | 026              | 1b0470z0026j           |
 |                      | Refrigerator             | 026              | 1b0610z0049j           |
+| RF793N4SAFE          | Refrigerator             | 026              | 1b0610z0043j           |
 |                      | Refrigerator             | 026              | 1b0628z0075j           |
 | RS818N4TIE1          | Refrigerator             | 026              | 1b0628z0146j           |
 | WPNA84A2TSWIFI       | Washing machine          | 027              | washing-machine-wm22   |
