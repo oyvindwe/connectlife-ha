@@ -353,9 +353,6 @@ properties:
   - property: Detergent_flag
     hide: true
     entity_category: diagnostic
-  - property: Detergent_state
-    hide: true
-    entity_category: diagnostic
   - property: Dose_Detergent_amount
     hide: true
     entity_category: diagnostic
@@ -573,9 +570,6 @@ properties:
     hide: true
     entity_category: diagnostic
   - property: SoftenerCompartment_flag
-    hide: true
-    entity_category: diagnostic
-  - property: Softener_state
     hide: true
     entity_category: diagnostic
   - property: Softer_flag
