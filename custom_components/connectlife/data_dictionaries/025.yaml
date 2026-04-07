@@ -19,15 +19,30 @@ properties:
         0: "off"
         1: standby
         2: running
+        3: pause
   - property: Detergent_display
     icon: mdi:spray
     binary_sensor:
       options:
         0: false
         1: true
+  - property: Detergent_state
+    icon: mdi:spray
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
   - property: Softer_display
     icon: mdi:water
     binary_sensor:
+      options:
+        0: false
+        1: true
+  - property: Softener_state
+    icon: mdi:water
+    binary_sensor:
+      device_class: problem
       options:
         0: false
         1: true
@@ -321,8 +336,14 @@ properties:
     hide: true
     entity_category: diagnostic
   - property: Detergent
-    hide: true
-    entity_category: diagnostic
+    icon: mdi:chart-bubble
+    select:
+      options:
+        0: "off"
+        1: auto
+        2: less
+        3: standard
+        4: more
   - property: DetergentStandardDosage
     hide: true
     entity_category: diagnostic
@@ -399,8 +420,8 @@ properties:
     hide: true
     entity_category: diagnostic
   - property: Extra_Rinse
-    hide: true
-    entity_category: diagnostic
+    icon: mdi:water-sync
+    switch: {}
   - property: Favour_program_ID
     hide: true
     entity_category: diagnostic
@@ -540,8 +561,14 @@ properties:
     hide: true
     entity_category: diagnostic
   - property: Softener
-    hide: true
-    entity_category: diagnostic
+    icon: mdi:flower-tulip-outline
+    select:
+      options:
+        0: "off"
+        1: auto
+        2: less
+        3: standard
+        4: more
   - property: Softener Compartment
     hide: true
     entity_category: diagnostic
@@ -624,8 +651,8 @@ properties:
     hide: true
     entity_category: diagnostic
   - property: Time_Save
-    hide: true
-    entity_category: diagnostic
+    icon: mdi:run-fast
+    switch: {}
   - property: UV_Light
     hide: true
     entity_category: diagnostic
