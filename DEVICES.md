@@ -39,6 +39,7 @@
 | WFSE1214-MVW002      | Washing machine          | 025              | 1wj120389v0b           |
 |                      | Washing machine          | 025              | 1wj120407v0w           |
 | WF5i1214-RVW002      | Washing machine          | 025              | 1wj120560v0w           |
+|                      | Refrigerator             | 026              | 1b0330z0079j           |
 | HRCD483TBW           | Refrigerator             | 026              | 1b0470z0012j           |
 | RQ5P470SEIE          | Refrigerator             | 026              | 1b0470z0026j           |
 |                      | Refrigerator             | 026              | 1b0610z0049j           |
