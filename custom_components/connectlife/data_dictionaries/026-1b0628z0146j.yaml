@@ -5,65 +5,12 @@ properties:
       options:
         0: false
         1: true
-  - property: existing_fuzzy_mode
-    binary_sensor:
-      options:
-        0: false
-        1: true
-  - property: existing_holiday_mode
-    binary_sensor:
-      options:
-        0: false
-        1: true
-  - property: existing_lock_fresh_mode
-    binary_sensor:
-      options:
-        0: false
-        1: true
-  - property: existing_save_mode
-    binary_sensor:
-      options:
-        0: false
-        1: true
-  - property: existing_sf_mode
-    binary_sensor:
-      options:
-        0: false
-        1: true
-  - property: existing_sr_mode
-    binary_sensor:
-      options:
-        0: false
-        1: true
-  - property: free_room_open
-    binary_sensor:
-      device_class: door
   - property: freeze_temperature
     number:
       device_class: temperature
       unit: °C
       min_value: -24
       max_value: -14
-  - property: ice_making_state
-    binary_sensor:
-      options:
-        0: false
-        1: true
-  - property: ice_making_stop_status
-    binary_sensor:
-      options:
-        0: false
-        1: true
-  - property: mainboard_type
-  - property: mainboard_version
-  - property: refr_room_open
-    binary_sensor:
-      device_class: door
-  - property: refrigerator_sensor_real_temperature
-    hide: true
-    sensor:
-      device_class: temperature
-      unit: °C
   - property: refrigerator_temperature
     number:
       device_class: temperature
@@ -80,7 +27,6 @@ properties:
       options:
         0: false
         1: true
-  - property: sf_sr_mutex_mode
   - property: sr_mode
     binary_sensor:
       options:

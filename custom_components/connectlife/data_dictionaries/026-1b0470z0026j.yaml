@@ -2,39 +2,6 @@
 properties:
   - property: automatic_ice_making
     hide: true
-  - property: existing_fuzzy_mode
-    binary_sensor:
-      options:
-        0: false
-        1: true
-  - property: existing_holiday_mode
-    binary_sensor:
-      options:
-        0: false
-        1: true
-  - property: existing_lock_fresh_mode
-    binary_sensor:
-      options:
-        0: false
-        1: true
-  - property: existing_save_mode
-    binary_sensor:
-      options:
-        0: false
-        1: true
-  - property: existing_sf_mode
-    binary_sensor:
-      options:
-        0: false
-        1: true
-  - property: existing_sr_mode
-    binary_sensor:
-      options:
-        0: false
-        1: true
-  - property: free_room_open
-    binary_sensor:
-      device_class: door
   - property: freeze_door_open_time
     sensor:
       device_class: duration
@@ -48,8 +15,6 @@ properties:
   - property: humidity sensor_failure
     binary_sensor:
       device_class: problem
-  - property: mainboard_type
-  - property: mainboard_version
   - property: open_freeze_door_alarm
     binary_sensor:
       device_class: problem
@@ -62,9 +27,6 @@ properties:
   - property: open_variation_door_alarm
     binary_sensor:
       device_class: problem
-  - property: refr_room_open
-    binary_sensor:
-      device_class: door
   - property: refrigerator_door_open_time
     sensor:
       device_class: duration
@@ -85,15 +47,11 @@ properties:
       options:
         0: false
         1: true
-  - property: sf_sr_mutex_mode
   - property: sr_mode
     binary_sensor:
       options:
         0: false
         1: true
-  - property: vari_room_open
-    binary_sensor:
-      device_class: door
   - property: variation_door_open_time
     sensor:
       device_class: duration
@@ -103,14 +61,6 @@ properties:
       device_class: temperature
       unit: °C
   - property: variation_min_temperature
-    sensor:
-      device_class: temperature
-      unit: °C
-  - property: variation_real_temperature
-    sensor:
-      device_class: temperature
-      unit: °C
-  - property: variation_sensor_real_temperature
     sensor:
       device_class: temperature
       unit: °C

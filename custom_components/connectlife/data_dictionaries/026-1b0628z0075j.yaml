@@ -19,10 +19,6 @@ properties:
   - property: high_temperature
     hide: true
     binary_sensor: {}
-  - property: holiday_mode
-    switch: {}
-  - property: ice_making_b_switch_status
-    switch: {}
   - property: ice_making_state
     switch: {}
   - property: refrigerator_temperature
@@ -31,13 +27,7 @@ properties:
       unit: °C
       min_value: 2
       max_value: 8
-  - property: save_mode
-    switch: {}
-  - property: sf_mode
-    switch: {}
   - property: sf_sr_mutex_mode
-    switch: {}
-  - property: sr_mode
     switch: {}
   - property: variation_temperature
     hide: true

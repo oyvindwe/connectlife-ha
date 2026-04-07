@@ -13,14 +13,7 @@ properties:
     sensor:
       device_class: temperature
       unit: property.temperature_unit
-  - property: ice_making_state
-    binary_sensor:
-      options:
-        0: false
-        1: true
   - property: refrigerator_real_temperature
-    hide: true
-  - property: refrigerator_sensor_real_temperature
     hide: true
   - property: refrigerator_temperature
     sensor:

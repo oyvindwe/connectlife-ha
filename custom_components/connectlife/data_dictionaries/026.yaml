@@ -200,42 +200,36 @@ properties:
       device_class: temperature
       unit: °C
   - property: existing_fuzzy_mode
-    hide: true
     entity_category: diagnostic
     binary_sensor:
       options:
         0: false
         1: true
   - property: existing_holiday_mode
-    hide: true
     entity_category: diagnostic
     binary_sensor:
       options:
         0: false
         1: true
   - property: existing_lock_fresh_mode
-    hide: true
     entity_category: diagnostic
     binary_sensor:
       options:
         0: false
         1: true
   - property: existing_save_mode
-    hide: true
     entity_category: diagnostic
     binary_sensor:
       options:
         0: false
         1: true
   - property: existing_sf_mode
-    hide: true
     entity_category: diagnostic
     binary_sensor:
       options:
         0: false
         1: true
   - property: existing_sr_mode
-    hide: true
     entity_category: diagnostic
     binary_sensor:
       options:
@@ -282,7 +276,6 @@ properties:
   - property: free_room
     hide: true
   - property: free_room_open
-    hide: true
     entity_category: diagnostic
     binary_sensor:
       device_class: door
@@ -378,7 +371,6 @@ properties:
   - property: froze_convert_to_refri_switch_status
     hide: true
   - property: fruit_vegetables_temperature
-    hide: true
     entity_category: diagnostic
     sensor:
       device_class: temperature
@@ -410,7 +402,6 @@ properties:
       device_class: temperature
       unit: °C
   - property: holiday_mode
-    hide: true
     entity_category: config
     switch: {}
   - property: human_on_off_status
@@ -446,7 +437,6 @@ properties:
   - property: ice_make_room_switch
     hide: true
   - property: ice_making_b_switch_status
-    hide: true
     entity_category: config
     switch: {}
   - property: ice_making_fast_status
@@ -469,14 +459,12 @@ properties:
         0: false
         1: true
   - property: ice_making_state
-    hide: true
     entity_category: diagnostic
     binary_sensor:
       options:
         0: false
         1: true
   - property: ice_making_stop_status
-    hide: true
     entity_category: diagnostic
     binary_sensor:
       options:
@@ -574,9 +562,7 @@ properties:
   - property: lumin_value_of_interior_light
     hide: true
   - property: mainboard_type
-    hide: true
   - property: mainboard_version
-    hide: true
   - property: market_mode_exist
     hide: true
   - property: measured_vibrations
@@ -770,7 +756,6 @@ properties:
   - property: refr_room
     hide: true
   - property: refr_room_open
-    hide: true
     entity_category: diagnostic
     binary_sensor:
       device_class: door
@@ -883,6 +868,7 @@ properties:
         0: false
         1: true
   - property: refrigerator_sensor_real_temperature
+    hide: true
     sensor:
       device_class: temperature
       unit: °C
@@ -977,7 +963,6 @@ properties:
         0: false
         1: true
   - property: save_mode
-    hide: true
     entity_category: config
     switch: {}
   - property: screen_display_brightness
@@ -999,11 +984,9 @@ properties:
   - property: sensor_failure_status2
     hide: true
   - property: sf_mode
-    hide: true
     entity_category: config
     switch: {}
   - property: sf_sr_mutex_mode
-    hide: true
   - property: shelf_light_a_state
     hide: true
   - property: shelf_light_atmosphere_brightness
@@ -1025,7 +1008,6 @@ properties:
   - property: special_space
     hide: true
   - property: sr_mode
-    hide: true
     entity_category: config
     switch: {}
   - property: standby_mode_state
@@ -1149,7 +1131,6 @@ properties:
   - property: vari_room
     hide: true
   - property: vari_room_open
-    hide: true
     entity_category: diagnostic
     binary_sensor:
       device_class: door
@@ -1216,13 +1197,11 @@ properties:
   - property: variation_poweron_ad
     hide: true
   - property: variation_real_temperature
-    hide: true
     entity_category: diagnostic
     sensor:
       device_class: temperature
       unit: °C
   - property: variation_sensor_real_temperature
-    hide: true
     entity_category: diagnostic
     sensor:
       device_class: temperature
