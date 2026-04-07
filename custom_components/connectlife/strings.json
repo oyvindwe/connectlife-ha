@@ -1764,8 +1764,7 @@
           "off": "Off",
           "standby": "Standby",
           "running": "Running",
-          "paused": "Paused",
-          "pause": "Pause"
+          "paused": "Paused"
         }
       },
       "mainwashtime": {
