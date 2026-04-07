@@ -92,8 +92,6 @@ properties:
     options:
       0: off
       1: on
-- property: daily_energy_kwh # Unsupported
-  disable: true
 - property: date_format_status # Unsupported
   disable: true
 - property: date_time_format_day_state # Unsupported
