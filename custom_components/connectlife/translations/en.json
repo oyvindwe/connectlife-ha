@@ -445,6 +445,9 @@
       "alarmtanklevel1": {
         "name": "Alarmtanklevel1"
       },
+      "ali_wifi_fault_flag": {
+        "name": "WiFi fault"
+      },
       "auto_dose_refill": {
         "name": "Auto dose refill"
       },
@@ -480,6 +483,12 @@
       },
       "clean_filter": {
         "name": "Clean filter"
+      },
+      "condensation_fan_failure_status": {
+        "name": "Condensation fan failure status"
+      },
+      "control_failure_status": {
+        "name": "Control failure status"
       },
       "crisp_function_status": {
         "name": "Crisp function status"
@@ -757,6 +766,9 @@
       "freeze_poweron_ad": {
         "name": "Freeze poweron ad"
       },
+      "frize_temp_2_degree_above_starting_point": {
+        "name": "Freezer temperature 2\u00b0 above start"
+      },
       "frost_state": {
         "name": "Frost state"
       },
@@ -802,8 +814,14 @@
       "humidity_sensor_failure": {
         "name": "Humidity sensor failure"
       },
+      "ice_make_room_alarm": {
+        "name": "Ice maker room alarm"
+      },
       "ice_making_machine_failure": {
         "name": "Ice making machine failure"
+      },
+      "ice_making_normal_status": {
+        "name": "Ice making normal status"
       },
       "ice_making_state": {
         "name": "Ice making state"
@@ -825,6 +843,9 @@
       },
       "light": {
         "name": "Light"
+      },
+      "lock_fresh_mode": {
+        "name": "Lock fresh mode"
       },
       "low_wine_area_c_evaporator_fault": {
         "name": "Low wine area c evaporator fault"
@@ -870,6 +891,9 @@
       },
       "reed_switch": {
         "name": "Reed switch"
+      },
+      "refi_temp_2_degree_above_starting_point": {
+        "name": "Refrigerator temperature 2\u00b0 above start"
       },
       "refr_defrosting_failure": {
         "name": "Refrigerator defrosting failure"
@@ -1183,14 +1207,41 @@
       "tx_failure": {
         "name": "TX failure"
       },
+      "up_wine_area_a_evaporator_fault": {
+        "name": "Upper wine area A evaporator fault"
+      },
+      "up_wine_area_a_fan_fault": {
+        "name": "Upper wine area A fan fault"
+      },
+      "up_wine_area_a_humdy_fault": {
+        "name": "Upper wine area A humidity fault"
+      },
+      "up_wine_area_a_temp_fault": {
+        "name": "Upper wine area A temperature fault"
+      },
       "vacuum_on_off_status": {
         "name": "Vacuum on off status"
+      },
+      "var_room_over_temp_alarm": {
+        "name": "Variable room over temperature alarm"
       },
       "vari_evap_temp_sens_head_failure": {
         "name": "Vari evap temp sens head failure"
       },
+      "vari_room_open": {
+        "name": "Variable room open"
+      },
+      "vari_temp_2_degree_above_starting_point": {
+        "name": "Variable temperature 2\u00b0 above start"
+      },
       "vari_temp_sens_head_failure": {
         "name": "Vari temp sens head failure"
+      },
+      "variable_fan_failure_status": {
+        "name": "Variable fan failure"
+      },
+      "variable_heater_failure_status": {
+        "name": "Variable heater failure"
       },
       "vibration_alarm": {
         "name": "Vibration alarm"
@@ -1206,6 +1257,9 @@
       },
       "waterbox_full": {
         "name": "Waterbox full"
+      },
+      "wine_sensor_failure_flag": {
+        "name": "Wine sensor failure"
       }
     },
     "climate": {
@@ -1578,6 +1632,9 @@
           "high": "High"
         }
       },
+      "filter_state": {
+        "name": "Filter state"
+      },
       "flexiblespintime_flag": {
         "name": "Flexible spin time flag"
       },
@@ -1591,6 +1648,9 @@
           "confirm_fota": "Confirm fota"
         }
       },
+      "freeze_door_open_time": {
+        "name": "Freeze door open time"
+      },
       "freeze_max_temperature": {
         "name": "Freeze max temperature"
       },
@@ -1602,6 +1662,9 @@
       },
       "freeze_sensor_real_temperature": {
         "name": "Freezer sensor real temperature"
+      },
+      "freeze_temperature": {
+        "name": "Freeze temperature"
       },
       "fruit_vegetables_temperature": {
         "name": "Fruit vegetables temperature"
@@ -1788,6 +1851,9 @@
       "real_humidity_c": {
         "name": "Real humidity c"
       },
+      "refrigerator_door_open_time": {
+        "name": "Refrigerator door open time"
+      },
       "refrigerator_max_temperature": {
         "name": "Refrigerator max temperature"
       },
@@ -1799,6 +1865,9 @@
       },
       "refrigerator_sensor_real_temperature": {
         "name": "Refrigerator sensor real temperature"
+      },
+      "refrigerator_temperature": {
+        "name": "Refrigerator temperature"
       },
       "remaining_time_of_selected_program": {
         "name": "Remaining time of selected program"
@@ -3154,6 +3223,13 @@
       "temperature_room_judge": {
         "name": "Temperature room judge"
       },
+      "temperature_unit": {
+        "name": "Temperature unit",
+        "state": {
+          "celsius": "Celsius",
+          "fahrenheit": "Fahrenheit"
+        }
+      },
       "time_format": {
         "name": "Time format",
         "state": {
@@ -3196,6 +3272,9 @@
       },
       "utc_datetime_bdc_delaystart_delayend_timestamp": {
         "name": "BDC DelayStart DelayEnd"
+      },
+      "variation_door_open_time": {
+        "name": "Variation door open time"
       },
       "variation_max_temperature": {
         "name": "Variation max temperature"
@@ -3245,7 +3324,10 @@
         "name": "Water hardness"
       },
       "water_hardness_setting_status": {
-        "name": "Water hardness"
+        "name": "Water hardness",
+        "state": {
+          "not_set": "Not set"
+        }
       },
       "water_inlet_setting_status": {
         "name": "Water inlet"
@@ -3790,6 +3872,13 @@
         "name": "Temperature",
         "state": {
           "cold": "Cold"
+        }
+      },
+      "temperature_unit": {
+        "name": "Temperature unit",
+        "state": {
+          "celsius": "Celsius",
+          "fahrenheit": "Fahrenheit"
         }
       },
       "time_format": {
