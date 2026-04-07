@@ -1,6 +1,5 @@
 # Hisense 483L French Door Refrigerator HRCD483TBW
 properties:
-  - property: automatic_ice_making
   - property: freeze_temperature
     sensor:
       device_class: temperature
@@ -9,21 +8,6 @@ properties:
     sensor:
       device_class: temperature
       unit: property.temperature_unit
-  - property: save_mode
-    binary_sensor:
-      options:
-        0: false
-        1: true
-  - property: sf_mode
-    binary_sensor:
-      options:
-        0: false
-        1: true
-  - property: sr_mode
-    binary_sensor:
-      options:
-        0: false
-        1: true
   - property: temperature_unit
     sensor:
       device_class: enum

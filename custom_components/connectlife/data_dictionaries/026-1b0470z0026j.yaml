@@ -12,21 +12,6 @@ properties:
       unit: °C
       min_value: 2
       max_value: 8
-  - property: save_mode
-    binary_sensor:
-      options:
-        0: false
-        1: true
-  - property: sf_mode
-    binary_sensor:
-      options:
-        0: false
-        1: true
-  - property: sr_mode
-    binary_sensor:
-      options:
-        0: false
-        1: true
   - property: variation_temperature
     number:
       device_class: temperature

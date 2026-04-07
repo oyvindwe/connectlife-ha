@@ -1,10 +1,4 @@
 properties:
-  - property: automatic_ice_making
-    hide: true
-    binary_sensor:
-      options:
-        0: false
-        1: true
   - property: environment_humidity
     hide: true
     sensor:
@@ -71,24 +65,6 @@ properties:
       read_only: true
       device_class: temperature
       unit: property.temperature_unit
-  - property: save_mode
-    hide: true
-    binary_sensor:
-      options:
-        0: false
-        1: true
-  - property: sf_mode
-    hide: true
-    binary_sensor:
-      options:
-        0: false
-        1: true
-  - property: sr_mode
-    hide: true
-    binary_sensor:
-      options:
-        0: false
-        1: true
   - property: temperature_room_judge
     hide: true
     sensor:

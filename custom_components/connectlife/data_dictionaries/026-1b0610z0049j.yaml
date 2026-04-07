@@ -23,12 +23,6 @@ properties:
       unit: °C
       min_value: 0
       max_value: 8
-  - property: save_mode
-    hide: true
-    binary_sensor:
-      options:
-        0: false
-        1: true
   - property: variation_max_temperature
     hide: true
     number:

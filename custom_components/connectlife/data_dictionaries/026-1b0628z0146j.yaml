@@ -1,10 +1,5 @@
 # HISENSE American Side by Side Refrigerator RS 818 N 4 TIE 1
 properties:
-  - property: automatic_ice_making
-    binary_sensor:
-      options:
-        0: false
-        1: true
   - property: freeze_temperature
     number:
       device_class: temperature
@@ -17,18 +12,3 @@ properties:
       unit: °C
       min_value: 2
       max_value: 8
-  - property: save_mode
-    binary_sensor:
-      options:
-        0: false
-        1: true
-  - property: sf_mode
-    binary_sensor:
-      options:
-        0: false
-        1: true
-  - property: sr_mode
-    binary_sensor:
-      options:
-        0: false
-        1: true
