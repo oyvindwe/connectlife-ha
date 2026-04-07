@@ -204,17 +204,6 @@ properties:
       180: "180_min"
       240: "240_min"
 
-- property: machine_status
-  sensor: # Need to change to select to enable pause and resume functionality?
-    read_only: true
-    device_class: enum
-    options:
-      0: "off"
-      1: standby
-      2: running
-      3: paused
-  icon: 'mdi:washing-machine'
-
 - property: spin_time
   icon: mdi:timer-sand
   sensor:

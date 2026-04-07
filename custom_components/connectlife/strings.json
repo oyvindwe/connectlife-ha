@@ -508,6 +508,9 @@
       "detergent_display": {
         "name": "Detergent display"
       },
+      "detergent_state": {
+        "name": "Detergent state"
+      },
       "door": {
         "name": "Door"
       },
@@ -1140,6 +1143,9 @@
       },
       "soft_pairing_setting": {
         "name": "Soft pairing setting"
+      },
+      "softener_state": {
+        "name": "Softener state"
       },
       "softer_display": {
         "name": "Softener display"
@@ -3389,6 +3395,9 @@
       "drum_light": {
         "name": "Drum light"
       },
+      "extra_rinse": {
+        "name": "Extra rinse"
+      },
       "fota_cmd": {
         "name": "Firmware update"
       },
@@ -3488,6 +3497,9 @@
       "tab_setting_status": {
         "name": "Tab setting status"
       },
+      "time_save": {
+        "name": "Time save"
+      },
       "welcome": {
         "name": "Welcome"
       }
@@ -3560,6 +3572,15 @@
           "24_hours": "24 hours"
         }
       },
+      "detergent": {
+        "name": "Detergent",
+        "state": {
+          "auto": "Auto",
+          "less": "Less",
+          "standard": "Standard",
+          "more": "More"
+        }
+      },
       "dry_level": {
         "name": "Drying level",
         "state": {
@@ -3581,7 +3602,8 @@
           "180_min": "180 min",
           "240_min": "240 min",
           "iron": "Iron",
-          "cupboard": "Cupboard"
+          "cupboard": "Cupboard",
+          "none": "None"
         }
       },
       "drymodel": {
@@ -3674,7 +3696,20 @@
           "bedding": "Bedding",
           "power_30": "Power 30",
           "pets": "Pets",
-          "full_load_49": "Full load 49"
+          "full_load_49": "Full load 49",
+          "mix": "Mix",
+          "jeans": "Jeans",
+          "sportswear": "Sportswear",
+          "hand_wash": "Hand wash"
+        }
+      },
+      "softener": {
+        "name": "Softener",
+        "state": {
+          "auto": "Auto",
+          "less": "Less",
+          "standard": "Standard",
+          "more": "More"
         }
       },
       "spin_speed_rpm": {
