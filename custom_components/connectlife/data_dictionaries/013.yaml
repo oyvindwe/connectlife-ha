@@ -946,20 +946,20 @@ properties:
   hide: true
   binary_sensor:
     options:
-      0: "not_active"
-      1: "active"
+      0: false
+      1: true
 - property: Remote_control_monitoring_set_commands
   hide: true
   binary_sensor:
     options:
-      0: "not_active"
-      1: "active"
+      0: false
+      1: true
 - property: Remote_control_monitoring_set_commands_actions
   hide: true
   binary_sensor:
     options:
-      0: "not_active"
-      1: "active"
+      0: false
+      1: true
 - property: Remove_moist_now
   disable: true
 - property: Reset_to_default
@@ -1159,8 +1159,8 @@ properties:
   hide: true
   binary_sensor:
     options:
-      0: "off"
-      1: "on"
+      0: false
+      1: true
 - property: Set_time_Hour
   hide: true
   sensor:
@@ -1197,8 +1197,8 @@ properties:
   hide: true
   binary_sensor:
     options:
-      0: "off"
-      1: "on"
+      0: false
+      1: true
 - property: Stage_lights_setting
   hide: true
 - property: Status
