@@ -303,7 +303,6 @@ properties:
   - property: freeri_fan_speed
     hide: true
   - property: freeze_door_open_time
-    hide: true
     entity_category: diagnostic
     sensor:
       read_only: true
@@ -417,7 +416,6 @@ properties:
   - property: humdy_test_switch_state
     hide: true
   - property: humidity sensor_failure
-    hide: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -641,7 +639,6 @@ properties:
   - property: not_active
     hide: true
   - property: open_freeze_door_alarm
-    hide: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -649,7 +646,6 @@ properties:
         0: false
         1: true
   - property: open_refrigerator_door_alarm
-    hide: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -657,7 +653,6 @@ properties:
         0: false
         1: true
   - property: open_the_door_alarm
-    hide: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -665,7 +660,6 @@ properties:
         0: false
         1: true
   - property: open_variation_door_alarm
-    hide: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -795,7 +789,6 @@ properties:
         0: false
         1: true
   - property: refrigerator_door_open_time
-    hide: true
     entity_category: diagnostic
     sensor:
       read_only: true
@@ -1172,21 +1165,18 @@ properties:
   - property: variable_temperature_space
     hide: true
   - property: variation_door_open_time
-    hide: true
     entity_category: diagnostic
     sensor:
       read_only: true
       device_class: duration
       unit: s
   - property: variation_max_temperature
-    hide: true
     entity_category: diagnostic
     sensor:
       read_only: true
       device_class: temperature
       unit: °C
   - property: variation_min_temperature
-    hide: true
     entity_category: diagnostic
     sensor:
       read_only: true
@@ -1209,7 +1199,7 @@ properties:
   - property: variation_temperature
     hide: true
     entity_category: diagnostic
-    number:
+    sensor:
       device_class: temperature
       unit: °C
   - property: vibration_alarm

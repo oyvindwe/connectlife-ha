@@ -2,35 +2,12 @@
 properties:
   - property: automatic_ice_making
     hide: true
-  - property: freeze_door_open_time
-    sensor:
-      device_class: duration
-      unit: s
   - property: freeze_temperature
     number:
       device_class: temperature
       unit: °C
       min_value: -18
       max_value: -14
-  - property: humidity sensor_failure
-    binary_sensor:
-      device_class: problem
-  - property: open_freeze_door_alarm
-    binary_sensor:
-      device_class: problem
-  - property: open_refrigerator_door_alarm
-    binary_sensor:
-      device_class: problem
-  - property: open_the_door_alarm
-    binary_sensor:
-      device_class: problem
-  - property: open_variation_door_alarm
-    binary_sensor:
-      device_class: problem
-  - property: refrigerator_door_open_time
-    sensor:
-      device_class: duration
-      unit: s
   - property: refrigerator_temperature
     number:
       device_class: temperature
@@ -52,18 +29,6 @@ properties:
       options:
         0: false
         1: true
-  - property: variation_door_open_time
-    sensor:
-      device_class: duration
-      unit: s
-  - property: variation_max_temperature
-    sensor:
-      device_class: temperature
-      unit: °C
-  - property: variation_min_temperature
-    sensor:
-      device_class: temperature
-      unit: °C
   - property: variation_temperature
     number:
       device_class: temperature

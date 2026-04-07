@@ -29,8 +29,3 @@ properties:
       max_value: 8
   - property: sf_sr_mutex_mode
     switch: {}
-  - property: variation_temperature
-    hide: true
-    sensor:
-      device_class: temperature
-      unit: °C

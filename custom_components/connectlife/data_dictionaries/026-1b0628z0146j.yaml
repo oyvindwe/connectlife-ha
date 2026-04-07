@@ -32,8 +32,3 @@ properties:
       options:
         0: false
         1: true
-  - property: variation_temperature
-    hide: true
-    sensor:
-      device_class: temperature
-      unit: °C
