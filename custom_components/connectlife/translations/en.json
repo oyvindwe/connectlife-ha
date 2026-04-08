@@ -51,7 +51,7 @@
             "title": "Disable beep not supported by {device_name}",
             "description": "The device \"{device_name}\" does not support the disable beep option.",
             "menu_options": {
-              "confirm": "Disable",
+              "confirm": "Update configuration",
               "ignore": "Ignore"
             }
           }

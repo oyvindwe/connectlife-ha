@@ -77,8 +77,9 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
                 await self.coordinator.async_update_device(self.device_id, command, properties)
             except LifeConnectError as err:
                 _LOGGER.debug(
-                    "Command failed with t_beep for %s, retrying without",
+                    "Command failed with t_beep for %s (%s), retrying without",
                     self.nickname,
+                    err,
                 )
                 del command["t_beep"]
                 try:
