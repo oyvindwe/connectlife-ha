@@ -50,6 +50,7 @@
 |                      | Refrigerator             | 026              | 1b0610z0049j           |
 |                      | Refrigerator             | 026              | 1b0628z0075j           |
 | RS818N4TIE1          | Refrigerator             | 026              | 1b0628z0146j           |
+| WPAM14A2T            | Washing machine          | 027              | washing-machine-wm22-b2plus |
 | WPNA84A2TSWIFI       | Washing machine          | 027              | washing-machine-wm22   |
 | DH3S802BW3           | Tumble dryer             | 030              | 1wk080066v0w           |
 | DH5S102BW            | Tumble dryer             | 030              | 1wk100028v0w           |
