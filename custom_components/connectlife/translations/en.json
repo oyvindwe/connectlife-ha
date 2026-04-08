@@ -39,6 +39,24 @@
           }
         }
       }
+    },
+    "unsupported_beep": {
+      "title": "Disable beep not supported by {device_name}",
+      "fix_flow": {
+        "abort": {
+          "issue_ignored": "Ignored \"Disable beep not supported by {device_name}\"."
+        },
+        "step": {
+          "init": {
+            "title": "Disable beep not supported by {device_name}",
+            "description": "The device \"{device_name}\" does not support the disable beep option.",
+            "menu_options": {
+              "confirm": "Update configuration",
+              "ignore": "Ignore"
+            }
+          }
+        }
+      }
     }
   },
   "options": {

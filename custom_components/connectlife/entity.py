@@ -1,11 +1,14 @@
 """ConnectLife entity base class."""
 
+import logging
 from abc import abstractmethod
 
+from connectlife.api import LifeConnectError
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import Platform
 from homeassistant.core import callback
 from homeassistant.helpers.device_registry import DeviceInfo
+from homeassistant.helpers import issue_registry as ir
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
 from connectlife.appliance import ConnectLifeAppliance
@@ -16,6 +19,8 @@ from .const import (
     DOMAIN,
 )
 from .coordinator import ConnectLifeCoordinator
+
+_LOGGER = logging.getLogger(__name__)
 
 
 class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
@@ -66,9 +71,39 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
     async def async_update_device(self, command: dict[str, int], properties: dict[str, int] | None = None):
         if properties is None:
             properties = command.copy()
-        if self._disable_beep and "t_beep" in self.coordinator.data[self.device_id].status_list:
+        if self._disable_beep:
             command["t_beep"] = 0
-        await self.coordinator.async_update_device(self.device_id, command, properties)
+            try:
+                await self.coordinator.async_update_device(self.device_id, command, properties)
+            except LifeConnectError as err:
+                _LOGGER.debug(
+                    "Command failed with t_beep for %s (%s), retrying without",
+                    self.nickname,
+                    err,
+                )
+                del command["t_beep"]
+                try:
+                    await self.coordinator.async_update_device(self.device_id, command, properties)
+                except LifeConnectError:
+                    raise err from None
+                self._disable_beep = False
+                ir.async_create_issue(
+                    self.coordinator.hass,
+                    DOMAIN,
+                    f"unsupported_beep.{self.device_id}",
+                    is_fixable=True,
+                    severity=ir.IssueSeverity.WARNING,
+                    translation_key="unsupported_beep",
+                    translation_placeholders={
+                        "device_name": self.nickname or "",
+                    },
+                    data={
+                        "entry_id": self.coordinator.config_entry.entry_id,
+                        "device_id": self.device_id,
+                    },
+                )
+        else:
+            await self.coordinator.async_update_device(self.device_id, command, properties)
 
     def to_translation_key(self, property_name: str) -> str:
         return property_name.lower().replace(" ", "_")
