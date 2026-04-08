@@ -1266,6 +1266,33 @@
       },
       "wine_sensor_failure_flag": {
         "name": "Wine sensor failure"
+      },
+      "child_lock_status_status": {
+        "name": "Child lock"
+      },
+      "extra_rinse_status": {
+        "name": "Extra rinse"
+      },
+      "selected_program_disinfection": {
+        "name": "Disinfection"
+      },
+      "selected_program_entry_steam_status": {
+        "name": "Entry steam"
+      },
+      "selected_program_prewash_status": {
+        "name": "Prewash"
+      },
+      "selected_program_rinse_hold_status": {
+        "name": "Rinse hold"
+      },
+      "selected_program_water_pluse_status": {
+        "name": "Water pulse"
+      },
+      "stopaddgo_status": {
+        "name": "Stop & Go"
+      },
+      "stopaddgoallowed": {
+        "name": "Stop & Go allowed"
       }
     },
     "climate": {
@@ -1548,8 +1575,8 @@
           "not_available": "Not available",
           "open": "Open",
           "closed": "Closed",
-          "closed_when_running": "Closed when running",
-          "other": "Other"
+          "other": "Other",
+          "locked": "Locked"
         }
       },
       "dryopen_defaultspinspeed": {
@@ -2055,7 +2082,11 @@
           "shirts": "Shirts",
           "drum_cleaning": "Drum Cleaning",
           "spinning_draining": "Spinning & Draining",
-          "rinsing_softening": "Rinsing & Softening"
+          "rinsing_softening": "Rinsing & Softening",
+          "no_program_selected": "No program selected",
+          "pet_hair_removal": "Pet hair removal",
+          "draining": "Draining",
+          "down_feathers": "Down feathers"
         }
       },
       "selected_program_mode": {
@@ -3350,6 +3381,42 @@
       },
       "zone_number": {
         "name": "Number of zones"
+      },
+      "delaystart_delayend_remaining_time_in_minutes": {
+        "name": "Delay start/end remaining time"
+      },
+      "selected_program_mode_status": {
+        "name": "Program mode",
+        "state": {
+          "not_available": "Not available",
+          "normal": "Normal",
+          "fast": "Fast",
+          "extra_fast": "Extra fast"
+        }
+      },
+      "selected_program_set_temperature_status": {
+        "name": "Temperature",
+        "state": {
+          "not_available": "Not available",
+          "cold": "Cold",
+          "20_c": "20 \u00b0C",
+          "30_c": "30 \u00b0C",
+          "40_c": "40 \u00b0C",
+          "60_c": "60 \u00b0C"
+        }
+      },
+      "selected_program_washing_spin_speed_rpm_status": {
+        "name": "Spin speed",
+        "state": {
+          "not_available": "Not available",
+          "no_spin": "No spin",
+          "0_rpm": "0",
+          "800_rpm": "800",
+          "400_rpm": "400",
+          "1000_rpm": "1000",
+          "1200_rpm": "1200",
+          "1400_rpm": "1400"
+        }
       }
     },
     "switch": {
