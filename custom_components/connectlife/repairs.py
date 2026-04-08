@@ -7,7 +7,7 @@ from homeassistant.components.repairs import RepairsFlow
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers import device_registry as dr, issue_registry as ir
 
-from .const import DOMAIN
+from .const import CONF_DEVICES, CONF_DISABLE_BEEP, DOMAIN
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -55,6 +55,51 @@ class UnavailableDeviceRepairFlow(RepairsFlow):
         )
 
 
+class UnsupportedBeepRepairFlow(RepairsFlow):
+    """Flow to disable beep for unsupported device."""
+
+    def __init__(self, issue_id: str, data: dict[str, str | int | float | None] | None) -> None:
+        """Initialize repair flow."""
+        self.issue_id = issue_id
+        self.data = data
+
+    async def async_step_init(
+            self, user_input: dict[str, str] | None = None
+    ) -> data_entry_flow.FlowResult:
+        """Handle the first step of a fix flow."""
+        return self.async_show_menu(
+            step_id="init",
+            menu_options=["confirm", "ignore"],
+            description_placeholders=self.data,  # type: ignore[arg-type]
+        )
+
+    async def async_step_confirm(
+            self, user_input: dict[str, str] | None = None
+    ) -> data_entry_flow.FlowResult:
+        """Disable beep for the device."""
+        if self.data is not None:
+            entry = self.hass.config_entries.async_get_entry(str(self.data["entry_id"]))
+            if entry is not None:
+                device_id = str(self.data["device_id"])
+                options = entry.options.copy()
+                devices = options.get(CONF_DEVICES, {}).copy()
+                if device_id in devices:
+                    devices[device_id] = {**devices[device_id], CONF_DISABLE_BEEP: False}
+                    options[CONF_DEVICES] = devices
+                    self.hass.config_entries.async_update_entry(entry, options=options)
+        return self.async_create_entry(title="", data={})
+
+    async def async_step_ignore(
+            self, user_input: dict[str, str] | None = None
+    ) -> data_entry_flow.FlowResult:
+        """Ignore the issue."""
+        ir.async_get(self.hass).async_ignore(DOMAIN, self.issue_id, True)
+        return self.async_abort(
+            reason="issue_ignored",
+            description_placeholders=self.data  # type: ignore[arg-type]
+        )
+
+
 async def async_create_fix_flow(
         hass: HomeAssistant,
         issue_id: str,
@@ -63,4 +108,6 @@ async def async_create_fix_flow(
     """Create flow."""
     if issue_id.startswith("unavailable_device."):
         return UnavailableDeviceRepairFlow(issue_id, data)
+    if issue_id.startswith("unsupported_beep."):
+        return UnsupportedBeepRepairFlow(issue_id, data)
     raise ValueError(f"Unknown issue: {issue_id}")

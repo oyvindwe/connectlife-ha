@@ -16,6 +16,7 @@ from homeassistant.config_entries import (
 from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
 from homeassistant.core import callback
 from homeassistant.exceptions import HomeAssistantError
+from homeassistant.helpers import issue_registry as ir
 
 from .const import CONF_DEVICES, CONF_DEVELOPMENT_MODE, CONF_DISABLE_BEEP, CONF_TEST_SERVER_URL, DOMAIN
 from connectlife.api import ConnectLifeApi
@@ -129,6 +130,8 @@ class OptionsFlowHandler(OptionsFlow):
             data = self.config_entry.options.copy()
             data[CONF_DEVICES] = data[CONF_DEVICES].copy() if CONF_DEVICES in data else {}
             data[CONF_DEVICES][self._device_id] = {CONF_DISABLE_BEEP: user_input[CONF_DISABLE_BEEP]}
+            if not user_input[CONF_DISABLE_BEEP]:
+                ir.async_delete_issue(self.hass, DOMAIN, f"unsupported_beep.{self._device_id}")
             return self.async_create_entry(title="", data=data)
 
         devices = self.config_entry.options.get(CONF_DEVICES, {})
