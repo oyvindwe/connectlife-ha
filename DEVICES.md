@@ -52,7 +52,9 @@
 | RS818N4TIE1          | Refrigerator             | 026              | 1b0628z0146j           |
 | WPAM14A2T            | Washing machine          | 027              | washing-machine-wm22-b2plus |
 | WPNA84A2TSWIFI       | Washing machine          | 027              | washing-machine-wm22   |
+| DH3S80-DVW006        | Tumble dryer             | 030              | 1wk080140v0w           |
 | DH3S802BW3           | Tumble dryer             | 030              | 1wk080066v0w           |
 | DH5S102BW            | Tumble dryer             | 030              | 1wk100028v0w           |
 | DHSE10               | Tumble dryer             | 030              | 1wk100130v0f           |
+| DHSE80-BEW001        | Tumble dryer             | 030              | 1wk080027e0w           |
 | DPNA83W              | Tumble dryer             | 032              | 000                    |

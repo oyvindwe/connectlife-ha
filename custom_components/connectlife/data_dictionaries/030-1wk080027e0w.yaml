@@ -1,0 +1,20 @@
+# Tumble dryer model DHSE80-BEW001
+properties:
+  - property: Selected_program_ID
+    icon: mdi:selection-ellipse-arrow-inside
+    select:
+      options:
+        1: auto
+        2: anti_allergy
+        3: refresh
+        4: sports
+        5: towels
+        7: time
+        8: cotton
+        9: baby
+        10: synthetic
+        11: wool
+        13: fast30
+        17: shirts
+        18: bed_linen
+        19: down
