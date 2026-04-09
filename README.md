@@ -126,6 +126,26 @@ There are two workarounds is you have logged in using a 3rd party identity provi
 3. In the connectlife-ha integration within Home Assistant, use the email and password from the new account you set up, which will now have the device(s) shared with it.
 4. Forget your new email version of your account exists, you don't have to accept device shares or use that account for any other reason.
 
+### Updated Terms & Conditions
+
+ConnectLife periodically updates their Terms & Conditions. When this happens, the integration may stop working
+with errors like `Account Pending Registration` or `Missing required fields for registration`, or devices may
+silently become unavailable.
+
+To resolve this, you need to accept the new Terms & Conditions in the ConnectLife mobile app:
+
+1. Open the ConnectLife mobile app
+2. Go to Settings and **change the app language to English**
+3. **Force close the app** (not just background it)
+4. **Reopen the app** — the Terms & Conditions acceptance screen should appear
+5. **Accept the new Terms & Conditions**
+6. In Home Assistant, **reload the ConnectLife integration**
+7. You can change the app language back afterward — the acceptance persists
+
+The language change is needed because updated Terms & Conditions are often only available in English initially.
+The app skips the acceptance prompt if the translated version for your language doesn't exist yet, but the
+backend still requires acceptance.
+
 ## Contributing
 
 See [DEVELOPMENT.md](DEVELOPMENT.md).
