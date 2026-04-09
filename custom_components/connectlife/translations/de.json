@@ -959,13 +959,13 @@
         "name": "Alarm Sabbat-Erinnerung"
       },
       "alarm_sand_timer_1_elapsed": {
-        "name": "Alarm Zeitmesser 1 abgelaufen"
+        "name": "Alarm Timer 1 abgelaufen"
       },
       "alarm_sand_timer_2_elapsed": {
-        "name": "Alarm Zeitmesser 2 abgelaufen"
+        "name": "Alarm Timer 2 abgelaufen"
       },
       "alarm_sand_timer_3_elapsed": {
-        "name": "Alarm Zeitmesser 3 abgelaufen"
+        "name": "Alarm Timer 3 abgelaufen"
       },
       "alarm_set_temperature_reached": {
         "name": "Alarm eingestellte Temperatur erreicht"
@@ -2581,25 +2581,25 @@
         "name": "Verbleibende Zeit des gew\u00e4hlten Programms"
       },
       "sand_timer_1_duration_hours": {
-        "name": "Zeitmesser 1 Dauer Stunden"
+        "name": "Timer 1 Dauer Stunden"
       },
       "sand_timer_1_duration_minutes": {
-        "name": "Zeitmesser 1 Dauer Minuten"
+        "name": "Timer 1 Dauer Minuten"
       },
       "sand_timer_1_duration_seconds": {
-        "name": "Zeitmesser 1 Dauer"
+        "name": "Timer 1 Dauer Sekunden"
       },
       "sand_timer_1_end_utc_datetime_bdc_timestamp": {
-        "name": "Zeitmesser 1 Endzeit UTC"
+        "name": "Timer 1 Endzeit UTC"
       },
       "sand_timer_1_paused_total_seconds": {
-        "name": "Zeitmesser 1 pausiert gesamt"
+        "name": "Timer 1 pausiert gesamt"
       },
       "sand_timer_1_start_utc_datetime_bdc_timestamp": {
-        "name": "Zeitmesser 1 Startzeit UTC"
+        "name": "Timer 1 Startzeit UTC"
       },
       "sand_timer_1_status": {
-        "name": "Zeitmesser 1 Status",
+        "name": "Timer 1 Status",
         "state": {
           "not_active": "Nicht aktiv",
           "running": "L\u00e4uft",
@@ -2609,25 +2609,25 @@
         }
       },
       "sand_timer_2_duration_hours": {
-        "name": "Zeitmesser 2 Dauer Stunden"
+        "name": "Timer 2 Dauer Stunden"
       },
       "sand_timer_2_duration_minutes": {
-        "name": "Zeitmesser 2 Dauer Minuten"
+        "name": "Timer 2 Dauer Minuten"
       },
       "sand_timer_2_duration_seconds": {
-        "name": "Zeitmesser 2 Dauer"
+        "name": "Timer 2 Dauer Sekunden"
       },
       "sand_timer_2_end_utc_datetime_bdc_timestamp": {
-        "name": "Zeitmesser 2 Endzeit UTC"
+        "name": "Timer 2 Endzeit UTC"
       },
       "sand_timer_2_paused_total_seconds": {
-        "name": "Zeitmesser 2 pausiert gesamt"
+        "name": "Timer 2 pausiert gesamt"
       },
       "sand_timer_2_start_utc_datetime_bdc_timestamp": {
-        "name": "Zeitmesser 2 Startzeit UTC"
+        "name": "Timer 2 Startzeit UTC"
       },
       "sand_timer_2_status": {
-        "name": "Zeitmesser 2 Status",
+        "name": "Timer 2 Status",
         "state": {
           "not_active": "Nicht aktiv",
           "running": "L\u00e4uft",
@@ -2637,25 +2637,25 @@
         }
       },
       "sand_timer_3_duration_hours": {
-        "name": "Zeitmesser 3 Dauer Stunden"
+        "name": "Timer 3 Dauer Stunden"
       },
       "sand_timer_3_duration_minutes": {
-        "name": "Zeitmesser 3 Dauer Minuten"
+        "name": "Timer 3 Dauer Minuten"
       },
       "sand_timer_3_duration_seconds": {
-        "name": "Zeitmesser 3 Dauer"
+        "name": "Timer 3 Dauer Sekunden"
       },
       "sand_timer_3_end_utc_datetime_bdc_timestamp": {
-        "name": "Zeitmesser 3 Endzeit UTC"
+        "name": "Timer 3 Endzeit UTC"
       },
       "sand_timer_3_paused_total_seconds": {
-        "name": "Zeitmesser 3 pausiert gesamt"
+        "name": "Timer 3 pausiert gesamt"
       },
       "sand_timer_3_start_utc_datetime_bdc_timestamp": {
-        "name": "Zeitmesser 3 Startzeit UTC"
+        "name": "Timer 3 Startzeit UTC"
       },
       "sand_timer_3_status": {
-        "name": "Zeitmesser 3 Status",
+        "name": "Timer 3 Status",
         "state": {
           "not_active": "Nicht aktiv",
           "running": "L\u00e4uft",
@@ -2862,7 +2862,7 @@
           "convection_roast": "Umluft braten",
           "proof": "G\u00e4ren",
           "dehydrate": "D\u00f6rren",
-          "crisp": "Knuspern",
+          "crisp": "Knusprig backen",
           "large_grill_bottom_hot_air": "Gro\u00dfer Grill + Unterhitze + Hei\u00dfluft",
           "bottom_top_heat_fan": "Unter-/Oberhitze + Ventilator",
           "largegrillsteak_pyro": "Gro\u00dfer Grill Steak Pyrolyse",
@@ -2987,7 +2987,7 @@
           "convection_roast": "Umluft braten",
           "proof": "G\u00e4ren",
           "dehydrate": "D\u00f6rren",
-          "crisp": "Knuspern",
+          "crisp": "Knusprig backen",
           "large_grill_bottom_hot_air": "Gro\u00dfer Grill + Unterhitze + Hei\u00dfluft",
           "bottom_top_heat_fan": "Unter-/Oberhitze + Ventilator",
           "largegrillsteak_pyro": "Gro\u00dfer Grill Steak Pyrolyse",
@@ -3112,7 +3112,7 @@
           "convection_roast": "Umluft braten",
           "proof": "G\u00e4ren",
           "dehydrate": "D\u00f6rren",
-          "crisp": "Knuspern",
+          "crisp": "Knusprig backen",
           "large_grill_bottom_hot_air": "Gro\u00dfer Grill + Unterhitze + Hei\u00dfluft",
           "bottom_top_heat_fan": "Unter-/Oberhitze + Ventilator",
           "largegrillsteak_pyro": "Gro\u00dfer Grill Steak Pyrolyse",
@@ -3238,7 +3238,7 @@
           "convection_roast": "Umluft braten",
           "proof": "G\u00e4ren",
           "dehydrate": "D\u00f6rren",
-          "crisp": "Knuspern",
+          "crisp": "Knusprig backen",
           "large_grill_bottom_hot_air": "Gro\u00dfer Grill + Unterhitze + Hei\u00dfluft",
           "bottom_top_heat_fan": "Unter-/Oberhitze + Ventilator",
           "largegrillsteak_pyro": "Gro\u00dfer Grill Steak Pyrolyse",
@@ -3344,7 +3344,7 @@
           "convection_roast": "Umluft braten",
           "proof": "G\u00e4ren",
           "dehydrate": "D\u00f6rren",
-          "crisp": "Knuspern",
+          "crisp": "Knusprig backen",
           "large_grill_bottom_hot_air": "Gro\u00dfer Grill + Unterhitze + Hei\u00dfluft",
           "bottom_top_heat_fan": "Unter-/Oberhitze + Ventilator",
           "largegrillsteak_pyro": "Gro\u00dfer Grill Steak Pyrolyse",
@@ -3795,7 +3795,7 @@
         }
       },
       "sand_timer_1_status_cmd": {
-        "name": "Zeitmesser 1 Steuerung",
+        "name": "Timer 1 Steuerung",
         "state": {
           "start": "Start",
           "stop": "Stopp",
@@ -3804,7 +3804,7 @@
         }
       },
       "sand_timer_2_status_cmd": {
-        "name": "Zeitmesser 2 Steuerung",
+        "name": "Timer 2 Steuerung",
         "state": {
           "start": "Start",
           "stop": "Stopp",
@@ -3813,7 +3813,7 @@
         }
       },
       "sand_timer_3_status_cmd": {
-        "name": "Zeitmesser 3 Steuerung",
+        "name": "Timer 3 Steuerung",
         "state": {
           "start": "Start",
           "stop": "Stopp",
