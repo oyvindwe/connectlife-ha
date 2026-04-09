@@ -493,6 +493,9 @@
       "child_lock_status": {
         "name": "Child lock"
       },
+      "child_lock_status_status": {
+        "name": "Child lock"
+      },
       "child_lock_switch_exist": {
         "name": "Child lock switch exist"
       },
@@ -686,6 +689,9 @@
         "name": "Existing SR mode"
       },
       "extra_rinse": {
+        "name": "Extra rinse"
+      },
+      "extra_rinse_status": {
         "name": "Extra rinse"
       },
       "f_e_arkgrille": {
@@ -1000,11 +1006,26 @@
       "selected_program_auto_door_open_function": {
         "name": "Selected program auto door open"
       },
+      "selected_program_disinfection": {
+        "name": "Disinfection"
+      },
+      "selected_program_entry_steam_status": {
+        "name": "Entry steam"
+      },
       "selected_program_extradry_status": {
         "name": "Extra dry"
       },
+      "selected_program_prewash_status": {
+        "name": "Prewash"
+      },
+      "selected_program_rinse_hold_status": {
+        "name": "Rinse hold"
+      },
       "selected_program_steamfinish": {
         "name": "Steam finish"
+      },
+      "selected_program_water_pluse_status": {
+        "name": "Water pulse"
       },
       "session_pairing_active": {
         "name": "Session pairing active"
@@ -1222,6 +1243,12 @@
       "step_pre_bake_status": {
         "name": "Step pre bake status"
       },
+      "stopaddgo_status": {
+        "name": "Stop & Go"
+      },
+      "stopaddgoallowed": {
+        "name": "Stop & Go allowed"
+      },
       "t_beep": {
         "name": "Beep"
       },
@@ -1284,33 +1311,6 @@
       },
       "wine_sensor_failure_flag": {
         "name": "Wine sensor failure"
-      },
-      "child_lock_status_status": {
-        "name": "Child lock"
-      },
-      "extra_rinse_status": {
-        "name": "Extra rinse"
-      },
-      "selected_program_disinfection": {
-        "name": "Disinfection"
-      },
-      "selected_program_entry_steam_status": {
-        "name": "Entry steam"
-      },
-      "selected_program_prewash_status": {
-        "name": "Prewash"
-      },
-      "selected_program_rinse_hold_status": {
-        "name": "Rinse hold"
-      },
-      "selected_program_water_pluse_status": {
-        "name": "Water pulse"
-      },
-      "stopaddgo_status": {
-        "name": "Stop & Go"
-      },
-      "stopaddgoallowed": {
-        "name": "Stop & Go allowed"
       }
     },
     "climate": {
@@ -1512,6 +1512,9 @@
           "on": "On"
         }
       },
+      "delaystart_delayend_remaining_time_in_minutes": {
+        "name": "Delay start/end remaining time"
+      },
       "delaystart_delayend_remaining_timein_minutes": {
         "name": "Delay start remaining time"
       },
@@ -1605,6 +1608,9 @@
       },
       "electricit_consumption_int": {
         "name": "Electricit consumption int"
+      },
+      "energy": {
+        "name": "Energy"
       },
       "energy_consumption_in_running_program": {
         "name": "Energy consumption in running program"
@@ -2073,7 +2079,14 @@
           "fast89": "Fast89",
           "extra_hygiene": "Extra hygiene",
           "remote": "Remote",
-          "none": "None"
+          "none": "None",
+          "auto": "Auto",
+          "anti_allergy": "Anti allergy",
+          "refresh": "Refresh",
+          "towels": "Towels",
+          "cotton": "Cotton",
+          "fast30": "Fast30",
+          "down": "Down"
         }
       },
       "selected_program_id_status": {
@@ -2114,14 +2127,47 @@
           "fast": "Fast"
         }
       },
+      "selected_program_mode_status": {
+        "name": "Program mode",
+        "state": {
+          "not_available": "Not available",
+          "normal": "Normal",
+          "fast": "Fast",
+          "extra_fast": "Extra fast"
+        }
+      },
       "selected_program_remaining_time_in_minutes": {
         "name": "Remaining time of selected program"
+      },
+      "selected_program_set_temperature_status": {
+        "name": "Temperature",
+        "state": {
+          "not_available": "Not available",
+          "cold": "Cold",
+          "20_c": "20 \u00b0C",
+          "30_c": "30 \u00b0C",
+          "40_c": "40 \u00b0C",
+          "60_c": "60 \u00b0C"
+        }
       },
       "selected_program_total_running_time_in_minutes": {
         "name": "Selected program total running time"
       },
       "selected_program_total_time_in_minutes": {
         "name": "Selected program total time"
+      },
+      "selected_program_washing_spin_speed_rpm_status": {
+        "name": "Spin speed",
+        "state": {
+          "not_available": "Not available",
+          "no_spin": "No spin",
+          "0_rpm": "0",
+          "800_rpm": "800",
+          "400_rpm": "400",
+          "1000_rpm": "1000",
+          "1200_rpm": "1200",
+          "1400_rpm": "1400"
+        }
       },
       "selected_programduration_inminutes": {
         "name": "Duration of selected program"
@@ -3399,42 +3445,6 @@
       },
       "zone_number": {
         "name": "Number of zones"
-      },
-      "delaystart_delayend_remaining_time_in_minutes": {
-        "name": "Delay start/end remaining time"
-      },
-      "selected_program_mode_status": {
-        "name": "Program mode",
-        "state": {
-          "not_available": "Not available",
-          "normal": "Normal",
-          "fast": "Fast",
-          "extra_fast": "Extra fast"
-        }
-      },
-      "selected_program_set_temperature_status": {
-        "name": "Temperature",
-        "state": {
-          "not_available": "Not available",
-          "cold": "Cold",
-          "20_c": "20 \u00b0C",
-          "30_c": "30 \u00b0C",
-          "40_c": "40 \u00b0C",
-          "60_c": "60 \u00b0C"
-        }
-      },
-      "selected_program_washing_spin_speed_rpm_status": {
-        "name": "Spin speed",
-        "state": {
-          "not_available": "Not available",
-          "no_spin": "No spin",
-          "0_rpm": "0",
-          "800_rpm": "800",
-          "400_rpm": "400",
-          "1000_rpm": "1000",
-          "1200_rpm": "1200",
-          "1400_rpm": "1400"
-        }
       }
     },
     "switch": {
@@ -3688,7 +3698,10 @@
           "240_min": "240 min",
           "iron": "Iron",
           "cupboard": "Cupboard",
-          "none": "None"
+          "none": "None",
+          "5_min": "5 min",
+          "10_min": "10 min",
+          "15_min": "15 min"
         }
       },
       "drymodel": {
@@ -3785,7 +3798,8 @@
           "mix": "Mix",
           "jeans": "Jeans",
           "sportswear": "Sportswear",
-          "hand_wash": "Hand wash"
+          "hand_wash": "Hand wash",
+          "eco": "Eco"
         }
       },
       "softener": {
@@ -4031,6 +4045,9 @@
       }
     },
     "number": {
+      "delayendtime_hour": {
+        "name": "Delayendtime hour"
+      },
       "freeze_max_temperature": {
         "name": "Freezeer max temperature"
       },

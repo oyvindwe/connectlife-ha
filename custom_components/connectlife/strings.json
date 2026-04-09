@@ -1609,6 +1609,9 @@
       "electricit_consumption_int": {
         "name": "Electricit consumption int"
       },
+      "energy": {
+        "name": "Energy"
+      },
       "energy_consumption_in_running_program": {
         "name": "Energy consumption in running program"
       },
@@ -2076,7 +2079,14 @@
           "fast89": "Fast89",
           "extra_hygiene": "Extra hygiene",
           "remote": "Remote",
-          "none": "None"
+          "none": "None",
+          "auto": "Auto",
+          "anti_allergy": "Anti allergy",
+          "refresh": "Refresh",
+          "towels": "Towels",
+          "cotton": "Cotton",
+          "fast30": "Fast30",
+          "down": "Down"
         }
       },
       "selected_program_id_status": {
@@ -3688,7 +3698,10 @@
           "240_min": "240 min",
           "iron": "Iron",
           "cupboard": "Cupboard",
-          "none": "None"
+          "none": "None",
+          "5_min": "5 min",
+          "10_min": "10 min",
+          "15_min": "15 min"
         }
       },
       "drymodel": {
@@ -3785,7 +3798,8 @@
           "mix": "Mix",
           "jeans": "Jeans",
           "sportswear": "Sportswear",
-          "hand_wash": "Hand wash"
+          "hand_wash": "Hand wash",
+          "eco": "Eco"
         }
       },
       "softener": {
@@ -4031,6 +4045,9 @@
       }
     },
     "number": {
+      "delayendtime_hour": {
+        "name": "Delayendtime hour"
+      },
       "freeze_max_temperature": {
         "name": "Freezeer max temperature"
       },

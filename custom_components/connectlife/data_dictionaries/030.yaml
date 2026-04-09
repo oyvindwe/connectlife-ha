@@ -17,6 +17,7 @@ properties:
     hide: true
   - property: Child_lock
     icon: mdi:lock
+    entity_category: config
     switch:
   - property: Clean_Filter
     icon: mdi:brush-variant
@@ -35,8 +36,10 @@ properties:
       read_only: true
     # Sample value: 0
   - property: DelayEndTime_Hour
-    # Sample value: 0
-    hide: true
+    icon: mdi:clock-end
+    number:
+      min_value: 0
+      max_value: 24
   - property: DelayEndTime_Minute
     # Sample value: 0
     hide: true
@@ -53,6 +56,7 @@ properties:
     hide: true
   - property: Drum_Light
     icon: mdi:lightbulb-on
+    entity_category: config
     switch:
   - property: Dry_Level
     icon: mdi:weather-sunny
@@ -176,6 +180,7 @@ properties:
         17: shirts
         18: bed_linen
         19: down
+        28: eco
   - property: Selected_program_remaining_time_in_minutes
     sensor:
       device_class: duration
@@ -241,8 +246,12 @@ properties:
     # Sample value: 4
     hide: true
   - property: dry_time
-    # Sample value: 220
-    hide: true
+    icon: mdi:timer
+    select:
+      options:
+        1: wardrobe
+        2: pre-ironing
+        3: extra_dry
   - property: drying_linkage_order
     # Sample value: 0
     hide: true
@@ -256,8 +265,11 @@ properties:
     # Sample value: 0
     hide: true
   - property: energy
-    # Sample value: 73
-    hide: true
+    entity_category: diagnostic
+    sensor:
+      device_class: energy
+      unit: Wh
+      read_only: true
   - property: error_code
     # Sample value: 0
     hide: true
@@ -272,6 +284,7 @@ properties:
       read_only: true
   - property: mute
     icon: mdi:volume-mute
+    entity_category: config
     switch:
   - property: parse_lib_ver
     # Sample value: 20241030

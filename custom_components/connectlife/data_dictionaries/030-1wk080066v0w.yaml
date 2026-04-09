@@ -1,8 +1,1 @@
-properties:
-  - property: dry_time
-    icon: mdi:timer
-    select:
-      options:
-        1: wardrobe
-        2: pre-ironing
-        3: extra_dry
+# Uses default mappings
