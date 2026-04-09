@@ -1,13 +1,217 @@
 # Window air conditioner
 properties:
+  - property: f_e_arkgrille
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_dwmachine
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_incoiltemp
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_incom
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_indisplay
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_ineeprom
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_inele
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_infanmotor
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_inhumidity
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_inkeys
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_intemp
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_invzero
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_inwifi
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_outcoiltemp
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_outeeprom
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_outgastemp
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_outtemp
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_over_cold
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_over_hot
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_push
+    disable: true
+  - property: f_e_upmachine
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_waterfull
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_ecm
+    disable: true
+  - property: f_electricity
+    sensor:
+      device_class: energy
+      read_only: true
+      unit: kWh
+      state_class: total_increasing
   - property: f_humidity
     climate:
       target: current_humidity
       unknown_value: 128
   - property: f_temp_in
-    icon: mdi:temp
+    icon: mdi:thermometer
     climate:
       target: current_temperature
+  - property: measured_grid_voltage
+    sensor:
+      device_class: voltage
+      unit: V
+    hide: true
+    entity_category: diagnostic
+  - property: t_beep
+    binary_sensor:
+      options:
+        0: off
+        1: on
+    hide: true
+    entity_category: diagnostic
+  - property: t_dimmer
+    switch:
+      device_class: switch
+    icon: mdi:lightbulb-on
+    entity_category: config
+  - property: t_eco
+    switch:
+      device_class: switch
+    icon: mdi:leaf
+  - property: t_fan_mute
+    switch:
+      device_class: switch
+    icon: mdi:volume-variant-off
   - property: t_fan_speed
     climate:
       target: fan_mode
@@ -16,6 +220,8 @@ properties:
         2: low
         3: medium
         4: high
+  - property: t_fan_speed_s
+    disable: true
   - property: t_power
     climate:
       target: is_on
@@ -23,6 +229,10 @@ properties:
     icon: mdi:power-sleep
     switch:
       device_class: switch
+  - property: t_super
+    switch:
+      device_class: switch
+    icon: mdi:run-fast
   - property: t_temp
     climate:
       target: target_temperature
@@ -38,6 +248,15 @@ properties:
       options:
         0: celsius
         1: fahrenheit
+  - property: t_tms
+    switch:
+      device_class: switch
+  - property: t_up_down
+    climate:
+      target: swing_mode
+      options:
+        0: "off"
+        1: "on"
   - property: t_work_mode
     climate:
       target: hvac_mode
