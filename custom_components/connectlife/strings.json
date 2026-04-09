@@ -697,6 +697,9 @@
       "f_e_arkgrille": {
         "name": "Cabinet grille protection alarm"
       },
+      "f_e_dwmachine": {
+        "name": "Lower machine failure"
+      },
       "f_e_filterclean": {
         "name": "Filter clean"
       },
@@ -745,6 +748,12 @@
       "f_e_outtemp": {
         "name": "Outdoor ambient temperature sensor failure"
       },
+      "f_e_over_cold": {
+        "name": "Over cold protection"
+      },
+      "f_e_over_hot": {
+        "name": "Over heat protection"
+      },
       "f_e_pump": {
         "name": "Pump"
       },
@@ -756,6 +765,9 @@
       },
       "f_e_tubetemp": {
         "name": "Tube temperature"
+      },
+      "f_e_upmachine": {
+        "name": "Upper machine failure"
       },
       "f_e_waterfull": {
         "name": "Water full"
@@ -1668,6 +1680,9 @@
       "f_cool_qvalue": {
         "name": "Cooling"
       },
+      "f_electricity": {
+        "name": "Electricity"
+      },
       "f_heat_qvalue": {
         "name": "Heating"
       },
@@ -1823,6 +1838,9 @@
       },
       "mainwashtimeuseindex": {
         "name": "Main wash time use index"
+      },
+      "measured_grid_voltage": {
+        "name": "Measured grid voltage"
       },
       "measured_vibrations": {
         "name": "Measured vibrations"
@@ -3564,6 +3582,9 @@
       },
       "t_beep": {
         "name": "Beep"
+      },
+      "t_dimmer": {
+        "name": "Dimmer"
       },
       "t_eco": {
         "name": "Eco"

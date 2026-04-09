@@ -1,12 +1,13 @@
-# Window air conditioner
+# Ultraslim AC
 properties:
   - property: t_fan_speed
     climate:
       target: fan_mode
       options:
-        2: low
-        3: medium
-        4: high
+        0: auto
+        5: low
+        7: medium
+        9: high
   - property: t_temp
     climate:
       target: target_temperature

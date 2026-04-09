@@ -7,6 +7,7 @@
 |                      | Dehumidifier             | 007              | 406                    |
 |                      | Air conditioner          | 008              | 301                    |
 |                      | Air conditioner          | 008              | 304                    |
+| AWUS1225TW           | Air conditioner          | 008              | 399                    |
 |                      | Air conditioner          | 009              | 100                    |
 |                      | Air conditioner          | 009              | 104                    |
 | AS-09TW2RLDTT00      | Air conditioner          | 009              | 105                    |
