@@ -158,7 +158,7 @@ properties:
     icon: mdi:clock-outline
     sensor:
       device_class: duration
-      unit: min
+      unit: h
       read_only: true
   - property: order_time_minimum_hour
     icon: mdi:clock-start
