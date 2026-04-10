@@ -99,7 +99,7 @@ def main(basedir):
         strings["entity"][k] = dict(sorted(v.items()))
 
     with open(f'{basedir}/strings.json', 'w') as f:
-        json.dump(strings, f, indent=2)
+        json.dump(strings, f, indent=2, sort_keys=True)
         f.write("\n")
 
 def is_number(s: str) -> bool:

@@ -28,6 +28,15 @@
       "alarm_1": {
         "name": "Alarm 1"
       },
+      "alarm_10": {
+        "name": "Alarm 10"
+      },
+      "alarm_11": {
+        "name": "Alarm 11"
+      },
+      "alarm_12": {
+        "name": "Alarm 12"
+      },
       "alarm_2": {
         "name": "Alarm 2"
       },
@@ -51,15 +60,6 @@
       },
       "alarm_9": {
         "name": "Alarm 9"
-      },
-      "alarm_10": {
-        "name": "Alarm 10"
-      },
-      "alarm_11": {
-        "name": "Alarm 11"
-      },
-      "alarm_12": {
-        "name": "Alarm 12"
       },
       "alarm_alarm_time_reached": {
         "name": "Alarmtijd bereikt"
@@ -137,7 +137,7 @@
         "name": "Afzuigkap ingeschakeld"
       },
       "alarm_keepwarm_ended": {
-        "name": "Warmhouden beëindigd"
+        "name": "Warmhouden be\u00ebindigd"
       },
       "alarm_mw_active": {
         "name": "Magnetron actief"
@@ -158,7 +158,7 @@
         "name": "Gebruikslimiet oven bereikt, automatische reiniging aanbevolen"
       },
       "alarm_platewarm_ended": {
-        "name": "Warmhouden plaat beëindigd"
+        "name": "Warmhouden plaat be\u00ebindigd"
       },
       "alarm_preheat_reached": {
         "name": "Voorverwarmtemperatuur bereikt"
@@ -230,7 +230,7 @@
         "name": "Temperatuur bereikt"
       },
       "alarm_timer_ended": {
-        "name": "Timer beëindigd"
+        "name": "Timer be\u00ebindigd"
       },
       "alarm_turn_food": {
         "name": "Draai het eten om"
@@ -329,7 +329,7 @@
         "name": "Sabbatmodus start binnenkort"
       },
       "alarmsabbathended": {
-        "name": "Sabbatmodus beëindigd"
+        "name": "Sabbatmodus be\u00ebindigd"
       },
       "alarmsabbathpostpone": {
         "name": "Sabbatmodus uitgesteld"
@@ -941,7 +941,7 @@
         "name": "Zone 1 spoel oververhitting"
       },
       "sl1_alarm_timer_ended": {
-        "name": "Zone 1 timer beëindigd"
+        "name": "Zone 1 timer be\u00ebindigd"
       },
       "sl1_alarm_zone_turned_off": {
         "name": "Zone 1 uitgeschakeld"
@@ -965,7 +965,7 @@
         "name": "Zone 2 spoel oververhitting"
       },
       "sl2_alarm_timer_ended": {
-        "name": "Zone 2 timer beëindigd"
+        "name": "Zone 2 timer be\u00ebindigd"
       },
       "sl2_alarm_zone_turned_off": {
         "name": "Zone 2 uitgeschakeld"
@@ -989,7 +989,7 @@
         "name": "Zone 3 spoel oververhitting"
       },
       "sl3_alarm_timer_ended": {
-        "name": "Zone 3 timer beëindigd"
+        "name": "Zone 3 timer be\u00ebindigd"
       },
       "sl3_alarm_zone_turned_off": {
         "name": "Zone 3 uitgeschakeld"
@@ -1013,7 +1013,7 @@
         "name": "Zone 4 spoel oververhitting"
       },
       "sl4_alarm_timer_ended": {
-        "name": "Zone 4 timer beëindigd"
+        "name": "Zone 4 timer be\u00ebindigd"
       },
       "sl4_alarm_zone_turned_off": {
         "name": "Zone 4 uitgeschakeld"
@@ -1037,7 +1037,7 @@
         "name": "Zone 5 spoel oververhitting"
       },
       "sl5_alarm_timer_ended": {
-        "name": "Zone 5 timer beëindigd"
+        "name": "Zone 5 timer be\u00ebindigd"
       },
       "sl5_alarm_zone_turned_off": {
         "name": "Zone 5 uitgeschakeld"
@@ -1061,7 +1061,7 @@
         "name": "Zone 6 spoel oververhitting"
       },
       "sl6_alarm_timer_ended": {
-        "name": "Zone 6 timer beëindigd"
+        "name": "Zone 6 timer be\u00ebindigd"
       },
       "sl6_alarm_zone_turned_off": {
         "name": "Zone 6 uitgeschakeld"
@@ -1087,9 +1087,6 @@
       "sr_mode": {
         "name": "SR-modus"
       },
-      "steam_shot": {
-        "name": "Stoomstoot"
-      },
       "steam123_0_available": {
         "name": "Steam123 0 beschikbaar"
       },
@@ -1102,23 +1099,8 @@
       "steam123_3_available": {
         "name": "Steam123 3 beschikbaar"
       },
-      "step_1_fastpreheat_function": {
-        "name": "Stap 1: snelvoorverwarmfunctie"
-      },
-      "step_1_status": {
-        "name": "Status stap 1"
-      },
-      "step_2_status": {
-        "name": "Status stap 2"
-      },
-      "step_3_steam_available": {
-        "name": "Stap 3: stoom beschikbaar"
-      },
-      "step_after_bake_status": {
-        "name": "Status na bakstap"
-      },
-      "step_pre_bake_status": {
-        "name": "Status voor bakstap"
+      "steam_shot": {
+        "name": "Stoomstoot"
       },
       "step1_status": {
         "name": "Stap 1 status"
@@ -1137,6 +1119,24 @@
       },
       "step3_steam_assist": {
         "name": "Stap 3 stoomondersteuning"
+      },
+      "step_1_fastpreheat_function": {
+        "name": "Stap 1: snelvoorverwarmfunctie"
+      },
+      "step_1_status": {
+        "name": "Status stap 1"
+      },
+      "step_2_status": {
+        "name": "Status stap 2"
+      },
+      "step_3_steam_available": {
+        "name": "Stap 3: stoom beschikbaar"
+      },
+      "step_after_bake_status": {
+        "name": "Status na bakstap"
+      },
+      "step_pre_bake_status": {
+        "name": "Status voor bakstap"
       },
       "stopaddgo_status": {
         "name": "Stop & Go"
@@ -1166,7 +1166,7 @@
         "name": "Temperatuurstoring bovenste wijnzone A"
       },
       "vacuum_on_off_status": {
-        "name": "Vacuüm aan/uit-status"
+        "name": "Vacu\u00fcm aan/uit-status"
       },
       "var_room_over_temp_alarm": {
         "name": "Temperatuur te hoog in variabele ruimte"
@@ -1178,7 +1178,7 @@
         "name": "Variabele ruimte open"
       },
       "vari_temp_2_degree_above_starting_point": {
-        "name": "Temperatuur variabele ruimte 2° boven startpunt"
+        "name": "Temperatuur variabele ruimte 2\u00b0 boven startpunt"
       },
       "vari_temp_sens_head_failure": {
         "name": "Temperatuursensorfout variabele ruimte"
@@ -1350,15 +1350,6 @@
       "delayendtime": {
         "name": "Einduitstel",
         "state": {
-          "1_hour": "1 uur",
-          "2_hours": "2 uur",
-          "3_hours": "3 uur",
-          "4_hours": "4 uur",
-          "5_hours": "5 uur",
-          "6_hours": "6 uur",
-          "7_hours": "7 uur",
-          "8_hours": "8 uur",
-          "9_hours": "9 uur",
           "10_hours": "10 uur",
           "11_hours": "11 uur",
           "12_hours": "12 uur",
@@ -1369,11 +1360,20 @@
           "17_hours": "17 uur",
           "18_hours": "18 uur",
           "19_hours": "19 uur",
+          "1_hour": "1 uur",
           "20_hours": "20 uur",
           "21_hours": "21 uur",
           "22_hours": "22 uur",
           "23_hours": "23 uur",
           "24_hours": "24 uur",
+          "2_hours": "2 uur",
+          "3_hours": "3 uur",
+          "4_hours": "4 uur",
+          "5_hours": "5 uur",
+          "6_hours": "6 uur",
+          "7_hours": "7 uur",
+          "8_hours": "8 uur",
+          "9_hours": "9 uur",
           "none": "Geen"
         }
       },
@@ -1383,8 +1383,8 @@
           "auto": "Automatisch",
           "less": "Minder",
           "more": "Meer",
-          "standard": "Standaard",
-          "off": "Uit"
+          "off": "Uit",
+          "standard": "Standaard"
         }
       },
       "dry_level": {
@@ -1398,15 +1398,15 @@
       "dry_time": {
         "name": "Drogen",
         "state": {
-          "5_min": "5 minuten",
           "10_min": "10 minuten",
-          "15_min": "15 minuten",
-          "30_min": "30 minuten",
-          "60_min": "60 minuten",
-          "90_min": "90 minuten",
           "120_min": "2 uur",
+          "15_min": "15 minuten",
           "180_min": "3 uur",
           "240_min": "4 uur",
+          "30_min": "30 minuten",
+          "5_min": "5 minuten",
+          "60_min": "60 minuten",
+          "90_min": "90 minuten",
           "cupboard": "Kast",
           "extra_dry": "Extra droog",
           "iron": "Strijken",
@@ -1496,20 +1496,21 @@
           "delicates": "Delicaat",
           "down": "Dons",
           "drum_cleaning": "Trommelreiniging",
+          "eco": "Eco",
           "eco_40_60": "Eco 40-60",
-          "extra_hygiene": "Extra hygiëne",
+          "extra_hygiene": "Extra hygi\u00ebne",
           "fast15": "Snel 15'",
           "fast30": "Snel 30'",
           "fast89": "Snel 89'",
-          "iron": "Strijken",
           "full_load_49": "Volle lading 49'",
           "hand_wash": "Handwas",
+          "iron": "Strijken",
           "jeans": "Spijkerbroeken",
           "mix": "Mix",
           "none": "Geen",
           "pets": "Huisdieren",
-          "power_30": "Power 30'",
           "power49": "Power 49'",
+          "power_30": "Power 30'",
           "refresh": "Opfrissen",
           "remote": "Op afstand",
           "rinse_spin": "Spoelen & centrifugeren",
@@ -1533,8 +1534,8 @@
           "auto": "Automatisch",
           "less": "Minder",
           "more": "Meer",
-          "standard": "Standaard",
-          "off": "Uit"
+          "off": "Uit",
+          "standard": "Standaard"
         }
       },
       "spin_speed_rpm": {
@@ -1934,6 +1935,7 @@
       "detergentstandarddosage": {
         "name": "Wasmiddel standaard dosering",
         "state": {
+          "100ml": "100 ml",
           "10ml": "10 ml",
           "15ml": "15 ml",
           "20ml": "20 ml",
@@ -1951,8 +1953,7 @@
           "80ml": "80 ml",
           "85ml": "85 ml",
           "90ml": "90 ml",
-          "95ml": "95 ml",
-          "100ml": "100 ml"
+          "95ml": "95 ml"
         }
       },
       "device_status": {
@@ -1987,9 +1988,9 @@
       "display_switch_to_standby_after_minutes": {
         "name": "Scherm naar standby",
         "state": {
-          "5_min": "5 minuten",
           "15_min": "15 minuten",
-          "30_min": "30 minuten"
+          "30_min": "30 minuten",
+          "5_min": "5 minuten"
         }
       },
       "door_status": {
@@ -1997,6 +1998,7 @@
         "state": {
           "closed": "Gesloten",
           "closed_when_running": "Gesloten tijdens draaien",
+          "locked": "Vergrendeld",
           "not_available": "Niet beschikbaar",
           "open": "Open",
           "other": "Anders"
@@ -2347,90 +2349,6 @@
       "running_status": {
         "name": "Status"
       },
-      "sand_timer_1_duration_hours": {
-        "name": "Zandloper 1 duur (uren)"
-      },
-      "sand_timer_1_duration_minutes": {
-        "name": "Zandloper 1 duur (minuten)"
-      },
-      "sand_timer_1_duration_seconds": {
-        "name": "Zandloper 1 duur (seconden)"
-      },
-      "sand_timer_1_end_utc_datetime_bdc_timestamp": {
-        "name": "Zandloper 1 einde (UTC tijdstip)"
-      },
-      "sand_timer_1_paused_total_seconds": {
-        "name": "Totaal gepauzeerde tijd zandloper 1 (seconden)"
-      },
-      "sand_timer_1_start_utc_datetime_bdc_timestamp": {
-        "name": "Zandloper 1 start (UTC tijdstip)"
-      },
-      "sand_timer_1_status": {
-        "name": "Zandloper 1 status",
-        "state": {
-          "ended": "Beëindigd",
-          "not_active": "Niet actief",
-          "paused": "Gepauzeerd",
-          "running": "Lopend",
-          "stopped": "Gestopt"
-        }
-      },
-      "sand_timer_2_duration_hours": {
-        "name": "Zandloper 2 duur (uren)"
-      },
-      "sand_timer_2_duration_minutes": {
-        "name": "Zandloper 2 duur (minuten)"
-      },
-      "sand_timer_2_duration_seconds": {
-        "name": "Zandloper 2 duur (seconden)"
-      },
-      "sand_timer_2_end_utc_datetime_bdc_timestamp": {
-        "name": "Zandloper 2 einde (UTC tijdstip)"
-      },
-      "sand_timer_2_paused_total_seconds": {
-        "name": "Totaal gepauzeerde tijd zandloper 2 (seconden)"
-      },
-      "sand_timer_2_start_utc_datetime_bdc_timestamp": {
-        "name": "Zandloper 2 start (UTC tijdstip)"
-      },
-      "sand_timer_2_status": {
-        "name": "Zandloper 2 status",
-        "state": {
-          "ended": "Beëindigd",
-          "not_active": "Niet actief",
-          "paused": "Gepauzeerd",
-          "running": "Lopend",
-          "stopped": "Gestopt"
-        }
-      },
-      "sand_timer_3_duration_hours": {
-        "name": "Zandloper 3 duur (uren)"
-      },
-      "sand_timer_3_duration_minutes": {
-        "name": "Zandloper 3 duur (minuten)"
-      },
-      "sand_timer_3_duration_seconds": {
-        "name": "Zandloper 3 duur (seconden)"
-      },
-      "sand_timer_3_end_utc_datetime_bdc_timestamp": {
-        "name": "Zandloper 3 einde (UTC tijdstip)"
-      },
-      "sand_timer_3_paused_total_seconds": {
-        "name": "Totaal gepauzeerde tijd zandloper 3 (seconden)"
-      },
-      "sand_timer_3_start_utc_datetime_bdc_timestamp": {
-        "name": "Zandloper 3 start (UTC tijdstip)"
-      },
-      "sand_timer_3_status": {
-        "name": "Zandloper 3 status",
-        "state": {
-          "ended": "Beëindigd",
-          "not_active": "Niet actief",
-          "paused": "Gepauzeerd",
-          "running": "Lopend",
-          "stopped": "Gestopt"
-        }
-      },
       "sand_timer1_duration_in_seconds": {
         "name": "Zandloper 1 duur (seconden)"
       },
@@ -2464,6 +2382,90 @@
           "stopped": "Gestopt"
         }
       },
+      "sand_timer_1_duration_hours": {
+        "name": "Zandloper 1 duur (uren)"
+      },
+      "sand_timer_1_duration_minutes": {
+        "name": "Zandloper 1 duur (minuten)"
+      },
+      "sand_timer_1_duration_seconds": {
+        "name": "Zandloper 1 duur (seconden)"
+      },
+      "sand_timer_1_end_utc_datetime_bdc_timestamp": {
+        "name": "Zandloper 1 einde (UTC tijdstip)"
+      },
+      "sand_timer_1_paused_total_seconds": {
+        "name": "Totaal gepauzeerde tijd zandloper 1 (seconden)"
+      },
+      "sand_timer_1_start_utc_datetime_bdc_timestamp": {
+        "name": "Zandloper 1 start (UTC tijdstip)"
+      },
+      "sand_timer_1_status": {
+        "name": "Zandloper 1 status",
+        "state": {
+          "ended": "Be\u00ebindigd",
+          "not_active": "Niet actief",
+          "paused": "Gepauzeerd",
+          "running": "Lopend",
+          "stopped": "Gestopt"
+        }
+      },
+      "sand_timer_2_duration_hours": {
+        "name": "Zandloper 2 duur (uren)"
+      },
+      "sand_timer_2_duration_minutes": {
+        "name": "Zandloper 2 duur (minuten)"
+      },
+      "sand_timer_2_duration_seconds": {
+        "name": "Zandloper 2 duur (seconden)"
+      },
+      "sand_timer_2_end_utc_datetime_bdc_timestamp": {
+        "name": "Zandloper 2 einde (UTC tijdstip)"
+      },
+      "sand_timer_2_paused_total_seconds": {
+        "name": "Totaal gepauzeerde tijd zandloper 2 (seconden)"
+      },
+      "sand_timer_2_start_utc_datetime_bdc_timestamp": {
+        "name": "Zandloper 2 start (UTC tijdstip)"
+      },
+      "sand_timer_2_status": {
+        "name": "Zandloper 2 status",
+        "state": {
+          "ended": "Be\u00ebindigd",
+          "not_active": "Niet actief",
+          "paused": "Gepauzeerd",
+          "running": "Lopend",
+          "stopped": "Gestopt"
+        }
+      },
+      "sand_timer_3_duration_hours": {
+        "name": "Zandloper 3 duur (uren)"
+      },
+      "sand_timer_3_duration_minutes": {
+        "name": "Zandloper 3 duur (minuten)"
+      },
+      "sand_timer_3_duration_seconds": {
+        "name": "Zandloper 3 duur (seconden)"
+      },
+      "sand_timer_3_end_utc_datetime_bdc_timestamp": {
+        "name": "Zandloper 3 einde (UTC tijdstip)"
+      },
+      "sand_timer_3_paused_total_seconds": {
+        "name": "Totaal gepauzeerde tijd zandloper 3 (seconden)"
+      },
+      "sand_timer_3_start_utc_datetime_bdc_timestamp": {
+        "name": "Zandloper 3 start (UTC tijdstip)"
+      },
+      "sand_timer_3_status": {
+        "name": "Zandloper 3 status",
+        "state": {
+          "ended": "Be\u00ebindigd",
+          "not_active": "Niet actief",
+          "paused": "Gepauzeerd",
+          "running": "Lopend",
+          "stopped": "Gestopt"
+        }
+      },
       "scanned_ean_code": {
         "name": "Gescande EAN code"
       },
@@ -2485,7 +2487,7 @@
           "down": "Dons",
           "drum_cleaning": "Trommelreiniging",
           "eco_40_60": "Eco 40-60",
-          "extra_hygiene": "Extra hygiëne",
+          "extra_hygiene": "Extra hygi\u00ebne",
           "fast15": "Snel 15'",
           "fast30": "Snel 30'",
           "fast89": "Snel 89'",
@@ -2520,10 +2522,10 @@
           "drum_cleaning": "Trommelreiniging",
           "eco": "Eco",
           "eco_40_60": "Eco 40-60",
-          "extra_hygiene": "Extra hygiëne",
+          "extra_hygiene": "Extra hygi\u00ebne",
           "fast_20": "Snel 20'",
           "glass": "Glas",
-          "hygiene": "Hygiëne",
+          "hygiene": "Hygi\u00ebne",
           "intensive": "Intensief",
           "intensive_59_32": "Intensive 59'/32'",
           "mix_synthetic": "Mix/Synthetic",
@@ -2579,11 +2581,11 @@
         "name": "Centrifugeersnelheid",
         "state": {
           "0_rpm": "0 toeren",
-          "400_rpm": "400 toeren",
-          "800_rpm": "800 toeren",
           "1000_rpm": "1000 toeren",
           "1200_rpm": "1200 toeren",
           "1400_rpm": "1400 toeren",
+          "400_rpm": "400 toeren",
+          "800_rpm": "800 toeren",
           "no_spin": "Niet centrifugeren",
           "not_available": "Niet beschikbaar"
         }
@@ -2890,6 +2892,7 @@
       "softnerstandarddosage": {
         "name": "Wasverzachter standaard dosering",
         "state": {
+          "100ml": "100 ml",
           "10ml": "10 ml",
           "15ml": "15 ml",
           "20ml": "20 ml",
@@ -2907,8 +2910,7 @@
           "80ml": "80 ml",
           "85ml": "85 ml",
           "90ml": "90 ml",
-          "95ml": "95 ml",
-          "100ml": "100 ml"
+          "95ml": "95 ml"
         }
       },
       "sound_setting": {
@@ -2939,6 +2941,197 @@
       },
       "steam_assist_time_used": {
         "name": "Stoomassistentie tijd gebruikt"
+      },
+      "step1_duration": {
+        "name": "Stap 1 duur"
+      },
+      "step1_heater_system": {
+        "name": "Stap 1 verwarmingssysteem",
+        "state": {
+          "aqua_clean": "Aqua schoon",
+          "bottom": "Onder",
+          "bottom_fan": "Onder ventilator",
+          "clean_air": "Schone lucht",
+          "defrost": "Ontdooien",
+          "defrost_auto": "Automatisch ontdooien",
+          "descale": "Ontkalken",
+          "eco_hot_air": "Eco hete lucht",
+          "fast_preheat": "Snel voorverwarmen",
+          "grill_fan_micro": "Grill ventilator micro",
+          "grillfanmicro": "Grill ventilator micro",
+          "hot_air": "Hete lucht",
+          "hot_air_bottom": "Hete lucht onder",
+          "hot_air_micro": "Hete lucht micro",
+          "hot_air_steam_1": "Hete lucht stoom 1",
+          "hot_air_steam_2": "Hete lucht stoom 2",
+          "hot_air_steam_3": "Hete lucht stoom 3",
+          "hotairmicro": "Hete lucht micro",
+          "keep_warm": "Warm houden",
+          "large_grill": "Grote grill",
+          "large_grill_fan": "Grote grill ventilator",
+          "low_temp_steam": "Lage temperatuur stoom",
+          "micro": "Micro",
+          "microwave_clean": "Magnetron schoon",
+          "microwave_defrost": "Magnetron ontdooien",
+          "plates": "Borden",
+          "pro_roasting": "Pro braden",
+          "programs": "Programma's",
+          "pyro": "Pyro",
+          "quick": "Snel",
+          "regenerate": "Regenereren",
+          "sabbath": "Sabbat",
+          "small_grill": "Kleine grill",
+          "sous_vide": "Sous vide",
+          "steam": "Stoom",
+          "steam_clean": "Stoom schoon",
+          "top": "Boven",
+          "top_bottom": "Boven onder",
+          "warming": "Opwarmen"
+        }
+      },
+      "step1_remaining_time": {
+        "name": "Stap 1 resterende tijd"
+      },
+      "step1_set_temperature": {
+        "name": "Stap 1 ingestelde temperatuur"
+      },
+      "step1_steam_assist_intensity": {
+        "name": "Stap 1 stoom assist intensiteit",
+        "state": {
+          "high": "Hoog",
+          "low": "Laag",
+          "medium": "Medium",
+          "not_active": "Niet actief"
+        }
+      },
+      "step1_steam_assistset_time_in_minutes": {
+        "name": "Stap 1 stoom assist ingestelde tijd"
+      },
+      "step2_duration": {
+        "name": "Stap 2 duur"
+      },
+      "step2_heater_system": {
+        "name": "Stap 2 verwarmingssysteem",
+        "state": {
+          "aqua_clean": "Aqua schoon",
+          "bottom": "Onder",
+          "bottom_fan": "Onder ventilator",
+          "clean_air": "Schone lucht",
+          "defrost": "Ontdooien",
+          "defrost_auto": "Automatisch ontdooien",
+          "descale": "Ontkalken",
+          "eco_hot_air": "Eco hete lucht",
+          "fast_preheat": "Snel voorverwarmen",
+          "grill_fan_micro": "Grill ventilator micro",
+          "hot_air": "Hete lucht",
+          "hot_air_bottom": "Hete lucht onder",
+          "hot_air_micro": "Hete lucht micro",
+          "hot_air_steam_1": "Hete lucht stoom 1",
+          "hot_air_steam_2": "Hete lucht stoom 2",
+          "hot_air_steam_3": "Hete lucht stoom 3",
+          "keep_warm": "Warm houden",
+          "large_grill": "Grote grill",
+          "large_grill_fan": "Grote grill ventilator",
+          "low_temp_steam": "Lage temperatuur stoom",
+          "micro": "Micro",
+          "microwave_clean": "Magnetron schoon",
+          "microwave_defrost": "Magnetron ontdooien",
+          "plates": "Borden",
+          "pro_roasting": "Pro braden",
+          "programs": "Programma's",
+          "pyrolysis": "Pyrolyse",
+          "quick": "Snel",
+          "regenerate": "Regenereren",
+          "sabbath": "Sabbat",
+          "small_grill": "Kleine grill",
+          "sous_vide": "Sous vide",
+          "steam": "Stoom",
+          "steam_clean": "Stoom schoon",
+          "top": "Boven",
+          "top_bottom": "Boven onder",
+          "warming": "Opwarmen"
+        }
+      },
+      "step2_remaining_time": {
+        "name": "Stap 2 resterende tijd"
+      },
+      "step2_set_temperature": {
+        "name": "Stap 2 ingestelde temperatuur"
+      },
+      "step2_steam_assist_intensity": {
+        "name": "Stap 2 stoom assist intensiteit",
+        "state": {
+          "high": "Hoog",
+          "low": "Laag",
+          "medium": "Medium",
+          "not_active": "Niet actief"
+        }
+      },
+      "step2_steam_assistset_time_in_minutes": {
+        "name": "Stap 2 stoom assist ingestelde tijd"
+      },
+      "step3_duration": {
+        "name": "Stap 3 duur"
+      },
+      "step3_heater_system": {
+        "name": "Stap 3 verwarmingssysteem",
+        "state": {
+          "aqua_clean": "Aqua schoon",
+          "bottom": "Onder",
+          "bottom_fan": "Onder ventilator",
+          "clean_air": "Schone lucht",
+          "defrost": "Ontdooien",
+          "defrost_auto": "Automatisch ontdooien",
+          "descale": "Ontkalken",
+          "eco_hot_air": "Eco hete lucht",
+          "fast_preheat": "Snel voorverwarmen",
+          "grill_fan_micro": "Grill ventilator micro",
+          "hot_air": "Hete lucht",
+          "hot_air_bottom": "Hete lucht onder",
+          "hot_air_micro": "Hete lucht micro",
+          "hot_air_steam_1": "Hete lucht stoom 1",
+          "hot_air_steam_2": "Hete lucht stoom 2",
+          "hot_air_steam_3": "Hete lucht stoom 3",
+          "keep_warm": "Warm houden",
+          "large_grill": "Grote grill",
+          "large_grill_fan": "Grote grill ventilator",
+          "low_temp_steam": "Lage temperatuur stoom",
+          "micro": "Micro",
+          "microwave_clean": "Magnetron schoon",
+          "microwave_defrost": "Magnetron ontdooien",
+          "plates": "Borden",
+          "pro_roasting": "Pro braden",
+          "programs": "Programma's",
+          "pyro": "Pyro",
+          "quick": "Snel",
+          "regenerate": "Regenereren",
+          "sabbath": "Sabbat",
+          "small_grill": "Kleine grill",
+          "sous_vide": "Sous vide",
+          "steam": "Stoom",
+          "steam_clean": "Stoom schoon",
+          "top": "Boven",
+          "top_bottom": "Boven onder",
+          "warming": "Opwarmen"
+        }
+      },
+      "step3_remaining_time": {
+        "name": "Stap 3 resterende tijd"
+      },
+      "step3_set_temperature": {
+        "name": "Stap 3 ingestelde temperatuur"
+      },
+      "step3_steam_assist_intensity": {
+        "name": "Stap 3 stoom assist intensiteit",
+        "state": {
+          "high": "Hoog",
+          "low": "Laag",
+          "medium": "Medium",
+          "not_active": "Niet actief"
+        }
+      },
+      "step3_steam_assistset_time_in_minutes": {
+        "name": "Stap 3 stoom assist ingestelde tijd"
       },
       "step_1_bake_mode": {
         "name": "Stap 1 bakmodus",
@@ -3536,197 +3729,6 @@
           "minutes": "Minuten",
           "seconds": "Seconden"
         }
-      },
-      "step1_duration": {
-        "name": "Stap 1 duur"
-      },
-      "step1_heater_system": {
-        "name": "Stap 1 verwarmingssysteem",
-        "state": {
-          "aqua_clean": "Aqua schoon",
-          "bottom": "Onder",
-          "bottom_fan": "Onder ventilator",
-          "clean_air": "Schone lucht",
-          "defrost": "Ontdooien",
-          "defrost_auto": "Automatisch ontdooien",
-          "descale": "Ontkalken",
-          "eco_hot_air": "Eco hete lucht",
-          "fast_preheat": "Snel voorverwarmen",
-          "grill_fan_micro": "Grill ventilator micro",
-          "grillfanmicro": "Grill ventilator micro",
-          "hot_air": "Hete lucht",
-          "hot_air_bottom": "Hete lucht onder",
-          "hot_air_micro": "Hete lucht micro",
-          "hot_air_steam_1": "Hete lucht stoom 1",
-          "hot_air_steam_2": "Hete lucht stoom 2",
-          "hot_air_steam_3": "Hete lucht stoom 3",
-          "hotairmicro": "Hete lucht micro",
-          "keep_warm": "Warm houden",
-          "large_grill": "Grote grill",
-          "large_grill_fan": "Grote grill ventilator",
-          "low_temp_steam": "Lage temperatuur stoom",
-          "micro": "Micro",
-          "microwave_clean": "Magnetron schoon",
-          "microwave_defrost": "Magnetron ontdooien",
-          "plates": "Borden",
-          "pro_roasting": "Pro braden",
-          "programs": "Programma's",
-          "pyro": "Pyro",
-          "quick": "Snel",
-          "regenerate": "Regenereren",
-          "sabbath": "Sabbat",
-          "small_grill": "Kleine grill",
-          "sous_vide": "Sous vide",
-          "steam": "Stoom",
-          "steam_clean": "Stoom schoon",
-          "top": "Boven",
-          "top_bottom": "Boven onder",
-          "warming": "Opwarmen"
-        }
-      },
-      "step1_remaining_time": {
-        "name": "Stap 1 resterende tijd"
-      },
-      "step1_set_temperature": {
-        "name": "Stap 1 ingestelde temperatuur"
-      },
-      "step1_steam_assist_intensity": {
-        "name": "Stap 1 stoom assist intensiteit",
-        "state": {
-          "high": "Hoog",
-          "low": "Laag",
-          "medium": "Medium",
-          "not_active": "Niet actief"
-        }
-      },
-      "step1_steam_assistset_time_in_minutes": {
-        "name": "Stap 1 stoom assist ingestelde tijd"
-      },
-      "step2_duration": {
-        "name": "Stap 2 duur"
-      },
-      "step2_heater_system": {
-        "name": "Stap 2 verwarmingssysteem",
-        "state": {
-          "aqua_clean": "Aqua schoon",
-          "bottom": "Onder",
-          "bottom_fan": "Onder ventilator",
-          "clean_air": "Schone lucht",
-          "defrost": "Ontdooien",
-          "defrost_auto": "Automatisch ontdooien",
-          "descale": "Ontkalken",
-          "eco_hot_air": "Eco hete lucht",
-          "fast_preheat": "Snel voorverwarmen",
-          "grill_fan_micro": "Grill ventilator micro",
-          "hot_air": "Hete lucht",
-          "hot_air_bottom": "Hete lucht onder",
-          "hot_air_micro": "Hete lucht micro",
-          "hot_air_steam_1": "Hete lucht stoom 1",
-          "hot_air_steam_2": "Hete lucht stoom 2",
-          "hot_air_steam_3": "Hete lucht stoom 3",
-          "keep_warm": "Warm houden",
-          "large_grill": "Grote grill",
-          "large_grill_fan": "Grote grill ventilator",
-          "low_temp_steam": "Lage temperatuur stoom",
-          "micro": "Micro",
-          "microwave_clean": "Magnetron schoon",
-          "microwave_defrost": "Magnetron ontdooien",
-          "plates": "Borden",
-          "pro_roasting": "Pro braden",
-          "programs": "Programma's",
-          "pyrolysis": "Pyrolyse",
-          "quick": "Snel",
-          "regenerate": "Regenereren",
-          "sabbath": "Sabbat",
-          "small_grill": "Kleine grill",
-          "sous_vide": "Sous vide",
-          "steam": "Stoom",
-          "steam_clean": "Stoom schoon",
-          "top": "Boven",
-          "top_bottom": "Boven onder",
-          "warming": "Opwarmen"
-        }
-      },
-      "step2_remaining_time": {
-        "name": "Stap 2 resterende tijd"
-      },
-      "step2_set_temperature": {
-        "name": "Stap 2 ingestelde temperatuur"
-      },
-      "step2_steam_assist_intensity": {
-        "name": "Stap 2 stoom assist intensiteit",
-        "state": {
-          "high": "Hoog",
-          "low": "Laag",
-          "medium": "Medium",
-          "not_active": "Niet actief"
-        }
-      },
-      "step2_steam_assistset_time_in_minutes": {
-        "name": "Stap 2 stoom assist ingestelde tijd"
-      },
-      "step3_duration": {
-        "name": "Stap 3 duur"
-      },
-      "step3_heater_system": {
-        "name": "Stap 3 verwarmingssysteem",
-        "state": {
-          "aqua_clean": "Aqua schoon",
-          "bottom": "Onder",
-          "bottom_fan": "Onder ventilator",
-          "clean_air": "Schone lucht",
-          "defrost": "Ontdooien",
-          "defrost_auto": "Automatisch ontdooien",
-          "descale": "Ontkalken",
-          "eco_hot_air": "Eco hete lucht",
-          "fast_preheat": "Snel voorverwarmen",
-          "grill_fan_micro": "Grill ventilator micro",
-          "hot_air": "Hete lucht",
-          "hot_air_bottom": "Hete lucht onder",
-          "hot_air_micro": "Hete lucht micro",
-          "hot_air_steam_1": "Hete lucht stoom 1",
-          "hot_air_steam_2": "Hete lucht stoom 2",
-          "hot_air_steam_3": "Hete lucht stoom 3",
-          "keep_warm": "Warm houden",
-          "large_grill": "Grote grill",
-          "large_grill_fan": "Grote grill ventilator",
-          "low_temp_steam": "Lage temperatuur stoom",
-          "micro": "Micro",
-          "microwave_clean": "Magnetron schoon",
-          "microwave_defrost": "Magnetron ontdooien",
-          "plates": "Borden",
-          "pro_roasting": "Pro braden",
-          "programs": "Programma's",
-          "pyro": "Pyro",
-          "quick": "Snel",
-          "regenerate": "Regenereren",
-          "sabbath": "Sabbat",
-          "small_grill": "Kleine grill",
-          "sous_vide": "Sous vide",
-          "steam": "Stoom",
-          "steam_clean": "Stoom schoon",
-          "top": "Boven",
-          "top_bottom": "Boven onder",
-          "warming": "Opwarmen"
-        }
-      },
-      "step3_remaining_time": {
-        "name": "Stap 3 resterende tijd"
-      },
-      "step3_set_temperature": {
-        "name": "Stap 3 ingestelde temperatuur"
-      },
-      "step3_steam_assist_intensity": {
-        "name": "Stap 3 stoom assist intensiteit",
-        "state": {
-          "high": "Hoog",
-          "low": "Laag",
-          "medium": "Medium",
-          "not_active": "Niet actief"
-        }
-      },
-      "step3_steam_assistset_time_in_minutes": {
-        "name": "Stap 3 stoom assist ingestelde tijd"
       },
       "super_rinse_setting_status": {
         "name": "Super spoelen"
