@@ -1,0 +1,42 @@
+# Tumble Dryer
+properties:
+  - property: Selected_program_ID
+    icon: mdi:selection-ellipse-arrow-inside
+    select:
+      options:
+        1: auto
+        2: allergy_care
+        3: ion_refresh
+        4: sportswear
+        5: towels
+        6: duvet
+        7: time_dry
+        8: cotton
+        9: baby_care
+        10: synthetics
+        11: wool
+        13: quick_30
+        14: rack_dry
+        17: shirts
+        18: bedding
+  - property: Remaining_time_of_selected_program
+    icon: mdi:update
+    sensor:
+      device_class: duration
+      unit: min
+      read_only: true
+  - property: Selected_program_total_running_time
+    icon: mdi:timer
+    sensor:
+      device_class: duration
+      unit: min
+      read_only: true
+  - property: Selected_program_total_time
+    icon: mdi:timer
+    sensor:
+      device_class: duration
+      unit: min
+      read_only: true
+  - property: selected_program
+    hide: true
+    entity_category: diagnostic
