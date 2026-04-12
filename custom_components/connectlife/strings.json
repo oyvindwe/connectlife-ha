@@ -2005,11 +2005,8 @@
       "dryopen_defaultspinspeed": {
         "name": "Dry open default spin speed"
       },
-      "electricit_consumption_decimal": {
-        "name": "Electricit consumption decimal"
-      },
-      "electricit_consumption_int": {
-        "name": "Electricit consumption int"
+      "electricit_consumption": {
+        "name": "Electricity consumption"
       },
       "energy": {
         "name": "Energy"
@@ -2379,13 +2376,7 @@
           "stopped": "Stopped"
         }
       },
-      "sand_timer_1_duration_hours": {
-        "name": "Sand timer 1 duration hours"
-      },
-      "sand_timer_1_duration_minutes": {
-        "name": "Sand timer 1 duration minutes"
-      },
-      "sand_timer_1_duration_seconds": {
+      "sand_timer_1_duration": {
         "name": "Sand timer 1 duration"
       },
       "sand_timer_1_end_utc_datetime_bdc_timestamp": {
@@ -2407,13 +2398,7 @@
           "stopped": "Stopped"
         }
       },
-      "sand_timer_2_duration_hours": {
-        "name": "Sand timer 2 duration hours"
-      },
-      "sand_timer_2_duration_minutes": {
-        "name": "Sand timer 2 duration minutes"
-      },
-      "sand_timer_2_duration_seconds": {
+      "sand_timer_2_duration": {
         "name": "Sand timer 2 duration"
       },
       "sand_timer_2_end_utc_datetime_bdc_timestamp": {
@@ -2435,13 +2420,7 @@
           "stopped": "Stopped"
         }
       },
-      "sand_timer_3_duration_hours": {
-        "name": "Sand timer 3 duration hours"
-      },
-      "sand_timer_3_duration_minutes": {
-        "name": "Sand timer 3 duration minutes"
-      },
-      "sand_timer_3_duration_seconds": {
+      "sand_timer_3_duration": {
         "name": "Sand timer 3 duration"
       },
       "sand_timer_3_end_utc_datetime_bdc_timestamp": {
@@ -3829,14 +3808,8 @@
       "water_consumption": {
         "name": "Water consumption"
       },
-      "water_consumption_decimal": {
-        "name": "Water consumption decimal"
-      },
       "water_consumption_in_running_program": {
         "name": "Water consumption in running program"
-      },
-      "water_consumption_int": {
-        "name": "Water consumption"
       },
       "water_hardness": {
         "name": "Water hardness"

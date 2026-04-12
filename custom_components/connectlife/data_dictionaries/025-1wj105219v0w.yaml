@@ -35,13 +35,15 @@ properties:
     unit: rpm
     multiplier: 100
   icon: 'mdi:speedometer'
-- property: Electricit_consumption_decimal
+- property: Electricit_consumption
   icon: mdi:lightning-bolt
-  sensor: # Sample value: 27
+  sensor:
     read_only: true
     device_class: energy
     state_class: total
     unit: kWh
+  combine:
+    - property: Electricit_consumption_decimal
 - property: Program_end_to_shutdown_time_in_minutes
   sensor:
     read_only: true

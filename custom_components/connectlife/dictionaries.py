@@ -3,6 +3,7 @@ from collections import defaultdict
 from dataclasses import dataclass
 import logging
 import pkgutil
+from typing import TypedDict
 
 from connectlife.appliance import ConnectLifeAppliance
 from homeassistant.const import Platform, EntityCategory
@@ -47,12 +48,22 @@ TARGET = "target"
 READ_ONLY = "read_only"
 STATE_CLASS = "state_class"
 SWITCH = "switch"
+COMBINE = "combine"
 UNAVAILABLE = "unavailable"
 ENTITY_CATEGORY = "entity_category"
 UNKNOWN_VALUE = "unknown_value"
 UNIT = "unit"
 
 _LOGGER = logging.getLogger(__name__)
+
+
+class _CombineSourceRequired(TypedDict):
+    property: str
+
+
+class CombineSource(_CombineSourceRequired, total=False):
+    multiplier: float
+    unknown_value: int
 
 
 class BinarySensor:
@@ -321,6 +332,7 @@ class Property:
     disable: bool
     unavailable: int | None
     entity_category: EntityCategory | None
+    combine: list[CombineSource] | None
     binary_sensor: BinarySensor
     climate: Climate
     humidifier: Humidifier
@@ -343,6 +355,7 @@ class Property:
             if ENTITY_CATEGORY in entry
             else None
         )
+        self.combine = entry[COMBINE] if COMBINE in entry else None
 
         if Platform.BINARY_SENSOR in entry:
             self.binary_sensor = BinarySensor(self.name, entry[Platform.BINARY_SENSOR])
@@ -412,6 +425,11 @@ class Dictionaries:
             _LOGGER.warning(
                 "No data dictionary found for %s (%s)", appliance.device_nickname, key
             )
+
+        for prop in properties.values():
+            if prop.combine:
+                for source in prop.combine:
+                    properties[source[PROPERTY]].disable = True
 
         dictionary = Dictionary(climate=climate, properties=properties)
         cls.dictionaries[key] = dictionary
