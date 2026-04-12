@@ -86,6 +86,7 @@ properties:
       state_class: total_increasing
   - property: Electricit_consumption_decimal
     icon: mdi:lightning-bolt
+    entity_category: diagnostic
     sensor:
       device_class: energy
       unit: kWh
@@ -591,8 +592,12 @@ properties:
     hide: true
     entity_category: diagnostic
   - property: Spintime_Index
-    hide: true
+    icon: mdi:timer-sand
     entity_category: diagnostic
+    sensor:
+      device_class: duration
+      unit: min
+      read_only: true
   - property: Stain_removal
     hide: true
     entity_category: diagnostic
@@ -873,8 +878,12 @@ properties:
     hide: true
     entity_category: diagnostic
   - property: washing_program_kg
-    hide: true
+    icon: mdi:weight-kilogram
     entity_category: diagnostic
+    sensor:
+      device_class: weight
+      unit: kg
+      read_only: true
   - property: washingtime
     hide: true
     entity_category: diagnostic
@@ -1102,8 +1111,15 @@ properties:
     hide: true
     entity_category: diagnostic
   - property: Spin_speed_rpm
-    hide: true
-    entity_category: diagnostic
+    icon: mdi:rotate-3d-variant
+    select:
+      options:
+        0: none
+        6: "600"
+        8: "800"
+        10: "1000"
+        12: "1200"
+        14: "1400"
   - property: dry_time
     hide: true
     entity_category: diagnostic
@@ -1111,5 +1127,12 @@ properties:
     hide: true
     entity_category: diagnostic
   - property: temperature
-    hide: true
-    entity_category: diagnostic
+    icon: mdi:thermometer-lines
+    select:
+      options:
+        0: cold
+        2: "20"
+        3: "30"
+        4: "40"
+        6: "60"
+        9: "90"
