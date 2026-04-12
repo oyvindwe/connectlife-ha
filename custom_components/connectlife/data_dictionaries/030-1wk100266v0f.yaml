@@ -1,0 +1,21 @@
+# Tumble Dryer
+properties:
+  - property: Selected_program_ID
+    icon: mdi:selection-ellipse-arrow-inside
+    select:
+      options:
+        1: auto
+        2: allergy_care
+        3: ion_refresh
+        4: sportswear
+        5: towels
+        6: duvet
+        7: time_dry
+        8: cotton
+        9: baby_care
+        10: synthetics
+        11: wool
+        13: quick_30
+        14: rack_dry
+        17: shirts
+        18: bedding

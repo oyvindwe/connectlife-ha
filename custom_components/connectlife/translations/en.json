@@ -2168,8 +2168,14 @@
           "60_c": "60 \u00b0C"
         }
       },
+      "selected_program_total_running_time": {
+        "name": "Selected program total running time"
+      },
       "selected_program_total_running_time_in_minutes": {
         "name": "Selected program total running time"
+      },
+      "selected_program_total_time": {
+        "name": "Selected program total time"
       },
       "selected_program_total_time_in_minutes": {
         "name": "Selected program total time"
@@ -3821,10 +3827,16 @@
           "sportswear": "Sportswear",
           "hand_wash": "Hand wash",
           "eco": "Eco",
+          "ion_refresh": "Ion refresh",
+          "duvet": "Duvet",
+          "time_dry": "Time dry",
+          "baby_care": "Baby care",
+          "synthetics": "Synthetics",
+          "quick_30": "Quick 30",
+          "rack_dry": "Rack dry",
           "drum_clean": "Drum clean",
           "quick_15": "Quick 15",
           "spin": "Spin",
-          "baby_care": "Baby care",
           "silk_delicate": "Silk delicate",
           "power_49": "Power 49"
         }

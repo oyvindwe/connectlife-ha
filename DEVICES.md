@@ -58,5 +58,6 @@
 | DH3S802BW3           | Tumble dryer             | 030              | 1wk080066v0w           |
 | DH5S102BW            | Tumble dryer             | 030              | 1wk100028v0w           |
 | DHSE10               | Tumble dryer             | 030              | 1wk100130v0f           |
+| DH5S102BB            | Tumble dryer             | 030              | 1wk100266v0f           |
 | DHSE80-BEW001        | Tumble dryer             | 030              | 1wk080027e0w           |
 | DPNA83W              | Tumble dryer             | 032              | 000                    |
