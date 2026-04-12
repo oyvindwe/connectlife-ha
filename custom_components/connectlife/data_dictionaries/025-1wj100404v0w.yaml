@@ -1,0 +1,81 @@
+# WF3S1014-SVW002-000
+properties:
+  - property: Current_program_phase
+    icon: mdi:state-machine
+    sensor:
+      read_only: true
+      device_class: enum
+      options:
+        0: not_available
+        1: weigh
+        2: prewash
+        3: main_wash
+        4: rinse
+        7: spin-dry
+        8: drying
+        10: finished
+        11: delay_start_waiting
+  - property: Selected_program_ID
+    icon: mdi:playlist-check
+    select:
+      options:
+        1: cotton_dry
+        2: synthetic_dry
+        4: refresh
+        5: anti_allergy
+        6: drum_cleaning
+        7: cotton
+        8: synthetic
+        10: wool
+        11: fast15
+        12: mix
+        14: spin-dry
+        16: baby
+        18: sports
+        20: rinse_spin
+        21: delicates
+        22: clean_dry_60
+        41: power49
+        44: bed_linen
+        45: jeans
+        55: hand_wash
+        90: auto
+  - property: QuickerMode
+    icon: mdi:clock-fast
+    select:
+      options:
+        0: none
+        1: level_1
+        2: level_2
+  - property: DelayEndTime
+    icon: mdi:clock-outline
+    number:
+      min_value: 4
+      max_value: 24
+      device_class: duration
+      unit: h
+  - property: Electricit_consumption_decimal
+    icon: mdi:lightning-bolt
+    entity_category: diagnostic
+    sensor:
+      read_only: true
+      device_class: energy
+      unit: kWh
+      multiplier: 0.01
+  - property: Water_consumption_decimal
+    icon: mdi:water
+    entity_category: diagnostic
+    sensor:
+      read_only: true
+      device_class: water
+      unit: L
+      multiplier: 0.01
+  - property: ApplicationPermissions
+    icon: mdi:cellphone-wireless
+    entity_category: diagnostic
+    sensor:
+      read_only: true
+      device_class: enum
+      options:
+        2: disabled
+        3: enabled

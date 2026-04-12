@@ -31,6 +31,7 @@
 |                      | Washing machine          | 025              | 1wj090660v0w           |
 | WF5S9045BW           | Washing machine          | 025              | 1wj090728v0w           |
 | WD3S9043BB3          | Washing machine          | 025              | 1wj090913v0f           |
+| WF3S1014-SVW002      | Washing machine          | 025              | 1wj100404v0w           |
 | WFQR1014             | Washing machine          | 025              | 1wj100649v0t           |
 | WF3S1043BW3          | Washing machine          | 025              | 1wj100722v0w           |
 | HWFS1015AB           | Washing machine          | 025              | 1wj100923v0f           |

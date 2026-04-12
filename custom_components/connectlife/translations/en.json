@@ -1265,6 +1265,9 @@
       }
     },
     "number": {
+      "delayendtime": {
+        "name": "Delay end time"
+      },
       "delayendtime_hour": {
         "name": "Delayendtime hour"
       },
@@ -1442,6 +1445,14 @@
         "state": {
           "celsius": "Celsius",
           "fahrenheit": "Fahrenheit"
+        }
+      },
+      "quickermode": {
+        "name": "Quicker mode",
+        "state": {
+          "level_1": "Level 1",
+          "level_2": "Level 2",
+          "none": "None"
         }
       },
       "sand_timer_1_status_cmd": {
@@ -1783,6 +1794,8 @@
       "applicationpermissions": {
         "name": "Application permissions",
         "state": {
+          "disabled": "Disabled",
+          "enabled": "Enabled",
           "granted": "Granted",
           "not_granted": "Not granted"
         }
@@ -3809,6 +3822,9 @@
       },
       "washing_machine_type_max_speed": {
         "name": "Washing machine type max speed"
+      },
+      "washing_program_kg": {
+        "name": "Washing program weight"
       },
       "water_consumption": {
         "name": "Water consumption"
