@@ -117,8 +117,12 @@ def main(basedir):
 
 def load_ha_strings():
     print(f"Fetching HA strings from {HA_STRINGS_URL}")
-    with urllib.request.urlopen(HA_STRINGS_URL) as r:
-        return json.load(r)
+    try:
+        with urllib.request.urlopen(HA_STRINGS_URL, timeout=30) as r:
+            return json.load(r)
+    except Exception as e:
+        print(f"Failed to fetch HA strings: {e}")
+        exit(1)
 
 
 def resolve_key(ha_strings, key):
