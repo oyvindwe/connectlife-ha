@@ -1,135 +1,18 @@
 {
   "config": {
+    "abort": {
+      "already_configured": "Device is already configured"
+    },
+    "error": {
+      "cannot_connect": "Failed to connect",
+      "invalid_auth": "Invalid authentication",
+      "unknown": "Unexpected error"
+    },
     "step": {
       "user": {
         "data": {
-          "username": "[%key:common::config_flow::data::username%]",
-          "password": "[%key:common::config_flow::data::password%]"
-        }
-      }
-    },
-    "error": {
-      "cannot_connect": "[%key:common::config_flow::error::cannot_connect%]",
-      "invalid_auth": "[%key:common::config_flow::error::invalid_auth%]",
-      "unknown": "[%key:common::config_flow::error::unknown%]"
-    },
-    "abort": {
-      "already_configured": "[%key:common::config_flow::abort::already_configured_device%]"
-    }
-  },
-  "issues": {
-    "unavailable_device": {
-      "title": "{device_name} no longer available",
-      "fix_flow": {
-        "abort": {
-          "issue_ignored": "Ignored \"{device_name} no longer available\". The device and all its entities will still be listed in the regiestry."
-        },
-        "step": {
-          "init": {
-            "title": "{device_name} no longer available",
-            "description": "The device \"{device_name}\" is now longer available in your ConnectLife account. If you no longer have this device, you can delete it from Home Assistant.",
-            "menu_options": {
-              "ignore": "Ignore",
-              "remove": "Remove"
-            }
-          },
-          "remove": {
-            "title": "Remove {device_name}",
-            "description": "The device \"{device_name}\" and all its entities will be removed from Home Assistant."
-          }
-        }
-      }
-    },
-    "unsupported_beep": {
-      "title": "Disable beep not supported by {device_name}",
-      "fix_flow": {
-        "abort": {
-          "issue_ignored": "Ignored \"Disable beep not supported by {device_name}\"."
-        },
-        "step": {
-          "init": {
-            "title": "Disable beep not supported by {device_name}",
-            "description": "The device \"{device_name}\" does not support the disable beep option.",
-            "menu_options": {
-              "confirm": "Update configuration",
-              "ignore": "Ignore"
-            }
-          }
-        }
-      }
-    }
-  },
-  "options": {
-    "step": {
-      "init": {
-        "menu_options": {
-          "select_device": "Configure a device",
-          "development": "Configure development mode"
-        }
-      },
-      "select_device": {
-        "data": {
-          "device": "Select device"
-        },
-        "description": "Configure a device."
-      },
-      "configure_device": {
-        "data": {
-          "disable_beep": "Disable beep"
-        },
-        "description": "Configure a device."
-      },
-      "development": {
-        "data": {
-          "development_mode": "Development mode",
-          "test_server_url": "Test server URL"
-        },
-        "description": "Enable development mode to connect to test server instead of the ConnectLife API."
-      }
-    },
-    "error": {
-      "test_server_invalid": "Invalid test server URL",
-      "test_server_required": "Development mode requires test server URL"
-    }
-  },
-  "selector": {
-    "actions": {
-      "options": {
-        "1": "Stop",
-        "2": "Start",
-        "3": "Pause",
-        "4": "Open door"
-      }
-    }
-  },
-  "services": {
-    "set_value": {
-      "name": "Set value",
-      "description": "Sets a value for the status. Use with care. Does not apply multiplier when setting.",
-      "fields": {
-        "value": {
-          "name": "Value",
-          "description": "Value to set."
-        }
-      }
-    },
-    "set_action": {
-      "name": "Set action",
-      "description": "Sets action for device. Use with care.",
-      "fields": {
-        "action": {
-          "name": "Action",
-          "description": "Action to set."
-        }
-      }
-    },
-    "update": {
-      "name": "Update device",
-      "description": "Updates all properties defined in the data field.",
-      "fields": {
-        "data": {
-          "name": "Data",
-          "description": "Properties that should be updated"
+          "password": "Password",
+          "username": "Username"
         }
       }
     }
@@ -1330,30 +1213,27 @@
         "state_attributes": {
           "fan_mode": {
             "state": {
-              "middle_low": "Middle low",
-              "middle_high": "Middle high"
+              "middle_high": "Middle high",
+              "middle_low": "Middle low"
             }
           },
           "preset_mode": {
             "state": {
               "ai": "AI",
-              "off": "Off",
-              "mute": "Mute",
+              "bedtime": "Bedtime",
               "eco_mute": "Eco mute",
-              "super": "Super",
-              "sleep_1": "Sleep 1",
-              "sleep_2": "Sleep 2",
-              "sleep_3": "Sleep 3",
-              "sleep_4": "Sleep 4",
               "eco_sleep_1": "Eco sleep 1",
               "eco_sleep_2": "Eco sleep 2",
               "eco_sleep_3": "Eco sleep 3",
               "eco_sleep_4": "Eco sleep 4",
-              "bedtime": "Bedtime"
+              "mute": "Mute",
+              "off": "Off",
+              "sleep_1": "Sleep 1",
+              "sleep_2": "Sleep 2",
+              "sleep_3": "Sleep 3",
+              "sleep_4": "Sleep 4",
+              "super": "Super"
             }
-          },
-          "swing_mode": {
-            "state": {}
           },
           "swing_horizontal_mode": {
             "state": {
@@ -1363,6 +1243,9 @@
               "right": "Right",
               "swing": "Swing"
             }
+          },
+          "swing_mode": {
+            "state": {}
           }
         }
       }
@@ -1373,12 +1256,506 @@
           "mode": {
             "state": {
               "auto": "Auto",
+              "clothes_dry": "Clothes dry",
               "continuous": "Continuous",
-              "manual": "Manual",
-              "clothes_dry": "Clothes dry"
+              "manual": "Manual"
             }
           }
         }
+      }
+    },
+    "number": {
+      "delayendtime_hour": {
+        "name": "Delayendtime hour"
+      },
+      "freeze_max_temperature": {
+        "name": "Freezeer max temperature"
+      },
+      "freeze_min_temperature": {
+        "name": "Freezeer min temperature"
+      },
+      "freeze_temperature": {
+        "name": "Freezeer temperature"
+      },
+      "gratin_from_below_functionset_time_in_seconds": {
+        "name": "Gratin from below function set time"
+      },
+      "gratin_function_set_time_in_seconds": {
+        "name": "Gratin function set time"
+      },
+      "lightbrightness": {
+        "name": "Light brightness"
+      },
+      "lightcolortemperature": {
+        "name": "Light color temperature"
+      },
+      "refrigerator_max_temperature": {
+        "name": "Refrigerator max temperature"
+      },
+      "refrigerator_min_temperature": {
+        "name": "Refrigerator min temperature"
+      },
+      "refrigerator_temperature": {
+        "name": "Refrigerator temperature"
+      },
+      "variation_max_temperature": {
+        "name": "Variation max temperature"
+      },
+      "variation_min_temperature": {
+        "name": "Variation min temperature"
+      },
+      "variation_temperature": {
+        "name": "Variation temperature"
+      }
+    },
+    "select": {
+      "actions": {
+        "name": "Actions",
+        "state": {
+          "add_duration": "Add duration",
+          "add_gratin": "Add gratin",
+          "none": "None",
+          "pause": "Pause",
+          "start": "Start",
+          "steam_shot": "Steam shot",
+          "stop": "Stop",
+          "stop_finish": "Stop finish"
+        }
+      },
+      "auto_dose_quantity_setting_status": {
+        "name": "Auto dose quantity"
+      },
+      "baking_steps_intensity_levels": {
+        "name": "Baking steps intensity levels",
+        "state": {
+          "none": "None"
+        }
+      },
+      "baking_steps_intensity_levels_type": {
+        "name": "Baking steps intensity levels type",
+        "state": {
+          "low_mid_high": "Low mid high",
+          "none": "None",
+          "not_used": "Not used",
+          "rare_medium_well_done": "Rare medium well done"
+        }
+      },
+      "brightness": {
+        "name": "Brightness"
+      },
+      "cooking_intensity": {
+        "name": "Cooking intensity"
+      },
+      "delayendtime": {
+        "name": "Delay end time",
+        "state": {
+          "10_hours": "10 hours",
+          "11_hours": "11 hours",
+          "12_hours": "12 hours",
+          "13_hours": "13 hours",
+          "14_hours": "14 hours",
+          "15_hours": "15 hours",
+          "16_hours": "16 hours",
+          "17_hours": "17 hours",
+          "18_hours": "18 hours",
+          "19_hours": "19 hours",
+          "1_hour": "1 hour",
+          "20_hours": "20 hours",
+          "21_hours": "21 hours",
+          "22_hours": "22 hours",
+          "23_hours": "23 hours",
+          "24_hours": "24 hours",
+          "2_hours": "2 hours",
+          "3_hours": "3 hours",
+          "4_hours": "4 hours",
+          "5_hours": "5 hours",
+          "6_hours": "6 hours",
+          "7_hours": "7 hours",
+          "8_hours": "8 hours",
+          "9_hours": "9 hours",
+          "none": "None"
+        }
+      },
+      "detergent": {
+        "name": "Detergent",
+        "state": {
+          "auto": "Auto",
+          "less": "Less",
+          "more": "More",
+          "standard": "Standard"
+        }
+      },
+      "dry_level": {
+        "name": "Drying level",
+        "state": {
+          "high": "High",
+          "low": "Low",
+          "medium": "Medium"
+        }
+      },
+      "dry_time": {
+        "name": "Dry time",
+        "state": {
+          "10_min": "10 min",
+          "120_min": "120 min",
+          "15_min": "15 min",
+          "180_min": "180 min",
+          "240_min": "240 min",
+          "30_min": "30 min",
+          "5_min": "5 min",
+          "60_min": "60 min",
+          "90_min": "90 min",
+          "cupboard": "Cupboard",
+          "extra_dry": "Extra dry",
+          "iron": "Iron",
+          "none": "None",
+          "pre-ironing": "Pre-ironing",
+          "wardrobe": "Wardrobe"
+        }
+      },
+      "drymodel": {
+        "name": "Dry model",
+        "state": {
+          "dry_only": "Dry only",
+          "wash": "Wash",
+          "wash_and_dry": "Wash and dry"
+        }
+      },
+      "extrarinsenum": {
+        "name": "Extra rinse",
+        "state": {
+          "none": "None"
+        }
+      },
+      "language_status": {
+        "name": "Language",
+        "state": {
+          "english": "English",
+          "simplified_chinese": "Simplified chinese"
+        }
+      },
+      "motorlevel": {
+        "name": "Motor level"
+      },
+      "oven_temperature_unit": {
+        "name": "Oven temperature unit",
+        "state": {
+          "celsius": "Celsius",
+          "fahrenheit": "Fahrenheit"
+        }
+      },
+      "sand_timer_1_status_cmd": {
+        "name": "Sand timer 1 control",
+        "state": {
+          "cancel": "Cancel",
+          "pause": "Pause",
+          "start": "Start",
+          "stop": "Stop"
+        }
+      },
+      "sand_timer_2_status_cmd": {
+        "name": "Sand timer 2 control",
+        "state": {
+          "cancel": "Cancel",
+          "pause": "Pause",
+          "start": "Start",
+          "stop": "Stop"
+        }
+      },
+      "sand_timer_3_status_cmd": {
+        "name": "Sand timer 3 control",
+        "state": {
+          "cancel": "Cancel",
+          "pause": "Pause",
+          "start": "Start",
+          "stop": "Stop"
+        }
+      },
+      "selected_program_id": {
+        "name": "Selected program",
+        "state": {
+          "allergy_care": "Allergy care",
+          "anti_allergy": "Anti allergy",
+          "auto": "Auto",
+          "baby": "Baby",
+          "baby_care": "Baby care",
+          "bed_linen": "Bed linen",
+          "bedding": "Bedding",
+          "clean_dry_60": "Clean dry 60",
+          "cotton": "Cotton",
+          "cotton_dry": "Cotton dry",
+          "delicates": "Delicates",
+          "down": "Down",
+          "drum_clean": "Drum clean",
+          "drum_cleaning": "Drum cleaning",
+          "duvet": "Duvet",
+          "eco": "Eco",
+          "eco_40_60": "Eco 40 60",
+          "fast15": "Fast15",
+          "fast30": "Quick 30",
+          "full_load_49": "Full load 49",
+          "hand_wash": "Hand wash",
+          "ion_refresh": "Ion refresh",
+          "jeans": "Jeans",
+          "mix": "Mix",
+          "pets": "Pets",
+          "power49": "Power49",
+          "power_30": "Power 30",
+          "power_49": "Power 49",
+          "quick_15": "Quick 15",
+          "quick_30": "Quick 30",
+          "rack_dry": "Rack dry",
+          "refresh": "Refresh",
+          "rinse_spin": "Rinse spin",
+          "shirts": "Shirts",
+          "silk_delicate": "Silk delicate",
+          "spin": "Spin",
+          "spin-dry": "Spin-dry",
+          "sports": "Sports",
+          "sportswear": "Sportswear",
+          "synthetic": "Synthetics",
+          "synthetic_dry": "Synthetic dry",
+          "synthetics": "Synthetics",
+          "time": "Time",
+          "time_dry": "Time dry",
+          "towels": "Towels",
+          "wash_and_dry_49": "Wash and dry 49",
+          "wool": "Wool"
+        }
+      },
+      "softener": {
+        "name": "Softener",
+        "state": {
+          "auto": "Auto",
+          "less": "Less",
+          "more": "More",
+          "standard": "Standard"
+        }
+      },
+      "spin_speed_rpm": {
+        "name": "Spin speed",
+        "state": {
+          "none": "None"
+        }
+      },
+      "stain_removal": {
+        "name": "Stain removal",
+        "state": {
+          "blood": "Blood",
+          "coffee": "Coffee",
+          "grass": "Grass",
+          "juice": "Juice",
+          "milk": "Milk",
+          "oil": "Oil",
+          "soil": "Soil",
+          "sweat": "Sweat",
+          "wine": "Wine"
+        }
+      },
+      "steam_123": {
+        "name": "Steam 123",
+        "state": {
+          "steam123_0": "Steam123 0",
+          "steam123_1": "Steam123 1",
+          "steam123_2": "Steam123 2",
+          "steam123_3": "Steam123 3"
+        }
+      },
+      "step_1_bake_mode": {
+        "name": "Step 1 bake mode",
+        "state": {
+          "autobake": "AutoBake",
+          "extrabake": "ExtraBake",
+          "extrabake_cleaning": "ExtraBake - Cleaning",
+          "extrabake_fastpreheat": "ExtraBake - Fast preheat",
+          "extrabake_warming": "ExtraBake - Warming",
+          "meatprobebake": "MeatProbeBake",
+          "probake": "ProBake",
+          "recipe": "Recipe",
+          "steambake": "SteamBake",
+          "steamcombibake": "SteamCombiBake",
+          "stepbake": "StepBake",
+          "undefined": "Undefined"
+        }
+      },
+      "step_1_set_microwave_wattage": {
+        "name": "Step 1 set microwave wattage",
+        "state": {
+          "none": "None"
+        }
+      },
+      "step_1_time_unit": {
+        "name": "Step 1 time unit",
+        "state": {
+          "hours": "Hours",
+          "minutes": "Minutes",
+          "seconds": "Seconds"
+        }
+      },
+      "step_2_bake_mode": {
+        "name": "Step 2 bake mode",
+        "state": {
+          "autobake": "AutoBake",
+          "extrabake": "ExtraBake",
+          "probake": "ProBake",
+          "recipe": "Recipe",
+          "steambake": "SteamBake",
+          "steamcombibake": "SteamCombiBake",
+          "stepbake": "StepBake",
+          "undefined": "Undefined"
+        }
+      },
+      "step_2_set_microwave_wattage": {
+        "name": "Step 2 set microwave wattage",
+        "state": {
+          "none": "None"
+        }
+      },
+      "step_2_time_unit": {
+        "name": "Step 2 time unit",
+        "state": {
+          "hours": "Hours",
+          "minutes": "Minutes",
+          "seconds": "Seconds"
+        }
+      },
+      "step_3_bake_mode": {
+        "name": "Step 3 bake mode",
+        "state": {
+          "autobake": "AutoBake",
+          "extrabake": "ExtraBake",
+          "probake": "ProBake",
+          "recipe": "Recipe",
+          "steambake": "SteamBake",
+          "steamcombibake": "SteamCombiBake",
+          "stepbake": "StepBake",
+          "undefined": "Undefined"
+        }
+      },
+      "step_3_set_microwave_wattage": {
+        "name": "Step 3 set microwave wattage",
+        "state": {
+          "none": "None"
+        }
+      },
+      "step_3_status": {
+        "name": "Step 3 status",
+        "state": {
+          "active": "Active",
+          "available": "Available",
+          "not_active": "Not active"
+        }
+      },
+      "step_3_time_unit": {
+        "name": "Step 3 time unit",
+        "state": {
+          "hours": "Hours",
+          "minutes": "Minutes",
+          "seconds": "Seconds"
+        }
+      },
+      "step_after_bake_mode": {
+        "name": "Step after bake mode",
+        "state": {
+          "gratine": "Gratine"
+        }
+      },
+      "step_after_bake_time_unit": {
+        "name": "Step after bake time unit",
+        "state": {
+          "hours": "Hours",
+          "minutes": "Minutes",
+          "seconds": "Seconds"
+        }
+      },
+      "step_pre_bake_mode": {
+        "name": "Step pre bake mode",
+        "state": {
+          "delay_start_waiting": "Delay start waiting",
+          "not_active": "Not active",
+          "preheat": "Preheat"
+        }
+      },
+      "step_pre_bake_time_unit": {
+        "name": "Step pre bake time unit",
+        "state": {
+          "hours": "Hours",
+          "minutes": "Minutes",
+          "seconds": "Seconds"
+        }
+      },
+      "t_fan_speed": {
+        "name": "Fan speed",
+        "state": {
+          "auto": "Auto",
+          "high": "High",
+          "low": "Low"
+        }
+      },
+      "t_sleep": {
+        "name": "Sleep Mode",
+        "state": {
+          "for_kid": "For kid",
+          "for_old": "For old",
+          "for_young": "For young",
+          "general": "General",
+          "off": "Off"
+        }
+      },
+      "t_swing_angle": {
+        "name": "Swing angle",
+        "state": {
+          "angle_1": "Angle 1",
+          "angle_2": "Angle 2",
+          "angle_3": "Angle 3",
+          "angle_4": "Angle 4",
+          "angle_5": "Angle 5",
+          "angle_6": "Angle 6",
+          "auto": "Auto",
+          "swing": "Swing"
+        }
+      },
+      "t_swing_follow": {
+        "name": "AI ventilation",
+        "state": {
+          "follow": "Follow",
+          "not_follow": "Not Follow",
+          "off": "Off"
+        }
+      },
+      "temperature": {
+        "name": "Temperature",
+        "state": {
+          "cold": "Cold"
+        }
+      },
+      "temperature_unit": {
+        "name": "Temperature unit",
+        "state": {
+          "celsius": "Celsius",
+          "fahrenheit": "Fahrenheit"
+        }
+      },
+      "time_format": {
+        "name": "Time format",
+        "state": {
+          "12h": "12h",
+          "24h": "24h"
+        }
+      },
+      "volume": {
+        "name": "Volume"
+      },
+      "warming_drawer_power_level": {
+        "name": "Warming drawer power level",
+        "state": {
+          "high": "High",
+          "low": "Low",
+          "medium": "Medium"
+        }
+      },
+      "water_hardness": {
+        "name": "Water hardness"
       }
     },
     "sensor": {
@@ -1406,8 +1783,8 @@
       "applicationpermissions": {
         "name": "Application permissions",
         "state": {
-          "not_granted": "Not granted",
-          "granted": "Granted"
+          "granted": "Granted",
+          "not_granted": "Not granted"
         }
       },
       "auto_dose_duration": {
@@ -1419,8 +1796,8 @@
       "autodose_flag": {
         "name": "Auto dose flag",
         "state": {
-          "unavailable": "Unavailable",
-          "available": "Available"
+          "available": "Available",
+          "unavailable": "Unavailable"
         }
       },
       "bundling_humidity": {
@@ -1448,38 +1825,38 @@
       "current_baking_step": {
         "name": "Current baking step",
         "state": {
-          "preheat": "Preheat",
-          "step_1": "Step 1",
-          "step_2": "Step 2",
-          "step_3": "Step 3",
+          "after_bake": "After bake",
           "after_bake_finished": "After bake finished",
           "pre_bake": "Pre bake",
-          "after_bake": "After bake",
-          "special": "Special"
+          "preheat": "Preheat",
+          "special": "Special",
+          "step_1": "Step 1",
+          "step_2": "Step 2",
+          "step_3": "Step 3"
         }
       },
       "current_program_phase": {
         "state": {
-          "not_available": "Not available",
-          "program_not_selected": "Program not selected",
-          "program_selected": "Program selected",
+          "anti_crease": "Anti crease",
+          "delay": "Delay",
           "delay_start_waiting": "Delay start waiting",
+          "drying": "Drying",
+          "finished": "Finished",
+          "idle": "Idle",
+          "main_wash": "Main wash",
+          "not_available": "Not available",
           "preheat": "Preheat",
           "preheat_finished": "Preheat finished",
           "prewash": "Pre-wash",
-          "main_wash": "Main wash",
-          "drying": "Drying",
           "program_finished": "Finished",
-          "ventilating": "Ventilating",
-          "idle": "Idle",
-          "running": "Running",
-          "anti_crease": "Anti crease",
-          "delay": "Delay",
-          "finished": "Finished",
-          "weigh": "Weigh",
-          "wash": "Wash",
+          "program_not_selected": "Program not selected",
+          "program_selected": "Program selected",
           "rinse": "Rinse",
-          "spin-dry": "Spin-dry"
+          "running": "Running",
+          "spin-dry": "Spin-dry",
+          "ventilating": "Ventilating",
+          "wash": "Wash",
+          "weigh": "Weigh"
         }
       },
       "current_programphase": {
@@ -1534,8 +1911,8 @@
         "name": "Detergent",
         "state": {
           "less": "Less",
-          "standard": "Standard",
-          "more": "More"
+          "more": "More",
+          "standard": "Standard"
         }
       },
       "detergent_display": {
@@ -1544,6 +1921,7 @@
       "detergentstandarddosage": {
         "name": "Detergent standard dosage",
         "state": {
+          "100ml": "100 ml",
           "10ml": "10 ml",
           "15ml": "15 ml",
           "20ml": "20 ml",
@@ -1561,13 +1939,15 @@
           "80ml": "80 ml",
           "85ml": "85 ml",
           "90ml": "90 ml",
-          "95ml": "95 ml",
-          "100ml": "100 ml"
+          "95ml": "95 ml"
         }
       },
       "device_status": {
         "state": {
+          "after_bake_finished": "After bake finished",
+          "delay_time_waiting": "Delay time waiting",
           "demo_mode": "Demo mode",
+          "error": "Error",
           "failure": "Failure",
           "idle": "Idle",
           "iq": "IQ",
@@ -1575,14 +1955,11 @@
           "not_available": "Not available",
           "pause": "Paused",
           "pause_mode": "Paused",
+          "paused": "Paused",
           "production": "Production",
           "running": "Running",
           "service": "Service",
-          "stand_by": "Stand by",
-          "paused": "Paused",
-          "delay_time_waiting": "Delay time waiting",
-          "error": "Error",
-          "after_bake_finished": "After bake finished"
+          "stand_by": "Stand by"
         }
       },
       "display_brightness_setting_status": {
@@ -1597,19 +1974,19 @@
       "display_switch_to_standby_after_minutes": {
         "name": "Display switch to standby after minutes",
         "state": {
-          "5_min": "5 min",
           "15_min": "15 min",
-          "30_min": "30 min"
+          "30_min": "30 min",
+          "5_min": "5 min"
         }
       },
       "door_status": {
         "name": "Door status",
         "state": {
+          "closed": "Closed",
+          "locked": "Locked",
           "not_available": "Not available",
           "open": "Open",
-          "closed": "Closed",
-          "other": "Other",
-          "locked": "Locked"
+          "other": "Other"
         }
       },
       "dryopen_defaultspinspeed": {
@@ -1639,7 +2016,6 @@
       "error_code": {
         "name": "Error code",
         "state": {
-          "none": "None",
           "error_f01": "Error f01",
           "error_f03": "Error f03",
           "error_f04": "Error f04",
@@ -1653,7 +2029,8 @@
           "error_f17": "Error f17",
           "error_f18": "Error f18",
           "error_f23": "Error f23",
-          "error_f24": "Error f24"
+          "error_f24": "Error f24",
+          "none": "None"
         }
       },
       "error_read_out_1_code": {
@@ -1698,10 +2075,10 @@
       "feedback_volumen_setting_status": {
         "name": "Feedback volume",
         "state": {
-          "mute": "Mute",
+          "high": "High",
           "low": "Low",
           "mid": "Mid",
-          "high": "High"
+          "mute": "Mute"
         }
       },
       "filter_state": {
@@ -1713,11 +2090,11 @@
       "fota": {
         "name": "Fota",
         "state": {
-          "not_available": "Not available",
-          "waiting_for_confirmation": "Waiting for confirmation",
-          "in_progress": "In progress",
+          "confirm_fota": "Confirm fota",
           "finished": "Finished",
-          "confirm_fota": "Confirm fota"
+          "in_progress": "In progress",
+          "not_available": "Not available",
+          "waiting_for_confirmation": "Waiting for confirmation"
         }
       },
       "freeze_door_open_time": {
@@ -1753,10 +2130,10 @@
       "hardpairingstatus": {
         "name": "Hard pairing status",
         "state": {
-          "not_active": "Not active",
           "active": "Active",
-          "unpair_all_users": "Unpair all users",
-          "reserved": "Reserved"
+          "not_active": "Not active",
+          "reserved": "Reserved",
+          "unpair_all_users": "Unpair all users"
         }
       },
       "heat_pump_setting_status": {
@@ -1771,9 +2148,9 @@
       "hob_warming_zone_power_level": {
         "name": "Hob warming zone power level",
         "state": {
+          "high": "High",
           "low": "Low",
-          "medium": "Medium",
-          "high": "High"
+          "medium": "Medium"
         }
       },
       "hob_zone_1_status": {
@@ -1828,9 +2205,9 @@
         "name": "Machine status",
         "state": {
           "off": "Off",
-          "standby": "Standby",
+          "paused": "Paused",
           "running": "Running",
-          "paused": "Paused"
+          "standby": "Standby"
         }
       },
       "mainwashtime": {
@@ -1854,9 +2231,9 @@
       "meat_probe_status": {
         "name": "Meat probe status",
         "state": {
-          "not_active": "Not active",
+          "active_hob": "Active hob",
           "active_oven": "Active oven",
-          "active_hob": "Active hob"
+          "not_active": "Not active"
         }
       },
       "medium_humidity": {
@@ -1962,8 +2339,8 @@
       "sand_timer1_status": {
         "name": "Timer 1 status",
         "state": {
-          "started": "Started",
           "paused": "Paused",
+          "started": "Started",
           "stopped": "Stopped"
         }
       },
@@ -1973,8 +2350,8 @@
       "sand_timer2_status": {
         "name": "Timer 2 status",
         "state": {
-          "started": "Started",
           "paused": "Paused",
+          "started": "Started",
           "stopped": "Stopped"
         }
       },
@@ -1984,8 +2361,8 @@
       "sand_timer3_status": {
         "name": "Timer 3 status",
         "state": {
-          "started": "Started",
           "paused": "Paused",
+          "started": "Started",
           "stopped": "Stopped"
         }
       },
@@ -2010,11 +2387,11 @@
       "sand_timer_1_status": {
         "name": "Sand timer 1 status",
         "state": {
+          "ended": "Ended",
           "not_active": "Not active",
-          "running": "Running",
           "paused": "Paused",
-          "stopped": "Stopped",
-          "ended": "Ended"
+          "running": "Running",
+          "stopped": "Stopped"
         }
       },
       "sand_timer_2_duration_hours": {
@@ -2038,11 +2415,11 @@
       "sand_timer_2_status": {
         "name": "Sand timer 2 status",
         "state": {
+          "ended": "Ended",
           "not_active": "Not active",
-          "running": "Running",
           "paused": "Paused",
-          "stopped": "Stopped",
-          "ended": "Ended"
+          "running": "Running",
+          "stopped": "Stopped"
         }
       },
       "sand_timer_3_duration_hours": {
@@ -2066,11 +2443,11 @@
       "sand_timer_3_status": {
         "name": "Sand timer 3 status",
         "state": {
+          "ended": "Ended",
           "not_active": "Not active",
-          "running": "Running",
           "paused": "Paused",
-          "stopped": "Stopped",
-          "ended": "Ended"
+          "running": "Running",
+          "stopped": "Stopped"
         }
       },
       "scanned_ean_code": {
@@ -2082,76 +2459,76 @@
       "selected_program_id": {
         "name": "Selected program",
         "state": {
+          "anti_allergy": "Anti allergy",
+          "auto": "Auto",
+          "baby": "Baby",
+          "bed_linen": "Bed linen",
+          "cotton": "Cotton",
           "cotton_storage": "Cotton storage",
-          "standard": "Standard",
+          "down": "Down",
+          "extra_hygiene": "Extra hygiene",
+          "fast30": "Fast30",
+          "fast89": "Fast89",
           "iron": "Iron",
           "mix": "Mix",
-          "synthetic": "Synthetic",
-          "wool": "Wool",
-          "bed_linen": "Bed linen",
-          "time": "Time",
-          "baby": "Baby",
+          "none": "None",
+          "refresh": "Refresh",
+          "remote": "Remote",
           "sensitive": "Sensitive",
           "shirts": "Shirts",
           "sports": "Sports",
-          "fast89": "Fast89",
-          "extra_hygiene": "Extra hygiene",
-          "remote": "Remote",
-          "none": "None",
-          "auto": "Auto",
-          "anti_allergy": "Anti allergy",
-          "refresh": "Refresh",
+          "standard": "Standard",
+          "synthetic": "Synthetic",
+          "time": "Time",
           "towels": "Towels",
-          "cotton": "Cotton",
-          "fast30": "Fast30",
-          "down": "Down"
+          "wool": "Wool"
         }
       },
       "selected_program_id_status": {
         "name": "Selected program",
         "state": {
           "auto": "Auto",
-          "eco": "Eco",
-          "one_hour": "1 hour",
-          "intensive": "Intensive",
-          "glass": "Glass",
-          "hygiene": "Hygiene",
-          "night": "Night",
+          "baby": "Baby",
           "clean": "Clean",
-          "eco_40_60": "Eco 40-60",
-          "white_cotton": "White Cotton",
           "color": "Color",
-          "wool_manual": "Wool & Manual",
-          "mix_synthetic": "Mix/Synthetic",
+          "down_feathers": "Down feathers",
+          "draining": "Draining",
+          "drum_cleaning": "Drum Cleaning",
+          "eco": "Eco",
+          "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Extra Hygiene",
           "fast_20": "Fast 20'",
+          "glass": "Glass",
+          "hygiene": "Hygiene",
+          "intensive": "Intensive",
           "intensive_59_32": "Intensive 59'/32'",
-          "sport": "Sport",
-          "baby": "Baby",
-          "shirts": "Shirts",
-          "drum_cleaning": "Drum Cleaning",
-          "spinning_draining": "Spinning & Draining",
-          "rinsing_softening": "Rinsing & Softening",
+          "mix_synthetic": "Mix/Synthetic",
+          "night": "Night",
           "no_program_selected": "No program selected",
+          "one_hour": "1 hour",
           "pet_hair_removal": "Pet hair removal",
-          "draining": "Draining",
-          "down_feathers": "Down feathers"
+          "rinsing_softening": "Rinsing & Softening",
+          "shirts": "Shirts",
+          "spinning_draining": "Spinning & Draining",
+          "sport": "Sport",
+          "white_cotton": "White Cotton",
+          "wool_manual": "Wool & Manual"
         }
       },
       "selected_program_mode": {
         "name": "Selected program mode",
         "state": {
-          "normal": "Normal",
-          "fast": "Fast"
+          "fast": "Fast",
+          "normal": "Normal"
         }
       },
       "selected_program_mode_status": {
         "name": "Program mode",
         "state": {
-          "not_available": "Not available",
-          "normal": "Normal",
+          "extra_fast": "Extra fast",
           "fast": "Fast",
-          "extra_fast": "Extra fast"
+          "normal": "Normal",
+          "not_available": "Not available"
         }
       },
       "selected_program_remaining_time_in_minutes": {
@@ -2160,12 +2537,12 @@
       "selected_program_set_temperature_status": {
         "name": "Temperature",
         "state": {
-          "not_available": "Not available",
-          "cold": "Cold",
           "20_c": "20 \u00b0C",
           "30_c": "30 \u00b0C",
           "40_c": "40 \u00b0C",
-          "60_c": "60 \u00b0C"
+          "60_c": "60 \u00b0C",
+          "cold": "Cold",
+          "not_available": "Not available"
         }
       },
       "selected_program_total_running_time": {
@@ -2183,14 +2560,14 @@
       "selected_program_washing_spin_speed_rpm_status": {
         "name": "Spin speed",
         "state": {
-          "not_available": "Not available",
-          "no_spin": "No spin",
           "0_rpm": "0",
-          "800_rpm": "800",
-          "400_rpm": "400",
           "1000_rpm": "1000",
           "1200_rpm": "1200",
-          "1400_rpm": "1400"
+          "1400_rpm": "1400",
+          "400_rpm": "400",
+          "800_rpm": "800",
+          "no_spin": "No spin",
+          "not_available": "Not available"
         }
       },
       "selected_programduration_inminutes": {
@@ -2202,28 +2579,28 @@
       "session_pairing_active": {
         "name": "Session pairing active",
         "state": {
+          "close_session": "Close session",
           "no_active_session": "No active session",
           "request_denied": "Request denied",
-          "session_is_active": "Session is active",
-          "close_session": "Close session"
+          "session_is_active": "Session is active"
         }
       },
       "set_progress_type": {
         "name": "Set progress type",
         "state": {
-          "oven_set": "Oven set",
+          "cleaning": "Cleaning",
+          "culi_set": "Culi set",
+          "defrost": "Defrost",
+          "fast_set": "Fast set",
           "mw_set": "Mw set",
           "mwc_set": "Mwc set",
-          "st_set": "St set",
-          "stc_set": "Stc set",
-          "fast_set": "Fast set",
-          "stage_set": "Stage set",
-          "culi_set": "Culi set",
-          "warming": "Warming",
-          "defrost": "Defrost",
-          "cleaning": "Cleaning",
+          "none": "None",
+          "oven_set": "Oven set",
           "pyrolysis": "Pyrolysis",
-          "none": "None"
+          "st_set": "St set",
+          "stage_set": "Stage set",
+          "stc_set": "Stc set",
+          "warming": "Warming"
         }
       },
       "set_time_hour": {
@@ -2258,13 +2635,13 @@
       "sl1_functions": {
         "name": "Zone 1 function",
         "state": {
-          "none": "None",
           "boil": "Boil",
-          "simmer": "Simmer",
+          "grill": "Grill",
           "keep_warm": "Keep warm",
-          "wok": "Wok",
+          "none": "None",
           "roast": "Roast",
-          "grill": "Grill"
+          "simmer": "Simmer",
+          "wok": "Wok"
         }
       },
       "sl1_ntc_sensor": {
@@ -2279,11 +2656,11 @@
       "sl1_zone_shape": {
         "name": "Zone 1 shape",
         "state": {
-          "round": "Round",
-          "square": "Square",
-          "rectangle_vertical": "Vertical rectangle",
+          "no_shape": "No shape",
           "rectangle_horizontal": "Horizontal Rectangle",
-          "no_shape": "No shape"
+          "rectangle_vertical": "Vertical rectangle",
+          "round": "Round",
+          "square": "Square"
         }
       },
       "sl2_active_timer": {
@@ -2297,13 +2674,13 @@
       "sl2_functions": {
         "name": "Zone 2 function",
         "state": {
-          "none": "None",
           "boil": "Boil",
-          "simmer": "Simmer",
+          "grill": "Grill",
           "keep_warm": "Keep warm",
-          "wok": "Wok",
+          "none": "None",
           "roast": "Roast",
-          "grill": "Grill"
+          "simmer": "Simmer",
+          "wok": "Wok"
         }
       },
       "sl2_ntc_sensor": {
@@ -2318,11 +2695,11 @@
       "sl2_zone_shape": {
         "name": "Zone 2 shape",
         "state": {
-          "round": "Round",
-          "square": "Square",
-          "rectangle_vertical": "Vertical rectangle",
+          "no_shape": "No shape",
           "rectangle_horizontal": "Horizontal Rectangle",
-          "no_shape": "No shape"
+          "rectangle_vertical": "Vertical rectangle",
+          "round": "Round",
+          "square": "Square"
         }
       },
       "sl3_active_timer": {
@@ -2336,13 +2713,13 @@
       "sl3_functions": {
         "name": "Zone 3 function",
         "state": {
-          "none": "None",
           "boil": "Boil",
-          "simmer": "Simmer",
+          "grill": "Grill",
           "keep_warm": "Keep warm",
-          "wok": "Wok",
+          "none": "None",
           "roast": "Roast",
-          "grill": "Grill"
+          "simmer": "Simmer",
+          "wok": "Wok"
         }
       },
       "sl3_ntc_sensor": {
@@ -2357,11 +2734,11 @@
       "sl3_zone_shape": {
         "name": "Zone 3 shape",
         "state": {
-          "round": "Round",
-          "square": "Square",
-          "rectangle_vertical": "Vertical rectangle",
+          "no_shape": "No shape",
           "rectangle_horizontal": "Horizontal Rectangle",
-          "no_shape": "No shape"
+          "rectangle_vertical": "Vertical rectangle",
+          "round": "Round",
+          "square": "Square"
         }
       },
       "sl4_active_timer": {
@@ -2375,13 +2752,13 @@
       "sl4_functions": {
         "name": "Zone 4 function",
         "state": {
-          "none": "None",
           "boil": "Boil",
-          "simmer": "Simmer",
+          "grill": "Grill",
           "keep_warm": "Keep warm",
-          "wok": "Wok",
+          "none": "None",
           "roast": "Roast",
-          "grill": "Grill"
+          "simmer": "Simmer",
+          "wok": "Wok"
         }
       },
       "sl4_ntc_sensor": {
@@ -2396,11 +2773,11 @@
       "sl4_zone_shape": {
         "name": "Zone 4 shape",
         "state": {
-          "round": "Round",
-          "square": "Square",
-          "rectangle_vertical": "Vertical rectangle",
+          "no_shape": "No shape",
           "rectangle_horizontal": "Horizontal Rectangle",
-          "no_shape": "No shape"
+          "rectangle_vertical": "Vertical rectangle",
+          "round": "Round",
+          "square": "Square"
         }
       },
       "sl5_active_timer": {
@@ -2414,13 +2791,13 @@
       "sl5_functions": {
         "name": "Zone 5 function",
         "state": {
-          "none": "None",
           "boil": "Boil",
-          "simmer": "Simmer",
+          "grill": "Grill",
           "keep_warm": "Keep warm",
-          "wok": "Wok",
+          "none": "None",
           "roast": "Roast",
-          "grill": "Grill"
+          "simmer": "Simmer",
+          "wok": "Wok"
         }
       },
       "sl5_ntc_sensor": {
@@ -2435,11 +2812,11 @@
       "sl5_zone_shape": {
         "name": "Zone 5 shape",
         "state": {
-          "round": "Round",
-          "square": "Square",
-          "rectangle_vertical": "Vertical rectangle",
+          "no_shape": "No shape",
           "rectangle_horizontal": "Horizontal Rectangle",
-          "no_shape": "No shape"
+          "rectangle_vertical": "Vertical rectangle",
+          "round": "Round",
+          "square": "Square"
         }
       },
       "sl6_active_timer": {
@@ -2453,13 +2830,13 @@
       "sl6_functions": {
         "name": "Zone 6 function",
         "state": {
-          "none": "None",
           "boil": "Boil",
-          "simmer": "Simmer",
+          "grill": "Grill",
           "keep_warm": "Keep warm",
-          "wok": "Wok",
+          "none": "None",
           "roast": "Roast",
-          "grill": "Grill"
+          "simmer": "Simmer",
+          "wok": "Wok"
         }
       },
       "sl6_ntc_sensor": {
@@ -2474,19 +2851,19 @@
       "sl6_zone_shape": {
         "name": "Zone 6 shape",
         "state": {
-          "round": "Round",
-          "square": "Square",
-          "rectangle_vertical": "Vertical rectangle",
+          "no_shape": "No shape",
           "rectangle_horizontal": "Horizontal Rectangle",
-          "no_shape": "No shape"
+          "rectangle_vertical": "Vertical rectangle",
+          "round": "Round",
+          "square": "Square"
         }
       },
       "softener": {
         "name": "Softener",
         "state": {
           "less": "Less",
-          "standard": "Standard",
-          "more": "More"
+          "more": "More",
+          "standard": "Standard"
         }
       },
       "softer_display": {
@@ -2495,6 +2872,7 @@
       "softnerstandarddosage": {
         "name": "Softener standard dosage",
         "state": {
+          "100ml": "100 ml",
           "10ml": "10 ml",
           "15ml": "15 ml",
           "20ml": "20 ml",
@@ -2512,8 +2890,7 @@
           "80ml": "80 ml",
           "85ml": "85 ml",
           "90ml": "90 ml",
-          "95ml": "95 ml",
-          "100ml": "100 ml"
+          "95ml": "95 ml"
         }
       },
       "sound_setting": {
@@ -2531,15 +2908,15 @@
       "status": {
         "name": "Device status",
         "state": {
-          "off": "Off",
-          "standby": "Standby",
-          "running": "Running",
-          "not_avaliable": "Not avaliable",
+          "delay_time_waiting": "Delay time waiting",
+          "error": "Error",
           "idle": "Idle",
+          "not_avaliable": "Not avaliable",
+          "off": "Off",
           "pause": "Pause",
           "production": "Production",
-          "delay_time_waiting": "Delay time waiting",
-          "error": "Error"
+          "running": "Running",
+          "standby": "Standby"
         }
       },
       "steam_assist_time_used": {
@@ -2551,45 +2928,45 @@
       "step1_heater_system": {
         "name": "Step 1 heater system",
         "state": {
-          "hot_air": "Hot air",
-          "eco_hot_air": "Eco hot air",
-          "top_bottom": "Top bottom",
-          "hot_air_bottom": "Hot air bottom",
-          "bottom_fan": "Bottom fan",
+          "aqua_clean": "Aqua clean",
           "bottom": "Bottom",
-          "top": "Top",
-          "small_grill": "Small grill",
-          "large_grill": "Large grill",
-          "large_grill_fan": "Large grill fan",
-          "pro_roasting": "Pro roasting",
-          "hotairmicro": "Hot air + microwave",
+          "bottom_fan": "Bottom fan",
+          "clean_air": "Clean air",
+          "defrost": "Defrost",
+          "defrost_auto": "Auto defrost",
+          "descale": "Descale",
+          "eco_hot_air": "Eco hot air",
+          "fast_preheat": "Fast preheat",
+          "grill_fan_micro": "Grill fan micro",
           "grillfanmicro": "Grill + fan + microwave",
-          "micro": "Microwave",
+          "hot_air": "Hot air",
+          "hot_air_bottom": "Hot air bottom",
+          "hot_air_micro": "Hot air micro",
           "hot_air_steam_1": "Hot air steam 1",
           "hot_air_steam_2": "Hot air steam 2",
           "hot_air_steam_3": "Hot air steam 3",
-          "fast_preheat": "Fast preheat",
-          "pyro": "Pyro",
-          "defrost": "Defrost",
+          "hotairmicro": "Hot air + microwave",
           "keep_warm": "Keep warm",
-          "plates": "Plates",
-          "aqua_clean": "Aqua clean",
-          "steam_clean": "Steam clean",
-          "regenerate": "Regenerate",
-          "descale": "Descale",
-          "microwave_defrost": "Microwave defrost",
-          "sous_vide": "Sous vide",
+          "large_grill": "Large grill",
+          "large_grill_fan": "Large grill fan",
           "low_temp_steam": "Low temp steam",
-          "steam": "Steam",
-          "quick": "Quick",
-          "clean_air": "Clean air",
-          "defrost_auto": "Auto defrost",
-          "sabbath": "Sabbath",
-          "programs": "Programs",
-          "warming": "Warming",
+          "micro": "Microwave",
           "microwave_clean": "Microwave clean",
-          "hot_air_micro": "Hot air micro",
-          "grill_fan_micro": "Grill fan micro"
+          "microwave_defrost": "Microwave defrost",
+          "plates": "Plates",
+          "pro_roasting": "Pro roasting",
+          "programs": "Programs",
+          "pyro": "Pyro",
+          "quick": "Quick",
+          "regenerate": "Regenerate",
+          "sabbath": "Sabbath",
+          "small_grill": "Small grill",
+          "sous_vide": "Sous vide",
+          "steam": "Steam",
+          "steam_clean": "Steam clean",
+          "top": "Top",
+          "top_bottom": "Top bottom",
+          "warming": "Warming"
         }
       },
       "step1_remaining_time": {
@@ -2601,10 +2978,10 @@
       "step1_steam_assist_intensity": {
         "name": "Step 1 steam assist intensity",
         "state": {
-          "not_active": "Not active",
+          "high": "High",
           "low": "Low",
           "medium": "Medium",
-          "high": "High"
+          "not_active": "Not active"
         }
       },
       "step1_steam_assistset_time_in_minutes": {
@@ -2616,43 +2993,43 @@
       "step2_heater_system": {
         "name": "Step 2 heater system",
         "state": {
-          "hot_air": "Hot air",
-          "eco_hot_air": "Eco hot air",
-          "top_bottom": "Top bottom",
-          "hot_air_bottom": "Hot air bottom",
-          "bottom_fan": "Bottom fan",
+          "aqua_clean": "Aqua clean",
           "bottom": "Bottom",
-          "top": "Top",
-          "small_grill": "Small grill",
-          "large_grill": "Large grill",
-          "large_grill_fan": "Large grill fan",
-          "pro_roasting": "Pro roasting",
-          "hot_air_micro": "Hot air micro",
+          "bottom_fan": "Bottom fan",
+          "clean_air": "Clean air",
+          "defrost": "Defrost",
+          "defrost_auto": "Auto defrost",
+          "descale": "Descale",
+          "eco_hot_air": "Eco hot air",
+          "fast_preheat": "Fast preheat",
           "grill_fan_micro": "Grill fan micro",
-          "micro": "Microwave",
+          "hot_air": "Hot air",
+          "hot_air_bottom": "Hot air bottom",
+          "hot_air_micro": "Hot air micro",
           "hot_air_steam_1": "Hot air steam 1",
           "hot_air_steam_2": "Hot air steam 2",
           "hot_air_steam_3": "Hot air steam 3",
-          "fast_preheat": "Fast preheat",
-          "pyrolysis": "Pyrolysis",
-          "defrost": "Defrost",
           "keep_warm": "Keep warm",
-          "plates": "Plates",
-          "aqua_clean": "Aqua clean",
-          "steam_clean": "Steam clean",
-          "regenerate": "Regenerate",
-          "descale": "Descale",
-          "microwave_defrost": "Microwave defrost",
-          "sous_vide": "Sous vide",
+          "large_grill": "Large grill",
+          "large_grill_fan": "Large grill fan",
           "low_temp_steam": "Low temp steam",
-          "steam": "Steam",
-          "quick": "Quick",
-          "clean_air": "Clean air",
-          "defrost_auto": "Auto defrost",
-          "sabbath": "Sabbath",
+          "micro": "Microwave",
+          "microwave_clean": "Microwave clean",
+          "microwave_defrost": "Microwave defrost",
+          "plates": "Plates",
+          "pro_roasting": "Pro roasting",
           "programs": "Programs",
-          "warming": "Warming",
-          "microwave_clean": "Microwave clean"
+          "pyrolysis": "Pyrolysis",
+          "quick": "Quick",
+          "regenerate": "Regenerate",
+          "sabbath": "Sabbath",
+          "small_grill": "Small grill",
+          "sous_vide": "Sous vide",
+          "steam": "Steam",
+          "steam_clean": "Steam clean",
+          "top": "Top",
+          "top_bottom": "Top bottom",
+          "warming": "Warming"
         }
       },
       "step2_remaining_time": {
@@ -2664,10 +3041,10 @@
       "step2_steam_assist_intensity": {
         "name": "Step 2 steam assist intensity",
         "state": {
-          "not_active": "Not active",
+          "high": "High",
           "low": "Low",
           "medium": "Medium",
-          "high": "High"
+          "not_active": "Not active"
         }
       },
       "step2_steam_assistset_time_in_minutes": {
@@ -2679,43 +3056,43 @@
       "step3_heater_system": {
         "name": "Step3 heater system",
         "state": {
-          "hot_air": "Hot air",
-          "eco_hot_air": "Eco hot air",
-          "top_bottom": "Top bottom",
-          "hot_air_bottom": "Hot air bottom",
-          "bottom_fan": "Bottom fan",
+          "aqua_clean": "Aqua clean",
           "bottom": "Bottom",
-          "top": "Top",
-          "small_grill": "Small grill",
-          "large_grill": "Large grill",
-          "large_grill_fan": "Large grill fan",
-          "pro_roasting": "Pro roasting",
-          "hot_air_micro": "Hot air micro",
+          "bottom_fan": "Bottom fan",
+          "clean_air": "Clean air",
+          "defrost": "Defrost",
+          "defrost_auto": "Auto defrost",
+          "descale": "Descale",
+          "eco_hot_air": "Eco hot air",
+          "fast_preheat": "Fast preheat",
           "grill_fan_micro": "Grill fan micro",
-          "micro": "Microwave",
+          "hot_air": "Hot air",
+          "hot_air_bottom": "Hot air bottom",
+          "hot_air_micro": "Hot air micro",
           "hot_air_steam_1": "Hot air steam 1",
           "hot_air_steam_2": "Hot air steam 2",
           "hot_air_steam_3": "Hot air steam 3",
-          "fast_preheat": "Fast preheat",
-          "pyro": "Pyro",
-          "defrost": "Defrost",
           "keep_warm": "Keep warm",
-          "plates": "Plates",
-          "aqua_clean": "Aqua clean",
-          "steam_clean": "Steam clean",
-          "regenerate": "Regenerate",
-          "descale": "Descale",
-          "microwave_defrost": "Microwave defrost",
-          "sous_vide": "Sous vide",
+          "large_grill": "Large grill",
+          "large_grill_fan": "Large grill fan",
           "low_temp_steam": "Low temperature steam",
-          "steam": "Steam",
-          "quick": "Quick",
-          "clean_air": "Clean air",
-          "defrost_auto": "Auto defrost",
-          "sabbath": "Sabbath",
+          "micro": "Microwave",
+          "microwave_clean": "Microwave clean",
+          "microwave_defrost": "Microwave defrost",
+          "plates": "Plates",
+          "pro_roasting": "Pro roasting",
           "programs": "Programs",
-          "warming": "Warming",
-          "microwave_clean": "Microwave clean"
+          "pyro": "Pyro",
+          "quick": "Quick",
+          "regenerate": "Regenerate",
+          "sabbath": "Sabbath",
+          "small_grill": "Small grill",
+          "sous_vide": "Sous vide",
+          "steam": "Steam",
+          "steam_clean": "Steam clean",
+          "top": "Top",
+          "top_bottom": "Top bottom",
+          "warming": "Warming"
         }
       },
       "step3_remaining_time": {
@@ -2727,10 +3104,10 @@
       "step3_steam_assist_intensity": {
         "name": "Step 3 steam assist intensity",
         "state": {
-          "not_active": "Not active",
+          "high": "High",
           "low": "Low",
           "medium": "Medium",
-          "high": "High"
+          "not_active": "Not active"
         }
       },
       "step3_steam_assistset_time_in_minutes": {
@@ -2739,18 +3116,18 @@
       "step_1_bake_mode": {
         "name": "Step 1 bake mode",
         "state": {
-          "undefined": "Undefined",
-          "probake": "ProBake",
-          "stepbake": "StepBake",
-          "extrabake": "ExtraBake",
           "autobake": "AutoBake",
+          "extrabake": "ExtraBake",
+          "extrabake_cleaning": "ExtraBake - Cleaning",
+          "extrabake_fastpreheat": "ExtraBake - Fast preheat",
+          "extrabake_warming": "ExtraBake - Warming",
+          "meatprobebake": "MeatProbeBake",
+          "probake": "ProBake",
           "recipe": "Recipe",
           "steambake": "SteamBake",
           "steamcombibake": "SteamCombiBake",
-          "extrabake_fastpreheat": "ExtraBake - Fast preheat",
-          "extrabake_warming": "ExtraBake - Warming",
-          "extrabake_cleaning": "ExtraBake - Cleaning",
-          "meatprobebake": "MeatProbeBake"
+          "stepbake": "StepBake",
+          "undefined": "Undefined"
         }
       },
       "step_1_duration": {
@@ -2765,79 +3142,79 @@
       "step_1_set_heater_system": {
         "name": "Step 1 set heater system",
         "state": {
-          "hotair": "Hot air",
-          "ecohotair": "Eco hot air",
-          "topbottom": "Top + bottom",
-          "hotairbottom": "Hot air + bottom",
-          "bottomfan": "Bottom + fan",
+          "3d_hot_ai": "3D hot air",
+          "air_fry": "Air fry",
+          "aquaclean": "AquaClean",
+          "bake": "Bake",
           "bottom": "Bottom",
-          "top": "Top",
-          "smallgrill": "Small grill",
-          "largegrill": "Large grill",
-          "largegrillfan": "Large grill + fan",
-          "proroasting": "Pro roasting",
-          "hotairmicro": "Hot air + microwave",
+          "bottom_infra": "Bottom + infra",
+          "bottom_infra_fan": "Bottom + infra + fan",
+          "bottom_top_heat": "Bottom + top heat",
+          "bottom_top_heat_fan": "Bottom + top heat + fan",
+          "bottom_top_heat_fan_steam": "Bottom + top heat + fan + steam",
+          "bottomfan": "Bottom + fan",
+          "broil": "Broil",
+          "cleanair": "Clean air",
+          "convection_bake": "Convection bake",
+          "convection_roast": "Convection roast",
+          "count": "Count",
+          "crisp": "Crisp",
+          "defrost": "Defrost",
+          "defrost_auto": "Auto defrost",
+          "dehydrate": "Dehydrate",
+          "descale": "Descale",
+          "eco": "Eco",
+          "ecohotair": "Eco hot air",
+          "fastpreheat": "Fast preheat",
+          "frozen_bake": "Frozen bake",
+          "gentle_bake": "Gentle bake",
+          "gratin": "Gratin",
           "grillfanmicro": "Grill + fan + microwave",
-          "micro": "Microwave",
+          "hot_air_bottomheat": "Hot air + bottom heat",
+          "hot_air_infra": "Hot air + infra",
+          "hot_air_upper": "Hot air + upper",
+          "hotair": "Hot air",
+          "hotairbottom": "Hot air + bottom",
+          "hotairmicro": "Hot air + microwave",
           "hotairsteam1": "Hot air + steam 1",
           "hotairsteam2": "Hot air + steam 2",
           "hotairsteam3": "Hot air + steam 3",
-          "fastpreheat": "Fast preheat",
-          "pyro": "Pyro",
-          "defrost": "Defrost",
           "keepwarm": "Keep warm",
-          "plates": "Plates",
-          "aquaclean": "AquaClean",
-          "steamclean": "Steam clean",
-          "regenerate": "Regenerate",
-          "descale": "Descale",
-          "mwdefrost": "Microwave defrost",
-          "sousvide": "Sous vide",
-          "lowtempsteam": "Low temp steam",
-          "steam": "Steam",
-          "quick": "Quick",
-          "cleanair": "Clean air",
-          "defrost_auto": "Auto defrost",
-          "sabbath": "Sabbath",
-          "programs": "Programs",
-          "warming": "Warming",
-          "mwclean": "Microwave clean",
-          "count": "Count",
-          "undefined": "Undefined",
-          "pyrolize": "Pyrolize",
-          "gentle_bake": "Gentle bake",
-          "air_fry": "Air fry",
-          "bottom_top_heat": "Bottom + top heat",
+          "large_grill": "Large grill",
           "large_grill_bottom": "Large grill + bottom",
           "large_grill_bottom_fan": "Large grill + bottom + fan",
-          "large_grill": "Large grill",
-          "hot_air_bottomheat": "Hot air + bottom heat",
-          "3d_hot_ai": "3D hot air",
-          "eco": "Eco",
-          "bottom_top_heat_fan_steam": "Bottom + top heat + fan + steam",
-          "large_grill_fan_steam": "Large grill + fan + steam",
-          "hot_air_upper": "Hot air + upper",
-          "hot_air_infra": "Hot air + infra",
-          "bottom_infra": "Bottom + infra",
-          "bottom_infra_fan": "Bottom + infra + fan",
-          "pizza": "Pizza",
-          "frozen_bake": "Frozen bake",
-          "gratin": "Gratin",
-          "bake": "Bake",
-          "convection_bake": "Convection bake",
-          "broil": "Broil",
-          "self_clean": "Self clean",
-          "convection_roast": "Convection roast",
-          "proof": "Proof",
-          "dehydrate": "Dehydrate",
-          "crisp": "Crisp",
           "large_grill_bottom_hot_air": "Large grill + bottom + hot air",
-          "bottom_top_heat_fan": "Bottom + top heat + fan",
-          "largegrillsteak_pyro": "Large grill steak pyro",
+          "large_grill_fan_steam": "Large grill + fan + steam",
+          "largegrill": "Large grill",
           "largegrill_pyro": "Large grill pyro",
+          "largegrillfan": "Large grill + fan",
           "largegrillfan_pyro": "Large grill + fan pyro",
+          "largegrillsteak_pyro": "Large grill steak pyro",
+          "lowtempsteam": "Low temp steam",
+          "micro": "Microwave",
+          "mwclean": "Microwave clean",
+          "mwdefrost": "Microwave defrost",
+          "none": "None",
+          "pizza": "Pizza",
+          "plates": "Plates",
+          "programs": "Programs",
+          "proof": "Proof",
+          "proroasting": "Pro roasting",
+          "pyro": "Pyro",
+          "pyrolize": "Pyrolize",
+          "quick": "Quick",
+          "regenerate": "Regenerate",
+          "sabbath": "Sabbath",
+          "self_clean": "Self clean",
+          "smallgrill": "Small grill",
           "smallgrill_pyro": "Small grill pyro",
-          "none": "None"
+          "sousvide": "Sous vide",
+          "steam": "Steam",
+          "steamclean": "Steam clean",
+          "top": "Top",
+          "topbottom": "Top + bottom",
+          "undefined": "Undefined",
+          "warming": "Warming"
         }
       },
       "step_1_set_microwave_wattage": {
@@ -2852,30 +3229,30 @@
       "step_1_steam_available": {
         "name": "Step 1 steam available",
         "state": {
-          "not_active": "Not active",
           "active": "Active",
-          "available": "Available"
+          "available": "Available",
+          "not_active": "Not active"
         }
       },
       "step_1_time_unit": {
         "name": "Step 1 time unit",
         "state": {
-          "seconds": "Seconds",
+          "hours": "Hours",
           "minutes": "Minutes",
-          "hours": "Hours"
+          "seconds": "Seconds"
         }
       },
       "step_2_bake_mode": {
         "name": "Step 2 bake mode",
         "state": {
-          "undefined": "Undefined",
-          "probake": "ProBake",
-          "stepbake": "StepBake",
-          "extrabake": "ExtraBake",
           "autobake": "AutoBake",
+          "extrabake": "ExtraBake",
+          "probake": "ProBake",
           "recipe": "Recipe",
           "steambake": "SteamBake",
-          "steamcombibake": "SteamCombiBake"
+          "steamcombibake": "SteamCombiBake",
+          "stepbake": "StepBake",
+          "undefined": "Undefined"
         }
       },
       "step_2_duration": {
@@ -2890,79 +3267,79 @@
       "step_2_set_heater_system": {
         "name": "Step 2 set heater system",
         "state": {
-          "hotair": "Hot air",
-          "ecohotair": "Eco hot air",
-          "topbottom": "Top + bottom",
-          "hotairbottom": "Hot air + bottom",
-          "bottomfan": "Bottom + fan",
+          "3d_hot_ai": "3D hot air",
+          "air_fry": "Air fry",
+          "aquaclean": "AquaClean",
+          "bake": "Bake",
           "bottom": "Bottom",
-          "top": "Top",
-          "smallgrill": "Small grill",
-          "largegrill": "Large grill",
-          "largegrillfan": "Large grill + fan",
-          "proroasting": "Pro roasting",
-          "hotairmicro": "Hot air + microwave",
+          "bottom_infra": "Bottom + infra",
+          "bottom_infra_fan": "Bottom + infra + fan",
+          "bottom_top_heat": "Bottom + top heat",
+          "bottom_top_heat_fan": "Bottom + top heat + fan",
+          "bottom_top_heat_fan_steam": "Bottom + top heat + fan + steam",
+          "bottomfan": "Bottom + fan",
+          "broil": "Broil",
+          "cleanair": "Clean air",
+          "convection_bake": "Convection bake",
+          "convection_roast": "Convection roast",
+          "count": "Count",
+          "crisp": "Crisp",
+          "defrost": "Defrost",
+          "defrost_auto": "Auto defrost",
+          "dehydrate": "Dehydrate",
+          "descale": "Descale",
+          "eco": "Eco",
+          "ecohotair": "Eco hot air",
+          "fastpreheat": "Fast preheat",
+          "frozen_bake": "Frozen bake",
+          "gentle_bake": "Gentle bake",
+          "gratin": "Gratin",
           "grillfanmicro": "Grill + fan + microwave",
-          "micro": "Microwave",
+          "hot_air_bottomheat": "Hot air + bottom heat",
+          "hot_air_infra": "Hot air + infra",
+          "hot_air_upper": "Hot air + upper",
+          "hotair": "Hot air",
+          "hotairbottom": "Hot air + bottom",
+          "hotairmicro": "Hot air + microwave",
           "hotairsteam1": "Hot air + steam 1",
           "hotairsteam2": "Hot air + steam 2",
           "hotairsteam3": "Hot air + steam 3",
-          "fastpreheat": "Fast preheat",
-          "pyro": "Pyro",
-          "defrost": "Defrost",
           "keepwarm": "Keep warm",
-          "plates": "Plates",
-          "aquaclean": "AquaClean",
-          "steamclean": "Steam clean",
-          "regenerate": "Regenerate",
-          "descale": "Descale",
-          "mwdefrost": "Microwave defrost",
-          "sousvide": "Sous vide",
-          "lowtempsteam": "Low temp steam",
-          "steam": "Steam",
-          "quick": "Quick",
-          "cleanair": "Clean air",
-          "defrost_auto": "Auto defrost",
-          "sabbath": "Sabbath",
-          "programs": "Programs",
-          "warming": "Warming",
-          "mwclean": "Microwave clean",
-          "count": "Count",
-          "undefined": "Undefined",
-          "pyrolize": "Pyrolize",
-          "gentle_bake": "Gentle bake",
-          "air_fry": "Air fry",
-          "bottom_top_heat": "Bottom + top heat",
+          "large_grill": "Large grill",
           "large_grill_bottom": "Large grill + bottom",
           "large_grill_bottom_fan": "Large grill + bottom + fan",
-          "large_grill": "Large grill",
-          "hot_air_bottomheat": "Hot air + bottom heat",
-          "3d_hot_ai": "3D hot air",
-          "eco": "Eco",
-          "bottom_top_heat_fan_steam": "Bottom + top heat + fan + steam",
-          "large_grill_fan_steam": "Large grill + fan + steam",
-          "hot_air_upper": "Hot air + upper",
-          "hot_air_infra": "Hot air + infra",
-          "bottom_infra": "Bottom + infra",
-          "bottom_infra_fan": "Bottom + infra + fan",
-          "pizza": "Pizza",
-          "frozen_bake": "Frozen bake",
-          "gratin": "Gratin",
-          "bake": "Bake",
-          "convection_bake": "Convection bake",
-          "broil": "Broil",
-          "self_clean": "Self clean",
-          "convection_roast": "Convection roast",
-          "proof": "Proof",
-          "dehydrate": "Dehydrate",
-          "crisp": "Crisp",
           "large_grill_bottom_hot_air": "Large grill + bottom + hot air",
-          "bottom_top_heat_fan": "Bottom + top heat + fan",
-          "largegrillsteak_pyro": "Large grill steak pyro",
+          "large_grill_fan_steam": "Large grill + fan + steam",
+          "largegrill": "Large grill",
           "largegrill_pyro": "Large grill pyro",
+          "largegrillfan": "Large grill + fan",
           "largegrillfan_pyro": "Large grill + fan pyro",
+          "largegrillsteak_pyro": "Large grill steak pyro",
+          "lowtempsteam": "Low temp steam",
+          "micro": "Microwave",
+          "mwclean": "Microwave clean",
+          "mwdefrost": "Microwave defrost",
+          "none": "None",
+          "pizza": "Pizza",
+          "plates": "Plates",
+          "programs": "Programs",
+          "proof": "Proof",
+          "proroasting": "Pro roasting",
+          "pyro": "Pyro",
+          "pyrolize": "Pyrolize",
+          "quick": "Quick",
+          "regenerate": "Regenerate",
+          "sabbath": "Sabbath",
+          "self_clean": "Self clean",
+          "smallgrill": "Small grill",
           "smallgrill_pyro": "Small grill pyro",
-          "none": "None"
+          "sousvide": "Sous vide",
+          "steam": "Steam",
+          "steamclean": "Steam clean",
+          "top": "Top",
+          "topbottom": "Top + bottom",
+          "undefined": "Undefined",
+          "warming": "Warming"
         }
       },
       "step_2_set_microwave_wattage": {
@@ -2977,30 +3354,30 @@
       "step_2_steam_available": {
         "name": "Step 2 steam available",
         "state": {
-          "not_active": "Not active",
           "active": "Active",
-          "available": "Available"
+          "available": "Available",
+          "not_active": "Not active"
         }
       },
       "step_2_time_unit": {
         "name": "Step 2 time unit",
         "state": {
-          "seconds": "Seconds",
+          "hours": "Hours",
           "minutes": "Minutes",
-          "hours": "Hours"
+          "seconds": "Seconds"
         }
       },
       "step_3_bake_mode": {
         "name": "Step 3 bake mode",
         "state": {
-          "undefined": "Undefined",
-          "probake": "ProBake",
-          "stepbake": "StepBake",
-          "extrabake": "ExtraBake",
           "autobake": "AutoBake",
+          "extrabake": "ExtraBake",
+          "probake": "ProBake",
           "recipe": "Recipe",
           "steambake": "SteamBake",
-          "steamcombibake": "SteamCombiBake"
+          "steamcombibake": "SteamCombiBake",
+          "stepbake": "StepBake",
+          "undefined": "Undefined"
         }
       },
       "step_3_duration": {
@@ -3015,79 +3392,79 @@
       "step_3_set_heater_system": {
         "name": "Step 3 set heater system",
         "state": {
-          "hotair": "Hot air",
-          "ecohotair": "Eco hot air",
-          "topbottom": "Top + bottom",
-          "hotairbottom": "Hot air + bottom",
-          "bottomfan": "Bottom + fan",
+          "3d_hot_ai": "3D hot air",
+          "air_fry": "Air fry",
+          "aquaclean": "AquaClean",
+          "bake": "Bake",
           "bottom": "Bottom",
-          "top": "Top",
-          "smallgrill": "Small grill",
-          "largegrill": "Large grill",
-          "largegrillfan": "Large grill + fan",
-          "proroasting": "Pro roasting",
-          "hotairmicro": "Hot air + microwave",
+          "bottom_infra": "Bottom + infra",
+          "bottom_infra_fan": "Bottom + infra + fan",
+          "bottom_top_heat": "Bottom + top heat",
+          "bottom_top_heat_fan": "Bottom + top heat + fan",
+          "bottom_top_heat_fan_steam": "Bottom + top heat + fan + steam",
+          "bottomfan": "Bottom + fan",
+          "broil": "Broil",
+          "cleanair": "Clean air",
+          "convection_bake": "Convection bake",
+          "convection_roast": "Convection roast",
+          "count": "Count",
+          "crisp": "Crisp",
+          "defrost": "Defrost",
+          "defrost_auto": "Auto defrost",
+          "dehydrate": "Dehydrate",
+          "descale": "Descale",
+          "eco": "Eco",
+          "ecohotair": "Eco hot air",
+          "fastpreheat": "Fast preheat",
+          "frozen_bake": "Frozen bake",
+          "gentle_bake": "Gentle bake",
+          "gratin": "Gratin",
           "grillfanmicro": "Grill + fan + microwave",
-          "micro": "Microwave",
+          "hot_air_bottomheat": "Hot air + bottom heat",
+          "hot_air_infra": "Hot air + infra",
+          "hot_air_upper": "Hot air + upper",
+          "hotair": "Hot air",
+          "hotairbottom": "Hot air + bottom",
+          "hotairmicro": "Hot air + microwave",
           "hotairsteam1": "Hot air + steam 1",
           "hotairsteam2": "Hot air + steam 2",
           "hotairsteam3": "Hot air + steam 3",
-          "fastpreheat": "Fast preheat",
-          "pyro": "Pyro",
-          "defrost": "Defrost",
           "keepwarm": "Keep warm",
-          "plates": "Plates",
-          "aquaclean": "AquaClean",
-          "steamclean": "Steam clean",
-          "regenerate": "Regenerate",
-          "descale": "Descale",
-          "mwdefrost": "Microwave defrost",
-          "sousvide": "Sous vide",
-          "lowtempsteam": "Low temp steam",
-          "steam": "Steam",
-          "quick": "Quick",
-          "cleanair": "Clean air",
-          "defrost_auto": "Auto defrost",
-          "sabbath": "Sabbath",
-          "programs": "Programs",
-          "warming": "Warming",
-          "mwclean": "Microwave clean",
-          "count": "Count",
-          "undefined": "Undefined",
-          "pyrolize": "Pyrolize",
-          "gentle_bake": "Gentle bake",
-          "air_fry": "Air fry",
-          "bottom_top_heat": "Bottom + top heat",
+          "large_grill": "Large grill",
           "large_grill_bottom": "Large grill + bottom",
           "large_grill_bottom_fan": "Large grill + bottom + fan",
-          "large_grill": "Large grill",
-          "hot_air_bottomheat": "Hot air + bottom heat",
-          "3d_hot_ai": "3D hot air",
-          "eco": "Eco",
-          "bottom_top_heat_fan_steam": "Bottom + top heat + fan + steam",
-          "large_grill_fan_steam": "Large grill + fan + steam",
-          "hot_air_upper": "Hot air + upper",
-          "hot_air_infra": "Hot air + infra",
-          "bottom_infra": "Bottom + infra",
-          "bottom_infra_fan": "Bottom + infra + fan",
-          "pizza": "Pizza",
-          "frozen_bake": "Frozen bake",
-          "gratin": "Gratin",
-          "bake": "Bake",
-          "convection_bake": "Convection bake",
-          "broil": "Broil",
-          "self_clean": "Self clean",
-          "convection_roast": "Convection roast",
-          "proof": "Proof",
-          "dehydrate": "Dehydrate",
-          "crisp": "Crisp",
           "large_grill_bottom_hot_air": "Large grill + bottom + hot air",
-          "bottom_top_heat_fan": "Bottom + top heat + fan",
-          "largegrillsteak_pyro": "Large grill steak pyro",
+          "large_grill_fan_steam": "Large grill + fan + steam",
+          "largegrill": "Large grill",
           "largegrill_pyro": "Large grill pyro",
+          "largegrillfan": "Large grill + fan",
           "largegrillfan_pyro": "Large grill + fan pyro",
+          "largegrillsteak_pyro": "Large grill steak pyro",
+          "lowtempsteam": "Low temp steam",
+          "micro": "Microwave",
+          "mwclean": "Microwave clean",
+          "mwdefrost": "Microwave defrost",
+          "none": "None",
+          "pizza": "Pizza",
+          "plates": "Plates",
+          "programs": "Programs",
+          "proof": "Proof",
+          "proroasting": "Pro roasting",
+          "pyro": "Pyro",
+          "pyrolize": "Pyrolize",
+          "quick": "Quick",
+          "regenerate": "Regenerate",
+          "sabbath": "Sabbath",
+          "self_clean": "Self clean",
+          "smallgrill": "Small grill",
           "smallgrill_pyro": "Small grill pyro",
-          "none": "None"
+          "sousvide": "Sous vide",
+          "steam": "Steam",
+          "steamclean": "Steam clean",
+          "top": "Top",
+          "topbottom": "Top + bottom",
+          "undefined": "Undefined",
+          "warming": "Warming"
         }
       },
       "step_3_set_microwave_wattage": {
@@ -3102,25 +3479,25 @@
       "step_3_status": {
         "name": "Step 3 status",
         "state": {
-          "not_active": "Not active",
           "active": "Active",
-          "available": "Available"
+          "available": "Available",
+          "not_active": "Not active"
         }
       },
       "step_3_steam_available": {
         "name": "Step 3 steam available",
         "state": {
-          "not_active": "Not active",
           "active": "Active",
-          "available": "Available"
+          "available": "Available",
+          "not_active": "Not active"
         }
       },
       "step_3_time_unit": {
         "name": "Step 3 time unit",
         "state": {
-          "seconds": "Seconds",
+          "hours": "Hours",
           "minutes": "Minutes",
-          "hours": "Hours"
+          "seconds": "Seconds"
         }
       },
       "step_after_bake_duration": {
@@ -3141,79 +3518,79 @@
       "step_after_bake_set_heater_system": {
         "name": "Step after bake set heater system",
         "state": {
-          "hotair": "Hot air",
-          "ecohotair": "Eco hot air",
-          "topbottom": "Top + bottom",
-          "hotairbottom": "Hot air + bottom",
-          "bottomfan": "Bottom + fan",
+          "3d_hot_ai": "3D hot air",
+          "air_fry": "Air fry",
+          "aquaclean": "AquaClean",
+          "bake": "Bake",
           "bottom": "Bottom",
-          "top": "Top",
-          "smallgrill": "Small grill",
-          "largegrill": "Large grill",
-          "largegrillfan": "Large grill + fan",
-          "proroasting": "Pro roasting",
-          "hotairmicro": "Hot air + microwave",
+          "bottom_infra": "Bottom + infra",
+          "bottom_infra_fan": "Bottom + infra + fan",
+          "bottom_top_heat": "Bottom + top heat",
+          "bottom_top_heat_fan": "Bottom + top heat + fan",
+          "bottom_top_heat_fan_steam": "Bottom + top heat + fan + steam",
+          "bottomfan": "Bottom + fan",
+          "broil": "Broil",
+          "cleanair": "Clean air",
+          "convection_bake": "Convection bake",
+          "convection_roast": "Convection roast",
+          "count": "Count",
+          "crisp": "Crisp",
+          "defrost": "Defrost",
+          "defrost_auto": "Auto defrost",
+          "dehydrate": "Dehydrate",
+          "descale": "Descale",
+          "eco": "Eco",
+          "ecohotair": "Eco hot air",
+          "fastpreheat": "Fast preheat",
+          "frozen_bake": "Frozen bake",
+          "gentle_bake": "Gentle bake",
+          "gratin": "Gratin",
           "grillfanmicro": "Grill + fan + microwave",
-          "micro": "Microwave",
+          "hot_air_bottomheat": "Hot air + bottom heat",
+          "hot_air_infra": "Hot air + infra",
+          "hot_air_upper": "Hot air + upper",
+          "hotair": "Hot air",
+          "hotairbottom": "Hot air + bottom",
+          "hotairmicro": "Hot air + microwave",
           "hotairsteam1": "Hot air + steam 1",
           "hotairsteam2": "Hot air + steam 2",
           "hotairsteam3": "Hot air + steam 3",
-          "fastpreheat": "Fast preheat",
-          "pyro": "Pyro",
-          "defrost": "Defrost",
           "keepwarm": "Keep warm",
-          "plates": "Plates",
-          "aquaclean": "AquaClean",
-          "steamclean": "Steam clean",
-          "regenerate": "Regenerate",
-          "descale": "Descale",
-          "mwdefrost": "Microwave defrost",
-          "sousvide": "Sous vide",
-          "lowtempsteam": "Low temp steam",
-          "steam": "Steam",
-          "quick": "Quick",
-          "cleanair": "Clean air",
-          "defrost_auto": "Auto defrost",
-          "sabbath": "Sabbath",
-          "programs": "Programs",
-          "warming": "Warming",
-          "mwclean": "Microwave clean",
-          "count": "Count",
-          "undefined": "Undefined",
-          "pyrolize": "Pyrolize",
-          "gentle_bake": "Gentle bake",
-          "air_fry": "Air fry",
-          "bottom_top_heat": "Bottom + top heat",
+          "large_grill": "Large grill",
           "large_grill_bottom": "Large grill + bottom",
           "large_grill_bottom_fan": "Large grill + bottom + fan",
-          "large_grill": "Large grill",
-          "hot_air_bottomheat": "Hot air + bottom heat",
-          "3d_hot_ai": "3D hot air",
-          "eco": "Eco",
-          "bottom_top_heat_fan_steam": "Bottom + top heat + fan + steam",
-          "large_grill_fan_steam": "Large grill + fan + steam",
-          "hot_air_upper": "Hot air + upper",
-          "hot_air_infra": "Hot air + infra",
-          "bottom_infra": "Bottom + infra",
-          "bottom_infra_fan": "Bottom + infra + fan",
-          "pizza": "Pizza",
-          "frozen_bake": "Frozen bake",
-          "gratin": "Gratin",
-          "bake": "Bake",
-          "convection_bake": "Convection bake",
-          "broil": "Broil",
-          "self_clean": "Self clean",
-          "convection_roast": "Convection roast",
-          "proof": "Proof",
-          "dehydrate": "Dehydrate",
-          "crisp": "Crisp",
           "large_grill_bottom_hot_air": "Large grill + bottom + hot air",
-          "bottom_top_heat_fan": "Bottom + top heat + fan",
-          "largegrillsteak_pyro": "Large grill steak pyro",
+          "large_grill_fan_steam": "Large grill + fan + steam",
+          "largegrill": "Large grill",
           "largegrill_pyro": "Large grill pyro",
+          "largegrillfan": "Large grill + fan",
           "largegrillfan_pyro": "Large grill + fan pyro",
+          "largegrillsteak_pyro": "Large grill steak pyro",
+          "lowtempsteam": "Low temp steam",
+          "micro": "Microwave",
+          "mwclean": "Microwave clean",
+          "mwdefrost": "Microwave defrost",
+          "none": "None",
+          "pizza": "Pizza",
+          "plates": "Plates",
+          "programs": "Programs",
+          "proof": "Proof",
+          "proroasting": "Pro roasting",
+          "pyro": "Pyro",
+          "pyrolize": "Pyrolize",
+          "quick": "Quick",
+          "regenerate": "Regenerate",
+          "sabbath": "Sabbath",
+          "self_clean": "Self clean",
+          "smallgrill": "Small grill",
           "smallgrill_pyro": "Small grill pyro",
-          "none": "None"
+          "sousvide": "Sous vide",
+          "steam": "Steam",
+          "steamclean": "Steam clean",
+          "top": "Top",
+          "topbottom": "Top + bottom",
+          "undefined": "Undefined",
+          "warming": "Warming"
         }
       },
       "step_after_bake_set_temperature": {
@@ -3222,9 +3599,9 @@
       "step_after_bake_time_unit": {
         "name": "Step after bake time unit",
         "state": {
-          "seconds": "Seconds",
+          "hours": "Hours",
           "minutes": "Minutes",
-          "hours": "Hours"
+          "seconds": "Seconds"
         }
       },
       "step_pre_bake_duration": {
@@ -3233,9 +3610,9 @@
       "step_pre_bake_mode": {
         "name": "Step pre bake mode",
         "state": {
+          "delay_start_waiting": "Delay start waiting",
           "not_active": "Not active",
-          "preheat": "Preheat",
-          "delay_start_waiting": "Delay start waiting"
+          "preheat": "Preheat"
         }
       },
       "step_pre_bake_passed_time": {
@@ -3247,79 +3624,79 @@
       "step_pre_bake_set_heater_system": {
         "name": "Step pre bake set heater system",
         "state": {
-          "hotair": "Hot air",
-          "ecohotair": "Eco hot air",
-          "topbottom": "Top + bottom",
-          "hotairbottom": "Hot air + bottom",
-          "bottomfan": "Bottom + fan",
+          "3d_hot_ai": "3D hot air",
+          "air_fry": "Air fry",
+          "aquaclean": "AquaClean",
+          "bake": "Bake",
           "bottom": "Bottom",
-          "top": "Top",
-          "smallgrill": "Small grill",
-          "largegrill": "Large grill",
-          "largegrillfan": "Large grill + fan",
-          "proroasting": "Pro roasting",
-          "hotairmicro": "Hot air + microwave",
+          "bottom_infra": "Bottom + infra",
+          "bottom_infra_fan": "Bottom + infra + fan",
+          "bottom_top_heat": "Bottom + top heat",
+          "bottom_top_heat_fan": "Bottom + top heat + fan",
+          "bottom_top_heat_fan_steam": "Bottom + top heat + fan + steam",
+          "bottomfan": "Bottom + fan",
+          "broil": "Broil",
+          "cleanair": "Clean air",
+          "convection_bake": "Convection bake",
+          "convection_roast": "Convection roast",
+          "count": "Count",
+          "crisp": "Crisp",
+          "defrost": "Defrost",
+          "defrost_auto": "Auto defrost",
+          "dehydrate": "Dehydrate",
+          "descale": "Descale",
+          "eco": "Eco",
+          "ecohotair": "Eco hot air",
+          "fastpreheat": "Fast preheat",
+          "frozen_bake": "Frozen bake",
+          "gentle_bake": "Gentle bake",
+          "gratin": "Gratin",
           "grillfanmicro": "Grill + fan + microwave",
-          "micro": "Microwave",
+          "hot_air_bottomheat": "Hot air + bottom heat",
+          "hot_air_infra": "Hot air + infra",
+          "hot_air_upper": "Hot air + upper",
+          "hotair": "Hot air",
+          "hotairbottom": "Hot air + bottom",
+          "hotairmicro": "Hot air + microwave",
           "hotairsteam1": "Hot air + steam 1",
           "hotairsteam2": "Hot air + steam 2",
           "hotairsteam3": "Hot air + steam 3",
-          "fastpreheat": "Fast preheat",
-          "pyro": "Pyro",
-          "defrost": "Defrost",
           "keepwarm": "Keep warm",
-          "plates": "Plates",
-          "aquaclean": "AquaClean",
-          "steamclean": "Steam clean",
-          "regenerate": "Regenerate",
-          "descale": "Descale",
-          "mwdefrost": "Microwave defrost",
-          "sousvide": "Sous vide",
-          "lowtempsteam": "Low temp steam",
-          "steam": "Steam",
-          "quick": "Quick",
-          "cleanair": "Clean air",
-          "defrost_auto": "Auto defrost",
-          "sabbath": "Sabbath",
-          "programs": "Programs",
-          "warming": "Warming",
-          "mwclean": "Microwave clean",
-          "count": "Count",
-          "undefined": "Undefined",
-          "pyrolize": "Pyrolize",
-          "gentle_bake": "Gentle bake",
-          "air_fry": "Air fry",
-          "bottom_top_heat": "Bottom + top heat",
+          "large_grill": "Large grill",
           "large_grill_bottom": "Large grill + bottom",
           "large_grill_bottom_fan": "Large grill + bottom + fan",
-          "large_grill": "Large grill",
-          "hot_air_bottomheat": "Hot air + bottom heat",
-          "3d_hot_ai": "3D hot air",
-          "eco": "Eco",
-          "bottom_top_heat_fan_steam": "Bottom + top heat + fan + steam",
-          "large_grill_fan_steam": "Large grill + fan + steam",
-          "hot_air_upper": "Hot air + upper",
-          "hot_air_infra": "Hot air + infra",
-          "bottom_infra": "Bottom + infra",
-          "bottom_infra_fan": "Bottom + infra + fan",
-          "pizza": "Pizza",
-          "frozen_bake": "Frozen bake",
-          "gratin": "Gratin",
-          "bake": "Bake",
-          "convection_bake": "Convection bake",
-          "broil": "Broil",
-          "self_clean": "Self clean",
-          "convection_roast": "Convection roast",
-          "proof": "Proof",
-          "dehydrate": "Dehydrate",
-          "crisp": "Crisp",
           "large_grill_bottom_hot_air": "Large grill + bottom + hot air",
-          "bottom_top_heat_fan": "Bottom + top heat + fan",
-          "largegrillsteak_pyro": "Large grill steak pyro",
+          "large_grill_fan_steam": "Large grill + fan + steam",
+          "largegrill": "Large grill",
           "largegrill_pyro": "Large grill pyro",
+          "largegrillfan": "Large grill + fan",
           "largegrillfan_pyro": "Large grill + fan pyro",
+          "largegrillsteak_pyro": "Large grill steak pyro",
+          "lowtempsteam": "Low temp steam",
+          "micro": "Microwave",
+          "mwclean": "Microwave clean",
+          "mwdefrost": "Microwave defrost",
+          "none": "None",
+          "pizza": "Pizza",
+          "plates": "Plates",
+          "programs": "Programs",
+          "proof": "Proof",
+          "proroasting": "Pro roasting",
+          "pyro": "Pyro",
+          "pyrolize": "Pyrolize",
+          "quick": "Quick",
+          "regenerate": "Regenerate",
+          "sabbath": "Sabbath",
+          "self_clean": "Self clean",
+          "smallgrill": "Small grill",
           "smallgrill_pyro": "Small grill pyro",
-          "none": "None"
+          "sousvide": "Sous vide",
+          "steam": "Steam",
+          "steamclean": "Steam clean",
+          "top": "Top",
+          "topbottom": "Top + bottom",
+          "undefined": "Undefined",
+          "warming": "Warming"
         }
       },
       "step_pre_bake_set_temperature": {
@@ -3328,9 +3705,9 @@
       "step_pre_bake_time_unit": {
         "name": "Step pre bake time unit",
         "state": {
-          "seconds": "Seconds",
+          "hours": "Hours",
           "minutes": "Minutes",
-          "hours": "Hours"
+          "seconds": "Seconds"
         }
       },
       "super_rinse_setting_status": {
@@ -3422,9 +3799,9 @@
       "warming_drawer_power_level": {
         "name": "Warming drawer power level",
         "state": {
+          "high": "High",
           "low": "Low",
-          "medium": "Medium",
-          "high": "High"
+          "medium": "Medium"
         }
       },
       "washing_machine_type_kg": {
@@ -3626,506 +4003,129 @@
         "name": "Welcome"
       }
     },
-    "select": {
-      "actions": {
-        "name": "Actions",
-        "state": {
-          "start": "Start",
-          "pause": "Pause",
-          "stop_finish": "Stop finish",
-          "add_duration": "Add duration",
-          "add_gratin": "Add gratin",
-          "steam_shot": "Steam shot",
-          "none": "None",
-          "stop": "Stop"
-        }
-      },
-      "auto_dose_quantity_setting_status": {
-        "name": "Auto dose quantity"
-      },
-      "baking_steps_intensity_levels": {
-        "name": "Baking steps intensity levels",
-        "state": {
-          "none": "None"
-        }
-      },
-      "baking_steps_intensity_levels_type": {
-        "name": "Baking steps intensity levels type",
-        "state": {
-          "none": "None",
-          "not_used": "Not used",
-          "low_mid_high": "Low mid high",
-          "rare_medium_well_done": "Rare medium well done"
-        }
-      },
-      "brightness": {
-        "name": "Brightness"
-      },
-      "cooking_intensity": {
-        "name": "Cooking intensity"
-      },
-      "delayendtime": {
-        "name": "Delay end time",
-        "state": {
-          "none": "None",
-          "1_hour": "1 hour",
-          "2_hours": "2 hours",
-          "3_hours": "3 hours",
-          "4_hours": "4 hours",
-          "5_hours": "5 hours",
-          "6_hours": "6 hours",
-          "7_hours": "7 hours",
-          "8_hours": "8 hours",
-          "9_hours": "9 hours",
-          "10_hours": "10 hours",
-          "11_hours": "11 hours",
-          "12_hours": "12 hours",
-          "13_hours": "13 hours",
-          "14_hours": "14 hours",
-          "15_hours": "15 hours",
-          "16_hours": "16 hours",
-          "17_hours": "17 hours",
-          "18_hours": "18 hours",
-          "19_hours": "19 hours",
-          "20_hours": "20 hours",
-          "21_hours": "21 hours",
-          "22_hours": "22 hours",
-          "23_hours": "23 hours",
-          "24_hours": "24 hours"
-        }
-      },
-      "detergent": {
-        "name": "Detergent",
-        "state": {
-          "auto": "Auto",
-          "less": "Less",
-          "standard": "Standard",
-          "more": "More"
-        }
-      },
-      "dry_level": {
-        "name": "Drying level",
-        "state": {
-          "low": "Low",
-          "medium": "Medium",
-          "high": "High"
-        }
-      },
-      "dry_time": {
-        "name": "Dry time",
-        "state": {
-          "wardrobe": "Wardrobe",
-          "pre-ironing": "Pre-ironing",
-          "extra_dry": "Extra dry",
-          "30_min": "30 min",
-          "60_min": "60 min",
-          "90_min": "90 min",
-          "120_min": "120 min",
-          "180_min": "180 min",
-          "240_min": "240 min",
-          "iron": "Iron",
-          "cupboard": "Cupboard",
-          "none": "None",
-          "5_min": "5 min",
-          "10_min": "10 min",
-          "15_min": "15 min"
-        }
-      },
-      "drymodel": {
-        "name": "Dry model",
-        "state": {
-          "wash": "Wash",
-          "wash_and_dry": "Wash and dry",
-          "dry_only": "Dry only"
-        }
-      },
-      "extrarinsenum": {
-        "name": "Extra rinse",
-        "state": {
-          "none": "None"
-        }
-      },
-      "language_status": {
-        "name": "Language",
-        "state": {
-          "english": "English",
-          "simplified_chinese": "Simplified chinese"
-        }
-      },
-      "motorlevel": {
-        "name": "Motor level"
-      },
-      "oven_temperature_unit": {
-        "name": "Oven temperature unit",
-        "state": {
-          "celsius": "Celsius",
-          "fahrenheit": "Fahrenheit"
-        }
-      },
-      "sand_timer_1_status_cmd": {
-        "name": "Sand timer 1 control",
-        "state": {
-          "start": "Start",
-          "stop": "Stop",
-          "pause": "Pause",
-          "cancel": "Cancel"
-        }
-      },
-      "sand_timer_2_status_cmd": {
-        "name": "Sand timer 2 control",
-        "state": {
-          "start": "Start",
-          "stop": "Stop",
-          "pause": "Pause",
-          "cancel": "Cancel"
-        }
-      },
-      "sand_timer_3_status_cmd": {
-        "name": "Sand timer 3 control",
-        "state": {
-          "start": "Start",
-          "stop": "Stop",
-          "pause": "Pause",
-          "cancel": "Cancel"
-        }
-      },
-      "selected_program_id": {
-        "name": "Selected program",
-        "state": {
-          "auto": "Auto",
-          "anti_allergy": "Anti allergy",
-          "refresh": "Refresh",
-          "sports": "Sports",
-          "towels": "Towels",
-          "time": "Time",
-          "cotton": "Cotton",
-          "baby": "Baby",
-          "synthetic": "Synthetics",
-          "wool": "Wool",
-          "delicates": "Delicates",
-          "fast30": "Quick 30",
-          "shirts": "Shirts",
-          "bed_linen": "Bed linen",
-          "down": "Down",
-          "cotton_dry": "Cotton dry",
-          "synthetic_dry": "Synthetic dry",
-          "drum_cleaning": "Drum cleaning",
-          "eco_40_60": "Eco 40 60",
-          "fast15": "Fast15",
-          "spin-dry": "Spin-dry",
-          "rinse_spin": "Rinse spin",
-          "clean_dry_60": "Clean dry 60",
-          "power49": "Power49",
-          "allergy_care": "Allergy care",
-          "wash_and_dry_49": "Wash and dry 49",
-          "bedding": "Bedding",
-          "power_30": "Power 30",
-          "pets": "Pets",
-          "full_load_49": "Full load 49",
-          "mix": "Mix",
-          "jeans": "Jeans",
-          "sportswear": "Sportswear",
-          "hand_wash": "Hand wash",
-          "eco": "Eco",
-          "ion_refresh": "Ion refresh",
-          "duvet": "Duvet",
-          "time_dry": "Time dry",
-          "baby_care": "Baby care",
-          "synthetics": "Synthetics",
-          "quick_30": "Quick 30",
-          "rack_dry": "Rack dry",
-          "drum_clean": "Drum clean",
-          "quick_15": "Quick 15",
-          "spin": "Spin",
-          "silk_delicate": "Silk delicate",
-          "power_49": "Power 49"
-        }
-      },
-      "softener": {
-        "name": "Softener",
-        "state": {
-          "auto": "Auto",
-          "less": "Less",
-          "standard": "Standard",
-          "more": "More"
-        }
-      },
-      "spin_speed_rpm": {
-        "name": "Spin speed",
-        "state": {
-          "none": "None"
-        }
-      },
-      "stain_removal": {
-        "name": "Stain removal",
-        "state": {
-          "wine": "Wine",
-          "grass": "Grass",
-          "soil": "Soil",
-          "coffee": "Coffee",
-          "milk": "Milk",
-          "juice": "Juice",
-          "sweat": "Sweat",
-          "blood": "Blood",
-          "oil": "Oil"
-        }
-      },
-      "steam_123": {
-        "name": "Steam 123",
-        "state": {
-          "steam123_0": "Steam123 0",
-          "steam123_1": "Steam123 1",
-          "steam123_2": "Steam123 2",
-          "steam123_3": "Steam123 3"
-        }
-      },
-      "step_1_bake_mode": {
-        "name": "Step 1 bake mode",
-        "state": {
-          "undefined": "Undefined",
-          "probake": "ProBake",
-          "stepbake": "StepBake",
-          "extrabake": "ExtraBake",
-          "autobake": "AutoBake",
-          "recipe": "Recipe",
-          "steambake": "SteamBake",
-          "steamcombibake": "SteamCombiBake",
-          "extrabake_fastpreheat": "ExtraBake - Fast preheat",
-          "extrabake_warming": "ExtraBake - Warming",
-          "extrabake_cleaning": "ExtraBake - Cleaning",
-          "meatprobebake": "MeatProbeBake"
-        }
-      },
-      "step_1_set_microwave_wattage": {
-        "name": "Step 1 set microwave wattage",
-        "state": {
-          "none": "None"
-        }
-      },
-      "step_1_time_unit": {
-        "name": "Step 1 time unit",
-        "state": {
-          "seconds": "Seconds",
-          "minutes": "Minutes",
-          "hours": "Hours"
-        }
-      },
-      "step_2_bake_mode": {
-        "name": "Step 2 bake mode",
-        "state": {
-          "undefined": "Undefined",
-          "probake": "ProBake",
-          "stepbake": "StepBake",
-          "extrabake": "ExtraBake",
-          "autobake": "AutoBake",
-          "recipe": "Recipe",
-          "steambake": "SteamBake",
-          "steamcombibake": "SteamCombiBake"
-        }
-      },
-      "step_2_set_microwave_wattage": {
-        "name": "Step 2 set microwave wattage",
-        "state": {
-          "none": "None"
-        }
-      },
-      "step_2_time_unit": {
-        "name": "Step 2 time unit",
-        "state": {
-          "seconds": "Seconds",
-          "minutes": "Minutes",
-          "hours": "Hours"
-        }
-      },
-      "step_3_bake_mode": {
-        "name": "Step 3 bake mode",
-        "state": {
-          "undefined": "Undefined",
-          "probake": "ProBake",
-          "stepbake": "StepBake",
-          "extrabake": "ExtraBake",
-          "autobake": "AutoBake",
-          "recipe": "Recipe",
-          "steambake": "SteamBake",
-          "steamcombibake": "SteamCombiBake"
-        }
-      },
-      "step_3_set_microwave_wattage": {
-        "name": "Step 3 set microwave wattage",
-        "state": {
-          "none": "None"
-        }
-      },
-      "step_3_status": {
-        "name": "Step 3 status",
-        "state": {
-          "not_active": "Not active",
-          "active": "Active",
-          "available": "Available"
-        }
-      },
-      "step_3_time_unit": {
-        "name": "Step 3 time unit",
-        "state": {
-          "seconds": "Seconds",
-          "minutes": "Minutes",
-          "hours": "Hours"
-        }
-      },
-      "step_after_bake_mode": {
-        "name": "Step after bake mode",
-        "state": {
-          "gratine": "Gratine"
-        }
-      },
-      "step_after_bake_time_unit": {
-        "name": "Step after bake time unit",
-        "state": {
-          "seconds": "Seconds",
-          "minutes": "Minutes",
-          "hours": "Hours"
-        }
-      },
-      "step_pre_bake_mode": {
-        "name": "Step pre bake mode",
-        "state": {
-          "not_active": "Not active",
-          "preheat": "Preheat",
-          "delay_start_waiting": "Delay start waiting"
-        }
-      },
-      "step_pre_bake_time_unit": {
-        "name": "Step pre bake time unit",
-        "state": {
-          "seconds": "Seconds",
-          "minutes": "Minutes",
-          "hours": "Hours"
-        }
-      },
-      "t_fan_speed": {
-        "name": "Fan speed",
-        "state": {
-          "auto": "Auto",
-          "low": "Low",
-          "high": "High"
-        }
-      },
-      "t_sleep": {
-        "name": "Sleep Mode",
-        "state": {
-          "off": "Off",
-          "general": "General",
-          "for_old": "For old",
-          "for_young": "For young",
-          "for_kid": "For kid"
-        }
-      },
-      "t_swing_angle": {
-        "name": "Swing angle",
-        "state": {
-          "swing": "Swing",
-          "auto": "Auto",
-          "angle_1": "Angle 1",
-          "angle_2": "Angle 2",
-          "angle_3": "Angle 3",
-          "angle_4": "Angle 4",
-          "angle_5": "Angle 5",
-          "angle_6": "Angle 6"
-        }
-      },
-      "t_swing_follow": {
-        "name": "AI ventilation",
-        "state": {
-          "off": "Off",
-          "follow": "Follow",
-          "not_follow": "Not Follow"
-        }
-      },
-      "temperature": {
-        "name": "Temperature",
-        "state": {
-          "cold": "Cold"
-        }
-      },
-      "temperature_unit": {
-        "name": "Temperature unit",
-        "state": {
-          "celsius": "Celsius",
-          "fahrenheit": "Fahrenheit"
-        }
-      },
-      "time_format": {
-        "name": "Time format",
-        "state": {
-          "12h": "12h",
-          "24h": "24h"
-        }
-      },
-      "volume": {
-        "name": "Volume"
-      },
-      "warming_drawer_power_level": {
-        "name": "Warming drawer power level",
-        "state": {
-          "low": "Low",
-          "medium": "Medium",
-          "high": "High"
-        }
-      },
-      "water_hardness": {
-        "name": "Water hardness"
-      }
-    },
     "water_heater": {
       "connectlife": {
         "state": {
           "auto": "Auto"
         }
       }
+    }
+  },
+  "issues": {
+    "unavailable_device": {
+      "fix_flow": {
+        "abort": {
+          "issue_ignored": "Ignored \"{device_name} no longer available\". The device and all its entities will still be listed in the regiestry."
+        },
+        "step": {
+          "init": {
+            "description": "The device \"{device_name}\" is now longer available in your ConnectLife account. If you no longer have this device, you can delete it from Home Assistant.",
+            "menu_options": {
+              "ignore": "Ignore",
+              "remove": "Remove"
+            },
+            "title": "{device_name} no longer available"
+          },
+          "remove": {
+            "description": "The device \"{device_name}\" and all its entities will be removed from Home Assistant.",
+            "title": "Remove {device_name}"
+          }
+        }
+      },
+      "title": "{device_name} no longer available"
     },
-    "number": {
-      "delayendtime_hour": {
-        "name": "Delayendtime hour"
+    "unsupported_beep": {
+      "fix_flow": {
+        "abort": {
+          "issue_ignored": "Ignored \"Disable beep not supported by {device_name}\"."
+        },
+        "step": {
+          "init": {
+            "description": "The device \"{device_name}\" does not support the disable beep option.",
+            "menu_options": {
+              "confirm": "Update configuration",
+              "ignore": "Ignore"
+            },
+            "title": "Disable beep not supported by {device_name}"
+          }
+        }
       },
-      "freeze_max_temperature": {
-        "name": "Freezeer max temperature"
+      "title": "Disable beep not supported by {device_name}"
+    }
+  },
+  "options": {
+    "error": {
+      "test_server_invalid": "Invalid test server URL",
+      "test_server_required": "Development mode requires test server URL"
+    },
+    "step": {
+      "configure_device": {
+        "data": {
+          "disable_beep": "Disable beep"
+        },
+        "description": "Configure a device."
       },
-      "freeze_min_temperature": {
-        "name": "Freezeer min temperature"
+      "development": {
+        "data": {
+          "development_mode": "Development mode",
+          "test_server_url": "Test server URL"
+        },
+        "description": "Enable development mode to connect to test server instead of the ConnectLife API."
       },
-      "freeze_temperature": {
-        "name": "Freezeer temperature"
+      "init": {
+        "menu_options": {
+          "development": "Configure development mode",
+          "select_device": "Configure a device"
+        }
       },
-      "gratin_from_below_functionset_time_in_seconds": {
-        "name": "Gratin from below function set time"
-      },
-      "gratin_function_set_time_in_seconds": {
-        "name": "Gratin function set time"
-      },
-      "lightbrightness": {
-        "name": "Light brightness"
-      },
-      "lightcolortemperature": {
-        "name": "Light color temperature"
-      },
-      "refrigerator_max_temperature": {
-        "name": "Refrigerator max temperature"
-      },
-      "refrigerator_min_temperature": {
-        "name": "Refrigerator min temperature"
-      },
-      "refrigerator_temperature": {
-        "name": "Refrigerator temperature"
-      },
-      "variation_max_temperature": {
-        "name": "Variation max temperature"
-      },
-      "variation_min_temperature": {
-        "name": "Variation min temperature"
-      },
-      "variation_temperature": {
-        "name": "Variation temperature"
+      "select_device": {
+        "data": {
+          "device": "Select device"
+        },
+        "description": "Configure a device."
       }
+    }
+  },
+  "selector": {
+    "actions": {
+      "options": {
+        "1": "Stop",
+        "2": "Start",
+        "3": "Pause",
+        "4": "Open door"
+      }
+    }
+  },
+  "services": {
+    "set_action": {
+      "description": "Sets action for device. Use with care.",
+      "fields": {
+        "action": {
+          "description": "Action to set.",
+          "name": "Action"
+        }
+      },
+      "name": "Set action"
+    },
+    "set_value": {
+      "description": "Sets a value for the status. Use with care. Does not apply multiplier when setting.",
+      "fields": {
+        "value": {
+          "description": "Value to set.",
+          "name": "Value"
+        }
+      },
+      "name": "Set value"
+    },
+    "update": {
+      "description": "Updates all properties defined in the data field.",
+      "fields": {
+        "data": {
+          "description": "Properties that should be updated",
+          "name": "Data"
+        }
+      },
+      "name": "Update device"
     }
   }
 }
