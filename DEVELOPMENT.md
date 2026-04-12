@@ -21,13 +21,33 @@ Install dev dependencies (in `connectlife-ha` repo):
 uv sync
 ```
 
-## Generate `strings.json` 
+## Generate `strings.json` and `en.json`
 
-This will add strings for new properties.
+This will add strings for new properties, update `translations/en.json`, and sort all translation files.
 
 ```bash
 uv run python -m scripts.gen_strings
 ```
+
+## Providing translations
+
+Translation files are located in `custom_components/connectlife/translations/`.
+
+`strings.json` is the source of truth for English strings. It uses Home Assistant
+`[%key:...]` references for common strings (e.g. config flow labels). The file
+`translations/en.json` is generated automatically as a copy of `strings.json` —
+do not edit it manually.
+
+To add or update a translation:
+
+1. Copy `translations/en.json` to a new language file (e.g. `translations/fr.json`)
+   or edit an existing one.
+2. Translate the values. Do not translate keys, only values.
+3. Replace any `[%key:...]` references with the translated text.
+4. Sort the translation file:
+   ```bash
+   uv run python -m scripts.sort_translations
+   ```
 
 ## Validate mapping files
 

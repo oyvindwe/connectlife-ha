@@ -15,8 +15,11 @@ uv sync
 # Validate data dictionary YAML files against JSON schema
 uv run python -m scripts.validate_mappings
 
-# Regenerate strings.json from data dictionaries
+# Regenerate strings.json and en.json from data dictionaries, sort all translations
 uv run python -m scripts.gen_strings
+
+# Sort all translation files (without regenerating strings)
+uv run python -m scripts.sort_translations
 
 # Run the test server for local development
 uv run python -m connectlife.test_server -d <dumps_dir>
@@ -80,5 +83,5 @@ The API library is published to PyPI as `connectlife` and developed in a separat
 1. Generate skeleton: `python -m connectlife.dump --username <user> --password <pass> --format dd`
 2. Create/edit YAML in `data_dictionaries/` (see `data_dictionaries/README.md` for full schema docs)
 3. Validate: `uv run python -m scripts.validate_mappings`
-4. Generate strings: `uv run python -m scripts.gen_strings`
+4. Generate strings and translations: `uv run python -m scripts.gen_strings`
 5. Translation keys must be lowercase; YAML booleans (`true`, `false`, `on`, `off`, `yes`, `no`) must be quoted in option values
