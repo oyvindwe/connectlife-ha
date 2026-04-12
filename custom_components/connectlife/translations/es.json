@@ -11,23 +11,23 @@
         "step": {
             "user": {
                 "data": {
-                    "password": "Password",
-                    "username": "Username"
+                    "password": "Contraseña",
+                    "username": "Nombre de usuario"
                 }
             }
         }
     },
     "issues": {
         "unavailable_device": {
-            "title": "{device_name} no esta disponible",
+            "title": "{device_name} no está disponible",
             "fix_flow": {
                 "abort": {
-                    "issue_ignored": "El dipsitivo ignorado \"{device_name} no está disponible\". El dispositivo y todas sus entidades permanecerán listada en el registro."
+                    "issue_ignored": "El dispositivo ignorado \"{device_name} no está disponible\". El dispositivo y todas sus entidades permanecerán listadas en el registro."
                 },
                 "step": {
                     "init": {
-                        "title": "{device_name} no esta disponibl",
-                        "description": "El dipsitivo \"{device_name}\" está disponible en tu cuenta de ConnectLife. Si ya no dispones de este dispositivo, puedes eliminarlo de Home Assistant.",
+                        "title": "{device_name} no está disponible",
+                        "description": "El dispositivo \"{device_name}\" está disponible en tu cuenta de ConnectLife. Si ya no dispones de este dispositivo, puedes eliminarlo de Home Assistant.",
                         "menu_options": {
                             "ignore": "Ignorar",
                             "remove": "Eliminar"
@@ -221,7 +221,7 @@
                 "name": "Voltage"
             },
             "alarm_warning_fastpreheat": {
-                "name": "Antención, precalentamiento rápido"
+                "name": "Atención, precalentamiento rápido"
             },
             "alarm_warning_microwave": {
                 "name": "Atención microondas"
@@ -365,7 +365,7 @@
                 "name": "Estado de emparejamiento difícil"
             },
             "humidity_sensor": {
-                "name": "Senor humedad"
+                "name": "Sensor humedad"
             },
             "humidity_sensor_failure": {
                 "name": "Fallo en el sensor de humedad"
@@ -401,10 +401,10 @@
                 "name": "Fallo en la temperatura del área media b de vino"
             },
             "open_freeze_door_alarm": {
-                "name": "Alarma, puerta abierta del frigorifico"
+                "name": "Alarma, puerta abierta del frigorífico"
             },
             "open_refrigerator_door_alarm": {
-                "name": "Alarma, puerta abierta del frigorifico"
+                "name": "Alarma, puerta abierta del frigorífico"
             },
             "open_the_door_alarm": {
                 "name": "Alarma, puerta abierta"
@@ -662,18 +662,18 @@
                     "preset_mode": {
                         "state": {
                             "ai": "AI",
-                            "off": "Off",
-                            "mute": "Mute",
-                            "eco_mute": "Eco mute",
+                            "off": "Apagado",
+                            "mute": "Silencioso",
+                            "eco_mute": "Silencioso Eco",
                             "super": "Super",
-                            "sleep_1": "Sleep 1",
-                            "sleep_2": "Sleep 2",
-                            "sleep_3": "Sleep 3",
-                            "sleep_4": "Sleep 4",
-                            "eco_sleep_1": "Eco sleep 1",
-                            "eco_sleep_2": "Eco sleep 2",
-                            "eco_sleep_3": "Eco sleep 3",
-                            "eco_sleep_4": "Eco sleep 4"
+                            "sleep_1": "Sueño 1",
+                            "sleep_2": "Sueño 2",
+                            "sleep_3": "Sueño 3",
+                            "sleep_4": "Sueño 4",
+                            "eco_sleep_1": "Sueño Eco 1",
+                            "eco_sleep_2": "Sueño Eco 2",
+                            "eco_sleep_3": "Sueño Eco 3",
+                            "eco_sleep_4": "Sueño Eco 4"
                         }
                     },
                     "swing_mode": {
@@ -993,11 +993,11 @@
             "selected_program_id": {
                 "name": "Programa seleccionado",
                 "state": {
-                    "cotton_storage": "Aglodón",
-                    "standard": "Estandar",
+                    "cotton_storage": "Algodón",
+                    "standard": "Estándar",
                     "iron": "Plancha",
                     "mix": "Mix",
-                    "synthetic": "Sintenticos",
+                    "synthetic": "Sinténticos",
                     "wool": "Lana",
                     "bed_linen": "Ropa de cama",
                     "time": "Tiempo",
@@ -1012,14 +1012,14 @@
                     "auto": "Auto",
                     "anti_allergy": "Antialergias",
                     "refresh": "Refrescar",
-                    "towels": "Toalas",
-                    "cotton": "Algodon",
+                    "towels": "Toallas",
+                    "cotton": "Algodón",
                     "delicates": "Delicados",
-                    "fast30": "Rapido 30´",
-                    "fast15": "Rapido 15´",
+                    "fast30": "Rápido 30´",
+                    "fast15": "Rápido 15´",
                     "down": "Bajar",
-                    "cotton_dry": "Secado Agodón",
-                    "synthetic_dry": "Secado Sinteticos",
+                    "cotton_dry": "Secado Algodón",
+                    "synthetic_dry": "Secado Sintéticos",
                     "drum_cleaning": "Limpieza Tambor",
                     "eco_40_60": "Eco 40-60",
                     "spin-dry": "Centrifugar",
@@ -1055,7 +1055,7 @@
                     "stage_set": "Stage set",
                     "culi_set": "Culi set",
                     "warming": "Calentando",
-                    "defrost": "DEscongelar",
+                    "defrost": "Descongelar",
                     "cleaning": "Limpieza",
                     "pyrolysis": "Pirolysis",
                     "none": "Nada"
@@ -1064,7 +1064,7 @@
             "sl1_active_timer": {
                 "name": "Zona 1 temporizador activo",
                 "state": {
-                    "inactive": "Inactivi",
+                    "inactive": "Inactivo",
                     "stopwatch": "Parado",
                     "timer": "Tiempo"
                 }
@@ -1095,15 +1095,15 @@
                 "state": {
                     "round": "Redonda",
                     "square": "Cuadrada",
-                    "rectangle_vertical": "Rectangulo vertical",
-                    "rectangle_horizontal": "Rectangulo horizontal",
+                    "rectangle_vertical": "Rectángulo vertical",
+                    "rectangle_horizontal": "Rectángulo horizontal",
                     "no_shape": "Sin forma"
                 }
             },
             "sl2_active_timer": {
                 "name": "Zona 2 temporizador activo",
                 "state": {
-                    "inactive": "Inactivi",
+                    "inactive": "Inactivo",
                     "stopwatch": "Parado",
                     "timer": "Tiempo"
                 }
@@ -1127,22 +1127,22 @@
                 "name": "Zona 2 nivel potencia"
             },
             "sl2_power_level_max": {
-                "name": "Zona 2 maximo nivel potencia"
+                "name": "Zona 2 máximo nivel potencia"
             },
             "sl2_zone_shape": {
                 "name": "Zona 2 forma",
                 "state": {
                     "round": "Redonda",
                     "square": "Cuadrada",
-                    "rectangle_vertical": "Rectangulo vertical",
-                    "rectangle_horizontal": "Rectangulo horizontal",
+                    "rectangle_vertical": "Rectángulo vertical",
+                    "rectangle_horizontal": "Rectángulo horizontal",
                     "no_shape": "Sin forma"
                 }
             },
             "sl3_active_timer": {
                 "name": "Zona 3 temporizador activo",
                 "state": {
-                    "inactive": "Inactivi",
+                    "inactive": "Inactivo",
                     "stopwatch": "Parado",
                     "timer": "Tiempo"
                 }
@@ -1166,22 +1166,22 @@
                 "name": "Zona 3 nivel potencia"
             },
             "sl3_power_level_max": {
-                "name": "Zona 3 maximo nivel potencia"
+                "name": "Zona 3 máximo nivel potencia"
             },
             "sl3_zone_shape": {
                 "name": "Zona 3 forma",
                 "state": {
                     "round": "Redonda",
                     "square": "Cuadrada",
-                    "rectangle_vertical": "Rectangulo vertical",
-                    "rectangle_horizontal": "Rectangulo horizontal",
+                    "rectangle_vertical": "Rectángulo vertical",
+                    "rectangle_horizontal": "Rectángulo horizontal",
                     "no_shape": "Sin forma"
                 }
             },
             "sl4_active_timer": {
                 "name": "Zona 4 temporizador activo",
                 "state": {
-                    "inactive": "Inactivi",
+                    "inactive": "Inactivo",
                     "stopwatch": "Parado",
                     "timer": "Tiempo"
                 }
@@ -1205,22 +1205,22 @@
                 "name": "Zona 4 nivel potencia"
             },
             "sl4_power_level_max": {
-                "name": "Zona 4 maximo nivel potencia"
+                "name": "Zona 4 máximo nivel potencia"
             },
             "sl4_zone_shape": {
                 "name": "Zona 4 forma",
                 "state": {
                     "round": "Redonda",
                     "square": "Cuadrada",
-                    "rectangle_vertical": "Rectangulo vertical",
-                    "rectangle_horizontal": "Rectangulo horizontal",
+                    "rectangle_vertical": "Rectángulo vertical",
+                    "rectangle_horizontal": "Rectángulo horizontal",
                     "no_shape": "Sin forma"
                 }
             },
             "sl5_active_timer": {
                 "name": "Zona 5 temporizador activo",
                 "state": {
-                    "inactive": "Inactivi",
+                    "inactive": "Inactivo",
                     "stopwatch": "Parado",
                     "timer": "Tiempo"
                 }
@@ -1244,22 +1244,22 @@
                 "name": "Zona 5 nivel potencia"
             },
             "sl5_power_level_max": {
-                "name": "Zona 5 maximo nivel potencia"
+                "name": "Zona 5 máximo nivel potencia"
             },
             "sl5_zone_shape": {
                 "name": "Zona 5 forma",
                 "state": {
                     "round": "Redonda",
                     "square": "Cuadrada",
-                    "rectangle_vertical": "Rectangulo vertical",
-                    "rectangle_horizontal": "Rectangulo horizontal",
+                    "rectangle_vertical": "Rectángulo vertical",
+                    "rectangle_horizontal": "Rectángulo horizontal",
                     "no_shape": "Sin forma"
                 }
             },
             "sl6_active_timer": {
                 "name": "Zona 6 temporizador activo",
                 "state": {
-                    "inactive": "Inactivi",
+                    "inactive": "Inactivo",
                     "stopwatch": "Parado",
                     "timer": "Tiempo"
                 }
@@ -1290,8 +1290,8 @@
                 "state": {
                     "round": "Redonda",
                     "square": "Cuadrada",
-                    "rectangle_vertical": "Rectangulo vertical",
-                    "rectangle_horizontal": "Rectangulo horizontal",
+                    "rectangle_vertical": "Rectángulo vertical",
+                    "rectangle_horizontal": "Rectángulo horizontal",
                     "no_shape": "Sin forma"
                 }
             },
@@ -1729,7 +1729,7 @@
                 "name": "Frigorifico temperatura mínima"
             },
             "refrigerator_temperature": {
-                "name": "Temperatura frigorifico"
+                "name": "Temperatura frigorífico"
             },
             "variation_max_temperature": {
                 "name": "Variación temperatura máxima"
