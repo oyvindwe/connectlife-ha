@@ -3833,7 +3833,12 @@
           "baby_care": "Baby care",
           "synthetics": "Synthetics",
           "quick_30": "Quick 30",
-          "rack_dry": "Rack dry"
+          "rack_dry": "Rack dry",
+          "drum_clean": "Drum clean",
+          "quick_15": "Quick 15",
+          "spin": "Spin",
+          "silk_delicate": "Silk delicate",
+          "power_49": "Power 49"
         }
       },
       "softener": {
