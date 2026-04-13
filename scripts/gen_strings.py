@@ -1,11 +1,17 @@
 import json
+import urllib.request
 from os import listdir
 from os.path import isfile, join
 
 import yaml
 
+from scripts import sort_translations
+
+HA_STRINGS_URL = "https://raw.githubusercontent.com/home-assistant/core/dev/homeassistant/strings.json"
+
 
 def main(basedir):
+    ha_strings = load_ha_strings()
     with open(f'{basedir}/strings.json', 'r') as f:
         strings = json.load(f)
     device_dir = f'{basedir}/data_dictionaries'
@@ -101,6 +107,47 @@ def main(basedir):
     with open(f'{basedir}/strings.json', 'w') as f:
         json.dump(strings, f, indent=2, sort_keys=True)
         f.write("\n")
+
+    en = expand_keys(strings, ha_strings)
+    with open(f'{basedir}/translations/en.json', 'w') as f:
+        json.dump(en, f, indent=2, sort_keys=True)
+        f.write("\n")
+
+    sort_translations.main(basedir)
+
+def load_ha_strings():
+    print(f"Fetching HA strings from {HA_STRINGS_URL}")
+    try:
+        with urllib.request.urlopen(HA_STRINGS_URL, timeout=30) as r:
+            return json.load(r)
+    except Exception as e:
+        print(f"Failed to fetch HA strings: {e}")
+        exit(1)
+
+
+def resolve_key(ha_strings, key):
+    """Resolve a key like 'common::config_flow::data::username' against HA strings."""
+    parts = key.split("::")
+    obj = ha_strings
+    for part in parts:
+        if not isinstance(obj, dict) or part not in obj:
+            return None
+        obj = obj[part]
+    return obj
+
+
+def expand_keys(obj, ha_strings):
+    if isinstance(obj, dict):
+        return {k: expand_keys(v, ha_strings) for k, v in obj.items()}
+    if isinstance(obj, str) and obj.startswith("[%key:") and obj.endswith("%]"):
+        key = obj[6:-2]
+        value = resolve_key(ha_strings, key)
+        if value is None:
+            print(f"Unknown HA common string: {key}")
+            exit(1)
+        return value
+    return obj
+
 
 def is_number(s: str) -> bool:
     try:
