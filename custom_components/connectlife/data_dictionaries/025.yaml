@@ -595,18 +595,28 @@ properties:
   - property: Stain_removal
     hide: true
     entity_category: diagnostic
-  - property: StandardElectricitConsumption_int
+  - property: StandardElectricitConsumption
     hide: true
     entity_category: diagnostic
-  - property: StandardElectricitconsumption_decimal
+    sensor:
+      device_class: energy
+      unit: kWh
+      read_only: true
+    combine:
+      - property: StandardElectricitConsumption_int
+      - property: StandardElectricitconsumption_decimal
+        multiplier: 0.01
+  - property: StandardWaterConsumption
     hide: true
     entity_category: diagnostic
-  - property: StandardWaterConsumption_decimal
-    hide: true
-    entity_category: diagnostic
-  - property: StandardWaterConsumption_int
-    hide: true
-    entity_category: diagnostic
+    sensor:
+      device_class: water
+      unit: L
+      read_only: true
+    combine:
+      - property: StandardWaterConsumption_int
+      - property: StandardWaterConsumption_decimal
+        multiplier: 0.01
   - property: Temp_Index
     hide: true
     entity_category: diagnostic

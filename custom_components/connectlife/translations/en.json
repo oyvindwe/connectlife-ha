@@ -2897,6 +2897,12 @@
       "spintime_index": {
         "name": "Spin time index"
       },
+      "standardelectricitconsumption": {
+        "name": "Standard electricity consumption"
+      },
+      "standardwaterconsumption": {
+        "name": "Standard water consumption"
+      },
       "status": {
         "name": "Device status",
         "state": {
