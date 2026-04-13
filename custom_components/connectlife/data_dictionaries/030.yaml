@@ -288,6 +288,7 @@ properties:
       device_class: energy
       unit: Wh
       read_only: true
+      state_class: total_increasing
   - property: error_code
     # Sample value: 0
     hide: true
