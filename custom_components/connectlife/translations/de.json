@@ -1961,11 +1961,8 @@
       "dryopen_defaultspinspeed": {
         "name": "Standard Schleudergeschwindigkeit"
       },
-      "electricit_consumption_decimal": {
-        "name": "Stromverbrauch (Dezimal)"
-      },
-      "electricit_consumption_int": {
-        "name": "Stromverbrauch (Ganzzahl)"
+      "electricit_consumption": {
+        "name": "Stromverbrauch"
       },
       "energy_consumption_in_running_program": {
         "name": "Energieverbrauch im laufenden Programm"
@@ -2326,14 +2323,8 @@
           "stopped": "Gestoppt"
         }
       },
-      "sand_timer_1_duration_hours": {
-        "name": "Timer 1 Dauer Stunden"
-      },
-      "sand_timer_1_duration_minutes": {
-        "name": "Timer 1 Dauer Minuten"
-      },
-      "sand_timer_1_duration_seconds": {
-        "name": "Timer 1 Dauer Sekunden"
+      "sand_timer_1_duration": {
+        "name": "Timer 1 Dauer"
       },
       "sand_timer_1_end_utc_datetime_bdc_timestamp": {
         "name": "Timer 1 Endzeit UTC"
@@ -2354,14 +2345,8 @@
           "stopped": "Gestoppt"
         }
       },
-      "sand_timer_2_duration_hours": {
-        "name": "Timer 2 Dauer Stunden"
-      },
-      "sand_timer_2_duration_minutes": {
-        "name": "Timer 2 Dauer Minuten"
-      },
-      "sand_timer_2_duration_seconds": {
-        "name": "Timer 2 Dauer Sekunden"
+      "sand_timer_2_duration": {
+        "name": "Timer 2 Dauer"
       },
       "sand_timer_2_end_utc_datetime_bdc_timestamp": {
         "name": "Timer 2 Endzeit UTC"
@@ -2382,14 +2367,8 @@
           "stopped": "Gestoppt"
         }
       },
-      "sand_timer_3_duration_hours": {
-        "name": "Timer 3 Dauer Stunden"
-      },
-      "sand_timer_3_duration_minutes": {
-        "name": "Timer 3 Dauer Minuten"
-      },
-      "sand_timer_3_duration_seconds": {
-        "name": "Timer 3 Dauer Sekunden"
+      "sand_timer_3_duration": {
+        "name": "Timer 3 Dauer"
       },
       "sand_timer_3_end_utc_datetime_bdc_timestamp": {
         "name": "Timer 3 Endzeit UTC"
@@ -3760,14 +3739,8 @@
       "water_consumption": {
         "name": "Wasserverbrauch"
       },
-      "water_consumption_decimal": {
-        "name": "Wasserverbrauch (Dezimal)"
-      },
       "water_consumption_in_running_program": {
         "name": "Wasserverbrauch im laufenden Programm"
-      },
-      "water_consumption_int": {
-        "name": "Wasserverbrauch"
       },
       "water_hardness": {
         "name": "Wasserh\u00e4rte"

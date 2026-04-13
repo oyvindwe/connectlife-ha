@@ -932,8 +932,8 @@
           "iron": "Seco plancha"
         }
       },
-      "electricit_consumption_int": {
-        "name": "Energia consumida"
+      "electricit_consumption": {
+        "name": "Consumo de electricidad"
       },
       "energy_consumption_in_running_program": {
         "name": "Energia consumida programa en curso"
@@ -1600,9 +1600,6 @@
       },
       "water_consumption_in_running_program": {
         "name": "Agua consumida en programa actual"
-      },
-      "water_consumption_int": {
-        "name": "Agua consumida"
       },
       "zone_number": {
         "name": "N\u00famero de zonas"

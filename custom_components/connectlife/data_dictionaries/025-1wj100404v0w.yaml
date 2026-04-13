@@ -54,22 +54,6 @@ properties:
       max_value: 24
       device_class: duration
       unit: h
-  - property: Electricit_consumption_decimal
-    icon: mdi:lightning-bolt
-    entity_category: diagnostic
-    sensor:
-      read_only: true
-      device_class: energy
-      unit: kWh
-      multiplier: 0.01
-  - property: Water_consumption_decimal
-    icon: mdi:water
-    entity_category: diagnostic
-    sensor:
-      read_only: true
-      device_class: water
-      unit: L
-      multiplier: 0.01
   - property: ApplicationPermissions
     icon: mdi:cellphone-wireless
     entity_category: diagnostic

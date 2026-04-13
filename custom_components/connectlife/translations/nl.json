@@ -1561,9 +1561,6 @@
       "water_consumption_in_running_program": {
         "name": "Waterverbruik in huidig programma"
       },
-      "water_consumption_int": {
-        "name": "Waterverbruik"
-      },
       "water_hardness_setting_status": {
         "name": "Waterhardheid"
       },

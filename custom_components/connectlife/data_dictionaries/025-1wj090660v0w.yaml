@@ -20,13 +20,6 @@ properties:
       options:
         0: false
         1: true
-  - property: Electricit_consumption_int
-    icon: mdi:lightning-bolt
-    sensor:
-      read_only: true
-      state_class: total_increasing
-      device_class: energy
-      unit: kWh
   - property: Energy_estimate
     icon: mdi:lightning-bolt
     sensor:
