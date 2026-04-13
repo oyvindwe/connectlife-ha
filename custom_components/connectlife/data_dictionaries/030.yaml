@@ -233,12 +233,17 @@ properties:
   - property: Sound_setting
     # Sample value: 0
     hide: true
-  - property: StandardElectricitConsumption_int
-    # Sample value: 0
+  - property: StandardElectricitConsumption
     hide: true
-  - property: StandardElectricitconsumption_decimal
-    # Sample value: 0
-    hide: true
+    entity_category: diagnostic
+    sensor:
+      device_class: energy
+      unit: kWh
+      read_only: true
+    combine:
+      - property: StandardElectricitConsumption_int
+      - property: StandardElectricitconsumption_decimal
+        multiplier: 0.01
   - property: Steam
     # Sample value: 0
     hide: true
