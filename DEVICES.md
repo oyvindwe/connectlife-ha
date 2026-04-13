@@ -31,6 +31,7 @@
 |                      | Washing machine          | 025              | 1wj090660v0w           |
 | WF5S9045BW           | Washing machine          | 025              | 1wj090728v0w           |
 | WD3S9043BB3          | Washing machine          | 025              | 1wj090913v0f           |
+| WF3S1014-SVW002      | Washing machine          | 025              | 1wj100404v0w           |
 | WFQR1014             | Washing machine          | 025              | 1wj100649v0t           |
 | WF3S1043BW3          | Washing machine          | 025              | 1wj100722v0w           |
 | HWFS1015AB           | Washing machine          | 025              | 1wj100923v0f           |
@@ -39,6 +40,7 @@
 | WF3S1114-LVW004      | Washing machine          | 025              | 1wj105246v0w           |
 |                      | Washing machine          | 025              | 1wj105418v0t           |
 | WD5I1045BWQ          | Washing machine          | 025              | 1wj105552v0w           |
+| WF5S1245BB           | Washing machine          | 025              | 1wj120238v0b           |
 | WDSE1214-EVAJMW      | Washing machine          | 025              | 1wj120261v0w           |
 | WFSE1214-MVW002      | Washing machine          | 025              | 1wj120389v0b           |
 |                      | Washing machine          | 025              | 1wj120407v0w           |
@@ -57,5 +59,6 @@
 | DH3S802BW3           | Tumble dryer             | 030              | 1wk080066v0w           |
 | DH5S102BW            | Tumble dryer             | 030              | 1wk100028v0w           |
 | DHSE10               | Tumble dryer             | 030              | 1wk100130v0f           |
+| DH5S102BB            | Tumble dryer             | 030              | 1wk100266v0f           |
 | DHSE80-BEW001        | Tumble dryer             | 030              | 1wk080027e0w           |
 | DPNA83W              | Tumble dryer             | 032              | 000                    |
