@@ -1,18 +1,18 @@
 {
   "config": {
     "abort": {
-      "already_configured": "[%key:common::config_flow::abort::already_configured_device%]"
+      "already_configured": "Device is already configured"
     },
     "error": {
-      "cannot_connect": "[%key:common::config_flow::error::cannot_connect%]",
-      "invalid_auth": "[%key:common::config_flow::error::invalid_auth%]",
-      "unknown": "[%key:common::config_flow::error::unknown%]"
+      "cannot_connect": "Failed to connect",
+      "invalid_auth": "Invalid authentication",
+      "unknown": "Unexpected error"
     },
     "step": {
       "user": {
         "data": {
-          "password": "[%key:common::config_flow::data::password%]",
-          "username": "[%key:common::config_flow::data::username%]"
+          "password": "Password",
+          "username": "Username"
         }
       }
     }
@@ -1265,6 +1265,9 @@
       }
     },
     "number": {
+      "delayendtime": {
+        "name": "Delay end time"
+      },
       "delayendtime_hour": {
         "name": "Delayendtime hour"
       },
@@ -1315,7 +1318,6 @@
           "add_duration": "Add duration",
           "add_gratin": "Add gratin",
           "none": "None",
-          "open_door": "Open door",
           "pause": "Pause",
           "start": "Start",
           "steam_shot": "Steam shot",
@@ -1383,7 +1385,6 @@
           "auto": "Auto",
           "less": "Less",
           "more": "More",
-          "off": "Off",
           "standard": "Standard"
         }
       },
@@ -1411,7 +1412,6 @@
           "extra_dry": "Extra dry",
           "iron": "Iron",
           "none": "None",
-          "off": "Off",
           "pre-ironing": "Pre-ironing",
           "wardrobe": "Wardrobe"
         }
@@ -1437,12 +1437,6 @@
           "simplified_chinese": "Simplified chinese"
         }
       },
-      "lightbrightness": {
-        "name": "Light brightness"
-      },
-      "lightcolortemperature": {
-        "name": "Light color temperature"
-      },
       "motorlevel": {
         "name": "Motor level"
       },
@@ -1451,6 +1445,14 @@
         "state": {
           "celsius": "Celsius",
           "fahrenheit": "Fahrenheit"
+        }
+      },
+      "quickermode": {
+        "name": "Quicker mode",
+        "state": {
+          "level_1": "Level 1",
+          "level_2": "Level 2",
+          "none": "None"
         }
       },
       "sand_timer_1_status_cmd": {
@@ -1487,42 +1489,46 @@
           "anti_allergy": "Anti allergy",
           "auto": "Auto",
           "baby": "Baby",
+          "baby_care": "Baby care",
           "bed_linen": "Bed linen",
           "bedding": "Bedding",
           "clean_dry_60": "Clean dry 60",
           "cotton": "Cotton",
           "cotton_dry": "Cotton dry",
-          "cotton_storage": "Cotton storage",
           "delicates": "Delicates",
           "down": "Down",
+          "drum_clean": "Drum clean",
           "drum_cleaning": "Drum cleaning",
+          "duvet": "Duvet",
           "eco": "Eco",
           "eco_40_60": "Eco 40 60",
-          "extra_hygiene": "Extra hygiene",
-          "fast15": "Fast 15",
+          "fast15": "Fast15",
           "fast30": "Quick 30",
-          "fast89": "Fast 89'",
           "full_load_49": "Full load 49",
           "hand_wash": "Hand wash",
-          "iron": "Iron",
+          "ion_refresh": "Ion refresh",
           "jeans": "Jeans",
           "mix": "Mix",
-          "none": "None",
           "pets": "Pets",
           "power49": "Power49",
           "power_30": "Power 30",
+          "power_49": "Power 49",
+          "quick_15": "Quick 15",
+          "quick_30": "Quick 30",
+          "rack_dry": "Rack dry",
           "refresh": "Refresh",
-          "remote": "Remote",
           "rinse_spin": "Rinse spin",
-          "sensitive": "Sensitive",
           "shirts": "Shirts",
+          "silk_delicate": "Silk delicate",
+          "spin": "Spin",
           "spin-dry": "Spin-dry",
           "sports": "Sports",
           "sportswear": "Sportswear",
-          "standard": "Standard",
           "synthetic": "Synthetics",
           "synthetic_dry": "Synthetic dry",
+          "synthetics": "Synthetics",
           "time": "Time",
+          "time_dry": "Time dry",
           "towels": "Towels",
           "wash_and_dry_49": "Wash and dry 49",
           "wool": "Wool"
@@ -1534,21 +1540,13 @@
           "auto": "Auto",
           "less": "Less",
           "more": "More",
-          "off": "Off",
           "standard": "Standard"
         }
       },
       "spin_speed_rpm": {
         "name": "Spin speed",
         "state": {
-          "1000": "1000 RPM",
-          "1200": "1200 RPM",
-          "1400": "1400 RPM",
-          "1600": "1600 RPM",
-          "600": "600 RPM",
-          "800": "800 RPM",
-          "none": "None",
-          "off": "Off"
+          "none": "None"
         }
       },
       "stain_removal": {
@@ -1796,6 +1794,8 @@
       "applicationpermissions": {
         "name": "Application permissions",
         "state": {
+          "disabled": "Disabled",
+          "enabled": "Enabled",
           "granted": "Granted",
           "not_granted": "Not granted"
         }
@@ -1849,7 +1849,6 @@
         }
       },
       "current_program_phase": {
-        "name": "Current program phase",
         "state": {
           "anti_crease": "Anti crease",
           "delay": "Delay",
@@ -1997,7 +1996,6 @@
         "name": "Door status",
         "state": {
           "closed": "Closed",
-          "closed_when_running": "Closed when running",
           "locked": "Locked",
           "not_available": "Not available",
           "open": "Open",
@@ -2031,21 +2029,20 @@
       "error_code": {
         "name": "Error code",
         "state": {
-          "error_f01": "F01 - Water inflow fault",
-          "error_f03": "F03 - Water drain fault",
-          "error_f04": "F04 - Electronic module fault",
-          "error_f05": "F05 - Electronic module fault",
-          "error_f06": "F06 - Electronic module fault",
-          "error_f07": "F07 - Electronic module fault",
-          "error_f13": "F13 - Door lock fault",
-          "error_f14": "F14 - Door unlock fault",
-          "error_f15": "F15 - Abnormal drying",
-          "error_f16": "F16 - Abnormal drying",
-          "error_f17": "F17 - Abnormal drying",
-          "error_f18": "F18 - Abnormal drying",
-          "error_f23": "F23 - Electronic module fault",
-          "error_f24": "F24 - Water level overflow",
-          "error_unb": "UNB - Unbalance alert",
+          "error_f01": "Error f01",
+          "error_f03": "Error f03",
+          "error_f04": "Error f04",
+          "error_f05": "Error f05",
+          "error_f06": "Error f06",
+          "error_f07": "Error f07",
+          "error_f13": "Error f13",
+          "error_f14": "Error f14",
+          "error_f15": "Error f15",
+          "error_f16": "Error f16",
+          "error_f17": "Error f17",
+          "error_f18": "Error f18",
+          "error_f23": "Error f23",
+          "error_f24": "Error f24",
           "none": "None"
         }
       },
@@ -2479,32 +2476,22 @@
           "auto": "Auto",
           "baby": "Baby",
           "bed_linen": "Bed linen",
-          "clean_dry_60": "Clean dry 60",
           "cotton": "Cotton",
-          "cotton_dry": "Cotton dry",
           "cotton_storage": "Cotton storage",
-          "delicates": "Delicates",
           "down": "Down",
-          "drum_cleaning": "Drum Cleaning",
-          "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Extra hygiene",
-          "fast15": "Fast 15",
-          "fast30": "Quick 30",
-          "fast89": "Fast 89",
+          "fast30": "Fast30",
+          "fast89": "Fast89",
           "iron": "Iron",
           "mix": "Mix",
           "none": "None",
-          "power49": "Power 49'",
           "refresh": "Refresh",
           "remote": "Remote",
-          "rinse_spin": "Rinse spin",
           "sensitive": "Sensitive",
           "shirts": "Shirts",
-          "spin-dry": "Spin-dry",
           "sports": "Sports",
           "standard": "Standard",
           "synthetic": "Synthetic",
-          "synthetic_dry": "Synthetic dry",
           "time": "Time",
           "towels": "Towels",
           "wool": "Wool"
@@ -2571,8 +2558,14 @@
           "not_available": "Not available"
         }
       },
+      "selected_program_total_running_time": {
+        "name": "Selected program total running time"
+      },
       "selected_program_total_running_time_in_minutes": {
         "name": "Selected program total running time"
+      },
+      "selected_program_total_time": {
+        "name": "Selected program total time"
       },
       "selected_program_total_time_in_minutes": {
         "name": "Selected program total time"
@@ -3830,6 +3823,9 @@
       "washing_machine_type_max_speed": {
         "name": "Washing machine type max speed"
       },
+      "washing_program_kg": {
+        "name": "Washing program weight"
+      },
       "water_consumption": {
         "name": "Water consumption"
       },
@@ -4109,7 +4105,6 @@
   "selector": {
     "actions": {
       "options": {
-        "0": "None",
         "1": "Stop",
         "2": "Start",
         "3": "Pause",
