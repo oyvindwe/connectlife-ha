@@ -426,7 +426,7 @@ class Dictionaries:
                 "No data dictionary found for %s (%s)", appliance.device_nickname, key
             )
 
-        for prop in properties.values():
+        for prop in list(properties.values()):
             if prop.combine:
                 for source in prop.combine:
                     properties[source[PROPERTY]].disable = True
