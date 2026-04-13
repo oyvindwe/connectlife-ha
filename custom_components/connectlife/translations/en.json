@@ -1272,13 +1272,13 @@
         "name": "Delayendtime hour"
       },
       "freeze_max_temperature": {
-        "name": "Freezeer max temperature"
+        "name": "Freezer max temperature"
       },
       "freeze_min_temperature": {
-        "name": "Freezeer min temperature"
+        "name": "Freezer min temperature"
       },
       "freeze_temperature": {
-        "name": "Freezeer temperature"
+        "name": "Freezer temperature"
       },
       "gratin_from_below_functionset_time_in_seconds": {
         "name": "Gratin from below function set time"
