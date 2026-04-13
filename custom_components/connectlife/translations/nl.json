@@ -2008,10 +2008,10 @@
         "name": "Standaard centrifugesnelheid (open drogen)"
       },
       "electricit_consumption_decimal": {
-        "name": "Energieverbruik"
+        "name": "Energieverbruik (decimaal)"
       },
       "electricit_consumption_int": {
-        "name": "Energieverbruik (afgerond)"
+        "name": "Energieverbruik (hele getal)"
       },
       "energy": {
         "name": "Energie"
@@ -3831,10 +3831,10 @@
         "name": "Wasmachine type maximale snelheid"
       },
       "water_consumption": {
-        "name": "Waterverbruik (afgerond)"
+        "name": "Waterverbruik (hele getal)"
       },
       "water_consumption_decimal": {
-        "name": "Waterverbruik"
+        "name": "Waterverbruik (decimaal)"
       },
       "water_consumption_in_running_program": {
         "name": "Waterverbruik in huidig programma"
