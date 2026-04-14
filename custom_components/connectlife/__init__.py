@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import logging
 
-from homeassistant.exceptions import ConfigEntryError, ConfigEntryNotReady
+from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import Platform, CONF_USERNAME, CONF_PASSWORD
 from homeassistant.core import HomeAssistant
@@ -54,7 +54,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     try:
         await api.login()
     except LifeConnectAuthError as ex:
-        raise ConfigEntryError from ex
+        raise ConfigEntryAuthFailed from ex
     except LifeConnectError as ex:
         raise ConfigEntryNotReady from ex
     coordinator = ConnectLifeCoordinator(hass, api)
