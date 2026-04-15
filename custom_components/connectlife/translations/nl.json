@@ -360,9 +360,6 @@
       "auto_dose_refill": {
         "name": "Auto doseer bijvullen"
       },
-      "automatic_ice_making": {
-        "name": "Automatisch ijs maken"
-      },
       "charcoal_filter_expiration_alarm": {
         "name": "Einde levensduur koolstoffilter"
       },
@@ -401,9 +398,6 @@
       },
       "control_failure_status": {
         "name": "Besturing storing"
-      },
-      "crisp_function_status": {
-        "name": "Crisp-functie"
       },
       "delay_start": {
         "name": "Uitgestelde start"
@@ -579,9 +573,6 @@
       "existing_sr_mode": {
         "name": "Bestaande SR mode"
       },
-      "extra_rinse": {
-        "name": "Spoelen+"
-      },
       "extra_rinse_status": {
         "name": "Spoelen+"
       },
@@ -725,12 +716,6 @@
       },
       "hard_pairing_status": {
         "name": "Harde koppelingsstatus"
-      },
-      "high_humidity": {
-        "name": "Hoge luchtvochtigheid"
-      },
-      "high_temperature": {
-        "name": "Hoge temperatuur"
       },
       "hob_status": {
         "name": "Kookplaatstatus"
@@ -900,9 +885,6 @@
       "sabbath_mode_switch_status": {
         "name": "Sabbatmodus schakelstatus"
       },
-      "save_mode": {
-        "name": "Spaarstand"
-      },
       "selected_program_anticrease_status": {
         "name": "Anti-kreuk"
       },
@@ -935,9 +917,6 @@
       },
       "session_pairing_setting": {
         "name": "Sessiekoppeling instelling"
-      },
-      "sf_mode": {
-        "name": "SF-modus"
       },
       "sl1_alarm_auto_program_notification": {
         "name": "Zone 1 automatische programmamelding"
@@ -1092,9 +1071,6 @@
       "softer_display": {
         "name": "Display wasverzachter"
       },
-      "sr_mode": {
-        "name": "SR-modus"
-      },
       "steam123_0_available": {
         "name": "Steam123 0 beschikbaar"
       },
@@ -1128,23 +1104,11 @@
       "step3_steam_assist": {
         "name": "Stap 3 stoomondersteuning"
       },
-      "step_1_fastpreheat_function": {
-        "name": "Stap 1: snelvoorverwarmfunctie"
-      },
       "step_1_status": {
         "name": "Status stap 1"
       },
       "step_2_status": {
         "name": "Status stap 2"
-      },
-      "step_3_steam_available": {
-        "name": "Stap 3: stoom beschikbaar"
-      },
-      "step_after_bake_status": {
-        "name": "Status na bakstap"
-      },
-      "step_pre_bake_status": {
-        "name": "Status voor bakstap"
       },
       "stopaddgo_status": {
         "name": "Stop & Go"
@@ -1154,9 +1118,6 @@
       },
       "t_beep": {
         "name": "Piep"
-      },
-      "tab_setting_status": {
-        "name": "Tab-instelling"
       },
       "tx_failure": {
         "name": "TX storing"
@@ -1426,14 +1387,6 @@
           "wardrobe": "Kastdroog"
         }
       },
-      "drymodel": {
-        "name": "Droger model",
-        "state": {
-          "dry_only": "Alleen drogen",
-          "wash": "Wassen",
-          "wash_and_dry": "Wassen en drogen"
-        }
-      },
       "extrarinsenum": {
         "name": "Extra spoelen",
         "state": {
@@ -1560,25 +1513,10 @@
           "1000": "1000 toeren",
           "1200": "1200 toeren",
           "1400": "1400 toeren",
-          "1600": "1600 toeren",
           "600": "600 toeren",
           "800": "800 toeren",
           "none": "Geen",
           "off": "Uit"
-        }
-      },
-      "stain_removal": {
-        "name": "Vlekken verwijderen",
-        "state": {
-          "blood": "Bloed",
-          "coffee": "Koffie",
-          "grass": "Gras",
-          "juice": "Sap",
-          "milk": "Melk",
-          "oil": "Olie",
-          "soil": "Vuil",
-          "sweat": "Zweet",
-          "wine": "Wijn"
         }
       },
       "steam_123": {
@@ -1665,14 +1603,6 @@
         "name": "Stap 3 magnetronvermogen instellen",
         "state": {
           "none": "Geen"
-        }
-      },
-      "step_3_status": {
-        "name": "Stap 3 status",
-        "state": {
-          "active": "Actief",
-          "available": "Beschikbaar",
-          "not_active": "Niet actief"
         }
       },
       "step_3_time_unit": {
@@ -1788,15 +1718,6 @@
       }
     },
     "sensor": {
-      "ado_allowed": {
-        "name": "ADO toegestaan"
-      },
-      "alarm_door_closed": {
-        "name": "Deur gesloten"
-      },
-      "alarm_door_opened": {
-        "name": "Deur geopend"
-      },
       "almost_finished_notification_settingtimer_in_minutes": {
         "name": "Bijna voltooid notificatiesettingtimer in minuten"
       },
@@ -1820,9 +1741,6 @@
       },
       "auto_dose_duration": {
         "name": "Auto doseer duur"
-      },
-      "auto_dose_refill": {
-        "name": "Auto doseer bijvullen"
       },
       "autodose_flag": {
         "name": "Auto dosering",
@@ -1939,40 +1857,8 @@
       "delaystart_delayend_remaining_timein_minutes": {
         "name": "Resterende tijd uitstel start"
       },
-      "detergent": {
-        "name": "Wasmiddel",
-        "state": {
-          "less": "Minder",
-          "more": "Meer",
-          "standard": "Standaard"
-        }
-      },
-      "detergent_display": {
-        "name": "Wasmiddel display"
-      },
       "detergentstandarddosage": {
-        "name": "Wasmiddel standaard dosering",
-        "state": {
-          "100ml": "100 ml",
-          "10ml": "10 ml",
-          "15ml": "15 ml",
-          "20ml": "20 ml",
-          "25ml": "25 ml",
-          "30ml": "30 ml",
-          "35ml": "35 ml",
-          "40ml": "40 ml",
-          "45ml": "45 ml",
-          "50ml": "50 ml",
-          "55ml": "55 ml",
-          "60ml": "60 ml",
-          "65ml": "65 ml",
-          "70ml": "70 ml",
-          "75ml": "75 ml",
-          "80ml": "80 ml",
-          "85ml": "85 ml",
-          "90ml": "90 ml",
-          "95ml": "95 ml"
-        }
+        "name": "Wasmiddel standaard dosering"
       },
       "device_status": {
         "state": {
@@ -2043,24 +1929,7 @@
         "name": "Werkelijke omgevingstemperatuur"
       },
       "error_code": {
-        "name": "Foutmelding",
-        "state": {
-          "error_f01": "F01 - Watertoevoer fout",
-          "error_f03": "F03 - Waterafvoer fout",
-          "error_f04": "F04 - Electronische module fout",
-          "error_f05": "F05 - Electronische module fout",
-          "error_f06": "F06 - Electronische module fout",
-          "error_f07": "F07 - Electronische module fout",
-          "error_f13": "F13 - Deurvergrendeling fout",
-          "error_f14": "F14 - Deurontgrendeling fout",
-          "error_f15": "F15 - Abnormaal drogen",
-          "error_f16": "F16 - Abnormaal drogen",
-          "error_f17": "F17 - Abnormaal drogen",
-          "error_f18": "F18 - Abnormaal drogen",
-          "error_f23": "F23 - Electronische module fout",
-          "error_f24": "F24 - Water overloop pleil",
-          "none": "Geen"
-        }
+        "name": "Foutmelding"
       },
       "error_read_out_1_code": {
         "name": "Foutcode uitlezen 1"
@@ -2141,9 +2010,6 @@
       "freeze_sensor_real_temperature": {
         "name": "Sensor temperatuur vriezer"
       },
-      "freeze_temperature": {
-        "name": "Vriezertemperatuur"
-      },
       "fruit_vegetables_temperature": {
         "name": "Temperatuur groente- en fruitlade"
       },
@@ -2211,9 +2077,6 @@
         "state": {
           "off_hot": "Uit (heet)"
         }
-      },
-      "interior_light_at_power_off_setting_status": {
-        "name": "Interieurverlichting bij uitschakelen"
       },
       "interior_light_status": {
         "name": "Interieurverlichting"
@@ -2298,13 +2161,6 @@
       "oven_temperature": {
         "name": "Oventemperatuur"
       },
-      "oven_temperature_unit_setting": {
-        "name": "Temperatuureenheid",
-        "state": {
-          "degree_celsius": "Celsius",
-          "degree_fahrenheit": "Fahrenheit"
-        }
-      },
       "oven_usage_value_alarm_limit": {
         "name": "Waarschuwingslimiet ovengebruik"
       },
@@ -2346,9 +2202,6 @@
       },
       "refrigerator_sensor_real_temperature": {
         "name": "Werkelijke koelkastsensortemperatuur"
-      },
-      "refrigerator_temperature": {
-        "name": "Koelkast temperatuur"
       },
       "remaining_time_of_selected_program": {
         "name": "Resterende tijd van geselecteerd programma"
@@ -2461,29 +2314,20 @@
           "stopped": "Gestopt"
         }
       },
-      "scanned_ean_code": {
-        "name": "Gescande EAN code"
-      },
       "selected_program_duration_in_minutes": {
         "name": "Geselecteerd programma duur"
       },
       "selected_program_id": {
         "name": "Geselecteerd programma",
         "state": {
-          "anti_allergy": "Anti-allergie",
-          "auto": "Auto",
           "baby": "Baby Care",
           "bed_linen": "Bedlinnen",
-          "cotton": "Katoen",
           "cotton_storage": "Katoen opslag",
-          "down": "Dons",
           "extra_hygiene": "Extra hygi\u00ebne",
-          "fast30": "Snel 30'",
           "fast89": "Snel 89'",
           "iron": "Strijken",
           "mix": "Mix",
           "none": "Geen",
-          "refresh": "Opfrissen",
           "remote": "Op afstand",
           "sensitive": "Gevoelig",
           "shirts": "Shirts",
@@ -2491,7 +2335,6 @@
           "standard": "Standaard",
           "synthetic": "Synthetisch",
           "time": "Tijd",
-          "towels": "Handdoeken",
           "wool": "Wol"
         }
       },
@@ -2869,40 +2712,8 @@
           "square": "Vierkant"
         }
       },
-      "softener": {
-        "name": "Wasverzachter",
-        "state": {
-          "less": "Minder",
-          "more": "Meer",
-          "standard": "Standaard"
-        }
-      },
-      "softer_display": {
-        "name": "Wasverzachter display"
-      },
       "softnerstandarddosage": {
-        "name": "Wasverzachter standaard dosering",
-        "state": {
-          "100ml": "100 ml",
-          "10ml": "10 ml",
-          "15ml": "15 ml",
-          "20ml": "20 ml",
-          "25ml": "25 ml",
-          "30ml": "30 ml",
-          "35ml": "35 ml",
-          "40ml": "40 ml",
-          "45ml": "45 ml",
-          "50ml": "50 ml",
-          "55ml": "55 ml",
-          "60ml": "60 ml",
-          "65ml": "65 ml",
-          "70ml": "70 ml",
-          "75ml": "75 ml",
-          "80ml": "80 ml",
-          "85ml": "85 ml",
-          "90ml": "90 ml",
-          "95ml": "95 ml"
-        }
+        "name": "Wasverzachter standaard dosering"
       },
       "sound_setting": {
         "name": "Geluid"
@@ -2955,14 +2766,12 @@
           "eco_hot_air": "Eco hete lucht",
           "fast_preheat": "Snel voorverwarmen",
           "grill_fan_micro": "Grill ventilator micro",
-          "grillfanmicro": "Grill ventilator micro",
           "hot_air": "Hete lucht",
           "hot_air_bottom": "Hete lucht onder",
           "hot_air_micro": "Hete lucht micro",
           "hot_air_steam_1": "Hete lucht stoom 1",
           "hot_air_steam_2": "Hete lucht stoom 2",
           "hot_air_steam_3": "Hete lucht stoom 3",
-          "hotairmicro": "Hete lucht micro",
           "keep_warm": "Warm houden",
           "large_grill": "Grote grill",
           "large_grill_fan": "Grote grill ventilator",
@@ -3130,23 +2939,6 @@
       "step3_steam_assistset_time_in_minutes": {
         "name": "Stap 3 stoom assist ingestelde tijd"
       },
-      "step_1_bake_mode": {
-        "name": "Stap 1 bakmodus",
-        "state": {
-          "autobake": "AutoBake",
-          "extrabake": "ExtraBake",
-          "extrabake_cleaning": "ExtraBake - Schoonmaken",
-          "extrabake_fastpreheat": "ExtraBake - Snelle voorverwarming",
-          "extrabake_warming": "ExtraBake - Verwarmen",
-          "meatprobebake": "MeatProbeBake",
-          "probake": "ProBake",
-          "recipe": "Recept",
-          "steambake": "SteamBake",
-          "steamcombibake": "SteamCombiBake",
-          "stepbake": "StepBake",
-          "undefined": "Ongedefinieerd"
-        }
-      },
       "step_1_duration": {
         "name": "Stap 1 duur"
       },
@@ -3234,12 +3026,6 @@
           "warming": "Verwarmen"
         }
       },
-      "step_1_set_microwave_wattage": {
-        "name": "Stap 1 zet magnetron wattage",
-        "state": {
-          "none": "Geen"
-        }
-      },
       "step_1_set_temperature": {
         "name": "Stap 1 ingestelde temperatuur"
       },
@@ -3249,27 +3035,6 @@
           "active": "Actief",
           "available": "Beschikbaar",
           "not_active": "Niet actief"
-        }
-      },
-      "step_1_time_unit": {
-        "name": "Stap 1 tijdseenheid",
-        "state": {
-          "hours": "Uren",
-          "minutes": "Minuten",
-          "seconds": "Seconden"
-        }
-      },
-      "step_2_bake_mode": {
-        "name": "Stap 2 bakmodus",
-        "state": {
-          "autobake": "AutoBake",
-          "extrabake": "ExtraBake",
-          "probake": "ProBake",
-          "recipe": "Recept",
-          "steambake": "SteamBake",
-          "steamcombibake": "SteamCombiBake",
-          "stepbake": "StepBake",
-          "undefined": "Ongedefinieerd"
         }
       },
       "step_2_duration": {
@@ -3359,12 +3124,6 @@
           "warming": "Verwarmen"
         }
       },
-      "step_2_set_microwave_wattage": {
-        "name": "Stap 2 zet magnetron wattage",
-        "state": {
-          "none": "Geen"
-        }
-      },
       "step_2_set_temperature": {
         "name": "Stap 2 ingestelde temperatuur"
       },
@@ -3374,27 +3133,6 @@
           "active": "Actief",
           "available": "Beschikbaar",
           "not_active": "Niet actief"
-        }
-      },
-      "step_2_time_unit": {
-        "name": "Stap 2 tijdseenheid",
-        "state": {
-          "hours": "Uren",
-          "minutes": "Minuten",
-          "seconds": "Seconden"
-        }
-      },
-      "step_3_bake_mode": {
-        "name": "Stap 3 bakmodus",
-        "state": {
-          "autobake": "AutoBake",
-          "extrabake": "ExtraBake",
-          "probake": "ProBake",
-          "recipe": "Recept",
-          "steambake": "SteamBake",
-          "steamcombibake": "SteamCombiBake",
-          "stepbake": "StepBake",
-          "undefined": "Ongedefinieerd"
         }
       },
       "step_3_duration": {
@@ -3484,12 +3222,6 @@
           "warming": "Verwarmen"
         }
       },
-      "step_3_set_microwave_wattage": {
-        "name": "Stap 3 zet magnetron wattage",
-        "state": {
-          "none": "Geen"
-        }
-      },
       "step_3_set_temperature": {
         "name": "Stap 3 ingestelde temperatuur"
       },
@@ -3509,22 +3241,8 @@
           "not_active": "Niet actief"
         }
       },
-      "step_3_time_unit": {
-        "name": "Stap 3 tijdseenheid",
-        "state": {
-          "hours": "Uren",
-          "minutes": "Minuten",
-          "seconds": "Seconden"
-        }
-      },
       "step_after_bake_duration": {
         "name": "Stap na bakken duur"
-      },
-      "step_after_bake_mode": {
-        "name": "Stap na bakken modus",
-        "state": {
-          "gratine": "Gratine"
-        }
       },
       "step_after_bake_passed_time": {
         "name": "Stap na bakken verstreken tijd"
@@ -3613,24 +3331,8 @@
       "step_after_bake_set_temperature": {
         "name": "Stap na bakken ingestelde temperatuur"
       },
-      "step_after_bake_time_unit": {
-        "name": "Stap na bakken tijdseenheid",
-        "state": {
-          "hours": "Uren",
-          "minutes": "Minuten",
-          "seconds": "Seconden"
-        }
-      },
       "step_pre_bake_duration": {
         "name": "Stap voor bakken duur"
-      },
-      "step_pre_bake_mode": {
-        "name": "Stap voor bakken modus",
-        "state": {
-          "delay_start_waiting": "Delay start waiting",
-          "not_active": "Not active",
-          "preheat": "Preheat"
-        }
       },
       "step_pre_bake_passed_time": {
         "name": "Stap voor bakken verstreken tijd"
@@ -3719,20 +3421,6 @@
       "step_pre_bake_set_temperature": {
         "name": "Stap voor bakken ingestelde temperatuur"
       },
-      "step_pre_bake_time_unit": {
-        "name": "Stap voor bakken tijdeenheid",
-        "state": {
-          "hours": "Uren",
-          "minutes": "Minuten",
-          "seconds": "Seconden"
-        }
-      },
-      "super_rinse_setting_status": {
-        "name": "Super spoelen"
-      },
-      "t_sleep": {
-        "name": "Slaap"
-      },
       "temperature": {
         "name": "Temperatuur"
       },
@@ -3741,20 +3429,6 @@
       },
       "temperature_room_judge": {
         "name": "Temperatuur kamer beoordeling"
-      },
-      "temperature_unit": {
-        "name": "Temperatuureenheid",
-        "state": {
-          "celsius": "Celsius",
-          "fahrenheit": "Fahrenheit"
-        }
-      },
-      "time_format": {
-        "name": "Tijdsweergave",
-        "state": {
-          "12h": "12-uurs",
-          "24h": "24-uurs"
-        }
       },
       "total_duration_in_seconds": {
         "name": "Totale duur"
@@ -3807,20 +3481,6 @@
       "variation_sensor_real_temperature": {
         "name": "Werkelijke variatiesensortemperatuur"
       },
-      "variation_temperature": {
-        "name": "Variatie temperatuur"
-      },
-      "volume": {
-        "name": "Volume"
-      },
-      "warming_drawer_power_level": {
-        "name": "Opwarmlade vermogensniveau",
-        "state": {
-          "high": "Hoog",
-          "low": "Laag",
-          "medium": "Medium"
-        }
-      },
       "washing_machine_type_kg": {
         "name": "Wasmachine type kg"
       },
@@ -3835,9 +3495,6 @@
       },
       "water_consumption_in_running_program": {
         "name": "Waterverbruik in huidig programma"
-      },
-      "water_hardness": {
-        "name": "Waterhardheid"
       },
       "water_hardness_setting_status": {
         "name": "Waterhardheid",
@@ -3887,9 +3544,6 @@
       "child_lock": {
         "name": "Kinderbeveiliging"
       },
-      "coldwash": {
-        "name": "Koude was"
-      },
       "crisp_function_status": {
         "name": "Crisp-functie"
       },
@@ -3898,9 +3552,6 @@
       },
       "display_standby": {
         "name": "Display standby"
-      },
-      "downlight": {
-        "name": "Down light"
       },
       "drum_light": {
         "name": "Trommelverlichting"
@@ -3977,9 +3628,6 @@
       "t_air": {
         "name": "Lucht"
       },
-      "t_beep": {
-        "name": "Pieptoon"
-      },
       "t_dimmer": {
         "name": "Dimmer"
       },
@@ -3988,9 +3636,6 @@
       },
       "t_fan_mute": {
         "name": "Ventilator stil"
-      },
-      "t_power": {
-        "name": "Stroom"
       },
       "t_purify": {
         "name": "Zuiveren"

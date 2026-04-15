@@ -360,9 +360,6 @@
       "auto_dose_refill": {
         "name": "Auto dose refill"
       },
-      "automatic_ice_making": {
-        "name": "Automatic ice making"
-      },
       "charcoal_filter_expiration_alarm": {
         "name": "Charcoal filter expiration alarm"
       },
@@ -401,9 +398,6 @@
       },
       "control_failure_status": {
         "name": "Control failure status"
-      },
-      "crisp_function_status": {
-        "name": "Crisp function status"
       },
       "delay_start": {
         "name": "Delay start"
@@ -579,9 +573,6 @@
       "existing_sr_mode": {
         "name": "Existing SR mode"
       },
-      "extra_rinse": {
-        "name": "Extra rinse"
-      },
       "extra_rinse_status": {
         "name": "Extra rinse"
       },
@@ -725,12 +716,6 @@
       },
       "hard_pairing_status": {
         "name": "Hard pairing status"
-      },
-      "high_humidity": {
-        "name": "High humidity"
-      },
-      "high_temperature": {
-        "name": "High temperature"
       },
       "hob_status": {
         "name": "Hob status"
@@ -900,9 +885,6 @@
       "sabbath_mode_switch_status": {
         "name": "Sabbath mode switch status"
       },
-      "save_mode": {
-        "name": "Save mode"
-      },
       "selected_program_anticrease_status": {
         "name": "Anti crease"
       },
@@ -935,9 +917,6 @@
       },
       "session_pairing_setting": {
         "name": "Session pairing setting"
-      },
-      "sf_mode": {
-        "name": "SF mode"
       },
       "sl1_alarm_auto_program_notification": {
         "name": "Zone 1 auto program notification"
@@ -1092,9 +1071,6 @@
       "softer_display": {
         "name": "Softener display"
       },
-      "sr_mode": {
-        "name": "SR mode"
-      },
       "steam123_0_available": {
         "name": "Steam123 0 available"
       },
@@ -1128,23 +1104,11 @@
       "step3_steam_assist": {
         "name": "Step 3 steam assist"
       },
-      "step_1_fastpreheat_function": {
-        "name": "Step 1 fastpreheat function"
-      },
       "step_1_status": {
         "name": "Step 1 status"
       },
       "step_2_status": {
         "name": "Step 2 status"
-      },
-      "step_3_steam_available": {
-        "name": "Step 3 steam available"
-      },
-      "step_after_bake_status": {
-        "name": "Step after bake status"
-      },
-      "step_pre_bake_status": {
-        "name": "Step pre bake status"
       },
       "stopaddgo_status": {
         "name": "Stop & Go"
@@ -1154,9 +1118,6 @@
       },
       "t_beep": {
         "name": "Beep"
-      },
-      "tab_setting_status": {
-        "name": "Tab setting"
       },
       "tx_failure": {
         "name": "TX failure"
@@ -1426,14 +1387,6 @@
           "wardrobe": "Wardrobe"
         }
       },
-      "drymodel": {
-        "name": "Dry model",
-        "state": {
-          "dry_only": "Dry only",
-          "wash": "Wash",
-          "wash_and_dry": "Wash and dry"
-        }
-      },
       "extrarinsenum": {
         "name": "Extra rinse",
         "state": {
@@ -1560,25 +1513,10 @@
           "1000": "1000 RPM",
           "1200": "1200 RPM",
           "1400": "1400 RPM",
-          "1600": "1600 RPM",
           "600": "600 RPM",
           "800": "800 RPM",
           "none": "None",
           "off": "Off"
-        }
-      },
-      "stain_removal": {
-        "name": "Stain removal",
-        "state": {
-          "blood": "Blood",
-          "coffee": "Coffee",
-          "grass": "Grass",
-          "juice": "Juice",
-          "milk": "Milk",
-          "oil": "Oil",
-          "soil": "Soil",
-          "sweat": "Sweat",
-          "wine": "Wine"
         }
       },
       "steam_123": {
@@ -1665,14 +1603,6 @@
         "name": "Step 3 set microwave wattage",
         "state": {
           "none": "None"
-        }
-      },
-      "step_3_status": {
-        "name": "Step 3 status",
-        "state": {
-          "active": "Active",
-          "available": "Available",
-          "not_active": "Not active"
         }
       },
       "step_3_time_unit": {
@@ -1788,15 +1718,6 @@
       }
     },
     "sensor": {
-      "ado_allowed": {
-        "name": "ADO allowed"
-      },
-      "alarm_door_closed": {
-        "name": "Door closed"
-      },
-      "alarm_door_opened": {
-        "name": "Door open"
-      },
       "almost_finished_notification_settingtimer_in_minutes": {
         "name": "Almost finished notification settingtimer in minutes"
       },
@@ -1804,6 +1725,7 @@
         "name": "Anti crease duration"
       },
       "appliance_status": {
+        "name": "Appliance status",
         "state": {
           "idle": "Idle",
           "running": "Running"
@@ -1820,9 +1742,6 @@
       },
       "auto_dose_duration": {
         "name": "Auto dose duration"
-      },
-      "auto_dose_refill": {
-        "name": "Auto dose refill"
       },
       "autodose_flag": {
         "name": "Auto dose flag",
@@ -1892,6 +1811,7 @@
         }
       },
       "current_programphase": {
+        "name": "Current programphase",
         "state": {
           "running": "Running"
         }
@@ -1939,42 +1859,11 @@
       "delaystart_delayend_remaining_timein_minutes": {
         "name": "Delay start remaining time"
       },
-      "detergent": {
-        "name": "Detergent",
-        "state": {
-          "less": "Less",
-          "more": "More",
-          "standard": "Standard"
-        }
-      },
-      "detergent_display": {
-        "name": "Detergent display"
-      },
       "detergentstandarddosage": {
-        "name": "Detergent standard dosage",
-        "state": {
-          "100ml": "100 ml",
-          "10ml": "10 ml",
-          "15ml": "15 ml",
-          "20ml": "20 ml",
-          "25ml": "25 ml",
-          "30ml": "30 ml",
-          "35ml": "35 ml",
-          "40ml": "40 ml",
-          "45ml": "45 ml",
-          "50ml": "50 ml",
-          "55ml": "55 ml",
-          "60ml": "60 ml",
-          "65ml": "65 ml",
-          "70ml": "70 ml",
-          "75ml": "75 ml",
-          "80ml": "80 ml",
-          "85ml": "85 ml",
-          "90ml": "90 ml",
-          "95ml": "95 ml"
-        }
+        "name": "Detergent standard dosage"
       },
       "device_status": {
+        "name": "Device status",
         "state": {
           "after_bake_finished": "After bake finished",
           "delay_time_waiting": "Delay time waiting",
@@ -2043,24 +1932,7 @@
         "name": "Environment real temperature"
       },
       "error_code": {
-        "name": "Error code",
-        "state": {
-          "error_f01": "Error f01",
-          "error_f03": "Error f03",
-          "error_f04": "Error f04",
-          "error_f05": "Error f05",
-          "error_f06": "Error f06",
-          "error_f07": "Error f07",
-          "error_f13": "Error f13",
-          "error_f14": "Error f14",
-          "error_f15": "Error f15",
-          "error_f16": "Error f16",
-          "error_f17": "Error f17",
-          "error_f18": "Error f18",
-          "error_f23": "Error f23",
-          "error_f24": "Error f24",
-          "none": "None"
-        }
+        "name": "Error code"
       },
       "error_read_out_1_code": {
         "name": "Error read out 1 code"
@@ -2141,9 +2013,6 @@
       "freeze_sensor_real_temperature": {
         "name": "Freezer sensor real temperature"
       },
-      "freeze_temperature": {
-        "name": "Freeze temperature"
-      },
       "fruit_vegetables_temperature": {
         "name": "Fruit vegetables temperature"
       },
@@ -2211,9 +2080,6 @@
         "state": {
           "off_hot": "Off hot"
         }
-      },
-      "interior_light_at_power_off_setting_status": {
-        "name": "Interior light at power off"
       },
       "interior_light_status": {
         "name": "Interior light"
@@ -2298,13 +2164,6 @@
       "oven_temperature": {
         "name": "Oven temperature"
       },
-      "oven_temperature_unit_setting": {
-        "name": "Oven temperature unit setting",
-        "state": {
-          "degree_celsius": "Celsius",
-          "degree_fahrenheit": "Fahrenheit"
-        }
-      },
       "oven_usage_value_alarm_limit": {
         "name": "Oven usage value alarm limit"
       },
@@ -2346,9 +2205,6 @@
       },
       "refrigerator_sensor_real_temperature": {
         "name": "Refrigerator sensor real temperature"
-      },
-      "refrigerator_temperature": {
-        "name": "Refrigerator temperature"
       },
       "remaining_time_of_selected_program": {
         "name": "Remaining time of selected program"
@@ -2461,29 +2317,20 @@
           "stopped": "Stopped"
         }
       },
-      "scanned_ean_code": {
-        "name": "Scanned EAN code"
-      },
       "selected_program_duration_in_minutes": {
         "name": "Selected program duration"
       },
       "selected_program_id": {
         "name": "Selected program",
         "state": {
-          "anti_allergy": "Anti allergy",
-          "auto": "Auto",
           "baby": "Baby",
           "bed_linen": "Bed linen",
-          "cotton": "Cotton",
           "cotton_storage": "Cotton storage",
-          "down": "Down",
           "extra_hygiene": "Extra hygiene",
-          "fast30": "Fast30",
           "fast89": "Fast89",
           "iron": "Iron",
           "mix": "Mix",
           "none": "None",
-          "refresh": "Refresh",
           "remote": "Remote",
           "sensitive": "Sensitive",
           "shirts": "Shirts",
@@ -2491,7 +2338,6 @@
           "standard": "Standard",
           "synthetic": "Synthetic",
           "time": "Time",
-          "towels": "Towels",
           "wool": "Wool"
         }
       },
@@ -2869,40 +2715,8 @@
           "square": "Square"
         }
       },
-      "softener": {
-        "name": "Softener",
-        "state": {
-          "less": "Less",
-          "more": "More",
-          "standard": "Standard"
-        }
-      },
-      "softer_display": {
-        "name": "Softener display"
-      },
       "softnerstandarddosage": {
-        "name": "Softener standard dosage",
-        "state": {
-          "100ml": "100 ml",
-          "10ml": "10 ml",
-          "15ml": "15 ml",
-          "20ml": "20 ml",
-          "25ml": "25 ml",
-          "30ml": "30 ml",
-          "35ml": "35 ml",
-          "40ml": "40 ml",
-          "45ml": "45 ml",
-          "50ml": "50 ml",
-          "55ml": "55 ml",
-          "60ml": "60 ml",
-          "65ml": "65 ml",
-          "70ml": "70 ml",
-          "75ml": "75 ml",
-          "80ml": "80 ml",
-          "85ml": "85 ml",
-          "90ml": "90 ml",
-          "95ml": "95 ml"
-        }
+        "name": "Softener standard dosage"
       },
       "sound_setting": {
         "name": "Sound setting"
@@ -2955,14 +2769,12 @@
           "eco_hot_air": "Eco hot air",
           "fast_preheat": "Fast preheat",
           "grill_fan_micro": "Grill fan micro",
-          "grillfanmicro": "Grill + fan + microwave",
           "hot_air": "Hot air",
           "hot_air_bottom": "Hot air bottom",
           "hot_air_micro": "Hot air micro",
           "hot_air_steam_1": "Hot air steam 1",
           "hot_air_steam_2": "Hot air steam 2",
           "hot_air_steam_3": "Hot air steam 3",
-          "hotairmicro": "Hot air + microwave",
           "keep_warm": "Keep warm",
           "large_grill": "Large grill",
           "large_grill_fan": "Large grill fan",
@@ -3130,23 +2942,6 @@
       "step3_steam_assistset_time_in_minutes": {
         "name": "Step 3 steam assist set time"
       },
-      "step_1_bake_mode": {
-        "name": "Step 1 bake mode",
-        "state": {
-          "autobake": "AutoBake",
-          "extrabake": "ExtraBake",
-          "extrabake_cleaning": "ExtraBake - Cleaning",
-          "extrabake_fastpreheat": "ExtraBake - Fast preheat",
-          "extrabake_warming": "ExtraBake - Warming",
-          "meatprobebake": "MeatProbeBake",
-          "probake": "ProBake",
-          "recipe": "Recipe",
-          "steambake": "SteamBake",
-          "steamcombibake": "SteamCombiBake",
-          "stepbake": "StepBake",
-          "undefined": "Undefined"
-        }
-      },
       "step_1_duration": {
         "name": "Step 1 duration"
       },
@@ -3234,12 +3029,6 @@
           "warming": "Warming"
         }
       },
-      "step_1_set_microwave_wattage": {
-        "name": "Step 1 set microwave wattage",
-        "state": {
-          "none": "None"
-        }
-      },
       "step_1_set_temperature": {
         "name": "Step 1 set temperature"
       },
@@ -3249,27 +3038,6 @@
           "active": "Active",
           "available": "Available",
           "not_active": "Not active"
-        }
-      },
-      "step_1_time_unit": {
-        "name": "Step 1 time unit",
-        "state": {
-          "hours": "Hours",
-          "minutes": "Minutes",
-          "seconds": "Seconds"
-        }
-      },
-      "step_2_bake_mode": {
-        "name": "Step 2 bake mode",
-        "state": {
-          "autobake": "AutoBake",
-          "extrabake": "ExtraBake",
-          "probake": "ProBake",
-          "recipe": "Recipe",
-          "steambake": "SteamBake",
-          "steamcombibake": "SteamCombiBake",
-          "stepbake": "StepBake",
-          "undefined": "Undefined"
         }
       },
       "step_2_duration": {
@@ -3359,12 +3127,6 @@
           "warming": "Warming"
         }
       },
-      "step_2_set_microwave_wattage": {
-        "name": "Step 2 set microwave wattage",
-        "state": {
-          "none": "None"
-        }
-      },
       "step_2_set_temperature": {
         "name": "Step 2 set temperature"
       },
@@ -3374,27 +3136,6 @@
           "active": "Active",
           "available": "Available",
           "not_active": "Not active"
-        }
-      },
-      "step_2_time_unit": {
-        "name": "Step 2 time unit",
-        "state": {
-          "hours": "Hours",
-          "minutes": "Minutes",
-          "seconds": "Seconds"
-        }
-      },
-      "step_3_bake_mode": {
-        "name": "Step 3 bake mode",
-        "state": {
-          "autobake": "AutoBake",
-          "extrabake": "ExtraBake",
-          "probake": "ProBake",
-          "recipe": "Recipe",
-          "steambake": "SteamBake",
-          "steamcombibake": "SteamCombiBake",
-          "stepbake": "StepBake",
-          "undefined": "Undefined"
         }
       },
       "step_3_duration": {
@@ -3484,12 +3225,6 @@
           "warming": "Warming"
         }
       },
-      "step_3_set_microwave_wattage": {
-        "name": "Step 3 set microwave wattage",
-        "state": {
-          "none": "None"
-        }
-      },
       "step_3_set_temperature": {
         "name": "Step 3 set temperature"
       },
@@ -3509,22 +3244,8 @@
           "not_active": "Not active"
         }
       },
-      "step_3_time_unit": {
-        "name": "Step 3 time unit",
-        "state": {
-          "hours": "Hours",
-          "minutes": "Minutes",
-          "seconds": "Seconds"
-        }
-      },
       "step_after_bake_duration": {
         "name": "Step after bake duration"
-      },
-      "step_after_bake_mode": {
-        "name": "Step after bake mode",
-        "state": {
-          "gratine": "Gratine"
-        }
       },
       "step_after_bake_passed_time": {
         "name": "Step after bake passed time"
@@ -3613,24 +3334,8 @@
       "step_after_bake_set_temperature": {
         "name": "Step after bake set temperature"
       },
-      "step_after_bake_time_unit": {
-        "name": "Step after bake time unit",
-        "state": {
-          "hours": "Hours",
-          "minutes": "Minutes",
-          "seconds": "Seconds"
-        }
-      },
       "step_pre_bake_duration": {
         "name": "Step pre bake duration"
-      },
-      "step_pre_bake_mode": {
-        "name": "Step pre bake mode",
-        "state": {
-          "delay_start_waiting": "Delay start waiting",
-          "not_active": "Not active",
-          "preheat": "Preheat"
-        }
       },
       "step_pre_bake_passed_time": {
         "name": "Step pre bake passed time"
@@ -3719,20 +3424,6 @@
       "step_pre_bake_set_temperature": {
         "name": "Step pre bake set temperature"
       },
-      "step_pre_bake_time_unit": {
-        "name": "Step pre bake time unit",
-        "state": {
-          "hours": "Hours",
-          "minutes": "Minutes",
-          "seconds": "Seconds"
-        }
-      },
-      "super_rinse_setting_status": {
-        "name": "Super rinse"
-      },
-      "t_sleep": {
-        "name": "Sleep"
-      },
       "temperature": {
         "name": "Temperature"
       },
@@ -3741,20 +3432,6 @@
       },
       "temperature_room_judge": {
         "name": "Temperature room judge"
-      },
-      "temperature_unit": {
-        "name": "Temperature unit",
-        "state": {
-          "celsius": "Celsius",
-          "fahrenheit": "Fahrenheit"
-        }
-      },
-      "time_format": {
-        "name": "Time format",
-        "state": {
-          "12h": "12h",
-          "24h": "24h"
-        }
       },
       "total_duration_in_seconds": {
         "name": "Total duration"
@@ -3807,20 +3484,6 @@
       "variation_sensor_real_temperature": {
         "name": "Variation sensor real temperature"
       },
-      "variation_temperature": {
-        "name": "Variation temperature"
-      },
-      "volume": {
-        "name": "Volume"
-      },
-      "warming_drawer_power_level": {
-        "name": "Warming drawer power level",
-        "state": {
-          "high": "High",
-          "low": "Low",
-          "medium": "Medium"
-        }
-      },
       "washing_machine_type_kg": {
         "name": "Washing machine type kg"
       },
@@ -3835,9 +3498,6 @@
       },
       "water_consumption_in_running_program": {
         "name": "Water consumption in running program"
-      },
-      "water_hardness": {
-        "name": "Water hardness"
       },
       "water_hardness_setting_status": {
         "name": "Water hardness",
@@ -3887,9 +3547,6 @@
       "child_lock": {
         "name": "Child lock"
       },
-      "coldwash": {
-        "name": "Cold wash"
-      },
       "crisp_function_status": {
         "name": "Crisp function status"
       },
@@ -3898,9 +3555,6 @@
       },
       "display_standby": {
         "name": "Display standby"
-      },
-      "downlight": {
-        "name": "Down light"
       },
       "drum_light": {
         "name": "Drum light"
@@ -3977,9 +3631,6 @@
       "t_air": {
         "name": "Air"
       },
-      "t_beep": {
-        "name": "Beep"
-      },
       "t_dimmer": {
         "name": "Dimmer"
       },
@@ -3988,9 +3639,6 @@
       },
       "t_fan_mute": {
         "name": "Fan mute"
-      },
-      "t_power": {
-        "name": "Power"
       },
       "t_purify": {
         "name": "Purifier"

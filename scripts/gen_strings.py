@@ -14,6 +14,9 @@ def main(basedir):
     ha_strings = load_ha_strings()
     with open(f'{basedir}/strings.json', 'r') as f:
         strings = json.load(f)
+    valid_properties = {"sensor": {"daily_energy_kwh"}}
+    valid_options = {}
+
     device_dir = f'{basedir}/data_dictionaries'
     filenames = list(filter(lambda f: f[-5:] == ".yaml", [f for f in listdir(device_dir) if isfile(join(device_dir, f))]))
     for filename in filenames:
@@ -59,6 +62,9 @@ def main(basedir):
                     else:
                         if "disable" in property and property["disable"]:
                             continue
+                        key = property["property"].lower().replace(" ", "_")
+                        if not any(entity_type in property for entity_type in ["binary_sensor", "switch", "number", "sensor", "select"]):
+                            valid_properties.setdefault("sensor", set()).add(key)
                         for entity_type in ["binary_sensor", "switch", "number", "sensor", "select"]:
                             if entity_type in property:
                                 if entity_type not in strings["entity"]:
@@ -67,6 +73,16 @@ def main(basedir):
                                 key = name.lower().replace(" ", "_")
                                 if key not in strings["entity"][entity_type]:
                                     strings["entity"][entity_type][key] = {"name": pretty(name)}
+                                elif "name" not in strings["entity"][entity_type][key]:
+                                    strings["entity"][entity_type][key]["name"] = pretty(name)
+                                valid_properties.setdefault(entity_type, set()).add(key)
+                                if (
+                                        property[entity_type] is not None
+                                        and "options" in property[entity_type]
+                                        and property[entity_type]["options"] is not None
+                                ):
+                                    for option in property[entity_type]["options"].values():
+                                        valid_options.setdefault((entity_type, key), set()).add(option)
                                 if (
                                         (
                                                 (
@@ -101,6 +117,23 @@ def main(basedir):
                             if include_option(preset, filename):
                                 strings["entity"]["climate"]["connectlife"]["state_attributes"]["preset_mode"]["state"][preset] = pretty(preset)
 
+    for entity_type in ["binary_sensor", "switch", "number", "sensor", "select"]:
+        if entity_type not in strings["entity"]:
+            continue
+        valid = valid_properties.get(entity_type, set())
+        for key in list(strings["entity"][entity_type]):
+            if key not in valid:
+                print(f"Removing stale {entity_type}.{key}")
+                del strings["entity"][entity_type][key]
+            elif "state" in strings["entity"][entity_type][key]:
+                valid_opts = valid_options.get((entity_type, key), set())
+                for option in list(strings["entity"][entity_type][key]["state"]):
+                    if option not in valid_opts:
+                        print(f"Removing stale {entity_type}.{key}.state.{option}")
+                        del strings["entity"][entity_type][key]["state"][option]
+                if not strings["entity"][entity_type][key]["state"]:
+                    del strings["entity"][entity_type][key]["state"]
+
     for (k, v) in strings["entity"].items():
         strings["entity"][k] = dict(sorted(v.items()))
 
@@ -113,7 +146,27 @@ def main(basedir):
         json.dump(en, f, indent=2, sort_keys=True)
         f.write("\n")
 
+    prune_translations(basedir, en)
     sort_translations.main(basedir)
+
+def prune_translations(basedir, reference):
+    translations_dir = f'{basedir}/translations'
+    for filename in sorted(listdir(translations_dir)):
+        if filename.endswith('.json') and filename != 'en.json':
+            filepath = join(translations_dir, filename)
+            with open(filepath, 'r') as f:
+                trans = json.load(f)
+            pruned = prune_keys(trans, reference)
+            with open(filepath, 'w') as f:
+                json.dump(pruned, f, indent=2, ensure_ascii=True, sort_keys=True)
+                f.write("\n")
+
+
+def prune_keys(obj, reference):
+    if not isinstance(obj, dict) or not isinstance(reference, dict):
+        return obj
+    return {k: prune_keys(v, reference[k]) for k, v in obj.items() if k in reference}
+
 
 def load_ha_strings():
     print(f"Fetching HA strings from {HA_STRINGS_URL}")
