@@ -1,7 +1,8 @@
 {
   "config": {
     "abort": {
-      "already_configured": "Apparaat is al geconfigureerd"
+      "already_configured": "Apparaat is al geconfigureerd",
+      "reauth_successful": "Re-authentication was successful"
     },
     "error": {
       "cannot_connect": "Verbinding mislukt",
@@ -9,6 +10,13 @@
       "unknown": "Onverwachte fout"
     },
     "step": {
+      "reauth_confirm": {
+        "data": {
+          "password": "Password",
+          "username": "Username"
+        },
+        "description": "Please re-enter your ConnectLife credentials."
+      },
       "user": {
         "data": {
           "password": "Wachtwoord",
@@ -1265,6 +1273,9 @@
       }
     },
     "number": {
+      "delayendtime": {
+        "name": "Delay end time"
+      },
       "delayendtime_hour": {
         "name": "Einduitstel uur"
       },
@@ -1315,7 +1326,6 @@
           "add_duration": "Duur toevoegen",
           "add_gratin": "Gratin toevoegen",
           "none": "Geen",
-          "open_door": "Deur openen",
           "pause": "Pauze",
           "start": "Start",
           "steam_shot": "Stoom shot",
@@ -1383,7 +1393,6 @@
           "auto": "Automatisch",
           "less": "Minder",
           "more": "Meer",
-          "off": "Uit",
           "standard": "Standaard"
         }
       },
@@ -1411,7 +1420,6 @@
           "extra_dry": "Extra droog",
           "iron": "Strijken",
           "none": "Geen",
-          "off": "Uit",
           "pre-ironing": "Strijkdroog",
           "wardrobe": "Kastdroog"
         }
@@ -1437,12 +1445,6 @@
           "simplified_chinese": "Vereenvoudigd Chinees"
         }
       },
-      "lightbrightness": {
-        "name": "Lichthelderheid"
-      },
-      "lightcolortemperature": {
-        "name": "Lichtkleurtemperatuur"
-      },
       "motorlevel": {
         "name": "Motorniveau"
       },
@@ -1451,6 +1453,14 @@
         "state": {
           "celsius": "Celsius",
           "fahrenheit": "Fahrenheit"
+        }
+      },
+      "quickermode": {
+        "name": "Quicker mode",
+        "state": {
+          "level_1": "Level 1",
+          "level_2": "Level 2",
+          "none": "None"
         }
       },
       "sand_timer_1_status_cmd": {
@@ -1487,42 +1497,46 @@
           "anti_allergy": "Anti-allergie",
           "auto": "Automatisch",
           "baby": "Baby Care",
+          "baby_care": "Baby care",
           "bed_linen": "Bedlinnen",
           "bedding": "Beddengoed",
           "clean_dry_60": "Was en droog 60'",
           "cotton": "Katoen",
           "cotton_dry": "Katoen droog",
-          "cotton_storage": "Katoen opslag",
           "delicates": "Delicaat",
           "down": "Dons",
+          "drum_clean": "Drum clean",
           "drum_cleaning": "Trommelreiniging",
+          "duvet": "Duvet",
           "eco": "Eco",
           "eco_40_60": "Eco 40-60",
-          "extra_hygiene": "Extra hygi\u00ebne",
           "fast15": "Snel 15'",
           "fast30": "Snel 30'",
-          "fast89": "Snel 89'",
           "full_load_49": "Volle lading 49'",
           "hand_wash": "Handwas",
-          "iron": "Strijken",
+          "ion_refresh": "Ion refresh",
           "jeans": "Spijkerbroeken",
           "mix": "Mix",
-          "none": "Geen",
           "pets": "Huisdieren",
           "power49": "Power 49'",
           "power_30": "Power 30'",
+          "power_49": "Power 49",
+          "quick_15": "Quick 15",
+          "quick_30": "Quick 30",
+          "rack_dry": "Rack dry",
           "refresh": "Opfrissen",
-          "remote": "Op afstand",
           "rinse_spin": "Spoelen & centrifugeren",
-          "sensitive": "Gevoelig",
           "shirts": "Shirts",
+          "silk_delicate": "Silk delicate",
+          "spin": "Spin",
           "spin-dry": "Centrifugeren",
           "sports": "Sport",
           "sportswear": "Sportkleding",
-          "standard": "Standaard",
           "synthetic": "Synthetisch",
           "synthetic_dry": "Synthetisch droog",
+          "synthetics": "Synthetics",
           "time": "Tijd",
+          "time_dry": "Time dry",
           "towels": "Handdoeken",
           "wash_and_dry_49": "Wassen en drogen 49'",
           "wool": "Wol"
@@ -1534,21 +1548,13 @@
           "auto": "Automatisch",
           "less": "Minder",
           "more": "Meer",
-          "off": "Uit",
           "standard": "Standaard"
         }
       },
       "spin_speed_rpm": {
         "name": "Centrifugeren",
         "state": {
-          "1000": "1000 toeren",
-          "1200": "1200 toeren",
-          "1400": "1400 toeren",
-          "1600": "1600 toeren",
-          "600": "600 toeren",
-          "800": "800 toeren",
-          "none": "Geen",
-          "off": "Uit"
+          "none": "Geen"
         }
       },
       "stain_removal": {
@@ -1796,6 +1802,8 @@
       "applicationpermissions": {
         "name": "Bediening op afstand",
         "state": {
+          "disabled": "Disabled",
+          "enabled": "Enabled",
           "granted": "Toegestaan",
           "not_granted": "Niet toegestaan"
         }
@@ -1849,7 +1857,6 @@
         }
       },
       "current_program_phase": {
-        "name": "Programmafase",
         "state": {
           "anti_crease": "Anti-kreuk",
           "delay": "Uitgesteld",
@@ -1997,7 +2004,6 @@
         "name": "Deur status",
         "state": {
           "closed": "Gesloten",
-          "closed_when_running": "Gesloten tijdens draaien",
           "locked": "Vergrendeld",
           "not_available": "Niet beschikbaar",
           "open": "Open",
@@ -2007,11 +2013,8 @@
       "dryopen_defaultspinspeed": {
         "name": "Standaard centrifugesnelheid (open drogen)"
       },
-      "electricit_consumption_decimal": {
-        "name": "Energieverbruik (decimaal)"
-      },
-      "electricit_consumption_int": {
-        "name": "Energieverbruik (hele getal)"
+      "electricit_consumption": {
+        "name": "Electricity consumption"
       },
       "energy": {
         "name": "Energie"
@@ -2045,7 +2048,6 @@
           "error_f18": "F18 - Abnormaal drogen",
           "error_f23": "F23 - Electronische module fout",
           "error_f24": "F24 - Water overloop pleil",
-          "error_unb": "UNB - Onbalansalarm",
           "none": "Geen"
         }
       },
@@ -2382,14 +2384,8 @@
           "stopped": "Gestopt"
         }
       },
-      "sand_timer_1_duration_hours": {
-        "name": "Zandloper 1 duur (uren)"
-      },
-      "sand_timer_1_duration_minutes": {
-        "name": "Zandloper 1 duur (minuten)"
-      },
-      "sand_timer_1_duration_seconds": {
-        "name": "Zandloper 1 duur (seconden)"
+      "sand_timer_1_duration": {
+        "name": "Sand timer 1 duration"
       },
       "sand_timer_1_end_utc_datetime_bdc_timestamp": {
         "name": "Zandloper 1 einde (UTC tijdstip)"
@@ -2410,14 +2406,8 @@
           "stopped": "Gestopt"
         }
       },
-      "sand_timer_2_duration_hours": {
-        "name": "Zandloper 2 duur (uren)"
-      },
-      "sand_timer_2_duration_minutes": {
-        "name": "Zandloper 2 duur (minuten)"
-      },
-      "sand_timer_2_duration_seconds": {
-        "name": "Zandloper 2 duur (seconden)"
+      "sand_timer_2_duration": {
+        "name": "Sand timer 2 duration"
       },
       "sand_timer_2_end_utc_datetime_bdc_timestamp": {
         "name": "Zandloper 2 einde (UTC tijdstip)"
@@ -2438,14 +2428,8 @@
           "stopped": "Gestopt"
         }
       },
-      "sand_timer_3_duration_hours": {
-        "name": "Zandloper 3 duur (uren)"
-      },
-      "sand_timer_3_duration_minutes": {
-        "name": "Zandloper 3 duur (minuten)"
-      },
-      "sand_timer_3_duration_seconds": {
-        "name": "Zandloper 3 duur (seconden)"
+      "sand_timer_3_duration": {
+        "name": "Sand timer 3 duration"
       },
       "sand_timer_3_end_utc_datetime_bdc_timestamp": {
         "name": "Zandloper 3 einde (UTC tijdstip)"
@@ -2479,32 +2463,22 @@
           "auto": "Auto",
           "baby": "Baby Care",
           "bed_linen": "Bedlinnen",
-          "clean_dry_60": "Was en droog 60'",
           "cotton": "Katoen",
-          "cotton_dry": "Katoen droog",
           "cotton_storage": "Katoen opslag",
-          "delicates": "Delicaat",
           "down": "Dons",
-          "drum_cleaning": "Trommelreiniging",
-          "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Extra hygi\u00ebne",
-          "fast15": "Snel 15'",
           "fast30": "Snel 30'",
           "fast89": "Snel 89'",
           "iron": "Strijken",
           "mix": "Mix",
           "none": "Geen",
-          "power49": "Power 49'",
           "refresh": "Opfrissen",
           "remote": "Op afstand",
-          "rinse_spin": "Spoelen & centrifugeren",
           "sensitive": "Gevoelig",
           "shirts": "Shirts",
-          "spin-dry": "Centrifugeren",
           "sports": "Sport",
           "standard": "Standaard",
           "synthetic": "Synthetisch",
-          "synthetic_dry": "Synthetisch droog",
           "time": "Tijd",
           "towels": "Handdoeken",
           "wool": "Wol"
@@ -2571,8 +2545,14 @@
           "not_available": "Niet beschikbaar"
         }
       },
+      "selected_program_total_running_time": {
+        "name": "Selected program total running time"
+      },
       "selected_program_total_running_time_in_minutes": {
         "name": "Geselecteerd programma totale looptijd"
+      },
+      "selected_program_total_time": {
+        "name": "Selected program total time"
       },
       "selected_program_total_time_in_minutes": {
         "name": "Geselecteerd programma totale tijd"
@@ -2924,6 +2904,12 @@
       },
       "spintime_index": {
         "name": "Centrifugeertijd index"
+      },
+      "standardelectricitconsumption": {
+        "name": "Standard electricity consumption"
+      },
+      "standardwaterconsumption": {
+        "name": "Standard water consumption"
       },
       "status": {
         "name": "Status",
@@ -3830,17 +3816,14 @@
       "washing_machine_type_max_speed": {
         "name": "Wasmachine type maximale snelheid"
       },
+      "washing_program_kg": {
+        "name": "Washing program weight"
+      },
       "water_consumption": {
         "name": "Waterverbruik (hele getal)"
       },
-      "water_consumption_decimal": {
-        "name": "Waterverbruik (decimaal)"
-      },
       "water_consumption_in_running_program": {
         "name": "Waterverbruik in huidig programma"
-      },
-      "water_consumption_int": {
-        "name": "Waterverbruik"
       },
       "water_hardness": {
         "name": "Waterhardheid"
@@ -4109,7 +4092,6 @@
   "selector": {
     "actions": {
       "options": {
-        "0": "Geen",
         "1": "Start",
         "2": "Stop",
         "3": "Pauze",
