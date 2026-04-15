@@ -52,6 +52,13 @@
           "description": "Property name",
           "type": "string"
         },
+        "combine": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/CombineSource"
+          },
+          "description": "Combine multiple source properties into a single sensor value. The combined value is the sum of each source value times its multiplier."
+        },
         "binary_sensor": {
           "$ref": "#/$defs/BinarySensor"
         },
@@ -342,6 +349,27 @@
           "description": "Map of integer to string or boolean. Required for targets current_operation (string), state (string), temperature_unit (string), and is_away_mode_on (boolean)."
         }
       }
+    },
+    "CombineSource": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "property": {
+          "type": "string",
+          "description": "Name of a source property to combine."
+        },
+        "multiplier": {
+          "type": "number",
+          "description": "Multiplier for the source value before summing.",
+          "default": 1
+        },
+        "unknown_value": {
+          "$ref": "#/$defs/UnknownValue"
+        }
+      },
+      "required": [
+        "property"
+      ]
     },
     "BinarySensorDeviceClass": {
       "type": "string",

@@ -83,7 +83,8 @@ Note that translation keys must be lowercase!
 
 | Item                       | Type                               | Description                                                                                                                                                                                                                                                                            |
 |----------------------------|------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `property`                 | string                             | Name of status/property.                                                                                                                                                                                                                                                               |
+| `property`                 | string                             | Name of status/property. Can also be a virtual name when used with `combine`.                                                                                                                                                                                                          |
+| `combine`                  | list of [CombineSource](#combine)  | Combine multiple source properties into a single sensor value. See [Combine](#combine).                                                                                                                                                                                                |
 | `disable`                  | `true`, `false`                    | If Home Assistant should not create an entity for this property. Defaults to `false`.                                                                                                                                                                                                  |
 | `hide`                     | `true`, `false`                    | If Home Assistant should initially hide the entity for this property. Defaults to `false`, but is set to `true` for unknown properties.                                                                                                                                                |
 | `icon`                     | `mdi:eye`, etc.                    | Icon to use for the entity.                                                                                                                                                                                                                                                            |
@@ -101,6 +102,72 @@ If an entity mapping is not given, the property is mapped to a sensor entity.
 
 It is not necessary to include items with empty values. A [JSON schema](properties-schema.json) is provided so data dictionaries can be
 validated.
+
+## Combine
+
+Some devices split a single value across two properties, e.g., an integer part and a decimal part, or hours and minutes.
+The `combine` field creates a single sensor entity from multiple source properties.
+
+The combined value is the sum of each source value multiplied by its multiplier:
+
+```
+combined_value = sum(source_value * multiplier)
+```
+
+The sensor-level `multiplier` (if set) is applied after the combination.
+
+| Item            | Type    | Description                                                                    |
+|-----------------|---------|--------------------------------------------------------------------------------|
+| `property`      | string  | Name of a source property.                                                     |
+| `multiplier`    | number  | Multiplier for the source value. Default `1`.                                  |
+| `unknown_value` | integer | If the source has this value, it is treated as 0 (same as a missing property). |
+
+Properties referenced as combine sources are automatically disabled (no separate entity is created for them).
+
+Combined sensor entities are implicitly read-only.
+
+The `property` name on the combined entry can be a virtual name that does not exist in the device API. In that case, the
+entity is created when any of the source properties exist.
+
+If the `property` name matches an actual API property (e.g., when a property exists both as a split value on some devices
+and as a single value on others), the entity falls back to the direct API value when no combine sources are available.
+
+### Examples
+
+Combining integer and decimal parts:
+
+```yaml
+- property: Electricit_consumption
+  icon: mdi:lightning-bolt
+  sensor:
+    device_class: energy
+    unit: kWh
+    read_only: true
+    state_class: total_increasing
+  combine:
+    - property: Electricit_consumption_int
+    - property: Electricit_consumption_decimal
+      multiplier: 0.01
+```
+
+Combining hours, minutes, and seconds into a total duration in seconds:
+
+```yaml
+- property: Sand_timer_1_duration
+  hide: true
+  sensor:
+    device_class: duration
+    unit: s
+  combine:
+    - property: Sand_timer_1_duration_hours
+      multiplier: 3600
+      unknown_value: 255
+    - property: Sand_timer_1_duration_minutes
+      multiplier: 60
+      unknown_value: 255
+    - property: Sand_timer_1_duration_seconds
+      unknown_value: 255
+```
 
 ## Type `BinarySensor`
 
@@ -224,15 +291,15 @@ Remember to add [translation strings](#translation-strings) for the options.
 Sensor entities are usually read-only, but this integration provides a `set_value` service that can be applied on
 the `sensor.connectlife` entities, unless the sensor is set to `read_only: true`.
 
-| Item            | Type                                            | Description                                                                                                                                                                                                              |
-|-----------------|-------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `read_only`     | `true`, `false`                                 | If this property is known to be read-only (prevents `set_value` service).                                                                                                                                                |
+| Item            | Type                                            | Description                                                                                                                                                                                                               |
+|-----------------|-------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `read_only`     | `true`, `false`                                 | If this property is known to be read-only (prevents `set_value` service).                                                                                                                                                 |
 | `state_class`   | `measurement`, `total`, `total_increasing`      | Name of any [SensorStateClass enum](https://developers.home-assistant.io/docs/core/entity/sensor/#available-state-classes). For integer properties, defaults to `measurement`. Not allowed when `device_class` is `enum`. |
-| `device_class`  | `duration`, `energy`, `water`, etc.             | Name of any [SensorDeviceClass enum](https://developers.home-assistant.io/docs/core/entity/sensor/#available-device-classes).                                                                                            |
-| `unit`          | `min`, `kWh`, `L`, etc., _or_ `property.<name>` | Required if `device_class` is set, except not allowed when `device_class` is `aqi`, `ph` or `enum`.                                                                                                                      |
-| `multiplier`    | number, e.g. `0.1` or `10`                      | Required if the unit in the API is not supported in Home Assistant, e.g. hWh can be multiplied by 0.1 to get kWh.                                                                                                        |
-| `options`       | dictionary of integer to string                 | Required if `device_class` is set to `enum`.                                                                                                                                                                             |
-| `unknown_value` | integer                                         | The value used by the API to signal unknown value.                                                                                                                                                                       |
+| `device_class`  | `duration`, `energy`, `water`, etc.             | Name of any [SensorDeviceClass enum](https://developers.home-assistant.io/docs/core/entity/sensor/#available-device-classes).                                                                                             |
+| `unit`          | `min`, `kWh`, `L`, etc., _or_ `property.<name>` | Required if `device_class` is set, except not allowed when `device_class` is `aqi`, `ph` or `enum`.                                                                                                                       |
+| `multiplier`    | number, e.g. `0.1` or `10`                      | Required if the unit in the API is not supported in Home Assistant, e.g. hWh can be multiplied by 0.1 to get kWh.                                                                                                         |
+| `options`       | dictionary of integer to string                 | Required if `device_class` is set to `enum`.                                                                                                                                                                              |
+| `unknown_value` | integer                                         | The value used by the API to signal unknown value.                                                                                                                                                                        |
 
 For device class `enum`, remember to add [translation strings](#translation-strings) for the options.
 
@@ -251,7 +318,7 @@ type `water_heater`, a water heater entity is created for the appliance.
 | Item            | Type                                               | Description                                                                                                                                                                                                                                                  |
 |-----------------|----------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `target`        | string                                             | Any  of these [water heater entity](https://developers.home-assistant.io/docs/core/entity/water-heater#properties) attributes: `current_operation`, `current_temperature`, `state`, `target_temperature`, `temperature_unit`, or the special target `is_on`. |
-| `options`       | dictionary of integer to string or boolean         | Required for `current_operation`, `is_away_mode_on`, state`, and`temperature_unit`.                                                                                                                                                                         |
+| `options`       | dictionary of integer to string or boolean         | Required for `current_operation`, `is_away_mode_on`, state`, and`temperature_unit`.                                                                                                                                                                          |
 | `unknown_value` | integer                                            | The value used by the API to signal unknown value.                                                                                                                                                                                                           |
 | `min_value`     | [IntegerOrTemperature](#type-integerortemperature) | Minimum allowed value. Supported for `target_temperature` (temperature).                                                                                                                                                                                     |
 | `max_value`     | [IntegerOrTemperature](#type-integerortemperature) | Maximum allowed value. Supported for `target_temperature` (temperature).                                                                                                                                                                                     |

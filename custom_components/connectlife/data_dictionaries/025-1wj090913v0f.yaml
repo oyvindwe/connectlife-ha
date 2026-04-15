@@ -91,14 +91,6 @@ properties:
       12: "1200"
       14: "1400"
 
-- property: Electricit_consumption_int
-  hide: true
-  sensor:
-    read_only: true
-    device_class: energy
-    unit: kWh
-  icon: 'mdi:lightning-bolt'
-
 - property: Energy_estimate
   icon: mdi:lightning-bolt
   # Estimates power consumption (0%-100%) for the selected program and options in 10 percentage steps, based on selected program options.
@@ -176,17 +168,6 @@ properties:
   icon: mdi:heat-wave
   switch:
     device_class: switch
-
-- property: Water_consumption_int
-  icon: mdi:water
-  # Not sure what the value actually represents
-  hide: true
-  sensor:
-    read_only: true
-    state_class: total_increasing
-    device_class: water
-    unit: L
-  #  multiplier: .1 # don't know if needed
 
 - property: dry_time
   # Sample value: 3

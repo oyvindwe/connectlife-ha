@@ -77,27 +77,17 @@ properties:
       unit: kWh
       read_only: true
       state_class: total
-  - property: Electricit_consumption_int
+  - property: Electricit_consumption
     icon: mdi:lightning-bolt
     sensor:
       device_class: energy
       unit: kWh
       read_only: true
       state_class: total_increasing
-  - property: Electricit_consumption_decimal
-    icon: mdi:lightning-bolt
-    entity_category: diagnostic
-    sensor:
-      device_class: energy
-      unit: kWh
-      read_only: true
-  - property: Water_consumption_int
-    icon: mdi:water
-    sensor:
-      device_class: water
-      unit: L
-      read_only: true
-      state_class: total_increasing
+    combine:
+      - property: Electricit_consumption_int
+      - property: Electricit_consumption_decimal
+        multiplier: 0.01
   - property: Water_consumption
     icon: mdi:water
     sensor:
@@ -105,6 +95,10 @@ properties:
       unit: L
       read_only: true
       state_class: total_increasing
+    combine:
+      - property: Water_consumption_int
+      - property: Water_consumption_decimal
+        multiplier: 0.01
   - property: Daily_energy_consumption
     icon: mdi:lightning-bolt
     sensor:
@@ -601,18 +595,28 @@ properties:
   - property: Stain_removal
     hide: true
     entity_category: diagnostic
-  - property: StandardElectricitConsumption_int
+  - property: StandardElectricitConsumption
     hide: true
     entity_category: diagnostic
-  - property: StandardElectricitconsumption_decimal
+    sensor:
+      device_class: energy
+      unit: kWh
+      read_only: true
+    combine:
+      - property: StandardElectricitConsumption_int
+      - property: StandardElectricitconsumption_decimal
+        multiplier: 0.01
+  - property: StandardWaterConsumption
     hide: true
     entity_category: diagnostic
-  - property: StandardWaterConsumption_decimal
-    hide: true
-    entity_category: diagnostic
-  - property: StandardWaterConsumption_int
-    hide: true
-    entity_category: diagnostic
+    sensor:
+      device_class: water
+      unit: L
+      read_only: true
+    combine:
+      - property: StandardWaterConsumption_int
+      - property: StandardWaterConsumption_decimal
+        multiplier: 0.01
   - property: Temp_Index
     hide: true
     entity_category: diagnostic
@@ -791,9 +795,6 @@ properties:
     hide: true
     entity_category: diagnostic
   - property: WaterLevelIndex
-    hide: true
-    entity_category: diagnostic
-  - property: Water_consumption_decimal
     hide: true
     entity_category: diagnostic
   - property: Water_hardness_setting

@@ -991,24 +991,20 @@ properties:
 - property: Sabbath_mode_status
   unavailable: 0
   binary_sensor: {}
-- property: Sand_timer_1_duration_hours
-  hide: true
-  sensor:
-    device_class: duration
-    unit: h
-    unknown_value: 255
-- property: Sand_timer_1_duration_minutes
-  hide: true
-  sensor:
-    device_class: duration
-    unit: min
-    unknown_value: 255
-- property: Sand_timer_1_duration_seconds
+- property: Sand_timer_1_duration
   hide: true
   sensor:
     device_class: duration
     unit: s
-    unknown_value: 255
+  combine:
+    - property: Sand_timer_1_duration_hours
+      multiplier: 3600
+      unknown_value: 255
+    - property: Sand_timer_1_duration_minutes
+      multiplier: 60
+      unknown_value: 255
+    - property: Sand_timer_1_duration_seconds
+      unknown_value: 255
 - property: Sand_timer_1_end_utc_datetime_bdc_timestamp
   hide: true
   sensor:
@@ -1042,24 +1038,20 @@ properties:
       1: stop
       2: pause
       3: cancel
-- property: Sand_timer_2_duration_hours
-  hide: true
-  sensor:
-    device_class: duration
-    unit: h
-    unknown_value: 255
-- property: Sand_timer_2_duration_minutes
-  hide: true
-  sensor:
-    device_class: duration
-    unit: min
-    unknown_value: 255
-- property: Sand_timer_2_duration_seconds
+- property: Sand_timer_2_duration
   hide: true
   sensor:
     device_class: duration
     unit: s
-    unknown_value: 255
+  combine:
+    - property: Sand_timer_2_duration_hours
+      multiplier: 3600
+      unknown_value: 255
+    - property: Sand_timer_2_duration_minutes
+      multiplier: 60
+      unknown_value: 255
+    - property: Sand_timer_2_duration_seconds
+      unknown_value: 255
 - property: Sand_timer_2_end_utc_datetime_bdc_timestamp
   hide: true
   sensor:
@@ -1093,24 +1085,20 @@ properties:
       1: stop
       2: pause
       3: cancel
-- property: Sand_timer_3_duration_hours
-  hide: true
-  sensor:
-    device_class: duration
-    unit: h
-    unknown_value: 255
-- property: Sand_timer_3_duration_minutes
-  hide: true
-  sensor:
-    device_class: duration
-    unit: min
-    unknown_value: 255
-- property: Sand_timer_3_duration_seconds
+- property: Sand_timer_3_duration
   hide: true
   sensor:
     device_class: duration
     unit: s
-    unknown_value: 255
+  combine:
+    - property: Sand_timer_3_duration_hours
+      multiplier: 3600
+      unknown_value: 255
+    - property: Sand_timer_3_duration_minutes
+      multiplier: 60
+      unknown_value: 255
+    - property: Sand_timer_3_duration_seconds
+      unknown_value: 255
 - property: Sand_timer_3_end_utc_datetime_bdc_timestamp
   hide: true
   sensor:

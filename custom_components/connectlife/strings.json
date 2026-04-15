@@ -1,7 +1,8 @@
 {
   "config": {
     "abort": {
-      "already_configured": "[%key:common::config_flow::abort::already_configured_device%]"
+      "already_configured": "[%key:common::config_flow::abort::already_configured_device%]",
+      "reauth_successful": "[%key:common::config_flow::abort::reauth_successful%]"
     },
     "error": {
       "cannot_connect": "[%key:common::config_flow::error::cannot_connect%]",
@@ -9,6 +10,13 @@
       "unknown": "[%key:common::config_flow::error::unknown%]"
     },
     "step": {
+      "reauth_confirm": {
+        "data": {
+          "password": "[%key:common::config_flow::data::password%]",
+          "username": "[%key:common::config_flow::data::username%]"
+        },
+        "description": "Please re-enter your ConnectLife credentials."
+      },
       "user": {
         "data": {
           "password": "[%key:common::config_flow::data::password%]",
@@ -1272,13 +1280,13 @@
         "name": "Delayendtime hour"
       },
       "freeze_max_temperature": {
-        "name": "Freezeer max temperature"
+        "name": "Freezer max temperature"
       },
       "freeze_min_temperature": {
-        "name": "Freezeer min temperature"
+        "name": "Freezer min temperature"
       },
       "freeze_temperature": {
-        "name": "Freezeer temperature"
+        "name": "Freezer temperature"
       },
       "gratin_from_below_functionset_time_in_seconds": {
         "name": "Gratin from below function set time"
@@ -2005,11 +2013,8 @@
       "dryopen_defaultspinspeed": {
         "name": "Dry open default spin speed"
       },
-      "electricit_consumption_decimal": {
-        "name": "Electricit consumption decimal"
-      },
-      "electricit_consumption_int": {
-        "name": "Electricit consumption int"
+      "electricit_consumption": {
+        "name": "Electricity consumption"
       },
       "energy": {
         "name": "Energy"
@@ -2379,13 +2384,7 @@
           "stopped": "Stopped"
         }
       },
-      "sand_timer_1_duration_hours": {
-        "name": "Sand timer 1 duration hours"
-      },
-      "sand_timer_1_duration_minutes": {
-        "name": "Sand timer 1 duration minutes"
-      },
-      "sand_timer_1_duration_seconds": {
+      "sand_timer_1_duration": {
         "name": "Sand timer 1 duration"
       },
       "sand_timer_1_end_utc_datetime_bdc_timestamp": {
@@ -2407,13 +2406,7 @@
           "stopped": "Stopped"
         }
       },
-      "sand_timer_2_duration_hours": {
-        "name": "Sand timer 2 duration hours"
-      },
-      "sand_timer_2_duration_minutes": {
-        "name": "Sand timer 2 duration minutes"
-      },
-      "sand_timer_2_duration_seconds": {
+      "sand_timer_2_duration": {
         "name": "Sand timer 2 duration"
       },
       "sand_timer_2_end_utc_datetime_bdc_timestamp": {
@@ -2435,13 +2428,7 @@
           "stopped": "Stopped"
         }
       },
-      "sand_timer_3_duration_hours": {
-        "name": "Sand timer 3 duration hours"
-      },
-      "sand_timer_3_duration_minutes": {
-        "name": "Sand timer 3 duration minutes"
-      },
-      "sand_timer_3_duration_seconds": {
+      "sand_timer_3_duration": {
         "name": "Sand timer 3 duration"
       },
       "sand_timer_3_end_utc_datetime_bdc_timestamp": {
@@ -2917,6 +2904,12 @@
       },
       "spintime_index": {
         "name": "Spin time index"
+      },
+      "standardelectricitconsumption": {
+        "name": "Standard electricity consumption"
+      },
+      "standardwaterconsumption": {
+        "name": "Standard water consumption"
       },
       "status": {
         "name": "Device status",
@@ -3829,14 +3822,8 @@
       "water_consumption": {
         "name": "Water consumption"
       },
-      "water_consumption_decimal": {
-        "name": "Water consumption decimal"
-      },
       "water_consumption_in_running_program": {
         "name": "Water consumption in running program"
-      },
-      "water_consumption_int": {
-        "name": "Water consumption"
       },
       "water_hardness": {
         "name": "Water hardness"

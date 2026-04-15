@@ -26,12 +26,14 @@ properties:
       13: anti_crease
       14: delay
       15: finished
-- property: Electricit_consumption_decimal
+- property: Electricit_consumption
   icon: mdi:lightning-bolt
   sensor:
     read_only: true
     device_class: energy
     unit: kWh
+  combine:
+    - property: Electricit_consumption_decimal
 - property: Energy_estimate
   icon: mdi:lightning-bolt
   sensor:

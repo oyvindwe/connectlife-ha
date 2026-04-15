@@ -52,6 +52,19 @@ async def async_setup_entry(
                 appliance.status_list[s],
             )
         )
+        async_add_entities(
+            ConnectLifeStatusSensor(
+                coordinator, appliance, name, prop, dictionary
+            )
+            for name, prop in dictionary.properties.items()
+            if prop.combine
+            and name not in appliance.status_list
+            and hasattr(prop, Platform.SENSOR)
+            and any(
+                src["property"] in appliance.status_list
+                for src in prop.combine
+            )
+        )
     async_add_entities(
         ConnectLifeEnergySensor(coordinator, energy_coordinator, appliance)
         for appliance in coordinator.data.values()
@@ -79,28 +92,26 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
         """Initialize the entity."""
         super().__init__(coordinator, appliance, status, Platform.SENSOR)
         self.status = status
-        self.read_only = dd_entry.sensor.read_only
+        self.combine = dd_entry.combine
+        self.read_only = True if self.combine else dd_entry.sensor.read_only
         self.multiplier = dd_entry.sensor.multiplier
         self.unknown_value = dd_entry.sensor.unknown_value
 
         device_class = dd_entry.sensor.device_class
         self.options_map: dict[int, str] | None = None
         options = None
+        current_value = self.coordinator.data[self.device_id].status_list.get(status)
         if device_class == SensorDeviceClass.ENUM and dd_entry.sensor.options is not None:
             self.options_map = dd_entry.sensor.options
             options = list(self.options_map.values())
-        elif device_class is None and isinstance(
-            self.coordinator.data[self.device_id].status_list[status], datetime.datetime
-        ):
+        elif device_class is None and isinstance(current_value, datetime.datetime):
             device_class = SensorDeviceClass.TIMESTAMP
         if device_class == SensorDeviceClass.TIMESTAMP and self.unknown_value is None:
             self.unknown_value = MAX_DATETIME
         state_class = dd_entry.sensor.state_class
         if (
             state_class is None
-            and isinstance(
-                self.coordinator.data[self.device_id].status_list[status], int
-            )
+            and (isinstance(current_value, int) or self.combine)
             and device_class != SensorDeviceClass.ENUM
         ):
             state_class = SensorStateClass.MEASUREMENT
@@ -122,8 +133,32 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
 
     @callback
     def update_state(self):
-        if self.status in self.coordinator.data[self.device_id].status_list:
-            value = self.coordinator.data[self.device_id].status_list[self.status]
+        status_list = self.coordinator.data[self.device_id].status_list
+        if self.combine:
+            value = 0.0
+            has_sources = False
+            for source in self.combine:
+                src_value = status_list.get(source["property"])
+                if src_value is not None and isinstance(src_value, (int, float)):
+                    if "unknown_value" in source and src_value == source["unknown_value"]:
+                        continue
+                    value += src_value * source.get("multiplier", 1)
+                    has_sources = True
+            if has_sources:
+                if value == self.unknown_value:
+                    self._attr_native_value = None
+                else:
+                    if self.multiplier is not None:
+                        value *= self.multiplier
+                    self._attr_native_value = value
+                self._attr_available = self.coordinator.data[self.device_id].offline_state == 1
+                return
+            elif self.status not in status_list:
+                self._attr_native_value = None
+                self._attr_available = self.coordinator.data[self.device_id].offline_state == 1
+                return
+        if self.status in status_list:
+            value = status_list[self.status]
             if self.device_class == SensorDeviceClass.ENUM and self.options_map is not None:
                 if value in self.options_map:
                     value = self.options_map[value]

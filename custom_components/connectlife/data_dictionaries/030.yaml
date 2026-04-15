@@ -134,10 +134,17 @@ properties:
   - property: DryingWizzard_ClothingType_twelfth
     # Sample value: 0
     hide: true
-  - property: Electricit_consumption_decimal
-    # Sample value: 0
-  - property: Electricit_consumption_int
-    # Sample value: 0
+  - property: Electricit_consumption
+    icon: mdi:lightning-bolt
+    sensor:
+      device_class: energy
+      unit: kWh
+      read_only: true
+      state_class: total_increasing
+    combine:
+      - property: Electricit_consumption_int
+      - property: Electricit_consumption_decimal
+        multiplier: 0.01
   - property: Favour_program_ID
     # Sample value: 0
   - property: Hard_pairing_commond
@@ -226,12 +233,17 @@ properties:
   - property: Sound_setting
     # Sample value: 0
     hide: true
-  - property: StandardElectricitConsumption_int
-    # Sample value: 0
+  - property: StandardElectricitConsumption
     hide: true
-  - property: StandardElectricitconsumption_decimal
-    # Sample value: 0
-    hide: true
+    entity_category: diagnostic
+    sensor:
+      device_class: energy
+      unit: kWh
+      read_only: true
+    combine:
+      - property: StandardElectricitConsumption_int
+      - property: StandardElectricitconsumption_decimal
+        multiplier: 0.01
   - property: Steam
     # Sample value: 0
     hide: true
@@ -288,6 +300,7 @@ properties:
       device_class: energy
       unit: Wh
       read_only: true
+      state_class: total_increasing
   - property: error_code
     # Sample value: 0
     hide: true
