@@ -1,17 +1,17 @@
+import argparse
 import json
-import sys
 import urllib.request
 from os import listdir
 from os.path import isfile, join
 
 import yaml
 
-from scripts import sort_translations
+from scripts import check_translations, sort_translations
 
 HA_STRINGS_URL = "https://raw.githubusercontent.com/home-assistant/core/dev/homeassistant/strings.json"
 
 
-def main(basedir, show_missing=False):
+def main(basedir):
     ha_strings = load_ha_strings()
     with open(f'{basedir}/strings.json', 'r') as f:
         strings = json.load(f)
@@ -150,41 +150,6 @@ def main(basedir, show_missing=False):
     prune_translations(basedir, en)
     sort_translations.main(basedir)
 
-    if show_missing:
-        report_missing_translations(basedir, en)
-
-
-def report_missing_translations(basedir, reference):
-    translations_dir = f'{basedir}/translations'
-    ref_keys = leaf_keys(reference)
-    found_missing = False
-    for filename in sorted(listdir(translations_dir)):
-        if filename.endswith('.json') and filename != 'en.json':
-            with open(join(translations_dir, filename), 'r') as f:
-                trans = json.load(f)
-            trans_keys = leaf_keys(trans)
-            missing = sorted(ref_keys - trans_keys)
-            if missing:
-                found_missing = True
-                print(f"\n{len(missing)} missing keys in {filename}:")
-                for key in missing:
-                    print(f"  {key}")
-            else:
-                print(f"\nNo missing keys in {filename}")
-    if not found_missing:
-        print("\nAll translation files are complete.")
-
-
-def leaf_keys(obj, prefix=""):
-    keys = set()
-    if isinstance(obj, dict):
-        for k, v in obj.items():
-            keys |= leaf_keys(v, f"{prefix}.{k}" if prefix else k)
-    else:
-        keys.add(prefix)
-    return keys
-
-
 def prune_translations(basedir, reference):
     translations_dir = f'{basedir}/translations'
     for filename in sorted(listdir(translations_dir)):
@@ -262,4 +227,11 @@ def pretty(name: str) -> str:
 
 
 if __name__ == "__main__":
-    main("custom_components/connectlife", show_missing="--show-missing" in sys.argv)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--show-missing", nargs="?", const="", default=None,
+                        metavar="LANG", help="show missing translation keys (optionally for a specific language, e.g. nl)")
+    args = parser.parse_args()
+    basedir = "custom_components/connectlife"
+    main(basedir)
+    if args.show_missing is not None:
+        check_translations.main(basedir, lang=args.show_missing)
