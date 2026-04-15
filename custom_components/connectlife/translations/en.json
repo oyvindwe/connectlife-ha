@@ -1393,6 +1393,7 @@
           "auto": "Auto",
           "less": "Less",
           "more": "More",
+          "off": "Off",
           "standard": "Standard"
         }
       },
@@ -1420,6 +1421,7 @@
           "extra_dry": "Extra dry",
           "iron": "Iron",
           "none": "None",
+          "off": "Off",
           "pre-ironing": "Pre-ironing",
           "wardrobe": "Wardrobe"
         }
@@ -1548,13 +1550,21 @@
           "auto": "Auto",
           "less": "Less",
           "more": "More",
+          "off": "Off",
           "standard": "Standard"
         }
       },
       "spin_speed_rpm": {
         "name": "Spin speed",
         "state": {
-          "none": "None"
+          "1000": "1000 RPM",
+          "1200": "1200 RPM",
+          "1400": "1400 RPM",
+          "1600": "1600 RPM",
+          "600": "600 RPM",
+          "800": "800 RPM",
+          "none": "None",
+          "off": "Off"
         }
       },
       "stain_removal": {
@@ -1857,6 +1867,7 @@
         }
       },
       "current_program_phase": {
+        "name": "Current program phase",
         "state": {
           "anti_crease": "Anti crease",
           "delay": "Delay",
