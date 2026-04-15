@@ -22,7 +22,12 @@ jobs:
       - uses: astral-sh/setup-uv@v6
       - run: uv sync
       - run: uv run python -m scripts.gen_strings
-      - run: git diff --exit-code
+      - name: Check strings and translations are up to date
+        run: |
+          if ! git diff --exit-code; then
+            echo "::error::Strings or translations are out of date. Run 'uv run python -m scripts.gen_strings' and commit the changes."
+            exit 1
+          fi
 
   test:
     runs-on: ubuntu-latest
