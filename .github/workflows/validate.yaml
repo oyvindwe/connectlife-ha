@@ -1,0 +1,41 @@
+name: Validate mappings and check types
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  validate-mappings:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync
+      - run: uv run python -m scripts.validate_mappings
+
+  gen-strings:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync
+      - run: uv run python -m scripts.gen_strings
+      - run: git diff --exit-code
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync
+      - run: uv run pytest
+
+  type-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync
+      - run: uv run pyright
