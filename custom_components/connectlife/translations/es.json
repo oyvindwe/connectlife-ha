@@ -388,9 +388,6 @@
       "sabbath_mode_switch_status": {
         "name": "Estado interruptor Sabbath mode"
       },
-      "save_mode": {
-        "name": "Modo ahorro"
-      },
       "selected_program_anticrease_status": {
         "name": "Antiarrgas "
       },
@@ -475,9 +472,6 @@
       "sl3_status": {
         "name": "Estado Zone 3"
       },
-      "sl42_alarm_ntc_coil_overheating": {
-        "name": "Sobrecalentamiento de la bobina de la zona 4"
-      },
       "sl4_alarm_auto_program_notification": {
         "name": "Notificaci\u00f3n de programa autom\u00e1tico de zona 4"
       },
@@ -553,9 +547,6 @@
       "step3_status": {
         "name": "Estado paso 3"
       },
-      "step6_status": {
-        "name": "Estado paso 2"
-      },
       "tx_failure": {
         "name": "Fallo TX"
       },
@@ -608,13 +599,7 @@
             }
           },
           "swing_mode": {
-            "state": {
-              "both_sides": "Ambos lados",
-              "forward": "Avanzar",
-              "left": "Izquierda",
-              "right": "Derecha",
-              "swing": "Balanceo"
-            }
+            "state": {}
           }
         }
       }
@@ -663,22 +648,9 @@
       }
     },
     "select": {
-      "ExtraRinseNum": {
-        "name": "Aclarado extra",
-        "state": {
-          "0": "0",
-          "1": "1",
-          "2": "2",
-          "3": "3"
-        }
-      },
       "dry_level": {
         "name": "Nivel Secado",
-        "state": {
-          "1": "1",
-          "2": "2",
-          "3": "3"
-        }
+        "state": {}
       },
       "dry_time": {
         "name": "Secado",
@@ -706,7 +678,6 @@
           "fast30": "Rapido 30\u00b4",
           "power49": "Power 49",
           "refresh": "Refrescar",
-          "remote": "Control remoto",
           "rinse_spin": "Aclarado y Centrifugado",
           "shirts": "Camisas",
           "spin-dry": "Centrifugar",
@@ -771,25 +742,11 @@
       "temperature": {
         "name": "Temperatura",
         "state": {
-          "20": "20",
-          "30": "30",
-          "40": "40",
-          "60": "60",
-          "90": "90",
           "cold": "Frio"
         }
       }
     },
     "sensor": {
-      "ado_allowed": {
-        "name": "ADO permitido"
-      },
-      "alarm_door_closed": {
-        "name": "Puerta cerrada"
-      },
-      "alarm_door_opened": {
-        "name": "Puerta abierta"
-      },
       "anticrease_setting": {
         "name": "Duraci\u00f3n anti arrugas"
       },
@@ -801,15 +758,6 @@
       },
       "auto_dose_duration": {
         "name": "Duraci\u00f3n de la dosis autom\u00e1tica"
-      },
-      "auto_dose_quantity_setting_status": {
-        "name": "Configuraci\u00f3n autom\u00e1tica de la cantidad de dosificador"
-      },
-      "auto_dose_refill": {
-        "name": "Recargar autodosificador"
-      },
-      "auto_dose_setting_status": {
-        "name": "Configuracion autodosificador"
       },
       "bundling_humidity": {
         "name": "Humedad acumulado"
@@ -880,13 +828,6 @@
       "delaystart_delayend_remaining_timein_minutes": {
         "name": "Tiempo restrante inicio retrasado"
       },
-      "detergent_display": {
-        "name": "Display Detergente",
-        "state": {
-          "off": "off",
-          "on": "on"
-        }
-      },
       "device_status": {
         "state": {
           "after_bake_finished": "Horneado terminado",
@@ -916,20 +857,6 @@
           "closed": "Cerrada",
           "not_available": "No disponible",
           "open": "Abierta"
-        }
-      },
-      "dry_time": {
-        "name": "Tipo Secado",
-        "state": {
-          "120": "120 min",
-          "150": "150 min",
-          "180": "180 min",
-          "30": "30 min",
-          "60": "60 min",
-          "90": "90 min",
-          "closet": "Seco armario",
-          "extra_dry": "Extra seco",
-          "iron": "Seco plancha"
         }
       },
       "electricit_consumption": {
@@ -1071,38 +998,21 @@
       "selected_program_id": {
         "name": "Programa seleccionado",
         "state": {
-          "anti_allergy": "Antialergias",
-          "auto": "Auto",
           "baby": "Ropa beb\u00e9",
           "bed_linen": "Ropa de cama",
-          "clean_dry_60": "Lavado Secado 60\u00b4",
-          "cotton": "Algod\u00f3n",
-          "cotton_dry": "Secado Algod\u00f3n",
           "cotton_storage": "Algod\u00f3n",
-          "delicates": "Delicados",
-          "down": "Bajar",
-          "drum_cleaning": "Limpieza Tambor",
-          "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Extra higiene",
-          "fast15": "R\u00e1pido 15\u00b4",
-          "fast30": "R\u00e1pido 30\u00b4",
           "fast89": "Fast 89",
           "iron": "Plancha",
           "mix": "Mix",
           "none": "Nada",
-          "power49": "Power 49",
-          "refresh": "Refrescar",
           "remote": "Remoto",
-          "rinse_dpin": "Aclarado y Centrifugado",
           "sensitive": "Delicados",
           "shirts": "Camisas",
-          "spin-dry": "Centrifugar",
           "sports": "Ropa deporte",
           "standard": "Est\u00e1ndar",
           "synthetic": "Sint\u00e9nticos",
-          "synthetic_dry": "Secado Sint\u00e9ticos",
           "time": "Tiempo",
-          "towels": "Toallas",
           "wool": "Lana"
         }
       },
@@ -1393,13 +1303,6 @@
           "square": "Cuadrada"
         }
       },
-      "softer_display": {
-        "name": "Display Suavizante",
-        "state": {
-          "off": "off",
-          "on": "on"
-        }
-      },
       "spintime_index": {
         "name": "Duraci\u00f3n centrifugado"
       },
@@ -1419,14 +1322,12 @@
           "eco_hot_air": "Aire Caliente ECO",
           "fast_preheat": "Precalentado r\u00e1pido",
           "grill_fan_micro": "Microondas ventilador parrilla",
-          "grillfanmicro": "Grill fa nmicro",
           "hot_air": "Aire Caliente",
           "hot_air_bottom": "Calor Arriba y Abajo",
           "hot_air_micro": "Microondas aire caliente",
           "hot_air_steam_1": "Vapor nivel 1",
           "hot_air_steam_2": "Vapor nivel 2",
           "hot_air_steam_3": "Vapor nivel 3",
-          "hotairmicro": "Micro aire caliente",
           "keep_warm": "Mantener caliente",
           "large_grill": "Parrilla grande",
           "large_grill_fan": "Ventilador parrilla grande",
@@ -1472,14 +1373,12 @@
           "eco_hot_air": "Aire Caliente ECO",
           "fast_preheat": "Precalentado r\u00e1pido",
           "grill_fan_micro": "Microondas ventilador parrilla",
-          "grillfanmicro": "Grill fa nmicro",
           "hot_air": "Aire Caliente",
           "hot_air_bottom": "Calor Arriba y Abajo",
           "hot_air_micro": "Microondas aire caliente",
           "hot_air_steam_1": "Vapor nivel 1",
           "hot_air_steam_2": "Vapor nivel 2",
           "hot_air_steam_3": "Vapor nivel 3",
-          "hotairmicro": "Micro aire caliente",
           "keep_warm": "Mantener caliente",
           "large_grill": "Parrilla grande",
           "large_grill_fan": "Ventilador parrilla grande",
@@ -1490,7 +1389,6 @@
           "plates": "Platos",
           "pro_roasting": "Pro tostado",
           "programs": "Programas",
-          "pyro": "Pyro",
           "quick": "R\u00e1pido",
           "regenerate": "Regeneraci\u00f3n",
           "sabbath": "Sabbath",
@@ -1525,14 +1423,12 @@
           "eco_hot_air": "Aire Caliente ECO",
           "fast_preheat": "Precalentado r\u00e1pido",
           "grill_fan_micro": "Microondas ventilador parrilla",
-          "grillfanmicro": "Grill fa nmicro",
           "hot_air": "Aire Caliente",
           "hot_air_bottom": "Calor Arriba y Abajo",
           "hot_air_micro": "Microondas aire caliente",
           "hot_air_steam_1": "Vapor nivel 1",
           "hot_air_steam_2": "Vapor nivel 2",
           "hot_air_steam_3": "Vapor nivel 3",
-          "hotairmicro": "Micro aire caliente",
           "keep_warm": "Mantener caliente",
           "large_grill": "Parrilla grande",
           "large_grill_fan": "Ventilador parrilla grande",
@@ -1561,9 +1457,6 @@
       },
       "step3_set_temperature": {
         "name": "Fase 3 temperatura"
-      },
-      "t_sleep": {
-        "name": "Suspendido"
       },
       "temperature_room_judge": {
         "name": "Temperature room judge"
@@ -1633,17 +1526,11 @@
       "t_air": {
         "name": "Aire"
       },
-      "t_beep": {
-        "name": "Beep"
-      },
       "t_eco": {
         "name": "Eco"
       },
       "t_fan_mute": {
         "name": "Silenciar ventilador"
-      },
-      "t_power": {
-        "name": "Encendido"
       },
       "t_purify": {
         "name": "Purificador"

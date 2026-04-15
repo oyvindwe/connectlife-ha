@@ -352,9 +352,6 @@
       "auto_dose_refill": {
         "name": "Automatische Dosierung nachf\u00fcllen"
       },
-      "automatic_ice_making": {
-        "name": "Automatische Eisherstellung"
-      },
       "charcoal_filter_expiration_alarm": {
         "name": "Aktivkohlefilter Ablaufwarnung"
       },
@@ -393,9 +390,6 @@
       },
       "control_failure_status": {
         "name": "Steuerungsausfallstatus"
-      },
-      "crisp_function_status": {
-        "name": "Knusperfunktion Status"
       },
       "delay_start": {
         "name": "Verz\u00f6gerter Start"
@@ -571,9 +565,6 @@
       "existing_sr_mode": {
         "name": "Aktueller SR-Modus"
       },
-      "extra_rinse": {
-        "name": "Extra Sp\u00fclen"
-      },
       "extra_rinse_status": {
         "name": "Programmoption Extra-Sp\u00fclung"
       },
@@ -705,12 +696,6 @@
       },
       "hard_pairing_status": {
         "name": "Status der festen Kopplung"
-      },
-      "high_humidity": {
-        "name": "Hohe Luftfeuchtigkeit"
-      },
-      "high_temperature": {
-        "name": "Hohe Temperatur"
       },
       "hob_status": {
         "name": "Kochfeldstatus"
@@ -880,9 +865,6 @@
       "sabbath_mode_switch_status": {
         "name": "Sabbatmodus-Schalterstatus"
       },
-      "save_mode": {
-        "name": "Sparmodus"
-      },
       "selected_program_anticrease_status": {
         "name": "Programmoption Knitterschutz"
       },
@@ -915,9 +897,6 @@
       },
       "session_pairing_setting": {
         "name": "Sitzungskopplung Einstellung"
-      },
-      "sf_mode": {
-        "name": "SF-Modus"
       },
       "sl1_alarm_auto_program_notification": {
         "name": "Automatische Programmbenachrichtigung Zone 1"
@@ -1072,9 +1051,6 @@
       "softer_display": {
         "name": "Weichsp\u00fcleranzeige"
       },
-      "sr_mode": {
-        "name": "SR-Modus"
-      },
       "steam123_0_available": {
         "name": "Steam123 0 verf\u00fcgbar"
       },
@@ -1108,23 +1084,11 @@
       "step3_steam_assist": {
         "name": "Schritt 3 Dampfunterst\u00fctzung"
       },
-      "step_1_fastpreheat_function": {
-        "name": "Schritt 1 Schnellvorheizen"
-      },
       "step_1_status": {
         "name": "Schritt 1 Status"
       },
       "step_2_status": {
         "name": "Schritt 2 Status"
-      },
-      "step_3_steam_available": {
-        "name": "Schritt 3 Dampf verf\u00fcgbar"
-      },
-      "step_after_bake_status": {
-        "name": "Nachbackphase Status"
-      },
-      "step_pre_bake_status": {
-        "name": "Vorbackphase Status"
       },
       "stopaddgo_status": {
         "name": "Stop-Add-Go aktiv"
@@ -1134,9 +1098,6 @@
       },
       "t_beep": {
         "name": "Signalton"
-      },
-      "tab_setting_status": {
-        "name": "Tab-Einstellung"
       },
       "tx_failure": {
         "name": "TX-Fehler"
@@ -1395,14 +1356,6 @@
           "wardrobe": "Schranktrocken"
         }
       },
-      "drymodel": {
-        "name": "Trocknungsmodus",
-        "state": {
-          "dry_only": "Nur Trocknen",
-          "wash": "Waschen",
-          "wash_and_dry": "Waschen und Trocknen"
-        }
-      },
       "extrarinsenum": {
         "name": "Zus\u00e4tzliche Sp\u00fclg\u00e4nge",
         "state": {
@@ -1507,20 +1460,6 @@
           "none": "Keine"
         }
       },
-      "stain_removal": {
-        "name": "Fleckenentfernung",
-        "state": {
-          "blood": "Blut",
-          "coffee": "Kaffee",
-          "grass": "Gras",
-          "juice": "Saft",
-          "milk": "Milch",
-          "oil": "\u00d6l",
-          "soil": "Erde",
-          "sweat": "Schwei\u00df",
-          "wine": "Wein"
-        }
-      },
       "steam_123": {
         "name": "Steam 123",
         "state": {
@@ -1605,14 +1544,6 @@
         "name": "Schritt 3 Mikrowellenleistung",
         "state": {
           "none": "Keine"
-        }
-      },
-      "step_3_status": {
-        "name": "Schritt 3 Status",
-        "state": {
-          "active": "Aktiv",
-          "available": "Verf\u00fcgbar",
-          "not_active": "Nicht aktiv"
         }
       },
       "step_3_time_unit": {
@@ -1728,15 +1659,6 @@
       }
     },
     "sensor": {
-      "ado_allowed": {
-        "name": "ADO erlaubt"
-      },
-      "alarm_door_closed": {
-        "name": "T\u00fcr geschlossen"
-      },
-      "alarm_door_opened": {
-        "name": "T\u00fcr ge\u00f6ffnet"
-      },
       "almost_finished_notification_settingtimer_in_minutes": {
         "name": "Bald-fertig-Benachrichtigung Timer"
       },
@@ -1758,9 +1680,6 @@
       },
       "auto_dose_duration": {
         "name": "Automatische Dosierungsdauer"
-      },
-      "auto_dose_refill": {
-        "name": "Automatische Dosierung nachf\u00fcllen"
       },
       "autodose_flag": {
         "name": "Autodosierung Kennzeichen",
@@ -1876,40 +1795,8 @@
       "delaystart_delayend_remaining_timein_minutes": {
         "name": "Startverz\u00f6gerung Gesamtlaufzeit Verbleibend"
       },
-      "detergent": {
-        "name": "Waschmittel",
-        "state": {
-          "less": "Weniger",
-          "more": "Mehr",
-          "standard": "Standard"
-        }
-      },
-      "detergent_display": {
-        "name": "Waschmittelanzeige"
-      },
       "detergentstandarddosage": {
-        "name": "Waschmittel Standarddosierung",
-        "state": {
-          "100ml": "100 ml",
-          "10ml": "10 ml",
-          "15ml": "15 ml",
-          "20ml": "20 ml",
-          "25ml": "25 ml",
-          "30ml": "30 ml",
-          "35ml": "35 ml",
-          "40ml": "40 ml",
-          "45ml": "45 ml",
-          "50ml": "50 ml",
-          "55ml": "55 ml",
-          "60ml": "60 ml",
-          "65ml": "65 ml",
-          "70ml": "70 ml",
-          "75ml": "75 ml",
-          "80ml": "80 ml",
-          "85ml": "85 ml",
-          "90ml": "90 ml",
-          "95ml": "95 ml"
-        }
+        "name": "Waschmittel Standarddosierung"
       },
       "device_status": {
         "state": {
@@ -1977,24 +1864,7 @@
         "name": "Reale Umgebungstemperatur"
       },
       "error_code": {
-        "name": "Fehlercode",
-        "state": {
-          "error_f01": "Fehler f01",
-          "error_f03": "Fehler f03",
-          "error_f04": "Fehler f04",
-          "error_f05": "Fehler f05",
-          "error_f06": "Fehler f06",
-          "error_f07": "Fehler f07",
-          "error_f13": "Fehler f13",
-          "error_f14": "Fehler f14",
-          "error_f15": "Fehler f15",
-          "error_f16": "Fehler f16",
-          "error_f17": "Fehler f17",
-          "error_f18": "Fehler f18",
-          "error_f23": "Fehler f23",
-          "error_f24": "Fehler f24",
-          "none": "Keine"
-        }
+        "name": "Fehlercode"
       },
       "error_read_out_1_code": {
         "name": "Fehlercode 1 auslesen"
@@ -2072,9 +1942,6 @@
       "freeze_sensor_real_temperature": {
         "name": "Reale Gefriersensor-Temperatur"
       },
-      "freeze_temperature": {
-        "name": "Gefriertemperatur"
-      },
       "fruit_vegetables_temperature": {
         "name": "Frucht- und Gem\u00fcse-Temperatur"
       },
@@ -2142,9 +2009,6 @@
         "state": {
           "off_hot": "Aus (hei\u00df)"
         }
-      },
-      "interior_light_at_power_off_setting_status": {
-        "name": "Innenbeleuchtung bei ausgeschaltetem Ger\u00e4t"
       },
       "interior_light_status": {
         "name": "Innenbeleuchtungsstatus"
@@ -2226,13 +2090,6 @@
       "oven_temperature": {
         "name": "Ofentemperatur"
       },
-      "oven_temperature_unit_setting": {
-        "name": "Ofen Temperatureinheit",
-        "state": {
-          "degree_celsius": "Celsius",
-          "degree_fahrenheit": "Fahrenheit"
-        }
-      },
       "oven_usage_value_alarm_limit": {
         "name": "Ofen Nutzungswert Alarmgrenze"
       },
@@ -2274,9 +2131,6 @@
       },
       "refrigerator_sensor_real_temperature": {
         "name": "Reale Sensor-Temperatur des K\u00fchlschranks"
-      },
-      "refrigerator_temperature": {
-        "name": "K\u00fchlschranktemperatur"
       },
       "remaining_time_of_selected_program": {
         "name": "Verbleibende Zeit des gew\u00e4hlten Programms"
@@ -2388,9 +2242,6 @@
           "running": "L\u00e4uft",
           "stopped": "Gestoppt"
         }
-      },
-      "scanned_ean_code": {
-        "name": "Gescannter EAN-Code"
       },
       "selected_program_duration_in_minutes": {
         "name": "Programmdauer Gesamt"
@@ -2784,40 +2635,8 @@
           "square": "Quadratisch"
         }
       },
-      "softener": {
-        "name": "Weichsp\u00fcler",
-        "state": {
-          "less": "Weniger",
-          "more": "Mehr",
-          "standard": "Standard"
-        }
-      },
-      "softer_display": {
-        "name": "Sanfte Anzeige"
-      },
       "softnerstandarddosage": {
-        "name": "Weichsp\u00fcler Standarddosierung",
-        "state": {
-          "100ml": "100 ml",
-          "10ml": "10 ml",
-          "15ml": "15 ml",
-          "20ml": "20 ml",
-          "25ml": "25 ml",
-          "30ml": "30 ml",
-          "35ml": "35 ml",
-          "40ml": "40 ml",
-          "45ml": "45 ml",
-          "50ml": "50 ml",
-          "55ml": "55 ml",
-          "60ml": "60 ml",
-          "65ml": "65 ml",
-          "70ml": "70 ml",
-          "75ml": "75 ml",
-          "80ml": "80 ml",
-          "85ml": "85 ml",
-          "90ml": "90 ml",
-          "95ml": "95 ml"
-        }
+        "name": "Weichsp\u00fcler Standarddosierung"
       },
       "sound_setting": {
         "name": "Klangeinstellung"
@@ -2864,14 +2683,12 @@
           "eco_hot_air": "Eco-Hei\u00dfluft",
           "fast_preheat": "Schnelles Vorheizen",
           "grill_fan_micro": "Grillventilator-Mikrowelle",
-          "grillfanmicro": "Grillventilator-Mikrowelle",
           "hot_air": "Hei\u00dfluft",
           "hot_air_bottom": "Hei\u00dfluft unten",
           "hot_air_micro": "Hei\u00dfluft-Mikrowelle",
           "hot_air_steam_1": "Hei\u00dfluft-Dampf 1",
           "hot_air_steam_2": "Hei\u00dfluft-Dampf 2",
           "hot_air_steam_3": "Hei\u00dfluft-Dampf 3",
-          "hotairmicro": "Hei\u00dfluft-Mikrowelle",
           "keep_warm": "Warmhalten",
           "large_grill": "Gro\u00dfer Grill",
           "large_grill_fan": "Gro\u00dfer Grill mit Ventilator",
@@ -3039,23 +2856,6 @@
       "step3_steam_assistset_time_in_minutes": {
         "name": "Schritt 3 Dampfunterst\u00fctzung Zeiteinstellung"
       },
-      "step_1_bake_mode": {
-        "name": "Schritt 1 Backmodus",
-        "state": {
-          "autobake": "AutoBake",
-          "extrabake": "ExtraBake",
-          "extrabake_cleaning": "ExtraBake \u2013 Reinigung",
-          "extrabake_fastpreheat": "ExtraBake \u2013 Schnellvorheizen",
-          "extrabake_warming": "ExtraBake \u2013 Aufw\u00e4rmen",
-          "meatprobebake": "MeatProbeBake",
-          "probake": "ProBake",
-          "recipe": "Rezept",
-          "steambake": "SteamBake",
-          "steamcombibake": "SteamCombiBake",
-          "stepbake": "StepBake",
-          "undefined": "Undefiniert"
-        }
-      },
       "step_1_duration": {
         "name": "Schritt 1 Dauer"
       },
@@ -3143,12 +2943,6 @@
           "warming": "Aufw\u00e4rmen"
         }
       },
-      "step_1_set_microwave_wattage": {
-        "name": "Schritt 1 Mikrowellenleistung",
-        "state": {
-          "none": "Keine"
-        }
-      },
       "step_1_set_temperature": {
         "name": "Schritt 1 Temperatur"
       },
@@ -3158,27 +2952,6 @@
           "active": "Aktiv",
           "available": "Verf\u00fcgbar",
           "not_active": "Nicht aktiv"
-        }
-      },
-      "step_1_time_unit": {
-        "name": "Schritt 1 Zeiteinheit",
-        "state": {
-          "hours": "Stunden",
-          "minutes": "Minuten",
-          "seconds": "Sekunden"
-        }
-      },
-      "step_2_bake_mode": {
-        "name": "Schritt 2 Backmodus",
-        "state": {
-          "autobake": "AutoBake",
-          "extrabake": "ExtraBake",
-          "probake": "ProBake",
-          "recipe": "Rezept",
-          "steambake": "SteamBake",
-          "steamcombibake": "SteamCombiBake",
-          "stepbake": "StepBake",
-          "undefined": "Undefiniert"
         }
       },
       "step_2_duration": {
@@ -3268,12 +3041,6 @@
           "warming": "Aufw\u00e4rmen"
         }
       },
-      "step_2_set_microwave_wattage": {
-        "name": "Schritt 2 Mikrowellenleistung",
-        "state": {
-          "none": "Keine"
-        }
-      },
       "step_2_set_temperature": {
         "name": "Schritt 2 Temperatur"
       },
@@ -3283,27 +3050,6 @@
           "active": "Aktiv",
           "available": "Verf\u00fcgbar",
           "not_active": "Nicht aktiv"
-        }
-      },
-      "step_2_time_unit": {
-        "name": "Schritt 2 Zeiteinheit",
-        "state": {
-          "hours": "Stunden",
-          "minutes": "Minuten",
-          "seconds": "Sekunden"
-        }
-      },
-      "step_3_bake_mode": {
-        "name": "Schritt 3 Backmodus",
-        "state": {
-          "autobake": "AutoBake",
-          "extrabake": "ExtraBake",
-          "probake": "ProBake",
-          "recipe": "Rezept",
-          "steambake": "SteamBake",
-          "steamcombibake": "SteamCombiBake",
-          "stepbake": "StepBake",
-          "undefined": "Undefiniert"
         }
       },
       "step_3_duration": {
@@ -3393,12 +3139,6 @@
           "warming": "Aufw\u00e4rmen"
         }
       },
-      "step_3_set_microwave_wattage": {
-        "name": "Schritt 3 Mikrowellenleistung",
-        "state": {
-          "none": "Keine"
-        }
-      },
       "step_3_set_temperature": {
         "name": "Schritt 3 Temperatur"
       },
@@ -3418,22 +3158,8 @@
           "not_active": "Nicht aktiv"
         }
       },
-      "step_3_time_unit": {
-        "name": "Schritt 3 Zeiteinheit",
-        "state": {
-          "hours": "Stunden",
-          "minutes": "Minuten",
-          "seconds": "Sekunden"
-        }
-      },
       "step_after_bake_duration": {
         "name": "Nachbackphase Dauer"
-      },
-      "step_after_bake_mode": {
-        "name": "Nachbackphase Modus",
-        "state": {
-          "gratine": "Gratinieren"
-        }
       },
       "step_after_bake_passed_time": {
         "name": "Nachbackphase verstrichene Zeit"
@@ -3522,24 +3248,8 @@
       "step_after_bake_set_temperature": {
         "name": "Nachbackphase Temperatur"
       },
-      "step_after_bake_time_unit": {
-        "name": "Nachbackphase Zeiteinheit",
-        "state": {
-          "hours": "Stunden",
-          "minutes": "Minuten",
-          "seconds": "Sekunden"
-        }
-      },
       "step_pre_bake_duration": {
         "name": "Vorbackphase Dauer"
-      },
-      "step_pre_bake_mode": {
-        "name": "Vorbackphase Modus",
-        "state": {
-          "delay_start_waiting": "Warte auf Startverz\u00f6gerung",
-          "not_active": "Nicht aktiv",
-          "preheat": "Vorheizen"
-        }
       },
       "step_pre_bake_passed_time": {
         "name": "Vorbackphase verstrichene Zeit"
@@ -3628,20 +3338,6 @@
       "step_pre_bake_set_temperature": {
         "name": "Vorbackphase Temperatur"
       },
-      "step_pre_bake_time_unit": {
-        "name": "Vorbackphase Zeiteinheit",
-        "state": {
-          "hours": "Stunden",
-          "minutes": "Minuten",
-          "seconds": "Sekunden"
-        }
-      },
-      "super_rinse_setting_status": {
-        "name": "Super-Sp\u00fclung"
-      },
-      "t_sleep": {
-        "name": "Schlafmodus"
-      },
       "temperature": {
         "name": "Temperatur"
       },
@@ -3650,20 +3346,6 @@
       },
       "temperature_room_judge": {
         "name": "Temperaturraum-Beurteilung"
-      },
-      "temperature_unit": {
-        "name": "Temperatureinheit",
-        "state": {
-          "celsius": "Celsius",
-          "fahrenheit": "Fahrenheit"
-        }
-      },
-      "time_format": {
-        "name": "Zeitformat",
-        "state": {
-          "12h": "12h",
-          "24h": "24h"
-        }
       },
       "total_duration_in_seconds": {
         "name": "Gesamtdauer"
@@ -3716,20 +3398,6 @@
       "variation_sensor_real_temperature": {
         "name": "Reale Sensortemperatur der Variation"
       },
-      "variation_temperature": {
-        "name": "Temperatur der Variation"
-      },
-      "volume": {
-        "name": "Lautst\u00e4rke"
-      },
-      "warming_drawer_power_level": {
-        "name": "Warmhalteschublade Leistungsstufe",
-        "state": {
-          "high": "Hoch",
-          "low": "Niedrig",
-          "medium": "Mittel"
-        }
-      },
       "washing_machine_type_kg": {
         "name": "Waschmaschinentyp (kg)"
       },
@@ -3741,9 +3409,6 @@
       },
       "water_consumption_in_running_program": {
         "name": "Wasserverbrauch im laufenden Programm"
-      },
-      "water_hardness": {
-        "name": "Wasserh\u00e4rte"
       },
       "water_hardness_setting_status": {
         "name": "Wasserh\u00e4rte",
@@ -3793,9 +3458,6 @@
       "child_lock": {
         "name": "Kindersicherung"
       },
-      "coldwash": {
-        "name": "Kaltw\u00e4sche"
-      },
       "crisp_function_status": {
         "name": "Knusperfunktion Status"
       },
@@ -3804,9 +3466,6 @@
       },
       "display_standby": {
         "name": "Display Standby"
-      },
-      "downlight": {
-        "name": "Beleuchtung"
       },
       "drum_light": {
         "name": "Trommelbeleuchtung"
@@ -3883,17 +3542,11 @@
       "t_air": {
         "name": "Luft"
       },
-      "t_beep": {
-        "name": "Signalton"
-      },
       "t_eco": {
         "name": "Eco"
       },
       "t_fan_mute": {
         "name": "L\u00fcfter-Stummschaltung"
-      },
-      "t_power": {
-        "name": "Leistung"
       },
       "t_purify": {
         "name": "Luftreiniger"

@@ -206,13 +206,7 @@
             }
           },
           "swing_mode": {
-            "state": {
-              "both_sides": "Solo lati",
-              "forward": "Dritto",
-              "left": "Sinistra",
-              "right": "Destra",
-              "swing": "Oscillazione"
-            }
+            "state": {}
           }
         }
       }
@@ -273,12 +267,6 @@
       }
     },
     "sensor": {
-      "alarm_door_closed": {
-        "name": "Porta chiusa"
-      },
-      "alarm_door_opened": {
-        "name": "Porta aperta"
-      },
       "anticrease_setting": {
         "name": "Durata antipiega"
       },
@@ -326,20 +314,7 @@
       "delaystart_delayend_remaining_timein_minutes": {
         "name": "Tempo rimanente avvio ritardato"
       },
-      "device_status": {
-        "demo_mode": "Modalit\u00e0 demo",
-        "failure": "Guasto",
-        "idle": "Inattivo",
-        "iq": "IQ",
-        "locked": "Bloccato",
-        "not_available": "Non disponibile",
-        "pause": "In pausa",
-        "pause_mode": "In pausa",
-        "production": "Produzione",
-        "running": "In esecuzione",
-        "service": "Servizio",
-        "stand_by": "In attesa"
-      },
+      "device_status": {},
       "door_status": {
         "name": "Porta",
         "state": {
@@ -609,9 +584,6 @@
           "square": "Quadrata"
         }
       },
-      "t_sleep": {
-        "name": "Riposo"
-      },
       "total_time_of_cooking_in_hours": {
         "name": "Tempo totale di cottura"
       },
@@ -623,17 +595,11 @@
       "t_air": {
         "name": "Air"
       },
-      "t_beep": {
-        "name": "Beep"
-      },
       "t_eco": {
         "name": "Eco"
       },
       "t_fan_mute": {
         "name": "Silenzioso"
-      },
-      "t_power": {
-        "name": "Power"
       },
       "t_purify": {
         "name": "Purificatore dell'aria"

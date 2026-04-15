@@ -23,10 +23,17 @@ uv sync
 
 ## Generate `strings.json` and `en.json`
 
-This will add strings for new properties, update `translations/en.json`, and sort all translation files.
+This will add strings for new properties, remove stale keys, update
+`translations/en.json`, prune translation files, and sort all translation files.
 
 ```bash
 uv run python -m scripts.gen_strings
+```
+
+To also report missing translation keys after generating:
+
+```bash
+uv run python -m scripts.gen_strings --show-missing [lang]
 ```
 
 ## Providing translations
@@ -47,6 +54,14 @@ To add or update a translation:
    ```bash
    uv run python -m scripts.sort_translations
    ```
+
+To check which keys are missing from a translation file:
+
+```bash
+uv run python -m scripts.check_translations [lang]
+```
+
+Omit the language code to check all translation files.
 
 ## Validate mapping files
 
