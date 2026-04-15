@@ -2385,7 +2385,7 @@
         }
       },
       "sand_timer_1_duration": {
-        "name": "Sand timer 1 duration"
+        "name": "Zandloper 1 duur"
       },
       "sand_timer_1_end_utc_datetime_bdc_timestamp": {
         "name": "Zandloper 1 einde (UTC tijdstip)"
@@ -2546,16 +2546,16 @@
         }
       },
       "selected_program_total_running_time": {
-        "name": "Selected program total running time"
+        "name": "Totale looptijd geselecteerd programma"
       },
       "selected_program_total_running_time_in_minutes": {
-        "name": "Geselecteerd programma totale looptijd"
+        "name": "Totale looptijd geselecteerd programma (minuten)"
       },
       "selected_program_total_time": {
-        "name": "Selected program total time"
+        "name": "Totale tijd geselecteerd programma"
       },
       "selected_program_total_time_in_minutes": {
-        "name": "Geselecteerd programma totale tijd"
+        "name": "Totale tijd geselecteerd programma (minuten)"
       },
       "selected_program_washing_spin_speed_rpm_status": {
         "name": "Centrifugeersnelheid",
@@ -2906,10 +2906,10 @@
         "name": "Centrifugeertijd index"
       },
       "standardelectricitconsumption": {
-        "name": "Standard electricity consumption"
+        "name": "Standaard elektriciteitsverbruik"
       },
       "standardwaterconsumption": {
-        "name": "Standard water consumption"
+        "name": "Standaard waterverbruik"
       },
       "status": {
         "name": "Status",
@@ -3817,7 +3817,7 @@
         "name": "Wasmachine type maximale snelheid"
       },
       "washing_program_kg": {
-        "name": "Washing program weight"
+        "name": "Programmagewicht"
       },
       "water_consumption": {
         "name": "Waterverbruik (hele getal)"
@@ -3877,7 +3877,7 @@
         "name": "Kinderbeveiliging"
       },
       "coldwash": {
-        "name": "Cold wash"
+        "name": "Koude was"
       },
       "crisp_function_status": {
         "name": "Crisp-functie"
