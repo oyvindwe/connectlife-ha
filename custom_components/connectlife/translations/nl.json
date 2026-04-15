@@ -1393,6 +1393,7 @@
           "auto": "Automatisch",
           "less": "Minder",
           "more": "Meer",
+          "off": "Uit",
           "standard": "Standaard"
         }
       },
@@ -1420,6 +1421,7 @@
           "extra_dry": "Extra droog",
           "iron": "Strijken",
           "none": "Geen",
+          "off": "Uit",
           "pre-ironing": "Strijkdroog",
           "wardrobe": "Kastdroog"
         }
@@ -1548,13 +1550,21 @@
           "auto": "Automatisch",
           "less": "Minder",
           "more": "Meer",
+          "off": "Uit",
           "standard": "Standaard"
         }
       },
       "spin_speed_rpm": {
         "name": "Centrifugeren",
         "state": {
-          "none": "Geen"
+          "1000": "1000 toeren",
+          "1200": "1200 toeren",
+          "1400": "1400 toeren",
+          "1600": "1600 toeren",
+          "600": "600 toeren",
+          "800": "800 toeren",
+          "none": "Geen",
+          "off": "Uit"
         }
       },
       "stain_removal": {
@@ -1857,6 +1867,7 @@
         }
       },
       "current_program_phase": {
+        "name": "Programmafase",
         "state": {
           "anti_crease": "Anti-kreuk",
           "delay": "Uitgesteld",
