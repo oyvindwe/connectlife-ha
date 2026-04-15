@@ -2,7 +2,7 @@
   "config": {
     "abort": {
       "already_configured": "Apparaat is al geconfigureerd",
-      "reauth_successful": "Re-authentication was successful"
+      "reauth_successful": "Opnieuw authenticeren is gelukt"
     },
     "error": {
       "cannot_connect": "Verbinding mislukt",
@@ -12,10 +12,10 @@
     "step": {
       "reauth_confirm": {
         "data": {
-          "password": "Password",
-          "username": "Username"
+          "password": "Wachtwoord",
+          "username": "Gebruikersnaam"
         },
-        "description": "Please re-enter your ConnectLife credentials."
+        "description": "Voer je ConnectLife inloggegevens opnieuw in."
       },
       "user": {
         "data": {
@@ -2014,7 +2014,7 @@
         "name": "Standaard centrifugesnelheid (open drogen)"
       },
       "electricit_consumption": {
-        "name": "Electricity consumption"
+        "name": "Elektriciteitsverbruik"
       },
       "energy": {
         "name": "Energie"
