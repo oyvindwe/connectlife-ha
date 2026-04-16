@@ -310,7 +310,7 @@
         "name": "Alarm increased power consumption"
       },
       "alarmkey_lock_on": {
-        "name": "Alarmkey lock on"
+        "name": "Alarm key lock on"
       },
       "alarmmicrowave_system_finished": {
         "name": "Alarm microwave system finished"
@@ -763,28 +763,28 @@
         "name": "Lock fresh mode"
       },
       "low_wine_area_c_evaporator_fault": {
-        "name": "Low wine area c evaporator fault"
+        "name": "Low wine area C evaporator fault"
       },
       "low_wine_area_c_fan_fault": {
-        "name": "Low wine area c fan fault"
+        "name": "Low wine area C fan fault"
       },
       "low_wine_area_c_humdy_fault": {
-        "name": "Low wine area c humidity fault"
+        "name": "Low wine area C humidity fault"
       },
       "low_wine_area_c_temp_fault": {
-        "name": "Low wine area c temp fault"
+        "name": "Low wine area C temperature fault"
       },
       "mid_wine_area_b_evaporator_fault": {
-        "name": "Mid wine area b evaporator fault"
+        "name": "Mid wine area B evaporator fault"
       },
       "mid_wine_area_b_fan_fault": {
-        "name": "Mid wine area b fan fault"
+        "name": "Mid wine area B fan fault"
       },
       "mid_wine_area_b_humdy_fault": {
-        "name": "Mid wine area b humidity fault"
+        "name": "Mid wine area B humidity fault"
       },
       "mid_wine_area_b_temp_fault": {
-        "name": "Mid wine area b temp fault"
+        "name": "Mid wine area B temperature fault"
       },
       "open_freeze_door_alarm": {
         "name": "Open freeze door alarm"
@@ -2394,7 +2394,7 @@
         "name": "Detergent left ml"
       },
       "detergent_leftnum": {
-        "name": "Detergent left num"
+        "name": "Detergent left number"
       },
       "detergent_soften_settingflag": {
         "name": "Detergent soften settings flag"
@@ -2403,7 +2403,7 @@
         "name": "Detergent total ml"
       },
       "detergent_totalnum": {
-        "name": "Detergent total num"
+        "name": "Detergent total number"
       },
       "detergent_useindex": {
         "name": "Detergent use index"
@@ -2486,16 +2486,16 @@
         "name": "Door lock status"
       },
       "door_num_four_color": {
-        "name": "Door num four color"
+        "name": "Door number four color"
       },
       "door_num_one_color": {
-        "name": "Door num one color"
+        "name": "Door number one color"
       },
       "door_num_three_color": {
-        "name": "Door num three color"
+        "name": "Door number three color"
       },
       "door_num_two_color": {
-        "name": "Door num two color"
+        "name": "Door number two color"
       },
       "door_open_light_status": {
         "name": "Door open light status"
@@ -3081,10 +3081,10 @@
         "name": "ExtraDry setting"
       },
       "extrarinsenum": {
-        "name": "Extra rinse num"
+        "name": "Extra rinse number"
       },
       "extrarinsenum_flag": {
-        "name": "Extra rinse num flag"
+        "name": "Extra rinse number flag"
       },
       "extrasoft_runing_flag": {
         "name": "Extrasoft running flag"
@@ -3165,7 +3165,7 @@
         "name": "Fluffysoft flag 1"
       },
       "fota": {
-        "name": "Fota",
+        "name": "FOTA",
         "state": {
           "confirm_fota": "Confirm fota",
           "finished": "Finished",
@@ -3175,10 +3175,10 @@
         }
       },
       "fota_status": {
-        "name": "Fota status"
+        "name": "FOTA status"
       },
       "fotastatus": {
-        "name": "Fota status"
+        "name": "FOTA status"
       },
       "free_key": {
         "name": "Free key"
@@ -3196,7 +3196,7 @@
         "name": "Freeze door open time"
       },
       "freeze_drawer_room_temp": {
-        "name": "Freeze drawer room temp"
+        "name": "Freeze drawer room temperature"
       },
       "freeze_fan_speed": {
         "name": "Freeze fan speed"
@@ -3214,10 +3214,10 @@
         "name": "Freezer sensor real temperature"
       },
       "freezing_powerdown_temp_alarm": {
-        "name": "Freezing powerdown temp alarm"
+        "name": "Freezing powerdown temperature alarm"
       },
       "froze_convert_to_refri_switch_status": {
-        "name": "Froze convert to refri switch status"
+        "name": "Froze convert to refrigerator switch status"
       },
       "fruit_vegetables_temperature": {
         "name": "Fruit vegetables temperature"
@@ -3342,7 +3342,7 @@
         "name": "Humidity test switch state"
       },
       "ice_machine_actual_temp": {
-        "name": "Ice machine actual temp"
+        "name": "Ice machine actual temperature"
       },
       "ice_make_room_switch": {
         "name": "Ice make room switch"
@@ -3354,7 +3354,7 @@
         "name": "Ice making full status"
       },
       "ice_room_actual_temp": {
-        "name": "Ice room actual temp"
+        "name": "Ice room actual temperature"
       },
       "id1": {
         "name": "ID 1"
@@ -3501,7 +3501,7 @@
         "name": "Market mode exist"
       },
       "max_rpm_allowed_stat": {
-        "name": "Max RPM allowed stat"
+        "name": "Max RPM allowed status"
       },
       "mdo_on_demand": {
         "name": "MDO on demand"
@@ -3668,7 +3668,7 @@
         "name": "Order time minimum hour"
       },
       "ota_num1": {
-        "name": "OTA num 1"
+        "name": "OTA number 1"
       },
       "ota_sucess": {
         "name": "OTA success"
@@ -3902,22 +3902,22 @@
         "name": "RF pairing status"
       },
       "rgb_atmosphere_mode_b_value": {
-        "name": "RGB atmosphere mode b value"
+        "name": "RGB atmosphere mode B value"
       },
       "rgb_atmosphere_mode_g_value": {
-        "name": "RGB atmosphere mode g value"
+        "name": "RGB atmosphere mode G value"
       },
       "rgb_atmosphere_mode_r_value": {
-        "name": "RGB atmosphere mode r value"
+        "name": "RGB atmosphere mode R value"
       },
       "rgb_function_mode_b_value": {
-        "name": "RGB function mode b value"
+        "name": "RGB function mode B value"
       },
       "rgb_function_mode_g_value": {
-        "name": "RGB function mode g value"
+        "name": "RGB function mode G value"
       },
       "rgb_function_mode_r_value": {
-        "name": "RGB function mode r value"
+        "name": "RGB function mode R value"
       },
       "rgb_light_atmosphere_brightness": {
         "name": "RGB light atmosphere brightness"
@@ -3941,13 +3941,13 @@
         "name": "RGB light state"
       },
       "rgb_normal_mode_b_value": {
-        "name": "RGB normal mode b value"
+        "name": "RGB normal mode B value"
       },
       "rgb_normal_mode_g_value": {
-        "name": "RGB normal mode g value"
+        "name": "RGB normal mode G value"
       },
       "rgb_normal_mode_r_value": {
-        "name": "RGB normal mode r value"
+        "name": "RGB normal mode R value"
       },
       "rinse_aid_setting_status": {
         "name": "Rinse aid"
@@ -3959,10 +3959,10 @@
         "name": "Rinse num"
       },
       "rinsenum_containextrarinse": {
-        "name": "Rinse num contain extra rinse"
+        "name": "Rinse number contain extra rinse"
       },
       "rinsenum_index": {
-        "name": "Rinse num index"
+        "name": "Rinse number index"
       },
       "rinsestepfinishnotifyswitch": {
         "name": "Rinse step finish notify switch"
@@ -4447,10 +4447,10 @@
         "name": "Shelf light atmosphere mode brightness"
       },
       "shelf_light_b_state": {
-        "name": "Shelf light b state"
+        "name": "Shelf light B state"
       },
       "shelf_light_c_state": {
-        "name": "Shelf light c state"
+        "name": "Shelf light C state"
       },
       "shelf_light_function_mode_brightness": {
         "name": "Shelf light function mode brightness"
@@ -4753,7 +4753,7 @@
         "name": "Softener left ml"
       },
       "softener_leftnum": {
-        "name": "Softener left num"
+        "name": "Softener left number"
       },
       "softener_tank": {
         "name": "Softener tank"
@@ -4762,7 +4762,7 @@
         "name": "Softener total ml"
       },
       "softener_totalnum": {
-        "name": "Softener total num"
+        "name": "Softener total number"
       },
       "softenercompartment_flag": {
         "name": "Softener compartment flag"
@@ -4872,25 +4872,25 @@
         }
       },
       "status_fan_c_switch": {
-        "name": "Status fan c switch"
+        "name": "Status fan C switch"
       },
       "status_fan_f_switch": {
-        "name": "Status fan f switch"
+        "name": "Status fan F switch"
       },
       "status_fan_ln_switch": {
         "name": "Status fan ln switch"
       },
       "status_fan_r_switch": {
-        "name": "Status fan r switch"
+        "name": "Status fan R switch"
       },
       "status_heater_c_switch": {
-        "name": "Status heater c switch"
+        "name": "Status heater C switch"
       },
       "status_heater_f_switch": {
-        "name": "Status heater f switch"
+        "name": "Status heater F switch"
       },
       "status_heater_r_switch": {
-        "name": "Status heater r switch"
+        "name": "Status heater R switch"
       },
       "steam": {
         "name": "Steam"
@@ -5822,7 +5822,7 @@
         "name": "Storage mode allowed"
       },
       "storage_mode_on_demand_stat": {
-        "name": "Storage mode on demand stat"
+        "name": "Storage mode on demand status"
       },
       "store_dry_time": {
         "name": "Store dry time"
@@ -5861,22 +5861,22 @@
         "name": "Tankclean flag 1"
       },
       "temp_auto_ctrl_mode_exist": {
-        "name": "Temp auto ctrl mode exist"
+        "name": "Temperature auto control mode exist"
       },
       "temp_auto_ctrl_mode_state": {
-        "name": "Temp auto ctrl mode state"
+        "name": "Temperature auto control mode state"
       },
       "temp_index": {
-        "name": "Temp index"
+        "name": "Temperature index"
       },
       "temp_runing_flag": {
-        "name": "Temp running flag"
+        "name": "Temperature running flag"
       },
       "temp_wave": {
-        "name": "Temp wave"
+        "name": "Temperature wave"
       },
       "temp_wave_flag": {
-        "name": "Temp wave flag"
+        "name": "Temperature wave flag"
       },
       "temperature": {
         "name": "Temperature"
@@ -6269,7 +6269,7 @@
         "name": "Water estimate"
       },
       "water_fill_actual_temp": {
-        "name": "Water fill actual temp"
+        "name": "Water fill actual temperature"
       },
       "water_filter_surplus_time": {
         "name": "Water filter surplus time"
@@ -6387,7 +6387,7 @@
         "name": "Wine area switch status"
       },
       "wine_b_switch_area": {
-        "name": "Wine b switch area"
+        "name": "Wine B switch area"
       },
       "wine_light": {
         "name": "Wine light"
