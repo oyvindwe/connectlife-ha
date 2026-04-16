@@ -4135,8 +4135,8 @@
       "sani_lock_allowed": {
         "name": "Sani lock allowed"
       },
-      "saveelectricitvalue__decimal": {
-        "name": "Save electricit value  decimal"
+      "saveelectricitvalue_decimal": {
+        "name": "Save electricit value decimal"
       },
       "saveelectricitvalue_int": {
         "name": "Save electricit value int"
@@ -4164,9 +4164,6 @@
       },
       "second_ice_maker_sensor_fault": {
         "name": "Second ice maker sensor fault"
-      },
-      "selected__programid_ota": {
-        "name": "Selected  program id ota"
       },
       "selected_program": {
         "name": "Selected program"
@@ -4729,13 +4726,13 @@
         }
       },
       "slotdry": {
-        "name": "Slot dry"
+        "name": "Slotdry"
       },
       "slotdry_flag": {
-        "name": "Slot dry flag"
+        "name": "Slotdry flag"
       },
       "slotdry_flag1": {
-        "name": "Slot dry flag1"
+        "name": "Slotdry flag1"
       },
       "smart_sync_setting_status": {
         "name": "Smart sync setting status"
@@ -6410,8 +6407,8 @@
       "wine_area_switch_status": {
         "name": "Wine area switch status"
       },
-      "wine_b_switch__area": {
-        "name": "Wine b switch  area"
+      "wine_b_switch_area": {
+        "name": "Wine b switch area"
       },
       "wine_light": {
         "name": "Wine light"

@@ -64,7 +64,7 @@ def main(basedir):
                     else:
                         if "disable" in property and property["disable"]:
                             continue
-                        key = property["property"].strip().lower().replace(" ", "_")
+                        key = to_key(property["property"])
                         if not any(entity_type in property for entity_type in ["binary_sensor", "switch", "number", "sensor", "select"]):
                             valid_properties.setdefault("sensor", set()).add(key)
                             name = property["property"]
@@ -79,7 +79,7 @@ def main(basedir):
                                 if entity_type not in strings["entity"]:
                                     strings["entity"][entity_type] = {}
                                 name = property["property"]
-                                key = name.strip().lower().replace(" ", "_")
+                                key = to_key(name)
                                 if key not in strings["entity"][entity_type]:
                                     strings["entity"][entity_type][key] = {"name": pretty(name)}
                                 elif "name" not in strings["entity"][entity_type][key]:
@@ -230,12 +230,16 @@ def include_option(option: str, filename: str) -> bool:
     return True
 
 
+def to_key(name: str) -> str:
+    return re.sub(r'_+', '_', name.strip().lower().replace(" ", "_"))
+
+
 def pretty(name: str) -> str:
     # Split camelCase: "AirDryFlag" -> "Air Dry Flag"
     name = re.sub(r'(?<=[a-z])(?=[A-Z])', ' ', name)
     # Split acronyms from words: "APPControl" -> "APP Control"
     name = re.sub(r'(?<=[A-Z])(?=[A-Z][a-z])', ' ', name)
-    return name.replace("_", " ").strip().capitalize()
+    return re.sub(r' +', ' ', name.replace("_", " ")).strip().capitalize()
 
 
 if __name__ == "__main__":
