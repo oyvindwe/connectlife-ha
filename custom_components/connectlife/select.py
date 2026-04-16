@@ -54,19 +54,20 @@ class ConnectLifeSelect(ConnectLifeEntity, SelectEntity):
         """Initialize the entity."""
         super().__init__(coordinator, appliance, status, Platform.SELECT, config_entry)
         self.status = status
-        self.options_map = dd_entry.select.options
+        # Copy: unmapped values are added per-entity, avoid leaking to other appliances.
+        self.options_map = dict(dd_entry.select.options)
         self.reverse_options_map = {v: k for k, v in self.options_map.items()}
         self.command_name = (
             dd_entry.select.command_name if dd_entry.select.command_name else status
         )
         self.command_adjust = dd_entry.select.command_adjust
+        self._attr_options = list(self.options_map.values())
         self.entity_description = SelectEntityDescription(
             key=self._attr_unique_id,
             entity_registry_visible_default=not dd_entry.hide,
             icon=dd_entry.icon,
             name=status.replace("_", " "),
             translation_key=self.to_translation_key(status),
-            options=list(self.options_map.values()),
             entity_category=dd_entry.entity_category,
         )
         self.update_state()
@@ -78,13 +79,18 @@ class ConnectLifeSelect(ConnectLifeEntity, SelectEntity):
             if value in self.options_map:
                 value = self.options_map[value]
             else:
-                _LOGGER.warning(
-                    "Got unexpected value %d for %s (%s)",
-                    value,
-                    self.status,
-                    self.nickname,
-                )
-                _value = None
+                str_value = str(value)
+                if str_value not in self._attr_options:
+                    _LOGGER.warning(
+                        "Got unexpected value %s for %s (%s)",
+                        str_value,
+                        self.status,
+                        self.nickname,
+                    )
+                    self.options_map[value] = str_value
+                    self.reverse_options_map[str_value] = value
+                    self._attr_options = [*self._attr_options, str_value]
+                value = str_value
             self._attr_current_option = value
 
     async def async_select_option(self, option: str) -> None:
