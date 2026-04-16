@@ -1,6 +1,7 @@
 """ConnectLife entity base class."""
 
 import logging
+import re
 from abc import abstractmethod
 
 from connectlife.api import LifeConnectError
@@ -106,4 +107,4 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
             await self.coordinator.async_update_device(self.device_id, command, properties)
 
     def to_translation_key(self, property_name: str) -> str:
-        return property_name.lower().replace(" ", "_")
+        return re.sub(r'_+', '_', property_name.strip().lower().replace(" ", "_"))

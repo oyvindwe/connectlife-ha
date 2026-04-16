@@ -19,6 +19,12 @@
   },
   "entity": {
     "binary_sensor": {
+      "alarm_door_closed": {
+        "name": "Porta chiusa"
+      },
+      "alarm_door_opened": {
+        "name": "Porta aperta"
+      },
       "child_lock_status": {
         "name": "Blocco bambini"
       },
@@ -177,6 +183,9 @@
       },
       "sl6_status": {
         "name": "Stato della zona 6"
+      },
+      "t_beep": {
+        "name": "Beep"
       }
     },
     "climate": {
@@ -583,6 +592,9 @@
           "round": "Rotonda",
           "square": "Quadrata"
         }
+      },
+      "t_beep": {
+        "name": "Beep"
       },
       "total_time_of_cooking_in_hours": {
         "name": "Tempo totale di cottura"

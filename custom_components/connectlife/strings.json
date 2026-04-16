@@ -76,16 +76,16 @@
         "name": "AquaClean finished"
       },
       "alarm_auto_dose_refill": {
-        "name": "Auto dose refill"
+        "name": "Auto-dose refill"
       },
       "alarm_auto_program_notification": {
         "name": "Auto program notification"
       },
       "alarm_autodose_level10": {
-        "name": "Autodose level 10"
+        "name": "Auto-dose level 10"
       },
       "alarm_autodose_level20": {
-        "name": "Autodose level 20"
+        "name": "Auto-dose level 20"
       },
       "alarm_automatic_switch_off_zone": {
         "name": "Automatic switch off zone"
@@ -124,16 +124,16 @@
         "name": "Door opened"
       },
       "alarm_ean_scan_info": {
-        "name": "Alarm ean scan info"
+        "name": "Alarm EAN scan info"
       },
       "alarm_empty_and_clean_water_tank": {
         "name": "Alarm empty and clean water tank"
       },
       "alarm_external_autodose_level15": {
-        "name": "External autodose level 15"
+        "name": "External auto-dose level 15"
       },
       "alarm_external_autodose_level30": {
-        "name": "External autodose level 30"
+        "name": "External auto-dose level 30"
       },
       "alarm_fast_preheat_active": {
         "name": "Alarm fast preheat active"
@@ -274,7 +274,7 @@
         "name": "Zone turned off"
       },
       "alarmalmost_finished": {
-        "name": "Alarmalmost finished"
+        "name": "Alarm almost finished"
       },
       "alarmchild_lockoff": {
         "name": "Alarmchild lockoff"
@@ -283,43 +283,43 @@
         "name": "Alarmchild lockon"
       },
       "alarmcleantank": {
-        "name": "Alarmcleantank"
+        "name": "Alarm clean tank"
       },
       "alarmdehydrate_ended": {
-        "name": "Alarmdehydrate ended"
+        "name": "Alarm dehydrate ended"
       },
       "alarmdescalestep1": {
-        "name": "Alarmdescalestep1"
+        "name": "Alarm descale step 1"
       },
       "alarmdescalestep2": {
-        "name": "Alarmdescalestep2"
+        "name": "Alarm descale step 2"
       },
       "alarmdescalestep3": {
-        "name": "Alarmdescalestep3"
+        "name": "Alarm descale step 3"
       },
       "alarmdescaling_interrupted": {
-        "name": "Alarmdescaling interrupted"
+        "name": "Alarm descaling interrupted"
       },
       "alarmemptytankpause": {
-        "name": "Alarmemptytankpause"
+        "name": "Alarm empty tank pause"
       },
       "alarmfilltank": {
-        "name": "Alarmfilltank"
+        "name": "Alarm fill tank"
       },
       "alarmincreased_power_consumption": {
-        "name": "Alarmincreased power consumption"
+        "name": "Alarm increased power consumption"
       },
       "alarmkey_lock_on": {
-        "name": "Alarmkey lock on"
+        "name": "Alarm key lock on"
       },
       "alarmmicrowave_system_finished": {
-        "name": "Alarmmicrowave system finished"
+        "name": "Alarm microwave system finished"
       },
       "alarmoven_system_finished": {
         "name": "Alarmoven system finished"
       },
       "alarmpoptankopened": {
-        "name": "Alarmpoptankopened"
+        "name": "Alarm pop tank opened"
       },
       "alarmpower_failure_running": {
         "name": "Alarmpower failure running"
@@ -328,37 +328,37 @@
         "name": "Alarmprobe lost connection"
       },
       "alarmremotestartpowerfailure": {
-        "name": "Alarmremotestartpowerfailure"
+        "name": "Alarm remote start power failure"
       },
       "alarmremove_probe": {
-        "name": "Alarmremove probe"
+        "name": "Alarm remove probe"
       },
       "alarmsabbathabouttostart": {
-        "name": "Alarmsabbathabouttostart"
+        "name": "Alarm sabbath about to start"
       },
       "alarmsabbathended": {
-        "name": "Alarmsabbathended"
+        "name": "Alarm sabbath ended"
       },
       "alarmsabbathpostpone": {
-        "name": "Alarmsabbathpostpone"
+        "name": "Alarm sabbath postpone"
       },
       "alarmsteam_interrupted": {
-        "name": "Alarmsteam interrupted"
+        "name": "Alarm steam interrupted"
       },
       "alarmsteam_system_finished": {
-        "name": "Alarmsteam system finished"
+        "name": "Alarm steam system finished"
       },
       "alarmsteamclean_finished": {
-        "name": "Alarmsteamclean finished"
+        "name": "Alarm steam clean finished"
       },
       "alarmtanklevel1": {
-        "name": "Alarmtanklevel1"
+        "name": "Alarm tank level 1"
       },
       "ali_wifi_fault_flag": {
         "name": "WiFi fault"
       },
       "auto_dose_refill": {
-        "name": "Auto dose refill"
+        "name": "Auto-dose refill"
       },
       "charcoal_filter_expiration_alarm": {
         "name": "Charcoal filter expiration alarm"
@@ -616,7 +616,7 @@
         "name": "Indoor voltage zero-crossing detection fault"
       },
       "f_e_inwifi": {
-        "name": "Communication failure between WIFI control panel and indoor control panel"
+        "name": "Communication failure between WiFi control panel and indoor control panel"
       },
       "f_e_outcoiltemp": {
         "name": "Outdoor coil temperature sensor failure"
@@ -682,10 +682,10 @@
         "name": "Freezer temp sens head failure"
       },
       "freeze_poweroff_ad": {
-        "name": "Freeze poweroff ad"
+        "name": "Freeze power off ad"
       },
       "freeze_poweron_ad": {
-        "name": "Freeze poweron ad"
+        "name": "Freeze power on ad"
       },
       "frize_temp_2_degree_above_starting_point": {
         "name": "Freezer temperature 2\u00b0 above start"
@@ -763,28 +763,28 @@
         "name": "Lock fresh mode"
       },
       "low_wine_area_c_evaporator_fault": {
-        "name": "Low wine area c evaporator fault"
+        "name": "Low wine area C evaporator fault"
       },
       "low_wine_area_c_fan_fault": {
-        "name": "Low wine area c fan fault"
+        "name": "Low wine area C fan fault"
       },
       "low_wine_area_c_humdy_fault": {
-        "name": "Low wine area c humdy fault"
+        "name": "Low wine area C humidity fault"
       },
       "low_wine_area_c_temp_fault": {
-        "name": "Low wine area c temp fault"
+        "name": "Low wine area C temperature fault"
       },
       "mid_wine_area_b_evaporator_fault": {
-        "name": "Mid wine area b evaporator fault"
+        "name": "Mid wine area B evaporator fault"
       },
       "mid_wine_area_b_fan_fault": {
-        "name": "Mid wine area b fan fault"
+        "name": "Mid wine area B fan fault"
       },
       "mid_wine_area_b_humdy_fault": {
-        "name": "Mid wine area b humdy fault"
+        "name": "Mid wine area B humidity fault"
       },
       "mid_wine_area_b_temp_fault": {
-        "name": "Mid wine area b temp fault"
+        "name": "Mid wine area B temperature fault"
       },
       "open_freeze_door_alarm": {
         "name": "Open freeze door alarm"
@@ -886,7 +886,7 @@
         "name": "Sabbath mode switch status"
       },
       "selected_program_anticrease_status": {
-        "name": "Anti crease"
+        "name": "Anti-crease"
       },
       "selected_program_auto_door_open_function": {
         "name": "Selected program auto door open"
@@ -1238,7 +1238,7 @@
         "name": "Delay end time"
       },
       "delayendtime_hour": {
-        "name": "Delayendtime hour"
+        "name": "Delay end time hour"
       },
       "freeze_max_temperature": {
         "name": "Freezer max temperature"
@@ -1295,7 +1295,7 @@
         }
       },
       "auto_dose_quantity_setting_status": {
-        "name": "Auto dose quantity"
+        "name": "Auto-dose quantity"
       },
       "baking_steps_intensity_levels": {
         "name": "Baking steps intensity levels",
@@ -1718,11 +1718,191 @@
       }
     },
     "sensor": {
+      "actions": {
+        "name": "Actions"
+      },
+      "activemodelightbrightness": {
+        "name": "Active mode light brightness"
+      },
+      "activemodelightcolortemperature": {
+        "name": "Active mode light color temperature"
+      },
+      "activemodelightstatus": {
+        "name": "Active mode light status"
+      },
+      "activemodemotorlevel": {
+        "name": "Active mode motor level"
+      },
+      "activemodemotorlevelstatus": {
+        "name": "Active mode motor level status"
+      },
+      "activemodestatus": {
+        "name": "Active mode status"
+      },
+      "adapt_sense_setting_status": {
+        "name": "Adapt sense setting status"
+      },
+      "adapttech_setting": {
+        "name": "Adapt tech setting"
+      },
+      "add_clothes_check": {
+        "name": "Add clothes check"
+      },
+      "add_on_program_download_id": {
+        "name": "Add on program download ID"
+      },
+      "add_on_program_download_status": {
+        "name": "Add on program download status"
+      },
+      "add_program_to_device": {
+        "name": "Add program to device"
+      },
+      "add_water_flag": {
+        "name": "Add water flag"
+      },
+      "ads_dirtiness_setting_status": {
+        "name": "ADS dirtiness setting status"
+      },
+      "ads_settings_current_program_detergent_setting_status": {
+        "name": "ADS settings current program detergent setting status"
+      },
+      "ads_settings_current_program_softener_setting_status": {
+        "name": "ADS settings current program softener setting status"
+      },
+      "ai_energy_mode_switch": {
+        "name": "AI energy mode switch"
+      },
+      "air_dry_function_status": {
+        "name": "Air dry function status"
+      },
+      "air_freshness": {
+        "name": "Air freshness"
+      },
+      "air_shower_setting_status": {
+        "name": "Air shower setting status"
+      },
+      "airdryflag": {
+        "name": "Air dry flag"
+      },
+      "airwashtime": {
+        "name": "Air wash time"
+      },
+      "alarm_1": {
+        "name": "Alarm 1"
+      },
+      "alarm_10": {
+        "name": "Alarm 10"
+      },
+      "alarm_11": {
+        "name": "Alarm 11"
+      },
+      "alarm_12": {
+        "name": "Alarm 12"
+      },
+      "alarm_13": {
+        "name": "Alarm 13"
+      },
+      "alarm_14": {
+        "name": "Alarm 14"
+      },
+      "alarm_15": {
+        "name": "Alarm 15"
+      },
+      "alarm_16": {
+        "name": "Alarm 16"
+      },
+      "alarm_17": {
+        "name": "Alarm 17"
+      },
+      "alarm_18": {
+        "name": "Alarm 18"
+      },
+      "alarm_19": {
+        "name": "Alarm 19"
+      },
+      "alarm_2": {
+        "name": "Alarm 2"
+      },
+      "alarm_20": {
+        "name": "Alarm 20"
+      },
+      "alarm_21": {
+        "name": "Alarm 21"
+      },
+      "alarm_22": {
+        "name": "Alarm 22"
+      },
+      "alarm_3": {
+        "name": "Alarm 3"
+      },
+      "alarm_4": {
+        "name": "Alarm 4"
+      },
+      "alarm_5": {
+        "name": "Alarm 5"
+      },
+      "alarm_6": {
+        "name": "Alarm 6"
+      },
+      "alarm_7": {
+        "name": "Alarm 7"
+      },
+      "alarm_8": {
+        "name": "Alarm 8"
+      },
+      "alarm_9": {
+        "name": "Alarm 9"
+      },
+      "alarm_key": {
+        "name": "Alarm key"
+      },
+      "alarm_sound_volume": {
+        "name": "Alarm sound volume"
+      },
+      "alarmcleanairended": {
+        "name": "Alarm clean air ended"
+      },
+      "alarmgreasefilter": {
+        "name": "Alarm grease filter"
+      },
+      "alarmrecirculationfilter1": {
+        "name": "Alarm recirculation filter 1"
+      },
+      "alarmrecirculationfilter2": {
+        "name": "Alarm recirculation filter 2"
+      },
+      "alarmtimerended": {
+        "name": "Alarm timer ended"
+      },
+      "almost_finished_notification_setting": {
+        "name": "Almost finished notification setting"
+      },
       "almost_finished_notification_settingtimer_in_minutes": {
         "name": "Almost finished notification settingtimer in minutes"
       },
+      "ambient_sound_setting": {
+        "name": "Ambient sound setting"
+      },
+      "ambientlightbrightness": {
+        "name": "Ambient light brightness"
+      },
+      "ambientlightcolortemperature": {
+        "name": "Ambient light color temperature"
+      },
+      "ambientlightstatus": {
+        "name": "Ambient light status"
+      },
+      "ancreae_mux": {
+        "name": "An creae mux"
+      },
+      "anticrease_flag": {
+        "name": "Anti-crease flag"
+      },
       "anticrease_setting": {
-        "name": "Anti crease duration"
+        "name": "Anti-crease duration"
+      },
+      "appcontrol_flag": {
+        "name": "App control flag"
       },
       "appliance_status": {
         "name": "Appliance status",
@@ -1740,24 +1920,237 @@
           "not_granted": "Not granted"
         }
       },
+      "aquapreserve": {
+        "name": "Aqua preserve"
+      },
+      "aquapreserve_flag": {
+        "name": "Aqua preserve flag"
+      },
+      "aquapreserve_runing_flag": {
+        "name": "Aqua preserve running flag"
+      },
+      "aromatherapy": {
+        "name": "Aromatherapy"
+      },
+      "auto_dose_compartment1_amount_setting": {
+        "name": "Auto-dose compartment 1 amount setting"
+      },
+      "auto_dose_compartment1_status_102": {
+        "name": "Auto-dose compartment 1 status 102"
+      },
+      "auto_dose_compartment1_tank_amount": {
+        "name": "Auto-dose compartment 1 tank amount"
+      },
+      "auto_dose_compartment2_amount_setting": {
+        "name": "Auto-dose compartment 2 amount setting"
+      },
+      "auto_dose_compartment2_status_102": {
+        "name": "Auto-dose compartment 2 status 102"
+      },
+      "auto_dose_compartment2_tank_amount": {
+        "name": "Auto-dose compartment 2 tank amount"
+      },
+      "auto_dose_drawer_status": {
+        "name": "Auto-dose drawer status"
+      },
       "auto_dose_duration": {
-        "name": "Auto dose duration"
+        "name": "Auto-dose duration"
+      },
+      "auto_dose_system_setting_status": {
+        "name": "Auto-dose system setting status"
+      },
+      "auto_super_rinse_setting_status": {
+        "name": "Auto super rinse setting status"
       },
       "autodose_flag": {
-        "name": "Auto dose flag",
+        "name": "Auto-dose flag",
         "state": {
           "available": "Available",
           "unavailable": "Unavailable"
         }
       },
+      "autodosetype": {
+        "name": "Auto-dose type"
+      },
+      "automatic_display_brightness_setting": {
+        "name": "Automatic display brightness setting"
+      },
+      "automatic_door_closing_at_program_start_setting": {
+        "name": "Automatic door closing at program start setting"
+      },
+      "automatic_door_open_at_program_end_after_time_setting": {
+        "name": "Automatic door open at program end after time setting"
+      },
+      "automatic_door_open_at_program_end_after_time_settingtimer_in_minutes": {
+        "name": "Automatic door open at program end after time setting timer in minutes"
+      },
+      "automatic_door_open_at_program_end_setting": {
+        "name": "Automatic door open at program end setting"
+      },
+      "automatic_water_tank_opening_setting": {
+        "name": "Automatic water tank opening setting"
+      },
+      "automaticchild_lock_setting": {
+        "name": "Automatic child lock setting"
+      },
+      "automaticdoor_lock_setting": {
+        "name": "Automatic door lock setting"
+      },
+      "automaticdoor_lock_setting_allowed": {
+        "name": "Automatic door lock setting allowed"
+      },
+      "auxiliary_heat": {
+        "name": "Auxiliary heat"
+      },
+      "bake_start_utc_datetime_bdc_timestamp": {
+        "name": "Bake start UTC datetime BDC timestamp"
+      },
+      "bathingwaterpump_flag": {
+        "name": "Bathing water pump flag"
+      },
+      "bathingwaterpump_rinse": {
+        "name": "Bathing water pump rinse"
+      },
+      "bathingwaterpump_wash": {
+        "name": "Bathing water pump wash"
+      },
+      "bathingwaterpumpstate": {
+        "name": "Bathing water pump state"
+      },
+      "brand_splash_setting": {
+        "name": "Brand splash setting"
+      },
+      "brightness_setting": {
+        "name": "Brightness setting"
+      },
       "bundling_humidity": {
         "name": "Bundling humidity"
+      },
+      "bundling_sensor_setting_status": {
+        "name": "Bundling sensor setting status"
       },
       "bundling_temperature": {
         "name": "Bundling temperature"
       },
+      "camera_enable_setting": {
+        "name": "Camera enable setting"
+      },
+      "camera_state": {
+        "name": "Camera state"
+      },
+      "camera_status": {
+        "name": "Camera status"
+      },
+      "cameralive_feed_current_phase": {
+        "name": "Camera live feed current phase"
+      },
+      "cameralive_feed_status": {
+        "name": "Camera live feed status"
+      },
+      "camerapicture_current_phase": {
+        "name": "Camera picture current phase"
+      },
+      "camerapicture_request": {
+        "name": "Camera picture request"
+      },
+      "cameratime_lapse_current_phase": {
+        "name": "Camera time lapse current phase"
+      },
+      "cameratime_lapse_request": {
+        "name": "Camera time lapse request"
+      },
+      "can_upload_wifi_program": {
+        "name": "Can upload WiFi program"
+      },
+      "cancel_delayend_flag": {
+        "name": "Cancel delay end flag"
+      },
+      "cancle_delayend": {
+        "name": "Cancel delay end"
+      },
       "child_lock_setting_status": {
         "name": "Child lock setting"
+      },
+      "child_lock_status_status": {
+        "name": "Child lock status status"
+      },
+      "childlock_flag": {
+        "name": "Child lock flag"
+      },
+      "childlock_newfuntion": {
+        "name": "Child lock new function"
+      },
+      "childlock_pause": {
+        "name": "Child lock pause"
+      },
+      "circulationmodestatus": {
+        "name": "Circulation mode status"
+      },
+      "clean_mode_switch_status": {
+        "name": "Clean mode switch status"
+      },
+      "cleanairactivepassedhours": {
+        "name": "Clean air active passed hours"
+      },
+      "cleanairactivetotalhours": {
+        "name": "Clean air active total hours"
+      },
+      "cleanairdurationofcycleinminutes": {
+        "name": "Clean air duration of cycle in minutes"
+      },
+      "cleanairmotorlevel": {
+        "name": "Clean air motor level"
+      },
+      "cleanairruncycleeverynumberofminutes": {
+        "name": "Clean air run cycle every number of minutes"
+      },
+      "cleanairstarttime": {
+        "name": "Clean air start time"
+      },
+      "cleanairstatus": {
+        "name": "Clean air status"
+      },
+      "coldwash": {
+        "name": "Cold wash"
+      },
+      "color_sensor_setting_status": {
+        "name": "Color sensor setting status"
+      },
+      "commodity_inspection": {
+        "name": "Commodity inspection"
+      },
+      "compartment1_type_setting_status": {
+        "name": "Compartment 1 type setting status"
+      },
+      "compartment2_type_setting_status": {
+        "name": "Compartment 2 type setting status"
+      },
+      "compartment_inuse": {
+        "name": "Compartment in use"
+      },
+      "compartment_switch": {
+        "name": "Compartment switch"
+      },
+      "compressor_condition": {
+        "name": "Compressor condition"
+      },
+      "compressor_frequency": {
+        "name": "Compressor frequency"
+      },
+      "condensed_watermode": {
+        "name": "Condensed water mode"
+      },
+      "cool_c": {
+        "name": "Cool C"
+      },
+      "cool_f": {
+        "name": "Cool F"
+      },
+      "cool_fan_speed": {
+        "name": "Cool fan speed"
+      },
+      "cool_r": {
+        "name": "Cool R"
       },
       "crisp_function_available": {
         "name": "Crisp function available",
@@ -1772,6 +2165,18 @@
       "curent_program_remaining_time": {
         "name": "Current program remaining time"
       },
+      "curprogdetergentdosage": {
+        "name": "Current program detergent dosage"
+      },
+      "curprogdetergentdosageno_auto": {
+        "name": "Current program detergent dosage no auto"
+      },
+      "curprogsoftnerdosage": {
+        "name": "Current program softener dosage"
+      },
+      "curprogsoftnerdosageno_auto": {
+        "name": "Current program softener dosage no auto"
+      },
       "current_baking_step": {
         "name": "Current baking step",
         "state": {
@@ -1784,6 +2189,9 @@
           "step_2": "Step 2",
           "step_3": "Step 3"
         }
+      },
+      "current_baking_step2": {
+        "name": "Current baking step 2"
       },
       "current_program_phase": {
         "name": "Current program phase",
@@ -1816,8 +2224,50 @@
           "running": "Running"
         }
       },
+      "current_set_step": {
+        "name": "Current set step"
+      },
       "current_temperature": {
         "name": "Current temperature"
+      },
+      "current_washing_program_phase_2": {
+        "name": "Current washing program phase 2"
+      },
+      "current_washing_program_phase_status": {
+        "name": "Current washing program phase status"
+      },
+      "current_water_level": {
+        "name": "Current water level"
+      },
+      "currentprogram_high_waterlevel_inflowtime": {
+        "name": "Current program high water level inflow time"
+      },
+      "currentprogram_high_waterlevel_starting_waterlevelvalue": {
+        "name": "Current program high water level starting water level value"
+      },
+      "currentprogram_low_waterlevel_inflowtime": {
+        "name": "Current program low water level inflow time"
+      },
+      "currentprogram_medium_waterlevel_inflowtime": {
+        "name": "Current program medium water level inflow time"
+      },
+      "currentprogram_medium_waterlevel_starting_waterlevelvalue": {
+        "name": "Current program medium water level starting water level value"
+      },
+      "currrent_dry_level_time": {
+        "name": "Current dry level time"
+      },
+      "custard_room": {
+        "name": "Custard room"
+      },
+      "d1_program_id": {
+        "name": "D 1 program ID"
+      },
+      "d2_program_id": {
+        "name": "D 2 program ID"
+      },
+      "d3_program_id": {
+        "name": "D 3 program ID"
       },
       "daily_energy_consumption": {
         "name": "Daily energy consumption"
@@ -1825,8 +2275,59 @@
       "daily_energy_kwh": {
         "name": "Daily energy consumption"
       },
+      "darhcdq": {
+        "name": "Darhcdq"
+      },
+      "dat3": {
+        "name": "Dat 3"
+      },
+      "data1": {
+        "name": "Data 1"
+      },
+      "data2": {
+        "name": "Data 2"
+      },
+      "data4": {
+        "name": "Data 4"
+      },
+      "data5": {
+        "name": "Data 5"
+      },
+      "date_display_format_status": {
+        "name": "Date display format status"
+      },
+      "date_format_setting": {
+        "name": "Date format setting"
+      },
+      "date_format_status": {
+        "name": "Date format status"
+      },
+      "date_time_format_day_state": {
+        "name": "Date time format day state"
+      },
+      "date_time_format_month_state": {
+        "name": "Date time format month state"
+      },
+      "date_time_format_year_state": {
+        "name": "Date time format year state"
+      },
+      "dbd_clean_mode": {
+        "name": "DBD clean mode"
+      },
+      "debacilli_mode": {
+        "name": "Debacilli mode"
+      },
+      "default_dry_level": {
+        "name": "Default dry level"
+      },
       "defaultspinspeed": {
         "name": "Default spin speed"
+      },
+      "delay_actions_flag": {
+        "name": "Delay actions flag"
+      },
+      "delay_close_dryer_time": {
+        "name": "Delay close dryer time"
       },
       "delay_duration_inminutes": {
         "name": "Delay duration"
@@ -1840,8 +2341,17 @@
       "delay_start_set_time": {
         "name": "Delay start set time"
       },
+      "delay_time_hour_min": {
+        "name": "Delay time hour min"
+      },
+      "delayclose_flag": {
+        "name": "Delay close flag"
+      },
       "delayendtime": {
         "name": "Delay end time"
+      },
+      "delayendtime_minute": {
+        "name": "Delay end time minute"
       },
       "delaystart_delayend_duration_inminutes": {
         "name": "Delay start duration"
@@ -1859,8 +2369,50 @@
       "delaystart_delayend_remaining_timein_minutes": {
         "name": "Delay start remaining time"
       },
+      "delaystart_delayend_timestamp_status": {
+        "name": "Delay start/end timestamp status"
+      },
+      "demo_mode_status": {
+        "name": "Demo mode status"
+      },
+      "descale_status": {
+        "name": "Descale status"
+      },
+      "detergent_amount_status": {
+        "name": "Detergent amount status"
+      },
+      "detergent_buynotifyswitch": {
+        "name": "Detergent buy notify switch"
+      },
+      "detergent_flag": {
+        "name": "Detergent flag"
+      },
+      "detergent_indicator": {
+        "name": "Detergent indicator"
+      },
+      "detergent_leftml": {
+        "name": "Detergent left ml"
+      },
+      "detergent_leftnum": {
+        "name": "Detergent left number"
+      },
+      "detergent_soften_settingflag": {
+        "name": "Detergent soften settings flag"
+      },
+      "detergent_totalml": {
+        "name": "Detergent total ml"
+      },
+      "detergent_totalnum": {
+        "name": "Detergent total number"
+      },
+      "detergent_useindex": {
+        "name": "Detergent use index"
+      },
       "detergentstandarddosage": {
         "name": "Detergent standard dosage"
+      },
+      "detergentstandarddosage_flag": {
+        "name": "Detergent standard dosage flag"
       },
       "device_status": {
         "name": "Device status",
@@ -1883,6 +2435,9 @@
           "stand_by": "Stand by"
         }
       },
+      "devicestatus": {
+        "name": "Device status"
+      },
       "display_brightness_setting_status": {
         "name": "Display brightness"
       },
@@ -1892,6 +2447,9 @@
       "display_logotype_setting_status": {
         "name": "Display logotype"
       },
+      "display_panel_ronshen": {
+        "name": "Display panel Ronshen"
+      },
       "display_switch_to_standby_after_minutes": {
         "name": "Display switch to standby after minutes",
         "state": {
@@ -1899,6 +2457,57 @@
           "30_min": "30 min",
           "5_min": "5 min"
         }
+      },
+      "displayboard_brand": {
+        "name": "Display board brand"
+      },
+      "displayboard_key_setting": {
+        "name": "Display board key setting"
+      },
+      "displayboard_type": {
+        "name": "Display board type"
+      },
+      "displayboard_version": {
+        "name": "Display board version"
+      },
+      "displaybrightness_setting": {
+        "name": "Display brightness setting"
+      },
+      "displaycontrast_setting": {
+        "name": "Display contrast setting"
+      },
+      "door_close_light_status": {
+        "name": "Door close light status"
+      },
+      "door_close_ui_display_status": {
+        "name": "Door close UI display status"
+      },
+      "door_lock_status": {
+        "name": "Door lock status"
+      },
+      "door_num_four_color": {
+        "name": "Door number four color"
+      },
+      "door_num_one_color": {
+        "name": "Door number one color"
+      },
+      "door_num_three_color": {
+        "name": "Door number three color"
+      },
+      "door_num_two_color": {
+        "name": "Door number two color"
+      },
+      "door_open_light_status": {
+        "name": "Door open light status"
+      },
+      "door_open_notification_setting": {
+        "name": "Door open notification setting"
+      },
+      "door_open_ui_display_status": {
+        "name": "Door open UI display status"
+      },
+      "door_sensor_setting": {
+        "name": "Door sensor setting"
       },
       "door_status": {
         "name": "Door status",
@@ -1910,8 +2519,173 @@
           "other": "Other"
         }
       },
+      "dose_assist_recommended_detergent_quantity_unit_status": {
+        "name": "Dose assist recommended detergent quantity unit status"
+      },
+      "dose_assist_recommended_low_concenatration_detergent_quantity": {
+        "name": "Dose assist recommended low concentration detergent quantity"
+      },
+      "dose_assist_status": {
+        "name": "Dose assist status"
+      },
+      "dose_detergent_amount": {
+        "name": "Dose detergent amount"
+      },
+      "dose_softener_amount": {
+        "name": "Dose softener amount"
+      },
+      "doseaid": {
+        "name": "Dose aid"
+      },
+      "downlight": {
+        "name": "Down light"
+      },
+      "downlight_lighttime": {
+        "name": "Down light light time"
+      },
+      "downloadprogram": {
+        "name": "Download program"
+      },
+      "drum_light_setting_status": {
+        "name": "Drum light setting status"
+      },
+      "drumcleancycle_runsnumber": {
+        "name": "Drum clean cycle runs number"
+      },
+      "drumcleanflag": {
+        "name": "Drum clean flag"
+      },
+      "drumcleanswitch": {
+        "name": "Drum clean switch"
+      },
+      "drumcleanwashcount": {
+        "name": "Drum clean wash count"
+      },
+      "dry_level_show": {
+        "name": "Dry level show"
+      },
+      "dry_lever": {
+        "name": "Dry lever"
+      },
+      "dry_time": {
+        "name": "Dry time"
+      },
+      "dryfilterremindflag": {
+        "name": "Dry filter remind flag"
+      },
+      "drying_linkage_order": {
+        "name": "Drying linkage order"
+      },
+      "drying_linkage_preheat_time": {
+        "name": "Drying linkage preheat time"
+      },
+      "drying_linkage_programid": {
+        "name": "Drying linkage program ID"
+      },
+      "drying_washing_linkage_state": {
+        "name": "Drying washing linkage state"
+      },
+      "dryingswitch": {
+        "name": "Drying switch"
+      },
+      "dryingwizzard_clothesdrylevel": {
+        "name": "Drying wizard clothes dry level"
+      },
+      "dryingwizzard_clothesdrylevel1": {
+        "name": "Drying wizard clothes dry level 1"
+      },
+      "dryingwizzard_clothesdrytarget": {
+        "name": "Drying wizard clothes dry target"
+      },
+      "dryingwizzard_clothesdrytarget1": {
+        "name": "Drying wizard clothes dry target 1"
+      },
+      "dryingwizzard_clothesmaterialcharacteristics": {
+        "name": "Drying wizard clothes material characteristics"
+      },
+      "dryingwizzard_clothesmaterialcharacteristics_first": {
+        "name": "Drying wizard clothes material characteristics first"
+      },
+      "dryingwizzard_clothesmaterialcharacteristics_second": {
+        "name": "Drying wizard clothes material characteristics second"
+      },
+      "dryingwizzard_clothesmaterialcharacteristics_third": {
+        "name": "Drying wizard clothes material characteristics third"
+      },
+      "dryingwizzard_clothingtype": {
+        "name": "Drying wizard clothing type"
+      },
+      "dryingwizzard_clothingtype_eighth": {
+        "name": "Drying wizard clothing type eighth"
+      },
+      "dryingwizzard_clothingtype_eleventh": {
+        "name": "Drying wizard clothing type eleventh"
+      },
+      "dryingwizzard_clothingtype_fifth": {
+        "name": "Drying wizard clothing type fifth"
+      },
+      "dryingwizzard_clothingtype_first": {
+        "name": "Drying wizard clothing type first"
+      },
+      "dryingwizzard_clothingtype_fourth": {
+        "name": "Drying wizard clothing type fourth"
+      },
+      "dryingwizzard_clothingtype_ninth": {
+        "name": "Drying wizard clothing type ninth"
+      },
+      "dryingwizzard_clothingtype_second": {
+        "name": "Drying wizard clothing type second"
+      },
+      "dryingwizzard_clothingtype_seventh": {
+        "name": "Drying wizard clothing type seventh"
+      },
+      "dryingwizzard_clothingtype_sixth": {
+        "name": "Drying wizard clothing type sixth"
+      },
+      "dryingwizzard_clothingtype_tenth": {
+        "name": "Drying wizard clothing type tenth"
+      },
+      "dryingwizzard_clothingtype_third": {
+        "name": "Drying wizard clothing type third"
+      },
+      "dryingwizzard_clothingtype_thirteenth": {
+        "name": "Drying wizard clothing type thirteenth"
+      },
+      "dryingwizzard_clothingtype_twelfth": {
+        "name": "Drying wizard clothing type twelfth"
+      },
+      "dryleve_flag": {
+        "name": "Dry level flag"
+      },
+      "drymode_flag": {
+        "name": "Dry mode flag"
+      },
+      "drymodel": {
+        "name": "Dry model"
+      },
       "dryopen_defaultspinspeed": {
         "name": "Dry open default spin speed"
+      },
+      "duration_of_clock": {
+        "name": "Duration of clock"
+      },
+      "eco_mode_setting": {
+        "name": "Eco mode setting"
+      },
+      "eco_score_type": {
+        "name": "Eco score type"
+      },
+      "ecomode": {
+        "name": "Eco mode"
+      },
+      "electric_current": {
+        "name": "Electric current"
+      },
+      "electric_energy_one_tenths_value": {
+        "name": "Electric energy one tenths value"
+      },
+      "electric_energy_percentile_thousands_value": {
+        "name": "Electric energy percentile thousands value"
       },
       "electricit_consumption": {
         "name": "Electricity consumption"
@@ -1925,14 +2699,347 @@
       "energy_estimate": {
         "name": "Energy estimate"
       },
+      "energy_save_setting_status": {
+        "name": "Energy save setting status"
+      },
+      "enterperformancemode_dry1_conditiontype": {
+        "name": "Enter performance mode dry 1 condition type"
+      },
+      "enterperformancemode_dry1_mainwashtime": {
+        "name": "Enter performance mode dry 1 main wash time"
+      },
+      "enterperformancemode_wash1_conditiontype": {
+        "name": "Enter performance mode wash 1 condition type"
+      },
+      "enterperformancemode_wash1_mainwashtime": {
+        "name": "Enter performance mode wash 1 main wash time"
+      },
+      "enterperformancemode_wash2_conditiontype": {
+        "name": "Enter performance mode wash 2 condition type"
+      },
+      "enterperformancemode_wash2_mainwashtime": {
+        "name": "Enter performance mode wash 2 main wash time"
+      },
       "environment_humidity": {
         "name": "Environment humidity"
       },
       "environment_real_temperature": {
         "name": "Environment real temperature"
       },
+      "error_0": {
+        "name": "Error 0"
+      },
+      "error_1": {
+        "name": "Error 1"
+      },
+      "error_10": {
+        "name": "Error 10"
+      },
+      "error_11": {
+        "name": "Error 11"
+      },
+      "error_12": {
+        "name": "Error 12"
+      },
+      "error_12_1": {
+        "name": "Error 12_1"
+      },
+      "error_12_10": {
+        "name": "Error 12_10"
+      },
+      "error_12_11": {
+        "name": "Error 12_11"
+      },
+      "error_12_12": {
+        "name": "Error 12_12"
+      },
+      "error_12_13": {
+        "name": "Error 12_13"
+      },
+      "error_12_14": {
+        "name": "Error 12_14"
+      },
+      "error_12_15": {
+        "name": "Error 12_15"
+      },
+      "error_12_16": {
+        "name": "Error 12_16"
+      },
+      "error_12_17": {
+        "name": "Error 12_17"
+      },
+      "error_12_18": {
+        "name": "Error 12_18"
+      },
+      "error_12_2": {
+        "name": "Error 12_2"
+      },
+      "error_12_3": {
+        "name": "Error 12_3"
+      },
+      "error_12_4": {
+        "name": "Error 12_4"
+      },
+      "error_12_5": {
+        "name": "Error 12_5"
+      },
+      "error_12_6": {
+        "name": "Error 12_6"
+      },
+      "error_12_7": {
+        "name": "Error 12_7"
+      },
+      "error_12_8": {
+        "name": "Error 12_8"
+      },
+      "error_12_9": {
+        "name": "Error 12_9"
+      },
+      "error_13": {
+        "name": "Error 13"
+      },
+      "error_13_1": {
+        "name": "Error 13_1"
+      },
+      "error_13_2": {
+        "name": "Error 13_2"
+      },
+      "error_13_3": {
+        "name": "Error 13_3"
+      },
+      "error_14": {
+        "name": "Error 14"
+      },
+      "error_15": {
+        "name": "Error 15"
+      },
+      "error_16": {
+        "name": "Error 16"
+      },
+      "error_17": {
+        "name": "Error 17"
+      },
+      "error_18": {
+        "name": "Error 18"
+      },
+      "error_19": {
+        "name": "Error 19"
+      },
+      "error_2": {
+        "name": "Error 2"
+      },
+      "error_20": {
+        "name": "Error 20"
+      },
+      "error_21": {
+        "name": "Error 21"
+      },
+      "error_22": {
+        "name": "Error 22"
+      },
+      "error_23": {
+        "name": "Error 23"
+      },
+      "error_24": {
+        "name": "Error 24"
+      },
+      "error_25": {
+        "name": "Error 25"
+      },
+      "error_26": {
+        "name": "Error 26"
+      },
+      "error_27": {
+        "name": "Error 27"
+      },
+      "error_28": {
+        "name": "Error 28"
+      },
+      "error_29": {
+        "name": "Error 29"
+      },
+      "error_3": {
+        "name": "Error 3"
+      },
+      "error_30": {
+        "name": "Error 30"
+      },
+      "error_31": {
+        "name": "Error 31"
+      },
+      "error_32": {
+        "name": "Error 32"
+      },
+      "error_33": {
+        "name": "Error 33"
+      },
+      "error_34": {
+        "name": "Error 34"
+      },
+      "error_35": {
+        "name": "Error 35"
+      },
+      "error_36": {
+        "name": "Error 36"
+      },
+      "error_37": {
+        "name": "Error 37"
+      },
+      "error_38": {
+        "name": "Error 38"
+      },
+      "error_38_1": {
+        "name": "Error 38_1"
+      },
+      "error_39": {
+        "name": "Error 39"
+      },
+      "error_4": {
+        "name": "Error 4"
+      },
+      "error_40": {
+        "name": "Error 40"
+      },
+      "error_41": {
+        "name": "Error 41"
+      },
+      "error_42": {
+        "name": "Error 42"
+      },
+      "error_43": {
+        "name": "Error 43"
+      },
+      "error_44": {
+        "name": "Error 44"
+      },
+      "error_45": {
+        "name": "Error 45"
+      },
+      "error_46": {
+        "name": "Error 46"
+      },
+      "error_47": {
+        "name": "Error 47"
+      },
+      "error_48": {
+        "name": "Error 48"
+      },
+      "error_49": {
+        "name": "Error 49"
+      },
+      "error_5": {
+        "name": "Error 5"
+      },
+      "error_50": {
+        "name": "Error 50"
+      },
+      "error_51": {
+        "name": "Error 51"
+      },
+      "error_52": {
+        "name": "Error 52"
+      },
+      "error_6": {
+        "name": "Error 6"
+      },
+      "error_7": {
+        "name": "Error 7"
+      },
+      "error_7_1": {
+        "name": "Error 7_1"
+      },
+      "error_7_2": {
+        "name": "Error 7_2"
+      },
+      "error_8": {
+        "name": "Error 8"
+      },
+      "error_89": {
+        "name": "Error 89"
+      },
+      "error_9": {
+        "name": "Error 9"
+      },
+      "error_90": {
+        "name": "Error 90"
+      },
+      "error_9_1": {
+        "name": "Error 9_1"
+      },
       "error_code": {
         "name": "Error code"
+      },
+      "error_f10": {
+        "name": "Error f10"
+      },
+      "error_f11": {
+        "name": "Error f11"
+      },
+      "error_f12": {
+        "name": "Error f12"
+      },
+      "error_f40": {
+        "name": "Error f40"
+      },
+      "error_f41": {
+        "name": "Error f41"
+      },
+      "error_f42": {
+        "name": "Error f42"
+      },
+      "error_f43": {
+        "name": "Error f43"
+      },
+      "error_f44": {
+        "name": "Error f44"
+      },
+      "error_f45": {
+        "name": "Error f45"
+      },
+      "error_f46": {
+        "name": "Error f46"
+      },
+      "error_f52": {
+        "name": "Error f52"
+      },
+      "error_f54": {
+        "name": "Error f54"
+      },
+      "error_f56": {
+        "name": "Error f56"
+      },
+      "error_f61": {
+        "name": "Error f61"
+      },
+      "error_f62": {
+        "name": "Error f62"
+      },
+      "error_f65": {
+        "name": "Error f65"
+      },
+      "error_f67": {
+        "name": "Error f67"
+      },
+      "error_f68": {
+        "name": "Error f68"
+      },
+      "error_f69": {
+        "name": "Error f69"
+      },
+      "error_f70": {
+        "name": "Error f70"
+      },
+      "error_f72": {
+        "name": "Error f72"
+      },
+      "error_f74": {
+        "name": "Error f74"
+      },
+      "error_f75": {
+        "name": "Error f75"
+      },
+      "error_f76": {
+        "name": "Error f76"
       },
       "error_read_out_1_code": {
         "name": "Error read out 1 code"
@@ -1940,11 +3047,17 @@
       "error_read_out_1_cycle": {
         "name": "Error read out 1 cycle"
       },
+      "error_read_out_1_status": {
+        "name": "Error read out 1 status"
+      },
       "error_read_out_2_code": {
         "name": "Error read out 2 code"
       },
       "error_read_out_2_cycle": {
         "name": "Error read out 2 cycle"
+      },
+      "error_read_out_2_status": {
+        "name": "Error read out 2 status"
       },
       "error_read_out_3_code": {
         "name": "Error read out 3 code"
@@ -1952,8 +3065,29 @@
       "error_read_out_3_cycle": {
         "name": "Error read out 3 cycle"
       },
+      "error_read_out_3_status": {
+        "name": "Error read out 3 status"
+      },
+      "extra_rinse_status": {
+        "name": "Extra rinse status"
+      },
+      "extra_soft": {
+        "name": "Extra soft"
+      },
+      "extra_soft_hideflag": {
+        "name": "Extra soft hide flag"
+      },
       "extradry_setting": {
         "name": "ExtraDry setting"
+      },
+      "extrarinsenum": {
+        "name": "Extra rinse number"
+      },
+      "extrarinsenum_flag": {
+        "name": "Extra rinse number flag"
+      },
+      "extrasoft_runing_flag": {
+        "name": "Extra soft running flag"
       },
       "f_cool_qvalue": {
         "name": "Cooling"
@@ -1973,6 +3107,15 @@
       "fan_sequence_setting_status": {
         "name": "Fan sequence"
       },
+      "fast_store_mode_exist": {
+        "name": "Fast store mode exist"
+      },
+      "fast_store_mode_status": {
+        "name": "Fast store mode status"
+      },
+      "favour_program_id": {
+        "name": "Favour program ID"
+      },
       "feedback_volumen_setting_status": {
         "name": "Feedback volume",
         "state": {
@@ -1982,14 +3125,47 @@
           "mute": "Mute"
         }
       },
+      "filter_alarm_time": {
+        "name": "Filter alarm time"
+      },
       "filter_state": {
         "name": "Filter state"
+      },
+      "filterclean_dry": {
+        "name": "Filter clean dry"
+      },
+      "filterclean_drycount": {
+        "name": "Filter clean dry count"
+      },
+      "filterclean_dryflag": {
+        "name": "Filter clean dry flag"
+      },
+      "filterclean_wash": {
+        "name": "Filter clean wash"
+      },
+      "filterclean_washcound": {
+        "name": "Filter clean wash count"
+      },
+      "filterclean_washcount": {
+        "name": "Filter clean wash count"
+      },
+      "filterclean_washflag": {
+        "name": "Filter clean wash flag"
       },
       "flexiblespintime_flag": {
         "name": "Flexible spin time flag"
       },
+      "fluffysoft": {
+        "name": "Fluffy soft"
+      },
+      "fluffysoft_flag": {
+        "name": "Fluffy soft flag"
+      },
+      "fluffysoft_flag1": {
+        "name": "Fluffy soft flag 1"
+      },
       "fota": {
-        "name": "Fota",
+        "name": "FOTA",
         "state": {
           "confirm_fota": "Confirm fota",
           "finished": "Finished",
@@ -1998,8 +3174,32 @@
           "waiting_for_confirmation": "Waiting for confirmation"
         }
       },
+      "fota_status": {
+        "name": "FOTA status"
+      },
+      "fotastatus": {
+        "name": "FOTA status"
+      },
+      "free_key": {
+        "name": "Free key"
+      },
+      "free_room": {
+        "name": "Free room"
+      },
+      "free_room_open_2": {
+        "name": "Free room open 2"
+      },
+      "freeri_fan_speed": {
+        "name": "Freeri fan speed"
+      },
       "freeze_door_open_time": {
         "name": "Freeze door open time"
+      },
+      "freeze_drawer_room_temp": {
+        "name": "Freeze drawer room temperature"
+      },
+      "freeze_fan_speed": {
+        "name": "Freeze fan speed"
       },
       "freeze_max_temperature": {
         "name": "Freeze max temperature"
@@ -2013,8 +3213,26 @@
       "freeze_sensor_real_temperature": {
         "name": "Freezer sensor real temperature"
       },
+      "freezing_powerdown_temp_alarm": {
+        "name": "Freezing power down temperature alarm"
+      },
+      "froze_convert_to_refri_switch_status": {
+        "name": "Froze convert to refrigerator switch status"
+      },
       "fruit_vegetables_temperature": {
         "name": "Fruit vegetables temperature"
+      },
+      "function1_useindex": {
+        "name": "Function 1 use index"
+      },
+      "gentle_dry": {
+        "name": "Gentle dry"
+      },
+      "gentledry_flag": {
+        "name": "Gentle dry flag"
+      },
+      "getcurrentcityinfoflag": {
+        "name": "Get current city info flag"
       },
       "gratin_total_allowed_time_in_minutes": {
         "name": "Gratin total allowed time in minutes"
@@ -2022,8 +3240,26 @@
       "gratin_total_passed_time_in_minutes": {
         "name": "Gratin total passed time in minutes"
       },
+      "greasefiltercleaningintervalinhours": {
+        "name": "Grease filter cleaning interval in hours"
+      },
+      "greasefilterstatus": {
+        "name": "Grease filter status"
+      },
+      "greasefilterusedhours": {
+        "name": "Grease filter used hours"
+      },
       "grill_plate_measured_temperature": {
         "name": "Grill plate measured temperature"
+      },
+      "half_load": {
+        "name": "Half load"
+      },
+      "hard_pairing_commond": {
+        "name": "Hard pairing command"
+      },
+      "hard_pairing_status": {
+        "name": "Hard pairing status"
       },
       "hardpairingstatus": {
         "name": "Hard pairing status",
@@ -2042,6 +3278,9 @@
       },
       "high_temperature": {
         "name": "High temperature"
+      },
+      "high_temperature_status": {
+        "name": "High temperature status"
       },
       "hob_warming_zone_power_level": {
         "name": "Hob warming zone power level",
@@ -2081,20 +3320,155 @@
           "off_hot": "Off hot"
         }
       },
+      "hottime": {
+        "name": "Hot time"
+      },
+      "human_on_off_status": {
+        "name": "Human on off status"
+      },
+      "human_sense_light_status": {
+        "name": "Human sense light status"
+      },
+      "human_sense_ui_display_state": {
+        "name": "Human sense UI display state"
+      },
+      "human_sensor_switch_exist": {
+        "name": "Human sensor switch exist"
+      },
+      "humanbody_sensor_switch_status": {
+        "name": "Human body sensor switch status"
+      },
+      "humdy_test_switch_state": {
+        "name": "Humidity test switch state"
+      },
+      "ice_machine_actual_temp": {
+        "name": "Ice machine actual temperature"
+      },
+      "ice_make_room_switch": {
+        "name": "Ice make room switch"
+      },
+      "ice_making_fast_status": {
+        "name": "Ice making fast status"
+      },
+      "ice_making_full_status": {
+        "name": "Ice making full status"
+      },
+      "ice_room_actual_temp": {
+        "name": "Ice room actual temperature"
+      },
+      "id1": {
+        "name": "ID 1"
+      },
+      "id2": {
+        "name": "ID 2"
+      },
+      "id3": {
+        "name": "ID 3"
+      },
+      "id4": {
+        "name": "ID 4"
+      },
+      "id5": {
+        "name": "ID 5"
+      },
+      "inactivity_timeout": {
+        "name": "Inactivity timeout"
+      },
+      "initializationprogramid": {
+        "name": "Initialization program ID"
+      },
+      "intensive_flag": {
+        "name": "Intensive flag"
+      },
+      "intensivewash": {
+        "name": "Intensive wash"
+      },
       "interior_light_status": {
         "name": "Interior light"
+      },
+      "ion_preservation_switch": {
+        "name": "Ion preservation switch"
+      },
+      "ion_refresh": {
+        "name": "Ion refresh"
+      },
+      "iron_dry_time": {
+        "name": "Iron dry time"
+      },
+      "iscloudprogramflag": {
+        "name": "Is cloud program flag"
+      },
+      "ispower_flag": {
+        "name": "Is power flag"
+      },
+      "kettle_install_status": {
+        "name": "Kettle install status"
+      },
+      "kettle_overflow_alarm": {
+        "name": "Kettle overflow alarm"
+      },
+      "key_press_sound_volume": {
+        "name": "Key press sound volume"
+      },
+      "language": {
+        "name": "Language"
+      },
+      "language_select": {
+        "name": "Language select"
+      },
+      "language_setting": {
+        "name": "Language setting"
       },
       "language_status": {
         "name": "Language"
       },
+      "last_completed_running_process": {
+        "name": "Last completed running process"
+      },
       "last_run_program_id": {
         "name": "Last run program"
+      },
+      "lidopenflag": {
+        "name": "Lid open flag"
+      },
+      "lights_duration_setting": {
+        "name": "Lights duration setting"
+      },
+      "lightsbrightness_setting": {
+        "name": "Lights brightness setting"
+      },
+      "lightscolor_temperature_setting": {
+        "name": "Lights color temperature setting"
+      },
+      "lightstatus": {
+        "name": "Light status"
+      },
+      "liquid_unit_setting_status": {
+        "name": "Liquid unit setting status"
+      },
+      "load_operation_status2": {
+        "name": "Load operation status 2"
+      },
+      "loadlevel": {
+        "name": "Load level"
+      },
+      "lock_key": {
+        "name": "Lock key"
+      },
+      "lockpin_code": {
+        "name": "Lock pin code"
+      },
+      "logo_setting_status": {
+        "name": "Logo setting status"
       },
       "low_humidity": {
         "name": "Low humidity"
       },
       "low_temperature": {
         "name": "Low temperature"
+      },
+      "lumin_value_of_interior_light": {
+        "name": "Lumin value of interior light"
       },
       "machine_status": {
         "name": "Machine status",
@@ -2105,11 +3479,35 @@
           "standby": "Standby"
         }
       },
+      "mainboard_type": {
+        "name": "Mainboard type"
+      },
+      "mainboard_version": {
+        "name": "Mainboard version"
+      },
       "mainwashtime": {
         "name": "Main wash time"
       },
+      "mainwashtime_flag": {
+        "name": "Main wash time flag"
+      },
+      "mainwashtimelist": {
+        "name": "Main wash time list"
+      },
       "mainwashtimeuseindex": {
         "name": "Main wash time use index"
+      },
+      "market_mode_exist": {
+        "name": "Market mode exist"
+      },
+      "max_rpm_allowed_stat": {
+        "name": "Max RPM allowed status"
+      },
+      "mdo_on_demand": {
+        "name": "MDO on demand"
+      },
+      "mdo_on_demand_allowed": {
+        "name": "MDO on demand allowed"
       },
       "measured_grid_voltage": {
         "name": "Measured grid voltage"
@@ -2140,6 +3538,36 @@
       "mian_wash_time": {
         "name": "Main wash time"
       },
+      "micro_water_supply_mode": {
+        "name": "Micro water supply mode"
+      },
+      "mode_key": {
+        "name": "Mode key"
+      },
+      "model_type": {
+        "name": "Model type"
+      },
+      "monitor": {
+        "name": "Monitor"
+      },
+      "monitor_set": {
+        "name": "Monitor set"
+      },
+      "monitor_set_act": {
+        "name": "Monitor set act"
+      },
+      "navigation_sound_setting": {
+        "name": "Navigation sound setting"
+      },
+      "night_dry": {
+        "name": "Night dry"
+      },
+      "night_mode_end_hour": {
+        "name": "Night mode end hour"
+      },
+      "night_mode_light_dark_level": {
+        "name": "Night mode light dark level"
+      },
       "night_mode_off_hour": {
         "name": "Night mode off hour"
       },
@@ -2152,11 +3580,98 @@
       "night_mode_on_minute": {
         "name": "Night mode on minute"
       },
+      "night_mode_screen_dark_level": {
+        "name": "Night mode screen dark level"
+      },
+      "night_mode_start_hour": {
+        "name": "Night mode start hour"
+      },
+      "night_mode_start_min": {
+        "name": "Night mode start min"
+      },
+      "night_modedisplay_brightness_setting": {
+        "name": "Night mode display brightness setting"
+      },
+      "night_modelight_brightness_setting": {
+        "name": "Night mode light brightness setting"
+      },
+      "night_modevolume_setting": {
+        "name": "Night mode volume setting"
+      },
+      "night_start_setting_status_102": {
+        "name": "Night start setting status 102"
+      },
+      "nightmode_flag": {
+        "name": "Night mode flag"
+      },
+      "no_autodoseswitch": {
+        "name": "No auto-dose switch"
+      },
+      "no_sound_status": {
+        "name": "No sound status"
+      },
+      "normal_sound_size": {
+        "name": "Normal sound size"
+      },
+      "not_active": {
+        "name": "Not active"
+      },
+      "notification_pitch_sound_setting": {
+        "name": "Notification pitch sound setting"
+      },
+      "notification_sounds_volume_setting": {
+        "name": "Notification sounds volume setting"
+      },
       "notification_volumen_setting_status": {
         "name": "Notification volume"
       },
+      "ntc_sensor_1": {
+        "name": "NTC sensor 1"
+      },
+      "ntc_sensor_2": {
+        "name": "NTC sensor 2"
+      },
+      "number_of_rinses": {
+        "name": "Number of rinses"
+      },
+      "odor_sensor_fault_flag": {
+        "name": "Odor sensor fault flag"
+      },
+      "odor_sensor_no_disturb_mode_status": {
+        "name": "Odor sensor no disturb mode status"
+      },
+      "odor_sensor_sensitivity": {
+        "name": "Odor sensor sensitivity"
+      },
+      "odor_sensor_swithc_status": {
+        "name": "Odor sensor switch status"
+      },
+      "once_rinse_step_time": {
+        "name": "Once rinse step time"
+      },
+      "once_strong_step_time": {
+        "name": "Once strong step time"
+      },
+      "oncewaterinrinse_time": {
+        "name": "Once water in rinse time"
+      },
+      "onlyrinse_model": {
+        "name": "Only rinse model"
+      },
+      "onlyspin_model": {
+        "name": "Only spin model"
+      },
+      "onlywash_model": {
+        "name": "Only wash model"
+      },
       "order_time_minimum_hour": {
         "name": "Order time minimum hour"
+      },
+      "ota_num1": {
+        "name": "OTA number 1"
+      },
+      "ota_sucess": {
+        "name": "OTA success"
       },
       "oven_measured_temperature": {
         "name": "Oven measured temperature"
@@ -2170,17 +3685,122 @@
       "oven_usage_value_time_since_last_cleaning": {
         "name": "Oven usage value time since last cleaning"
       },
+      "pairing": {
+        "name": "Pairing"
+      },
+      "pairing_active": {
+        "name": "Pairing active"
+      },
       "parse_lib_ota": {
         "name": "Parse lib OTA"
       },
       "parse_lib_ver": {
         "name": "Parse lib version"
       },
+      "party_mode_switch_status": {
+        "name": "Party mode switch status"
+      },
+      "pause_anticrease_flag": {
+        "name": "Pause anti-crease flag"
+      },
+      "performancemode_flag": {
+        "name": "Performance mode flag"
+      },
+      "performancemode_mainwashtime": {
+        "name": "Performance mode main wash time"
+      },
+      "permanent_remote_start": {
+        "name": "Permanent remote start"
+      },
+      "power_one_tenths_value": {
+        "name": "Power one tenths value"
+      },
+      "power_save": {
+        "name": "Power save"
+      },
+      "power_save_status": {
+        "name": "Power save status"
+      },
+      "power_value": {
+        "name": "Power value"
+      },
+      "power_voltage": {
+        "name": "Power voltage"
+      },
+      "powersavedeletetime": {
+        "name": "Power save delete time"
+      },
+      "presoak": {
+        "name": "Pre-soak"
+      },
+      "presoak_index": {
+        "name": "Pre-soak index"
+      },
+      "presoak_runing_flag": {
+        "name": "Pre-soak running flag"
+      },
+      "presoakflag": {
+        "name": "Pre-soak flag"
+      },
       "pressure_calibration_setting_status": {
         "name": "Pressure calibration"
       },
+      "prewashstepfinishnotifyswitch": {
+        "name": "Prewash step finish notify switch"
+      },
       "program_end_to_shutdown_time_in_minutes": {
         "name": "Program end to shutdown time in minutes"
+      },
+      "program_settingsdefault": {
+        "name": "Program settings default"
+      },
+      "program_settingsstart_key_duation_formw": {
+        "name": "Program settings start key duration for mw"
+      },
+      "programfunctionvalueid": {
+        "name": "Program function value ID"
+      },
+      "proximity_sensor_setting": {
+        "name": "Proximity sensor setting"
+      },
+      "proximity_sensor_settingclose_user_detecteddisplay_change_to": {
+        "name": "Proximity sensor setting close user detected display change to"
+      },
+      "proximity_sensor_settingclose_user_detectedlight_change_to": {
+        "name": "Proximity sensor setting close user detected light change to"
+      },
+      "proximity_sensor_settingdistant_user_detecteddisplay_change_to": {
+        "name": "Proximity sensor setting distant user detected display change to"
+      },
+      "proximity_sensor_settingdistant_user_detectedlight_change_to": {
+        "name": "Proximity sensor setting distant user detected light change to"
+      },
+      "proximitysensor": {
+        "name": "Proximity sensor"
+      },
+      "proximitysensorreactiontime": {
+        "name": "Proximity sensor reaction time"
+      },
+      "proximitysensorsensitivity": {
+        "name": "Proximity sensor sensitivity"
+      },
+      "proximitysensorstatus": {
+        "name": "Proximity sensor status"
+      },
+      "pumcleanflag": {
+        "name": "Pump clean flag"
+      },
+      "pumcleanremaintime": {
+        "name": "Pump clean remaining time"
+      },
+      "pumcleantotaltime": {
+        "name": "Pump clean total time"
+      },
+      "quickermode": {
+        "name": "Quicker mode"
+      },
+      "quiet_model": {
+        "name": "Quiet model"
       },
       "real_humidity": {
         "name": "Real humidity"
@@ -2191,8 +3811,50 @@
       "real_humidity_c": {
         "name": "Real humidity c"
       },
+      "recirculationfilter1lifetimeinhours": {
+        "name": "Recirculation filter 1 lifetime in hours"
+      },
+      "recirculationfilter1status": {
+        "name": "Recirculation filter 1 status"
+      },
+      "recirculationfilter1type": {
+        "name": "Recirculation filter 1 type"
+      },
+      "recirculationfilter1usedhours": {
+        "name": "Recirculation filter 1 used hours"
+      },
+      "recirculationfilter2lifetimeinhours": {
+        "name": "Recirculation filter 2 lifetime in hours"
+      },
+      "recirculationfilter2status": {
+        "name": "Recirculation filter 2 status"
+      },
+      "recirculationfilter2type": {
+        "name": "Recirculation filter 2 type"
+      },
+      "recirculationfilter2usedhours": {
+        "name": "Recirculation filter 2 used hours"
+      },
+      "ref_light": {
+        "name": "Ref light"
+      },
+      "refr_key": {
+        "name": "Refr key"
+      },
+      "refr_room": {
+        "name": "Refr room"
+      },
       "refrigerator_door_open_time": {
         "name": "Refrigerator door open time"
+      },
+      "refrigerator_freeze_swith": {
+        "name": "Refrigerator freeze switch"
+      },
+      "refrigerator_freeze_swith_state": {
+        "name": "Refrigerator freeze switch state"
+      },
+      "refrigerator_key": {
+        "name": "Refrigerator key"
       },
       "refrigerator_max_temperature": {
         "name": "Refrigerator max temperature"
@@ -2200,8 +3862,17 @@
       "refrigerator_min_temperature": {
         "name": "Refrigerator min temperature"
       },
+      "refrigerator_poweroff_ad": {
+        "name": "Refrigerator power off ad"
+      },
+      "refrigerator_poweron_ad": {
+        "name": "Refrigerator power on ad"
+      },
       "refrigerator_real_temperature": {
         "name": "Refrigerator real temperature"
+      },
+      "refrigerator_room": {
+        "name": "Refrigerator room"
       },
       "refrigerator_sensor_real_temperature": {
         "name": "Refrigerator sensor real temperature"
@@ -2209,17 +3880,146 @@
       "remaining_time_of_selected_program": {
         "name": "Remaining time of selected program"
       },
+      "remote_control_mode": {
+        "name": "Remote control mode"
+      },
+      "remote_control_mode_monitoring": {
+        "name": "Remote control mode monitoring"
+      },
+      "remote_control_monitoring_set_commands": {
+        "name": "Remote control monitoring set commands"
+      },
+      "remote_control_monitoring_set_commands_actions": {
+        "name": "Remote control monitoring set commands actions"
+      },
+      "remotecontrolmonitoringsetcommands": {
+        "name": "Remote control monitoring set commands"
+      },
+      "remotecontrolmonitoringsetcommandsactions": {
+        "name": "Remote control monitoring set commands actions"
+      },
+      "rfpairingstatus": {
+        "name": "RF pairing status"
+      },
+      "rgb_atmosphere_mode_b_value": {
+        "name": "RGB atmosphere mode B value"
+      },
+      "rgb_atmosphere_mode_g_value": {
+        "name": "RGB atmosphere mode G value"
+      },
+      "rgb_atmosphere_mode_r_value": {
+        "name": "RGB atmosphere mode R value"
+      },
+      "rgb_function_mode_b_value": {
+        "name": "RGB function mode B value"
+      },
+      "rgb_function_mode_g_value": {
+        "name": "RGB function mode G value"
+      },
+      "rgb_function_mode_r_value": {
+        "name": "RGB function mode R value"
+      },
+      "rgb_light_atmosphere_brightness": {
+        "name": "RGB light atmosphere brightness"
+      },
+      "rgb_light_atmosphere_on_time": {
+        "name": "RGB light atmosphere on time"
+      },
+      "rgb_light_function_brightness": {
+        "name": "RGB light function brightness"
+      },
+      "rgb_light_function_on_time": {
+        "name": "RGB light function on time"
+      },
+      "rgb_light_normal_brightness": {
+        "name": "RGB light normal brightness"
+      },
+      "rgb_light_normal_on_time": {
+        "name": "RGB light normal on time"
+      },
+      "rgb_light_state": {
+        "name": "RGB light state"
+      },
+      "rgb_normal_mode_b_value": {
+        "name": "RGB normal mode B value"
+      },
+      "rgb_normal_mode_g_value": {
+        "name": "RGB normal mode G value"
+      },
+      "rgb_normal_mode_r_value": {
+        "name": "RGB normal mode R value"
+      },
       "rinse_aid_setting_status": {
         "name": "Rinse aid"
+      },
+      "rinse_flag": {
+        "name": "Rinse flag"
       },
       "rinsenum": {
         "name": "Rinse num"
       },
+      "rinsenum_containextrarinse": {
+        "name": "Rinse number contain extra rinse"
+      },
+      "rinsenum_index": {
+        "name": "Rinse number index"
+      },
+      "rinsestepfinishnotifyswitch": {
+        "name": "Rinse step finish notify switch"
+      },
+      "run_status_flag_5": {
+        "name": "Run status flag 5"
+      },
+      "runing_zero_flag": {
+        "name": "Running zero flag"
+      },
       "running_status": {
         "name": "Running status"
       },
+      "running_status3": {
+        "name": "Running status 3"
+      },
+      "sabbath_mode_setting": {
+        "name": "Sabbath mode setting"
+      },
+      "sabbath_mode_setting_activate_weekly": {
+        "name": "Sabbath mode setting activate weekly"
+      },
+      "sabbath_mode_settingbakingend_athour": {
+        "name": "Sabbath mode setting baking end at hour"
+      },
+      "sabbath_mode_settingbakingend_atminute": {
+        "name": "Sabbath mode setting baking end at minute"
+      },
+      "sabbath_mode_settingbakingstart_athour": {
+        "name": "Sabbath mode setting baking start at hour"
+      },
+      "sabbath_mode_settingbakingstart_atminute": {
+        "name": "Sabbath mode setting baking start at minute"
+      },
+      "sabbath_mode_settingcavity_light_during_sabbath": {
+        "name": "Sabbath mode setting cavity light during sabbath"
+      },
+      "sabbath_mode_settingend_timehour": {
+        "name": "Sabbath mode setting end time hour"
+      },
+      "sabbath_mode_settingend_timeminute": {
+        "name": "Sabbath mode setting end time minute"
+      },
+      "sabbath_mode_settingset_heater_system": {
+        "name": "Sabbath mode setting set heater system"
+      },
+      "sabbath_mode_settingstart_timehour": {
+        "name": "Sabbath mode setting start time hour"
+      },
+      "sabbath_mode_settingstart_timeminute": {
+        "name": "Sabbath mode setting start time minute"
+      },
       "sand_timer1_duration_in_seconds": {
         "name": "Sand timer 1 duration"
+      },
+      "sand_timer1_start_utc_datetime_bdc_timestamp": {
+        "name": "Sand timer 1 start UTC datetime BDC timestamp"
       },
       "sand_timer1_status": {
         "name": "Timer 1 status",
@@ -2232,6 +4032,9 @@
       "sand_timer2_duration_in_seconds": {
         "name": "Timer 2 duration"
       },
+      "sand_timer2_start_utc_datetime_bdc_timestamp": {
+        "name": "Sand timer 2 start UTC datetime BDC timestamp"
+      },
       "sand_timer2_status": {
         "name": "Timer 2 status",
         "state": {
@@ -2242,6 +4045,9 @@
       },
       "sand_timer3_duration_in_seconds": {
         "name": "Timer 3 duration"
+      },
+      "sand_timer3_start_utc_datetime_bdc_timestamp": {
+        "name": "Sand timer 3 start UTC datetime BDC timestamp"
       },
       "sand_timer3_status": {
         "name": "Timer 3 status",
@@ -2255,13 +4061,13 @@
         "name": "Sand timer 1 duration"
       },
       "sand_timer_1_end_utc_datetime_bdc_timestamp": {
-        "name": "Sand timer 1 end utc datetime bdc timestamp"
+        "name": "Sand timer 1 end UTC datetime BDC timestamp"
       },
       "sand_timer_1_paused_total_seconds": {
         "name": "Sand timer 1 paused total"
       },
       "sand_timer_1_start_utc_datetime_bdc_timestamp": {
-        "name": "Sand timer 1 start utc datetime bdc timestamp"
+        "name": "Sand timer 1 start UTC datetime BDC timestamp"
       },
       "sand_timer_1_status": {
         "name": "Sand timer 1 status",
@@ -2277,13 +4083,13 @@
         "name": "Sand timer 2 duration"
       },
       "sand_timer_2_end_utc_datetime_bdc_timestamp": {
-        "name": "Sand timer 2 end utc datetime bdc timestamp"
+        "name": "Sand timer 2 end UTC datetime BDC timestamp"
       },
       "sand_timer_2_paused_total_seconds": {
         "name": "Sand timer 2 paused total"
       },
       "sand_timer_2_start_utc_datetime_bdc_timestamp": {
-        "name": "Sand timer 2 start utc datetime bdc timestamp"
+        "name": "Sand timer 2 start UTC datetime BDC timestamp"
       },
       "sand_timer_2_status": {
         "name": "Sand timer 2 status",
@@ -2299,13 +4105,13 @@
         "name": "Sand timer 3 duration"
       },
       "sand_timer_3_end_utc_datetime_bdc_timestamp": {
-        "name": "Sand timer 3 end utc datetime bdc timestamp"
+        "name": "Sand timer 3 end UTC datetime BDC timestamp"
       },
       "sand_timer_3_paused_total_seconds": {
         "name": "Sand timer 3 paused total"
       },
       "sand_timer_3_start_utc_datetime_bdc_timestamp": {
-        "name": "Sand timer 3 start utc datetime bdc timestamp"
+        "name": "Sand timer 3 start UTC datetime BDC timestamp"
       },
       "sand_timer_3_status": {
         "name": "Sand timer 3 status",
@@ -2317,8 +4123,80 @@
           "stopped": "Stopped"
         }
       },
+      "sani_lock": {
+        "name": "Sani lock"
+      },
+      "sani_lock_allowed": {
+        "name": "Sani lock allowed"
+      },
+      "saveelectricitvalue_decimal": {
+        "name": "Save electricity value decimal"
+      },
+      "saveelectricitvalue_int": {
+        "name": "Save electricity value int"
+      },
+      "screen_display_brightness": {
+        "name": "Screen display brightness"
+      },
+      "screen_display_lock": {
+        "name": "Screen display lock"
+      },
+      "screen_to_clock_time": {
+        "name": "Screen to clock time"
+      },
+      "screen_to_standby_time": {
+        "name": "Screen to standby time"
+      },
+      "screensavertime": {
+        "name": "Screen saver time"
+      },
+      "second_ice_maker_full_status": {
+        "name": "Second ice maker full status"
+      },
+      "second_ice_maker_init_fault": {
+        "name": "Second ice maker init fault"
+      },
+      "second_ice_maker_sensor_fault": {
+        "name": "Second ice maker sensor fault"
+      },
+      "selected_program": {
+        "name": "Selected program"
+      },
+      "selected_program_anticrease_status": {
+        "name": "Selected program anti-crease status"
+      },
+      "selected_program_disinfection": {
+        "name": "Selected program disinfection"
+      },
+      "selected_program_dry_function": {
+        "name": "Selected program dry function"
+      },
       "selected_program_duration_in_minutes": {
         "name": "Selected program duration"
+      },
+      "selected_program_eco_disinfection": {
+        "name": "Selected program eco disinfection"
+      },
+      "selected_program_eco_score": {
+        "name": "Selected program eco score"
+      },
+      "selected_program_eco_small_load": {
+        "name": "Selected program eco small load"
+      },
+      "selected_program_entry_steam_status": {
+        "name": "Selected program entry steam status"
+      },
+      "selected_program_extra_drying_function": {
+        "name": "Selected program extra drying function"
+      },
+      "selected_program_green_leaves_anticrease": {
+        "name": "Selected program green leaves anti-crease"
+      },
+      "selected_program_green_leaves_entry_steam": {
+        "name": "Selected program green leaves entry steam"
+      },
+      "selected_program_green_leaves_prewash": {
+        "name": "Selected program green leaves prewash"
       },
       "selected_program_id": {
         "name": "Selected program",
@@ -2372,12 +4250,24 @@
           "wool_manual": "Wool & Manual"
         }
       },
+      "selected_program_intensive_mode": {
+        "name": "Selected program intensive mode"
+      },
+      "selected_program_load_status": {
+        "name": "Selected program load status"
+      },
+      "selected_program_lower_wash_function": {
+        "name": "Selected program lower wash function"
+      },
       "selected_program_mode": {
         "name": "Selected program mode",
         "state": {
           "fast": "Fast",
           "normal": "Normal"
         }
+      },
+      "selected_program_mode2_status": {
+        "name": "Selected program mode 2 status"
       },
       "selected_program_mode_status": {
         "name": "Program mode",
@@ -2388,8 +4278,17 @@
           "not_available": "Not available"
         }
       },
+      "selected_program_night_mode": {
+        "name": "Selected program night mode"
+      },
+      "selected_program_prewash_status": {
+        "name": "Selected program prewash status"
+      },
       "selected_program_remaining_time_in_minutes": {
         "name": "Remaining time of selected program"
+      },
+      "selected_program_rinse_hold_status": {
+        "name": "Selected program rinse hold status"
       },
       "selected_program_set_temperature_status": {
         "name": "Temperature",
@@ -2402,6 +4301,15 @@
           "not_available": "Not available"
         }
       },
+      "selected_program_small_load_status": {
+        "name": "Selected program small load status"
+      },
+      "selected_program_storage_function": {
+        "name": "Selected program storage function"
+      },
+      "selected_program_super_rinse": {
+        "name": "Selected program super rinse"
+      },
       "selected_program_total_running_time": {
         "name": "Selected program total running time"
       },
@@ -2413,6 +4321,12 @@
       },
       "selected_program_total_time_in_minutes": {
         "name": "Selected program total time"
+      },
+      "selected_program_upper_wash_function": {
+        "name": "Selected program upper wash function"
+      },
+      "selected_program_uv_function": {
+        "name": "Selected program UV function"
       },
       "selected_program_washing_spin_speed_rpm_status": {
         "name": "Spin speed",
@@ -2427,11 +4341,26 @@
           "not_available": "Not available"
         }
       },
+      "selected_program_water_add": {
+        "name": "Selected program water add"
+      },
+      "selected_program_water_pluse_status": {
+        "name": "Selected program water pulse status"
+      },
       "selected_programduration_inminutes": {
         "name": "Duration of selected program"
       },
+      "selected_programid_ota": {
+        "name": "Selected program ID OTA"
+      },
       "selected_programremaining_time_inminutes": {
         "name": "Remaining time of selected program"
+      },
+      "sensor_failure_status": {
+        "name": "Sensor failure status"
+      },
+      "sensor_failure_status2": {
+        "name": "Sensor failure status 2"
       },
       "session_pairing_active": {
         "name": "Session pairing active",
@@ -2441,6 +4370,30 @@
           "request_denied": "Request denied",
           "session_is_active": "Session is active"
         }
+      },
+      "session_pairing_commond": {
+        "name": "Session pairing command"
+      },
+      "session_pairing_confirmation": {
+        "name": "Session pairing confirmation"
+      },
+      "session_pairing_setting": {
+        "name": "Session pairing setting"
+      },
+      "session_pairing_states": {
+        "name": "Session pairing states"
+      },
+      "session_pairing_status": {
+        "name": "Session pairing status"
+      },
+      "sessionpairing": {
+        "name": "Session pairing"
+      },
+      "sessionpairingactive": {
+        "name": "Session pairing active"
+      },
+      "sessionpairingconfirmation": {
+        "name": "Session pairing confirmation"
       },
       "set_progress_type": {
         "name": "Set progress type",
@@ -2480,6 +4433,57 @@
       },
       "settings_year": {
         "name": "Settings year"
+      },
+      "sf_sr_mutex_mode": {
+        "name": "SF SR mutex mode"
+      },
+      "shelf_light_a_state": {
+        "name": "Shelf light A state"
+      },
+      "shelf_light_atmosphere_brightness": {
+        "name": "Shelf light atmosphere brightness"
+      },
+      "shelf_light_atmosphere_mode_brightness": {
+        "name": "Shelf light atmosphere mode brightness"
+      },
+      "shelf_light_b_state": {
+        "name": "Shelf light B state"
+      },
+      "shelf_light_c_state": {
+        "name": "Shelf light C state"
+      },
+      "shelf_light_function_mode_brightness": {
+        "name": "Shelf light function mode brightness"
+      },
+      "shelf_light_function_on_time": {
+        "name": "Shelf light function on time"
+      },
+      "shelf_light_normal_on_time": {
+        "name": "Shelf light normal on time"
+      },
+      "shop_mode_setting": {
+        "name": "Shop mode setting"
+      },
+      "show_date_setting": {
+        "name": "Show date setting"
+      },
+      "show_mode": {
+        "name": "Show mode"
+      },
+      "silence_on_demand": {
+        "name": "Silence on demand"
+      },
+      "silence_on_demand_allowed": {
+        "name": "Silence on demand allowed"
+      },
+      "singleairdry": {
+        "name": "Single air dry"
+      },
+      "skipdelayprocess": {
+        "name": "Skip delay process"
+      },
+      "sl": {
+        "name": "Sl"
       },
       "sl1_active_timer": {
         "name": "Zone 1 active timer",
@@ -2715,26 +4719,143 @@
           "square": "Square"
         }
       },
+      "slotdry": {
+        "name": "Slotdry"
+      },
+      "slotdry_flag": {
+        "name": "Slotdry flag"
+      },
+      "slotdry_flag1": {
+        "name": "Slotdry flag 1"
+      },
+      "smart_sync_setting_status": {
+        "name": "Smart sync setting status"
+      },
+      "soft_pairing_setting": {
+        "name": "Soft pairing setting"
+      },
+      "soft_pairing_status": {
+        "name": "Soft pairing status"
+      },
+      "softener_amount_status": {
+        "name": "Softener amount status"
+      },
+      "softener_buynotifyswitch": {
+        "name": "Softener buy notify switch"
+      },
+      "softener_compartment": {
+        "name": "Softener compartment"
+      },
+      "softener_indicator": {
+        "name": "Softener indicator"
+      },
+      "softener_leftml": {
+        "name": "Softener left ml"
+      },
+      "softener_leftnum": {
+        "name": "Softener left number"
+      },
+      "softener_tank": {
+        "name": "Softener tank"
+      },
+      "softener_totalml": {
+        "name": "Softener total ml"
+      },
+      "softener_totalnum": {
+        "name": "Softener total number"
+      },
+      "softenercompartment_flag": {
+        "name": "Softener compartment flag"
+      },
+      "softer_flag": {
+        "name": "Softer flag"
+      },
+      "softner_useindex": {
+        "name": "Softener use index"
+      },
       "softnerstandarddosage": {
         "name": "Softener standard dosage"
+      },
+      "softnerstandarddosage_flag": {
+        "name": "Softener standard dosage flag"
+      },
+      "softpairing": {
+        "name": "Soft pairing"
+      },
+      "soil_lever": {
+        "name": "Soil lever"
+      },
+      "soilleverflag": {
+        "name": "Soil lever flag"
       },
       "sound_setting": {
         "name": "Sound setting"
       },
+      "sound_setting_status": {
+        "name": "Sound setting status"
+      },
+      "sound_settings": {
+        "name": "Sound settings"
+      },
+      "special_space": {
+        "name": "Special space"
+      },
+      "speed_flag": {
+        "name": "Speed flag"
+      },
+      "speed_on_demand": {
+        "name": "Speed on demand"
+      },
+      "spend_on_demand_allowed": {
+        "name": "Spend on demand allowed"
+      },
       "spin_speed_rpm": {
-        "name": "Spin speed rpm"
+        "name": "Spin speed RPM"
       },
       "spin_time": {
         "name": "Spin time"
       },
+      "spinrange": {
+        "name": "Spin range"
+      },
+      "spinspeeduseindex": {
+        "name": "Spin speed use index"
+      },
+      "spinstepfinishnotifyswitch": {
+        "name": "Spin step finish notify switch"
+      },
+      "spintime_flag": {
+        "name": "Spin time flag"
+      },
       "spintime_index": {
         "name": "Spin time index"
+      },
+      "spintime_useindex": {
+        "name": "Spin time use index"
+      },
+      "stage_lights_setting": {
+        "name": "Stage lights setting"
+      },
+      "stain_program_set_clothes_type_status": {
+        "name": "Stain program set clothes type status"
+      },
+      "stain_program_set_stain_status": {
+        "name": "Stain program set stain status"
+      },
+      "stain_removal": {
+        "name": "Stain removal"
       },
       "standardelectricitconsumption": {
         "name": "Standard electricity consumption"
       },
       "standardwaterconsumption": {
         "name": "Standard water consumption"
+      },
+      "standby_mode_state": {
+        "name": "Standby mode state"
+      },
+      "standby_mode_valid": {
+        "name": "Standby mode valid"
       },
       "status": {
         "name": "Device status",
@@ -2750,8 +4871,41 @@
           "standby": "Standby"
         }
       },
+      "status_fan_c_switch": {
+        "name": "Status fan C switch"
+      },
+      "status_fan_f_switch": {
+        "name": "Status fan F switch"
+      },
+      "status_fan_ln_switch": {
+        "name": "Status fan LN switch"
+      },
+      "status_fan_r_switch": {
+        "name": "Status fan R switch"
+      },
+      "status_heater_c_switch": {
+        "name": "Status heater C switch"
+      },
+      "status_heater_f_switch": {
+        "name": "Status heater F switch"
+      },
+      "status_heater_r_switch": {
+        "name": "Status heater R switch"
+      },
+      "steam": {
+        "name": "Steam"
+      },
       "steam_assist_time_used": {
         "name": "Steam assist time used"
+      },
+      "steam_reduction_at_door_opening_setting": {
+        "name": "Steam reduction at door opening setting"
+      },
+      "steam_reduction_at_program_end_setting": {
+        "name": "Steam reduction at program end setting"
+      },
+      "steamenginelackwaterstate": {
+        "name": "Steam engine lack water state"
       },
       "step1_duration": {
         "name": "Step1 duration"
@@ -2804,6 +4958,9 @@
       "step1_set_temperature": {
         "name": "Step 1 set temperature"
       },
+      "step1_setmulti_level_baking": {
+        "name": "Step 1 set multi level baking"
+      },
       "step1_steam_assist_intensity": {
         "name": "Step 1 steam assist intensity",
         "state": {
@@ -2815,6 +4972,27 @@
       },
       "step1_steam_assistset_time_in_minutes": {
         "name": "Step 1 steam assist set time"
+      },
+      "step1add_moist_status": {
+        "name": "Step 1 add moist status"
+      },
+      "step1add_moiststart_at_minute": {
+        "name": "Step 1 add moist start at minute"
+      },
+      "step1add_moistvalve_open_percentage": {
+        "name": "Step 1 add moist valve open percentage"
+      },
+      "step1alarm_after_step": {
+        "name": "Step 1 alarm after step"
+      },
+      "step1grill_intensity": {
+        "name": "Step 1 grill intensity"
+      },
+      "step1pause_after_step": {
+        "name": "Step 1 pause after step"
+      },
+      "step1remove_moiststart_at_minute": {
+        "name": "Step 1 remove moist start at minute"
       },
       "step2_duration": {
         "name": "Step 2 duration"
@@ -2867,6 +5045,9 @@
       "step2_set_temperature": {
         "name": "Step2 set temperature"
       },
+      "step2_setmulti_level_baking": {
+        "name": "Step 2 set multi level baking"
+      },
       "step2_steam_assist_intensity": {
         "name": "Step 2 steam assist intensity",
         "state": {
@@ -2878,6 +5059,27 @@
       },
       "step2_steam_assistset_time_in_minutes": {
         "name": "Step 2 steam assist set time"
+      },
+      "step2add_moist_status": {
+        "name": "Step 2 add moist status"
+      },
+      "step2add_moiststart_at_minute": {
+        "name": "Step 2 add moist start at minute"
+      },
+      "step2add_moistvalve_open_percentage": {
+        "name": "Step 2 add moist valve open percentage"
+      },
+      "step2alarm_after_step": {
+        "name": "Step 2 alarm after step"
+      },
+      "step2grill_intensity": {
+        "name": "Step 2 grill intensity"
+      },
+      "step2pause_after_step": {
+        "name": "Step 2 pause after step"
+      },
+      "step2remove_moiststart_at_minute": {
+        "name": "Step 2 remove moist start at minute"
       },
       "step3_duration": {
         "name": "Step3 duration"
@@ -2930,6 +5132,9 @@
       "step3_set_temperature": {
         "name": "Step3 set temperature"
       },
+      "step3_setmulti_level_baking": {
+        "name": "Step 3 set multi level baking"
+      },
       "step3_steam_assist_intensity": {
         "name": "Step 3 steam assist intensity",
         "state": {
@@ -2941,6 +5146,153 @@
       },
       "step3_steam_assistset_time_in_minutes": {
         "name": "Step 3 steam assist set time"
+      },
+      "step3add_moist_status": {
+        "name": "Step 3 add moist status"
+      },
+      "step3add_moiststart_at_minute": {
+        "name": "Step 3 add moist start at minute"
+      },
+      "step3add_moistvalve_open_percentage": {
+        "name": "Step 3 add moist valve open percentage"
+      },
+      "step3alarm_after_step": {
+        "name": "Step 3 alarm after step"
+      },
+      "step3grill_intensity": {
+        "name": "Step 3 grill intensity"
+      },
+      "step3pause_after_step": {
+        "name": "Step 3 pause after step"
+      },
+      "step3remove_moiststart_at_minute": {
+        "name": "Step 3 remove moist start at minute"
+      },
+      "step4_bake_mode": {
+        "name": "Step 4 bake mode"
+      },
+      "step4_duration": {
+        "name": "Step 4 duration"
+      },
+      "step4_passed_time": {
+        "name": "Step 4 passed time"
+      },
+      "step4_remaining_time": {
+        "name": "Step 4 remaining time"
+      },
+      "step4_set_heater_system": {
+        "name": "Step 4 set heater system"
+      },
+      "step4_set_microwave_wattage": {
+        "name": "Step 4 set microwave wattage"
+      },
+      "step4_set_temperature": {
+        "name": "Step 4 set temperature"
+      },
+      "step4_setmulti_level_baking": {
+        "name": "Step 4 set multi level baking"
+      },
+      "step4_status": {
+        "name": "Step 4 status"
+      },
+      "step4_steam_available": {
+        "name": "Step 4 steam available"
+      },
+      "step4_time_unit": {
+        "name": "Step 4 time unit"
+      },
+      "step4add_moist_status": {
+        "name": "Step 4 add moist status"
+      },
+      "step4add_moiststart_at_minute": {
+        "name": "Step 4 add moist start at minute"
+      },
+      "step4add_moistvalve_open_percentage": {
+        "name": "Step 4 add moist valve open percentage"
+      },
+      "step4alarm_after_step": {
+        "name": "Step 4 alarm after step"
+      },
+      "step4grill_intensity": {
+        "name": "Step 4 grill intensity"
+      },
+      "step4pause_after_step": {
+        "name": "Step 4 pause after step"
+      },
+      "step4remove_moiststart_at_minute": {
+        "name": "Step 4 remove moist start at minute"
+      },
+      "step4steam_assist": {
+        "name": "Step 4 steam assist"
+      },
+      "step4steam_assist_intensity": {
+        "name": "Step 4 steam assist intensity"
+      },
+      "step4steam_assistset_time_in_minutes": {
+        "name": "Step 4 steam assist set time in minutes"
+      },
+      "step5_bake_mode": {
+        "name": "Step 5 bake mode"
+      },
+      "step5_duration": {
+        "name": "Step 5 duration"
+      },
+      "step5_passed_time": {
+        "name": "Step 5 passed time"
+      },
+      "step5_remaining_time": {
+        "name": "Step 5 remaining time"
+      },
+      "step5_set_heater_system": {
+        "name": "Step 5 set heater system"
+      },
+      "step5_set_microwave_wattage": {
+        "name": "Step 5 set microwave wattage"
+      },
+      "step5_set_temperature": {
+        "name": "Step 5 set temperature"
+      },
+      "step5_setmulti_level_baking": {
+        "name": "Step 5 set multi level baking"
+      },
+      "step5_status": {
+        "name": "Step 5 status"
+      },
+      "step5_steam_available": {
+        "name": "Step 5 steam available"
+      },
+      "step5_time_unit": {
+        "name": "Step 5 time unit"
+      },
+      "step5add_moist_status": {
+        "name": "Step 5 add moist status"
+      },
+      "step5add_moiststart_at_minute": {
+        "name": "Step 5 add moist start at minute"
+      },
+      "step5add_moistvalve_open_percentage": {
+        "name": "Step 5 add moist valve open percentage"
+      },
+      "step5alarm_after_step": {
+        "name": "Step 5 alarm after step"
+      },
+      "step5grill_intensity": {
+        "name": "Step 5 grill intensity"
+      },
+      "step5pause_after_step": {
+        "name": "Step 5 pause after step"
+      },
+      "step5remove_moiststart_at_minute": {
+        "name": "Step 5 remove moist start at minute"
+      },
+      "step5steam_assist": {
+        "name": "Step 5 steam assist"
+      },
+      "step5steam_assist_intensity": {
+        "name": "Step 5 steam assist intensity"
+      },
+      "step5steam_assistset_time_in_minutes": {
+        "name": "Step 5 steam assist set time in minutes"
       },
       "step_1_duration": {
         "name": "Step 1 duration"
@@ -3334,6 +5686,21 @@
       "step_after_bake_set_temperature": {
         "name": "Step after bake set temperature"
       },
+      "step_after_bake_setmulti_level_baking": {
+        "name": "Step after bake set multi level baking"
+      },
+      "step_after_bakeadd_moist_status": {
+        "name": "Step after bake add moist status"
+      },
+      "step_after_bakeadd_moiststart_at_minute": {
+        "name": "Step after bake add moist start at minute"
+      },
+      "step_after_bakeadd_moistvalve_open_percentage": {
+        "name": "Step after bake add moist valve open percentage"
+      },
+      "step_after_bakeremove_moiststart_at_minute": {
+        "name": "Step after bake remove moist start at minute"
+      },
       "step_pre_bake_duration": {
         "name": "Step pre bake duration"
       },
@@ -3424,14 +5791,179 @@
       "step_pre_bake_set_temperature": {
         "name": "Step pre bake set temperature"
       },
+      "step_pre_bake_setmulti_level_baking": {
+        "name": "Step pre bake set multi level baking"
+      },
+      "step_pre_bakeadd_moist_status": {
+        "name": "Step pre bake add moist status"
+      },
+      "step_pre_bakeadd_moiststart_at_minute": {
+        "name": "Step pre bake add moist start at minute"
+      },
+      "step_pre_bakeadd_moistvalve_open_percentage": {
+        "name": "Step pre bake add moist valve open percentage"
+      },
+      "step_pre_bakeremove_moiststart_at_minute": {
+        "name": "Step pre bake remove moist start at minute"
+      },
+      "steri_puri_cycle_flag": {
+        "name": "Steri puri cycle flag"
+      },
+      "stopaddgo_status": {
+        "name": "Stop add go status"
+      },
+      "stopaddgoallowed": {
+        "name": "Stop add go allowed"
+      },
+      "stoprunning_flag": {
+        "name": "Stop running flag"
+      },
+      "storage_mode_allowed": {
+        "name": "Storage mode allowed"
+      },
+      "storage_mode_on_demand_stat": {
+        "name": "Storage mode on demand status"
+      },
+      "store_dry_time": {
+        "name": "Store dry time"
+      },
+      "summerwinter_timeautomatic_setting": {
+        "name": "Summer winter time automatic setting"
+      },
+      "super_rinse_on_demand": {
+        "name": "Super rinse on demand"
+      },
+      "super_rinse_on_demand_allowed": {
+        "name": "Super rinse on demand allowed"
+      },
+      "super_rinse_status": {
+        "name": "Super rinse status"
+      },
+      "super_water_supply_mode": {
+        "name": "Super water supply mode"
+      },
+      "support_preheat_state": {
+        "name": "Support preheat state"
+      },
+      "t_beep": {
+        "name": "T beep"
+      },
+      "t_fan_speed": {
+        "name": "T fan speed"
+      },
+      "tankclean": {
+        "name": "Tank clean"
+      },
+      "tankclean_flag": {
+        "name": "Tank clean flag"
+      },
+      "tankclean_flag1": {
+        "name": "Tank clean flag 1"
+      },
+      "temp_auto_ctrl_mode_exist": {
+        "name": "Temperature auto control mode exist"
+      },
+      "temp_auto_ctrl_mode_state": {
+        "name": "Temperature auto control mode state"
+      },
+      "temp_index": {
+        "name": "Temperature index"
+      },
+      "temp_runing_flag": {
+        "name": "Temperature running flag"
+      },
+      "temp_wave": {
+        "name": "Temperature wave"
+      },
+      "temp_wave_flag": {
+        "name": "Temperature wave flag"
+      },
       "temperature": {
         "name": "Temperature"
+      },
+      "temperature_0_defaultmainwashtime": {
+        "name": "Temperature 0 default main wash time"
+      },
+      "temperature_2_defaultmainwashtime": {
+        "name": "Temperature 2 default main wash time"
+      },
+      "temperature_3_defaultmainwashtime": {
+        "name": "Temperature 3 default main wash time"
+      },
+      "temperature_4_defaultmainwashtime": {
+        "name": "Temperature 4 default main wash time"
+      },
+      "temperature_6_defaultmainwashtime": {
+        "name": "Temperature 6 default main wash time"
+      },
+      "temperature_9_defaultmainwashtime": {
+        "name": "Temperature 9 default main wash time"
       },
       "temperature_default_defaultmainwashtime": {
         "name": "Temperature default default main wash time"
       },
+      "temperature_reached_notification_setting": {
+        "name": "Temperature reached notification setting"
+      },
       "temperature_room_judge": {
         "name": "Temperature room judge"
+      },
+      "temperature_unit_setting_status": {
+        "name": "Temperature unit setting status"
+      },
+      "temperature_unit_status": {
+        "name": "Temperature unit status"
+      },
+      "testdata_data": {
+        "name": "Test data"
+      },
+      "testdata_month": {
+        "name": "Test data month"
+      },
+      "testdata_year": {
+        "name": "Test data year"
+      },
+      "text_size_setting": {
+        "name": "Text size setting"
+      },
+      "theme_color": {
+        "name": "Theme color"
+      },
+      "time_autoflag": {
+        "name": "Time auto flag"
+      },
+      "time_program_set_duration_status": {
+        "name": "Time program set duration status"
+      },
+      "time_program_set_time_status": {
+        "name": "Time program set time status"
+      },
+      "time_save_status": {
+        "name": "Time save status"
+      },
+      "time_zone_setting": {
+        "name": "Time zone setting"
+      },
+      "timedateautomatic_setting": {
+        "name": "Time date automatic setting"
+      },
+      "timerendtime": {
+        "name": "Timer end time"
+      },
+      "timerpausedtime": {
+        "name": "Timer paused time"
+      },
+      "timerpausedtotalseconds": {
+        "name": "Timer paused total seconds"
+      },
+      "timerstarttime": {
+        "name": "Timer start time"
+      },
+      "timerstatus": {
+        "name": "Timer status"
+      },
+      "timezone": {
+        "name": "Timezone"
       },
       "total_duration_in_seconds": {
         "name": "Total duration"
@@ -3466,8 +5998,56 @@
       "total_water_consumption": {
         "name": "Total water consumption"
       },
+      "turbidity_sensor_setting_status": {
+        "name": "Turbidity sensor setting status"
+      },
+      "unfreeze_run_status": {
+        "name": "Unfreeze run status"
+      },
+      "unfreeze_switch_status": {
+        "name": "Unfreeze switch status"
+      },
+      "units_setting_status": {
+        "name": "Units setting status"
+      },
+      "unpair_all_users": {
+        "name": "Unpair all users"
+      },
+      "user_debacilli_mode": {
+        "name": "User debacilli mode"
+      },
       "utc_datetime_bdc_delaystart_delayend_timestamp": {
         "name": "BDC DelayStart DelayEnd"
+      },
+      "uv_light": {
+        "name": "UV light"
+      },
+      "uv_mode_on_demand": {
+        "name": "UV mode on demand"
+      },
+      "uv_mode_on_demand_allowed": {
+        "name": "UV mode on demand allowed"
+      },
+      "uv_steri_status": {
+        "name": "UV steri status"
+      },
+      "uv_sterilization": {
+        "name": "UV sterilization"
+      },
+      "var_room_open_2": {
+        "name": "Var room open 2"
+      },
+      "vari_fan_speed": {
+        "name": "Vari fan speed"
+      },
+      "vari_key": {
+        "name": "Vari key"
+      },
+      "vari_room": {
+        "name": "Vari room"
+      },
+      "variable_temperature_space": {
+        "name": "Variable temperature space"
       },
       "variation_door_open_time": {
         "name": "Variation door open time"
@@ -3478,11 +6058,53 @@
       "variation_min_temperature": {
         "name": "Variation min temperature"
       },
+      "variation_poweroff_ad": {
+        "name": "Variation power off ad"
+      },
+      "variation_poweron_ad": {
+        "name": "Variation power on ad"
+      },
       "variation_real_temperature": {
         "name": "Variation real temperature"
       },
       "variation_sensor_real_temperature": {
         "name": "Variation sensor real temperature"
+      },
+      "view_size_setting_status": {
+        "name": "View size setting status"
+      },
+      "volume_setting": {
+        "name": "Volume setting"
+      },
+      "warmwaterwashing": {
+        "name": "Warm water washing"
+      },
+      "wash_step_time_drain_water_spin_and_stop": {
+        "name": "Wash step time drain water spin and stop"
+      },
+      "washer_to_dryer_available_for_hours_v": {
+        "name": "Washer to dryer available for hours v"
+      },
+      "washer_to_dryer_program_id": {
+        "name": "Washer to dryer program ID"
+      },
+      "washer_to_dryersetting_status": {
+        "name": "Washer to dryer setting status"
+      },
+      "washer_to_dryerwizard_trigger_status": {
+        "name": "Washer to dryer wizard trigger status"
+      },
+      "washfunction1": {
+        "name": "Wash function 1"
+      },
+      "washing_drying_linkage_flag": {
+        "name": "Washing drying linkage flag"
+      },
+      "washing_drying_linkage_state": {
+        "name": "Washing drying linkage state"
+      },
+      "washing_machine_type": {
+        "name": "Washing machine type"
       },
       "washing_machine_type_kg": {
         "name": "Washing machine type kg"
@@ -3493,17 +6115,179 @@
       "washing_program_kg": {
         "name": "Washing program weight"
       },
+      "washingtime": {
+        "name": "Washing time"
+      },
+      "washingtime_presoak_flag": {
+        "name": "Washing time presoak flag"
+      },
+      "washingtime_useindex": {
+        "name": "Washing time use index"
+      },
+      "washingtime_waterlevel_flag": {
+        "name": "Washing time water level flag"
+      },
+      "washingtimeindex": {
+        "name": "Washing time index"
+      },
+      "washingwizzard_cloth": {
+        "name": "Washing wizard cloth"
+      },
+      "washingwizzard_cloth_colour": {
+        "name": "Washing wizard cloth colour"
+      },
+      "washingwizzard_cloth_colour_fifth": {
+        "name": "Washing wizard cloth colour fifth"
+      },
+      "washingwizzard_cloth_colour_fourth": {
+        "name": "Washing wizard cloth colour fourth"
+      },
+      "washingwizzard_cloth_colour_second": {
+        "name": "Washing wizard cloth colour second"
+      },
+      "washingwizzard_cloth_colour_third": {
+        "name": "Washing wizard cloth colour third"
+      },
+      "washingwizzard_cloth_dirty": {
+        "name": "Washing wizard cloth dirty"
+      },
+      "washingwizzard_cloth_dirty_first": {
+        "name": "Washing wizard cloth dirty first"
+      },
+      "washingwizzard_cloth_dirty_second": {
+        "name": "Washing wizard cloth dirty second"
+      },
+      "washingwizzard_cloth_dirty_third": {
+        "name": "Washing wizard cloth dirty third"
+      },
+      "washingwizzard_cloth_olour_first": {
+        "name": "Washing wizard cloth colour first"
+      },
+      "washingwizzard_cloth_sensitive": {
+        "name": "Washing wizard cloth sensitive"
+      },
+      "washingwizzard_cloth_sensitive_first": {
+        "name": "Washing wizard cloth sensitive first"
+      },
+      "washingwizzard_cloth_sensitive_second": {
+        "name": "Washing wizard cloth sensitive second"
+      },
+      "washingwizzard_cloth_sensitive_third": {
+        "name": "Washing wizard cloth sensitive third"
+      },
+      "washingwizzard_cloth_stains_eighth": {
+        "name": "Washing wizard cloth stains eighth"
+      },
+      "washingwizzard_cloth_stains_fifth": {
+        "name": "Washing wizard cloth stains fifth"
+      },
+      "washingwizzard_cloth_stains_first": {
+        "name": "Washing wizard cloth stains first"
+      },
+      "washingwizzard_cloth_stains_fourth": {
+        "name": "Washing wizard cloth stains fourth"
+      },
+      "washingwizzard_cloth_stains_ninth": {
+        "name": "Washing wizard cloth stains ninth"
+      },
+      "washingwizzard_cloth_stains_second": {
+        "name": "Washing wizard cloth stains second"
+      },
+      "washingwizzard_cloth_stains_seventh": {
+        "name": "Washing wizard cloth stains seventh"
+      },
+      "washingwizzard_cloth_stains_sixth": {
+        "name": "Washing wizard cloth stains sixth"
+      },
+      "washingwizzard_cloth_stains_third": {
+        "name": "Washing wizard cloth stains third"
+      },
+      "washingwizzard_clothingtype": {
+        "name": "Washing wizard clothing type"
+      },
+      "washingwizzard_clothingtype_eighth": {
+        "name": "Washing wizard clothing type eighth"
+      },
+      "washingwizzard_clothingtype_eleventh": {
+        "name": "Washing wizard clothing type eleventh"
+      },
+      "washingwizzard_clothingtype_fifth": {
+        "name": "Washing wizard clothing type fifth"
+      },
+      "washingwizzard_clothingtype_first": {
+        "name": "Washing wizard clothing type first"
+      },
+      "washingwizzard_clothingtype_fourth": {
+        "name": "Washing wizard clothing type fourth"
+      },
+      "washingwizzard_clothingtype_ninth": {
+        "name": "Washing wizard clothing type ninth"
+      },
+      "washingwizzard_clothingtype_second": {
+        "name": "Washing wizard clothing type second"
+      },
+      "washingwizzard_clothingtype_seventh": {
+        "name": "Washing wizard clothing type seventh"
+      },
+      "washingwizzard_clothingtype_sixth": {
+        "name": "Washing wizard clothing type sixth"
+      },
+      "washingwizzard_clothingtype_tenth": {
+        "name": "Washing wizard clothing type tenth"
+      },
+      "washingwizzard_clothingtype_third": {
+        "name": "Washing wizard clothing type third"
+      },
+      "washingwizzard_clothingtype_thirteenth": {
+        "name": "Washing wizard clothing type thirteenth"
+      },
+      "washingwizzard_clothingtype_twelfth": {
+        "name": "Washing wizard clothing type twelfth"
+      },
+      "washingwizzard_flag": {
+        "name": "Washing wizard flag"
+      },
+      "washstepfinishnotifyswitch": {
+        "name": "Wash step finish notify switch"
+      },
+      "water_box_alarm_switch_state": {
+        "name": "Water box alarm switch state"
+      },
+      "water_box_lack_status": {
+        "name": "Water box lack status"
+      },
+      "water_box_mode_status": {
+        "name": "Water box mode status"
+      },
       "water_consumption": {
         "name": "Water consumption"
       },
       "water_consumption_in_running_program": {
         "name": "Water consumption in running program"
       },
+      "water_estimate": {
+        "name": "Water estimate"
+      },
+      "water_fill_actual_temp": {
+        "name": "Water fill actual temperature"
+      },
+      "water_filter_surplus_time": {
+        "name": "Water filter surplus time"
+      },
+      "water_filter_time_reset": {
+        "name": "Water filter time reset"
+      },
+      "water_hardness_setting": {
+        "name": "Water hardness setting"
+      },
       "water_hardness_setting_status": {
         "name": "Water hardness",
         "state": {
           "not_set": "Not set"
         }
+      },
+      "water_heat_switch": {
+        "name": "Water heat switch"
       },
       "water_inlet_setting_status": {
         "name": "Water inlet"
@@ -3518,6 +6302,105 @@
           "present": "Present"
         }
       },
+      "water_tank_install_state": {
+        "name": "Water tank install state"
+      },
+      "water_tank_level": {
+        "name": "Water tank level"
+      },
+      "waterlevel": {
+        "name": "Water level"
+      },
+      "waterlevel_runing_flag": {
+        "name": "Water level running flag"
+      },
+      "waterlevelflag": {
+        "name": "Water level flag"
+      },
+      "waterlevelindex": {
+        "name": "Water level index"
+      },
+      "wear_dry_time": {
+        "name": "Wear dry time"
+      },
+      "weight_runningend": {
+        "name": "Weight running end"
+      },
+      "weight_startrunning": {
+        "name": "Weight start running"
+      },
+      "weight_unit_setting": {
+        "name": "Weight unit setting"
+      },
+      "weight_unit_setting_status": {
+        "name": "Weight unit setting status"
+      },
+      "wet_and_dry_space": {
+        "name": "Wet and dry space"
+      },
+      "wifi_fault_flag": {
+        "name": "WiFi fault flag"
+      },
+      "wifi_handshake_fault_flag": {
+        "name": "WiFi handshake fault flag"
+      },
+      "wifi_next_sendtime": {
+        "name": "WiFi next sendtime"
+      },
+      "wifi_rx_fault_flag": {
+        "name": "WiFi rx fault flag"
+      },
+      "wifi_setting": {
+        "name": "WiFi setting"
+      },
+      "wifi_tx_fault_flag": {
+        "name": "WiFi tx fault flag"
+      },
+      "wild_vegetable_heat_switch": {
+        "name": "Wild vegetable heat switch"
+      },
+      "will_fresh_light_status": {
+        "name": "Will fresh light status"
+      },
+      "will_fress_light_exist": {
+        "name": "Will fresh light exist"
+      },
+      "will_light_market_mode_state": {
+        "name": "Will light market mode state"
+      },
+      "will_light_mode_exist": {
+        "name": "Will light mode exist"
+      },
+      "will_light_mode_state": {
+        "name": "Will light mode state"
+      },
+      "will_light_switch_state": {
+        "name": "Will light switch state"
+      },
+      "winddrying": {
+        "name": "Wind drying"
+      },
+      "winddryingflag": {
+        "name": "Wind drying flag"
+      },
+      "wine_area_switch_status": {
+        "name": "Wine area switch status"
+      },
+      "wine_b_switch_area": {
+        "name": "Wine B switch area"
+      },
+      "wine_light": {
+        "name": "Wine light"
+      },
+      "work_mode1": {
+        "name": "Work mode 1"
+      },
+      "work_mode2": {
+        "name": "Work mode 2"
+      },
+      "zibian_program_id": {
+        "name": "Zibian program ID"
+      },
       "zone_number": {
         "name": "Number of zones"
       }
@@ -3527,22 +6410,22 @@
         "name": "Adaptive sense setting"
       },
       "anticrease": {
-        "name": "Anti crease"
+        "name": "Anti-crease"
       },
       "auto_dose_setting_status": {
-        "name": "Auto dose"
+        "name": "Auto-dose"
       },
       "auto_fast_preheat": {
         "name": "Auto fast preheat"
       },
       "autodose": {
-        "name": "Auto dose"
+        "name": "Auto-dose"
       },
       "automatic_ice_making": {
         "name": "Automatic ice making"
       },
       "autotubclean": {
-        "name": "Autotubclean"
+        "name": "Auto tub clean"
       },
       "child_lock": {
         "name": "Child lock"

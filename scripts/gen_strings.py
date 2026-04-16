@@ -1,5 +1,6 @@
 import argparse
 import json
+import re
 import urllib.request
 from os import listdir
 from os.path import isfile, join
@@ -63,15 +64,22 @@ def main(basedir):
                     else:
                         if "disable" in property and property["disable"]:
                             continue
-                        key = property["property"].lower().replace(" ", "_")
-                        if not any(entity_type in property for entity_type in ["binary_sensor", "switch", "number", "sensor", "select"]):
+                        key = to_key(property["property"])
+                        if not any(entity_type in property for entity_type in ["binary_sensor", "climate", "humidifier", "number", "select", "sensor", "switch", "water_heater"]):
                             valid_properties.setdefault("sensor", set()).add(key)
+                            name = property["property"]
+                            if "sensor" not in strings["entity"]:
+                                strings["entity"]["sensor"] = {}
+                            if key not in strings["entity"]["sensor"]:
+                                strings["entity"]["sensor"][key] = {"name": pretty(name)}
+                            elif "name" not in strings["entity"]["sensor"][key]:
+                                strings["entity"]["sensor"][key]["name"] = pretty(name)
                         for entity_type in ["binary_sensor", "switch", "number", "sensor", "select"]:
                             if entity_type in property:
                                 if entity_type not in strings["entity"]:
                                     strings["entity"][entity_type] = {}
                                 name = property["property"]
-                                key = name.lower().replace(" ", "_")
+                                key = to_key(name)
                                 if key not in strings["entity"][entity_type]:
                                     strings["entity"][entity_type][key] = {"name": pretty(name)}
                                 elif "name" not in strings["entity"][entity_type][key]:
@@ -222,8 +230,19 @@ def include_option(option: str, filename: str) -> bool:
     return True
 
 
+def to_key(name: str) -> str:
+    return re.sub(r'_+', '_', name.strip().lower().replace(" ", "_"))
+
+
 def pretty(name: str) -> str:
-    return name.replace("_", " ").capitalize();
+    # Split camelCase: "AirDryFlag" -> "Air Dry Flag"
+    name = re.sub(r'(?<=[a-z])(?=[A-Z])', ' ', name)
+    # Split acronyms from words: "APPControl" -> "APP Control"
+    name = re.sub(r'(?<=[A-Z])(?=[A-Z][a-z])', ' ', name)
+    # Split letters from digits: "compartment1" -> "compartment 1", "1add" -> "1 add"
+    name = re.sub(r'(?<=[a-zA-Z])(?=\d)', ' ', name)
+    name = re.sub(r'(?<=\d)(?=[a-zA-Z])', ' ', name)
+    return re.sub(r' +', ' ', name.replace("_", " ")).strip().capitalize()
 
 
 if __name__ == "__main__":

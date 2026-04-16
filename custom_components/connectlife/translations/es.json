@@ -19,6 +19,9 @@
   },
   "entity": {
     "binary_sensor": {
+      "ado_allowed": {
+        "name": "ADO permitido"
+      },
       "alarm_1": {
         "name": "Alarma 1"
       },
@@ -169,6 +172,9 @@
       "alarm_zone_turned_off": {
         "name": "Zona apagada"
       },
+      "auto_dose_refill": {
+        "name": "Recargar autodosificador"
+      },
       "charcoal_filter_expiration_alarm": {
         "name": "Alarma de caducidad del filtro de carb\u00f3n"
       },
@@ -189,6 +195,9 @@
       },
       "demo_mode": {
         "name": "Modo demostraci\u00f3n"
+      },
+      "detergent_display": {
+        "name": "Display Detergente"
       },
       "door": {
         "name": "Puerta"
@@ -541,11 +550,17 @@
       "sl6_status": {
         "name": "Estado Zone 6"
       },
+      "softer_display": {
+        "name": "Display Suavizante"
+      },
       "step1_status": {
         "name": "Estado paso 1"
       },
       "step3_status": {
         "name": "Estado paso 3"
+      },
+      "t_beep": {
+        "name": "Beep"
       },
       "tx_failure": {
         "name": "Fallo TX"
@@ -648,6 +663,9 @@
       }
     },
     "select": {
+      "auto_dose_quantity_setting_status": {
+        "name": "Configuraci\u00f3n autom\u00e1tica de la cantidad de dosificador"
+      },
       "dry_level": {
         "name": "Nivel Secado",
         "state": {}
@@ -858,6 +876,9 @@
           "not_available": "No disponible",
           "open": "Abierta"
         }
+      },
+      "dry_time": {
+        "name": "Tipo Secado"
       },
       "electricit_consumption": {
         "name": "Consumo de electricidad"
@@ -1458,6 +1479,9 @@
       "step3_set_temperature": {
         "name": "Fase 3 temperatura"
       },
+      "t_beep": {
+        "name": "Beep"
+      },
       "temperature_room_judge": {
         "name": "Temperature room judge"
       },
@@ -1502,6 +1526,9 @@
       "anticrease": {
         "name": "Antiarrugas"
       },
+      "auto_dose_setting_status": {
+        "name": "Configuracion autodosificador"
+      },
       "automatic_ice_making": {
         "name": "Fabricaci\u00f3n autom\u00e1tica de hielo"
       },
@@ -1519,6 +1546,9 @@
       },
       "prewash": {
         "name": "Prelavado"
+      },
+      "save_mode": {
+        "name": "Modo ahorro"
       },
       "steam": {
         "name": "Vapor"
