@@ -124,7 +124,7 @@
         "name": "Door opened"
       },
       "alarm_ean_scan_info": {
-        "name": "Alarm ean scan info"
+        "name": "Alarm EAN scan info"
       },
       "alarm_empty_and_clean_water_tank": {
         "name": "Alarm empty and clean water tank"
@@ -616,7 +616,7 @@
         "name": "Indoor voltage zero-crossing detection fault"
       },
       "f_e_inwifi": {
-        "name": "Communication failure between WIFI control panel and indoor control panel"
+        "name": "Communication failure between WiFi control panel and indoor control panel"
       },
       "f_e_outcoiltemp": {
         "name": "Outdoor coil temperature sensor failure"
@@ -682,10 +682,10 @@
         "name": "Freezer temp sens head failure"
       },
       "freeze_poweroff_ad": {
-        "name": "Freeze poweroff ad"
+        "name": "Freeze power off ad"
       },
       "freeze_poweron_ad": {
-        "name": "Freeze poweron ad"
+        "name": "Freeze power on ad"
       },
       "frize_temp_2_degree_above_starting_point": {
         "name": "Freezer temperature 2\u00b0 above start"
@@ -769,7 +769,7 @@
         "name": "Low wine area c fan fault"
       },
       "low_wine_area_c_humdy_fault": {
-        "name": "Low wine area c humdy fault"
+        "name": "Low wine area c humidity fault"
       },
       "low_wine_area_c_temp_fault": {
         "name": "Low wine area c temp fault"
@@ -781,7 +781,7 @@
         "name": "Mid wine area b fan fault"
       },
       "mid_wine_area_b_humdy_fault": {
-        "name": "Mid wine area b humdy fault"
+        "name": "Mid wine area b humidity fault"
       },
       "mid_wine_area_b_temp_fault": {
         "name": "Mid wine area b temp fault"
@@ -1749,7 +1749,7 @@
         "name": "Add clothes check"
       },
       "add_on_program_download_id": {
-        "name": "Add on program download id"
+        "name": "Add on program download ID"
       },
       "add_on_program_download_status": {
         "name": "Add on program download status"
@@ -1761,13 +1761,13 @@
         "name": "Add water flag"
       },
       "ads_dirtiness_setting_status": {
-        "name": "Ads dirtiness setting status"
+        "name": "ADS dirtiness setting status"
       },
       "ads_settings_current_program_detergent_setting_status": {
-        "name": "Ads settings current program detergent setting status"
+        "name": "ADS settings current program detergent setting status"
       },
       "ads_settings_current_program_softener_setting_status": {
-        "name": "Ads settings current program softener setting status"
+        "name": "ADS settings current program softener setting status"
       },
       "ai_energy_mode_switch": {
         "name": "AI energy mode switch"
@@ -2003,7 +2003,7 @@
         "name": "Auxiliary heat"
       },
       "bake_start_utc_datetime_bdc_timestamp": {
-        "name": "Bake start utc datetime bdc timestamp"
+        "name": "Bake start UTC datetime BDC timestamp"
       },
       "bathingwaterpump_flag": {
         "name": "Bathing water pump flag"
@@ -2066,7 +2066,7 @@
         "name": "Cancel delay end flag"
       },
       "cancle_delayend": {
-        "name": "Cancle delay end"
+        "name": "Cancel delay end"
       },
       "child_lock_setting_status": {
         "name": "Child lock setting"
@@ -2078,7 +2078,7 @@
         "name": "Child lock flag"
       },
       "childlock_newfuntion": {
-        "name": "Child lock newfuntion"
+        "name": "Child lock new function"
       },
       "childlock_pause": {
         "name": "Child lock pause"
@@ -2126,7 +2126,7 @@
         "name": "Compartment 2 type setting status"
       },
       "compartment_inuse": {
-        "name": "Compartment inuse"
+        "name": "Compartment in use"
       },
       "compartment_switch": {
         "name": "Compartment switch"
@@ -2261,13 +2261,13 @@
         "name": "Custard room"
       },
       "d1_program_id": {
-        "name": "D 1 program id"
+        "name": "D 1 program ID"
       },
       "d2_program_id": {
-        "name": "D 2 program id"
+        "name": "D 2 program ID"
       },
       "d3_program_id": {
-        "name": "D 3 program id"
+        "name": "D 3 program ID"
       },
       "daily_energy_consumption": {
         "name": "Daily energy consumption"
@@ -2480,7 +2480,7 @@
         "name": "Door close light status"
       },
       "door_close_ui_display_status": {
-        "name": "Door close ui display status"
+        "name": "Door close UI display status"
       },
       "door_lock_status": {
         "name": "Door lock status"
@@ -2504,7 +2504,7 @@
         "name": "Door open notification setting"
       },
       "door_open_ui_display_status": {
-        "name": "Door open ui display status"
+        "name": "Door open UI display status"
       },
       "door_sensor_setting": {
         "name": "Door sensor setting"
@@ -2655,7 +2655,7 @@
         "name": "Drying wizzard clothing type twelfth"
       },
       "dryleve_flag": {
-        "name": "Dry leve flag"
+        "name": "Dry level flag"
       },
       "drymode_flag": {
         "name": "Dry mode flag"
@@ -3075,7 +3075,7 @@
         "name": "Extra soft"
       },
       "extra_soft_hideflag": {
-        "name": "Extra soft hideflag"
+        "name": "Extra soft hide flag"
       },
       "extradry_setting": {
         "name": "ExtraDry setting"
@@ -3087,7 +3087,7 @@
         "name": "Extra rinse num flag"
       },
       "extrasoft_runing_flag": {
-        "name": "Extrasoft runing flag"
+        "name": "Extrasoft running flag"
       },
       "f_cool_qvalue": {
         "name": "Cooling"
@@ -3114,7 +3114,7 @@
         "name": "Fast store mode status"
       },
       "favour_program_id": {
-        "name": "Favour program id"
+        "name": "Favour program ID"
       },
       "feedback_volumen_setting_status": {
         "name": "Feedback volume",
@@ -3256,7 +3256,7 @@
         "name": "Half load"
       },
       "hard_pairing_commond": {
-        "name": "Hard pairing commond"
+        "name": "Hard pairing command"
       },
       "hard_pairing_status": {
         "name": "Hard pairing status"
@@ -3330,7 +3330,7 @@
         "name": "Human sense light status"
       },
       "human_sense_ui_display_state": {
-        "name": "Human sense ui display state"
+        "name": "Human sense UI display state"
       },
       "human_sensor_switch_exist": {
         "name": "Human sensor switch exist"
@@ -3339,7 +3339,7 @@
         "name": "Humanbody sensor switch status"
       },
       "humdy_test_switch_state": {
-        "name": "Humdy test switch state"
+        "name": "Humidity test switch state"
       },
       "ice_machine_actual_temp": {
         "name": "Ice machine actual temp"
@@ -3357,25 +3357,25 @@
         "name": "Ice room actual temp"
       },
       "id1": {
-        "name": "Id 1"
+        "name": "ID 1"
       },
       "id2": {
-        "name": "Id 2"
+        "name": "ID 2"
       },
       "id3": {
-        "name": "Id 3"
+        "name": "ID 3"
       },
       "id4": {
-        "name": "Id 4"
+        "name": "ID 4"
       },
       "id5": {
-        "name": "Id 5"
+        "name": "ID 5"
       },
       "inactivity_timeout": {
         "name": "Inactivity timeout"
       },
       "initializationprogramid": {
-        "name": "Initialization program id"
+        "name": "Initialization program ID"
       },
       "intensive_flag": {
         "name": "Intensive flag"
@@ -3501,13 +3501,13 @@
         "name": "Market mode exist"
       },
       "max_rpm_allowed_stat": {
-        "name": "Max rpm allowed stat"
+        "name": "Max RPM allowed stat"
       },
       "mdo_on_demand": {
-        "name": "Mdo on demand"
+        "name": "MDO on demand"
       },
       "mdo_on_demand_allowed": {
-        "name": "Mdo on demand allowed"
+        "name": "MDO on demand allowed"
       },
       "measured_grid_voltage": {
         "name": "Measured grid voltage"
@@ -3626,10 +3626,10 @@
         "name": "Notification volume"
       },
       "ntc_sensor_1": {
-        "name": "Ntc sensor 1"
+        "name": "NTC sensor 1"
       },
       "ntc_sensor_2": {
-        "name": "Ntc sensor 2"
+        "name": "NTC sensor 2"
       },
       "number_of_rinses": {
         "name": "Number of rinses"
@@ -3644,7 +3644,7 @@
         "name": "Odor sensor sensitivity"
       },
       "odor_sensor_swithc_status": {
-        "name": "Odor sensor swithc status"
+        "name": "Odor sensor switch status"
       },
       "once_rinse_step_time": {
         "name": "Once rinse step time"
@@ -3668,10 +3668,10 @@
         "name": "Order time minimum hour"
       },
       "ota_num1": {
-        "name": "Ota num 1"
+        "name": "OTA num 1"
       },
       "ota_sucess": {
-        "name": "Ota sucess"
+        "name": "OTA success"
       },
       "oven_measured_temperature": {
         "name": "Oven measured temperature"
@@ -3737,7 +3737,7 @@
         "name": "Presoak index"
       },
       "presoak_runing_flag": {
-        "name": "Presoak runing flag"
+        "name": "Presoak running flag"
       },
       "presoakflag": {
         "name": "Pre soak flag"
@@ -3758,7 +3758,7 @@
         "name": "Program settings start key duation for mw"
       },
       "programfunctionvalueid": {
-        "name": "Program function value id"
+        "name": "Program function value ID"
       },
       "proximity_sensor_setting": {
         "name": "Proximity sensor setting"
@@ -3848,10 +3848,10 @@
         "name": "Refrigerator door open time"
       },
       "refrigerator_freeze_swith": {
-        "name": "Refrigerator freeze swith"
+        "name": "Refrigerator freeze switch"
       },
       "refrigerator_freeze_swith_state": {
-        "name": "Refrigerator freeze swith state"
+        "name": "Refrigerator freeze switch state"
       },
       "refrigerator_key": {
         "name": "Refrigerator key"
@@ -3863,10 +3863,10 @@
         "name": "Refrigerator min temperature"
       },
       "refrigerator_poweroff_ad": {
-        "name": "Refrigerator poweroff ad"
+        "name": "Refrigerator power off ad"
       },
       "refrigerator_poweron_ad": {
-        "name": "Refrigerator poweron ad"
+        "name": "Refrigerator power on ad"
       },
       "refrigerator_real_temperature": {
         "name": "Refrigerator real temperature"
@@ -3899,55 +3899,55 @@
         "name": "Remote control monitoring set commands actions"
       },
       "rfpairingstatus": {
-        "name": "Rf pairing status"
+        "name": "RF pairing status"
       },
       "rgb_atmosphere_mode_b_value": {
-        "name": "Rgb atmosphere mode b value"
+        "name": "RGB atmosphere mode b value"
       },
       "rgb_atmosphere_mode_g_value": {
-        "name": "Rgb atmosphere mode g value"
+        "name": "RGB atmosphere mode g value"
       },
       "rgb_atmosphere_mode_r_value": {
-        "name": "Rgb atmosphere mode r value"
+        "name": "RGB atmosphere mode r value"
       },
       "rgb_function_mode_b_value": {
-        "name": "Rgb function mode b value"
+        "name": "RGB function mode b value"
       },
       "rgb_function_mode_g_value": {
-        "name": "Rgb function mode g value"
+        "name": "RGB function mode g value"
       },
       "rgb_function_mode_r_value": {
-        "name": "Rgb function mode r value"
+        "name": "RGB function mode r value"
       },
       "rgb_light_atmosphere_brightness": {
-        "name": "Rgb light atmosphere brightness"
+        "name": "RGB light atmosphere brightness"
       },
       "rgb_light_atmosphere_on_time": {
-        "name": "Rgb light atmosphere on time"
+        "name": "RGB light atmosphere on time"
       },
       "rgb_light_function_brightness": {
-        "name": "Rgb light function brightness"
+        "name": "RGB light function brightness"
       },
       "rgb_light_function_on_time": {
-        "name": "Rgb light function on time"
+        "name": "RGB light function on time"
       },
       "rgb_light_normal_brightness": {
-        "name": "Rgb light normal brightness"
+        "name": "RGB light normal brightness"
       },
       "rgb_light_normal_on_time": {
-        "name": "Rgb light normal on time"
+        "name": "RGB light normal on time"
       },
       "rgb_light_state": {
-        "name": "Rgb light state"
+        "name": "RGB light state"
       },
       "rgb_normal_mode_b_value": {
-        "name": "Rgb normal mode b value"
+        "name": "RGB normal mode b value"
       },
       "rgb_normal_mode_g_value": {
-        "name": "Rgb normal mode g value"
+        "name": "RGB normal mode g value"
       },
       "rgb_normal_mode_r_value": {
-        "name": "Rgb normal mode r value"
+        "name": "RGB normal mode r value"
       },
       "rinse_aid_setting_status": {
         "name": "Rinse aid"
@@ -3971,7 +3971,7 @@
         "name": "Run status flag 5"
       },
       "runing_zero_flag": {
-        "name": "Runing zero flag"
+        "name": "Running zero flag"
       },
       "running_status": {
         "name": "Running status"
@@ -4019,7 +4019,7 @@
         "name": "Sand timer 1 duration"
       },
       "sand_timer1_start_utc_datetime_bdc_timestamp": {
-        "name": "Sand timer 1 start utc datetime bdc timestamp"
+        "name": "Sand timer 1 start UTC datetime BDC timestamp"
       },
       "sand_timer1_status": {
         "name": "Timer 1 status",
@@ -4033,7 +4033,7 @@
         "name": "Timer 2 duration"
       },
       "sand_timer2_start_utc_datetime_bdc_timestamp": {
-        "name": "Sand timer 2 start utc datetime bdc timestamp"
+        "name": "Sand timer 2 start UTC datetime BDC timestamp"
       },
       "sand_timer2_status": {
         "name": "Timer 2 status",
@@ -4047,7 +4047,7 @@
         "name": "Timer 3 duration"
       },
       "sand_timer3_start_utc_datetime_bdc_timestamp": {
-        "name": "Sand timer 3 start utc datetime bdc timestamp"
+        "name": "Sand timer 3 start UTC datetime BDC timestamp"
       },
       "sand_timer3_status": {
         "name": "Timer 3 status",
@@ -4061,13 +4061,13 @@
         "name": "Sand timer 1 duration"
       },
       "sand_timer_1_end_utc_datetime_bdc_timestamp": {
-        "name": "Sand timer 1 end utc datetime bdc timestamp"
+        "name": "Sand timer 1 end UTC datetime BDC timestamp"
       },
       "sand_timer_1_paused_total_seconds": {
         "name": "Sand timer 1 paused total"
       },
       "sand_timer_1_start_utc_datetime_bdc_timestamp": {
-        "name": "Sand timer 1 start utc datetime bdc timestamp"
+        "name": "Sand timer 1 start UTC datetime BDC timestamp"
       },
       "sand_timer_1_status": {
         "name": "Sand timer 1 status",
@@ -4083,13 +4083,13 @@
         "name": "Sand timer 2 duration"
       },
       "sand_timer_2_end_utc_datetime_bdc_timestamp": {
-        "name": "Sand timer 2 end utc datetime bdc timestamp"
+        "name": "Sand timer 2 end UTC datetime BDC timestamp"
       },
       "sand_timer_2_paused_total_seconds": {
         "name": "Sand timer 2 paused total"
       },
       "sand_timer_2_start_utc_datetime_bdc_timestamp": {
-        "name": "Sand timer 2 start utc datetime bdc timestamp"
+        "name": "Sand timer 2 start UTC datetime BDC timestamp"
       },
       "sand_timer_2_status": {
         "name": "Sand timer 2 status",
@@ -4105,13 +4105,13 @@
         "name": "Sand timer 3 duration"
       },
       "sand_timer_3_end_utc_datetime_bdc_timestamp": {
-        "name": "Sand timer 3 end utc datetime bdc timestamp"
+        "name": "Sand timer 3 end UTC datetime BDC timestamp"
       },
       "sand_timer_3_paused_total_seconds": {
         "name": "Sand timer 3 paused total"
       },
       "sand_timer_3_start_utc_datetime_bdc_timestamp": {
-        "name": "Sand timer 3 start utc datetime bdc timestamp"
+        "name": "Sand timer 3 start UTC datetime BDC timestamp"
       },
       "sand_timer_3_status": {
         "name": "Sand timer 3 status",
@@ -4326,7 +4326,7 @@
         "name": "Selected program upper wash function"
       },
       "selected_program_uv_function": {
-        "name": "Selected program uv function"
+        "name": "Selected program UV function"
       },
       "selected_program_washing_spin_speed_rpm_status": {
         "name": "Spin speed",
@@ -4351,7 +4351,7 @@
         "name": "Duration of selected program"
       },
       "selected_programid_ota": {
-        "name": "Selected program id ota"
+        "name": "Selected program ID OTA"
       },
       "selected_programremaining_time_inminutes": {
         "name": "Remaining time of selected program"
@@ -4372,7 +4372,7 @@
         }
       },
       "session_pairing_commond": {
-        "name": "Session pairing commond"
+        "name": "Session pairing command"
       },
       "session_pairing_confirmation": {
         "name": "Session pairing confirmation"
@@ -4810,7 +4810,7 @@
         "name": "Spend on demand allowed"
       },
       "spin_speed_rpm": {
-        "name": "Spin speed rpm"
+        "name": "Spin speed RPM"
       },
       "spin_time": {
         "name": "Spin time"
@@ -5870,7 +5870,7 @@
         "name": "Temp index"
       },
       "temp_runing_flag": {
-        "name": "Temp runing flag"
+        "name": "Temp running flag"
       },
       "temp_wave": {
         "name": "Temp wave"
@@ -6020,19 +6020,19 @@
         "name": "BDC DelayStart DelayEnd"
       },
       "uv_light": {
-        "name": "Uv light"
+        "name": "UV light"
       },
       "uv_mode_on_demand": {
-        "name": "Uv mode on demand"
+        "name": "UV mode on demand"
       },
       "uv_mode_on_demand_allowed": {
-        "name": "Uv mode on demand allowed"
+        "name": "UV mode on demand allowed"
       },
       "uv_steri_status": {
-        "name": "Uv steri status"
+        "name": "UV steri status"
       },
       "uv_sterilization": {
-        "name": "Uv sterilization"
+        "name": "UV sterilization"
       },
       "var_room_open_2": {
         "name": "Var room open 2"
@@ -6059,10 +6059,10 @@
         "name": "Variation min temperature"
       },
       "variation_poweroff_ad": {
-        "name": "Variation poweroff ad"
+        "name": "Variation power off ad"
       },
       "variation_poweron_ad": {
-        "name": "Variation poweron ad"
+        "name": "Variation power on ad"
       },
       "variation_real_temperature": {
         "name": "Variation real temperature"
@@ -6086,7 +6086,7 @@
         "name": "Washer to dryer available for hours v"
       },
       "washer_to_dryer_program_id": {
-        "name": "Washer to dryer program id"
+        "name": "Washer to dryer program ID"
       },
       "washer_to_dryersetting_status": {
         "name": "Washer to dryersetting status"
@@ -6161,7 +6161,7 @@
         "name": "Washing wizzard cloth dirty third"
       },
       "washingwizzard_cloth_olour_first": {
-        "name": "Washing wizzard cloth olour first"
+        "name": "Washing wizzard cloth colour first"
       },
       "washingwizzard_cloth_sensitive": {
         "name": "Washing wizzard cloth sensitive"
@@ -6312,7 +6312,7 @@
         "name": "Water level"
       },
       "waterlevel_runing_flag": {
-        "name": "Waterlevel runing flag"
+        "name": "Water level running flag"
       },
       "waterlevelflag": {
         "name": "Water level flag"
@@ -6339,22 +6339,22 @@
         "name": "Wet and dry space"
       },
       "wifi_fault_flag": {
-        "name": "Wifi fault flag"
+        "name": "WiFi fault flag"
       },
       "wifi_handshake_fault_flag": {
-        "name": "Wifi handshake fault flag"
+        "name": "WiFi handshake fault flag"
       },
       "wifi_next_sendtime": {
-        "name": "Wifi next sendtime"
+        "name": "WiFi next sendtime"
       },
       "wifi_rx_fault_flag": {
-        "name": "Wifi rx fault flag"
+        "name": "WiFi rx fault flag"
       },
       "wifi_setting": {
-        "name": "Wifi setting"
+        "name": "WiFi setting"
       },
       "wifi_tx_fault_flag": {
-        "name": "Wifi tx fault flag"
+        "name": "WiFi tx fault flag"
       },
       "wild_vegetable_heat_switch": {
         "name": "Wild vegetable heat switch"
@@ -6363,7 +6363,7 @@
         "name": "Will fresh light status"
       },
       "will_fress_light_exist": {
-        "name": "Will fress light exist"
+        "name": "Will fresh light exist"
       },
       "will_light_market_mode_state": {
         "name": "Will light market mode state"
@@ -6399,7 +6399,7 @@
         "name": "Work mode 2"
       },
       "zibian_program_id": {
-        "name": "Zibian program id"
+        "name": "Zibian program ID"
       },
       "zone_number": {
         "name": "Number of zones"
