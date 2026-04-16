@@ -343,10 +343,10 @@
         "name": "Alarm sabbath postpone"
       },
       "alarmsteam_interrupted": {
-        "name": "Alarmsteam interrupted"
+        "name": "Alarm steam interrupted"
       },
       "alarmsteam_system_finished": {
-        "name": "Alarmsteam system finished"
+        "name": "Alarm steam system finished"
       },
       "alarmsteamclean_finished": {
         "name": "Alarm steam clean finished"
@@ -1770,7 +1770,7 @@
         "name": "Ads settings current program softener setting status"
       },
       "ai_energy_mode_switch": {
-        "name": "Ai energy mode switch"
+        "name": "AI energy mode switch"
       },
       "air_dry_function_status": {
         "name": "Air dry function status"
@@ -2060,10 +2060,10 @@
         "name": "Camera time lapse request"
       },
       "can_upload_wifi_program": {
-        "name": "Can upload wi fi program"
+        "name": "Can upload WiFi program"
       },
       "cancel_delayend_flag": {
-        "name": "Cancel delayend flag"
+        "name": "Cancel delay end flag"
       },
       "cancle_delayend": {
         "name": "Cancle delay end"
@@ -2075,13 +2075,13 @@
         "name": "Child lock status status"
       },
       "childlock_flag": {
-        "name": "Childlock flag"
+        "name": "Child lock flag"
       },
       "childlock_newfuntion": {
-        "name": "Childlock newfuntion"
+        "name": "Child lock newfuntion"
       },
       "childlock_pause": {
-        "name": "Childlock pause"
+        "name": "Child lock pause"
       },
       "circulationmodestatus": {
         "name": "Circulation mode status"
@@ -2141,16 +2141,16 @@
         "name": "Condensed watermode"
       },
       "cool_c": {
-        "name": "Cool c"
+        "name": "Cool C"
       },
       "cool_f": {
-        "name": "Cool f"
+        "name": "Cool F"
       },
       "cool_fan_speed": {
         "name": "Cool fan speed"
       },
       "cool_r": {
-        "name": "Cool r"
+        "name": "Cool R"
       },
       "crisp_function_available": {
         "name": "Crisp function available",
@@ -2166,16 +2166,16 @@
         "name": "Current program remaining time"
       },
       "curprogdetergentdosage": {
-        "name": "Cur prog detergent dosage"
+        "name": "Current program detergent dosage"
       },
       "curprogdetergentdosageno_auto": {
-        "name": "Cur prog detergent dosage no auto"
+        "name": "Current program detergent dosage no auto"
       },
       "curprogsoftnerdosage": {
-        "name": "Cur prog softner dosage"
+        "name": "Current program softener dosage"
       },
       "curprogsoftnerdosageno_auto": {
-        "name": "Cur prog softner dosage no auto"
+        "name": "Current program softener dosage no auto"
       },
       "current_baking_step": {
         "name": "Current baking step",
@@ -2312,7 +2312,7 @@
         "name": "Date time format year state"
       },
       "dbd_clean_mode": {
-        "name": "Dbd clean mode"
+        "name": "DBD clean mode"
       },
       "debacilli_mode": {
         "name": "Debacilli mode"
@@ -2345,7 +2345,7 @@
         "name": "Delay time hour min"
       },
       "delayclose_flag": {
-        "name": "Delayclose flag"
+        "name": "Delay close flag"
       },
       "delayendtime": {
         "name": "Delay end time"
@@ -2370,7 +2370,7 @@
         "name": "Delay start remaining time"
       },
       "delaystart_delayend_timestamp_status": {
-        "name": "Delaystart delayend timestamp status"
+        "name": "Delay start/end timestamp status"
       },
       "demo_mode_status": {
         "name": "Demo mode status"
@@ -2397,7 +2397,7 @@
         "name": "Detergent left num"
       },
       "detergent_soften_settingflag": {
-        "name": "Detergent soften settingflag"
+        "name": "Detergent soften settings flag"
       },
       "detergent_totalml": {
         "name": "Detergent total ml"
@@ -2523,7 +2523,7 @@
         "name": "Dose assist recommended detergent quantity unit status"
       },
       "dose_assist_recommended_low_concenatration_detergent_quantity": {
-        "name": "Dose assist recommended low concenatration detergent quantity"
+        "name": "Dose assist recommended low concentration detergent quantity"
       },
       "dose_assist_status": {
         "name": "Dose assist status"
@@ -2970,76 +2970,76 @@
         "name": "Error code"
       },
       "error_f10": {
-        "name": "Error f 10"
+        "name": "Error f10"
       },
       "error_f11": {
-        "name": "Error f 11"
+        "name": "Error f11"
       },
       "error_f12": {
-        "name": "Error f 12"
+        "name": "Error f12"
       },
       "error_f40": {
-        "name": "Error f 40"
+        "name": "Error f40"
       },
       "error_f41": {
-        "name": "Error f 41"
+        "name": "Error f41"
       },
       "error_f42": {
-        "name": "Error f 42"
+        "name": "Error f42"
       },
       "error_f43": {
-        "name": "Error f 43"
+        "name": "Error f43"
       },
       "error_f44": {
-        "name": "Error f 44"
+        "name": "Error f44"
       },
       "error_f45": {
-        "name": "Error f 45"
+        "name": "Error f45"
       },
       "error_f46": {
-        "name": "Error f 46"
+        "name": "Error f46"
       },
       "error_f52": {
-        "name": "Error f 52"
+        "name": "Error f52"
       },
       "error_f54": {
-        "name": "Error f 54"
+        "name": "Error f54"
       },
       "error_f56": {
-        "name": "Error f 56"
+        "name": "Error f56"
       },
       "error_f61": {
-        "name": "Error f 61"
+        "name": "Error f61"
       },
       "error_f62": {
-        "name": "Error f 62"
+        "name": "Error f62"
       },
       "error_f65": {
-        "name": "Error f 65"
+        "name": "Error f65"
       },
       "error_f67": {
-        "name": "Error f 67"
+        "name": "Error f67"
       },
       "error_f68": {
-        "name": "Error f 68"
+        "name": "Error f68"
       },
       "error_f69": {
-        "name": "Error f 69"
+        "name": "Error f69"
       },
       "error_f70": {
-        "name": "Error f 70"
+        "name": "Error f70"
       },
       "error_f72": {
-        "name": "Error f 72"
+        "name": "Error f72"
       },
       "error_f74": {
-        "name": "Error f 74"
+        "name": "Error f74"
       },
       "error_f75": {
-        "name": "Error f 75"
+        "name": "Error f75"
       },
       "error_f76": {
-        "name": "Error f 76"
+        "name": "Error f76"
       },
       "error_read_out_1_code": {
         "name": "Error read out 1 code"
