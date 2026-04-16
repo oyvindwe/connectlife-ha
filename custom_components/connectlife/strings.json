@@ -1718,15 +1718,6 @@
       }
     },
     "sensor": {
-      "_slotdry": {
-        "name": "Slotdry"
-      },
-      "_slotdry_flag": {
-        "name": "Slotdry flag"
-      },
-      "_slotdry_flag1": {
-        "name": "Slotdry flag1"
-      },
       "actions": {
         "name": "Actions"
       },

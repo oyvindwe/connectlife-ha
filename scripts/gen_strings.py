@@ -64,7 +64,7 @@ def main(basedir):
                     else:
                         if "disable" in property and property["disable"]:
                             continue
-                        key = property["property"].lower().replace(" ", "_")
+                        key = property["property"].strip().lower().replace(" ", "_")
                         if not any(entity_type in property for entity_type in ["binary_sensor", "switch", "number", "sensor", "select"]):
                             valid_properties.setdefault("sensor", set()).add(key)
                             name = property["property"]
@@ -79,7 +79,7 @@ def main(basedir):
                                 if entity_type not in strings["entity"]:
                                     strings["entity"][entity_type] = {}
                                 name = property["property"]
-                                key = name.lower().replace(" ", "_")
+                                key = name.strip().lower().replace(" ", "_")
                                 if key not in strings["entity"][entity_type]:
                                     strings["entity"][entity_type][key] = {"name": pretty(name)}
                                 elif "name" not in strings["entity"][entity_type][key]:
