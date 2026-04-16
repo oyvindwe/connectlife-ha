@@ -274,7 +274,7 @@
         "name": "Zone turned off"
       },
       "alarmalmost_finished": {
-        "name": "Alarmalmost finished"
+        "name": "Alarm almost finished"
       },
       "alarmchild_lockoff": {
         "name": "Alarmchild lockoff"
@@ -283,43 +283,43 @@
         "name": "Alarmchild lockon"
       },
       "alarmcleantank": {
-        "name": "Alarmcleantank"
+        "name": "Alarm clean tank"
       },
       "alarmdehydrate_ended": {
-        "name": "Alarmdehydrate ended"
+        "name": "Alarm dehydrate ended"
       },
       "alarmdescalestep1": {
-        "name": "Alarmdescalestep1"
+        "name": "Alarm descale step 1"
       },
       "alarmdescalestep2": {
-        "name": "Alarmdescalestep2"
+        "name": "Alarm descale step 2"
       },
       "alarmdescalestep3": {
-        "name": "Alarmdescalestep3"
+        "name": "Alarm descale step 3"
       },
       "alarmdescaling_interrupted": {
-        "name": "Alarmdescaling interrupted"
+        "name": "Alarm descaling interrupted"
       },
       "alarmemptytankpause": {
-        "name": "Alarmemptytankpause"
+        "name": "Alarm empty tank pause"
       },
       "alarmfilltank": {
-        "name": "Alarmfilltank"
+        "name": "Alarm fill tank"
       },
       "alarmincreased_power_consumption": {
-        "name": "Alarmincreased power consumption"
+        "name": "Alarm increased power consumption"
       },
       "alarmkey_lock_on": {
         "name": "Alarmkey lock on"
       },
       "alarmmicrowave_system_finished": {
-        "name": "Alarmmicrowave system finished"
+        "name": "Alarm microwave system finished"
       },
       "alarmoven_system_finished": {
         "name": "Alarmoven system finished"
       },
       "alarmpoptankopened": {
-        "name": "Alarmpoptankopened"
+        "name": "Alarm pop tank opened"
       },
       "alarmpower_failure_running": {
         "name": "Alarmpower failure running"
@@ -328,19 +328,19 @@
         "name": "Alarmprobe lost connection"
       },
       "alarmremotestartpowerfailure": {
-        "name": "Alarmremotestartpowerfailure"
+        "name": "Alarm remote start power failure"
       },
       "alarmremove_probe": {
-        "name": "Alarmremove probe"
+        "name": "Alarm remove probe"
       },
       "alarmsabbathabouttostart": {
-        "name": "Alarmsabbathabouttostart"
+        "name": "Alarm sabbath about to start"
       },
       "alarmsabbathended": {
-        "name": "Alarmsabbathended"
+        "name": "Alarm sabbath ended"
       },
       "alarmsabbathpostpone": {
-        "name": "Alarmsabbathpostpone"
+        "name": "Alarm sabbath postpone"
       },
       "alarmsteam_interrupted": {
         "name": "Alarmsteam interrupted"
@@ -349,10 +349,10 @@
         "name": "Alarmsteam system finished"
       },
       "alarmsteamclean_finished": {
-        "name": "Alarmsteamclean finished"
+        "name": "Alarm steam clean finished"
       },
       "alarmtanklevel1": {
-        "name": "Alarmtanklevel1"
+        "name": "Alarm tank level 1"
       },
       "ali_wifi_fault_flag": {
         "name": "WiFi fault"
@@ -1238,7 +1238,7 @@
         "name": "Delay end time"
       },
       "delayendtime_hour": {
-        "name": "Delayendtime hour"
+        "name": "Delay end time hour"
       },
       "freeze_max_temperature": {
         "name": "Freezer max temperature"
@@ -1866,10 +1866,10 @@
         "name": "Alarm grease filter"
       },
       "alarmrecirculationfilter1": {
-        "name": "Alarm recirculation filter1"
+        "name": "Alarm recirculation filter 1"
       },
       "alarmrecirculationfilter2": {
-        "name": "Alarm recirculation filter2"
+        "name": "Alarm recirculation filter 2"
       },
       "alarmtimerended": {
         "name": "Alarm timer ended"
@@ -1927,28 +1927,28 @@
         "name": "Aqua preserve flag"
       },
       "aquapreserve_runing_flag": {
-        "name": "Aquapreserve runing flag"
+        "name": "Aqua preserve running flag"
       },
       "aromatherapy": {
         "name": "Aromatherapy"
       },
       "auto_dose_compartment1_amount_setting": {
-        "name": "Auto dose compartment1 amount setting"
+        "name": "Auto dose compartment 1 amount setting"
       },
       "auto_dose_compartment1_status_102": {
-        "name": "Auto dose compartment1 status 102"
+        "name": "Auto dose compartment 1 status 102"
       },
       "auto_dose_compartment1_tank_amount": {
-        "name": "Auto dose compartment1 tank amount"
+        "name": "Auto dose compartment 1 tank amount"
       },
       "auto_dose_compartment2_amount_setting": {
-        "name": "Auto dose compartment2 amount setting"
+        "name": "Auto dose compartment 2 amount setting"
       },
       "auto_dose_compartment2_status_102": {
-        "name": "Auto dose compartment2 status 102"
+        "name": "Auto dose compartment 2 status 102"
       },
       "auto_dose_compartment2_tank_amount": {
-        "name": "Auto dose compartment2 tank amount"
+        "name": "Auto dose compartment 2 tank amount"
       },
       "auto_dose_drawer_status": {
         "name": "Auto dose drawer status"
@@ -2120,10 +2120,10 @@
         "name": "Commodity inspection"
       },
       "compartment1_type_setting_status": {
-        "name": "Compartment1 type setting status"
+        "name": "Compartment 1 type setting status"
       },
       "compartment2_type_setting_status": {
-        "name": "Compartment2 type setting status"
+        "name": "Compartment 2 type setting status"
       },
       "compartment_inuse": {
         "name": "Compartment inuse"
@@ -2191,7 +2191,7 @@
         }
       },
       "current_baking_step2": {
-        "name": "Current baking step2"
+        "name": "Current baking step 2"
       },
       "current_program_phase": {
         "name": "Current program phase",
@@ -2261,13 +2261,13 @@
         "name": "Custard room"
       },
       "d1_program_id": {
-        "name": "D1 program id"
+        "name": "D 1 program id"
       },
       "d2_program_id": {
-        "name": "D2 program id"
+        "name": "D 2 program id"
       },
       "d3_program_id": {
-        "name": "D3 program id"
+        "name": "D 3 program id"
       },
       "daily_energy_consumption": {
         "name": "Daily energy consumption"
@@ -2279,19 +2279,19 @@
         "name": "Darhcdq"
       },
       "dat3": {
-        "name": "Dat3"
+        "name": "Dat 3"
       },
       "data1": {
-        "name": "Data1"
+        "name": "Data 1"
       },
       "data2": {
-        "name": "Data2"
+        "name": "Data 2"
       },
       "data4": {
-        "name": "Data4"
+        "name": "Data 4"
       },
       "data5": {
-        "name": "Data5"
+        "name": "Data 5"
       },
       "date_display_format_status": {
         "name": "Date display format status"
@@ -2459,16 +2459,16 @@
         }
       },
       "displayboard_brand": {
-        "name": "Displayboard brand"
+        "name": "Display board brand"
       },
       "displayboard_key_setting": {
-        "name": "Displayboard key setting"
+        "name": "Display board key setting"
       },
       "displayboard_type": {
-        "name": "Displayboard type"
+        "name": "Display board type"
       },
       "displayboard_version": {
-        "name": "Displayboard version"
+        "name": "Display board version"
       },
       "displaybrightness_setting": {
         "name": "Display brightness setting"
@@ -2544,7 +2544,7 @@
         "name": "Down light light time"
       },
       "downloadprogram": {
-        "name": "Downloadprogram"
+        "name": "Download program"
       },
       "drum_light_setting_status": {
         "name": "Drum light setting status"
@@ -2592,13 +2592,13 @@
         "name": "Drying wizzard clothes dry level"
       },
       "dryingwizzard_clothesdrylevel1": {
-        "name": "Drying wizzard clothes dry level1"
+        "name": "Drying wizzard clothes dry level 1"
       },
       "dryingwizzard_clothesdrytarget": {
         "name": "Drying wizzard clothes dry target"
       },
       "dryingwizzard_clothesdrytarget1": {
-        "name": "Drying wizzard clothes dry target1"
+        "name": "Drying wizzard clothes dry target 1"
       },
       "dryingwizzard_clothesmaterialcharacteristics": {
         "name": "Drying wizzard clothes material characteristics"
@@ -2703,22 +2703,22 @@
         "name": "Energy save setting status"
       },
       "enterperformancemode_dry1_conditiontype": {
-        "name": "Enter performance mode dry1 condition type"
+        "name": "Enter performance mode dry 1 condition type"
       },
       "enterperformancemode_dry1_mainwashtime": {
-        "name": "Enter performance mode dry1 main wash time"
+        "name": "Enter performance mode dry 1 main wash time"
       },
       "enterperformancemode_wash1_conditiontype": {
-        "name": "Enter performance mode wash1 condition type"
+        "name": "Enter performance mode wash 1 condition type"
       },
       "enterperformancemode_wash1_mainwashtime": {
-        "name": "Enter performance mode wash1 main wash time"
+        "name": "Enter performance mode wash 1 main wash time"
       },
       "enterperformancemode_wash2_conditiontype": {
-        "name": "Enter performance mode wash2 condition type"
+        "name": "Enter performance mode wash 2 condition type"
       },
       "enterperformancemode_wash2_mainwashtime": {
-        "name": "Enter performance mode wash2 main wash time"
+        "name": "Enter performance mode wash 2 main wash time"
       },
       "environment_humidity": {
         "name": "Environment humidity"
@@ -2970,76 +2970,76 @@
         "name": "Error code"
       },
       "error_f10": {
-        "name": "Error f10"
+        "name": "Error f 10"
       },
       "error_f11": {
-        "name": "Error f11"
+        "name": "Error f 11"
       },
       "error_f12": {
-        "name": "Error f12"
+        "name": "Error f 12"
       },
       "error_f40": {
-        "name": "Error f40"
+        "name": "Error f 40"
       },
       "error_f41": {
-        "name": "Error f41"
+        "name": "Error f 41"
       },
       "error_f42": {
-        "name": "Error f42"
+        "name": "Error f 42"
       },
       "error_f43": {
-        "name": "Error f43"
+        "name": "Error f 43"
       },
       "error_f44": {
-        "name": "Error f44"
+        "name": "Error f 44"
       },
       "error_f45": {
-        "name": "Error f45"
+        "name": "Error f 45"
       },
       "error_f46": {
-        "name": "Error f46"
+        "name": "Error f 46"
       },
       "error_f52": {
-        "name": "Error f52"
+        "name": "Error f 52"
       },
       "error_f54": {
-        "name": "Error f54"
+        "name": "Error f 54"
       },
       "error_f56": {
-        "name": "Error f56"
+        "name": "Error f 56"
       },
       "error_f61": {
-        "name": "Error f61"
+        "name": "Error f 61"
       },
       "error_f62": {
-        "name": "Error f62"
+        "name": "Error f 62"
       },
       "error_f65": {
-        "name": "Error f65"
+        "name": "Error f 65"
       },
       "error_f67": {
-        "name": "Error f67"
+        "name": "Error f 67"
       },
       "error_f68": {
-        "name": "Error f68"
+        "name": "Error f 68"
       },
       "error_f69": {
-        "name": "Error f69"
+        "name": "Error f 69"
       },
       "error_f70": {
-        "name": "Error f70"
+        "name": "Error f 70"
       },
       "error_f72": {
-        "name": "Error f72"
+        "name": "Error f 72"
       },
       "error_f74": {
-        "name": "Error f74"
+        "name": "Error f 74"
       },
       "error_f75": {
-        "name": "Error f75"
+        "name": "Error f 75"
       },
       "error_f76": {
-        "name": "Error f76"
+        "name": "Error f 76"
       },
       "error_read_out_1_code": {
         "name": "Error read out 1 code"
@@ -3132,25 +3132,25 @@
         "name": "Filter state"
       },
       "filterclean_dry": {
-        "name": "Filterclean dry"
+        "name": "Filter clean dry"
       },
       "filterclean_drycount": {
-        "name": "Filterclean dry count"
+        "name": "Filter clean dry count"
       },
       "filterclean_dryflag": {
-        "name": "Filterclean dry flag"
+        "name": "Filter clean dry flag"
       },
       "filterclean_wash": {
-        "name": "Filterclean wash"
+        "name": "Filter clean wash"
       },
       "filterclean_washcound": {
-        "name": "Filterclean wash cound"
+        "name": "Filter clean wash count"
       },
       "filterclean_washcount": {
-        "name": "Filterclean wash count"
+        "name": "Filter clean wash count"
       },
       "filterclean_washflag": {
-        "name": "Filterclean wash flag"
+        "name": "Filter clean wash flag"
       },
       "flexiblespintime_flag": {
         "name": "Flexible spin time flag"
@@ -3162,7 +3162,7 @@
         "name": "Fluffysoft flag"
       },
       "fluffysoft_flag1": {
-        "name": "Fluffysoft flag1"
+        "name": "Fluffysoft flag 1"
       },
       "fota": {
         "name": "Fota",
@@ -3223,7 +3223,7 @@
         "name": "Fruit vegetables temperature"
       },
       "function1_useindex": {
-        "name": "Function1 use index"
+        "name": "Function 1 use index"
       },
       "gentle_dry": {
         "name": "Gentle dry"
@@ -3357,25 +3357,25 @@
         "name": "Ice room actual temp"
       },
       "id1": {
-        "name": "Id1"
+        "name": "Id 1"
       },
       "id2": {
-        "name": "Id2"
+        "name": "Id 2"
       },
       "id3": {
-        "name": "Id3"
+        "name": "Id 3"
       },
       "id4": {
-        "name": "Id4"
+        "name": "Id 4"
       },
       "id5": {
-        "name": "Id5"
+        "name": "Id 5"
       },
       "inactivity_timeout": {
         "name": "Inactivity timeout"
       },
       "initializationprogramid": {
-        "name": "Initializationprogram id"
+        "name": "Initialization program id"
       },
       "intensive_flag": {
         "name": "Intensive flag"
@@ -3447,7 +3447,7 @@
         "name": "Liquid unit setting status"
       },
       "load_operation_status2": {
-        "name": "Load operation status2"
+        "name": "Load operation status 2"
       },
       "loadlevel": {
         "name": "Load level"
@@ -3489,7 +3489,7 @@
         "name": "Main wash time"
       },
       "mainwashtime_flag": {
-        "name": "Mainwashtime flag"
+        "name": "Main wash time flag"
       },
       "mainwashtimelist": {
         "name": "Main wash time list"
@@ -3668,7 +3668,7 @@
         "name": "Order time minimum hour"
       },
       "ota_num1": {
-        "name": "Ota num1"
+        "name": "Ota num 1"
       },
       "ota_sucess": {
         "name": "Ota sucess"
@@ -3812,28 +3812,28 @@
         "name": "Real humidity c"
       },
       "recirculationfilter1lifetimeinhours": {
-        "name": "Recirculation filter1lifetime in hours"
+        "name": "Recirculation filter 1 lifetime in hours"
       },
       "recirculationfilter1status": {
-        "name": "Recirculation filter1status"
+        "name": "Recirculation filter 1 status"
       },
       "recirculationfilter1type": {
-        "name": "Recirculation filter1type"
+        "name": "Recirculation filter 1 type"
       },
       "recirculationfilter1usedhours": {
-        "name": "Recirculation filter1used hours"
+        "name": "Recirculation filter 1 used hours"
       },
       "recirculationfilter2lifetimeinhours": {
-        "name": "Recirculation filter2lifetime in hours"
+        "name": "Recirculation filter 2 lifetime in hours"
       },
       "recirculationfilter2status": {
-        "name": "Recirculation filter2status"
+        "name": "Recirculation filter 2 status"
       },
       "recirculationfilter2type": {
-        "name": "Recirculation filter2type"
+        "name": "Recirculation filter 2 type"
       },
       "recirculationfilter2usedhours": {
-        "name": "Recirculation filter2used hours"
+        "name": "Recirculation filter 2 used hours"
       },
       "ref_light": {
         "name": "Ref light"
@@ -3977,7 +3977,7 @@
         "name": "Running status"
       },
       "running_status3": {
-        "name": "Running status3"
+        "name": "Running status 3"
       },
       "sabbath_mode_setting": {
         "name": "Sabbath mode setting"
@@ -4019,7 +4019,7 @@
         "name": "Sand timer 1 duration"
       },
       "sand_timer1_start_utc_datetime_bdc_timestamp": {
-        "name": "Sand timer1 start utc datetime bdc timestamp"
+        "name": "Sand timer 1 start utc datetime bdc timestamp"
       },
       "sand_timer1_status": {
         "name": "Timer 1 status",
@@ -4033,7 +4033,7 @@
         "name": "Timer 2 duration"
       },
       "sand_timer2_start_utc_datetime_bdc_timestamp": {
-        "name": "Sand timer2 start utc datetime bdc timestamp"
+        "name": "Sand timer 2 start utc datetime bdc timestamp"
       },
       "sand_timer2_status": {
         "name": "Timer 2 status",
@@ -4047,7 +4047,7 @@
         "name": "Timer 3 duration"
       },
       "sand_timer3_start_utc_datetime_bdc_timestamp": {
-        "name": "Sand timer3 start utc datetime bdc timestamp"
+        "name": "Sand timer 3 start utc datetime bdc timestamp"
       },
       "sand_timer3_status": {
         "name": "Timer 3 status",
@@ -4267,7 +4267,7 @@
         }
       },
       "selected_program_mode2_status": {
-        "name": "Selected program mode2 status"
+        "name": "Selected program mode 2 status"
       },
       "selected_program_mode_status": {
         "name": "Program mode",
@@ -4360,7 +4360,7 @@
         "name": "Sensor failure status"
       },
       "sensor_failure_status2": {
-        "name": "Sensor failure status2"
+        "name": "Sensor failure status 2"
       },
       "session_pairing_active": {
         "name": "Session pairing active",
@@ -4726,7 +4726,7 @@
         "name": "Slotdry flag"
       },
       "slotdry_flag1": {
-        "name": "Slotdry flag1"
+        "name": "Slotdry flag 1"
       },
       "smart_sync_setting_status": {
         "name": "Smart sync setting status"
@@ -4959,7 +4959,7 @@
         "name": "Step 1 set temperature"
       },
       "step1_setmulti_level_baking": {
-        "name": "Step1 set multi level baking"
+        "name": "Step 1 set multi level baking"
       },
       "step1_steam_assist_intensity": {
         "name": "Step 1 steam assist intensity",
@@ -4974,25 +4974,25 @@
         "name": "Step 1 steam assist set time"
       },
       "step1add_moist_status": {
-        "name": "Step1add moist status"
+        "name": "Step 1 add moist status"
       },
       "step1add_moiststart_at_minute": {
-        "name": "Step1add moist start at minute"
+        "name": "Step 1 add moist start at minute"
       },
       "step1add_moistvalve_open_percentage": {
-        "name": "Step1add moist valve open percentage"
+        "name": "Step 1 add moist valve open percentage"
       },
       "step1alarm_after_step": {
-        "name": "Step1alarm after step"
+        "name": "Step 1 alarm after step"
       },
       "step1grill_intensity": {
-        "name": "Step1grill intensity"
+        "name": "Step 1 grill intensity"
       },
       "step1pause_after_step": {
-        "name": "Step1pause after step"
+        "name": "Step 1 pause after step"
       },
       "step1remove_moiststart_at_minute": {
-        "name": "Step1remove moist start at minute"
+        "name": "Step 1 remove moist start at minute"
       },
       "step2_duration": {
         "name": "Step 2 duration"
@@ -5046,7 +5046,7 @@
         "name": "Step2 set temperature"
       },
       "step2_setmulti_level_baking": {
-        "name": "Step2 set multi level baking"
+        "name": "Step 2 set multi level baking"
       },
       "step2_steam_assist_intensity": {
         "name": "Step 2 steam assist intensity",
@@ -5061,25 +5061,25 @@
         "name": "Step 2 steam assist set time"
       },
       "step2add_moist_status": {
-        "name": "Step2add moist status"
+        "name": "Step 2 add moist status"
       },
       "step2add_moiststart_at_minute": {
-        "name": "Step2add moist start at minute"
+        "name": "Step 2 add moist start at minute"
       },
       "step2add_moistvalve_open_percentage": {
-        "name": "Step2add moist valve open percentage"
+        "name": "Step 2 add moist valve open percentage"
       },
       "step2alarm_after_step": {
-        "name": "Step2alarm after step"
+        "name": "Step 2 alarm after step"
       },
       "step2grill_intensity": {
-        "name": "Step2grill intensity"
+        "name": "Step 2 grill intensity"
       },
       "step2pause_after_step": {
-        "name": "Step2pause after step"
+        "name": "Step 2 pause after step"
       },
       "step2remove_moiststart_at_minute": {
-        "name": "Step2remove moist start at minute"
+        "name": "Step 2 remove moist start at minute"
       },
       "step3_duration": {
         "name": "Step3 duration"
@@ -5133,7 +5133,7 @@
         "name": "Step3 set temperature"
       },
       "step3_setmulti_level_baking": {
-        "name": "Step3 set multi level baking"
+        "name": "Step 3 set multi level baking"
       },
       "step3_steam_assist_intensity": {
         "name": "Step 3 steam assist intensity",
@@ -5148,151 +5148,151 @@
         "name": "Step 3 steam assist set time"
       },
       "step3add_moist_status": {
-        "name": "Step3add moist status"
+        "name": "Step 3 add moist status"
       },
       "step3add_moiststart_at_minute": {
-        "name": "Step3add moist start at minute"
+        "name": "Step 3 add moist start at minute"
       },
       "step3add_moistvalve_open_percentage": {
-        "name": "Step3add moist valve open percentage"
+        "name": "Step 3 add moist valve open percentage"
       },
       "step3alarm_after_step": {
-        "name": "Step3alarm after step"
+        "name": "Step 3 alarm after step"
       },
       "step3grill_intensity": {
-        "name": "Step3grill intensity"
+        "name": "Step 3 grill intensity"
       },
       "step3pause_after_step": {
-        "name": "Step3pause after step"
+        "name": "Step 3 pause after step"
       },
       "step3remove_moiststart_at_minute": {
-        "name": "Step3remove moist start at minute"
+        "name": "Step 3 remove moist start at minute"
       },
       "step4_bake_mode": {
-        "name": "Step4 bake mode"
+        "name": "Step 4 bake mode"
       },
       "step4_duration": {
-        "name": "Step4 duration"
+        "name": "Step 4 duration"
       },
       "step4_passed_time": {
-        "name": "Step4 passed time"
+        "name": "Step 4 passed time"
       },
       "step4_remaining_time": {
-        "name": "Step4 remaining time"
+        "name": "Step 4 remaining time"
       },
       "step4_set_heater_system": {
-        "name": "Step4 set heater system"
+        "name": "Step 4 set heater system"
       },
       "step4_set_microwave_wattage": {
-        "name": "Step4 set microwave wattage"
+        "name": "Step 4 set microwave wattage"
       },
       "step4_set_temperature": {
-        "name": "Step4 set temperature"
+        "name": "Step 4 set temperature"
       },
       "step4_setmulti_level_baking": {
-        "name": "Step4 set multi level baking"
+        "name": "Step 4 set multi level baking"
       },
       "step4_status": {
-        "name": "Step4 status"
+        "name": "Step 4 status"
       },
       "step4_steam_available": {
-        "name": "Step4 steam available"
+        "name": "Step 4 steam available"
       },
       "step4_time_unit": {
-        "name": "Step4 time unit"
+        "name": "Step 4 time unit"
       },
       "step4add_moist_status": {
-        "name": "Step4add moist status"
+        "name": "Step 4 add moist status"
       },
       "step4add_moiststart_at_minute": {
-        "name": "Step4add moist start at minute"
+        "name": "Step 4 add moist start at minute"
       },
       "step4add_moistvalve_open_percentage": {
-        "name": "Step4add moist valve open percentage"
+        "name": "Step 4 add moist valve open percentage"
       },
       "step4alarm_after_step": {
-        "name": "Step4alarm after step"
+        "name": "Step 4 alarm after step"
       },
       "step4grill_intensity": {
-        "name": "Step4grill intensity"
+        "name": "Step 4 grill intensity"
       },
       "step4pause_after_step": {
-        "name": "Step4pause after step"
+        "name": "Step 4 pause after step"
       },
       "step4remove_moiststart_at_minute": {
-        "name": "Step4remove moist start at minute"
+        "name": "Step 4 remove moist start at minute"
       },
       "step4steam_assist": {
-        "name": "Step4steam assist"
+        "name": "Step 4 steam assist"
       },
       "step4steam_assist_intensity": {
-        "name": "Step4steam assist intensity"
+        "name": "Step 4 steam assist intensity"
       },
       "step4steam_assistset_time_in_minutes": {
-        "name": "Step4steam assist set time in minutes"
+        "name": "Step 4 steam assist set time in minutes"
       },
       "step5_bake_mode": {
-        "name": "Step5 bake mode"
+        "name": "Step 5 bake mode"
       },
       "step5_duration": {
-        "name": "Step5 duration"
+        "name": "Step 5 duration"
       },
       "step5_passed_time": {
-        "name": "Step5 passed time"
+        "name": "Step 5 passed time"
       },
       "step5_remaining_time": {
-        "name": "Step5 remaining time"
+        "name": "Step 5 remaining time"
       },
       "step5_set_heater_system": {
-        "name": "Step5 set heater system"
+        "name": "Step 5 set heater system"
       },
       "step5_set_microwave_wattage": {
-        "name": "Step5 set microwave wattage"
+        "name": "Step 5 set microwave wattage"
       },
       "step5_set_temperature": {
-        "name": "Step5 set temperature"
+        "name": "Step 5 set temperature"
       },
       "step5_setmulti_level_baking": {
-        "name": "Step5 set multi level baking"
+        "name": "Step 5 set multi level baking"
       },
       "step5_status": {
-        "name": "Step5 status"
+        "name": "Step 5 status"
       },
       "step5_steam_available": {
-        "name": "Step5 steam available"
+        "name": "Step 5 steam available"
       },
       "step5_time_unit": {
-        "name": "Step5 time unit"
+        "name": "Step 5 time unit"
       },
       "step5add_moist_status": {
-        "name": "Step5add moist status"
+        "name": "Step 5 add moist status"
       },
       "step5add_moiststart_at_minute": {
-        "name": "Step5add moist start at minute"
+        "name": "Step 5 add moist start at minute"
       },
       "step5add_moistvalve_open_percentage": {
-        "name": "Step5add moist valve open percentage"
+        "name": "Step 5 add moist valve open percentage"
       },
       "step5alarm_after_step": {
-        "name": "Step5alarm after step"
+        "name": "Step 5 alarm after step"
       },
       "step5grill_intensity": {
-        "name": "Step5grill intensity"
+        "name": "Step 5 grill intensity"
       },
       "step5pause_after_step": {
-        "name": "Step5pause after step"
+        "name": "Step 5 pause after step"
       },
       "step5remove_moiststart_at_minute": {
-        "name": "Step5remove moist start at minute"
+        "name": "Step 5 remove moist start at minute"
       },
       "step5steam_assist": {
-        "name": "Step5steam assist"
+        "name": "Step 5 steam assist"
       },
       "step5steam_assist_intensity": {
-        "name": "Step5steam assist intensity"
+        "name": "Step 5 steam assist intensity"
       },
       "step5steam_assistset_time_in_minutes": {
-        "name": "Step5steam assist set time in minutes"
+        "name": "Step 5 steam assist set time in minutes"
       },
       "step_1_duration": {
         "name": "Step 1 duration"
@@ -5816,7 +5816,7 @@
         "name": "Stop add go allowed"
       },
       "stoprunning_flag": {
-        "name": "Stoprunning flag"
+        "name": "Stop running flag"
       },
       "storage_mode_allowed": {
         "name": "Storage mode allowed"
@@ -5858,7 +5858,7 @@
         "name": "Tankclean flag"
       },
       "tankclean_flag1": {
-        "name": "Tankclean flag1"
+        "name": "Tankclean flag 1"
       },
       "temp_auto_ctrl_mode_exist": {
         "name": "Temp auto ctrl mode exist"
@@ -6095,7 +6095,7 @@
         "name": "Washer to dryerwizard trigger status"
       },
       "washfunction1": {
-        "name": "Wash function1"
+        "name": "Wash function 1"
       },
       "washing_drying_linkage_flag": {
         "name": "Washing drying linkage flag"
@@ -6116,16 +6116,16 @@
         "name": "Washing program weight"
       },
       "washingtime": {
-        "name": "Washingtime"
+        "name": "Washing time"
       },
       "washingtime_presoak_flag": {
-        "name": "Washingtime presoak flag"
+        "name": "Washing time presoak flag"
       },
       "washingtime_useindex": {
         "name": "Washing time use index"
       },
       "washingtime_waterlevel_flag": {
-        "name": "Washingtime waterlevel flag"
+        "name": "Washing time water level flag"
       },
       "washingtimeindex": {
         "name": "Washing time index"
@@ -6393,10 +6393,10 @@
         "name": "Wine light"
       },
       "work_mode1": {
-        "name": "Work mode1"
+        "name": "Work mode 1"
       },
       "work_mode2": {
-        "name": "Work mode2"
+        "name": "Work mode 2"
       },
       "zibian_program_id": {
         "name": "Zibian program id"
@@ -6425,7 +6425,7 @@
         "name": "Automatic ice making"
       },
       "autotubclean": {
-        "name": "Autotubclean"
+        "name": "Auto tub clean"
       },
       "child_lock": {
         "name": "Child lock"

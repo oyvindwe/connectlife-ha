@@ -239,6 +239,9 @@ def pretty(name: str) -> str:
     name = re.sub(r'(?<=[a-z])(?=[A-Z])', ' ', name)
     # Split acronyms from words: "APPControl" -> "APP Control"
     name = re.sub(r'(?<=[A-Z])(?=[A-Z][a-z])', ' ', name)
+    # Split letters from digits: "compartment1" -> "compartment 1", "1add" -> "1 add"
+    name = re.sub(r'(?<=[a-zA-Z])(?=\d)', ' ', name)
+    name = re.sub(r'(?<=\d)(?=[a-zA-Z])', ' ', name)
     return re.sub(r' +', ' ', name.replace("_", " ")).strip().capitalize()
 
 
