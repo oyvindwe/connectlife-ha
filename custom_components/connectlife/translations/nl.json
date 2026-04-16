@@ -3436,9 +3436,6 @@
       "t_beep": {
         "name": "Pieptoon"
       },
-      "t_power": {
-        "name": "Stroom"
-      },
       "temperature": {
         "name": "Temperatuur"
       },

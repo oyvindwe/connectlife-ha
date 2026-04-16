@@ -596,9 +596,6 @@
       "t_beep": {
         "name": "Beep"
       },
-      "t_power": {
-        "name": "Power"
-      },
       "total_time_of_cooking_in_hours": {
         "name": "Tempo totale di cottura"
       },

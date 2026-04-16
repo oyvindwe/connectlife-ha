@@ -3353,9 +3353,6 @@
       "t_beep": {
         "name": "Signalton"
       },
-      "t_power": {
-        "name": "Leistung"
-      },
       "temperature": {
         "name": "Temperatur"
       },

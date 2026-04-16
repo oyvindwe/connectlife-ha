@@ -1482,9 +1482,6 @@
       "t_beep": {
         "name": "Beep"
       },
-      "t_power": {
-        "name": "Encendido"
-      },
       "temperature_room_judge": {
         "name": "Temperature room judge"
       },

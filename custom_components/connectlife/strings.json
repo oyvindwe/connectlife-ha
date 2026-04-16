@@ -2544,7 +2544,7 @@
         "name": "Down light light time"
       },
       "downloadprogram": {
-        "name": "Download program"
+        "name": "Downloadprogram"
       },
       "drum_light_setting_status": {
         "name": "Drum light setting status"
@@ -3098,14 +3098,8 @@
       "f_heat_qvalue": {
         "name": "Heating"
       },
-      "f_humidity": {
-        "name": "F humidity"
-      },
       "f_votage": {
         "name": "Measured grid voltage"
-      },
-      "f_water_tank_temp": {
-        "name": "F water tank temp"
       },
       "factory_reset": {
         "name": "Factory reset"
@@ -3162,7 +3156,7 @@
         "name": "Flexible spin time flag"
       },
       "fluffysoft": {
-        "name": "Fluffy soft"
+        "name": "Fluffysoft"
       },
       "fluffysoft_flag": {
         "name": "Fluffysoft flag"
@@ -5857,23 +5851,8 @@
       "t_fan_speed": {
         "name": "T fan speed"
       },
-      "t_humidity": {
-        "name": "T humidity"
-      },
-      "t_power": {
-        "name": "T power"
-      },
-      "t_temp": {
-        "name": "T temp"
-      },
-      "t_vacation": {
-        "name": "T vacation"
-      },
-      "t_work_mode": {
-        "name": "T work mode"
-      },
       "tankclean": {
-        "name": "Tank clean"
+        "name": "Tankclean"
       },
       "tankclean_flag": {
         "name": "Tankclean flag"
@@ -6137,7 +6116,7 @@
         "name": "Washing program weight"
       },
       "washingtime": {
-        "name": "Washing time"
+        "name": "Washingtime"
       },
       "washingtime_presoak_flag": {
         "name": "Washingtime presoak flag"
