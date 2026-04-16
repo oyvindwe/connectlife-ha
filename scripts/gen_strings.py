@@ -1,5 +1,6 @@
 import argparse
 import json
+import re
 import urllib.request
 from os import listdir
 from os.path import isfile, join
@@ -66,6 +67,13 @@ def main(basedir):
                         key = property["property"].lower().replace(" ", "_")
                         if not any(entity_type in property for entity_type in ["binary_sensor", "switch", "number", "sensor", "select"]):
                             valid_properties.setdefault("sensor", set()).add(key)
+                            name = property["property"]
+                            if "sensor" not in strings["entity"]:
+                                strings["entity"]["sensor"] = {}
+                            if key not in strings["entity"]["sensor"]:
+                                strings["entity"]["sensor"][key] = {"name": pretty(name)}
+                            elif "name" not in strings["entity"]["sensor"][key]:
+                                strings["entity"]["sensor"][key]["name"] = pretty(name)
                         for entity_type in ["binary_sensor", "switch", "number", "sensor", "select"]:
                             if entity_type in property:
                                 if entity_type not in strings["entity"]:
@@ -223,7 +231,11 @@ def include_option(option: str, filename: str) -> bool:
 
 
 def pretty(name: str) -> str:
-    return name.replace("_", " ").capitalize();
+    # Split camelCase: "AirDryFlag" -> "Air Dry Flag"
+    name = re.sub(r'(?<=[a-z])(?=[A-Z])', ' ', name)
+    # Split acronyms from words: "APPControl" -> "APP Control"
+    name = re.sub(r'(?<=[A-Z])(?=[A-Z][a-z])', ' ', name)
+    return name.replace("_", " ").strip().capitalize()
 
 
 if __name__ == "__main__":

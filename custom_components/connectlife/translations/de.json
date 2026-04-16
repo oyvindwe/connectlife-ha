@@ -1697,6 +1697,9 @@
       "child_lock_setting_status": {
         "name": "Kindersicherungseinstellung"
       },
+      "coldwash": {
+        "name": "Kaltw\u00e4sche"
+      },
       "crisp_function_available": {
         "name": "Knusperfunktion verf\u00fcgbar",
         "state": {
@@ -1844,6 +1847,12 @@
           "open": "Ge\u00f6ffnet",
           "other": "Andere"
         }
+      },
+      "downlight": {
+        "name": "Beleuchtung"
+      },
+      "drymodel": {
+        "name": "Trocknungsmodus"
       },
       "dryopen_defaultspinspeed": {
         "name": "Standard Schleudergeschwindigkeit"
@@ -2650,6 +2659,9 @@
       "spintime_index": {
         "name": "Schleuderzeit-Index"
       },
+      "stain_removal": {
+        "name": "Fleckenentfernung"
+      },
       "status": {
         "name": "Ger\u00e4testatus",
         "state": {
@@ -3337,6 +3349,12 @@
       },
       "step_pre_bake_set_temperature": {
         "name": "Vorbackphase Temperatur"
+      },
+      "t_beep": {
+        "name": "Signalton"
+      },
+      "t_power": {
+        "name": "Leistung"
       },
       "temperature": {
         "name": "Temperatur"

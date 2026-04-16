@@ -1758,6 +1758,9 @@
       "child_lock_setting_status": {
         "name": "Kinderbeveiliging instelling"
       },
+      "coldwash": {
+        "name": "Koude was"
+      },
       "crisp_function_available": {
         "name": "Crisp-functie",
         "state": {
@@ -1906,6 +1909,12 @@
           "open": "Open",
           "other": "Anders"
         }
+      },
+      "downlight": {
+        "name": "Down light"
+      },
+      "drymodel": {
+        "name": "Droger model"
       },
       "dryopen_defaultspinspeed": {
         "name": "Standaard centrifugesnelheid (open drogen)"
@@ -2727,6 +2736,9 @@
       "spintime_index": {
         "name": "Centrifugeertijd index"
       },
+      "stain_removal": {
+        "name": "Vlekken verwijderen"
+      },
       "standardelectricitconsumption": {
         "name": "Standaard elektriciteitsverbruik"
       },
@@ -3420,6 +3432,12 @@
       },
       "step_pre_bake_set_temperature": {
         "name": "Stap voor bakken ingestelde temperatuur"
+      },
+      "t_beep": {
+        "name": "Pieptoon"
+      },
+      "t_power": {
+        "name": "Stroom"
       },
       "temperature": {
         "name": "Temperatuur"
