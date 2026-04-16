@@ -1,0 +1,368 @@
+{
+  "config": {
+    "abort": {
+      "already_configured": "L\u2019appareil est d\u00e9j\u00e0 configur\u00e9"
+    },
+    "error": {
+      "cannot_connect": "\u00c9chec de l\u2019\u00e9tablissement de la connexion",
+      "invalid_auth": "\u00c9chec de l\u2019authentification",
+      "unknown": "Erreur inconnue"
+    },
+    "step": {
+      "user": {
+        "data": {
+          "password": "Mot de passe",
+          "username": "Nom d\u2019utilisateur"
+        }
+      }
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "child_lock": {
+        "name": "Verrouillage enfant"
+      },
+      "detergent_display": {
+        "name": "Affichage lessive"
+      },
+      "detergent_state": {
+        "name": "\u00c9tat lessive"
+      },
+      "door_status": {
+        "name": "\u00c9tat hublot"
+      },
+      "eco_mode": {
+        "name": "Mode ECO"
+      },
+      "softener_state": {
+        "name": "\u00c9tat assouplissant"
+      }
+    },
+    "number": {
+      "delayendtime": {
+        "name": "Fin diff\u00e9r\u00e9e"
+      }
+    },
+    "select": {
+      "actions": {
+        "name": "Actions"
+      },
+      "delayendtime": {
+        "name": "Fin diff\u00e9r\u00e9e"
+      },
+      "detergent": {
+        "name": "Dosage lessive"
+      },
+      "dry_time": {
+        "name": "Dur\u00e9e s\u00e9chage"
+      },
+      "extrarinsenum": {
+        "name": "Nombre rin\u00e7age suppl\u00e9mentaire"
+      },
+      "quickermode": {
+        "name": "Mode rapide"
+      },
+      "selected_program_id": {
+        "name": "Programme"
+      },
+      "softener": {
+        "name": "Dosage assouplissant"
+      },
+      "spin_speed_rpm": {
+        "name": "Vitesse essorage"
+      },
+      "temperature": {
+        "name": "Temp\u00e9rature lavage"
+      }
+    },
+    "sensor": {
+      "add_water_flag": {
+        "name": "Indicateur ajout eau"
+      },
+      "airdryflag": {
+        "name": "Indicateur s\u00e9chage air"
+      },
+      "airwashtime": {
+        "name": "Dur\u00e9e lavage air"
+      },
+      "anticrease_flag": {
+        "name": "Indicateur anti froissage"
+      },
+      "applicationpermissions": {
+        "name": "Autorisations application"
+      },
+      "aquapreserve": {
+        "name": "Pr\u00e9servation eau"
+      },
+      "aquapreserve_flag": {
+        "name": "Indicateur pr\u00e9servation eau"
+      },
+      "autodose_flag": {
+        "name": "Indicateur dosage automatique"
+      },
+      "autodosetype": {
+        "name": "Type dosage automatique"
+      },
+      "bathingwaterpump_rinse": {
+        "name": "Pompe recyclage rin\u00e7age"
+      },
+      "bathingwaterpump_wash": {
+        "name": "Pompe recyclage lavage"
+      },
+      "bathingwaterpumpstate": {
+        "name": "\u00c9tat pompe recyclage"
+      },
+      "cancle_delayend": {
+        "name": "Annulation fin diff\u00e9r\u00e9e"
+      },
+      "childlock_flag": {
+        "name": "Indicateur verrouillage enfant"
+      },
+      "childlock_newfuntion": {
+        "name": "Nouvelle fonction verrouillage enfant"
+      },
+      "childlock_pause": {
+        "name": "Pause verrouillage enfant"
+      },
+      "coldwash": {
+        "name": "Lavage a froid"
+      },
+      "compartment_inuse": {
+        "name": "Compartiment utilis\u00e9"
+      },
+      "compartment_switch": {
+        "name": "S\u00e9lecteur de compartiment"
+      },
+      "curprogdetergentdosage": {
+        "name": "Dosage lessive programme courant"
+      },
+      "curprogdetergentdosageno_auto": {
+        "name": "Dosage manuel lessive programme courant"
+      },
+      "curprogsoftnerdosage": {
+        "name": "Dosage assouplissant programme courant"
+      },
+      "curprogsoftnerdosageno_auto": {
+        "name": "Dosage manuel assouplissant programme courant"
+      },
+      "current_program_phase": {
+        "name": "\u00c9tape en cours"
+      },
+      "daily_energy_kwh": {
+        "name": "\u00c9nergie quotidienne"
+      },
+      "defaultspinspeed": {
+        "name": "Vitesse essorage par d\u00e9faut"
+      },
+      "delayendtime": {
+        "name": "Fin diff\u00e9r\u00e9e"
+      },
+      "delayendtime_minute": {
+        "name": "D\u00e9lai fin diff\u00e9r\u00e9e"
+      },
+      "detergentstandarddosage": {
+        "name": "Dosage standard lessive"
+      },
+      "detergentstandarddosage_flag": {
+        "name": "Indicateur dosage standard lessive"
+      },
+      "door_status": {
+        "name": "\u00c9tat hublot"
+      },
+      "dose_detergent_amount": {
+        "name": "Quantit\u00e9 lessive dos\u00e9e"
+      },
+      "dose_softener_amount": {
+        "name": "Quantit\u00e9 assouplissant dos\u00e9e"
+      },
+      "drumcleancycle_runsnumber": {
+        "name": "Nombre cycles nettoyage tambour"
+      },
+      "drumcleanflag": {
+        "name": "Indicateur nettoyage tambour"
+      },
+      "dryfilterremindflag": {
+        "name": "Rappel nettoyage filtre s\u00e9chage"
+      },
+      "drymodel": {
+        "name": "Mode s\u00e9chage"
+      },
+      "ecomode": {
+        "name": "Mode ECO"
+      },
+      "electricit_consumption": {
+        "name": "Consommation \u00e9lectrique"
+      },
+      "energy_estimate": {
+        "name": "Estimation \u00e9nerg\u00e9tique"
+      },
+      "error_code": {
+        "name": "Code erreur"
+      },
+      "filterclean_washflag": {
+        "name": "Indicateur nettoyage filtre"
+      },
+      "fluffysoft": {
+        "name": "Assouplissement renforc\u00e9"
+      },
+      "gentle_dry": {
+        "name": "S\u00e9chage doux"
+      },
+      "half_load": {
+        "name": "Demi charge"
+      },
+      "intensivewash": {
+        "name": "Lavage intensif"
+      },
+      "last_completed_running_process": {
+        "name": "Dernier cycle"
+      },
+      "machine_status": {
+        "name": "\u00c9tat machine"
+      },
+      "mainwashtimeuseindex": {
+        "name": "Index dur\u00e9e lavage"
+      },
+      "nightmode_flag": {
+        "name": "Indicateur mode nuit"
+      },
+      "performancemode_flag": {
+        "name": "Indicateur mode performance"
+      },
+      "power_save": {
+        "name": "\u00c9conomie \u00e9nergie"
+      },
+      "presoak": {
+        "name": "Trempage"
+      },
+      "rinsenum": {
+        "name": "Nombre rin\u00e7age"
+      },
+      "selected_program_id": {
+        "name": "Programme"
+      },
+      "selected_program_remaining_time_in_minutes": {
+        "name": "Temps restant programme"
+      },
+      "selected_program_total_running_time_in_minutes": {
+        "name": "Temps ex\u00e9cution programme"
+      },
+      "selected_program_total_time_in_minutes": {
+        "name": "Dur\u00e9e totale programme"
+      },
+      "slotdry": {
+        "name": "S\u00e9chage par compartiment"
+      },
+      "spin_speed_rpm": {
+        "name": "Vitesse essorage"
+      },
+      "spinrange": {
+        "name": "Plage essorage"
+      },
+      "temperature": {
+        "name": "Temp\u00e9rature lavage"
+      },
+      "water_consumption": {
+        "name": "Consommation eau"
+      },
+      "weight_startrunning": {
+        "name": "Poids d\u00e9marrage"
+      }
+    },
+    "switch": {
+      "anticrease": {
+        "name": "Anti froissage"
+      },
+      "autodose": {
+        "name": "Dosage automatique"
+      },
+      "autotubclean": {
+        "name": "Nettoyage automatique tambour"
+      },
+      "child_lock": {
+        "name": "Verrouillage enfant"
+      },
+      "extra_rinse": {
+        "name": "Rin\u00e7age suppl\u00e9mentaire"
+      },
+      "mute": {
+        "name": "Mode silencieux"
+      },
+      "prewash": {
+        "name": "Pr\u00e9lavage"
+      },
+      "steam": {
+        "name": "Vapeur"
+      }
+    }
+  },
+  "issues": {
+    "unavailable_device": {
+      "fix_flow": {
+        "abort": {
+          "issue_ignored": "L\u2019appareil ignor\u00e9 \"{device_name} n\u2019est pas disponible\". L\u2019appareil et toutes ses entit\u00e9s resteront list\u00e9s dans le registre."
+        },
+        "step": {
+          "init": {
+            "description": "L\u2019appareil \"{device_name}\" est disponible dans votre compte ConnectLife. Si vous ne poss\u00e9dez plus cet appareil, vous pouvez le supprimer de Home Assistant.",
+            "menu_options": {
+              "ignore": "Ignorer",
+              "remove": "Supprimer"
+            },
+            "title": "{device_name} n\u2019est pas disponible"
+          },
+          "remove": {
+            "description": "L\u2019appareil \"{device_name}\" et toutes ses entit\u00e9s seront supprim\u00e9s de Home Assistant.",
+            "title": "Supprimer {device_name}"
+          }
+        }
+      },
+      "title": "{device_name} n\u2019est pas disponible"
+    }
+  },
+  "options": {
+    "error": {
+      "test_server_invalid": "URL du serveur de test invalide",
+      "test_server_required": "Le mode d\u00e9veloppement n\u00e9cessite une URL de serveur de test"
+    },
+    "step": {
+      "configure_device": {
+        "data": {
+          "disable_beep": "D\u00e9sactiver le bip"
+        },
+        "description": "Configurer un appareil."
+      },
+      "development": {
+        "data": {
+          "development_mode": "Mode d\u00e9veloppement",
+          "test_server_url": "URL du serveur de test"
+        },
+        "description": "Activer le mode d\u00e9veloppement pour se connecter au serveur de test au lieu de l\u2019API ConnectLife."
+      },
+      "init": {
+        "menu_options": {
+          "development": "Configurer le mode d\u00e9veloppement",
+          "select_device": "Configurer un appareil"
+        }
+      },
+      "select_device": {
+        "data": {
+          "device": "S\u00e9lectionner un appareil"
+        },
+        "description": "Configurer un appareil."
+      }
+    }
+  },
+  "services": {
+    "set_value": {
+      "description": "D\u00e9finir une valeur pour l\u2019\u00e9tat. \u00c0 utiliser avec pr\u00e9caution.",
+      "fields": {
+        "value": {
+          "description": "Valeur \u00e0 d\u00e9finir.",
+          "name": "Valeur"
+        }
+      },
+      "name": "D\u00e9finir la valeur"
+    }
+  }
+}
