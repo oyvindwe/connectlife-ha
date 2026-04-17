@@ -6511,6 +6511,9 @@
       "super_rinse_setting_status": {
         "name": "Super rinse setting status"
       },
+      "t_8heat": {
+        "name": "Frost protection"
+      },
       "t_air": {
         "name": "Air"
       },
