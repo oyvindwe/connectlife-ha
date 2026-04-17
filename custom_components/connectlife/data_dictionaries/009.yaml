@@ -137,6 +137,10 @@ properties:
       device_class: voltage
       unit: V
     hide: true
+  - property: t_8heat
+    switch:
+      device_class: switch
+    icon: mdi:snowflake-thermometer
   - property: t_beep
     binary_sensor:
       options:
