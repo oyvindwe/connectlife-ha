@@ -47,14 +47,15 @@ Generate release notes for this ConnectLife Home Assistant integration release.
 
 7. Come up with a cool release name.
 
-8. Format the release notes following this template:
+8. Format the release notes following this template. Do NOT include a `v` prefix on the version in the title line.
 
 ```markdown
-# <release version> <release name>
+<version> <release name>
 
 ## Highlights
 
 <2-4 bullet summary of the most notable changes in this release>
+- Do NOT include PR references (#123) or contributor mentions in Highlights — those belong in the detail sections below.
 
 ## New devices
 
@@ -105,4 +106,7 @@ The following have contributed to changes in this release — thank you very muc
 - Quote property names and field names in backticks (e.g., `DelayEndTime`, `state_class`)
 - Keep descriptions concise — one line per item
 - The Highlights section should give a quick overview: count of new devices, key fixes, notable features
+- Always read the PR body (via `gh pr view <num> --json body --jq '.body'`)
+- When a PR body calls out a breaking change is experimental, note that in the entry (e.g., "breaking changes ...")
+- When a PR body calls out that a change is experimental, speculative, or untested for certain models/devices, note that in the entry (e.g., "experimental for ...")
 - Present the final release notes as a single markdown code block so it can be easily copied
