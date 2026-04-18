@@ -20,6 +20,7 @@ properties:
         1: standby
         2: running
         3: paused
+        4: alarm
   - property: Detergent_display
     icon: mdi:spray
     binary_sensor:
@@ -822,8 +823,14 @@ properties:
     hide: true
     entity_category: diagnostic
   - property: error_code
-    hide: true
+    icon: mdi:alert-circle-outline
     entity_category: diagnostic
+    sensor:
+      device_class: enum
+      read_only: true
+      options:
+        0: none
+        100: unbalance_alarm
   - property: hottime
     hide: true
     entity_category: diagnostic

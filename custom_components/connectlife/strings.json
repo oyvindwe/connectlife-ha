@@ -3038,7 +3038,11 @@
         "name": "Error 9_1"
       },
       "error_code": {
-        "name": "Error code"
+        "name": "Error code",
+        "state": {
+          "none": "None",
+          "unbalance_alarm": "Unbalance alarm"
+        }
       },
       "error_f10": {
         "name": "Error f10"
@@ -3541,6 +3545,7 @@
       "machine_status": {
         "name": "Machine status",
         "state": {
+          "alarm": "Alarm",
           "off": "Off",
           "paused": "Paused",
           "running": "Running",

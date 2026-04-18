@@ -1935,7 +1935,11 @@
         "name": "Reale Umgebungstemperatur"
       },
       "error_code": {
-        "name": "Fehlercode"
+        "name": "Fehlercode",
+        "state": {
+          "none": "Kein Fehler",
+          "unbalance_alarm": "Unwucht-Alarm"
+        }
       },
       "error_read_out_1_code": {
         "name": "Fehlercode 1 auslesen"
@@ -2090,6 +2094,7 @@
       "machine_status": {
         "name": "Maschinenstatus",
         "state": {
+          "alarm": "Alarm",
           "off": "Aus",
           "paused": "Pausiert",
           "running": "L\u00e4uft",
