@@ -1,4 +1,23 @@
 properties:
+  - property: f_electricity
+    sensor:
+      device_class: current
+      unit: A
+      read_only: true
+    hide: true
+  - property: f_power_consumption
+    sensor:
+      device_class: energy
+      unit: kWh
+      read_only: true
+      state_class: total_increasing
+    icon: mdi:lightning-bolt
+  - property: f_votage
+    sensor:
+      device_class: voltage
+      unit: V
+      read_only: true
+    hide: true
   - property: f_water_tank_temp
     water_heater:
       target: current_temperature
