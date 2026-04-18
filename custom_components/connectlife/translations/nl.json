@@ -1938,7 +1938,11 @@
         "name": "Werkelijke omgevingstemperatuur"
       },
       "error_code": {
-        "name": "Foutmelding"
+        "name": "Foutmelding",
+        "state": {
+          "none": "Geen",
+          "unbalance_alarm": "Onbalans alarm"
+        }
       },
       "error_read_out_1_code": {
         "name": "Foutcode uitlezen 1"
@@ -2105,6 +2109,7 @@
       "machine_status": {
         "name": "Machine status",
         "state": {
+          "alarm": "Alarm",
           "off": "Uit",
           "paused": "Gepauzeerd",
           "running": "Draait",
