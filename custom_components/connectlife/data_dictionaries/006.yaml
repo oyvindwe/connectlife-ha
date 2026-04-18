@@ -21,7 +21,7 @@ properties:
     state_class: measurement
   icon: mdi:flash
 - property: f_temp_in
-  icon: mdi:temp
+  icon: mdi:thermometer
   climate:
     target: current_temperature
 - property: t_eco

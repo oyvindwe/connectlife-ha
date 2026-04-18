@@ -1234,6 +1234,30 @@
       }
     },
     "number": {
+      "aus_zone1_opencontrol": {
+        "name": "Zone 1 opening"
+      },
+      "aus_zone2_opencontrol": {
+        "name": "Zone 2 opening"
+      },
+      "aus_zone3_opencontrol": {
+        "name": "Zone 3 opening"
+      },
+      "aus_zone4_opencontrol": {
+        "name": "Zone 4 opening"
+      },
+      "aus_zone5_opencontrol": {
+        "name": "Zone 5 opening"
+      },
+      "aus_zone6_opencontrol": {
+        "name": "Zone 6 opening"
+      },
+      "aus_zone7_opencontrol": {
+        "name": "Zone 7 opening"
+      },
+      "aus_zone8_opencontrol": {
+        "name": "Zone 8 opening"
+      },
       "delayendtime": {
         "name": "Delay end time"
       },
@@ -1269,6 +1293,9 @@
       },
       "refrigerator_temperature": {
         "name": "Refrigerator temperature"
+      },
+      "t_fanspeedcv": {
+        "name": "Variable fan speed"
       },
       "variation_max_temperature": {
         "name": "Variation max temperature"
@@ -1731,6 +1758,26 @@
           "follow": "Follow",
           "not_follow": "Not Follow",
           "off": "Off"
+        }
+      },
+      "t_temp_compensate": {
+        "name": "Temperature offset",
+        "state": {
+          "offset_0": "0 \u00b0C",
+          "offset_minus_1": "-1 \u00b0C",
+          "offset_minus_2": "-2 \u00b0C",
+          "offset_minus_3": "-3 \u00b0C",
+          "offset_minus_4": "-4 \u00b0C",
+          "offset_minus_5": "-5 \u00b0C",
+          "offset_minus_6": "-6 \u00b0C",
+          "offset_minus_7": "-7 \u00b0C",
+          "offset_plus_1": "+1 \u00b0C",
+          "offset_plus_2": "+2 \u00b0C",
+          "offset_plus_3": "+3 \u00b0C",
+          "offset_plus_4": "+4 \u00b0C",
+          "offset_plus_5": "+5 \u00b0C",
+          "offset_plus_6": "+6 \u00b0C",
+          "offset_plus_7": "+7 \u00b0C"
         }
       },
       "temperature": {
@@ -6464,6 +6511,30 @@
       "anticrease": {
         "name": "Anti-crease"
       },
+      "aus_zone1_power": {
+        "name": "Zone 1"
+      },
+      "aus_zone2_power": {
+        "name": "Zone 2"
+      },
+      "aus_zone3_power": {
+        "name": "Zone 3"
+      },
+      "aus_zone4_power": {
+        "name": "Zone 4"
+      },
+      "aus_zone5_power": {
+        "name": "Zone 5"
+      },
+      "aus_zone6_power": {
+        "name": "Zone 6"
+      },
+      "aus_zone7_power": {
+        "name": "Zone 7"
+      },
+      "aus_zone8_power": {
+        "name": "Zone 8"
+      },
       "auto_dose_setting_status": {
         "name": "Auto-dose"
       },
@@ -6577,6 +6648,12 @@
       },
       "t_fan_mute": {
         "name": "Fan mute"
+      },
+      "t_fresh_air": {
+        "name": "Fresh air"
+      },
+      "t_left_right": {
+        "name": "Horizontal swing"
       },
       "t_purify": {
         "name": "Purifier"
