@@ -197,7 +197,11 @@
         "name": "Estimation \u00e9nerg\u00e9tique"
       },
       "error_code": {
-        "name": "Code erreur"
+        "name": "Code erreur",
+        "state": {
+          "none": "Aucun",
+          "unbalance_alarm": "Alarme d\u00e9s\u00e9quilibre"
+        }
       },
       "filterclean_washflag": {
         "name": "Indicateur nettoyage filtre"
@@ -218,7 +222,10 @@
         "name": "Dernier cycle"
       },
       "machine_status": {
-        "name": "\u00c9tat machine"
+        "name": "\u00c9tat machine",
+        "state": {
+          "alarm": "Alarme"
+        }
       },
       "mainwashtimeuseindex": {
         "name": "Index dur\u00e9e lavage"

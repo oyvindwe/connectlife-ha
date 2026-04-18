@@ -941,7 +941,11 @@
         "name": "Humedad ambiental"
       },
       "error_code": {
-        "name": "C\u00f3digo error"
+        "name": "C\u00f3digo error",
+        "state": {
+          "none": "Ninguno",
+          "unbalance_alarm": "Alarma de desequilibrio"
+        }
       },
       "extradry_setting": {
         "name": "Configuraci\u00f3n extra-seco"
@@ -982,6 +986,7 @@
       "machine_status": {
         "name": "Estado Maquina",
         "state": {
+          "alarm": "Alarma",
           "off": "Apagada",
           "running": "En Marcha",
           "standby": "Suspendida"
