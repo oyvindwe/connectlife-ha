@@ -3093,10 +3093,16 @@
         "name": "Cooling"
       },
       "f_electricity": {
-        "name": "Electricity"
+        "name": "Current"
       },
       "f_heat_qvalue": {
         "name": "Heating"
+      },
+      "f_power_consumption": {
+        "name": "Energy consumption"
+      },
+      "f_power_display": {
+        "name": "Power"
       },
       "f_votage": {
         "name": "Measured grid voltage"

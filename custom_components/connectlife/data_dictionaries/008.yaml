@@ -174,10 +174,10 @@ properties:
     disable: true
   - property: f_electricity
     sensor:
-      device_class: energy
+      device_class: current
+      unit: A
       read_only: true
-      unit: kWh
-      state_class: total_increasing
+    hide: true
   - property: f_humidity
     climate:
       target: current_humidity

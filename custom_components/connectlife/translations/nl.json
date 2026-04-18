@@ -1965,7 +1965,7 @@
         "name": "Koeling"
       },
       "f_electricity": {
-        "name": "Elektriciteit"
+        "name": "Stroom"
       },
       "f_heat_qvalue": {
         "name": "Verwarming"
