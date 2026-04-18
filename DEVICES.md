@@ -9,13 +9,37 @@
 |                      | Air conditioner          | 008              | 304                    |
 | AWUS1225TW           | Air conditioner          | 008              | 399                    |
 |                      | Air conditioner          | 009              | 100                    |
+|                      | Air conditioner          | 009              | 101                    |
+|                      | Air conditioner          | 009              | 102                    |
+|                      | Air conditioner          | 009              | 103                    |
 |                      | Air conditioner          | 009              | 104                    |
 | AS-09TW2RLDTT00      | Air conditioner          | 009              | 105                    |
 |                      | Air conditioner          | 009              | 106                    |
+|                      | Air conditioner          | 009              | 107                    |
+|                      | Air conditioner          | 009              | 108                    |
 |                      | Air conditioner          | 009              | 109                    |
+|                      | Air conditioner          | 009              | 110                    |
+|                      | Air conditioner          | 009              | 111                    |
+|                      | Air conditioner          | 009              | 112                    |
+|                      | Air conditioner          | 009              | 113                    |
+|                      | Air conditioner          | 009              | 114                    |
+|                      | Air conditioner          | 009              | 115                    |
+|                      | Air conditioner          | 009              | 116                    |
 |                      | Air conditioner          | 009              | 117                    |
+|                      | Air conditioner          | 009              | 118                    |
+|                      | Air conditioner          | 009              | 119                    |
+|                      | Air conditioner          | 009              | 120                    |
+|                      | Air conditioner          | 009              | 121                    |
+|                      | Air conditioner          | 009              | 122                    |
+|                      | Air conditioner          | 009              | 123                    |
+|                      | Air conditioner          | 009              | 124                    |
+|                      | Air conditioner          | 009              | 125                    |
+|                      | Air conditioner          | 009              | 126                    |
+|                      | Air conditioner          | 009              | 127                    |
 |                      | Air conditioner          | 009              | 128                    |
 |                      | Air conditioner          | 009              | 129                    |
+|                      | Air conditioner          | 009              | 199                    |
+|                      | Air conditioner          | 009              | 19901                  |
 |                      | Hood                     | 012              | 000                    |
 |                      | Oven                     | 013              | 000                    |
 | Bio21                | Oven                     | 013              | oven-bio21-iconledplus |

@@ -1,13 +1,4 @@
 # t_temp range extends to the 8° heat mode low setpoint (8 °C / 46 °F).
-climate:
-  presets:
-    - t_eco: 1
-      t_fan_speed: 0 # auto
-      t_power: 1
-      preset: eco
-    - t_power: 1
-      t_tms: 1
-      preset: ai
 properties:
   - property: t_temp
     climate:

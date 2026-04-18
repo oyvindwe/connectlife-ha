@@ -1,4 +1,76 @@
 properties:
+  - property: aus_zone1_opencontrol
+    number:
+      min_value: 0
+      max_value: 100
+      unit: "%"
+    icon: mdi:valve
+  - property: aus_zone1_power
+    switch:
+      device_class: switch
+  - property: aus_zone2_opencontrol
+    number:
+      min_value: 0
+      max_value: 100
+      unit: "%"
+    icon: mdi:valve
+  - property: aus_zone2_power
+    switch:
+      device_class: switch
+  - property: aus_zone3_opencontrol
+    number:
+      min_value: 0
+      max_value: 100
+      unit: "%"
+    icon: mdi:valve
+  - property: aus_zone3_power
+    switch:
+      device_class: switch
+  - property: aus_zone4_opencontrol
+    number:
+      min_value: 0
+      max_value: 100
+      unit: "%"
+    icon: mdi:valve
+  - property: aus_zone4_power
+    switch:
+      device_class: switch
+  - property: aus_zone5_opencontrol
+    number:
+      min_value: 0
+      max_value: 100
+      unit: "%"
+    icon: mdi:valve
+  - property: aus_zone5_power
+    switch:
+      device_class: switch
+  - property: aus_zone6_opencontrol
+    number:
+      min_value: 0
+      max_value: 100
+      unit: "%"
+    icon: mdi:valve
+  - property: aus_zone6_power
+    switch:
+      device_class: switch
+  - property: aus_zone7_opencontrol
+    number:
+      min_value: 0
+      max_value: 100
+      unit: "%"
+    icon: mdi:valve
+  - property: aus_zone7_power
+    switch:
+      device_class: switch
+  - property: aus_zone8_opencontrol
+    number:
+      min_value: 0
+      max_value: 100
+      unit: "%"
+    icon: mdi:valve
+  - property: aus_zone8_power
+    switch:
+      device_class: switch
   - property: f_cool_qvalue
     sensor:
       unit: BTU/h
@@ -11,6 +83,7 @@ properties:
         0: false
         1: true
     hide: true
+    entity_category: diagnostic
   - property: f_e_incoiltemp
     binary_sensor:
       device_class: problem
@@ -18,6 +91,7 @@ properties:
         0: false
         1: true
     hide: true
+    entity_category: diagnostic
   - property: f_e_incom
     binary_sensor:
       device_class: problem
@@ -25,6 +99,7 @@ properties:
         0: false
         1: true
     hide: true
+    entity_category: diagnostic
   - property: f_e_indisplay
     binary_sensor:
       device_class: problem
@@ -32,6 +107,7 @@ properties:
         0: false
         1: true
     hide: true
+    entity_category: diagnostic
   - property: f_e_ineeprom
     binary_sensor:
       device_class: problem
@@ -39,6 +115,7 @@ properties:
         0: false
         1: true
     hide: true
+    entity_category: diagnostic
   - property: f_e_inele
     binary_sensor:
       device_class: problem
@@ -46,6 +123,7 @@ properties:
         0: false
         1: true
     hide: true
+    entity_category: diagnostic
   - property: f_e_infanmotor
     binary_sensor:
       device_class: problem
@@ -53,6 +131,7 @@ properties:
         0: false
         1: true
     hide: true
+    entity_category: diagnostic
   - property: f_e_inhumidity
     binary_sensor:
       device_class: problem
@@ -60,6 +139,7 @@ properties:
         0: false
         1: true
     hide: true
+    entity_category: diagnostic
   - property: f_e_inkeys
     binary_sensor:
       device_class: problem
@@ -67,6 +147,7 @@ properties:
         0: false
         1: true
     hide: true
+    entity_category: diagnostic
   - property: f_e_intemp
     binary_sensor:
       device_class: problem
@@ -74,6 +155,7 @@ properties:
         0: false
         1: true
     hide: true
+    entity_category: diagnostic
   - property: f_e_invzero
     binary_sensor:
       device_class: problem
@@ -81,6 +163,7 @@ properties:
         0: false
         1: true
     hide: true
+    entity_category: diagnostic
   - property: f_e_inwifi
     binary_sensor:
       device_class: problem
@@ -88,6 +171,7 @@ properties:
         0: false
         1: true
     hide: true
+    entity_category: diagnostic
   - property: f_e_outcoiltemp
     binary_sensor:
       device_class: problem
@@ -95,6 +179,7 @@ properties:
         0: false
         1: true
     hide: true
+    entity_category: diagnostic
   - property: f_e_outeeprom
     binary_sensor:
       device_class: problem
@@ -102,6 +187,7 @@ properties:
         0: false
         1: true
     hide: true
+    entity_category: diagnostic
   - property: f_e_outgastemp
     binary_sensor:
       device_class: problem
@@ -109,6 +195,7 @@ properties:
         0: false
         1: true
     hide: true
+    entity_category: diagnostic
   - property: f_e_outtemp
     binary_sensor:
       device_class: problem
@@ -116,6 +203,7 @@ properties:
         0: false
         1: true
     hide: true
+    entity_category: diagnostic
   - property: f_e_push
     disable: true
   - property: f_ecm
@@ -157,6 +245,9 @@ properties:
       device_class: voltage
       unit: V
     hide: true
+    entity_category: diagnostic
+  - property: oem_host_version
+    disable: true
   - property: t_8heat
     switch:
       device_class: switch
@@ -167,6 +258,16 @@ properties:
         0: off
         1: on
     hide: true
+    entity_category: diagnostic
+  - property: t_device_info
+    disable: true
+  - property: t_dimmer
+    switch:
+      device_class: switch
+      "on": 0
+      "off": 1
+    icon: mdi:lightbulb-on
+    entity_category: config
   - property: t_eco
     switch:
       device_class: switch
@@ -187,6 +288,20 @@ properties:
         9: high
   - property: t_fan_speed_s
     disable: true
+  - property: t_fanspeedCV
+    number:
+      min_value: 0
+      max_value: 100
+      unit: "%"
+    icon: mdi:fan
+  - property: t_fresh_air
+    switch:
+      device_class: switch
+    icon: mdi:weather-windy
+  - property: t_left_right
+    switch:
+      device_class: switch
+    icon: mdi:arrow-left-right
   - property: t_power
     climate:
       target: is_on
@@ -202,7 +317,7 @@ properties:
         2: for_old
         3: for_young
         4: for_kid
-    icon: mdi:sleep
+    icon: mdi:power-sleep
   - property: t_super
     switch:
       device_class: switch
@@ -232,8 +347,8 @@ properties:
       options:
         0: forward
         1: right
-        2: swing
-        3: both_sides
+        2: both_sides
+        3: swing
         4: left
   - property: t_up_down
     climate:
@@ -250,6 +365,28 @@ properties:
       min_value:
         celsius: 16
         fahrenheit: 61
+  - property: t_temp_compensate
+    # Signed 4-bit encoding: 0..7 = 0..+7 °C, 9..15 = -7..-1 °C (value 8 / -8 unused).
+    # Full range applies in non-AI modes; AI mode (t_tms=1) limits effective offset to ±3 °C.
+    select:
+      options:
+        9: "offset_minus_7"
+        10: "offset_minus_6"
+        11: "offset_minus_5"
+        12: "offset_minus_4"
+        13: "offset_minus_3"
+        14: "offset_minus_2"
+        15: "offset_minus_1"
+        0: "offset_0"
+        1: "offset_plus_1"
+        2: "offset_plus_2"
+        3: "offset_plus_3"
+        4: "offset_plus_4"
+        5: "offset_plus_5"
+        6: "offset_plus_6"
+        7: "offset_plus_7"
+    icon: mdi:thermometer-plus
+    entity_category: config
   - property: t_temp_type
     climate:
       target: temperature_unit

@@ -1,0 +1,10 @@
+properties:
+  - property: t_temp
+    climate:
+      target: target_temperature
+      max_value:
+        celsius: 30
+        fahrenheit: 86
+      min_value:
+        celsius: 16
+        fahrenheit: 61
