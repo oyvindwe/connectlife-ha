@@ -1,1 +1,28 @@
-# Uses default mappings
+# Hisense WD16-E722BXi / HSAP16FB (Gorenje-style program labels, per PR #360)
+properties:
+  - property: Selected_program_id_status
+    select:
+      options:
+        0: auto
+        1: eco
+        2: one_hour
+        3: intensive
+        4: glass
+        5: hygiene
+        6: night
+        7: clean
+      command:
+        name: Selected_program_id
+    icon: mdi:clipboard-list
+  - property: Selected_program_mode
+    select:
+      options:
+        0: "0"
+        1: "1"
+        2: normal
+        3: "3"
+        4: fast
+      command:
+        name: Program_mode
+        adjust: 1
+    icon: mdi:cube-outline

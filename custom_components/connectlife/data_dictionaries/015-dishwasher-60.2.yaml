@@ -1,1 +1,52 @@
-# Uses default mappings
+# ASKO dishwasher (firmware-updated variant of 015-000)
+#
+# Mode availability observed per program:
+#   Auto / Hygiene / Rinse and hold / Self cleaning: only normal
+#   Eco / Intensive: normal, speed, night
+#   Quick pro: normal, speed
+#   Time program: no mode; set duration via Time_program_set_duration_status instead
+#
+# Modes "none", "green", "intensive", "uv", "heat_boost", "storage" were
+# never offered by this device — excluded from the select.
+properties:
+  - property: Selected_program_id_status
+    select:
+      options:
+        0: eco
+        1: auto
+        2: intensive
+        3: quick_pro
+        4: time_program
+        5: hygiene
+        6: rinse_and_hold
+        7: self_cleaning
+      command:
+        name: Selected_program_id
+    icon: mdi:clipboard-list
+  - property: Selected_program_mode
+    select:
+      options:
+        0: "not_available"
+        2: "normal"
+        4: "speed"
+        5: "night"
+      command:
+        name: Program_mode
+        adjust: 1
+    icon: mdi:cube-outline
+  - property: Time_program_set_duration_status
+    select:
+      options:
+        0: "not_available"
+        1: "not_set"
+        2: "15_min"
+        3: "30_min"
+        4: "45_min"
+        5: "1_h"
+        6: "1_h_30_min"
+        7: "2_h"
+        8: "2_h_30_min"
+      command:
+        name: Time_program_set_duration
+        adjust: 1
+    icon: mdi:timer-outline

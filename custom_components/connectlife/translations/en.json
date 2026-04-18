@@ -1393,6 +1393,15 @@
           "none": "None"
         }
       },
+      "feedback_volumen_setting_status": {
+        "name": "Feedback volume",
+        "state": {
+          "high": "High",
+          "low": "Low",
+          "mid": "Mid",
+          "mute": "Mute"
+        }
+      },
       "language_status": {
         "name": "Language",
         "state": {
@@ -1402,6 +1411,15 @@
       },
       "motorlevel": {
         "name": "Motor level"
+      },
+      "notification_volumen_setting_status": {
+        "name": "Notification volume",
+        "state": {
+          "high": "High",
+          "low": "Low",
+          "mid": "Mid",
+          "mute": "Mute"
+        }
       },
       "oven_temperature_unit": {
         "name": "Oven temperature unit",
@@ -1416,6 +1434,12 @@
           "level_1": "Level 1",
           "level_2": "Level 2",
           "none": "None"
+        }
+      },
+      "rinse_aid_setting_status": {
+        "name": "Rinse aid",
+        "state": {
+          "tab": "TAB"
         }
       },
       "sand_timer_1_status_cmd": {
@@ -1495,6 +1519,33 @@
           "towels": "Towels",
           "wash_and_dry_49": "Wash and dry 49",
           "wool": "Wool"
+        }
+      },
+      "selected_program_id_status": {
+        "name": "Program",
+        "state": {
+          "auto": "Auto",
+          "clean": "Clean",
+          "eco": "Eco",
+          "glass": "Glass",
+          "hygiene": "Hygiene",
+          "intensive": "Intensive",
+          "night": "Night",
+          "one_hour": "One hour",
+          "quick_pro": "Quick pro",
+          "rinse_and_hold": "Rinse and hold",
+          "self_cleaning": "Self cleaning",
+          "time_program": "Time program"
+        }
+      },
+      "selected_program_mode": {
+        "name": "Mode",
+        "state": {
+          "fast": "Fast",
+          "night": "Night",
+          "normal": "Normal",
+          "not_available": "Not available",
+          "speed": "Speed"
         }
       },
       "softener": {
@@ -1702,6 +1753,20 @@
           "24h": "24h"
         }
       },
+      "time_program_set_duration_status": {
+        "name": "Time program duration",
+        "state": {
+          "15_min": "00:15",
+          "1_h": "01:00",
+          "1_h_30_min": "01:30",
+          "2_h": "02:00",
+          "2_h_30_min": "02:30",
+          "30_min": "00:30",
+          "45_min": "00:45",
+          "not_available": "Not available",
+          "not_set": "Not set"
+        }
+      },
       "volume": {
         "name": "Volume"
       },
@@ -1715,6 +1780,12 @@
       },
       "water_hardness": {
         "name": "Water hardness"
+      },
+      "water_hardness_setting_status": {
+        "name": "Water hardness setting status",
+        "state": {
+          "not_set": "Not set"
+        }
       }
     },
     "sensor": {
@@ -3122,15 +3193,6 @@
       "favour_program_id": {
         "name": "Favour program ID"
       },
-      "feedback_volumen_setting_status": {
-        "name": "Feedback volume",
-        "state": {
-          "high": "High",
-          "low": "Low",
-          "mid": "Mid",
-          "mute": "Mute"
-        }
-      },
       "filter_alarm_time": {
         "name": "Filter alarm time"
       },
@@ -3628,9 +3690,6 @@
       "notification_sounds_volume_setting": {
         "name": "Notification sounds volume setting"
       },
-      "notification_volumen_setting_status": {
-        "name": "Notification volume"
-      },
       "ntc_sensor_1": {
         "name": "NTC sensor 1"
       },
@@ -3955,9 +4014,6 @@
       "rgb_normal_mode_r_value": {
         "name": "RGB normal mode R value"
       },
-      "rinse_aid_setting_status": {
-        "name": "Rinse aid"
-      },
       "rinse_flag": {
         "name": "Rinse flag"
       },
@@ -4228,25 +4284,17 @@
       "selected_program_id_status": {
         "name": "Selected program",
         "state": {
-          "auto": "Auto",
           "baby": "Baby",
-          "clean": "Clean",
           "color": "Color",
           "down_feathers": "Down feathers",
           "draining": "Draining",
           "drum_cleaning": "Drum Cleaning",
-          "eco": "Eco",
           "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Extra Hygiene",
           "fast_20": "Fast 20'",
-          "glass": "Glass",
-          "hygiene": "Hygiene",
-          "intensive": "Intensive",
           "intensive_59_32": "Intensive 59'/32'",
           "mix_synthetic": "Mix/Synthetic",
-          "night": "Night",
           "no_program_selected": "No program selected",
-          "one_hour": "1 hour",
           "pet_hair_removal": "Pet hair removal",
           "rinsing_softening": "Rinsing & Softening",
           "shirts": "Shirts",
@@ -4266,11 +4314,7 @@
         "name": "Selected program lower wash function"
       },
       "selected_program_mode": {
-        "name": "Selected program mode",
-        "state": {
-          "fast": "Fast",
-          "normal": "Normal"
-        }
+        "name": "Selected program mode"
       },
       "selected_program_mode2_status": {
         "name": "Selected program mode 2 status"
@@ -5939,7 +5983,7 @@
         "name": "Time auto flag"
       },
       "time_program_set_duration_status": {
-        "name": "Time program set duration status"
+        "name": "Time program duration"
       },
       "time_program_set_time_status": {
         "name": "Time program set time status"
@@ -6287,10 +6331,7 @@
         "name": "Water hardness setting"
       },
       "water_hardness_setting_status": {
-        "name": "Water hardness",
-        "state": {
-          "not_set": "Not set"
-        }
+        "name": "Water hardness"
       },
       "water_heat_switch": {
         "name": "Water heat switch"
@@ -6470,7 +6511,7 @@
         "name": "Interior light"
       },
       "interior_light_at_power_off_setting_status": {
-        "name": "Interior light at power off setting status"
+        "name": "Interior light at power off"
       },
       "key_sound": {
         "name": "Key sound"
@@ -6515,7 +6556,7 @@
         "name": "Step pre bake status"
       },
       "super_rinse_setting_status": {
-        "name": "Super rinse setting status"
+        "name": "Super rinse"
       },
       "t_8heat": {
         "name": "Frost protection"
@@ -6548,7 +6589,7 @@
         "name": "AI"
       },
       "tab_setting_status": {
-        "name": "Tab setting status"
+        "name": "Detergent TAB"
       },
       "time_save": {
         "name": "Time save"

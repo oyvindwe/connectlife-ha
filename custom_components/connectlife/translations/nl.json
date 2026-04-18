@@ -1354,7 +1354,6 @@
           "auto": "Automatisch",
           "less": "Minder",
           "more": "Meer",
-          "off": "Uit",
           "standard": "Standaard"
         }
       },
@@ -1382,7 +1381,6 @@
           "extra_dry": "Extra droog",
           "iron": "Strijken",
           "none": "Geen",
-          "off": "Uit",
           "pre-ironing": "Strijkdroog",
           "wardrobe": "Kastdroog"
         }
@@ -1391,6 +1389,15 @@
         "name": "Extra spoelen",
         "state": {
           "none": "Geen"
+        }
+      },
+      "feedback_volumen_setting_status": {
+        "name": "Feedback volume",
+        "state": {
+          "high": "Hoog",
+          "low": "Laag",
+          "mid": "Midden",
+          "mute": "Stil"
         }
       },
       "language_status": {
@@ -1402,6 +1409,15 @@
       },
       "motorlevel": {
         "name": "Motorniveau"
+      },
+      "notification_volumen_setting_status": {
+        "name": "Meldingsvolume",
+        "state": {
+          "high": "Hoog",
+          "low": "Laag",
+          "mid": "Midden",
+          "mute": "Stil"
+        }
       },
       "oven_temperature_unit": {
         "name": "Oventemperatuur eenheid",
@@ -1416,6 +1432,12 @@
           "level_1": "Level 1",
           "level_2": "Level 2",
           "none": "None"
+        }
+      },
+      "rinse_aid_setting_status": {
+        "name": "Glansspoelmiddel",
+        "state": {
+          "tab": "TAB"
         }
       },
       "sand_timer_1_status_cmd": {
@@ -1497,26 +1519,45 @@
           "wool": "Wol"
         }
       },
+      "selected_program_id_status": {
+        "name": "Geselecteerd programma",
+        "state": {
+          "auto": "Auto",
+          "clean": "Schoon",
+          "eco": "Eco",
+          "glass": "Glas",
+          "hygiene": "Hygi\u00ebne",
+          "intensive": "Intensief",
+          "night": "Nacht",
+          "one_hour": "1 uur",
+          "quick_pro": "Quick pro",
+          "rinse_and_hold": "Spoelen en wachten",
+          "self_cleaning": "Zelfreiniging",
+          "time_program": "Tijdprogramma"
+        }
+      },
+      "selected_program_mode": {
+        "name": "Geselecteerde programmamodus",
+        "state": {
+          "fast": "Snel",
+          "night": "Nacht",
+          "normal": "Normaal",
+          "speed": "Snel"
+        }
+      },
       "softener": {
         "name": "Wasverzachter",
         "state": {
           "auto": "Automatisch",
           "less": "Minder",
           "more": "Meer",
-          "off": "Uit",
           "standard": "Standaard"
         }
       },
       "spin_speed_rpm": {
         "name": "Centrifugeren",
         "state": {
-          "1000": "1000 toeren",
-          "1200": "1200 toeren",
-          "1400": "1400 toeren",
-          "600": "600 toeren",
-          "800": "800 toeren",
-          "none": "Geen",
-          "off": "Uit"
+          "none": "Geen"
         }
       },
       "steam_123": {
@@ -1702,6 +1743,12 @@
           "24h": "24-uurs"
         }
       },
+      "time_program_set_duration_status": {
+        "name": "Duur tijdprogramma",
+        "state": {
+          "not_set": "Niet ingesteld"
+        }
+      },
       "volume": {
         "name": "Volume"
       },
@@ -1715,6 +1762,12 @@
       },
       "water_hardness": {
         "name": "Waterhardheid"
+      },
+      "water_hardness_setting_status": {
+        "name": "Waterhardheid",
+        "state": {
+          "not_set": "Niet ingesteld"
+        }
       }
     },
     "sensor": {
@@ -1979,15 +2032,6 @@
       "fan_sequence_setting_status": {
         "name": "Ventilatorvolgorde"
       },
-      "feedback_volumen_setting_status": {
-        "name": "Feedback volume",
-        "state": {
-          "high": "Hoog",
-          "low": "Laag",
-          "mid": "Midden",
-          "mute": "Stil"
-        }
-      },
       "filter_state": {
         "name": "Filterstatus"
       },
@@ -2158,9 +2202,6 @@
       "night_mode_on_minute": {
         "name": "Nachtmodus aan Minuut"
       },
-      "notification_volumen_setting_status": {
-        "name": "Meldingsvolume"
-      },
       "order_time_minimum_hour": {
         "name": "Order time minimum (uur)"
       },
@@ -2214,9 +2255,6 @@
       },
       "remaining_time_of_selected_program": {
         "name": "Resterende tijd van geselecteerd programma"
-      },
-      "rinse_aid_setting_status": {
-        "name": "Glansspoelmiddel"
       },
       "rinsenum": {
         "name": "Aantal spoelbeurten"
@@ -2350,25 +2388,17 @@
       "selected_program_id_status": {
         "name": "Geselecteerd programma",
         "state": {
-          "auto": "Auto",
           "baby": "Baby",
-          "clean": "Schoon",
           "color": "Kleur",
           "down_feathers": "Donsveren",
           "draining": "Afpompen",
           "drum_cleaning": "Trommelreiniging",
-          "eco": "Eco",
           "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Extra hygi\u00ebne",
           "fast_20": "Snel 20'",
-          "glass": "Glas",
-          "hygiene": "Hygi\u00ebne",
-          "intensive": "Intensief",
           "intensive_59_32": "Intensief 59'/32'",
           "mix_synthetic": "Mix/Synthetisch",
-          "night": "Nacht",
           "no_program_selected": "Geen programma geselecteerd",
-          "one_hour": "1 uur",
           "pet_hair_removal": "Huisdierhaar verwijderen",
           "rinsing_softening": "Spoelen & verzachten",
           "shirts": "Shirts",
@@ -2376,13 +2406,6 @@
           "sport": "Sport",
           "white_cotton": "Wit katoen",
           "wool_manual": "Wol & Handmatig"
-        }
-      },
-      "selected_program_mode": {
-        "name": "Geselecteerde programmamodus",
-        "state": {
-          "fast": "Snel",
-          "normal": "Normaal"
         }
       },
       "selected_program_mode_status": {
@@ -3512,10 +3535,7 @@
         "name": "Waterverbruik in huidig programma"
       },
       "water_hardness_setting_status": {
-        "name": "Waterhardheid",
-        "state": {
-          "not_set": "Niet ingesteld"
-        }
+        "name": "Waterhardheid"
       },
       "water_inlet_setting_status": {
         "name": "Watertoevoer"
