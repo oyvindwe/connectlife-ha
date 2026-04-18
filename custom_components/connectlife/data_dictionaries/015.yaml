@@ -81,8 +81,7 @@ properties:
   - property: Alarm_run_selfcleaning
     entity_category: diagnostic
     binary_sensor:
-      device_class: problem
-    icon: mdi:dishwasher-alert
+    icon: mdi:dishwasher
   - property: Alarm_salt_refill
     entity_category: diagnostic
     binary_sensor:
