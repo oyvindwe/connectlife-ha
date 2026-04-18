@@ -1,1 +1,43 @@
-# Uses default mappings
+# Assumed ASKO family (untested); labels copied from 015-dishwasher-60.2
+properties:
+  - property: Selected_program_id_status
+    select:
+      options:
+        0: eco
+        1: auto
+        2: intensive
+        3: quick_pro
+        4: time_program
+        5: hygiene
+        6: rinse_and_hold
+        7: self_cleaning
+      command:
+        name: Selected_program_id
+    icon: mdi:clipboard-list
+  - property: Selected_program_mode
+    select:
+      options:
+        0: "not_available"
+        2: "normal"
+        4: "speed"
+        5: "night"
+      command:
+        name: Program_mode
+        adjust: 1
+    icon: mdi:cube-outline
+  - property: Time_program_set_duration_status
+    select:
+      options:
+        0: "not_available"
+        1: "not_set"
+        2: "15_min"
+        3: "30_min"
+        4: "45_min"
+        5: "1_h"
+        6: "1_h_30_min"
+        7: "2_h"
+        8: "2_h_30_min"
+      command:
+        name: Time_program_set_duration
+        adjust: 1
+    icon: mdi:timer-outline

@@ -678,6 +678,27 @@
           "wardrobe": "Armario"
         }
       },
+      "feedback_volumen_setting_status": {
+        "state": {
+          "high": "Alto",
+          "low": "Bajo",
+          "mid": "Medio",
+          "mute": "Silenciar"
+        }
+      },
+      "notification_volumen_setting_status": {
+        "state": {
+          "high": "Alto",
+          "low": "Bajo",
+          "mid": "Medio",
+          "mute": "Silenciar"
+        }
+      },
+      "rinse_aid_setting_status": {
+        "state": {
+          "tab": "TAB"
+        }
+      },
       "selected_program_id": {
         "name": "Programa seleccionado",
         "state": {
@@ -707,14 +728,35 @@
           "wool": "Lana"
         }
       },
+      "selected_program_id_status": {
+        "name": "Programa seleccionado",
+        "state": {
+          "auto": "Auto",
+          "clean": "Limpieza",
+          "eco": "Eco",
+          "glass": "Cristal",
+          "hygiene": "Higiene",
+          "intensive": "Intensivo",
+          "night": "Noche",
+          "one_hour": "1 hora",
+          "quick_pro": "Quick pro",
+          "rinse_and_hold": "Aclarar y esperar",
+          "self_cleaning": "Autolimpieza",
+          "time_program": "Programa temporizado"
+        }
+      },
+      "selected_program_mode": {
+        "name": "Modo programa",
+        "state": {
+          "fast": "R\u00e1pido",
+          "night": "Noche",
+          "normal": "Normal",
+          "speed": "R\u00e1pido"
+        }
+      },
       "spin_speed_rpm": {
         "name": "Centrifugado",
         "state": {
-          "1000": "30",
-          "1200": "1200",
-          "1400": "1400",
-          "600": "60",
-          "800": "40",
           "none": "No centrifugar"
         }
       },
@@ -761,6 +803,12 @@
         "name": "Temperatura",
         "state": {
           "cold": "Frio"
+        }
+      },
+      "time_program_set_duration_status": {
+        "name": "Duraci\u00f3n del programa temporizado",
+        "state": {
+          "not_set": "Sin definir"
         }
       }
     },
@@ -907,14 +955,6 @@
       "f_votage": {
         "name": "Voltaje"
       },
-      "feedback_volumen_setting_status": {
-        "state": {
-          "high": "Alto",
-          "low": "Bajo",
-          "mid": "Medio",
-          "mute": "Silenciar"
-        }
-      },
       "freeze_real_temperature": {
         "name": "Temperatura real congelador"
       },
@@ -1039,23 +1079,7 @@
       },
       "selected_program_id_status": {
         "name": "Programa seleccionado",
-        "state": {
-          "auto": "Auto",
-          "clean": "Limpieza",
-          "eco": "Eco",
-          "glass": "Cristal",
-          "hygiene": "Higiene",
-          "intensive": "Intensivo",
-          "night": "Noche",
-          "one_hour": "1 hora"
-        }
-      },
-      "selected_program_mode": {
-        "name": "Modo programa",
-        "state": {
-          "fast": "R\u00e1pido",
-          "normal": "Normal"
-        }
+        "state": {}
       },
       "selected_program_remaining_time_in_minutes": {
         "name": "Tiempo restante programa seleccionado"

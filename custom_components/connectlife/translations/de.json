@@ -1362,6 +1362,15 @@
           "none": "Keine"
         }
       },
+      "feedback_volumen_setting_status": {
+        "name": "Feedback-Lautst\u00e4rke",
+        "state": {
+          "high": "Hoch",
+          "low": "Niedrig",
+          "mid": "Mittel",
+          "mute": "Stumm"
+        }
+      },
       "language_status": {
         "name": "Sprache",
         "state": {
@@ -1372,11 +1381,26 @@
       "motorlevel": {
         "name": "Motorleistung"
       },
+      "notification_volumen_setting_status": {
+        "name": "Benachrichtigungslautst\u00e4rke",
+        "state": {
+          "high": "Hoch",
+          "low": "Niedrig",
+          "mid": "Mittel",
+          "mute": "Stumm"
+        }
+      },
       "oven_temperature_unit": {
         "name": "Ofen Temperatureinheit",
         "state": {
           "celsius": "Celsius",
           "fahrenheit": "Fahrenheit"
+        }
+      },
+      "rinse_aid_setting_status": {
+        "name": "Klarsp\u00fcler",
+        "state": {
+          "tab": "TAB"
         }
       },
       "sand_timer_1_status_cmd": {
@@ -1443,6 +1467,32 @@
           "towels": "Handt\u00fccher",
           "wash_and_dry_49": "Waschen und Trocknen 49",
           "wool": "Wolle"
+        }
+      },
+      "selected_program_id_status": {
+        "name": "Programm",
+        "state": {
+          "auto": "Automatisch",
+          "clean": "Reinigung",
+          "eco": "Eco",
+          "glass": "Glas",
+          "hygiene": "Hygiene",
+          "intensive": "Intensiv",
+          "night": "Nacht",
+          "one_hour": "1 Stunde",
+          "quick_pro": "Quick pro",
+          "rinse_and_hold": "Sp\u00fclen & Warten",
+          "self_cleaning": "Selbstreinigung",
+          "time_program": "Zeitprogramm"
+        }
+      },
+      "selected_program_mode": {
+        "name": "Programm Modus",
+        "state": {
+          "fast": "Schnell",
+          "night": "Nacht",
+          "normal": "Normal",
+          "speed": "Schnell"
         }
       },
       "softener": {
@@ -1643,6 +1693,12 @@
           "24h": "24h"
         }
       },
+      "time_program_set_duration_status": {
+        "name": "Zeitprogrammdauer",
+        "state": {
+          "not_set": "Nicht festgelegt"
+        }
+      },
       "volume": {
         "name": "Lautst\u00e4rke"
       },
@@ -1656,6 +1712,12 @@
       },
       "water_hardness": {
         "name": "Wasserh\u00e4rte"
+      },
+      "water_hardness_setting_status": {
+        "name": "Wasserh\u00e4rte",
+        "state": {
+          "not_set": "Nicht eingestellt"
+        }
       }
     },
     "sensor": {
@@ -1911,15 +1973,6 @@
       "fan_sequence_setting_status": {
         "name": "L\u00fcftersequenz"
       },
-      "feedback_volumen_setting_status": {
-        "name": "Feedback-Lautst\u00e4rke",
-        "state": {
-          "high": "Hoch",
-          "low": "Niedrig",
-          "mid": "Mittel",
-          "mute": "Stumm"
-        }
-      },
       "filter_state": {
         "name": "Filterzustand"
       },
@@ -2087,9 +2140,6 @@
       "night_mode_on_minute": {
         "name": "Nachtmodus Ein Minute"
       },
-      "notification_volumen_setting_status": {
-        "name": "Benachrichtigungslautst\u00e4rke"
-      },
       "order_time_minimum_hour": {
         "name": "Mindestbestellzeit in Stunden"
       },
@@ -2143,9 +2193,6 @@
       },
       "remaining_time_of_selected_program": {
         "name": "Verbleibende Zeit des gew\u00e4hlten Programms"
-      },
-      "rinse_aid_setting_status": {
-        "name": "Klarsp\u00fcler"
       },
       "rinsenum": {
         "name": "Anzahl der Sp\u00fclg\u00e4nge"
@@ -2279,25 +2326,17 @@
       "selected_program_id_status": {
         "name": "Programm",
         "state": {
-          "auto": "Automatisch",
           "baby": "Baby",
-          "clean": "Reinigung",
           "color": "Farbig",
           "down_feathers": "Daunenfedern",
           "draining": "Abpumpen",
           "drum_cleaning": "Trommelreinigung",
-          "eco": "Eco",
           "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Extra Hygiene",
           "fast_20": "Schnell 20'",
-          "glass": "Glas",
-          "hygiene": "Hygiene",
-          "intensive": "Intensiv",
           "intensive_59_32": "Intensiv 59'/32'",
           "mix_synthetic": "Mix/Synthetik",
-          "night": "Nacht",
           "no_program_selected": "Kein Programm ausgew\u00e4hlt",
-          "one_hour": "1 Stunde",
           "pet_hair_removal": "Tierhaarentfernung",
           "rinsing_softening": "Sp\u00fclen & Weichsp\u00fclen",
           "shirts": "Hemden",
@@ -2305,13 +2344,6 @@
           "sport": "Sport",
           "white_cotton": "Wei\u00dfe Baumwolle",
           "wool_manual": "Wolle & Manuell"
-        }
-      },
-      "selected_program_mode": {
-        "name": "Programm Modus",
-        "state": {
-          "fast": "Schnell",
-          "normal": "Normal"
         }
       },
       "selected_program_mode_status": {
@@ -3426,10 +3458,7 @@
         "name": "Wasserverbrauch im laufenden Programm"
       },
       "water_hardness_setting_status": {
-        "name": "Wasserh\u00e4rte",
-        "state": {
-          "not_set": "Nicht eingestellt"
-        }
+        "name": "Wasserh\u00e4rte"
       },
       "water_inlet_setting_status": {
         "name": "Wasserzulauf"
