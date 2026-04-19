@@ -1993,8 +1993,22 @@
       "error_code": {
         "name": "Foutmelding",
         "state": {
+          "error_f01": "F01 - Watertoevoer fout",
+          "error_f03": "F03 - Waterafvoer fout",
+          "error_f04": "F04 - Fout elektrische module",
+          "error_f05": "F05 - Fout elektrische module",
+          "error_f06": "F06 - Fout elektrische module",
+          "error_f07": "F07 - Fout elektrische module",
+          "error_f13": "F13 - Deurvergrendeling fout",
+          "error_f14": "F14 - Deurontgrendeling fout",
+          "error_f15": "F15 - Abnormaal drogen",
+          "error_f16": "F16 - Abnormaal drogen",
+          "error_f17": "F17 - Abnormaal drogen",
+          "error_f18": "F18 - Abnormaal drogen",
+          "error_f23": "F23 - Fout elektrische module",
+          "error_f24": "F24 - Wateroverlooppeil bereikt",
           "none": "Geen",
-          "unbalance_alarm": "Onbalans alarm"
+          "unbalance_alarm": "Onbalansalarm"
         }
       },
       "error_read_out_1_code": {

@@ -830,6 +830,20 @@ properties:
       read_only: true
       options:
         0: none
+        1: error_f01
+        3: error_f03
+        4: error_f04
+        5: error_f05
+        6: error_f06
+        7: error_f07
+        13: error_f13
+        14: error_f14
+        15: error_f15
+        16: error_f16
+        17: error_f17
+        18: error_f18
+        23: error_f23
+        24: error_f24
         100: unbalance_alarm
   - property: hottime
     hide: true

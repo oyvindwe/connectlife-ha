@@ -3087,6 +3087,20 @@
       "error_code": {
         "name": "Error code",
         "state": {
+          "error_f01": "F01 - Water inflow fault",
+          "error_f03": "F03 - Water drain fault",
+          "error_f04": "F04 - Electronic module fault",
+          "error_f05": "F05 - Electronic module fault",
+          "error_f06": "F06 - Electronic module fault",
+          "error_f07": "F07 - Electronic module fault",
+          "error_f13": "F13 - Door lock fault",
+          "error_f14": "F14 - Door unlock fault",
+          "error_f15": "F15 - Abnormal drying",
+          "error_f16": "F16 - Abnormal drying",
+          "error_f17": "F17 - Abnormal drying",
+          "error_f18": "F18 - Abnormal drying",
+          "error_f23": "F23 - Electronic module fault",
+          "error_f24": "F24 - Water level overflow",
           "none": "None",
           "unbalance_alarm": "Unbalance alarm"
         }
