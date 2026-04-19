@@ -292,7 +292,13 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
     async def async_turn_on(self):
         """Turn the entity on."""
         # TODO: Support value mapping
-        await self.async_update_device(self.add_target_temperature({self.target_map[IS_ON]: 1}))
+        request = {self.target_map[IS_ON]: 1}
+        if HVAC_MODE in self.target_map:
+            status = self.target_map[HVAC_MODE]
+            status_list = self.coordinator.data[self.device_id].status_list
+            if status in status_list:
+                request[status] = int(status_list[status])
+        await self.async_update_device(self.add_target_temperature(request))
 
     async def async_turn_off(self):
         """Turn the entity off."""
