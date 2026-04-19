@@ -18,7 +18,3 @@ properties:
       unit: °C
       min_value: -18
       max_value: -14
-  - property: vibration_alarm
-    hide: true
-    binary_sensor:
-      device_class: vibration
