@@ -552,7 +552,11 @@ properties:
   - property: lumin_value_of_interior_light
     hide: true
   - property: mainboard_type
+    hide: true
+    entity_category: diagnostic
   - property: mainboard_version
+    hide: true
+    entity_category: diagnostic
   - property: market_mode_exist
     hide: true
   - property: measured_vibrations
@@ -922,7 +926,8 @@ properties:
   - property: run_status_flag_5
     hide: true
   - property: running_status
-    sensor: {}
+    hide: true
+    entity_category: diagnostic
   - property: running_status3
     hide: true
   - property: rx_failure
@@ -972,6 +977,7 @@ properties:
     entity_category: config
     switch: {}
   - property: sf_sr_mutex_mode
+    hide: true
   - property: shelf_light_a_state
     hide: true
   - property: shelf_light_atmosphere_brightness
@@ -1198,7 +1204,7 @@ properties:
     hide: true
     entity_category: diagnostic
     binary_sensor:
-      device_class: problem
+      device_class: vibration
       options:
         0: false
         1: true
