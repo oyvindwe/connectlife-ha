@@ -45,13 +45,13 @@ uv run pyright
 
 YAML files in `custom_components/connectlife/data_dictionaries/` define how API properties map to HA entities. This is the most important part of the codebase.
 
-- **Default type mapping**: `{device_type_code}.yaml` (e.g., `009.yaml` for air conditioners)
-- **Feature override**: `{device_type_code}-{device_feature_code}.yaml` (e.g., `009-105.yaml`)
-- Feature files overlay the default — properties in the feature file replace same-named properties from the type file
-- Unmapped properties become hidden sensor entities with `state_class: measurement`
-- Parsed by `Dictionaries` class (`dictionaries.py`) with a class-level cache
+For the YAML schema and authoring guidance, see:
+- `custom_components/connectlife/data_dictionaries/README.md` — user-facing field docs (all types, `command`/`adjust`, presets, units, translations)
+- `custom_components/connectlife/data_dictionaries/properties-schema.json` — authoritative JSON schema
 
-Each property maps to exactly one platform. Platform type is determined by `hasattr()` on the `Property` object — only the attribute for the assigned platform is set during `__init__`.
+Code-level details not in those files:
+- Parsed by `Dictionaries` class (`dictionaries.py`) with a class-level cache.
+- Each property maps to exactly one platform. Platform type is determined by `hasattr()` on the `Property` object — only the attribute for the assigned platform is set during `__init__`.
 
 ### Entity Creation Pattern
 
@@ -71,7 +71,6 @@ Device-level platforms (climate, humidifier, water_heater) create one entity per
 
 - **Unique ID format**: `{device_id}-{property_name}` (or `{device_id}-climate` etc. for device-level entities)
 - **Beep disable**: When configured per-device in options, `t_beep: 0` is injected into every command (`entity.py:async_update_device`)
-- **Command vs property**: Select and switch support separate `command` property names with optional `adjust` offset for devices where the write property differs from the status property
 - **`is_entity()` utility** (`utils.py`): gates entity creation — checks platform match, not disabled, and not in unavailable state
 
 ### connectlife API Library
@@ -80,8 +79,4 @@ The API library is published to PyPI as `connectlife` and developed in a separat
 
 ## Adding New Device Mappings
 
-1. Generate skeleton: `python -m connectlife.dump --username <user> --password <pass> --format dd`
-2. Create/edit YAML in `data_dictionaries/` (see `data_dictionaries/README.md` for full schema docs)
-3. Validate: `uv run python -m scripts.validate_mappings`
-4. Generate strings and translations: `uv run python -m scripts.gen_strings`
-5. Translation keys must be lowercase; YAML booleans (`true`, `false`, `on`, `off`, `yes`, `no`) must be quoted in option values
+See `custom_components/connectlife/data_dictionaries/README.md` for the authoring workflow (skeleton generation, tips, translation strings). After editing YAML, run `uv run python -m scripts.validate_mappings` and `uv run python -m scripts.gen_strings`.
