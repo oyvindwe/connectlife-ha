@@ -74,6 +74,7 @@ properties:
   - property: f_electricity
     sensor:
       device_class: power
+      state_class: measurement
       read_only: true
       unit: kW
       multiplier: 0.1
