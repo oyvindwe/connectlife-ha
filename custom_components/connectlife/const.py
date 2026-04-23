@@ -27,3 +27,5 @@ SWING_HORIZONTAL_MODE = "swing_horizontal_mode"
 TARGET_HUMIDITY = "target_humidity"
 TARGET_TEMPERATURE = "target_temperature"
 TEMPERATURE_UNIT = "temperature_unit"
+
+SW_VERSION_PROPERTY = "oem_host_version"

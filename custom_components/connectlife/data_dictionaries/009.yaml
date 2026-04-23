@@ -246,8 +246,6 @@ properties:
       unit: V
     hide: true
     entity_category: diagnostic
-  - property: oem_host_version
-    disable: true
   - property: t_8heat
     switch:
       device_class: switch

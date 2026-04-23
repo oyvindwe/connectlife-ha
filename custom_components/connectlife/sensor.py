@@ -18,7 +18,7 @@ from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers import config_validation as cv, entity_platform
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
-from .const import DOMAIN
+from .const import DOMAIN, SW_VERSION_PROPERTY
 from .coordinator import ConnectLifeCoordinator, ConnectLifeEnergyCoordinator
 from .dictionaries import Dictionaries, Dictionary, Property
 from .entity import ConnectLifeEntity
@@ -46,7 +46,8 @@ async def async_setup_entry(
                 coordinator, appliance, s, dictionary.properties[s], dictionary
             )
             for s in appliance.status_list
-            if is_entity(
+            if s != SW_VERSION_PROPERTY
+            and is_entity(
                 Platform.SENSOR,
                 dictionary.properties[s],
                 appliance.status_list[s],
