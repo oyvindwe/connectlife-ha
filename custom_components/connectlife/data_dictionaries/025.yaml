@@ -603,6 +603,7 @@ properties:
       device_class: energy
       unit: kWh
       read_only: true
+      state_class: total_increasing
     combine:
       - property: StandardElectricitConsumption_int
       - property: StandardElectricitconsumption_decimal
@@ -614,6 +615,7 @@ properties:
       device_class: water
       unit: L
       read_only: true
+      state_class: total_increasing
     combine:
       - property: StandardWaterConsumption_int
       - property: StandardWaterConsumption_decimal

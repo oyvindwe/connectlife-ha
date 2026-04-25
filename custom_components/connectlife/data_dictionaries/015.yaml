@@ -568,22 +568,22 @@ properties:
     hide: true
   - property: Total_energy_consumption
     sensor:
-      state_class: total
+      state_class: total_increasing
       device_class: energy
       unit: kWh
     icon: mdi:lightning-bolt
   - property: Total_number_of_cycles
     sensor:
-      state_class: total
+      state_class: total_increasing
   - property: Total_run_time
     sensor:
-      state_class: total
+      state_class: total_increasing
       device_class: duration
       unit: h
     icon: mdi:timer-sand-full
   - property: Total_water_consumption
     sensor:
-      state_class: total
+      state_class: total_increasing
       device_class: water
       unit: L
     icon: mdi:water

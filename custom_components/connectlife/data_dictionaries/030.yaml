@@ -240,6 +240,7 @@ properties:
       device_class: energy
       unit: kWh
       read_only: true
+      state_class: total_increasing
     combine:
       - property: StandardElectricitConsumption_int
       - property: StandardElectricitconsumption_decimal
