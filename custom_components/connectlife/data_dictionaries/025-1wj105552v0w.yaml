@@ -1,26 +1,14 @@
 # Washing Machine
 properties:
-- property: AntiCrease
-  icon: mdi:iron
-  switch:
-- property: AutoDose
-  icon: mdi:tray-arrow-up
-  switch:
 - property: AutoDose_flag
-  hide: true
   icon: mdi:tray-arrow-up
   sensor:
     device_class: enum
     options:
       0: "unavailable"
       1: "available"
-- property: Child_lock
-  icon: mdi:lock
-  switch:
 - property: Current_program_phase
-  icon: mdi:state-machine
   sensor:
-    read_only: true
     device_class: enum
     options:
       0: not_available
@@ -34,7 +22,6 @@ properties:
       11: delay
 - property: ExtraRinseNum
   icon: mdi:tray-plus
-  entity_category: diagnostic
   select:
     options:
       0: "0"
@@ -68,28 +55,11 @@ properties:
       52: "power_30"
       56: "pets"
       57: "full_load_49"
-- property: Selected_program_remaining_time_in_minutes
-  icon: mdi:update
-  sensor:
-    device_class: duration
-    unit: min
-    read_only: true
 - property: Selected_program_total_time_in_minutes
-  icon: mdi:timer
   hide: true
-  sensor:
-    device_class: duration
-    unit: min
-    read_only: true
 - property: Selected_program_total_running_time_in_minutes
-  icon: mdi:timer
   hide: true
-  sensor:
-    device_class: duration
-    unit: min
-    read_only: true
 - property: Spin_speed_rpm
-  icon: mdi:rotate-3d-variant
   select:
     options:
       14: "1400"
@@ -98,9 +68,6 @@ properties:
       80: "800"
       60: "600"
       0: "none"
-- property: Steam
-  icon: mdi:heat-wave
-  switch:
 - property: dry_time
   icon: mdi:tumble-dryer
   select:
@@ -116,14 +83,3 @@ properties:
       120: "120"
       180: "180"
       240: "240"
-- property: temperature
-  icon: mdi:thermometer-lines
-  select:
-    options:
-      0: "cold"
-      2: "20"
-      3: "30"
-      4: "40"
-      6: "60"
-      9: "90"
-

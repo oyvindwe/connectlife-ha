@@ -2,7 +2,6 @@
 properties:
   - property: t_fan_speed
     climate:
-      target: fan_mode
       options:
         0: auto
         5: low
@@ -10,10 +9,6 @@ properties:
         9: high
   - property: t_temp
     climate:
-      target: target_temperature
-      min_value:
-        celsius: 16
-        fahrenheit: 61
       max_value:
         celsius: 30
         fahrenheit: 86

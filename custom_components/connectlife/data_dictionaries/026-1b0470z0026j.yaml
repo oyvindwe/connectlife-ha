@@ -2,19 +2,12 @@
 properties:
   - property: freeze_temperature
     number:
-      device_class: temperature
-      unit: °C
       min_value: -18
       max_value: -14
   - property: refrigerator_temperature
     number:
-      device_class: temperature
-      unit: °C
       min_value: 2
-      max_value: 8
   - property: variation_temperature
     number:
-      device_class: temperature
-      unit: °C
       min_value: -18
       max_value: -14

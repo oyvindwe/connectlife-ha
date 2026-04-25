@@ -1,7 +1,6 @@
 # WashingMachine
 properties:
   - property: Current_program_phase
-    icon: mdi:state-machine
     sensor:
       device_class: enum
       options:
@@ -13,23 +12,8 @@ properties:
         7: spin-dry
         8: drying
         10: finished
-      read_only: true
-  - property: Detergent_display
-    icon: mdi:spray
-    binary_sensor:
-      options:
-        0: false
-        1: true
-  - property: Energy_estimate
-    icon: mdi:lightning-bolt
-    sensor:
-      read_only: true
-      state_class: total
-      device_class: energy
-      unit: kWh
   - property: ExtraRinseNum
     icon: mdi:tray-plus
-    entity_category: diagnostic
     select:
       options:
         0: "0"
@@ -37,7 +21,6 @@ properties:
         2: "2"
         3: "3"
   - property: RinseNum
-    icon: mdi:reload
     sensor:
       device_class: enum
       options:
@@ -64,42 +47,7 @@ properties:
         22: "clean_dry_60"
         41: "power49"
         42: "auto"
-  - property: Selected_program_remaining_time_in_minutes
-    icon: mdi:update
-    sensor:
-      device_class: duration
-      unit: min
-      read_only: true
-  - property: Selected_program_total_time_in_minutes
-    icon: mdi:timer
-    sensor:
-      device_class: duration
-      unit: min
-      read_only: true
-  - property: Selected_program_total_running_time_in_minutes
-    icon: mdi:timer
-    sensor:
-      device_class: duration
-      unit: min
-      read_only: true
-  - property: Softer_display
-    icon: mdi:water
-    binary_sensor:
-      options:
-        0: false
-        1: true
-  - property: temperature
-    icon: mdi:thermometer-lines
-    select:
-      options:
-        0: "cold"
-        2: "20"
-        3: "30"
-        4: "40"
-        6: "60"
-        9: "90"
   - property: Spin_speed_rpm
-    icon: mdi:rotate-3d-variant
     select:
       options:
         14: "1400"
@@ -108,9 +56,3 @@ properties:
         80: "800"
         60: "600"
         0: "none"
-  - property: spintime_index
-    icon: mdi:timer-sand
-    sensor:
-      device_class: duration
-      unit: min
-      read_only: true

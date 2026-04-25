@@ -1,9 +1,1 @@
-properties:
-  - property: t_work_mode
-    humidifier:
-      target: mode
-      options:
-        0: continuous
-        1: manual
-        2: auto
-        3: clothes_dry
+# Dehumidifier — uses default mappings

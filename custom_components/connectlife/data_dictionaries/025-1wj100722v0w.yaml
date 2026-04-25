@@ -1,9 +1,7 @@
 # Washing machine WF3S1043BW3
 properties:
 - property: Current_program_phase
-  icon: mdi:state-machine
   sensor:
-    read_only: true
     device_class: enum
     options:
       0: not_available
@@ -44,9 +42,3 @@ properties:
       14: remote
       15: none
   icon: 'mdi:playlist-check'
-- property: Selected_program_remaining_time_in_minutes
-  icon: mdi:update
-  sensor:
-    read_only: true
-    device_class: duration
-    unit: min

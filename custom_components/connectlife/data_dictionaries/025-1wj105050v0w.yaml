@@ -1,9 +1,7 @@
 # Washing Machine
 properties:
 - property: Current_program_phase
-  icon: mdi:state-machine
   sensor:
-    read_only: true
     device_class: enum
     options:
       0: not_available
@@ -39,23 +37,3 @@ properties:
       42: "auto"
       44: "bed_linen"
       45: "jeans"
-- property: Spin_speed_rpm
-  icon: mdi:rotate-3d-variant
-  select:
-    options:
-      14: "1400"
-      12: "1200"
-      10: "1000"
-      8: "800"
-      6: "600"
-      0: "none"
-- property: temperature
-  icon: mdi:thermometer-lines
-  select:
-    options:
-      0: "cold"
-      2: "20"
-      3: "30"
-      4: "40"
-      6: "60"
-      9: "90"
