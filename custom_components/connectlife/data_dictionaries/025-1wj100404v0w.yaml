@@ -52,6 +52,7 @@ properties:
       device_class: duration
       unit: h
   - property: ApplicationPermissions
+    hide: false
     icon: mdi:cellphone-wireless
     sensor:
       read_only: true

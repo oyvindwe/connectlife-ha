@@ -1,6 +1,7 @@
 # Washing machine WF3S1043BW3
 properties:
 - property: ApplicationPermissions
+  hide: false
   sensor:
     read_only: true
   icon: 'mdi:shield-check'
@@ -24,10 +25,6 @@ properties:
       13: anti_crease
       14: delay
       15: finished
-- property: FlexibleSpinTime_Flag
-  sensor:
-    read_only: true
-  icon: 'mdi:timer-cog'
 - property: RinseNum
   sensor:
     unit: times
@@ -53,10 +50,6 @@ properties:
       14: remote
       15: none
   icon: 'mdi:playlist-check'
-- property: Sound_setting
-  sensor:
-    read_only: true
-  icon: 'mdi:volume-high'
 - property: Spin_speed_rpm
   sensor:
     read_only: true
