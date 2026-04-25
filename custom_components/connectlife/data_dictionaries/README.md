@@ -16,6 +16,72 @@ will just be ignored for feature variants that don't expose that property.
 
 **Note:** The top level `climate` section is not supported in the default mapping files.
 
+### Property inheritance in feature overrides
+
+Any field in a property can be overridden in a feature file; unspecified fields are inherited from the
+base type file. If the override changes the platform type (e.g., from `sensor:` to `select:`), the
+override's platform block replaces the base's.
+
+The following top-level fields always inherit, even across platform changes:
+
+- `icon`
+- `hide`
+- `disable`
+- `entity_category`
+- `unavailable`
+- `combine` — if you change the platform and want to drop the base's combine sources, clear it with
+  `combine: null`.
+
+Collections replace as a whole — there is no per-key merging inside them:
+
+- `options`
+- `combine`
+- `command`
+- dict-valued `min_value` / `max_value`
+
+Set a field to `null` to explicitly unset what the base specified — useful for opting a sensor out of
+long-term statistics with `state_class: null`, or dropping a `unit:` set in the base. To suppress an
+entity entirely, use `disable: true`.
+
+Example: the base specifies the full mapping, the feature override carries only the difference.
+
+```yaml
+# 009.yaml (base)
+- property: t_temp
+  climate:
+    target: target_temperature
+    min_value: 16
+    max_value: 32
+```
+
+```yaml
+# 009-120.yaml (feature override — caps at 30 °C, inherits target and min_value)
+- property: t_temp
+  climate:
+    max_value: 30
+```
+
+Example: a feature variant returns a property as a direct value where the base combines two sources.
+
+```yaml
+# 025.yaml (base — virtual sensor combining int and decimal source properties)
+- property: StandardElectricitConsumption
+  sensor:
+    device_class: energy
+    unit: kWh
+    state_class: total_increasing
+  combine:
+    - property: StandardElectricitConsumption_int
+    - property: StandardElectricitconsumption_decimal
+      multiplier: 0.01
+```
+
+```yaml
+# 025-{feature}.yaml (override — read the property directly, no combine)
+- property: StandardElectricitConsumption
+  combine: null
+```
+
 ## Create your own mapping file
 
 To map you device, create a file with the name `<deviceTypeCode>-<deviceFeatureCode>.yaml` in this directory. When done,

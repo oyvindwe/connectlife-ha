@@ -112,6 +112,7 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
         state_class = dd_entry.sensor.state_class
         if (
             state_class is None
+            and not dd_entry.sensor.state_class_explicit
             and (isinstance(current_value, int) or self.combine)
             and device_class != SensorDeviceClass.ENUM
         ):

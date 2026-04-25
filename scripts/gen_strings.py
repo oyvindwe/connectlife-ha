@@ -7,7 +7,44 @@ from os.path import isfile, join
 
 import yaml
 
+from custom_components.connectlife.dictionaries import _merge_property
 from scripts import check_translations, sort_translations
+
+
+def _is_base_file(filename: str) -> bool:
+    """True for ``009.yaml`` (base type), False for ``009-105.yaml`` (feature override)."""
+    return "-" not in filename.removesuffix(".yaml")
+
+
+def _load_base_properties(basedir: str, filenames: list[str]) -> dict[str, dict[str, dict]]:
+    """Pre-load base type YAMLs as ``{type_code: {prop_name: prop_dict}}``.
+
+    Used to merge feature-override entries with their base counterpart so
+    gen_strings sees the same merged Property the runtime sees, even when
+    a subtype is trimmed to only the differences from base.
+    """
+    bases: dict[str, dict[str, dict]] = {}
+    for filename in filenames:
+        if not _is_base_file(filename):
+            continue
+        type_code = filename.removesuffix(".yaml")
+        with open(f"{basedir}/data_dictionaries/{filename}") as f:
+            parsed = yaml.safe_load(f)
+        if not parsed or "properties" not in parsed or parsed["properties"] is None:
+            continue
+        bases[type_code] = {p["property"]: p for p in parsed["properties"]}
+    return bases
+
+
+def _merged_properties(filename: str, parsed_properties: list[dict], bases: dict[str, dict[str, dict]]):
+    """Yield each property in ``parsed_properties``, merged with its base entry for subtypes."""
+    if _is_base_file(filename):
+        yield from parsed_properties
+        return
+    type_code = filename.split("-", 1)[0]
+    base = bases.get(type_code, {})
+    for prop in parsed_properties:
+        yield _merge_property(base.get(prop["property"]), prop)
 
 HA_STRINGS_URL = "https://raw.githubusercontent.com/home-assistant/core/dev/homeassistant/strings.json"
 
@@ -21,13 +58,14 @@ def main(basedir):
 
     device_dir = f'{basedir}/data_dictionaries'
     filenames = list(filter(lambda f: f[-5:] == ".yaml", [f for f in listdir(device_dir) if isfile(join(device_dir, f))]))
+    bases = _load_base_properties(basedir, filenames)
     for filename in filenames:
         print(f"Generating strings from {filename}")
         with (open(f'{basedir}/data_dictionaries/{filename}') as f):
             appliance = yaml.safe_load(f)
         if appliance is not None:
             if "properties" in appliance and appliance["properties"] is not None:
-                for property in appliance["properties"]:
+                for property in _merged_properties(filename, appliance["properties"], bases):
                     if "climate" in property:
                         if property["climate"]["target"] == "fan_mode":
                             for option in property["climate"]["options"].values():
