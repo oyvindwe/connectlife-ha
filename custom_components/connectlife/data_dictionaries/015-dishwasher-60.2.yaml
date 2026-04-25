@@ -22,7 +22,6 @@ properties:
         7: self_cleaning
       command:
         name: Selected_program_id
-    icon: mdi:clipboard-list
   - property: Selected_program_mode
     select:
       options:
@@ -33,7 +32,6 @@ properties:
       command:
         name: Program_mode
         adjust: 1
-    icon: mdi:cube-outline
   - property: Time_program_set_duration_status
     select:
       options:

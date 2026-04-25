@@ -1,6 +1,5 @@
 properties:
   - property: Selected_program_ID
-    icon: mdi:selection-ellipse-arrow-inside
     select:
       options:
         1: auto
@@ -19,7 +18,6 @@ properties:
         19: down
         28: eco
   - property: dry_time
-    icon: mdi:timer
     select:
       options:
         1: wardrobe

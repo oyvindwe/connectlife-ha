@@ -1,9 +1,7 @@
 # WF3S1014-SVW002-000
 properties:
   - property: Current_program_phase
-    icon: mdi:state-machine
     sensor:
-      read_only: true
       device_class: enum
       options:
         0: not_available
@@ -48,7 +46,6 @@ properties:
         1: level_1
         2: level_2
   - property: DelayEndTime
-    icon: mdi:clock-outline
     number:
       min_value: 4
       max_value: 24
@@ -56,7 +53,6 @@ properties:
       unit: h
   - property: ApplicationPermissions
     icon: mdi:cellphone-wireless
-    entity_category: diagnostic
     sensor:
       read_only: true
       device_class: enum

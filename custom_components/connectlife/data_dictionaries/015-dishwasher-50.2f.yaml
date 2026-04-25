@@ -13,7 +13,6 @@ properties:
         7: clean
       command:
         name: Selected_program_id
-    icon: mdi:clipboard-list
   - property: Selected_program_mode
     select:
       options:
@@ -25,4 +24,3 @@ properties:
       command:
         name: Program_mode
         adjust: 1
-    icon: mdi:cube-outline

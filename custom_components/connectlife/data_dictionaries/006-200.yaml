@@ -2,7 +2,6 @@
 properties:
 - property: t_work_mode
   climate:
-    target: hvac_mode
     options:
       0: fan_only
       2: cool

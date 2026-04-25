@@ -1,7 +1,6 @@
 # Tumble dryer model DHSE80-BEW001
 properties:
   - property: Selected_program_ID
-    icon: mdi:selection-ellipse-arrow-inside
     select:
       options:
         1: auto

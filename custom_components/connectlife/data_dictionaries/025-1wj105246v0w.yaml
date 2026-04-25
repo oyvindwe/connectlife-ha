@@ -5,9 +5,7 @@ properties:
     read_only: true
   icon: 'mdi:shield-check'
 - property: Current_program_phase
-  icon: mdi:state-machine
   sensor:
-    read_only: true
     device_class: enum
     options:
       0: not_available
@@ -32,9 +30,7 @@ properties:
   icon: 'mdi:timer-cog'
 - property: RinseNum
   sensor:
-    read_only: true
     unit: times
-  icon: 'mdi:reload'
 - property: Selected_program_ID
   sensor:
     read_only: true
@@ -72,22 +68,5 @@ properties:
     device_class: temperature
     unit: °C
   icon: 'mdi:thermometer'
-- property: Temperature_Default_DefaultMainWashTime
-  icon: mdi:clock-outline
-  sensor:
-    read_only: true
-    device_class: duration
-    unit: min
-- property: DryOpen_DefaultSpinSpeed
-  hide: true
-- property: ExtraRinseNum
-  hide: true
 - property: Program_end_to_shutdown_time_in_minutes
-  sensor:
-    read_only: true
-    device_class: duration
-    unit: min
-  icon: 'mdi:timer'
-  hide: true
-- property: dry_time
   hide: true
