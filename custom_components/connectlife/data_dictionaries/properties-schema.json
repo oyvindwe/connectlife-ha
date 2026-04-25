@@ -53,7 +53,7 @@
           "type": "string"
         },
         "combine": {
-          "type": "array",
+          "type": ["array", "null"],
           "items": {
             "$ref": "#/$defs/CombineSource"
           },
@@ -84,9 +84,9 @@
           "$ref": "#/$defs/WaterHeater"
         },
         "icon": {
-          "type": "string",
+          "type": ["string", "null"],
           "title": "Icon",
-          "description": "Icon to use for the entity.",
+          "description": "Icon to use for the entity. Use null in a feature override to unset an icon set in the base.",
           "examples": [
             "mdi:alert",
             "mdi:dishwash-alert"
@@ -103,13 +103,14 @@
           "default": false
         },
         "unavailable": {
-          "type": "integer",
+          "type": ["integer", "null"],
           "description": "If the property has this value, it is not available on the device, and no entity is created."
         },
         "entity_category": {
-          "type": "string",
+          "type": ["string", "null"],
           "description": "https://developers.home-assistant.io/docs/core/entity/#registry-properties:~:text=automatic%20device%20registration.-,entity_category,-EntityCategory%20%7C%20None",
           "enum": [
+            null,
             "config",
             "diagnostic"
           ]
@@ -129,7 +130,7 @@
           "$ref": "#/$defs/BinarySensorDeviceClass"
         },
         "options": {
-          "type": "object",
+          "type": ["object", "null"],
           "additionalProperties": {
             "type": "boolean"
           },
@@ -139,15 +140,15 @@
       "title": "BinarySensor"
     },
     "Command": {
-      "type": "object",
+      "type": ["object", "null"],
       "additionalProperties": false,
       "properties": {
         "name": {
-          "type": "string",
+          "type": ["string", "null"],
           "description": "Use this property instead to change state."
         },
         "adjust": {
-          "type": "integer",
+          "type": ["integer", "null"],
           "description": "When changing state, adjust the request value by substracting this value. Used when the command values are offset from the property values.",
           "default": 0
         }
@@ -155,7 +156,7 @@
       "title": "Command"
     },
     "Climate": {
-      "type": "object",
+      "type": ["object", "null"],
       "additionalProperties": false,
       "properties": {
         "target": {
@@ -171,7 +172,7 @@
           "$ref": "#/$defs/IntegerOrTemperature"
         },
         "options": {
-          "type": "object",
+          "type": ["object", "null"],
           "additionalProperties": {
             "type": "string"
           },
@@ -180,23 +181,23 @@
       }
     },
     "Humidifier": {
-      "type": "object",
+      "type": ["object", "null"],
       "additionalProperties": false,
       "properties": {
         "target": {
           "$ref": "#/$defs/HumidifierTarget"
         },
         "min_value": {
-          "type": "integer"
+          "type": ["integer", "null"]
         },
         "max_value": {
-          "type": "integer"
+          "type": ["integer", "null"]
         },
         "device_class": {
           "$ref": "#/$defs/HumidifierDeviceClass"
         },
         "options": {
-          "type": "object",
+          "type": ["object", "null"],
           "additionalProperties": {
             "type": "string"
           },
@@ -205,14 +206,14 @@
       }
     },
     "Number": {
-      "type": "object",
+      "type": ["object", "null"],
       "additionalProperties": false,
       "properties": {
         "device_class": {
           "$ref": "#/$defs/NumberDeviceClass"
         },
         "unit": {
-          "type": "string",
+          "type": ["string", "null"],
           "description": "Required if device_class is set, except not allowed when device_class is AQI or ph.",
           "examples": [
             "min",
@@ -221,7 +222,7 @@
           ]
         },
         "min_value": {
-          "type": "integer",
+          "type": ["integer", "null"],
           "description": "Minimum allowed value.",
           "examples": [
             -40,
@@ -229,7 +230,7 @@
           ]
         },
         "max_value": {
-          "type": "integer",
+          "type": ["integer", "null"],
           "description": "Maximum allowed value.",
           "examples": [
             20,
@@ -239,11 +240,11 @@
       }
     },
     "Select": {
-      "type": "object",
+      "type": ["object", "null"],
       "additionalProperties": false,
       "properties": {
         "options": {
-          "type": "object",
+          "type": ["object", "null"],
           "additionalProperties": {
             "type": "string"
           },
@@ -252,10 +253,7 @@
         "command": {
           "$ref": "#/$defs/Command"
         }
-      },
-      "required": [
-        "options"
-      ]
+      }
     },
     "Sensor": {
       "type": ["object", "null" ],
@@ -270,7 +268,7 @@
           "default": false
         },
         "unit": {
-          "type": "string",
+          "type": ["string", "null"],
           "description": "Required if device_class is set, except not allowed when device_class is aqi, enum or ph.",
           "examples": [
             "min",
@@ -282,7 +280,7 @@
           "$ref": "#/$defs/UnknownValue"
         },
         "options": {
-          "type": "object",
+          "type": ["object", "null"],
           "additionalProperties": {
             "type": "string"
           },
@@ -292,7 +290,7 @@
           "$ref": "#/$defs/SensorStateClass"
         },
         "multiplier": {
-          "type": "number",
+          "type": ["number", "null"],
           "description": "Multiplier to be used if the native API value does not match a supportet unit in Home Assistant",
           "examples": [
             "0.1",
@@ -307,12 +305,12 @@
       "additionalProperties": false,
       "properties": {
         "off": {
-          "type": "integer",
+          "type": ["integer", "null"],
           "description": "Off value",
           "default": 0
         },
         "on": {
-          "type": "integer",
+          "type": ["integer", "null"],
           "description": "On value",
           "default": 1
         },
@@ -326,7 +324,7 @@
       "title": "BinarySensor"
     },
     "WaterHeater": {
-      "type": "object",
+      "type": ["object", "null"],
       "additionalProperties": false,
       "properties": {
         "target": {
@@ -342,7 +340,7 @@
           "$ref": "#/$defs/IntegerOrTemperature"
         },
         "options": {
-          "type": "object",
+          "type": ["object", "null"],
           "additionalProperties": {
             "type": ["string", "boolean"]
           },
@@ -372,8 +370,9 @@
       ]
     },
     "BinarySensorDeviceClass": {
-      "type": "string",
+      "type": ["string", "null"],
       "enum": [
+        null,
         "battery",
         "battery_charging",
         "carbon_monoxide",
@@ -407,8 +406,9 @@
       "description": "Name of any BinarySensorDeviceClass enum."
     },
     "ClimateTarget": {
-      "type": "string",
+      "type": ["string", "null"],
       "enum": [
+        null,
         "current_humidity",
         "current_temperature",
         "fan_mode",
@@ -425,8 +425,9 @@
       "description": "Target property of ClimateEntity."
     },
     "HumidifierTarget": {
-      "type": "string",
+      "type": ["string", "null"],
       "enum": [
+        null,
         "current_humidity",
         "mode",
         "target_humidity",
@@ -436,16 +437,18 @@
       "description": "Target property of HumidifierEntity."
     },
     "HumidifierDeviceClass": {
-      "type": "string",
+      "type": ["string", "null"],
       "enum": [
+        null,
         "dehumidifier",
         "humidifier"
       ],
       "title": "Humidifier device class."
     },
     "SensorDeviceClass": {
-      "type": "string",
+      "type": ["string", "null"],
       "enum": [
+        null,
         "date",
         "enum",
         "timestamp",
@@ -502,8 +505,9 @@
       "description": "Name of any SensorDeviceClass enum."
     },
     "NumberDeviceClass": {
-      "type": "string",
+      "type": ["string", "null"],
       "enum": [
+        null,
         "apparent_power",
         "aqi",
         "atmospheric_pressure",
@@ -557,18 +561,20 @@
       "description": "Name of any SensorDeviceClass enum."
     },
     "SensorStateClass": {
-      "type": "string",
+      "type": ["string", "null"],
       "enum": [
+        null,
         "measurement",
         "total",
         "total_increasing"
       ],
       "title": "State class",
-      "description": "Name of any SensorStateClass. Only allowed for integer properties, defaults to measurement."
+      "description": "Name of any SensorStateClass. Only allowed for integer properties. Set to null to suppress the integer-property auto-fallback to measurement (e.g. for state codes or setpoints where statistics aren't meaningful)."
     },
     "SwitchDeviceClass": {
-      "type": "string",
+      "type": ["string", "null"],
       "enum": [
+        null,
         "outlet",
         "switch"
       ],
@@ -576,8 +582,9 @@
       "description": "Name of any SwitchDeviceClass enum."
     },
     "WaterHeaterTarget": {
-      "type": "string",
+      "type": ["string", "null"],
       "enum": [
+        null,
         "current_temperature",
         "current_operation",
         "is_on",
@@ -590,7 +597,7 @@
       "description": "Target property of WaterHeaterEntity."
     },
     "UnknownValue": {
-      "type": "integer",
+      "type": ["integer", "null"],
       "description": "The value used by the API to signal unknown value.",
       "examples": [
         255,
@@ -600,7 +607,8 @@
     "IntegerOrTemperature": {
       "type": [
         "integer",
-        "object"
+        "object",
+        "null"
       ],
       "additionalProperties": false,
       "properties": {

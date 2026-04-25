@@ -3,7 +3,7 @@ from collections import defaultdict
 from dataclasses import dataclass
 import logging
 import pkgutil
-from typing import TypedDict
+from typing import Any, TypedDict
 
 from connectlife.appliance import ConnectLifeAppliance
 from homeassistant.const import Platform, EntityCategory
@@ -66,6 +66,18 @@ class CombineSource(_CombineSourceRequired, total=False):
     unknown_value: int
 
 
+def _val(d: dict, key: str, default: Any = None) -> Any:
+    """Return ``d[key]`` if the key is present with a non-None value, else ``default``.
+
+    Used by parsers to treat ``key: ~`` (explicit null in a feature override) the
+    same as the key being absent — except for ``state_class``, which tracks the
+    distinction explicitly to suppress the auto-fallback in sensor.py.
+    """
+    if key in d and d[key] is not None:
+        return d[key]
+    return default
+
+
 class BinarySensor:
     device_class: BinarySensorDeviceClass | None
     options: dict[int, bool] = {0: False, 1: False, 2: True}
@@ -73,13 +85,13 @@ class BinarySensor:
     def __init__(self, name: str, binary_sensor: dict | None):
         if binary_sensor is None:
             binary_sensor = {}
+        device_class = _val(binary_sensor, DEVICE_CLASS)
         self.device_class = (
-            BinarySensorDeviceClass(binary_sensor[DEVICE_CLASS])
-            if DEVICE_CLASS in binary_sensor
-            else None
+            BinarySensorDeviceClass(device_class) if device_class is not None else None
         )
-        if OPTIONS in binary_sensor:
-            self.options = binary_sensor[OPTIONS]
+        options = _val(binary_sensor, OPTIONS)
+        if options is not None:
+            self.options = options
 
 
 class Climate:
@@ -92,10 +104,10 @@ class Climate:
     def __init__(self, name: str, climate: dict | None):
         if climate is None:
             climate = {}
-        self.target = climate[TARGET] if TARGET in climate else None
+        self.target = _val(climate, TARGET)
         if self.target is None:
             _LOGGER.warning("Missing climate.target for for %s", name)
-        self.options = climate[OPTIONS] if OPTIONS in climate else {}
+        self.options = _val(climate, OPTIONS, {})
         if not self.options and self.target in [
             FAN_MODE,
             HVAC_ACTION,
@@ -109,8 +121,8 @@ class Climate:
             if UNKNOWN_VALUE in climate and climate[UNKNOWN_VALUE]
             else None
         )
-        self.min_value = climate[MIN_VALUE] if MIN_VALUE in climate else None
-        self.max_value = climate[MAX_VALUE] if MAX_VALUE in climate else None
+        self.min_value = _val(climate, MIN_VALUE)
+        self.max_value = _val(climate, MAX_VALUE)
 
 
 class Humidifier:
@@ -123,19 +135,18 @@ class Humidifier:
     def __init__(self, name: str, humidifier: dict | None):
         if humidifier is None:
             humidifier = {}
-        self.target = humidifier[TARGET] if TARGET in humidifier else None
+        self.target = _val(humidifier, TARGET)
         if self.target is None:
             _LOGGER.warning("Missing humidifier.target for for %s", name)
-        self.options = humidifier[OPTIONS] if OPTIONS in humidifier else {}
+        self.options = _val(humidifier, OPTIONS, {})
         if not self.options and self.target in [ACTION, MODE]:
             _LOGGER.warning("Missing humidifier.options for %s", name)
+        device_class = _val(humidifier, DEVICE_CLASS)
         self.device_class = (
-            HumidifierDeviceClass(humidifier[DEVICE_CLASS])
-            if DEVICE_CLASS in humidifier
-            else None
+            HumidifierDeviceClass(device_class) if device_class is not None else None
         )
-        self.min_value = humidifier[MIN_VALUE] if MIN_VALUE in humidifier else None
-        self.max_value = humidifier[MAX_VALUE] if MAX_VALUE in humidifier else None
+        self.min_value = _val(humidifier, MIN_VALUE)
+        self.max_value = _val(humidifier, MAX_VALUE)
 
 
 class Number:
@@ -145,17 +156,18 @@ class Number:
     device_class: NumberDeviceClass | None
     unit: str | None
 
-    def __init__(self, name: str, number: dict):
+    def __init__(self, name: str, number: dict | None):
         if number is None:
             number = {}
-        self.min_value = number[MIN_VALUE] if MIN_VALUE in number else None
-        self.max_value = number[MAX_VALUE] if MAX_VALUE in number else None
-        self.unit = number[UNIT] if UNIT in number and number[UNIT] else None
-        self.multiplier = number[MULTIPLIER] if MULTIPLIER in number else None
+        self.min_value = _val(number, MIN_VALUE)
+        self.max_value = _val(number, MAX_VALUE)
+        self.unit = _val(number, UNIT) or None
+        self.multiplier = _val(number, MULTIPLIER)
 
         device_class = None
-        if DEVICE_CLASS in number:
-            device_class = NumberDeviceClass(number[DEVICE_CLASS])
+        device_class_value = _val(number, DEVICE_CLASS)
+        if device_class_value is not None:
+            device_class = NumberDeviceClass(device_class_value)
             if (
                 device_class == NumberDeviceClass.PH
                 or device_class == NumberDeviceClass.AQI
@@ -179,24 +191,18 @@ class Select:
     command_name: str | None
     command_adjust: int = 0
 
-    def __init__(self, name: str, select: dict):
+    def __init__(self, name: str, select: dict | None):
         if select is None:
             select = {}
-        if OPTIONS not in select:
+        options = _val(select, OPTIONS)
+        if options is None:
             _LOGGER.warning("Select %s has no options", name)
             self.options = {}
         else:
-            self.options = select[OPTIONS]
-        self.command_name = (
-            select[COMMAND][NAME]
-            if COMMAND in select and NAME in select[COMMAND]
-            else None
-        )
-        self.command_adjust = (
-            select[COMMAND][ADJUST]
-            if COMMAND in select and ADJUST in select[COMMAND]
-            else 0
-        )
+            self.options = options
+        command = _val(select, COMMAND, {})
+        self.command_name = _val(command, NAME)
+        self.command_adjust = _val(command, ADJUST, 0)
 
 
 class Sensor:
@@ -206,11 +212,12 @@ class Sensor:
     multiplier: float | None
     read_only: bool | None
     state_class: SensorStateClass | None
+    state_class_explicit: bool
     device_class: SensorDeviceClass | None
     unit: str | None
     options: dict[int, str] | None
 
-    def __init__(self, name: str, sensor: dict):
+    def __init__(self, name: str, sensor: dict | None):
         if sensor is None:
             sensor = {}
         self.unknown_value = (
@@ -218,16 +225,19 @@ class Sensor:
             if UNKNOWN_VALUE in sensor and sensor[UNKNOWN_VALUE]
             else None
         )
-        self.read_only = sensor[READ_ONLY] if READ_ONLY in sensor else None
-        self.unit = sensor[UNIT] if UNIT in sensor and sensor[UNIT] else None
-        self.multiplier = sensor[MULTIPLIER] if MULTIPLIER in sensor else None
+        self.read_only = _val(sensor, READ_ONLY)
+        self.unit = _val(sensor, UNIT) or None
+        self.multiplier = _val(sensor, MULTIPLIER)
+        self.state_class_explicit = STATE_CLASS in sensor
+        state_class_value = _val(sensor, STATE_CLASS)
         self.state_class = (
-            SensorStateClass(sensor[STATE_CLASS]) if STATE_CLASS in sensor else None
+            SensorStateClass(state_class_value) if state_class_value is not None else None
         )
 
         device_class = None
-        if DEVICE_CLASS in sensor:
-            device_class = SensorDeviceClass(sensor[DEVICE_CLASS])
+        device_class_value = _val(sensor, DEVICE_CLASS)
+        if device_class_value is not None:
+            device_class = SensorDeviceClass(device_class_value)
             if device_class == SensorDeviceClass.ENUM:
                 if self.unit:
                     _LOGGER.warning("%s has device class enum, but has unit", name)
@@ -237,11 +247,12 @@ class Sensor:
                         "%s has device class enum, but has state_class", name
                     )
                     device_class = None
-                if device_class and "options" not in sensor:
+                options = _val(sensor, OPTIONS)
+                if device_class and options is None:
                     _LOGGER.warning("%s has device class enum, but no options", name)
                     device_class = None
                 else:
-                    self.options = sensor["options"]
+                    self.options = options
             elif device_class in [
                 SensorDeviceClass.AQI,
                 SensorDeviceClass.DATE,
@@ -269,24 +280,18 @@ class Switch:
     command_name: str | None
     command_adjust: int = 0
 
-    def __init__(self, name: str, switch: dict):
+    def __init__(self, name: str, switch: dict | None):
         if switch is None:
             switch = {}
+        device_class = _val(switch, DEVICE_CLASS)
         self.device_class = (
-            SwitchDeviceClass(switch[DEVICE_CLASS]) if DEVICE_CLASS in switch else None
+            SwitchDeviceClass(device_class) if device_class is not None else None
         )
-        self.off = switch[OFF] if OFF in switch else 0
-        self.on = switch[ON] if ON in switch else 1
-        self.command_name = (
-            switch[COMMAND][NAME]
-            if COMMAND in switch and NAME in switch[COMMAND]
-            else None
-        )
-        self.command_adjust = (
-            switch[COMMAND][ADJUST]
-            if COMMAND in switch and ADJUST in switch[COMMAND]
-            else 0
-        )
+        self.off = _val(switch, OFF, 0)
+        self.on = _val(switch, ON, 1)
+        command = _val(switch, COMMAND, {})
+        self.command_name = _val(command, NAME)
+        self.command_adjust = _val(command, ADJUST, 0)
 
 
 class WaterHeater:
@@ -299,10 +304,10 @@ class WaterHeater:
     def __init__(self, name: str, water_heater: dict | None):
         if water_heater is None:
             water_heater = {}
-        self.target = water_heater[TARGET] if TARGET in water_heater else None
+        self.target = _val(water_heater, TARGET)
         if self.target is None:
             _LOGGER.warning("Missing water_heater.target for for %s", name)
-        self.options = water_heater[OPTIONS] if OPTIONS in water_heater else {}
+        self.options = _val(water_heater, OPTIONS, {})
         if not self.options and self.target in [
             CURRENT_OPERATION,
             IS_AWAY_MODE_ON,
@@ -321,8 +326,8 @@ class WaterHeater:
             if UNKNOWN_VALUE in water_heater and water_heater[UNKNOWN_VALUE]
             else None
         )
-        self.min_value = water_heater[MIN_VALUE] if MIN_VALUE in water_heater else None
-        self.max_value = water_heater[MAX_VALUE] if MAX_VALUE in water_heater else None
+        self.min_value = _val(water_heater, MIN_VALUE)
+        self.max_value = _val(water_heater, MAX_VALUE)
 
 
 class Property:
@@ -344,18 +349,17 @@ class Property:
 
     def __init__(self, entry: dict):
         self.name = entry[PROPERTY]
-        self.icon = entry[ICON] if ICON in entry and entry[ICON] else None
+        self.icon = _val(entry, ICON) or None
         self.hide = entry[HIDE] == bool(entry[HIDE]) if HIDE in entry else False
         self.disable = (
             entry[DISABLE] == bool(entry[DISABLE]) if DISABLE in entry else False
         )
-        self.unavailable = entry[UNAVAILABLE] if UNAVAILABLE in entry else None
+        self.unavailable = _val(entry, UNAVAILABLE)
+        entity_category = _val(entry, ENTITY_CATEGORY)
         self.entity_category = (
-            EntityCategory[entry[ENTITY_CATEGORY].upper()]
-            if ENTITY_CATEGORY in entry
-            else None
+            EntityCategory[entity_category.upper()] if entity_category is not None else None
         )
-        self.combine = entry[COMBINE] if COMBINE in entry else None
+        self.combine = _val(entry, COMBINE)
 
         if Platform.BINARY_SENSOR in entry:
             self.binary_sensor = BinarySensor(self.name, entry[Platform.BINARY_SENSOR])
@@ -386,6 +390,87 @@ class Dictionary:
     properties: dict[str, Property]
 
 
+PLATFORM_KEYS = (
+    Platform.BINARY_SENSOR,
+    Platform.CLIMATE,
+    Platform.HUMIDIFIER,
+    Platform.NUMBER,
+    Platform.SELECT,
+    Platform.SENSOR,
+    Platform.SWITCH,
+    Platform.WATER_HEATER,
+)
+
+
+def _merge_property(base: dict | None, override: dict) -> dict:
+    """Merge ``override`` on top of ``base``.
+
+    Top-level fields and platform-block fields inherit field-by-field from the
+    base when the platform is unchanged. Collections (``options``, ``combine``,
+    dict-valued ``min_value``/``max_value``, ``command``) replace as a whole.
+    A field set to ``None`` in the override is preserved as ``None`` so parsers
+    can detect "explicitly unset" — meaningful for ``state_class``, equivalent
+    to absent for everything else.
+
+    A bare platform key in the override (``switch:`` with no value, parsed as
+    ``None``) is YAML shorthand for ``{}``: it means "this property uses the
+    given platform with no overrides", not "remove the platform from base".
+    To convert a property to a different platform, declare the new platform
+    key explicitly with the desired contents; to suppress an entity, use
+    ``disable: true``.
+    """
+    if base is None:
+        return dict(override)
+
+    result = dict(base)
+    base_plat = next((p for p in PLATFORM_KEYS if p in base), None)
+    override_plat = next((p for p in PLATFORM_KEYS if p in override), None)
+
+    for key, val in override.items():
+        if key in PLATFORM_KEYS:
+            continue
+        result[key] = val
+
+    if override_plat is None:
+        return result
+    override_val = override[override_plat]
+    if base_plat == override_plat:
+        inner_override = {} if override_val is None else override_val
+        result[override_plat] = _merge_platform_block(base[base_plat], inner_override)
+        return result
+    if base_plat is not None:
+        result.pop(base_plat, None)
+    result[override_plat] = override_val
+    return result
+
+
+def _merge_platform_block(base, override):
+    if override is None:
+        return None
+    if base is None:
+        return dict(override)
+    result = dict(base)
+    result.update(override)
+    return result
+
+
+def _load_yaml(path: str) -> tuple[bool, Any]:
+    """Return ``(found, parsed_yaml)``.
+
+    An empty file (a subtype file with only ``# Uses default mappings``) is
+    ``(True, None)`` — present, no overrides — distinct from a missing file
+    ``(False, None)``, so callers don't emit spurious "no data dictionary
+    found" warnings for placeholder subtype files.
+    """
+    try:
+        data = pkgutil.get_data(__name__, path)
+    except FileNotFoundError:
+        return False, None
+    if data is None:
+        return False, None
+    return True, yaml.safe_load(data)
+
+
 class Dictionaries:
 
     dictionaries: dict[str, Dictionary] = {}
@@ -395,36 +480,38 @@ class Dictionaries:
         key = f"{appliance.device_type_code}-{appliance.device_feature_code}"
         if key in cls.dictionaries:
             return cls.dictionaries[key]
+
         climate: dict | None = None
-        properties = defaultdict(lambda: Property({PROPERTY: "default", HIDE: True}))
-        try:
-            data = pkgutil.get_data(__name__, f"data_dictionaries/{appliance.device_type_code}.yaml")
-            if data is None:
-                raise FileNotFoundError
-            parsed = yaml.safe_load(data)
-            # TODO: Support default climate section
-            if parsed is not None and PROPERTIES in parsed and parsed[PROPERTIES] is not None:
-                for prop in parsed[PROPERTIES]:
-                    properties[prop[PROPERTY]] = Property(prop)
-        except FileNotFoundError:
-            pass
-        try:
-            data = pkgutil.get_data(__name__, f"data_dictionaries/{key}.yaml")
-            if data is None:
-                raise FileNotFoundError
-            parsed = yaml.safe_load(data)
-            if parsed is not None:
-                if Platform.CLIMATE in parsed:
-                    climate = (
-                        parsed[Platform.CLIMATE] if Platform.CLIMATE in parsed else None
-                    )
-                if PROPERTIES in parsed and parsed[PROPERTIES] is not None:
-                    for prop in parsed[PROPERTIES]:
-                        properties[prop[PROPERTY]] = Property(prop)
-        except FileNotFoundError:
+        raw_entries: dict[str, dict] = {}
+
+        # TODO: Support default climate section
+        _, base_data = _load_yaml(
+            f"data_dictionaries/{appliance.device_type_code}.yaml"
+        )
+        if base_data is not None and PROPERTIES in base_data and base_data[PROPERTIES] is not None:
+            for prop in base_data[PROPERTIES]:
+                raw_entries[prop[PROPERTY]] = prop
+
+        sub_found, sub_data = _load_yaml(f"data_dictionaries/{key}.yaml")
+        if not sub_found:
             _LOGGER.warning(
-                "No data dictionary found for %s (%s)", appliance.device_nickname, key
+                "No data dictionary found for %s (%s)",
+                appliance.device_nickname,
+                key,
             )
+        if sub_data is not None:
+            if Platform.CLIMATE in sub_data:
+                climate = sub_data[Platform.CLIMATE]
+            if PROPERTIES in sub_data and sub_data[PROPERTIES] is not None:
+                for prop in sub_data[PROPERTIES]:
+                    name = prop[PROPERTY]
+                    raw_entries[name] = _merge_property(raw_entries.get(name), prop)
+
+        properties: dict[str, Property] = defaultdict(
+            lambda: Property({PROPERTY: "default", HIDE: True})
+        )
+        for name, entry in raw_entries.items():
+            properties[name] = Property(entry)
 
         for prop in list(properties.values()):
             if prop.combine:
