@@ -245,8 +245,14 @@ properties:
     hide: true
     entity_category: diagnostic
   - property: AutoDose_flag
-    hide: true
+    icon: mdi:tray-arrow-up
     entity_category: diagnostic
+    sensor:
+      device_class: enum
+      options:
+        0: unavailable
+        1: available
+      read_only: true
   - property: BathingWaterPumpState
     hide: true
     entity_category: diagnostic
@@ -521,8 +527,6 @@ properties:
     hide: true
     entity_category: diagnostic
   - property: QuickerMode
-    hide: true
-    entity_category: diagnostic
   - property: Quiet_model
     hide: true
     entity_category: diagnostic
@@ -925,7 +929,6 @@ properties:
     entity_category: diagnostic
   - property: ApplicationPermissions
     hide: true
-    entity_category: diagnostic
   - property: BathingWaterPump_Flag
     hide: true
     entity_category: diagnostic
@@ -954,10 +957,10 @@ properties:
     hide: true
     entity_category: diagnostic
   - property: DryOpen_DefaultSpinSpeed
-    hide: true
-    entity_category: diagnostic
   - property: FlexibleSpinTime_Flag
-    hide: true
+    sensor:
+      read_only: true
+    icon: 'mdi:timer-cog'
     entity_category: diagnostic
   - property: Fluffysoft_flag
     hide: true
@@ -1022,6 +1025,9 @@ properties:
   - property: Sound_setting
     hide: true
     entity_category: diagnostic
+    sensor:
+      read_only: true
+    icon: 'mdi:volume-high'
   - property: SpinRange
     hide: true
     entity_category: diagnostic
@@ -1120,8 +1126,6 @@ properties:
     sensor:
       read_only: true
   - property: ExtraRinseNum
-    hide: true
-    entity_category: diagnostic
   - property: Filterclean_washCound
     hide: true
     entity_category: diagnostic
@@ -1132,8 +1136,6 @@ properties:
     hide: true
     entity_category: diagnostic
   - property: Selected_program_ID
-    hide: true
-    entity_category: diagnostic
   - property: Spin_speed_rpm
     icon: mdi:rotate-3d-variant
     select:
@@ -1145,8 +1147,6 @@ properties:
         12: "1200"
         14: "1400"
   - property: dry_time
-    hide: true
-    entity_category: diagnostic
   - property: once_strong_step_time
     hide: true
     entity_category: diagnostic

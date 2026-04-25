@@ -1,6 +1,7 @@
 # Washing machine WFQR1014
 properties:
 - property: ApplicationPermissions
+  hide: false
   sensor:
     read_only: true
   icon: 'mdi:shield-check'
@@ -27,10 +28,6 @@ properties:
 - property: Electricit_consumption
   combine:
     - property: Electricit_consumption_decimal
-- property: FlexibleSpinTime_Flag
-  sensor:
-    read_only: true
-  icon: 'mdi:timer-cog'
 - property: RinseNum
   sensor:
     unit: times
@@ -56,10 +53,6 @@ properties:
       13: extra_hygiene
       14: remote
       15: none
-- property: Sound_setting
-  sensor:
-    read_only: true
-  icon: 'mdi:volume-high'
 - property: Spin_speed_rpm
   sensor:
     read_only: true

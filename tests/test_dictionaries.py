@@ -270,3 +270,19 @@ def test_unknown_value_null_is_none():
 def test_unknown_value_absent_is_none():
     sensor = Sensor("p", {})
     assert sensor.unknown_value is None
+
+
+def test_hide_false_actually_disables_hiding():
+    """Regression: the parser used `entry[HIDE] == bool(entry[HIDE])`, which
+    evaluates True for any boolean — so `hide: false` previously set
+    `self.hide = True`. With inheritance, that broke the only way for a
+    subtype to clear an inherited `hide: true` from a base placeholder."""
+    assert Property({"property": "p", "hide": False}).hide is False
+    assert Property({"property": "p", "hide": True}).hide is True
+    assert Property({"property": "p"}).hide is False
+
+
+def test_disable_false_actually_disables_disabling():
+    assert Property({"property": "p", "disable": False}).disable is False
+    assert Property({"property": "p", "disable": True}).disable is True
+    assert Property({"property": "p"}).disable is False

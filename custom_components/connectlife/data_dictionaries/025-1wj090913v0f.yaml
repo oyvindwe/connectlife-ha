@@ -2,6 +2,7 @@
 properties:
 - property: ApplicationPermissions
   # 1 = not granted (No remote control allowed), 3 = granted (Remote control allowed) ?
+  hide: false
   sensor:
     read_only: true
     device_class: enum
@@ -120,12 +121,6 @@ properties:
       41: "power49"
       42: "auto"
 
-- property: Sound_setting
-  # Sample value: 3 
-  sensor:
-    read_only: true
-  icon: 'mdi:volume-high'
-
 - property: Spin_speed_rpm
   # Sample value: 12 (1200 rpm)
   select:
@@ -157,4 +152,3 @@ properties:
       120: "120_min"
       180: "180_min"
       240: "240_min"
-

@@ -1,12 +1,5 @@
 # Washing Machine
 properties:
-- property: AutoDose_flag
-  icon: mdi:tray-arrow-up
-  sensor:
-    device_class: enum
-    options:
-      0: "unavailable"
-      1: "available"
 - property: Current_program_phase
   sensor:
     device_class: enum

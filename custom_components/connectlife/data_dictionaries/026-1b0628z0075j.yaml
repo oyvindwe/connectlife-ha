@@ -10,3 +10,5 @@ properties:
       min_value: 2
   - property: sf_sr_mutex_mode
     switch: {}
+    hide: false
+    entity_category: config

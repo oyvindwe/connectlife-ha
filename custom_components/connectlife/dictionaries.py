@@ -338,10 +338,8 @@ class Property:
     def __init__(self, entry: dict):
         self.name = entry[PROPERTY]
         self.icon = _val(entry, ICON) or None
-        self.hide = entry[HIDE] == bool(entry[HIDE]) if HIDE in entry else False
-        self.disable = (
-            entry[DISABLE] == bool(entry[DISABLE]) if DISABLE in entry else False
-        )
+        self.hide = bool(entry[HIDE]) if HIDE in entry else False
+        self.disable = bool(entry[DISABLE]) if DISABLE in entry else False
         self.unavailable = _val(entry, UNAVAILABLE)
         entity_category = _val(entry, ENTITY_CATEGORY)
         self.entity_category = (

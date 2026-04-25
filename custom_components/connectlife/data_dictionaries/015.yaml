@@ -565,7 +565,6 @@ properties:
   - property: Temperature_unit_status
     hide: true
   - property: Time_program_set_duration_status
-    hide: true
   - property: Total_energy_consumption
     sensor:
       state_class: total_increasing
