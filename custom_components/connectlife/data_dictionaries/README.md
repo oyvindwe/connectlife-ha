@@ -18,17 +18,30 @@ will just be ignored for feature variants that don't expose that property.
 
 ### Property inheritance in feature overrides
 
-Any field in a property can be overridden in a feature file; unspecified fields are inherited from the base
-type file. If the override changes the platform type (e.g., from `sensor:` to `select:`), the override's
-platform block replaces the base's. Top-level fields (`icon`, `hide`, `disable`, `entity_category`,
-`unavailable`, `combine`) always inherit.
+Any field in a property can be overridden in a feature file; unspecified fields are inherited from the
+base type file. If the override changes the platform type (e.g., from `sensor:` to `select:`), the
+override's platform block replaces the base's.
 
-Collections (`options`, `combine`, `command`, dict-valued `min_value` / `max_value`) replace as a whole —
-there is no per-key merging inside them.
+The following top-level fields always inherit, even across platform changes:
+
+- `icon`
+- `hide`
+- `disable`
+- `entity_category`
+- `unavailable`
+- `combine` — if you change the platform and want to drop the base's combine sources, clear it with
+  `combine: null`.
+
+Collections replace as a whole — there is no per-key merging inside them:
+
+- `options`
+- `combine`
+- `command`
+- dict-valued `min_value` / `max_value`
 
 Set a field to `null` to explicitly unset what the base specified — useful for opting a sensor out of
-long-term statistics with `state_class: null`, or dropping a `unit:` set in the base. To suppress an entity
-entirely, use `disable: true`.
+long-term statistics with `state_class: null`, or dropping a `unit:` set in the base. To suppress an
+entity entirely, use `disable: true`.
 
 Example: the base specifies the full mapping, the feature override carries only the difference.
 
