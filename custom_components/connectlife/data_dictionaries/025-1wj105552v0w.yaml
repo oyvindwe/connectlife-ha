@@ -14,7 +14,6 @@ properties:
       10: finished
       11: delay
 - property: ExtraRinseNum
-  icon: mdi:tray-plus
   select:
     options:
       0: "0"
@@ -24,7 +23,6 @@ properties:
       4: "4"
       5: "5"
 - property: Selected_program_ID
-  icon: mdi:tshirt-crew
   select:
     options:
       1: "cotton_dry"
@@ -62,7 +60,6 @@ properties:
       60: "600"
       0: "none"
 - property: dry_time
-  icon: mdi:tumble-dryer
   select:
     options:
       1: "iron"

@@ -118,7 +118,7 @@ properties:
   - property: Door_status
     unavailable: 0
     hide: true
-    icon: mdi:square
+    icon: mdi:door
     binary_sensor:
       device_class: door
       options:

@@ -13,7 +13,6 @@ properties:
       8: drying
       10: finished
 - property: ExtraRinseNum
-  icon: mdi:tray-plus
   select:
     options:
       0: "0"
@@ -21,7 +20,6 @@ properties:
       2: "2"
       3: "3"
 - property: Selected_program_ID
-  icon: mdi:tshirt-crew
   select:
     options:
       1: "cotton_dry"

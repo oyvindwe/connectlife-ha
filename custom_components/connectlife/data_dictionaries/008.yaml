@@ -211,7 +211,7 @@ properties:
   - property: t_fan_mute
     switch:
       device_class: switch
-    icon: mdi:volume-variant-off
+    icon: mdi:volume-off
   - property: t_fan_speed
     climate:
       target: fan_mode

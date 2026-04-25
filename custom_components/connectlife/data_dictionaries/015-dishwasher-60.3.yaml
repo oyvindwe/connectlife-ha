@@ -38,4 +38,3 @@ properties:
       command:
         name: Time_program_set_duration
         adjust: 1
-    icon: mdi:timer-outline

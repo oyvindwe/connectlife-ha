@@ -14,7 +14,6 @@ properties:
       10: finished
       11: delay_start_waiting
 - property: dry_time
-  icon: mdi:tumble-dryer
   select:
     options:
       0: "none"
@@ -28,7 +27,6 @@ properties:
       180: "180"
       240: "240"
 - property: Selected_program_ID
-  icon: mdi:tshirt-crew
   select:
     options:
       1: "cotton_dry"

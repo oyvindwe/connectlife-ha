@@ -222,7 +222,7 @@ properties:
       options:
         1: off
         2: on
-    icon: mdi:folder-open-outline
+    icon: mdi:door
   - property: Energy_consumption_in_running_program
     sensor:
       state_class: total_increasing
@@ -396,7 +396,7 @@ properties:
       command:
         name: Feedback_volumen_setting
         adjust: 1
-    icon: mdi:volume-low
+    icon: mdi:volume-high
   - property: Fill_salt
     binary_sensor:
       device_class: problem
@@ -448,7 +448,7 @@ properties:
       command:
         name: Notification_volumen_setting
         adjust: 1
-    icon: mdi:volume-low
+    icon: mdi:volume-high
   - property: Odor_control_setting
     entity_category: config
     unavailable: 0
@@ -500,7 +500,7 @@ properties:
   - property: Selected_program_auto_door_open_function
     binary_sensor:
       device_class: door
-    icon: mdi:folder-open-outline
+    icon: mdi:door
     hide: true
   - property: Selected_program_dry_function
     hide: true
@@ -565,6 +565,7 @@ properties:
   - property: Temperature_unit_status
     hide: true
   - property: Time_program_set_duration_status
+    icon: mdi:timer
   - property: Total_energy_consumption
     sensor:
       state_class: total_increasing

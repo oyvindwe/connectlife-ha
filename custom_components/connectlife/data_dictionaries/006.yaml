@@ -19,7 +19,7 @@ properties:
     unit: W
     read_only: true
     state_class: measurement
-  icon: mdi:flash
+  icon: mdi:lightning-bolt
 - property: f_temp_in
   icon: mdi:thermometer
   climate:
