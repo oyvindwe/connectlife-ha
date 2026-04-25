@@ -252,3 +252,21 @@ def test_state_class_explicit_value_sets_flag():
 
     assert sensor.state_class is not None
     assert sensor.state_class_explicit is True
+
+
+def test_unknown_value_zero_is_honored():
+    """`unknown_value: 0` should be preserved as 0, not silently dropped.
+    A device reporting 0 (e.g., probe removed, sensor off) means "unknown",
+    and the YAML author signals that with the explicit 0 sentinel."""
+    sensor = Sensor("oven_temperature", {"unknown_value": 0})
+    assert sensor.unknown_value == 0
+
+
+def test_unknown_value_null_is_none():
+    sensor = Sensor("p", {"unknown_value": None})
+    assert sensor.unknown_value is None
+
+
+def test_unknown_value_absent_is_none():
+    sensor = Sensor("p", {})
+    assert sensor.unknown_value is None

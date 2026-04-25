@@ -116,11 +116,7 @@ class Climate:
             TEMPERATURE_UNIT,
         ]:
             _LOGGER.warning("Missing climate.options for %s", name)
-        self.unknown_value = (
-            climate[UNKNOWN_VALUE]
-            if UNKNOWN_VALUE in climate and climate[UNKNOWN_VALUE]
-            else None
-        )
+        self.unknown_value = _val(climate, UNKNOWN_VALUE)
         self.min_value = _val(climate, MIN_VALUE)
         self.max_value = _val(climate, MAX_VALUE)
 
@@ -220,11 +216,7 @@ class Sensor:
     def __init__(self, name: str, sensor: dict | None):
         if sensor is None:
             sensor = {}
-        self.unknown_value = (
-            sensor[UNKNOWN_VALUE]
-            if UNKNOWN_VALUE in sensor and sensor[UNKNOWN_VALUE]
-            else None
-        )
+        self.unknown_value = _val(sensor, UNKNOWN_VALUE)
         self.read_only = _val(sensor, READ_ONLY)
         self.unit = _val(sensor, UNIT) or None
         self.multiplier = _val(sensor, MULTIPLIER)
@@ -321,11 +313,7 @@ class WaterHeater:
             _LOGGER.warning(
                 "Require at least 2 valid states in water_heater.options for %s", name
             )
-        self.unknown_value = (
-            water_heater[UNKNOWN_VALUE]
-            if UNKNOWN_VALUE in water_heater and water_heater[UNKNOWN_VALUE]
-            else None
-        )
+        self.unknown_value = _val(water_heater, UNKNOWN_VALUE)
         self.min_value = _val(water_heater, MIN_VALUE)
         self.max_value = _val(water_heater, MAX_VALUE)
 
