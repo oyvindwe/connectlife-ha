@@ -2649,8 +2649,7 @@
       "sl1_power_level": {
         "name": "Zone 1 vermogensniveau",
         "state": {
-          "boost": "Boost",
-          "off": "Uit"
+          "boost": "Boost"
         }
       },
       "sl1_power_level_max": {
@@ -2739,8 +2738,7 @@
       "sl2_power_level": {
         "name": "Zone 2 vermogensniveau",
         "state": {
-          "boost": "Boost",
-          "off": "Uit"
+          "boost": "Boost"
         }
       },
       "sl2_power_level_max": {
@@ -2829,8 +2827,7 @@
       "sl3_power_level": {
         "name": "Zone 3 vermogensniveau",
         "state": {
-          "boost": "Boost",
-          "off": "Uit"
+          "boost": "Boost"
         }
       },
       "sl3_power_level_max": {
@@ -2919,8 +2916,7 @@
       "sl4_power_level": {
         "name": "Zone 4 vermogensniveau",
         "state": {
-          "boost": "Boost",
-          "off": "Uit"
+          "boost": "Boost"
         }
       },
       "sl4_power_level_max": {
