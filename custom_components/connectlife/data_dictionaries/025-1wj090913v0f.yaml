@@ -9,12 +9,10 @@ properties:
     options:
       1: "not_granted"
       3: "granted"
-  icon: 'mdi:shield-check'
 - property: Child_lock
   # 1 = active, 0 = inactive
   switch:
     device_class: switch
-  #icon_on: 'mdi:account-lock'
 
 - property: Current_program_phase
   # Machine falls back to the first option from the selected program after machine is completed. Usually option 3 for washing program. 7 for spin-dry only program. 8 for drying only program. Dont know why.
@@ -72,7 +70,6 @@ properties:
 
 - property: DryOpen_DefaultSpinSpeed
   # Sample value: 14
-  icon: 'mdi:rotate-3d-variant'
   sensor:
     read_only: true
     device_class: enum
@@ -91,7 +88,6 @@ properties:
 #    unit: '%'
 
 - property: ExtraRinseNum
-  icon: mdi:tray-plus
   select:
     options:
       0: "none"
@@ -101,7 +97,6 @@ properties:
 
 - property: Selected_program_ID
   # Sample value: 41 (Power 49')
-  icon: 'mdi:washing-machine'
   select:
     options:
       1: "cotton_dry"
@@ -139,7 +134,6 @@ properties:
 
 - property: dry_time
   # Sample value: 3
-  icon: 'mdi:tumble-dryer'
   select:
     options:
       0: "off"

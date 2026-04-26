@@ -42,7 +42,7 @@ properties:
       unit: W
       read_only: true
       state_class: measurement
-    icon: mdi:flash
+    icon: mdi:lightning-bolt
   - property: t_fan_speed
     icon: mdi:fan
     select:

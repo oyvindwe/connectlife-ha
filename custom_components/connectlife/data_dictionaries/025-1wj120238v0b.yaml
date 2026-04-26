@@ -1,7 +1,6 @@
 # Washing Machine
 properties:
   - property: Selected_program_ID
-    icon: mdi:tshirt-crew
     select:
       options:
         6: drum_clean

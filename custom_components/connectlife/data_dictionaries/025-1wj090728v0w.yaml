@@ -13,7 +13,6 @@ properties:
       8: drying
       10: finished
 - property: Selected_program_ID
-  icon: mdi:tshirt-crew
   select:
     options:
       6: "drum_cleaning"

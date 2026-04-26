@@ -48,13 +48,13 @@ properties:
         0: false
         1: true
   - property: Selected_program_remaining_time_in_minutes
-    icon: mdi:update
+    icon: mdi:clock-end
     sensor:
       device_class: duration
       unit: min
       read_only: true
   - property: Remaining_time_of_selected_program
-    icon: mdi:update
+    icon: mdi:clock-end
     sensor:
       device_class: duration
       unit: min
@@ -127,7 +127,7 @@ properties:
       unit: min
       read_only: true
   - property: MainWashTimeUseIndex
-    icon: mdi:clock
+    icon: mdi:clock-outline
     entity_category: diagnostic
     sensor:
       read_only: true
@@ -177,7 +177,7 @@ properties:
       read_only: true
       unit: rpm
   - property: DefaultSpinSpeed
-    icon: mdi:speedometer
+    icon: mdi:sync
     entity_category: diagnostic
     sensor:
       read_only: true
@@ -204,7 +204,7 @@ properties:
     entity_category: config
     switch: {}
   - property: mute
-    icon: mdi:volume-variant-off
+    icon: mdi:volume-off
     entity_category: config
     switch:
       device_class: switch
@@ -219,7 +219,7 @@ properties:
     icon: mdi:iron
     switch: {}
   - property: AutoDose
-    icon: mdi:tray-arrow-up
+    icon: mdi:car-coolant-level
     entity_category: config
     switch: {}
   - property: AutoTubClean
@@ -245,7 +245,7 @@ properties:
     hide: true
     entity_category: diagnostic
   - property: AutoDose_flag
-    icon: mdi:tray-arrow-up
+    icon: mdi:car-coolant-level
     entity_category: diagnostic
     sensor:
       device_class: enum
@@ -527,6 +527,7 @@ properties:
     hide: true
     entity_category: diagnostic
   - property: QuickerMode
+    icon: mdi:clock-fast
   - property: Quiet_model
     hide: true
     entity_category: diagnostic
@@ -929,6 +930,7 @@ properties:
     entity_category: diagnostic
   - property: ApplicationPermissions
     hide: true
+    icon: mdi:cellphone-wireless
   - property: BathingWaterPump_Flag
     hide: true
     entity_category: diagnostic
@@ -957,6 +959,7 @@ properties:
     hide: true
     entity_category: diagnostic
   - property: DryOpen_DefaultSpinSpeed
+    icon: mdi:sync
   - property: FlexibleSpinTime_Flag
     sensor:
       read_only: true
@@ -1126,6 +1129,7 @@ properties:
     sensor:
       read_only: true
   - property: ExtraRinseNum
+    icon: mdi:tray-plus
   - property: Filterclean_washCound
     hide: true
     entity_category: diagnostic
@@ -1136,8 +1140,9 @@ properties:
     hide: true
     entity_category: diagnostic
   - property: Selected_program_ID
+    icon: mdi:tshirt-crew
   - property: Spin_speed_rpm
-    icon: mdi:rotate-3d-variant
+    icon: mdi:sync
     select:
       options:
         0: none
@@ -1147,11 +1152,12 @@ properties:
         12: "1200"
         14: "1400"
   - property: dry_time
+    icon: mdi:tumble-dryer
   - property: once_strong_step_time
     hide: true
     entity_category: diagnostic
   - property: temperature
-    icon: mdi:thermometer-lines
+    icon: mdi:thermometer
     select:
       options:
         0: cold

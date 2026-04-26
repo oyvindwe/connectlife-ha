@@ -4,7 +4,6 @@ properties:
   hide: false
   sensor:
     read_only: true
-  icon: 'mdi:shield-check'
 - property: Current_program_phase
   sensor:
     device_class: enum
@@ -32,7 +31,6 @@ properties:
   sensor:
     unit: times
 - property: Selected_program_ID
-  icon: mdi:playlist-check
   sensor:
     read_only: true
     device_class: enum
@@ -57,10 +55,8 @@ properties:
   sensor:
     read_only: true
     unit: rpm
-  icon: 'mdi:speedometer'
 - property: temperature
   sensor:
     read_only: true
     device_class: temperature
     unit: °C
-  icon: 'mdi:thermometer'

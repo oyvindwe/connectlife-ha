@@ -14,7 +14,6 @@ properties:
         10: finished
         11: delay_start_waiting
   - property: Selected_program_ID
-    icon: mdi:playlist-check
     select:
       options:
         1: cotton_dry
@@ -39,7 +38,6 @@ properties:
         55: hand_wash
         90: auto
   - property: QuickerMode
-    icon: mdi:clock-fast
     select:
       options:
         0: none
@@ -53,7 +51,6 @@ properties:
       unit: h
   - property: ApplicationPermissions
     hide: false
-    icon: mdi:cellphone-wireless
     sensor:
       read_only: true
       device_class: enum

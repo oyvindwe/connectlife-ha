@@ -50,12 +50,12 @@ properties:
       options:
         1: off
         2: on
-    icon: mdi:square-circle
+    icon: mdi:door
   - property: DownLight_LightTime
     # Sample value: 0
     hide: true
   - property: Drum_Light
-    icon: mdi:lightbulb-on
+    icon: mdi:lightbulb
     entity_category: config
     switch:
   - property: Dry_Level
@@ -158,16 +158,17 @@ properties:
   - property: Language
     # Sample value: 0
   - property: Natural_Dry
-    icon: mdi:hair-dryer
+    icon: mdi:tumble-dryer
     switch:
   - property: Night_Dry
     # Sample value: 0
   - property: Pause_AntiCrease_flag
     # Sample value: 0
   - property: QuickerMode
+    icon: mdi:clock-fast
     # Sample value: 0
   - property: Remaining_time_of_selected_program
-    icon: mdi:update
+    icon: mdi:clock-end
     sensor:
       device_class: duration
       unit: min
@@ -199,7 +200,7 @@ properties:
       device_class: duration
       unit: min
       read_only: true
-    icon: mdi:timer
+    icon: mdi:clock-end
   - property: Selected_program_total_running_time
     icon: mdi:timer
     sensor:
@@ -315,7 +316,7 @@ properties:
         2: running
       read_only: true
   - property: mute
-    icon: mdi:volume-mute
+    icon: mdi:volume-off
     entity_category: config
     switch:
   - property: parse_lib_ver
