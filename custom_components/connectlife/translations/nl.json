@@ -78,6 +78,9 @@
       "alarm_auto_dose_refill": {
         "name": "Auto doseer bijvullen"
       },
+      "alarm_auto_program_ended": {
+        "name": "Automatisch programma be\u00ebindigd"
+      },
       "alarm_auto_program_notification": {
         "name": "Auto program melding"
       },
@@ -357,8 +360,17 @@
       "ali_wifi_fault_flag": {
         "name": "Wifi fout"
       },
+      "auto_boost": {
+        "name": "Auto boost"
+      },
+      "auto_bridge": {
+        "name": "Automatische brug"
+      },
       "auto_dose_refill": {
         "name": "Auto doseer bijvullen"
+      },
+      "auto_timer": {
+        "name": "Automatische timer"
       },
       "charcoal_filter_expiration_alarm": {
         "name": "Einde levensduur koolstoffilter"
@@ -368,6 +380,9 @@
       },
       "charcoal_filter_time_reset": {
         "name": "Koolstoffilter tijd reset"
+      },
+      "chef_mode": {
+        "name": "Chef-modus"
       },
       "child_lock": {
         "name": "Kinderbeveiliging"
@@ -663,6 +678,15 @@
       "float_switch": {
         "name": "Vlotterschakelaar"
       },
+      "fota_set": {
+        "name": "FOTA instellen"
+      },
+      "fota_set_flag": {
+        "name": "FOTA instel-flag"
+      },
+      "fota_status": {
+        "name": "FOTA-status"
+      },
       "free_defrosting_failure": {
         "name": "Vriezer ontdooien mislukt"
       },
@@ -716,6 +740,15 @@
       },
       "hard_pairing_status": {
         "name": "Harde koppelingsstatus"
+      },
+      "hard_pairing_unpair_all_set_flag": {
+        "name": "Hard pairing alles loskoppelen flag"
+      },
+      "hardpairingstatus": {
+        "name": "Hard pairing status"
+      },
+      "hardpairingunpairall": {
+        "name": "Hard pairing alles loskoppelen"
       },
       "hob_status": {
         "name": "Kookplaatstatus"
@@ -798,11 +831,17 @@
       "open_variation_door_alarm": {
         "name": "Variatie deur open alarm"
       },
+      "permanent_pot_detection": {
+        "name": "Permanente pandetectie"
+      },
       "preheat": {
         "name": "Voorverwarmen"
       },
       "quiet_mode_status": {
         "name": "Stille modus status"
+      },
+      "recovery": {
+        "name": "Herstel"
       },
       "reed_switch": {
         "name": "Reed schakelaar"
@@ -870,6 +909,9 @@
       "remote_control_monitoring_set_commands_actions": {
         "name": "Afstandsbediening"
       },
+      "remote_controlmode": {
+        "name": "Afstandsbedieningsmodus"
+      },
       "right_free_sensor_failure": {
         "name": "Rechter sensorstoring vrije ruimte"
       },
@@ -924,6 +966,9 @@
       "sl1_alarm_automatic_switch_off_zone": {
         "name": "Zone 1 automatisch uitgeschakeld"
       },
+      "sl1_alarm_ntc_coil": {
+        "name": "Zone 1 NTC-spoelalarm"
+      },
       "sl1_alarm_ntc_coil_overheating": {
         "name": "Zone 1 spoel oververhitting"
       },
@@ -939,6 +984,9 @@
       "sl1_pot_detected": {
         "name": "Zone 1 pot gedetecteerd"
       },
+      "sl1_residual_heat_signal": {
+        "name": "Zone 1 restwarmte"
+      },
       "sl1_status": {
         "name": "Zone 1 status"
       },
@@ -947,6 +995,9 @@
       },
       "sl2_alarm_automatic_switch_off_zone": {
         "name": "Zone 2 automatisch uitgeschakeld"
+      },
+      "sl2_alarm_ntc_coil": {
+        "name": "Zone 2 NTC-spoelalarm"
       },
       "sl2_alarm_ntc_coil_overheating": {
         "name": "Zone 2 spoel oververhitting"
@@ -963,6 +1014,9 @@
       "sl2_pot_detected": {
         "name": "Zone 2 pot gedetecteerd"
       },
+      "sl2_residual_heat_signal": {
+        "name": "Zone 2 restwarmte"
+      },
       "sl2_status": {
         "name": "Zone 2 status"
       },
@@ -971,6 +1025,9 @@
       },
       "sl3_alarm_automatic_switch_off_zone": {
         "name": "Zone 3 automatisch uitgeschakeld"
+      },
+      "sl3_alarm_ntc_coil": {
+        "name": "Zone 3 NTC-spoelalarm"
       },
       "sl3_alarm_ntc_coil_overheating": {
         "name": "Zone 3 spoel oververhitting"
@@ -987,6 +1044,9 @@
       "sl3_pot_detected": {
         "name": "Zone 3 pot gedetecteerd"
       },
+      "sl3_residual_heat_signal": {
+        "name": "Zone 3 restwarmte"
+      },
       "sl3_status": {
         "name": "Zone 3 status"
       },
@@ -995,6 +1055,9 @@
       },
       "sl4_alarm_automatic_switch_off_zone": {
         "name": "Zone 4 automatisch uitgeschakeld"
+      },
+      "sl4_alarm_ntc_coil": {
+        "name": "Zone 4 NTC-spoelalarm"
       },
       "sl4_alarm_ntc_coil_overheating": {
         "name": "Zone 4 spoel oververhitting"
@@ -1010,6 +1073,9 @@
       },
       "sl4_pot_detected": {
         "name": "Zone 4 pot gedetecteerd"
+      },
+      "sl4_residual_heat_signal": {
+        "name": "Zone 4 restwarmte"
       },
       "sl4_status": {
         "name": "Zone 4 status"
@@ -1118,6 +1184,9 @@
       },
       "t_beep": {
         "name": "Piep"
+      },
+      "test_mode": {
+        "name": "Testmodus"
       },
       "tx_failure": {
         "name": "TX storing"
@@ -2537,26 +2606,77 @@
           "timer": "Timer"
         }
       },
+      "sl1_cooking_method": {
+        "name": "Zone 1 kookmethode",
+        "state": {
+          "method_1": "Methode 1",
+          "method_2": "Methode 2",
+          "none": "Geen"
+        }
+      },
+      "sl1_function_status": {
+        "name": "Zone 1 functiestatus",
+        "state": {
+          "function_1": "Functie 1",
+          "function_2": "Functie 2",
+          "none": "Geen"
+        }
+      },
       "sl1_functions": {
         "name": "Zone 1 functie",
         "state": {
           "boil": "Koken",
+          "fry": "Bakken",
           "grill": "Grillen",
           "keep_warm": "Warm houden",
+          "keep_warm_and_fry": "Warm houden en bakken",
           "none": "Geen",
           "roast": "Braden",
           "simmer": "Sudderen",
+          "slow_cook": "Langzaam garen",
           "wok": "Wok"
         }
+      },
+      "sl1_hestan_cue_set_temperature": {
+        "name": "Zone 1 Hestan Cue ingestelde temperatuur"
+      },
+      "sl1_hestan_cue_temperature": {
+        "name": "Zone 1 Hestan Cue temperatuur"
       },
       "sl1_ntc_sensor": {
         "name": "Zone 1 NTC sensor"
       },
       "sl1_power_level": {
-        "name": "Zone 1 vermogensniveau"
+        "name": "Zone 1 vermogensniveau",
+        "state": {
+          "boost": "Boost",
+          "off": "Uit"
+        }
       },
       "sl1_power_level_max": {
         "name": "Zone 1 maximaal vermogensniveau"
+      },
+      "sl1_sand_timer_status": {
+        "name": "Zone 1 zandlopertimer-status",
+        "state": {
+          "active": "Actief",
+          "ended": "Be\u00ebindigd",
+          "inactive": "Inactief",
+          "paused": "Gepauzeerd",
+          "stopped": "Gestopt"
+        }
+      },
+      "sl1_stopwatch_status": {
+        "name": "Zone 1 stopwatch-status",
+        "state": {
+          "active": "Actief",
+          "hold": "Vastgehouden",
+          "inactive": "Inactief",
+          "paused": "Gepauzeerd"
+        }
+      },
+      "sl1_temperature": {
+        "name": "Zone 1 temperatuur"
       },
       "sl1_zone_shape": {
         "name": "Zone 1 vorm",
@@ -2576,26 +2696,77 @@
           "timer": "Timer"
         }
       },
+      "sl2_cooking_method": {
+        "name": "Zone 2 kookmethode",
+        "state": {
+          "method_1": "Methode 1",
+          "method_2": "Methode 2",
+          "none": "Geen"
+        }
+      },
+      "sl2_function_status": {
+        "name": "Zone 2 functiestatus",
+        "state": {
+          "function_1": "Functie 1",
+          "function_2": "Functie 2",
+          "none": "Geen"
+        }
+      },
       "sl2_functions": {
         "name": "Zone 2 functie",
         "state": {
           "boil": "Koken",
+          "fry": "Bakken",
           "grill": "Grillen",
           "keep_warm": "Warm houden",
+          "keep_warm_and_fry": "Warm houden en bakken",
           "none": "Geen",
           "roast": "Braden",
           "simmer": "Sudderen",
+          "slow_cook": "Langzaam garen",
           "wok": "Wok"
         }
+      },
+      "sl2_hestan_cue_set_temperature": {
+        "name": "Zone 2 Hestan Cue ingestelde temperatuur"
+      },
+      "sl2_hestan_cue_temperature": {
+        "name": "Zone 2 Hestan Cue temperatuur"
       },
       "sl2_ntc_sensor": {
         "name": "Zone 2 NTC sensor"
       },
       "sl2_power_level": {
-        "name": "Zone 2 vermogensniveau"
+        "name": "Zone 2 vermogensniveau",
+        "state": {
+          "boost": "Boost",
+          "off": "Uit"
+        }
       },
       "sl2_power_level_max": {
         "name": "Zone 2 maximaal vermogensniveau"
+      },
+      "sl2_sand_timer_status": {
+        "name": "Zone 2 zandlopertimer-status",
+        "state": {
+          "active": "Actief",
+          "ended": "Be\u00ebindigd",
+          "inactive": "Inactief",
+          "paused": "Gepauzeerd",
+          "stopped": "Gestopt"
+        }
+      },
+      "sl2_stopwatch_status": {
+        "name": "Zone 2 stopwatch-status",
+        "state": {
+          "active": "Actief",
+          "hold": "Vastgehouden",
+          "inactive": "Inactief",
+          "paused": "Gepauzeerd"
+        }
+      },
+      "sl2_temperature": {
+        "name": "Zone 2 temperatuur"
       },
       "sl2_zone_shape": {
         "name": "Zone 2 vorm",
@@ -2615,26 +2786,77 @@
           "timer": "Timer"
         }
       },
+      "sl3_cooking_method": {
+        "name": "Zone 3 kookmethode",
+        "state": {
+          "method_1": "Methode 1",
+          "method_2": "Methode 2",
+          "none": "Geen"
+        }
+      },
+      "sl3_function_status": {
+        "name": "Zone 3 functiestatus",
+        "state": {
+          "function_1": "Functie 1",
+          "function_2": "Functie 2",
+          "none": "Geen"
+        }
+      },
       "sl3_functions": {
         "name": "Zone 3 functie",
         "state": {
           "boil": "Koken",
+          "fry": "Bakken",
           "grill": "Grillen",
           "keep_warm": "Warm houden",
+          "keep_warm_and_fry": "Warm houden en bakken",
           "none": "Geen",
           "roast": "Braden",
           "simmer": "Sudderen",
+          "slow_cook": "Langzaam garen",
           "wok": "Wok"
         }
+      },
+      "sl3_hestan_cue_set_temperature": {
+        "name": "Zone 3 Hestan Cue ingestelde temperatuur"
+      },
+      "sl3_hestan_cue_temperature": {
+        "name": "Zone 3 Hestan Cue temperatuur"
       },
       "sl3_ntc_sensor": {
         "name": "Zone 3 NTC sensor"
       },
       "sl3_power_level": {
-        "name": "Zone 3 vermogensniveau"
+        "name": "Zone 3 vermogensniveau",
+        "state": {
+          "boost": "Boost",
+          "off": "Uit"
+        }
       },
       "sl3_power_level_max": {
         "name": "Zone 3 maximaal vermogensniveau"
+      },
+      "sl3_sand_timer_status": {
+        "name": "Zone 3 zandlopertimer-status",
+        "state": {
+          "active": "Actief",
+          "ended": "Be\u00ebindigd",
+          "inactive": "Inactief",
+          "paused": "Gepauzeerd",
+          "stopped": "Gestopt"
+        }
+      },
+      "sl3_stopwatch_status": {
+        "name": "Zone 3 stopwatch-status",
+        "state": {
+          "active": "Actief",
+          "hold": "Vastgehouden",
+          "inactive": "Inactief",
+          "paused": "Gepauzeerd"
+        }
+      },
+      "sl3_temperature": {
+        "name": "Zone 3 temperatuur"
       },
       "sl3_zone_shape": {
         "name": "Zone 3 vorm",
@@ -2654,26 +2876,77 @@
           "timer": "Timer"
         }
       },
+      "sl4_cooking_method": {
+        "name": "Zone 4 kookmethode",
+        "state": {
+          "method_1": "Methode 1",
+          "method_2": "Methode 2",
+          "none": "Geen"
+        }
+      },
+      "sl4_function_status": {
+        "name": "Zone 4 functiestatus",
+        "state": {
+          "function_1": "Functie 1",
+          "function_2": "Functie 2",
+          "none": "Geen"
+        }
+      },
       "sl4_functions": {
         "name": "Zone 4 functie",
         "state": {
           "boil": "Koken",
+          "fry": "Bakken",
           "grill": "Grillen",
           "keep_warm": "Warm houden",
+          "keep_warm_and_fry": "Warm houden en bakken",
           "none": "Geen",
           "roast": "Braden",
           "simmer": "Sudderen",
+          "slow_cook": "Langzaam garen",
           "wok": "Wok"
         }
+      },
+      "sl4_hestan_cue_set_temperature": {
+        "name": "Zone 4 Hestan Cue ingestelde temperatuur"
+      },
+      "sl4_hestan_cue_temperature": {
+        "name": "Zone 4 Hestan Cue temperatuur"
       },
       "sl4_ntc_sensor": {
         "name": "Zone 4 NTC sensor"
       },
       "sl4_power_level": {
-        "name": "Zone 4 vermogensniveau"
+        "name": "Zone 4 vermogensniveau",
+        "state": {
+          "boost": "Boost",
+          "off": "Uit"
+        }
       },
       "sl4_power_level_max": {
         "name": "Zone 4 maximaal vermogensniveau"
+      },
+      "sl4_sand_timer_status": {
+        "name": "Zone 4 zandlopertimer-status",
+        "state": {
+          "active": "Actief",
+          "ended": "Be\u00ebindigd",
+          "inactive": "Inactief",
+          "paused": "Gepauzeerd",
+          "stopped": "Gestopt"
+        }
+      },
+      "sl4_stopwatch_status": {
+        "name": "Zone 4 stopwatch-status",
+        "state": {
+          "active": "Actief",
+          "hold": "Vastgehouden",
+          "inactive": "Inactief",
+          "paused": "Gepauzeerd"
+        }
+      },
+      "sl4_temperature": {
+        "name": "Zone 4 temperatuur"
       },
       "sl4_zone_shape": {
         "name": "Zone 4 vorm",
@@ -3515,6 +3788,9 @@
         "name": "Totale looptijd"
       },
       "total_time_of_cooking_in_hours": {
+        "name": "Totale kooktijd"
+      },
+      "total_time_of_cooking_in_minute": {
         "name": "Totale kooktijd"
       },
       "total_water_consumption": {
