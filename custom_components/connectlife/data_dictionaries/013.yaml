@@ -727,6 +727,7 @@ properties:
   sensor:
     device_class: temperature
     unit: property.Oven_temperature_unit
+    state_class: measurement
 - property: Grill_plate_status
   unavailable: 0
   binary_sensor: {}
@@ -849,11 +850,13 @@ properties:
     device_class: temperature
     unit: property.Oven_temperature_unit
     unknown_value: 65535
+    state_class: measurement
 - property: Meat_probe_set_temperature
   sensor:
     device_class: temperature
     unit: property.Oven_temperature_unit
     unknown_value: 65535
+    state_class: measurement
 - property: Meat_probe_status
   unavailable: 0
   sensor:
@@ -908,6 +911,7 @@ properties:
   sensor:
     device_class: temperature
     unit: property.Oven_temperature_unit
+    state_class: measurement
 - property: Oven_temperature_unit
   unavailable: 0
   hide: true
@@ -1567,6 +1571,7 @@ properties:
   sensor:
     device_class: temperature
     unit: property.Oven_temperature_unit
+    state_class: measurement
 - property: Step_1_status
   unavailable: 0
   hide: true
@@ -1721,6 +1726,7 @@ properties:
   sensor:
     device_class: temperature
     unit: property.Oven_temperature_unit
+    state_class: measurement
 - property: Step_2_status
   unavailable: 0
   hide: true
@@ -1878,6 +1884,7 @@ properties:
     device_class: temperature
     unit: property.Oven_temperature_unit
     unknown_value: 65535
+    state_class: measurement
 - property: Step_3_status
   unavailable: 0
   hide: true
@@ -2028,6 +2035,7 @@ properties:
     device_class: temperature
     unit: property.Oven_temperature_unit
     unknown_value: 65535
+    state_class: measurement
 - property: Step_after_bake_status
   unavailable: 0
   hide: true
@@ -2170,6 +2178,7 @@ properties:
   sensor:
     device_class: temperature
     unit: property.Oven_temperature_unit
+    state_class: measurement
 - property: Step_pre_bake_status
   unavailable: 0
   hide: true

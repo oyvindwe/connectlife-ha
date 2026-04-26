@@ -213,6 +213,7 @@ properties:
       device_class: current
       unit: A
       read_only: true
+      state_class: measurement
     hide: true
   - property: f_heat_qvalue
     sensor:
@@ -244,6 +245,7 @@ properties:
     sensor:
       device_class: voltage
       unit: V
+      state_class: measurement
     hide: true
     entity_category: diagnostic
   - property: t_8heat

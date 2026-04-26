@@ -80,11 +80,13 @@ properties:
       device_class: humidity
       unit: "%"
       unknown_value: 255
+      state_class: measurement
   - property: Bundling_Temperature
     sensor:
       device_class: temperature
       unit: celsius
       unknown_value: 255
+      state_class: measurement
   - property: Bundling_sensor_setting_status
     # Example value: 0
   - property: Child_Lock_status

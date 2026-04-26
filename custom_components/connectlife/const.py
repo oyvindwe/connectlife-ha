@@ -11,6 +11,12 @@ CONF_DEVELOPMENT_MODE = "development_mode"
 CONF_DISABLE_BEEP = "disable_beep"
 CONF_TEST_SERVER_URL = "test_server_url"
 
+# Set by the orphaned-statistics repair flow once the user clicks Clear or
+# Ignore. While unset, every setup runs orphan detection so the repair
+# survives missed restarts; once set, detection is skipped permanently for
+# this entry.
+DATA_STATE_CLASS_MIGRATION_DONE = "state_class_migration_done"
+
 ACTION = "action"
 CURRENT_OPERATION = "current_operation"
 HVAC_ACTION = "hvac_action"

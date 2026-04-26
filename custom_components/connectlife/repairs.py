@@ -3,11 +3,13 @@ from __future__ import annotations
 import logging
 
 from homeassistant import data_entry_flow
+from homeassistant.components.recorder import get_instance
 from homeassistant.components.repairs import RepairsFlow
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers import device_registry as dr, issue_registry as ir
 
-from .const import CONF_DEVICES, CONF_DISABLE_BEEP, DOMAIN
+from .const import CONF_DEVICES, CONF_DISABLE_BEEP, DATA_STATE_CLASS_MIGRATION_DONE, DOMAIN
+from .coordinator import ConnectLifeCoordinator
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -100,6 +102,68 @@ class UnsupportedBeepRepairFlow(RepairsFlow):
         )
 
 
+class OrphanedStatisticsRepairFlow(RepairsFlow):
+    """Bulk-clear long-term statistics for sensors that lost ``state_class``."""
+
+    def __init__(self, issue_id: str, data: dict[str, str | int | float | None] | None) -> None:
+        self.issue_id = issue_id
+        self.data = data
+
+    def _mark_migration_done(self) -> None:
+        """Persist that this entry has completed the state-class migration."""
+        if not self.data:
+            return
+        entry_id = str(self.data["entry_id"])
+        entry = self.hass.config_entries.async_get_entry(entry_id)
+        if entry is None:
+            return
+        self.hass.config_entries.async_update_entry(
+            entry,
+            data={**entry.data, DATA_STATE_CLASS_MIGRATION_DONE: True},
+        )
+
+    async def async_step_init(
+            self, user_input: dict[str, str] | None = None
+    ) -> data_entry_flow.FlowResult:
+        return self.async_show_menu(
+            step_id="init",
+            menu_options=["clear", "ignore"],
+        )
+
+    async def async_step_clear(
+            self, user_input: dict[str, str] | None = None
+    ) -> data_entry_flow.FlowResult:
+        if user_input is None:
+            return self.async_show_form(step_id="clear")
+
+        entry_id = str(self.data["entry_id"]) if self.data else None
+        coordinator: ConnectLifeCoordinator | None = (
+            self.hass.data.get(DOMAIN, {}).get(entry_id) if entry_id else None
+        )
+        if coordinator is None:
+            return self.async_abort(reason="entry_not_loaded")
+
+        statistic_ids = await coordinator.find_orphaned_statistics()
+        if statistic_ids:
+            get_instance(self.hass).async_clear_statistics(statistic_ids)
+            _LOGGER.info(
+                "Cleared orphaned long-term statistics for %d entities",
+                len(statistic_ids),
+            )
+        self._mark_migration_done()
+        return self.async_create_entry(title="", data={})
+
+    async def async_step_ignore(
+            self, user_input: dict[str, str] | None = None
+    ) -> data_entry_flow.FlowResult:
+        # Don't set the migration flag here — Home Assistant persists the
+        # ignored state, and detection re-running on every setup keeps the
+        # issue refreshed in "Show ignored repairs" so the user can reopen
+        # this dialog later from there.
+        ir.async_get(self.hass).async_ignore(DOMAIN, self.issue_id, True)
+        return self.async_abort(reason="issue_ignored")
+
+
 async def async_create_fix_flow(
         hass: HomeAssistant,
         issue_id: str,
@@ -110,4 +174,6 @@ async def async_create_fix_flow(
         return UnavailableDeviceRepairFlow(issue_id, data)
     if issue_id.startswith("unsupported_beep."):
         return UnsupportedBeepRepairFlow(issue_id, data)
+    if issue_id.startswith("orphaned_statistics."):
+        return OrphanedStatisticsRepairFlow(issue_id, data)
     raise ValueError(f"Unknown issue: {issue_id}")

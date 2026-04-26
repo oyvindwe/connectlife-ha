@@ -1,6 +1,7 @@
 {
   "domain": "connectlife",
   "name": "ConnectLife",
+  "after_dependencies": ["recorder"],
   "codeowners": ["@oyvindwe"],
   "config_flow": true,
   "documentation": "https://github.com/oyvindwe/connectlife-ha",

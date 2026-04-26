@@ -4,6 +4,7 @@ properties:
       device_class: current
       unit: A
       read_only: true
+      state_class: measurement
     hide: true
   - property: f_power_consumption
     sensor:
@@ -17,6 +18,7 @@ properties:
       device_class: voltage
       unit: V
       read_only: true
+      state_class: measurement
     hide: true
   - property: f_water_tank_temp
     water_heater:

@@ -143,16 +143,19 @@ properties:
       device_class: temperature
       unit: °C
       unknown_value: 0
+      state_class: measurement
   - property: Meat_probe_set_temperature
     sensor:
       device_class: temperature
       unit: °C
       unknown_value: 0
+      state_class: measurement
   - property: Oven_temperature
     sensor:
       device_class: temperature
       unit: °C
       unknown_value: 0
+      state_class: measurement
   - property: Preheat
     binary_sensor:
       device_class: heat
@@ -275,6 +278,7 @@ properties:
     sensor:
       device_class: temperature
       unit: °C
+      state_class: measurement
   - property: Step1_status
     binary_sensor:
       options:
@@ -336,6 +340,7 @@ properties:
     sensor:
       device_class: temperature
       unit: °C
+      state_class: measurement
   - property: Step2_status
     binary_sensor:
       options:
@@ -397,6 +402,7 @@ properties:
     sensor:
       device_class: temperature
       unit: °C
+      state_class: measurement
   - property: Step3_status
     binary_sensor:
       options:

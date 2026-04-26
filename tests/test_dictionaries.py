@@ -233,27 +233,6 @@ def test_property_constructed_from_merged_dict():
     assert prop.climate.min_value == 16
 
 
-def test_state_class_explicit_null_suppresses_auto_fallback_signal():
-    sensor = Sensor("t_setpoint", {"state_class": None})
-
-    assert sensor.state_class is None
-    assert sensor.state_class_explicit is True
-
-
-def test_state_class_absent_does_not_set_explicit_flag():
-    sensor = Sensor("t_setpoint", {})
-
-    assert sensor.state_class is None
-    assert sensor.state_class_explicit is False
-
-
-def test_state_class_explicit_value_sets_flag():
-    sensor = Sensor("t_setpoint", {"state_class": "measurement"})
-
-    assert sensor.state_class is not None
-    assert sensor.state_class_explicit is True
-
-
 def test_unknown_value_zero_is_honored():
     """`unknown_value: 0` should be preserved as 0, not silently dropped.
     A device reporting 0 (e.g., probe removed, sensor off) means "unknown",

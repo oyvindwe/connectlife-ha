@@ -95,6 +95,8 @@ properties:
     hide: true
   - property: compressor_frequency
     hide: true
+    sensor:
+      state_class: measurement
   - property: condensation_fan_failure_status
     hide: true
     entity_category: diagnostic
@@ -171,6 +173,8 @@ properties:
     hide: true
   - property: electric_current
     hide: true
+    sensor:
+      state_class: measurement
   - property: electric_energy_one_tenths_value
     hide: true
   - property: electric_energy_percentile_thousands_value
@@ -187,10 +191,12 @@ properties:
     sensor:
       device_class: humidity
       unit: "%"
+      state_class: measurement
   - property: environment_real_temperature
     sensor:
       device_class: temperature
       unit: °C
+      state_class: measurement
   - property: existing_fuzzy_mode
     entity_category: diagnostic
     binary_sensor:
@@ -309,11 +315,13 @@ properties:
       read_only: true
       device_class: temperature
       unit: °C
+      state_class: measurement
   - property: freeze_min_temperature
     sensor:
       read_only: true
       device_class: temperature
       unit: °C
+      state_class: measurement
   - property: freeze_poweroff_ad
     hide: true
     entity_category: diagnostic
@@ -332,10 +340,12 @@ properties:
     sensor:
       device_class: temperature
       unit: °C
+      state_class: measurement
   - property: freeze_sensor_real_temperature
     sensor:
       device_class: temperature
       unit: °C
+      state_class: measurement
   - property: freeze_temperature
     number:
       device_class: temperature
@@ -366,6 +376,7 @@ properties:
     sensor:
       device_class: temperature
       unit: °C
+      state_class: measurement
   - property: fuzzy_mode
     hide: true
     entity_category: diagnostic
@@ -386,12 +397,14 @@ properties:
     sensor:
       device_class: humidity
       unit: "%"
+      state_class: measurement
   - property: high_temperature
     hide: true
     entity_category: diagnostic
     sensor:
       device_class: temperature
       unit: °C
+      state_class: measurement
   - property: holiday_mode
     entity_category: config
     switch: {}
@@ -511,12 +524,14 @@ properties:
     sensor:
       device_class: humidity
       unit: "%"
+      state_class: measurement
   - property: low_temperature
     hide: true
     entity_category: diagnostic
     sensor:
       device_class: temperature
       unit: °C
+      state_class: measurement
   - property: low_wine_area_c_evaporator_fault
     hide: true
     entity_category: diagnostic
@@ -570,12 +585,14 @@ properties:
     sensor:
       device_class: humidity
       unit: "%"
+      state_class: measurement
   - property: medium_temperature
     hide: true
     entity_category: diagnostic
     sensor:
       device_class: temperature
       unit: °C
+      state_class: measurement
   - property: micro_water_supply_mode
     hide: true
   - property: mid_wine_area_b_evaporator_fault
@@ -672,8 +689,12 @@ properties:
     hide: true
   - property: power_value
     hide: true
+    sensor:
+      state_class: measurement
   - property: power_voltage
     hide: true
+    sensor:
+      state_class: measurement
   - property: quiet_mode_status
     hide: true
     entity_category: diagnostic
@@ -687,18 +708,21 @@ properties:
     sensor:
       device_class: humidity
       unit: "%"
+      state_class: measurement
   - property: real_humidity_b
     hide: true
     entity_category: diagnostic
     sensor:
       device_class: humidity
       unit: "%"
+      state_class: measurement
   - property: real_humidity_c
     hide: true
     entity_category: diagnostic
     sensor:
       device_class: humidity
       unit: "%"
+      state_class: measurement
   - property: ref_light
     hide: true
   - property: refi_temp_2_degree_above_starting_point
@@ -825,11 +849,13 @@ properties:
       read_only: true
       device_class: temperature
       unit: °C
+      state_class: measurement
   - property: refrigerator_min_temperature
     sensor:
       read_only: true
       device_class: temperature
       unit: °C
+      state_class: measurement
   - property: refrigerator_poweroff_ad
     hide: true
   - property: refrigerator_poweron_ad
@@ -838,6 +864,7 @@ properties:
     sensor:
       device_class: temperature
       unit: °C
+      state_class: measurement
   - property: refrigerator_room
     hide: true
   - property: refrigerator_room_open
@@ -861,6 +888,7 @@ properties:
     sensor:
       device_class: temperature
       unit: °C
+      state_class: measurement
   - property: refrigerator_temp_sens_head_failure
     hide: true
     entity_category: diagnostic
@@ -1031,6 +1059,7 @@ properties:
     sensor:
       device_class: temperature
       unit: °C
+      state_class: measurement
   - property: temperature_unit
     hide: true
     entity_category: diagnostic
@@ -1174,12 +1203,14 @@ properties:
       read_only: true
       device_class: temperature
       unit: °C
+      state_class: measurement
   - property: variation_min_temperature
     entity_category: diagnostic
     sensor:
       read_only: true
       device_class: temperature
       unit: °C
+      state_class: measurement
   - property: variation_poweroff_ad
     hide: true
   - property: variation_poweron_ad
@@ -1189,11 +1220,13 @@ properties:
     sensor:
       device_class: temperature
       unit: °C
+      state_class: measurement
   - property: variation_sensor_real_temperature
     entity_category: diagnostic
     sensor:
       device_class: temperature
       unit: °C
+      state_class: measurement
   - property: variation_temperature
     hide: true
     entity_category: diagnostic
