@@ -60,3 +60,4 @@ properties:
     read_only: true
     device_class: temperature
     unit: °C
+    state_class: measurement

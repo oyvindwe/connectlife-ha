@@ -5,12 +5,15 @@ from datetime import timedelta
 
 from connectlife.api import LifeConnectAuthError, LifeConnectError, ConnectLifeApi
 from connectlife.appliance import ConnectLifeAppliance
+from homeassistant.components.recorder import get_instance
+from homeassistant.components.recorder.statistics import list_statistic_ids
 from homeassistant.const import Platform
 from homeassistant.exceptions import ConfigEntryAuthFailed
 from homeassistant.helpers import device_registry as dr, entity_registry as er, issue_registry as ir
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
-from .const import DOMAIN
+from .const import DATA_STATE_CLASS_MIGRATION_DONE, DOMAIN
+from .dictionaries import Dictionaries
 from .messages import format_retry_message
 
 MAX_RETRIES = 3
@@ -136,6 +139,70 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
                     else:
                         # Self repair
                         ir.async_delete_issue(self.hass, DOMAIN, f"unavailable_device.{device_id}")
+
+    async def find_orphaned_statistics(self) -> list[str]:
+        """Return entity_ids of our sensors with stored LTS but no current ``state_class``.
+
+        Sensors lose ``state_class`` when a property is remapped or when the
+        old auto-default to ``measurement`` no longer applies. The recorder
+        keeps the historical data and emits one repair per entity. Collect
+        them so we can offer a single bulk-clear action.
+        """
+        entity_reg = er.async_get(self.hass)
+        candidates: list[str] = []
+        for appliance in self.data.values():
+            dictionary = Dictionaries.get_dictionary(appliance)
+            for name, prop in dictionary.properties.items():
+                if not hasattr(prop, Platform.SENSOR):
+                    continue
+                if prop.sensor.state_class is not None:
+                    continue
+                unique_id = f"{appliance.device_id}-{name}"
+                entity_id = entity_reg.async_get_entity_id(
+                    Platform.SENSOR, DOMAIN, unique_id
+                )
+                if entity_id:
+                    candidates.append(entity_id)
+
+        if not candidates:
+            return []
+
+        recorder = get_instance(self.hass)
+        metas = await recorder.async_add_executor_job(
+            list_statistic_ids, self.hass, set(candidates)
+        )
+        return sorted(m["statistic_id"] for m in metas)
+
+    async def update_orphaned_statistics_issue(self) -> None:
+        """Create or clear the bulk repair issue for orphaned statistics.
+
+        When no orphans are found the migration is effectively complete for
+        this entry — fresh installs and lucky upgraders never had any to
+        clean up. Mark the flag so we don't re-run detection on every
+        future setup.
+        """
+        issue_id = f"orphaned_statistics.{self.config_entry.entry_id}"
+        orphans = await self.find_orphaned_statistics()
+        if not orphans:
+            ir.async_delete_issue(self.hass, DOMAIN, issue_id)
+            self.hass.config_entries.async_update_entry(
+                self.config_entry,
+                data={
+                    **self.config_entry.data,
+                    DATA_STATE_CLASS_MIGRATION_DONE: True,
+                },
+            )
+            return
+        ir.async_create_issue(
+            self.hass,
+            DOMAIN,
+            issue_id,
+            data={"entry_id": self.config_entry.entry_id},
+            is_fixable=True,
+            severity=ir.IssueSeverity.CRITICAL,
+            translation_key="orphaned_statistics",
+            translation_placeholders={"count": str(len(orphans))},
+        )
 
 
 class ConnectLifeEnergyCoordinator(DataUpdateCoordinator[dict[str, float | None]]):

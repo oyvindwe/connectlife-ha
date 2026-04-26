@@ -6703,6 +6703,29 @@
     }
   },
   "issues": {
+    "orphaned_statistics": {
+      "fix_flow": {
+        "abort": {
+          "entry_not_loaded": "The ConnectLife configuration entry is no longer loaded.",
+          "issue_ignored": "Ignored orphaned long-term statistics for ConnectLife sensors."
+        },
+        "step": {
+          "clear": {
+            "description": "This will permanently delete long-term statistics for {count} ConnectLife sensors. Continue?",
+            "title": "Clear orphaned long-term statistics"
+          },
+          "init": {
+            "description": "{count} ConnectLife sensors have stored long-term statistics (LTS) but no longer report a state class. Home Assistant emits a separate repair for each one.\n\nThis is caused by a recent change in the integration: numeric properties no longer default to `state_class: measurement`, so state codes, mode flags, and setpoints are no longer recorded as LTS.\n\n**Clear orphaned statistics** removes the stored LTS rows for all {count} sensors at once. The historical data for these sensors in Settings \u2192 Statistics will be deleted and cannot be recovered. The per-entity Home Assistant repairs will disappear the next time Home Assistant re-validates statistics \u2014 which happens when you open Developer Tools \u2192 Statistics. This bulk repair will not appear again on this configuration entry.\n\n**Ignore** hides this bulk action and leaves the per-entity repairs in place \u2014 fix or ignore each one individually if you want finer-grained control over which sensors keep their history. You can come back to the bulk action later by selecting \"Show ignored repairs\" in the overflow menu on the top right of Settings \u2192 Repairs, then reopening this repair.\n\nTo review the individual sensor repairs before deciding, simply close this window \u2014 the bulk repair stays available as-is.\n\nNote: this issue is marked critical only so it sorts above the per-entity recorder repairs. It is not urgent.",
+            "menu_options": {
+              "clear": "Clear orphaned statistics",
+              "ignore": "Ignore"
+            },
+            "title": "Orphaned long-term statistics ({count} sensors)"
+          }
+        }
+      },
+      "title": "Orphaned long-term statistics ({count} sensors)"
+    },
     "unavailable_device": {
       "fix_flow": {
         "abort": {

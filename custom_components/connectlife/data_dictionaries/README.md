@@ -2,8 +2,7 @@
 
 Mapping files for known appliances are located in this directory. Appliances without a mapping file will still
 be loaded, but with a warning in the log. Their properties will all be mapped to [sensor](#type-sensor) entities,
-with `hidden` set to `true` and `state_class` set to `measurement` (to enable
-[long-term statistics](https://developers.home-assistant.io/docs/core/entity/sensor/#long-term-statistics)).
+with `hidden` set to `true`.
 
 ## Default mapping files
 
@@ -39,9 +38,8 @@ Collections replace as a whole — there is no per-key merging inside them:
 - `command`
 - dict-valued `min_value` / `max_value`
 
-Set a field to `null` to explicitly unset what the base specified — useful for opting a sensor out of
-long-term statistics with `state_class: null`, or dropping a `unit:` set in the base. To suppress an
-entity entirely, use `disable: true`.
+Set a field to `null` to explicitly unset what the base specified — useful for dropping a `unit:` set
+in the base. To suppress an entity entirely, use `disable: true`.
 
 Example: the base specifies the full mapping, the feature override carries only the difference.
 
@@ -93,7 +91,7 @@ The file contains two top level items:
 - `properties`: list of [`Property`](#property)
 
 To make a property visible by default, just add the property to the list. Note that properties you do not map are still
-mapped to [sensor](#type-sensor) entities with `hidden` set to `true` and `state_class` set to `measurement`.
+mapped to [sensor](#type-sensor) entities with `hidden` set to `true`.
 
 Each property is mapped to _one_ entity or _one_ target property. In addition, each `climate` preset is mapped to a
 set of properties and values.
@@ -364,7 +362,7 @@ the `sensor.connectlife` entities, unless the sensor is set to `read_only: true`
 | Item            | Type                                            | Description                                                                                                                                                                                                               |
 |-----------------|-------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `read_only`     | `true`, `false`                                 | If this property is known to be read-only (prevents `set_value` service).                                                                                                                                                 |
-| `state_class`   | `measurement`, `total`, `total_increasing`      | Name of any [SensorStateClass enum](https://developers.home-assistant.io/docs/core/entity/sensor/#available-state-classes). For integer properties, defaults to `measurement`. Not allowed when `device_class` is `enum`. |
+| `state_class`   | `measurement`, `total`, `total_increasing`      | Name of any [SensorStateClass enum](https://developers.home-assistant.io/docs/core/entity/sensor/#available-state-classes). Required to enable [long-term statistics](https://developers.home-assistant.io/docs/core/entity/sensor/#long-term-statistics). Only allowed for integer properties; not allowed when `device_class` is `enum`. |
 | `device_class`  | `duration`, `energy`, `water`, etc.             | Name of any [SensorDeviceClass enum](https://developers.home-assistant.io/docs/core/entity/sensor/#available-device-classes).                                                                                             |
 | `unit`          | `min`, `kWh`, `L`, etc., _or_ `property.<name>` | Required if `device_class` is set, except not allowed when `device_class` is `aqi`, `ph` or `enum`.                                                                                                                       |
 | `multiplier`    | number, e.g. `0.1` or `10`                      | Required if the unit in the API is not supported in Home Assistant, e.g. hWh can be multiplied by 0.1 to get kWh.                                                                                                         |

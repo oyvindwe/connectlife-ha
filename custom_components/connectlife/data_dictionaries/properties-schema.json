@@ -569,7 +569,7 @@
         "total_increasing"
       ],
       "title": "State class",
-      "description": "Name of any SensorStateClass. Only allowed for integer properties. Set to null to suppress the integer-property auto-fallback to measurement (e.g. for state codes or setpoints where statistics aren't meaningful)."
+      "description": "Name of any SensorStateClass. Only allowed for integer properties."
     },
     "SwitchDeviceClass": {
       "type": ["string", "null"],

@@ -57,5 +57,6 @@ properties:
     read_only: true
     device_class: temperature
     unit: °C
+    state_class: measurement
 - property: Program_end_to_shutdown_time_in_minutes
   hide: true

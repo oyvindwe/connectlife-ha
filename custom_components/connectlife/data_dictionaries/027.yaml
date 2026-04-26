@@ -10,6 +10,7 @@ properties:
     read_only: true
     device_class: temperature
     unit: °C
+    state_class: measurement
 - property: Delay_start_remaining_time_in_minutes
   icon: 'mdi:update'
   sensor:

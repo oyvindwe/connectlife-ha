@@ -25,6 +25,7 @@ properties:
       device_class: current
       unit: A
       read_only: true
+      state_class: measurement
     hide: true
   - property: f_humidity
     humidifier:

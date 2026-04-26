@@ -110,13 +110,6 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
         if device_class == SensorDeviceClass.TIMESTAMP and self.unknown_value is None:
             self.unknown_value = MAX_DATETIME
         state_class = dd_entry.sensor.state_class
-        if (
-            state_class is None
-            and not dd_entry.sensor.state_class_explicit
-            and (isinstance(current_value, int) or self.combine)
-            and device_class != SensorDeviceClass.ENUM
-        ):
-            state_class = SensorStateClass.MEASUREMENT
         self.entity_description = SensorEntityDescription(
             key=self._attr_unique_id,
             device_class=device_class,

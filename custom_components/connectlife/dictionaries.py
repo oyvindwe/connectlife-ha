@@ -67,12 +67,7 @@ class CombineSource(_CombineSourceRequired, total=False):
 
 
 def _val(d: dict, key: str, default: Any = None) -> Any:
-    """Return ``d[key]`` if the key is present with a non-None value, else ``default``.
-
-    Used by parsers to treat ``key: ~`` (explicit null in a feature override) the
-    same as the key being absent — except for ``state_class``, which tracks the
-    distinction explicitly to suppress the auto-fallback in sensor.py.
-    """
+    """Return ``d[key]`` if the key is present with a non-None value, else ``default``."""
     if key in d and d[key] is not None:
         return d[key]
     return default
@@ -208,7 +203,6 @@ class Sensor:
     multiplier: float | None
     read_only: bool | None
     state_class: SensorStateClass | None
-    state_class_explicit: bool
     device_class: SensorDeviceClass | None
     unit: str | None
     options: dict[int, str] | None
@@ -220,7 +214,6 @@ class Sensor:
         self.read_only = _val(sensor, READ_ONLY)
         self.unit = _val(sensor, UNIT) or None
         self.multiplier = _val(sensor, MULTIPLIER)
-        self.state_class_explicit = STATE_CLASS in sensor
         state_class_value = _val(sensor, STATE_CLASS)
         self.state_class = (
             SensorStateClass(state_class_value) if state_class_value is not None else None
