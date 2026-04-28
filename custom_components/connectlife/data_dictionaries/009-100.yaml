@@ -73,7 +73,7 @@ climate:
 properties:
   - property: f_electricity
     sensor:
-      device_class: power
+      device_class: current
       state_class: measurement
       read_only: true
       unit: A
