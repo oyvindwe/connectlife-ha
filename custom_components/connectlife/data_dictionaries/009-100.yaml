@@ -70,3 +70,11 @@ climate:
       t_sleep: 4
       t_super: 0
       preset: eco_sleep_4
+properties:
+  - property: f_electricity
+    sensor:
+      device_class: current
+      state_class: measurement
+      read_only: true
+      unit: A
+      multiplier: 0.001
