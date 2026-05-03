@@ -3228,6 +3228,9 @@
       "f_cool_qvalue": {
         "name": "Cooling"
       },
+      "f_ecm": {
+        "name": "Electricity reporting mode"
+      },
       "f_electricity": {
         "name": "Electricity"
       },

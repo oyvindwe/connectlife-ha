@@ -207,11 +207,23 @@ properties:
   - property: f_e_push
     disable: true
   - property: f_ecm
-    disable: true
+    # f_ecm: appears to indicate which unit f_electricity uses (f_ecm=1
+    # has been observed alongside mA current values; absent in 009-104,
+    # which reports in hW). Exposed as a diagnostic so users can report
+    # the value alongside f_electricity readings.
+    sensor:
+      read_only: true
+    entity_category: diagnostic
+    hide: true
   - property: f_electricity
+    # f_electricity: unit varies by device. Most devices observed report
+    # in mA. Devices that report in other units (e.g. hW), need a
+    # per-feature override mapping to power/kW (see e.g. 009-104).
+    # The companion property f_ecm appears to discriminate the scheme
+    # (f_ecm=1 → mA; absent → hW).
     sensor:
       device_class: current
-      unit: A
+      unit: mA
       read_only: true
       state_class: measurement
     hide: true
