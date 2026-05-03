@@ -1,0 +1,1094 @@
+# Induction hob
+properties:
+  - property: Alarm_Hob_Hood_Started
+    hide: true
+    binary_sensor:
+      device_class: problem
+      options:
+        0: off
+        1: on
+  - property: Alarm_NTC_TC
+    hide: true
+    binary_sensor:
+      device_class: problem
+      options:
+        0: off
+        1: on
+  - property: Alarm_NTC_coil_overheating
+    hide: true
+    binary_sensor:
+      device_class: problem
+      options:
+        0: off
+        1: on
+  - property: Alarm_NTC_power
+    hide: true
+    binary_sensor:
+      device_class: problem
+      options:
+        0: off
+        1: on
+  - property: Alarm_auto_program_ended
+    hide: true
+    binary_sensor:
+      device_class: problem
+      options:
+        0: off
+        1: on
+  - property: Alarm_automatic_switch_off_zone
+    hide: true
+    binary_sensor:
+      device_class: problem
+      options:
+        0: off
+        1: on
+  - property: Alarm_timer_ended
+    hide: true
+    binary_sensor:
+      device_class: problem
+      options:
+        0: off
+        1: on
+  - property: Alarm_voltage
+    hide: true
+    binary_sensor:
+      device_class: problem
+      options:
+        0: off
+        1: on
+  - property: Alarm_zone_turned_off
+    hide: true
+    binary_sensor:
+      device_class: problem
+      options:
+        0: off
+        1: on
+  - property: Child_lock
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: Device_status
+    hide: true
+    sensor:
+      device_class: enum
+      options:
+        0: idle
+        1: service
+        2: production
+        3: demo_mode
+        4: iq
+        5: running
+        6: failure
+        7: stand_by
+        8: pause_mode
+        9: locked
+  - property: Demo_mode
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: Test_mode
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: ECO_mode
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: Auto_timer
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: Auto_bridge
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: Auto_boost
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: Chef_mode
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: Permanent_pot_detection
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: Remote_controlmode
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: Recovery
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: Hard_pairing_unpair_all_set_flag
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: HardPairingStatus
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: HardPairingUnpairAll
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: FOTA_status
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: FOTA_set
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: FOTA_set_flag
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: Total_time_of_cooking_in_minute
+    sensor:
+      state_class: total
+      unit: min
+  - property: SL1_Status
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL2_Status
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL3_Status
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL4_Status
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL5_Status
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL6_Status
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL1_Sand_timer_status
+    hide: true
+    sensor:
+      device_class: enum
+      options:
+        0: paused
+        1: active
+        2: stopped
+        3: ended
+        4: inactive
+  - property: SL2_Sand_timer_status
+    hide: true
+    sensor:
+      device_class: enum
+      options:
+        0: paused
+        1: active
+        2: stopped
+        3: ended
+        4: inactive
+  - property: SL3_Sand_timer_status
+    hide: true
+    sensor:
+      device_class: enum
+      options:
+        0: paused
+        1: active
+        2: stopped
+        3: ended
+        4: inactive
+  - property: SL4_Sand_timer_status
+    hide: true
+    sensor:
+      device_class: enum
+      options:
+        0: paused
+        1: active
+        2: stopped
+        3: ended
+        4: inactive
+  - property: SL5_Sand_timer_status
+    hide: true
+    sensor:
+      device_class: enum
+      options:
+        0: paused
+        1: active
+        2: stopped
+        3: ended
+        4: inactive
+  - property: SL6_Sand_timer_status
+    hide: true
+    sensor:
+      device_class: enum
+      options:
+        0: paused
+        1: active
+        2: stopped
+        3: ended
+        4: inactive
+  - property: SL1_Stopwatch_status
+    hide: true
+    sensor:
+      device_class: enum
+      options:
+        0: hold
+        1: active
+        2: paused
+        3: inactive
+  - property: SL2_Stopwatch_status
+    hide: true
+    sensor:
+      device_class: enum
+      options:
+        0: hold
+        1: active
+        2: paused
+        3: inactive
+  - property: SL3_Stopwatch_status
+    hide: true
+    sensor:
+      device_class: enum
+      options:
+        0: hold
+        1: active
+        2: paused
+        3: inactive
+  - property: SL4_Stopwatch_status
+    hide: true
+    sensor:
+      device_class: enum
+      options:
+        0: hold
+        1: active
+        2: paused
+        3: inactive
+  - property: SL5_Stopwatch_status
+    hide: true
+    sensor:
+      device_class: enum
+      options:
+        0: hold
+        1: active
+        2: paused
+        3: inactive
+  - property: SL6_Stopwatch_status
+    hide: true
+    sensor:
+      device_class: enum
+      options:
+        0: hold
+        1: active
+        2: paused
+        3: inactive
+  - property: SL1_Residual_heat_signal
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL2_Residual_heat_signal
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL3_Residual_heat_signal
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL4_Residual_heat_signal
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL5_Residual_heat_signal
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL6_Residual_heat_signal
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL1_Alarm_auto_program_notification
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL2_Alarm_auto_program_notification
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL3_Alarm_auto_program_notification
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL4_Alarm_auto_program_notification
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL5_Alarm_auto_program_notification
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL6_Alarm_auto_program_notification
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL1_Alarm_automatic_switch_off_zone
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL2_Alarm_automatic_switch_off_zone
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL3_Alarm_automatic_switch_off_zone
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL4_Alarm_automatic_switch_off_zone
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL5_Alarm_automatic_switch_off_zone
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL6_Alarm_automatic_switch_off_zone
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL1_Alarm_timer_ended
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL2_Alarm_timer_ended
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL3_Alarm_timer_ended
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL4_Alarm_timer_ended
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL5_Alarm_timer_ended
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL6_Alarm_timer_ended
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL1_Active_timer
+    hide: true
+    sensor:
+      device_class: enum
+      options:
+        0: inactive
+        1: stopwatch
+        2: timer
+  - property: SL2_Active_timer
+    hide: true
+    sensor:
+      device_class: enum
+      options:
+        0: inactive
+        1: stopwatch
+        2: timer
+  - property: SL3_Active_timer
+    hide: true
+    sensor:
+      device_class: enum
+      options:
+        0: inactive
+        1: stopwatch
+        2: timer
+  - property: SL4_Active_timer
+    hide: true
+    sensor:
+      device_class: enum
+      options:
+        0: inactive
+        1: stopwatch
+        2: timer
+  - property: SL5_Active_timer
+    hide: true
+    sensor:
+      device_class: enum
+      options:
+        0: inactive
+        1: stopwatch
+        2: timer
+  - property: SL6_Active_timer
+    hide: true
+    sensor:
+      device_class: enum
+      options:
+        0: inactive
+        1: stopwatch
+        2: timer
+  - property: SL1_Alarm_zone_turned_off
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL2_Alarm_zone_turned_off
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL3_Alarm_zone_turned_off
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL4_Alarm_zone_turned_off
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL5_Alarm_zone_turned_off
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL6_Alarm_zone_turned_off
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL1_Alarm_NTC_coil
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL2_Alarm_NTC_coil
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL3_Alarm_NTC_coil
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL4_Alarm_NTC_coil
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL5_Alarm_NTC_coil
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL6_Alarm_NTC_coil
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL1_Bridge_function_active
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL2_Bridge_function_active
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL3_Bridge_function_active
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL4_Bridge_function_active
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL5_Bridge_function_active
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL6_Bridge_function_active
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL1_Pot_detected
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL2_Pot_detected
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL3_Pot_detected
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL4_Pot_detected
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL5_Pot_detected
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL6_Pot_detected
+    hide: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL1_Power_level
+    sensor:
+      device_class: enum
+      options:
+        0: "off"
+        1: "1"
+        2: "2"
+        3: "3"
+        4: "4"
+        5: "5"
+        6: "6"
+        7: "7"
+        8: "8"
+        9: "9"
+        10: "10"
+        11: "11"
+        12: "12"
+        13: boost
+  - property: SL2_Power_level
+    sensor:
+      device_class: enum
+      options:
+        0: "off"
+        1: "1"
+        2: "2"
+        3: "3"
+        4: "4"
+        5: "5"
+        6: "6"
+        7: "7"
+        8: "8"
+        9: "9"
+        10: "10"
+        11: "11"
+        12: "12"
+        13: boost
+  - property: SL3_Power_level
+    sensor:
+      device_class: enum
+      options:
+        0: "off"
+        1: "1"
+        2: "2"
+        3: "3"
+        4: "4"
+        5: "5"
+        6: "6"
+        7: "7"
+        8: "8"
+        9: "9"
+        10: "10"
+        11: "11"
+        12: "12"
+        13: boost
+  - property: SL4_Power_level
+    sensor:
+      device_class: enum
+      options:
+        0: "off"
+        1: "1"
+        2: "2"
+        3: "3"
+        4: "4"
+        5: "5"
+        6: "6"
+        7: "7"
+        8: "8"
+        9: "9"
+        10: "10"
+        11: "11"
+        12: "12"
+        13: boost
+  - property: SL5_Power_level
+    sensor:
+      device_class: enum
+      options:
+        0: "off"
+        1: "1"
+        2: "2"
+        3: "3"
+        4: "4"
+        5: "5"
+        6: "6"
+        7: "7"
+        8: "8"
+        9: "9"
+        10: "10"
+        11: "11"
+        12: "12"
+        13: boost
+  - property: SL6_Power_level
+    sensor:
+      device_class: enum
+      options:
+        0: "off"
+        1: "1"
+        2: "2"
+        3: "3"
+        4: "4"
+        5: "5"
+        6: "6"
+        7: "7"
+        8: "8"
+        9: "9"
+        10: "10"
+        11: "11"
+        12: "12"
+        13: boost
+  - property: SL1_Function_status
+    hide: true
+    sensor:
+      device_class: enum
+      options:
+        0: none
+        1: function_1
+        2: function_2
+  - property: SL2_Function_status
+    hide: true
+    sensor:
+      device_class: enum
+      options:
+        0: none
+        1: function_1
+        2: function_2
+  - property: SL3_Function_status
+    hide: true
+    sensor:
+      device_class: enum
+      options:
+        0: none
+        1: function_1
+        2: function_2
+  - property: SL4_Function_status
+    hide: true
+    sensor:
+      device_class: enum
+      options:
+        0: none
+        1: function_1
+        2: function_2
+  - property: SL5_Function_status
+    hide: true
+    sensor:
+      device_class: enum
+      options:
+        0: none
+        1: function_1
+        2: function_2
+  - property: SL6_Function_status
+    hide: true
+    sensor:
+      device_class: enum
+      options:
+        0: none
+        1: function_1
+        2: function_2
+  - property: SL1_Cooking_method
+    hide: true
+    sensor:
+      device_class: enum
+      options:
+        0: none
+        1: method_1
+        2: method_2
+  - property: SL2_Cooking_method
+    hide: true
+    sensor:
+      device_class: enum
+      options:
+        0: none
+        1: method_1
+        2: method_2
+  - property: SL3_Cooking_method
+    hide: true
+    sensor:
+      device_class: enum
+      options:
+        0: none
+        1: method_1
+        2: method_2
+  - property: SL4_Cooking_method
+    hide: true
+    sensor:
+      device_class: enum
+      options:
+        0: none
+        1: method_1
+        2: method_2
+  - property: SL5_Cooking_method
+    hide: true
+    sensor:
+      device_class: enum
+      options:
+        0: none
+        1: method_1
+        2: method_2
+  - property: SL6_Cooking_method
+    hide: true
+    sensor:
+      device_class: enum
+      options:
+        0: none
+        1: method_1
+        2: method_2
+  - property: SL1_Functions
+    sensor:
+      device_class: enum
+      options:
+        0: none
+        1: keep_warm_and_heat_up
+        2: fry
+        3: grill
+        4: slow_cook
+        5: boil
+        6: heat_up_and_fry
+  - property: SL2_Functions
+    sensor:
+      device_class: enum
+      options:
+        0: none
+        1: keep_warm_and_heat_up
+        2: fry
+        3: grill
+        4: slow_cook
+        5: boil
+        6: heat_up_and_fry
+  - property: SL3_Functions
+    sensor:
+      device_class: enum
+      options:
+        0: none
+        1: keep_warm_and_heat_up
+        2: fry
+        3: grill
+        4: slow_cook
+        5: boil
+        6: heat_up_and_fry
+  - property: SL4_Functions
+    sensor:
+      device_class: enum
+      options:
+        0: none
+        1: keep_warm_and_heat_up
+        2: fry
+        3: grill
+        4: slow_cook
+        5: boil
+        6: heat_up_and_fry
+  - property: SL5_Functions
+    sensor:
+      device_class: enum
+      options:
+        0: none
+        1: keep_warm_and_heat_up
+        2: fry
+        3: grill
+        4: slow_cook
+        5: boil
+        6: heat_up_and_fry
+  - property: SL6_Functions
+    sensor:
+      device_class: enum
+      options:
+        0: none
+        1: keep_warm_and_heat_up
+        2: fry
+        3: grill
+        4: slow_cook
+        5: boil
+        6: heat_up_and_fry
+  - property: SL1_Temperature
+    hide: true
+    sensor:
+      read_only: true
+      state_class: measurement
+      device_class: temperature
+      unit: °C
+  - property: SL2_Temperature
+    hide: true
+    sensor:
+      read_only: true
+      state_class: measurement
+      device_class: temperature
+      unit: °C
+  - property: SL3_Temperature
+    hide: true
+    sensor:
+      read_only: true
+      state_class: measurement
+      device_class: temperature
+      unit: °C
+  - property: SL4_Temperature
+    hide: true
+    sensor:
+      read_only: true
+      state_class: measurement
+      device_class: temperature
+      unit: °C
+  - property: SL5_Temperature
+    hide: true
+    sensor:
+      read_only: true
+      state_class: measurement
+      device_class: temperature
+      unit: °C
+  - property: SL6_Temperature
+    hide: true
+    sensor:
+      read_only: true
+      state_class: measurement
+      device_class: temperature
+      unit: °C
+  - property: SL1_NTC_sensor
+    hide: true
+    sensor:
+      read_only: true
+      state_class: measurement
+      device_class: temperature
+      unit: °C
+  - property: SL2_NTC_sensor
+    hide: true
+    sensor:
+      read_only: true
+      state_class: measurement
+      device_class: temperature
+      unit: °C
+  - property: SL3_NTC_sensor
+    hide: true
+    sensor:
+      read_only: true
+      state_class: measurement
+      device_class: temperature
+      unit: °C
+  - property: SL4_NTC_sensor
+    hide: true
+    sensor:
+      read_only: true
+      state_class: measurement
+      device_class: temperature
+      unit: °C
+  - property: SL5_NTC_sensor
+    hide: true
+    sensor:
+      read_only: true
+      state_class: measurement
+      device_class: temperature
+      unit: °C
+  - property: SL6_NTC_sensor
+    hide: true
+    sensor:
+      read_only: true
+      state_class: measurement
+      device_class: temperature
+      unit: °C
+  - property: SL1_Hestan_Cue_Set_Temperature
+    hide: true
+    sensor:
+      read_only: true
+      state_class: measurement
+      device_class: temperature
+      unit: °C
+  - property: SL2_Hestan_Cue_Set_Temperature
+    hide: true
+    sensor:
+      read_only: true
+      state_class: measurement
+      device_class: temperature
+      unit: °C
+  - property: SL3_Hestan_Cue_Set_Temperature
+    hide: true
+    sensor:
+      read_only: true
+      state_class: measurement
+      device_class: temperature
+      unit: °C
+  - property: SL4_Hestan_Cue_Set_Temperature
+    hide: true
+    sensor:
+      read_only: true
+      state_class: measurement
+      device_class: temperature
+      unit: °C
+  - property: SL5_Hestan_Cue_Set_Temperature
+    hide: true
+    sensor:
+      read_only: true
+      state_class: measurement
+      device_class: temperature
+      unit: °C
+  - property: SL6_Hestan_Cue_Set_Temperature
+    hide: true
+    sensor:
+      read_only: true
+      state_class: measurement
+      device_class: temperature
+      unit: °C
+  - property: SL1_Hestan_Cue_Temperature
+    hide: true
+    sensor:
+      read_only: true
+      state_class: measurement
+      device_class: temperature
+      unit: °C
+  - property: SL2_Hestan_Cue_Temperature
+    hide: true
+    sensor:
+      read_only: true
+      state_class: measurement
+      device_class: temperature
+      unit: °C
+  - property: SL3_Hestan_Cue_Temperature
+    hide: true
+    sensor:
+      read_only: true
+      state_class: measurement
+      device_class: temperature
+      unit: °C
+  - property: SL4_Hestan_Cue_Temperature
+    hide: true
+    sensor:
+      read_only: true
+      state_class: measurement
+      device_class: temperature
+      unit: °C
+  - property: SL5_Hestan_Cue_Temperature
+    hide: true
+    sensor:
+      read_only: true
+      state_class: measurement
+      device_class: temperature
+      unit: °C
+  - property: SL6_Hestan_Cue_Temperature
+    hide: true
+    sensor:
+      read_only: true
+      state_class: measurement
+      device_class: temperature
+      unit: °C
