@@ -1086,6 +1086,9 @@
       "sl5_alarm_automatic_switch_off_zone": {
         "name": "Zone 5 automatically switched off"
       },
+      "sl5_alarm_ntc_coil": {
+        "name": "Zone 5 alarm NTC coil"
+      },
       "sl5_alarm_ntc_coil_overheating": {
         "name": "Zone 5 coil overheating"
       },
@@ -1101,6 +1104,9 @@
       "sl5_pot_detected": {
         "name": "Zone 5 pot detected"
       },
+      "sl5_residual_heat_signal": {
+        "name": "Zone 5 residual heat"
+      },
       "sl5_status": {
         "name": "Zone 5 status"
       },
@@ -1109,6 +1115,9 @@
       },
       "sl6_alarm_automatic_switch_off_zone": {
         "name": "Zone 6 automatically switched off"
+      },
+      "sl6_alarm_ntc_coil": {
+        "name": "Zone 6 alarm NTC coil"
       },
       "sl6_alarm_ntc_coil_overheating": {
         "name": "Zone 6 coil overheating"
@@ -1124,6 +1133,9 @@
       },
       "sl6_pot_detected": {
         "name": "Zone 6 pot detected"
+      },
+      "sl6_residual_heat_signal": {
+        "name": "Zone 6 residual heat"
       },
       "sl6_status": {
         "name": "Zone 6 status"
@@ -4700,8 +4712,9 @@
           "boil": "Boil",
           "fry": "Fry",
           "grill": "Grill",
+          "heat_up_and_fry": "Heat up and fry",
           "keep_warm": "Keep warm",
-          "keep_warm_and_fry": "Keep warm and fry",
+          "keep_warm_and_heat_up": "Keep warm and heat up",
           "none": "None",
           "roast": "Roast",
           "simmer": "Simmer",
@@ -4789,8 +4802,9 @@
           "boil": "Boil",
           "fry": "Fry",
           "grill": "Grill",
+          "heat_up_and_fry": "Heat up and fry",
           "keep_warm": "Keep warm",
-          "keep_warm_and_fry": "Keep warm and fry",
+          "keep_warm_and_heat_up": "Keep warm and heat up",
           "none": "None",
           "roast": "Roast",
           "simmer": "Simmer",
@@ -4878,8 +4892,9 @@
           "boil": "Boil",
           "fry": "Fry",
           "grill": "Grill",
+          "heat_up_and_fry": "Heat up and fry",
           "keep_warm": "Keep warm",
-          "keep_warm_and_fry": "Keep warm and fry",
+          "keep_warm_and_heat_up": "Keep warm and heat up",
           "none": "None",
           "roast": "Roast",
           "simmer": "Simmer",
@@ -4967,8 +4982,9 @@
           "boil": "Boil",
           "fry": "Fry",
           "grill": "Grill",
+          "heat_up_and_fry": "Heat up and fry",
           "keep_warm": "Keep warm",
-          "keep_warm_and_fry": "Keep warm and fry",
+          "keep_warm_and_heat_up": "Keep warm and heat up",
           "none": "None",
           "roast": "Roast",
           "simmer": "Simmer",
@@ -5034,26 +5050,77 @@
           "timer": "Timer"
         }
       },
+      "sl5_cooking_method": {
+        "name": "Zone 5 cooking method",
+        "state": {
+          "method_1": "Method 1",
+          "method_2": "Method 2",
+          "none": "None"
+        }
+      },
+      "sl5_function_status": {
+        "name": "Zone 5 function status",
+        "state": {
+          "function_1": "Function 1",
+          "function_2": "Function 2",
+          "none": "None"
+        }
+      },
       "sl5_functions": {
         "name": "Zone 5 function",
         "state": {
           "boil": "Boil",
+          "fry": "Fry",
           "grill": "Grill",
+          "heat_up_and_fry": "Heat up and fry",
           "keep_warm": "Keep warm",
+          "keep_warm_and_heat_up": "Keep warm and heat up",
           "none": "None",
           "roast": "Roast",
           "simmer": "Simmer",
+          "slow_cook": "Slow cook",
           "wok": "Wok"
         }
+      },
+      "sl5_hestan_cue_set_temperature": {
+        "name": "Zone 5 Hestan Cue set temperature"
+      },
+      "sl5_hestan_cue_temperature": {
+        "name": "Zone 5 Hestan Cue temperature"
       },
       "sl5_ntc_sensor": {
         "name": "Zone 5 NTC sensor"
       },
       "sl5_power_level": {
-        "name": "Zone 5 power level"
+        "name": "Zone 5 power level",
+        "state": {
+          "boost": "Boost"
+        }
       },
       "sl5_power_level_max": {
         "name": "Zone 5 max power level"
+      },
+      "sl5_sand_timer_status": {
+        "name": "Zone 5 sand timer status",
+        "state": {
+          "active": "Active",
+          "ended": "Ended",
+          "inactive": "Inactive",
+          "paused": "Paused",
+          "stopped": "Stopped"
+        }
+      },
+      "sl5_stopwatch_status": {
+        "name": "Zone 5 stopwatch status",
+        "state": {
+          "active": "Active",
+          "hold": "Hold",
+          "inactive": "Inactive",
+          "paused": "Paused"
+        }
+      },
+      "sl5_temperature": {
+        "name": "Zone 5 temperature"
       },
       "sl5_zone_shape": {
         "name": "Zone 5 shape",
@@ -5073,26 +5140,77 @@
           "timer": "Timer"
         }
       },
+      "sl6_cooking_method": {
+        "name": "Zone 6 cooking method",
+        "state": {
+          "method_1": "Method 1",
+          "method_2": "Method 2",
+          "none": "None"
+        }
+      },
+      "sl6_function_status": {
+        "name": "Zone 6 function status",
+        "state": {
+          "function_1": "Function 1",
+          "function_2": "Function 2",
+          "none": "None"
+        }
+      },
       "sl6_functions": {
         "name": "Zone 6 function",
         "state": {
           "boil": "Boil",
+          "fry": "Fry",
           "grill": "Grill",
+          "heat_up_and_fry": "Heat up and fry",
           "keep_warm": "Keep warm",
+          "keep_warm_and_heat_up": "Keep warm and heat up",
           "none": "None",
           "roast": "Roast",
           "simmer": "Simmer",
+          "slow_cook": "Slow cook",
           "wok": "Wok"
         }
+      },
+      "sl6_hestan_cue_set_temperature": {
+        "name": "Zone 6 Hestan Cue set temperature"
+      },
+      "sl6_hestan_cue_temperature": {
+        "name": "Zone 6 Hestan Cue temperature"
       },
       "sl6_ntc_sensor": {
         "name": "Zone 6 NTC sensor"
       },
       "sl6_power_level": {
-        "name": "Zone 6 power level"
+        "name": "Zone 6 power level",
+        "state": {
+          "boost": "Boost"
+        }
       },
       "sl6_power_level_max": {
         "name": "Zone 6 max power level"
+      },
+      "sl6_sand_timer_status": {
+        "name": "Zone 6 sand timer status",
+        "state": {
+          "active": "Active",
+          "ended": "Ended",
+          "inactive": "Inactive",
+          "paused": "Paused",
+          "stopped": "Stopped"
+        }
+      },
+      "sl6_stopwatch_status": {
+        "name": "Zone 6 stopwatch status",
+        "state": {
+          "active": "Active",
+          "hold": "Hold",
+          "inactive": "Inactive",
+          "paused": "Paused"
+        }
+      },
+      "sl6_temperature": {
+        "name": "Zone 6 temperature"
       },
       "sl6_zone_shape": {
         "name": "Zone 6 shape",

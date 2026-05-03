@@ -1086,6 +1086,9 @@
       "sl5_alarm_automatic_switch_off_zone": {
         "name": "Zone 5 automatisch uitgeschakeld"
       },
+      "sl5_alarm_ntc_coil": {
+        "name": "Zone 5 NTC-spoelalarm"
+      },
       "sl5_alarm_ntc_coil_overheating": {
         "name": "Zone 5 spoel oververhitting"
       },
@@ -1101,6 +1104,9 @@
       "sl5_pot_detected": {
         "name": "Zone 5 pot gedetecteerd"
       },
+      "sl5_residual_heat_signal": {
+        "name": "Zone 5 restwarmte"
+      },
       "sl5_status": {
         "name": "Zone 5 status"
       },
@@ -1109,6 +1115,9 @@
       },
       "sl6_alarm_automatic_switch_off_zone": {
         "name": "Zone 6 automatisch uitgeschakeld"
+      },
+      "sl6_alarm_ntc_coil": {
+        "name": "Zone 6 NTC-spoelalarm"
       },
       "sl6_alarm_ntc_coil_overheating": {
         "name": "Zone 6 spoel oververhitting"
@@ -1124,6 +1133,9 @@
       },
       "sl6_pot_detected": {
         "name": "Zone 6 pot gedetecteerd"
+      },
+      "sl6_residual_heat_signal": {
+        "name": "Zone 6 restwarmte"
       },
       "sl6_status": {
         "name": "Zone 6 status"
@@ -2628,8 +2640,8 @@
           "boil": "Koken",
           "fry": "Bakken",
           "grill": "Grillen",
-          "keep_warm": "Warm houden",
-          "keep_warm_and_fry": "Warm houden en bakken",
+          "heat_up_and_fry": "Opwarmen en bakken",
+          "keep_warm_and_heat_up": "Warm houden en opwarmen",
           "none": "Geen",
           "roast": "Braden",
           "simmer": "Sudderen",
@@ -2717,8 +2729,8 @@
           "boil": "Koken",
           "fry": "Bakken",
           "grill": "Grillen",
-          "keep_warm": "Warm houden",
-          "keep_warm_and_fry": "Warm houden en bakken",
+          "heat_up_and_fry": "Opwarmen en bakken",
+          "keep_warm_and_heat_up": "Warm houden en opwarmen",
           "none": "Geen",
           "roast": "Braden",
           "simmer": "Sudderen",
@@ -2806,8 +2818,8 @@
           "boil": "Koken",
           "fry": "Bakken",
           "grill": "Grillen",
-          "keep_warm": "Warm houden",
-          "keep_warm_and_fry": "Warm houden en bakken",
+          "heat_up_and_fry": "Opwarmen en bakken",
+          "keep_warm_and_heat_up": "Warm houden en opwarmen",
           "none": "Geen",
           "roast": "Braden",
           "simmer": "Sudderen",
@@ -2895,8 +2907,8 @@
           "boil": "Koken",
           "fry": "Bakken",
           "grill": "Grillen",
-          "keep_warm": "Warm houden",
-          "keep_warm_and_fry": "Warm houden en bakken",
+          "heat_up_and_fry": "Opwarmen en bakken",
+          "keep_warm_and_heat_up": "Warm houden en opwarmen",
           "none": "Geen",
           "roast": "Braden",
           "simmer": "Sudderen",
@@ -2962,17 +2974,40 @@
           "timer": "Timer"
         }
       },
+      "sl5_cooking_method": {
+        "name": "Zone 5 kookmethode",
+        "state": {
+          "method_1": "Methode 1",
+          "method_2": "Methode 2",
+          "none": "Geen"
+        }
+      },
+      "sl5_function_status": {
+        "name": "Zone 5 functiestatus",
+        "state": {
+          "function_1": "Functie 1",
+          "function_2": "Functie 2",
+          "none": "Geen"
+        }
+      },
       "sl5_functions": {
         "name": "Zone 5 functie",
         "state": {
           "boil": "Koken",
           "grill": "Grillen",
-          "keep_warm": "Warm houden",
+          "heat_up_and_fry": "Opwarmen en bakken",
+          "keep_warm_and_heat_up": "Warm houden en opwarmen",
           "none": "Geen",
           "roast": "Braden",
           "simmer": "Sudderen",
           "wok": "Wok"
         }
+      },
+      "sl5_hestan_cue_set_temperature": {
+        "name": "Zone 5 Hestan Cue ingestelde temperatuur"
+      },
+      "sl5_hestan_cue_temperature": {
+        "name": "Zone 5 Hestan Cue temperatuur"
       },
       "sl5_ntc_sensor": {
         "name": "Zone 5 NTC sensor"
@@ -2982,6 +3017,28 @@
       },
       "sl5_power_level_max": {
         "name": "Zone 5 maximaal vermogensniveau"
+      },
+      "sl5_sand_timer_status": {
+        "name": "Zone 5 zandlopertimer-status",
+        "state": {
+          "active": "Actief",
+          "ended": "Be\u00ebindigd",
+          "inactive": "Inactief",
+          "paused": "Gepauzeerd",
+          "stopped": "Gestopt"
+        }
+      },
+      "sl5_stopwatch_status": {
+        "name": "Zone 5 stopwatch-status",
+        "state": {
+          "active": "Actief",
+          "hold": "Vastgehouden",
+          "inactive": "Inactief",
+          "paused": "Gepauzeerd"
+        }
+      },
+      "sl5_temperature": {
+        "name": "Zone 5 temperatuur"
       },
       "sl5_zone_shape": {
         "name": "Zone 5 vorm",
@@ -3001,17 +3058,40 @@
           "timer": "Timer"
         }
       },
+      "sl6_cooking_method": {
+        "name": "Zone 6 kookmethode",
+        "state": {
+          "method_1": "Methode 1",
+          "method_2": "Methode 2",
+          "none": "Geen"
+        }
+      },
+      "sl6_function_status": {
+        "name": "Zone 6 functiestatus",
+        "state": {
+          "function_1": "Functie 1",
+          "function_2": "Functie 2",
+          "none": "Geen"
+        }
+      },
       "sl6_functions": {
         "name": "Zone 6 functie",
         "state": {
           "boil": "Koken",
           "grill": "Grillen",
-          "keep_warm": "Warm houden",
+          "heat_up_and_fry": "Opwarmen en bakken",
+          "keep_warm_and_heat_up": "Warm houden en opwarmen",
           "none": "Geen",
           "roast": "Braden",
           "simmer": "Sudderen",
           "wok": "Wok"
         }
+      },
+      "sl6_hestan_cue_set_temperature": {
+        "name": "Zone 6 Hestan Cue ingestelde temperatuur"
+      },
+      "sl6_hestan_cue_temperature": {
+        "name": "Zone 6 Hestan Cue temperatuur"
       },
       "sl6_ntc_sensor": {
         "name": "Zone 6 NTC sensor"
@@ -3021,6 +3101,28 @@
       },
       "sl6_power_level_max": {
         "name": "Zone 6 maximaal vermogensniveau"
+      },
+      "sl6_sand_timer_status": {
+        "name": "Zone 6 zandlopertimer-status",
+        "state": {
+          "active": "Actief",
+          "ended": "Be\u00ebindigd",
+          "inactive": "Inactief",
+          "paused": "Gepauzeerd",
+          "stopped": "Gestopt"
+        }
+      },
+      "sl6_stopwatch_status": {
+        "name": "Zone 6 stopwatch-status",
+        "state": {
+          "active": "Actief",
+          "hold": "Vastgehouden",
+          "inactive": "Inactief",
+          "paused": "Gepauzeerd"
+        }
+      },
+      "sl6_temperature": {
+        "name": "Zone 6 temperatuur"
       },
       "sl6_zone_shape": {
         "name": "Zone 6 vorm",
