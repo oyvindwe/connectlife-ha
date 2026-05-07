@@ -687,9 +687,6 @@
       "fota_set": {
         "name": "FOTA set"
       },
-      "fota_set_flag": {
-        "name": "FOTA set flag"
-      },
       "fota_status": {
         "name": "FOTA status"
       },
@@ -746,9 +743,6 @@
       },
       "hard_pairing_status": {
         "name": "Hard pairing status"
-      },
-      "hard_pairing_unpair_all_set_flag": {
-        "name": "Hard pairing unpair all set flag"
       },
       "hardpairingstatus": {
         "name": "Hard pairing status"
@@ -2474,13 +2468,13 @@
         "name": "Auto-dose system setting status"
       },
       "auto_grease_filter_indication": {
-        "name": "Auto grease filter indication"
+        "name": "Auto grease filter"
       },
       "auto_super_rinse_setting_status": {
         "name": "Auto super rinse setting status"
       },
       "auto_tower_up": {
-        "name": "Auto tower up"
+        "name": "Tower auto-raise"
       },
       "autodose_flag": {
         "name": "Auto-dose flag",
@@ -3898,7 +3892,7 @@
         "name": "Hood status"
       },
       "hood_total_used_hours": {
-        "name": "Hood total used hours"
+        "name": "Hood runtime hours"
       },
       "hottime": {
         "name": "Hot time"
@@ -5096,7 +5090,7 @@
         }
       },
       "sl1_bridged_to_zone": {
-        "name": "Zone 1 bridged to zone"
+        "name": "Zone 1 bridge target"
       },
       "sl1_cooking_method": {
         "name": "Zone 1 cooking method",
@@ -5237,7 +5231,7 @@
         }
       },
       "sl2_bridged_to_zone": {
-        "name": "Zone 2 bridged to zone"
+        "name": "Zone 2 bridge target"
       },
       "sl2_cooking_method": {
         "name": "Zone 2 cooking method",
@@ -5378,7 +5372,7 @@
         }
       },
       "sl3_bridged_to_zone": {
-        "name": "Zone 3 bridged to zone"
+        "name": "Zone 3 bridge target"
       },
       "sl3_cooking_method": {
         "name": "Zone 3 cooking method",
@@ -5519,7 +5513,7 @@
         }
       },
       "sl4_bridged_to_zone": {
-        "name": "Zone 4 bridged to zone"
+        "name": "Zone 4 bridge target"
       },
       "sl4_cooking_method": {
         "name": "Zone 4 cooking method",
@@ -5660,7 +5654,7 @@
         }
       },
       "sl5_bridged_to_zone": {
-        "name": "Zone 5 bridged to zone"
+        "name": "Zone 5 bridge target"
       },
       "sl5_cooking_method": {
         "name": "Zone 5 cooking method",
@@ -5801,7 +5795,7 @@
         }
       },
       "sl6_bridged_to_zone": {
-        "name": "Zone 6 bridged to zone"
+        "name": "Zone 6 bridge target"
       },
       "sl6_cooking_method": {
         "name": "Zone 6 cooking method",

@@ -681,9 +681,6 @@
       "fota_set": {
         "name": "FOTA instellen"
       },
-      "fota_set_flag": {
-        "name": "FOTA instel-flag"
-      },
       "fota_status": {
         "name": "FOTA-status"
       },
@@ -740,9 +737,6 @@
       },
       "hard_pairing_status": {
         "name": "Harde koppelingsstatus"
-      },
-      "hard_pairing_unpair_all_set_flag": {
-        "name": "Hard pairing alles loskoppelen flag"
       },
       "hardpairingstatus": {
         "name": "Hard pairing status"

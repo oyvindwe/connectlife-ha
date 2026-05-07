@@ -4,6 +4,7 @@ properties:
     hide: true
   - property: Alarm_Grease_filter
     hide: true
+    entity_category: diagnostic
     binary_sensor:
       device_class: problem
       options:
@@ -11,6 +12,7 @@ properties:
         1: on
   - property: Alarm_NTC_TC
     hide: true
+    entity_category: diagnostic
     binary_sensor:
       device_class: problem
       options:
@@ -18,6 +20,7 @@ properties:
         1: on
   - property: Alarm_NTC_coil_overheating
     hide: true
+    entity_category: diagnostic
     binary_sensor:
       device_class: problem
       options:
@@ -25,6 +28,7 @@ properties:
         1: on
   - property: Alarm_NTC_power
     hide: true
+    entity_category: diagnostic
     binary_sensor:
       device_class: problem
       options:
@@ -32,6 +36,7 @@ properties:
         1: on
   - property: Alarm_Recirculation_filter_1
     hide: true
+    entity_category: diagnostic
     binary_sensor:
       device_class: problem
       options:
@@ -39,34 +44,35 @@ properties:
         1: on
   - property: Alarm_auto_program_ended
     hide: true
+    entity_category: diagnostic
     binary_sensor:
-      device_class: problem
       options:
         0: off
         1: on
   - property: Alarm_automatic_switch_off_zone
     hide: true
+    entity_category: diagnostic
     binary_sensor:
-      device_class: problem
       options:
         0: off
         1: on
   - property: Alarm_hob_hood_started
     hide: true
+    entity_category: diagnostic
     binary_sensor:
-      device_class: problem
       options:
         0: off
         1: on
   - property: Alarm_timer_ended
     hide: true
+    entity_category: diagnostic
     binary_sensor:
-      device_class: problem
       options:
         0: off
         1: on
   - property: Alarm_voltage
     hide: true
+    entity_category: diagnostic
     binary_sensor:
       device_class: problem
       options:
@@ -74,13 +80,14 @@ properties:
         1: on
   - property: Alarm_zone_turned_off
     hide: true
+    entity_category: diagnostic
     binary_sensor:
-      device_class: problem
       options:
         0: off
         1: on
   - property: Auto_Grease_filter_indication
     hide: true
+    entity_category: diagnostic
   - property: Auto_Tower_Up
     hide: true
   - property: Auto_boost
@@ -117,6 +124,7 @@ properties:
     disable: true
   - property: Control_Response_Level
     hide: true
+    entity_category: diagnostic
   - property: Demo_mode
     binary_sensor:
       options:
@@ -239,69 +247,73 @@ properties:
         0: off
         1: on
   - property: FOTA_set
+    entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: FOTA_set_flag
-    binary_sensor:
-      options:
-        0: off
-        1: on
+    disable: true
   - property: FOTA_status
+    entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: Grease_Filter_saturation
     hide: true
+    entity_category: diagnostic
   - property: Grease_filter_cleaning_interval_in_hours
     hide: true
+    entity_category: diagnostic
     sensor:
       device_class: duration
       unit: h
-      state_class: measurement
   - property: Grease_filter_reset_counter
     hide: true
+    entity_category: diagnostic
   - property: Grease_filter_reset_counter_set_flag
     disable: true
   - property: Grease_filter_set_lifetime_in_hours
     hide: true
+    entity_category: diagnostic
     sensor:
       device_class: duration
       unit: h
-      state_class: measurement
   - property: Grease_filter_set_lifetime_in_hours_set_flag
     disable: true
   - property: Grease_filter_status
     hide: true
+    entity_category: diagnostic
   - property: Grease_filter_timer_active
     hide: true
+    entity_category: diagnostic
   - property: Grease_filter_timer_active_set_flag
     disable: true
   - property: Grease_filter_used_hours
     hide: true
+    entity_category: diagnostic
     sensor:
       device_class: duration
       unit: h
-      state_class: measurement
+      state_class: total_increasing
   - property: HardPairingStatus
+    entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: HardPairingUnpairAll
+    entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: Hard_pairing_unpair_all_set_flag
-    binary_sensor:
-      options:
-        0: off
-        1: on
+    disable: true
   - property: Hood_connected_via_RF
     hide: true
+    entity_category: diagnostic
   - property: Hood_fan_speed
     hide: true
   - property: Hood_light
@@ -310,14 +322,17 @@ properties:
     hide: true
   - property: Hood_total_used_hours
     hide: true
+    entity_category: diagnostic
     sensor:
       device_class: duration
       unit: h
-      state_class: measurement
+      state_class: total_increasing
   - property: Key_sensitivity_level
     hide: true
+    entity_category: diagnostic
   - property: Key_sound_level
     hide: true
+    entity_category: diagnostic
   - property: Motor
     hide: true
   - property: Motor_level
@@ -331,40 +346,46 @@ properties:
     hide: true
   - property: Recirculation_filter_1_lifetime_in_hours
     hide: true
+    entity_category: diagnostic
     sensor:
       device_class: duration
       unit: h
-      state_class: measurement
   - property: Recirculation_filter_1_reset_counter
     hide: true
+    entity_category: diagnostic
   - property: Recirculation_filter_1_reset_counter_set_flag
     disable: true
   - property: Recirculation_filter_1_set_lifetime_in_hours
     hide: true
+    entity_category: diagnostic
     sensor:
       device_class: duration
       unit: h
-      state_class: measurement
   - property: Recirculation_filter_1_set_lifetime_in_hours_set_flag
     disable: true
   - property: Recirculation_filter_1_set_type
     hide: true
+    entity_category: diagnostic
   - property: Recirculation_filter_1_set_type_set_flag
     disable: true
   - property: Recirculation_filter_1_status
     hide: true
+    entity_category: diagnostic
   - property: Recirculation_filter_1_timer_active
     hide: true
+    entity_category: diagnostic
   - property: Recirculation_filter_1_timer_active_set_flag
     disable: true
   - property: Recirculation_filter_1_type
     hide: true
+    entity_category: diagnostic
   - property: Recirculation_filter_1_used_hours
     hide: true
+    entity_category: diagnostic
     sensor:
       device_class: duration
       unit: h
-      state_class: measurement
+      state_class: total_increasing
   - property: Recovery
     binary_sensor:
       options:
@@ -385,30 +406,36 @@ properties:
         2: timer
   - property: SL1_Alarm_NTC_coil
     hide: true
+    entity_category: diagnostic
     binary_sensor:
+      device_class: problem
       options:
         0: off
         1: on
   - property: SL1_Alarm_auto_program_notification
     hide: true
+    entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL1_Alarm_automatic_switch_off_zone
     hide: true
+    entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL1_Alarm_timer_ended
     hide: true
+    entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL1_Alarm_zone_turned_off
     hide: true
+    entity_category: diagnostic
     binary_sensor:
       options:
         0: off
@@ -468,6 +495,7 @@ properties:
     hide: true
   - property: SL1_NTC_sensor
     hide: true
+    entity_category: diagnostic
     sensor:
       read_only: true
       state_class: measurement
@@ -505,12 +533,16 @@ properties:
         1: on
   - property: SL1_Sand_timer_UTC_start_time_hours
     hide: true
+    entity_category: diagnostic
   - property: SL1_Sand_timer_UTC_start_time_minutes
     hide: true
+    entity_category: diagnostic
   - property: SL1_Sand_timer_UTC_start_time_seconds
     hide: true
+    entity_category: diagnostic
   - property: SL1_Sand_timer_paused_total_seconds
     hide: true
+    entity_category: diagnostic
     sensor:
       device_class: duration
       unit: s
@@ -533,12 +565,16 @@ properties:
         1: on
   - property: SL1_Stopwatch_UTC_start_time_hours
     hide: true
+    entity_category: diagnostic
   - property: SL1_Stopwatch_UTC_start_time_minutes
     hide: true
+    entity_category: diagnostic
   - property: SL1_Stopwatch_UTC_start_time_seconds
     hide: true
+    entity_category: diagnostic
   - property: SL1_Stopwatch_paused_total_seconds
     hide: true
+    entity_category: diagnostic
     sensor:
       device_class: duration
       unit: s
@@ -561,16 +597,22 @@ properties:
       unit: °C
   - property: SL1_Timer_UTC_end_time_hours
     hide: true
+    entity_category: diagnostic
   - property: SL1_Timer_UTC_end_time_minutes
     hide: true
+    entity_category: diagnostic
   - property: SL1_Timer_UTC_end_time_seconds
     hide: true
+    entity_category: diagnostic
   - property: SL1_Timer_UTC_paused_hours
     hide: true
+    entity_category: diagnostic
   - property: SL1_Timer_UTC_paused_minutes
     hide: true
+    entity_category: diagnostic
   - property: SL1_Timer_UTC_paused_seconds
     hide: true
+    entity_category: diagnostic
   - property: SL1_error_1
     hide: true
     entity_category: diagnostic
@@ -717,30 +759,36 @@ properties:
         2: timer
   - property: SL2_Alarm_NTC_coil
     hide: true
+    entity_category: diagnostic
     binary_sensor:
+      device_class: problem
       options:
         0: off
         1: on
   - property: SL2_Alarm_auto_program_notification
     hide: true
+    entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL2_Alarm_automatic_switch_off_zone
     hide: true
+    entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL2_Alarm_timer_ended
     hide: true
+    entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL2_Alarm_zone_turned_off
     hide: true
+    entity_category: diagnostic
     binary_sensor:
       options:
         0: off
@@ -800,6 +848,7 @@ properties:
     hide: true
   - property: SL2_NTC_sensor
     hide: true
+    entity_category: diagnostic
     sensor:
       read_only: true
       state_class: measurement
@@ -837,12 +886,16 @@ properties:
         1: on
   - property: SL2_Sand_timer_UTC_start_time_hours
     hide: true
+    entity_category: diagnostic
   - property: SL2_Sand_timer_UTC_start_time_minutes
     hide: true
+    entity_category: diagnostic
   - property: SL2_Sand_timer_UTC_start_time_seconds
     hide: true
+    entity_category: diagnostic
   - property: SL2_Sand_timer_paused_total_seconds
     hide: true
+    entity_category: diagnostic
     sensor:
       device_class: duration
       unit: s
@@ -865,12 +918,16 @@ properties:
         1: on
   - property: SL2_Stopwatch_UTC_start_time_hours
     hide: true
+    entity_category: diagnostic
   - property: SL2_Stopwatch_UTC_start_time_minutes
     hide: true
+    entity_category: diagnostic
   - property: SL2_Stopwatch_UTC_start_time_seconds
     hide: true
+    entity_category: diagnostic
   - property: SL2_Stopwatch_paused_total_seconds
     hide: true
+    entity_category: diagnostic
     sensor:
       device_class: duration
       unit: s
@@ -893,16 +950,22 @@ properties:
       unit: °C
   - property: SL2_Timer_UTC_end_time_hours
     hide: true
+    entity_category: diagnostic
   - property: SL2_Timer_UTC_end_time_minutes
     hide: true
+    entity_category: diagnostic
   - property: SL2_Timer_UTC_end_time_seconds
     hide: true
+    entity_category: diagnostic
   - property: SL2_Timer_UTC_paused_hours
     hide: true
+    entity_category: diagnostic
   - property: SL2_Timer_UTC_paused_minutes
     hide: true
+    entity_category: diagnostic
   - property: SL2_Timer_UTC_paused_seconds
     hide: true
+    entity_category: diagnostic
   - property: SL2_error_1
     hide: true
     entity_category: diagnostic
@@ -1049,30 +1112,36 @@ properties:
         2: timer
   - property: SL3_Alarm_NTC_coil
     hide: true
+    entity_category: diagnostic
     binary_sensor:
+      device_class: problem
       options:
         0: off
         1: on
   - property: SL3_Alarm_auto_program_notification
     hide: true
+    entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL3_Alarm_automatic_switch_off_zone
     hide: true
+    entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL3_Alarm_timer_ended
     hide: true
+    entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL3_Alarm_zone_turned_off
     hide: true
+    entity_category: diagnostic
     binary_sensor:
       options:
         0: off
@@ -1132,6 +1201,7 @@ properties:
     hide: true
   - property: SL3_NTC_sensor
     hide: true
+    entity_category: diagnostic
     sensor:
       read_only: true
       state_class: measurement
@@ -1169,12 +1239,16 @@ properties:
         1: on
   - property: SL3_Sand_timer_UTC_start_time_hours
     hide: true
+    entity_category: diagnostic
   - property: SL3_Sand_timer_UTC_start_time_minutes
     hide: true
+    entity_category: diagnostic
   - property: SL3_Sand_timer_UTC_start_time_seconds
     hide: true
+    entity_category: diagnostic
   - property: SL3_Sand_timer_paused_total_seconds
     hide: true
+    entity_category: diagnostic
     sensor:
       device_class: duration
       unit: s
@@ -1197,12 +1271,16 @@ properties:
         1: on
   - property: SL3_Stopwatch_UTC_start_time_hours
     hide: true
+    entity_category: diagnostic
   - property: SL3_Stopwatch_UTC_start_time_minutes
     hide: true
+    entity_category: diagnostic
   - property: SL3_Stopwatch_UTC_start_time_seconds
     hide: true
+    entity_category: diagnostic
   - property: SL3_Stopwatch_paused_total_seconds
     hide: true
+    entity_category: diagnostic
     sensor:
       device_class: duration
       unit: s
@@ -1225,16 +1303,22 @@ properties:
       unit: °C
   - property: SL3_Timer_UTC_end_time_hours
     hide: true
+    entity_category: diagnostic
   - property: SL3_Timer_UTC_end_time_minutes
     hide: true
+    entity_category: diagnostic
   - property: SL3_Timer_UTC_end_time_seconds
     hide: true
+    entity_category: diagnostic
   - property: SL3_Timer_UTC_paused_hours
     hide: true
+    entity_category: diagnostic
   - property: SL3_Timer_UTC_paused_minutes
     hide: true
+    entity_category: diagnostic
   - property: SL3_Timer_UTC_paused_seconds
     hide: true
+    entity_category: diagnostic
   - property: SL3_error_1
     hide: true
     entity_category: diagnostic
@@ -1381,30 +1465,36 @@ properties:
         2: timer
   - property: SL4_Alarm_NTC_coil
     hide: true
+    entity_category: diagnostic
     binary_sensor:
+      device_class: problem
       options:
         0: off
         1: on
   - property: SL4_Alarm_auto_program_notification
     hide: true
+    entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL4_Alarm_automatic_switch_off_zone
     hide: true
+    entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL4_Alarm_timer_ended
     hide: true
+    entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL4_Alarm_zone_turned_off
     hide: true
+    entity_category: diagnostic
     binary_sensor:
       options:
         0: off
@@ -1464,6 +1554,7 @@ properties:
     hide: true
   - property: SL4_NTC_sensor
     hide: true
+    entity_category: diagnostic
     sensor:
       read_only: true
       state_class: measurement
@@ -1501,12 +1592,16 @@ properties:
         1: on
   - property: SL4_Sand_timer_UTC_start_time_hours
     hide: true
+    entity_category: diagnostic
   - property: SL4_Sand_timer_UTC_start_time_minutes
     hide: true
+    entity_category: diagnostic
   - property: SL4_Sand_timer_UTC_start_time_seconds
     hide: true
+    entity_category: diagnostic
   - property: SL4_Sand_timer_paused_total_seconds
     hide: true
+    entity_category: diagnostic
     sensor:
       device_class: duration
       unit: s
@@ -1529,12 +1624,16 @@ properties:
         1: on
   - property: SL4_Stopwatch_UTC_start_time_hours
     hide: true
+    entity_category: diagnostic
   - property: SL4_Stopwatch_UTC_start_time_minutes
     hide: true
+    entity_category: diagnostic
   - property: SL4_Stopwatch_UTC_start_time_seconds
     hide: true
+    entity_category: diagnostic
   - property: SL4_Stopwatch_paused_total_seconds
     hide: true
+    entity_category: diagnostic
     sensor:
       device_class: duration
       unit: s
@@ -1557,16 +1656,22 @@ properties:
       unit: °C
   - property: SL4_Timer_UTC_end_time_hours
     hide: true
+    entity_category: diagnostic
   - property: SL4_Timer_UTC_end_time_minutes
     hide: true
+    entity_category: diagnostic
   - property: SL4_Timer_UTC_end_time_seconds
     hide: true
+    entity_category: diagnostic
   - property: SL4_Timer_UTC_paused_hours
     hide: true
+    entity_category: diagnostic
   - property: SL4_Timer_UTC_paused_minutes
     hide: true
+    entity_category: diagnostic
   - property: SL4_Timer_UTC_paused_seconds
     hide: true
+    entity_category: diagnostic
   - property: SL4_error_1
     hide: true
     entity_category: diagnostic
@@ -1713,30 +1818,36 @@ properties:
         2: timer
   - property: SL5_Alarm_NTC_coil
     hide: true
+    entity_category: diagnostic
     binary_sensor:
+      device_class: problem
       options:
         0: off
         1: on
   - property: SL5_Alarm_auto_program_notification
     hide: true
+    entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL5_Alarm_automatic_switch_off_zone
     hide: true
+    entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL5_Alarm_timer_ended
     hide: true
+    entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL5_Alarm_zone_turned_off
     hide: true
+    entity_category: diagnostic
     binary_sensor:
       options:
         0: off
@@ -1796,6 +1907,7 @@ properties:
     hide: true
   - property: SL5_NTC_sensor
     hide: true
+    entity_category: diagnostic
     sensor:
       read_only: true
       state_class: measurement
@@ -1833,12 +1945,16 @@ properties:
         1: on
   - property: SL5_Sand_timer_UTC_start_time_hours
     hide: true
+    entity_category: diagnostic
   - property: SL5_Sand_timer_UTC_start_time_minutes
     hide: true
+    entity_category: diagnostic
   - property: SL5_Sand_timer_UTC_start_time_seconds
     hide: true
+    entity_category: diagnostic
   - property: SL5_Sand_timer_paused_total_seconds
     hide: true
+    entity_category: diagnostic
     sensor:
       device_class: duration
       unit: s
@@ -1861,12 +1977,16 @@ properties:
         1: on
   - property: SL5_Stopwatch_UTC_start_time_hours
     hide: true
+    entity_category: diagnostic
   - property: SL5_Stopwatch_UTC_start_time_minutes
     hide: true
+    entity_category: diagnostic
   - property: SL5_Stopwatch_UTC_start_time_seconds
     hide: true
+    entity_category: diagnostic
   - property: SL5_Stopwatch_paused_total_seconds
     hide: true
+    entity_category: diagnostic
     sensor:
       device_class: duration
       unit: s
@@ -1889,16 +2009,22 @@ properties:
       unit: °C
   - property: SL5_Timer_UTC_end_time_hours
     hide: true
+    entity_category: diagnostic
   - property: SL5_Timer_UTC_end_time_minutes
     hide: true
+    entity_category: diagnostic
   - property: SL5_Timer_UTC_end_time_seconds
     hide: true
+    entity_category: diagnostic
   - property: SL5_Timer_UTC_paused_hours
     hide: true
+    entity_category: diagnostic
   - property: SL5_Timer_UTC_paused_minutes
     hide: true
+    entity_category: diagnostic
   - property: SL5_Timer_UTC_paused_seconds
     hide: true
+    entity_category: diagnostic
   - property: SL5_error_1
     hide: true
     entity_category: diagnostic
@@ -2045,30 +2171,36 @@ properties:
         2: timer
   - property: SL6_Alarm_NTC_coil
     hide: true
+    entity_category: diagnostic
     binary_sensor:
+      device_class: problem
       options:
         0: off
         1: on
   - property: SL6_Alarm_auto_program_notification
     hide: true
+    entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL6_Alarm_automatic_switch_off_zone
     hide: true
+    entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL6_Alarm_timer_ended
     hide: true
+    entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL6_Alarm_zone_turned_off
     hide: true
+    entity_category: diagnostic
     binary_sensor:
       options:
         0: off
@@ -2128,6 +2260,7 @@ properties:
     hide: true
   - property: SL6_NTC_sensor
     hide: true
+    entity_category: diagnostic
     sensor:
       read_only: true
       state_class: measurement
@@ -2165,12 +2298,16 @@ properties:
         1: on
   - property: SL6_Sand_timer_UTC_start_time_hours
     hide: true
+    entity_category: diagnostic
   - property: SL6_Sand_timer_UTC_start_time_minutes
     hide: true
+    entity_category: diagnostic
   - property: SL6_Sand_timer_UTC_start_time_seconds
     hide: true
+    entity_category: diagnostic
   - property: SL6_Sand_timer_paused_total_seconds
     hide: true
+    entity_category: diagnostic
     sensor:
       device_class: duration
       unit: s
@@ -2193,12 +2330,16 @@ properties:
         1: on
   - property: SL6_Stopwatch_UTC_start_time_hours
     hide: true
+    entity_category: diagnostic
   - property: SL6_Stopwatch_UTC_start_time_minutes
     hide: true
+    entity_category: diagnostic
   - property: SL6_Stopwatch_UTC_start_time_seconds
     hide: true
+    entity_category: diagnostic
   - property: SL6_Stopwatch_paused_total_seconds
     hide: true
+    entity_category: diagnostic
     sensor:
       device_class: duration
       unit: s
@@ -2221,16 +2362,22 @@ properties:
       unit: °C
   - property: SL6_Timer_UTC_end_time_hours
     hide: true
+    entity_category: diagnostic
   - property: SL6_Timer_UTC_end_time_minutes
     hide: true
+    entity_category: diagnostic
   - property: SL6_Timer_UTC_end_time_seconds
     hide: true
+    entity_category: diagnostic
   - property: SL6_Timer_UTC_paused_hours
     hide: true
+    entity_category: diagnostic
   - property: SL6_Timer_UTC_paused_minutes
     hide: true
+    entity_category: diagnostic
   - property: SL6_Timer_UTC_paused_seconds
     hide: true
+    entity_category: diagnostic
   - property: SL6_error_1
     hide: true
     entity_category: diagnostic
@@ -2369,10 +2516,13 @@ properties:
         1: on
   - property: Stand_by_time
     hide: true
+    entity_category: diagnostic
   - property: Synchro_Start_Level
     hide: true
+    entity_category: diagnostic
   - property: Synchro_Stop_Level
     hide: true
+    entity_category: diagnostic
   - property: Test_mode
     binary_sensor:
       options:
@@ -2380,12 +2530,9 @@ properties:
         1: on
   - property: Total_time_of_cooking_in_minute
     sensor:
-      state_class: total
+      device_class: duration
       unit: min
+      state_class: total_increasing
   - property: Window_status
     hide: true
-  - property: daily_energy_kwh
-    sensor:
-      device_class: energy
-      unit: kWh
-      state_class: total_increasing
+    entity_category: diagnostic
