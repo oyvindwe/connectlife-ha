@@ -1229,12 +1229,6 @@
       "gratin_function_set_time_in_seconds": {
         "name": "Gratin Zeiteinstellung"
       },
-      "lightbrightness": {
-        "name": "Lichthelligkeit"
-      },
-      "lightcolortemperature": {
-        "name": "Lichtfarbtemperatur"
-      },
       "refrigerator_max_temperature": {
         "name": "Maximale K\u00fchlschranktemperatur"
       },
@@ -1377,9 +1371,6 @@
           "english": "Englisch",
           "simplified_chinese": "Vereinfachtes Chinesisch"
         }
-      },
-      "motorlevel": {
-        "name": "Motorleistung"
       },
       "notification_volumen_setting_status": {
         "name": "Benachrichtigungslautst\u00e4rke",

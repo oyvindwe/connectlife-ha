@@ -1330,12 +1330,6 @@
       "gratin_function_set_time_in_seconds": {
         "name": "Gratin-instellingstijd"
       },
-      "lightbrightness": {
-        "name": "Lichthelderheid"
-      },
-      "lightcolortemperature": {
-        "name": "Kleurtemperatuur verlichting"
-      },
       "refrigerator_max_temperature": {
         "name": "Koelkast max temperatuur"
       },
@@ -1481,9 +1475,6 @@
           "english": "Engels",
           "simplified_chinese": "Vereenvoudigd Chinees"
         }
-      },
-      "motorlevel": {
-        "name": "Motorniveau"
       },
       "notification_volumen_setting_status": {
         "name": "Meldingsvolume",
