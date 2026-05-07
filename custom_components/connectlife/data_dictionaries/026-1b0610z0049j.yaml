@@ -24,12 +24,10 @@ properties:
       min_value: 0
       max_value: 8
   - property: variation_max_temperature
-    hide: true
     number:
       device_class: temperature
       unit: °C
   - property: variation_min_temperature
-    hide: true
     number:
       device_class: temperature
       unit: °C
