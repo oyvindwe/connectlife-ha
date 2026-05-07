@@ -214,7 +214,7 @@ properties:
     sensor:
       read_only: true
     entity_category: diagnostic
-    hide: true
+    optional: true
   - property: f_electricity
     # f_electricity: unit varies by device. Most devices observed report
     # in mA. Devices that report in other units (e.g. hW), need a
@@ -258,7 +258,7 @@ properties:
       device_class: voltage
       unit: V
       state_class: measurement
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: t_8heat
     switch:
@@ -269,7 +269,7 @@ properties:
       options:
         0: off
         1: on
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: t_device_info
     disable: true
