@@ -178,7 +178,7 @@ properties:
     sensor:
       read_only: true
     entity_category: diagnostic
-    hide: true
+    optional: true
   - property: f_electricity
     # f_electricity: unit varies by device. Most devices observed report
     # in mA. Devices that report in other units (e.g. hW), need a
@@ -198,17 +198,17 @@ properties:
   - property: f_matterOriginalProductId
     sensor:
       read_only: true
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: f_matterOriginalVendorId
     sensor:
       read_only: true
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: f_matterUniqueId
     sensor:
       read_only: true
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: f_temp_in
     icon: mdi:thermometer
@@ -218,21 +218,21 @@ properties:
     sensor:
       device_class: voltage
       unit: V
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: measured_grid_voltage
     sensor:
       device_class: voltage
       unit: V
       state_class: measurement
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: t_beep
     binary_sensor:
       options:
         0: off
         1: on
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: t_dimmer
     switch:
