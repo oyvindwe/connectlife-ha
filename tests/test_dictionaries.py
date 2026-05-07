@@ -265,3 +265,9 @@ def test_disable_false_actually_disables_disabling():
     assert Property({"property": "p", "disable": False}).disable is False
     assert Property({"property": "p", "disable": True}).disable is True
     assert Property({"property": "p"}).disable is False
+
+
+def test_optional_parsing():
+    assert Property({"property": "p", "optional": False}).optional is False
+    assert Property({"property": "p", "optional": True}).optional is True
+    assert Property({"property": "p"}).optional is False

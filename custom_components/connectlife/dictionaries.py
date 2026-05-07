@@ -44,6 +44,7 @@ PROPERTIES = "properties"
 MAX_VALUE = "max_value"
 MIN_VALUE = "min_value"
 MULTIPLIER = "multiplier"
+OPTIONAL = "optional"
 TARGET = "target"
 READ_ONLY = "read_only"
 STATE_CLASS = "state_class"
@@ -316,6 +317,7 @@ class Property:
     icon: str | None
     hide: bool
     disable: bool
+    optional: bool
     unavailable: int | None
     entity_category: EntityCategory | None
     combine: list[CombineSource] | None
@@ -333,6 +335,7 @@ class Property:
         self.icon = _val(entry, ICON) or None
         self.hide = bool(entry[HIDE]) if HIDE in entry else False
         self.disable = bool(entry[DISABLE]) if DISABLE in entry else False
+        self.optional = bool(entry[OPTIONAL]) if OPTIONAL in entry else False
         self.unavailable = _val(entry, UNAVAILABLE)
         entity_category = _val(entry, ENTITY_CATEGORY)
         self.entity_category = (
@@ -487,7 +490,7 @@ class Dictionaries:
                     raw_entries[name] = _merge_property(raw_entries.get(name), prop)
 
         properties: dict[str, Property] = defaultdict(
-            lambda: Property({PROPERTY: "default", HIDE: True})
+            lambda: Property({PROPERTY: "default", OPTIONAL: True})
         )
         for name, entry in raw_entries.items():
             properties[name] = Property(entry)
