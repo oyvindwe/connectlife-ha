@@ -66,6 +66,7 @@ class ConnectLifeNumberEntity(ConnectLifeEntity, NumberEntity):
             key=self._attr_unique_id,
             device_class=device_class,
             entity_registry_visible_default=not dd_entry.hide,
+            entity_registry_enabled_default=not dd_entry.optional,
             icon=dd_entry.icon,
             name=status.replace("_", " "),
             native_max_value=dd_entry.number.max_value,  # type: ignore[arg-type]

@@ -114,6 +114,7 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
             key=self._attr_unique_id,
             device_class=device_class,
             entity_registry_visible_default=not dd_entry.hide,
+            entity_registry_enabled_default=not dd_entry.optional,
             icon=dd_entry.icon,
             name=status.replace("_", " "),
             native_unit_of_measurement=to_unit(

@@ -2,7 +2,7 @@
 
 Mapping files for known appliances are located in this directory. Appliances without a mapping file will still
 be loaded, but with a warning in the log. Their properties will all be mapped to [sensor](#type-sensor) entities,
-with `hidden` set to `true`.
+registered as disabled by default. Users can enable individual ones from the device page in Home Assistant.
 
 ## Default mapping files
 
@@ -26,6 +26,7 @@ The following top-level fields always inherit, even across platform changes:
 - `icon`
 - `hide`
 - `disable`
+- `optional`
 - `entity_category`
 - `unavailable`
 - `combine` — if you change the platform and want to drop the base's combine sources, clear it with
@@ -91,7 +92,7 @@ The file contains two top level items:
 - `properties`: list of [`Property`](#property)
 
 To make a property visible by default, just add the property to the list. Note that properties you do not map are still
-mapped to [sensor](#type-sensor) entities with `hidden` set to `true`.
+mapped to [sensor](#type-sensor) entities, but registered as disabled by default.
 
 Each property is mapped to _one_ entity or _one_ target property. In addition, each `climate` preset is mapped to a
 set of properties and values.
@@ -151,6 +152,7 @@ Note that translation keys must be lowercase!
 | `combine`                  | list of [CombineSource](#combine)  | Combine multiple source properties into a single sensor value. See [Combine](#combine).                                                                                                                                                                                                |
 | `disable`                  | `true`, `false`                    | If Home Assistant should not create an entity for this property. Defaults to `false`.                                                                                                                                                                                                  |
 | `hide`                     | `true`, `false`                    | If Home Assistant should initially hide the entity for this property. Defaults to `false`, but is set to `true` for unknown properties.                                                                                                                                                |
+| `optional`                 | `true`, `false`                    | If the entity should be registered as disabled by default. The user can enable it from the Home Assistant UI. Use for rarely-useful properties (e.g., per-slot error codes). Defaults to `false`. Only applies to per-property platforms (`binary_sensor`, `number`, `select`, `sensor`, `switch`). |
 | `icon`                     | `mdi:eye`, etc.                    | Icon to use for the entity.                                                                                                                                                                                                                                                            |
 | `unavailable`              | integer                            | If the property has this value on the device, no entity is created for it. Use for properties that the device reports as "not available" with a sentinel value.                                                                                                                        |
 | `entity_category`          | `config`, `diagnostic`             | Whether the entity should be considered a diagnostics or config entity. Defaults to `None`. [More info in HA docs](https://developers.home-assistant.io/docs/core/entity/#registry-properties:~:text=automatic%20device%20registration.-,entity_category,-EntityCategory%20%7C%20None) |
