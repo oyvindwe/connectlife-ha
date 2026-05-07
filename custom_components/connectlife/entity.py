@@ -61,6 +61,18 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
                 if CONF_DISABLE_BEEP in device:
                     self._disable_beep = device[CONF_DISABLE_BEEP]
 
+    @property
+    def available(self) -> bool:
+        # CoordinatorEntity.available only checks last_update_success, so
+        # _attr_available is ignored. Combine both with the device's
+        # offline_state (1 == online) so unplugged devices show as
+        # unavailable in HA.
+        return (
+            super().available
+            and self.device_id in self.coordinator.data
+            and self.coordinator.data[self.device_id].offline_state == 1
+        )
+
     @callback
     @abstractmethod
     def update_state(self):

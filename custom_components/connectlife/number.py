@@ -84,7 +84,6 @@ class ConnectLifeNumberEntity(ConnectLifeEntity, NumberEntity):
         if self.status in self.coordinator.data[self.device_id].status_list:
             value = self.coordinator.data[self.device_id].status_list[self.status]
             self._attr_native_value = value
-        self._attr_available = self.coordinator.data[self.device_id].offline_state == 1
 
     async def async_set_native_value(self, value: float) -> None:
         """Update the current value."""

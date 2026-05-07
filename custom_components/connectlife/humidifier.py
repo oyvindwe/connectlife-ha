@@ -133,7 +133,6 @@ class ConnectLifeHumidifier(ConnectLifeEntity, HumidifierEntity):
                         _LOGGER.warning("Got unexpected value %d for %s (%s)", value, status, self.nickname)
                 else:
                     setattr(self, f"_attr_{target}", value)
-        self._attr_available = self.coordinator.data[self.device_id].offline_state == 1
 
     async def async_set_humidity(self, humidity):
         """Set new target humidity."""

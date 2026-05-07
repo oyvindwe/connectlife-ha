@@ -205,8 +205,6 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
             elif CURRENT_OPERATION not in self.target_map:
                 self._attr_current_operation = STATE_ON
 
-        self._attr_available = self.coordinator.data[self.device_id].offline_state == 1
-
     def get_temperature_limit(self, temperature_map: dict[str, int]) -> int | None:
         if temperature_map and self._attr_temperature_unit in temperature_map:
             return temperature_map[self._attr_temperature_unit]

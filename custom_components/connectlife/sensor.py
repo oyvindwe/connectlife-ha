@@ -146,11 +146,9 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
                     if self.multiplier is not None:
                         value *= self.multiplier
                     self._attr_native_value = value
-                self._attr_available = self.coordinator.data[self.device_id].offline_state == 1
                 return
             elif self.status not in status_list:
                 self._attr_native_value = None
-                self._attr_available = self.coordinator.data[self.device_id].offline_state == 1
                 return
         if self.status in status_list:
             value = status_list[self.status]
@@ -175,7 +173,6 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
                 if self.multiplier is not None and value is not None:
                     value *= self.multiplier  # type: ignore[operator]
                 self._attr_native_value = value
-        self._attr_available = self.coordinator.data[self.device_id].offline_state == 1
 
     async def async_set_value(self, value: int) -> None:
         """Set value for this sensor."""
@@ -212,12 +209,24 @@ class ConnectLifeEnergySensor(CoordinatorEntity[ConnectLifeEnergyCoordinator], S
         """Initialize the energy sensor."""
         super().__init__(energy_coordinator)
         self._device_id = appliance.device_id
+        self._appliance_coordinator = appliance_coordinator
         self._attr_unique_id = f"{appliance.device_id}-daily_energy_kwh"
         self._attr_device_info = DeviceInfo(
             identifiers={(DOMAIN, appliance.device_id)},
         )
         appliance_coordinator.add_entity(self._attr_unique_id, Platform.SENSOR)
         self._update_native_value()
+
+    @property
+    def available(self) -> bool:
+        appliance = self._appliance_coordinator.data.get(self._device_id)
+        return (
+            super().available
+            and appliance is not None
+            and appliance.offline_state == 1
+            and self.coordinator.data is not None
+            and self.coordinator.data.get(self._device_id) is not None
+        )
 
     @callback
     def _handle_coordinator_update(self) -> None:
@@ -228,9 +237,6 @@ class ConnectLifeEnergySensor(CoordinatorEntity[ConnectLifeEnergyCoordinator], S
     def _update_native_value(self) -> None:
         """Update native value from energy coordinator data."""
         if self.coordinator.data and self._device_id in self.coordinator.data:
-            value = self.coordinator.data[self._device_id]
-            self._attr_native_value = value
-            self._attr_available = value is not None
+            self._attr_native_value = self.coordinator.data[self._device_id]
         else:
             self._attr_native_value = None
-            self._attr_available = False
