@@ -40,6 +40,7 @@
 |                      | Air conditioner          | 009              | 129                    |
 |                      | Air conditioner          | 009              | 199                    |
 |                      | Air conditioner          | 009              | 19901                  |
+| HI21472SV            | Induction hob            | 010              | hob-pind               |
 |                      | Hood                     | 012              | 000                    |
 |                      | Oven                     | 013              | 000                    |
 | Bio21                | Oven                     | 013              | oven-bio21-iconledplus |
