@@ -1,7 +1,7 @@
 # Induction hob
 properties:
   - property: Alarm_Hob_Hood_Started
-    hide: true
+    optional: true
     binary_sensor:
       device_class: problem
       options:
@@ -30,21 +30,21 @@ properties:
         0: off
         1: on
   - property: Alarm_auto_program_notification
-    hide: true
+    optional: true
     binary_sensor:
       device_class: problem
       options:
         0: off
         1: on
   - property: Alarm_automatic_switch_off_zone
-    hide: true
+    optional: true
     binary_sensor:
       device_class: problem
       options:
         0: off
         1: on
   - property: Alarm_timer_ended
-    hide: true
+    optional: true
     binary_sensor:
       device_class: problem
       options:
@@ -58,7 +58,7 @@ properties:
         0: off
         1: on
   - property: Alarm_zone_turned_off
-    hide: true
+    optional: true
     binary_sensor:
       device_class: problem
       options:
@@ -95,9 +95,9 @@ properties:
   - property: SL
     # Sample value: 6
     # Probably number of zones supported by API, and should be ignored. Zone_number is actual number of zones on hob.
-    hide: true
+    optional: true
   - property: SL1_Active_timer
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -105,7 +105,7 @@ properties:
         1: stopwatch
         2: timer
   - property: SL1_Alarm_NTC_coil_overheating
-    hide: true
+    optional: true
     icon: mdi:alert
     binary_sensor:
       device_class: problem
@@ -113,31 +113,31 @@ properties:
         0: off
         1: on
   - property: SL1_Alarm_auto_program_notification
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL1_Alarm_automatic_switch_off_zone
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL1_Alarm_timer_ended
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL1_Alarm_zone_turned_off
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL1_Bridge_function_active
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
@@ -155,9 +155,9 @@ properties:
         8172: grill
   - property: SL1_NTC_sensor
     # Sample value: 0
-    hide: true
+    optional: true
   - property: SL1_Pot_detected
-    hide: true
+    optional: true
     binary_sensor:
       options:
         8126: on
@@ -166,15 +166,15 @@ properties:
     # Sample value: 0
   - property: SL1_Power_level_max
     # Sample value: 13
-    hide: true
+    optional: true
   - property: SL1_Status
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL1_Zone_shape
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -184,7 +184,7 @@ properties:
         8344: rectangle_horizontal
         8345: no_shape
   - property: SL2_Active_timer
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -192,7 +192,7 @@ properties:
         1: stopwatch
         2: timer
   - property: SL2_Alarm_NTC_coil_overheating
-    hide: true
+    optional: true
     icon: mdi:alert
     binary_sensor:
       device_class: problem
@@ -200,31 +200,31 @@ properties:
         0: off
         1: on
   - property: SL2_Alarm_auto_program_notification
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL2_Alarm_automatic_switch_off_zone
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL2_Alarm_timer_ended
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL2_Alarm_zone_turned_off
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL2_Bridge_function_active
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
@@ -242,9 +242,9 @@ properties:
         8172: grill
   - property: SL2_NTC_sensor
     # Sample value: 0
-    hide: true
+    optional: true
   - property: SL2_Pot_detected
-    hide: true
+    optional: true
     binary_sensor:
       options:
         8126: on
@@ -253,15 +253,15 @@ properties:
     # Sample value: 0
   - property: SL2_Power_level_max
     # Sample value: 13
-    hide: true
+    optional: true
   - property: SL2_Status
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL2_Zone_shape
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -271,7 +271,7 @@ properties:
         8344: rectangle_horizontal
         8345: no_shape
   - property: SL3_Active_timer
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -279,7 +279,7 @@ properties:
         1: stopwatch
         2: timer
   - property: SL3_Alarm_NTC_coil_overheating
-    hide: true
+    optional: true
     icon: mdi:alert
     binary_sensor:
       device_class: problem
@@ -287,31 +287,31 @@ properties:
         0: off
         1: on
   - property: SL3_Alarm_auto_program_notification
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL3_Alarm_automatic_switch_off_zone
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL3_Alarm_timer_ended
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL3_Alarm_zone_turned_off
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL3_Bridge_function_active
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
@@ -329,9 +329,9 @@ properties:
         8172: grill
   - property: SL3_NTC_sensor
     # Sample value: 0
-    hide: true
+    optional: true
   - property: SL3_Pot_detected
-    hide: true
+    optional: true
     binary_sensor:
       options:
         8126: on
@@ -340,15 +340,15 @@ properties:
     # Sample value: 0
   - property: SL3_Power_level_max
     # Sample value: 13
-    hide: true
+    optional: true
   - property: SL3_Status
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL3_Zone_shape
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -358,7 +358,7 @@ properties:
         8344: rectangle_horizontal
         8345: no_shape
   - property: SL4_Active_timer
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -366,7 +366,7 @@ properties:
         1: stopwatch
         2: timer
   - property: SL4_Alarm_NTC_coil_overheating
-    hide: true
+    optional: true
     icon: mdi:alert
     binary_sensor:
       device_class: problem
@@ -374,31 +374,31 @@ properties:
         0: off
         1: on
   - property: SL4_Alarm_auto_program_notification
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL4_Alarm_automatic_switch_off_zone
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL4_Alarm_timer_ended
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL4_Alarm_zone_turned_off
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL4_Bridge_function_active
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
@@ -416,9 +416,9 @@ properties:
         8172: grill
   - property: SL4_NTC_sensor
     # Sample value: 0
-    hide: true
+    optional: true
   - property: SL4_Pot_detected
-    hide: true
+    optional: true
     binary_sensor:
       options:
         8126: on
@@ -427,15 +427,15 @@ properties:
     # Sample value: 0
   - property: SL4_Power_level_max
     # Sample value: 13
-    hide: true
+    optional: true
   - property: SL4_Status
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL4_Zone_shape
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -445,7 +445,7 @@ properties:
         8344: rectangle_horizontal
         8345: no_shape
   - property: SL5_Active_timer
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -453,7 +453,7 @@ properties:
         1: stopwatch
         2: timer
   - property: SL5_Alarm_NTC_coil_overheating
-    hide: true
+    optional: true
     icon: mdi:alert
     binary_sensor:
       device_class: problem
@@ -461,31 +461,31 @@ properties:
         0: off
         1: on
   - property: SL5_Alarm_auto_program_notification
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL5_Alarm_automatic_switch_off_zone
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL5_Alarm_timer_ended
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL5_Alarm_zone_turned_off
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL5_Bridge_function_active
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
@@ -503,9 +503,9 @@ properties:
         8172: grill
   - property: SL5_NTC_sensor
     # Sample value: 0
-    hide: true
+    optional: true
   - property: SL5_Pot_detected
-    hide: true
+    optional: true
     binary_sensor:
       options:
         8126: on
@@ -514,15 +514,15 @@ properties:
     # Sample value: 0
   - property: SL5_Power_level_max
     # Sample value: 13
-    hide: true
+    optional: true
   - property: SL5_Status
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL5_Zone_shape
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -532,7 +532,7 @@ properties:
         8344: rectangle_horizontal
         8345: no_shape
   - property: SL6_Active_timer
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -540,7 +540,7 @@ properties:
         1: stopwatch
         2: timer
   - property: SL6_Alarm_NTC_coil_overheating
-    hide: true
+    optional: true
     icon: mdi:alert
     binary_sensor:
       device_class: problem
@@ -548,31 +548,31 @@ properties:
         0: off
         1: on
   - property: SL6_Alarm_auto_program_notification
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL6_Alarm_automatic_switch_off_zone
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL6_Alarm_timer_ended
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL6_Alarm_zone_turned_off
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL6_Bridge_function_active
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
@@ -590,9 +590,9 @@ properties:
         8172: grill
   - property: SL6_NTC_sensor
     # Sample value: 0
-    hide: true
+    optional: true
   - property: SL6_Pot_detected
-    hide: true
+    optional: true
     binary_sensor:
       options:
         8126: on
@@ -601,15 +601,15 @@ properties:
     # Sample value: 0
   - property: SL6_Power_level_max
     # Sample value: 13
-    hide: true
+    optional: true
   - property: SL6_Status
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL6_Zone_shape
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -624,4 +624,4 @@ properties:
       unit: h
   - property: Zone_number
     # Sample value: 5
-    hide: true
+    optional: true
