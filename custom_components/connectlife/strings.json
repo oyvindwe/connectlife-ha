@@ -144,6 +144,9 @@
       "alarm_fast_preheating_finished": {
         "name": "Alarm fast preheating finished"
       },
+      "alarm_grease_filter": {
+        "name": "Grease filter alarm"
+      },
       "alarm_hob_hood_started": {
         "name": "Hob hood started"
       },
@@ -191,6 +194,9 @@
       },
       "alarm_pyrolytic_finished": {
         "name": "Alarm pyrolytic finished"
+      },
+      "alarm_recirculation_filter_1": {
+        "name": "Recirculation filter 1 alarm"
       },
       "alarm_remote_start_canceled": {
         "name": "Remote start canceled"
@@ -981,6 +987,57 @@
       "sl1_bridge_function_active": {
         "name": "Zone 1 bridge active"
       },
+      "sl1_error_1": {
+        "name": "Zone 1 error 1"
+      },
+      "sl1_error_10": {
+        "name": "Zone 1 error 10"
+      },
+      "sl1_error_11": {
+        "name": "Zone 1 error 11"
+      },
+      "sl1_error_12": {
+        "name": "Zone 1 error 12"
+      },
+      "sl1_error_13": {
+        "name": "Zone 1 error 13"
+      },
+      "sl1_error_14": {
+        "name": "Zone 1 error 14"
+      },
+      "sl1_error_15": {
+        "name": "Zone 1 error 15"
+      },
+      "sl1_error_16": {
+        "name": "Zone 1 error 16"
+      },
+      "sl1_error_17": {
+        "name": "Zone 1 error 17"
+      },
+      "sl1_error_2": {
+        "name": "Zone 1 error 2"
+      },
+      "sl1_error_3": {
+        "name": "Zone 1 error 3"
+      },
+      "sl1_error_4": {
+        "name": "Zone 1 error 4"
+      },
+      "sl1_error_5": {
+        "name": "Zone 1 error 5"
+      },
+      "sl1_error_6": {
+        "name": "Zone 1 error 6"
+      },
+      "sl1_error_7": {
+        "name": "Zone 1 error 7"
+      },
+      "sl1_error_8": {
+        "name": "Zone 1 error 8"
+      },
+      "sl1_error_9": {
+        "name": "Zone 1 error 9"
+      },
       "sl1_pot_detected": {
         "name": "Zone 1 pot detected"
       },
@@ -1010,6 +1067,57 @@
       },
       "sl2_bridge_function_active": {
         "name": "Zone 2 bridge active"
+      },
+      "sl2_error_1": {
+        "name": "Zone 2 error 1"
+      },
+      "sl2_error_10": {
+        "name": "Zone 2 error 10"
+      },
+      "sl2_error_11": {
+        "name": "Zone 2 error 11"
+      },
+      "sl2_error_12": {
+        "name": "Zone 2 error 12"
+      },
+      "sl2_error_13": {
+        "name": "Zone 2 error 13"
+      },
+      "sl2_error_14": {
+        "name": "Zone 2 error 14"
+      },
+      "sl2_error_15": {
+        "name": "Zone 2 error 15"
+      },
+      "sl2_error_16": {
+        "name": "Zone 2 error 16"
+      },
+      "sl2_error_17": {
+        "name": "Zone 2 error 17"
+      },
+      "sl2_error_2": {
+        "name": "Zone 2 error 2"
+      },
+      "sl2_error_3": {
+        "name": "Zone 2 error 3"
+      },
+      "sl2_error_4": {
+        "name": "Zone 2 error 4"
+      },
+      "sl2_error_5": {
+        "name": "Zone 2 error 5"
+      },
+      "sl2_error_6": {
+        "name": "Zone 2 error 6"
+      },
+      "sl2_error_7": {
+        "name": "Zone 2 error 7"
+      },
+      "sl2_error_8": {
+        "name": "Zone 2 error 8"
+      },
+      "sl2_error_9": {
+        "name": "Zone 2 error 9"
       },
       "sl2_pot_detected": {
         "name": "Zone 2 pot detected"
@@ -1041,6 +1149,57 @@
       "sl3_bridge_function_active": {
         "name": "Zone 3 bridge active"
       },
+      "sl3_error_1": {
+        "name": "Zone 3 error 1"
+      },
+      "sl3_error_10": {
+        "name": "Zone 3 error 10"
+      },
+      "sl3_error_11": {
+        "name": "Zone 3 error 11"
+      },
+      "sl3_error_12": {
+        "name": "Zone 3 error 12"
+      },
+      "sl3_error_13": {
+        "name": "Zone 3 error 13"
+      },
+      "sl3_error_14": {
+        "name": "Zone 3 error 14"
+      },
+      "sl3_error_15": {
+        "name": "Zone 3 error 15"
+      },
+      "sl3_error_16": {
+        "name": "Zone 3 error 16"
+      },
+      "sl3_error_17": {
+        "name": "Zone 3 error 17"
+      },
+      "sl3_error_2": {
+        "name": "Zone 3 error 2"
+      },
+      "sl3_error_3": {
+        "name": "Zone 3 error 3"
+      },
+      "sl3_error_4": {
+        "name": "Zone 3 error 4"
+      },
+      "sl3_error_5": {
+        "name": "Zone 3 error 5"
+      },
+      "sl3_error_6": {
+        "name": "Zone 3 error 6"
+      },
+      "sl3_error_7": {
+        "name": "Zone 3 error 7"
+      },
+      "sl3_error_8": {
+        "name": "Zone 3 error 8"
+      },
+      "sl3_error_9": {
+        "name": "Zone 3 error 9"
+      },
       "sl3_pot_detected": {
         "name": "Zone 3 pot detected"
       },
@@ -1070,6 +1229,57 @@
       },
       "sl4_bridge_function_active": {
         "name": "Zone 4 bridge active"
+      },
+      "sl4_error_1": {
+        "name": "Zone 4 error 1"
+      },
+      "sl4_error_10": {
+        "name": "Zone 4 error 10"
+      },
+      "sl4_error_11": {
+        "name": "Zone 4 error 11"
+      },
+      "sl4_error_12": {
+        "name": "Zone 4 error 12"
+      },
+      "sl4_error_13": {
+        "name": "Zone 4 error 13"
+      },
+      "sl4_error_14": {
+        "name": "Zone 4 error 14"
+      },
+      "sl4_error_15": {
+        "name": "Zone 4 error 15"
+      },
+      "sl4_error_16": {
+        "name": "Zone 4 error 16"
+      },
+      "sl4_error_17": {
+        "name": "Zone 4 error 17"
+      },
+      "sl4_error_2": {
+        "name": "Zone 4 error 2"
+      },
+      "sl4_error_3": {
+        "name": "Zone 4 error 3"
+      },
+      "sl4_error_4": {
+        "name": "Zone 4 error 4"
+      },
+      "sl4_error_5": {
+        "name": "Zone 4 error 5"
+      },
+      "sl4_error_6": {
+        "name": "Zone 4 error 6"
+      },
+      "sl4_error_7": {
+        "name": "Zone 4 error 7"
+      },
+      "sl4_error_8": {
+        "name": "Zone 4 error 8"
+      },
+      "sl4_error_9": {
+        "name": "Zone 4 error 9"
       },
       "sl4_pot_detected": {
         "name": "Zone 4 pot detected"
@@ -1101,6 +1311,57 @@
       "sl5_bridge_function_active": {
         "name": "Zone 5 bridge active"
       },
+      "sl5_error_1": {
+        "name": "Zone 5 error 1"
+      },
+      "sl5_error_10": {
+        "name": "Zone 5 error 10"
+      },
+      "sl5_error_11": {
+        "name": "Zone 5 error 11"
+      },
+      "sl5_error_12": {
+        "name": "Zone 5 error 12"
+      },
+      "sl5_error_13": {
+        "name": "Zone 5 error 13"
+      },
+      "sl5_error_14": {
+        "name": "Zone 5 error 14"
+      },
+      "sl5_error_15": {
+        "name": "Zone 5 error 15"
+      },
+      "sl5_error_16": {
+        "name": "Zone 5 error 16"
+      },
+      "sl5_error_17": {
+        "name": "Zone 5 error 17"
+      },
+      "sl5_error_2": {
+        "name": "Zone 5 error 2"
+      },
+      "sl5_error_3": {
+        "name": "Zone 5 error 3"
+      },
+      "sl5_error_4": {
+        "name": "Zone 5 error 4"
+      },
+      "sl5_error_5": {
+        "name": "Zone 5 error 5"
+      },
+      "sl5_error_6": {
+        "name": "Zone 5 error 6"
+      },
+      "sl5_error_7": {
+        "name": "Zone 5 error 7"
+      },
+      "sl5_error_8": {
+        "name": "Zone 5 error 8"
+      },
+      "sl5_error_9": {
+        "name": "Zone 5 error 9"
+      },
       "sl5_pot_detected": {
         "name": "Zone 5 pot detected"
       },
@@ -1130,6 +1391,57 @@
       },
       "sl6_bridge_function_active": {
         "name": "Zone 6 bridge active"
+      },
+      "sl6_error_1": {
+        "name": "Zone 6 error 1"
+      },
+      "sl6_error_10": {
+        "name": "Zone 6 error 10"
+      },
+      "sl6_error_11": {
+        "name": "Zone 6 error 11"
+      },
+      "sl6_error_12": {
+        "name": "Zone 6 error 12"
+      },
+      "sl6_error_13": {
+        "name": "Zone 6 error 13"
+      },
+      "sl6_error_14": {
+        "name": "Zone 6 error 14"
+      },
+      "sl6_error_15": {
+        "name": "Zone 6 error 15"
+      },
+      "sl6_error_16": {
+        "name": "Zone 6 error 16"
+      },
+      "sl6_error_17": {
+        "name": "Zone 6 error 17"
+      },
+      "sl6_error_2": {
+        "name": "Zone 6 error 2"
+      },
+      "sl6_error_3": {
+        "name": "Zone 6 error 3"
+      },
+      "sl6_error_4": {
+        "name": "Zone 6 error 4"
+      },
+      "sl6_error_5": {
+        "name": "Zone 6 error 5"
+      },
+      "sl6_error_6": {
+        "name": "Zone 6 error 6"
+      },
+      "sl6_error_7": {
+        "name": "Zone 6 error 7"
+      },
+      "sl6_error_8": {
+        "name": "Zone 6 error 8"
+      },
+      "sl6_error_9": {
+        "name": "Zone 6 error 9"
       },
       "sl6_pot_detected": {
         "name": "Zone 6 pot detected"
@@ -1971,6 +2283,9 @@
       "ai_energy_mode_switch": {
         "name": "AI energy mode switch"
       },
+      "air_dry_function": {
+        "name": "Air dry function"
+      },
       "air_dry_function_status": {
         "name": "Air dry function status"
       },
@@ -2158,8 +2473,14 @@
       "auto_dose_system_setting_status": {
         "name": "Auto-dose system setting status"
       },
+      "auto_grease_filter_indication": {
+        "name": "Auto grease filter indication"
+      },
       "auto_super_rinse_setting_status": {
         "name": "Auto super rinse setting status"
+      },
+      "auto_tower_up": {
+        "name": "Auto tower up"
       },
       "autodose_flag": {
         "name": "Auto-dose flag",
@@ -2222,6 +2543,9 @@
       "brightness_setting": {
         "name": "Brightness setting"
       },
+      "builtin_hood_status": {
+        "name": "Built-in hood status"
+      },
       "bundling_humidity": {
         "name": "Bundling humidity"
       },
@@ -2282,6 +2606,9 @@
       "childlock_pause": {
         "name": "Child lock pause"
       },
+      "circulation_mode": {
+        "name": "Circulation mode"
+      },
       "circulationmodestatus": {
         "name": "Circulation mode status"
       },
@@ -2338,6 +2665,9 @@
       },
       "condensed_watermode": {
         "name": "Condensed water mode"
+      },
+      "control_response_level": {
+        "name": "Control response level"
       },
       "cool_c": {
         "name": "Cool C"
@@ -2472,7 +2802,7 @@
         "name": "Daily energy consumption"
       },
       "daily_energy_kwh": {
-        "name": "Daily energy consumption"
+        "name": "Daily energy"
       },
       "darhcdq": {
         "name": "Darhcdq"
@@ -3454,6 +3784,27 @@
       "gratin_total_passed_time_in_minutes": {
         "name": "Gratin total passed time in minutes"
       },
+      "grease_filter_cleaning_interval_in_hours": {
+        "name": "Grease filter cleaning interval"
+      },
+      "grease_filter_reset_counter": {
+        "name": "Grease filter reset counter"
+      },
+      "grease_filter_saturation": {
+        "name": "Grease filter saturation"
+      },
+      "grease_filter_set_lifetime_in_hours": {
+        "name": "Grease filter lifetime"
+      },
+      "grease_filter_status": {
+        "name": "Grease filter status"
+      },
+      "grease_filter_timer_active": {
+        "name": "Grease filter timer active"
+      },
+      "grease_filter_used_hours": {
+        "name": "Grease filter used hours"
+      },
       "greasefiltercleaningintervalinhours": {
         "name": "Grease filter cleaning interval in hours"
       },
@@ -3533,6 +3884,21 @@
         "state": {
           "off_hot": "Off hot"
         }
+      },
+      "hood_connected_via_rf": {
+        "name": "Hood connected via RF"
+      },
+      "hood_fan_speed": {
+        "name": "Hood fan speed"
+      },
+      "hood_light": {
+        "name": "Hood light"
+      },
+      "hood_status": {
+        "name": "Hood status"
+      },
+      "hood_total_used_hours": {
+        "name": "Hood total used hours"
       },
       "hottime": {
         "name": "Hot time"
@@ -3623,6 +3989,12 @@
       },
       "key_press_sound_volume": {
         "name": "Key press sound volume"
+      },
+      "key_sensitivity_level": {
+        "name": "Key sensitivity level"
+      },
+      "key_sound_level": {
+        "name": "Key sound level"
       },
       "language": {
         "name": "Language"
@@ -3770,6 +4142,12 @@
       },
       "monitor_set_act": {
         "name": "Monitor set act"
+      },
+      "motor": {
+        "name": "Motor"
+      },
+      "motor_level": {
+        "name": "Motor level"
       },
       "navigation_sound_setting": {
         "name": "Navigation sound setting"
@@ -3924,6 +4302,9 @@
       "permanent_remote_start": {
         "name": "Permanent remote start"
       },
+      "position_of_tower": {
+        "name": "Position of tower"
+      },
       "power_one_tenths_value": {
         "name": "Power one tenths value"
       },
@@ -4022,6 +4403,30 @@
       },
       "real_humidity_c": {
         "name": "Real humidity c"
+      },
+      "recirculation_filter_1_lifetime_in_hours": {
+        "name": "Recirculation filter 1 lifetime"
+      },
+      "recirculation_filter_1_reset_counter": {
+        "name": "Recirculation filter 1 reset counter"
+      },
+      "recirculation_filter_1_set_lifetime_in_hours": {
+        "name": "Recirculation filter 1 set lifetime"
+      },
+      "recirculation_filter_1_set_type": {
+        "name": "Recirculation filter 1 set type"
+      },
+      "recirculation_filter_1_status": {
+        "name": "Recirculation filter 1 status"
+      },
+      "recirculation_filter_1_timer_active": {
+        "name": "Recirculation filter 1 timer active"
+      },
+      "recirculation_filter_1_type": {
+        "name": "Recirculation filter 1 type"
+      },
+      "recirculation_filter_1_used_hours": {
+        "name": "Recirculation filter 1 used hours"
       },
       "recirculationfilter1lifetimeinhours": {
         "name": "Recirculation filter 1 lifetime in hours"
@@ -4690,6 +5095,9 @@
           "timer": "Timer"
         }
       },
+      "sl1_bridged_to_zone": {
+        "name": "Zone 1 bridged to zone"
+      },
       "sl1_cooking_method": {
         "name": "Zone 1 cooking method",
         "state": {
@@ -4722,6 +5130,12 @@
           "wok": "Wok"
         }
       },
+      "sl1_hestan_cue_cookware_type": {
+        "name": "Zone 1 Hestan Cue cookware type"
+      },
+      "sl1_hestan_cue_next_step_required_warning": {
+        "name": "Zone 1 Hestan Cue next step required"
+      },
       "sl1_hestan_cue_set_temperature": {
         "name": "Zone 1 Hestan Cue set temperature"
       },
@@ -4740,6 +5154,9 @@
       "sl1_power_level_max": {
         "name": "Zone 1 max power level"
       },
+      "sl1_sand_timer_paused_total_seconds": {
+        "name": "Zone 1 sand timer paused"
+      },
       "sl1_sand_timer_status": {
         "name": "Zone 1 sand timer status",
         "state": {
@@ -4750,6 +5167,18 @@
           "stopped": "Stopped"
         }
       },
+      "sl1_sand_timer_utc_start_time_hours": {
+        "name": "Zone 1 sand timer start hours"
+      },
+      "sl1_sand_timer_utc_start_time_minutes": {
+        "name": "Zone 1 sand timer start minutes"
+      },
+      "sl1_sand_timer_utc_start_time_seconds": {
+        "name": "Zone 1 sand timer start seconds"
+      },
+      "sl1_stopwatch_paused_total_seconds": {
+        "name": "Zone 1 stopwatch paused"
+      },
       "sl1_stopwatch_status": {
         "name": "Zone 1 stopwatch status",
         "state": {
@@ -4759,8 +5188,35 @@
           "paused": "Paused"
         }
       },
+      "sl1_stopwatch_utc_start_time_hours": {
+        "name": "Zone 1 stopwatch start hours"
+      },
+      "sl1_stopwatch_utc_start_time_minutes": {
+        "name": "Zone 1 stopwatch start minutes"
+      },
+      "sl1_stopwatch_utc_start_time_seconds": {
+        "name": "Zone 1 stopwatch start seconds"
+      },
       "sl1_temperature": {
         "name": "Zone 1 temperature"
+      },
+      "sl1_timer_utc_end_time_hours": {
+        "name": "Zone 1 timer end hours"
+      },
+      "sl1_timer_utc_end_time_minutes": {
+        "name": "Zone 1 timer end minutes"
+      },
+      "sl1_timer_utc_end_time_seconds": {
+        "name": "Zone 1 timer end seconds"
+      },
+      "sl1_timer_utc_paused_hours": {
+        "name": "Zone 1 timer paused hours"
+      },
+      "sl1_timer_utc_paused_minutes": {
+        "name": "Zone 1 timer paused minutes"
+      },
+      "sl1_timer_utc_paused_seconds": {
+        "name": "Zone 1 timer paused seconds"
       },
       "sl1_zone_shape": {
         "name": "Zone 1 shape",
@@ -4779,6 +5235,9 @@
           "stopwatch": "Stopwatch",
           "timer": "Timer"
         }
+      },
+      "sl2_bridged_to_zone": {
+        "name": "Zone 2 bridged to zone"
       },
       "sl2_cooking_method": {
         "name": "Zone 2 cooking method",
@@ -4812,6 +5271,12 @@
           "wok": "Wok"
         }
       },
+      "sl2_hestan_cue_cookware_type": {
+        "name": "Zone 2 Hestan Cue cookware type"
+      },
+      "sl2_hestan_cue_next_step_required_warning": {
+        "name": "Zone 2 Hestan Cue next step required"
+      },
       "sl2_hestan_cue_set_temperature": {
         "name": "Zone 2 Hestan Cue set temperature"
       },
@@ -4830,6 +5295,9 @@
       "sl2_power_level_max": {
         "name": "Zone 2 max power level"
       },
+      "sl2_sand_timer_paused_total_seconds": {
+        "name": "Zone 2 sand timer paused"
+      },
       "sl2_sand_timer_status": {
         "name": "Zone 2 sand timer status",
         "state": {
@@ -4840,6 +5308,18 @@
           "stopped": "Stopped"
         }
       },
+      "sl2_sand_timer_utc_start_time_hours": {
+        "name": "Zone 2 sand timer start hours"
+      },
+      "sl2_sand_timer_utc_start_time_minutes": {
+        "name": "Zone 2 sand timer start minutes"
+      },
+      "sl2_sand_timer_utc_start_time_seconds": {
+        "name": "Zone 2 sand timer start seconds"
+      },
+      "sl2_stopwatch_paused_total_seconds": {
+        "name": "Zone 2 stopwatch paused"
+      },
       "sl2_stopwatch_status": {
         "name": "Zone 2 stopwatch status",
         "state": {
@@ -4849,8 +5329,35 @@
           "paused": "Paused"
         }
       },
+      "sl2_stopwatch_utc_start_time_hours": {
+        "name": "Zone 2 stopwatch start hours"
+      },
+      "sl2_stopwatch_utc_start_time_minutes": {
+        "name": "Zone 2 stopwatch start minutes"
+      },
+      "sl2_stopwatch_utc_start_time_seconds": {
+        "name": "Zone 2 stopwatch start seconds"
+      },
       "sl2_temperature": {
         "name": "Zone 2 temperature"
+      },
+      "sl2_timer_utc_end_time_hours": {
+        "name": "Zone 2 timer end hours"
+      },
+      "sl2_timer_utc_end_time_minutes": {
+        "name": "Zone 2 timer end minutes"
+      },
+      "sl2_timer_utc_end_time_seconds": {
+        "name": "Zone 2 timer end seconds"
+      },
+      "sl2_timer_utc_paused_hours": {
+        "name": "Zone 2 timer paused hours"
+      },
+      "sl2_timer_utc_paused_minutes": {
+        "name": "Zone 2 timer paused minutes"
+      },
+      "sl2_timer_utc_paused_seconds": {
+        "name": "Zone 2 timer paused seconds"
       },
       "sl2_zone_shape": {
         "name": "Zone 2 shape",
@@ -4869,6 +5376,9 @@
           "stopwatch": "Stopwatch",
           "timer": "Timer"
         }
+      },
+      "sl3_bridged_to_zone": {
+        "name": "Zone 3 bridged to zone"
       },
       "sl3_cooking_method": {
         "name": "Zone 3 cooking method",
@@ -4902,6 +5412,12 @@
           "wok": "Wok"
         }
       },
+      "sl3_hestan_cue_cookware_type": {
+        "name": "Zone 3 Hestan Cue cookware type"
+      },
+      "sl3_hestan_cue_next_step_required_warning": {
+        "name": "Zone 3 Hestan Cue next step required"
+      },
       "sl3_hestan_cue_set_temperature": {
         "name": "Zone 3 Hestan Cue set temperature"
       },
@@ -4920,6 +5436,9 @@
       "sl3_power_level_max": {
         "name": "Zone 3 max power level"
       },
+      "sl3_sand_timer_paused_total_seconds": {
+        "name": "Zone 3 sand timer paused"
+      },
       "sl3_sand_timer_status": {
         "name": "Zone 3 sand timer status",
         "state": {
@@ -4930,6 +5449,18 @@
           "stopped": "Stopped"
         }
       },
+      "sl3_sand_timer_utc_start_time_hours": {
+        "name": "Zone 3 sand timer start hours"
+      },
+      "sl3_sand_timer_utc_start_time_minutes": {
+        "name": "Zone 3 sand timer start minutes"
+      },
+      "sl3_sand_timer_utc_start_time_seconds": {
+        "name": "Zone 3 sand timer start seconds"
+      },
+      "sl3_stopwatch_paused_total_seconds": {
+        "name": "Zone 3 stopwatch paused"
+      },
       "sl3_stopwatch_status": {
         "name": "Zone 3 stopwatch status",
         "state": {
@@ -4939,8 +5470,35 @@
           "paused": "Paused"
         }
       },
+      "sl3_stopwatch_utc_start_time_hours": {
+        "name": "Zone 3 stopwatch start hours"
+      },
+      "sl3_stopwatch_utc_start_time_minutes": {
+        "name": "Zone 3 stopwatch start minutes"
+      },
+      "sl3_stopwatch_utc_start_time_seconds": {
+        "name": "Zone 3 stopwatch start seconds"
+      },
       "sl3_temperature": {
         "name": "Zone 3 temperature"
+      },
+      "sl3_timer_utc_end_time_hours": {
+        "name": "Zone 3 timer end hours"
+      },
+      "sl3_timer_utc_end_time_minutes": {
+        "name": "Zone 3 timer end minutes"
+      },
+      "sl3_timer_utc_end_time_seconds": {
+        "name": "Zone 3 timer end seconds"
+      },
+      "sl3_timer_utc_paused_hours": {
+        "name": "Zone 3 timer paused hours"
+      },
+      "sl3_timer_utc_paused_minutes": {
+        "name": "Zone 3 timer paused minutes"
+      },
+      "sl3_timer_utc_paused_seconds": {
+        "name": "Zone 3 timer paused seconds"
       },
       "sl3_zone_shape": {
         "name": "Zone 3 shape",
@@ -4959,6 +5517,9 @@
           "stopwatch": "Stopwatch",
           "timer": "Timer"
         }
+      },
+      "sl4_bridged_to_zone": {
+        "name": "Zone 4 bridged to zone"
       },
       "sl4_cooking_method": {
         "name": "Zone 4 cooking method",
@@ -4992,6 +5553,12 @@
           "wok": "Wok"
         }
       },
+      "sl4_hestan_cue_cookware_type": {
+        "name": "Zone 4 Hestan Cue cookware type"
+      },
+      "sl4_hestan_cue_next_step_required_warning": {
+        "name": "Zone 4 Hestan Cue next step required"
+      },
       "sl4_hestan_cue_set_temperature": {
         "name": "Zone 4 Hestan Cue set temperature"
       },
@@ -5010,6 +5577,9 @@
       "sl4_power_level_max": {
         "name": "Zone 4 max power level"
       },
+      "sl4_sand_timer_paused_total_seconds": {
+        "name": "Zone 4 sand timer paused"
+      },
       "sl4_sand_timer_status": {
         "name": "Zone 4 sand timer status",
         "state": {
@@ -5020,6 +5590,18 @@
           "stopped": "Stopped"
         }
       },
+      "sl4_sand_timer_utc_start_time_hours": {
+        "name": "Zone 4 sand timer start hours"
+      },
+      "sl4_sand_timer_utc_start_time_minutes": {
+        "name": "Zone 4 sand timer start minutes"
+      },
+      "sl4_sand_timer_utc_start_time_seconds": {
+        "name": "Zone 4 sand timer start seconds"
+      },
+      "sl4_stopwatch_paused_total_seconds": {
+        "name": "Zone 4 stopwatch paused"
+      },
       "sl4_stopwatch_status": {
         "name": "Zone 4 stopwatch status",
         "state": {
@@ -5029,8 +5611,35 @@
           "paused": "Paused"
         }
       },
+      "sl4_stopwatch_utc_start_time_hours": {
+        "name": "Zone 4 stopwatch start hours"
+      },
+      "sl4_stopwatch_utc_start_time_minutes": {
+        "name": "Zone 4 stopwatch start minutes"
+      },
+      "sl4_stopwatch_utc_start_time_seconds": {
+        "name": "Zone 4 stopwatch start seconds"
+      },
       "sl4_temperature": {
         "name": "Zone 4 temperature"
+      },
+      "sl4_timer_utc_end_time_hours": {
+        "name": "Zone 4 timer end hours"
+      },
+      "sl4_timer_utc_end_time_minutes": {
+        "name": "Zone 4 timer end minutes"
+      },
+      "sl4_timer_utc_end_time_seconds": {
+        "name": "Zone 4 timer end seconds"
+      },
+      "sl4_timer_utc_paused_hours": {
+        "name": "Zone 4 timer paused hours"
+      },
+      "sl4_timer_utc_paused_minutes": {
+        "name": "Zone 4 timer paused minutes"
+      },
+      "sl4_timer_utc_paused_seconds": {
+        "name": "Zone 4 timer paused seconds"
       },
       "sl4_zone_shape": {
         "name": "Zone 4 shape",
@@ -5049,6 +5658,9 @@
           "stopwatch": "Stopwatch",
           "timer": "Timer"
         }
+      },
+      "sl5_bridged_to_zone": {
+        "name": "Zone 5 bridged to zone"
       },
       "sl5_cooking_method": {
         "name": "Zone 5 cooking method",
@@ -5082,6 +5694,12 @@
           "wok": "Wok"
         }
       },
+      "sl5_hestan_cue_cookware_type": {
+        "name": "Zone 5 Hestan Cue cookware type"
+      },
+      "sl5_hestan_cue_next_step_required_warning": {
+        "name": "Zone 5 Hestan Cue next step required"
+      },
       "sl5_hestan_cue_set_temperature": {
         "name": "Zone 5 Hestan Cue set temperature"
       },
@@ -5100,6 +5718,9 @@
       "sl5_power_level_max": {
         "name": "Zone 5 max power level"
       },
+      "sl5_sand_timer_paused_total_seconds": {
+        "name": "Zone 5 sand timer paused"
+      },
       "sl5_sand_timer_status": {
         "name": "Zone 5 sand timer status",
         "state": {
@@ -5110,6 +5731,18 @@
           "stopped": "Stopped"
         }
       },
+      "sl5_sand_timer_utc_start_time_hours": {
+        "name": "Zone 5 sand timer start hours"
+      },
+      "sl5_sand_timer_utc_start_time_minutes": {
+        "name": "Zone 5 sand timer start minutes"
+      },
+      "sl5_sand_timer_utc_start_time_seconds": {
+        "name": "Zone 5 sand timer start seconds"
+      },
+      "sl5_stopwatch_paused_total_seconds": {
+        "name": "Zone 5 stopwatch paused"
+      },
       "sl5_stopwatch_status": {
         "name": "Zone 5 stopwatch status",
         "state": {
@@ -5119,8 +5752,35 @@
           "paused": "Paused"
         }
       },
+      "sl5_stopwatch_utc_start_time_hours": {
+        "name": "Zone 5 stopwatch start hours"
+      },
+      "sl5_stopwatch_utc_start_time_minutes": {
+        "name": "Zone 5 stopwatch start minutes"
+      },
+      "sl5_stopwatch_utc_start_time_seconds": {
+        "name": "Zone 5 stopwatch start seconds"
+      },
       "sl5_temperature": {
         "name": "Zone 5 temperature"
+      },
+      "sl5_timer_utc_end_time_hours": {
+        "name": "Zone 5 timer end hours"
+      },
+      "sl5_timer_utc_end_time_minutes": {
+        "name": "Zone 5 timer end minutes"
+      },
+      "sl5_timer_utc_end_time_seconds": {
+        "name": "Zone 5 timer end seconds"
+      },
+      "sl5_timer_utc_paused_hours": {
+        "name": "Zone 5 timer paused hours"
+      },
+      "sl5_timer_utc_paused_minutes": {
+        "name": "Zone 5 timer paused minutes"
+      },
+      "sl5_timer_utc_paused_seconds": {
+        "name": "Zone 5 timer paused seconds"
       },
       "sl5_zone_shape": {
         "name": "Zone 5 shape",
@@ -5139,6 +5799,9 @@
           "stopwatch": "Stopwatch",
           "timer": "Timer"
         }
+      },
+      "sl6_bridged_to_zone": {
+        "name": "Zone 6 bridged to zone"
       },
       "sl6_cooking_method": {
         "name": "Zone 6 cooking method",
@@ -5172,6 +5835,12 @@
           "wok": "Wok"
         }
       },
+      "sl6_hestan_cue_cookware_type": {
+        "name": "Zone 6 Hestan Cue cookware type"
+      },
+      "sl6_hestan_cue_next_step_required_warning": {
+        "name": "Zone 6 Hestan Cue next step required"
+      },
       "sl6_hestan_cue_set_temperature": {
         "name": "Zone 6 Hestan Cue set temperature"
       },
@@ -5190,6 +5859,9 @@
       "sl6_power_level_max": {
         "name": "Zone 6 max power level"
       },
+      "sl6_sand_timer_paused_total_seconds": {
+        "name": "Zone 6 sand timer paused"
+      },
       "sl6_sand_timer_status": {
         "name": "Zone 6 sand timer status",
         "state": {
@@ -5200,6 +5872,18 @@
           "stopped": "Stopped"
         }
       },
+      "sl6_sand_timer_utc_start_time_hours": {
+        "name": "Zone 6 sand timer start hours"
+      },
+      "sl6_sand_timer_utc_start_time_minutes": {
+        "name": "Zone 6 sand timer start minutes"
+      },
+      "sl6_sand_timer_utc_start_time_seconds": {
+        "name": "Zone 6 sand timer start seconds"
+      },
+      "sl6_stopwatch_paused_total_seconds": {
+        "name": "Zone 6 stopwatch paused"
+      },
       "sl6_stopwatch_status": {
         "name": "Zone 6 stopwatch status",
         "state": {
@@ -5209,8 +5893,35 @@
           "paused": "Paused"
         }
       },
+      "sl6_stopwatch_utc_start_time_hours": {
+        "name": "Zone 6 stopwatch start hours"
+      },
+      "sl6_stopwatch_utc_start_time_minutes": {
+        "name": "Zone 6 stopwatch start minutes"
+      },
+      "sl6_stopwatch_utc_start_time_seconds": {
+        "name": "Zone 6 stopwatch start seconds"
+      },
       "sl6_temperature": {
         "name": "Zone 6 temperature"
+      },
+      "sl6_timer_utc_end_time_hours": {
+        "name": "Zone 6 timer end hours"
+      },
+      "sl6_timer_utc_end_time_minutes": {
+        "name": "Zone 6 timer end minutes"
+      },
+      "sl6_timer_utc_end_time_seconds": {
+        "name": "Zone 6 timer end seconds"
+      },
+      "sl6_timer_utc_paused_hours": {
+        "name": "Zone 6 timer paused hours"
+      },
+      "sl6_timer_utc_paused_minutes": {
+        "name": "Zone 6 timer paused minutes"
+      },
+      "sl6_timer_utc_paused_seconds": {
+        "name": "Zone 6 timer paused seconds"
       },
       "sl6_zone_shape": {
         "name": "Zone 6 shape",
@@ -5347,6 +6058,9 @@
       },
       "stain_removal": {
         "name": "Stain removal"
+      },
+      "stand_by_time": {
+        "name": "Stand-by time"
       },
       "standardelectricitconsumption": {
         "name": "Standard electricity consumption"
@@ -6348,6 +7062,12 @@
       "support_preheat_state": {
         "name": "Support preheat state"
       },
+      "synchro_start_level": {
+        "name": "Synchro start level"
+      },
+      "synchro_stop_level": {
+        "name": "Synchro stop level"
+      },
       "t_beep": {
         "name": "T beep"
       },
@@ -6885,6 +7605,9 @@
       },
       "winddryingflag": {
         "name": "Wind drying flag"
+      },
+      "window_status": {
+        "name": "Window status"
       },
       "wine_area_switch_status": {
         "name": "Wine area switch status"
