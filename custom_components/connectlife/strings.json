@@ -2600,9 +2600,6 @@
       "child_lock_setting_status": {
         "name": "Child lock setting"
       },
-      "child_lock_status_status": {
-        "name": "Child lock status status"
-      },
       "childlock_flag": {
         "name": "Child lock flag"
       },
@@ -3640,9 +3637,6 @@
       },
       "error_read_out_3_status": {
         "name": "Error read out 3 status"
-      },
-      "extra_rinse_status": {
-        "name": "Extra rinse status"
       },
       "extra_soft": {
         "name": "Extra soft"
@@ -4833,12 +4827,6 @@
       "selected_program": {
         "name": "Selected program"
       },
-      "selected_program_anticrease_status": {
-        "name": "Selected program anti-crease status"
-      },
-      "selected_program_disinfection": {
-        "name": "Selected program disinfection"
-      },
       "selected_program_dry_function": {
         "name": "Selected program dry function"
       },
@@ -4853,9 +4841,6 @@
       },
       "selected_program_eco_small_load": {
         "name": "Selected program eco small load"
-      },
-      "selected_program_entry_steam_status": {
-        "name": "Selected program entry steam status"
       },
       "selected_program_extra_drying_function": {
         "name": "Selected program extra drying function"
@@ -4940,14 +4925,8 @@
       "selected_program_night_mode": {
         "name": "Selected program night mode"
       },
-      "selected_program_prewash_status": {
-        "name": "Selected program prewash status"
-      },
       "selected_program_remaining_time_in_minutes": {
         "name": "Remaining time of selected program"
-      },
-      "selected_program_rinse_hold_status": {
-        "name": "Selected program rinse hold status"
       },
       "selected_program_set_temperature_status": {
         "name": "Temperature",
@@ -5002,9 +4981,6 @@
       },
       "selected_program_water_add": {
         "name": "Selected program water add"
-      },
-      "selected_program_water_pluse_status": {
-        "name": "Selected program water pulse status"
       },
       "selected_programduration_inminutes": {
         "name": "Duration of selected program"
@@ -7082,12 +7058,6 @@
       },
       "steri_puri_cycle_flag": {
         "name": "Steri puri cycle flag"
-      },
-      "stopaddgo_status": {
-        "name": "Stop add go status"
-      },
-      "stopaddgoallowed": {
-        "name": "Stop add go allowed"
       },
       "stoprunning_flag": {
         "name": "Stop running flag"
