@@ -11,7 +11,7 @@ properties:
       5: steam_shot
 - property: Adaptive_sense_setting
   unavailable: 0
-  hide: true
+  optional: true
   switch:
     "off": 1
     "on": 2
@@ -20,11 +20,11 @@ properties:
       adjust: 1
 - property: Add_moist_now
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: AlarmAlmost_finished
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: AlarmChild_lockOff
   icon: mdi:lock
@@ -42,30 +42,30 @@ properties:
     device_class: problem
 - property: AlarmDehydrate_ended
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: AlarmDemo_activated
   unavailable: 0
   disable: true
 - property: AlarmDescaleStep1
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: AlarmDescaleStep2
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: AlarmDescaleStep3
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: AlarmDescaling_interrupted
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: AlarmEmptyTankPause
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: AlarmFillTank
   unavailable: 0
@@ -73,7 +73,7 @@ properties:
     device_class: problem
 - property: AlarmIncreased_power_consumption
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: AlarmKey_lock_on
   icon: mdi:lock
@@ -82,15 +82,15 @@ properties:
   binary_sensor: {}
 - property: AlarmMicrowave_system_finished
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: AlarmOven_system_finished
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: AlarmPopTankOpened
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: AlarmPower_failure_running
   unavailable: 0
@@ -109,46 +109,46 @@ properties:
     device_class: problem
 - property: AlarmRemove_probe
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: AlarmSabbathAboutToStart
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: AlarmSabbathEnded
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: AlarmSabbathPostpone
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: AlarmSteamClean_finished
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: AlarmSteam_interrupted
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: AlarmSteam_system_finished
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: AlarmTankLevel1
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: Alarm_aquaClean_finished
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: Alarm_baking_finished
   unavailable: 0
   binary_sensor: {}
 - property: Alarm_baking_stoped
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: Alarm_child_lock_deactivated_on_the_oven
   icon: mdi:lock
@@ -157,7 +157,7 @@ properties:
   binary_sensor: {}
 - property: Alarm_cleaning_suggestion_after_baking_finished
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: Alarm_defrost_finished
   unavailable: 0
@@ -177,7 +177,7 @@ properties:
   binary_sensor: {}
 - property: Alarm_ean_scan_info
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: Alarm_empty_and_clean_water_tank
   unavailable: 0
@@ -186,18 +186,18 @@ properties:
     device_class: problem
 - property: Alarm_fast_preheat_active
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: Alarm_fast_preheating_finished
   unavailable: 0
   binary_sensor: {}
 - property: Alarm_keepWarm_ended
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: Alarm_mw_active
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: Alarm_oven_temperature_too_high
   unavailable: 0
@@ -206,15 +206,15 @@ properties:
     device_class: problem
 - property: Alarm_oven_usage_reached_set_limit_auto_cleaning_suggested
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: Alarm_plateWarm_ended
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: Alarm_probe_inserted
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: Alarm_probe_temp_reached
   unavailable: 0
@@ -222,7 +222,7 @@ properties:
     device_class: heat
 - property: Alarm_pyrolytic_finished
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: Alarm_running_time_over_10_or_24_hour_limit_error
   unavailable: 0
@@ -231,22 +231,22 @@ properties:
     device_class: problem
 - property: Alarm_sabbath_reminder
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: Alarm_sand_timer_1_elapsed
   icon: mdi:timer-alert
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: Alarm_sand_timer_2_elapsed
   icon: mdi:timer-alert
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: Alarm_sand_timer_3_elapsed
   icon: mdi:timer-alert
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: Alarm_set_temperature_reached
   unavailable: 0
@@ -259,14 +259,14 @@ properties:
     device_class: problem
 - property: Alarm_steam_function_active
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: Alarm_turn_food
   unavailable: 0
   binary_sensor: {}
 - property: Alarm_user_interaction_on_appliance_detected
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: Alarm_water_tank_is_empty
   unavailable: 0
@@ -279,17 +279,17 @@ properties:
   binary_sensor:
     device_class: problem
 - property: Almost_finished_notification_setting
-  hide: true
+  optional: true
 - property: Almost_finished_notification_settingTimer_in_minutes
-  hide: true
+  optional: true
   sensor:
     device_class: duration
     unit: min
 - property: Ambient_sound_setting
-  hide: true
+  optional: true
 - property: Auto_fast_preheat
   unavailable: 0
-  hide: true
+  optional: true
   switch:
     "off": 1
     "on": 2
@@ -297,25 +297,25 @@ properties:
       name: Auto_fast_preheat_cmd
       adjust: 1
 - property: AutomaticChild_lock_setting
-  hide: true
+  optional: true
 - property: AutomaticDoor_lock_setting
-  hide: true
+  optional: true
 - property: AutomaticDoor_lock_setting_allowed
-  hide: true
+  optional: true
 - property: Automatic_display_brightness_setting
-  hide: true
+  optional: true
 - property: Automatic_door_closing_at_program_start_setting
-  hide: true
+  optional: true
 - property: Automatic_door_open_at_program_end_after_time_setting
-  hide: true
+  optional: true
 - property: Automatic_door_open_at_program_end_after_time_settingTimer_in_minutes
-  hide: true
+  optional: true
 - property: Automatic_door_open_at_program_end_setting
-  hide: true
+  optional: true
 - property: Automatic_water_tank_opening_setting
-  hide: true
+  optional: true
 - property: Baking_steps_intensity_levels
-  hide: true
+  optional: true
   select:
     options:
       0: none
@@ -325,7 +325,7 @@ properties:
     command:
       name: Baking_steps_intensity_levels_cmd
 - property: Baking_steps_intensity_levels_type
-  hide: true
+  optional: true
   select:
     options:
       0: none
@@ -335,7 +335,7 @@ properties:
     command:
       name: Baking_steps_intensity_levels_type_cmd
 - property: Brand_splash_setting
-  hide: true
+  optional: true
 - property: Brightness
   unavailable: 0
   select:
@@ -350,21 +350,21 @@ properties:
       name: Brightness_cmd
       adjust: 1
 - property: CameraLive_feed_current_phase
-  hide: true
+  optional: true
 - property: CameraLive_feed_status
-  hide: true
+  optional: true
 - property: CameraPicture_current_phase
-  hide: true
+  optional: true
 - property: CameraPicture_request
-  hide: true
+  optional: true
 - property: CameraTime_lapse_current_phase
-  hide: true
+  optional: true
 - property: CameraTime_lapse_request
-  hide: true
+  optional: true
 - property: Camera_enable_setting
-  hide: true
+  optional: true
 - property: Camera_status
-  hide: true
+  optional: true
 - property: Child_lock
   icon: mdi:lock
   unavailable: 0
@@ -388,7 +388,7 @@ properties:
       adjust: 1
 - property: Crisp_function_available
   unavailable: 0
-  hide: true
+  optional: true
   sensor:
     device_class: enum
     options:
@@ -396,7 +396,7 @@ properties:
       2: function_available
 - property: Crisp_function_status
   unavailable: 0
-  hide: true
+  optional: true
   switch:
     "off": 1
     "on": 2
@@ -415,9 +415,9 @@ properties:
       5: after_bake
       6: special
 - property: Current_baking_step2
-  hide: true
+  optional: true
 - property: Date_format_setting
-  hide: true
+  optional: true
 - property: Demo_mode
   unavailable: 0
   switch:
@@ -427,11 +427,11 @@ properties:
       name: Demo_mode_cmd
       adjust: 1
 - property: Descale_status
-  hide: true
+  optional: true
 - property: DisplayBrightness_setting
-  hide: true
+  optional: true
 - property: DisplayContrast_setting
-  hide: true
+  optional: true
 - property: Display_standby
   unavailable: 0
   switch:
@@ -456,227 +456,227 @@ properties:
   binary_sensor:
     device_class: lock
 - property: Door_lock_status
-  hide: true
+  optional: true
 - property: Door_open_notification_setting
-  hide: true
+  optional: true
 - property: Door_sensor_setting
-  hide: true
+  optional: true
 - property: Duration_of_clock
-  hide: true
+  optional: true
 - property: Eco_mode_setting
-  hide: true
+  optional: true
 - property: Error_0
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_1
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_10
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_11
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_12
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_13
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_14
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_15
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_16
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_17
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_18
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_19
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_2
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_20
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_21
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_22
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_23
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_24
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_25
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_26
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_27
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_28
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_29
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_3
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_30
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_31
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_32
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_33
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_34
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_35
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_36
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_37
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_38
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_39
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_4
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_40
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_5
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_6
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_7
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_8
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Error_9
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor:
     device_class: problem
 - property: Factory_reset
-  hide: true
+  optional: true
   sensor:
     read_only: true
 - property: Fota
   unavailable: 0
-  hide: true
+  optional: true
   sensor:
     device_class: enum
     options:
@@ -686,39 +686,39 @@ properties:
       3: finished
       4: confirm_fota
 - property: Fota_cmd
-  hide: true
+  optional: true
   switch: {}
 - property: Gratin_available
   unavailable: 0
   binary_sensor: {}
 - property: Gratin_from_below_functionSet_time_in_seconds
-  hide: true
+  optional: true
   number:
     device_class: duration
     unit: s
 - property: Gratin_from_below_function_allowed
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: Gratin_from_below_function_status
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: Gratin_function_Set_time_in_seconds
-  hide: true
+  optional: true
   number:
     device_class: duration
     unit: s
 - property: Gratin_status
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: Gratin_total_allowed_time_in_minutes
   sensor:
     device_class: duration
     unit: min
 - property: Gratin_total_passed_time_in_minutes
-  hide: true
+  optional: true
   sensor:
     device_class: duration
     unit: min
@@ -743,7 +743,7 @@ properties:
   unavailable: 0
   binary_sensor: {}
 - property: HardPairingStatus
-  hide: true
+  optional: true
   sensor:
     device_class: enum
     options:
@@ -753,7 +753,7 @@ properties:
       3: reserved
 - property: Hide_setting
   unavailable: 0
-  hide: true
+  optional: true
   switch:
     "off": 1
     "on": 2
@@ -804,7 +804,7 @@ properties:
       2: "on"
       3: off_hot
 - property: Inactivity_timeout
-  hide: true
+  optional: true
 - property: Interior_Light_Control_available
   unavailable: 0
   binary_sensor: {}
@@ -820,7 +820,7 @@ properties:
       adjust: 1
 - property: Key_sound
   unavailable: 0
-  hide: true
+  optional: true
   switch:
     "off": 1
     "on": 2
@@ -829,7 +829,7 @@ properties:
       adjust: 1
 - property: Language_status
   unavailable: 0
-  hide: true
+  optional: true
   select:
     options:
       1: english
@@ -838,13 +838,13 @@ properties:
       name: Language
       adjust: 1
 - property: LightsBrightness_setting
-  hide: true
+  optional: true
 - property: LightsColor_temperature_setting
-  hide: true
+  optional: true
 - property: Lights_duration_setting
-  hide: true
+  optional: true
 - property: LockPIN_code
-  hide: true
+  optional: true
 - property: Meat_probe_measured_temperature
   sensor:
     device_class: temperature
@@ -867,30 +867,30 @@ properties:
       3: active_hob
 - property: Navigation_sound_setting
   unavailable: 0
-  hide: true
+  optional: true
 - property: Night_modeDisplay_brightness_setting
   unavailable: 0
-  hide: true
+  optional: true
 - property: Night_modeLight_brightness_setting
   unavailable: 0
-  hide: true
+  optional: true
 - property: Night_modeVolume_setting
   unavailable: 0
-  hide: true
+  optional: true
 - property: Night_mode_off_hour
-  hide: true
+  optional: true
   sensor:
     unknown_value: 255
 - property: Night_mode_off_minute
-  hide: true
+  optional: true
   sensor:
     unknown_value: 255
 - property: Night_mode_on_hour
-  hide: true
+  optional: true
   sensor:
     unknown_value: 255
 - property: Night_mode_on_minute
-  hide: true
+  optional: true
   sensor:
     unknown_value: 255
 - property: Night_mode_status
@@ -903,10 +903,10 @@ properties:
       adjust: 1
 - property: Notification_pitch_sound_setting
   unavailable: 0
-  hide: true
+  optional: true
 - property: Notification_sounds_volume_setting
   unavailable: 0
-  hide: true
+  optional: true
 - property: Oven_measured_temperature
   sensor:
     device_class: temperature
@@ -914,7 +914,7 @@ properties:
     state_class: measurement
 - property: Oven_temperature_unit
   unavailable: 0
-  hide: true
+  optional: true
   select:
     options:
       1: celsius
@@ -925,41 +925,41 @@ properties:
 - property: Oven_temperature_unit_setting
   disable: true
 - property: Oven_usage_value_alarm_limit
-  hide: true
+  optional: true
   sensor: {}
 - property: Oven_usage_value_time_since_last_cleaning
   sensor:
     unknown_value: 65535
 - property: Permanent_remote_start
-  hide: true
+  optional: true
 - property: Program_settingsDefault
-  hide: true
+  optional: true
 - property: Program_settingsStart_key_duation_forMW
-  hide: true
+  optional: true
 - property: Proximity_sensor_setting
-  hide: true
+  optional: true
 - property: Proximity_sensor_settingClose_user_detectedDisplay_change_to
-  hide: true
+  optional: true
 - property: Proximity_sensor_settingClose_user_detectedLight_change_to
-  hide: true
+  optional: true
 - property: Proximity_sensor_settingDistant_user_detectedDisplay_change_to
-  hide: true
+  optional: true
 - property: Proximity_sensor_settingDistant_user_detectedLight_change_to
-  hide: true
+  optional: true
 - property: Remote_control_monitoring
-  hide: true
+  optional: true
   binary_sensor:
     options:
       0: false
       1: true
 - property: Remote_control_monitoring_set_commands
-  hide: true
+  optional: true
   binary_sensor:
     options:
       0: false
       1: true
 - property: Remote_control_monitoring_set_commands_actions
-  hide: true
+  optional: true
   binary_sensor:
     options:
       0: false
@@ -969,34 +969,34 @@ properties:
 - property: Reset_to_default
   disable: true
 - property: Sabbath_mode_setting
-  hide: true
+  optional: true
 - property: Sabbath_mode_settingBakingEnd_atHour
-  hide: true
+  optional: true
 - property: Sabbath_mode_settingBakingEnd_atMinute
-  hide: true
+  optional: true
 - property: Sabbath_mode_settingBakingStart_atHour
-  hide: true
+  optional: true
 - property: Sabbath_mode_settingBakingStart_atMinute
-  hide: true
+  optional: true
 - property: Sabbath_mode_settingCavity_light_during_sabbath
-  hide: true
+  optional: true
 - property: Sabbath_mode_settingEnd_timeHour
-  hide: true
+  optional: true
 - property: Sabbath_mode_settingEnd_timeMinute
-  hide: true
+  optional: true
 - property: Sabbath_mode_settingSet_heater_system
-  hide: true
+  optional: true
 - property: Sabbath_mode_settingStart_timeHour
-  hide: true
+  optional: true
 - property: Sabbath_mode_settingStart_timeMinute
-  hide: true
+  optional: true
 - property: Sabbath_mode_setting_activate_weekly
-  hide: true
+  optional: true
 - property: Sabbath_mode_status
   unavailable: 0
   binary_sensor: {}
 - property: Sand_timer_1_duration
-  hide: true
+  optional: true
   sensor:
     device_class: duration
     unit: s
@@ -1010,22 +1010,22 @@ properties:
     - property: Sand_timer_1_duration_seconds
       unknown_value: 255
 - property: Sand_timer_1_end_utc_datetime_bdc_timestamp
-  hide: true
+  optional: true
   sensor:
     device_class: timestamp
 - property: Sand_timer_1_paused_total_seconds
-  hide: true
+  optional: true
   sensor:
     device_class: duration
     unit: s
     unknown_value: 65535
 - property: Sand_timer_1_start_utc_datetime_bdc_timestamp
-  hide: true
+  optional: true
   sensor:
     device_class: timestamp
 - property: Sand_timer_1_status
   unavailable: 0
-  hide: true
+  optional: true
   sensor:
     device_class: enum
     options:
@@ -1035,7 +1035,7 @@ properties:
       4: stopped
       5: ended
 - property: Sand_timer_1_status_cmd
-  hide: true
+  optional: true
   select:
     options:
       0: start
@@ -1043,7 +1043,7 @@ properties:
       2: pause
       3: cancel
 - property: Sand_timer_2_duration
-  hide: true
+  optional: true
   sensor:
     device_class: duration
     unit: s
@@ -1057,22 +1057,22 @@ properties:
     - property: Sand_timer_2_duration_seconds
       unknown_value: 255
 - property: Sand_timer_2_end_utc_datetime_bdc_timestamp
-  hide: true
+  optional: true
   sensor:
     device_class: timestamp
 - property: Sand_timer_2_paused_total_seconds
-  hide: true
+  optional: true
   sensor:
     device_class: duration
     unit: s
     unknown_value: 65535
 - property: Sand_timer_2_start_utc_datetime_bdc_timestamp
-  hide: true
+  optional: true
   sensor:
     device_class: timestamp
 - property: Sand_timer_2_status
   unavailable: 0
-  hide: true
+  optional: true
   sensor:
     device_class: enum
     options:
@@ -1082,7 +1082,7 @@ properties:
       4: stopped
       5: ended
 - property: Sand_timer_2_status_cmd
-  hide: true
+  optional: true
   select:
     options:
       0: start
@@ -1090,7 +1090,7 @@ properties:
       2: pause
       3: cancel
 - property: Sand_timer_3_duration
-  hide: true
+  optional: true
   sensor:
     device_class: duration
     unit: s
@@ -1104,22 +1104,22 @@ properties:
     - property: Sand_timer_3_duration_seconds
       unknown_value: 255
 - property: Sand_timer_3_end_utc_datetime_bdc_timestamp
-  hide: true
+  optional: true
   sensor:
     device_class: timestamp
 - property: Sand_timer_3_paused_total_seconds
-  hide: true
+  optional: true
   sensor:
     device_class: duration
     unit: s
     unknown_value: 65535
 - property: Sand_timer_3_start_utc_datetime_bdc_timestamp
-  hide: true
+  optional: true
   sensor:
     device_class: timestamp
 - property: Sand_timer_3_status
   unavailable: 0
-  hide: true
+  optional: true
   sensor:
     device_class: enum
     options:
@@ -1129,7 +1129,7 @@ properties:
       4: stopped
       5: ended
 - property: Sand_timer_3_status_cmd
-  hide: true
+  optional: true
   select:
     options:
       0: start
@@ -1139,7 +1139,7 @@ properties:
 - property: Scanned_EAN_code
   disable: true
 - property: Session_pairing_active
-  hide: true
+  optional: true
   sensor:
     device_class: enum
     options:
@@ -1148,51 +1148,51 @@ properties:
       2: session_is_active
       3: close_session
 - property: Session_pairing_setting
-  hide: true
+  optional: true
   binary_sensor:
     options:
       0: false
       1: true
 - property: Set_time_Hour
-  hide: true
+  optional: true
   sensor:
     device_class: duration
     unit: h
 - property: Set_time_Minutes
-  hide: true
+  optional: true
   sensor:
     device_class: duration
     unit: min
 - property: Settings_day
-  hide: true
+  optional: true
   sensor:
     unknown_value: 255
 - property: Settings_hour
-  hide: true
+  optional: true
   sensor: {}
 - property: Settings_minute
-  hide: true
+  optional: true
   sensor: {}
 - property: Settings_month
-  hide: true
+  optional: true
   sensor:
     unknown_value: 255
 - property: Settings_year
-  hide: true
+  optional: true
   sensor:
     unknown_value: 65535
 - property: Shop_mode_setting
-  hide: true
+  optional: true
 - property: Show_date_setting
-  hide: true
+  optional: true
 - property: Soft_pairing_setting
-  hide: true
+  optional: true
   binary_sensor:
     options:
       0: false
       1: true
 - property: Stage_lights_setting
-  hide: true
+  optional: true
 - property: Status
   sensor:
     device_class: enum
@@ -1228,42 +1228,42 @@ properties:
       name: Steam_123_cmd
       adjust: 1
 - property: Steam_assist_Time_used
-  hide: true
+  optional: true
   sensor: {}
 - property: Steam_reduction_at_door_opening_setting
-  hide: true
+  optional: true
 - property: Steam_reduction_at_program_end_setting
-  hide: true
+  optional: true
 - property: Steam_shot
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: Step1Add_moistStart_at_minute
-  hide: true
+  optional: true
 - property: Step1Add_moistValve_open_percentage
-  hide: true
+  optional: true
 - property: Step1Add_moist_status
-  hide: true
+  optional: true
 - property: Step1Alarm_after_step
-  hide: true
+  optional: true
 - property: Step1Grill_intensity
-  hide: true
+  optional: true
 - property: Step1Pause_after_step
-  hide: true
+  optional: true
 - property: Step1Remove_moistStart_at_minute
-  hide: true
+  optional: true
 - property: Step1_Steam_assist
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: Step1_Steam_assistSet_time_in_minutes
-  hide: true
+  optional: true
   sensor:
     device_class: duration
     unit: min
 - property: Step1_Steam_assist_intensity
   unavailable: 0
-  hide: true
+  optional: true
   sensor:
     device_class: enum
     options:
@@ -1272,33 +1272,33 @@ properties:
       3: medium
       4: high
 - property: Step1_setMulti_level_baking
-  hide: true
+  optional: true
 - property: Step2Add_moistStart_at_minute
-  hide: true
+  optional: true
 - property: Step2Add_moistValve_open_percentage
-  hide: true
+  optional: true
 - property: Step2Add_moist_status
-  hide: true
+  optional: true
 - property: Step2Alarm_after_step
-  hide: true
+  optional: true
 - property: Step2Grill_intensity
-  hide: true
+  optional: true
 - property: Step2Pause_after_step
-  hide: true
+  optional: true
 - property: Step2Remove_moistStart_at_minute
-  hide: true
+  optional: true
 - property: Step2_Steam_assist
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: Step2_Steam_assistSet_time_in_minutes
-  hide: true
+  optional: true
   sensor:
     device_class: duration
     unit: min
 - property: Step2_Steam_assist_intensity
   unavailable: 0
-  hide: true
+  optional: true
   sensor:
     device_class: enum
     options:
@@ -1307,33 +1307,33 @@ properties:
       3: medium
       4: high
 - property: Step2_setMulti_level_baking
-  hide: true
+  optional: true
 - property: Step3Add_moistStart_at_minute
-  hide: true
+  optional: true
 - property: Step3Add_moistValve_open_percentage
-  hide: true
+  optional: true
 - property: Step3Add_moist_status
-  hide: true
+  optional: true
 - property: Step3Alarm_after_step
-  hide: true
+  optional: true
 - property: Step3Grill_intensity
-  hide: true
+  optional: true
 - property: Step3Pause_after_step
-  hide: true
+  optional: true
 - property: Step3Remove_moistStart_at_minute
-  hide: true
+  optional: true
 - property: Step3_Steam_assist
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: Step3_Steam_assistSet_time_in_minutes
-  hide: true
+  optional: true
   sensor:
     device_class: duration
     unit: min
 - property: Step3_Steam_assist_intensity
   unavailable: 0
-  hide: true
+  optional: true
   sensor:
     device_class: enum
     options:
@@ -1342,94 +1342,94 @@ properties:
       3: medium
       4: high
 - property: Step3_setMulti_level_baking
-  hide: true
+  optional: true
 - property: Step4Add_moistStart_at_minute
-  hide: true
+  optional: true
 - property: Step4Add_moistValve_open_percentage
-  hide: true
+  optional: true
 - property: Step4Add_moist_status
-  hide: true
+  optional: true
 - property: Step4Alarm_after_step
-  hide: true
+  optional: true
 - property: Step4Grill_intensity
-  hide: true
+  optional: true
 - property: Step4Pause_after_step
-  hide: true
+  optional: true
 - property: Step4Remove_moistStart_at_minute
-  hide: true
+  optional: true
 - property: Step4Steam_assist
-  hide: true
+  optional: true
 - property: Step4Steam_assistSet_time_in_minutes
-  hide: true
+  optional: true
 - property: Step4Steam_assist_intensity
-  hide: true
+  optional: true
 - property: Step4_bake_mode
-  hide: true
+  optional: true
 - property: Step4_duration
-  hide: true
+  optional: true
 - property: Step4_passed_time
-  hide: true
+  optional: true
 - property: Step4_remaining_time
-  hide: true
+  optional: true
 - property: Step4_setMulti_level_baking
-  hide: true
+  optional: true
 - property: Step4_set_heater_system
-  hide: true
+  optional: true
 - property: Step4_set_microwave_wattage
-  hide: true
+  optional: true
 - property: Step4_set_temperature
-  hide: true
+  optional: true
 - property: Step4_status
-  hide: true
+  optional: true
 - property: Step4_steam_available
-  hide: true
+  optional: true
 - property: Step4_time_unit
-  hide: true
+  optional: true
 - property: Step5Add_moistStart_at_minute
-  hide: true
+  optional: true
 - property: Step5Add_moistValve_open_percentage
-  hide: true
+  optional: true
 - property: Step5Add_moist_status
-  hide: true
+  optional: true
 - property: Step5Alarm_after_step
-  hide: true
+  optional: true
 - property: Step5Grill_intensity
-  hide: true
+  optional: true
 - property: Step5Pause_after_step
-  hide: true
+  optional: true
 - property: Step5Remove_moistStart_at_minute
-  hide: true
+  optional: true
 - property: Step5Steam_assist
-  hide: true
+  optional: true
 - property: Step5Steam_assistSet_time_in_minutes
-  hide: true
+  optional: true
 - property: Step5Steam_assist_intensity
-  hide: true
+  optional: true
 - property: Step5_bake_mode
-  hide: true
+  optional: true
 - property: Step5_duration
-  hide: true
+  optional: true
 - property: Step5_passed_time
-  hide: true
+  optional: true
 - property: Step5_remaining_time
-  hide: true
+  optional: true
 - property: Step5_setMulti_level_baking
-  hide: true
+  optional: true
 - property: Step5_set_heater_system
-  hide: true
+  optional: true
 - property: Step5_set_microwave_wattage
-  hide: true
+  optional: true
 - property: Step5_set_temperature
-  hide: true
+  optional: true
 - property: Step5_status
-  hide: true
+  optional: true
 - property: Step5_steam_available
-  hide: true
+  optional: true
 - property: Step5_time_unit
-  hide: true
+  optional: true
 - property: Step_1_bake_mode
   unavailable: 0
-  hide: true
+  optional: true
   select:
     options:
       1: undefined
@@ -1448,13 +1448,13 @@ properties:
       name: Step_1_bake_mode_cmd
       adjust: 1
 - property: Step_1_duration
-  hide: true
+  optional: true
   sensor:
     device_class: duration
     unit: s
 - property: Step_1_fastpreheat_function
   unavailable: 0
-  hide: true
+  optional: true
   switch:
     "off": 1
     "on": 2
@@ -1462,19 +1462,19 @@ properties:
       name: Step_1_fastpreheat_function_cmd
       adjust: 1
 - property: Step_1_passed_time
-  hide: true
+  optional: true
   sensor:
     device_class: duration
     unit: s
     unknown_value: 16777215
 - property: Step_1_remaining_time
-  hide: true
+  optional: true
   sensor:
     device_class: duration
     unit: s
     unknown_value: 16777215
 - property: Step_1_set_heater_system
-  hide: true
+  optional: true
   sensor:
     device_class: enum
     options:
@@ -1553,7 +1553,7 @@ properties:
       255: none
 - property: Step_1_set_microwave_wattage
   unavailable: 0
-  hide: true
+  optional: true
   select:
     options:
       1: none
@@ -1567,18 +1567,18 @@ properties:
       name: Step_1_set_microwave_wattage_set
       adjust: 2
 - property: Step_1_set_temperature
-  hide: true
+  optional: true
   sensor:
     device_class: temperature
     unit: property.Oven_temperature_unit
     state_class: measurement
 - property: Step_1_status
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: Step_1_steam_available
   unavailable: 0
-  hide: true
+  optional: true
   sensor:
     device_class: enum
     options:
@@ -1587,7 +1587,7 @@ properties:
       3: available
 - property: Step_1_time_unit
   unavailable: 0
-  hide: true
+  optional: true
   select:
     options:
       1: seconds
@@ -1598,7 +1598,7 @@ properties:
       adjust: 1
 - property: Step_2_bake_mode
   unavailable: 0
-  hide: true
+  optional: true
   select:
     options:
       1: undefined
@@ -1613,23 +1613,23 @@ properties:
       name: Step_2_bake_mode_cmd
       adjust: 2
 - property: Step_2_duration
-  hide: true
+  optional: true
   sensor:
     device_class: duration
     unit: s
 - property: Step_2_passed_time
-  hide: true
+  optional: true
   sensor:
     device_class: duration
     unit: s
     unknown_value: 16777215
 - property: Step_2_remaining_time
-  hide: true
+  optional: true
   sensor:
     device_class: duration
     unit: s
 - property: Step_2_set_heater_system
-  hide: true
+  optional: true
   sensor:
     device_class: enum
     options:
@@ -1708,7 +1708,7 @@ properties:
       255: none
 - property: Step_2_set_microwave_wattage
   unavailable: 0
-  hide: true
+  optional: true
   select:
     options:
       1: none
@@ -1722,18 +1722,18 @@ properties:
       name: Step_2_set_microwave_wattage_set
       adjust: 2
 - property: Step_2_set_temperature
-  hide: true
+  optional: true
   sensor:
     device_class: temperature
     unit: property.Oven_temperature_unit
     state_class: measurement
 - property: Step_2_status
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: Step_2_steam_available
   unavailable: 0
-  hide: true
+  optional: true
   sensor:
     device_class: enum
     options:
@@ -1742,7 +1742,7 @@ properties:
       3: available
 - property: Step_2_time_unit
   unavailable: 0
-  hide: true
+  optional: true
   select:
     options:
       1: seconds
@@ -1753,7 +1753,7 @@ properties:
       adjust: 1
 - property: Step_3_bake_mode
   unavailable: 0
-  hide: true
+  optional: true
   select:
     options:
       1: undefined
@@ -1768,25 +1768,25 @@ properties:
       name: Step_3_bake_mode_cmd
       adjust: 2
 - property: Step_3_duration
-  hide: true
+  optional: true
   sensor:
     device_class: duration
     unit: s
     unknown_value: 16777215
 - property: Step_3_passed_time
-  hide: true
+  optional: true
   sensor:
     device_class: duration
     unit: s
     unknown_value: 16777215
 - property: Step_3_remaining_time
-  hide: true
+  optional: true
   sensor:
     device_class: duration
     unit: s
     unknown_value: 16777215
 - property: Step_3_set_heater_system
-  hide: true
+  optional: true
   sensor:
     device_class: enum
     options:
@@ -1865,7 +1865,7 @@ properties:
       255: none
 - property: Step_3_set_microwave_wattage
   unavailable: 0
-  hide: true
+  optional: true
   select:
     options:
       1: none
@@ -1879,7 +1879,7 @@ properties:
       name: Step_3_set_microwave_wattage_set
       adjust: 2
 - property: Step_3_set_temperature
-  hide: true
+  optional: true
   sensor:
     device_class: temperature
     unit: property.Oven_temperature_unit
@@ -1887,7 +1887,7 @@ properties:
     state_class: measurement
 - property: Step_3_status
   unavailable: 0
-  hide: true
+  optional: true
   sensor:
     device_class: enum
     options:
@@ -1896,7 +1896,7 @@ properties:
       3: available
 - property: Step_3_steam_available
   unavailable: 0
-  hide: true
+  optional: true
   sensor:
     device_class: enum
     options:
@@ -1905,7 +1905,7 @@ properties:
       3: available
 - property: Step_3_time_unit
   unavailable: 0
-  hide: true
+  optional: true
   select:
     options:
       1: seconds
@@ -1915,22 +1915,22 @@ properties:
       name: Step_3_time_unit_cmd
       adjust: 1
 - property: Step_after_bakeAdd_moistStart_at_minute
-  hide: true
+  optional: true
 - property: Step_after_bakeAdd_moistValve_open_percentage
-  hide: true
+  optional: true
 - property: Step_after_bakeAdd_moist_status
-  hide: true
+  optional: true
 - property: Step_after_bakeRemove_moistStart_at_minute
-  hide: true
+  optional: true
 - property: Step_after_bake_duration
-  hide: true
+  optional: true
   sensor:
     device_class: duration
     unit: s
     unknown_value: 16777215
 - property: Step_after_bake_mode
   unavailable: 0
-  hide: true
+  optional: true
   select:
     options:
       1: gratine
@@ -1938,21 +1938,21 @@ properties:
       name: Step_after_bake_mode_cmd
       adjust: 1
 - property: Step_after_bake_passed_time
-  hide: true
+  optional: true
   sensor:
     device_class: duration
     unit: s
     unknown_value: 16777215
 - property: Step_after_bake_remaining_Time
-  hide: true
+  optional: true
   sensor:
     device_class: duration
     unit: s
     unknown_value: 16777215
 - property: Step_after_bake_setMulti_level_baking
-  hide: true
+  optional: true
 - property: Step_after_bake_set_heater_system
-  hide: true
+  optional: true
   sensor:
     device_class: enum
     options:
@@ -2030,7 +2030,7 @@ properties:
       71: smallgrill_pyro
       255: none
 - property: Step_after_bake_set_temperature
-  hide: true
+  optional: true
   sensor:
     device_class: temperature
     unit: property.Oven_temperature_unit
@@ -2038,7 +2038,7 @@ properties:
     state_class: measurement
 - property: Step_after_bake_status
   unavailable: 0
-  hide: true
+  optional: true
   switch:
     "off": 1
     "on": 2
@@ -2047,7 +2047,7 @@ properties:
       adjust: 1
 - property: Step_after_bake_time_unit
   unavailable: 0
-  hide: true
+  optional: true
   select:
     options:
       1: seconds
@@ -2057,22 +2057,22 @@ properties:
       name: Step_after_bake_time_unit_cmd
       adjust: 1
 - property: Step_pre_bakeAdd_moistStart_at_minute
-  hide: true
+  optional: true
 - property: Step_pre_bakeAdd_moistValve_open_percentage
-  hide: true
+  optional: true
 - property: Step_pre_bakeAdd_moist_status
-  hide: true
+  optional: true
 - property: Step_pre_bakeRemove_moistStart_at_minute
-  hide: true
+  optional: true
 - property: Step_pre_bake_duration
-  hide: true
+  optional: true
   sensor:
     device_class: duration
     unit: s
     unknown_value: 16777215
 - property: Step_pre_bake_mode
   unavailable: 0
-  hide: true
+  optional: true
   select:
     options:
       1: not_active
@@ -2082,21 +2082,21 @@ properties:
       name: Step_pre_bake_mode_cmd
       adjust: 2
 - property: Step_pre_bake_passed_time
-  hide: true
+  optional: true
   sensor:
     device_class: duration
     unit: s
     unknown_value: 16777215
 - property: Step_pre_bake_remaining_time
-  hide: true
+  optional: true
   sensor:
     device_class: duration
     unit: s
     unknown_value: 16777215
 - property: Step_pre_bake_setMulti_level_baking
-  hide: true
+  optional: true
 - property: Step_pre_bake_set_heater_system
-  hide: true
+  optional: true
   sensor:
     device_class: enum
     options:
@@ -2174,14 +2174,14 @@ properties:
       71: smallgrill_pyro
       255: none
 - property: Step_pre_bake_set_temperature
-  hide: true
+  optional: true
   sensor:
     device_class: temperature
     unit: property.Oven_temperature_unit
     state_class: measurement
 - property: Step_pre_bake_status
   unavailable: 0
-  hide: true
+  optional: true
   switch:
     "off": 1
     "on": 2
@@ -2190,7 +2190,7 @@ properties:
       adjust: 1
 - property: Step_pre_bake_time_unit
   unavailable: 0
-  hide: true
+  optional: true
   select:
     options:
       1: seconds
@@ -2200,16 +2200,16 @@ properties:
       name: Step_pre_bake_time_unit_cmd
       adjust: 1
 - property: SummerWinter_timeAutomatic_setting
-  hide: true
+  optional: true
 - property: Temperature_reached_notification_setting
-  hide: true
+  optional: true
 - property: Text_size_setting
-  hide: true
+  optional: true
 - property: TimeDateAutomatic_setting
-  hide: true
+  optional: true
 - property: Time_format
   unavailable: 0
-  hide: true
+  optional: true
   select:
     options:
       1: "12h"
@@ -2218,32 +2218,32 @@ properties:
       name: Time_format_cmd
       adjust: 1
 - property: Time_zone_setting
-  hide: true
+  optional: true
 - property: Total_duration_in_seconds
-  hide: true
+  optional: true
   sensor:
     device_class: duration
     unit: s
     unknown_value: 16777215
 - property: Total_oven_usage_value
-  hide: true
+  optional: true
   sensor:
     unknown_value: 65535
 - property: Total_passed_time_seconds
-  hide: true
+  optional: true
   sensor:
     device_class: duration
     unit: s
     unknown_value: 16777215
 - property: Total_remaining_time_seconds
-  hide: true
+  optional: true
   sensor:
     device_class: duration
     unit: s
     unknown_value: 16777215
 - property: Volume
   unavailable: 0
-  hide: true
+  optional: true
   select:
     options:
       1: "0"
@@ -2256,10 +2256,10 @@ properties:
       name: Volume_cmd
       adjust: 1
 - property: Volume_setting
-  hide: true
+  optional: true
 - property: Warming_drawer_power_level
   unavailable: 0
-  hide: true
+  optional: true
   select:
     options:
       1: low
@@ -2270,11 +2270,11 @@ properties:
       adjust: 1
 - property: Warming_drawer_status
   unavailable: 0
-  hide: true
+  optional: true
   binary_sensor: {}
 - property: Water_hardness
   unavailable: 0
-  hide: true
+  optional: true
   select:
     options:
       1: "1"
@@ -2287,19 +2287,19 @@ properties:
       adjust: 1
 - property: Water_tank
   unavailable: 0
-  hide: true
+  optional: true
   sensor:
     device_class: enum
     options:
       1: not_detected
       2: present
 - property: Water_tank_level
-  hide: true
+  optional: true
 - property: Weight_unit_setting
-  hide: true
+  optional: true
 - property: Welcome
   unavailable: 0
-  hide: true
+  optional: true
   switch:
     "off": 1
     "on": 2
