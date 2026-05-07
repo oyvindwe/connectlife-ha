@@ -1969,7 +1969,7 @@
         "name": "Heizung"
       },
       "f_votage": {
-        "name": "Gemessene Netzspannung"
+        "name": "Spannung"
       },
       "factory_reset": {
         "name": "Werksreset"

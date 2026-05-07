@@ -2042,7 +2042,7 @@
         "name": "Verwarming"
       },
       "f_votage": {
-        "name": "Gemeten netspanning"
+        "name": "Spanning"
       },
       "factory_reset": {
         "name": "Reset naar fabrieksinstellingen"

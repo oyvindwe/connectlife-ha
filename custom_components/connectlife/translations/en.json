@@ -3237,6 +3237,15 @@
       "f_heat_qvalue": {
         "name": "Heating"
       },
+      "f_matteroriginalproductid": {
+        "name": "Matter product ID"
+      },
+      "f_matteroriginalvendorid": {
+        "name": "Matter vendor ID"
+      },
+      "f_matteruniqueid": {
+        "name": "Matter unique ID"
+      },
       "f_power_consumption": {
         "name": "Energy consumption"
       },
@@ -3244,7 +3253,7 @@
         "name": "Power"
       },
       "f_votage": {
-        "name": "Measured grid voltage"
+        "name": "Voltage"
       },
       "factory_reset": {
         "name": "Factory reset"
