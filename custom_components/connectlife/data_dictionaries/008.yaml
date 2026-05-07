@@ -195,10 +195,31 @@ properties:
     climate:
       target: current_humidity
       unknown_value: 128
+  - property: f_matterOriginalProductId
+    sensor:
+      read_only: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_matterOriginalVendorId
+    sensor:
+      read_only: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_matterUniqueId
+    sensor:
+      read_only: true
+    hide: true
+    entity_category: diagnostic
   - property: f_temp_in
     icon: mdi:thermometer
     climate:
       target: current_temperature
+  - property: f_votage
+    sensor:
+      device_class: voltage
+      unit: V
+    hide: true
+    entity_category: diagnostic
   - property: measured_grid_voltage
     sensor:
       device_class: voltage
