@@ -34,8 +34,6 @@ properties:
     state_class: total
   combine:
     - property: Electricit_consumption_decimal
-- property: Program_end_to_shutdown_time_in_minutes
-  hide: true
 - property: RinseNum
   sensor: # Sample value: 2
     unit: times

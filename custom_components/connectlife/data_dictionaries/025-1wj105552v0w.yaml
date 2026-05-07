@@ -46,10 +46,6 @@ properties:
       52: "power_30"
       56: "pets"
       57: "full_load_49"
-- property: Selected_program_total_time_in_minutes
-  hide: true
-- property: Selected_program_total_running_time_in_minutes
-  hide: true
 - property: Spin_speed_rpm
   select:
     options:
