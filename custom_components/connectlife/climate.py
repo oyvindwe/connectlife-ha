@@ -270,7 +270,6 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
                 self._attr_preset_mode = preset_mode
 
         self._attr_hvac_mode = hvac_mode if is_on else HVACMode.OFF
-        self._attr_available = self.coordinator.data[self.device_id].offline_state == 1
 
     def get_temperature_limit(self, temperature_map: dict[str, int]) -> int | None:
         if temperature_map and self._attr_temperature_unit in temperature_map:

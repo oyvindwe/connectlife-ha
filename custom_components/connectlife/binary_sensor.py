@@ -78,4 +78,3 @@ class ConnectLifeBinaryStatusSensor(ConnectLifeEntity, BinarySensorEntity):
             else:
                 self._attr_is_on = None
                 _LOGGER.warning("Unknown value %d for %s", value, self.status)
-        self._attr_available = self.coordinator.data[self.device_id].offline_state == 1
