@@ -291,6 +291,9 @@
       "alarmchild_lockon": {
         "name": "Alarmchild lockon"
       },
+      "alarmcleanairended": {
+        "name": "Alarm clean air ended"
+      },
       "alarmcleantank": {
         "name": "Alarm clean tank"
       },
@@ -315,6 +318,9 @@
       "alarmfilltank": {
         "name": "Alarm fill tank"
       },
+      "alarmgreasefilter": {
+        "name": "Alarm grease filter"
+      },
       "alarmincreased_power_consumption": {
         "name": "Alarm increased power consumption"
       },
@@ -335,6 +341,12 @@
       },
       "alarmprobe_lost_connection": {
         "name": "Alarmprobe lost connection"
+      },
+      "alarmrecirculationfilter1": {
+        "name": "Alarm recirculation filter 1"
+      },
+      "alarmrecirculationfilter2": {
+        "name": "Alarm recirculation filter 2"
       },
       "alarmremotestartpowerfailure": {
         "name": "Alarm remote start power failure"
@@ -362,6 +374,9 @@
       },
       "alarmtanklevel1": {
         "name": "Alarm tank level 1"
+      },
+      "alarmtimerended": {
+        "name": "Alarm timer ended"
       },
       "ali_wifi_fault_flag": {
         "name": "WiFi fault"
@@ -791,6 +806,9 @@
       },
       "light": {
         "name": "Light"
+      },
+      "lightstatus": {
+        "name": "Light status"
       },
       "lock_fresh_mode": {
         "name": "Lock fresh mode"
@@ -1666,12 +1684,6 @@
       "gratin_function_set_time_in_seconds": {
         "name": "Gratin function set time"
       },
-      "lightbrightness": {
-        "name": "Light brightness"
-      },
-      "lightcolortemperature": {
-        "name": "Light color temperature"
-      },
       "refrigerator_max_temperature": {
         "name": "Refrigerator max temperature"
       },
@@ -1822,9 +1834,6 @@
           "english": "English",
           "simplified_chinese": "Simplified chinese"
         }
-      },
-      "motorlevel": {
-        "name": "Motor level"
       },
       "notification_volumen_setting_status": {
         "name": "Notification volume",
@@ -2233,16 +2242,30 @@
         "name": "Active mode light color temperature"
       },
       "activemodelightstatus": {
-        "name": "Active mode light status"
+        "name": "Active mode light status",
+        "state": {
+          "not_available": "Not available",
+          "reserved": "Reserved"
+        }
       },
       "activemodemotorlevel": {
         "name": "Active mode motor level"
       },
       "activemodemotorlevelstatus": {
-        "name": "Active mode motor level status"
+        "name": "Active mode motor level status",
+        "state": {
+          "not_available": "Not available",
+          "reserved": "Reserved"
+        }
       },
       "activemodestatus": {
-        "name": "Active mode status"
+        "name": "Active mode status",
+        "state": {
+          "active": "Active",
+          "not_active": "Not active",
+          "not_available": "Not available",
+          "reserved": "Reserved"
+        }
       },
       "adapt_sense_setting_status": {
         "name": "Adapt sense setting status"
@@ -2367,21 +2390,6 @@
       "alarm_sound_volume": {
         "name": "Alarm sound volume"
       },
-      "alarmcleanairended": {
-        "name": "Alarm clean air ended"
-      },
-      "alarmgreasefilter": {
-        "name": "Alarm grease filter"
-      },
-      "alarmrecirculationfilter1": {
-        "name": "Alarm recirculation filter 1"
-      },
-      "alarmrecirculationfilter2": {
-        "name": "Alarm recirculation filter 2"
-      },
-      "alarmtimerended": {
-        "name": "Alarm timer ended"
-      },
       "almost_finished_notification_setting": {
         "name": "Almost finished notification setting"
       },
@@ -2398,7 +2406,11 @@
         "name": "Ambient light color temperature"
       },
       "ambientlightstatus": {
-        "name": "Ambient light status"
+        "name": "Ambient light status",
+        "state": {
+          "not_available": "Not available",
+          "reserved": "Reserved"
+        }
       },
       "ancreae_mux": {
         "name": "An creae mux"
@@ -2604,7 +2616,13 @@
         "name": "Circulation mode"
       },
       "circulationmodestatus": {
-        "name": "Circulation mode status"
+        "name": "Circulation mode status",
+        "state": {
+          "exhaust": "Exhaust",
+          "not_available": "Not available",
+          "recirculation": "Recirculation",
+          "reserved": "Reserved"
+        }
       },
       "clean_mode_switch_status": {
         "name": "Clean mode switch status"
@@ -2628,7 +2646,13 @@
         "name": "Clean air start time"
       },
       "cleanairstatus": {
-        "name": "Clean air status"
+        "name": "Clean air status",
+        "state": {
+          "active": "Active",
+          "not_active": "Not active",
+          "not_available": "Not available",
+          "reserved": "Reserved"
+        }
       },
       "coldwash": {
         "name": "Cold wash"
@@ -2959,7 +2983,15 @@
         }
       },
       "devicestatus": {
-        "name": "Device status"
+        "name": "Device status",
+        "state": {
+          "idle": "Idle",
+          "not_available": "Not available",
+          "production": "Production",
+          "reserved": "Reserved",
+          "running": "Running",
+          "service": "Service"
+        }
       },
       "display_brightness_setting_status": {
         "name": "Display brightness"
@@ -3815,7 +3847,13 @@
         "name": "Grease filter cleaning interval in hours"
       },
       "greasefilterstatus": {
-        "name": "Grease filter status"
+        "name": "Grease filter status",
+        "state": {
+          "active": "Active",
+          "not_active": "Not active",
+          "not_available": "Not available",
+          "reserved": "Reserved"
+        }
       },
       "greasefilterusedhours": {
         "name": "Grease filter used hours"
@@ -3837,6 +3875,7 @@
         "state": {
           "active": "Active",
           "not_active": "Not active",
+          "pairing_active": "Pairing active",
           "reserved": "Reserved",
           "unpair_all_users": "Unpair all users"
         }
@@ -4023,6 +4062,12 @@
       "lidopenflag": {
         "name": "Lid open flag"
       },
+      "lightbrightness": {
+        "name": "Light brightness"
+      },
+      "lightcolortemperature": {
+        "name": "Light color temperature"
+      },
       "lights_duration_setting": {
         "name": "Lights duration setting"
       },
@@ -4031,9 +4076,6 @@
       },
       "lightscolor_temperature_setting": {
         "name": "Lights color temperature setting"
-      },
-      "lightstatus": {
-        "name": "Light status"
       },
       "liquid_unit_setting_status": {
         "name": "Liquid unit setting status"
@@ -4153,6 +4195,9 @@
         "name": "Motor"
       },
       "motor_level": {
+        "name": "Motor level"
+      },
+      "motorlevel": {
         "name": "Motor level"
       },
       "navigation_sound_setting": {
@@ -4384,7 +4429,13 @@
         "name": "Proximity sensor sensitivity"
       },
       "proximitysensorstatus": {
-        "name": "Proximity sensor status"
+        "name": "Proximity sensor status",
+        "state": {
+          "active": "Active",
+          "not_active": "Not active",
+          "not_available": "Not available",
+          "reserved": "Reserved"
+        }
       },
       "pumcleanflag": {
         "name": "Pump clean flag"
@@ -7189,7 +7240,16 @@
         "name": "Timer start time"
       },
       "timerstatus": {
-        "name": "Timer status"
+        "name": "Timer status",
+        "state": {
+          "ended": "Ended",
+          "not_active": "Not active",
+          "not_available": "Not available",
+          "paused": "Paused",
+          "reserved": "Reserved",
+          "running": "Running",
+          "stopped": "Stopped"
+        }
       },
       "timezone": {
         "name": "Timezone"
