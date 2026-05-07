@@ -43,28 +43,28 @@ properties:
         0: off
         1: on
   - property: Alarm_auto_program_ended
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: Alarm_automatic_switch_off_zone
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: Alarm_hob_hood_started
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: Alarm_timer_ended
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       options:
@@ -79,14 +79,14 @@ properties:
         0: off
         1: on
   - property: Alarm_zone_turned_off
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: Auto_Grease_filter_indication
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: Auto_Tower_Up
     hide: true
@@ -123,7 +123,7 @@ properties:
   - property: Circulation_mode__set_flag
     disable: true
   - property: Control_Response_Level
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: Demo_mode
     binary_sensor:
@@ -151,7 +151,7 @@ properties:
         0: off
         1: on
   - property: Error_1
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -159,7 +159,7 @@ properties:
         0: off
         1: on
   - property: Error_10
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -167,7 +167,7 @@ properties:
         0: off
         1: on
   - property: Error_11
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -175,7 +175,7 @@ properties:
         0: off
         1: on
   - property: Error_12
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -183,7 +183,7 @@ properties:
         0: off
         1: on
   - property: Error_2
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -191,7 +191,7 @@ properties:
         0: off
         1: on
   - property: Error_3
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -199,7 +199,7 @@ properties:
         0: off
         1: on
   - property: Error_4
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -207,7 +207,7 @@ properties:
         0: off
         1: on
   - property: Error_5
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -215,7 +215,7 @@ properties:
         0: off
         1: on
   - property: Error_6
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -223,7 +223,7 @@ properties:
         0: off
         1: on
   - property: Error_7
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -231,7 +231,7 @@ properties:
         0: off
         1: on
   - property: Error_8
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -239,7 +239,7 @@ properties:
         0: off
         1: on
   - property: Error_9
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -261,21 +261,21 @@ properties:
         0: off
         1: on
   - property: Grease_Filter_saturation
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: Grease_filter_cleaning_interval_in_hours
-    hide: true
+    optional: true
     entity_category: diagnostic
     sensor:
       device_class: duration
       unit: h
   - property: Grease_filter_reset_counter
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: Grease_filter_reset_counter_set_flag
     disable: true
   - property: Grease_filter_set_lifetime_in_hours
-    hide: true
+    optional: true
     entity_category: diagnostic
     sensor:
       device_class: duration
@@ -283,15 +283,15 @@ properties:
   - property: Grease_filter_set_lifetime_in_hours_set_flag
     disable: true
   - property: Grease_filter_status
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: Grease_filter_timer_active
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: Grease_filter_timer_active_set_flag
     disable: true
   - property: Grease_filter_used_hours
-    hide: true
+    optional: true
     entity_category: diagnostic
     sensor:
       device_class: duration
@@ -312,7 +312,7 @@ properties:
   - property: Hard_pairing_unpair_all_set_flag
     disable: true
   - property: Hood_connected_via_RF
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: Hood_fan_speed
     hide: true
@@ -328,10 +328,10 @@ properties:
       unit: h
       state_class: total_increasing
   - property: Key_sensitivity_level
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: Key_sound_level
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: Motor
     hide: true
@@ -345,18 +345,18 @@ properties:
   - property: Position_of_tower
     hide: true
   - property: Recirculation_filter_1_lifetime_in_hours
-    hide: true
+    optional: true
     entity_category: diagnostic
     sensor:
       device_class: duration
       unit: h
   - property: Recirculation_filter_1_reset_counter
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: Recirculation_filter_1_reset_counter_set_flag
     disable: true
   - property: Recirculation_filter_1_set_lifetime_in_hours
-    hide: true
+    optional: true
     entity_category: diagnostic
     sensor:
       device_class: duration
@@ -364,23 +364,23 @@ properties:
   - property: Recirculation_filter_1_set_lifetime_in_hours_set_flag
     disable: true
   - property: Recirculation_filter_1_set_type
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: Recirculation_filter_1_set_type_set_flag
     disable: true
   - property: Recirculation_filter_1_status
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: Recirculation_filter_1_timer_active
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: Recirculation_filter_1_timer_active_set_flag
     disable: true
   - property: Recirculation_filter_1_type
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: Recirculation_filter_1_used_hours
-    hide: true
+    optional: true
     entity_category: diagnostic
     sensor:
       device_class: duration
@@ -397,7 +397,7 @@ properties:
         0: off
         1: on
   - property: SL1_Active_timer
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -405,7 +405,7 @@ properties:
         1: stopwatch
         2: timer
   - property: SL1_Alarm_NTC_coil
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -413,43 +413,43 @@ properties:
         0: off
         1: on
   - property: SL1_Alarm_auto_program_notification
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL1_Alarm_automatic_switch_off_zone
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL1_Alarm_timer_ended
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL1_Alarm_zone_turned_off
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL1_Bridge_function_active
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL1_Bridged_to_zone
-    hide: true
+    optional: true
   - property: SL1_Cooking_method
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -457,7 +457,7 @@ properties:
         1: method_1
         2: method_2
   - property: SL1_Function_status
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -476,25 +476,25 @@ properties:
         5: boil
         6: heat_up_and_fry
   - property: SL1_Hestan_Cue_Set_Temperature
-    hide: true
+    optional: true
     sensor:
       read_only: true
       state_class: measurement
       device_class: temperature
       unit: °C
   - property: SL1_Hestan_Cue_Temperature
-    hide: true
+    optional: true
     sensor:
       read_only: true
       state_class: measurement
       device_class: temperature
       unit: °C
   - property: SL1_Hestan_Cue_cookware_type
-    hide: true
+    optional: true
   - property: SL1_Hestan_Cue_next_step_required_warning
-    hide: true
+    optional: true
   - property: SL1_NTC_sensor
-    hide: true
+    optional: true
     entity_category: diagnostic
     sensor:
       read_only: true
@@ -502,7 +502,7 @@ properties:
       device_class: temperature
       unit: °C
   - property: SL1_Pot_detected
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
@@ -526,29 +526,29 @@ properties:
         12: "12"
         13: boost
   - property: SL1_Residual_heat_signal
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL1_Sand_timer_UTC_start_time_hours
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL1_Sand_timer_UTC_start_time_minutes
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL1_Sand_timer_UTC_start_time_seconds
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL1_Sand_timer_paused_total_seconds
-    hide: true
+    optional: true
     entity_category: diagnostic
     sensor:
       device_class: duration
       unit: s
       state_class: measurement
   - property: SL1_Sand_timer_status
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -558,29 +558,29 @@ properties:
         3: ended
         4: inactive
   - property: SL1_Status
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL1_Stopwatch_UTC_start_time_hours
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL1_Stopwatch_UTC_start_time_minutes
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL1_Stopwatch_UTC_start_time_seconds
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL1_Stopwatch_paused_total_seconds
-    hide: true
+    optional: true
     entity_category: diagnostic
     sensor:
       device_class: duration
       unit: s
       state_class: measurement
   - property: SL1_Stopwatch_status
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -589,32 +589,32 @@ properties:
         2: paused
         3: inactive
   - property: SL1_Temperature
-    hide: true
+    optional: true
     sensor:
       read_only: true
       state_class: measurement
       device_class: temperature
       unit: °C
   - property: SL1_Timer_UTC_end_time_hours
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL1_Timer_UTC_end_time_minutes
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL1_Timer_UTC_end_time_seconds
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL1_Timer_UTC_paused_hours
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL1_Timer_UTC_paused_minutes
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL1_Timer_UTC_paused_seconds
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL1_error_1
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -622,7 +622,7 @@ properties:
         0: off
         1: on
   - property: SL1_error_10
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -630,7 +630,7 @@ properties:
         0: off
         1: on
   - property: SL1_error_11
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -638,7 +638,7 @@ properties:
         0: off
         1: on
   - property: SL1_error_12
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -646,7 +646,7 @@ properties:
         0: off
         1: on
   - property: SL1_error_13
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -654,7 +654,7 @@ properties:
         0: off
         1: on
   - property: SL1_error_14
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -662,7 +662,7 @@ properties:
         0: off
         1: on
   - property: SL1_error_15
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -670,7 +670,7 @@ properties:
         0: off
         1: on
   - property: SL1_error_16
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -678,7 +678,7 @@ properties:
         0: off
         1: on
   - property: SL1_error_17
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -686,7 +686,7 @@ properties:
         0: off
         1: on
   - property: SL1_error_2
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -694,7 +694,7 @@ properties:
         0: off
         1: on
   - property: SL1_error_3
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -702,7 +702,7 @@ properties:
         0: off
         1: on
   - property: SL1_error_4
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -710,7 +710,7 @@ properties:
         0: off
         1: on
   - property: SL1_error_5
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -718,7 +718,7 @@ properties:
         0: off
         1: on
   - property: SL1_error_6
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -726,7 +726,7 @@ properties:
         0: off
         1: on
   - property: SL1_error_7
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -734,7 +734,7 @@ properties:
         0: off
         1: on
   - property: SL1_error_8
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -742,7 +742,7 @@ properties:
         0: off
         1: on
   - property: SL1_error_9
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -750,7 +750,7 @@ properties:
         0: off
         1: on
   - property: SL2_Active_timer
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -758,7 +758,7 @@ properties:
         1: stopwatch
         2: timer
   - property: SL2_Alarm_NTC_coil
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -766,43 +766,43 @@ properties:
         0: off
         1: on
   - property: SL2_Alarm_auto_program_notification
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL2_Alarm_automatic_switch_off_zone
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL2_Alarm_timer_ended
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL2_Alarm_zone_turned_off
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL2_Bridge_function_active
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL2_Bridged_to_zone
-    hide: true
+    optional: true
   - property: SL2_Cooking_method
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -810,7 +810,7 @@ properties:
         1: method_1
         2: method_2
   - property: SL2_Function_status
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -829,25 +829,25 @@ properties:
         5: boil
         6: heat_up_and_fry
   - property: SL2_Hestan_Cue_Set_Temperature
-    hide: true
+    optional: true
     sensor:
       read_only: true
       state_class: measurement
       device_class: temperature
       unit: °C
   - property: SL2_Hestan_Cue_Temperature
-    hide: true
+    optional: true
     sensor:
       read_only: true
       state_class: measurement
       device_class: temperature
       unit: °C
   - property: SL2_Hestan_Cue_cookware_type
-    hide: true
+    optional: true
   - property: SL2_Hestan_Cue_next_step_required_warning
-    hide: true
+    optional: true
   - property: SL2_NTC_sensor
-    hide: true
+    optional: true
     entity_category: diagnostic
     sensor:
       read_only: true
@@ -855,7 +855,7 @@ properties:
       device_class: temperature
       unit: °C
   - property: SL2_Pot_detected
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
@@ -879,29 +879,29 @@ properties:
         12: "12"
         13: boost
   - property: SL2_Residual_heat_signal
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL2_Sand_timer_UTC_start_time_hours
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL2_Sand_timer_UTC_start_time_minutes
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL2_Sand_timer_UTC_start_time_seconds
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL2_Sand_timer_paused_total_seconds
-    hide: true
+    optional: true
     entity_category: diagnostic
     sensor:
       device_class: duration
       unit: s
       state_class: measurement
   - property: SL2_Sand_timer_status
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -911,29 +911,29 @@ properties:
         3: ended
         4: inactive
   - property: SL2_Status
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL2_Stopwatch_UTC_start_time_hours
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL2_Stopwatch_UTC_start_time_minutes
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL2_Stopwatch_UTC_start_time_seconds
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL2_Stopwatch_paused_total_seconds
-    hide: true
+    optional: true
     entity_category: diagnostic
     sensor:
       device_class: duration
       unit: s
       state_class: measurement
   - property: SL2_Stopwatch_status
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -942,32 +942,32 @@ properties:
         2: paused
         3: inactive
   - property: SL2_Temperature
-    hide: true
+    optional: true
     sensor:
       read_only: true
       state_class: measurement
       device_class: temperature
       unit: °C
   - property: SL2_Timer_UTC_end_time_hours
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL2_Timer_UTC_end_time_minutes
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL2_Timer_UTC_end_time_seconds
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL2_Timer_UTC_paused_hours
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL2_Timer_UTC_paused_minutes
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL2_Timer_UTC_paused_seconds
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL2_error_1
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -975,7 +975,7 @@ properties:
         0: off
         1: on
   - property: SL2_error_10
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -983,7 +983,7 @@ properties:
         0: off
         1: on
   - property: SL2_error_11
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -991,7 +991,7 @@ properties:
         0: off
         1: on
   - property: SL2_error_12
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -999,7 +999,7 @@ properties:
         0: off
         1: on
   - property: SL2_error_13
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1007,7 +1007,7 @@ properties:
         0: off
         1: on
   - property: SL2_error_14
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1015,7 +1015,7 @@ properties:
         0: off
         1: on
   - property: SL2_error_15
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1023,7 +1023,7 @@ properties:
         0: off
         1: on
   - property: SL2_error_16
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1031,7 +1031,7 @@ properties:
         0: off
         1: on
   - property: SL2_error_17
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1039,7 +1039,7 @@ properties:
         0: off
         1: on
   - property: SL2_error_2
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1047,7 +1047,7 @@ properties:
         0: off
         1: on
   - property: SL2_error_3
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1055,7 +1055,7 @@ properties:
         0: off
         1: on
   - property: SL2_error_4
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1063,7 +1063,7 @@ properties:
         0: off
         1: on
   - property: SL2_error_5
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1071,7 +1071,7 @@ properties:
         0: off
         1: on
   - property: SL2_error_6
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1079,7 +1079,7 @@ properties:
         0: off
         1: on
   - property: SL2_error_7
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1087,7 +1087,7 @@ properties:
         0: off
         1: on
   - property: SL2_error_8
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1095,7 +1095,7 @@ properties:
         0: off
         1: on
   - property: SL2_error_9
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1103,7 +1103,7 @@ properties:
         0: off
         1: on
   - property: SL3_Active_timer
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -1111,7 +1111,7 @@ properties:
         1: stopwatch
         2: timer
   - property: SL3_Alarm_NTC_coil
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1119,43 +1119,43 @@ properties:
         0: off
         1: on
   - property: SL3_Alarm_auto_program_notification
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL3_Alarm_automatic_switch_off_zone
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL3_Alarm_timer_ended
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL3_Alarm_zone_turned_off
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL3_Bridge_function_active
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL3_Bridged_to_zone
-    hide: true
+    optional: true
   - property: SL3_Cooking_method
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -1163,7 +1163,7 @@ properties:
         1: method_1
         2: method_2
   - property: SL3_Function_status
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -1182,25 +1182,25 @@ properties:
         5: boil
         6: heat_up_and_fry
   - property: SL3_Hestan_Cue_Set_Temperature
-    hide: true
+    optional: true
     sensor:
       read_only: true
       state_class: measurement
       device_class: temperature
       unit: °C
   - property: SL3_Hestan_Cue_Temperature
-    hide: true
+    optional: true
     sensor:
       read_only: true
       state_class: measurement
       device_class: temperature
       unit: °C
   - property: SL3_Hestan_Cue_cookware_type
-    hide: true
+    optional: true
   - property: SL3_Hestan_Cue_next_step_required_warning
-    hide: true
+    optional: true
   - property: SL3_NTC_sensor
-    hide: true
+    optional: true
     entity_category: diagnostic
     sensor:
       read_only: true
@@ -1208,7 +1208,7 @@ properties:
       device_class: temperature
       unit: °C
   - property: SL3_Pot_detected
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
@@ -1232,29 +1232,29 @@ properties:
         12: "12"
         13: boost
   - property: SL3_Residual_heat_signal
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL3_Sand_timer_UTC_start_time_hours
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL3_Sand_timer_UTC_start_time_minutes
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL3_Sand_timer_UTC_start_time_seconds
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL3_Sand_timer_paused_total_seconds
-    hide: true
+    optional: true
     entity_category: diagnostic
     sensor:
       device_class: duration
       unit: s
       state_class: measurement
   - property: SL3_Sand_timer_status
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -1264,29 +1264,29 @@ properties:
         3: ended
         4: inactive
   - property: SL3_Status
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL3_Stopwatch_UTC_start_time_hours
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL3_Stopwatch_UTC_start_time_minutes
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL3_Stopwatch_UTC_start_time_seconds
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL3_Stopwatch_paused_total_seconds
-    hide: true
+    optional: true
     entity_category: diagnostic
     sensor:
       device_class: duration
       unit: s
       state_class: measurement
   - property: SL3_Stopwatch_status
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -1295,32 +1295,32 @@ properties:
         2: paused
         3: inactive
   - property: SL3_Temperature
-    hide: true
+    optional: true
     sensor:
       read_only: true
       state_class: measurement
       device_class: temperature
       unit: °C
   - property: SL3_Timer_UTC_end_time_hours
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL3_Timer_UTC_end_time_minutes
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL3_Timer_UTC_end_time_seconds
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL3_Timer_UTC_paused_hours
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL3_Timer_UTC_paused_minutes
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL3_Timer_UTC_paused_seconds
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL3_error_1
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1328,7 +1328,7 @@ properties:
         0: off
         1: on
   - property: SL3_error_10
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1336,7 +1336,7 @@ properties:
         0: off
         1: on
   - property: SL3_error_11
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1344,7 +1344,7 @@ properties:
         0: off
         1: on
   - property: SL3_error_12
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1352,7 +1352,7 @@ properties:
         0: off
         1: on
   - property: SL3_error_13
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1360,7 +1360,7 @@ properties:
         0: off
         1: on
   - property: SL3_error_14
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1368,7 +1368,7 @@ properties:
         0: off
         1: on
   - property: SL3_error_15
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1376,7 +1376,7 @@ properties:
         0: off
         1: on
   - property: SL3_error_16
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1384,7 +1384,7 @@ properties:
         0: off
         1: on
   - property: SL3_error_17
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1392,7 +1392,7 @@ properties:
         0: off
         1: on
   - property: SL3_error_2
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1400,7 +1400,7 @@ properties:
         0: off
         1: on
   - property: SL3_error_3
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1408,7 +1408,7 @@ properties:
         0: off
         1: on
   - property: SL3_error_4
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1416,7 +1416,7 @@ properties:
         0: off
         1: on
   - property: SL3_error_5
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1424,7 +1424,7 @@ properties:
         0: off
         1: on
   - property: SL3_error_6
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1432,7 +1432,7 @@ properties:
         0: off
         1: on
   - property: SL3_error_7
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1440,7 +1440,7 @@ properties:
         0: off
         1: on
   - property: SL3_error_8
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1448,7 +1448,7 @@ properties:
         0: off
         1: on
   - property: SL3_error_9
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1456,7 +1456,7 @@ properties:
         0: off
         1: on
   - property: SL4_Active_timer
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -1464,7 +1464,7 @@ properties:
         1: stopwatch
         2: timer
   - property: SL4_Alarm_NTC_coil
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1472,43 +1472,43 @@ properties:
         0: off
         1: on
   - property: SL4_Alarm_auto_program_notification
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL4_Alarm_automatic_switch_off_zone
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL4_Alarm_timer_ended
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL4_Alarm_zone_turned_off
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL4_Bridge_function_active
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL4_Bridged_to_zone
-    hide: true
+    optional: true
   - property: SL4_Cooking_method
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -1516,7 +1516,7 @@ properties:
         1: method_1
         2: method_2
   - property: SL4_Function_status
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -1535,25 +1535,25 @@ properties:
         5: boil
         6: heat_up_and_fry
   - property: SL4_Hestan_Cue_Set_Temperature
-    hide: true
+    optional: true
     sensor:
       read_only: true
       state_class: measurement
       device_class: temperature
       unit: °C
   - property: SL4_Hestan_Cue_Temperature
-    hide: true
+    optional: true
     sensor:
       read_only: true
       state_class: measurement
       device_class: temperature
       unit: °C
   - property: SL4_Hestan_Cue_cookware_type
-    hide: true
+    optional: true
   - property: SL4_Hestan_Cue_next_step_required_warning
-    hide: true
+    optional: true
   - property: SL4_NTC_sensor
-    hide: true
+    optional: true
     entity_category: diagnostic
     sensor:
       read_only: true
@@ -1561,7 +1561,7 @@ properties:
       device_class: temperature
       unit: °C
   - property: SL4_Pot_detected
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
@@ -1585,29 +1585,29 @@ properties:
         12: "12"
         13: boost
   - property: SL4_Residual_heat_signal
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL4_Sand_timer_UTC_start_time_hours
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL4_Sand_timer_UTC_start_time_minutes
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL4_Sand_timer_UTC_start_time_seconds
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL4_Sand_timer_paused_total_seconds
-    hide: true
+    optional: true
     entity_category: diagnostic
     sensor:
       device_class: duration
       unit: s
       state_class: measurement
   - property: SL4_Sand_timer_status
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -1617,29 +1617,29 @@ properties:
         3: ended
         4: inactive
   - property: SL4_Status
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL4_Stopwatch_UTC_start_time_hours
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL4_Stopwatch_UTC_start_time_minutes
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL4_Stopwatch_UTC_start_time_seconds
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL4_Stopwatch_paused_total_seconds
-    hide: true
+    optional: true
     entity_category: diagnostic
     sensor:
       device_class: duration
       unit: s
       state_class: measurement
   - property: SL4_Stopwatch_status
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -1648,32 +1648,32 @@ properties:
         2: paused
         3: inactive
   - property: SL4_Temperature
-    hide: true
+    optional: true
     sensor:
       read_only: true
       state_class: measurement
       device_class: temperature
       unit: °C
   - property: SL4_Timer_UTC_end_time_hours
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL4_Timer_UTC_end_time_minutes
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL4_Timer_UTC_end_time_seconds
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL4_Timer_UTC_paused_hours
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL4_Timer_UTC_paused_minutes
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL4_Timer_UTC_paused_seconds
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL4_error_1
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1681,7 +1681,7 @@ properties:
         0: off
         1: on
   - property: SL4_error_10
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1689,7 +1689,7 @@ properties:
         0: off
         1: on
   - property: SL4_error_11
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1697,7 +1697,7 @@ properties:
         0: off
         1: on
   - property: SL4_error_12
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1705,7 +1705,7 @@ properties:
         0: off
         1: on
   - property: SL4_error_13
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1713,7 +1713,7 @@ properties:
         0: off
         1: on
   - property: SL4_error_14
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1721,7 +1721,7 @@ properties:
         0: off
         1: on
   - property: SL4_error_15
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1729,7 +1729,7 @@ properties:
         0: off
         1: on
   - property: SL4_error_16
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1737,7 +1737,7 @@ properties:
         0: off
         1: on
   - property: SL4_error_17
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1745,7 +1745,7 @@ properties:
         0: off
         1: on
   - property: SL4_error_2
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1753,7 +1753,7 @@ properties:
         0: off
         1: on
   - property: SL4_error_3
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1761,7 +1761,7 @@ properties:
         0: off
         1: on
   - property: SL4_error_4
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1769,7 +1769,7 @@ properties:
         0: off
         1: on
   - property: SL4_error_5
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1777,7 +1777,7 @@ properties:
         0: off
         1: on
   - property: SL4_error_6
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1785,7 +1785,7 @@ properties:
         0: off
         1: on
   - property: SL4_error_7
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1793,7 +1793,7 @@ properties:
         0: off
         1: on
   - property: SL4_error_8
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1801,7 +1801,7 @@ properties:
         0: off
         1: on
   - property: SL4_error_9
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1809,7 +1809,7 @@ properties:
         0: off
         1: on
   - property: SL5_Active_timer
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -1817,7 +1817,7 @@ properties:
         1: stopwatch
         2: timer
   - property: SL5_Alarm_NTC_coil
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -1825,43 +1825,43 @@ properties:
         0: off
         1: on
   - property: SL5_Alarm_auto_program_notification
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL5_Alarm_automatic_switch_off_zone
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL5_Alarm_timer_ended
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL5_Alarm_zone_turned_off
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL5_Bridge_function_active
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL5_Bridged_to_zone
-    hide: true
+    optional: true
   - property: SL5_Cooking_method
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -1869,7 +1869,7 @@ properties:
         1: method_1
         2: method_2
   - property: SL5_Function_status
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -1888,25 +1888,25 @@ properties:
         5: boil
         6: heat_up_and_fry
   - property: SL5_Hestan_Cue_Set_Temperature
-    hide: true
+    optional: true
     sensor:
       read_only: true
       state_class: measurement
       device_class: temperature
       unit: °C
   - property: SL5_Hestan_Cue_Temperature
-    hide: true
+    optional: true
     sensor:
       read_only: true
       state_class: measurement
       device_class: temperature
       unit: °C
   - property: SL5_Hestan_Cue_cookware_type
-    hide: true
+    optional: true
   - property: SL5_Hestan_Cue_next_step_required_warning
-    hide: true
+    optional: true
   - property: SL5_NTC_sensor
-    hide: true
+    optional: true
     entity_category: diagnostic
     sensor:
       read_only: true
@@ -1914,7 +1914,7 @@ properties:
       device_class: temperature
       unit: °C
   - property: SL5_Pot_detected
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
@@ -1938,29 +1938,29 @@ properties:
         12: "12"
         13: boost
   - property: SL5_Residual_heat_signal
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL5_Sand_timer_UTC_start_time_hours
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL5_Sand_timer_UTC_start_time_minutes
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL5_Sand_timer_UTC_start_time_seconds
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL5_Sand_timer_paused_total_seconds
-    hide: true
+    optional: true
     entity_category: diagnostic
     sensor:
       device_class: duration
       unit: s
       state_class: measurement
   - property: SL5_Sand_timer_status
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -1970,29 +1970,29 @@ properties:
         3: ended
         4: inactive
   - property: SL5_Status
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL5_Stopwatch_UTC_start_time_hours
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL5_Stopwatch_UTC_start_time_minutes
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL5_Stopwatch_UTC_start_time_seconds
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL5_Stopwatch_paused_total_seconds
-    hide: true
+    optional: true
     entity_category: diagnostic
     sensor:
       device_class: duration
       unit: s
       state_class: measurement
   - property: SL5_Stopwatch_status
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -2001,32 +2001,32 @@ properties:
         2: paused
         3: inactive
   - property: SL5_Temperature
-    hide: true
+    optional: true
     sensor:
       read_only: true
       state_class: measurement
       device_class: temperature
       unit: °C
   - property: SL5_Timer_UTC_end_time_hours
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL5_Timer_UTC_end_time_minutes
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL5_Timer_UTC_end_time_seconds
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL5_Timer_UTC_paused_hours
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL5_Timer_UTC_paused_minutes
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL5_Timer_UTC_paused_seconds
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL5_error_1
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -2034,7 +2034,7 @@ properties:
         0: off
         1: on
   - property: SL5_error_10
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -2042,7 +2042,7 @@ properties:
         0: off
         1: on
   - property: SL5_error_11
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -2050,7 +2050,7 @@ properties:
         0: off
         1: on
   - property: SL5_error_12
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -2058,7 +2058,7 @@ properties:
         0: off
         1: on
   - property: SL5_error_13
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -2066,7 +2066,7 @@ properties:
         0: off
         1: on
   - property: SL5_error_14
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -2074,7 +2074,7 @@ properties:
         0: off
         1: on
   - property: SL5_error_15
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -2082,7 +2082,7 @@ properties:
         0: off
         1: on
   - property: SL5_error_16
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -2090,7 +2090,7 @@ properties:
         0: off
         1: on
   - property: SL5_error_17
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -2098,7 +2098,7 @@ properties:
         0: off
         1: on
   - property: SL5_error_2
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -2106,7 +2106,7 @@ properties:
         0: off
         1: on
   - property: SL5_error_3
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -2114,7 +2114,7 @@ properties:
         0: off
         1: on
   - property: SL5_error_4
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -2122,7 +2122,7 @@ properties:
         0: off
         1: on
   - property: SL5_error_5
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -2130,7 +2130,7 @@ properties:
         0: off
         1: on
   - property: SL5_error_6
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -2138,7 +2138,7 @@ properties:
         0: off
         1: on
   - property: SL5_error_7
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -2146,7 +2146,7 @@ properties:
         0: off
         1: on
   - property: SL5_error_8
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -2154,7 +2154,7 @@ properties:
         0: off
         1: on
   - property: SL5_error_9
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -2162,7 +2162,7 @@ properties:
         0: off
         1: on
   - property: SL6_Active_timer
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -2170,7 +2170,7 @@ properties:
         1: stopwatch
         2: timer
   - property: SL6_Alarm_NTC_coil
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -2178,43 +2178,43 @@ properties:
         0: off
         1: on
   - property: SL6_Alarm_auto_program_notification
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL6_Alarm_automatic_switch_off_zone
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL6_Alarm_timer_ended
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL6_Alarm_zone_turned_off
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL6_Bridge_function_active
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL6_Bridged_to_zone
-    hide: true
+    optional: true
   - property: SL6_Cooking_method
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -2222,7 +2222,7 @@ properties:
         1: method_1
         2: method_2
   - property: SL6_Function_status
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -2241,25 +2241,25 @@ properties:
         5: boil
         6: heat_up_and_fry
   - property: SL6_Hestan_Cue_Set_Temperature
-    hide: true
+    optional: true
     sensor:
       read_only: true
       state_class: measurement
       device_class: temperature
       unit: °C
   - property: SL6_Hestan_Cue_Temperature
-    hide: true
+    optional: true
     sensor:
       read_only: true
       state_class: measurement
       device_class: temperature
       unit: °C
   - property: SL6_Hestan_Cue_cookware_type
-    hide: true
+    optional: true
   - property: SL6_Hestan_Cue_next_step_required_warning
-    hide: true
+    optional: true
   - property: SL6_NTC_sensor
-    hide: true
+    optional: true
     entity_category: diagnostic
     sensor:
       read_only: true
@@ -2267,7 +2267,7 @@ properties:
       device_class: temperature
       unit: °C
   - property: SL6_Pot_detected
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
@@ -2291,29 +2291,29 @@ properties:
         12: "12"
         13: boost
   - property: SL6_Residual_heat_signal
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL6_Sand_timer_UTC_start_time_hours
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL6_Sand_timer_UTC_start_time_minutes
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL6_Sand_timer_UTC_start_time_seconds
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL6_Sand_timer_paused_total_seconds
-    hide: true
+    optional: true
     entity_category: diagnostic
     sensor:
       device_class: duration
       unit: s
       state_class: measurement
   - property: SL6_Sand_timer_status
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -2323,29 +2323,29 @@ properties:
         3: ended
         4: inactive
   - property: SL6_Status
-    hide: true
+    optional: true
     binary_sensor:
       options:
         0: off
         1: on
   - property: SL6_Stopwatch_UTC_start_time_hours
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL6_Stopwatch_UTC_start_time_minutes
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL6_Stopwatch_UTC_start_time_seconds
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL6_Stopwatch_paused_total_seconds
-    hide: true
+    optional: true
     entity_category: diagnostic
     sensor:
       device_class: duration
       unit: s
       state_class: measurement
   - property: SL6_Stopwatch_status
-    hide: true
+    optional: true
     sensor:
       device_class: enum
       options:
@@ -2354,32 +2354,32 @@ properties:
         2: paused
         3: inactive
   - property: SL6_Temperature
-    hide: true
+    optional: true
     sensor:
       read_only: true
       state_class: measurement
       device_class: temperature
       unit: °C
   - property: SL6_Timer_UTC_end_time_hours
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL6_Timer_UTC_end_time_minutes
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL6_Timer_UTC_end_time_seconds
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL6_Timer_UTC_paused_hours
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL6_Timer_UTC_paused_minutes
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL6_Timer_UTC_paused_seconds
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: SL6_error_1
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -2387,7 +2387,7 @@ properties:
         0: off
         1: on
   - property: SL6_error_10
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -2395,7 +2395,7 @@ properties:
         0: off
         1: on
   - property: SL6_error_11
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -2403,7 +2403,7 @@ properties:
         0: off
         1: on
   - property: SL6_error_12
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -2411,7 +2411,7 @@ properties:
         0: off
         1: on
   - property: SL6_error_13
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -2419,7 +2419,7 @@ properties:
         0: off
         1: on
   - property: SL6_error_14
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -2427,7 +2427,7 @@ properties:
         0: off
         1: on
   - property: SL6_error_15
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -2435,7 +2435,7 @@ properties:
         0: off
         1: on
   - property: SL6_error_16
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -2443,7 +2443,7 @@ properties:
         0: off
         1: on
   - property: SL6_error_17
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -2451,7 +2451,7 @@ properties:
         0: off
         1: on
   - property: SL6_error_2
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -2459,7 +2459,7 @@ properties:
         0: off
         1: on
   - property: SL6_error_3
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -2467,7 +2467,7 @@ properties:
         0: off
         1: on
   - property: SL6_error_4
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -2475,7 +2475,7 @@ properties:
         0: off
         1: on
   - property: SL6_error_5
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -2483,7 +2483,7 @@ properties:
         0: off
         1: on
   - property: SL6_error_6
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -2491,7 +2491,7 @@ properties:
         0: off
         1: on
   - property: SL6_error_7
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -2499,7 +2499,7 @@ properties:
         0: off
         1: on
   - property: SL6_error_8
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -2507,7 +2507,7 @@ properties:
         0: off
         1: on
   - property: SL6_error_9
-    hide: true
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       device_class: problem
@@ -2515,13 +2515,13 @@ properties:
         0: off
         1: on
   - property: Stand_by_time
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: Synchro_Start_Level
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: Synchro_Stop_Level
-    hide: true
+    optional: true
     entity_category: diagnostic
   - property: Test_mode
     binary_sensor:
@@ -2534,5 +2534,5 @@ properties:
       unit: min
       state_class: total_increasing
   - property: Window_status
-    hide: true
+    optional: true
     entity_category: diagnostic
