@@ -7212,7 +7212,7 @@
       "timerstatus": {
         "name": "Timerstatus",
         "state": {
-          "ended": "Beëindigd",
+          "ended": "Be\u00ebindigd",
           "not_active": "Niet actief",
           "not_available": "Niet beschikbaar",
           "paused": "Gepauzeerd",
