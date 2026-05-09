@@ -82,7 +82,7 @@
         "name": "Automatisch programma be\u00ebindigd"
       },
       "alarm_auto_program_notification": {
-        "name": "Auto program melding"
+        "name": "Automatische programmamelding"
       },
       "alarm_autodose_level10": {
         "name": "Autodose niveau 10"
@@ -144,6 +144,9 @@
       "alarm_fast_preheating_finished": {
         "name": "Snelle voorverwarming voltooid"
       },
+      "alarm_grease_filter": {
+        "name": "Vetfilter alarm"
+      },
       "alarm_hob_hood_started": {
         "name": "Afzuigkap ingeschakeld"
       },
@@ -191,6 +194,9 @@
       },
       "alarm_pyrolytic_finished": {
         "name": "Pyrolyse voltooid"
+      },
+      "alarm_recirculation_filter_1": {
+        "name": "Recirculatiefilter 1 alarm"
       },
       "alarm_remote_start_canceled": {
         "name": "Bediening op afstand geannuleerd"
@@ -285,6 +291,9 @@
       "alarmchild_lockon": {
         "name": "Kinderslot aan"
       },
+      "alarmcleanairended": {
+        "name": "Alarm clean air ended"
+      },
       "alarmcleantank": {
         "name": "Reservoir reinigen"
       },
@@ -309,6 +318,9 @@
       "alarmfilltank": {
         "name": "Reservoir vullen"
       },
+      "alarmgreasefilter": {
+        "name": "Alarm vetfilter"
+      },
       "alarmincreased_power_consumption": {
         "name": "Verhoogd energieverbruik"
       },
@@ -329,6 +341,12 @@
       },
       "alarmprobe_lost_connection": {
         "name": "Vleesthermometer verbinding verloren"
+      },
+      "alarmrecirculationfilter1": {
+        "name": "Alarm recirculatiefilter 1"
+      },
+      "alarmrecirculationfilter2": {
+        "name": "Alarm recirculatiefilter 2"
       },
       "alarmremotestartpowerfailure": {
         "name": "Start op afstand mislukt door stroomuitval"
@@ -356,6 +374,9 @@
       },
       "alarmtanklevel1": {
         "name": "Waterniveau laag"
+      },
+      "alarmtimerended": {
+        "name": "Alarm timer ended"
       },
       "ali_wifi_fault_flag": {
         "name": "Wifi fout"
@@ -445,7 +466,7 @@
         "name": "ECO-modus"
       },
       "envi_temp_sens_head_failure": {
-        "name": "Envi temp sens head storing"
+        "name": "Storing omgevingstemperatuursensor"
       },
       "error_0": {
         "name": "Fout 0"
@@ -571,22 +592,22 @@
         "name": "Fout 9"
       },
       "existing_fuzzy_mode": {
-        "name": "Bestaande fuzzy mode"
+        "name": "Bestaande fuzzy-modus"
       },
       "existing_holiday_mode": {
-        "name": "Bestaande vakantie mode"
+        "name": "Bestaande vakantiemodus"
       },
       "existing_lock_fresh_mode": {
-        "name": "Bestaande lock fresh mode"
+        "name": "Bestaande vershoudmodus"
       },
       "existing_save_mode": {
         "name": "Bestaande spaarstand"
       },
       "existing_sf_mode": {
-        "name": "Bestaande SF mode"
+        "name": "Bestaande SF-modus"
       },
       "existing_sr_mode": {
-        "name": "Bestaande SR mode"
+        "name": "Bestaande SR-modus"
       },
       "extra_rinse_status": {
         "name": "Spoelen+"
@@ -727,7 +748,7 @@
         "name": "Gratineren van onderaf toegestaan"
       },
       "gratin_from_below_function_status": {
-        "name": "Status gratineren van onderaf"
+        "name": "Gratineren van onderaf status"
       },
       "gratin_status": {
         "name": "Gratin-status"
@@ -739,10 +760,10 @@
         "name": "Harde koppelingsstatus"
       },
       "hardpairingstatus": {
-        "name": "Hard pairing status"
+        "name": "Harde koppeling status"
       },
       "hardpairingunpairall": {
-        "name": "Hard pairing alles loskoppelen"
+        "name": "Alle harde koppelingen loskoppelen"
       },
       "hob_status": {
         "name": "Kookplaatstatus"
@@ -785,6 +806,9 @@
       },
       "light": {
         "name": "Verlichting"
+      },
+      "lightstatus": {
+        "name": "Verlichting status"
       },
       "lock_fresh_mode": {
         "name": "Vershoudmodus vergrendeling"
@@ -975,6 +999,57 @@
       "sl1_bridge_function_active": {
         "name": "Zone 1 brugfunctie actief"
       },
+      "sl1_error_1": {
+        "name": "Zone 1 error 1"
+      },
+      "sl1_error_10": {
+        "name": "Zone 1 error 10"
+      },
+      "sl1_error_11": {
+        "name": "Zone 1 error 11"
+      },
+      "sl1_error_12": {
+        "name": "Zone 1 error 12"
+      },
+      "sl1_error_13": {
+        "name": "Zone 1 error 13"
+      },
+      "sl1_error_14": {
+        "name": "Zone 1 error 14"
+      },
+      "sl1_error_15": {
+        "name": "Zone 1 error 15"
+      },
+      "sl1_error_16": {
+        "name": "Zone 1 error 16"
+      },
+      "sl1_error_17": {
+        "name": "Zone 1 error 17"
+      },
+      "sl1_error_2": {
+        "name": "Zone 1 error 2"
+      },
+      "sl1_error_3": {
+        "name": "Zone 1 error 3"
+      },
+      "sl1_error_4": {
+        "name": "Zone 1 error 4"
+      },
+      "sl1_error_5": {
+        "name": "Zone 1 error 5"
+      },
+      "sl1_error_6": {
+        "name": "Zone 1 error 6"
+      },
+      "sl1_error_7": {
+        "name": "Zone 1 error 7"
+      },
+      "sl1_error_8": {
+        "name": "Zone 1 error 8"
+      },
+      "sl1_error_9": {
+        "name": "Zone 1 error 9"
+      },
       "sl1_pot_detected": {
         "name": "Zone 1 pot gedetecteerd"
       },
@@ -1004,6 +1079,57 @@
       },
       "sl2_bridge_function_active": {
         "name": "Zone 2 brugfunctie actief"
+      },
+      "sl2_error_1": {
+        "name": "Zone 2 error 1"
+      },
+      "sl2_error_10": {
+        "name": "Zone 2 error 10"
+      },
+      "sl2_error_11": {
+        "name": "Zone 2 error 11"
+      },
+      "sl2_error_12": {
+        "name": "Zone 2 error 12"
+      },
+      "sl2_error_13": {
+        "name": "Zone 2 error 13"
+      },
+      "sl2_error_14": {
+        "name": "Zone 2 error 14"
+      },
+      "sl2_error_15": {
+        "name": "Zone 2 error 15"
+      },
+      "sl2_error_16": {
+        "name": "Zone 2 error 16"
+      },
+      "sl2_error_17": {
+        "name": "Zone 2 error 17"
+      },
+      "sl2_error_2": {
+        "name": "Zone 2 error 2"
+      },
+      "sl2_error_3": {
+        "name": "Zone 2 error 3"
+      },
+      "sl2_error_4": {
+        "name": "Zone 2 error 4"
+      },
+      "sl2_error_5": {
+        "name": "Zone 2 error 5"
+      },
+      "sl2_error_6": {
+        "name": "Zone 2 error 6"
+      },
+      "sl2_error_7": {
+        "name": "Zone 2 error 7"
+      },
+      "sl2_error_8": {
+        "name": "Zone 2 error 8"
+      },
+      "sl2_error_9": {
+        "name": "Zone 2 error 9"
       },
       "sl2_pot_detected": {
         "name": "Zone 2 pot gedetecteerd"
@@ -1035,6 +1161,57 @@
       "sl3_bridge_function_active": {
         "name": "Zone 3 brugfunctie actief"
       },
+      "sl3_error_1": {
+        "name": "Zone 3 error 1"
+      },
+      "sl3_error_10": {
+        "name": "Zone 3 error 10"
+      },
+      "sl3_error_11": {
+        "name": "Zone 3 error 11"
+      },
+      "sl3_error_12": {
+        "name": "Zone 3 error 12"
+      },
+      "sl3_error_13": {
+        "name": "Zone 3 error 13"
+      },
+      "sl3_error_14": {
+        "name": "Zone 3 error 14"
+      },
+      "sl3_error_15": {
+        "name": "Zone 3 error 15"
+      },
+      "sl3_error_16": {
+        "name": "Zone 3 error 16"
+      },
+      "sl3_error_17": {
+        "name": "Zone 3 error 17"
+      },
+      "sl3_error_2": {
+        "name": "Zone 3 error 2"
+      },
+      "sl3_error_3": {
+        "name": "Zone 3 error 3"
+      },
+      "sl3_error_4": {
+        "name": "Zone 3 error 4"
+      },
+      "sl3_error_5": {
+        "name": "Zone 3 error 5"
+      },
+      "sl3_error_6": {
+        "name": "Zone 3 error 6"
+      },
+      "sl3_error_7": {
+        "name": "Zone 3 error 7"
+      },
+      "sl3_error_8": {
+        "name": "Zone 3 error 8"
+      },
+      "sl3_error_9": {
+        "name": "Zone 3 error 9"
+      },
       "sl3_pot_detected": {
         "name": "Zone 3 pot gedetecteerd"
       },
@@ -1064,6 +1241,57 @@
       },
       "sl4_bridge_function_active": {
         "name": "Zone 4 brugfunctie actief"
+      },
+      "sl4_error_1": {
+        "name": "Zone 4 error 1"
+      },
+      "sl4_error_10": {
+        "name": "Zone 4 error 10"
+      },
+      "sl4_error_11": {
+        "name": "Zone 4 error 11"
+      },
+      "sl4_error_12": {
+        "name": "Zone 4 error 12"
+      },
+      "sl4_error_13": {
+        "name": "Zone 4 error 13"
+      },
+      "sl4_error_14": {
+        "name": "Zone 4 error 14"
+      },
+      "sl4_error_15": {
+        "name": "Zone 4 error 15"
+      },
+      "sl4_error_16": {
+        "name": "Zone 4 error 16"
+      },
+      "sl4_error_17": {
+        "name": "Zone 4 error 17"
+      },
+      "sl4_error_2": {
+        "name": "Zone 4 error 2"
+      },
+      "sl4_error_3": {
+        "name": "Zone 4 error 3"
+      },
+      "sl4_error_4": {
+        "name": "Zone 4 error 4"
+      },
+      "sl4_error_5": {
+        "name": "Zone 4 error 5"
+      },
+      "sl4_error_6": {
+        "name": "Zone 4 error 6"
+      },
+      "sl4_error_7": {
+        "name": "Zone 4 error 7"
+      },
+      "sl4_error_8": {
+        "name": "Zone 4 error 8"
+      },
+      "sl4_error_9": {
+        "name": "Zone 4 error 9"
       },
       "sl4_pot_detected": {
         "name": "Zone 4 pot gedetecteerd"
@@ -1095,6 +1323,57 @@
       "sl5_bridge_function_active": {
         "name": "Zone 5 brugfunctie actief"
       },
+      "sl5_error_1": {
+        "name": "Zone 5 error 1"
+      },
+      "sl5_error_10": {
+        "name": "Zone 5 error 10"
+      },
+      "sl5_error_11": {
+        "name": "Zone 5 error 11"
+      },
+      "sl5_error_12": {
+        "name": "Zone 5 error 12"
+      },
+      "sl5_error_13": {
+        "name": "Zone 5 error 13"
+      },
+      "sl5_error_14": {
+        "name": "Zone 5 error 14"
+      },
+      "sl5_error_15": {
+        "name": "Zone 5 error 15"
+      },
+      "sl5_error_16": {
+        "name": "Zone 5 error 16"
+      },
+      "sl5_error_17": {
+        "name": "Zone 5 error 17"
+      },
+      "sl5_error_2": {
+        "name": "Zone 5 error 2"
+      },
+      "sl5_error_3": {
+        "name": "Zone 5 error 3"
+      },
+      "sl5_error_4": {
+        "name": "Zone 5 error 4"
+      },
+      "sl5_error_5": {
+        "name": "Zone 5 error 5"
+      },
+      "sl5_error_6": {
+        "name": "Zone 5 error 6"
+      },
+      "sl5_error_7": {
+        "name": "Zone 5 error 7"
+      },
+      "sl5_error_8": {
+        "name": "Zone 5 error 8"
+      },
+      "sl5_error_9": {
+        "name": "Zone 5 error 9"
+      },
       "sl5_pot_detected": {
         "name": "Zone 5 pot gedetecteerd"
       },
@@ -1125,6 +1404,57 @@
       "sl6_bridge_function_active": {
         "name": "Zone 6 brugfunctie actief"
       },
+      "sl6_error_1": {
+        "name": "Zone 6 error 1"
+      },
+      "sl6_error_10": {
+        "name": "Zone 6 error 10"
+      },
+      "sl6_error_11": {
+        "name": "Zone 6 error 11"
+      },
+      "sl6_error_12": {
+        "name": "Zone 6 error 12"
+      },
+      "sl6_error_13": {
+        "name": "Zone 6 error 13"
+      },
+      "sl6_error_14": {
+        "name": "Zone 6 error 14"
+      },
+      "sl6_error_15": {
+        "name": "Zone 6 error 15"
+      },
+      "sl6_error_16": {
+        "name": "Zone 6 error 16"
+      },
+      "sl6_error_17": {
+        "name": "Zone 6 error 17"
+      },
+      "sl6_error_2": {
+        "name": "Zone 6 error 2"
+      },
+      "sl6_error_3": {
+        "name": "Zone 6 error 3"
+      },
+      "sl6_error_4": {
+        "name": "Zone 6 error 4"
+      },
+      "sl6_error_5": {
+        "name": "Zone 6 error 5"
+      },
+      "sl6_error_6": {
+        "name": "Zone 6 error 6"
+      },
+      "sl6_error_7": {
+        "name": "Zone 6 error 7"
+      },
+      "sl6_error_8": {
+        "name": "Zone 6 error 8"
+      },
+      "sl6_error_9": {
+        "name": "Zone 6 error 9"
+      },
       "sl6_pot_detected": {
         "name": "Zone 6 pot gedetecteerd"
       },
@@ -1138,10 +1468,10 @@
         "name": "Instelling soft pairing"
       },
       "softener_state": {
-        "name": "Status wasverzachter"
+        "name": "Wasverzachter status"
       },
       "softer_display": {
-        "name": "Display wasverzachter"
+        "name": "Wasverzachter display"
       },
       "steam123_0_available": {
         "name": "Steam123 0 beschikbaar"
@@ -1309,6 +1639,30 @@
       }
     },
     "number": {
+      "aus_zone1_opencontrol": {
+        "name": "Zone 1 opening"
+      },
+      "aus_zone2_opencontrol": {
+        "name": "Zone 2 opening"
+      },
+      "aus_zone3_opencontrol": {
+        "name": "Zone 3 opening"
+      },
+      "aus_zone4_opencontrol": {
+        "name": "Zone 4 opening"
+      },
+      "aus_zone5_opencontrol": {
+        "name": "Zone 5 opening"
+      },
+      "aus_zone6_opencontrol": {
+        "name": "Zone 6 opening"
+      },
+      "aus_zone7_opencontrol": {
+        "name": "Zone 7 opening"
+      },
+      "aus_zone8_opencontrol": {
+        "name": "Zone 8 opening"
+      },
       "delayendtime": {
         "name": "Delay end time"
       },
@@ -1338,6 +1692,9 @@
       },
       "refrigerator_temperature": {
         "name": "Koelkast temperatuur"
+      },
+      "t_fanspeedcv": {
+        "name": "Variable fan speed"
       },
       "variation_max_temperature": {
         "name": "Variatie max temperatuur"
@@ -1423,6 +1780,7 @@
           "auto": "Automatisch",
           "less": "Minder",
           "more": "Meer",
+          "off": "Uit",
           "standard": "Standaard"
         }
       },
@@ -1450,6 +1808,7 @@
           "extra_dry": "Extra droog",
           "iron": "Strijken",
           "none": "Geen",
+          "off": "Uit",
           "pre-ironing": "Strijkdroog",
           "wardrobe": "Kastdroog"
         }
@@ -1495,9 +1854,9 @@
       "quickermode": {
         "name": "Quicker mode",
         "state": {
-          "level_1": "Level 1",
-          "level_2": "Level 2",
-          "none": "None"
+          "level_1": "Niveau 1",
+          "level_2": "Niveau 2",
+          "none": "Geen"
         }
       },
       "rinse_aid_setting_status": {
@@ -1536,7 +1895,7 @@
       "selected_program_id": {
         "name": "Geselecteerd programma",
         "state": {
-          "allergy_care": "Allergie Care",
+          "allergy_care": "Allergy Care",
           "anti_allergy": "Anti-allergie",
           "auto": "Automatisch",
           "baby": "Baby Care",
@@ -1557,16 +1916,16 @@
           "fast30": "Snel 30'",
           "full_load_49": "Volle lading 49'",
           "hand_wash": "Handwas",
-          "ion_refresh": "Ion refresh",
+          "ion_refresh": "Ion Refresh",
           "jeans": "Spijkerbroeken",
           "mix": "Mix",
           "pets": "Huisdieren",
           "power49": "Power 49'",
           "power_30": "Power 30'",
           "power_49": "Power 49",
-          "quick_15": "Quick 15",
-          "quick_30": "Quick 30",
-          "rack_dry": "Rek droog",
+          "quick_15": "Snel 15",
+          "quick_30": "Snel 30",
+          "rack_dry": "Rekdrogen",
           "refresh": "Opfrissen",
           "rinse_spin": "Spoelen & centrifugeren",
           "shirts": "Shirts",
@@ -1579,7 +1938,7 @@
           "synthetic_dry": "Synthetisch droog",
           "synthetics": "Synthetisch",
           "time": "Tijd",
-          "time_dry": "Tijd droog",
+          "time_dry": "Tijddrogen",
           "towels": "Handdoeken",
           "wash_and_dry_49": "Wassen en drogen 49'",
           "wool": "Wol"
@@ -1608,6 +1967,7 @@
           "fast": "Snel",
           "night": "Nacht",
           "normal": "Normaal",
+          "not_available": "Niet beschikbaar",
           "speed": "Snel"
         }
       },
@@ -1617,13 +1977,20 @@
           "auto": "Automatisch",
           "less": "Minder",
           "more": "Meer",
+          "off": "Uit",
           "standard": "Standaard"
         }
       },
       "spin_speed_rpm": {
         "name": "Centrifugeren",
         "state": {
-          "none": "Geen"
+          "1000": "1000 toeren",
+          "1200": "1200 toeren",
+          "1400": "1400 toeren",
+          "600": "600 toeren",
+          "800": "800 toeren",
+          "none": "Geen",
+          "off": "Uit"
         }
       },
       "steam_123": {
@@ -1789,6 +2156,26 @@
           "off": "Uit"
         }
       },
+      "t_temp_compensate": {
+        "name": "Temperature offset",
+        "state": {
+          "offset_0": "0 \u00b0C",
+          "offset_minus_1": "-1 \u00b0C",
+          "offset_minus_2": "-2 \u00b0C",
+          "offset_minus_3": "-3 \u00b0C",
+          "offset_minus_4": "-4 \u00b0C",
+          "offset_minus_5": "-5 \u00b0C",
+          "offset_minus_6": "-6 \u00b0C",
+          "offset_minus_7": "-7 \u00b0C",
+          "offset_plus_1": "+1 \u00b0C",
+          "offset_plus_2": "+2 \u00b0C",
+          "offset_plus_3": "+3 \u00b0C",
+          "offset_plus_4": "+4 \u00b0C",
+          "offset_plus_5": "+5 \u00b0C",
+          "offset_plus_6": "+6 \u00b0C",
+          "offset_plus_7": "+7 \u00b0C"
+        }
+      },
       "temperature": {
         "name": "Temperatuur",
         "state": {
@@ -1812,6 +2199,14 @@
       "time_program_set_duration_status": {
         "name": "Duur tijdprogramma",
         "state": {
+          "15_min": "00:15",
+          "1_h": "01:00",
+          "1_h_30_min": "01:30",
+          "2_h": "02:00",
+          "2_h_30_min": "02:30",
+          "30_min": "00:30",
+          "45_min": "00:45",
+          "not_available": "Niet beschikbaar",
           "not_set": "Niet ingesteld"
         }
       },
@@ -1823,7 +2218,7 @@
         "state": {
           "high": "Hoog",
           "low": "Laag",
-          "medium": "Medium"
+          "medium": "Gemiddeld"
         }
       },
       "water_hardness": {
@@ -1837,13 +2232,200 @@
       }
     },
     "sensor": {
+      "actions": {
+        "name": "Acties"
+      },
+      "activemodelightbrightness": {
+        "name": "Helderheid verlichting actieve modus"
+      },
+      "activemodelightcolortemperature": {
+        "name": "Kleurtemperatuur verlichting actieve modus"
+      },
+      "activemodelightstatus": {
+        "name": "Status verlichting actieve modus",
+        "state": {
+          "not_available": "Niet beschikbaar",
+          "reserved": "Gereserveerd"
+        }
+      },
+      "activemodemotorlevel": {
+        "name": "Motorniveau actieve modus"
+      },
+      "activemodemotorlevelstatus": {
+        "name": "Status motorniveau actieve modus",
+        "state": {
+          "not_available": "Niet beschikbaar",
+          "reserved": "Gereserveerd"
+        }
+      },
+      "activemodestatus": {
+        "name": "Actieve modus",
+        "state": {
+          "active": "Actief",
+          "not_active": "Niet actief",
+          "not_available": "Niet beschikbaar",
+          "reserved": "Gereserveerd"
+        }
+      },
+      "adapt_sense_setting_status": {
+        "name": "Adapt Sense-instelling"
+      },
+      "adapttech_setting": {
+        "name": "Adapt Tech-instelling"
+      },
+      "add_clothes_check": {
+        "name": "Kleding toevoegen"
+      },
+      "add_on_program_download_id": {
+        "name": "Download-ID aanvullend programma"
+      },
+      "add_on_program_download_status": {
+        "name": "Downloadstatus aanvullend programma"
+      },
+      "add_program_to_device": {
+        "name": "Programma toevoegen aan apparaat"
+      },
+      "add_water_flag": {
+        "name": "Water bijvullen"
+      },
+      "ads_dirtiness_setting_status": {
+        "name": "Status ADS-vuilheidsinstelling"
+      },
+      "ads_settings_current_program_detergent_setting_status": {
+        "name": "Status ADS-instelling wasmiddel huidig programma"
+      },
+      "ads_settings_current_program_softener_setting_status": {
+        "name": "Status ADS-instelling wasverzachter huidig programma"
+      },
+      "ai_energy_mode_switch": {
+        "name": "AI-energiemodus"
+      },
+      "air_dry_function": {
+        "name": "Luchtdroogfunctie"
+      },
+      "air_dry_function_status": {
+        "name": "Luchtdroogfunctie status"
+      },
+      "air_freshness": {
+        "name": "Luchtverversing"
+      },
+      "air_shower_setting_status": {
+        "name": "Status Air Shower-instelling"
+      },
+      "airdryflag": {
+        "name": "Indicator luchtdrogen"
+      },
+      "airwashtime": {
+        "name": "Tijd luchtwassen"
+      },
+      "alarm_1": {
+        "name": "Alarm 1"
+      },
+      "alarm_10": {
+        "name": "Alarm 10"
+      },
+      "alarm_11": {
+        "name": "Alarm 11"
+      },
+      "alarm_12": {
+        "name": "Alarm 12"
+      },
+      "alarm_13": {
+        "name": "Alarm 13"
+      },
+      "alarm_14": {
+        "name": "Alarm 14"
+      },
+      "alarm_15": {
+        "name": "Alarm 15"
+      },
+      "alarm_16": {
+        "name": "Alarm 16"
+      },
+      "alarm_17": {
+        "name": "Alarm 17"
+      },
+      "alarm_18": {
+        "name": "Alarm 18"
+      },
+      "alarm_19": {
+        "name": "Alarm 19"
+      },
+      "alarm_2": {
+        "name": "Alarm 2"
+      },
+      "alarm_20": {
+        "name": "Alarm 20"
+      },
+      "alarm_21": {
+        "name": "Alarm 21"
+      },
+      "alarm_22": {
+        "name": "Alarm 22"
+      },
+      "alarm_3": {
+        "name": "Alarm 3"
+      },
+      "alarm_4": {
+        "name": "Alarm 4"
+      },
+      "alarm_5": {
+        "name": "Alarm 5"
+      },
+      "alarm_6": {
+        "name": "Alarm 6"
+      },
+      "alarm_7": {
+        "name": "Alarm 7"
+      },
+      "alarm_8": {
+        "name": "Alarm 8"
+      },
+      "alarm_9": {
+        "name": "Alarm 9"
+      },
+      "alarm_key": {
+        "name": "Alarm key"
+      },
+      "alarm_sound_volume": {
+        "name": "Alarmgeluid volume"
+      },
+      "almost_finished_notification_setting": {
+        "name": "Bijna voltooid notificatie"
+      },
       "almost_finished_notification_settingtimer_in_minutes": {
-        "name": "Bijna voltooid notificatiesettingtimer in minuten"
+        "name": "Bijna voltooid notificatie timer in minuten"
+      },
+      "ambient_sound_setting": {
+        "name": "Instelling omgevingsgeluid"
+      },
+      "ambientlightbrightness": {
+        "name": "Helderheid sfeerverlichting"
+      },
+      "ambientlightcolortemperature": {
+        "name": "Kleurtemperatuur sfeerverlichting"
+      },
+      "ambientlightstatus": {
+        "name": "Sfeerverlichting status",
+        "state": {
+          "not_available": "Niet beschikbaar",
+          "reserved": "Gereserveerd"
+        }
+      },
+      "ancreae_mux": {
+        "name": "An creae mux"
+      },
+      "anticrease_flag": {
+        "name": "Anti-kreuk flag"
       },
       "anticrease_setting": {
         "name": "Anti-kreuk duur"
       },
+      "appcontrol_flag": {
+        "name": "App-bediening"
+      },
       "appliance_status": {
+        "name": "Apparaat status",
         "state": {
           "idle": "Inactief",
           "running": "Actief"
@@ -1852,14 +2434,59 @@
       "applicationpermissions": {
         "name": "Bediening op afstand",
         "state": {
-          "disabled": "Disabled",
-          "enabled": "Enabled",
+          "disabled": "Uitgeschakeld",
+          "enabled": "Ingeschakeld",
           "granted": "Toegestaan",
           "not_granted": "Niet toegestaan"
         }
       },
+      "aquapreserve": {
+        "name": "Waterbesparing"
+      },
+      "aquapreserve_flag": {
+        "name": "Waterbesparing"
+      },
+      "aquapreserve_runing_flag": {
+        "name": "Waterbesparing actief"
+      },
+      "aromatherapy": {
+        "name": "Aromatherapie"
+      },
+      "auto_dose_compartment1_amount_setting": {
+        "name": "Instelling hoeveelheid auto-dose compartiment 1"
+      },
+      "auto_dose_compartment1_status_102": {
+        "name": "Status 102 auto-dose compartiment 1"
+      },
+      "auto_dose_compartment1_tank_amount": {
+        "name": "Tankniveau auto-dose compartiment 1"
+      },
+      "auto_dose_compartment2_amount_setting": {
+        "name": "Instelling hoeveelheid auto-dose compartiment 2"
+      },
+      "auto_dose_compartment2_status_102": {
+        "name": "Status 102 auto-dose compartiment 2"
+      },
+      "auto_dose_compartment2_tank_amount": {
+        "name": "Tankniveau auto-dose compartiment 2"
+      },
+      "auto_dose_drawer_status": {
+        "name": "Auto doseer lade status"
+      },
       "auto_dose_duration": {
         "name": "Auto doseer duur"
+      },
+      "auto_dose_system_setting_status": {
+        "name": "Status auto-dose systeeminstelling"
+      },
+      "auto_grease_filter_indication": {
+        "name": "Automatisch vetfilter"
+      },
+      "auto_super_rinse_setting_status": {
+        "name": "Status instelling automatisch extra spoelen"
+      },
+      "auto_tower_up": {
+        "name": "Toren automatisch omhoog"
       },
       "autodose_flag": {
         "name": "Auto dosering",
@@ -1868,17 +2495,206 @@
           "unavailable": "Niet beschikbaar"
         }
       },
+      "autodosetype": {
+        "name": "Type auto-dose"
+      },
+      "automatic_display_brightness_setting": {
+        "name": "Instelling automatische displayhelderheid"
+      },
+      "automatic_door_closing_at_program_start_setting": {
+        "name": "Instelling automatisch sluiten deur bij programmastart"
+      },
+      "automatic_door_open_at_program_end_after_time_setting": {
+        "name": "Instelling automatisch openen deur na programmaverloop"
+      },
+      "automatic_door_open_at_program_end_after_time_settingtimer_in_minutes": {
+        "name": "Timer automatisch openen deur na programmaverloop (minuten)"
+      },
+      "automatic_door_open_at_program_end_setting": {
+        "name": "Instelling automatisch openen deur na programma"
+      },
+      "automatic_water_tank_opening_setting": {
+        "name": "Instelling automatisch openen watertank"
+      },
+      "automaticchild_lock_setting": {
+        "name": "Instelling automatische kinderbeveiliging"
+      },
+      "automaticdoor_lock_setting": {
+        "name": "Instelling automatische deurvergrendeling"
+      },
+      "automaticdoor_lock_setting_allowed": {
+        "name": "Automatische deurvergrendeling toegestaan"
+      },
+      "auxiliary_heat": {
+        "name": "Bijverwarming"
+      },
+      "bake_start_utc_datetime_bdc_timestamp": {
+        "name": "Starttijd bakken (UTC)"
+      },
+      "bathingwaterpump_flag": {
+        "name": "Indicator waterpomp spoelbak"
+      },
+      "bathingwaterpump_rinse": {
+        "name": "Spoelen waterpomp spoelbak"
+      },
+      "bathingwaterpump_wash": {
+        "name": "Wassen waterpomp spoelbak"
+      },
+      "bathingwaterpumpstate": {
+        "name": "Status waterpomp spoelbak"
+      },
+      "brand_splash_setting": {
+        "name": "Instelling merk-opstartscherm"
+      },
+      "brightness_setting": {
+        "name": "Helderheidsinstelling"
+      },
+      "builtin_hood_status": {
+        "name": "Ingebouwde afzuigkap status"
+      },
       "bundling_humidity": {
         "name": "Bundel vochtigheid"
+      },
+      "bundling_sensor_setting_status": {
+        "name": "Status bundelsensorinstelling"
       },
       "bundling_temperature": {
         "name": "Bundel temperatuur"
       },
+      "camera_enable_setting": {
+        "name": "Instelling camera inschakelen"
+      },
+      "camera_state": {
+        "name": "Camerastatus"
+      },
+      "camera_status": {
+        "name": "Camera status"
+      },
+      "cameralive_feed_current_phase": {
+        "name": "Huidige fase cameralivefeed"
+      },
+      "cameralive_feed_status": {
+        "name": "Cameralivefeed status"
+      },
+      "camerapicture_current_phase": {
+        "name": "Huidige fase foto"
+      },
+      "camerapicture_request": {
+        "name": "Verzoek foto"
+      },
+      "cameratime_lapse_current_phase": {
+        "name": "Huidige fase camera time-lapse"
+      },
+      "cameratime_lapse_request": {
+        "name": "Verzoek camera time-lapse"
+      },
+      "can_upload_wifi_program": {
+        "name": "Kan wifi-programma uploaden"
+      },
+      "cancel_delayend_flag": {
+        "name": "Indicator uitgestelde eindtijd annuleren"
+      },
+      "cancle_delayend": {
+        "name": "Uitgestelde eindtijd annuleren"
+      },
       "child_lock_setting_status": {
         "name": "Kinderbeveiliging instelling"
       },
+      "childlock_flag": {
+        "name": "Kinderbeveiliging"
+      },
+      "childlock_newfuntion": {
+        "name": "Kinderbeveiliging nieuwe functie"
+      },
+      "childlock_pause": {
+        "name": "Kinderbeveiliging pauzeren"
+      },
+      "circulation_mode": {
+        "name": "Circulatiemodus"
+      },
+      "circulationmodestatus": {
+        "name": "Circulatiemodus status",
+        "state": {
+          "exhaust": "Afvoer",
+          "not_available": "Niet beschikbaar",
+          "recirculation": "Recirculatie",
+          "reserved": "Gereserveerd"
+        }
+      },
+      "clean_mode_switch_status": {
+        "name": "Reinigingsmodus schakelaar status"
+      },
+      "cleanairactivepassedhours": {
+        "name": "Verstreken uren schone lucht actief"
+      },
+      "cleanairactivetotalhours": {
+        "name": "Totale uren schone lucht actief"
+      },
+      "cleanairdurationofcycleinminutes": {
+        "name": "Duur schone-luchtcyclus in minuten"
+      },
+      "cleanairmotorlevel": {
+        "name": "Motorniveau schone lucht"
+      },
+      "cleanairruncycleeverynumberofminutes": {
+        "name": "Schone-luchtcyclus elke x minuten"
+      },
+      "cleanairstarttime": {
+        "name": "Starttijd schone lucht"
+      },
+      "cleanairstatus": {
+        "name": "Status schone lucht",
+        "state": {
+          "active": "Actief",
+          "not_active": "Niet actief",
+          "not_available": "Niet beschikbaar",
+          "reserved": "Gereserveerd"
+        }
+      },
       "coldwash": {
         "name": "Koude was"
+      },
+      "color_sensor_setting_status": {
+        "name": "Status kleursensorinstelling"
+      },
+      "commodity_inspection": {
+        "name": "Productinspectie"
+      },
+      "compartment1_type_setting_status": {
+        "name": "Status type-instelling compartiment 1"
+      },
+      "compartment2_type_setting_status": {
+        "name": "Status type-instelling compartiment 2"
+      },
+      "compartment_inuse": {
+        "name": "Compartiment in gebruik"
+      },
+      "compartment_switch": {
+        "name": "Compartimentschakelaar"
+      },
+      "compressor_condition": {
+        "name": "Conditie compressor"
+      },
+      "compressor_frequency": {
+        "name": "Compressorfrequentie"
+      },
+      "condensed_watermode": {
+        "name": "Condenswatermodus"
+      },
+      "control_response_level": {
+        "name": "Responsniveau bediening"
+      },
+      "cool_c": {
+        "name": "Cool C"
+      },
+      "cool_f": {
+        "name": "Cool F"
+      },
+      "cool_fan_speed": {
+        "name": "Cool fan speed"
+      },
+      "cool_r": {
+        "name": "Cool R"
       },
       "crisp_function_available": {
         "name": "Crisp-functie",
@@ -1893,6 +2709,18 @@
       "curent_program_remaining_time": {
         "name": "Resterende tijd huidig programma"
       },
+      "curprogdetergentdosage": {
+        "name": "Current program detergent dosage"
+      },
+      "curprogdetergentdosageno_auto": {
+        "name": "Current program detergent dosage no auto"
+      },
+      "curprogsoftnerdosage": {
+        "name": "Current program softener dosage"
+      },
+      "curprogsoftnerdosageno_auto": {
+        "name": "Current program softener dosage no auto"
+      },
       "current_baking_step": {
         "name": "Huidige bakstap",
         "state": {
@@ -1905,6 +2733,9 @@
           "step_2": "Stap 2",
           "step_3": "Stap 3"
         }
+      },
+      "current_baking_step2": {
+        "name": "Current baking step 2"
       },
       "current_program_phase": {
         "name": "Programmafase",
@@ -1932,12 +2763,55 @@
         }
       },
       "current_programphase": {
+        "name": "Huidige programmafase",
         "state": {
           "running": "Actief"
         }
       },
+      "current_set_step": {
+        "name": "Huidige instelling stap"
+      },
       "current_temperature": {
         "name": "Huidige temperatuur"
+      },
+      "current_washing_program_phase_2": {
+        "name": "Huidig wasprogramma fase 2"
+      },
+      "current_washing_program_phase_status": {
+        "name": "Huidig wasprogramma fase status"
+      },
+      "current_water_level": {
+        "name": "Huidig waterniveau"
+      },
+      "currentprogram_high_waterlevel_inflowtime": {
+        "name": "Huidig programma hoog waterniveau inlooptijd"
+      },
+      "currentprogram_high_waterlevel_starting_waterlevelvalue": {
+        "name": "Huidig programma hoog waterniveau startende waterniveau waarde"
+      },
+      "currentprogram_low_waterlevel_inflowtime": {
+        "name": "Huidig programma laag waterniveau inlooptijd"
+      },
+      "currentprogram_medium_waterlevel_inflowtime": {
+        "name": "Huidig programma medium waterniveau inlooptijd"
+      },
+      "currentprogram_medium_waterlevel_starting_waterlevelvalue": {
+        "name": "Huidig programma medium waterniveau startende waterniveau waarde"
+      },
+      "currrent_dry_level_time": {
+        "name": "Huidige droogtijd"
+      },
+      "custard_room": {
+        "name": "Custard room"
+      },
+      "d1_program_id": {
+        "name": "D 1 programma ID"
+      },
+      "d2_program_id": {
+        "name": "D 2 programma ID"
+      },
+      "d3_program_id": {
+        "name": "D 3 programma ID"
       },
       "daily_energy_consumption": {
         "name": "Dagelijkse energieverbruik"
@@ -1945,8 +2819,59 @@
       "daily_energy_kwh": {
         "name": "Dagelijks energieverbruik"
       },
+      "darhcdq": {
+        "name": "Darhcdq"
+      },
+      "dat3": {
+        "name": "Data 3"
+      },
+      "data1": {
+        "name": "Data 1"
+      },
+      "data2": {
+        "name": "Data 2"
+      },
+      "data4": {
+        "name": "Data 4"
+      },
+      "data5": {
+        "name": "Data 5"
+      },
+      "date_display_format_status": {
+        "name": "Datumweergaveformaat status"
+      },
+      "date_format_setting": {
+        "name": "Datumformaatinstelling"
+      },
+      "date_format_status": {
+        "name": "Datumformaat status"
+      },
+      "date_time_format_day_state": {
+        "name": "Datum- en tijdformaat dag status"
+      },
+      "date_time_format_month_state": {
+        "name": "Datum- en tijdformaat maand status"
+      },
+      "date_time_format_year_state": {
+        "name": "Datum- en tijdformaat jaar status"
+      },
+      "dbd_clean_mode": {
+        "name": "DBD clean mode"
+      },
+      "debacilli_mode": {
+        "name": "Debacilli mode"
+      },
+      "default_dry_level": {
+        "name": "Standaard droogniveau"
+      },
       "defaultspinspeed": {
         "name": "Standaard centrifugesnelheid"
+      },
+      "delay_actions_flag": {
+        "name": "Uitstel acties"
+      },
+      "delay_close_dryer_time": {
+        "name": "Uitstel sluiten droger tijd"
       },
       "delay_duration_inminutes": {
         "name": "Uitstelduur"
@@ -1960,8 +2885,17 @@
       "delay_start_set_time": {
         "name": "Ingestelde tijd uitgestelde start"
       },
+      "delay_time_hour_min": {
+        "name": "Uitstel tijd uur min"
+      },
+      "delayclose_flag": {
+        "name": "Uitstel sluiten"
+      },
       "delayendtime": {
         "name": "Eindtijd uitstel"
+      },
+      "delayendtime_minute": {
+        "name": "Eindtijd uitstel minuten"
       },
       "delaystart_delayend_duration_inminutes": {
         "name": "Uitgestelde start duur"
@@ -1979,10 +2913,53 @@
       "delaystart_delayend_remaining_timein_minutes": {
         "name": "Resterende tijd uitstel start"
       },
+      "delaystart_delayend_timestamp_status": {
+        "name": "Uitstel van start-/eindtijdstempel status"
+      },
+      "demo_mode_status": {
+        "name": "Demomodus"
+      },
+      "descale_status": {
+        "name": "Ontkalken"
+      },
+      "detergent_amount_status": {
+        "name": "Wasmiddelhoeveelheid"
+      },
+      "detergent_buynotifyswitch": {
+        "name": "Schakelaar melding wasmiddel kopen"
+      },
+      "detergent_flag": {
+        "name": "Indicator wasmiddel"
+      },
+      "detergent_indicator": {
+        "name": "Wasmiddelindicator"
+      },
+      "detergent_leftml": {
+        "name": "Resterend wasmiddel (ml)"
+      },
+      "detergent_leftnum": {
+        "name": "Resterend aantal doseringen wasmiddel"
+      },
+      "detergent_soften_settingflag": {
+        "name": "Indicator instellingen wasmiddel/verzachter"
+      },
+      "detergent_totalml": {
+        "name": "Totale hoeveelheid wasmiddel (ml)"
+      },
+      "detergent_totalnum": {
+        "name": "Totaal aantal doseringen wasmiddel"
+      },
+      "detergent_useindex": {
+        "name": "Gebruikindex wasmiddel"
+      },
       "detergentstandarddosage": {
         "name": "Wasmiddel standaard dosering"
       },
+      "detergentstandarddosage_flag": {
+        "name": "Indicator standaarddosering wasmiddel"
+      },
       "device_status": {
+        "name": "Apparaatstatus",
         "state": {
           "after_bake_finished": "Na het bakken voltooid",
           "delay_time_waiting": "Wachten op uitgestelde tijd",
@@ -2002,14 +2979,28 @@
           "stand_by": "Stand-by"
         }
       },
+      "devicestatus": {
+        "name": "Apparaatstatus",
+        "state": {
+          "idle": "Inactief",
+          "not_available": "Niet beschikbaar",
+          "production": "Productie",
+          "reserved": "Gereserveerd",
+          "running": "Actief",
+          "service": "Onderhoud"
+        }
+      },
       "display_brightness_setting_status": {
         "name": "Helderheid display"
       },
       "display_contrast_setting_status": {
-        "name": "Contrast display"
+        "name": "Schermcontrast"
       },
       "display_logotype_setting_status": {
-        "name": "Logotype display"
+        "name": "Schermlogo"
+      },
+      "display_panel_ronshen": {
+        "name": "Displaypaneel Ronshen"
       },
       "display_switch_to_standby_after_minutes": {
         "name": "Scherm naar standby",
@@ -2019,8 +3010,59 @@
           "5_min": "5 minuten"
         }
       },
+      "displayboard_brand": {
+        "name": "Displayboard merk"
+      },
+      "displayboard_key_setting": {
+        "name": "Displayboard toetsinstelling"
+      },
+      "displayboard_type": {
+        "name": "Displayboard type"
+      },
+      "displayboard_version": {
+        "name": "Displayboard versie"
+      },
+      "displaybrightness_setting": {
+        "name": "Instelling schermhelderheid"
+      },
+      "displaycontrast_setting": {
+        "name": "Instelling schermcontrast"
+      },
+      "door_close_light_status": {
+        "name": "Verlichting bij gesloten deur status"
+      },
+      "door_close_ui_display_status": {
+        "name": "UI-weergave bij gesloten deur status"
+      },
+      "door_lock_status": {
+        "name": "Deurvergrendeling status"
+      },
+      "door_num_four_color": {
+        "name": "Kleur deurnummer vier"
+      },
+      "door_num_one_color": {
+        "name": "Kleur deurnummer een"
+      },
+      "door_num_three_color": {
+        "name": "Kleur deurnummer drie"
+      },
+      "door_num_two_color": {
+        "name": "Kleur deurnummer twee"
+      },
+      "door_open_light_status": {
+        "name": "Verlichting bij open deur status"
+      },
+      "door_open_notification_setting": {
+        "name": "Instelling melding open deur"
+      },
+      "door_open_ui_display_status": {
+        "name": "UI-weergave bij open deur status"
+      },
+      "door_sensor_setting": {
+        "name": "Deursensorinstelling"
+      },
       "door_status": {
-        "name": "Deur status",
+        "name": "Deurstatus",
         "state": {
           "closed": "Gesloten",
           "locked": "Vergrendeld",
@@ -2029,14 +3071,173 @@
           "other": "Anders"
         }
       },
+      "dose_assist_recommended_detergent_quantity_unit_status": {
+        "name": "Status eenheid aanbevolen wasmiddelhoeveelheid dose assist"
+      },
+      "dose_assist_recommended_low_concenatration_detergent_quantity": {
+        "name": "Aanbevolen hoeveelheid laaggeconcentreerd wasmiddel dose assist"
+      },
+      "dose_assist_status": {
+        "name": "Doseerhulp status"
+      },
+      "dose_detergent_amount": {
+        "name": "Hoeveelheid wasmiddel doseren"
+      },
+      "dose_softener_amount": {
+        "name": "Hoeveelheid wasverzachter doseren"
+      },
+      "doseaid": {
+        "name": "Doseerhulp"
+      },
       "downlight": {
-        "name": "Down light"
+        "name": "Onderverlichting"
+      },
+      "downlight_lighttime": {
+        "name": "Brandduur onderverlichting"
+      },
+      "downloadprogram": {
+        "name": "Programma downloaden"
+      },
+      "drum_light_setting_status": {
+        "name": "Trommelverlichting instelling status"
+      },
+      "drumcleancycle_runsnumber": {
+        "name": "Aantal trommelreinigingscycli"
+      },
+      "drumcleanflag": {
+        "name": "Trommelreinigingsindicator"
+      },
+      "drumcleanswitch": {
+        "name": "Trommelreiniging schakelaar"
+      },
+      "drumcleanwashcount": {
+        "name": "Aantal wasbeurten trommelreiniging"
+      },
+      "dry_level_show": {
+        "name": "Weergave droogniveau"
+      },
+      "dry_lever": {
+        "name": "Drooghendel"
+      },
+      "dry_time": {
+        "name": "Droogtijd"
+      },
+      "dryfilterremindflag": {
+        "name": "Droogfilterherinnering"
+      },
+      "drying_linkage_order": {
+        "name": "Drying linkage order"
+      },
+      "drying_linkage_preheat_time": {
+        "name": "Drying linkage preheat time"
+      },
+      "drying_linkage_programid": {
+        "name": "Drying linkage program ID"
+      },
+      "drying_washing_linkage_state": {
+        "name": "Drying washing linkage state"
+      },
+      "dryingswitch": {
+        "name": "Drying switch"
+      },
+      "dryingwizzard_clothesdrylevel": {
+        "name": "Drying wizard clothes dry level"
+      },
+      "dryingwizzard_clothesdrylevel1": {
+        "name": "Drying wizard clothes dry level 1"
+      },
+      "dryingwizzard_clothesdrytarget": {
+        "name": "Drying wizard clothes dry target"
+      },
+      "dryingwizzard_clothesdrytarget1": {
+        "name": "Drying wizard clothes dry target 1"
+      },
+      "dryingwizzard_clothesmaterialcharacteristics": {
+        "name": "Drying wizard clothes material characteristics"
+      },
+      "dryingwizzard_clothesmaterialcharacteristics_first": {
+        "name": "Drying wizard clothes material characteristics first"
+      },
+      "dryingwizzard_clothesmaterialcharacteristics_second": {
+        "name": "Drying wizard clothes material characteristics second"
+      },
+      "dryingwizzard_clothesmaterialcharacteristics_third": {
+        "name": "Drying wizard clothes material characteristics third"
+      },
+      "dryingwizzard_clothingtype": {
+        "name": "Drying wizard clothing type"
+      },
+      "dryingwizzard_clothingtype_eighth": {
+        "name": "Drying wizard clothing type eighth"
+      },
+      "dryingwizzard_clothingtype_eleventh": {
+        "name": "Drying wizard clothing type eleventh"
+      },
+      "dryingwizzard_clothingtype_fifth": {
+        "name": "Drying wizard clothing type fifth"
+      },
+      "dryingwizzard_clothingtype_first": {
+        "name": "Drying wizard clothing type first"
+      },
+      "dryingwizzard_clothingtype_fourth": {
+        "name": "Drying wizard clothing type fourth"
+      },
+      "dryingwizzard_clothingtype_ninth": {
+        "name": "Drying wizard clothing type ninth"
+      },
+      "dryingwizzard_clothingtype_second": {
+        "name": "Drying wizard clothing type second"
+      },
+      "dryingwizzard_clothingtype_seventh": {
+        "name": "Drying wizard clothing type seventh"
+      },
+      "dryingwizzard_clothingtype_sixth": {
+        "name": "Drying wizard clothing type sixth"
+      },
+      "dryingwizzard_clothingtype_tenth": {
+        "name": "Drying wizard clothing type tenth"
+      },
+      "dryingwizzard_clothingtype_third": {
+        "name": "Drying wizard clothing type third"
+      },
+      "dryingwizzard_clothingtype_thirteenth": {
+        "name": "Drying wizard clothing type thirteenth"
+      },
+      "dryingwizzard_clothingtype_twelfth": {
+        "name": "Drying wizard clothing type twelfth"
+      },
+      "dryleve_flag": {
+        "name": "Dry level flag"
+      },
+      "drymode_flag": {
+        "name": "Dry mode flag"
       },
       "drymodel": {
         "name": "Droger model"
       },
       "dryopen_defaultspinspeed": {
         "name": "Standaard centrifugesnelheid (open drogen)"
+      },
+      "duration_of_clock": {
+        "name": "Duur klok"
+      },
+      "eco_mode_setting": {
+        "name": "Ecomodus instelling"
+      },
+      "eco_score_type": {
+        "name": "Eco score type"
+      },
+      "ecomode": {
+        "name": "Ecomodus"
+      },
+      "electric_current": {
+        "name": "Elektrische stroom"
+      },
+      "electric_energy_one_tenths_value": {
+        "name": "Elektrische energie tienden waarde"
+      },
+      "electric_energy_percentile_thousands_value": {
+        "name": "Elektrische energie percentiel duizenden waarde"
       },
       "electricit_consumption": {
         "name": "Elektriciteitsverbruik"
@@ -2050,11 +3251,272 @@
       "energy_estimate": {
         "name": "Geschatte energieverbruik"
       },
+      "energy_save_setting_status": {
+        "name": "Energiebesparing instelling status"
+      },
+      "enterperformancemode_dry1_conditiontype": {
+        "name": "Enter performance mode dry 1 condition type"
+      },
+      "enterperformancemode_dry1_mainwashtime": {
+        "name": "Enter performance mode dry 1 main wash time"
+      },
+      "enterperformancemode_wash1_conditiontype": {
+        "name": "Enter performance mode wash 1 condition type"
+      },
+      "enterperformancemode_wash1_mainwashtime": {
+        "name": "Enter performance mode wash 1 main wash time"
+      },
+      "enterperformancemode_wash2_conditiontype": {
+        "name": "Enter performance mode wash 2 condition type"
+      },
+      "enterperformancemode_wash2_mainwashtime": {
+        "name": "Enter performance mode wash 2 main wash time"
+      },
       "environment_humidity": {
         "name": "Omgevingsvochtigheid"
       },
       "environment_real_temperature": {
         "name": "Werkelijke omgevingstemperatuur"
+      },
+      "error_0": {
+        "name": "Fout 0"
+      },
+      "error_1": {
+        "name": "Fout 1"
+      },
+      "error_10": {
+        "name": "Fout 10"
+      },
+      "error_11": {
+        "name": "Fout 11"
+      },
+      "error_12": {
+        "name": "Fout 12"
+      },
+      "error_12_1": {
+        "name": "Fout 12_1"
+      },
+      "error_12_10": {
+        "name": "Fout 12_10"
+      },
+      "error_12_11": {
+        "name": "Fout 12_11"
+      },
+      "error_12_12": {
+        "name": "Fout 12_12"
+      },
+      "error_12_13": {
+        "name": "Fout 12_13"
+      },
+      "error_12_14": {
+        "name": "Fout 12_14"
+      },
+      "error_12_15": {
+        "name": "Fout 12_15"
+      },
+      "error_12_16": {
+        "name": "Fout 12_16"
+      },
+      "error_12_17": {
+        "name": "Fout 12_17"
+      },
+      "error_12_18": {
+        "name": "Fout 12_18"
+      },
+      "error_12_2": {
+        "name": "Fout 12_2"
+      },
+      "error_12_3": {
+        "name": "Fout 12_3"
+      },
+      "error_12_4": {
+        "name": "Fout 12_4"
+      },
+      "error_12_5": {
+        "name": "Fout 12_5"
+      },
+      "error_12_6": {
+        "name": "Fout 12_6"
+      },
+      "error_12_7": {
+        "name": "Fout 12_7"
+      },
+      "error_12_8": {
+        "name": "Fout 12_8"
+      },
+      "error_12_9": {
+        "name": "Fout 12_9"
+      },
+      "error_13": {
+        "name": "Fout 13"
+      },
+      "error_13_1": {
+        "name": "Fout 13_1"
+      },
+      "error_13_2": {
+        "name": "Fout 13_2"
+      },
+      "error_13_3": {
+        "name": "Fout 13_3"
+      },
+      "error_14": {
+        "name": "Fout 14"
+      },
+      "error_15": {
+        "name": "Fout 15"
+      },
+      "error_16": {
+        "name": "Fout 16"
+      },
+      "error_17": {
+        "name": "Fout 17"
+      },
+      "error_18": {
+        "name": "Fout 18"
+      },
+      "error_19": {
+        "name": "Fout 19"
+      },
+      "error_2": {
+        "name": "Fout 2"
+      },
+      "error_20": {
+        "name": "Fout 20"
+      },
+      "error_21": {
+        "name": "Fout 21"
+      },
+      "error_22": {
+        "name": "Fout 22"
+      },
+      "error_23": {
+        "name": "Fout 23"
+      },
+      "error_24": {
+        "name": "Fout 24"
+      },
+      "error_25": {
+        "name": "Fout 25"
+      },
+      "error_26": {
+        "name": "Fout 26"
+      },
+      "error_27": {
+        "name": "Fout 27"
+      },
+      "error_28": {
+        "name": "Fout 28"
+      },
+      "error_29": {
+        "name": "Fout 29"
+      },
+      "error_3": {
+        "name": "Fout 3"
+      },
+      "error_30": {
+        "name": "Fout 30"
+      },
+      "error_31": {
+        "name": "Fout 31"
+      },
+      "error_32": {
+        "name": "Fout 32"
+      },
+      "error_33": {
+        "name": "Fout 33"
+      },
+      "error_34": {
+        "name": "Fout 34"
+      },
+      "error_35": {
+        "name": "Fout 35"
+      },
+      "error_36": {
+        "name": "Fout 36"
+      },
+      "error_37": {
+        "name": "Fout 37"
+      },
+      "error_38": {
+        "name": "Fout 38"
+      },
+      "error_38_1": {
+        "name": "Fout 38_1"
+      },
+      "error_39": {
+        "name": "Fout 39"
+      },
+      "error_4": {
+        "name": "Fout 4"
+      },
+      "error_40": {
+        "name": "Fout 40"
+      },
+      "error_41": {
+        "name": "Fout 41"
+      },
+      "error_42": {
+        "name": "Fout 42"
+      },
+      "error_43": {
+        "name": "Fout 43"
+      },
+      "error_44": {
+        "name": "Fout 44"
+      },
+      "error_45": {
+        "name": "Fout 45"
+      },
+      "error_46": {
+        "name": "Fout 46"
+      },
+      "error_47": {
+        "name": "Fout 47"
+      },
+      "error_48": {
+        "name": "Fout 48"
+      },
+      "error_49": {
+        "name": "Fout 49"
+      },
+      "error_5": {
+        "name": "Fout 5"
+      },
+      "error_50": {
+        "name": "Fout 50"
+      },
+      "error_51": {
+        "name": "Fout 51"
+      },
+      "error_52": {
+        "name": "Fout 52"
+      },
+      "error_6": {
+        "name": "Fout 6"
+      },
+      "error_7": {
+        "name": "Fout 7"
+      },
+      "error_7_1": {
+        "name": "Fout 7_1"
+      },
+      "error_7_2": {
+        "name": "Fout 7_2"
+      },
+      "error_8": {
+        "name": "Fout 8"
+      },
+      "error_89": {
+        "name": "Fout 89"
+      },
+      "error_9": {
+        "name": "Fout 9"
+      },
+      "error_90": {
+        "name": "Fout 90"
+      },
+      "error_9_1": {
+        "name": "Fout 9_1"
       },
       "error_code": {
         "name": "Foutmelding",
@@ -2077,11 +3539,86 @@
           "unbalance_alarm": "Onbalansalarm"
         }
       },
+      "error_f10": {
+        "name": "Fout f10"
+      },
+      "error_f11": {
+        "name": "Fout f11"
+      },
+      "error_f12": {
+        "name": "Fout f12"
+      },
+      "error_f40": {
+        "name": "Fout f40"
+      },
+      "error_f41": {
+        "name": "Fout f41"
+      },
+      "error_f42": {
+        "name": "Fout f42"
+      },
+      "error_f43": {
+        "name": "Fout f43"
+      },
+      "error_f44": {
+        "name": "Fout f44"
+      },
+      "error_f45": {
+        "name": "Fout f45"
+      },
+      "error_f46": {
+        "name": "Fout f46"
+      },
+      "error_f52": {
+        "name": "Fout f52"
+      },
+      "error_f54": {
+        "name": "Fout f54"
+      },
+      "error_f56": {
+        "name": "Fout f56"
+      },
+      "error_f61": {
+        "name": "Fout f61"
+      },
+      "error_f62": {
+        "name": "Fout f62"
+      },
+      "error_f65": {
+        "name": "Fout f65"
+      },
+      "error_f67": {
+        "name": "Fout f67"
+      },
+      "error_f68": {
+        "name": "Fout f68"
+      },
+      "error_f69": {
+        "name": "Fout f69"
+      },
+      "error_f70": {
+        "name": "Fout f70"
+      },
+      "error_f72": {
+        "name": "Fout f72"
+      },
+      "error_f74": {
+        "name": "Fout f74"
+      },
+      "error_f75": {
+        "name": "Fout f75"
+      },
+      "error_f76": {
+        "name": "Fout f76"
+      },
       "error_read_out_1_code": {
         "name": "Foutcode uitlezen 1"
       },
       "error_read_out_1_cycle": {
         "name": "Foutcyclus uitlezen 1"
+      },
+      "error_read_out_1_status": {
+        "name": "Foutstatus uitlezen 1"
       },
       "error_read_out_2_code": {
         "name": "Foutcode uitlezen 2"
@@ -2089,23 +3626,62 @@
       "error_read_out_2_cycle": {
         "name": "Foutcyclus uitlezen 2"
       },
+      "error_read_out_2_status": {
+        "name": "Foutstatus uitlezen 2"
+      },
       "error_read_out_3_code": {
         "name": "Foutcode uitlezen 3"
       },
       "error_read_out_3_cycle": {
         "name": "Foutcyclus uitlezen 3"
       },
+      "error_read_out_3_status": {
+        "name": "Foutstatus uitlezen 3"
+      },
+      "extra_soft": {
+        "name": "Extra soft"
+      },
+      "extra_soft_hideflag": {
+        "name": "Extra soft verborgen"
+      },
       "extradry_setting": {
         "name": "Extra droog instelling"
       },
+      "extrarinsenum": {
+        "name": "Extra spoelen nummer"
+      },
+      "extrarinsenum_flag": {
+        "name": "Extra spoelen nummer"
+      },
+      "extrasoft_runing_flag": {
+        "name": "Extra soft actief"
+      },
       "f_cool_qvalue": {
         "name": "Koeling"
+      },
+      "f_ecm": {
+        "name": "Elektriciteitsrapportagemodus"
       },
       "f_electricity": {
         "name": "Elektriciteit"
       },
       "f_heat_qvalue": {
         "name": "Verwarming"
+      },
+      "f_matteroriginalproductid": {
+        "name": "Matter product ID"
+      },
+      "f_matteroriginalvendorid": {
+        "name": "Matter vendor ID"
+      },
+      "f_matteruniqueid": {
+        "name": "Matter unieke ID"
+      },
+      "f_power_consumption": {
+        "name": "Energieverbruik"
+      },
+      "f_power_display": {
+        "name": "Vermogen"
       },
       "f_votage": {
         "name": "Spanning"
@@ -2116,11 +3692,53 @@
       "fan_sequence_setting_status": {
         "name": "Ventilatorvolgorde"
       },
+      "fast_store_mode_exist": {
+        "name": "Fast store mode exist"
+      },
+      "fast_store_mode_status": {
+        "name": "Fast store mode status"
+      },
+      "favour_program_id": {
+        "name": "Favour program ID"
+      },
+      "filter_alarm_time": {
+        "name": "Filter alarm time"
+      },
       "filter_state": {
         "name": "Filterstatus"
       },
+      "filterclean_dry": {
+        "name": "Filter clean dry"
+      },
+      "filterclean_drycount": {
+        "name": "Filter clean dry count"
+      },
+      "filterclean_dryflag": {
+        "name": "Filter clean dry flag"
+      },
+      "filterclean_wash": {
+        "name": "Filter clean wash"
+      },
+      "filterclean_washcound": {
+        "name": "Filter clean wash count"
+      },
+      "filterclean_washcount": {
+        "name": "Filter clean wash count"
+      },
+      "filterclean_washflag": {
+        "name": "Filter clean wash flag"
+      },
       "flexiblespintime_flag": {
         "name": "Flexibele centrifugeertijd"
+      },
+      "fluffysoft": {
+        "name": "Fluffy soft"
+      },
+      "fluffysoft_flag": {
+        "name": "Fluffy soft flag"
+      },
+      "fluffysoft_flag1": {
+        "name": "Fluffy soft flag 1"
       },
       "fota": {
         "name": "Firmware-update",
@@ -2132,8 +3750,32 @@
           "waiting_for_confirmation": "Wachten op bevestiging"
         }
       },
+      "fota_status": {
+        "name": "FOTA status"
+      },
+      "fotastatus": {
+        "name": "FOTA status"
+      },
+      "free_key": {
+        "name": "Free key"
+      },
+      "free_room": {
+        "name": "Free room"
+      },
+      "free_room_open_2": {
+        "name": "Free room open 2"
+      },
+      "freeri_fan_speed": {
+        "name": "Freeri fan speed"
+      },
       "freeze_door_open_time": {
         "name": "Vriezerdeur open tijd"
+      },
+      "freeze_drawer_room_temp": {
+        "name": "Freeze drawer room temperature"
+      },
+      "freeze_fan_speed": {
+        "name": "Freeze fan speed"
       },
       "freeze_max_temperature": {
         "name": "Maximale vriezertemperatuur"
@@ -2147,8 +3789,26 @@
       "freeze_sensor_real_temperature": {
         "name": "Sensor temperatuur vriezer"
       },
+      "freezing_powerdown_temp_alarm": {
+        "name": "Freezing power down temperature alarm"
+      },
+      "froze_convert_to_refri_switch_status": {
+        "name": "Froze convert to refrigerator switch status"
+      },
       "fruit_vegetables_temperature": {
         "name": "Temperatuur groente- en fruitlade"
+      },
+      "function1_useindex": {
+        "name": "Gebruiksindex functie 1"
+      },
+      "gentle_dry": {
+        "name": "Voorzichtig drogen"
+      },
+      "gentledry_flag": {
+        "name": "Indicator voorzichtig drogen"
+      },
+      "getcurrentcityinfoflag": {
+        "name": "Indicator huidige stadsinfo ophalen"
       },
       "gratin_total_allowed_time_in_minutes": {
         "name": "Maximale gratineertijd (minuten)"
@@ -2156,14 +3816,60 @@
       "gratin_total_passed_time_in_minutes": {
         "name": "Verstreken gratineertijd (minuten)"
       },
+      "grease_filter_cleaning_interval_in_hours": {
+        "name": "Reinigingsinterval vetfilter"
+      },
+      "grease_filter_reset_counter": {
+        "name": "Reset teller vetfilter"
+      },
+      "grease_filter_saturation": {
+        "name": "Verzadiging vetfilter"
+      },
+      "grease_filter_set_lifetime_in_hours": {
+        "name": "Levensduur vetfilter"
+      },
+      "grease_filter_status": {
+        "name": "Vetfilter status"
+      },
+      "grease_filter_timer_active": {
+        "name": "Vetfilter timer actief"
+      },
+      "grease_filter_used_hours": {
+        "name": "Vetfilter gebruikte uren"
+      },
+      "greasefiltercleaningintervalinhours": {
+        "name": "Vetfilter reinigingsinterval in uren"
+      },
+      "greasefilterstatus": {
+        "name": "Vetfilter status",
+        "state": {
+          "active": "Actief",
+          "not_active": "Niet actief",
+          "not_available": "Niet beschikbaar",
+          "reserved": "Gereserveerd"
+        }
+      },
+      "greasefilterusedhours": {
+        "name": "Vetfilter gebruikte uren"
+      },
       "grill_plate_measured_temperature": {
         "name": "Gemeten temperatuur grillplaat"
+      },
+      "half_load": {
+        "name": "Halve belading"
+      },
+      "hard_pairing_commond": {
+        "name": "Opdracht harde koppeling"
+      },
+      "hard_pairing_status": {
+        "name": "Harde koppeling status"
       },
       "hardpairingstatus": {
         "name": "Harde koppeling status",
         "state": {
           "active": "Actief",
           "not_active": "Niet actief",
+          "pairing_active": "Koppeling actief",
           "reserved": "Gereserveerd",
           "unpair_all_users": "Alle koppelingen verwijderen"
         }
@@ -2176,6 +3882,9 @@
       },
       "high_temperature": {
         "name": "Hoge temperatuur"
+      },
+      "high_temperature_status": {
+        "name": "Status hoge temperatuur"
       },
       "hob_warming_zone_power_level": {
         "name": "Warmhoudzone kookplaat",
@@ -2215,20 +3924,179 @@
           "off_hot": "Uit (heet)"
         }
       },
+      "hood_connected_via_rf": {
+        "name": "Hood connected via RF"
+      },
+      "hood_fan_speed": {
+        "name": "Ventilatorsnelheid afzuigkap"
+      },
+      "hood_light": {
+        "name": "Verlichting afzuigkap"
+      },
+      "hood_status": {
+        "name": "Status afzuigkap"
+      },
+      "hood_total_used_hours": {
+        "name": "Gebruiksuren afzuigkap"
+      },
+      "hottime": {
+        "name": "Verwarmingstijd"
+      },
+      "human_on_off_status": {
+        "name": "Status mensdetectie aan/uit"
+      },
+      "human_sense_light_status": {
+        "name": "Status verlichting mensdetectie"
+      },
+      "human_sense_ui_display_state": {
+        "name": "Status UI-weergave mensdetectie"
+      },
+      "human_sensor_switch_exist": {
+        "name": "Menssensor-schakelaar aanwezig"
+      },
+      "humanbody_sensor_switch_status": {
+        "name": "Status schakelaar bewegingssensor"
+      },
+      "humdy_test_switch_state": {
+        "name": "Status schakelaar vochtigheidstest"
+      },
+      "ice_machine_actual_temp": {
+        "name": "Werkelijke temperatuur ijsmachine"
+      },
+      "ice_make_room_switch": {
+        "name": "Schakelaar ijsmaakruimte"
+      },
+      "ice_making_fast_status": {
+        "name": "Status snel ijs maken"
+      },
+      "ice_making_full_status": {
+        "name": "Status ijsopslag vol"
+      },
+      "ice_room_actual_temp": {
+        "name": "Werkelijke temperatuur ijsruimte"
+      },
+      "id1": {
+        "name": "ID 1"
+      },
+      "id2": {
+        "name": "ID 2"
+      },
+      "id3": {
+        "name": "ID 3"
+      },
+      "id4": {
+        "name": "ID 4"
+      },
+      "id5": {
+        "name": "ID 5"
+      },
+      "inactivity_timeout": {
+        "name": "Time-out inactiviteit"
+      },
+      "initializationprogramid": {
+        "name": "Initialisatieprogramma-ID"
+      },
+      "intensive_flag": {
+        "name": "Indicator intensief"
+      },
+      "intensivewash": {
+        "name": "Intensieve was"
+      },
       "interior_light_status": {
         "name": "Interieurverlichting"
+      },
+      "ion_preservation_switch": {
+        "name": "Schakelaar ionenbehoud"
+      },
+      "ion_refresh": {
+        "name": "Ion Refresh"
+      },
+      "iron_dry_time": {
+        "name": "Strijkdroogtijd"
+      },
+      "iscloudprogramflag": {
+        "name": "Indicator cloudprogramma"
+      },
+      "ispower_flag": {
+        "name": "Indicator ingeschakeld"
+      },
+      "kettle_install_status": {
+        "name": "Status installatie waterkoker"
+      },
+      "kettle_overflow_alarm": {
+        "name": "Overloopalarm waterkoker"
+      },
+      "key_press_sound_volume": {
+        "name": "Volume toetsgeluid"
+      },
+      "key_sensitivity_level": {
+        "name": "Gevoeligheidsniveau toetsen"
+      },
+      "key_sound_level": {
+        "name": "Geluidsniveau toetsen"
+      },
+      "language": {
+        "name": "Taal"
+      },
+      "language_select": {
+        "name": "Taalkeuze"
+      },
+      "language_setting": {
+        "name": "Taalinstelling"
       },
       "language_status": {
         "name": "Taal"
       },
+      "last_completed_running_process": {
+        "name": "Laatst voltooid proces"
+      },
       "last_run_program_id": {
         "name": "Laatst uitgevoerd programma"
+      },
+      "lidopenflag": {
+        "name": "Indicator deksel open"
+      },
+      "lightbrightness": {
+        "name": "Helderheid verlichting"
+      },
+      "lightcolortemperature": {
+        "name": "Light color temperature"
+      },
+      "lights_duration_setting": {
+        "name": "Lights duration setting"
+      },
+      "lightsbrightness_setting": {
+        "name": "Lights brightness setting"
+      },
+      "lightscolor_temperature_setting": {
+        "name": "Lights color temperature setting"
+      },
+      "liquid_unit_setting_status": {
+        "name": "Liquid unit setting status"
+      },
+      "load_operation_status2": {
+        "name": "Load operation status 2"
+      },
+      "loadlevel": {
+        "name": "Load level"
+      },
+      "lock_key": {
+        "name": "Lock key"
+      },
+      "lockpin_code": {
+        "name": "Lock pin code"
+      },
+      "logo_setting_status": {
+        "name": "Logo setting status"
       },
       "low_humidity": {
         "name": "Lage vochtigheid"
       },
       "low_temperature": {
         "name": "Lage temperatuur"
+      },
+      "lumin_value_of_interior_light": {
+        "name": "Lumin value of interior light"
       },
       "machine_status": {
         "name": "Machine status",
@@ -2240,11 +4108,35 @@
           "standby": "Standby"
         }
       },
+      "mainboard_type": {
+        "name": "Mainboard type"
+      },
+      "mainboard_version": {
+        "name": "Mainboard versie"
+      },
       "mainwashtime": {
         "name": "Hoofdwasduur"
       },
+      "mainwashtime_flag": {
+        "name": "Hoofdwasduur"
+      },
+      "mainwashtimelist": {
+        "name": "Hoofdwasduur lijst"
+      },
       "mainwashtimeuseindex": {
         "name": "Hoofdwasduur gebruiksindex"
+      },
+      "market_mode_exist": {
+        "name": "Market mode exist"
+      },
+      "max_rpm_allowed_stat": {
+        "name": "Maximale toegestane toeren status"
+      },
+      "mdo_on_demand": {
+        "name": "MDO on demand"
+      },
+      "mdo_on_demand_allowed": {
+        "name": "MDO on demand toegestaan"
       },
       "measured_grid_voltage": {
         "name": "Gemeten netspanning"
@@ -2275,6 +4167,45 @@
       "mian_wash_time": {
         "name": "Hoofdwasduur"
       },
+      "micro_water_supply_mode": {
+        "name": "Micro watertoevoer modus"
+      },
+      "mode_key": {
+        "name": "Mode toets"
+      },
+      "model_type": {
+        "name": "Model type"
+      },
+      "monitor": {
+        "name": "Monitor"
+      },
+      "monitor_set": {
+        "name": "Monitor set"
+      },
+      "monitor_set_act": {
+        "name": "Monitor set act"
+      },
+      "motor": {
+        "name": "Motor"
+      },
+      "motor_level": {
+        "name": "Motor level"
+      },
+      "motorlevel": {
+        "name": "Motor level"
+      },
+      "navigation_sound_setting": {
+        "name": "Navigatiegeluid instelling"
+      },
+      "night_dry": {
+        "name": "Night dry"
+      },
+      "night_mode_end_hour": {
+        "name": "Nachtmodus eindtijd"
+      },
+      "night_mode_light_dark_level": {
+        "name": "Nachtmodus helderheidsniveau"
+      },
       "night_mode_off_hour": {
         "name": "Nachtmodus uit Uur"
       },
@@ -2287,8 +4218,95 @@
       "night_mode_on_minute": {
         "name": "Nachtmodus aan Minuut"
       },
+      "night_mode_screen_dark_level": {
+        "name": "Nachtmodus donker scherm niveau"
+      },
+      "night_mode_start_hour": {
+        "name": "Nachtmodus start uur"
+      },
+      "night_mode_start_min": {
+        "name": "Nachtmodus start min"
+      },
+      "night_modedisplay_brightness_setting": {
+        "name": "Nachtmodus schermhelderheid instelling"
+      },
+      "night_modelight_brightness_setting": {
+        "name": "Nachtmodus licht helderheid instelling"
+      },
+      "night_modevolume_setting": {
+        "name": "Nachtmodus volume instelling"
+      },
+      "night_start_setting_status_102": {
+        "name": "Nachtmodus start instelling status 102"
+      },
+      "nightmode_flag": {
+        "name": "Nachtmodus"
+      },
+      "no_autodoseswitch": {
+        "name": "Geen automatische dosering"
+      },
+      "no_sound_status": {
+        "name": "Geen geluid status"
+      },
+      "normal_sound_size": {
+        "name": "Normale geluids grootte"
+      },
+      "not_active": {
+        "name": "Niet actief"
+      },
+      "notification_pitch_sound_setting": {
+        "name": "Notificatie toonhoogte geluid instelling"
+      },
+      "notification_sounds_volume_setting": {
+        "name": "Notificatie geluiden volume instelling"
+      },
+      "ntc_sensor_1": {
+        "name": "NTC sensor 1"
+      },
+      "ntc_sensor_2": {
+        "name": "NTC sensor 2"
+      },
+      "number_of_rinses": {
+        "name": "Aantal spoelingen"
+      },
+      "odor_sensor_fault_flag": {
+        "name": "Storing geur sensor"
+      },
+      "odor_sensor_no_disturb_mode_status": {
+        "name": "Geur sensor niet storen status"
+      },
+      "odor_sensor_sensitivity": {
+        "name": "Geur sensor gevoeligheid"
+      },
+      "odor_sensor_swithc_status": {
+        "name": "Geur sensor"
+      },
+      "once_rinse_step_time": {
+        "name": "Once rinse step time"
+      },
+      "once_strong_step_time": {
+        "name": "Once strong step time"
+      },
+      "oncewaterinrinse_time": {
+        "name": "Once water in rinse time"
+      },
+      "onlyrinse_model": {
+        "name": "Only rinse model"
+      },
+      "onlyspin_model": {
+        "name": "Only spin model"
+      },
+      "onlywash_model": {
+        "name": "Only wash model"
+      },
       "order_time_minimum_hour": {
         "name": "Order time minimum (uur)"
+      },
+      "ota_num1": {
+        "name": "OTA nummer 1"
+      },
+      "ota_sucess": {
+        "name": "OTA geslaagd"
       },
       "oven_measured_temperature": {
         "name": "Gemeten oventemperatuur"
@@ -2302,17 +4320,131 @@
       "oven_usage_value_time_since_last_cleaning": {
         "name": "Tijd sinds laatste reiniging"
       },
+      "pairing": {
+        "name": "Koppelen"
+      },
+      "pairing_active": {
+        "name": "Koppeling actief"
+      },
       "parse_lib_ota": {
         "name": "Parse lib OTA"
       },
       "parse_lib_ver": {
         "name": "Parse lib versie"
       },
+      "party_mode_switch_status": {
+        "name": "Party mode switch status"
+      },
+      "pause_anticrease_flag": {
+        "name": "Pause anti-crease flag"
+      },
+      "performancemode_flag": {
+        "name": "Performance mode flag"
+      },
+      "performancemode_mainwashtime": {
+        "name": "Performance mode main wash time"
+      },
+      "permanent_remote_start": {
+        "name": "Permanent remote start"
+      },
+      "position_of_tower": {
+        "name": "Position of tower"
+      },
+      "power_one_tenths_value": {
+        "name": "Power one tenths value"
+      },
+      "power_save": {
+        "name": "Energiebesparing"
+      },
+      "power_save_status": {
+        "name": "Energiebesparing status"
+      },
+      "power_value": {
+        "name": "Vermogen"
+      },
+      "power_voltage": {
+        "name": "Spanning"
+      },
+      "powersavedeletetime": {
+        "name": "Energiebesparing verwijdertijd"
+      },
+      "presoak": {
+        "name": "Vooraf weken"
+      },
+      "presoak_index": {
+        "name": "Vooraf weken index"
+      },
+      "presoak_runing_flag": {
+        "name": "Vooraf weken actief"
+      },
+      "presoakflag": {
+        "name": "Vooraf weken"
+      },
       "pressure_calibration_setting_status": {
         "name": "Drukcalibratie"
       },
+      "prewashstepfinishnotifyswitch": {
+        "name": "Voorwas stap voltooid melding schakelaar"
+      },
       "program_end_to_shutdown_time_in_minutes": {
         "name": "Tijd programma-einde tot uitschakelen (in minuten)"
+      },
+      "program_settingsdefault": {
+        "name": "Program settings default"
+      },
+      "program_settingsstart_key_duation_formw": {
+        "name": "Program settings start key duration for mw"
+      },
+      "programfunctionvalueid": {
+        "name": "Program function value ID"
+      },
+      "proximity_sensor_setting": {
+        "name": "Nabijheidssensor instelling"
+      },
+      "proximity_sensor_settingclose_user_detecteddisplay_change_to": {
+        "name": "Nabijheidssensor instelling korte afstand detectie veranderd scherm naar"
+      },
+      "proximity_sensor_settingclose_user_detectedlight_change_to": {
+        "name": "Nabijheidssensor instelling korte afstand detectie veranderd verlichting naar"
+      },
+      "proximity_sensor_settingdistant_user_detecteddisplay_change_to": {
+        "name": "Nabijheidssensor instelling lange afstand detectie veranderd scherm naar"
+      },
+      "proximity_sensor_settingdistant_user_detectedlight_change_to": {
+        "name": "Nabijheidssensor instelling lange afstand detectie veranderd verlichting naar"
+      },
+      "proximitysensor": {
+        "name": "Nabijheidssensor"
+      },
+      "proximitysensorreactiontime": {
+        "name": "Nabijheidssensor reactietijd"
+      },
+      "proximitysensorsensitivity": {
+        "name": "Nabijheidssensor gevoeligheid"
+      },
+      "proximitysensorstatus": {
+        "name": "Nabijheidssensor status",
+        "state": {
+          "active": "Actief",
+          "not_active": "Niet actief",
+          "not_available": "Niet beschikbaar",
+          "reserved": "Gereserveerd"
+        }
+      },
+      "pumcleanflag": {
+        "name": "Pomp schoonmaken"
+      },
+      "pumcleanremaintime": {
+        "name": "Pomp schoonmaken resterende tijd"
+      },
+      "pumcleantotaltime": {
+        "name": "Pomp schoonmaken totale tijd"
+      },
+      "quickermode": {
+        "name": "Quicker mode"
+      },
+      "quiet_model": {
+        "name": "Stil model"
       },
       "real_humidity": {
         "name": "Werkelijke vochtigheid"
@@ -2323,8 +4455,74 @@
       "real_humidity_c": {
         "name": "Werkelijke vochtigheid c"
       },
+      "recirculation_filter_1_lifetime_in_hours": {
+        "name": "Recirculatie filter 1 levensduur in uren"
+      },
+      "recirculation_filter_1_reset_counter": {
+        "name": "Recirculatie filter 1 reset teller"
+      },
+      "recirculation_filter_1_set_lifetime_in_hours": {
+        "name": "Recirculatie filter 1 levensduur instellen"
+      },
+      "recirculation_filter_1_set_type": {
+        "name": "Recirculatie filter 1 set type"
+      },
+      "recirculation_filter_1_status": {
+        "name": "Recirculatie filter 1 status"
+      },
+      "recirculation_filter_1_timer_active": {
+        "name": "Recirculatie filter 1 timer actief"
+      },
+      "recirculation_filter_1_type": {
+        "name": "Recirculatie filter 1 type"
+      },
+      "recirculation_filter_1_used_hours": {
+        "name": "Recirculatie filter 1 gebruikte uren"
+      },
+      "recirculationfilter1lifetimeinhours": {
+        "name": "Recirculatie filter 1 levensduur in uren"
+      },
+      "recirculationfilter1status": {
+        "name": "Recirculatie filter 1 status"
+      },
+      "recirculationfilter1type": {
+        "name": "Recirculatie filter 1 type"
+      },
+      "recirculationfilter1usedhours": {
+        "name": "Recirculatie filter 1 gebruikte uren"
+      },
+      "recirculationfilter2lifetimeinhours": {
+        "name": "Recirculatie filter 2 levensduur in uren"
+      },
+      "recirculationfilter2status": {
+        "name": "Recirculatie filter 2 status"
+      },
+      "recirculationfilter2type": {
+        "name": "Recirculatie filter 2 type"
+      },
+      "recirculationfilter2usedhours": {
+        "name": "Recirculatie filter 2 gebruikte uren"
+      },
+      "ref_light": {
+        "name": "Ref light"
+      },
+      "refr_key": {
+        "name": "Refr key"
+      },
+      "refr_room": {
+        "name": "Refr room"
+      },
       "refrigerator_door_open_time": {
         "name": "Koelkastdeur open tijd"
+      },
+      "refrigerator_freeze_swith": {
+        "name": "Koelkast vries schakelaar"
+      },
+      "refrigerator_freeze_swith_state": {
+        "name": "Koelkast vries schakelaar status"
+      },
+      "refrigerator_key": {
+        "name": "Koelkast"
       },
       "refrigerator_max_temperature": {
         "name": "Maximale temperatuur van de koelkast"
@@ -2332,8 +4530,17 @@
       "refrigerator_min_temperature": {
         "name": "Minimale temperatuur van de koelkast"
       },
+      "refrigerator_poweroff_ad": {
+        "name": "Koelkast power off ad"
+      },
+      "refrigerator_poweron_ad": {
+        "name": "Koelkast power on ad"
+      },
       "refrigerator_real_temperature": {
         "name": "Werkelijke koelkasttemperatuur"
+      },
+      "refrigerator_room": {
+        "name": "Koelkast room"
       },
       "refrigerator_sensor_real_temperature": {
         "name": "Werkelijke koelkastsensortemperatuur"
@@ -2341,14 +4548,143 @@
       "remaining_time_of_selected_program": {
         "name": "Resterende tijd van geselecteerd programma"
       },
+      "remote_control_mode": {
+        "name": "Bediening op afstand modus"
+      },
+      "remote_control_mode_monitoring": {
+        "name": "Bediening op afstand modus monitoring"
+      },
+      "remote_control_monitoring_set_commands": {
+        "name": "Bediening op afstand monitoring set commands"
+      },
+      "remote_control_monitoring_set_commands_actions": {
+        "name": "Bediening op afstand monitoring set commands actions"
+      },
+      "remotecontrolmonitoringsetcommands": {
+        "name": "Bediening op afstand monitoring set commands"
+      },
+      "remotecontrolmonitoringsetcommandsactions": {
+        "name": "Bediening op afstand monitoring set commands actions"
+      },
+      "rfpairingstatus": {
+        "name": "RF koppeling status"
+      },
+      "rgb_atmosphere_mode_b_value": {
+        "name": "RGB atmosphere mode B value"
+      },
+      "rgb_atmosphere_mode_g_value": {
+        "name": "RGB atmosphere mode G value"
+      },
+      "rgb_atmosphere_mode_r_value": {
+        "name": "RGB atmosphere mode R value"
+      },
+      "rgb_function_mode_b_value": {
+        "name": "RGB function mode B value"
+      },
+      "rgb_function_mode_g_value": {
+        "name": "RGB function mode G value"
+      },
+      "rgb_function_mode_r_value": {
+        "name": "RGB function mode R value"
+      },
+      "rgb_light_atmosphere_brightness": {
+        "name": "RGB light atmosphere brightness"
+      },
+      "rgb_light_atmosphere_on_time": {
+        "name": "RGB light atmosphere on time"
+      },
+      "rgb_light_function_brightness": {
+        "name": "RGB light function brightness"
+      },
+      "rgb_light_function_on_time": {
+        "name": "RGB light function on time"
+      },
+      "rgb_light_normal_brightness": {
+        "name": "RGB light normal brightness"
+      },
+      "rgb_light_normal_on_time": {
+        "name": "RGB light normal on time"
+      },
+      "rgb_light_state": {
+        "name": "RGB light state"
+      },
+      "rgb_normal_mode_b_value": {
+        "name": "RGB normal mode B value"
+      },
+      "rgb_normal_mode_g_value": {
+        "name": "RGB normal mode G value"
+      },
+      "rgb_normal_mode_r_value": {
+        "name": "RGB normal mode R value"
+      },
+      "rinse_flag": {
+        "name": "Spoelen"
+      },
       "rinsenum": {
         "name": "Aantal spoelbeurten"
+      },
+      "rinsenum_containextrarinse": {
+        "name": "Aantal spoelbeurten inclusief extra spoelbeurt"
+      },
+      "rinsenum_index": {
+        "name": "Spoelbeurten index"
+      },
+      "rinsestepfinishnotifyswitch": {
+        "name": "Spoelstap voltooid melding schakelaar"
+      },
+      "run_status_flag_5": {
+        "name": "Run status flag 5"
+      },
+      "runing_zero_flag": {
+        "name": "Indicator nulstand actief"
       },
       "running_status": {
         "name": "Status"
       },
+      "running_status3": {
+        "name": "Status actief 3"
+      },
+      "sabbath_mode_setting": {
+        "name": "Sabbath mode setting"
+      },
+      "sabbath_mode_setting_activate_weekly": {
+        "name": "Sabbath mode setting activate weekly"
+      },
+      "sabbath_mode_settingbakingend_athour": {
+        "name": "Sabbath mode setting baking end at hour"
+      },
+      "sabbath_mode_settingbakingend_atminute": {
+        "name": "Sabbath mode setting baking end at minute"
+      },
+      "sabbath_mode_settingbakingstart_athour": {
+        "name": "Sabbath mode setting baking start at hour"
+      },
+      "sabbath_mode_settingbakingstart_atminute": {
+        "name": "Sabbath mode setting baking start at minute"
+      },
+      "sabbath_mode_settingcavity_light_during_sabbath": {
+        "name": "Sabbath mode setting cavity light during sabbath"
+      },
+      "sabbath_mode_settingend_timehour": {
+        "name": "Sabbath mode setting end time hour"
+      },
+      "sabbath_mode_settingend_timeminute": {
+        "name": "Sabbath mode setting end time minute"
+      },
+      "sabbath_mode_settingset_heater_system": {
+        "name": "Sabbath mode setting set heater system"
+      },
+      "sabbath_mode_settingstart_timehour": {
+        "name": "Sabbath mode setting start time hour"
+      },
+      "sabbath_mode_settingstart_timeminute": {
+        "name": "Sabbath mode setting start time minute"
+      },
       "sand_timer1_duration_in_seconds": {
         "name": "Zandloper 1 duur (seconden)"
+      },
+      "sand_timer1_start_utc_datetime_bdc_timestamp": {
+        "name": "Sand timer 1 start UTC datetime BDC timestamp"
       },
       "sand_timer1_status": {
         "name": "Status zandloper 1",
@@ -2361,6 +4697,9 @@
       "sand_timer2_duration_in_seconds": {
         "name": "Zandloper 2 duur (seconden)"
       },
+      "sand_timer2_start_utc_datetime_bdc_timestamp": {
+        "name": "Sand timer 2 start UTC datetime BDC timestamp"
+      },
       "sand_timer2_status": {
         "name": "Status zandloper 2",
         "state": {
@@ -2371,6 +4710,9 @@
       },
       "sand_timer3_duration_in_seconds": {
         "name": "Zandloper 3 duur (seconden)"
+      },
+      "sand_timer3_start_utc_datetime_bdc_timestamp": {
+        "name": "Sand timer 3 start UTC datetime BDC timestamp"
       },
       "sand_timer3_status": {
         "name": "Status zandloper 3",
@@ -2446,8 +4788,71 @@
           "stopped": "Gestopt"
         }
       },
+      "sani_lock": {
+        "name": "Sani lock"
+      },
+      "sani_lock_allowed": {
+        "name": "Sani lock allowed"
+      },
+      "saveelectricitvalue_decimal": {
+        "name": "Save electricity value decimal"
+      },
+      "saveelectricitvalue_int": {
+        "name": "Save electricity value int"
+      },
+      "screen_display_brightness": {
+        "name": "Screen display brightness"
+      },
+      "screen_display_lock": {
+        "name": "Screen display lock"
+      },
+      "screen_to_clock_time": {
+        "name": "Screen to clock time"
+      },
+      "screen_to_standby_time": {
+        "name": "Screen to standby time"
+      },
+      "screensavertime": {
+        "name": "Screen saver time"
+      },
+      "second_ice_maker_full_status": {
+        "name": "Second ice maker full status"
+      },
+      "second_ice_maker_init_fault": {
+        "name": "Second ice maker init fault"
+      },
+      "second_ice_maker_sensor_fault": {
+        "name": "Second ice maker sensor fault"
+      },
+      "selected_program": {
+        "name": "Selected program"
+      },
+      "selected_program_dry_function": {
+        "name": "Selected program dry function"
+      },
       "selected_program_duration_in_minutes": {
         "name": "Geselecteerd programma duur"
+      },
+      "selected_program_eco_disinfection": {
+        "name": "Selected program eco disinfection"
+      },
+      "selected_program_eco_score": {
+        "name": "Selected program eco score"
+      },
+      "selected_program_eco_small_load": {
+        "name": "Selected program eco small load"
+      },
+      "selected_program_extra_drying_function": {
+        "name": "Selected program extra drying function"
+      },
+      "selected_program_green_leaves_anticrease": {
+        "name": "Anti-kreuk geselecteerd programma Green Leaves"
+      },
+      "selected_program_green_leaves_entry_steam": {
+        "name": "Inloopstoom geselecteerd programma Green Leaves"
+      },
+      "selected_program_green_leaves_prewash": {
+        "name": "Voorwas geselecteerd programma Green Leaves"
       },
       "selected_program_id": {
         "name": "Geselecteerd programma",
@@ -2493,6 +4898,21 @@
           "wool_manual": "Wol & Handmatig"
         }
       },
+      "selected_program_intensive_mode": {
+        "name": "Selected program intensive mode"
+      },
+      "selected_program_load_status": {
+        "name": "Selected program load status"
+      },
+      "selected_program_lower_wash_function": {
+        "name": "Selected program lower wash function"
+      },
+      "selected_program_mode": {
+        "name": "Selected program mode"
+      },
+      "selected_program_mode2_status": {
+        "name": "Selected program mode 2 status"
+      },
       "selected_program_mode_status": {
         "name": "Programmamodus",
         "state": {
@@ -2501,6 +4921,9 @@
           "normal": "Normaal",
           "not_available": "Niet beschikbaar"
         }
+      },
+      "selected_program_night_mode": {
+        "name": "Selected program night mode"
       },
       "selected_program_remaining_time_in_minutes": {
         "name": "Resterende tijd van geselecteerd programma"
@@ -2516,6 +4939,15 @@
           "not_available": "Niet beschikbaar"
         }
       },
+      "selected_program_small_load_status": {
+        "name": "Selected program small load status"
+      },
+      "selected_program_storage_function": {
+        "name": "Selected program storage function"
+      },
+      "selected_program_super_rinse": {
+        "name": "Selected program super rinse"
+      },
       "selected_program_total_running_time": {
         "name": "Totale looptijd geselecteerd programma"
       },
@@ -2527,6 +4959,12 @@
       },
       "selected_program_total_time_in_minutes": {
         "name": "Totale tijd geselecteerd programma (minuten)"
+      },
+      "selected_program_upper_wash_function": {
+        "name": "Selected program upper wash function"
+      },
+      "selected_program_uv_function": {
+        "name": "Selected program UV function"
       },
       "selected_program_washing_spin_speed_rpm_status": {
         "name": "Centrifugeersnelheid",
@@ -2541,11 +4979,23 @@
           "not_available": "Niet beschikbaar"
         }
       },
+      "selected_program_water_add": {
+        "name": "Selected program water add"
+      },
       "selected_programduration_inminutes": {
         "name": "Duur van geselecteerd programma"
       },
+      "selected_programid_ota": {
+        "name": "Selected program ID OTA"
+      },
       "selected_programremaining_time_inminutes": {
         "name": "Resterende tijd van geselecteerd programma"
+      },
+      "sensor_failure_status": {
+        "name": "Sensor failure status"
+      },
+      "sensor_failure_status2": {
+        "name": "Sensor failure status 2"
       },
       "session_pairing_active": {
         "name": "Sessie koppeling actief",
@@ -2555,6 +5005,30 @@
           "request_denied": "Verzoek geweigerd",
           "session_is_active": "Sessie is actief"
         }
+      },
+      "session_pairing_commond": {
+        "name": "Session pairing command"
+      },
+      "session_pairing_confirmation": {
+        "name": "Session pairing confirmation"
+      },
+      "session_pairing_setting": {
+        "name": "Session pairing setting"
+      },
+      "session_pairing_states": {
+        "name": "Session pairing states"
+      },
+      "session_pairing_status": {
+        "name": "Session pairing status"
+      },
+      "sessionpairing": {
+        "name": "Session pairing"
+      },
+      "sessionpairingactive": {
+        "name": "Session pairing active"
+      },
+      "sessionpairingconfirmation": {
+        "name": "Session pairing confirmation"
       },
       "set_progress_type": {
         "name": "Voortgangstype instellen",
@@ -2595,6 +5069,57 @@
       "settings_year": {
         "name": "Jaar instellen"
       },
+      "sf_sr_mutex_mode": {
+        "name": "SF SR mutex mode"
+      },
+      "shelf_light_a_state": {
+        "name": "Shelf light A state"
+      },
+      "shelf_light_atmosphere_brightness": {
+        "name": "Shelf light atmosphere brightness"
+      },
+      "shelf_light_atmosphere_mode_brightness": {
+        "name": "Shelf light atmosphere mode brightness"
+      },
+      "shelf_light_b_state": {
+        "name": "Shelf light B state"
+      },
+      "shelf_light_c_state": {
+        "name": "Shelf light C state"
+      },
+      "shelf_light_function_mode_brightness": {
+        "name": "Shelf light function mode brightness"
+      },
+      "shelf_light_function_on_time": {
+        "name": "Shelf light function on time"
+      },
+      "shelf_light_normal_on_time": {
+        "name": "Shelf light normal on time"
+      },
+      "shop_mode_setting": {
+        "name": "Shop mode setting"
+      },
+      "show_date_setting": {
+        "name": "Show date setting"
+      },
+      "show_mode": {
+        "name": "Show mode"
+      },
+      "silence_on_demand": {
+        "name": "Silence on demand"
+      },
+      "silence_on_demand_allowed": {
+        "name": "Silence on demand allowed"
+      },
+      "singleairdry": {
+        "name": "Single air dry"
+      },
+      "skipdelayprocess": {
+        "name": "Skip delay process"
+      },
+      "sl": {
+        "name": "Sl"
+      },
       "sl1_active_timer": {
         "name": "Zone 1 actieve timer",
         "state": {
@@ -2602,6 +5127,9 @@
           "stopwatch": "Stopwatch",
           "timer": "Timer"
         }
+      },
+      "sl1_bridged_to_zone": {
+        "name": "Zone 1 bridge target"
       },
       "sl1_cooking_method": {
         "name": "Zone 1 kookmethode",
@@ -2626,6 +5154,7 @@
           "fry": "Bakken",
           "grill": "Grillen",
           "heat_up_and_fry": "Opwarmen en bakken",
+          "keep_warm": "Keep warm",
           "keep_warm_and_heat_up": "Warm houden en opwarmen",
           "none": "Geen",
           "roast": "Braden",
@@ -2633,6 +5162,12 @@
           "slow_cook": "Langzaam garen",
           "wok": "Wok"
         }
+      },
+      "sl1_hestan_cue_cookware_type": {
+        "name": "Zone 1 Hestan Cue cookware type"
+      },
+      "sl1_hestan_cue_next_step_required_warning": {
+        "name": "Zone 1 Hestan Cue next step required"
       },
       "sl1_hestan_cue_set_temperature": {
         "name": "Zone 1 Hestan Cue ingestelde temperatuur"
@@ -2652,6 +5187,9 @@
       "sl1_power_level_max": {
         "name": "Zone 1 maximaal vermogensniveau"
       },
+      "sl1_sand_timer_paused_total_seconds": {
+        "name": "Zone 1 sand timer paused"
+      },
       "sl1_sand_timer_status": {
         "name": "Zone 1 zandlopertimer-status",
         "state": {
@@ -2662,6 +5200,18 @@
           "stopped": "Gestopt"
         }
       },
+      "sl1_sand_timer_utc_start_time_hours": {
+        "name": "Zone 1 sand timer start hours"
+      },
+      "sl1_sand_timer_utc_start_time_minutes": {
+        "name": "Zone 1 sand timer start minutes"
+      },
+      "sl1_sand_timer_utc_start_time_seconds": {
+        "name": "Zone 1 sand timer start seconds"
+      },
+      "sl1_stopwatch_paused_total_seconds": {
+        "name": "Zone 1 stopwatch paused"
+      },
       "sl1_stopwatch_status": {
         "name": "Zone 1 stopwatch-status",
         "state": {
@@ -2671,8 +5221,35 @@
           "paused": "Gepauzeerd"
         }
       },
+      "sl1_stopwatch_utc_start_time_hours": {
+        "name": "Zone 1 stopwatch start hours"
+      },
+      "sl1_stopwatch_utc_start_time_minutes": {
+        "name": "Zone 1 stopwatch start minutes"
+      },
+      "sl1_stopwatch_utc_start_time_seconds": {
+        "name": "Zone 1 stopwatch start seconds"
+      },
       "sl1_temperature": {
         "name": "Zone 1 temperatuur"
+      },
+      "sl1_timer_utc_end_time_hours": {
+        "name": "Zone 1 timer end hours"
+      },
+      "sl1_timer_utc_end_time_minutes": {
+        "name": "Zone 1 timer end minutes"
+      },
+      "sl1_timer_utc_end_time_seconds": {
+        "name": "Zone 1 timer end seconds"
+      },
+      "sl1_timer_utc_paused_hours": {
+        "name": "Zone 1 timer paused hours"
+      },
+      "sl1_timer_utc_paused_minutes": {
+        "name": "Zone 1 timer paused minutes"
+      },
+      "sl1_timer_utc_paused_seconds": {
+        "name": "Zone 1 timer paused seconds"
       },
       "sl1_zone_shape": {
         "name": "Zone 1 vorm",
@@ -2691,6 +5268,9 @@
           "stopwatch": "Stopwatch",
           "timer": "Timer"
         }
+      },
+      "sl2_bridged_to_zone": {
+        "name": "Zone 2 bridge target"
       },
       "sl2_cooking_method": {
         "name": "Zone 2 kookmethode",
@@ -2715,6 +5295,7 @@
           "fry": "Bakken",
           "grill": "Grillen",
           "heat_up_and_fry": "Opwarmen en bakken",
+          "keep_warm": "Keep warm",
           "keep_warm_and_heat_up": "Warm houden en opwarmen",
           "none": "Geen",
           "roast": "Braden",
@@ -2722,6 +5303,12 @@
           "slow_cook": "Langzaam garen",
           "wok": "Wok"
         }
+      },
+      "sl2_hestan_cue_cookware_type": {
+        "name": "Zone 2 Hestan Cue cookware type"
+      },
+      "sl2_hestan_cue_next_step_required_warning": {
+        "name": "Zone 2 Hestan Cue next step required"
       },
       "sl2_hestan_cue_set_temperature": {
         "name": "Zone 2 Hestan Cue ingestelde temperatuur"
@@ -2741,6 +5328,9 @@
       "sl2_power_level_max": {
         "name": "Zone 2 maximaal vermogensniveau"
       },
+      "sl2_sand_timer_paused_total_seconds": {
+        "name": "Zone 2 sand timer paused"
+      },
       "sl2_sand_timer_status": {
         "name": "Zone 2 zandlopertimer-status",
         "state": {
@@ -2751,6 +5341,18 @@
           "stopped": "Gestopt"
         }
       },
+      "sl2_sand_timer_utc_start_time_hours": {
+        "name": "Zone 2 sand timer start hours"
+      },
+      "sl2_sand_timer_utc_start_time_minutes": {
+        "name": "Zone 2 sand timer start minutes"
+      },
+      "sl2_sand_timer_utc_start_time_seconds": {
+        "name": "Zone 2 sand timer start seconds"
+      },
+      "sl2_stopwatch_paused_total_seconds": {
+        "name": "Zone 2 stopwatch paused"
+      },
       "sl2_stopwatch_status": {
         "name": "Zone 2 stopwatch-status",
         "state": {
@@ -2760,8 +5362,35 @@
           "paused": "Gepauzeerd"
         }
       },
+      "sl2_stopwatch_utc_start_time_hours": {
+        "name": "Zone 2 stopwatch start hours"
+      },
+      "sl2_stopwatch_utc_start_time_minutes": {
+        "name": "Zone 2 stopwatch start minutes"
+      },
+      "sl2_stopwatch_utc_start_time_seconds": {
+        "name": "Zone 2 stopwatch start seconds"
+      },
       "sl2_temperature": {
         "name": "Zone 2 temperatuur"
+      },
+      "sl2_timer_utc_end_time_hours": {
+        "name": "Zone 2 timer end hours"
+      },
+      "sl2_timer_utc_end_time_minutes": {
+        "name": "Zone 2 timer end minutes"
+      },
+      "sl2_timer_utc_end_time_seconds": {
+        "name": "Zone 2 timer end seconds"
+      },
+      "sl2_timer_utc_paused_hours": {
+        "name": "Zone 2 timer paused hours"
+      },
+      "sl2_timer_utc_paused_minutes": {
+        "name": "Zone 2 timer paused minutes"
+      },
+      "sl2_timer_utc_paused_seconds": {
+        "name": "Zone 2 timer paused seconds"
       },
       "sl2_zone_shape": {
         "name": "Zone 2 vorm",
@@ -2780,6 +5409,9 @@
           "stopwatch": "Stopwatch",
           "timer": "Timer"
         }
+      },
+      "sl3_bridged_to_zone": {
+        "name": "Zone 3 bridge target"
       },
       "sl3_cooking_method": {
         "name": "Zone 3 kookmethode",
@@ -2804,6 +5436,7 @@
           "fry": "Bakken",
           "grill": "Grillen",
           "heat_up_and_fry": "Opwarmen en bakken",
+          "keep_warm": "Keep warm",
           "keep_warm_and_heat_up": "Warm houden en opwarmen",
           "none": "Geen",
           "roast": "Braden",
@@ -2811,6 +5444,12 @@
           "slow_cook": "Langzaam garen",
           "wok": "Wok"
         }
+      },
+      "sl3_hestan_cue_cookware_type": {
+        "name": "Zone 3 Hestan Cue cookware type"
+      },
+      "sl3_hestan_cue_next_step_required_warning": {
+        "name": "Zone 3 Hestan Cue next step required"
       },
       "sl3_hestan_cue_set_temperature": {
         "name": "Zone 3 Hestan Cue ingestelde temperatuur"
@@ -2830,6 +5469,9 @@
       "sl3_power_level_max": {
         "name": "Zone 3 maximaal vermogensniveau"
       },
+      "sl3_sand_timer_paused_total_seconds": {
+        "name": "Zone 3 sand timer paused"
+      },
       "sl3_sand_timer_status": {
         "name": "Zone 3 zandlopertimer-status",
         "state": {
@@ -2840,6 +5482,18 @@
           "stopped": "Gestopt"
         }
       },
+      "sl3_sand_timer_utc_start_time_hours": {
+        "name": "Zone 3 sand timer start hours"
+      },
+      "sl3_sand_timer_utc_start_time_minutes": {
+        "name": "Zone 3 sand timer start minutes"
+      },
+      "sl3_sand_timer_utc_start_time_seconds": {
+        "name": "Zone 3 sand timer start seconds"
+      },
+      "sl3_stopwatch_paused_total_seconds": {
+        "name": "Zone 3 stopwatch paused"
+      },
       "sl3_stopwatch_status": {
         "name": "Zone 3 stopwatch-status",
         "state": {
@@ -2849,8 +5503,35 @@
           "paused": "Gepauzeerd"
         }
       },
+      "sl3_stopwatch_utc_start_time_hours": {
+        "name": "Zone 3 stopwatch start hours"
+      },
+      "sl3_stopwatch_utc_start_time_minutes": {
+        "name": "Zone 3 stopwatch start minutes"
+      },
+      "sl3_stopwatch_utc_start_time_seconds": {
+        "name": "Zone 3 stopwatch start seconds"
+      },
       "sl3_temperature": {
         "name": "Zone 3 temperatuur"
+      },
+      "sl3_timer_utc_end_time_hours": {
+        "name": "Zone 3 timer end hours"
+      },
+      "sl3_timer_utc_end_time_minutes": {
+        "name": "Zone 3 timer end minutes"
+      },
+      "sl3_timer_utc_end_time_seconds": {
+        "name": "Zone 3 timer end seconds"
+      },
+      "sl3_timer_utc_paused_hours": {
+        "name": "Zone 3 timer paused hours"
+      },
+      "sl3_timer_utc_paused_minutes": {
+        "name": "Zone 3 timer paused minutes"
+      },
+      "sl3_timer_utc_paused_seconds": {
+        "name": "Zone 3 timer paused seconds"
       },
       "sl3_zone_shape": {
         "name": "Zone 3 vorm",
@@ -2869,6 +5550,9 @@
           "stopwatch": "Stopwatch",
           "timer": "Timer"
         }
+      },
+      "sl4_bridged_to_zone": {
+        "name": "Zone 4 bridge target"
       },
       "sl4_cooking_method": {
         "name": "Zone 4 kookmethode",
@@ -2893,6 +5577,7 @@
           "fry": "Bakken",
           "grill": "Grillen",
           "heat_up_and_fry": "Opwarmen en bakken",
+          "keep_warm": "Keep warm",
           "keep_warm_and_heat_up": "Warm houden en opwarmen",
           "none": "Geen",
           "roast": "Braden",
@@ -2900,6 +5585,12 @@
           "slow_cook": "Langzaam garen",
           "wok": "Wok"
         }
+      },
+      "sl4_hestan_cue_cookware_type": {
+        "name": "Zone 4 Hestan Cue cookware type"
+      },
+      "sl4_hestan_cue_next_step_required_warning": {
+        "name": "Zone 4 Hestan Cue next step required"
       },
       "sl4_hestan_cue_set_temperature": {
         "name": "Zone 4 Hestan Cue ingestelde temperatuur"
@@ -2919,6 +5610,9 @@
       "sl4_power_level_max": {
         "name": "Zone 4 maximaal vermogensniveau"
       },
+      "sl4_sand_timer_paused_total_seconds": {
+        "name": "Zone 4 sand timer paused"
+      },
       "sl4_sand_timer_status": {
         "name": "Zone 4 zandlopertimer-status",
         "state": {
@@ -2929,6 +5623,18 @@
           "stopped": "Gestopt"
         }
       },
+      "sl4_sand_timer_utc_start_time_hours": {
+        "name": "Zone 4 sand timer start hours"
+      },
+      "sl4_sand_timer_utc_start_time_minutes": {
+        "name": "Zone 4 sand timer start minutes"
+      },
+      "sl4_sand_timer_utc_start_time_seconds": {
+        "name": "Zone 4 sand timer start seconds"
+      },
+      "sl4_stopwatch_paused_total_seconds": {
+        "name": "Zone 4 stopwatch paused"
+      },
       "sl4_stopwatch_status": {
         "name": "Zone 4 stopwatch-status",
         "state": {
@@ -2938,8 +5644,35 @@
           "paused": "Gepauzeerd"
         }
       },
+      "sl4_stopwatch_utc_start_time_hours": {
+        "name": "Zone 4 stopwatch start hours"
+      },
+      "sl4_stopwatch_utc_start_time_minutes": {
+        "name": "Zone 4 stopwatch start minutes"
+      },
+      "sl4_stopwatch_utc_start_time_seconds": {
+        "name": "Zone 4 stopwatch start seconds"
+      },
       "sl4_temperature": {
         "name": "Zone 4 temperatuur"
+      },
+      "sl4_timer_utc_end_time_hours": {
+        "name": "Zone 4 timer end hours"
+      },
+      "sl4_timer_utc_end_time_minutes": {
+        "name": "Zone 4 timer end minutes"
+      },
+      "sl4_timer_utc_end_time_seconds": {
+        "name": "Zone 4 timer end seconds"
+      },
+      "sl4_timer_utc_paused_hours": {
+        "name": "Zone 4 timer paused hours"
+      },
+      "sl4_timer_utc_paused_minutes": {
+        "name": "Zone 4 timer paused minutes"
+      },
+      "sl4_timer_utc_paused_seconds": {
+        "name": "Zone 4 timer paused seconds"
       },
       "sl4_zone_shape": {
         "name": "Zone 4 vorm",
@@ -2958,6 +5691,9 @@
           "stopwatch": "Stopwatch",
           "timer": "Timer"
         }
+      },
+      "sl5_bridged_to_zone": {
+        "name": "Zone 5 bridge target"
       },
       "sl5_cooking_method": {
         "name": "Zone 5 kookmethode",
@@ -2979,14 +5715,23 @@
         "name": "Zone 5 functie",
         "state": {
           "boil": "Koken",
+          "fry": "Fry",
           "grill": "Grillen",
           "heat_up_and_fry": "Opwarmen en bakken",
+          "keep_warm": "Keep warm",
           "keep_warm_and_heat_up": "Warm houden en opwarmen",
           "none": "Geen",
           "roast": "Braden",
           "simmer": "Sudderen",
+          "slow_cook": "Slow cook",
           "wok": "Wok"
         }
+      },
+      "sl5_hestan_cue_cookware_type": {
+        "name": "Zone 5 Hestan Cue cookware type"
+      },
+      "sl5_hestan_cue_next_step_required_warning": {
+        "name": "Zone 5 Hestan Cue next step required"
       },
       "sl5_hestan_cue_set_temperature": {
         "name": "Zone 5 Hestan Cue ingestelde temperatuur"
@@ -2998,10 +5743,16 @@
         "name": "Zone 5 NTC sensor"
       },
       "sl5_power_level": {
-        "name": "Zone 5 vermogensniveau"
+        "name": "Zone 5 vermogensniveau",
+        "state": {
+          "boost": "Boost"
+        }
       },
       "sl5_power_level_max": {
         "name": "Zone 5 maximaal vermogensniveau"
+      },
+      "sl5_sand_timer_paused_total_seconds": {
+        "name": "Zone 5 sand timer paused"
       },
       "sl5_sand_timer_status": {
         "name": "Zone 5 zandlopertimer-status",
@@ -3013,6 +5764,18 @@
           "stopped": "Gestopt"
         }
       },
+      "sl5_sand_timer_utc_start_time_hours": {
+        "name": "Zone 5 sand timer start hours"
+      },
+      "sl5_sand_timer_utc_start_time_minutes": {
+        "name": "Zone 5 sand timer start minutes"
+      },
+      "sl5_sand_timer_utc_start_time_seconds": {
+        "name": "Zone 5 sand timer start seconds"
+      },
+      "sl5_stopwatch_paused_total_seconds": {
+        "name": "Zone 5 stopwatch paused"
+      },
       "sl5_stopwatch_status": {
         "name": "Zone 5 stopwatch-status",
         "state": {
@@ -3022,8 +5785,35 @@
           "paused": "Gepauzeerd"
         }
       },
+      "sl5_stopwatch_utc_start_time_hours": {
+        "name": "Zone 5 stopwatch start hours"
+      },
+      "sl5_stopwatch_utc_start_time_minutes": {
+        "name": "Zone 5 stopwatch start minutes"
+      },
+      "sl5_stopwatch_utc_start_time_seconds": {
+        "name": "Zone 5 stopwatch start seconds"
+      },
       "sl5_temperature": {
         "name": "Zone 5 temperatuur"
+      },
+      "sl5_timer_utc_end_time_hours": {
+        "name": "Zone 5 timer end hours"
+      },
+      "sl5_timer_utc_end_time_minutes": {
+        "name": "Zone 5 timer end minutes"
+      },
+      "sl5_timer_utc_end_time_seconds": {
+        "name": "Zone 5 timer end seconds"
+      },
+      "sl5_timer_utc_paused_hours": {
+        "name": "Zone 5 timer paused hours"
+      },
+      "sl5_timer_utc_paused_minutes": {
+        "name": "Zone 5 timer paused minutes"
+      },
+      "sl5_timer_utc_paused_seconds": {
+        "name": "Zone 5 timer paused seconds"
       },
       "sl5_zone_shape": {
         "name": "Zone 5 vorm",
@@ -3042,6 +5832,9 @@
           "stopwatch": "Stopwatch",
           "timer": "Timer"
         }
+      },
+      "sl6_bridged_to_zone": {
+        "name": "Zone 6 bridge target"
       },
       "sl6_cooking_method": {
         "name": "Zone 6 kookmethode",
@@ -3063,14 +5856,23 @@
         "name": "Zone 6 functie",
         "state": {
           "boil": "Koken",
+          "fry": "Fry",
           "grill": "Grillen",
           "heat_up_and_fry": "Opwarmen en bakken",
+          "keep_warm": "Keep warm",
           "keep_warm_and_heat_up": "Warm houden en opwarmen",
           "none": "Geen",
           "roast": "Braden",
           "simmer": "Sudderen",
+          "slow_cook": "Slow cook",
           "wok": "Wok"
         }
+      },
+      "sl6_hestan_cue_cookware_type": {
+        "name": "Zone 6 Hestan Cue cookware type"
+      },
+      "sl6_hestan_cue_next_step_required_warning": {
+        "name": "Zone 6 Hestan Cue next step required"
       },
       "sl6_hestan_cue_set_temperature": {
         "name": "Zone 6 Hestan Cue ingestelde temperatuur"
@@ -3082,10 +5884,16 @@
         "name": "Zone 6 NTC sensor"
       },
       "sl6_power_level": {
-        "name": "Zone 6 vermogensniveau"
+        "name": "Zone 6 vermogensniveau",
+        "state": {
+          "boost": "Boost"
+        }
       },
       "sl6_power_level_max": {
         "name": "Zone 6 maximaal vermogensniveau"
+      },
+      "sl6_sand_timer_paused_total_seconds": {
+        "name": "Zone 6 sand timer paused"
       },
       "sl6_sand_timer_status": {
         "name": "Zone 6 zandlopertimer-status",
@@ -3097,6 +5905,18 @@
           "stopped": "Gestopt"
         }
       },
+      "sl6_sand_timer_utc_start_time_hours": {
+        "name": "Zone 6 sand timer start hours"
+      },
+      "sl6_sand_timer_utc_start_time_minutes": {
+        "name": "Zone 6 sand timer start minutes"
+      },
+      "sl6_sand_timer_utc_start_time_seconds": {
+        "name": "Zone 6 sand timer start seconds"
+      },
+      "sl6_stopwatch_paused_total_seconds": {
+        "name": "Zone 6 stopwatch paused"
+      },
       "sl6_stopwatch_status": {
         "name": "Zone 6 stopwatch-status",
         "state": {
@@ -3106,8 +5926,35 @@
           "paused": "Gepauzeerd"
         }
       },
+      "sl6_stopwatch_utc_start_time_hours": {
+        "name": "Zone 6 stopwatch start hours"
+      },
+      "sl6_stopwatch_utc_start_time_minutes": {
+        "name": "Zone 6 stopwatch start minutes"
+      },
+      "sl6_stopwatch_utc_start_time_seconds": {
+        "name": "Zone 6 stopwatch start seconds"
+      },
       "sl6_temperature": {
         "name": "Zone 6 temperatuur"
+      },
+      "sl6_timer_utc_end_time_hours": {
+        "name": "Zone 6 timer end hours"
+      },
+      "sl6_timer_utc_end_time_minutes": {
+        "name": "Zone 6 timer end minutes"
+      },
+      "sl6_timer_utc_end_time_seconds": {
+        "name": "Zone 6 timer end seconds"
+      },
+      "sl6_timer_utc_paused_hours": {
+        "name": "Zone 6 timer paused hours"
+      },
+      "sl6_timer_utc_paused_minutes": {
+        "name": "Zone 6 timer paused minutes"
+      },
+      "sl6_timer_utc_paused_seconds": {
+        "name": "Zone 6 timer paused seconds"
       },
       "sl6_zone_shape": {
         "name": "Zone 6 vorm",
@@ -3119,11 +5966,95 @@
           "square": "Vierkant"
         }
       },
+      "slotdry": {
+        "name": "Slotdry"
+      },
+      "slotdry_flag": {
+        "name": "Slotdry flag"
+      },
+      "slotdry_flag1": {
+        "name": "Slotdry flag 1"
+      },
+      "smart_sync_setting_status": {
+        "name": "Smart sync setting status"
+      },
+      "soft_pairing_setting": {
+        "name": "Soft pairing setting"
+      },
+      "soft_pairing_status": {
+        "name": "Soft pairing status"
+      },
+      "softener_amount_status": {
+        "name": "Softener amount status"
+      },
+      "softener_buynotifyswitch": {
+        "name": "Softener buy notify switch"
+      },
+      "softener_compartment": {
+        "name": "Softener compartment"
+      },
+      "softener_indicator": {
+        "name": "Softener indicator"
+      },
+      "softener_leftml": {
+        "name": "Softener left ml"
+      },
+      "softener_leftnum": {
+        "name": "Softener left number"
+      },
+      "softener_tank": {
+        "name": "Softener tank"
+      },
+      "softener_totalml": {
+        "name": "Softener total ml"
+      },
+      "softener_totalnum": {
+        "name": "Softener total number"
+      },
+      "softenercompartment_flag": {
+        "name": "Softener compartment flag"
+      },
+      "softer_flag": {
+        "name": "Softer flag"
+      },
+      "softner_useindex": {
+        "name": "Softener use index"
+      },
       "softnerstandarddosage": {
         "name": "Wasverzachter standaard dosering"
       },
+      "softnerstandarddosage_flag": {
+        "name": "Softener standard dosage flag"
+      },
+      "softpairing": {
+        "name": "Soft pairing"
+      },
+      "soil_lever": {
+        "name": "Soil lever"
+      },
+      "soilleverflag": {
+        "name": "Soil lever flag"
+      },
       "sound_setting": {
         "name": "Geluid"
+      },
+      "sound_setting_status": {
+        "name": "Sound setting status"
+      },
+      "sound_settings": {
+        "name": "Sound settings"
+      },
+      "special_space": {
+        "name": "Special space"
+      },
+      "speed_flag": {
+        "name": "Speed flag"
+      },
+      "speed_on_demand": {
+        "name": "Speed on demand"
+      },
+      "spend_on_demand_allowed": {
+        "name": "Spend on demand allowed"
       },
       "spin_speed_rpm": {
         "name": "Centrifugeersnelheid"
@@ -3131,17 +6062,50 @@
       "spin_time": {
         "name": "Centrifugeertijd"
       },
+      "spinrange": {
+        "name": "Spin range"
+      },
+      "spinspeeduseindex": {
+        "name": "Spin speed use index"
+      },
+      "spinstepfinishnotifyswitch": {
+        "name": "Spin step finish notify switch"
+      },
+      "spintime_flag": {
+        "name": "Spin time flag"
+      },
       "spintime_index": {
         "name": "Centrifugeertijd index"
       },
+      "spintime_useindex": {
+        "name": "Spin time use index"
+      },
+      "stage_lights_setting": {
+        "name": "Stage lights setting"
+      },
+      "stain_program_set_clothes_type_status": {
+        "name": "Stain program set clothes type status"
+      },
+      "stain_program_set_stain_status": {
+        "name": "Stain program set stain status"
+      },
       "stain_removal": {
         "name": "Vlekken verwijderen"
+      },
+      "stand_by_time": {
+        "name": "Stand-by time"
       },
       "standardelectricitconsumption": {
         "name": "Standaard elektriciteitsverbruik"
       },
       "standardwaterconsumption": {
         "name": "Standaard waterverbruik"
+      },
+      "standby_mode_state": {
+        "name": "Standby mode state"
+      },
+      "standby_mode_valid": {
+        "name": "Standby mode valid"
       },
       "status": {
         "name": "Status",
@@ -3157,8 +6121,41 @@
           "standby": "Standby"
         }
       },
+      "status_fan_c_switch": {
+        "name": "Status fan C switch"
+      },
+      "status_fan_f_switch": {
+        "name": "Status fan F switch"
+      },
+      "status_fan_ln_switch": {
+        "name": "Status fan LN switch"
+      },
+      "status_fan_r_switch": {
+        "name": "Status fan R switch"
+      },
+      "status_heater_c_switch": {
+        "name": "Status heater C switch"
+      },
+      "status_heater_f_switch": {
+        "name": "Status heater F switch"
+      },
+      "status_heater_r_switch": {
+        "name": "Status heater R switch"
+      },
+      "steam": {
+        "name": "Steam"
+      },
       "steam_assist_time_used": {
         "name": "Stoomassistentie tijd gebruikt"
+      },
+      "steam_reduction_at_door_opening_setting": {
+        "name": "Steam reduction at door opening setting"
+      },
+      "steam_reduction_at_program_end_setting": {
+        "name": "Steam reduction at program end setting"
+      },
+      "steamenginelackwaterstate": {
+        "name": "Steam engine lack water state"
       },
       "step1_duration": {
         "name": "Stap 1 duur"
@@ -3211,6 +6208,9 @@
       "step1_set_temperature": {
         "name": "Stap 1 ingestelde temperatuur"
       },
+      "step1_setmulti_level_baking": {
+        "name": "Step 1 set multi level baking"
+      },
       "step1_steam_assist_intensity": {
         "name": "Stap 1 stoom assist intensiteit",
         "state": {
@@ -3222,6 +6222,27 @@
       },
       "step1_steam_assistset_time_in_minutes": {
         "name": "Stap 1 stoom assist ingestelde tijd"
+      },
+      "step1add_moist_status": {
+        "name": "Step 1 add moist status"
+      },
+      "step1add_moiststart_at_minute": {
+        "name": "Step 1 add moist start at minute"
+      },
+      "step1add_moistvalve_open_percentage": {
+        "name": "Step 1 add moist valve open percentage"
+      },
+      "step1alarm_after_step": {
+        "name": "Step 1 alarm after step"
+      },
+      "step1grill_intensity": {
+        "name": "Step 1 grill intensity"
+      },
+      "step1pause_after_step": {
+        "name": "Step 1 pause after step"
+      },
+      "step1remove_moiststart_at_minute": {
+        "name": "Step 1 remove moist start at minute"
       },
       "step2_duration": {
         "name": "Stap 2 duur"
@@ -3274,6 +6295,9 @@
       "step2_set_temperature": {
         "name": "Stap 2 ingestelde temperatuur"
       },
+      "step2_setmulti_level_baking": {
+        "name": "Step 2 set multi level baking"
+      },
       "step2_steam_assist_intensity": {
         "name": "Stap 2 stoom assist intensiteit",
         "state": {
@@ -3285,6 +6309,27 @@
       },
       "step2_steam_assistset_time_in_minutes": {
         "name": "Stap 2 stoom assist ingestelde tijd"
+      },
+      "step2add_moist_status": {
+        "name": "Step 2 add moist status"
+      },
+      "step2add_moiststart_at_minute": {
+        "name": "Step 2 add moist start at minute"
+      },
+      "step2add_moistvalve_open_percentage": {
+        "name": "Step 2 add moist valve open percentage"
+      },
+      "step2alarm_after_step": {
+        "name": "Step 2 alarm after step"
+      },
+      "step2grill_intensity": {
+        "name": "Step 2 grill intensity"
+      },
+      "step2pause_after_step": {
+        "name": "Step 2 pause after step"
+      },
+      "step2remove_moiststart_at_minute": {
+        "name": "Step 2 remove moist start at minute"
       },
       "step3_duration": {
         "name": "Stap 3 duur"
@@ -3337,6 +6382,9 @@
       "step3_set_temperature": {
         "name": "Stap 3 ingestelde temperatuur"
       },
+      "step3_setmulti_level_baking": {
+        "name": "Step 3 set multi level baking"
+      },
       "step3_steam_assist_intensity": {
         "name": "Stap 3 stoom assist intensiteit",
         "state": {
@@ -3348,6 +6396,153 @@
       },
       "step3_steam_assistset_time_in_minutes": {
         "name": "Stap 3 stoom assist ingestelde tijd"
+      },
+      "step3add_moist_status": {
+        "name": "Step 3 add moist status"
+      },
+      "step3add_moiststart_at_minute": {
+        "name": "Step 3 add moist start at minute"
+      },
+      "step3add_moistvalve_open_percentage": {
+        "name": "Step 3 add moist valve open percentage"
+      },
+      "step3alarm_after_step": {
+        "name": "Step 3 alarm after step"
+      },
+      "step3grill_intensity": {
+        "name": "Step 3 grill intensity"
+      },
+      "step3pause_after_step": {
+        "name": "Step 3 pause after step"
+      },
+      "step3remove_moiststart_at_minute": {
+        "name": "Step 3 remove moist start at minute"
+      },
+      "step4_bake_mode": {
+        "name": "Step 4 bake mode"
+      },
+      "step4_duration": {
+        "name": "Step 4 duration"
+      },
+      "step4_passed_time": {
+        "name": "Step 4 passed time"
+      },
+      "step4_remaining_time": {
+        "name": "Step 4 remaining time"
+      },
+      "step4_set_heater_system": {
+        "name": "Step 4 set heater system"
+      },
+      "step4_set_microwave_wattage": {
+        "name": "Step 4 set microwave wattage"
+      },
+      "step4_set_temperature": {
+        "name": "Step 4 set temperature"
+      },
+      "step4_setmulti_level_baking": {
+        "name": "Step 4 set multi level baking"
+      },
+      "step4_status": {
+        "name": "Step 4 status"
+      },
+      "step4_steam_available": {
+        "name": "Step 4 steam available"
+      },
+      "step4_time_unit": {
+        "name": "Step 4 time unit"
+      },
+      "step4add_moist_status": {
+        "name": "Step 4 add moist status"
+      },
+      "step4add_moiststart_at_minute": {
+        "name": "Step 4 add moist start at minute"
+      },
+      "step4add_moistvalve_open_percentage": {
+        "name": "Step 4 add moist valve open percentage"
+      },
+      "step4alarm_after_step": {
+        "name": "Step 4 alarm after step"
+      },
+      "step4grill_intensity": {
+        "name": "Step 4 grill intensity"
+      },
+      "step4pause_after_step": {
+        "name": "Step 4 pause after step"
+      },
+      "step4remove_moiststart_at_minute": {
+        "name": "Step 4 remove moist start at minute"
+      },
+      "step4steam_assist": {
+        "name": "Step 4 steam assist"
+      },
+      "step4steam_assist_intensity": {
+        "name": "Step 4 steam assist intensity"
+      },
+      "step4steam_assistset_time_in_minutes": {
+        "name": "Step 4 steam assist set time in minutes"
+      },
+      "step5_bake_mode": {
+        "name": "Step 5 bake mode"
+      },
+      "step5_duration": {
+        "name": "Step 5 duration"
+      },
+      "step5_passed_time": {
+        "name": "Step 5 passed time"
+      },
+      "step5_remaining_time": {
+        "name": "Step 5 remaining time"
+      },
+      "step5_set_heater_system": {
+        "name": "Step 5 set heater system"
+      },
+      "step5_set_microwave_wattage": {
+        "name": "Step 5 set microwave wattage"
+      },
+      "step5_set_temperature": {
+        "name": "Step 5 set temperature"
+      },
+      "step5_setmulti_level_baking": {
+        "name": "Step 5 set multi level baking"
+      },
+      "step5_status": {
+        "name": "Step 5 status"
+      },
+      "step5_steam_available": {
+        "name": "Step 5 steam available"
+      },
+      "step5_time_unit": {
+        "name": "Step 5 time unit"
+      },
+      "step5add_moist_status": {
+        "name": "Step 5 add moist status"
+      },
+      "step5add_moiststart_at_minute": {
+        "name": "Step 5 add moist start at minute"
+      },
+      "step5add_moistvalve_open_percentage": {
+        "name": "Step 5 add moist valve open percentage"
+      },
+      "step5alarm_after_step": {
+        "name": "Step 5 alarm after step"
+      },
+      "step5grill_intensity": {
+        "name": "Step 5 grill intensity"
+      },
+      "step5pause_after_step": {
+        "name": "Step 5 pause after step"
+      },
+      "step5remove_moiststart_at_minute": {
+        "name": "Step 5 remove moist start at minute"
+      },
+      "step5steam_assist": {
+        "name": "Step 5 steam assist"
+      },
+      "step5steam_assist_intensity": {
+        "name": "Step 5 steam assist intensity"
+      },
+      "step5steam_assistset_time_in_minutes": {
+        "name": "Step 5 steam assist set time in minutes"
       },
       "step_1_duration": {
         "name": "Stap 1 duur"
@@ -3741,6 +6936,21 @@
       "step_after_bake_set_temperature": {
         "name": "Stap na bakken ingestelde temperatuur"
       },
+      "step_after_bake_setmulti_level_baking": {
+        "name": "Step after bake set multi level baking"
+      },
+      "step_after_bakeadd_moist_status": {
+        "name": "Step after bake add moist status"
+      },
+      "step_after_bakeadd_moiststart_at_minute": {
+        "name": "Step after bake add moist start at minute"
+      },
+      "step_after_bakeadd_moistvalve_open_percentage": {
+        "name": "Step after bake add moist valve open percentage"
+      },
+      "step_after_bakeremove_moiststart_at_minute": {
+        "name": "Step after bake remove moist start at minute"
+      },
       "step_pre_bake_duration": {
         "name": "Stap voor bakken duur"
       },
@@ -3831,17 +7041,188 @@
       "step_pre_bake_set_temperature": {
         "name": "Stap voor bakken ingestelde temperatuur"
       },
+      "step_pre_bake_setmulti_level_baking": {
+        "name": "Step pre bake set multi level baking"
+      },
+      "step_pre_bakeadd_moist_status": {
+        "name": "Step pre bake add moist status"
+      },
+      "step_pre_bakeadd_moiststart_at_minute": {
+        "name": "Step pre bake add moist start at minute"
+      },
+      "step_pre_bakeadd_moistvalve_open_percentage": {
+        "name": "Step pre bake add moist valve open percentage"
+      },
+      "step_pre_bakeremove_moiststart_at_minute": {
+        "name": "Step pre bake remove moist start at minute"
+      },
+      "steri_puri_cycle_flag": {
+        "name": "Steri puri cycle flag"
+      },
+      "stoprunning_flag": {
+        "name": "Stop running flag"
+      },
+      "storage_mode_allowed": {
+        "name": "Storage mode allowed"
+      },
+      "storage_mode_on_demand_stat": {
+        "name": "Storage mode on demand status"
+      },
+      "store_dry_time": {
+        "name": "Store dry time"
+      },
+      "summerwinter_timeautomatic_setting": {
+        "name": "Summer winter time automatic setting"
+      },
+      "super_rinse_on_demand": {
+        "name": "Super rinse on demand"
+      },
+      "super_rinse_on_demand_allowed": {
+        "name": "Super rinse on demand allowed"
+      },
+      "super_rinse_status": {
+        "name": "Super rinse status"
+      },
+      "super_water_supply_mode": {
+        "name": "Super water supply mode"
+      },
+      "support_preheat_state": {
+        "name": "Support preheat state"
+      },
+      "synchro_start_level": {
+        "name": "Synchro start level"
+      },
+      "synchro_stop_level": {
+        "name": "Synchro stop level"
+      },
       "t_beep": {
         "name": "Pieptoon"
+      },
+      "t_fan_speed": {
+        "name": "T fan speed"
+      },
+      "tankclean": {
+        "name": "Tank clean"
+      },
+      "tankclean_flag": {
+        "name": "Tank clean flag"
+      },
+      "tankclean_flag1": {
+        "name": "Tank clean flag 1"
+      },
+      "temp_auto_ctrl_mode_exist": {
+        "name": "Temperature auto control mode exist"
+      },
+      "temp_auto_ctrl_mode_state": {
+        "name": "Temperature auto control mode state"
+      },
+      "temp_index": {
+        "name": "Temperature index"
+      },
+      "temp_runing_flag": {
+        "name": "Temperature running flag"
+      },
+      "temp_wave": {
+        "name": "Temperature wave"
+      },
+      "temp_wave_flag": {
+        "name": "Temperature wave flag"
       },
       "temperature": {
         "name": "Temperatuur"
       },
+      "temperature_0_defaultmainwashtime": {
+        "name": "Temperature 0 default main wash time"
+      },
+      "temperature_2_defaultmainwashtime": {
+        "name": "Temperature 2 default main wash time"
+      },
+      "temperature_3_defaultmainwashtime": {
+        "name": "Temperature 3 default main wash time"
+      },
+      "temperature_4_defaultmainwashtime": {
+        "name": "Temperature 4 default main wash time"
+      },
+      "temperature_6_defaultmainwashtime": {
+        "name": "Temperature 6 default main wash time"
+      },
+      "temperature_9_defaultmainwashtime": {
+        "name": "Temperature 9 default main wash time"
+      },
       "temperature_default_defaultmainwashtime": {
         "name": "Standaard temperatuur hoofdwasduur"
       },
+      "temperature_reached_notification_setting": {
+        "name": "Temperature reached notification setting"
+      },
       "temperature_room_judge": {
         "name": "Temperatuur kamer beoordeling"
+      },
+      "temperature_unit_setting_status": {
+        "name": "Temperature unit setting status"
+      },
+      "temperature_unit_status": {
+        "name": "Temperature unit status"
+      },
+      "testdata_data": {
+        "name": "Test data"
+      },
+      "testdata_month": {
+        "name": "Test data month"
+      },
+      "testdata_year": {
+        "name": "Test data year"
+      },
+      "text_size_setting": {
+        "name": "Text size setting"
+      },
+      "theme_color": {
+        "name": "Theme color"
+      },
+      "time_autoflag": {
+        "name": "Time auto flag"
+      },
+      "time_program_set_duration_status": {
+        "name": "Time program duration"
+      },
+      "time_program_set_time_status": {
+        "name": "Time program set time status"
+      },
+      "time_save_status": {
+        "name": "Time save status"
+      },
+      "time_zone_setting": {
+        "name": "Time zone setting"
+      },
+      "timedateautomatic_setting": {
+        "name": "Time date automatic setting"
+      },
+      "timerendtime": {
+        "name": "Timer end time"
+      },
+      "timerpausedtime": {
+        "name": "Timer paused time"
+      },
+      "timerpausedtotalseconds": {
+        "name": "Timer paused total seconds"
+      },
+      "timerstarttime": {
+        "name": "Timer start time"
+      },
+      "timerstatus": {
+        "name": "Timerstatus",
+        "state": {
+          "ended": "Be\u00ebindigd",
+          "not_active": "Niet actief",
+          "not_available": "Niet beschikbaar",
+          "paused": "Gepauzeerd",
+          "reserved": "Gereserveerd",
+          "running": "Actief",
+          "stopped": "Gestopt"
+        }
+      },
+      "timezone": {
+        "name": "Timezone"
       },
       "total_duration_in_seconds": {
         "name": "Totale duur"
@@ -3879,8 +7260,56 @@
       "total_water_consumption": {
         "name": "Totale waterverbruik"
       },
+      "turbidity_sensor_setting_status": {
+        "name": "Turbidity sensor setting status"
+      },
+      "unfreeze_run_status": {
+        "name": "Unfreeze run status"
+      },
+      "unfreeze_switch_status": {
+        "name": "Unfreeze switch status"
+      },
+      "units_setting_status": {
+        "name": "Units setting status"
+      },
+      "unpair_all_users": {
+        "name": "Unpair all users"
+      },
+      "user_debacilli_mode": {
+        "name": "User debacilli mode"
+      },
       "utc_datetime_bdc_delaystart_delayend_timestamp": {
         "name": "BDC UitstelStart UitstelEinde"
+      },
+      "uv_light": {
+        "name": "UV light"
+      },
+      "uv_mode_on_demand": {
+        "name": "UV mode on demand"
+      },
+      "uv_mode_on_demand_allowed": {
+        "name": "UV mode on demand allowed"
+      },
+      "uv_steri_status": {
+        "name": "UV steri status"
+      },
+      "uv_sterilization": {
+        "name": "UV sterilization"
+      },
+      "var_room_open_2": {
+        "name": "Var room open 2"
+      },
+      "vari_fan_speed": {
+        "name": "Vari fan speed"
+      },
+      "vari_key": {
+        "name": "Vari key"
+      },
+      "vari_room": {
+        "name": "Vari room"
+      },
+      "variable_temperature_space": {
+        "name": "Variable temperature space"
       },
       "variation_door_open_time": {
         "name": "Variatie deur opentijd"
@@ -3891,11 +7320,53 @@
       "variation_min_temperature": {
         "name": "Variatie minimale temperatuur"
       },
+      "variation_poweroff_ad": {
+        "name": "Variation power off ad"
+      },
+      "variation_poweron_ad": {
+        "name": "Variation power on ad"
+      },
       "variation_real_temperature": {
         "name": "Werkelijke variatietemperatuur"
       },
       "variation_sensor_real_temperature": {
         "name": "Werkelijke variatiesensortemperatuur"
+      },
+      "view_size_setting_status": {
+        "name": "View size setting status"
+      },
+      "volume_setting": {
+        "name": "Volume setting"
+      },
+      "warmwaterwashing": {
+        "name": "Warm water washing"
+      },
+      "wash_step_time_drain_water_spin_and_stop": {
+        "name": "Wash step time drain water spin and stop"
+      },
+      "washer_to_dryer_available_for_hours_v": {
+        "name": "Washer to dryer available for hours v"
+      },
+      "washer_to_dryer_program_id": {
+        "name": "Washer to dryer program ID"
+      },
+      "washer_to_dryersetting_status": {
+        "name": "Washer to dryer setting status"
+      },
+      "washer_to_dryerwizard_trigger_status": {
+        "name": "Washer to dryer wizard trigger status"
+      },
+      "washfunction1": {
+        "name": "Wash function 1"
+      },
+      "washing_drying_linkage_flag": {
+        "name": "Washing drying linkage flag"
+      },
+      "washing_drying_linkage_state": {
+        "name": "Washing drying linkage state"
+      },
+      "washing_machine_type": {
+        "name": "Washing machine type"
       },
       "washing_machine_type_kg": {
         "name": "Wasmachine type kg"
@@ -3906,14 +7377,176 @@
       "washing_program_kg": {
         "name": "Programmagewicht"
       },
+      "washingtime": {
+        "name": "Washing time"
+      },
+      "washingtime_presoak_flag": {
+        "name": "Washing time presoak flag"
+      },
+      "washingtime_useindex": {
+        "name": "Washing time use index"
+      },
+      "washingtime_waterlevel_flag": {
+        "name": "Washing time water level flag"
+      },
+      "washingtimeindex": {
+        "name": "Washing time index"
+      },
+      "washingwizzard_cloth": {
+        "name": "Washing wizard cloth"
+      },
+      "washingwizzard_cloth_colour": {
+        "name": "Washing wizard cloth colour"
+      },
+      "washingwizzard_cloth_colour_fifth": {
+        "name": "Washing wizard cloth colour fifth"
+      },
+      "washingwizzard_cloth_colour_fourth": {
+        "name": "Washing wizard cloth colour fourth"
+      },
+      "washingwizzard_cloth_colour_second": {
+        "name": "Washing wizard cloth colour second"
+      },
+      "washingwizzard_cloth_colour_third": {
+        "name": "Washing wizard cloth colour third"
+      },
+      "washingwizzard_cloth_dirty": {
+        "name": "Washing wizard cloth dirty"
+      },
+      "washingwizzard_cloth_dirty_first": {
+        "name": "Washing wizard cloth dirty first"
+      },
+      "washingwizzard_cloth_dirty_second": {
+        "name": "Washing wizard cloth dirty second"
+      },
+      "washingwizzard_cloth_dirty_third": {
+        "name": "Washing wizard cloth dirty third"
+      },
+      "washingwizzard_cloth_olour_first": {
+        "name": "Washing wizard cloth colour first"
+      },
+      "washingwizzard_cloth_sensitive": {
+        "name": "Washing wizard cloth sensitive"
+      },
+      "washingwizzard_cloth_sensitive_first": {
+        "name": "Washing wizard cloth sensitive first"
+      },
+      "washingwizzard_cloth_sensitive_second": {
+        "name": "Washing wizard cloth sensitive second"
+      },
+      "washingwizzard_cloth_sensitive_third": {
+        "name": "Washing wizard cloth sensitive third"
+      },
+      "washingwizzard_cloth_stains_eighth": {
+        "name": "Washing wizard cloth stains eighth"
+      },
+      "washingwizzard_cloth_stains_fifth": {
+        "name": "Washing wizard cloth stains fifth"
+      },
+      "washingwizzard_cloth_stains_first": {
+        "name": "Washing wizard cloth stains first"
+      },
+      "washingwizzard_cloth_stains_fourth": {
+        "name": "Washing wizard cloth stains fourth"
+      },
+      "washingwizzard_cloth_stains_ninth": {
+        "name": "Washing wizard cloth stains ninth"
+      },
+      "washingwizzard_cloth_stains_second": {
+        "name": "Washing wizard cloth stains second"
+      },
+      "washingwizzard_cloth_stains_seventh": {
+        "name": "Washing wizard cloth stains seventh"
+      },
+      "washingwizzard_cloth_stains_sixth": {
+        "name": "Washing wizard cloth stains sixth"
+      },
+      "washingwizzard_cloth_stains_third": {
+        "name": "Washing wizard cloth stains third"
+      },
+      "washingwizzard_clothingtype": {
+        "name": "Washing wizard clothing type"
+      },
+      "washingwizzard_clothingtype_eighth": {
+        "name": "Washing wizard clothing type eighth"
+      },
+      "washingwizzard_clothingtype_eleventh": {
+        "name": "Washing wizard clothing type eleventh"
+      },
+      "washingwizzard_clothingtype_fifth": {
+        "name": "Washing wizard clothing type fifth"
+      },
+      "washingwizzard_clothingtype_first": {
+        "name": "Washing wizard clothing type first"
+      },
+      "washingwizzard_clothingtype_fourth": {
+        "name": "Washing wizard clothing type fourth"
+      },
+      "washingwizzard_clothingtype_ninth": {
+        "name": "Washing wizard clothing type ninth"
+      },
+      "washingwizzard_clothingtype_second": {
+        "name": "Washing wizard clothing type second"
+      },
+      "washingwizzard_clothingtype_seventh": {
+        "name": "Washing wizard clothing type seventh"
+      },
+      "washingwizzard_clothingtype_sixth": {
+        "name": "Washing wizard clothing type sixth"
+      },
+      "washingwizzard_clothingtype_tenth": {
+        "name": "Washing wizard clothing type tenth"
+      },
+      "washingwizzard_clothingtype_third": {
+        "name": "Washing wizard clothing type third"
+      },
+      "washingwizzard_clothingtype_thirteenth": {
+        "name": "Washing wizard clothing type thirteenth"
+      },
+      "washingwizzard_clothingtype_twelfth": {
+        "name": "Washing wizard clothing type twelfth"
+      },
+      "washingwizzard_flag": {
+        "name": "Washing wizard flag"
+      },
+      "washstepfinishnotifyswitch": {
+        "name": "Wash step finish notify switch"
+      },
+      "water_box_alarm_switch_state": {
+        "name": "Water box alarm switch state"
+      },
+      "water_box_lack_status": {
+        "name": "Water box lack status"
+      },
+      "water_box_mode_status": {
+        "name": "Water box mode status"
+      },
       "water_consumption": {
         "name": "Waterverbruik (hele getal)"
       },
       "water_consumption_in_running_program": {
         "name": "Waterverbruik in huidig programma"
       },
+      "water_estimate": {
+        "name": "Water estimate"
+      },
+      "water_fill_actual_temp": {
+        "name": "Water fill actual temperature"
+      },
+      "water_filter_surplus_time": {
+        "name": "Water filter surplus time"
+      },
+      "water_filter_time_reset": {
+        "name": "Water filter time reset"
+      },
+      "water_hardness_setting": {
+        "name": "Water hardness setting"
+      },
       "water_hardness_setting_status": {
         "name": "Waterhardheid"
+      },
+      "water_heat_switch": {
+        "name": "Water heat switch"
       },
       "water_inlet_setting_status": {
         "name": "Watertoevoer"
@@ -3928,6 +7561,108 @@
           "present": "Aanwezig"
         }
       },
+      "water_tank_install_state": {
+        "name": "Water tank install state"
+      },
+      "water_tank_level": {
+        "name": "Water tank level"
+      },
+      "waterlevel": {
+        "name": "Water level"
+      },
+      "waterlevel_runing_flag": {
+        "name": "Water level running flag"
+      },
+      "waterlevelflag": {
+        "name": "Water level flag"
+      },
+      "waterlevelindex": {
+        "name": "Water level index"
+      },
+      "wear_dry_time": {
+        "name": "Wear dry time"
+      },
+      "weight_runningend": {
+        "name": "Weight running end"
+      },
+      "weight_startrunning": {
+        "name": "Weight start running"
+      },
+      "weight_unit_setting": {
+        "name": "Weight unit setting"
+      },
+      "weight_unit_setting_status": {
+        "name": "Weight unit setting status"
+      },
+      "wet_and_dry_space": {
+        "name": "Wet and dry space"
+      },
+      "wifi_fault_flag": {
+        "name": "WiFi fault flag"
+      },
+      "wifi_handshake_fault_flag": {
+        "name": "WiFi handshake fault flag"
+      },
+      "wifi_next_sendtime": {
+        "name": "WiFi next sendtime"
+      },
+      "wifi_rx_fault_flag": {
+        "name": "WiFi rx fault flag"
+      },
+      "wifi_setting": {
+        "name": "WiFi setting"
+      },
+      "wifi_tx_fault_flag": {
+        "name": "WiFi tx fault flag"
+      },
+      "wild_vegetable_heat_switch": {
+        "name": "Wild vegetable heat switch"
+      },
+      "will_fresh_light_status": {
+        "name": "Will fresh light status"
+      },
+      "will_fress_light_exist": {
+        "name": "Will fresh light exist"
+      },
+      "will_light_market_mode_state": {
+        "name": "Will light market mode state"
+      },
+      "will_light_mode_exist": {
+        "name": "Will light mode exist"
+      },
+      "will_light_mode_state": {
+        "name": "Will light mode state"
+      },
+      "will_light_switch_state": {
+        "name": "Will light switch state"
+      },
+      "winddrying": {
+        "name": "Wind drying"
+      },
+      "winddryingflag": {
+        "name": "Wind drying flag"
+      },
+      "window_status": {
+        "name": "Window status"
+      },
+      "wine_area_switch_status": {
+        "name": "Wine area switch status"
+      },
+      "wine_b_switch_area": {
+        "name": "Wine B switch area"
+      },
+      "wine_light": {
+        "name": "Wine light"
+      },
+      "work_mode1": {
+        "name": "Work mode 1"
+      },
+      "work_mode2": {
+        "name": "Work mode 2"
+      },
+      "zibian_program_id": {
+        "name": "Zibian program ID"
+      },
       "zone_number": {
         "name": "Aantal zones"
       }
@@ -3938,6 +7673,30 @@
       },
       "anticrease": {
         "name": "Anti-kreuk"
+      },
+      "aus_zone1_power": {
+        "name": "Zone 1"
+      },
+      "aus_zone2_power": {
+        "name": "Zone 2"
+      },
+      "aus_zone3_power": {
+        "name": "Zone 3"
+      },
+      "aus_zone4_power": {
+        "name": "Zone 4"
+      },
+      "aus_zone5_power": {
+        "name": "Zone 5"
+      },
+      "aus_zone6_power": {
+        "name": "Zone 6"
+      },
+      "aus_zone7_power": {
+        "name": "Zone 7"
+      },
+      "aus_zone8_power": {
+        "name": "Zone 8"
       },
       "auto_dose_setting_status": {
         "name": "Automatisch doseren"
@@ -4038,6 +7797,9 @@
       "super_rinse_setting_status": {
         "name": "Super spoelen instelling status"
       },
+      "t_8heat": {
+        "name": "Vorstbescherming"
+      },
       "t_air": {
         "name": "Lucht"
       },
@@ -4049,6 +7811,12 @@
       },
       "t_fan_mute": {
         "name": "Ventilator stil"
+      },
+      "t_fresh_air": {
+        "name": "Fresh air"
+      },
+      "t_left_right": {
+        "name": "Horizontale swing"
       },
       "t_purify": {
         "name": "Zuiveren"
@@ -4084,6 +7852,29 @@
     }
   },
   "issues": {
+    "orphaned_statistics": {
+      "fix_flow": {
+        "abort": {
+          "entry_not_loaded": "The ConnectLife configuration entry is no longer loaded.",
+          "issue_ignored": "Ignored orphaned long-term statistics for ConnectLife sensors."
+        },
+        "step": {
+          "clear": {
+            "description": "This will permanently delete long-term statistics for {count} ConnectLife sensors. Continue?",
+            "title": "Clear orphaned long-term statistics"
+          },
+          "init": {
+            "description": "{count} ConnectLife sensors have stored long-term statistics (LTS) but no longer report a state class. Home Assistant emits a separate repair for each one.\n\nThis is caused by a recent change in the integration: numeric properties no longer default to `state_class: measurement`, so state codes, mode flags, and setpoints are no longer recorded as LTS.\n\n**Clear orphaned statistics** removes the stored LTS rows for all {count} sensors at once. The historical data for these sensors in Settings \u2192 Statistics will be deleted and cannot be recovered. The per-entity Home Assistant repairs will disappear the next time Home Assistant re-validates statistics \u2014 which happens when you open Developer Tools \u2192 Statistics. This bulk repair will not appear again on this configuration entry.\n\n**Ignore** hides this bulk action and leaves the per-entity repairs in place \u2014 fix or ignore each one individually if you want finer-grained control over which sensors keep their history. You can come back to the bulk action later by selecting \"Show ignored repairs\" in the overflow menu on the top right of Settings \u2192 Repairs, then reopening this repair.\n\nTo review the individual sensor repairs before deciding, simply close this window \u2014 the bulk repair stays available as-is.\n\nNote: this issue is marked critical only so it sorts above the per-entity recorder repairs. It is not urgent.",
+            "menu_options": {
+              "clear": "Clear orphaned statistics",
+              "ignore": "Ignore"
+            },
+            "title": "Orphaned long-term statistics ({count} sensors)"
+          }
+        }
+      },
+      "title": "Orphaned long-term statistics ({count} sensors)"
+    },
     "unavailable_device": {
       "fix_flow": {
         "abort": {
