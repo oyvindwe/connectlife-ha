@@ -2935,19 +2935,19 @@
         "name": "Detergent indicator"
       },
       "detergent_leftml": {
-        "name": "Detergent left ml"
+        "name": "Detergent left"
       },
       "detergent_leftnum": {
-        "name": "Detergent left number"
+        "name": "Detergent doses left"
       },
       "detergent_soften_settingflag": {
         "name": "Detergent soften settings flag"
       },
       "detergent_totalml": {
-        "name": "Detergent total ml"
+        "name": "Total detergent used"
       },
       "detergent_totalnum": {
-        "name": "Detergent total number"
+        "name": "Total detergent doses used"
       },
       "detergent_useindex": {
         "name": "Detergent use index"
@@ -3038,16 +3038,16 @@
         "name": "Door lock status"
       },
       "door_num_four_color": {
-        "name": "Door number four color"
+        "name": "Door 4 - color"
       },
       "door_num_one_color": {
-        "name": "Door number one color"
+        "name": "Door 1 - color"
       },
       "door_num_three_color": {
-        "name": "Door number three color"
+        "name": "Door 3 - color"
       },
       "door_num_two_color": {
-        "name": "Door number two color"
+        "name": "Door 2 - color"
       },
       "door_open_light_status": {
         "name": "Door open light status"
@@ -5997,19 +5997,19 @@
         "name": "Softener indicator"
       },
       "softener_leftml": {
-        "name": "Softener left ml"
+        "name": "Softener left"
       },
       "softener_leftnum": {
-        "name": "Softener left number"
+        "name": "Softener uses left"
       },
       "softener_tank": {
         "name": "Softener tank"
       },
       "softener_totalml": {
-        "name": "Softener total ml"
+        "name": "Total softener used"
       },
       "softener_totalnum": {
-        "name": "Softener total number"
+        "name": "Total softener doses used"
       },
       "softenercompartment_flag": {
         "name": "Softener compartment flag"

@@ -940,12 +940,16 @@ properties:
   - property: Detergent_LeftML
     optional: true
     entity_category: diagnostic
+    sensor:
+      unit: ml
   - property: Detergent_LeftNum
     optional: true
     entity_category: diagnostic
   - property: Detergent_TotalML
     optional: true
     entity_category: diagnostic
+    sensor:
+      unit: ml
   - property: Detergent_TotalNum
     optional: true
     entity_category: diagnostic
@@ -1013,12 +1017,16 @@ properties:
   - property: Softener_LeftML
     optional: true
     entity_category: diagnostic
+    sensor:
+      unit: ml
   - property: Softener_LeftNum
     optional: true
     entity_category: diagnostic
   - property: Softener_TotalML
     optional: true
     entity_category: diagnostic
+    sensor:
+      unit: ml
   - property: Softener_TotalNum
     optional: true
     entity_category: diagnostic
