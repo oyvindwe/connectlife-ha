@@ -1032,9 +1032,6 @@
       "light": {
         "name": "Light"
       },
-      "lightstatus": {
-        "name": "Light status"
-      },
       "lock_fresh_mode": {
         "name": "Lock fresh mode"
       },
@@ -1954,6 +1951,9 @@
       "gratin_function_set_time_in_seconds": {
         "name": "Gratin function set time"
       },
+      "greasefiltersetlifetimeinhours": {
+        "name": "Grease filter lifetime"
+      },
       "programoptiontimestartdelayhour": {
         "name": "Start delay hours"
       },
@@ -2022,6 +2022,13 @@
           "level_3": "Level 3",
           "level_4": "Level 4",
           "level_5": "Level 5"
+        }
+      },
+      "circulationmodestatus": {
+        "name": "Circulation mode",
+        "state": {
+          "exhaust": "Exhaust",
+          "recirculation": "Recirculation"
         }
       },
       "condensewatermode": {
@@ -2133,6 +2140,13 @@
           "low": "Low",
           "mid": "Mid",
           "mute": "Mute"
+        }
+      },
+      "greasefilterresetcounter": {
+        "name": "Reset grease filter counter",
+        "state": {
+          "not_active": "Not active",
+          "reset": "Reset"
         }
       },
       "language_status": {
@@ -2556,6 +2570,15 @@
           "time": "Time"
         }
       },
+      "timersetting": {
+        "name": "Timer action",
+        "state": {
+          "not_active": "Not active",
+          "pause": "Pause",
+          "start": "Start",
+          "stop": "Stop"
+        }
+      },
       "volume": {
         "name": "Volume",
         "state": {
@@ -2594,31 +2617,8 @@
       "activemodelightcolortemperature": {
         "name": "Active mode light color temperature"
       },
-      "activemodelightstatus": {
-        "name": "Active mode light status",
-        "state": {
-          "not_available": "Not available",
-          "reserved": "Reserved"
-        }
-      },
       "activemodemotorlevel": {
         "name": "Active mode motor level"
-      },
-      "activemodemotorlevelstatus": {
-        "name": "Active mode motor level status",
-        "state": {
-          "not_available": "Not available",
-          "reserved": "Reserved"
-        }
-      },
-      "activemodestatus": {
-        "name": "Active mode status",
-        "state": {
-          "active": "Active",
-          "not_active": "Not active",
-          "not_available": "Not available",
-          "reserved": "Reserved"
-        }
       },
       "adapt_sense_setting_status": {
         "name": "Adapt sense setting status"
@@ -2757,13 +2757,6 @@
       },
       "ambientlightcolortemperature": {
         "name": "Ambient light color temperature"
-      },
-      "ambientlightstatus": {
-        "name": "Ambient light status",
-        "state": {
-          "not_available": "Not available",
-          "reserved": "Reserved"
-        }
       },
       "ancreae_mux": {
         "name": "An creae mux"
@@ -2980,15 +2973,6 @@
       "circulation_mode": {
         "name": "Circulation mode"
       },
-      "circulationmodestatus": {
-        "name": "Circulation mode status",
-        "state": {
-          "exhaust": "Exhaust",
-          "not_available": "Not available",
-          "recirculation": "Recirculation",
-          "reserved": "Reserved"
-        }
-      },
       "clean_mode_switch_status": {
         "name": "Clean mode switch status"
       },
@@ -3009,15 +2993,6 @@
       },
       "cleanairstarttime": {
         "name": "Clean air start time"
-      },
-      "cleanairstatus": {
-        "name": "Clean air status",
-        "state": {
-          "active": "Active",
-          "not_active": "Not active",
-          "not_available": "Not available",
-          "reserved": "Reserved"
-        }
       },
       "cleancondensefilter": {
         "name": "Clean condenser filter"
@@ -4356,15 +4331,6 @@
       "greasefiltercleaningintervalinhours": {
         "name": "Grease filter cleaning interval in hours"
       },
-      "greasefilterstatus": {
-        "name": "Grease filter status",
-        "state": {
-          "active": "Active",
-          "not_active": "Not active",
-          "not_available": "Not available",
-          "reserved": "Reserved"
-        }
-      },
       "greasefilterusedhours": {
         "name": "Grease filter used hours"
       },
@@ -4979,15 +4945,6 @@
       },
       "proximitysensorsensitivity": {
         "name": "Proximity sensor sensitivity"
-      },
-      "proximitysensorstatus": {
-        "name": "Proximity sensor status",
-        "state": {
-          "active": "Active",
-          "not_active": "Not active",
-          "not_available": "Not available",
-          "reserved": "Reserved"
-        }
       },
       "pumcleanflag": {
         "name": "Pump clean flag"
@@ -8293,6 +8250,15 @@
       }
     },
     "switch": {
+      "activemodelightstatus": {
+        "name": "Active mode light"
+      },
+      "activemodemotorlevelstatus": {
+        "name": "Active mode motor"
+      },
+      "activemodestatus": {
+        "name": "Active mode"
+      },
       "adaptive_sense_setting": {
         "name": "Adaptive sense setting"
       },
@@ -8301,6 +8267,9 @@
       },
       "allergymodeenable": {
         "name": "Allergy mode"
+      },
+      "ambientlightstatus": {
+        "name": "Ambient light"
       },
       "anticrease": {
         "name": "Anti-crease"
@@ -8350,6 +8319,9 @@
       "childlockenabled": {
         "name": "Child lock"
       },
+      "cleanairstatus": {
+        "name": "Clean air"
+      },
       "coldwash": {
         "name": "Cold wash"
       },
@@ -8376,6 +8348,9 @@
       },
       "fota_cmd": {
         "name": "Firmware update"
+      },
+      "greasefilterstatus": {
+        "name": "Grease filter timer"
       },
       "heater2enable": {
         "name": "Auxiliary heater"
@@ -8404,6 +8379,9 @@
       "key_sound": {
         "name": "Key sound"
       },
+      "lightstatus": {
+        "name": "Light"
+      },
       "mute": {
         "name": "Mute"
       },
@@ -8421,6 +8399,12 @@
       },
       "programoptionanticrease": {
         "name": "Anti-crease"
+      },
+      "proximitysensorsetavalibility": {
+        "name": "Proximity sensor available"
+      },
+      "proximitysensorstatus": {
+        "name": "Proximity sensor"
       },
       "save_mode": {
         "name": "Save mode"
