@@ -1878,6 +1878,14 @@
         "name": "Wine sensor failure"
       }
     },
+    "button": {
+      "start": {
+        "name": "Start"
+      },
+      "stop": {
+        "name": "Stop"
+      }
+    },
     "climate": {
       "connectlife": {
         "state_attributes": {

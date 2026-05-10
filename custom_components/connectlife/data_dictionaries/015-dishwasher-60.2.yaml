@@ -8,6 +8,19 @@
 #
 # Modes "none", "green", "intensive", "uv", "heat_boost", "storage" were
 # never offered by this device — excluded from the select.
+# pause (Actions: 3) and open_door (Actions: 4) have no effect on this
+# firmware, so only stop and start are exposed.
+buttons:
+  - key: stop
+    icon: mdi:stop
+    write:
+      Actions: 1
+  - key: start
+    icon: mdi:play
+    available_when:
+      Remote_control_monitoring_set_commands_actions: 2
+    write:
+      Actions: 2
 properties:
   - property: Selected_program_id_status
     select:

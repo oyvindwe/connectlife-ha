@@ -1573,6 +1573,14 @@
         "name": "Wijnsensor storing"
       }
     },
+    "button": {
+      "start": {
+        "name": "Start"
+      },
+      "stop": {
+        "name": "Stop"
+      }
+    },
     "climate": {
       "connectlife": {
         "state_attributes": {
