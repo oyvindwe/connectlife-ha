@@ -6,7 +6,15 @@
 |                      | Portable air conditioner | 006              | 202                    |
 |                      | Portable air conditioner | 006              | 203                    |
 |                      | Dehumidifier             | 007              | 400                    |
-|                      | Dehumidifier             | 007              | 406                    |
+|                      | Dehumidifier             | 007              | 401                    |
+|                      | Dehumidifier             | 007              | 402                    |
+|                      | Dehumidifier             | 007              | 403                    |
+|                      | Dehumidifier             | 007              | 404                    |
+|                      | Dehumidifier             | 007              | 405                    |
+| Hisense D20HW        | Dehumidifier             | 007              | 406                    |
+|                      | Dehumidifier             | 007              | 407                    |
+|                      | Dehumidifier             | 007              | 408                    |
+|                      | Dehumidifier             | 007              | 409                    |
 |                      | Air conditioner          | 008              | 300                    |
 |                      | Air conditioner          | 008              | 301                    |
 |                      | Air conditioner          | 008              | 302                    |

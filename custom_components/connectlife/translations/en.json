@@ -678,9 +678,6 @@
       "f_e_pump": {
         "name": "Pump"
       },
-      "f_e_push": {
-        "name": "Push"
-      },
       "f_e_temp": {
         "name": "Temperature"
       },
@@ -2125,7 +2122,8 @@
         "state": {
           "auto": "Auto",
           "high": "High",
-          "low": "Low"
+          "low": "Low",
+          "medium": "Medium"
         }
       },
       "t_sleep": {
@@ -7826,6 +7824,9 @@
       },
       "t_left_right": {
         "name": "Horizontal swing"
+      },
+      "t_pump": {
+        "name": "Pump"
       },
       "t_purify": {
         "name": "Purifier"
