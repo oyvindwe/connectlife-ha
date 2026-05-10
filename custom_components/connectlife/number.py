@@ -61,6 +61,9 @@ class ConnectLifeNumberEntity(ConnectLifeEntity, NumberEntity):
         """Initialize the entity."""
         super().__init__(coordinator, appliance, status, Platform.NUMBER, config_entry)
         self.status = status
+        self.command_name = (
+            dd_entry.number.command_name if dd_entry.number.command_name else status
+        )
         device_class = dd_entry.number.device_class
         self.entity_description = NumberEntityDescription(
             key=self._attr_unique_id,
@@ -90,6 +93,9 @@ class ConnectLifeNumberEntity(ConnectLifeEntity, NumberEntity):
         value = int(value)
         _LOGGER.debug("Setting %s to %d on %s", self.status, value, self.nickname)
         try:
-            await self.async_update_device({self.status: value})
+            await self.async_update_device(
+                {self.command_name: value},
+                {self.status: value},
+            )
         except LifeConnectError as api_error:
             raise ServiceValidationError(str(api_error)) from api_error

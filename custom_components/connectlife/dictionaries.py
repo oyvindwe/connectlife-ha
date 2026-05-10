@@ -147,6 +147,7 @@ class Number:
     multiplier: float | None
     device_class: NumberDeviceClass | None
     unit: str | None
+    command_name: str | None
 
     def __init__(self, name: str, number: dict | None):
         if number is None:
@@ -155,6 +156,8 @@ class Number:
         self.max_value = _val(number, MAX_VALUE)
         self.unit = _val(number, UNIT) or None
         self.multiplier = _val(number, MULTIPLIER)
+        command = _val(number, COMMAND, {})
+        self.command_name = _val(command, NAME)
 
         device_class = None
         device_class_value = _val(number, DEVICE_CLASS)

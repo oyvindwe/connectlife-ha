@@ -241,8 +241,22 @@
             20,
             100
           ]
+        },
+        "command": {
+          "$ref": "#/$defs/NumberCommand"
         }
       }
+    },
+    "NumberCommand": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": ["string", "null"],
+          "description": "Use this property instead to change state."
+        }
+      },
+      "title": "NumberCommand"
     },
     "Select": {
       "type": ["object", "null"],
