@@ -678,9 +678,6 @@
       "f_e_pump": {
         "name": "Pumpe"
       },
-      "f_e_push": {
-        "name": "Push"
-      },
       "f_e_temp": {
         "name": "Temperatur"
       },
@@ -7826,6 +7823,9 @@
       },
       "t_left_right": {
         "name": "Horisontal sving"
+      },
+      "t_pump": {
+        "name": "Pumpe"
       },
       "t_purify": {
         "name": "Renser"

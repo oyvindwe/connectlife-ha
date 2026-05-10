@@ -262,9 +262,6 @@
       "f_e_pump": {
         "name": "Bomba"
       },
-      "f_e_push": {
-        "name": "Empujar"
-      },
       "f_e_temp": {
         "name": "Temperatura"
       },

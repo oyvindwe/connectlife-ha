@@ -622,9 +622,6 @@
       "f_e_pump": {
         "name": "Pumpe"
       },
-      "f_e_push": {
-        "name": "Dr\u00fccken"
-      },
       "f_e_temp": {
         "name": "Temperatur"
       },
