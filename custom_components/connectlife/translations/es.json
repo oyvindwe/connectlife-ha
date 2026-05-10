@@ -660,8 +660,22 @@
       }
     },
     "select": {
+      "ads_dirtiness_setting_status": {
+        "name": "Suciedad",
+        "state": {
+          "high": "Alta",
+          "low": "Baja",
+          "medium": "Media"
+        }
+      },
       "auto_dose_quantity_setting_status": {
         "name": "Configuraci\u00f3n autom\u00e1tica de la cantidad de dosificador"
+      },
+      "delaystart_delayend_mode_status": {
+        "state": {
+          "off": "Apagado",
+          "on": "Encendido"
+        }
       },
       "dry_level": {
         "name": "Nivel Secado",
@@ -682,6 +696,9 @@
           "mid": "Medio",
           "mute": "Silenciar"
         }
+      },
+      "max_rpm_allowed_stat": {
+        "name": "Velocidad m\u00e1xima de centrifugado"
       },
       "notification_volumen_setting_status": {
         "state": {
@@ -749,6 +766,23 @@
           "night": "Noche",
           "normal": "Normal",
           "speed": "R\u00e1pido"
+        }
+      },
+      "selected_program_mode2_status": {
+        "name": "Modo eco",
+        "state": {
+          "green_mode": "Verde",
+          "night_mode": "Noche",
+          "speed_mode": "Velocidad"
+        }
+      },
+      "sound_setting_status": {
+        "name": "Volumen",
+        "state": {
+          "0": "0",
+          "1": "1",
+          "2": "2",
+          "3": "3"
         }
       },
       "spin_speed_rpm": {
@@ -1080,8 +1114,7 @@
         }
       },
       "selected_program_id_status": {
-        "name": "Programa seleccionado",
-        "state": {}
+        "name": "Programa seleccionado"
       },
       "selected_program_remaining_time_in_minutes": {
         "name": "Tiempo restante programa seleccionado"
@@ -1569,6 +1602,9 @@
       },
       "mute": {
         "name": "Silenciar"
+      },
+      "no_sound_status": {
+        "name": "Silencio"
       },
       "prewash": {
         "name": "Prelavado"

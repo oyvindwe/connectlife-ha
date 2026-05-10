@@ -1,2 +1,9 @@
 # Washing machine WPNA84A2TSWIFI/PL
-# Uses default mappings
+# Override delay start/end status options to match what this variant reports
+# (only values 1 and 3 observed in PR #218).
+properties:
+  - property: Delaystart_delayend_mode_status
+    select:
+      options:
+        1: "off"
+        3: "on"

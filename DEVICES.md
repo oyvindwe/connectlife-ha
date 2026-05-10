@@ -102,6 +102,7 @@
 |                          | Refrigerator             | 026              | 1b0610z0049j                |
 |                          | Refrigerator             | 026              | 1b0628z0075j                |
 | RS818N4TIE1              | Refrigerator             | 026              | 1b0628z0146j                |
+| Gorenje W-WaveEn-22      | Washing machine          | 027              | 000                         |
 | WPAM14A2T                | Washing machine          | 027              | washing-machine-wm22-b2plus |
 | WPNA84A2TSWIFI           | Washing machine          | 027              | washing-machine-wm22        |
 | DH3S80-DVW006            | Tumble dryer             | 030              | 1wk080140v0w                |

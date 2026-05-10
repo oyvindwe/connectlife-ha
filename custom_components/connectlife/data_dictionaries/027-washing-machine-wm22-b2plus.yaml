@@ -1,2 +1,31 @@
 # Washing Machine Gorenje WPAM14A2T (WM22 B2 Plus)
-# Uses default mappings
+# Override program mode and spin speed to read-only sensors with the option
+# labels observed by the original contributor in PR #268. Writes via the base
+# command + adjust:1 can't be trusted on this variant: the write encoding is
+# unverified, and the observed labels don't line up with the spec write enum
+# (e.g. picking "0_rpm" with adjust:1 would write 700 RPM per spec).
+properties:
+  - property: Selected_program_mode_status
+    icon: 'mdi:tshirt-crew'
+    sensor:
+      read_only: true
+      device_class: enum
+      options:
+        0: not_available
+        1: normal
+        3: fast
+        4: extra_fast
+  - property: Selected_program_washing_spin_speed_rpm_status
+    icon: 'mdi:reload'
+    sensor:
+      read_only: true
+      device_class: enum
+      options:
+        0: not_available
+        1: no_spin
+        4: 0_rpm
+        5: 800_rpm
+        6: 400_rpm
+        7: 1000_rpm
+        8: 1200_rpm
+        9: 1400_rpm
