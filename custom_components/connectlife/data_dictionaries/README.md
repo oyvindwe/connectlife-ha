@@ -83,13 +83,14 @@ Example: a feature variant returns a property as a direct value where the base c
 
 ## Create your own mapping file
 
-To map you device, create a file with the name `<deviceTypeCode>-<deviceFeatureCode>.yaml` in this directory. When done,
+To map your device, create a file with the name `<deviceTypeCode>-<deviceFeatureCode>.yaml` in this directory. When done,
 or if you need help with the mapping, please open a PR on GitHub with the file!
 
-The file contains two top level items:
+The file contains these top level items:
 
 - `climate`: top level [`Climate`](#presets) configuration.
 - `properties`: list of [`Property`](#property)
+- `buttons`: list of [`Button`](#buttons) entities for write-only commands
 
 To make a property visible by default, just add the property to the list. Note that properties you do not map are still
 mapped to [sensor](#type-sensor) entities, but registered as disabled by default.
@@ -410,6 +411,58 @@ reports `1 = off` and `2 = on` on the status property but expects `0 = off` and 
 ```
 
 The same mechanism works for [Select](#type-select): the value written is the integer key from `options` minus `adjust`.
+
+## Buttons
+
+The top-level `buttons` section declares device-level button entities for write-only commands —
+properties that don't appear in `status_list`, such as `Actions` on a dishwasher. Each list entry
+becomes one HA button entity. A press sends the `write` map to the device in a single request.
+
+| Item             | Type                            | Description                                                                                                                                                                                                                                  |
+|------------------|---------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `key`            | string                          | Unique key for this button within the device. Used as the translation key, as part of the entity unique id, and as the merge identity when a feature override changes an inherited button.                                                  |
+| `icon`           | `mdi:play`, etc.                | Icon for the button.                                                                                                                                                                                                                         |
+| `available_when` | dictionary of string to integer | Optional. Map of property name to required value. The button is only available when every listed property currently has the listed value. Use to gate buttons behind a remote-control-allowed status property.                              |
+| `write`          | dictionary of string to integer | Required for non-disabled buttons. Map of property name to value to send when pressed. Multiple entries are sent in a single request — useful for combos like "set delay + start".                                                          |
+| `disable`        | `true`, `false`                 | If `true`, suppress this button. Use in a feature override to remove a button inherited from the base when a device variant doesn't support that action code. Defaults to `false`.                                                          |
+
+Feature overrides merge with the base by `key`: matching entries shallow-merge field by field
+(`available_when` and `write` replace as a whole), and entries with a new `key` are appended.
+A feature override carrying only the differences keeps the override file small.
+
+Remember to add [translation strings](#translation-strings) for button names under `entity.button.<key>.name`.
+
+Example base file declaring start/stop/pause:
+
+```yaml
+# 015.yaml (base)
+buttons:
+  - key: start
+    icon: mdi:play
+    available_when:
+      Remote_control_monitoring_set_commands_actions: 2
+    write:
+      Actions: 2
+  - key: stop
+    icon: mdi:stop
+    write:
+      Actions: 1
+  - key: pause
+    icon: mdi:pause
+    available_when:
+      Remote_control_monitoring_set_commands_actions: 2
+    write:
+      Actions: 3
+```
+
+Example feature override disabling pause on a variant that doesn't support `Actions: 3`:
+
+```yaml
+# 015-{feature}.yaml (override — drops the pause button, keeps start/stop)
+buttons:
+  - key: pause
+    disable: true
+```
 
 ## Type `WaterHeater`
 

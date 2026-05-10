@@ -14,6 +14,13 @@
           "items": {
             "$ref": "#/$defs/Property"
           }
+        },
+        "buttons": {
+          "type": ["array", "null"],
+          "items": {
+            "$ref": "#/$defs/Button"
+          },
+          "description": "Device-level buttons for write-only commands. A feature override replaces the base list as a whole."
         }
       },
       "title": "ConnectLife Data Dictionary"
@@ -126,6 +133,43 @@
       ],
       "title": "Property",
       "description": "Defines a property for an appliance."
+    },
+    "Button": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "type": "string",
+          "description": "Unique key for this button within the device. Used as the translation key, as part of the entity unique id, and as the merge identity when a feature override changes an inherited button.",
+          "examples": ["start", "stop", "pause"]
+        },
+        "icon": {
+          "type": ["string", "null"],
+          "description": "Icon for the button.",
+          "examples": ["mdi:play", "mdi:stop", "mdi:pause"]
+        },
+        "available_when": {
+          "type": ["object", "null"],
+          "additionalProperties": {
+            "type": "integer"
+          },
+          "description": "Map of property name to required value. The button is only available when every listed property currently has the listed value. Use to gate buttons behind a remote-control-allowed status property. Replaces the inherited value as a whole."
+        },
+        "write": {
+          "type": ["object", "null"],
+          "additionalProperties": {
+            "type": "integer"
+          },
+          "description": "Map of property name to value to send when the button is pressed. Multiple entries are sent in a single request. Required for non-disabled buttons; replaces the inherited value as a whole."
+        },
+        "disable": {
+          "type": "boolean",
+          "description": "If true, suppress this button. Used in a feature override to remove a button inherited from the base — e.g. when a device variant doesn't support a particular action code.",
+          "default": false
+        }
+      },
+      "required": ["key"],
+      "title": "Button"
     },
     "BinarySensor": {
       "type": ["object", "null"],
