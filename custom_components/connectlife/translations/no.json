@@ -414,9 +414,6 @@
       "child_lock_open_door_sound_alarm": {
         "name": "Lydalarm for \u00e5pen barnesikringsd\u00f8r"
       },
-      "child_lock_status": {
-        "name": "Barnesikring"
-      },
       "child_lock_status_status": {
         "name": "Barnesikring"
       },
@@ -1621,6 +1618,9 @@
       }
     },
     "number": {
+      "airing_program_set_time": {
+        "name": "Luftingstid"
+      },
       "aus_zone1_opencontrol": {
         "name": "Sone 1 \u00e5pning"
       },
@@ -1644,6 +1644,9 @@
       },
       "aus_zone8_opencontrol": {
         "name": "Sone 8 \u00e5pning"
+      },
+      "brightness_setting": {
+        "name": "Lysstyrke"
       },
       "delayendtime": {
         "name": "Utsatt sluttid"
@@ -1678,6 +1681,9 @@
       "refrigerator_temperature": {
         "name": "Kj\u00f8leskapstemperatur"
       },
+      "selected_program_timedry_set_duration": {
+        "name": "Tidsprogramvarighet"
+      },
       "t_fanspeedcv": {
         "name": "Variabel viftehastighet"
       },
@@ -1689,6 +1695,9 @@
       },
       "variation_temperature": {
         "name": "Variasjonstemperatur"
+      },
+      "volume_setting": {
+        "name": "Volum"
       }
     },
     "select": {
@@ -1711,6 +1720,16 @@
           "high": "H\u00f8y",
           "low": "Lav",
           "medium": "Middels"
+        }
+      },
+      "anticrease_setting": {
+        "name": "Anti-kr\u00f8ll-varighet",
+        "state": {
+          "1_hour": "1 time",
+          "2_hours": "2 timer",
+          "3_hours": "3 timer",
+          "4_hours": "4 timer",
+          "off": "Av"
         }
       },
       "auto_dose_quantity_setting_status": {
@@ -1856,6 +1875,15 @@
           "wardrobe": "Garderobe"
         }
       },
+      "extradry_setting": {
+        "name": "Ekstrat\u00f8rr",
+        "state": {
+          "10_min": "10 min",
+          "15_min": "15 min",
+          "5_min": "5 min",
+          "off": "Av"
+        }
+      },
       "extrarinsenum": {
         "name": "Ekstra skyll",
         "state": {
@@ -1876,6 +1904,17 @@
         "state": {
           "not_active": "Ikke aktiv",
           "reset": "Tilbakestill"
+        }
+      },
+      "language_setting": {
+        "name": "Spr\u00e5k",
+        "state": {
+          "au_english": "Engelsk (AU)",
+          "gb_english": "Engelsk (GB)",
+          "norwegian": "Norsk",
+          "swedish_asko": "Svensk (ASKO)",
+          "swedish_cylinda": "Svensk (Cylinda)",
+          "us_english": "Engelsk (US)"
         }
       },
       "language_status": {
@@ -2056,6 +2095,14 @@
           "wool_manual": "Ull og manuell"
         }
       },
+      "selected_program_load": {
+        "name": "Mengde",
+        "state": {
+          "heavy": "Tung",
+          "light": "Lett",
+          "medium": "Middels"
+        }
+      },
       "selected_program_mode": {
         "name": "Modus",
         "state": {
@@ -2064,6 +2111,13 @@
           "normal": "Normal",
           "not_available": "Ikke tilgjengelig",
           "speed": "Hastighet"
+        }
+      },
+      "selected_program_mode2": {
+        "name": "Spesialmodus",
+        "state": {
+          "delicate": "Sk\u00e5nsom",
+          "disinfection": "Desinfeksjon"
         }
       },
       "selected_program_mode2_status": {
@@ -2078,7 +2132,9 @@
         "name": "Programmodus",
         "state": {
           "intensive": "Intensiv",
+          "nature_dry": "NatureDry",
           "normal": "Normal",
+          "steam_tech": "SteamTech",
           "time_care_1": "Time Care 1",
           "time_care_2": "Time Care 2"
         }
@@ -2136,6 +2192,17 @@
           "1": "1",
           "2": "2",
           "3": "3"
+        }
+      },
+      "sound_settings": {
+        "name": "Lydniv\u00e5",
+        "state": {
+          "0": "0",
+          "1": "1",
+          "2": "2",
+          "3": "3",
+          "4": "4",
+          "5": "5"
         }
       },
       "spin_speed_rpm": {
@@ -2390,6 +2457,9 @@
           "metric": "Metrisk"
         }
       },
+      "view_size_setting": {
+        "name": "Visningsst\u00f8rrelse"
+      },
       "view_size_setting_status": {
         "name": "Visningsst\u00f8rrelse",
         "state": {
@@ -2575,9 +2645,6 @@
       },
       "anticrease_flag": {
         "name": "Anti-kr\u00f8ll-flagg"
-      },
-      "anticrease_setting": {
-        "name": "Anti-kr\u00f8ll-varighet"
       },
       "appcontrol_flag": {
         "name": "App-styringsflagg"
@@ -3752,9 +3819,6 @@
       },
       "extra_soft_hideflag": {
         "name": "Skjul-flagg for ekstra mykt"
-      },
-      "extradry_setting": {
-        "name": "Innstilling for ekstrat\u00f8rr"
       },
       "extrarinsenum": {
         "name": "Antall ekstra skyll"
@@ -6074,9 +6138,6 @@
       "sound_setting": {
         "name": "Lydinnstilling"
       },
-      "sound_settings": {
-        "name": "Lydinnstillinger"
-      },
       "special_space": {
         "name": "Spesialrom"
       },
@@ -7368,9 +7429,6 @@
       "washer_to_dryer_program_id": {
         "name": "Vasker \u2192 t\u00f8rker program-ID"
       },
-      "washer_to_dryersetting_status": {
-        "name": "Innstilling for vasker \u2192 t\u00f8rker"
-      },
       "washer_to_dryerwizard_trigger_status": {
         "name": "Veivisertriggerstatus for vasker \u2192 t\u00f8rker"
       },
@@ -7749,14 +7807,23 @@
       "autotubclean": {
         "name": "Automatisk trommelrens"
       },
+      "buzzer_setting": {
+        "name": "Summer"
+      },
       "child_lock": {
         "name": "Barnesikring"
       },
       "child_lock_setting_status": {
         "name": "Barnesikring"
       },
+      "child_lock_status": {
+        "name": "Barnesikring"
+      },
       "cleanairstatus": {
         "name": "Ren luft"
+      },
+      "cleaning_reminder_setting": {
+        "name": "Rengj\u00f8ringsp\u00e5minnelse"
       },
       "color_sensor_setting_status": {
         "name": "Fargesensor"
@@ -7776,6 +7843,9 @@
       "dose_assist_status": {
         "name": "Doseringshjelper"
       },
+      "drum_illumination": {
+        "name": "Trommellys"
+      },
       "drum_light": {
         "name": "Trommellys"
       },
@@ -7793,6 +7863,9 @@
       },
       "greasefilterstatus": {
         "name": "Fettfiltertimer"
+      },
+      "heating_power_setting": {
+        "name": "Varmeeffekt"
       },
       "hide_setting": {
         "name": "Skjul innstilling"
@@ -7832,6 +7905,9 @@
       },
       "no_sound_status": {
         "name": "Lydl\u00f8s"
+      },
+      "notification_setting": {
+        "name": "Varslinger"
       },
       "odor_control_setting": {
         "name": "Luktkontroll"
@@ -7877,6 +7953,9 @@
       },
       "sf_sr_mutex_mode": {
         "name": "SF/SR-mutex-modus"
+      },
+      "smart_sync_setting": {
+        "name": "Smart synk"
       },
       "smart_sync_setting_status": {
         "name": "Smart synk"
@@ -7961,6 +8040,9 @@
       },
       "turbidity_sensor_setting_status": {
         "name": "Turbiditetssensor"
+      },
+      "washer_to_dryersetting_status": {
+        "name": "Vasker-til-t\u00f8rker-sync"
       },
       "welcome": {
         "name": "Velkommen"
