@@ -1,0 +1,11 @@
+# Hisense BCD-668WP1BWF1R1/HC4(HAA) — French/EU multi-door refrigerator
+# Override the default temperature ranges with values accepted by this model.
+properties:
+  - property: refrigerator_temperature
+    number:
+      min_value: 2
+      max_value: 9
+  - property: freeze_temperature
+    number:
+      min_value: -24
+      max_value: -13
