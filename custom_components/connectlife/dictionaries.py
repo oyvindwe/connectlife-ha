@@ -183,6 +183,7 @@ class Number:
 
 class Select:
     options: dict
+    unknown_value: int | None
     command_name: str | None
     command_adjust: int = 0
 
@@ -195,6 +196,7 @@ class Select:
             self.options = {}
         else:
             self.options = options
+        self.unknown_value = _val(select, UNKNOWN_VALUE)
         command = _val(select, COMMAND, {})
         self.command_name = _val(command, NAME)
         self.command_adjust = _val(command, ADJUST, 0)
