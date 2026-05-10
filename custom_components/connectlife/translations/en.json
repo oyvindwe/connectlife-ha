@@ -1210,7 +1210,7 @@
         "name": "Sabbath mode switch status"
       },
       "selected_program_anticrease_status": {
-        "name": "Anti-crease"
+        "name": "Selected program anti crease status"
       },
       "selected_program_auto_door_open_function": {
         "name": "Selected program auto door open"
@@ -2056,12 +2056,11 @@
         }
       },
       "compartment2_type_setting_status": {
-        "name": "Compartment 2 type",
+        "name": "Compartment 2 type setting status",
         "state": {
           "black_detergent": "Black detergent",
           "color_detergent": "Color detergent",
           "detergent": "Detergent",
-          "other_rinse_agent": "Other rinse agent",
           "sensitive_detergent": "Sensitive detergent",
           "softener": "Softener",
           "white_detergent": "White detergent"
@@ -2112,7 +2111,9 @@
         "state": {
           "delay_end": "Delay end",
           "delay_start": "Delay start",
-          "not_active": "Not active"
+          "not_active": "Not active",
+          "off": "Off",
+          "on": "On"
         }
       },
       "detergent": {
@@ -2363,30 +2364,30 @@
           "color": "Color",
           "down_feathers": "Down feathers",
           "draining": "Draining",
-          "drum_cleaning": "Drum cleaning",
+          "drum_cleaning": "Drum Cleaning",
           "eco": "Eco",
-          "eco_40_60": "Eco 40 60",
-          "extra_hygiene": "Extra hygiene",
-          "fast_20": "Fast 20",
+          "eco_40_60": "Eco 40-60",
+          "extra_hygiene": "Extra Hygiene",
+          "fast_20": "Fast 20'",
           "glass": "Glass",
           "hygiene": "Hygiene",
           "intensive": "Intensive",
-          "intensive_59_32": "Intensive 59 32",
-          "mix_synthetic": "Mix synthetic",
+          "intensive_59_32": "Intensive 59'/32'",
+          "mix_synthetic": "Mix/Synthetic",
           "night": "Night",
           "no_program_selected": "No program selected",
           "one_hour": "One hour",
           "pet_hair_removal": "Pet hair removal",
           "quick_pro": "Quick pro",
           "rinse_and_hold": "Rinse and hold",
-          "rinsing_softening": "Rinsing softening",
+          "rinsing_softening": "Rinsing & Softening",
           "self_cleaning": "Self cleaning",
           "shirts": "Shirts",
-          "spinning_draining": "Spinning draining",
+          "spinning_draining": "Spinning & Draining",
           "sport": "Sport",
           "time_program": "Time program",
-          "white_cotton": "White cotton",
-          "wool_manual": "Wool manual"
+          "white_cotton": "White Cotton",
+          "wool_manual": "Wool & Manual"
         }
       },
       "selected_program_mode": {
@@ -2410,8 +2411,6 @@
       "selected_program_mode_status": {
         "name": "Program mode",
         "state": {
-          "extra_fast": "Extra fast",
-          "fast": "Fast",
           "intensive": "Intensive",
           "normal": "Normal",
           "time_care_1": "Time Care 1",
@@ -2425,6 +2424,8 @@
           "30_c": "30 \u00b0C",
           "40_c": "40 \u00b0C",
           "60_c": "60 \u00b0C",
+          "90_c": "90 \u00b0C",
+          "95_c": "95 \u00b0C",
           "cold": "Cold"
         }
       },
@@ -2439,8 +2440,7 @@
           "400_rpm": "400",
           "600_rpm": "600",
           "700_rpm": "700",
-          "800_rpm": "800",
-          "no_spin": "No spin"
+          "800_rpm": "800"
         }
       },
       "setmaxmotorspeed": {
@@ -5559,7 +5559,13 @@
         "name": "Selected program mode"
       },
       "selected_program_mode_status": {
-        "name": "Program mode"
+        "name": "Program mode",
+        "state": {
+          "extra_fast": "Extra fast",
+          "fast": "Fast",
+          "normal": "Normal",
+          "not_available": "Not available"
+        }
       },
       "selected_program_night_mode": {
         "name": "Selected program night mode"
@@ -5590,6 +5596,19 @@
       },
       "selected_program_uv_function": {
         "name": "Selected program UV function"
+      },
+      "selected_program_washing_spin_speed_rpm_status": {
+        "name": "Selected program washing spin speed rpm status",
+        "state": {
+          "0_rpm": "0 rpm",
+          "1000_rpm": "1000 rpm",
+          "1200_rpm": "1200 rpm",
+          "1400_rpm": "1400 rpm",
+          "400_rpm": "400 rpm",
+          "800_rpm": "800 rpm",
+          "no_spin": "No spin",
+          "not_available": "Not available"
+        }
       },
       "selected_program_water_add": {
         "name": "Selected program water add"

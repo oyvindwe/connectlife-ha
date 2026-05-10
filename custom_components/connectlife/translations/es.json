@@ -671,6 +671,12 @@
       "auto_dose_quantity_setting_status": {
         "name": "Configuraci\u00f3n autom\u00e1tica de la cantidad de dosificador"
       },
+      "delaystart_delayend_mode_status": {
+        "state": {
+          "off": "Apagado",
+          "on": "Encendido"
+        }
+      },
       "dry_level": {
         "name": "Nivel Secado",
         "state": {}

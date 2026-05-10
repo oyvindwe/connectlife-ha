@@ -1273,6 +1273,28 @@
       "brightness": {
         "name": "Helligkeit"
       },
+      "compartment1_type_setting_status": {
+        "name": "Kammer 1 Typ",
+        "state": {
+          "black_detergent": "Waschmittel f\u00fcr Schwarze",
+          "color_detergent": "Waschmittel f\u00fcr Bunte",
+          "detergent": "Waschmittel",
+          "sensitive_detergent": "Waschmittel f\u00fcr Empfindliches",
+          "softener": "Weichsp\u00fcler",
+          "white_detergent": "Waschmittel f\u00fcr Wei\u00dfe"
+        }
+      },
+      "compartment2_type_setting_status": {
+        "name": "Kammer 2 Typ",
+        "state": {
+          "black_detergent": "Waschmittel f\u00fcr Schwarze",
+          "color_detergent": "Waschmittel f\u00fcr Bunte",
+          "detergent": "Waschmittel",
+          "sensitive_detergent": "Waschmittel f\u00fcr Empfindliches",
+          "softener": "Weichsp\u00fcler",
+          "white_detergent": "Waschmittel f\u00fcr Wei\u00dfe"
+        }
+      },
       "cooking_intensity": {
         "name": "Kochintensit\u00e4t"
       },
@@ -1311,7 +1333,9 @@
         "state": {
           "delay_end": "Endverz\u00f6gerung",
           "delay_start": "Startverz\u00f6gerung",
-          "not_active": "Nicht aktiv"
+          "not_active": "Nicht aktiv",
+          "off": "Aus",
+          "on": "An"
         }
       },
       "detergent": {
@@ -1321,6 +1345,16 @@
           "less": "Weniger",
           "more": "Mehr",
           "standard": "Standard"
+        }
+      },
+      "detergent_amount_status": {
+        "name": "Waschmittelmenge",
+        "state": {
+          "1": "1",
+          "2": "2",
+          "3": "3",
+          "auto": "Auto",
+          "off": "Aus"
         }
       },
       "dry_level": {
@@ -1368,6 +1402,13 @@
         "state": {
           "english": "Englisch",
           "simplified_chinese": "Vereinfachtes Chinesisch"
+        }
+      },
+      "liquid_unit_setting_status": {
+        "name": "Fl\u00fcssigkeitseinheit",
+        "state": {
+          "ml": "ml",
+          "tbs": "EL"
         }
       },
       "max_rpm_allowed_stat": {
@@ -1516,8 +1557,6 @@
       "selected_program_mode_status": {
         "name": "Programm Modus",
         "state": {
-          "extra_fast": "Extra Schnell",
-          "fast": "Schnell",
           "intensive": "Intensiv",
           "normal": "Normal",
           "time_care_1": "Time Care 1",
@@ -1531,6 +1570,8 @@
           "30_c": "30 \u00b0C",
           "40_c": "40 \u00b0C",
           "60_c": "60 \u00b0C",
+          "90_c": "90 \u00b0C",
+          "95_c": "95 \u00b0C",
           "cold": "Kalt"
         }
       },
@@ -1545,8 +1586,7 @@
           "400_rpm": "400 U/min",
           "600_rpm": "600 U/min",
           "700_rpm": "700 U/min",
-          "800_rpm": "800 U/min",
-          "no_spin": "Kein Schleudern"
+          "800_rpm": "800 U/min"
         }
       },
       "softener": {
@@ -1556,6 +1596,16 @@
           "less": "Weniger",
           "more": "Mehr",
           "standard": "Standard"
+        }
+      },
+      "softener_amount_status": {
+        "name": "Weichsp\u00fclermenge",
+        "state": {
+          "1": "1",
+          "2": "2",
+          "3": "3",
+          "auto": "Auto",
+          "off": "Aus"
         }
       },
       "sound_setting_status": {
@@ -1749,6 +1799,13 @@
           "fahrenheit": "Fahrenheit"
         }
       },
+      "temperature_unit_setting_status": {
+        "name": "Temperatureinheit",
+        "state": {
+          "celsius": "Celsius",
+          "fahrenheit": "Fahrenheit"
+        }
+      },
       "time_format": {
         "name": "Zeitformat",
         "state": {
@@ -1760,6 +1817,20 @@
         "name": "Zeitprogrammdauer",
         "state": {
           "not_set": "Nicht festgelegt"
+        }
+      },
+      "units_setting_status": {
+        "name": "Einheiten",
+        "state": {
+          "imperial": "Imperial",
+          "metric": "Metrisch"
+        }
+      },
+      "view_size_setting_status": {
+        "name": "Anzeigegr\u00f6\u00dfe",
+        "state": {
+          "big_text": "Gro\u00dfer Text",
+          "normal_text": "Normaler Text"
         }
       },
       "volume": {
@@ -1783,6 +1854,13 @@
           "2": "2",
           "3": "3",
           "not_set": "Nicht eingestellt"
+        }
+      },
+      "weight_unit_setting_status": {
+        "name": "Gewichtseinheit",
+        "state": {
+          "kg": "kg",
+          "lbs": "lbs"
         }
       }
     },

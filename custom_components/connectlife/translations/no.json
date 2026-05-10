@@ -1758,7 +1758,6 @@
           "black_detergent": "Svartvaskemiddel",
           "color_detergent": "Fargevaskemiddel",
           "detergent": "Vaskemiddel",
-          "other_rinse_agent": "Annet skyllemiddel",
           "sensitive_detergent": "Vaskemiddel for sensitive plagg",
           "softener": "T\u00f8ymykner",
           "white_detergent": "Hvitvaskemiddel"
@@ -1802,7 +1801,9 @@
         "state": {
           "delay_end": "Utsatt slutt",
           "delay_start": "Utsatt start",
-          "not_active": "Ikke aktiv"
+          "not_active": "Ikke aktiv",
+          "off": "Av",
+          "on": "P\u00e5"
         }
       },
       "detergent": {
@@ -2075,8 +2076,6 @@
       "selected_program_mode_status": {
         "name": "Programmodus",
         "state": {
-          "extra_fast": "Ekstra hurtig",
-          "fast": "Hurtig",
           "intensive": "Intensiv",
           "normal": "Normal",
           "time_care_1": "Time Care 1",
@@ -2090,6 +2089,8 @@
           "30_c": "30 \u00b0C",
           "40_c": "40 \u00b0C",
           "60_c": "60 \u00b0C",
+          "90_c": "90 \u00b0C",
+          "95_c": "95 \u00b0C",
           "cold": "Kald"
         }
       },
@@ -2104,8 +2105,7 @@
           "400_rpm": "400",
           "600_rpm": "600",
           "700_rpm": "700",
-          "800_rpm": "800",
-          "no_spin": "Ingen sentrifugering"
+          "800_rpm": "800"
         }
       },
       "softener": {
