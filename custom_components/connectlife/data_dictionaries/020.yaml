@@ -167,6 +167,13 @@ properties:
   - property: SL1_Power_level_max
     # Sample value: 13
     optional: true
+  - property: SL1_Present
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      options:
+        0: off
+        1: on
   - property: SL1_Status
     optional: true
     binary_sensor:
@@ -254,6 +261,13 @@ properties:
   - property: SL2_Power_level_max
     # Sample value: 13
     optional: true
+  - property: SL2_Present
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      options:
+        0: off
+        1: on
   - property: SL2_Status
     optional: true
     binary_sensor:
@@ -341,6 +355,13 @@ properties:
   - property: SL3_Power_level_max
     # Sample value: 13
     optional: true
+  - property: SL3_Present
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      options:
+        0: off
+        1: on
   - property: SL3_Status
     optional: true
     binary_sensor:
@@ -428,6 +449,13 @@ properties:
   - property: SL4_Power_level_max
     # Sample value: 13
     optional: true
+  - property: SL4_Present
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      options:
+        0: off
+        1: on
   - property: SL4_Status
     optional: true
     binary_sensor:
@@ -515,6 +543,13 @@ properties:
   - property: SL5_Power_level_max
     # Sample value: 13
     optional: true
+  - property: SL5_Present
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      options:
+        0: off
+        1: on
   - property: SL5_Status
     optional: true
     binary_sensor:
@@ -602,6 +637,13 @@ properties:
   - property: SL6_Power_level_max
     # Sample value: 13
     optional: true
+  - property: SL6_Present
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      options:
+        0: off
+        1: on
   - property: SL6_Status
     optional: true
     binary_sensor:

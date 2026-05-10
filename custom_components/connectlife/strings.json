@@ -1320,6 +1320,9 @@
       "sl1_pot_detected": {
         "name": "Zone 1 pot detected"
       },
+      "sl1_present": {
+        "name": "Zone 1 present"
+      },
       "sl1_residual_heat_signal": {
         "name": "Zone 1 residual heat"
       },
@@ -1400,6 +1403,9 @@
       },
       "sl2_pot_detected": {
         "name": "Zone 2 pot detected"
+      },
+      "sl2_present": {
+        "name": "Zone 2 present"
       },
       "sl2_residual_heat_signal": {
         "name": "Zone 2 residual heat"
@@ -1482,6 +1488,9 @@
       "sl3_pot_detected": {
         "name": "Zone 3 pot detected"
       },
+      "sl3_present": {
+        "name": "Zone 3 present"
+      },
       "sl3_residual_heat_signal": {
         "name": "Zone 3 residual heat"
       },
@@ -1562,6 +1571,9 @@
       },
       "sl4_pot_detected": {
         "name": "Zone 4 pot detected"
+      },
+      "sl4_present": {
+        "name": "Zone 4 present"
       },
       "sl4_residual_heat_signal": {
         "name": "Zone 4 residual heat"
@@ -1644,6 +1656,9 @@
       "sl5_pot_detected": {
         "name": "Zone 5 pot detected"
       },
+      "sl5_present": {
+        "name": "Zone 5 present"
+      },
       "sl5_residual_heat_signal": {
         "name": "Zone 5 residual heat"
       },
@@ -1724,6 +1739,9 @@
       },
       "sl6_pot_detected": {
         "name": "Zone 6 pot detected"
+      },
+      "sl6_present": {
+        "name": "Zone 6 present"
       },
       "sl6_residual_heat_signal": {
         "name": "Zone 6 residual heat"
