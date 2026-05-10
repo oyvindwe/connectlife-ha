@@ -57,6 +57,7 @@ class ConnectLifeSelect(ConnectLifeEntity, SelectEntity):
         # Copy: unmapped values are added per-entity, avoid leaking to other appliances.
         self.options_map = dict(dd_entry.select.options)
         self.reverse_options_map = {v: k for k, v in self.options_map.items()}
+        self.unknown_value = dd_entry.select.unknown_value
         self.command_name = (
             dd_entry.select.command_name if dd_entry.select.command_name else status
         )
@@ -77,6 +78,9 @@ class ConnectLifeSelect(ConnectLifeEntity, SelectEntity):
     def update_state(self):
         if self.status in self.coordinator.data[self.device_id].status_list:
             value = self.coordinator.data[self.device_id].status_list[self.status]
+            if value == self.unknown_value:
+                self._attr_current_option = None
+                return
             if value in self.options_map:
                 value = self.options_map[value]
             else:

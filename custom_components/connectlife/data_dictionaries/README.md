@@ -350,10 +350,11 @@ Number entities can be set by the user.
 
 ## Type `Select`
 
-| Item       | Type                            | Description                                                                                                       |
-|------------|---------------------------------|-------------------------------------------------------------------------------------------------------------------|
-| `options`  | dictionary of integer to string | Required.                                                                                                         |
-| `command`  | [Command](#command)             | Send writes to a different property than the status property, and/or offset the value. See [Command](#command).   |
+| Item            | Type                            | Description                                                                                                       |
+|-----------------|---------------------------------|-------------------------------------------------------------------------------------------------------------------|
+| `options`       | dictionary of integer to string | Required.                                                                                                         |
+| `unknown_value` | integer                         | The value used by the API to signal unknown value. The entity will be reported as unknown without a warning.      |
+| `command`       | [Command](#command)             | Send writes to a different property than the status property, and/or offset the value. See [Command](#command).   |
 
 Remember to add [translation strings](#translation-strings) for the options.
 
