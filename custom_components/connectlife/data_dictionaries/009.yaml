@@ -306,6 +306,12 @@ properties:
       max_value: 100
       unit: "%"
     icon: mdi:fan
+  - property: t_fanspeedcv
+    number:
+      min_value: 0
+      max_value: 100
+      unit: "%"
+    icon: mdi:fan
   - property: t_fresh_air
     switch:
       device_class: switch
