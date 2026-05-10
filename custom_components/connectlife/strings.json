@@ -462,9 +462,6 @@
       "child_lock_open_door_sound_alarm": {
         "name": "Child lock open door sound alarm"
       },
-      "child_lock_status": {
-        "name": "Child lock"
-      },
       "child_lock_status_status": {
         "name": "Child lock"
       },
@@ -1909,6 +1906,9 @@
       }
     },
     "number": {
+      "airing_program_set_time": {
+        "name": "Airing time"
+      },
       "aus_zone1_opencontrol": {
         "name": "Zone 1 opening"
       },
@@ -1932,6 +1932,9 @@
       },
       "aus_zone8_opencontrol": {
         "name": "Zone 8 opening"
+      },
+      "brightness_setting": {
+        "name": "Brightness"
       },
       "delayendtime": {
         "name": "Delay end time"
@@ -1972,6 +1975,9 @@
       "refrigerator_temperature": {
         "name": "Refrigerator temperature"
       },
+      "selected_program_timedry_set_duration": {
+        "name": "Time dry duration"
+      },
       "t_fanspeedcv": {
         "name": "Variable fan speed"
       },
@@ -1983,6 +1989,9 @@
       },
       "variation_temperature": {
         "name": "Variation temperature"
+      },
+      "volume_setting": {
+        "name": "Volume"
       }
     },
     "select": {
@@ -1991,9 +2000,13 @@
         "state": {
           "add_duration": "Add duration",
           "add_gratin": "Add gratin",
+          "cancel": "Cancel",
           "direct_steam": "Direct steam",
           "none": "None",
           "pause": "Pause",
+          "production_test": "Production test",
+          "program_continue": "Program continue",
+          "reset_programs_to_default": "Reset programs to default",
           "start": "Start",
           "steam_shot": "Steam shot",
           "steamer_water_tank_door_open": "Open steamer water tank door",
@@ -2007,6 +2020,16 @@
           "high": "High",
           "low": "Low",
           "medium": "Medium"
+        }
+      },
+      "anticrease_setting": {
+        "name": "Anti-crease duration",
+        "state": {
+          "1_hour": "1 hour",
+          "2_hours": "2 hours",
+          "3_hours": "3 hours",
+          "4_hours": "4 hours",
+          "off": "Off"
         }
       },
       "auto_dose_quantity_setting_status": {
@@ -2183,6 +2206,15 @@
           "wardrobe": "Wardrobe"
         }
       },
+      "extradry_setting": {
+        "name": "Extra dry",
+        "state": {
+          "10_min": "10 min",
+          "15_min": "15 min",
+          "5_min": "5 min",
+          "off": "Off"
+        }
+      },
       "extrarinsenum": {
         "name": "Extra rinse",
         "state": {
@@ -2203,6 +2235,17 @@
         "state": {
           "not_active": "Not active",
           "reset": "Reset"
+        }
+      },
+      "language_setting": {
+        "name": "Language",
+        "state": {
+          "au_english": "English (AU)",
+          "gb_english": "English (GB)",
+          "norwegian": "Norwegian",
+          "swedish_asko": "Swedish (ASKO)",
+          "swedish_cylinda": "Swedish (Cylinda)",
+          "us_english": "English (US)"
         }
       },
       "language_status": {
@@ -2391,6 +2434,14 @@
           "wool_manual": "Wool & Manual"
         }
       },
+      "selected_program_load": {
+        "name": "Load",
+        "state": {
+          "heavy": "Heavy",
+          "light": "Light",
+          "medium": "Medium"
+        }
+      },
       "selected_program_mode": {
         "name": "Mode",
         "state": {
@@ -2399,6 +2450,13 @@
           "normal": "Normal",
           "not_available": "Not available",
           "speed": "Speed"
+        }
+      },
+      "selected_program_mode2": {
+        "name": "Special mode",
+        "state": {
+          "delicate": "Delicate",
+          "disinfection": "Disinfection"
         }
       },
       "selected_program_mode2_status": {
@@ -2413,7 +2471,9 @@
         "name": "Program mode",
         "state": {
           "intensive": "Intensive",
+          "nature_dry": "NatureDry",
           "normal": "Normal",
+          "steam_tech": "SteamTech",
           "time_care_1": "Time Care 1",
           "time_care_2": "Time Care 2"
         }
@@ -2494,6 +2554,17 @@
           "1": "1",
           "2": "2",
           "3": "3"
+        }
+      },
+      "sound_settings": {
+        "name": "Sound level",
+        "state": {
+          "0": "0",
+          "1": "1",
+          "2": "2",
+          "3": "3",
+          "4": "4",
+          "5": "5"
         }
       },
       "spin_speed_rpm": {
@@ -2756,6 +2827,13 @@
           "metric": "Metric"
         }
       },
+      "view_size_setting": {
+        "name": "View size",
+        "state": {
+          "big_text": "Big text",
+          "normal_text": "Normal text"
+        }
+      },
       "view_size_setting_status": {
         "name": "View size",
         "state": {
@@ -2948,9 +3026,6 @@
       },
       "anticrease_flag": {
         "name": "Anti-crease flag"
-      },
-      "anticrease_setting": {
-        "name": "Anti-crease duration"
       },
       "appcontrol_flag": {
         "name": "App control flag"
@@ -4186,9 +4261,6 @@
       },
       "extra_soft_hideflag": {
         "name": "Extra soft hide flag"
-      },
-      "extradry_setting": {
-        "name": "ExtraDry setting"
       },
       "extrarinsenum": {
         "name": "Extra rinse number"
@@ -6685,9 +6757,6 @@
       "sound_setting": {
         "name": "Sound setting"
       },
-      "sound_settings": {
-        "name": "Sound settings"
-      },
       "special_space": {
         "name": "Special space"
       },
@@ -8013,9 +8082,6 @@
       "washer_to_dryer_program_id": {
         "name": "Washer to dryer program ID"
       },
-      "washer_to_dryersetting_status": {
-        "name": "Washer to dryer setting status"
-      },
       "washer_to_dryerwizard_trigger_status": {
         "name": "Washer to dryer wizard trigger status"
       },
@@ -8400,10 +8466,16 @@
       "autotubclean": {
         "name": "Auto tub clean"
       },
+      "buzzer_setting": {
+        "name": "Buzzer"
+      },
       "child_lock": {
         "name": "Child lock"
       },
       "child_lock_setting_status": {
+        "name": "Child lock"
+      },
+      "child_lock_status": {
         "name": "Child lock"
       },
       "childlockenabled": {
@@ -8411,6 +8483,9 @@
       },
       "cleanairstatus": {
         "name": "Clean air"
+      },
+      "cleaning_reminder_setting": {
+        "name": "Cleaning reminder"
       },
       "coldwash": {
         "name": "Cold wash"
@@ -8432,6 +8507,9 @@
       },
       "dose_assist_status": {
         "name": "Dose assist"
+      },
+      "drum_illumination": {
+        "name": "Drum light"
       },
       "drum_light": {
         "name": "Drum light"
@@ -8459,6 +8537,9 @@
       },
       "heater2enable": {
         "name": "Auxiliary heater"
+      },
+      "heating_power_setting": {
+        "name": "Heating power"
       },
       "heatingsteps": {
         "name": "Heating steps"
@@ -8501,6 +8582,9 @@
       },
       "no_sound_status": {
         "name": "Mute"
+      },
+      "notification_setting": {
+        "name": "Notifications"
       },
       "odor_control_setting": {
         "name": "Odor control"
@@ -8552,6 +8636,9 @@
       },
       "showmeasuredtemperature": {
         "name": "Show measured temperature"
+      },
+      "smart_sync_setting": {
+        "name": "Smart sync"
       },
       "smart_sync_setting_status": {
         "name": "Smart sync"
@@ -8642,6 +8729,9 @@
       },
       "turbidity_sensor_setting_status": {
         "name": "Turbidity sensor"
+      },
+      "washer_to_dryersetting_status": {
+        "name": "Washer-to-dryer sync"
       },
       "welcome": {
         "name": "Welcome"

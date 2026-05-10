@@ -1,7 +1,24 @@
 # Tumble dryer
 properties:
+  - property: Actions
+    select:
+      options:
+        0: stop
+        1: start
+        2: pause
+        3: cancel
+        4: reset_programs_to_default
+        5: program_continue
+        6: production_test
   - property: AdaptTech_setting
     # Example value: 2
+  - property: Airing_program_Set_time
+    optional: true
+    number:
+      device_class: duration
+      unit: min
+      command:
+        name: Airing_program_Set_time_set
   - property: Alarm_1
     optional: true
     icon: mdi:tumble-dryer-alert
@@ -64,9 +81,17 @@ properties:
       device_class: problem
   - property: AntiCrease_setting
     # anti crease 1,2,3 hours
-    sensor:
-      device_class: duration
-      unit: h
+    unavailable: 0
+    select:
+      options:
+        1: "off"
+        2: 1_hour
+        3: 2_hours
+        4: 3_hours
+        5: 4_hours
+      command:
+        name: Selected_program_AntiCrease
+        adjust: 1
   - property: Appliance_status
     icon: mdi:tumble-dryer
     sensor:
@@ -75,6 +100,12 @@ properties:
         5: "off"
         6: idle
         7: running
+  - property: Brightness_setting
+    optional: true
+    entity_category: config
+    number:
+      command:
+        name: Brightness_setting_set
   - property: Bundling_Humidity
     sensor:
       device_class: humidity
@@ -89,8 +120,35 @@ properties:
       state_class: measurement
   - property: Bundling_sensor_setting_status
     # Example value: 0
+  - property: Buzzer_setting
+    optional: true
+    unavailable: 0
+    entity_category: config
+    switch:
+      "off": 1
+      "on": 2
+      command:
+        name: Buzzer_setting_set
+        adjust: 1
   - property: Child_Lock_status
-    binary_sensor:
+    unavailable: 0
+    entity_category: config
+    switch:
+      "off": 1
+      "on": 2
+      command:
+        name: Child_Lock
+        adjust: 1
+  - property: Cleaning_reminder_setting
+    optional: true
+    unavailable: 0
+    entity_category: config
+    switch:
+      "off": 1
+      "on": 2
+      command:
+        name: Cleaning_reminder_setting_set
+        adjust: 1
   - property: Condensed_watermode
     optional: true
   - property: Current_programphase
@@ -117,6 +175,16 @@ properties:
     sensor:
       device_class: duration
       unit: min
+  - property: Demo_mode
+    optional: true
+    unavailable: 0
+    entity_category: config
+    switch:
+      "off": 1
+      "on": 2
+      command:
+        name: Demo_mode_set
+        adjust: 1
   - property: Door_status
     unavailable: 0
     hide: true
@@ -126,6 +194,16 @@ properties:
       options:
         1: off
         2: on
+  - property: Drum_illumination
+    optional: true
+    unavailable: 0
+    entity_category: config
+    switch:
+      "off": 1
+      "on": 2
+      command:
+        name: Drum_illumination_set
+        adjust: 1
   - property: Error_0
     optional: true
     icon: mdi:tumble-dryer-alert
@@ -212,18 +290,65 @@ properties:
     binary_sensor:
       device_class: problem
   - property: ExtraDry_setting
-    sensor:
+    unavailable: 0
+    select:
+      options:
+        1: "off"
+        2: 5_min
+        3: 10_min
+        4: 15_min
+      command:
+        name: Selected_program_ExtraDry
+        adjust: 1
   - property: Float_switch
     binary_sensor:
   - property: Fota
     optional: true
+  - property: Fota_cmd
+    optional: true
+    switch: {}
   - property: HardPairingStatus
     optional: true
+  - property: Heating_power_setting
+    optional: true
+    unavailable: 0
+    entity_category: config
+    switch:
+      "off": 1
+      "on": 2
+      command:
+        name: Heating_power_setting_set
+        adjust: 1
   - property: Humidity_sensor
     binary_sensor:
     optional: true
+  - property: Language_setting
+    optional: true
+    unavailable: 0
+    entity_category: config
+    select:
+      options:
+        1: us_english
+        2: gb_english
+        3: au_english
+        4: norwegian
+        5: swedish_asko
+        6: swedish_cylinda
+      command:
+        name: Language_setting_set
+        adjust: 1
   - property: Logo_setting_status
     optional: true
+  - property: Notification_setting
+    optional: true
+    unavailable: 0
+    entity_category: config
+    switch:
+      "off": 1
+      "on": 2
+      command:
+        name: Notification_setting_set
+        adjust: 1
   - property: NTC_sensor_1
     optional: true
   - property: NTC_sensor_2
@@ -263,11 +388,44 @@ properties:
         13: extra_hygiene
         14: remote
         255: none
+  - property: Selected_program_Load
+    optional: true
+    unavailable: 0
+    select:
+      options:
+        1: light
+        2: medium
+        3: heavy
+      command:
+        name: Selected_program_Load_set
+  - property: Selected_program_mode2
+    optional: true
+    unavailable: 0
+    select:
+      options:
+        1: delicate
+        2: disinfection
+      command:
+        name: Selected_program_mode2_set
+        adjust: 1
   - property: Selected_program_SteamFinish
     binary_sensor:
-  - property: Selected_program_mode_status
+  - property: Selected_program_TimeDry_Set_Duration
     optional: true
+    number:
+      device_class: duration
+      unit: min
+  - property: Selected_program_mode_status
     # Example value: 1
+    unavailable: 0
+    select:
+      options:
+        1: normal
+        2: nature_dry
+        3: steam_tech
+      command:
+        name: Selected_program_mode
+        adjust: 1
   - property: Selected_programduration_inminutes
     sensor:
       device_class: duration
@@ -281,15 +439,55 @@ properties:
     optional: true
   - property: Session_pairing_setting
     optional: true
+  - property: Smart_sync_setting
+    optional: true
+    unavailable: 0
+    entity_category: config
+    switch:
+      "off": 1
+      "on": 2
+      command:
+        name: Smart_sync_setting_set
+        adjust: 1
   - property: Soft_pairing_setting
     optional: true
   - property: Sound_settings
     optional: true
     # Example value: 3
+    unavailable: 0
+    entity_category: config
+    select:
+      options:
+        1: '0'
+        2: '1'
+        3: '2'
+        4: '3'
+        5: '4'
+        6: '5'
+      command:
+        name: Sound_setting
+        adjust: 1
   - property: UTC_DateTime_BDC_DelayStart_DelayEnd_timestamp
     optional: true
     sensor:
       device_class: timestamp
+  - property: View_size_setting
+    optional: true
+    unavailable: 0
+    entity_category: config
+    select:
+      options:
+        1: normal_text
+        2: big_text
+      command:
+        name: View_size_setting_set
+        adjust: 1
+  - property: Volume_setting
+    optional: true
+    entity_category: config
+    number:
+      command:
+        name: Volume_setting_set
   - property: Washer_to_Dryer_available_for_hours_v
     hide: true
     # Example value: 1
@@ -299,6 +497,14 @@ properties:
   - property: Washer_to_Dryersetting_status
     optional: true
     # Example value: 0
+    unavailable: 0
+    entity_category: config
+    switch:
+      "off": 1
+      "on": 2
+      command:
+        name: Washer_to_Dryersetting
+        adjust: 1
   - property: Washer_to_dryerwizard_trigger_status
     optional: true
     # Example value: 1

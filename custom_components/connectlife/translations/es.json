@@ -181,9 +181,6 @@
       "child_lock": {
         "name": "Bloqueo ni\u00f1os"
       },
-      "child_lock_status": {
-        "name": "Bloqueo ni\u00f1os"
-      },
       "clean_filter": {
         "name": "Limpiar filtro"
       },
@@ -668,6 +665,9 @@
           "medium": "Media"
         }
       },
+      "anticrease_setting": {
+        "name": "Duraci\u00f3n anti arrugas"
+      },
       "auto_dose_quantity_setting_status": {
         "name": "Configuraci\u00f3n autom\u00e1tica de la cantidad de dosificador"
       },
@@ -688,6 +688,9 @@
           "pre-ironing": "Plancha",
           "wardrobe": "Armario"
         }
+      },
+      "extradry_setting": {
+        "name": "Configuraci\u00f3n extra-seco"
       },
       "feedback_volumen_setting_status": {
         "state": {
@@ -844,9 +847,6 @@
       }
     },
     "sensor": {
-      "anticrease_setting": {
-        "name": "Duraci\u00f3n anti arrugas"
-      },
       "appliance_status": {
         "state": {
           "idle": "Inactivo",
@@ -977,9 +977,6 @@
           "none": "Ninguno",
           "unbalance_alarm": "Alarma de desequilibrio"
         }
-      },
-      "extradry_setting": {
-        "name": "Configuraci\u00f3n extra-seco"
       },
       "f_cool_qvalue": {
         "name": "Enfriando"
@@ -1593,6 +1590,9 @@
       },
       "child_lock": {
         "name": "Bloqueo para ni\u00f1os"
+      },
+      "child_lock_status": {
+        "name": "Bloqueo ni\u00f1os"
       },
       "drum_light": {
         "name": "Luz tambor"

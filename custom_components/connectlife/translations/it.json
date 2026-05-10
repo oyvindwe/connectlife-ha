@@ -25,9 +25,6 @@
       "alarm_door_opened": {
         "name": "Porta aperta"
       },
-      "child_lock_status": {
-        "name": "Blocco bambini"
-      },
       "delaystart_delayend_mode": {
         "name": "Partenza ritardata"
       },
@@ -235,6 +232,9 @@
       }
     },
     "select": {
+      "anticrease_setting": {
+        "name": "Durata antipiega"
+      },
       "t_fan_speed": {
         "name": "Fan speed",
         "state": {
@@ -276,9 +276,6 @@
       }
     },
     "sensor": {
-      "anticrease_setting": {
-        "name": "Durata antipiega"
-      },
       "appliance_status": {
         "state": {
           "idle": "Idle",
@@ -604,6 +601,9 @@
       }
     },
     "switch": {
+      "child_lock_status": {
+        "name": "Blocco bambini"
+      },
       "t_air": {
         "name": "Air"
       },

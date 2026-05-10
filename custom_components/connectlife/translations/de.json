@@ -370,9 +370,6 @@
       "child_lock_open_door_sound_alarm": {
         "name": "T\u00fcrton-Alarm bei ge\u00f6ffneter Kindersicherung"
       },
-      "child_lock_status": {
-        "name": "Kindersicherung"
-      },
       "child_lock_status_status": {
         "name": "Kindersicherung"
       },
@@ -1196,6 +1193,12 @@
       }
     },
     "number": {
+      "airing_program_set_time": {
+        "name": "L\u00fcftungsdauer"
+      },
+      "brightness_setting": {
+        "name": "Helligkeit"
+      },
       "freeze_max_temperature": {
         "name": "Maximale Gefriertemperatur"
       },
@@ -1220,6 +1223,9 @@
       "refrigerator_temperature": {
         "name": "K\u00fchlschranktemperatur"
       },
+      "selected_program_timedry_set_duration": {
+        "name": "Zeitprogramm-Dauer"
+      },
       "variation_max_temperature": {
         "name": "Maximale Temperaturvariation"
       },
@@ -1228,6 +1234,9 @@
       },
       "variation_temperature": {
         "name": "Temperaturvariation"
+      },
+      "volume_setting": {
+        "name": "Lautst\u00e4rke"
       }
     },
     "select": {
@@ -1250,6 +1259,16 @@
           "high": "Hoch",
           "low": "Niedrig",
           "medium": "Mittel"
+        }
+      },
+      "anticrease_setting": {
+        "name": "Anti-Knitter-Dauer",
+        "state": {
+          "1_hour": "1 Stunde",
+          "2_hours": "2 Stunden",
+          "3_hours": "3 Stunden",
+          "4_hours": "4 Stunden",
+          "off": "Aus"
         }
       },
       "auto_dose_quantity_setting_status": {
@@ -1383,6 +1402,15 @@
           "wardrobe": "Schranktrocken"
         }
       },
+      "extradry_setting": {
+        "name": "ExtraTrocken",
+        "state": {
+          "10_min": "10 min",
+          "15_min": "15 min",
+          "5_min": "5 min",
+          "off": "Aus"
+        }
+      },
       "extrarinsenum": {
         "name": "Zus\u00e4tzliche Sp\u00fclg\u00e4nge",
         "state": {
@@ -1396,6 +1424,17 @@
           "low": "Niedrig",
           "mid": "Mittel",
           "mute": "Stumm"
+        }
+      },
+      "language_setting": {
+        "name": "Sprache",
+        "state": {
+          "au_english": "Englisch (AU)",
+          "gb_english": "Englisch (GB)",
+          "norwegian": "Norwegisch",
+          "swedish_asko": "Schwedisch (ASKO)",
+          "swedish_cylinda": "Schwedisch (Cylinda)",
+          "us_english": "Englisch (US)"
         }
       },
       "language_status": {
@@ -1538,6 +1577,14 @@
           "wool_manual": "Wolle & Manuell"
         }
       },
+      "selected_program_load": {
+        "name": "Beladung",
+        "state": {
+          "heavy": "Schwer",
+          "light": "Leicht",
+          "medium": "Mittel"
+        }
+      },
       "selected_program_mode": {
         "name": "Programm Modus",
         "state": {
@@ -1545,6 +1592,13 @@
           "night": "Nacht",
           "normal": "Normal",
           "speed": "Schnell"
+        }
+      },
+      "selected_program_mode2": {
+        "name": "Spezialmodus",
+        "state": {
+          "delicate": "Schonend",
+          "disinfection": "Desinfektion"
         }
       },
       "selected_program_mode2_status": {
@@ -1559,7 +1613,9 @@
         "name": "Programm Modus",
         "state": {
           "intensive": "Intensiv",
+          "nature_dry": "NatureDry",
           "normal": "Normal",
+          "steam_tech": "SteamTech",
           "time_care_1": "Time Care 1",
           "time_care_2": "Time Care 2"
         }
@@ -1616,6 +1672,17 @@
           "1": "1",
           "2": "2",
           "3": "3"
+        }
+      },
+      "sound_settings": {
+        "name": "Tonstufe",
+        "state": {
+          "0": "0",
+          "1": "1",
+          "2": "2",
+          "3": "3",
+          "4": "4",
+          "5": "5"
         }
       },
       "spin_speed_rpm": {
@@ -1827,6 +1894,9 @@
           "metric": "Metrisch"
         }
       },
+      "view_size_setting": {
+        "name": "Anzeigegr\u00f6\u00dfe"
+      },
       "view_size_setting_status": {
         "name": "Anzeigegr\u00f6\u00dfe",
         "state": {
@@ -1868,9 +1938,6 @@
     "sensor": {
       "almost_finished_notification_settingtimer_in_minutes": {
         "name": "Bald-fertig-Benachrichtigung Timer"
-      },
-      "anticrease_setting": {
-        "name": "Anti-Knitter-Dauer"
       },
       "appliance_status": {
         "state": {
@@ -2096,9 +2163,6 @@
       },
       "error_read_out_3_cycle": {
         "name": "Fehlerzyklus 3 auslesen"
-      },
-      "extradry_setting": {
-        "name": "ExtraTrocken-Einstellung"
       },
       "f_cool_qvalue": {
         "name": "K\u00fchlung"
@@ -3608,8 +3672,17 @@
       "autotubclean": {
         "name": "Automatische Trommelreinigung"
       },
+      "buzzer_setting": {
+        "name": "Summer"
+      },
       "child_lock": {
         "name": "Kindersicherung"
+      },
+      "child_lock_status": {
+        "name": "Kindersicherung"
+      },
+      "cleaning_reminder_setting": {
+        "name": "Reinigungserinnerung"
       },
       "crisp_function_status": {
         "name": "Knusperfunktion Status"
@@ -3619,6 +3692,9 @@
       },
       "display_standby": {
         "name": "Display Standby"
+      },
+      "drum_illumination": {
+        "name": "Trommellicht"
       },
       "drum_light": {
         "name": "Trommelbeleuchtung"
@@ -3631,6 +3707,9 @@
       },
       "fota_cmd": {
         "name": "Firmwareaktualisierung"
+      },
+      "heating_power_setting": {
+        "name": "Heizleistung"
       },
       "hide_setting": {
         "name": "Einstellung ausblenden"
@@ -3665,6 +3744,9 @@
       "no_sound_status": {
         "name": "Stumm"
       },
+      "notification_setting": {
+        "name": "Benachrichtigungen"
+      },
       "odor_control_setting": {
         "name": "Geruchskontrolle"
       },
@@ -3691,6 +3773,9 @@
       },
       "sf_sr_mutex_mode": {
         "name": "SF-SR-Mutex-Modus"
+      },
+      "smart_sync_setting": {
+        "name": "Smart Sync"
       },
       "sr_mode": {
         "name": "SR-Modus"
@@ -3739,6 +3824,9 @@
       },
       "time_save": {
         "name": "Zeitsparen"
+      },
+      "washer_to_dryersetting_status": {
+        "name": "W\u00e4scher-zu-Trockner-Sync"
       },
       "welcome": {
         "name": "Willkommen"
