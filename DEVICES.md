@@ -2,6 +2,7 @@
 | Device name              | Device type              | Device type code | Device feature code         |
 |--------------------------|--------------------------|------------------|-----------------------------|
 | ASKO Pro Washing Machine | Washing machine          | 003              | 000                         |
+| ASKO Pro Tumble Dryer    | Tumble dryer             | 004              | 000                         |
 | AP10TW1RLR-N             | Portable air conditioner | 006              | 200                         |
 |                          | Portable air conditioner | 006              | 201                         |
 |                          | Portable air conditioner | 006              | 202                         |

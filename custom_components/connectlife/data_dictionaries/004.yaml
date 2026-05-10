@@ -1,0 +1,631 @@
+# Tumble dryer
+properties:
+  - property: ACTION
+    disable: true
+  - property: AlarmCleanCondense
+    icon: mdi:filter-variant-remove
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: AlarmCleanCondenserFilter
+    icon: mdi:filter-variant-remove
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: AlarmCleanDoorFilter
+    icon: mdi:filter-variant-remove
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: AlarmCloseTheDoorWarning
+    icon: mdi:door-open
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: AlarmFullTank
+    icon: mdi:water-alert
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: AlarmPowerFail
+    icon: mdi:power-plug-off
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: AlarmProgramFinished
+    icon: mdi:bell-check
+    binary_sensor:
+      options:
+        0: false
+        1: true
+  - property: AlramEmptyWaterTank
+    icon: mdi:water-alert
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: BlockDetailedProgramView
+    optional: true
+    entity_category: diagnostic
+  - property: BookAvailableTime
+    optional: true
+    entity_category: diagnostic
+  - property: BookReservedTime
+    optional: true
+    entity_category: diagnostic
+  - property: BookTimeToEndReservation
+    optional: true
+    entity_category: diagnostic
+  - property: Booking
+    optional: true
+    entity_category: diagnostic
+  - property: ChildLockActive
+    icon: mdi:lock
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      options:
+        0: false
+        1: true
+  - property: ChildLockEnabled
+    icon: mdi:lock
+    entity_category: config
+    switch:
+      "off": 0
+      "on": 1
+  - property: CleanCondenseFilter
+    icon: mdi:filter-variant
+    optional: true
+    entity_category: diagnostic
+    sensor:
+  - property: CleanDoorFilter
+    icon: mdi:filter-variant
+    optional: true
+    entity_category: diagnostic
+    sensor:
+  - property: CondenseWaterMode
+    icon: mdi:water-pump
+    entity_category: config
+    select:
+      options:
+        0: tank
+        1: drain
+      command:
+        name: CondenseWaterModeSet
+  - property: CondenseWaterModeSet
+    disable: true
+  - property: DemoMode
+    optional: true
+    entity_category: diagnostic
+  - property: DeviceStatus
+    icon: mdi:tumble-dryer
+    sensor:
+      read_only: true
+      device_class: enum
+      options:
+        0: program_select
+        1: running
+        2: pause
+        3: service
+        4: production
+        5: error
+        6: standby
+        7: program_finished
+  - property: DisplayBrightness
+    icon: mdi:brightness-6
+    entity_category: config
+    select:
+      options:
+        0: level_1
+        1: level_2
+        2: level_3
+        3: level_4
+        4: level_5
+  - property: DisplayLogo
+    optional: true
+    entity_category: diagnostic
+  - property: DoorStatus
+    icon: mdi:door
+    binary_sensor:
+      device_class: door
+      options:
+        0: false
+        1: true
+  - property: EmptyWaterTank
+    icon: mdi:water
+    optional: true
+    entity_category: diagnostic
+    sensor:
+  - property: Error0
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error1
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error2
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error3
+    # Pump float failure
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error4
+    # Dirty filter, no airflow
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error5
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error6
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error7
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error8
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error9
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error10
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error11
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error12
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error13
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error14
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error15
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: FailureReadOut1
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut1LastCycle
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut1NumberOfRepetiotion
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut2
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut2LastCycle
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut2NumberOfRepetiotion
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut3
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut3LastCycle
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut3NumberOfRepetiotion
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut4
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut4LastCycle
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut4NumberOfRepetiotion
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut5
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut5LastCycle
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut5NumberOfRepetiotion
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut6
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut6LastCycle
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut6NumberOfRepetiotion
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut7
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut7LastCycle
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut7NumberOfRepetiotion
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut8
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut8LastCycle
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut8NumberOfRepetiotion
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut9
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut9LastCycle
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut9NumberOfRepetiotion
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut10
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut10LastCycle
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut10NumberOfRepetiotion
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut11
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut11NumberOfRepetiotion
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut12
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut12NumberOfRepetiotion
+    icon: mdi:tumble-dryer-alert
+    optional: true
+    entity_category: diagnostic
+  - property: HardPairingStatus
+    optional: true
+    entity_category: diagnostic
+  - property: Heater2Enable
+    icon: mdi:radiator
+    entity_category: config
+    switch:
+  - property: HumiditySensor
+    icon: mdi:water-percent
+    optional: true
+    entity_category: diagnostic
+    sensor:
+      device_class: humidity
+      unit: "%"
+      state_class: measurement
+  - property: IDMachine
+    optional: true
+    entity_category: diagnostic
+  - property: Identified
+    optional: true
+    entity_category: diagnostic
+  - property: Language
+    optional: true
+    entity_category: diagnostic
+  - property: PPUOnlineCoinSystem
+    optional: true
+    entity_category: diagnostic
+  - property: PPURECIPSS
+    optional: true
+    entity_category: diagnostic
+  - property: PPUWashEnabled
+    optional: true
+    entity_category: diagnostic
+  - property: PaidByCoinBoxOrEADBS
+    optional: true
+    entity_category: diagnostic
+  - property: ParseLibVersion
+    disable: true
+  - property: PaymentEnabledTimer
+    optional: true
+    entity_category: diagnostic
+  - property: PaymentSystem
+    optional: true
+    entity_category: diagnostic
+  - property: ProgramOptionAnticrease
+    icon: mdi:iron
+    switch:
+  - property: ProgramTimesStartDelayHours
+    icon: mdi:timer
+    number:
+      min_value: 0
+      max_value: 24
+      device_class: duration
+      unit: h
+  - property: RemoteControlMode
+    optional: true
+    entity_category: diagnostic
+  - property: RemoteStartDuration
+    optional: true
+    entity_category: diagnostic
+    sensor:
+      device_class: duration
+      unit: min
+  - property: RemoteStartEnabled
+    optional: true
+    entity_category: diagnostic
+  - property: SelectedBasicID
+    optional: true
+    entity_category: diagnostic
+  - property: SelectedDerivedID
+    optional: true
+    entity_category: diagnostic
+  - property: SelectedProgram
+    icon: mdi:tumble-dryer
+    sensor:
+      read_only: true
+  - property: SessionPairingActive
+    optional: true
+    entity_category: diagnostic
+  - property: SessionPairingConfirmation
+    optional: true
+    entity_category: diagnostic
+  - property: SessionPairingRequest
+    optional: true
+    entity_category: diagnostic
+  - property: SessionPairingSetting
+    optional: true
+    entity_category: diagnostic
+  - property: SoftPairingSetting
+    optional: true
+    entity_category: diagnostic
+  - property: StandbyChoice
+    optional: true
+    entity_category: diagnostic
+  - property: StartDelayFunction
+    icon: mdi:timer-play
+    entity_category: config
+    switch:
+  - property: TemperatureSensor1
+    icon: mdi:thermometer
+    optional: true
+    entity_category: diagnostic
+    sensor:
+      device_class: temperature
+      unit: °C
+      state_class: measurement
+  - property: TemperatureSensor2
+    icon: mdi:thermometer
+    optional: true
+    entity_category: diagnostic
+    sensor:
+      device_class: temperature
+      unit: °C
+      state_class: measurement
+  - property: TemporaryLanguageSelected
+    optional: true
+    entity_category: diagnostic
+  - property: TemporaryLanguageSettingEnabled
+    optional: true
+    entity_category: diagnostic
+  - property: TimeIconSetting
+    icon: mdi:clock-digital
+    entity_category: config
+    select:
+      options:
+        0: time
+        1: icon
+  - property: TimeRemaining
+    icon: mdi:clock-end
+    sensor:
+      read_only: true
+      device_class: duration
+      unit: min
+  - property: TotalProgramsCycles
+    icon: mdi:counter
+    sensor:
+      read_only: true
+      state_class: total_increasing
+  - property: Volume
+    icon: mdi:volume-high
+    entity_category: config
+    select:
+      options:
+        0: "off"
+        1: level_1
+        2: level_2
+        3: level_3
+        4: level_4
+        5: level_5
+  - property: reserved8
+    disable: true
+  - property: reserved9
+    disable: true
+  - property: reserved14
+    disable: true
+  - property: reserved18
+    disable: true
+  - property: reserved20
+    disable: true
+  - property: reserved83
+    disable: true
+  - property: reserved105
+    disable: true
+  - property: reserved106
+    disable: true
+  - property: reserved107
+    disable: true
+  - property: reserved110
+    disable: true
+  - property: reserved111
+    disable: true
+  - property: reserved112
+    disable: true
+  - property: reserved113
+    disable: true
+  - property: reserved114
+    disable: true
+  - property: reserved115
+    disable: true
+  - property: reserved116
+    disable: true
+  - property: reserved117
+    disable: true
+  - property: reserved118
+    disable: true
+  - property: reserved128
+    disable: true
+  - property: reserved129
+    disable: true
+  - property: reserved130
+    disable: true

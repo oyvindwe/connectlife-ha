@@ -294,11 +294,23 @@
       "alarmcleanairended": {
         "name": "Alarm clean air ended"
       },
+      "alarmcleancondense": {
+        "name": "Clean condenser"
+      },
+      "alarmcleancondenserfilter": {
+        "name": "Clean condenser filter"
+      },
+      "alarmcleandoorfilter": {
+        "name": "Clean door filter"
+      },
       "alarmcleanfilterwarning": {
         "name": "Clean filter"
       },
       "alarmcleantank": {
         "name": "Alarm clean tank"
+      },
+      "alarmclosethedoorwarning": {
+        "name": "Door not closed"
       },
       "alarmdehydrate_ended": {
         "name": "Alarm dehydrate ended"
@@ -330,6 +342,9 @@
       "alarmfoamdetection": {
         "name": "Foam detected"
       },
+      "alarmfulltank": {
+        "name": "Water tank full"
+      },
       "alarmgreasefilter": {
         "name": "Alarm grease filter"
       },
@@ -354,11 +369,17 @@
       "alarmpower_failure_running": {
         "name": "Alarmpower failure running"
       },
+      "alarmpowerfail": {
+        "name": "Power failure"
+      },
       "alarmpowerfailalert": {
         "name": "Power failure"
       },
       "alarmprobe_lost_connection": {
         "name": "Alarmprobe lost connection"
+      },
+      "alarmprogramfinished": {
+        "name": "Program finished"
       },
       "alarmrecirculationfilter1": {
         "name": "Alarm recirculation filter 1"
@@ -404,6 +425,9 @@
       },
       "ali_wifi_fault_flag": {
         "name": "WiFi fault"
+      },
+      "alramemptywatertank": {
+        "name": "Empty water tank"
       },
       "auto_boost": {
         "name": "Auto boost"
@@ -557,6 +581,9 @@
       },
       "error13_3": {
         "name": "Error 13 3"
+      },
+      "error14": {
+        "name": "Error 14"
       },
       "error15": {
         "name": "Error 15"
@@ -1930,6 +1957,9 @@
       "programoptiontimestartdelayhour": {
         "name": "Start delay hours"
       },
+      "programtimesstartdelayhours": {
+        "name": "Start delay hours"
+      },
       "refrigerator_max_temperature": {
         "name": "Refrigerator max temperature"
       },
@@ -1994,6 +2024,13 @@
           "level_5": "Level 5"
         }
       },
+      "condensewatermode": {
+        "name": "Condense water mode",
+        "state": {
+          "drain": "Drain",
+          "tank": "Tank"
+        }
+      },
       "cooking_intensity": {
         "name": "Cooking intensity"
       },
@@ -2035,6 +2072,16 @@
           "more": "More",
           "off": "Off",
           "standard": "Standard"
+        }
+      },
+      "displaybrightness": {
+        "name": "Display brightness",
+        "state": {
+          "level_1": "Level 1",
+          "level_2": "Level 2",
+          "level_3": "Level 3",
+          "level_4": "Level 4",
+          "level_5": "Level 5"
         }
       },
       "drain": {
@@ -2972,6 +3019,12 @@
           "reserved": "Reserved"
         }
       },
+      "cleancondensefilter": {
+        "name": "Clean condenser filter"
+      },
+      "cleandoorfilter": {
+        "name": "Clean door filter"
+      },
       "coldwash": {
         "name": "Cold wash"
       },
@@ -3330,6 +3383,7 @@
       "devicestatus": {
         "name": "Device status",
         "state": {
+          "error": "Error",
           "idle": "Idle",
           "not_available": "Not available",
           "pause": "Pause",
@@ -3381,6 +3435,9 @@
       },
       "displaycontrast_setting": {
         "name": "Display contrast setting"
+      },
+      "displaylogo": {
+        "name": "Display logo"
       },
       "door_close_light_status": {
         "name": "Door close light status"
@@ -3595,6 +3652,9 @@
       },
       "electricit_consumption": {
         "name": "Electricity consumption"
+      },
+      "emptywatertank": {
+        "name": "Empty water tank"
       },
       "energy": {
         "name": "Energy"
@@ -4055,6 +4115,18 @@
       "failurereadout10numberofrepetiotion": {
         "name": "Failure 10 repetitions"
       },
+      "failurereadout11": {
+        "name": "Failure 11"
+      },
+      "failurereadout11numberofrepetiotion": {
+        "name": "Failure 11 repetitions"
+      },
+      "failurereadout12": {
+        "name": "Failure 12"
+      },
+      "failurereadout12numberofrepetiotion": {
+        "name": "Failure 12 repetitions"
+      },
       "failurereadout1lastcycle": {
         "name": "Failure 1 last cycle"
       },
@@ -4404,6 +4476,9 @@
       "humdy_test_switch_state": {
         "name": "Humidity test switch state"
       },
+      "humiditysensor": {
+        "name": "Humidity sensor"
+      },
       "ice_machine_actual_temp": {
         "name": "Ice machine actual temperature"
       },
@@ -4439,6 +4514,9 @@
       },
       "identified": {
         "name": "Identified"
+      },
+      "idmachine": {
+        "name": "Machine ID"
       },
       "inactivity_timeout": {
         "name": "Inactivity timeout"
@@ -4778,6 +4856,9 @@
       },
       "paidbycoinbox": {
         "name": "Paid by coin box"
+      },
+      "paidbycoinboxoreadbs": {
+        "name": "Paid by coin box / EADBS"
       },
       "pairing": {
         "name": "Pairing"
@@ -7680,6 +7761,12 @@
       "temperature_unit_status": {
         "name": "Temperature unit status"
       },
+      "temperaturesensor1": {
+        "name": "Temperature sensor 1"
+      },
+      "temperaturesensor2": {
+        "name": "Temperature sensor 2"
+      },
       "temperatureunit": {
         "name": "Temperature unit",
         "state": {
@@ -7725,6 +7812,9 @@
       },
       "timedateautomatic_setting": {
         "name": "Time date automatic setting"
+      },
+      "timeremaining": {
+        "name": "Time remaining"
       },
       "timerendtime": {
         "name": "Timer end time"
@@ -7790,6 +7880,9 @@
         "name": "Total water consumption"
       },
       "totalprogramcycles": {
+        "name": "Total program cycles"
+      },
+      "totalprogramscycles": {
         "name": "Total program cycles"
       },
       "turbidity_sensor_setting_status": {
@@ -8284,6 +8377,9 @@
       "fota_cmd": {
         "name": "Firmware update"
       },
+      "heater2enable": {
+        "name": "Auxiliary heater"
+      },
       "heatingsteps": {
         "name": "Heating steps"
       },
@@ -8322,6 +8418,9 @@
       },
       "prewash": {
         "name": "Prewash"
+      },
+      "programoptionanticrease": {
+        "name": "Anti-crease"
       },
       "save_mode": {
         "name": "Save mode"
