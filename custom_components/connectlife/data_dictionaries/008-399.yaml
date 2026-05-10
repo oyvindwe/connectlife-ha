@@ -7,8 +7,3 @@ properties:
         5: low
         7: medium
         9: high
-  - property: t_temp
-    climate:
-      max_value:
-        celsius: 30
-        fahrenheit: 86

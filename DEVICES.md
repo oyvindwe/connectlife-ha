@@ -7,8 +7,18 @@
 |                      | Portable air conditioner | 006              | 203                    |
 |                      | Dehumidifier             | 007              | 400                    |
 |                      | Dehumidifier             | 007              | 406                    |
+|                      | Air conditioner          | 008              | 300                    |
 |                      | Air conditioner          | 008              | 301                    |
+|                      | Air conditioner          | 008              | 302                    |
+|                      | Air conditioner          | 008              | 303                    |
 |                      | Air conditioner          | 008              | 304                    |
+|                      | Air conditioner          | 008              | 305                    |
+|                      | Air conditioner          | 008              | 306                    |
+|                      | Air conditioner          | 008              | 307                    |
+|                      | Air conditioner          | 008              | 308                    |
+|                      | Air conditioner          | 008              | 309                    |
+|                      | Air conditioner          | 008              | 310                    |
+|                      | Air conditioner          | 008              | 311                    |
 | AWUS1225TW           | Air conditioner          | 008              | 399                    |
 |                      | Air conditioner          | 009              | 100                    |
 |                      | Air conditioner          | 009              | 101                    |
