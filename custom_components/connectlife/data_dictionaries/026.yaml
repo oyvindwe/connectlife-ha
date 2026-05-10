@@ -352,6 +352,8 @@ properties:
       unit: °C
       min_value: -30
       max_value: -5
+      command:
+        name: SET_FREEZE_TEMPERATURE
   - property: freezing_powerdown_temp_alarm
     optional: true
   - property: frize_temp_2_degree_above_starting_point
@@ -903,6 +905,8 @@ properties:
       unit: °C
       min_value: 0
       max_value: 8
+      command:
+        name: SET_REFRIGERATOR_TEMPERATURE
   - property: refrigerator_var_room_sens_failure
     hide: true
     entity_category: diagnostic
@@ -982,7 +986,9 @@ properties:
         1: true
   - property: save_mode
     entity_category: config
-    switch: {}
+    switch:
+      command:
+        name: SET_SAVE_MODE
   - property: screen_display_brightness
     optional: true
   - property: screen_display_lock
@@ -1003,7 +1009,9 @@ properties:
     optional: true
   - property: sf_mode
     entity_category: config
-    switch: {}
+    switch:
+      command:
+        name: SET_SF_MODE
   - property: sf_sr_mutex_mode
     optional: true
   - property: shelf_light_a_state
@@ -1028,7 +1036,9 @@ properties:
     optional: true
   - property: sr_mode
     entity_category: config
-    switch: {}
+    switch:
+      command:
+        name: SET_SR_MODE
   - property: standby_mode_state
     optional: true
   - property: standby_mode_valid
