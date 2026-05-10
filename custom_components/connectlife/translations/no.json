@@ -807,9 +807,6 @@
       "light": {
         "name": "Lys"
       },
-      "lightstatus": {
-        "name": "Lysstatus"
-      },
       "lock_fresh_mode": {
         "name": "Ferskl\u00e5smodus"
       },
@@ -1684,6 +1681,9 @@
       "gratin_function_set_time_in_seconds": {
         "name": "Innstilt tid for gratineringsfunksjon"
       },
+      "greasefiltersetlifetimeinhours": {
+        "name": "Fettfilterlevetid"
+      },
       "refrigerator_max_temperature": {
         "name": "Maks kj\u00f8leskapstemperatur"
       },
@@ -1740,6 +1740,13 @@
       },
       "brightness": {
         "name": "Lysstyrke"
+      },
+      "circulationmodestatus": {
+        "name": "Sirkulasjonsmodus",
+        "state": {
+          "exhaust": "Avtrekk",
+          "recirculation": "Resirkulering"
+        }
       },
       "cooking_intensity": {
         "name": "Kokeintensitet"
@@ -1826,6 +1833,13 @@
           "low": "Lav",
           "mid": "Middels",
           "mute": "Lydl\u00f8s"
+        }
+      },
+      "greasefilterresetcounter": {
+        "name": "Tilbakestill fettfiltertelling",
+        "state": {
+          "not_active": "Ikke aktiv",
+          "reset": "Tilbakestill"
         }
       },
       "language_status": {
@@ -2210,6 +2224,15 @@
           "not_set": "Ikke satt"
         }
       },
+      "timersetting": {
+        "name": "Timerhandling",
+        "state": {
+          "not_active": "Ikke aktiv",
+          "pause": "Pause",
+          "start": "Start",
+          "stop": "Stopp"
+        }
+      },
       "volume": {
         "name": "Volum"
       },
@@ -2241,31 +2264,8 @@
       "activemodelightcolortemperature": {
         "name": "Fargetemperatur i aktiv modus"
       },
-      "activemodelightstatus": {
-        "name": "Lysstatus i aktiv modus",
-        "state": {
-          "not_available": "Ikke tilgjengelig",
-          "reserved": "Reservert"
-        }
-      },
       "activemodemotorlevel": {
         "name": "Motorniv\u00e5 i aktiv modus"
-      },
-      "activemodemotorlevelstatus": {
-        "name": "Status for motorniv\u00e5 i aktiv modus",
-        "state": {
-          "not_available": "Ikke tilgjengelig",
-          "reserved": "Reservert"
-        }
-      },
-      "activemodestatus": {
-        "name": "Aktiv modus-status",
-        "state": {
-          "active": "Aktiv",
-          "not_active": "Ikke aktiv",
-          "not_available": "Ikke tilgjengelig",
-          "reserved": "Reservert"
-        }
       },
       "adapt_sense_setting_status": {
         "name": "Status for tilpasset sansing"
@@ -2404,13 +2404,6 @@
       },
       "ambientlightcolortemperature": {
         "name": "Fargetemperatur for omgivelseslys"
-      },
-      "ambientlightstatus": {
-        "name": "Status for omgivelseslys",
-        "state": {
-          "not_available": "Ikke tilgjengelig",
-          "reserved": "Reservert"
-        }
       },
       "ancreae_mux": {
         "name": "An creae mux"
@@ -2612,15 +2605,6 @@
       "circulation_mode": {
         "name": "Sirkulasjonsmodus"
       },
-      "circulationmodestatus": {
-        "name": "Status for sirkulasjonsmodus",
-        "state": {
-          "exhaust": "Avtrekk",
-          "not_available": "Ikke tilgjengelig",
-          "recirculation": "Resirkulering",
-          "reserved": "Reservert"
-        }
-      },
       "clean_mode_switch_status": {
         "name": "Bryterstatus for rensmodus"
       },
@@ -2641,15 +2625,6 @@
       },
       "cleanairstarttime": {
         "name": "Starttid for ren luft"
-      },
-      "cleanairstatus": {
-        "name": "Status for ren luft",
-        "state": {
-          "active": "Aktiv",
-          "not_active": "Ikke aktiv",
-          "not_available": "Ikke tilgjengelig",
-          "reserved": "Reservert"
-        }
       },
       "coldwash": {
         "name": "Kaldvask"
@@ -3840,15 +3815,6 @@
       "greasefiltercleaningintervalinhours": {
         "name": "Rengj\u00f8ringsintervall for fettfilter (timer)"
       },
-      "greasefilterstatus": {
-        "name": "Status for fettfilter",
-        "state": {
-          "active": "Aktiv",
-          "not_active": "Ikke aktiv",
-          "not_available": "Ikke tilgjengelig",
-          "reserved": "Reservert"
-        }
-      },
       "greasefilterusedhours": {
         "name": "Brukte timer for fettfilter"
       },
@@ -4421,15 +4387,6 @@
       },
       "proximitysensorsensitivity": {
         "name": "F\u00f8lsomhet for n\u00e6rhetssensor"
-      },
-      "proximitysensorstatus": {
-        "name": "Status for n\u00e6rhetssensor",
-        "state": {
-          "active": "Aktiv",
-          "not_active": "Ikke aktiv",
-          "not_available": "Ikke tilgjengelig",
-          "reserved": "Reservert"
-        }
       },
       "pumcleanflag": {
         "name": "Pumperensflagg"
@@ -7668,8 +7625,20 @@
       }
     },
     "switch": {
+      "activemodelightstatus": {
+        "name": "Lys i aktiv modus"
+      },
+      "activemodemotorlevelstatus": {
+        "name": "Motor i aktiv modus"
+      },
+      "activemodestatus": {
+        "name": "Aktiv modus"
+      },
       "adaptive_sense_setting": {
         "name": "Adaptiv sansingsinnstilling"
+      },
+      "ambientlightstatus": {
+        "name": "Omgivelseslys"
       },
       "anticrease": {
         "name": "Anti-kr\u00f8ll"
@@ -7716,6 +7685,9 @@
       "child_lock": {
         "name": "Barnesikring"
       },
+      "cleanairstatus": {
+        "name": "Ren luft"
+      },
       "crisp_function_status": {
         "name": "Status for spr\u00f8-funksjon"
       },
@@ -7733,6 +7705,9 @@
       },
       "fota_cmd": {
         "name": "Fastvareoppdatering"
+      },
+      "greasefilterstatus": {
+        "name": "Fettfiltertimer"
       },
       "hide_setting": {
         "name": "Skjul innstilling"
@@ -7755,6 +7730,9 @@
       "key_sound": {
         "name": "Tastelyd"
       },
+      "lightstatus": {
+        "name": "Lys"
+      },
       "mute": {
         "name": "Lydl\u00f8s"
       },
@@ -7769,6 +7747,12 @@
       },
       "prewash": {
         "name": "Forvask"
+      },
+      "proximitysensorsetavalibility": {
+        "name": "N\u00e6rhetssensor tilgjengelig"
+      },
+      "proximitysensorstatus": {
+        "name": "N\u00e6rhetssensor"
       },
       "save_mode": {
         "name": "Sparemodus"

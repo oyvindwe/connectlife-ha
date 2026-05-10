@@ -807,9 +807,6 @@
       "light": {
         "name": "Verlichting"
       },
-      "lightstatus": {
-        "name": "Verlichting status"
-      },
       "lock_fresh_mode": {
         "name": "Vershoudmodus vergrendeling"
       },
@@ -1684,6 +1681,9 @@
       "gratin_function_set_time_in_seconds": {
         "name": "Gratin-instellingstijd"
       },
+      "greasefiltersetlifetimeinhours": {
+        "name": "Vetfilter levensduur"
+      },
       "refrigerator_max_temperature": {
         "name": "Koelkast max temperatuur"
       },
@@ -1740,6 +1740,13 @@
       },
       "brightness": {
         "name": "Helderheid"
+      },
+      "circulationmodestatus": {
+        "name": "Circulatiemodus",
+        "state": {
+          "exhaust": "Afvoer",
+          "recirculation": "Recirculatie"
+        }
       },
       "cooking_intensity": {
         "name": "Kookintensiteit"
@@ -1826,6 +1833,13 @@
           "low": "Laag",
           "mid": "Midden",
           "mute": "Stil"
+        }
+      },
+      "greasefilterresetcounter": {
+        "name": "Vetfiltertelling resetten",
+        "state": {
+          "not_active": "Niet actief",
+          "reset": "Resetten"
         }
       },
       "language_status": {
@@ -2210,6 +2224,15 @@
           "not_set": "Niet ingesteld"
         }
       },
+      "timersetting": {
+        "name": "Timeractie",
+        "state": {
+          "not_active": "Niet actief",
+          "pause": "Pauze",
+          "start": "Start",
+          "stop": "Stop"
+        }
+      },
       "volume": {
         "name": "Volume"
       },
@@ -2241,31 +2264,8 @@
       "activemodelightcolortemperature": {
         "name": "Kleurtemperatuur verlichting actieve modus"
       },
-      "activemodelightstatus": {
-        "name": "Status verlichting actieve modus",
-        "state": {
-          "not_available": "Niet beschikbaar",
-          "reserved": "Gereserveerd"
-        }
-      },
       "activemodemotorlevel": {
         "name": "Motorniveau actieve modus"
-      },
-      "activemodemotorlevelstatus": {
-        "name": "Status motorniveau actieve modus",
-        "state": {
-          "not_available": "Niet beschikbaar",
-          "reserved": "Gereserveerd"
-        }
-      },
-      "activemodestatus": {
-        "name": "Actieve modus",
-        "state": {
-          "active": "Actief",
-          "not_active": "Niet actief",
-          "not_available": "Niet beschikbaar",
-          "reserved": "Gereserveerd"
-        }
       },
       "adapt_sense_setting_status": {
         "name": "Adapt Sense-instelling"
@@ -2404,13 +2404,6 @@
       },
       "ambientlightcolortemperature": {
         "name": "Kleurtemperatuur sfeerverlichting"
-      },
-      "ambientlightstatus": {
-        "name": "Sfeerverlichting status",
-        "state": {
-          "not_available": "Niet beschikbaar",
-          "reserved": "Gereserveerd"
-        }
       },
       "ancreae_mux": {
         "name": "An creae mux"
@@ -2612,15 +2605,6 @@
       "circulation_mode": {
         "name": "Circulatiemodus"
       },
-      "circulationmodestatus": {
-        "name": "Circulatiemodus status",
-        "state": {
-          "exhaust": "Afvoer",
-          "not_available": "Niet beschikbaar",
-          "recirculation": "Recirculatie",
-          "reserved": "Gereserveerd"
-        }
-      },
       "clean_mode_switch_status": {
         "name": "Reinigingsmodus schakelaar status"
       },
@@ -2641,15 +2625,6 @@
       },
       "cleanairstarttime": {
         "name": "Starttijd schone lucht"
-      },
-      "cleanairstatus": {
-        "name": "Status schone lucht",
-        "state": {
-          "active": "Actief",
-          "not_active": "Niet actief",
-          "not_available": "Niet beschikbaar",
-          "reserved": "Gereserveerd"
-        }
       },
       "coldwash": {
         "name": "Koude was"
@@ -3840,15 +3815,6 @@
       "greasefiltercleaningintervalinhours": {
         "name": "Vetfilter reinigingsinterval in uren"
       },
-      "greasefilterstatus": {
-        "name": "Vetfilter status",
-        "state": {
-          "active": "Actief",
-          "not_active": "Niet actief",
-          "not_available": "Niet beschikbaar",
-          "reserved": "Gereserveerd"
-        }
-      },
       "greasefilterusedhours": {
         "name": "Vetfilter gebruikte uren"
       },
@@ -4421,15 +4387,6 @@
       },
       "proximitysensorsensitivity": {
         "name": "Nabijheidssensor gevoeligheid"
-      },
-      "proximitysensorstatus": {
-        "name": "Nabijheidssensor status",
-        "state": {
-          "active": "Actief",
-          "not_active": "Niet actief",
-          "not_available": "Niet beschikbaar",
-          "reserved": "Gereserveerd"
-        }
       },
       "pumcleanflag": {
         "name": "Pomp schoonmaken"
@@ -7668,8 +7625,20 @@
       }
     },
     "switch": {
+      "activemodelightstatus": {
+        "name": "Verlichting actieve modus"
+      },
+      "activemodemotorlevelstatus": {
+        "name": "Motor actieve modus"
+      },
+      "activemodestatus": {
+        "name": "Actieve modus"
+      },
       "adaptive_sense_setting": {
         "name": "Adaptive sense instelling"
+      },
+      "ambientlightstatus": {
+        "name": "Sfeerverlichting"
       },
       "anticrease": {
         "name": "Anti-kreuk"
@@ -7716,6 +7685,9 @@
       "child_lock": {
         "name": "Kinderbeveiliging"
       },
+      "cleanairstatus": {
+        "name": "Schone lucht"
+      },
       "crisp_function_status": {
         "name": "Crisp-functie"
       },
@@ -7733,6 +7705,9 @@
       },
       "fota_cmd": {
         "name": "Firmware update"
+      },
+      "greasefilterstatus": {
+        "name": "Vetfiltertimer"
       },
       "hide_setting": {
         "name": "Instelling verbergen"
@@ -7755,6 +7730,9 @@
       "key_sound": {
         "name": "Toetsgeluid"
       },
+      "lightstatus": {
+        "name": "Verlichting"
+      },
       "mute": {
         "name": "Stil"
       },
@@ -7769,6 +7747,12 @@
       },
       "prewash": {
         "name": "Voorwas"
+      },
+      "proximitysensorsetavalibility": {
+        "name": "Nabijheidssensor beschikbaar"
+      },
+      "proximitysensorstatus": {
+        "name": "Nabijheidssensor"
       },
       "save_mode": {
         "name": "Spaarstand"
