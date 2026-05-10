@@ -3,6 +3,8 @@
 |----------------------|--------------------------|------------------|------------------------|
 | AP10TW1RLR-N         | Portable air conditioner | 006              | 200                    |
 |                      | Portable air conditioner | 006              | 201                    |
+|                      | Portable air conditioner | 006              | 202                    |
+|                      | Portable air conditioner | 006              | 203                    |
 |                      | Dehumidifier             | 007              | 400                    |
 |                      | Dehumidifier             | 007              | 406                    |
 |                      | Air conditioner          | 008              | 301                    |

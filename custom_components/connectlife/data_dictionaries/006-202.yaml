@@ -1,0 +1,9 @@
+# Portable air conditioner — cool-only (no heat mode)
+properties:
+  - property: t_work_mode
+    climate:
+      options:
+        0: fan_only
+        2: cool
+        3: dry
+        4: auto
