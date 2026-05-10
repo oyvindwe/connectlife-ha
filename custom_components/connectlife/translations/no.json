@@ -1758,6 +1758,7 @@
           "black_detergent": "Svartvaskemiddel",
           "color_detergent": "Fargevaskemiddel",
           "detergent": "Vaskemiddel",
+          "other_rinse_agent": "Annet skyllemiddel",
           "sensitive_detergent": "Vaskemiddel for sensitive plagg",
           "softener": "T\u00f8ymykner",
           "white_detergent": "Hvitvaskemiddel"
@@ -4969,7 +4970,13 @@
         "name": "Modus for valgt program"
       },
       "selected_program_mode_status": {
-        "name": "Programmodus"
+        "name": "Programmodus",
+        "state": {
+          "extra_fast": "Ekstra hurtig",
+          "fast": "Hurtig",
+          "normal": "Normal",
+          "not_available": "Ikke tilgjengelig"
+        }
       },
       "selected_program_night_mode": {
         "name": "Valgt program \u2013 nattmodus"
@@ -5000,6 +5007,19 @@
       },
       "selected_program_uv_function": {
         "name": "Valgt program \u2013 UV-funksjon"
+      },
+      "selected_program_washing_spin_speed_rpm_status": {
+        "name": "Sentrifugehastighet",
+        "state": {
+          "0_rpm": "0",
+          "1000_rpm": "1000",
+          "1200_rpm": "1200",
+          "1400_rpm": "1400",
+          "400_rpm": "400",
+          "800_rpm": "800",
+          "no_spin": "Ingen sentrifugering",
+          "not_available": "Ikke tilgjengelig"
+        }
       },
       "selected_program_water_add": {
         "name": "Valgt program \u2013 tilf\u00f8r vann"

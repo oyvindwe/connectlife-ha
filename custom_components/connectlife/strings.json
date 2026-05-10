@@ -1210,7 +1210,7 @@
         "name": "Sabbath mode switch status"
       },
       "selected_program_anticrease_status": {
-        "name": "Selected program anti crease status"
+        "name": "Anti-crease"
       },
       "selected_program_auto_door_open_function": {
         "name": "Selected program auto door open"
@@ -2056,11 +2056,12 @@
         }
       },
       "compartment2_type_setting_status": {
-        "name": "Compartment 2 type setting status",
+        "name": "Compartment 2 type",
         "state": {
           "black_detergent": "Black detergent",
           "color_detergent": "Color detergent",
           "detergent": "Detergent",
+          "other_rinse_agent": "Other rinse agent",
           "sensitive_detergent": "Sensitive detergent",
           "softener": "Softener",
           "white_detergent": "White detergent"
@@ -5598,14 +5599,14 @@
         "name": "Selected program UV function"
       },
       "selected_program_washing_spin_speed_rpm_status": {
-        "name": "Selected program washing spin speed rpm status",
+        "name": "Spin speed",
         "state": {
-          "0_rpm": "0 rpm",
-          "1000_rpm": "1000 rpm",
-          "1200_rpm": "1200 rpm",
-          "1400_rpm": "1400 rpm",
-          "400_rpm": "400 rpm",
-          "800_rpm": "800 rpm",
+          "0_rpm": "0",
+          "1000_rpm": "1000",
+          "1200_rpm": "1200",
+          "1400_rpm": "1400",
+          "400_rpm": "400",
+          "800_rpm": "800",
           "no_spin": "No spin",
           "not_available": "Not available"
         }

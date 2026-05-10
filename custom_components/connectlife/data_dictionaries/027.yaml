@@ -413,6 +413,7 @@ properties:
       4: white_detergent
       5: black_detergent
       6: sensitive_detergent
+      7: other_rinse_agent
     command:
       name: Compartment2_type_setting
       adjust: 1

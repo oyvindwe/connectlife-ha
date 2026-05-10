@@ -1758,6 +1758,7 @@
           "black_detergent": "Zwartwasmiddel",
           "color_detergent": "Kleurwasmiddel",
           "detergent": "Wasmiddel",
+          "other_rinse_agent": "Ander spoelmiddel",
           "sensitive_detergent": "Wasmiddel voor gevoelige stoffen",
           "softener": "Wasverzachter",
           "white_detergent": "Witwasmiddel"
@@ -4969,7 +4970,13 @@
         "name": "Selected program mode"
       },
       "selected_program_mode_status": {
-        "name": "Programmamodus"
+        "name": "Programmamodus",
+        "state": {
+          "extra_fast": "Extra snel",
+          "fast": "Snel",
+          "normal": "Normaal",
+          "not_available": "Niet beschikbaar"
+        }
       },
       "selected_program_night_mode": {
         "name": "Selected program night mode"
@@ -5000,6 +5007,19 @@
       },
       "selected_program_uv_function": {
         "name": "Selected program UV function"
+      },
+      "selected_program_washing_spin_speed_rpm_status": {
+        "name": "Centrifugeersnelheid",
+        "state": {
+          "0_rpm": "0 toeren",
+          "1000_rpm": "1000 toeren",
+          "1200_rpm": "1200 toeren",
+          "1400_rpm": "1400 toeren",
+          "400_rpm": "400 toeren",
+          "800_rpm": "800 toeren",
+          "no_spin": "Niet centrifugeren",
+          "not_available": "Niet beschikbaar"
+        }
       },
       "selected_program_water_add": {
         "name": "Selected program water add"
