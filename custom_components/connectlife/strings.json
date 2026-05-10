@@ -294,6 +294,9 @@
       "alarmcleanairended": {
         "name": "Alarm clean air ended"
       },
+      "alarmcleanfilterwarning": {
+        "name": "Alarm clean filter warning"
+      },
       "alarmcleantank": {
         "name": "Alarm clean tank"
       },
@@ -315,8 +318,17 @@
       "alarmemptytankpause": {
         "name": "Alarm empty tank pause"
       },
+      "alarmfilladcontainer1warning": {
+        "name": "Auto-dose container 1 fill warning"
+      },
+      "alarmfilladcontainer2warning": {
+        "name": "Auto-dose container 2 fill warning"
+      },
       "alarmfilltank": {
         "name": "Alarm fill tank"
+      },
+      "alarmfoamdetection": {
+        "name": "Alarm foam detection"
       },
       "alarmgreasefilter": {
         "name": "Alarm grease filter"
@@ -330,6 +342,9 @@
       "alarmmicrowave_system_finished": {
         "name": "Alarm microwave system finished"
       },
+      "alarmoptionnotavailable": {
+        "name": "Alarm option not available"
+      },
       "alarmoven_system_finished": {
         "name": "Alarmoven system finished"
       },
@@ -338,6 +353,9 @@
       },
       "alarmpower_failure_running": {
         "name": "Alarmpower failure running"
+      },
+      "alarmpowerfailalert": {
+        "name": "Alarm power fail alert"
       },
       "alarmprobe_lost_connection": {
         "name": "Alarmprobe lost connection"
@@ -372,11 +390,17 @@
       "alarmsteamclean_finished": {
         "name": "Alarm steam clean finished"
       },
+      "alarmsteriltubrunwarning": {
+        "name": "Alarm steriltub run warning"
+      },
       "alarmtanklevel1": {
         "name": "Alarm tank level 1"
       },
       "alarmtimerended": {
         "name": "Alarm timer ended"
+      },
+      "alarmwashfinished": {
+        "name": "Alarm wash finished"
       },
       "ali_wifi_fault_flag": {
         "name": "WiFi fault"
@@ -426,6 +450,9 @@
       "child_lock_switch_status": {
         "name": "Child lock switch status"
       },
+      "childlockactive": {
+        "name": "Child lock state"
+      },
       "clean_filter": {
         "name": "Clean filter"
       },
@@ -462,11 +489,182 @@
       "door_status": {
         "name": "Door"
       },
+      "doorstatus": {
+        "name": "Door"
+      },
       "eco_mode": {
         "name": "ECO mode"
       },
       "envi_temp_sens_head_failure": {
         "name": "Envi temp sens head failure"
+      },
+      "error0": {
+        "name": "Error 0"
+      },
+      "error1": {
+        "name": "Error 1"
+      },
+      "error10": {
+        "name": "Error 10"
+      },
+      "error11": {
+        "name": "Error 11"
+      },
+      "error12": {
+        "name": "Error 12"
+      },
+      "error12_1": {
+        "name": "Error 12 1"
+      },
+      "error12_10": {
+        "name": "Error 12 10"
+      },
+      "error12_12": {
+        "name": "Error 12 12"
+      },
+      "error12_2": {
+        "name": "Error 12 2"
+      },
+      "error12_3": {
+        "name": "Error 12 3"
+      },
+      "error12_4": {
+        "name": "Error 12 4"
+      },
+      "error12_5": {
+        "name": "Error 12 5"
+      },
+      "error12_6": {
+        "name": "Error 12 6"
+      },
+      "error12_7": {
+        "name": "Error 12 7"
+      },
+      "error12_8": {
+        "name": "Error 12 8"
+      },
+      "error12_9": {
+        "name": "Error 12 9"
+      },
+      "error13": {
+        "name": "Error 13"
+      },
+      "error13_1": {
+        "name": "Error 13 1"
+      },
+      "error13_2": {
+        "name": "Error 13 2"
+      },
+      "error13_3": {
+        "name": "Error 13 3"
+      },
+      "error15": {
+        "name": "Error 15"
+      },
+      "error2": {
+        "name": "Error 2"
+      },
+      "error22": {
+        "name": "Error 22"
+      },
+      "error23": {
+        "name": "Error 23"
+      },
+      "error24": {
+        "name": "Error 24"
+      },
+      "error25": {
+        "name": "Error 25"
+      },
+      "error26": {
+        "name": "Error 26"
+      },
+      "error27": {
+        "name": "Error 27"
+      },
+      "error28": {
+        "name": "Error 28"
+      },
+      "error29": {
+        "name": "Error 29"
+      },
+      "error3": {
+        "name": "Error 3"
+      },
+      "error30": {
+        "name": "Error 30"
+      },
+      "error31": {
+        "name": "Error 31"
+      },
+      "error32": {
+        "name": "Error 32"
+      },
+      "error33": {
+        "name": "Error 33"
+      },
+      "error34": {
+        "name": "Error 34"
+      },
+      "error35": {
+        "name": "Error 35"
+      },
+      "error36": {
+        "name": "Error 36"
+      },
+      "error37": {
+        "name": "Error 37"
+      },
+      "error38": {
+        "name": "Error 38"
+      },
+      "error39": {
+        "name": "Error 39"
+      },
+      "error4": {
+        "name": "Error 4"
+      },
+      "error40": {
+        "name": "Error 40"
+      },
+      "error41": {
+        "name": "Error 41"
+      },
+      "error42": {
+        "name": "Error 42"
+      },
+      "error43": {
+        "name": "Error 43"
+      },
+      "error44": {
+        "name": "Error 44"
+      },
+      "error45": {
+        "name": "Error 45"
+      },
+      "error46": {
+        "name": "Error 46"
+      },
+      "error47": {
+        "name": "Error 47"
+      },
+      "error5": {
+        "name": "Error 5"
+      },
+      "error6": {
+        "name": "Error 6"
+      },
+      "error7": {
+        "name": "Error 7"
+      },
+      "error7_1": {
+        "name": "Error 7 1"
+      },
+      "error8": {
+        "name": "Error 8"
+      },
+      "error9": {
+        "name": "Error 9"
       },
       "error_0": {
         "name": "Error 0"
@@ -836,6 +1034,51 @@
       },
       "mid_wine_area_b_temp_fault": {
         "name": "Mid wine area B temperature fault"
+      },
+      "motorspeed1000rpmavailable": {
+        "name": "Motor speed 1000 RPM available"
+      },
+      "motorspeed100rpmavailable": {
+        "name": "Motor speed 100 RPM available"
+      },
+      "motorspeed1100rpmavailable": {
+        "name": "Motor speed 1100 RPM available"
+      },
+      "motorspeed1200rpmavailable": {
+        "name": "Motor speed 1200 RPM available"
+      },
+      "motorspeed1300rpmavailable": {
+        "name": "Motor speed 1300 RPM available"
+      },
+      "motorspeed1400rpmavailable": {
+        "name": "Motor speed 1400 RPM available"
+      },
+      "motorspeed1500rpmavailable": {
+        "name": "Motor speed 1500 RPM available"
+      },
+      "motorspeed1600rpmavailable": {
+        "name": "Motor speed 1600 RPM available"
+      },
+      "motorspeed400rpmavailable": {
+        "name": "Motor speed 400 RPM available"
+      },
+      "motorspeed500rpmavailable": {
+        "name": "Motor speed 500 RPM available"
+      },
+      "motorspeed600rpmavailable": {
+        "name": "Motor speed 600 RPM available"
+      },
+      "motorspeed800rpmavailable": {
+        "name": "Motor speed 800 RPM available"
+      },
+      "motorspeed900rpmavailable": {
+        "name": "Motor speed 900 RPM available"
+      },
+      "motorspeednodrainavailable": {
+        "name": "Motor speed no drain available"
+      },
+      "motorspeednospinavailable": {
+        "name": "Motor speed no spin available"
       },
       "open_freeze_door_alarm": {
         "name": "Open freeze door alarm"
@@ -1684,6 +1927,9 @@
       "gratin_function_set_time_in_seconds": {
         "name": "Gratin function set time"
       },
+      "programoptiontimestartdelayhour": {
+        "name": "Start delay hours"
+      },
       "refrigerator_max_temperature": {
         "name": "Refrigerator max temperature"
       },
@@ -1739,7 +1985,14 @@
         }
       },
       "brightness": {
-        "name": "Brightness"
+        "name": "Brightness",
+        "state": {
+          "level_1": "Level 1",
+          "level_2": "Level 2",
+          "level_3": "Level 3",
+          "level_4": "Level 4",
+          "level_5": "Level 5"
+        }
       },
       "cooking_intensity": {
         "name": "Cooking intensity"
@@ -1782,6 +2035,13 @@
           "more": "More",
           "off": "Off",
           "standard": "Standard"
+        }
+      },
+      "drain": {
+        "name": "Drain",
+        "state": {
+          "pump": "Pump",
+          "valve": "Valve"
         }
       },
       "dry_level": {
@@ -1833,6 +2093,14 @@
         "state": {
           "english": "English",
           "simplified_chinese": "Simplified chinese"
+        }
+      },
+      "load": {
+        "name": "Load",
+        "state": {
+          "100_percent": "100 percent",
+          "25_percent": "25 percent",
+          "50_percent": "50 percent"
         }
       },
       "notification_volumen_setting_status": {
@@ -1969,6 +2237,29 @@
           "normal": "Normal",
           "not_available": "Not available",
           "speed": "Speed"
+        }
+      },
+      "setmaxmotorspeed": {
+        "name": "Maximum spin speed",
+        "state": {
+          "1000_rpm": "1000 RPM",
+          "100_rpm": "100 RPM",
+          "1100_rpm": "1100 RPM",
+          "1200_rpm": "1200 RPM",
+          "1300_rpm": "1300 RPM",
+          "1400_rpm": "1400 RPM",
+          "1500_rpm": "1500 RPM",
+          "1600_rpm": "1600 RPM",
+          "400_rpm": "400 RPM",
+          "500_rpm": "500 RPM",
+          "600_rpm": "600 RPM",
+          "800_rpm": "800 RPM",
+          "900_rpm": "900 RPM",
+          "no_drain": "No drain",
+          "no_spin": "No spin",
+          "not_available": "Not available",
+          "reserved_0": "Reserved 0",
+          "reserved_7": "Reserved 7"
         }
       },
       "softener": {
@@ -2211,8 +2502,22 @@
           "not_set": "Not set"
         }
       },
+      "timeiconsetting": {
+        "name": "Time icon setting",
+        "state": {
+          "icon": "Icon",
+          "time": "Time"
+        }
+      },
       "volume": {
-        "name": "Volume"
+        "name": "Volume",
+        "state": {
+          "level_1": "Level 1",
+          "level_2": "Level 2",
+          "level_3": "Level 3",
+          "level_4": "Level 4",
+          "level_5": "Level 5"
+        }
       },
       "warming_drawer_power_level": {
         "name": "Warming drawer power level",
@@ -2544,6 +2849,21 @@
       "bathingwaterpumpstate": {
         "name": "Bathing water pump state"
       },
+      "blockdetailedprogramview": {
+        "name": "Block detailed program view"
+      },
+      "bookavailabletime": {
+        "name": "Booking available time"
+      },
+      "booking": {
+        "name": "Booking"
+      },
+      "bookreservedtime": {
+        "name": "Booking reserved time"
+      },
+      "booktimetoendreservation": {
+        "name": "Booking time to end"
+      },
       "brand_splash_setting": {
         "name": "Brand splash setting"
       },
@@ -2799,6 +3119,27 @@
       "currentprogram_medium_waterlevel_starting_waterlevelvalue": {
         "name": "Current program medium water level starting water level value"
       },
+      "currentprogramphase": {
+        "name": "Current program phase",
+        "state": {
+          "add_cloth_drain": "Add clothes drain",
+          "add_cloth_drain_finish": "Add clothes drain finished",
+          "anticrease": "Anti-crease",
+          "coolend": "Cool down end",
+          "cooling": "Cooling",
+          "delay": "Delay",
+          "drain_water": "Draining",
+          "mainwash": "Main wash",
+          "prewash": "Pre-wash",
+          "program_end": "Finished",
+          "rinse": "Rinse",
+          "spin": "Spin",
+          "stop_program": "Cancelled"
+        }
+      },
+      "currentwatertemperature": {
+        "name": "Current water temperature"
+      },
       "currrent_dry_level_time": {
         "name": "Current dry level time"
       },
@@ -2917,8 +3258,14 @@
       "delaystart_delayend_timestamp_status": {
         "name": "Delay start/end timestamp status"
       },
+      "delaystartcountdowntimer": {
+        "name": "Delay start countdown timer"
+      },
       "demo_mode_status": {
         "name": "Demo mode status"
+      },
+      "demomode": {
+        "name": "Demo mode"
       },
       "descale_status": {
         "name": "Descale status"
@@ -2985,10 +3332,16 @@
         "state": {
           "idle": "Idle",
           "not_available": "Not available",
+          "pause": "Pause",
+          "permanent_error": "Permanent error",
           "production": "Production",
+          "program_finished": "Program finished",
+          "program_select": "Program selection",
           "reserved": "Reserved",
           "running": "Running",
-          "service": "Service"
+          "service": "Service",
+          "standby": "Standby",
+          "temporary_error": "Temporary error"
         }
       },
       "display_brightness_setting_status": {
@@ -3690,6 +4043,96 @@
       "factory_reset": {
         "name": "Factory reset"
       },
+      "failurereadout1": {
+        "name": "Failure 1"
+      },
+      "failurereadout10": {
+        "name": "Failure 10"
+      },
+      "failurereadout10lastcycle": {
+        "name": "Failure 10 last cycle"
+      },
+      "failurereadout10numberofrepetiotion": {
+        "name": "Failure 10 repetitions"
+      },
+      "failurereadout1lastcycle": {
+        "name": "Failure 1 last cycle"
+      },
+      "failurereadout1numberofrepetiotion": {
+        "name": "Failure 1 repetitions"
+      },
+      "failurereadout2": {
+        "name": "Failure 2"
+      },
+      "failurereadout2lastcycle": {
+        "name": "Failure 2 last cycle"
+      },
+      "failurereadout2numberofrepetiotion": {
+        "name": "Failure 2 repetitions"
+      },
+      "failurereadout3": {
+        "name": "Failure 3"
+      },
+      "failurereadout3lastcycle": {
+        "name": "Failure 3 last cycle"
+      },
+      "failurereadout3numberofrepetiotion": {
+        "name": "Failure 3 repetitions"
+      },
+      "failurereadout4": {
+        "name": "Failure 4"
+      },
+      "failurereadout4lastcycle": {
+        "name": "Failure 4 last cycle"
+      },
+      "failurereadout4numberofrepetiotion": {
+        "name": "Failure 4 repetitions"
+      },
+      "failurereadout5": {
+        "name": "Failure 5"
+      },
+      "failurereadout5lastcycle": {
+        "name": "Failure 5 last cycle"
+      },
+      "failurereadout5numberofrepetiotion": {
+        "name": "Failure 5 repetitions"
+      },
+      "failurereadout6": {
+        "name": "Failure 6"
+      },
+      "failurereadout6lastcycle": {
+        "name": "Failure 6 last cycle"
+      },
+      "failurereadout6numberofrepetiotion": {
+        "name": "Failure 6 repetitions"
+      },
+      "failurereadout7": {
+        "name": "Failure 7"
+      },
+      "failurereadout7lastcycle": {
+        "name": "Failure 7 last cycle"
+      },
+      "failurereadout7numberofrepetiotion": {
+        "name": "Failure 7 repetitions"
+      },
+      "failurereadout8": {
+        "name": "Failure 8"
+      },
+      "failurereadout8lastcycle": {
+        "name": "Failure 8 last cycle"
+      },
+      "failurereadout8numberofrepetiotion": {
+        "name": "Failure 8 repetitions"
+      },
+      "failurereadout9": {
+        "name": "Failure 9"
+      },
+      "failurereadout9lastcycle": {
+        "name": "Failure 9 last cycle"
+      },
+      "failurereadout9numberofrepetiotion": {
+        "name": "Failure 9 repetitions"
+      },
       "fan_sequence_setting_status": {
         "name": "Fan sequence"
       },
@@ -3991,6 +4434,12 @@
       "id5": {
         "name": "ID 5"
       },
+      "idcode": {
+        "name": "ID code"
+      },
+      "identified": {
+        "name": "Identified"
+      },
       "inactivity_timeout": {
         "name": "Inactivity timeout"
       },
@@ -4087,6 +4536,9 @@
       "lockpin_code": {
         "name": "Lock pin code"
       },
+      "logo": {
+        "name": "Logo"
+      },
       "logo_setting_status": {
         "name": "Logo setting status"
       },
@@ -4132,6 +4584,9 @@
       },
       "max_rpm_allowed_stat": {
         "name": "Max RPM allowed status"
+      },
+      "maxtimeevent": {
+        "name": "Max time event"
       },
       "mdo_on_demand": {
         "name": "MDO on demand"
@@ -4321,6 +4776,9 @@
       "oven_usage_value_time_since_last_cleaning": {
         "name": "Oven usage value time since last cleaning"
       },
+      "paidbycoinbox": {
+        "name": "Paid by coin box"
+      },
       "pairing": {
         "name": "Pairing"
       },
@@ -4338,6 +4796,12 @@
       },
       "pause_anticrease_flag": {
         "name": "Pause anti-crease flag"
+      },
+      "paymentenabledtimer": {
+        "name": "Payment enabled timer"
+      },
+      "paymentsystem": {
+        "name": "Payment system"
       },
       "performancemode_flag": {
         "name": "Performance mode flag"
@@ -4369,6 +4833,15 @@
       "powersavedeletetime": {
         "name": "Power save delete time"
       },
+      "ppuonlinecoinsystem": {
+        "name": "PPU online coin system"
+      },
+      "ppurecipss": {
+        "name": "PPU RECIPSS"
+      },
+      "ppuwashenabled": {
+        "name": "PPU wash enabled"
+      },
       "presoak": {
         "name": "Pre-soak"
       },
@@ -4398,6 +4871,9 @@
       },
       "programfunctionvalueid": {
         "name": "Program function value ID"
+      },
+      "programremainingtime": {
+        "name": "Program remaining time"
       },
       "proximity_sensor_setting": {
         "name": "Proximity sensor setting"
@@ -4561,11 +5037,23 @@
       "remote_control_monitoring_set_commands_actions": {
         "name": "Remote control monitoring set commands actions"
       },
+      "remotecontrolmode": {
+        "name": "Remote control mode"
+      },
       "remotecontrolmonitoringsetcommands": {
         "name": "Remote control monitoring set commands"
       },
       "remotecontrolmonitoringsetcommandsactions": {
         "name": "Remote control monitoring set commands actions"
+      },
+      "remotesetcontrolenabled": {
+        "name": "Remote set control enabled"
+      },
+      "remotestartduration": {
+        "name": "Remote start duration"
+      },
+      "remotestartenabled": {
+        "name": "Remote start enabled"
       },
       "rfpairingstatus": {
         "name": "RF pairing status"
@@ -4992,6 +5480,18 @@
       "selected_programremaining_time_inminutes": {
         "name": "Remaining time of selected program"
       },
+      "selectedbasicid": {
+        "name": "Selected basic ID"
+      },
+      "selectedderivedid": {
+        "name": "Selected derived ID"
+      },
+      "selectedprogram": {
+        "name": "Selected program"
+      },
+      "sensor3d": {
+        "name": "Sensor 3D"
+      },
       "sensor_failure_status": {
         "name": "Sensor failure status"
       },
@@ -5030,6 +5530,12 @@
       },
       "sessionpairingconfirmation": {
         "name": "Session pairing confirmation"
+      },
+      "sessionpairingrequest": {
+        "name": "Session pairing request"
+      },
+      "sessionpairingsetting": {
+        "name": "Session pairing setting"
       },
       "set_progress_type": {
         "name": "Set progress type",
@@ -6030,6 +6536,9 @@
       "softpairing": {
         "name": "Soft pairing"
       },
+      "softpairingsetting": {
+        "name": "Soft pairing setting"
+      },
       "soil_lever": {
         "name": "Soil lever"
       },
@@ -6072,6 +6581,9 @@
       "spinstepfinishnotifyswitch": {
         "name": "Spin step finish notify switch"
       },
+      "spintime": {
+        "name": "Spin time"
+      },
       "spintime_flag": {
         "name": "Spin time flag"
       },
@@ -6107,6 +6619,9 @@
       },
       "standby_mode_valid": {
         "name": "Standby mode valid"
+      },
+      "standbychoice": {
+        "name": "Standby choice"
       },
       "status": {
         "name": "Device status",
@@ -7165,6 +7680,19 @@
       "temperature_unit_status": {
         "name": "Temperature unit status"
       },
+      "temperatureunit": {
+        "name": "Temperature unit",
+        "state": {
+          "celsius": "Celsius",
+          "fahrenheit": "Fahrenheit"
+        }
+      },
+      "temporarylanguageselected": {
+        "name": "Temporary language selected"
+      },
+      "temporarylanguagesettingenabled": {
+        "name": "Temporary language setting enabled"
+      },
       "testdata_data": {
         "name": "Test data"
       },
@@ -7260,6 +7788,9 @@
       },
       "total_water_consumption": {
         "name": "Total water consumption"
+      },
+      "totalprogramcycles": {
+        "name": "Total program cycles"
       },
       "turbidity_sensor_setting_status": {
         "name": "Turbidity sensor setting status"
@@ -7672,6 +8203,12 @@
       "adaptive_sense_setting": {
         "name": "Adaptive sense setting"
       },
+      "addclothes": {
+        "name": "Add clothes"
+      },
+      "allergymodeenable": {
+        "name": "Allergy mode"
+      },
       "anticrease": {
         "name": "Anti-crease"
       },
@@ -7717,6 +8254,12 @@
       "child_lock": {
         "name": "Child lock"
       },
+      "childlockenabled": {
+        "name": "Child lock"
+      },
+      "coldwash": {
+        "name": "Cold wash"
+      },
       "crisp_function_status": {
         "name": "Crisp function status"
       },
@@ -7729,11 +8272,20 @@
       "drum_light": {
         "name": "Drum light"
       },
+      "drumvleanprogramwarning": {
+        "name": "Drum clean program warning"
+      },
       "extra_rinse": {
+        "name": "Extra rinse"
+      },
+      "extrarinse": {
         "name": "Extra rinse"
       },
       "fota_cmd": {
         "name": "Firmware update"
+      },
+      "heatingsteps": {
+        "name": "Heating steps"
       },
       "hide_setting": {
         "name": "Hide setting"
@@ -7780,8 +8332,17 @@
       "sf_sr_mutex_mode": {
         "name": "SF SR mutex mode"
       },
+      "showmeasuredtemperature": {
+        "name": "Show measured temperature"
+      },
+      "sound": {
+        "name": "Sound"
+      },
       "sr_mode": {
         "name": "SR mode"
+      },
+      "startdelayfunction": {
+        "name": "Start delay"
       },
       "steam": {
         "name": "Steam"

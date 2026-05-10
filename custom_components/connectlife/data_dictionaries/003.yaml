@@ -1,0 +1,1151 @@
+# Washing machine
+properties:
+  - property: ACTION
+    disable: true
+  - property: AddClothes
+    icon: mdi:plus-box
+    switch:
+  - property: AlarmCleanFilterWarning
+    icon: mdi:filter-variant-remove
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: AlarmFillAdContainer1Warning
+    icon: mdi:cup-water
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: AlarmFillAdContainer2Warning
+    icon: mdi:cup-water
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: AlarmFoamDetection
+    icon: mdi:bubble
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: AlarmOptionNotAvailable
+    icon: mdi:alert-circle
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: AlarmPowerFailAlert
+    icon: mdi:power-plug-off
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: AlarmSteriltubRunWarning
+    icon: mdi:water-alert
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: AlarmWashFinished
+    icon: mdi:bell-check
+    binary_sensor:
+      options:
+        0: false
+        1: true
+  - property: AllergyModeEnable
+    icon: mdi:allergy
+    switch:
+  - property: BlockDetailedProgramView
+    optional: true
+    entity_category: diagnostic
+  - property: BookAvailableTime
+    optional: true
+    entity_category: diagnostic
+  - property: BookReservedTime
+    optional: true
+    entity_category: diagnostic
+  - property: BookTimeToEndReservation
+    optional: true
+    entity_category: diagnostic
+  - property: Booking
+    optional: true
+    entity_category: diagnostic
+  - property: Brightness
+    icon: mdi:brightness-6
+    entity_category: config
+    select:
+      options:
+        0: level_1
+        1: level_2
+        2: level_3
+        3: level_4
+        4: level_5
+  - property: ChildLockActive
+    icon: mdi:lock
+    entity_category: diagnostic
+    binary_sensor:
+      options:
+        0: false
+        1: true
+  - property: ChildLockEnabled
+    icon: mdi:lock
+    entity_category: config
+    switch:
+  - property: ColdWash
+    icon: mdi:snowflake
+    switch:
+  - property: CurrentProgramPhase
+    icon: mdi:state-machine
+    sensor:
+      read_only: true
+      device_class: enum
+      options:
+        0: delay
+        1: prewash
+        2: mainwash
+        3: rinse
+        4: spin
+        5: anticrease
+        6: drain_water
+        7: stop_program
+        8: cooling
+        9: coolend
+        10: add_cloth_drain
+        11: add_cloth_drain_finish
+        12: program_end
+  - property: CurrentWaterTemperature
+    icon: mdi:thermometer
+    sensor:
+      read_only: true
+      device_class: temperature
+      unit: °C
+      state_class: measurement
+  - property: DelayStartCountdownTimer
+    icon: mdi:timer-sand
+    optional: true
+    sensor:
+      read_only: true
+      device_class: duration
+      unit: min
+  - property: DemoMode
+    optional: true
+    entity_category: diagnostic
+  - property: DeviceStatus
+    icon: mdi:washing-machine
+    sensor:
+      read_only: true
+      device_class: enum
+      options:
+        0: standby
+        1: program_select
+        2: running
+        3: pause
+        4: permanent_error
+        5: temporary_error
+        6: service
+        7: production
+        8: program_finished
+  - property: DoorStatus
+    icon: mdi:door
+    binary_sensor:
+      device_class: door
+      options:
+        0: false
+        1: true
+  - property: Drain
+    icon: mdi:water-pump
+    optional: true
+    entity_category: config
+    select:
+      options:
+        0: pump
+        1: valve
+  - property: DrumVleanProgramWarning
+    icon: mdi:brush-variant
+    entity_category: config
+    switch:
+  - property: Error0
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error1
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error2
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error3
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error4
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error5
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error6
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error7
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error7_1
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error8
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error9
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error10
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error11
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error12
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error12_1
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error12_2
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error12_3
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error12_4
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error12_5
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error12_6
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error12_7
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error12_8
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error12_9
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error12_10
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error12_12
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error13
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error13_1
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error13_2
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error13_3
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error15
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error22
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error23
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error24
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error25
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error26
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error27
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error28
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error29
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error30
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error31
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error32
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error33
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error34
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error35
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error36
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error37
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error38
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error39
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error40
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error41
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error42
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error43
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error44
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error45
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error46
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: Error47
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: ExtraRinse
+    icon: mdi:water-sync
+    switch:
+  - property: FailureReadOut1
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut1LastCycle
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut1NumberOfRepetiotion
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut2
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut2LastCycle
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut2NumberOfRepetiotion
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut3
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut3LastCycle
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut3NumberOfRepetiotion
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut4
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut4LastCycle
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut4NumberOfRepetiotion
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut5
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut5LastCycle
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut5NumberOfRepetiotion
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut6
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut6LastCycle
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut6NumberOfRepetiotion
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut7
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut7LastCycle
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut7NumberOfRepetiotion
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut8
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut8LastCycle
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut8NumberOfRepetiotion
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut9
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut9LastCycle
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut9NumberOfRepetiotion
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut10
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut10LastCycle
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+  - property: FailureReadOut10NumberOfRepetiotion
+    icon: mdi:washing-machine-alert
+    optional: true
+    entity_category: diagnostic
+  - property: HardPairingStatus
+    optional: true
+    entity_category: diagnostic
+  - property: HeatingSteps
+    icon: mdi:radiator
+    entity_category: config
+    switch:
+  - property: IDCode
+    optional: true
+    entity_category: diagnostic
+  - property: Identified
+    optional: true
+    entity_category: diagnostic
+  - property: Language
+    optional: true
+    entity_category: diagnostic
+  - property: Load
+    icon: mdi:weight
+    select:
+      options:
+        0: 25_percent
+        1: 50_percent
+        2: 100_percent
+  - property: Logo
+    optional: true
+    entity_category: diagnostic
+  - property: MaxTimeEvent
+    optional: true
+    entity_category: diagnostic
+  - property: MotorSpeed100RPMAvailable
+    icon: mdi:reload
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      options:
+        0: false
+        1: true
+  - property: MotorSpeed400RPMAvailable
+    icon: mdi:reload
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      options:
+        0: false
+        1: true
+  - property: MotorSpeed500RPMAvailable
+    icon: mdi:reload
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      options:
+        0: false
+        1: true
+  - property: MotorSpeed600RPMAvailable
+    icon: mdi:reload
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      options:
+        0: false
+        1: true
+  - property: MotorSpeed800RPMAvailable
+    icon: mdi:reload
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      options:
+        0: false
+        1: true
+  - property: MotorSpeed900RPMAvailable
+    icon: mdi:reload
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      options:
+        0: false
+        1: true
+  - property: MotorSpeed1000RPMAvailable
+    icon: mdi:reload
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      options:
+        0: false
+        1: true
+  - property: MotorSpeed1100RPMAvailable
+    icon: mdi:reload
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      options:
+        0: false
+        1: true
+  - property: MotorSpeed1200RPMAvailable
+    icon: mdi:reload
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      options:
+        0: false
+        1: true
+  - property: MotorSpeed1300RPMAvailable
+    icon: mdi:reload
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      options:
+        0: false
+        1: true
+  - property: MotorSpeed1400RPMAvailable
+    icon: mdi:reload
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      options:
+        0: false
+        1: true
+  - property: MotorSpeed1500RPMAvailable
+    icon: mdi:reload
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      options:
+        0: false
+        1: true
+  - property: MotorSpeed1600RPMAvailable
+    icon: mdi:reload
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      options:
+        0: false
+        1: true
+  - property: MotorSpeedNoDrainAvailable
+    icon: mdi:reload
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      options:
+        0: false
+        1: true
+  - property: MotorSpeedNoSpinAvailable
+    icon: mdi:reload
+    optional: true
+    entity_category: diagnostic
+    binary_sensor:
+      options:
+        0: false
+        1: true
+  - property: PPUOnlineCoinSystem
+    optional: true
+    entity_category: diagnostic
+  - property: PPURECIPSS
+    optional: true
+    entity_category: diagnostic
+  - property: PPUWashEnabled
+    optional: true
+    entity_category: diagnostic
+  - property: PPUWashTable1Finished
+    disable: true
+  - property: PPUWashTable1PID
+    disable: true
+  - property: PPUWashTable1Time
+    disable: true
+  - property: PPUWashTable2Finished
+    disable: true
+  - property: PPUWashTable2PID
+    disable: true
+  - property: PPUWashTable2Time
+    disable: true
+  - property: PPUWashTable3Finished
+    disable: true
+  - property: PPUWashTable3PID
+    disable: true
+  - property: PPUWashTable3Time
+    disable: true
+  - property: PPUWashTable4Finished
+    disable: true
+  - property: PPUWashTable4PID
+    disable: true
+  - property: PPUWashTable4Time
+    disable: true
+  - property: PPUWashTable5Finished
+    disable: true
+  - property: PPUWashTable5PID
+    disable: true
+  - property: PPUWashTable5Time
+    disable: true
+  - property: PaidByCoinBox
+    optional: true
+    entity_category: diagnostic
+  - property: ParseLibVersion
+    disable: true
+  - property: PaymentEnabledTimer
+    optional: true
+    entity_category: diagnostic
+  - property: PaymentSystem
+    optional: true
+    entity_category: diagnostic
+  - property: ProgramOptionTimeStartDelayHour
+    icon: mdi:timer
+    number:
+      min_value: 0
+      max_value: 24
+      device_class: duration
+      unit: h
+  - property: ProgramRemainingTime
+    icon: mdi:clock-end
+    sensor:
+      read_only: true
+      device_class: duration
+      unit: min
+  - property: RemoteControlMode
+    optional: true
+    entity_category: diagnostic
+  - property: RemoteSetControlEnabled
+    optional: true
+    entity_category: diagnostic
+  - property: RemoteStartDuration
+    optional: true
+    entity_category: diagnostic
+    sensor:
+      device_class: duration
+      unit: min
+  - property: RemoteStartEnabled
+    optional: true
+    entity_category: diagnostic
+  - property: SelectedBasicID
+    optional: true
+    entity_category: diagnostic
+  - property: SelectedDerivedID
+    optional: true
+    entity_category: diagnostic
+  - property: SelectedProgram
+    icon: mdi:tshirt-crew
+    sensor:
+      read_only: true
+  - property: Sensor3D
+    optional: true
+    entity_category: diagnostic
+  - property: SessionPairingActive
+    optional: true
+    entity_category: diagnostic
+  - property: SessionPairingRequest
+    optional: true
+    entity_category: diagnostic
+  - property: SessionPairingSetting
+    optional: true
+    entity_category: diagnostic
+  - property: SetMaxMotorSpeed
+    icon: mdi:reload
+    select:
+      options:
+        0: reserved_0
+        1: no_drain
+        2: no_spin
+        3: 100_rpm
+        4: 400_rpm
+        5: 500_rpm
+        6: 600_rpm
+        7: reserved_7
+        8: 800_rpm
+        9: 900_rpm
+        10: 1000_rpm
+        11: 1100_rpm
+        12: 1200_rpm
+        13: 1300_rpm
+        14: 1400_rpm
+        15: 1500_rpm
+        16: 1600_rpm
+        17: not_available
+  - property: ShowMeasuredTemperature
+    icon: mdi:thermometer-check
+    entity_category: config
+    switch:
+  - property: SoftPairingSetting
+    optional: true
+    entity_category: diagnostic
+  - property: Sound
+    icon: mdi:volume-high
+    entity_category: config
+    switch:
+  - property: SpinTime
+    icon: mdi:timer-sync
+    sensor:
+      read_only: true
+      device_class: duration
+      unit: min
+  - property: StandbyChoice
+    optional: true
+    entity_category: diagnostic
+  - property: StartDelayFunction
+    icon: mdi:timer-play
+    entity_category: config
+    switch:
+  - property: TemperatureUnit
+    icon: mdi:thermometer
+    entity_category: diagnostic
+    sensor:
+      read_only: true
+      device_class: enum
+      options:
+        0: celsius
+        1: fahrenheit
+  - property: TemporaryLanguageSelected
+    optional: true
+    entity_category: diagnostic
+  - property: TemporaryLanguageSettingEnabled
+    optional: true
+    entity_category: diagnostic
+  - property: TimeIconSetting
+    icon: mdi:clock-digital
+    entity_category: config
+    select:
+      options:
+        0: time
+        1: icon
+  - property: TotalProgramCycles
+    icon: mdi:counter
+    sensor:
+      read_only: true
+      state_class: total_increasing
+  - property: Volume
+    icon: mdi:volume-high
+    entity_category: config
+    select:
+      options:
+        0: level_1
+        1: level_2
+        2: level_3
+        3: level_4
+        4: level_5
+  - property: reserved1
+    disable: true
+  - property: reserved2
+    disable: true
+  - property: reserved3
+    disable: true
+  - property: reserved4
+    disable: true
+  - property: reserved125
+    disable: true
