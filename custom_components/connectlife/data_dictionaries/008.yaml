@@ -1,5 +1,12 @@
 # Window air conditioner
 properties:
+  - property: f-filter
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    icon: mdi:air-filter
   - property: f_e_arkgrille
     binary_sensor:
       device_class: problem
@@ -210,6 +217,20 @@ properties:
       read_only: true
     optional: true
     entity_category: diagnostic
+  - property: f_power_consumption
+    sensor:
+      device_class: energy
+      unit: kWh
+      read_only: true
+      state_class: total_increasing
+    icon: mdi:lightning-bolt
+  - property: f_power_display
+    sensor:
+      device_class: power
+      unit: W
+      read_only: true
+      state_class: measurement
+    icon: mdi:lightning-bolt
   - property: f_temp_in
     icon: mdi:thermometer
     climate:
@@ -218,6 +239,7 @@ properties:
     sensor:
       device_class: voltage
       unit: V
+      state_class: measurement
     optional: true
     entity_category: diagnostic
   - property: measured_grid_voltage
@@ -234,6 +256,16 @@ properties:
         1: on
     optional: true
     entity_category: diagnostic
+  - property: t_dal
+    switch:
+      device_class: switch
+    optional: true
+  - property: t_demand_response
+    switch:
+      device_class: switch
+    optional: true
+  - property: t_device_info
+    disable: true
   - property: t_dimmer
     switch:
       device_class: switch
@@ -257,6 +289,12 @@ properties:
         4: high
   - property: t_fan_speed_s
     disable: true
+  - property: t_fanspeedCV
+    number:
+      min_value: 0
+      max_value: 100
+      unit: "%"
+    icon: mdi:fan
   - property: t_power
     climate:
       target: is_on
@@ -268,6 +306,10 @@ properties:
     switch:
       device_class: switch
     icon: mdi:run-fast
+  - property: t_talr
+    switch:
+      device_class: switch
+    optional: true
   - property: t_temp
     climate:
       target: target_temperature
@@ -275,8 +317,8 @@ properties:
         celsius: 16
         fahrenheit: 61
       max_value:
-        celsius: 32
-        fahrenheit: 90
+        celsius: 30
+        fahrenheit: 86
   - property: t_temp_type
     climate:
       target: temperature_unit
