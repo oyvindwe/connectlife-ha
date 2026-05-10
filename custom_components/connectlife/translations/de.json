@@ -1306,6 +1306,14 @@
           "none": "Keine"
         }
       },
+      "delaystart_delayend_mode_status": {
+        "name": "Startverz\u00f6gerung",
+        "state": {
+          "delay_end": "Endverz\u00f6gerung",
+          "delay_start": "Startverz\u00f6gerung",
+          "not_active": "Nicht aktiv"
+        }
+      },
       "detergent": {
         "name": "Waschmittel",
         "state": {
@@ -1505,6 +1513,17 @@
           "speed_mode": "Schnell"
         }
       },
+      "selected_program_mode_status": {
+        "name": "Programm Modus",
+        "state": {
+          "extra_fast": "Extra Schnell",
+          "fast": "Schnell",
+          "intensive": "Intensiv",
+          "normal": "Normal",
+          "time_care_1": "Time Care 1",
+          "time_care_2": "Time Care 2"
+        }
+      },
       "selected_program_set_temperature_status": {
         "name": "Programm Temperatur",
         "state": {
@@ -1513,6 +1532,21 @@
           "40_c": "40 \u00b0C",
           "60_c": "60 \u00b0C",
           "cold": "Kalt"
+        }
+      },
+      "selected_program_washing_spin_speed_rpm_status": {
+        "name": "Programm Schleuderdrehzahl",
+        "state": {
+          "0_rpm": "0 U/min",
+          "1000_rpm": "1000 U/min",
+          "1200_rpm": "1200 U/min",
+          "1400_rpm": "1400 U/min",
+          "1600_rpm": "1600 U/min",
+          "400_rpm": "400 U/min",
+          "600_rpm": "600 U/min",
+          "700_rpm": "700 U/min",
+          "800_rpm": "800 U/min",
+          "no_spin": "Kein Schleudern"
         }
       },
       "softener": {
@@ -1878,13 +1912,6 @@
       },
       "delaystart_delayend_duration_inminutes": {
         "name": "Verz\u00f6gerungsdauer"
-      },
-      "delaystart_delayend_mode_status": {
-        "name": "Startverz\u00f6gerung",
-        "state": {
-          "off": "Aus",
-          "on": "An"
-        }
       },
       "delaystart_delayend_remaining_time_in_minutes": {
         "name": "Startverz\u00f6gerung Gesamtlaufzeit Verbleibend"
@@ -2364,13 +2391,7 @@
         "name": "Programm"
       },
       "selected_program_mode_status": {
-        "name": "Programm Modus",
-        "state": {
-          "extra_fast": "Extra Schnell",
-          "fast": "Schnell",
-          "normal": "Normal",
-          "not_available": "Nicht verf\u00fcgbar"
-        }
+        "name": "Programm Modus"
       },
       "selected_program_remaining_time_in_minutes": {
         "name": "Programmdauer Verbleibend"
@@ -2380,19 +2401,6 @@
       },
       "selected_program_total_time_in_minutes": {
         "name": "Programmdauer Gesamt"
-      },
-      "selected_program_washing_spin_speed_rpm_status": {
-        "name": "Programm Schleuderdrehzahl",
-        "state": {
-          "0_rpm": "0 U/min",
-          "1000_rpm": "1000 U/min",
-          "1200_rpm": "1200 U/min",
-          "1400_rpm": "1400 U/min",
-          "400_rpm": "400 U/min",
-          "800_rpm": "800 U/min",
-          "no_spin": "Kein Schleudern",
-          "not_available": "Nicht verf\u00fcgbar"
-        }
       },
       "selected_programduration_inminutes": {
         "name": "Programmdauer Gesamt"

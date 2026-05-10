@@ -1,2 +1,20 @@
 # Washing Machine Gorenje WPAM14A2T (WM22 B2 Plus)
-# Uses default mappings
+# Override program mode and spin speed options to match what this variant
+# reports (observed by the original contributor in PR #268).
+properties:
+  - property: Selected_program_mode_status
+    select:
+      options:
+        1: normal
+        3: fast
+        4: extra_fast
+  - property: Selected_program_washing_spin_speed_rpm_status
+    select:
+      options:
+        1: no_spin
+        4: 0_rpm
+        5: 800_rpm
+        6: 400_rpm
+        7: 1000_rpm
+        8: 1200_rpm
+        9: 1400_rpm

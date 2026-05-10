@@ -2107,6 +2107,14 @@
           "none": "None"
         }
       },
+      "delaystart_delayend_mode_status": {
+        "name": "Delay start mode",
+        "state": {
+          "delay_end": "Delay end",
+          "delay_start": "Delay start",
+          "not_active": "Not active"
+        }
+      },
       "detergent": {
         "name": "Detergent",
         "state": {
@@ -2399,6 +2407,17 @@
           "speed_mode": "Speed"
         }
       },
+      "selected_program_mode_status": {
+        "name": "Program mode",
+        "state": {
+          "extra_fast": "Extra fast",
+          "fast": "Fast",
+          "intensive": "Intensive",
+          "normal": "Normal",
+          "time_care_1": "Time Care 1",
+          "time_care_2": "Time Care 2"
+        }
+      },
       "selected_program_set_temperature_status": {
         "name": "Temperature",
         "state": {
@@ -2407,6 +2426,21 @@
           "40_c": "40 \u00b0C",
           "60_c": "60 \u00b0C",
           "cold": "Cold"
+        }
+      },
+      "selected_program_washing_spin_speed_rpm_status": {
+        "name": "Spin speed",
+        "state": {
+          "0_rpm": "0",
+          "1000_rpm": "1000",
+          "1200_rpm": "1200",
+          "1400_rpm": "1400",
+          "1600_rpm": "1600",
+          "400_rpm": "400",
+          "600_rpm": "600",
+          "700_rpm": "700",
+          "800_rpm": "800",
+          "no_spin": "No spin"
         }
       },
       "setmaxmotorspeed": {
@@ -3404,13 +3438,6 @@
       },
       "delaystart_delayend_duration_inminutes": {
         "name": "Delay start duration"
-      },
-      "delaystart_delayend_mode_status": {
-        "name": "Delay start status",
-        "state": {
-          "off": "Off",
-          "on": "On"
-        }
       },
       "delaystart_delayend_remaining_time_in_minutes": {
         "name": "Delay start/end remaining time"
@@ -5532,13 +5559,7 @@
         "name": "Selected program mode"
       },
       "selected_program_mode_status": {
-        "name": "Program mode",
-        "state": {
-          "extra_fast": "Extra fast",
-          "fast": "Fast",
-          "normal": "Normal",
-          "not_available": "Not available"
-        }
+        "name": "Program mode"
       },
       "selected_program_night_mode": {
         "name": "Selected program night mode"
@@ -5569,19 +5590,6 @@
       },
       "selected_program_uv_function": {
         "name": "Selected program UV function"
-      },
-      "selected_program_washing_spin_speed_rpm_status": {
-        "name": "Spin speed",
-        "state": {
-          "0_rpm": "0",
-          "1000_rpm": "1000",
-          "1200_rpm": "1200",
-          "1400_rpm": "1400",
-          "400_rpm": "400",
-          "800_rpm": "800",
-          "no_spin": "No spin",
-          "not_available": "Not available"
-        }
       },
       "selected_program_water_add": {
         "name": "Selected program water add"

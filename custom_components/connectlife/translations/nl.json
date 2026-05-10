@@ -1797,6 +1797,14 @@
           "none": "Geen"
         }
       },
+      "delaystart_delayend_mode_status": {
+        "name": "Uitgestelde start",
+        "state": {
+          "delay_end": "Uitgesteld einde",
+          "delay_start": "Uitgestelde start",
+          "not_active": "Niet actief"
+        }
+      },
       "detergent": {
         "name": "Wasmiddel",
         "state": {
@@ -2064,6 +2072,17 @@
           "speed_mode": "Snel"
         }
       },
+      "selected_program_mode_status": {
+        "name": "Programmamodus",
+        "state": {
+          "extra_fast": "Extra snel",
+          "fast": "Snel",
+          "intensive": "Intensief",
+          "normal": "Normaal",
+          "time_care_1": "Time Care 1",
+          "time_care_2": "Time Care 2"
+        }
+      },
       "selected_program_set_temperature_status": {
         "name": "Temperatuur",
         "state": {
@@ -2072,6 +2091,21 @@
           "40_c": "40 \u00b0C",
           "60_c": "60 \u00b0C",
           "cold": "Koud"
+        }
+      },
+      "selected_program_washing_spin_speed_rpm_status": {
+        "name": "Centrifugesnelheid",
+        "state": {
+          "0_rpm": "0 toeren",
+          "1000_rpm": "1000 toeren",
+          "1200_rpm": "1200 toeren",
+          "1400_rpm": "1400 toeren",
+          "1600_rpm": "1600 toeren",
+          "400_rpm": "400 toeren",
+          "600_rpm": "600 toeren",
+          "700_rpm": "700 toeren",
+          "800_rpm": "800 toeren",
+          "no_spin": "Niet centrifugeren"
         }
       },
       "softener": {
@@ -2989,13 +3023,6 @@
       },
       "delaystart_delayend_duration_inminutes": {
         "name": "Uitgestelde start duur"
-      },
-      "delaystart_delayend_mode_status": {
-        "name": "Uitgestelde start",
-        "state": {
-          "off": "Uit",
-          "on": "Aan"
-        }
       },
       "delaystart_delayend_remaining_time_in_minutes": {
         "name": "Resterende tijd uitgestelde start/einde"
@@ -4942,13 +4969,7 @@
         "name": "Selected program mode"
       },
       "selected_program_mode_status": {
-        "name": "Programmamodus",
-        "state": {
-          "extra_fast": "Extra snel",
-          "fast": "Snel",
-          "normal": "Normaal",
-          "not_available": "Niet beschikbaar"
-        }
+        "name": "Programmamodus"
       },
       "selected_program_night_mode": {
         "name": "Selected program night mode"
@@ -4979,19 +5000,6 @@
       },
       "selected_program_uv_function": {
         "name": "Selected program UV function"
-      },
-      "selected_program_washing_spin_speed_rpm_status": {
-        "name": "Centrifugeersnelheid",
-        "state": {
-          "0_rpm": "0 toeren",
-          "1000_rpm": "1000 toeren",
-          "1200_rpm": "1200 toeren",
-          "1400_rpm": "1400 toeren",
-          "400_rpm": "400 toeren",
-          "800_rpm": "800 toeren",
-          "no_spin": "Niet centrifugeren",
-          "not_available": "Niet beschikbaar"
-        }
       },
       "selected_program_water_add": {
         "name": "Selected program water add"

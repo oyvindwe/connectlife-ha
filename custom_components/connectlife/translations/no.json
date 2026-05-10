@@ -1797,6 +1797,14 @@
           "none": "Ingen"
         }
       },
+      "delaystart_delayend_mode_status": {
+        "name": "Utsatt start",
+        "state": {
+          "delay_end": "Utsatt slutt",
+          "delay_start": "Utsatt start",
+          "not_active": "Ikke aktiv"
+        }
+      },
       "detergent": {
         "name": "Vaskemiddel",
         "state": {
@@ -2064,6 +2072,17 @@
           "speed_mode": "Hurtig"
         }
       },
+      "selected_program_mode_status": {
+        "name": "Programmodus",
+        "state": {
+          "extra_fast": "Ekstra hurtig",
+          "fast": "Hurtig",
+          "intensive": "Intensiv",
+          "normal": "Normal",
+          "time_care_1": "Time Care 1",
+          "time_care_2": "Time Care 2"
+        }
+      },
       "selected_program_set_temperature_status": {
         "name": "Temperatur",
         "state": {
@@ -2072,6 +2091,21 @@
           "40_c": "40 \u00b0C",
           "60_c": "60 \u00b0C",
           "cold": "Kald"
+        }
+      },
+      "selected_program_washing_spin_speed_rpm_status": {
+        "name": "Sentrifugehastighet",
+        "state": {
+          "0_rpm": "0",
+          "1000_rpm": "1000",
+          "1200_rpm": "1200",
+          "1400_rpm": "1400",
+          "1600_rpm": "1600",
+          "400_rpm": "400",
+          "600_rpm": "600",
+          "700_rpm": "700",
+          "800_rpm": "800",
+          "no_spin": "Ingen sentrifugering"
         }
       },
       "softener": {
@@ -2989,13 +3023,6 @@
       },
       "delaystart_delayend_duration_inminutes": {
         "name": "Varighet for utsatt start"
-      },
-      "delaystart_delayend_mode_status": {
-        "name": "Status for utsatt start",
-        "state": {
-          "off": "Av",
-          "on": "P\u00e5"
-        }
       },
       "delaystart_delayend_remaining_time_in_minutes": {
         "name": "Gjenst\u00e5ende tid for utsatt start/slutt"
@@ -4942,13 +4969,7 @@
         "name": "Modus for valgt program"
       },
       "selected_program_mode_status": {
-        "name": "Programmodus",
-        "state": {
-          "extra_fast": "Ekstra hurtig",
-          "fast": "Hurtig",
-          "normal": "Normal",
-          "not_available": "Ikke tilgjengelig"
-        }
+        "name": "Programmodus"
       },
       "selected_program_night_mode": {
         "name": "Valgt program \u2013 nattmodus"
@@ -4979,19 +5000,6 @@
       },
       "selected_program_uv_function": {
         "name": "Valgt program \u2013 UV-funksjon"
-      },
-      "selected_program_washing_spin_speed_rpm_status": {
-        "name": "Sentrifugehastighet",
-        "state": {
-          "0_rpm": "0",
-          "1000_rpm": "1000",
-          "1200_rpm": "1200",
-          "1400_rpm": "1400",
-          "400_rpm": "400",
-          "800_rpm": "800",
-          "no_spin": "Ingen sentrifugering",
-          "not_available": "Ikke tilgjengelig"
-        }
       },
       "selected_program_water_add": {
         "name": "Valgt program \u2013 tilf\u00f8r vann"
