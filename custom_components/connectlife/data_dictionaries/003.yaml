@@ -98,6 +98,7 @@ properties:
         4: level_5
   - property: ChildLockActive
     icon: mdi:lock
+    optional: true
     entity_category: diagnostic
     binary_sensor:
       options:

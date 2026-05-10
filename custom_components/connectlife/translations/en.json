@@ -295,7 +295,7 @@
         "name": "Alarm clean air ended"
       },
       "alarmcleanfilterwarning": {
-        "name": "Alarm clean filter warning"
+        "name": "Clean filter"
       },
       "alarmcleantank": {
         "name": "Alarm clean tank"
@@ -319,16 +319,16 @@
         "name": "Alarm empty tank pause"
       },
       "alarmfilladcontainer1warning": {
-        "name": "Auto-dose container 1 fill warning"
+        "name": "Auto-dose container 1 empty"
       },
       "alarmfilladcontainer2warning": {
-        "name": "Auto-dose container 2 fill warning"
+        "name": "Auto-dose container 2 empty"
       },
       "alarmfilltank": {
         "name": "Alarm fill tank"
       },
       "alarmfoamdetection": {
-        "name": "Alarm foam detection"
+        "name": "Foam detected"
       },
       "alarmgreasefilter": {
         "name": "Alarm grease filter"
@@ -343,7 +343,7 @@
         "name": "Alarm microwave system finished"
       },
       "alarmoptionnotavailable": {
-        "name": "Alarm option not available"
+        "name": "Option not available"
       },
       "alarmoven_system_finished": {
         "name": "Alarmoven system finished"
@@ -355,7 +355,7 @@
         "name": "Alarmpower failure running"
       },
       "alarmpowerfailalert": {
-        "name": "Alarm power fail alert"
+        "name": "Power failure"
       },
       "alarmprobe_lost_connection": {
         "name": "Alarmprobe lost connection"
@@ -391,7 +391,7 @@
         "name": "Alarm steam clean finished"
       },
       "alarmsteriltubrunwarning": {
-        "name": "Alarm steriltub run warning"
+        "name": "Sterilization tub due"
       },
       "alarmtanklevel1": {
         "name": "Alarm tank level 1"
@@ -400,7 +400,7 @@
         "name": "Alarm timer ended"
       },
       "alarmwashfinished": {
-        "name": "Alarm wash finished"
+        "name": "Wash finished"
       },
       "ali_wifi_fault_flag": {
         "name": "WiFi fault"
