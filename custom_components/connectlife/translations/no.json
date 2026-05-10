@@ -609,9 +609,6 @@
       "existing_sr_mode": {
         "name": "Eksisterende SR-modus"
       },
-      "extra_rinse_status": {
-        "name": "Ekstra skyll"
-      },
       "f-filter": {
         "name": "Filter"
       },
@@ -951,23 +948,11 @@
       "selected_program_disinfection": {
         "name": "Desinfeksjon"
       },
-      "selected_program_entry_steam_status": {
-        "name": "Inngangsdamp"
-      },
       "selected_program_extradry_status": {
         "name": "Ekstra t\u00f8rr"
       },
-      "selected_program_prewash_status": {
-        "name": "Forvask"
-      },
-      "selected_program_rinse_hold_status": {
-        "name": "Skyllehold"
-      },
       "selected_program_steamfinish": {
         "name": "Dampavslutning"
-      },
-      "selected_program_water_pluse_status": {
-        "name": "Vannpuls"
       },
       "session_pairing_active": {
         "name": "\u00d8ktparing aktiv"
@@ -1720,6 +1705,14 @@
           "stop_finish": "Stopp og avslutt"
         }
       },
+      "ads_dirtiness_setting_status": {
+        "name": "Smussgrad",
+        "state": {
+          "high": "H\u00f8y",
+          "low": "Lav",
+          "medium": "Middels"
+        }
+      },
       "auto_dose_quantity_setting_status": {
         "name": "Autodoseringsmengde"
       },
@@ -1746,6 +1739,29 @@
         "state": {
           "exhaust": "Avtrekk",
           "recirculation": "Resirkulering"
+        }
+      },
+      "compartment1_type_setting_status": {
+        "name": "Kammer 1 type",
+        "state": {
+          "black_detergent": "Svartvaskemiddel",
+          "color_detergent": "Fargevaskemiddel",
+          "detergent": "Vaskemiddel",
+          "sensitive_detergent": "Vaskemiddel for sensitive plagg",
+          "softener": "T\u00f8ymykner",
+          "white_detergent": "Hvitvaskemiddel"
+        }
+      },
+      "compartment2_type_setting_status": {
+        "name": "Kammer 2 type",
+        "state": {
+          "black_detergent": "Svartvaskemiddel",
+          "color_detergent": "Fargevaskemiddel",
+          "detergent": "Vaskemiddel",
+          "other_rinse_agent": "Annet skyllemiddel",
+          "sensitive_detergent": "Vaskemiddel for sensitive plagg",
+          "softener": "T\u00f8ymykner",
+          "white_detergent": "Hvitvaskemiddel"
         }
       },
       "cooking_intensity": {
@@ -1789,6 +1805,16 @@
           "more": "Mer",
           "off": "Av",
           "standard": "Standard"
+        }
+      },
+      "detergent_amount_status": {
+        "name": "Vaskemiddelmengde",
+        "state": {
+          "1": "1",
+          "2": "2",
+          "3": "3",
+          "auto": "Auto",
+          "off": "Av"
         }
       },
       "dry_level": {
@@ -1847,6 +1873,33 @@
         "state": {
           "english": "Engelsk",
           "simplified_chinese": "Forenklet kinesisk"
+        }
+      },
+      "liquid_unit_setting_status": {
+        "name": "V\u00e6skeenhet",
+        "state": {
+          "ml": "ml",
+          "tbs": "ss"
+        }
+      },
+      "max_rpm_allowed_stat": {
+        "name": "Maks sentrifugehastighet",
+        "state": {
+          "0_rpm": "0 RPM",
+          "1000_rpm": "1000 RPM",
+          "1100_rpm": "1100 RPM",
+          "1200_rpm": "1200 RPM",
+          "1300_rpm": "1300 RPM",
+          "1400_rpm": "1400 RPM",
+          "1500_rpm": "1500 RPM",
+          "1600_rpm": "1600 RPM",
+          "1700_rpm": "1700 RPM",
+          "1800_rpm": "1800 RPM",
+          "400_rpm": "400 RPM",
+          "600_rpm": "600 RPM",
+          "700_rpm": "700 RPM",
+          "800_rpm": "800 RPM",
+          "900_rpm": "900 RPM"
         }
       },
       "notification_volumen_setting_status": {
@@ -1959,20 +2012,38 @@
         }
       },
       "selected_program_id_status": {
-        "name": "Program",
+        "name": "Valgt program",
         "state": {
           "auto": "Auto",
+          "baby": "Baby",
           "clean": "Rens",
+          "color": "Farge",
+          "down_feathers": "Dun",
+          "draining": "T\u00f8mmer vann",
+          "drum_cleaning": "Trommelrens",
           "eco": "Eco",
+          "eco_40_60": "Eco 40-60",
+          "extra_hygiene": "Ekstra hygiene",
+          "fast_20": "Hurtig 20'",
           "glass": "Glass",
           "hygiene": "Hygiene",
           "intensive": "Intensiv",
+          "intensive_59_32": "Intensiv 59'/32'",
+          "mix_synthetic": "Mix/Syntet",
           "night": "Natt",
+          "no_program_selected": "Intet program valgt",
           "one_hour": "\u00c9n time",
+          "pet_hair_removal": "Fjerning av kj\u00e6ledyrh\u00e5r",
           "quick_pro": "Hurtig pro",
           "rinse_and_hold": "Skyll og hold",
+          "rinsing_softening": "Skylling og myking",
           "self_cleaning": "Selvrens",
-          "time_program": "Tidsprogram"
+          "shirts": "Skjorter",
+          "spinning_draining": "Sentrifugering og t\u00f8mming",
+          "sport": "Sport",
+          "time_program": "Tidsprogram",
+          "white_cotton": "Hvit bomull",
+          "wool_manual": "Ull og manuell"
         }
       },
       "selected_program_mode": {
@@ -1985,6 +2056,24 @@
           "speed": "Hastighet"
         }
       },
+      "selected_program_mode2_status": {
+        "name": "Eco-modus",
+        "state": {
+          "green_mode": "Gr\u00f8nn",
+          "night_mode": "Natt",
+          "speed_mode": "Hurtig"
+        }
+      },
+      "selected_program_set_temperature_status": {
+        "name": "Temperatur",
+        "state": {
+          "20_c": "20 \u00b0C",
+          "30_c": "30 \u00b0C",
+          "40_c": "40 \u00b0C",
+          "60_c": "60 \u00b0C",
+          "cold": "Kald"
+        }
+      },
       "softener": {
         "name": "T\u00f8ymykner",
         "state": {
@@ -1993,6 +2082,25 @@
           "more": "Mer",
           "off": "Av",
           "standard": "Standard"
+        }
+      },
+      "softener_amount_status": {
+        "name": "T\u00f8ymyknermengde",
+        "state": {
+          "1": "1",
+          "2": "2",
+          "3": "3",
+          "auto": "Auto",
+          "off": "Av"
+        }
+      },
+      "sound_setting_status": {
+        "name": "Volum",
+        "state": {
+          "0": "0",
+          "1": "1",
+          "2": "2",
+          "3": "3"
         }
       },
       "spin_speed_rpm": {
@@ -2203,6 +2311,13 @@
           "fahrenheit": "Fahrenheit"
         }
       },
+      "temperature_unit_setting_status": {
+        "name": "Temperaturenhet",
+        "state": {
+          "celsius": "Celsius",
+          "fahrenheit": "Fahrenheit"
+        }
+      },
       "time_format": {
         "name": "Tidsformat",
         "state": {
@@ -2233,6 +2348,20 @@
           "stop": "Stopp"
         }
       },
+      "units_setting_status": {
+        "name": "Enheter",
+        "state": {
+          "imperial": "Imperial",
+          "metric": "Metrisk"
+        }
+      },
+      "view_size_setting_status": {
+        "name": "Visningsst\u00f8rrelse",
+        "state": {
+          "big_text": "Stor tekst",
+          "normal_text": "Normal tekst"
+        }
+      },
       "volume": {
         "name": "Volum"
       },
@@ -2248,9 +2377,19 @@
         "name": "Vannhardhet"
       },
       "water_hardness_setting_status": {
-        "name": "Innstilling for vannhardhet",
+        "name": "Vannhardhet",
         "state": {
+          "1": "1",
+          "2": "2",
+          "3": "3",
           "not_set": "Ikke satt"
+        }
+      },
+      "weight_unit_setting_status": {
+        "name": "Vektenhet",
+        "state": {
+          "kg": "kg",
+          "lbs": "lbs"
         }
       }
     },
@@ -2266,9 +2405,6 @@
       },
       "activemodemotorlevel": {
         "name": "Motorniv\u00e5 i aktiv modus"
-      },
-      "adapt_sense_setting_status": {
-        "name": "Status for tilpasset sansing"
       },
       "adapttech_setting": {
         "name": "Innstilling for tilpasset teknologi"
@@ -2288,9 +2424,6 @@
       "add_water_flag": {
         "name": "Flagg for \u00e5 fylle p\u00e5 vann"
       },
-      "ads_dirtiness_setting_status": {
-        "name": "ADS smussinnstilling"
-      },
       "ads_settings_current_program_detergent_setting_status": {
         "name": "ADS \u2013 vaskemiddelinnstilling for n\u00e5v\u00e6rende program"
       },
@@ -2308,9 +2441,6 @@
       },
       "air_freshness": {
         "name": "Luftfriskhet"
-      },
-      "air_shower_setting_status": {
-        "name": "Innstilling for luftdusj"
       },
       "airdryflag": {
         "name": "Luftt\u00f8rkflagg"
@@ -2469,14 +2599,8 @@
       "auto_dose_duration": {
         "name": "Autodoseringsvarighet"
       },
-      "auto_dose_system_setting_status": {
-        "name": "Innstilling for autodoseringssystem"
-      },
       "auto_grease_filter_indication": {
         "name": "Automatisk fettfilter"
-      },
-      "auto_super_rinse_setting_status": {
-        "name": "Innstilling for auto superskyll"
       },
       "auto_tower_up": {
         "name": "T\u00e5rn automatisk hevet"
@@ -2629,17 +2753,8 @@
       "coldwash": {
         "name": "Kaldvask"
       },
-      "color_sensor_setting_status": {
-        "name": "Innstilling for fargesensor"
-      },
       "commodity_inspection": {
         "name": "Vareinspeksjon"
-      },
-      "compartment1_type_setting_status": {
-        "name": "Innstilling for kammer 1 type"
-      },
-      "compartment2_type_setting_status": {
-        "name": "Innstilling for kammer 2 type"
       },
       "compartment_inuse": {
         "name": "Kammer i bruk"
@@ -2897,9 +3012,6 @@
       "descale_status": {
         "name": "Status for avkalking"
       },
-      "detergent_amount_status": {
-        "name": "Status for vaskemiddelmengde"
-      },
       "detergent_buynotifyswitch": {
         "name": "Bryter for kj\u00f8psvarsel for vaskemiddel"
       },
@@ -3052,9 +3164,6 @@
       "dose_assist_recommended_low_concenatration_detergent_quantity": {
         "name": "Anbefalt vaskemiddelmengde for lavkonsentrert"
       },
-      "dose_assist_status": {
-        "name": "Status for doseringshjelper"
-      },
       "dose_detergent_amount": {
         "name": "Dosert vaskemiddelmengde"
       },
@@ -3072,9 +3181,6 @@
       },
       "downloadprogram": {
         "name": "Last ned program"
-      },
-      "drum_light_setting_status": {
-        "name": "Innstillingsstatus for trommellys"
       },
       "drumcleancycle_runsnumber": {
         "name": "Antall trommelrenssykluser"
@@ -4037,9 +4143,6 @@
       "lightscolor_temperature_setting": {
         "name": "Innstilling for lysfargetemperatur"
       },
-      "liquid_unit_setting_status": {
-        "name": "Innstilling for v\u00e6skeenhet"
-      },
       "load_operation_status2": {
         "name": "Status for lastoperasjon 2"
       },
@@ -4094,9 +4197,6 @@
       },
       "market_mode_exist": {
         "name": "Butikkmodus finnes"
-      },
-      "max_rpm_allowed_stat": {
-        "name": "Status for maks tillatt RPM"
       },
       "mdo_on_demand": {
         "name": "MDO p\u00e5 foresp\u00f8rsel"
@@ -4211,9 +4311,6 @@
       "no_autodoseswitch": {
         "name": "Ingen autodoseringsbryter"
       },
-      "no_sound_status": {
-        "name": "Ingen lyd-status"
-      },
       "normal_sound_size": {
         "name": "Normal lydst\u00f8rrelse"
       },
@@ -4321,9 +4418,6 @@
       },
       "power_save": {
         "name": "Str\u00f8msparing"
-      },
-      "power_save_status": {
-        "name": "Status for str\u00f8msparing"
       },
       "power_value": {
         "name": "Effektverdi"
@@ -4833,27 +4927,7 @@
         }
       },
       "selected_program_id_status": {
-        "name": "Valgt program",
-        "state": {
-          "baby": "Baby",
-          "color": "Farge",
-          "down_feathers": "Dun",
-          "draining": "T\u00f8mmer vann",
-          "drum_cleaning": "Trommelrens",
-          "eco_40_60": "Eco 40-60",
-          "extra_hygiene": "Ekstra hygiene",
-          "fast_20": "Hurtig 20'",
-          "intensive_59_32": "Intensiv 59'/32'",
-          "mix_synthetic": "Mix/Syntet",
-          "no_program_selected": "Intet program valgt",
-          "pet_hair_removal": "Fjerning av kj\u00e6ledyrh\u00e5r",
-          "rinsing_softening": "Skylling og myking",
-          "shirts": "Skjorter",
-          "spinning_draining": "Sentrifugering og t\u00f8mming",
-          "sport": "Sport",
-          "white_cotton": "Hvit bomull",
-          "wool_manual": "Ull og manuell"
-        }
+        "name": "Valgt program"
       },
       "selected_program_intensive_mode": {
         "name": "Valgt program \u2013 intensivmodus"
@@ -4866,9 +4940,6 @@
       },
       "selected_program_mode": {
         "name": "Modus for valgt program"
-      },
-      "selected_program_mode2_status": {
-        "name": "Status for valgt program \u2013 modus 2"
       },
       "selected_program_mode_status": {
         "name": "Programmodus",
@@ -4884,20 +4955,6 @@
       },
       "selected_program_remaining_time_in_minutes": {
         "name": "Gjenst\u00e5ende tid for valgt program"
-      },
-      "selected_program_set_temperature_status": {
-        "name": "Temperatur",
-        "state": {
-          "20_c": "20 \u00b0C",
-          "30_c": "30 \u00b0C",
-          "40_c": "40 \u00b0C",
-          "60_c": "60 \u00b0C",
-          "cold": "Kald",
-          "not_available": "Ikke tilgjengelig"
-        }
-      },
-      "selected_program_small_load_status": {
-        "name": "Valgt program \u2013 liten last-status"
       },
       "selected_program_storage_function": {
         "name": "Valgt program \u2013 lagringsfunksjon"
@@ -5932,17 +5989,11 @@
       "slotdry_flag1": {
         "name": "Slotdry-flagg 1"
       },
-      "smart_sync_setting_status": {
-        "name": "Innstilling for smart synk"
-      },
       "soft_pairing_setting": {
         "name": "Innstilling for myk paring"
       },
       "soft_pairing_status": {
         "name": "Status for myk paring"
-      },
-      "softener_amount_status": {
-        "name": "Status for t\u00f8ymyknermengde"
       },
       "softener_buynotifyswitch": {
         "name": "Bryter for kj\u00f8psvarsel for t\u00f8ymykner"
@@ -5994,9 +6045,6 @@
       },
       "sound_setting": {
         "name": "Lydinnstilling"
-      },
-      "sound_setting_status": {
-        "name": "Status for lydinnstilling"
       },
       "sound_settings": {
         "name": "Lydinnstillinger"
@@ -7115,9 +7163,6 @@
       "temperature_room_judge": {
         "name": "Temperaturvurdering for rom"
       },
-      "temperature_unit_setting_status": {
-        "name": "Innstillingsstatus for temperaturenhet"
-      },
       "temperature_unit_status": {
         "name": "Status for temperaturenhet"
       },
@@ -7144,9 +7189,6 @@
       },
       "time_program_set_time_status": {
         "name": "Status for innstilt tid i tidsprogram"
-      },
-      "time_save_status": {
-        "name": "Status for tidsbesparelse"
       },
       "time_zone_setting": {
         "name": "Innstilling for tidssone"
@@ -7217,17 +7259,11 @@
       "total_water_consumption": {
         "name": "Totalt vannforbruk"
       },
-      "turbidity_sensor_setting_status": {
-        "name": "Innstilling for turbiditetssensor"
-      },
       "unfreeze_run_status": {
         "name": "Kj\u00f8restatus for opptining"
       },
       "unfreeze_switch_status": {
         "name": "Bryterstatus for opptining"
-      },
-      "units_setting_status": {
-        "name": "Innstilling for enheter"
       },
       "unpair_all_users": {
         "name": "Fjern paring for alle brukere"
@@ -7288,9 +7324,6 @@
       },
       "variation_sensor_real_temperature": {
         "name": "Faktisk temperatur fra variasjonssensor"
-      },
-      "view_size_setting_status": {
-        "name": "Innstilling for visningsst\u00f8rrelse"
       },
       "volume_setting": {
         "name": "Voluminnstilling"
@@ -7499,9 +7532,6 @@
       "water_hardness_setting": {
         "name": "Innstilling for vannhardhet"
       },
-      "water_hardness_setting_status": {
-        "name": "Vannhardhet"
-      },
       "water_heat_switch": {
         "name": "Bryter for vannvarming"
       },
@@ -7547,9 +7577,6 @@
       },
       "weight_unit_setting": {
         "name": "Innstilling for vektenhet"
-      },
-      "weight_unit_setting_status": {
-        "name": "Status for innstilling av vektenhet"
       },
       "wet_and_dry_space": {
         "name": "V\u00e5tt og t\u00f8rt rom"
@@ -7634,8 +7661,14 @@
       "activemodestatus": {
         "name": "Aktiv modus"
       },
+      "adapt_sense_setting_status": {
+        "name": "Tilpasset sansing"
+      },
       "adaptive_sense_setting": {
         "name": "Adaptiv sansingsinnstilling"
+      },
+      "air_shower_setting_status": {
+        "name": "Luftdusj"
       },
       "ambientlightstatus": {
         "name": "Omgivelseslys"
@@ -7670,8 +7703,14 @@
       "auto_dose_setting_status": {
         "name": "Autodosering"
       },
+      "auto_dose_system_setting_status": {
+        "name": "Autodoseringssystem"
+      },
       "auto_fast_preheat": {
         "name": "Automatisk hurtigforvarming"
+      },
+      "auto_super_rinse_setting_status": {
+        "name": "Auto superskyll"
       },
       "autodose": {
         "name": "Autodosering"
@@ -7685,8 +7724,14 @@
       "child_lock": {
         "name": "Barnesikring"
       },
+      "child_lock_setting_status": {
+        "name": "Barnesikring"
+      },
       "cleanairstatus": {
         "name": "Ren luft"
+      },
+      "color_sensor_setting_status": {
+        "name": "Fargesensor"
       },
       "crisp_function_status": {
         "name": "Status for spr\u00f8-funksjon"
@@ -7694,13 +7739,25 @@
       "demo_mode": {
         "name": "Demomodus"
       },
+      "demo_mode_status": {
+        "name": "Demomodus"
+      },
       "display_standby": {
         "name": "Skjermstandby"
+      },
+      "dose_assist_status": {
+        "name": "Doseringshjelper"
       },
       "drum_light": {
         "name": "Trommellys"
       },
+      "drum_light_setting_status": {
+        "name": "Trommellys"
+      },
       "extra_rinse": {
+        "name": "Ekstra skyll"
+      },
+      "extra_rinse_status": {
         "name": "Ekstra skyll"
       },
       "fota_cmd": {
@@ -7733,6 +7790,9 @@
       "lightstatus": {
         "name": "Lys"
       },
+      "logo_setting_status": {
+        "name": "Logo"
+      },
       "mute": {
         "name": "Lydl\u00f8s"
       },
@@ -7742,8 +7802,14 @@
       "night_mode_status": {
         "name": "Nattmodusstatus"
       },
+      "no_sound_status": {
+        "name": "Lydl\u00f8s"
+      },
       "odor_control_setting": {
         "name": "Luktkontroll"
+      },
+      "power_save_status": {
+        "name": "Str\u00f8msparing"
       },
       "prewash": {
         "name": "Forvask"
@@ -7757,11 +7823,38 @@
       "save_mode": {
         "name": "Sparemodus"
       },
+      "selected_program_anticrease_status": {
+        "name": "Anti-kr\u00f8ll"
+      },
+      "selected_program_entry_steam_status": {
+        "name": "Inngangsdamp"
+      },
+      "selected_program_prewash_status": {
+        "name": "Forvask"
+      },
+      "selected_program_rinse_hold_status": {
+        "name": "Skyllehold"
+      },
+      "selected_program_small_load_status": {
+        "name": "Liten last"
+      },
+      "selected_program_water_pluse_status": {
+        "name": "Vannpuls"
+      },
+      "session_pairing_status": {
+        "name": "\u00d8ktparing"
+      },
       "sf_mode": {
         "name": "SF-modus"
       },
       "sf_sr_mutex_mode": {
         "name": "SF/SR-mutex-modus"
+      },
+      "smart_sync_setting_status": {
+        "name": "Smart synk"
+      },
+      "soft_pairing_status": {
+        "name": "Myk paring"
       },
       "sr_mode": {
         "name": "SR-modus"
@@ -7834,6 +7927,12 @@
       },
       "time_save": {
         "name": "Tidsbesparelse"
+      },
+      "time_save_status": {
+        "name": "Tidsbesparelse"
+      },
+      "turbidity_sensor_setting_status": {
+        "name": "Turbiditetssensor"
       },
       "welcome": {
         "name": "Velkommen"

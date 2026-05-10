@@ -565,9 +565,6 @@
       "existing_sr_mode": {
         "name": "Aktueller SR-Modus"
       },
-      "extra_rinse_status": {
-        "name": "Programmoption Extra-Sp\u00fclung"
-      },
       "f_e_arkgrille": {
         "name": "Schutzalarm f\u00fcr Kabinengrill"
       },
@@ -871,23 +868,11 @@
       "selected_program_disinfection": {
         "name": "Programmoption Desinfektion"
       },
-      "selected_program_entry_steam_status": {
-        "name": "Programmoption Dampf"
-      },
       "selected_program_extradry_status": {
         "name": "Programmoption Extra Trocken"
       },
-      "selected_program_prewash_status": {
-        "name": "Programmoption Vorw\u00e4sche"
-      },
-      "selected_program_rinse_hold_status": {
-        "name": "Programmoption Sp\u00fclstopp"
-      },
       "selected_program_steamfinish": {
         "name": "Programmoption Dampffinish"
-      },
-      "selected_program_water_pluse_status": {
-        "name": "Programmoption Wasser Plus"
       },
       "session_pairing_active": {
         "name": "Sitzungskopplung aktiv"
@@ -1259,6 +1244,14 @@
           "stop_finish": "Stopp / Fertig"
         }
       },
+      "ads_dirtiness_setting_status": {
+        "name": "Verschmutzung",
+        "state": {
+          "high": "Hoch",
+          "low": "Niedrig",
+          "medium": "Mittel"
+        }
+      },
       "auto_dose_quantity_setting_status": {
         "name": "Automatische Dosierungsmenge"
       },
@@ -1369,6 +1362,9 @@
           "simplified_chinese": "Vereinfachtes Chinesisch"
         }
       },
+      "max_rpm_allowed_stat": {
+        "name": "Maximale Schleuderdrehzahl"
+      },
       "notification_volumen_setting_status": {
         "name": "Benachrichtigungslautst\u00e4rke",
         "state": {
@@ -1461,17 +1457,35 @@
         "name": "Programm",
         "state": {
           "auto": "Automatisch",
+          "baby": "Baby",
           "clean": "Reinigung",
+          "color": "Farbig",
+          "down_feathers": "Daunenfedern",
+          "draining": "Abpumpen",
+          "drum_cleaning": "Trommelreinigung",
           "eco": "Eco",
+          "eco_40_60": "Eco 40-60",
+          "extra_hygiene": "Extra Hygiene",
+          "fast_20": "Schnell 20'",
           "glass": "Glas",
           "hygiene": "Hygiene",
           "intensive": "Intensiv",
+          "intensive_59_32": "Intensiv 59'/32'",
+          "mix_synthetic": "Mix/Synthetik",
           "night": "Nacht",
+          "no_program_selected": "Kein Programm ausgew\u00e4hlt",
           "one_hour": "1 Stunde",
+          "pet_hair_removal": "Tierhaarentfernung",
           "quick_pro": "Quick pro",
           "rinse_and_hold": "Sp\u00fclen & Warten",
+          "rinsing_softening": "Sp\u00fclen & Weichsp\u00fclen",
           "self_cleaning": "Selbstreinigung",
-          "time_program": "Zeitprogramm"
+          "shirts": "Hemden",
+          "spinning_draining": "Schleudern & Abpumpen",
+          "sport": "Sport",
+          "time_program": "Zeitprogramm",
+          "white_cotton": "Wei\u00dfe Baumwolle",
+          "wool_manual": "Wolle & Manuell"
         }
       },
       "selected_program_mode": {
@@ -1483,6 +1497,24 @@
           "speed": "Schnell"
         }
       },
+      "selected_program_mode2_status": {
+        "name": "Eco-Modus",
+        "state": {
+          "green_mode": "Gr\u00fcn",
+          "night_mode": "Nacht",
+          "speed_mode": "Schnell"
+        }
+      },
+      "selected_program_set_temperature_status": {
+        "name": "Programm Temperatur",
+        "state": {
+          "20_c": "20 \u00b0C",
+          "30_c": "30 \u00b0C",
+          "40_c": "40 \u00b0C",
+          "60_c": "60 \u00b0C",
+          "cold": "Kalt"
+        }
+      },
       "softener": {
         "name": "Weichsp\u00fcler",
         "state": {
@@ -1490,6 +1522,15 @@
           "less": "Weniger",
           "more": "Mehr",
           "standard": "Standard"
+        }
+      },
+      "sound_setting_status": {
+        "name": "Lautst\u00e4rke",
+        "state": {
+          "0": "0",
+          "1": "1",
+          "2": "2",
+          "3": "3"
         }
       },
       "spin_speed_rpm": {
@@ -1704,6 +1745,9 @@
       "water_hardness_setting_status": {
         "name": "Wasserh\u00e4rte",
         "state": {
+          "1": "1",
+          "2": "2",
+          "3": "3",
           "not_set": "Nicht eingestellt"
         }
       }
@@ -2317,27 +2361,7 @@
         }
       },
       "selected_program_id_status": {
-        "name": "Programm",
-        "state": {
-          "baby": "Baby",
-          "color": "Farbig",
-          "down_feathers": "Daunenfedern",
-          "draining": "Abpumpen",
-          "drum_cleaning": "Trommelreinigung",
-          "eco_40_60": "Eco 40-60",
-          "extra_hygiene": "Extra Hygiene",
-          "fast_20": "Schnell 20'",
-          "intensive_59_32": "Intensiv 59'/32'",
-          "mix_synthetic": "Mix/Synthetik",
-          "no_program_selected": "Kein Programm ausgew\u00e4hlt",
-          "pet_hair_removal": "Tierhaarentfernung",
-          "rinsing_softening": "Sp\u00fclen & Weichsp\u00fclen",
-          "shirts": "Hemden",
-          "spinning_draining": "Schleudern & Abpumpen",
-          "sport": "Sport",
-          "white_cotton": "Wei\u00dfe Baumwolle",
-          "wool_manual": "Wolle & Manuell"
-        }
+        "name": "Programm"
       },
       "selected_program_mode_status": {
         "name": "Programm Modus",
@@ -2350,17 +2374,6 @@
       },
       "selected_program_remaining_time_in_minutes": {
         "name": "Programmdauer Verbleibend"
-      },
-      "selected_program_set_temperature_status": {
-        "name": "Programm Temperatur",
-        "state": {
-          "20_c": "20 \u00b0C",
-          "30_c": "30 \u00b0C",
-          "40_c": "40 \u00b0C",
-          "60_c": "60 \u00b0C",
-          "cold": "Kalt",
-          "not_available": "Nicht verf\u00fcgbar"
-        }
       },
       "selected_program_total_running_time_in_minutes": {
         "name": "Programmdauer Gesamt"
@@ -3450,9 +3463,6 @@
       "water_consumption_in_running_program": {
         "name": "Wasserverbrauch im laufenden Programm"
       },
-      "water_hardness_setting_status": {
-        "name": "Wasserh\u00e4rte"
-      },
       "water_inlet_setting_status": {
         "name": "Wasserzulauf"
       },
@@ -3510,6 +3520,9 @@
       "extra_rinse": {
         "name": "Extra Sp\u00fclen"
       },
+      "extra_rinse_status": {
+        "name": "Programmoption Extra-Sp\u00fclung"
+      },
       "fota_cmd": {
         "name": "Firmwareaktualisierung"
       },
@@ -3543,6 +3556,9 @@
       "night_mode_status": {
         "name": "Nachtmodus"
       },
+      "no_sound_status": {
+        "name": "Stumm"
+      },
       "odor_control_setting": {
         "name": "Geruchskontrolle"
       },
@@ -3551,6 +3567,18 @@
       },
       "save_mode": {
         "name": "Sparmodus"
+      },
+      "selected_program_entry_steam_status": {
+        "name": "Programmoption Dampf"
+      },
+      "selected_program_prewash_status": {
+        "name": "Programmoption Vorw\u00e4sche"
+      },
+      "selected_program_rinse_hold_status": {
+        "name": "Programmoption Sp\u00fclstopp"
+      },
+      "selected_program_water_pluse_status": {
+        "name": "Programmoption Wasser Plus"
       },
       "sf_mode": {
         "name": "SF-Modus"

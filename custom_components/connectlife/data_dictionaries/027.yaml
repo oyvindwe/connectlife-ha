@@ -42,9 +42,21 @@ properties:
       2: closed
       3: locked
 - property: Extra_rinse_status
-  binary_sensor: {}
+  unavailable: 0
+  switch:
+    "off": 1
+    "on": 2
+    command:
+      name: Extra_rinse
+      adjust: 1
 - property: Selected_program_anticrease_status
-  binary_sensor: {}
+  unavailable: 0
+  switch:
+    "off": 1
+    "on": 2
+    command:
+      name: Selected_program_anticrease
+      adjust: 1
 - property: Selected_program_Disinfection
   binary_sensor: {}
 - property: Selected_program_duration_in_minutes
@@ -54,13 +66,17 @@ properties:
     device_class: duration
     unit: min
 - property: Selected_program_entry_steam_status
-  binary_sensor: {}
+  unavailable: 0
+  switch:
+    "off": 1
+    "on": 2
+    command:
+      name: Selected_program_entry_steam
+      adjust: 1
 - property: Selected_program_id_status
   icon: 'mdi:tshirt-crew'
-  sensor:
-    read_only: true
-    device_class: enum
-    unknown_value: 255
+  unavailable: 0
+  select:
     options:
       0: eco_40_60
       1: white_cotton
@@ -80,6 +96,8 @@ properties:
       15: draining
       16: rinsing_softening
       17: down_feathers
+    command:
+      name: Selected_program_id
 - property: Selected_program_mode_status
   icon: 'mdi:tshirt-crew'
   sensor:
@@ -91,7 +109,13 @@ properties:
       3: fast
       4: extra_fast
 - property: Selected_program_prewash_status
-  binary_sensor: {}
+  unavailable: 0
+  switch:
+    "off": 1
+    "on": 2
+    command:
+      name: Selected_program_prewash
+      adjust: 1
 - property: Selected_program_remaining_time_in_minutes
   icon: 'mdi:clock-end'
   sensor:
@@ -99,19 +123,26 @@ properties:
     device_class: duration
     unit: min
 - property: Selected_program_rinse_hold_status
-  binary_sensor: {}
+  unavailable: 0
+  switch:
+    "off": 1
+    "on": 2
+    command:
+      name: Selected_program_rinse_hold
+      adjust: 1
 - property: Selected_program_set_temperature_status
   icon: 'mdi:thermometer'
-  sensor:
-    read_only: true
-    device_class: enum
+  unavailable: 0
+  select:
     options:
-      0: not_available
       1: cold
       2: 20_c
       3: 30_c
       4: 40_c
       5: 60_c
+    command:
+      name: Selected_program_set_temperature
+      adjust: 1
 - property: Selected_program_washing_spin_speed_rpm_status
   icon: 'mdi:reload'
   sensor:
@@ -127,7 +158,13 @@ properties:
       8: 1200_rpm
       9: 1400_rpm
 - property: Selected_program_water_pluse_status
-  binary_sensor: {}
+  unavailable: 0
+  switch:
+    "off": 1
+    "on": 2
+    command:
+      name: Selected_program_water_pluse
+      adjust: 1
 - property: Status
   icon: 'mdi:washing-machine'
   sensor:
@@ -149,6 +186,15 @@ properties:
 - property: ADS_Dirtiness_setting_status
   # Sample value: 2
   optional: true
+  unavailable: 0
+  select:
+    options:
+      1: low
+      2: medium
+      3: high
+    command:
+      name: ADS_Dirtiness_setting
+      adjust: 1
 - property: ADS_Settings_Current_Program_Detergent_setting_status
   # Sample value: 2
   optional: true
@@ -158,6 +204,14 @@ properties:
 - property: Adapt_sense_setting_status
   # Sample value: 2
   optional: true
+  unavailable: 0
+  switch:
+    "off": 1
+    "on": 2
+    command:
+      name: Adapt_sense_setting
+      adjust: 1
+  entity_category: config
 - property: Add_on_program_download_ID
   # Sample value: 254
   optional: true
@@ -173,6 +227,14 @@ properties:
 - property: Air_shower_setting_status
   # Sample value: 0
   optional: true
+  unavailable: 0
+  switch:
+    "off": 1
+    "on": 2
+    command:
+      name: Air_shower_setting
+      adjust: 1
+  entity_category: config
 - property: Alarm_1
   # Sample value: 1
   optional: true
@@ -242,6 +304,14 @@ properties:
 - property: Auto_Super_rinse_setting_status
   # Sample value: 0
   optional: true
+  unavailable: 0
+  switch:
+    "off": 1
+    "on": 2
+    command:
+      name: Auto_Super_rinse_setting
+      adjust: 1
+  entity_category: config
 - property: Auto_dose_Compartment1_amount_setting
   # Sample value: 0
   optional: true
@@ -266,6 +336,14 @@ properties:
 - property: Auto_dose_system_setting_status
   # Sample value: 0
   optional: true
+  unavailable: 0
+  switch:
+    "off": 1
+    "on": 2
+    command:
+      name: Auto_dose_system_setting
+      adjust: 1
+  entity_category: config
 - property: Brightness_setting
   # Sample value: 0
   optional: true
@@ -275,15 +353,58 @@ properties:
 - property: Child_lock_setting_status
   # Sample value: 2
   optional: true
+  unavailable: 0
+  switch:
+    "off": 1
+    "on": 2
+    command:
+      name: Child_lock_setting
+      adjust: 1
+  entity_category: config
 - property: Color_sensor_setting_status
   # Sample value: 0
   optional: true
+  unavailable: 0
+  switch:
+    "off": 1
+    "on": 2
+    command:
+      name: Color_sensor_setting
+      adjust: 1
+  entity_category: config
 - property: Compartment1_type_setting_status
   # Sample value: 0
   optional: true
+  unavailable: 0
+  select:
+    options:
+      1: detergent
+      2: softener
+      3: color_detergent
+      4: white_detergent
+      5: black_detergent
+      6: sensitive_detergent
+    command:
+      name: Compartment1_type_setting
+      adjust: 1
+  entity_category: config
 - property: Compartment2_type_setting_status
   # Sample value: 0
   optional: true
+  unavailable: 0
+  select:
+    options:
+      1: detergent
+      2: softener
+      3: color_detergent
+      4: white_detergent
+      5: black_detergent
+      6: sensitive_detergent
+      7: other_rinse_agent
+    command:
+      name: Compartment2_type_setting
+      adjust: 1
+  entity_category: config
 - property: Current_washing_program_phase_2
   # Sample value: 1
   optional: true
@@ -302,9 +423,28 @@ properties:
 - property: Demo_mode_status
   # Sample value: 0
   optional: true
+  unavailable: 0
+  switch:
+    "off": 1
+    "on": 2
+    command:
+      name: Demo_mode
+      adjust: 1
+  entity_category: config
 - property: Detergent_amount_status
   # Sample value: 0
   optional: true
+  unavailable: 0
+  select:
+    options:
+      1: "off"
+      2: auto
+      3: '1'
+      4: '2'
+      5: '3'
+    command:
+      name: Detergent_amount
+      adjust: 1
 - property: Detergent_indicator
   # Sample value: 0
   optional: true
@@ -317,9 +457,25 @@ properties:
 - property: Dose_assist_status
   # Sample value: 0
   optional: true
+  unavailable: 0
+  switch:
+    "off": 1
+    "on": 2
+    command:
+      name: Dose_assist
+      adjust: 1
+  entity_category: config
 - property: Drum_light_setting_status
   # Sample value: 0
   optional: true
+  unavailable: 0
+  switch:
+    "off": 1
+    "on": 2
+    command:
+      name: Drum_Light_setting
+      adjust: 1
+  entity_category: config
 - property: Eco_score_type
   # Sample value: 0
   optional: true
@@ -575,24 +731,78 @@ properties:
 - property: Liquid_unit_setting_status
   # Sample value: 0
   optional: true
+  unavailable: 0
+  select:
+    options:
+      1: ml
+      2: tbs
+    command:
+      name: Liquid_unit_setting
+      adjust: 1
+  entity_category: config
 - property: Logo_setting_status
   # Sample value: 0
   optional: true
+  unavailable: 0
+  switch:
+    "off": 1
+    "on": 2
+    command:
+      name: Logo_setting
+      adjust: 1
+  entity_category: config
 - property: Max_RPM_allowed_stat
   # Sample value: 0
   optional: true
+  unavailable: 0
+  select:
+    options:
+      1: 0_rpm
+      2: 400_rpm
+      3: 600_rpm
+      4: 700_rpm
+      5: 800_rpm
+      6: 900_rpm
+      7: 1000_rpm
+      8: 1100_rpm
+      9: 1200_rpm
+      10: 1300_rpm
+      11: 1400_rpm
+      12: 1500_rpm
+      13: 1600_rpm
+      14: 1700_rpm
+      15: 1800_rpm
+    command:
+      name: Max_RPM_allowed
+      adjust: 1
+  entity_category: config
 - property: Night_start_setting_status_102
   # Sample value: 0
   optional: true
 - property: No_sound_status
   # Sample value: 1
   optional: true
+  unavailable: 0
+  switch:
+    "off": 1
+    "on": 2
+    command:
+      name: No_sound
+      adjust: 1
+  entity_category: config
 - property: Number_of_rinses
   # Sample value: 254
   optional: true
 - property: Power_save_status
   # Sample value: 0
   optional: true
+  unavailable: 0
+  switch:
+    "off": 1
+    "on": 2
+    command:
+      name: Power_save
+      adjust: 1
 - property: Remote_control_mode_monitoring
   # Sample value: 1
   optional: true
@@ -629,6 +839,13 @@ properties:
 - property: Selected_program_Small_load_status
   # Sample value: 0
   optional: true
+  unavailable: 0
+  switch:
+    "off": 1
+    "on": 2
+    command:
+      name: Selected_program_Small_load
+      adjust: 1
 - property: Selected_program_Super_rinse
   # Sample value: 0
   optional: true
@@ -641,27 +858,78 @@ properties:
 - property: Selected_program_mode2_status
   # Sample value: 0
   optional: true
+  unavailable: 0
+  select:
+    options:
+      1: speed_mode
+      2: green_mode
+      3: night_mode
+    command:
+      name: Selected_program_mode2
+      adjust: 1
 - property: Session_pairing_active
   # Sample value: 0
   optional: true
 - property: Session_pairing_status
   # Sample value: 0
   optional: true
+  switch:
+    "off": 0
+    "on": 1
+    command:
+      name: Session_pairing_setting
+  entity_category: diagnostic
 - property: Smart_sync_setting_status
   # Sample value: 0
   optional: true
+  unavailable: 0
+  switch:
+    "off": 1
+    "on": 2
+    command:
+      name: Smart_sync_setting
+      adjust: 1
+  entity_category: config
 - property: Soft_pairing_status
   # Sample value: 0
   optional: true
+  switch:
+    "off": 0
+    "on": 1
+    command:
+      name: Soft_pairing_setting
+  entity_category: diagnostic
 - property: Softener_amount_status
   # Sample value: 0
   optional: true
+  unavailable: 0
+  select:
+    options:
+      1: "off"
+      2: auto
+      3: '1'
+      4: '2'
+      5: '3'
+    command:
+      name: Softener_amount
+      adjust: 1
 - property: Softener_indicator
   # Sample value: 0
   optional: true
 - property: Sound_setting_status
   # Sample value: 3
   optional: true
+  unavailable: 0
+  select:
+    options:
+      1: '0'
+      2: '1'
+      3: '2'
+      4: '3'
+    command:
+      name: Sound_setting
+      adjust: 1
+  entity_category: config
 - property: Stain_program_Set_clothes_type_status
   # Sample value: 0
   optional: true
@@ -671,27 +939,88 @@ properties:
 - property: Temperature_unit_setting_status
   # Sample value: 0
   optional: true
+  unavailable: 0
+  select:
+    options:
+      1: celsius
+      2: fahrenheit
+    command:
+      name: Temperature_unit_setting
+      adjust: 1
+  entity_category: config
 - property: Time_program_Set_time_status
   # Sample value: 0
   optional: true
 - property: Time_save_status
   # Sample value: 0
   optional: true
+  unavailable: 0
+  switch:
+    "off": 1
+    "on": 2
+    command:
+      name: Time_save
+      adjust: 1
 - property: Turbidity_sensor_setting_status
   # Sample value: 0
   optional: true
+  unavailable: 0
+  switch:
+    "off": 1
+    "on": 2
+    command:
+      name: Turbidity_sensor_setting
+      adjust: 1
+  entity_category: config
 - property: Units_setting_status
   # Sample value: 0
   optional: true
+  unavailable: 0
+  select:
+    options:
+      1: imperial
+      2: metric
+    command:
+      name: Units_setting
+      adjust: 1
+  entity_category: config
 - property: View_size_setting_status
   # Sample value: 0
   optional: true
+  unavailable: 0
+  select:
+    options:
+      1: normal_text
+      2: big_text
+    command:
+      name: View_size_setting
+      adjust: 1
+  entity_category: config
 - property: Volume_setting
   # Sample value: 0
   optional: true
 - property: Water_hardness_setting_status
   # Sample value: 2
   optional: true
+  unavailable: 0
+  select:
+    options:
+      1: '1'
+      2: '2'
+      3: '3'
+    command:
+      name: Water_hardness_setting
+      adjust: 1
+  entity_category: config
 - property: Weight_unit_setting_status
   # Sample value: 0
   optional: true
+  unavailable: 0
+  select:
+    options:
+      1: kg
+      2: lbs
+    command:
+      name: Weight_unit_setting
+      adjust: 1
+  entity_category: config

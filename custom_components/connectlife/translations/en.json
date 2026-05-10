@@ -834,9 +834,6 @@
       "existing_sr_mode": {
         "name": "Existing SR mode"
       },
-      "extra_rinse_status": {
-        "name": "Extra rinse"
-      },
       "f-filter": {
         "name": "Filter"
       },
@@ -1221,23 +1218,11 @@
       "selected_program_disinfection": {
         "name": "Disinfection"
       },
-      "selected_program_entry_steam_status": {
-        "name": "Entry steam"
-      },
       "selected_program_extradry_status": {
         "name": "Extra dry"
       },
-      "selected_program_prewash_status": {
-        "name": "Prewash"
-      },
-      "selected_program_rinse_hold_status": {
-        "name": "Rinse hold"
-      },
       "selected_program_steamfinish": {
         "name": "Steam finish"
-      },
-      "selected_program_water_pluse_status": {
-        "name": "Water pulse"
       },
       "session_pairing_active": {
         "name": "Session pairing active"
@@ -2016,6 +2001,14 @@
           "stop_finish": "Stop finish"
         }
       },
+      "ads_dirtiness_setting_status": {
+        "name": "Dirtiness",
+        "state": {
+          "high": "High",
+          "low": "Low",
+          "medium": "Medium"
+        }
+      },
       "auto_dose_quantity_setting_status": {
         "name": "Auto-dose quantity"
       },
@@ -2049,6 +2042,29 @@
         "state": {
           "exhaust": "Exhaust",
           "recirculation": "Recirculation"
+        }
+      },
+      "compartment1_type_setting_status": {
+        "name": "Compartment 1 type",
+        "state": {
+          "black_detergent": "Black detergent",
+          "color_detergent": "Color detergent",
+          "detergent": "Detergent",
+          "sensitive_detergent": "Sensitive detergent",
+          "softener": "Softener",
+          "white_detergent": "White detergent"
+        }
+      },
+      "compartment2_type_setting_status": {
+        "name": "Compartment 2 type",
+        "state": {
+          "black_detergent": "Black detergent",
+          "color_detergent": "Color detergent",
+          "detergent": "Detergent",
+          "other_rinse_agent": "Other rinse agent",
+          "sensitive_detergent": "Sensitive detergent",
+          "softener": "Softener",
+          "white_detergent": "White detergent"
         }
       },
       "condensewatermode": {
@@ -2099,6 +2115,16 @@
           "more": "More",
           "off": "Off",
           "standard": "Standard"
+        }
+      },
+      "detergent_amount_status": {
+        "name": "Detergent amount",
+        "state": {
+          "1": "1",
+          "2": "2",
+          "3": "3",
+          "auto": "Auto",
+          "off": "Off"
         }
       },
       "displaybrightness": {
@@ -2176,12 +2202,39 @@
           "simplified_chinese": "Simplified chinese"
         }
       },
+      "liquid_unit_setting_status": {
+        "name": "Liquid unit",
+        "state": {
+          "ml": "ml",
+          "tbs": "tbs"
+        }
+      },
       "load": {
         "name": "Load",
         "state": {
           "100_percent": "100 percent",
           "25_percent": "25 percent",
           "50_percent": "50 percent"
+        }
+      },
+      "max_rpm_allowed_stat": {
+        "name": "Max spin speed",
+        "state": {
+          "0_rpm": "0 RPM",
+          "1000_rpm": "1000 RPM",
+          "1100_rpm": "1100 RPM",
+          "1200_rpm": "1200 RPM",
+          "1300_rpm": "1300 RPM",
+          "1400_rpm": "1400 RPM",
+          "1500_rpm": "1500 RPM",
+          "1600_rpm": "1600 RPM",
+          "1700_rpm": "1700 RPM",
+          "1800_rpm": "1800 RPM",
+          "400_rpm": "400 RPM",
+          "600_rpm": "600 RPM",
+          "700_rpm": "700 RPM",
+          "800_rpm": "800 RPM",
+          "900_rpm": "900 RPM"
         }
       },
       "notification_volumen_setting_status": {
@@ -2294,20 +2347,38 @@
         }
       },
       "selected_program_id_status": {
-        "name": "Program",
+        "name": "Selected program",
         "state": {
           "auto": "Auto",
+          "baby": "Baby",
           "clean": "Clean",
+          "color": "Color",
+          "down_feathers": "Down feathers",
+          "draining": "Draining",
+          "drum_cleaning": "Drum cleaning",
           "eco": "Eco",
+          "eco_40_60": "Eco 40 60",
+          "extra_hygiene": "Extra hygiene",
+          "fast_20": "Fast 20",
           "glass": "Glass",
           "hygiene": "Hygiene",
           "intensive": "Intensive",
+          "intensive_59_32": "Intensive 59 32",
+          "mix_synthetic": "Mix synthetic",
           "night": "Night",
+          "no_program_selected": "No program selected",
           "one_hour": "One hour",
+          "pet_hair_removal": "Pet hair removal",
           "quick_pro": "Quick pro",
           "rinse_and_hold": "Rinse and hold",
+          "rinsing_softening": "Rinsing softening",
           "self_cleaning": "Self cleaning",
-          "time_program": "Time program"
+          "shirts": "Shirts",
+          "spinning_draining": "Spinning draining",
+          "sport": "Sport",
+          "time_program": "Time program",
+          "white_cotton": "White cotton",
+          "wool_manual": "Wool manual"
         }
       },
       "selected_program_mode": {
@@ -2318,6 +2389,24 @@
           "normal": "Normal",
           "not_available": "Not available",
           "speed": "Speed"
+        }
+      },
+      "selected_program_mode2_status": {
+        "name": "Eco mode",
+        "state": {
+          "green_mode": "Green",
+          "night_mode": "Night",
+          "speed_mode": "Speed"
+        }
+      },
+      "selected_program_set_temperature_status": {
+        "name": "Temperature",
+        "state": {
+          "20_c": "20 \u00b0C",
+          "30_c": "30 \u00b0C",
+          "40_c": "40 \u00b0C",
+          "60_c": "60 \u00b0C",
+          "cold": "Cold"
         }
       },
       "setmaxmotorspeed": {
@@ -2351,6 +2440,25 @@
           "more": "More",
           "off": "Off",
           "standard": "Standard"
+        }
+      },
+      "softener_amount_status": {
+        "name": "Softener amount",
+        "state": {
+          "1": "1",
+          "2": "2",
+          "3": "3",
+          "auto": "Auto",
+          "off": "Off"
+        }
+      },
+      "sound_setting_status": {
+        "name": "Volume",
+        "state": {
+          "0": "0",
+          "1": "1",
+          "2": "2",
+          "3": "3"
         }
       },
       "spin_speed_rpm": {
@@ -2562,6 +2670,13 @@
           "fahrenheit": "Fahrenheit"
         }
       },
+      "temperature_unit_setting_status": {
+        "name": "Temperature unit",
+        "state": {
+          "celsius": "Celsius",
+          "fahrenheit": "Fahrenheit"
+        }
+      },
       "time_format": {
         "name": "Time format",
         "state": {
@@ -2599,6 +2714,20 @@
           "stop": "Stop"
         }
       },
+      "units_setting_status": {
+        "name": "Units",
+        "state": {
+          "imperial": "Imperial",
+          "metric": "Metric"
+        }
+      },
+      "view_size_setting_status": {
+        "name": "View size",
+        "state": {
+          "big_text": "Big text",
+          "normal_text": "Normal text"
+        }
+      },
       "volume": {
         "name": "Volume",
         "state": {
@@ -2621,9 +2750,19 @@
         "name": "Water hardness"
       },
       "water_hardness_setting_status": {
-        "name": "Water hardness setting status",
+        "name": "Water hardness",
         "state": {
+          "1": "1",
+          "2": "2",
+          "3": "3",
           "not_set": "Not set"
+        }
+      },
+      "weight_unit_setting_status": {
+        "name": "Weight unit",
+        "state": {
+          "kg": "kg",
+          "lbs": "lbs"
         }
       }
     },
@@ -2639,9 +2778,6 @@
       },
       "activemodemotorlevel": {
         "name": "Active mode motor level"
-      },
-      "adapt_sense_setting_status": {
-        "name": "Adapt sense setting status"
       },
       "adapttech_setting": {
         "name": "Adapt tech setting"
@@ -2661,9 +2797,6 @@
       "add_water_flag": {
         "name": "Add water flag"
       },
-      "ads_dirtiness_setting_status": {
-        "name": "ADS dirtiness setting status"
-      },
       "ads_settings_current_program_detergent_setting_status": {
         "name": "ADS settings current program detergent setting status"
       },
@@ -2681,9 +2814,6 @@
       },
       "air_freshness": {
         "name": "Air freshness"
-      },
-      "air_shower_setting_status": {
-        "name": "Air shower setting status"
       },
       "airdryflag": {
         "name": "Air dry flag"
@@ -2842,14 +2972,8 @@
       "auto_dose_duration": {
         "name": "Auto-dose duration"
       },
-      "auto_dose_system_setting_status": {
-        "name": "Auto-dose system setting status"
-      },
       "auto_grease_filter_indication": {
         "name": "Auto grease filter"
-      },
-      "auto_super_rinse_setting_status": {
-        "name": "Auto super rinse setting status"
       },
       "auto_tower_up": {
         "name": "Tower auto-raise"
@@ -3023,17 +3147,8 @@
       "coldwash": {
         "name": "Cold wash"
       },
-      "color_sensor_setting_status": {
-        "name": "Color sensor setting status"
-      },
       "commodity_inspection": {
         "name": "Commodity inspection"
-      },
-      "compartment1_type_setting_status": {
-        "name": "Compartment 1 type setting status"
-      },
-      "compartment2_type_setting_status": {
-        "name": "Compartment 2 type setting status"
       },
       "compartment_inuse": {
         "name": "Compartment in use"
@@ -3318,9 +3433,6 @@
       "descale_status": {
         "name": "Descale status"
       },
-      "detergent_amount_status": {
-        "name": "Detergent amount status"
-      },
       "detergent_buynotifyswitch": {
         "name": "Detergent buy notify switch"
       },
@@ -3483,9 +3595,6 @@
       "dose_assist_recommended_low_concenatration_detergent_quantity": {
         "name": "Dose assist recommended low concentration detergent quantity"
       },
-      "dose_assist_status": {
-        "name": "Dose assist status"
-      },
       "dose_detergent_amount": {
         "name": "Dose detergent amount"
       },
@@ -3503,9 +3612,6 @@
       },
       "downloadprogram": {
         "name": "Download program"
-      },
-      "drum_light_setting_status": {
-        "name": "Drum light setting status"
       },
       "drumcleancycle_runsnumber": {
         "name": "Drum clean cycle runs number"
@@ -4585,9 +4691,6 @@
       "lightscolor_temperature_setting": {
         "name": "Lights color temperature setting"
       },
-      "liquid_unit_setting_status": {
-        "name": "Liquid unit setting status"
-      },
       "load_operation_status2": {
         "name": "Load operation status 2"
       },
@@ -4645,9 +4748,6 @@
       },
       "market_mode_exist": {
         "name": "Market mode exist"
-      },
-      "max_rpm_allowed_stat": {
-        "name": "Max RPM allowed status"
       },
       "maxtimeevent": {
         "name": "Max time event"
@@ -4764,9 +4864,6 @@
       },
       "no_autodoseswitch": {
         "name": "No auto-dose switch"
-      },
-      "no_sound_status": {
-        "name": "No sound status"
       },
       "normal_sound_size": {
         "name": "Normal sound size"
@@ -4887,9 +4984,6 @@
       },
       "power_save": {
         "name": "Power save"
-      },
-      "power_save_status": {
-        "name": "Power save status"
       },
       "power_value": {
         "name": "Power value"
@@ -5423,27 +5517,7 @@
         }
       },
       "selected_program_id_status": {
-        "name": "Selected program",
-        "state": {
-          "baby": "Baby",
-          "color": "Color",
-          "down_feathers": "Down feathers",
-          "draining": "Draining",
-          "drum_cleaning": "Drum Cleaning",
-          "eco_40_60": "Eco 40-60",
-          "extra_hygiene": "Extra Hygiene",
-          "fast_20": "Fast 20'",
-          "intensive_59_32": "Intensive 59'/32'",
-          "mix_synthetic": "Mix/Synthetic",
-          "no_program_selected": "No program selected",
-          "pet_hair_removal": "Pet hair removal",
-          "rinsing_softening": "Rinsing & Softening",
-          "shirts": "Shirts",
-          "spinning_draining": "Spinning & Draining",
-          "sport": "Sport",
-          "white_cotton": "White Cotton",
-          "wool_manual": "Wool & Manual"
-        }
+        "name": "Selected program"
       },
       "selected_program_intensive_mode": {
         "name": "Selected program intensive mode"
@@ -5456,9 +5530,6 @@
       },
       "selected_program_mode": {
         "name": "Selected program mode"
-      },
-      "selected_program_mode2_status": {
-        "name": "Selected program mode 2 status"
       },
       "selected_program_mode_status": {
         "name": "Program mode",
@@ -5474,20 +5545,6 @@
       },
       "selected_program_remaining_time_in_minutes": {
         "name": "Remaining time of selected program"
-      },
-      "selected_program_set_temperature_status": {
-        "name": "Temperature",
-        "state": {
-          "20_c": "20 \u00b0C",
-          "30_c": "30 \u00b0C",
-          "40_c": "40 \u00b0C",
-          "60_c": "60 \u00b0C",
-          "cold": "Cold",
-          "not_available": "Not available"
-        }
-      },
-      "selected_program_small_load_status": {
-        "name": "Selected program small load status"
       },
       "selected_program_storage_function": {
         "name": "Selected program storage function"
@@ -6540,17 +6597,11 @@
       "slotdry_flag1": {
         "name": "Slotdry flag 1"
       },
-      "smart_sync_setting_status": {
-        "name": "Smart sync setting status"
-      },
       "soft_pairing_setting": {
         "name": "Soft pairing setting"
       },
       "soft_pairing_status": {
         "name": "Soft pairing status"
-      },
-      "softener_amount_status": {
-        "name": "Softener amount status"
       },
       "softener_buynotifyswitch": {
         "name": "Softener buy notify switch"
@@ -6605,9 +6656,6 @@
       },
       "sound_setting": {
         "name": "Sound setting"
-      },
-      "sound_setting_status": {
-        "name": "Sound setting status"
       },
       "sound_settings": {
         "name": "Sound settings"
@@ -7732,9 +7780,6 @@
       "temperature_room_judge": {
         "name": "Temperature room judge"
       },
-      "temperature_unit_setting_status": {
-        "name": "Temperature unit setting status"
-      },
       "temperature_unit_status": {
         "name": "Temperature unit status"
       },
@@ -7780,9 +7825,6 @@
       },
       "time_program_set_time_status": {
         "name": "Time program set time status"
-      },
-      "time_save_status": {
-        "name": "Time save status"
       },
       "time_zone_setting": {
         "name": "Time zone setting"
@@ -7862,17 +7904,11 @@
       "totalprogramscycles": {
         "name": "Total program cycles"
       },
-      "turbidity_sensor_setting_status": {
-        "name": "Turbidity sensor setting status"
-      },
       "unfreeze_run_status": {
         "name": "Unfreeze run status"
       },
       "unfreeze_switch_status": {
         "name": "Unfreeze switch status"
-      },
-      "units_setting_status": {
-        "name": "Units setting status"
       },
       "unpair_all_users": {
         "name": "Unpair all users"
@@ -7933,9 +7969,6 @@
       },
       "variation_sensor_real_temperature": {
         "name": "Variation sensor real temperature"
-      },
-      "view_size_setting_status": {
-        "name": "View size setting status"
       },
       "volume_setting": {
         "name": "Volume setting"
@@ -8144,9 +8177,6 @@
       "water_hardness_setting": {
         "name": "Water hardness setting"
       },
-      "water_hardness_setting_status": {
-        "name": "Water hardness"
-      },
       "water_heat_switch": {
         "name": "Water heat switch"
       },
@@ -8192,9 +8222,6 @@
       },
       "weight_unit_setting": {
         "name": "Weight unit setting"
-      },
-      "weight_unit_setting_status": {
-        "name": "Weight unit setting status"
       },
       "wet_and_dry_space": {
         "name": "Wet and dry space"
@@ -8279,11 +8306,17 @@
       "activemodestatus": {
         "name": "Active mode"
       },
+      "adapt_sense_setting_status": {
+        "name": "Adapt sense"
+      },
       "adaptive_sense_setting": {
         "name": "Adaptive sense setting"
       },
       "addclothes": {
         "name": "Add clothes"
+      },
+      "air_shower_setting_status": {
+        "name": "Air shower"
       },
       "allergymodeenable": {
         "name": "Allergy mode"
@@ -8321,8 +8354,14 @@
       "auto_dose_setting_status": {
         "name": "Auto-dose"
       },
+      "auto_dose_system_setting_status": {
+        "name": "Auto-dose system"
+      },
       "auto_fast_preheat": {
         "name": "Auto fast preheat"
+      },
+      "auto_super_rinse_setting_status": {
+        "name": "Auto super rinse"
       },
       "autodose": {
         "name": "Auto-dose"
@@ -8336,6 +8375,9 @@
       "child_lock": {
         "name": "Child lock"
       },
+      "child_lock_setting_status": {
+        "name": "Child lock"
+      },
       "childlockenabled": {
         "name": "Child lock"
       },
@@ -8345,22 +8387,37 @@
       "coldwash": {
         "name": "Cold wash"
       },
+      "color_sensor_setting_status": {
+        "name": "Color sensor"
+      },
       "crisp_function_status": {
         "name": "Crisp function status"
       },
       "demo_mode": {
         "name": "Demo mode"
       },
+      "demo_mode_status": {
+        "name": "Demo mode"
+      },
       "display_standby": {
         "name": "Display standby"
       },
+      "dose_assist_status": {
+        "name": "Dose assist"
+      },
       "drum_light": {
+        "name": "Drum light"
+      },
+      "drum_light_setting_status": {
         "name": "Drum light"
       },
       "drumvleanprogramwarning": {
         "name": "Drum clean program warning"
       },
       "extra_rinse": {
+        "name": "Extra rinse"
+      },
+      "extra_rinse_status": {
         "name": "Extra rinse"
       },
       "extrarinse": {
@@ -8402,6 +8459,9 @@
       "lightstatus": {
         "name": "Light"
       },
+      "logo_setting_status": {
+        "name": "Logo"
+      },
       "mute": {
         "name": "Mute"
       },
@@ -8411,8 +8471,14 @@
       "night_mode_status": {
         "name": "Night mode status"
       },
+      "no_sound_status": {
+        "name": "Mute"
+      },
       "odor_control_setting": {
         "name": "Odor control"
+      },
+      "power_save_status": {
+        "name": "Power save"
       },
       "prewash": {
         "name": "Prewash"
@@ -8429,6 +8495,27 @@
       "save_mode": {
         "name": "Save mode"
       },
+      "selected_program_anticrease_status": {
+        "name": "Anti-crease"
+      },
+      "selected_program_entry_steam_status": {
+        "name": "Entry steam"
+      },
+      "selected_program_prewash_status": {
+        "name": "Prewash"
+      },
+      "selected_program_rinse_hold_status": {
+        "name": "Rinse hold"
+      },
+      "selected_program_small_load_status": {
+        "name": "Small load"
+      },
+      "selected_program_water_pluse_status": {
+        "name": "Water pulse"
+      },
+      "session_pairing_status": {
+        "name": "Session pairing"
+      },
       "sf_mode": {
         "name": "SF mode"
       },
@@ -8437,6 +8524,12 @@
       },
       "showmeasuredtemperature": {
         "name": "Show measured temperature"
+      },
+      "smart_sync_setting_status": {
+        "name": "Smart sync"
+      },
+      "soft_pairing_status": {
+        "name": "Soft pairing"
       },
       "sound": {
         "name": "Sound"
@@ -8515,6 +8608,12 @@
       },
       "time_save": {
         "name": "Time save"
+      },
+      "time_save_status": {
+        "name": "Time save"
+      },
+      "turbidity_sensor_setting_status": {
+        "name": "Turbidity sensor"
       },
       "welcome": {
         "name": "Welcome"

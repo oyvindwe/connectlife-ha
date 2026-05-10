@@ -609,9 +609,6 @@
       "existing_sr_mode": {
         "name": "Bestaande SR-modus"
       },
-      "extra_rinse_status": {
-        "name": "Spoelen+"
-      },
       "f-filter": {
         "name": "Filter"
       },
@@ -951,23 +948,11 @@
       "selected_program_disinfection": {
         "name": "Desinfectie"
       },
-      "selected_program_entry_steam_status": {
-        "name": "Stoomtoevoer"
-      },
       "selected_program_extradry_status": {
         "name": "Extra droog"
       },
-      "selected_program_prewash_status": {
-        "name": "Voorwas"
-      },
-      "selected_program_rinse_hold_status": {
-        "name": "Spoelstop"
-      },
       "selected_program_steamfinish": {
         "name": "Stoomafwerking"
-      },
-      "selected_program_water_pluse_status": {
-        "name": "Water pulse"
       },
       "session_pairing_active": {
         "name": "Sessiekoppeling actief"
@@ -1720,6 +1705,14 @@
           "stop_finish": "Stop afronden"
         }
       },
+      "ads_dirtiness_setting_status": {
+        "name": "Vuilheid",
+        "state": {
+          "high": "Hoog",
+          "low": "Laag",
+          "medium": "Gemiddeld"
+        }
+      },
       "auto_dose_quantity_setting_status": {
         "name": "Auto doseer hoeveelheid"
       },
@@ -1746,6 +1739,29 @@
         "state": {
           "exhaust": "Afvoer",
           "recirculation": "Recirculatie"
+        }
+      },
+      "compartment1_type_setting_status": {
+        "name": "Compartiment 1 type",
+        "state": {
+          "black_detergent": "Zwartwasmiddel",
+          "color_detergent": "Kleurwasmiddel",
+          "detergent": "Wasmiddel",
+          "sensitive_detergent": "Wasmiddel voor gevoelige stoffen",
+          "softener": "Wasverzachter",
+          "white_detergent": "Witwasmiddel"
+        }
+      },
+      "compartment2_type_setting_status": {
+        "name": "Compartiment 2 type",
+        "state": {
+          "black_detergent": "Zwartwasmiddel",
+          "color_detergent": "Kleurwasmiddel",
+          "detergent": "Wasmiddel",
+          "other_rinse_agent": "Ander spoelmiddel",
+          "sensitive_detergent": "Wasmiddel voor gevoelige stoffen",
+          "softener": "Wasverzachter",
+          "white_detergent": "Witwasmiddel"
         }
       },
       "cooking_intensity": {
@@ -1789,6 +1805,16 @@
           "more": "Meer",
           "off": "Uit",
           "standard": "Standaard"
+        }
+      },
+      "detergent_amount_status": {
+        "name": "Wasmiddelhoeveelheid",
+        "state": {
+          "1": "1",
+          "2": "2",
+          "3": "3",
+          "auto": "Auto",
+          "off": "Uit"
         }
       },
       "dry_level": {
@@ -1847,6 +1873,33 @@
         "state": {
           "english": "Engels",
           "simplified_chinese": "Vereenvoudigd Chinees"
+        }
+      },
+      "liquid_unit_setting_status": {
+        "name": "Vloeistofeenheid",
+        "state": {
+          "ml": "ml",
+          "tbs": "el"
+        }
+      },
+      "max_rpm_allowed_stat": {
+        "name": "Max centrifugesnelheid",
+        "state": {
+          "0_rpm": "0 toeren",
+          "1000_rpm": "1000 toeren",
+          "1100_rpm": "1100 toeren",
+          "1200_rpm": "1200 toeren",
+          "1300_rpm": "1300 toeren",
+          "1400_rpm": "1400 toeren",
+          "1500_rpm": "1500 toeren",
+          "1600_rpm": "1600 toeren",
+          "1700_rpm": "1700 toeren",
+          "1800_rpm": "1800 toeren",
+          "400_rpm": "400 toeren",
+          "600_rpm": "600 toeren",
+          "700_rpm": "700 toeren",
+          "800_rpm": "800 toeren",
+          "900_rpm": "900 toeren"
         }
       },
       "notification_volumen_setting_status": {
@@ -1962,17 +2015,35 @@
         "name": "Geselecteerd programma",
         "state": {
           "auto": "Auto",
+          "baby": "Baby",
           "clean": "Schoon",
+          "color": "Kleur",
+          "down_feathers": "Donsveren",
+          "draining": "Afpompen",
+          "drum_cleaning": "Trommelreiniging",
           "eco": "Eco",
+          "eco_40_60": "Eco 40-60",
+          "extra_hygiene": "Extra hygi\u00ebne",
+          "fast_20": "Snel 20'",
           "glass": "Glas",
           "hygiene": "Hygi\u00ebne",
           "intensive": "Intensief",
+          "intensive_59_32": "Intensief 59'/32'",
+          "mix_synthetic": "Mix/Synthetisch",
           "night": "Nacht",
+          "no_program_selected": "Geen programma geselecteerd",
           "one_hour": "1 uur",
+          "pet_hair_removal": "Huisdierhaar verwijderen",
           "quick_pro": "Quick pro",
           "rinse_and_hold": "Spoelen en wachten",
+          "rinsing_softening": "Spoelen & verzachten",
           "self_cleaning": "Zelfreiniging",
-          "time_program": "Tijdprogramma"
+          "shirts": "Shirts",
+          "spinning_draining": "Centrifugeren & afpompen",
+          "sport": "Sport",
+          "time_program": "Tijdprogramma",
+          "white_cotton": "Wit katoen",
+          "wool_manual": "Wol & Handmatig"
         }
       },
       "selected_program_mode": {
@@ -1985,6 +2056,24 @@
           "speed": "Snel"
         }
       },
+      "selected_program_mode2_status": {
+        "name": "Eco-modus",
+        "state": {
+          "green_mode": "Groen",
+          "night_mode": "Nacht",
+          "speed_mode": "Snel"
+        }
+      },
+      "selected_program_set_temperature_status": {
+        "name": "Temperatuur",
+        "state": {
+          "20_c": "20 \u00b0C",
+          "30_c": "30 \u00b0C",
+          "40_c": "40 \u00b0C",
+          "60_c": "60 \u00b0C",
+          "cold": "Koud"
+        }
+      },
       "softener": {
         "name": "Wasverzachter",
         "state": {
@@ -1993,6 +2082,25 @@
           "more": "Meer",
           "off": "Uit",
           "standard": "Standaard"
+        }
+      },
+      "softener_amount_status": {
+        "name": "Wasverzachterhoeveelheid",
+        "state": {
+          "1": "1",
+          "2": "2",
+          "3": "3",
+          "auto": "Auto",
+          "off": "Uit"
+        }
+      },
+      "sound_setting_status": {
+        "name": "Volume",
+        "state": {
+          "0": "0",
+          "1": "1",
+          "2": "2",
+          "3": "3"
         }
       },
       "spin_speed_rpm": {
@@ -2203,6 +2311,13 @@
           "fahrenheit": "Fahrenheit"
         }
       },
+      "temperature_unit_setting_status": {
+        "name": "Temperatuureenheid",
+        "state": {
+          "celsius": "Celsius",
+          "fahrenheit": "Fahrenheit"
+        }
+      },
       "time_format": {
         "name": "Tijdsweergave",
         "state": {
@@ -2233,6 +2348,20 @@
           "stop": "Stop"
         }
       },
+      "units_setting_status": {
+        "name": "Eenheden",
+        "state": {
+          "imperial": "Imperiaal",
+          "metric": "Metriek"
+        }
+      },
+      "view_size_setting_status": {
+        "name": "Weergavegrootte",
+        "state": {
+          "big_text": "Grote tekst",
+          "normal_text": "Normale tekst"
+        }
+      },
       "volume": {
         "name": "Volume"
       },
@@ -2250,7 +2379,17 @@
       "water_hardness_setting_status": {
         "name": "Waterhardheid",
         "state": {
+          "1": "1",
+          "2": "2",
+          "3": "3",
           "not_set": "Niet ingesteld"
+        }
+      },
+      "weight_unit_setting_status": {
+        "name": "Gewichtseenheid",
+        "state": {
+          "kg": "kg",
+          "lbs": "lbs"
         }
       }
     },
@@ -2266,9 +2405,6 @@
       },
       "activemodemotorlevel": {
         "name": "Motorniveau actieve modus"
-      },
-      "adapt_sense_setting_status": {
-        "name": "Adapt Sense-instelling"
       },
       "adapttech_setting": {
         "name": "Adapt Tech-instelling"
@@ -2288,9 +2424,6 @@
       "add_water_flag": {
         "name": "Water bijvullen"
       },
-      "ads_dirtiness_setting_status": {
-        "name": "Status ADS-vuilheidsinstelling"
-      },
       "ads_settings_current_program_detergent_setting_status": {
         "name": "Status ADS-instelling wasmiddel huidig programma"
       },
@@ -2308,9 +2441,6 @@
       },
       "air_freshness": {
         "name": "Luchtverversing"
-      },
-      "air_shower_setting_status": {
-        "name": "Status Air Shower-instelling"
       },
       "airdryflag": {
         "name": "Indicator luchtdrogen"
@@ -2469,14 +2599,8 @@
       "auto_dose_duration": {
         "name": "Auto doseer duur"
       },
-      "auto_dose_system_setting_status": {
-        "name": "Status auto-dose systeeminstelling"
-      },
       "auto_grease_filter_indication": {
         "name": "Automatisch vetfilter"
-      },
-      "auto_super_rinse_setting_status": {
-        "name": "Status instelling automatisch extra spoelen"
       },
       "auto_tower_up": {
         "name": "Toren automatisch omhoog"
@@ -2629,17 +2753,8 @@
       "coldwash": {
         "name": "Koude was"
       },
-      "color_sensor_setting_status": {
-        "name": "Status kleursensorinstelling"
-      },
       "commodity_inspection": {
         "name": "Productinspectie"
-      },
-      "compartment1_type_setting_status": {
-        "name": "Status type-instelling compartiment 1"
-      },
-      "compartment2_type_setting_status": {
-        "name": "Status type-instelling compartiment 2"
       },
       "compartment_inuse": {
         "name": "Compartiment in gebruik"
@@ -2897,9 +3012,6 @@
       "descale_status": {
         "name": "Ontkalken"
       },
-      "detergent_amount_status": {
-        "name": "Wasmiddelhoeveelheid"
-      },
       "detergent_buynotifyswitch": {
         "name": "Schakelaar melding wasmiddel kopen"
       },
@@ -3052,9 +3164,6 @@
       "dose_assist_recommended_low_concenatration_detergent_quantity": {
         "name": "Aanbevolen hoeveelheid laaggeconcentreerd wasmiddel dose assist"
       },
-      "dose_assist_status": {
-        "name": "Doseerhulp status"
-      },
       "dose_detergent_amount": {
         "name": "Hoeveelheid wasmiddel doseren"
       },
@@ -3072,9 +3181,6 @@
       },
       "downloadprogram": {
         "name": "Programma downloaden"
-      },
-      "drum_light_setting_status": {
-        "name": "Trommelverlichting instelling status"
       },
       "drumcleancycle_runsnumber": {
         "name": "Aantal trommelreinigingscycli"
@@ -4037,9 +4143,6 @@
       "lightscolor_temperature_setting": {
         "name": "Lights color temperature setting"
       },
-      "liquid_unit_setting_status": {
-        "name": "Liquid unit setting status"
-      },
       "load_operation_status2": {
         "name": "Load operation status 2"
       },
@@ -4094,9 +4197,6 @@
       },
       "market_mode_exist": {
         "name": "Market mode exist"
-      },
-      "max_rpm_allowed_stat": {
-        "name": "Maximale toegestane toeren status"
       },
       "mdo_on_demand": {
         "name": "MDO on demand"
@@ -4211,9 +4311,6 @@
       "no_autodoseswitch": {
         "name": "Geen automatische dosering"
       },
-      "no_sound_status": {
-        "name": "Geen geluid status"
-      },
       "normal_sound_size": {
         "name": "Normale geluids grootte"
       },
@@ -4321,9 +4418,6 @@
       },
       "power_save": {
         "name": "Energiebesparing"
-      },
-      "power_save_status": {
-        "name": "Energiebesparing status"
       },
       "power_value": {
         "name": "Vermogen"
@@ -4833,27 +4927,7 @@
         }
       },
       "selected_program_id_status": {
-        "name": "Geselecteerd programma",
-        "state": {
-          "baby": "Baby",
-          "color": "Kleur",
-          "down_feathers": "Donsveren",
-          "draining": "Afpompen",
-          "drum_cleaning": "Trommelreiniging",
-          "eco_40_60": "Eco 40-60",
-          "extra_hygiene": "Extra hygi\u00ebne",
-          "fast_20": "Snel 20'",
-          "intensive_59_32": "Intensief 59'/32'",
-          "mix_synthetic": "Mix/Synthetisch",
-          "no_program_selected": "Geen programma geselecteerd",
-          "pet_hair_removal": "Huisdierhaar verwijderen",
-          "rinsing_softening": "Spoelen & verzachten",
-          "shirts": "Shirts",
-          "spinning_draining": "Centrifugeren & afpompen",
-          "sport": "Sport",
-          "white_cotton": "Wit katoen",
-          "wool_manual": "Wol & Handmatig"
-        }
+        "name": "Geselecteerd programma"
       },
       "selected_program_intensive_mode": {
         "name": "Selected program intensive mode"
@@ -4866,9 +4940,6 @@
       },
       "selected_program_mode": {
         "name": "Selected program mode"
-      },
-      "selected_program_mode2_status": {
-        "name": "Selected program mode 2 status"
       },
       "selected_program_mode_status": {
         "name": "Programmamodus",
@@ -4884,20 +4955,6 @@
       },
       "selected_program_remaining_time_in_minutes": {
         "name": "Resterende tijd van geselecteerd programma"
-      },
-      "selected_program_set_temperature_status": {
-        "name": "Temperatuur",
-        "state": {
-          "20_c": "20 \u00b0C",
-          "30_c": "30 \u00b0C",
-          "40_c": "40 \u00b0C",
-          "60_c": "60 \u00b0C",
-          "cold": "Koud",
-          "not_available": "Niet beschikbaar"
-        }
-      },
-      "selected_program_small_load_status": {
-        "name": "Selected program small load status"
       },
       "selected_program_storage_function": {
         "name": "Selected program storage function"
@@ -5932,17 +5989,11 @@
       "slotdry_flag1": {
         "name": "Slotdry flag 1"
       },
-      "smart_sync_setting_status": {
-        "name": "Smart sync setting status"
-      },
       "soft_pairing_setting": {
         "name": "Soft pairing setting"
       },
       "soft_pairing_status": {
         "name": "Soft pairing status"
-      },
-      "softener_amount_status": {
-        "name": "Softener amount status"
       },
       "softener_buynotifyswitch": {
         "name": "Softener buy notify switch"
@@ -5994,9 +6045,6 @@
       },
       "sound_setting": {
         "name": "Geluid"
-      },
-      "sound_setting_status": {
-        "name": "Sound setting status"
       },
       "sound_settings": {
         "name": "Sound settings"
@@ -7115,9 +7163,6 @@
       "temperature_room_judge": {
         "name": "Temperatuur kamer beoordeling"
       },
-      "temperature_unit_setting_status": {
-        "name": "Temperature unit setting status"
-      },
       "temperature_unit_status": {
         "name": "Temperature unit status"
       },
@@ -7144,9 +7189,6 @@
       },
       "time_program_set_time_status": {
         "name": "Time program set time status"
-      },
-      "time_save_status": {
-        "name": "Time save status"
       },
       "time_zone_setting": {
         "name": "Time zone setting"
@@ -7217,17 +7259,11 @@
       "total_water_consumption": {
         "name": "Totale waterverbruik"
       },
-      "turbidity_sensor_setting_status": {
-        "name": "Turbidity sensor setting status"
-      },
       "unfreeze_run_status": {
         "name": "Unfreeze run status"
       },
       "unfreeze_switch_status": {
         "name": "Unfreeze switch status"
-      },
-      "units_setting_status": {
-        "name": "Units setting status"
       },
       "unpair_all_users": {
         "name": "Unpair all users"
@@ -7288,9 +7324,6 @@
       },
       "variation_sensor_real_temperature": {
         "name": "Werkelijke variatiesensortemperatuur"
-      },
-      "view_size_setting_status": {
-        "name": "View size setting status"
       },
       "volume_setting": {
         "name": "Volume setting"
@@ -7499,9 +7532,6 @@
       "water_hardness_setting": {
         "name": "Water hardness setting"
       },
-      "water_hardness_setting_status": {
-        "name": "Waterhardheid"
-      },
       "water_heat_switch": {
         "name": "Water heat switch"
       },
@@ -7547,9 +7577,6 @@
       },
       "weight_unit_setting": {
         "name": "Weight unit setting"
-      },
-      "weight_unit_setting_status": {
-        "name": "Weight unit setting status"
       },
       "wet_and_dry_space": {
         "name": "Wet and dry space"
@@ -7634,8 +7661,14 @@
       "activemodestatus": {
         "name": "Actieve modus"
       },
+      "adapt_sense_setting_status": {
+        "name": "Adapt Sense"
+      },
       "adaptive_sense_setting": {
         "name": "Adaptive sense instelling"
+      },
+      "air_shower_setting_status": {
+        "name": "Air Shower"
       },
       "ambientlightstatus": {
         "name": "Sfeerverlichting"
@@ -7670,8 +7703,14 @@
       "auto_dose_setting_status": {
         "name": "Automatisch doseren"
       },
+      "auto_dose_system_setting_status": {
+        "name": "Auto-dose systeem"
+      },
       "auto_fast_preheat": {
         "name": "Auto fast voorverwarmen"
+      },
+      "auto_super_rinse_setting_status": {
+        "name": "Automatisch extra spoelen"
       },
       "autodose": {
         "name": "Automatisch doseren"
@@ -7685,8 +7724,14 @@
       "child_lock": {
         "name": "Kinderbeveiliging"
       },
+      "child_lock_setting_status": {
+        "name": "Kinderbeveiliging"
+      },
       "cleanairstatus": {
         "name": "Schone lucht"
+      },
+      "color_sensor_setting_status": {
+        "name": "Kleursensor"
       },
       "crisp_function_status": {
         "name": "Crisp-functie"
@@ -7694,13 +7739,25 @@
       "demo_mode": {
         "name": "Demo modus"
       },
+      "demo_mode_status": {
+        "name": "Demomodus"
+      },
       "display_standby": {
         "name": "Display standby"
+      },
+      "dose_assist_status": {
+        "name": "Doseerhulp"
       },
       "drum_light": {
         "name": "Trommelverlichting"
       },
+      "drum_light_setting_status": {
+        "name": "Trommelverlichting"
+      },
       "extra_rinse": {
+        "name": "Spoelen+"
+      },
+      "extra_rinse_status": {
         "name": "Spoelen+"
       },
       "fota_cmd": {
@@ -7733,6 +7790,9 @@
       "lightstatus": {
         "name": "Verlichting"
       },
+      "logo_setting_status": {
+        "name": "Logo"
+      },
       "mute": {
         "name": "Stil"
       },
@@ -7742,8 +7802,14 @@
       "night_mode_status": {
         "name": "Nachtmodus"
       },
+      "no_sound_status": {
+        "name": "Dempen"
+      },
       "odor_control_setting": {
         "name": "Geurcontrole"
+      },
+      "power_save_status": {
+        "name": "Energiebesparing"
       },
       "prewash": {
         "name": "Voorwas"
@@ -7757,11 +7823,38 @@
       "save_mode": {
         "name": "Spaarstand"
       },
+      "selected_program_anticrease_status": {
+        "name": "Anti-kreuk"
+      },
+      "selected_program_entry_steam_status": {
+        "name": "Stoomtoevoer"
+      },
+      "selected_program_prewash_status": {
+        "name": "Voorwas"
+      },
+      "selected_program_rinse_hold_status": {
+        "name": "Spoelstop"
+      },
+      "selected_program_small_load_status": {
+        "name": "Kleine lading"
+      },
+      "selected_program_water_pluse_status": {
+        "name": "Water pulse"
+      },
+      "session_pairing_status": {
+        "name": "Sessiepairing"
+      },
       "sf_mode": {
         "name": "SF-modus"
       },
       "sf_sr_mutex_mode": {
         "name": "SF SR mutex modus"
+      },
+      "smart_sync_setting_status": {
+        "name": "Smart sync"
+      },
+      "soft_pairing_status": {
+        "name": "Soft pairing"
       },
       "sr_mode": {
         "name": "SR-modus"
@@ -7834,6 +7927,12 @@
       },
       "time_save": {
         "name": "Tijd besparen"
+      },
+      "time_save_status": {
+        "name": "Tijdbesparing"
+      },
+      "turbidity_sensor_setting_status": {
+        "name": "Troebelheidssensor"
       },
       "welcome": {
         "name": "Welkom"
