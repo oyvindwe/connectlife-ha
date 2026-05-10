@@ -269,6 +269,9 @@
           },
           "description": "Map of integer to string."
         },
+        "unknown_value": {
+          "$ref": "#/$defs/UnknownValue"
+        },
         "command": {
           "$ref": "#/$defs/Command"
         }
