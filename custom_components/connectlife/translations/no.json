@@ -612,6 +612,9 @@
       "extra_rinse_status": {
         "name": "Ekstra skyll"
       },
+      "f-filter": {
+        "name": "Filter"
+      },
       "f_e_arkgrille": {
         "name": "Beskyttelsesalarm for skapgitter"
       },
@@ -7803,6 +7806,12 @@
       "t_air": {
         "name": "Luft"
       },
+      "t_dal": {
+        "name": "DAL"
+      },
+      "t_demand_response": {
+        "name": "Krev svar"
+      },
       "t_dimmer": {
         "name": "Dimmer"
       },
@@ -7829,6 +7838,9 @@
       },
       "t_super": {
         "name": "Super"
+      },
+      "t_talr": {
+        "name": "TALR"
       },
       "t_tms": {
         "name": "AI"
