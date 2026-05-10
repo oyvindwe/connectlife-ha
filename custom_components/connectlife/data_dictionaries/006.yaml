@@ -1,99 +1,368 @@
 # Portable air conditioner
 properties:
-- property: f_ecm
-  # f_ecm: appears to indicate which unit f_electricity uses (f_ecm=1
-  # has been observed alongside mA current values; absent in 009-104,
-  # which reports in hW). Exposed as a diagnostic so users can report
-  # the value alongside f_electricity readings.
-  sensor:
-    read_only: true
-  entity_category: diagnostic
-  hide: true
-- property: f_electricity
-  # f_electricity: unit varies by device. Most devices observed report
-  # in mA. Devices that report in other units (e.g. hW), need a
-  # per-feature override mapping to power/kW (see e.g. 009-104).
-  # The companion property f_ecm appears to discriminate the scheme
-  # (f_ecm=1 → mA; absent → hW).
-  sensor:
-    device_class: current
-    unit: mA
-    read_only: true
-    state_class: measurement
-  hide: true
-- property: f_power_consumption
-  sensor:
-    device_class: energy
-    unit: kWh
-    read_only: true
-    state_class: total_increasing
-  icon: mdi:lightning-bolt
-- property: f_power_display
-  sensor:
-    device_class: power
-    unit: W
-    read_only: true
-    state_class: measurement
-  icon: mdi:lightning-bolt
-- property: f_temp_in
-  icon: mdi:thermometer
-  climate:
-    target: current_temperature
-- property: t_eco
-  icon: mdi:leaf
-  switch:
-    device_class: switch
-- property: t_fan_mute
-  hide: true
-  icon: mdi:volume-variant-off
-  switch:
-    device_class: switch
-- property: t_fan_speed
-  climate:
-    target: fan_mode
-    options:
-      0: auto
-      2: low
-      3: medium
-      4: high
-- property: t_power
-  climate:
-    target: is_on
-- property: t_sleep
-  icon: mdi:power-sleep
-  switch:
-    device_class: switch
-- property: t_super
-  icon: mdi:run-fast
-  switch:
-    device_class: switch
-- property: t_temp
-  climate:
-    target: target_temperature
-    min_value:
-      celsius: 16
-      fahrenheit: 61
-    max_value:
-      celsius: 32
-      fahrenheit: 90
-- property: t_temp_type
-  climate:
-    target: temperature_unit
-    options:
-      0: celsius
-      1: fahrenheit
-- property: t_up_down
-  climate:
-    target: swing_mode
-    options:
-      0: "off"
-      1: "on"
-- property: t_work_mode
-  climate:
-    target: hvac_mode
-    options:
-      0: fan_only
-      1: heat
-      2: cool
-      3: dry
-      4: auto
+  - property: f-filter
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    icon: mdi:air-filter
+  - property: f_e_arkgrille
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_dwmachine
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_incoiltemp
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_incom
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_indisplay
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_ineeprom
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_inele
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_infanmotor
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_inhumidity
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_inkeys
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_intemp
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_invzero
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_inwifi
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_outcoiltemp
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_outeeprom
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_outgastemp
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_outtemp
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_over_cold
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_over_hot
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_push
+    disable: true
+  - property: f_e_upmachine
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_waterfull
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_ecm
+    # f_ecm: appears to indicate which unit f_electricity uses (f_ecm=1
+    # has been observed alongside mA current values; absent in 009-104,
+    # which reports in hW). Exposed as a diagnostic so users can report
+    # the value alongside f_electricity readings.
+    sensor:
+      read_only: true
+    entity_category: diagnostic
+    optional: true
+  - property: f_electricity
+    # f_electricity: unit varies by device. Most devices observed report
+    # in mA. Devices that report in other units (e.g. hW), need a
+    # per-feature override mapping to power/kW (see e.g. 009-104).
+    # The companion property f_ecm appears to discriminate the scheme
+    # (f_ecm=1 → mA; absent → hW).
+    sensor:
+      device_class: current
+      unit: mA
+      read_only: true
+      state_class: measurement
+    hide: true
+  - property: f_humidity
+    climate:
+      target: current_humidity
+      unknown_value: 128
+  - property: f_power_consumption
+    sensor:
+      device_class: energy
+      unit: kWh
+      read_only: true
+      state_class: total_increasing
+    icon: mdi:lightning-bolt
+  - property: f_power_display
+    sensor:
+      device_class: power
+      unit: W
+      read_only: true
+      state_class: measurement
+    icon: mdi:lightning-bolt
+  - property: f_temp_in
+    climate:
+      target: current_temperature
+    icon: mdi:thermometer
+  - property: f_votage
+    sensor:
+      device_class: voltage
+      unit: V
+      state_class: measurement
+    optional: true
+    entity_category: diagnostic
+  - property: t_beep
+    binary_sensor:
+      options:
+        0: off
+        1: on
+    optional: true
+    entity_category: diagnostic
+  - property: t_dal
+    switch:
+      device_class: switch
+    optional: true
+  - property: t_demand_response
+    switch:
+      device_class: switch
+    optional: true
+  - property: t_device_info
+    disable: true
+  - property: t_eco
+    switch:
+      device_class: switch
+    icon: mdi:leaf
+  - property: t_fan_mute
+    switch:
+      device_class: switch
+    icon: mdi:volume-variant-off
+  - property: t_fan_speed
+    climate:
+      target: fan_mode
+      options:
+        0: auto
+        2: low
+        3: medium
+        4: high
+  - property: t_fan_speed_s
+    disable: true
+  - property: t_fanspeedcv
+    number:
+      min_value: 0
+      max_value: 100
+      unit: "%"
+    icon: mdi:fan
+  - property: t_power
+    climate:
+      target: is_on
+  - property: t_sleep
+    switch:
+      device_class: switch
+    icon: mdi:power-sleep
+  - property: t_super
+    switch:
+      device_class: switch
+    icon: mdi:run-fast
+  - property: t_swing_angle
+    select:
+      options:
+        0: swing
+        1: auto
+        2: angle_1
+        3: angle_2
+        4: angle_3
+        5: angle_4
+        6: angle_5
+        7: angle_6
+    icon: mdi:arrow-oscillating
+  - property: t_swing_direction
+    climate:
+      target: swing_horizontal_mode
+      options:
+        0: forward
+        1: right
+        2: both_sides
+        3: swing
+        4: left
+  - property: t_swing_follow
+    select:
+      options:
+        0: "off"
+        1: follow
+        2: not_follow
+    icon: mdi:account-arrow-right
+  - property: t_talr
+    switch:
+      device_class: switch
+    optional: true
+  - property: t_temp
+    climate:
+      target: target_temperature
+      min_value:
+        celsius: 16
+        fahrenheit: 61
+      max_value:
+        celsius: 32
+        fahrenheit: 90
+  - property: t_temp_compensate
+    # Signed 4-bit encoding: 0..7 = 0..+7 °C, 9..15 = -7..-1 °C (value 8 / -8 unused).
+    # Full range applies in non-AI modes; AI mode (t_tms=1) limits effective offset to ±3 °C.
+    select:
+      options:
+        9: "offset_minus_7"
+        10: "offset_minus_6"
+        11: "offset_minus_5"
+        12: "offset_minus_4"
+        13: "offset_minus_3"
+        14: "offset_minus_2"
+        15: "offset_minus_1"
+        0: "offset_0"
+        1: "offset_plus_1"
+        2: "offset_plus_2"
+        3: "offset_plus_3"
+        4: "offset_plus_4"
+        5: "offset_plus_5"
+        6: "offset_plus_6"
+        7: "offset_plus_7"
+    icon: mdi:thermometer-plus
+    entity_category: config
+  - property: t_temp_type
+    climate:
+      target: temperature_unit
+      options:
+        0: celsius
+        1: fahrenheit
+  - property: t_tms
+    switch:
+      device_class: switch
+  - property: t_up_down
+    climate:
+      target: swing_mode
+      options:
+        0: "off"
+        1: "on"
+  - property: t_work_mode
+    climate:
+      target: hvac_mode
+      options:
+        0: fan_only
+        1: heat
+        2: cool
+        3: dry
+        4: auto
