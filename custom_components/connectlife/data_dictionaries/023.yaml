@@ -1,5 +1,13 @@
 # Oven
 properties:
+  - property: Actions
+    select:
+      options:
+        1: stop
+        2: start
+        3: pause
+        6: steamer_water_tank_door_open
+        7: direct_steam
   - property: Alarm_alarm_time_reached
     icon: mdi:alarm
     binary_sensor:
@@ -417,3 +425,9 @@ properties:
     sensor:
       device_class: duration
       unit: min
+  - property: Water_tank
+    sensor:
+      device_class: enum
+      options:
+        3051: not_detected
+        3052: present
