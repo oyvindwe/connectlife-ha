@@ -19,8 +19,38 @@
   },
   "entity": {
     "binary_sensor": {
+      "ali_wifi_fault_flag": {
+        "name": "D\u00e9faut WiFi"
+      },
+      "charcoal_filter_expiration_alarm": {
+        "name": "Alarme expiration filtre charbon"
+      },
+      "charcoal_filter_surplus_time": {
+        "name": "Dur\u00e9e restante filtre charbon"
+      },
+      "charcoal_filter_time_reset": {
+        "name": "Reset dur\u00e9e filtre charbon"
+      },
       "child_lock": {
         "name": "Verrouillage enfant"
+      },
+      "child_lock_open_alarm": {
+        "name": "Alarme ouverture s\u00e9curit\u00e9 enfant"
+      },
+      "child_lock_open_door_sound_alarm": {
+        "name": "Alarme sonore s\u00e9curit\u00e9 enfant"
+      },
+      "child_lock_switch_exist": {
+        "name": "S\u00e9curit\u00e9 enfant disponible"
+      },
+      "child_lock_switch_status": {
+        "name": "\u00c9tat s\u00e9curit\u00e9 enfant"
+      },
+      "condensation_fan_failure_status": {
+        "name": "D\u00e9faut ventilateur condensation"
+      },
+      "control_failure_status": {
+        "name": "\u00c9tat d\u00e9faut contr\u00f4le"
       },
       "detergent_display": {
         "name": "Affichage lessive"
@@ -34,13 +64,268 @@
       "eco_mode": {
         "name": "Mode ECO"
       },
+      "envi_temp_sens_head_failure": {
+        "name": "D\u00e9faut t\u00eate sonde temp ambiante"
+      },
+      "existing_fuzzy_mode": {
+        "name": "Mode AI disponible"
+      },
+      "existing_holiday_mode": {
+        "name": "Mode vacances disponible"
+      },
+      "existing_lock_fresh_mode": {
+        "name": "Mode Lock Fresh disponible"
+      },
+      "existing_save_mode": {
+        "name": "Mode \u00e9co disponible"
+      },
+      "existing_sf_mode": {
+        "name": "Super-cong\u00e9lation disponible"
+      },
+      "existing_sr_mode": {
+        "name": "Super-refroidissement disponible"
+      },
+      "free_defrosting_failure": {
+        "name": "D\u00e9faut d\u00e9givrage cong\u00e9lateur"
+      },
+      "free_evap_temp_sens_head_failure": {
+        "name": "D\u00e9faut t\u00eate sonde \u00e9vaporateur cong\u00e9lateur"
+      },
+      "free_fan_failure": {
+        "name": "D\u00e9faut ventilateur cong\u00e9lateur"
+      },
+      "free_room_open": {
+        "name": "Compartiment cong\u00e9lateur ouvert"
+      },
+      "free_room_over_temp_alarm_failure": {
+        "name": "Alarme surchauffe zone cong\u00e9lateur"
+      },
+      "free_temp_sens_head_failure": {
+        "name": "D\u00e9faut t\u00eate sonde temp cong\u00e9lateur"
+      },
+      "freeze_poweroff_ad": {
+        "name": "AD extinction cong\u00e9lateur"
+      },
+      "freeze_poweron_ad": {
+        "name": "AD allumage cong\u00e9lateur"
+      },
+      "frize_temp_2_degree_above_starting_point": {
+        "name": "Temp\u00e9rature cong\u00e9lateur 2\u00b0 au-dessus consigne"
+      },
+      "frost_state": {
+        "name": "\u00c9tat givre"
+      },
+      "fuzzy_mode": {
+        "name": "Mode AI"
+      },
+      "gold_water_supply_mode": {
+        "name": "Mode alimentation eau Gold"
+      },
+      "ice_make_room_alarm": {
+        "name": "Alarme compartiment glace"
+      },
+      "ice_making_machine_failure": {
+        "name": "D\u00e9faut machine \u00e0 glace"
+      },
+      "ice_making_normal_status": {
+        "name": "Glace - \u00e9tat normal"
+      },
+      "ice_making_state": {
+        "name": "\u00c9tat production de glace"
+      },
+      "ice_making_stop_status": {
+        "name": "Glace - arr\u00eat"
+      },
+      "ice_sensor_failure_flag": {
+        "name": "D\u00e9faut sonde glace"
+      },
+      "ice_temperature_sensor_header_failure_flag": {
+        "name": "D\u00e9faut t\u00eate sonde temp glace"
+      },
+      "inlet_pipe_temp_sens_head_failure": {
+        "name": "D\u00e9faut t\u00eate sonde temp arriv\u00e9e d\u2019eau"
+      },
+      "lock_fresh_mode": {
+        "name": "Mode Lock Fresh"
+      },
+      "low_wine_area_c_evaporator_fault": {
+        "name": "D\u00e9faut \u00e9vaporateur zone vin C inf\u00e9rieure"
+      },
+      "low_wine_area_c_fan_fault": {
+        "name": "D\u00e9faut ventilateur zone vin C inf\u00e9rieure"
+      },
+      "low_wine_area_c_humdy_fault": {
+        "name": "D\u00e9faut humidit\u00e9 zone vin C inf\u00e9rieure"
+      },
+      "low_wine_area_c_temp_fault": {
+        "name": "D\u00e9faut temp\u00e9rature zone vin C inf\u00e9rieure"
+      },
+      "mid_wine_area_b_evaporator_fault": {
+        "name": "D\u00e9faut \u00e9vaporateur zone vin B m\u00e9diane"
+      },
+      "mid_wine_area_b_fan_fault": {
+        "name": "D\u00e9faut ventilateur zone vin B m\u00e9diane"
+      },
+      "mid_wine_area_b_humdy_fault": {
+        "name": "D\u00e9faut humidit\u00e9 zone vin B m\u00e9diane"
+      },
+      "mid_wine_area_b_temp_fault": {
+        "name": "D\u00e9faut temp\u00e9rature zone vin B m\u00e9diane"
+      },
+      "open_freeze_door_alarm": {
+        "name": "Alarme porte cong\u00e9lateur ouverte"
+      },
+      "open_refrigerator_door_alarm": {
+        "name": "Alarme porte frigo ouverte"
+      },
+      "open_the_door_alarm": {
+        "name": "Alarme porte ouverte"
+      },
+      "open_variation_door_alarm": {
+        "name": "Alarme porte zone variable ouverte"
+      },
+      "quiet_mode_status": {
+        "name": "\u00c9tat mode silencieux"
+      },
+      "refi_temp_2_degree_above_starting_point": {
+        "name": "Temp\u00e9rature frigo 2\u00b0 au-dessus consigne"
+      },
+      "refr_defrosting_failure": {
+        "name": "D\u00e9faut d\u00e9givrage frigo"
+      },
+      "refr_dry_wet_room_sens_failure": {
+        "name": "D\u00e9faut sonde humide/sec frigo"
+      },
+      "refr_evap_temp_sens_head_failure": {
+        "name": "D\u00e9faut t\u00eate sonde \u00e9vaporateur frigo"
+      },
+      "refr_fan_failure": {
+        "name": "D\u00e9faut ventilateur frigo"
+      },
+      "refr_room_open": {
+        "name": "Compartiment frigo ouvert"
+      },
+      "refr_room_over_temp_alarm": {
+        "name": "Alarme surchauffe zone frigo"
+      },
+      "refr_temp_sens_head_failure": {
+        "name": "D\u00e9faut t\u00eate sonde temp frigo"
+      },
+      "refr_var_room_sens_failure": {
+        "name": "D\u00e9faut sonde zone variable"
+      },
+      "refrigerator_defrosting_failure": {
+        "name": "D\u00e9faut d\u00e9givrage frigo"
+      },
+      "refrigerator_dry_wet_room_sens_failure": {
+        "name": "D\u00e9faut sonde humide/sec frigo"
+      },
+      "refrigerator_evap_temp_sens_head_failure": {
+        "name": "D\u00e9faut t\u00eate sonde \u00e9vaporateur frigo"
+      },
+      "refrigerator_fan_failure": {
+        "name": "D\u00e9faut ventilateur frigo"
+      },
+      "refrigerator_room_open": {
+        "name": "Compartiment frigo ouvert"
+      },
+      "refrigerator_room_over_temp_alarm": {
+        "name": "Alarme surchauffe zone frigo"
+      },
+      "refrigerator_temp_sens_head_failure": {
+        "name": "D\u00e9faut t\u00eate sonde temp frigo"
+      },
+      "refrigerator_var_room_sens_failure": {
+        "name": "D\u00e9faut sonde zone variable"
+      },
+      "right_free_sensor_failure": {
+        "name": "D\u00e9faut sonde cong\u00e9lateur droite"
+      },
+      "rx_failure": {
+        "name": "D\u00e9faut r\u00e9ception"
+      },
       "softener_state": {
         "name": "\u00c9tat assouplissant"
+      },
+      "tx_failure": {
+        "name": "D\u00e9faut transmission"
+      },
+      "up_wine_area_a_evaporator_fault": {
+        "name": "D\u00e9faut \u00e9vaporateur zone vin A sup\u00e9rieure"
+      },
+      "up_wine_area_a_fan_fault": {
+        "name": "D\u00e9faut ventilateur zone vin A sup\u00e9rieure"
+      },
+      "up_wine_area_a_humdy_fault": {
+        "name": "D\u00e9faut humidit\u00e9 zone vin A sup\u00e9rieure"
+      },
+      "up_wine_area_a_temp_fault": {
+        "name": "D\u00e9faut temp\u00e9rature zone vin A sup\u00e9rieure"
+      },
+      "vacuum_on_off_status": {
+        "name": "\u00c9tat vacuum"
+      },
+      "var_room_over_temp_alarm": {
+        "name": "Alarme surchauffe zone variable"
+      },
+      "vari_evap_temp_sens_head_failure": {
+        "name": "D\u00e9faut t\u00eate sonde \u00e9vaporateur zone variable"
+      },
+      "vari_room_open": {
+        "name": "Compartiment zone variable ouvert"
+      },
+      "vari_temp_2_degree_above_starting_point": {
+        "name": "Temp\u00e9rature zone variable 2\u00b0 au-dessus consigne"
+      },
+      "vari_temp_sens_head_failure": {
+        "name": "D\u00e9faut t\u00eate sonde temp zone variable"
+      },
+      "variable_fan_failure_status": {
+        "name": "D\u00e9faut ventilateur zone variable"
+      },
+      "variable_heater_failure_status": {
+        "name": "D\u00e9faut r\u00e9sistance zone variable"
+      },
+      "vibration_alarm": {
+        "name": "Alarme vibration"
+      },
+      "vibration_sensor_fault": {
+        "name": "D\u00e9faut sonde vibration"
+      },
+      "wine_sensor_failure_flag": {
+        "name": "D\u00e9faut sonde cave \u00e0 vin"
       }
     },
     "number": {
       "delayendtime": {
         "name": "Fin diff\u00e9r\u00e9e"
+      },
+      "freeze_max_temperature": {
+        "name": "Temp\u00e9rature max cong\u00e9lateur"
+      },
+      "freeze_min_temperature": {
+        "name": "Temp\u00e9rature min cong\u00e9lateur"
+      },
+      "freeze_temperature": {
+        "name": "Temp\u00e9rature cong\u00e9lateur"
+      },
+      "refrigerator_max_temperature": {
+        "name": "Temp\u00e9rature max frigo"
+      },
+      "refrigerator_min_temperature": {
+        "name": "Temp\u00e9rature min frigo"
+      },
+      "refrigerator_temperature": {
+        "name": "Temp\u00e9rature frigo"
+      },
+      "variation_max_temperature": {
+        "name": "Temp\u00e9rature max zone variable"
+      },
+      "variation_min_temperature": {
+        "name": "Temp\u00e9rature min zone variable"
+      },
+      "variation_temperature": {
+        "name": "Temp\u00e9rature zone variable"
       }
     },
     "select": {
@@ -73,17 +358,29 @@
       },
       "temperature": {
         "name": "Temp\u00e9rature lavage"
+      },
+      "temperature_unit": {
+        "name": "Unit\u00e9 de temp\u00e9rature"
       }
     },
     "sensor": {
       "add_water_flag": {
         "name": "Indicateur ajout eau"
       },
+      "ai_energy_mode_switch": {
+        "name": "Interrupteur mode AI \u00e9co-\u00e9nergie"
+      },
       "airdryflag": {
         "name": "Indicateur s\u00e9chage air"
       },
       "airwashtime": {
         "name": "Dur\u00e9e lavage air"
+      },
+      "alarm_key": {
+        "name": "Touche alarme"
+      },
+      "alarm_sound_volume": {
+        "name": "Volume alarme"
       },
       "anticrease_flag": {
         "name": "Indicateur anti froissage"
@@ -112,6 +409,9 @@
       "bathingwaterpumpstate": {
         "name": "\u00c9tat pompe recyclage"
       },
+      "camera_state": {
+        "name": "\u00c9tat cam\u00e9ra"
+      },
       "cancle_delayend": {
         "name": "Annulation fin diff\u00e9r\u00e9e"
       },
@@ -124,14 +424,38 @@
       "childlock_pause": {
         "name": "Pause verrouillage enfant"
       },
+      "clean_mode_switch_status": {
+        "name": "\u00c9tat mode nettoyage"
+      },
       "coldwash": {
         "name": "Lavage a froid"
+      },
+      "commodity_inspection": {
+        "name": "Inspection produits"
       },
       "compartment_inuse": {
         "name": "Compartiment utilis\u00e9"
       },
       "compartment_switch": {
         "name": "S\u00e9lecteur de compartiment"
+      },
+      "compressor_condition": {
+        "name": "\u00c9tat compresseur"
+      },
+      "compressor_frequency": {
+        "name": "Fr\u00e9quence compresseur"
+      },
+      "cool_c": {
+        "name": "Refroidissement C"
+      },
+      "cool_f": {
+        "name": "Refroidissement F"
+      },
+      "cool_fan_speed": {
+        "name": "Vitesse ventilateur refroidissement"
+      },
+      "cool_r": {
+        "name": "Refroidissement R"
       },
       "curprogdetergentdosage": {
         "name": "Dosage lessive programme courant"
@@ -148,8 +472,32 @@
       "current_program_phase": {
         "name": "\u00c9tape en cours"
       },
+      "daily_energy_consumption": {
+        "name": "Consommation \u00e9nerg\u00e9tique quotidienne"
+      },
       "daily_energy_kwh": {
         "name": "\u00c9nergie quotidienne"
+      },
+      "date_display_format_status": {
+        "name": "Format affichage date"
+      },
+      "date_format_status": {
+        "name": "Format date"
+      },
+      "date_time_format_day_state": {
+        "name": "Format date - jour"
+      },
+      "date_time_format_month_state": {
+        "name": "Format date - mois"
+      },
+      "date_time_format_year_state": {
+        "name": "Format date - ann\u00e9e"
+      },
+      "dbd_clean_mode": {
+        "name": "Mode nettoyage DBD"
+      },
+      "debacilli_mode": {
+        "name": "Mode anti-bact\u00e9ries"
       },
       "defaultspinspeed": {
         "name": "Vitesse essorage par d\u00e9faut"
@@ -165,6 +513,33 @@
       },
       "detergentstandarddosage_flag": {
         "name": "Indicateur dosage standard lessive"
+      },
+      "display_panel_ronshen": {
+        "name": "Panneau d\u2019affichage Ronshen"
+      },
+      "door_close_light_status": {
+        "name": "\u00c9tat voyant porte ferm\u00e9e"
+      },
+      "door_close_ui_display_status": {
+        "name": "\u00c9tat affichage UI porte ferm\u00e9e"
+      },
+      "door_num_four_color": {
+        "name": "Couleur porte 4"
+      },
+      "door_num_one_color": {
+        "name": "Couleur porte 1"
+      },
+      "door_num_three_color": {
+        "name": "Couleur porte 3"
+      },
+      "door_num_two_color": {
+        "name": "Couleur porte 2"
+      },
+      "door_open_light_status": {
+        "name": "\u00c9tat voyant porte ouverte"
+      },
+      "door_open_ui_display_status": {
+        "name": "\u00c9tat affichage UI porte ouverte"
       },
       "door_status": {
         "name": "\u00c9tat hublot"
@@ -190,11 +565,26 @@
       "ecomode": {
         "name": "Mode ECO"
       },
+      "electric_current": {
+        "name": "Courant \u00e9lectrique"
+      },
+      "electric_energy_one_tenths_value": {
+        "name": "\u00c9nergie \u00e9lectrique (dixi\u00e8mes)"
+      },
+      "electric_energy_percentile_thousands_value": {
+        "name": "\u00c9nergie \u00e9lectrique (milli\u00e8mes)"
+      },
       "electricit_consumption": {
         "name": "Consommation \u00e9lectrique"
       },
       "energy_estimate": {
         "name": "Estimation \u00e9nerg\u00e9tique"
+      },
+      "environment_humidity": {
+        "name": "Humidit\u00e9 ambiante"
+      },
+      "environment_real_temperature": {
+        "name": "Temp\u00e9rature ambiante"
       },
       "error_code": {
         "name": "Code erreur",
@@ -203,11 +593,65 @@
           "unbalance_alarm": "Alarme d\u00e9s\u00e9quilibre"
         }
       },
+      "fast_store_mode_exist": {
+        "name": "Mode stockage rapide disponible"
+      },
+      "fast_store_mode_status": {
+        "name": "\u00c9tat mode stockage rapide"
+      },
+      "filter_alarm_time": {
+        "name": "D\u00e9lai alarme filtre"
+      },
+      "filter_state": {
+        "name": "\u00c9tat filtre"
+      },
       "filterclean_washflag": {
         "name": "Indicateur nettoyage filtre"
       },
       "fluffysoft": {
         "name": "Assouplissement renforc\u00e9"
+      },
+      "free_key": {
+        "name": "Touche cong\u00e9lateur"
+      },
+      "free_room": {
+        "name": "Compartiment cong\u00e9lateur"
+      },
+      "free_room_open_2": {
+        "name": "Compartiment cong\u00e9lateur ouvert 2"
+      },
+      "freeri_fan_speed": {
+        "name": "Vitesse ventilateur freeri"
+      },
+      "freeze_door_open_time": {
+        "name": "Dur\u00e9e porte cong\u00e9lateur ouverte"
+      },
+      "freeze_drawer_room_temp": {
+        "name": "Temp\u00e9rature tiroir cong\u00e9lation"
+      },
+      "freeze_fan_speed": {
+        "name": "Vitesse ventilateur cong\u00e9lateur"
+      },
+      "freeze_max_temperature": {
+        "name": "Temp\u00e9rature max cong\u00e9lateur"
+      },
+      "freeze_min_temperature": {
+        "name": "Temp\u00e9rature min cong\u00e9lateur"
+      },
+      "freeze_real_temperature": {
+        "name": "Temp\u00e9rature r\u00e9elle cong\u00e9lateur"
+      },
+      "freeze_sensor_real_temperature": {
+        "name": "Temp\u00e9rature r\u00e9elle sonde cong\u00e9lateur"
+      },
+      "freezing_powerdown_temp_alarm": {
+        "name": "Alarme temp\u00e9rature apr\u00e8s coupure courant"
+      },
+      "froze_convert_to_refri_switch_status": {
+        "name": "\u00c9tat conversion cong\u00e9lateur \u2192 frigo"
+      },
+      "fruit_vegetables_temperature": {
+        "name": "Temp\u00e9rature bac fruits/l\u00e9gumes"
       },
       "gentle_dry": {
         "name": "S\u00e9chage doux"
@@ -215,11 +659,77 @@
       "half_load": {
         "name": "Demi charge"
       },
+      "high_humidity": {
+        "name": "Humidit\u00e9 \u00e9lev\u00e9e"
+      },
+      "high_temperature": {
+        "name": "Temp\u00e9rature haute"
+      },
+      "human_on_off_status": {
+        "name": "\u00c9tat capteur humain"
+      },
+      "human_sense_light_status": {
+        "name": "\u00c9tat voyant capteur humain"
+      },
+      "human_sense_ui_display_state": {
+        "name": "\u00c9tat affichage UI capteur humain"
+      },
+      "human_sensor_switch_exist": {
+        "name": "Capteur humain disponible"
+      },
+      "humanbody_sensor_switch_status": {
+        "name": "\u00c9tat interrupteur capteur corps humain"
+      },
+      "humdy_test_switch_state": {
+        "name": "\u00c9tat test humidit\u00e9"
+      },
+      "ice_machine_actual_temp": {
+        "name": "Temp\u00e9rature r\u00e9elle machine \u00e0 glace"
+      },
+      "ice_make_room_switch": {
+        "name": "Interrupteur compartiment glace"
+      },
+      "ice_making_fast_status": {
+        "name": "Glace - mode rapide"
+      },
+      "ice_making_full_status": {
+        "name": "Glace - plein"
+      },
+      "ice_room_actual_temp": {
+        "name": "Temp\u00e9rature r\u00e9elle compartiment glace"
+      },
       "intensivewash": {
         "name": "Lavage intensif"
       },
+      "ion_preservation_switch": {
+        "name": "Interrupteur pr\u00e9servation ions"
+      },
+      "kettle_install_status": {
+        "name": "\u00c9tat installation bouilloire"
+      },
+      "key_press_sound_volume": {
+        "name": "Volume touches"
+      },
+      "language_select": {
+        "name": "S\u00e9lection langue"
+      },
       "last_completed_running_process": {
         "name": "Dernier cycle"
+      },
+      "load_operation_status2": {
+        "name": "\u00c9tat charge 2"
+      },
+      "lock_key": {
+        "name": "Touche verrouillage"
+      },
+      "low_humidity": {
+        "name": "Humidit\u00e9 basse"
+      },
+      "low_temperature": {
+        "name": "Temp\u00e9rature basse"
+      },
+      "lumin_value_of_interior_light": {
+        "name": "Luminosit\u00e9 \u00e9clairage int\u00e9rieur"
       },
       "machine_status": {
         "name": "\u00c9tat machine",
@@ -230,20 +740,212 @@
       "mainwashtimeuseindex": {
         "name": "Index dur\u00e9e lavage"
       },
+      "market_mode_exist": {
+        "name": "Mode magasin disponible"
+      },
+      "measured_vibrations": {
+        "name": "Vibrations mesur\u00e9es"
+      },
+      "medium_humidity": {
+        "name": "Humidit\u00e9 moyenne"
+      },
+      "medium_temperature": {
+        "name": "Temp\u00e9rature moyenne"
+      },
+      "micro_water_supply_mode": {
+        "name": "Mode micro-alimentation eau"
+      },
+      "mode_key": {
+        "name": "Touche mode"
+      },
+      "model_type": {
+        "name": "Type de mod\u00e8le"
+      },
+      "monitor": {
+        "name": "Moniteur"
+      },
+      "monitor_set": {
+        "name": "R\u00e9glage moniteur"
+      },
+      "monitor_set_act": {
+        "name": "Action r\u00e9glage moniteur"
+      },
+      "night_mode_end_hour": {
+        "name": "Heure fin mode nuit"
+      },
+      "night_mode_light_dark_level": {
+        "name": "Niveau lumi\u00e8re mode nuit"
+      },
+      "night_mode_screen_dark_level": {
+        "name": "Niveau obscurit\u00e9 \u00e9cran mode nuit"
+      },
+      "night_mode_start_hour": {
+        "name": "Heure d\u00e9but mode nuit"
+      },
+      "night_mode_start_min": {
+        "name": "Minutes d\u00e9but mode nuit"
+      },
       "nightmode_flag": {
         "name": "Indicateur mode nuit"
+      },
+      "normal_sound_size": {
+        "name": "Volume normal"
+      },
+      "not_active": {
+        "name": "Non actif"
+      },
+      "party_mode_switch_status": {
+        "name": "\u00c9tat mode soir\u00e9e"
       },
       "performancemode_flag": {
         "name": "Indicateur mode performance"
       },
+      "power_one_tenths_value": {
+        "name": "Puissance (dixi\u00e8mes)"
+      },
       "power_save": {
         "name": "\u00c9conomie \u00e9nergie"
+      },
+      "power_value": {
+        "name": "Puissance"
+      },
+      "power_voltage": {
+        "name": "Tension"
       },
       "presoak": {
         "name": "Trempage"
       },
+      "real_humidity": {
+        "name": "Humidit\u00e9 r\u00e9elle"
+      },
+      "real_humidity_b": {
+        "name": "Humidit\u00e9 r\u00e9elle B"
+      },
+      "real_humidity_c": {
+        "name": "Humidit\u00e9 r\u00e9elle C"
+      },
+      "ref_light": {
+        "name": "Voyant frigo"
+      },
+      "refr_key": {
+        "name": "Touche frigo"
+      },
+      "refr_room": {
+        "name": "Compartiment frigo"
+      },
+      "refrigerator_door_open_time": {
+        "name": "Dur\u00e9e porte frigo ouverte"
+      },
+      "refrigerator_freeze_swith": {
+        "name": "Interrupteur frigo/cong\u00e9lateur"
+      },
+      "refrigerator_freeze_swith_state": {
+        "name": "\u00c9tat interrupteur frigo/cong\u00e9lateur"
+      },
+      "refrigerator_key": {
+        "name": "Touche frigo"
+      },
+      "refrigerator_max_temperature": {
+        "name": "Temp\u00e9rature max frigo"
+      },
+      "refrigerator_min_temperature": {
+        "name": "Temp\u00e9rature min frigo"
+      },
+      "refrigerator_poweroff_ad": {
+        "name": "AD extinction frigo"
+      },
+      "refrigerator_poweron_ad": {
+        "name": "AD allumage frigo"
+      },
+      "refrigerator_real_temperature": {
+        "name": "Temp\u00e9rature r\u00e9elle frigo"
+      },
+      "refrigerator_room": {
+        "name": "Compartiment frigo"
+      },
+      "refrigerator_sensor_real_temperature": {
+        "name": "Temp\u00e9rature r\u00e9elle sonde frigo"
+      },
+      "rgb_atmosphere_mode_b_value": {
+        "name": "Mode ambiance RGB - valeur B"
+      },
+      "rgb_atmosphere_mode_g_value": {
+        "name": "Mode ambiance RGB - valeur G"
+      },
+      "rgb_atmosphere_mode_r_value": {
+        "name": "Mode ambiance RGB - valeur R"
+      },
+      "rgb_function_mode_b_value": {
+        "name": "Mode fonction RGB - valeur B"
+      },
+      "rgb_function_mode_g_value": {
+        "name": "Mode fonction RGB - valeur G"
+      },
+      "rgb_function_mode_r_value": {
+        "name": "Mode fonction RGB - valeur R"
+      },
+      "rgb_light_atmosphere_brightness": {
+        "name": "Luminosit\u00e9 RGB ambiance"
+      },
+      "rgb_light_atmosphere_on_time": {
+        "name": "Dur\u00e9e allumage RGB ambiance"
+      },
+      "rgb_light_function_brightness": {
+        "name": "Luminosit\u00e9 RGB fonction"
+      },
+      "rgb_light_function_on_time": {
+        "name": "Dur\u00e9e allumage RGB fonction"
+      },
+      "rgb_light_normal_brightness": {
+        "name": "Luminosit\u00e9 RGB normale"
+      },
+      "rgb_light_normal_on_time": {
+        "name": "Dur\u00e9e allumage RGB normale"
+      },
+      "rgb_light_state": {
+        "name": "\u00c9tat RGB"
+      },
+      "rgb_normal_mode_b_value": {
+        "name": "Mode normal RGB - valeur B"
+      },
+      "rgb_normal_mode_g_value": {
+        "name": "Mode normal RGB - valeur G"
+      },
+      "rgb_normal_mode_r_value": {
+        "name": "Mode normal RGB - valeur R"
+      },
       "rinsenum": {
         "name": "Nombre rin\u00e7age"
+      },
+      "run_status_flag_5": {
+        "name": "Indicateur d\u2019\u00e9tat 5"
+      },
+      "running_status": {
+        "name": "\u00c9tat de fonctionnement"
+      },
+      "running_status3": {
+        "name": "\u00c9tat de fonctionnement 3"
+      },
+      "screen_display_brightness": {
+        "name": "Luminosit\u00e9 \u00e9cran"
+      },
+      "screen_display_lock": {
+        "name": "Verrouillage \u00e9cran"
+      },
+      "screen_to_clock_time": {
+        "name": "D\u00e9lai \u00e9cran \u2192 horloge"
+      },
+      "screen_to_standby_time": {
+        "name": "D\u00e9lai \u00e9cran \u2192 veille"
+      },
+      "second_ice_maker_full_status": {
+        "name": "Machine \u00e0 glace 2 - plein"
+      },
+      "second_ice_maker_init_fault": {
+        "name": "D\u00e9faut init machine \u00e0 glace 2"
+      },
+      "second_ice_maker_sensor_fault": {
+        "name": "D\u00e9faut sonde machine \u00e0 glace 2"
       },
       "selected_program_id": {
         "name": "Programme"
@@ -257,8 +959,47 @@
       "selected_program_total_time_in_minutes": {
         "name": "Dur\u00e9e totale programme"
       },
+      "sensor_failure_status": {
+        "name": "\u00c9tat d\u00e9faut sondes"
+      },
+      "sensor_failure_status2": {
+        "name": "\u00c9tat d\u00e9faut sondes 2"
+      },
+      "sf_sr_mutex_mode": {
+        "name": "Exclusion mutuelle Super-cong./Super-refr."
+      },
+      "shelf_light_a_state": {
+        "name": "\u00c9tat \u00e9tag\u00e8re lumineuse A"
+      },
+      "shelf_light_atmosphere_brightness": {
+        "name": "Luminosit\u00e9 \u00e9tag\u00e8re ambiance"
+      },
+      "shelf_light_atmosphere_mode_brightness": {
+        "name": "Luminosit\u00e9 mode ambiance \u00e9tag\u00e8re"
+      },
+      "shelf_light_b_state": {
+        "name": "\u00c9tat \u00e9tag\u00e8re lumineuse B"
+      },
+      "shelf_light_c_state": {
+        "name": "\u00c9tat \u00e9tag\u00e8re lumineuse C"
+      },
+      "shelf_light_function_mode_brightness": {
+        "name": "Luminosit\u00e9 mode fonction \u00e9tag\u00e8re"
+      },
+      "shelf_light_function_on_time": {
+        "name": "Dur\u00e9e allumage fonction \u00e9tag\u00e8re"
+      },
+      "shelf_light_normal_on_time": {
+        "name": "Dur\u00e9e allumage normale \u00e9tag\u00e8re"
+      },
+      "show_mode": {
+        "name": "Mode d\u00e9monstration"
+      },
       "slotdry": {
         "name": "S\u00e9chage par compartiment"
+      },
+      "special_space": {
+        "name": "Espace sp\u00e9cial"
       },
       "spin_speed_rpm": {
         "name": "Vitesse essorage"
@@ -266,14 +1007,161 @@
       "spinrange": {
         "name": "Plage essorage"
       },
+      "standby_mode_state": {
+        "name": "\u00c9tat mode veille"
+      },
+      "standby_mode_valid": {
+        "name": "Mode veille disponible"
+      },
+      "status_fan_c_switch": {
+        "name": "\u00c9tat interrupteur ventilateur C"
+      },
+      "status_fan_f_switch": {
+        "name": "\u00c9tat interrupteur ventilateur F"
+      },
+      "status_fan_ln_switch": {
+        "name": "\u00c9tat interrupteur ventilateur LN"
+      },
+      "status_fan_r_switch": {
+        "name": "\u00c9tat interrupteur ventilateur R"
+      },
+      "status_heater_c_switch": {
+        "name": "\u00c9tat interrupteur r\u00e9sistance C"
+      },
+      "status_heater_f_switch": {
+        "name": "\u00c9tat interrupteur r\u00e9sistance F"
+      },
+      "status_heater_r_switch": {
+        "name": "\u00c9tat interrupteur r\u00e9sistance R"
+      },
+      "super_water_supply_mode": {
+        "name": "Mode super alimentation eau"
+      },
+      "temp_auto_ctrl_mode_exist": {
+        "name": "Mode contr\u00f4le auto temp disponible"
+      },
+      "temp_auto_ctrl_mode_state": {
+        "name": "\u00c9tat mode contr\u00f4le auto temp"
+      },
       "temperature": {
         "name": "Temp\u00e9rature lavage"
+      },
+      "temperature_room_judge": {
+        "name": "\u00c9valuation temp\u00e9rature compartiment"
+      },
+      "theme_color": {
+        "name": "Couleur du th\u00e8me"
+      },
+      "unfreeze_run_status": {
+        "name": "\u00c9tat d\u00e9givrage en cours"
+      },
+      "unfreeze_switch_status": {
+        "name": "\u00c9tat interrupteur d\u00e9givrage"
+      },
+      "user_debacilli_mode": {
+        "name": "Mode anti-bact\u00e9ries utilisateur"
+      },
+      "uv_steri_status": {
+        "name": "\u00c9tat st\u00e9rilisation UV"
+      },
+      "var_room_open_2": {
+        "name": "Compartiment zone variable ouvert 2"
+      },
+      "vari_fan_speed": {
+        "name": "Vitesse ventilateur zone variable"
+      },
+      "vari_key": {
+        "name": "Touche zone variable"
+      },
+      "vari_room": {
+        "name": "Compartiment zone variable"
+      },
+      "variable_temperature_space": {
+        "name": "Espace temp\u00e9rature variable"
+      },
+      "variation_door_open_time": {
+        "name": "Dur\u00e9e porte zone variable ouverte"
+      },
+      "variation_max_temperature": {
+        "name": "Temp\u00e9rature max zone variable"
+      },
+      "variation_min_temperature": {
+        "name": "Temp\u00e9rature min zone variable"
+      },
+      "variation_poweroff_ad": {
+        "name": "AD extinction zone variable"
+      },
+      "variation_poweron_ad": {
+        "name": "AD allumage zone variable"
+      },
+      "variation_real_temperature": {
+        "name": "Temp\u00e9rature r\u00e9elle zone variable"
+      },
+      "variation_sensor_real_temperature": {
+        "name": "Temp\u00e9rature r\u00e9elle sonde zone variable"
+      },
+      "water_box_alarm_switch_state": {
+        "name": "\u00c9tat alarme bac \u00e0 eau"
+      },
+      "water_box_lack_status": {
+        "name": "Bac \u00e0 eau - manque d\u2019eau"
+      },
+      "water_box_mode_status": {
+        "name": "Mode bac \u00e0 eau"
       },
       "water_consumption": {
         "name": "Consommation eau"
       },
+      "water_fill_actual_temp": {
+        "name": "Temp\u00e9rature r\u00e9elle remplissage eau"
+      },
+      "water_filter_surplus_time": {
+        "name": "Dur\u00e9e restante filtre eau"
+      },
+      "water_filter_time_reset": {
+        "name": "Reset dur\u00e9e filtre eau"
+      },
+      "water_heat_switch": {
+        "name": "Interrupteur chauffe-eau"
+      },
+      "water_tank_install_state": {
+        "name": "\u00c9tat installation r\u00e9servoir d\u2019eau"
+      },
       "weight_startrunning": {
         "name": "Poids d\u00e9marrage"
+      },
+      "wet_and_dry_space": {
+        "name": "Espace humide/sec"
+      },
+      "wifi_fault_flag": {
+        "name": "D\u00e9faut WiFi"
+      },
+      "wifi_handshake_fault_flag": {
+        "name": "D\u00e9faut handshake WiFi"
+      },
+      "wifi_next_sendtime": {
+        "name": "Prochain envoi WiFi"
+      },
+      "wifi_rx_fault_flag": {
+        "name": "D\u00e9faut r\u00e9ception WiFi"
+      },
+      "wifi_setting": {
+        "name": "Param\u00e8tres WiFi"
+      },
+      "wifi_tx_fault_flag": {
+        "name": "D\u00e9faut transmission WiFi"
+      },
+      "wine_area_switch_status": {
+        "name": "\u00c9tat interrupteur zone vin"
+      },
+      "wine_light": {
+        "name": "Voyant cave \u00e0 vin"
+      },
+      "work_mode1": {
+        "name": "Mode de fonctionnement 1"
+      },
+      "work_mode2": {
+        "name": "Mode de fonctionnement 2"
       }
     },
     "switch": {
@@ -282,6 +1170,9 @@
       },
       "autodose": {
         "name": "Dosage automatique"
+      },
+      "automatic_ice_making": {
+        "name": "Production automatique de glace"
       },
       "autotubclean": {
         "name": "Nettoyage automatique tambour"
@@ -292,11 +1183,32 @@
       "extra_rinse": {
         "name": "Rin\u00e7age suppl\u00e9mentaire"
       },
+      "holiday_mode": {
+        "name": "Mode vacances"
+      },
+      "ice_making_b_switch_status": {
+        "name": "Interrupteur glace B"
+      },
+      "ice_making_state": {
+        "name": "Production de glace"
+      },
       "mute": {
         "name": "Mode silencieux"
       },
       "prewash": {
         "name": "Pr\u00e9lavage"
+      },
+      "save_mode": {
+        "name": "Mode \u00e9co"
+      },
+      "sf_mode": {
+        "name": "Super-cong\u00e9lation"
+      },
+      "sf_sr_mutex_mode": {
+        "name": "Exclusion mutuelle Super-cong./Super-refr."
+      },
+      "sr_mode": {
+        "name": "Super-refroidissement"
       },
       "steam": {
         "name": "Vapeur"
