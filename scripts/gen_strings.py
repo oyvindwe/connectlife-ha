@@ -164,7 +164,18 @@ def main(basedir):
                             if include_option(preset, filename):
                                 strings["entity"]["climate"]["connectlife"]["state_attributes"]["preset_mode"]["state"][preset] = pretty(preset)
 
-    for entity_type in ["binary_sensor", "switch", "number", "sensor", "select"]:
+            if "buttons" in appliance and appliance["buttons"] is not None:
+                if "button" not in strings["entity"]:
+                    strings["entity"]["button"] = {}
+                for button in appliance["buttons"]:
+                    key = to_key(button["key"])
+                    if key not in strings["entity"]["button"]:
+                        strings["entity"]["button"][key] = {"name": pretty(button["key"])}
+                    elif "name" not in strings["entity"]["button"][key]:
+                        strings["entity"]["button"][key]["name"] = pretty(button["key"])
+                    valid_properties.setdefault("button", set()).add(key)
+
+    for entity_type in ["binary_sensor", "button", "switch", "number", "sensor", "select"]:
         if entity_type not in strings["entity"]:
             continue
         valid = valid_properties.get(entity_type, set())
