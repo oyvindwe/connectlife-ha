@@ -10,9 +10,11 @@ import voluptuous as vol
 from homeassistant.config_entries import ConfigEntry, ConfigEntryState
 from homeassistant.const import ATTR_DEVICE_ID
 from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.exceptions import HomeAssistantError
+from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
 import homeassistant.helpers.config_validation as cv
 import homeassistant.helpers.device_registry as dr
+
+from connectlife.api import LifeConnectError
 
 from .coordinator import ConnectLifeCoordinator
 from .const import DOMAIN
@@ -68,7 +70,10 @@ async def async_setup_services(hass: HomeAssistant) -> None:
             _LOGGER.debug(f"Updating {device_id} with data: {data}")
             # TODO: Consider trigging a data update to avoid waiting for next poll to update state.
             #       Make sure to only do this once per coordinater.
-            await coordinator.async_update_device(device_id, data, {})
+            try:
+                await coordinator.async_update_device(device_id, data, {})
+            except LifeConnectError as api_error:
+                raise ServiceValidationError(str(api_error)) from api_error
 
     async def async_set_action(call: ServiceCall) -> None:
         """Set action on device."""

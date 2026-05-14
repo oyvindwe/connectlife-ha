@@ -22,7 +22,6 @@ from .const import DOMAIN, SW_VERSION_PROPERTY
 from .coordinator import ConnectLifeCoordinator, ConnectLifeEnergyCoordinator
 from .dictionaries import Dictionaries, Dictionary, Property
 from .entity import ConnectLifeEntity
-from connectlife.api import LifeConnectError
 from connectlife.appliance import ConnectLifeAppliance, MAX_DATETIME
 from .utils import has_platform, to_unit
 
@@ -183,10 +182,7 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
             raise ServiceValidationError(
                 f"{self.entity_description.name} is read-only on {self.nickname}"
             )
-        try:
-            await self.async_update_device({self.status: value})
-        except LifeConnectError as api_error:
-            raise ServiceValidationError(str(api_error)) from api_error
+        await self.async_update_device({self.status: value})
 
 
 class ConnectLifeEnergySensor(CoordinatorEntity[ConnectLifeEnergyCoordinator], SensorEntity):

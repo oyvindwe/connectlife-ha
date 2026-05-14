@@ -5,14 +5,12 @@ from homeassistant.components.number import NumberEntity, NumberEntityDescriptio
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ServiceValidationError
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
 from .const import DOMAIN
 from .coordinator import ConnectLifeCoordinator
 from .dictionaries import Dictionaries, Dictionary, Property
 from .entity import ConnectLifeEntity
-from connectlife.api import LifeConnectError
 from connectlife.appliance import ConnectLifeAppliance
 from .utils import has_platform, to_unit
 
@@ -92,10 +90,7 @@ class ConnectLifeNumberEntity(ConnectLifeEntity, NumberEntity):
         """Update the current value."""
         value = int(value)
         _LOGGER.debug("Setting %s to %d on %s", self.status, value, self.nickname)
-        try:
-            await self.async_update_device(
-                {self.command_name: value},
-                {self.status: value},
-            )
-        except LifeConnectError as api_error:
-            raise ServiceValidationError(str(api_error)) from api_error
+        await self.async_update_device(
+            {self.command_name: value},
+            {self.status: value},
+        )
