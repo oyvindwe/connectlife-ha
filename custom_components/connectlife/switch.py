@@ -14,7 +14,7 @@ from .const import DOMAIN
 from .coordinator import ConnectLifeCoordinator
 from .dictionaries import Dictionaries, Property
 from .entity import ConnectLifeEntity
-from .utils import is_entity
+from .utils import has_platform
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -33,9 +33,7 @@ async def async_setup_entry(
                 coordinator, appliance, s, dictionary.properties[s], config_entry
             )
             for s in appliance.status_list
-            if is_entity(
-                Platform.SWITCH, dictionary.properties[s], appliance.status_list[s]
-            )
+            if has_platform(Platform.SWITCH, dictionary.properties[s])
         )
 
 
@@ -53,6 +51,8 @@ class ConnectLifeSwitch(ConnectLifeEntity, SwitchEntity):
         """Initialize the entity."""
         super().__init__(coordinator, appliance, status, Platform.SWITCH, config_entry)
         self.status = status
+        self._unavailable_status = status
+        self._unavailable_value = dd_entry.unavailable
         self.command_name = (
             dd_entry.switch.command_name if dd_entry.switch.command_name else status
         )
@@ -70,7 +70,7 @@ class ConnectLifeSwitch(ConnectLifeEntity, SwitchEntity):
             device_class=dd_entry.switch.device_class,
             entity_category=dd_entry.entity_category,
         )
-        self.update_state()
+        self._refresh_state()
 
     @callback
     def update_state(self):

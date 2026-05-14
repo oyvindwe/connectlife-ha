@@ -24,7 +24,7 @@ from .dictionaries import Dictionaries, Dictionary, Property
 from .entity import ConnectLifeEntity
 from connectlife.api import LifeConnectError
 from connectlife.appliance import ConnectLifeAppliance, MAX_DATETIME
-from .utils import is_entity, to_unit
+from .utils import has_platform, to_unit
 
 SERVICE_SET_VALUE = "set_value"
 
@@ -47,11 +47,7 @@ async def async_setup_entry(
             )
             for s in appliance.status_list
             if s != SW_VERSION_PROPERTY
-            and is_entity(
-                Platform.SENSOR,
-                dictionary.properties[s],
-                appliance.status_list[s],
-            )
+            and has_platform(Platform.SENSOR, dictionary.properties[s])
         )
         async_add_entities(
             ConnectLifeStatusSensor(
@@ -93,6 +89,8 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
         """Initialize the entity."""
         super().__init__(coordinator, appliance, status, Platform.SENSOR)
         self.status = status
+        self._unavailable_status = status
+        self._unavailable_value = dd_entry.unavailable
         self.combine = dd_entry.combine
         self.read_only = True if self.combine else dd_entry.sensor.read_only
         self.multiplier = dd_entry.sensor.multiplier
@@ -124,7 +122,7 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
             translation_key=self.to_translation_key(status),
             entity_category=dd_entry.entity_category,
         )
-        self.update_state()
+        self._refresh_state()
 
     @callback
     def update_state(self):

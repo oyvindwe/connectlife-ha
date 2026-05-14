@@ -8,10 +8,13 @@ from .const import TEMPERATURE_UNIT
 from .dictionaries import Property, Dictionary
 
 
+def has_platform(platform: Platform, property: Property):
+    return hasattr(property, platform) and not property.disable
+
+
 def is_entity(platform: Platform, property: Property, value: float | int | str | dt.datetime | None):
     return (
-            hasattr(property, platform)
-            and not property.disable
+            has_platform(platform, property)
             and (
                     property.unavailable is None
                     or value != property.unavailable

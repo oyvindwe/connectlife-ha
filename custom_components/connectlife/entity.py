@@ -31,6 +31,8 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
     _attr_has_entity_name = True
     _attr_unique_id: str
     _disable_beep = False
+    _unavailable_status: str | None = None
+    _unavailable_value: int | None = None
 
     def __init__(
             self,
@@ -66,12 +68,23 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
         # CoordinatorEntity.available only checks last_update_success, so
         # _attr_available is ignored. Combine both with the device's
         # offline_state (1 == online) so unplugged devices show as
-        # unavailable in HA.
+        # unavailable in HA. Also factor in the per-property `unavailable`
+        # sentinel: when the current value matches, the entity is shown as
+        # unavailable rather than being skipped at creation time.
         return (
             super().available
             and self.device_id in self.coordinator.data
             and self.coordinator.data[self.device_id].offline_state == 1
+            and not self._is_value_unavailable()
         )
+
+    def _is_value_unavailable(self) -> bool:
+        if self._unavailable_status is None or self._unavailable_value is None:
+            return False
+        if self.device_id not in self.coordinator.data:
+            return False
+        status_list = self.coordinator.data[self.device_id].status_list
+        return status_list.get(self._unavailable_status) == self._unavailable_value
 
     @callback
     @abstractmethod
@@ -79,9 +92,15 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
         """Subclasses implement this to update their state."""
 
     @callback
+    def _refresh_state(self) -> None:
+        """Run subclass update_state() unless the value matches the unavailable sentinel."""
+        if not self._is_value_unavailable():
+            self.update_state()
+
+    @callback
     def _handle_coordinator_update(self) -> None:
         """Handle updated data from the coordinator."""
-        self.update_state()
+        self._refresh_state()
         self.async_write_ha_state()
 
     async def async_update_device(self, command: dict[str, int], properties: dict[str, int] | None = None):

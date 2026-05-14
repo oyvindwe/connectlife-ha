@@ -14,7 +14,7 @@ from .dictionaries import Dictionaries, Dictionary, Property
 from .entity import ConnectLifeEntity
 from connectlife.api import LifeConnectError
 from connectlife.appliance import ConnectLifeAppliance
-from .utils import is_entity, to_unit
+from .utils import has_platform, to_unit
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -38,9 +38,7 @@ async def async_setup_entry(
                 dictionary,
             )
             for s in appliance.status_list
-            if is_entity(
-                Platform.NUMBER, dictionary.properties[s], appliance.status_list[s]
-            )
+            if has_platform(Platform.NUMBER, dictionary.properties[s])
         )
 
 
@@ -61,6 +59,8 @@ class ConnectLifeNumberEntity(ConnectLifeEntity, NumberEntity):
         """Initialize the entity."""
         super().__init__(coordinator, appliance, status, Platform.NUMBER, config_entry)
         self.status = status
+        self._unavailable_status = status
+        self._unavailable_value = dd_entry.unavailable
         self.command_name = (
             dd_entry.number.command_name if dd_entry.number.command_name else status
         )
@@ -80,7 +80,7 @@ class ConnectLifeNumberEntity(ConnectLifeEntity, NumberEntity):
             translation_key=self.to_translation_key(status),
             entity_category=dd_entry.entity_category,
         )
-        self.update_state()
+        self._refresh_state()
 
     @callback
     def update_state(self):
