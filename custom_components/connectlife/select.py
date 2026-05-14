@@ -6,12 +6,14 @@ from homeassistant.components.select import SelectEntity, SelectEntityDescriptio
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant, callback
+from homeassistant.exceptions import ServiceValidationError
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
 from .const import DOMAIN
 from .coordinator import ConnectLifeCoordinator
 from .dictionaries import Dictionaries, Property
 from .entity import ConnectLifeEntity
+from connectlife.api import LifeConnectError
 from connectlife.appliance import ConnectLifeAppliance
 from .utils import is_entity
 
@@ -100,7 +102,10 @@ class ConnectLifeSelect(ConnectLifeEntity, SelectEntity):
 
     async def async_select_option(self, option: str) -> None:
         """Change the selected option."""
-        await self.async_update_device(
-            {self.command_name: self.reverse_options_map[option] - self.command_adjust},
-            {self.status: self.reverse_options_map[option]},
-        )
+        try:
+            await self.async_update_device(
+                {self.command_name: self.reverse_options_map[option] - self.command_adjust},
+                {self.status: self.reverse_options_map[option]},
+            )
+        except LifeConnectError as api_error:
+            raise ServiceValidationError(str(api_error)) from api_error
