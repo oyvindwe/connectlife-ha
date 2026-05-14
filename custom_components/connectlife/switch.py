@@ -6,8 +6,10 @@ from homeassistant.components.switch import SwitchEntity, SwitchEntityDescriptio
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant, callback
+from homeassistant.exceptions import ServiceValidationError
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
+from connectlife.api import LifeConnectError
 from connectlife.appliance import ConnectLifeAppliance
 
 from .const import DOMAIN
@@ -86,13 +88,19 @@ class ConnectLifeSwitch(ConnectLifeEntity, SwitchEntity):
 
     async def async_turn_off(self, **kwargs):
         """Turn off."""
-        await self.async_update_device(
-            {self.command_name: self.command_off},
-            {self.status: self.off},
-        )
+        try:
+            await self.async_update_device(
+                {self.command_name: self.command_off},
+                {self.status: self.off},
+            )
+        except LifeConnectError as api_error:
+            raise ServiceValidationError(str(api_error)) from api_error
 
     async def async_turn_on(self, **kwargs):
         """Turn on."""
-        await self.async_update_device(
-            {self.command_name: self.command_on}, {self.status: self.on}
-        )
+        try:
+            await self.async_update_device(
+                {self.command_name: self.command_on}, {self.status: self.on}
+            )
+        except LifeConnectError as api_error:
+            raise ServiceValidationError(str(api_error)) from api_error
