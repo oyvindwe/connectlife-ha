@@ -15,7 +15,7 @@ from .dictionaries import Dictionaries, Property
 from .entity import ConnectLifeEntity
 from connectlife.api import LifeConnectError
 from connectlife.appliance import ConnectLifeAppliance
-from .utils import is_entity
+from .utils import has_platform
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -34,9 +34,7 @@ async def async_setup_entry(
                 coordinator, appliance, s, dictionary.properties[s], config_entry
             )
             for s in appliance.status_list
-            if is_entity(
-                Platform.SELECT, dictionary.properties[s], appliance.status_list[s]
-            )
+            if has_platform(Platform.SELECT, dictionary.properties[s])
         )
 
 
@@ -56,6 +54,8 @@ class ConnectLifeSelect(ConnectLifeEntity, SelectEntity):
         """Initialize the entity."""
         super().__init__(coordinator, appliance, status, Platform.SELECT, config_entry)
         self.status = status
+        self._unavailable_status = status
+        self._unavailable_value = dd_entry.unavailable
         # Copy: unmapped values are added per-entity, avoid leaking to other appliances.
         self.options_map = dict(dd_entry.select.options)
         self.reverse_options_map = {v: k for k, v in self.options_map.items()}
@@ -74,7 +74,7 @@ class ConnectLifeSelect(ConnectLifeEntity, SelectEntity):
             translation_key=self.to_translation_key(status),
             entity_category=dd_entry.entity_category,
         )
-        self.update_state()
+        self._refresh_state()
 
     @callback
     def update_state(self):
