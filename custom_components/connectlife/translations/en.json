@@ -1862,6 +1862,7 @@
             "state": {
               "ai": "AI",
               "bedtime": "Bedtime",
+              "eco": "Eco",
               "eco_mute": "Eco mute",
               "eco_sleep_1": "Eco sleep 1",
               "eco_sleep_2": "Eco sleep 2",

@@ -1,4 +1,10 @@
 # Ultraslim AC
+climate:
+  presets:
+    - preset: eco
+      t_power: 1
+      t_work_mode: 5
+
 properties:
   - property: t_fan_speed
     climate:

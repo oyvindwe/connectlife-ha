@@ -36,6 +36,10 @@ from connectlife.appliance import ConnectLifeAppliance
 
 _LOGGER = logging.getLogger(__name__)
 
+HVAC_MODE_ALIASES = {
+    "eco": HVACMode.COOL,
+}
+
 
 async def async_setup_entry(
         hass: HomeAssistant,
@@ -150,11 +154,13 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
             elif target == HVAC_MODE:
                 modes = [mode.value for mode in HVACMode]
                 for (k, v) in data_dictionary.properties[status].climate.options.items():
-                    if v in modes:
-                        mode = HVACMode(v)
+                    if v in modes or v in HVAC_MODE_ALIASES:
+                        mode = HVACMode(v) if v in modes else HVAC_MODE_ALIASES[v]
                         self.hvac_mode_map[k] = mode
-                        hvac_modes.append(mode)
-                        self.hvac_mode_reverse_map[mode] = k
+                        if mode not in hvac_modes:
+                            hvac_modes.append(mode)
+                        if mode not in self.hvac_mode_reverse_map:
+                            self.hvac_mode_reverse_map[mode] = k
             elif target == FAN_MODE:
                 self.fan_mode_map = data_dictionary.properties[status].climate.options
                 self.fan_mode_reverse_map = {v: k for k, v in self.fan_mode_map.items()}
