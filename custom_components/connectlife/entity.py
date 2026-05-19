@@ -24,6 +24,7 @@ from .const import (
 from .coordinator import ConnectLifeCoordinator
 
 _LOGGER = logging.getLogger(__name__)
+DISABLE_BEEP_FAILURE_THRESHOLD = 3
 
 
 class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
@@ -32,6 +33,7 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
     _attr_has_entity_name = True
     _attr_unique_id: str
     _disable_beep = False
+    _disable_beep_failure_count = 0
     _unavailable_status: str | None = None
     _unavailable_value: int | None = None
 
@@ -63,6 +65,12 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
                 device = devices[self.device_id]
                 if CONF_DISABLE_BEEP in device:
                     self._disable_beep = device[CONF_DISABLE_BEEP]
+                    if self._disable_beep:
+                        ir.async_delete_issue(
+                            self.coordinator.hass,
+                            DOMAIN,
+                            f"unsupported_beep.{self.device_id}",
+                        )
 
     @property
     def available(self) -> bool:
@@ -112,33 +120,41 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
                 command["t_beep"] = 0
                 try:
                     await self.coordinator.async_update_device(self.device_id, command, properties)
+                    self._disable_beep_failure_count = 0
+                    ir.async_delete_issue(
+                        self.coordinator.hass,
+                        DOMAIN,
+                        f"unsupported_beep.{self.device_id}",
+                    )
                 except LifeConnectError as err:
                     _LOGGER.debug(
                         "Command failed with t_beep for %s (%s), retrying without",
                         self.nickname,
                         err,
                     )
-                    del command["t_beep"]
+                    command.pop("t_beep", None)
                     try:
                         await self.coordinator.async_update_device(self.device_id, command, properties)
                     except LifeConnectError:
                         raise err from None
-                    self._disable_beep = False
-                    ir.async_create_issue(
-                        self.coordinator.hass,
-                        DOMAIN,
-                        f"unsupported_beep.{self.device_id}",
-                        is_fixable=True,
-                        severity=ir.IssueSeverity.WARNING,
-                        translation_key="unsupported_beep",
-                        translation_placeholders={
-                            "device_name": self.nickname or "",
-                        },
-                        data={
-                            "entry_id": self.coordinator.config_entry.entry_id,
-                            "device_id": self.device_id,
-                        },
-                    )
+                    self._disable_beep_failure_count += 1
+                    if self._disable_beep_failure_count >= DISABLE_BEEP_FAILURE_THRESHOLD:
+                        self._disable_beep = False
+                        ir.async_create_issue(
+                            self.coordinator.hass,
+                            DOMAIN,
+                            f"unsupported_beep.{self.device_id}",
+                            is_fixable=True,
+                            severity=ir.IssueSeverity.WARNING,
+                            translation_key="unsupported_beep",
+                            translation_placeholders={
+                                "device_name": self.nickname or "",
+                            },
+                            data={
+                                "entry_id": self.coordinator.config_entry.entry_id,
+                                "device_id": self.device_id,
+                            },
+                        )
             else:
                 await self.coordinator.async_update_device(self.device_id, command, properties)
         except LifeConnectError as api_error:
