@@ -1133,7 +1133,7 @@ properties:
     optional: true
     entity_category: diagnostic
   - property: Current_program_phase
-    icon: mdi:state-machine
+    icon: mdi:washing-machine
     sensor:
       read_only: true
   - property: ExtraRinseNum
@@ -1150,7 +1150,7 @@ properties:
   - property: Selected_program_ID
     icon: mdi:tshirt-crew
   - property: Spin_speed_rpm
-    icon: mdi:sync
+    icon: mdi:rotate-3d-variant
     select:
       options:
         0: none
@@ -1165,7 +1165,7 @@ properties:
     optional: true
     entity_category: diagnostic
   - property: temperature
-    icon: mdi:thermometer
+    icon: mdi:thermometer-lines
     select:
       options:
         0: cold
