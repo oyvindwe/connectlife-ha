@@ -36,6 +36,36 @@ from connectlife.appliance import ConnectLifeAppliance
 
 _LOGGER = logging.getLogger(__name__)
 
+HVAC_MODE_ALIASES = {
+    "eco": HVACMode.COOL,
+}
+HVAC_MODE_VALUES = {mode.value for mode in HVACMode}
+
+
+def _add_hvac_mode_mapping(
+        raw_mode: int,
+        mode_value: str,
+        hvac_modes: list[HVACMode],
+        hvac_mode_map: dict[int, HVACMode],
+        hvac_mode_reverse_map: dict[HVACMode, int],
+) -> None:
+    """Add a raw HVAC mode mapping if Home Assistant can represent it."""
+    if mode_value in HVAC_MODE_VALUES:
+        mode = HVACMode(mode_value)
+        add_selectable_mapping = True
+    elif mode_value in HVAC_MODE_ALIASES:
+        mode = HVAC_MODE_ALIASES[mode_value]
+        add_selectable_mapping = False
+    else:
+        return
+
+    hvac_mode_map[raw_mode] = mode
+    if add_selectable_mapping:
+        if mode not in hvac_modes:
+            hvac_modes.append(mode)
+        if mode not in hvac_mode_reverse_map:
+            hvac_mode_reverse_map[mode] = raw_mode
+
 
 async def async_setup_entry(
         hass: HomeAssistant,
@@ -148,13 +178,14 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
                     if isinstance(unit, UnitOfTemperature):
                         self.temperature_unit_map[k] = unit
             elif target == HVAC_MODE:
-                modes = [mode.value for mode in HVACMode]
                 for (k, v) in data_dictionary.properties[status].climate.options.items():
-                    if v in modes:
-                        mode = HVACMode(v)
-                        self.hvac_mode_map[k] = mode
-                        hvac_modes.append(mode)
-                        self.hvac_mode_reverse_map[mode] = k
+                    _add_hvac_mode_mapping(
+                        k,
+                        v,
+                        hvac_modes,
+                        self.hvac_mode_map,
+                        self.hvac_mode_reverse_map,
+                    )
             elif target == FAN_MODE:
                 self.fan_mode_map = data_dictionary.properties[status].climate.options
                 self.fan_mode_reverse_map = {v: k for k, v in self.fan_mode_map.items()}
