@@ -6,10 +6,15 @@ from os.path import isfile, join
 from jschon import create_catalog, JSON, JSONSchema
 import yaml
 
+from homeassistant.components.climate import HVACAction
+
+from custom_components.connectlife.climate import HVAC_MODE_ALIASES, HVAC_MODE_VALUES
 from custom_components.connectlife.dictionaries import _merge_property
 
 PLATFORMS = ('binary_sensor', 'climate', 'humidifier', 'number', 'select',
              'sensor', 'switch', 'water_heater')
+
+HVAC_ACTION_VALUES = {action.value for action in HVACAction}
 
 
 def my_construct_mapping(self, node, deep=False):
@@ -41,6 +46,45 @@ def _check_entity_category_config_on_sensor(filename, merged_entry):
         f"writable entities (number/select/switch); use diagnostic or "
         f"omit the category for sensors."
     )
+
+
+def _check_hvac_option_values(filename, merged_entry):
+    """``hvac_mode`` and ``hvac_action`` options must map to values Home
+    Assistant understands. An unknown ``hvac_mode`` value is silently dropped
+    at runtime — the entity shows ``unknown`` for that device state with no
+    warning — so catch it at validation time instead. ``hvac_action`` is logged
+    but otherwise ignored at runtime; validate it for the same reason.
+
+    A value is legal if it is a member of the corresponding HA enum, or — for
+    ``hvac_mode`` — a key in ``climate.HVAC_MODE_ALIASES`` (e.g. ``eco`` →
+    ``cool``). Aliased values are display-only; see climate.py."""
+    climate = merged_entry.get('climate')
+    if not climate:
+        return None
+    options = climate.get('options')
+    if not options:
+        return None
+    target = climate.get('target')
+    if target == 'hvac_mode':
+        legal = HVAC_MODE_VALUES | set(HVAC_MODE_ALIASES)
+    elif target == 'hvac_action':
+        legal = HVAC_ACTION_VALUES
+    else:
+        return None
+    illegal = sorted({v for v in options.values() if v not in legal})
+    if not illegal:
+        return None
+    alias_note = " or an alias in HVAC_MODE_ALIASES" if target == 'hvac_mode' else ""
+    return (
+        f"{filename}: property '{merged_entry['property']}' maps {target} to "
+        f"unknown value(s) {illegal}. Allowed: HA {target} states{alias_note}."
+    )
+
+
+CHECKS = (
+    _check_entity_category_config_on_sensor,
+    _check_hvac_option_values,
+)
 
 
 def main(basedir):
@@ -88,10 +132,11 @@ def main(basedir):
         for prop in (mappings_yaml.get('properties') or []):
             name = prop['property']
             merged = _merge_property(base_props.get(name), prop) if is_subtype else prop
-            err = _check_entity_category_config_on_sensor(filename, merged)
-            if err:
-                print(err)
-                errors.append(filename)
+            for check in CHECKS:
+                err = check(filename, merged)
+                if err:
+                    print(err)
+                    errors.append(filename)
 
     if errors:
         sys.exit(1)
