@@ -1960,6 +1960,12 @@
       "greasefiltersetlifetimeinhours": {
         "name": "Grease filter lifetime"
       },
+      "lightbrightness": {
+        "name": "Light brightness"
+      },
+      "lightcolortemperature": {
+        "name": "Light color temperature"
+      },
       "programoptiontimestartdelayhour": {
         "name": "Start delay hours"
       },
@@ -2289,6 +2295,9 @@
           "800_rpm": "800 RPM",
           "900_rpm": "900 RPM"
         }
+      },
+      "motorlevel": {
+        "name": "Motor level"
       },
       "notification_volumen_setting_status": {
         "name": "Notification volume",

@@ -64,6 +64,7 @@
 |                          | Air conditioner          | 009              | 19901                       |
 | HI21472SV                | Induction hob            | 010              | hob-pind                    |
 |                          | Hood                     | 012              | 000                         |
+|                          | Hood                     | 012              | hood-aa-lightfeedback       |
 |                          | Oven                     | 013              | 000                         |
 | Bio21                    | Oven                     | 013              | oven-bio21-iconledplus      |
 | W-DW50/60-22             | Dishwasher               | 015              | 000                         |
