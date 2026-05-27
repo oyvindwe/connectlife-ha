@@ -275,7 +275,18 @@ type `climate`, a climate entity is created for the appliance.
 
 `is_on` is used when setting HVAC mode to on.
 
-`hvac_mode` can only be mapped to [pre-defined modes](https://developers.home-assistant.io/docs/core/entity/climate#hvac-modes).
+`hvac_mode` can only be mapped to [pre-defined modes](https://developers.home-assistant.io/docs/core/entity/climate#hvac-modes),
+with one exception: `eco` is accepted as an **alias** for `cool`. A device that reports `eco` as its
+`hvac_mode` value then displays as Cool instead of `unknown`. The alias is *display-only* — `eco` is
+not added to the selectable mode list, and selecting Cool always writes the canonical raw value (not
+the raw Eco value). To let the user switch the device into Eco, expose it as a [preset](#presets),
+e.g.:
+```yaml
+climate:
+  presets:
+    - preset: eco
+      t_work_mode: 5
+```
 
 `hvac_action` can only be mapped to [pre-defined actions](https://developers.home-assistant.io/docs/core/entity/climate#hvac-action).
 If a value does not have a sensible mapping, leave it out to set `hvac_action` to `None` for that value, or consider
