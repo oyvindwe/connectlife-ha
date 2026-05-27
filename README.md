@@ -53,8 +53,7 @@ Any devices of these types will use the default mapping file, but it may not be 
 feature-specific mapping file is provided.
 
 Any unmapped properties will show up as sensors with names based on their properties. As there are a lot of exposed
-sensors, all unknown sensors are hidden by default. Access the device or entity list to view sensors and change
-visibility.
+properties, all unknown entities are disabled by default. Access the device or entity list to view sensors and enable.
 
 Please contribute PRs with [mapping files](custom_components/connectlife/data_dictionaries) for your devices!
 
