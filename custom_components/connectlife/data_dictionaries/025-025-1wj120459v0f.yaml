@@ -1,0 +1,20 @@
+# Washing Machine HISENSE WF3S1243BB3
+properties:
+- property: Selected_program_ID
+  select:
+    options:
+        5: allergy_care
+        6: drum_clean
+        7: cotton
+        8: synthetic
+        9: eco_40_60
+        10: wool
+        11: quick15
+        14: spin
+        16: baby
+        18: sportswear
+        19: down
+        20: rinse_spin
+        24: shirts
+        41: power49
+        42: auto
