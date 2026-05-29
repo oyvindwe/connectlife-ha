@@ -18,7 +18,12 @@ from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers import config_validation as cv, entity_platform
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
-from .const import DOMAIN, SW_VERSION_PROPERTY
+from .const import (
+    CONF_DEVICES,
+    CONF_EXPOSE_OFFLINE_STATE,
+    DOMAIN,
+    SW_VERSION_PROPERTY,
+)
 from .coordinator import ConnectLifeCoordinator, ConnectLifeEnergyCoordinator
 from .dictionaries import Dictionaries, Dictionary, Property
 from .entity import ConnectLifeEntity
@@ -208,16 +213,19 @@ class ConnectLifeEnergySensor(CoordinatorEntity[ConnectLifeEnergyCoordinator], S
         self._attr_device_info = DeviceInfo(
             identifiers={(DOMAIN, appliance.device_id)},
         )
+        device = appliance_coordinator.config_entry.options.get(CONF_DEVICES, {}).get(self._device_id, {})
+        self._expose_offline_state = device.get(CONF_EXPOSE_OFFLINE_STATE, False)
         appliance_coordinator.add_entity(self._attr_unique_id, Platform.SENSOR)
         self._update_native_value()
 
     @property
     def available(self) -> bool:
         appliance = self._appliance_coordinator.data.get(self._device_id)
+        if appliance is None:
+            return False
         return (
             super().available
-            and appliance is not None
-            and appliance.offline_state == 1
+            and (self._expose_offline_state or appliance.offline_state == 1)
             and self.coordinator.data is not None
             and self.coordinator.data.get(self._device_id) is not None
         )

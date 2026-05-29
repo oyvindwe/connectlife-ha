@@ -38,7 +38,7 @@ async def async_setup_entry(
     for appliance in coordinator.data.values():
         dictionary = Dictionaries.get_dictionary(appliance)
         if is_humidifier(dictionary):
-            entities.append(ConnectLifeHumidifier(coordinator, appliance, dictionary, config_entry))
+            entities.append(ConnectLifeHumidifier(coordinator, appliance, dictionary))
     async_add_entities(entities)
 
 
@@ -63,10 +63,9 @@ class ConnectLifeHumidifier(ConnectLifeEntity, HumidifierEntity):
             coordinator: ConnectLifeCoordinator,
             appliance: ConnectLifeAppliance,
             data_dictionary: Dictionary,
-            config_entry: ConfigEntry,
     ):
         """Initialize the entity."""
-        super().__init__(coordinator, appliance, "humidifier", Platform.HUMIDIFIER, config_entry)
+        super().__init__(coordinator, appliance, "humidifier", Platform.HUMIDIFIER)
 
         self.target_map = {}
         self.mode_map = {}

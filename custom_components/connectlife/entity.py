@@ -5,7 +5,6 @@ import re
 from abc import abstractmethod
 
 from connectlife.api import LifeConnectError
-from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import Platform
 from homeassistant.core import callback
 from homeassistant.exceptions import ServiceValidationError
@@ -18,6 +17,7 @@ from connectlife.appliance import ConnectLifeAppliance
 from .const import (
     CONF_DEVICES,
     CONF_DISABLE_BEEP,
+    CONF_EXPOSE_OFFLINE_STATE,
     DOMAIN,
     SW_VERSION_PROPERTY,
 )
@@ -34,6 +34,7 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
     _attr_unique_id: str
     _disable_beep = False
     _disable_beep_failure_count = 0
+    _expose_offline_state = False
     _unavailable_status: str | None = None
     _unavailable_value: int | None = None
 
@@ -42,8 +43,7 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
             coordinator: ConnectLifeCoordinator,
             appliance: ConnectLifeAppliance,
             entity_name: str,
-            platform: Platform,
-            config_entry: ConfigEntry | None = None):
+            platform: Platform):
         """Initialize the entity."""
         super().__init__(coordinator)
         self.device_id = appliance.device_id
@@ -59,31 +59,37 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
             sw_version=sw_version if isinstance(sw_version, str) else None,
         )
         coordinator.add_entity(self._attr_unique_id, platform)
-        if config_entry and CONF_DEVICES in config_entry.options:
-            devices = config_entry.options[CONF_DEVICES]
-            if self.device_id in devices:
-                device = devices[self.device_id]
-                if CONF_DISABLE_BEEP in device:
-                    self._disable_beep = device[CONF_DISABLE_BEEP]
-                    if self._disable_beep:
-                        ir.async_delete_issue(
-                            self.coordinator.hass,
-                            DOMAIN,
-                            f"unsupported_beep.{self.device_id}",
-                        )
+        device = coordinator.config_entry.options.get(CONF_DEVICES, {}).get(self.device_id, {})
+        self._expose_offline_state = device.get(CONF_EXPOSE_OFFLINE_STATE, False)
+        self._disable_beep = device.get(CONF_DISABLE_BEEP, False)
+        if self._disable_beep:
+            ir.async_delete_issue(
+                self.coordinator.hass,
+                DOMAIN,
+                f"unsupported_beep.{self.device_id}",
+            )
 
     @property
     def available(self) -> bool:
-        # CoordinatorEntity.available only checks last_update_success, so
-        # _attr_available is ignored. Combine both with the device's
-        # offline_state (1 == online) so unplugged devices show as
-        # unavailable in HA. Also factor in the per-property `unavailable`
-        # sentinel: when the current value matches, the entity is shown as
-        # unavailable rather than being skipped at creation time.
+        # CoordinatorEntity.available only checks last_update_success and
+        # ignores _attr_available, so an entity is available only when all of
+        # the following hold:
+        #  - the coordinator's last update succeeded;
+        #  - the device is still present in the coordinator data;
+        #  - the device is online (offline_state == 1) — unless it is
+        #    configured to expose offline_state as a binary sensor, in which
+        #    case entities keep their last known value while offline instead
+        #    of going unavailable;
+        #  - the current value does not match the per-property `unavailable`
+        #    sentinel (which marks the entity unavailable at runtime rather
+        #    than skipping it at creation time).
         return (
             super().available
             and self.device_id in self.coordinator.data
-            and self.coordinator.data[self.device_id].offline_state == 1
+            and (
+                self._expose_offline_state
+                or self.coordinator.data[self.device_id].offline_state == 1
+            )
             and not self._is_value_unavailable()
         )
 

@@ -81,8 +81,7 @@ async def async_setup_entry(
             entities.append(ConnectLifeClimate(
                 coordinator,
                 appliance,
-                dictionary,
-                config_entry
+                dictionary
             ))
     async_add_entities(entities)
 
@@ -120,11 +119,10 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
             self,
             coordinator: ConnectLifeCoordinator,
             appliance: ConnectLifeAppliance,
-            data_dictionary: Dictionary,
-            config_entry: ConfigEntry
+            data_dictionary: Dictionary
     ):
         """Initialize the entity."""
-        super().__init__(coordinator, appliance, "climate", Platform.CLIMATE, config_entry)
+        super().__init__(coordinator, appliance, "climate", Platform.CLIMATE)
 
         self.entity_description = ClimateEntityDescription(
             key=self._attr_unique_id,

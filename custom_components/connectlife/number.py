@@ -32,7 +32,6 @@ async def async_setup_entry(
                 appliance,
                 s,
                 dictionary.properties[s],
-                config_entry,
                 dictionary,
             )
             for s in appliance.status_list
@@ -51,11 +50,10 @@ class ConnectLifeNumberEntity(ConnectLifeEntity, NumberEntity):
         appliance: ConnectLifeAppliance,
         status: str,
         dd_entry: Property,
-        config_entry: ConfigEntry,
         dictionary: Dictionary,
     ):
         """Initialize the entity."""
-        super().__init__(coordinator, appliance, status, Platform.NUMBER, config_entry)
+        super().__init__(coordinator, appliance, status, Platform.NUMBER)
         self.status = status
         self._unavailable_status = status
         self._unavailable_value = dd_entry.unavailable
