@@ -53,7 +53,11 @@ def main(basedir):
     ha_strings = load_ha_strings()
     with open(f'{basedir}/strings.json', 'r') as f:
         strings = json.load(f)
-    valid_properties = {"sensor": {"daily_energy_kwh"}}
+    # Entities not created based on status_list properties
+    valid_properties = {
+        "sensor": {"daily_energy_kwh"},
+        "binary_sensor": {"offline_state"},
+    }
     valid_options = {}
 
     device_dir = f'{basedir}/data_dictionaries'

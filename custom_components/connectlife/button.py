@@ -24,7 +24,7 @@ async def async_setup_entry(
     for appliance in coordinator.data.values():
         dictionary = Dictionaries.get_dictionary(appliance)
         async_add_entities(
-            ConnectLifeButton(coordinator, appliance, button, config_entry)
+            ConnectLifeButton(coordinator, appliance, button)
             for button in dictionary.buttons
         )
 
@@ -37,11 +37,10 @@ class ConnectLifeButton(ConnectLifeEntity, ButtonEntity):
         coordinator: ConnectLifeCoordinator,
         appliance: ConnectLifeAppliance,
         button: Button,
-        config_entry: ConfigEntry,
     ):
         """Initialize the entity."""
         super().__init__(
-            coordinator, appliance, f"button-{button.key}", Platform.BUTTON, config_entry
+            coordinator, appliance, f"button-{button.key}", Platform.BUTTON
         )
         self.button = button
         self.entity_description = ButtonEntityDescription(

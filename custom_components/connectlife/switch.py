@@ -30,7 +30,7 @@ async def async_setup_entry(
         dictionary = Dictionaries.get_dictionary(appliance)
         async_add_entities(
             ConnectLifeSwitch(
-                coordinator, appliance, s, dictionary.properties[s], config_entry
+                coordinator, appliance, s, dictionary.properties[s]
             )
             for s in appliance.status_list
             if has_platform(Platform.SWITCH, dictionary.properties[s])
@@ -46,10 +46,9 @@ class ConnectLifeSwitch(ConnectLifeEntity, SwitchEntity):
         appliance: ConnectLifeAppliance,
         status: str,
         dd_entry: Property,
-        config_entry: ConfigEntry,
     ):
         """Initialize the entity."""
-        super().__init__(coordinator, appliance, status, Platform.SWITCH, config_entry)
+        super().__init__(coordinator, appliance, status, Platform.SWITCH)
         self.status = status
         self._unavailable_status = status
         self._unavailable_value = dd_entry.unavailable

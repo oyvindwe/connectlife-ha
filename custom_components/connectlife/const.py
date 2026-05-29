@@ -9,7 +9,10 @@ ATTR_KEY = "key"
 CONF_DEVICES = "devices"
 CONF_DEVELOPMENT_MODE = "development_mode"
 CONF_DISABLE_BEEP = "disable_beep"
+CONF_EXPOSE_OFFLINE_STATE = "expose_offline_state"
 CONF_TEST_SERVER_URL = "test_server_url"
+
+OFFLINE_STATE = "offline_state"
 
 # Set by the orphaned-statistics repair flow once the user clicks Clear or
 # Ignore. While unset, every setup runs orphan detection so the repair

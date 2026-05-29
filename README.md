@@ -63,6 +63,17 @@ Some devices will beep on every configuration change. To disable this, go to the
 [ConnectLife integration](https://my.home-assistant.io/redirect/integration/?domain=connectlife)
 and click "Configure" → "Configure a device" and select the device you want to disable beeping for. 
 
+## Expose offline state
+
+By default, when a device goes offline all of its entities become unavailable in Home Assistant. If you would
+rather keep the entities showing their last known values, go to the
+[ConnectLife integration](https://my.home-assistant.io/redirect/integration/?domain=connectlife)
+and click "Configure" → "Configure a device", select the device, and enable "Expose offline state".
+
+This adds a `connectivity` binary sensor (a diagnostic entity) reporting whether the device is online, and stops
+the device's other entities from going unavailable while it is offline — they keep their last reported values
+until the device comes back online.
+
 ## Service to set property values on sensors
 
 Entity service `connectlife.set_value` can be used to set values. Use with caution, as there is **no** validation

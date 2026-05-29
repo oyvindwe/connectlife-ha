@@ -51,7 +51,7 @@ async def async_setup_entry(
     for appliance in coordinator.data.values():
         dictionary = Dictionaries.get_dictionary(appliance)
         if is_water_heater(dictionary):
-            entities.append(ConnectLifeWaterHeater(coordinator, appliance, dictionary, config_entry))
+            entities.append(ConnectLifeWaterHeater(coordinator, appliance, dictionary))
     async_add_entities(entities)
 
 
@@ -87,10 +87,9 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
             coordinator: ConnectLifeCoordinator,
             appliance: ConnectLifeAppliance,
             data_dictionary: Dictionary,
-            config_entry: ConfigEntry,
     ):
         """Initialize the entity."""
-        super().__init__(coordinator, appliance, "waterheater", Platform.WATER_HEATER, config_entry)
+        super().__init__(coordinator, appliance, "waterheater", Platform.WATER_HEATER)
 
         self.entity_description = WaterHeaterEntityDescription(  # type: ignore[assignment]
             key=self._attr_unique_id,

@@ -19,7 +19,14 @@ from homeassistant.core import callback
 from homeassistant.exceptions import HomeAssistantError
 from homeassistant.helpers import issue_registry as ir
 
-from .const import CONF_DEVICES, CONF_DEVELOPMENT_MODE, CONF_DISABLE_BEEP, CONF_TEST_SERVER_URL, DOMAIN
+from .const import (
+    CONF_DEVICES,
+    CONF_DEVELOPMENT_MODE,
+    CONF_DISABLE_BEEP,
+    CONF_EXPOSE_OFFLINE_STATE,
+    CONF_TEST_SERVER_URL,
+    DOMAIN,
+)
 from connectlife.api import ConnectLifeApi
 
 _LOGGER = logging.getLogger(__name__)
@@ -162,20 +169,32 @@ class OptionsFlowHandler(OptionsFlow):
         if user_input is not None:
             data = self.config_entry.options.copy()
             data[CONF_DEVICES] = data[CONF_DEVICES].copy() if CONF_DEVICES in data else {}
-            data[CONF_DEVICES][self._device_id] = {CONF_DISABLE_BEEP: user_input[CONF_DISABLE_BEEP]}
+            data[CONF_DEVICES][self._device_id] = {
+                CONF_DISABLE_BEEP: user_input[CONF_DISABLE_BEEP],
+                CONF_EXPOSE_OFFLINE_STATE: user_input[CONF_EXPOSE_OFFLINE_STATE],
+            }
             if not user_input[CONF_DISABLE_BEEP]:
                 ir.async_delete_issue(self.hass, DOMAIN, f"unsupported_beep.{self._device_id}")
             return self.async_create_entry(title="", data=data)
 
         devices = self.config_entry.options.get(CONF_DEVICES, {})
         device = devices[self._device_id] if self._device_id in devices else {}
-        disable_beep = device[CONF_DISABLE_BEEP] if CONF_DISABLE_BEEP in device else False
+        disable_beep = device.get(CONF_DISABLE_BEEP, False)
+        expose_offline_state = device.get(CONF_EXPOSE_OFFLINE_STATE, False)
         schema = vol.Schema(
             {
                 vol.Optional(CONF_DISABLE_BEEP, default=disable_beep): bool,
+                vol.Optional(CONF_EXPOSE_OFFLINE_STATE, default=expose_offline_state): bool,
             }
         )
-        return self.async_show_form(step_id="configure_device", data_schema=schema)
+        coordinator = self.hass.data[DOMAIN][self.config_entry.entry_id]
+        appliance = coordinator.data.get(self._device_id)
+        device_name = (appliance.device_nickname if appliance else self._device_id) or ""
+        return self.async_show_form(
+            step_id="configure_device",
+            data_schema=schema,
+            description_placeholders={"device_name": device_name},
+        )
 
     async def async_step_development(self, user_input: dict[str, Any] | None = None) -> ConfigFlowResult:
         """Manage the options."""

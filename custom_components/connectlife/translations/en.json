@@ -1098,6 +1098,9 @@
       "motorspeednospinavailable": {
         "name": "Motor speed no spin available"
       },
+      "offline_state": {
+        "name": "Connectivity"
+      },
       "open_freeze_door_alarm": {
         "name": "Open freeze door alarm"
       },
@@ -8827,9 +8830,14 @@
     "step": {
       "configure_device": {
         "data": {
-          "disable_beep": "Disable beep"
+          "disable_beep": "Disable beep",
+          "expose_offline_state": "Expose offline state"
         },
-        "description": "Configure a device."
+        "data_description": {
+          "disable_beep": "Suppress the appliance beep on commands sent from Home Assistant.",
+          "expose_offline_state": "Add a connectivity sensor for this device and keep its other entities available with their last known values while it is offline, instead of marking them unavailable."
+        },
+        "description": "Configure {device_name}."
       },
       "development": {
         "data": {
