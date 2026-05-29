@@ -80,6 +80,7 @@
 | WD3S8043BW3              | Washing machine          | 025              | 1wj080837v0w                |
 |                          | Washing machine          | 025              | 1wj090660v0w                |
 | WF5S9045BW               | Washing machine          | 025              | 1wj090728v0w                |
+| WFSE9014-LVW002          | Washing machine          | 025              | 1wj090729v0w                |
 | WD3S9043BB3              | Washing machine          | 025              | 1wj090913v0f                |
 | WF3S1014-SVW002          | Washing machine          | 025              | 1wj100404v0w                |
 | WFQR1014                 | Washing machine          | 025              | 1wj100649v0t                |
