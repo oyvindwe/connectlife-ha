@@ -10,11 +10,13 @@ from homeassistant.const import Platform, CONF_USERNAME, CONF_PASSWORD
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers import config_validation as cv
 from homeassistant.helpers.typing import ConfigType
-from connectlife.api import ConnectLifeApi, LifeConnectAuthError, LifeConnectError
+from connectlife.api import LifeConnectAuthError, LifeConnectError
 
+from .client import create_api
 from .const import (
     CONF_DEVELOPMENT_MODE,
     CONF_TEST_SERVER_URL,
+    CONF_TRIR,
     DATA_STATE_CLASS_MIGRATION_DONE,
     DOMAIN,
 )
@@ -56,7 +58,12 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
        if entry.options.get(CONF_DEVELOPMENT_MODE)
         else None
     )
-    api = ConnectLifeApi(entry.data[CONF_USERNAME], entry.data[CONF_PASSWORD], test_server_url)  # type: ignore[arg-type]
+    api = create_api(
+        entry.data[CONF_USERNAME],
+        entry.data[CONF_PASSWORD],
+        trir=entry.data.get(CONF_TRIR, False),
+        test_server_url=test_server_url,
+    )
     try:
         await api.login()
     except LifeConnectAuthError as ex:

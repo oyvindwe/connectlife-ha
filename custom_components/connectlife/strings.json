@@ -20,7 +20,11 @@
       "user": {
         "data": {
           "password": "[%key:common::config_flow::data::password%]",
+          "trir": "ConnectLife.TRIR (Russia/CIS) — experimental",
           "username": "[%key:common::config_flow::data::username%]"
+        },
+        "data_description": {
+          "trir": "Enable only if you sign in with the ConnectLife.TRIR app used in Russia/CIS. Experimental."
         }
       }
     }
