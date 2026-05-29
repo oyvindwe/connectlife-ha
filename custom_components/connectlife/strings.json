@@ -4788,12 +4788,6 @@
       "lidopenflag": {
         "name": "Lid open flag"
       },
-      "lightbrightness": {
-        "name": "Light brightness"
-      },
-      "lightcolortemperature": {
-        "name": "Light color temperature"
-      },
       "lights_duration_setting": {
         "name": "Lights duration setting"
       },
@@ -4921,9 +4915,6 @@
         "name": "Motor"
       },
       "motor_level": {
-        "name": "Motor level"
-      },
-      "motorlevel": {
         "name": "Motor level"
       },
       "navigation_sound_setting": {

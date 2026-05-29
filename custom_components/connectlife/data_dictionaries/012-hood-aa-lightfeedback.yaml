@@ -1,17 +1,2 @@
-# ATAG/ASKO hood (accepts direct writes to brightness, color temperature and motor level)
-properties:
-  - property: LightBrightness
-    number:
-      unit: "%"
-  - property: LightColorTemperature
-    number:
-      unit: "%"
-  - property: MotorLevel
-    select:
-      options:
-        0: "0"
-        1: "1"
-        2: "2"
-        3: "3"
-        4: "4"
-        5: "5"
+# ATAG/ASKO hood with light feedback
+# Uses default mappings

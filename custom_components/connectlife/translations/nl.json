@@ -1672,6 +1672,12 @@
       "greasefiltersetlifetimeinhours": {
         "name": "Vetfilter levensduur"
       },
+      "lightbrightness": {
+        "name": "Helderheid verlichting"
+      },
+      "lightcolortemperature": {
+        "name": "Light color temperature"
+      },
       "refrigerator_max_temperature": {
         "name": "Koelkast max temperatuur"
       },
@@ -1950,6 +1956,9 @@
           "800_rpm": "800 toeren",
           "900_rpm": "900 toeren"
         }
+      },
+      "motorlevel": {
+        "name": "Motor level"
       },
       "notification_volumen_setting_status": {
         "name": "Meldingsvolume",
@@ -4220,12 +4229,6 @@
       "lidopenflag": {
         "name": "Indicator deksel open"
       },
-      "lightbrightness": {
-        "name": "Helderheid verlichting"
-      },
-      "lightcolortemperature": {
-        "name": "Light color temperature"
-      },
       "lights_duration_setting": {
         "name": "Lights duration setting"
       },
@@ -4347,9 +4350,6 @@
         "name": "Motor"
       },
       "motor_level": {
-        "name": "Motor level"
-      },
-      "motorlevel": {
         "name": "Motor level"
       },
       "navigation_sound_setting": {
