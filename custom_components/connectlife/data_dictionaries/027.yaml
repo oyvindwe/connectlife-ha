@@ -1,199 +1,50 @@
 # Washing machine
+# Remote action buttons via the Actions command. All require remote actions to
+# be active (Remote_control_monitoring_set_commands_actions: 1); the others are
+# additionally gated on the relevant Status / StopAddGoAllowed value so each
+# button only shows when the action is applicable.
+buttons:
+- key: start
+  icon: mdi:play
+  available_when:
+    Remote_control_monitoring_set_commands_actions: 1
+    Status: 4  # Program select
+  write:
+    Actions: 1
+- key: pause
+  icon: mdi:pause
+  available_when:
+    Remote_control_monitoring_set_commands_actions: 1
+    Status: 6  # Running
+  write:
+    Actions: 7
+- key: resume
+  icon: mdi:play-pause
+  available_when:
+    Remote_control_monitoring_set_commands_actions: 1
+    Status: 7  # Pause
+  write:
+    Actions: 4
+- key: stop
+  icon: mdi:stop
+  available_when:
+    Remote_control_monitoring_set_commands_actions: 1
+  write:
+    Actions: 0
+- key: cancel
+  icon: mdi:cancel
+  available_when:
+    Remote_control_monitoring_set_commands_actions: 1
+  write:
+    Actions: 2
+- key: stop_add_go
+  icon: mdi:tshirt-crew
+  available_when:
+    Remote_control_monitoring_set_commands_actions: 1
+    StopAddGoAllowed: 2  # Active
+  write:
+    Actions: 5
 properties:
-- property: Child_lock_status_status
-  icon: 'mdi:lock'
-  entity_category: diagnostic
-  binary_sensor: {}
-- property: Current_temperature
-  icon: 'mdi:thermometer'
-  sensor:
-    read_only: true
-    device_class: temperature
-    unit: °C
-    state_class: measurement
-- property: Delay_start_remaining_time_in_minutes
-  icon: 'mdi:update'
-  sensor:
-    read_only: true
-    device_class: duration
-    unit: min
-- property: Delaystart_delayend_mode_status
-  icon: 'mdi:timer'
-  unavailable: 0
-  select:
-    options:
-      1: not_active
-      2: delay_start
-      3: delay_end
-    command:
-      name: Delaystart_delayend_mode
-      adjust: 1
-- property: Delaystart_delayend_remaining_time_in_minutes
-  icon: 'mdi:update'
-  sensor:
-    read_only: true
-    device_class: duration
-    unit: min
-- property: Door_status
-  icon: 'mdi:door'
-  sensor:
-    read_only: true
-    device_class: enum
-    options:
-      0: not_available
-      1: open
-      2: closed
-      3: locked
-- property: Extra_rinse_status
-  unavailable: 0
-  switch:
-    "off": 1
-    "on": 2
-    command:
-      name: Extra_rinse
-      adjust: 1
-- property: Selected_program_anticrease_status
-  unavailable: 0
-  switch:
-    "off": 1
-    "on": 2
-    command:
-      name: Selected_program_anticrease
-      adjust: 1
-- property: Selected_program_Disinfection
-  binary_sensor: {}
-- property: Selected_program_duration_in_minutes
-  icon: 'mdi:timer'
-  sensor:
-    read_only: true
-    device_class: duration
-    unit: min
-- property: Selected_program_entry_steam_status
-  unavailable: 0
-  switch:
-    "off": 1
-    "on": 2
-    command:
-      name: Selected_program_entry_steam
-      adjust: 1
-- property: Selected_program_id_status
-  icon: 'mdi:tshirt-crew'
-  select:
-    unknown_value: 255
-    options:
-      0: eco_40_60
-      1: white_cotton
-      2: color
-      3: wool_manual
-      4: mix_synthetic
-      5: extra_hygiene
-      6: fast_20
-      7: intensive_59_32
-      8: no_program_selected
-      9: sport
-      10: baby
-      11: pet_hair_removal
-      12: shirts
-      13: drum_cleaning
-      14: spinning_draining
-      15: draining
-      16: rinsing_softening
-      17: down_feathers
-    command:
-      name: Selected_program_id
-- property: Selected_program_mode_status
-  icon: 'mdi:tshirt-crew'
-  unavailable: 0
-  select:
-    options:
-      1: normal
-      2: intensive
-      3: time_care_1
-      4: time_care_2
-    command:
-      name: Selected_program_mode
-      adjust: 1
-- property: Selected_program_prewash_status
-  unavailable: 0
-  switch:
-    "off": 1
-    "on": 2
-    command:
-      name: Selected_program_prewash
-      adjust: 1
-- property: Selected_program_remaining_time_in_minutes
-  icon: 'mdi:clock-end'
-  sensor:
-    read_only: true
-    device_class: duration
-    unit: min
-- property: Selected_program_rinse_hold_status
-  unavailable: 0
-  switch:
-    "off": 1
-    "on": 2
-    command:
-      name: Selected_program_rinse_hold
-      adjust: 1
-- property: Selected_program_set_temperature_status
-  icon: 'mdi:thermometer'
-  unavailable: 0
-  select:
-    unknown_value: 15
-    options:
-      1: cold
-      2: 20_c
-      3: 30_c
-      4: 40_c
-      5: 60_c
-      6: 90_c
-      7: 95_c
-    command:
-      name: Selected_program_set_temperature
-      adjust: 1
-- property: Selected_program_washing_spin_speed_rpm_status
-  icon: 'mdi:reload'
-  unavailable: 0
-  select:
-    options:
-      1: 0_rpm
-      3: 600_rpm
-      4: 700_rpm
-      5: 800_rpm
-      6: 400_rpm
-      7: 1000_rpm
-      8: 1200_rpm
-      9: 1400_rpm
-      10: 1600_rpm
-    command:
-      name: Selected_program_washing_spin_speed_rpm
-      adjust: 1
-- property: Selected_program_water_pluse_status
-  unavailable: 0
-  switch:
-    "off": 1
-    "on": 2
-    command:
-      name: Selected_program_water_pluse
-      adjust: 1
-- property: Status
-  icon: 'mdi:washing-machine'
-  sensor:
-    read_only: true
-    device_class: enum
-    options:
-      0: "off"
-      1: standby
-      4: "on"
-      6: running
-- property: StopAddGoAllowed
-  icon: 'mdi:check-circle'
-  entity_category: diagnostic
-  binary_sensor: {}
-- property: Stopaddgo_status
-  icon: 'mdi:check-circle'
-  entity_category: diagnostic
-  binary_sensor: {}
 - property: ADS_Dirtiness_setting_status
   # Sample value: 2
   optional: true
@@ -362,8 +213,10 @@ properties:
   # Sample value: 2
   optional: true
 - property: Child_lock_setting_status
-  # Sample value: 2
-  optional: true
+  # Child lock control. Reads the setting echo (1: disabled, 2: enabled) and
+  # writes the Child_lock_setting command (adjust:1 -> 0: disabled, 1: enabled).
+  icon: 'mdi:lock'
+  entity_category: config
   unavailable: 0
   switch:
     "off": 1
@@ -371,7 +224,17 @@ properties:
     command:
       name: Child_lock_setting
       adjust: 1
+- property: Child_lock_status_status
+  icon: 'mdi:lock'
   entity_category: config
+  optional: true
+  unavailable: 0
+  switch:
+    "off": 1
+    "on": 2
+    command:
+      name: Child_lock_status
+      adjust: 1
 - property: Color_sensor_setting_status
   # Sample value: 0
   optional: true
@@ -417,6 +280,13 @@ properties:
     command:
       name: Compartment2_type_setting
       adjust: 1
+- property: Current_temperature
+  icon: 'mdi:thermometer'
+  sensor:
+    read_only: true
+    device_class: temperature
+    unit: °C
+    state_class: measurement
 - property: Current_washing_program_phase_2
   # Sample value: 1
   optional: true
@@ -429,6 +299,29 @@ properties:
 - property: Darhcdq
   # Sample value: 65535
   optional: true
+- property: Delay_start_remaining_time_in_minutes
+  icon: 'mdi:update'
+  sensor:
+    read_only: true
+    device_class: duration
+    unit: min
+- property: Delaystart_delayend_mode_status
+  icon: 'mdi:timer'
+  unavailable: 0
+  select:
+    options:
+      1: not_active
+      2: delay_start
+      3: delay_end
+    command:
+      name: Delaystart_delayend_mode
+      adjust: 1
+- property: Delaystart_delayend_remaining_time_in_minutes
+  icon: 'mdi:update'
+  sensor:
+    read_only: true
+    device_class: duration
+    unit: min
 - property: Delaystart_delayend_timestamp_status
   # Sample value: 16679/02/18T23:47:45
   optional: true
@@ -460,6 +353,16 @@ properties:
 - property: Detergent_indicator
   # Sample value: 0
   optional: true
+- property: Door_status
+  icon: 'mdi:door'
+  sensor:
+    read_only: true
+    device_class: enum
+    options:
+      0: not_available
+      1: open
+      2: closed
+      3: locked
 - property: Dose_assist_recommended_detergent_quantity_unit_status
   # Sample value: 1
   optional: true
@@ -731,6 +634,14 @@ properties:
 - property: Error_9_1
   # Sample value: 0
   optional: true
+- property: Extra_rinse_status
+  unavailable: 0
+  switch:
+    "off": 1
+    "on": 2
+    command:
+      name: Extra_rinse
+      adjust: 1
 - property: Fota
   # Sample value: 4
   optional: true
@@ -825,6 +736,8 @@ properties:
 - property: Remote_control_monitoring_set_commands_actions
   # Sample value: 0
   optional: true
+- property: Selected_program_Disinfection
+  binary_sensor: {}
 - property: Selected_program_Eco_Disinfection
   # Sample value: 0
   optional: true
@@ -865,6 +778,53 @@ properties:
 - property: Selected_program_Water_add
   # Sample value: 0
   optional: true
+- property: Selected_program_anticrease_status
+  unavailable: 0
+  switch:
+    "off": 1
+    "on": 2
+    command:
+      name: Selected_program_anticrease
+      adjust: 1
+- property: Selected_program_duration_in_minutes
+  icon: 'mdi:timer'
+  sensor:
+    read_only: true
+    device_class: duration
+    unit: min
+- property: Selected_program_entry_steam_status
+  unavailable: 0
+  switch:
+    "off": 1
+    "on": 2
+    command:
+      name: Selected_program_entry_steam
+      adjust: 1
+- property: Selected_program_id_status
+  icon: 'mdi:tshirt-crew'
+  select:
+    unknown_value: 255
+    options:
+      0: eco_40_60
+      1: white_cotton
+      2: color
+      3: wool_manual
+      4: mix_synthetic
+      5: extra_hygiene
+      6: fast_20
+      7: intensive_59_32
+      8: no_program_selected
+      9: sport
+      10: baby
+      11: pet_hair_removal
+      12: shirts
+      13: drum_cleaning
+      14: spinning_draining
+      15: draining
+      16: rinsing_softening
+      17: down_feathers
+    command:
+      name: Selected_program_id
 - property: Selected_program_load_status
   # Sample value: 0
   optional: true
@@ -879,6 +839,81 @@ properties:
       3: night_mode
     command:
       name: Selected_program_mode2
+      adjust: 1
+- property: Selected_program_mode_status
+  icon: 'mdi:tshirt-crew'
+  unavailable: 0
+  select:
+    options:
+      1: normal
+      2: intensive
+      3: time_care_1
+      4: time_care_2
+    command:
+      name: Selected_program_mode
+      adjust: 1
+- property: Selected_program_prewash_status
+  unavailable: 0
+  switch:
+    "off": 1
+    "on": 2
+    command:
+      name: Selected_program_prewash
+      adjust: 1
+- property: Selected_program_remaining_time_in_minutes
+  icon: 'mdi:clock-end'
+  sensor:
+    read_only: true
+    device_class: duration
+    unit: min
+- property: Selected_program_rinse_hold_status
+  unavailable: 0
+  switch:
+    "off": 1
+    "on": 2
+    command:
+      name: Selected_program_rinse_hold
+      adjust: 1
+- property: Selected_program_set_temperature_status
+  icon: 'mdi:thermometer'
+  unavailable: 0
+  select:
+    unknown_value: 15
+    options:
+      1: cold
+      2: 20_c
+      3: 30_c
+      4: 40_c
+      5: 60_c
+      6: 90_c
+      7: 95_c
+    command:
+      name: Selected_program_set_temperature
+      adjust: 1
+- property: Selected_program_washing_spin_speed_rpm_status
+  icon: 'mdi:reload'
+  unavailable: 0
+  select:
+    options:
+      1: 0_rpm
+      3: 600_rpm
+      4: 700_rpm
+      5: 800_rpm
+      6: 400_rpm
+      7: 1000_rpm
+      8: 1200_rpm
+      9: 1400_rpm
+      10: 1600_rpm
+    command:
+      name: Selected_program_washing_spin_speed_rpm
+      adjust: 1
+- property: Selected_program_water_pluse_status
+  unavailable: 0
+  switch:
+    "off": 1
+    "on": 2
+    command:
+      name: Selected_program_water_pluse
       adjust: 1
 - property: Session_pairing_active
   # Sample value: 0
@@ -949,6 +984,28 @@ properties:
 - property: Stain_program_Set_stain_status
   # Sample value: 0
   optional: true
+- property: Status
+  icon: 'mdi:washing-machine'
+  sensor:
+    read_only: true
+    device_class: enum
+    options:
+      0: standby
+      1: error
+      2: production
+      3: service
+      4: program_select
+      5: add_clothes
+      6: running
+      7: pause
+- property: StopAddGoAllowed
+  icon: 'mdi:check-circle'
+  entity_category: diagnostic
+  binary_sensor: {}
+- property: Stopaddgo_status
+  icon: 'mdi:check-circle'
+  entity_category: diagnostic
+  binary_sensor: {}
 - property: Temperature_unit_setting_status
   # Sample value: 0
   optional: true

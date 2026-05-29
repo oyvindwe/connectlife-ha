@@ -370,9 +370,6 @@
       "child_lock_open_door_sound_alarm": {
         "name": "T\u00fcrton-Alarm bei ge\u00f6ffneter Kindersicherung"
       },
-      "child_lock_status_status": {
-        "name": "Kindersicherung"
-      },
       "child_lock_switch_exist": {
         "name": "Kindersicherungsschalter vorhanden"
       },
@@ -2877,7 +2874,6 @@
           "error": "Fehler",
           "idle": "Bereit",
           "not_avaliable": "Nicht verf\u00fcgbar",
-          "off": "Aus",
           "pause": "Pause",
           "production": "Produktion",
           "running": "L\u00e4uft",

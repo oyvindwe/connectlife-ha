@@ -414,9 +414,6 @@
       "child_lock_open_door_sound_alarm": {
         "name": "Kinderbeveiliging open deur geluid alarm"
       },
-      "child_lock_status_status": {
-        "name": "Kinderbeveiliging"
-      },
       "child_lock_switch_exist": {
         "name": "Kinderbeveiliging schakelaar bestaat"
       },
@@ -6208,7 +6205,6 @@
           "error": "Fout",
           "idle": "Inactief",
           "not_avaliable": "Niet beschikbaar",
-          "off": "Uit",
           "pause": "Pauze",
           "production": "Productie",
           "running": "Actief",
@@ -7811,9 +7807,6 @@
         "name": "Zoemer"
       },
       "child_lock": {
-        "name": "Kinderbeveiliging"
-      },
-      "child_lock_setting_status": {
         "name": "Kinderbeveiliging"
       },
       "child_lock_status": {
