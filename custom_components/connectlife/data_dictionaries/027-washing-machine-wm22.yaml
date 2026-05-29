@@ -1,4 +1,6 @@
-# Washing machine WPNA84A2TSWIFI/PL
+# Washing machine, feature code washing-machine-wm22.
+# Known models: WPNA84A2TSWIFI/PL, Gorenje WNA94ARWIFI / W-WaveEn-22 (#528).
+#
 # Override delay start/end status options to match what this variant reports
 # (only values 1 and 3 observed in PR #218).
 properties:
