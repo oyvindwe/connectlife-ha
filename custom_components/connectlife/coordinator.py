@@ -27,12 +27,15 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
 
     # We need initial data, so no retries for first request.
     error_count = MAX_RETRIES
-    # Register of current entities (used for cleanup).
-    entities: dict[str, Platform] = {}
 
     def __init__(self, hass, api: ConnectLifeApi):
         """Initialize coordinator."""
         self.api = api
+        # Register of entities created this setup, keyed by unique ID (used by
+        # cleanup_removed_entities). Instance-scoped so a reload — e.g. after
+        # toggling a per-device option — starts fresh and prunes entities that
+        # are no longer created, such as the offline-state binary sensor.
+        self.entities: dict[str, Platform] = {}
         super().__init__(
             hass,
             _LOGGER,
