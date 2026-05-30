@@ -20,7 +20,7 @@
       "user": {
         "data": {
           "password": "[%key:common::config_flow::data::password%]",
-          "trir": "ConnectLife.TRIR (Russia/CIS) — experimental",
+          "trir": "ConnectLife.TRIR (Russia/CIS) \u2014 experimental",
           "username": "[%key:common::config_flow::data::username%]"
         },
         "data_description": {
