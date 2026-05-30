@@ -20,6 +20,7 @@ Download the `connectlife` directory and place in your `<config>/custom_componen
 After installing, you need to restart Home Assistant.
 
 Finally, add "ConnectLife" as an integration in the UI, and provide the username and password for your ConnectLife account.
+Users in Russia/CIS who sign in with the ConnectLife.TRIR app should enable the experimental "TRIR" option in the setup dialog.
 
 Your device and all their status values should show up.
 
@@ -116,8 +117,10 @@ Missing features:
 
 ### Login
 
-Note that users at least in Russia and China can't log in using this integration. See discussion in
-https://github.com/bilan/connectlife-api-connector/issues/25
+Note that users in China can't log in using this integration. Users in Russia/CIS who use the
+ConnectLife.TRIR app can log in by enabling the experimental "TRIR" option when setting up the
+integration (see https://github.com/oyvindwe/connectlife-ha/issues/267). See also the earlier
+discussion in https://github.com/bilan/connectlife-api-connector/issues/25
 
 You have to create a ConnectLife account with username/password. Login with SSO using 3rd party identity providers
 (Google, Apple, etc.) is not supported (See https://github.com/oyvindwe/connectlife-ha/issues/99).
