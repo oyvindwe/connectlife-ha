@@ -6,20 +6,19 @@ properties:
     options:
       0: not_available
       1: program_not_selected
-      2: program_selected
-      3: delay_start_waiting
-      4: preheat
-      5: preheat_finished
-      6: prewash
-      7: main_wash
-      8: drying
-      9: program_finished
-      10: ventilating
-      11: idle
-      12: running
-      13: anti_crease
-      14: delay
-      15: finished
+      2: program_selected #not verified
+      3: main_wash #previously delay_start_waiting
+      4: rinsing #previously preheat
+      5: preheat_finished #not verified
+      6: prewash #not verified
+      7: spinning #previously main_wash
+      8: drying #not verified
+      10: program_finished #previously ventilating
+      11: idle #not verified
+      12: running #not verified
+      13: anti_crease #not verified
+      14: delay #not verified
+      15: finished #not verified
 - property: DefaultSpinSpeed
   sensor:
     multiplier: 100
@@ -42,22 +41,32 @@ properties:
     read_only: true
     device_class: enum
     options:
-      0: cotton_storage
-      1: standard
-      2: iron
-      3: mix
-      4: synthetic
-      5: wool
-      6: bed_linen
-      7: time
-      8: baby
-      9: sensitive
-      10: shirts
-      11: sports
-      12: fast89
-      13: extra_hygiene
-      14: remote
-      15: none
+      0: cotton_storage #not verified
+      1: standard #not verified
+      2: iron #not verified
+      3: mix #not verified, duplicated with 12
+      4: synthetic #not verified, duplicated with 8
+      5: wool #not verified, duplicated with 10
+      6: drum_cleaning #previously bed_linen
+      7: cotton #previouslty time
+      8: synthetic #previouslty baby
+      9: eco #previously sensitive
+      10: wool #previously shirts
+      11: fast15 #previously sports
+      12: mix #previously fast89
+      13: extra_hygiene #not verified
+      14: spin #previously remote
+      15: anti_allergy #previously none
+      16: baby
+      18: sports #previously eco
+      19: sensitive
+      20: rinse_and_spin
+      21: silk
+      24: shirts
+      41: power49
+      42: auto
+      44: bed_linen
+      45: jeans
 - property: Spin_speed_rpm
   sensor: # Sample value: 10
     read_only: true
