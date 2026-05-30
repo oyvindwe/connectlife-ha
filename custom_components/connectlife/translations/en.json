@@ -20,7 +20,11 @@
       "user": {
         "data": {
           "password": "Password",
+          "trir": "ConnectLife.TRIR (Russia/CIS) \u2014 experimental",
           "username": "Username"
+        },
+        "data_description": {
+          "trir": "Enable only if you sign in with the ConnectLife.TRIR app used in Russia/CIS. Experimental."
         }
       }
     }
