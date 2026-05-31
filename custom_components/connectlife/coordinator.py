@@ -18,7 +18,7 @@ from .messages import format_retry_message
 from .statistics_sources import STATISTICS_SOURCES, enabled_sensors
 
 MAX_RETRIES = 3
-ENERGY_UPDATE_INTERVAL = timedelta(minutes=10)
+STATISTICS_UPDATE_INTERVAL = timedelta(minutes=10)
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -209,20 +209,20 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
         )
 
 
-class ConnectLifeEnergyCoordinator(DataUpdateCoordinator[dict[str, EnergyResult | None]]):
+class ConnectLifeStatisticsCoordinator(DataUpdateCoordinator[dict[str, EnergyResult | None]]):
     """ConnectLife statistics coordinator. Polls each appliance's statistics endpoint
     (selected per device type via the data dictionary ``statistics_source``) every 10
     minutes. Stores the fetched result per device; sensors extract their datapoint."""
 
     def __init__(self, hass, api: ConnectLifeApi, appliance_coordinator: ConnectLifeCoordinator):
-        """Initialize energy coordinator."""
+        """Initialize statistics coordinator."""
         self.api = api
         self.appliance_coordinator = appliance_coordinator
         super().__init__(
             hass,
             _LOGGER,
-            name=f"{DOMAIN}_energy",
-            update_interval=ENERGY_UPDATE_INTERVAL,
+            name=f"{DOMAIN}_statistics",
+            update_interval=STATISTICS_UPDATE_INTERVAL,
         )
 
     async def _async_update_data(self) -> dict[str, EnergyResult | None]:

@@ -21,7 +21,7 @@ from .const import (
     DOMAIN,
     SW_VERSION_PROPERTY,
 )
-from .coordinator import ConnectLifeCoordinator, ConnectLifeEnergyCoordinator
+from .coordinator import ConnectLifeCoordinator, ConnectLifeStatisticsCoordinator
 from .dictionaries import Dictionaries, Dictionary, Property
 from .entity import ConnectLifeEntity
 from .statistics_sources import StatisticsSensorDef, enabled_sensors
@@ -40,7 +40,7 @@ async def async_setup_entry(
 ) -> None:
     """Set up ConnectLife sensors."""
     coordinator = hass.data[DOMAIN][config_entry.entry_id]
-    energy_coordinator = hass.data[DOMAIN].get(f"{config_entry.entry_id}_energy")
+    statistics_coordinator = hass.data[DOMAIN].get(f"{config_entry.entry_id}_statistics")
     for appliance in coordinator.data.values():
         dictionary = Dictionaries.get_dictionary(appliance)
         async_add_entities(
@@ -64,11 +64,11 @@ async def async_setup_entry(
                 for src in prop.combine
             )
         )
-    if energy_coordinator is not None:
+    if statistics_coordinator is not None:
         for appliance in coordinator.data.values():
             dictionary = Dictionaries.get_dictionary(appliance)
             async_add_entities(
-                ConnectLifeStatisticsSensor(coordinator, energy_coordinator, appliance, sensor)
+                ConnectLifeStatisticsSensor(coordinator, statistics_coordinator, appliance, sensor)
                 for sensor in enabled_sensors(
                     dictionary.statistics_source, dictionary.statistics_sensors
                 )
@@ -193,7 +193,7 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
         await self.async_update_device({self.status: value})
 
 
-class ConnectLifeStatisticsSensor(CoordinatorEntity[ConnectLifeEnergyCoordinator], SensorEntity):
+class ConnectLifeStatisticsSensor(CoordinatorEntity[ConnectLifeStatisticsCoordinator], SensorEntity):
     """Sensor derived from a ConnectLife statistics endpoint.
 
     The endpoint (and the sensor set) is selected per device type via the data dictionary
@@ -206,12 +206,12 @@ class ConnectLifeStatisticsSensor(CoordinatorEntity[ConnectLifeEnergyCoordinator
     def __init__(
         self,
         appliance_coordinator: ConnectLifeCoordinator,
-        energy_coordinator: ConnectLifeEnergyCoordinator,
+        statistics_coordinator: ConnectLifeStatisticsCoordinator,
         appliance: ConnectLifeAppliance,
         sensor: StatisticsSensorDef,
     ):
         """Initialize the statistics sensor."""
-        super().__init__(energy_coordinator)
+        super().__init__(statistics_coordinator)
         self._device_id = appliance.device_id
         self._sensor = sensor
         self._attr_translation_key = sensor.key

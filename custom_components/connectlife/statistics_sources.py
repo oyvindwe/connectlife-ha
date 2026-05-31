@@ -10,13 +10,13 @@ from __future__ import annotations
 
 from collections.abc import Callable
 from dataclasses import dataclass
-import datetime as dt
 from typing import Any
 
 from connectlife.api import ConnectLifeApi, EnergyResult
 from connectlife.appliance import ConnectLifeAppliance
 from homeassistant.components.sensor import SensorDeviceClass, SensorStateClass
 from homeassistant.const import UnitOfEnergy, UnitOfVolume
+from homeassistant.util import dt as dt_util
 
 
 def _as_float(value: Any) -> float | None:
@@ -29,10 +29,14 @@ def _as_float(value: Any) -> float | None:
 
 
 def _curve_today(curve: dict[str, Any] | None) -> float | None:
-    """Today's value from a per-day curve keyed by ISO date (e.g. the week response)."""
+    """Today's value from a per-day curve keyed by ISO date (e.g. the week response).
+
+    "Today" uses Home Assistant's configured timezone (``dt_util.now()``) so the lookup
+    matches the user's local day boundary, not the server's.
+    """
     if not curve:
         return None
-    return _as_float(curve.get(dt.date.today().isoformat()))
+    return _as_float(curve.get(dt_util.now().date().isoformat()))
 
 
 @dataclass(frozen=True)
