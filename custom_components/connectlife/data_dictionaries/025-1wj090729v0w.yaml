@@ -1,0 +1,33 @@
+# Washing Machine WFSE9014-LVW002
+# Program IDs seeded from the WF5S9045BW (1wj090728v0w) sibling, which shares the
+# index-based spin/temperature encoding of the base 025.yaml. Unconfirmed: the
+# reporter needs to enumerate programs to verify the Selected_program_ID labels.
+properties:
+- property: Current_program_phase
+  sensor:
+    device_class: enum
+    options:
+      0: not_available
+      1: weigh
+      2: prewash
+      3: wash
+      4: rinse
+      7: spin-dry
+      8: drying
+      10: finished
+- property: Selected_program_ID
+  select:
+    options:
+      6: "drum_cleaning"
+      7: "cotton"
+      8: "synthetic"
+      9: "eco_40_60"
+      10: "wool"
+      11: "fast15"
+      14: "spin-dry"
+      15: "allergy_care"
+      16: "baby"
+      18: "sportswear"
+      24: "shirts"
+      41: "power49"
+      42: "auto"
