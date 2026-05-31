@@ -123,17 +123,17 @@ properties:
       options:
         0: delay
         1: prewash
-        2: mainwash
-        3: rinse
-        4: spin
-        5: anticrease
+        2: wash
+        3: rinsing
+        4: spinning
+        5: anti_crease
         6: drain_water
         7: stop_program
         8: cooling
         9: coolend
         10: add_cloth_drain
         11: add_cloth_drain_finish
-        12: program_end
+        12: finished
   - property: CurrentWaterTemperature
     icon: mdi:thermometer
     sensor:

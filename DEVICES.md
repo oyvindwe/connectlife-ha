@@ -96,7 +96,7 @@
 | WD5I1045BWQ              | Washing machine          | 025              | 1wj105552v0w                |
 | WF5S1245BB               | Washing machine          | 025              | 1wj120238v0b                |
 | WDSE1214-EVAJMW          | Washing machine          | 025              | 1wj120261v0w                |
-|                          | Washing machine          | 025              | 1wj120274v0w                |
+| WDSE1214-EVAJMW          | Washing machine          | 025              | 1wj120274v0w                |
 | WFSE1214-MVW002          | Washing machine          | 025              | 1wj120389v0b                |
 |                          | Washing machine          | 025              | 1wj120407v0w                |
 | WF3S1243BB3              | Washing machine          | 025              | 1wj120459v0f                |

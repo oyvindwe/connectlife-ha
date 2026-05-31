@@ -381,12 +381,12 @@ properties:
         3: mix
         4: synthetic
         5: wool
-        6: bed_linen
+        6: bedding
         7: time
-        8: baby
+        8: baby_care
         9: sensitive
         10: shirts
-        11: sports
+        11: sportswear
         12: fast89
         13: extra_hygiene
         14: remote

@@ -3,18 +3,18 @@ properties:
     select:
       options:
         1: auto
-        2: anti_allergy
+        2: allergy_care
         3: refresh
-        4: sports
+        4: sportswear
         5: towels
         7: time
         8: cotton
-        9: baby
+        9: baby_care
         10: synthetic
         11: wool
-        13: fast30
+        13: quick_30
         17: shirts
-        18: bed_linen
+        18: bedding
         19: down
         28: eco
   - property: dry_time
