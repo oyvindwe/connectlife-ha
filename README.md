@@ -75,6 +75,20 @@ This adds a `connectivity` binary sensor (a diagnostic entity) reporting whether
 the device's other entities from going unavailable while it is offline — they keep their last reported values
 until the device comes back online.
 
+## Daily energy and water consumption sensors
+
+For supported device types, the integration exposes a **daily energy** sensor (kWh) and, for
+wet appliances such as dishwashers and washing machines, a **daily water consumption** sensor (L).
+Air conditioners report energy via the cloud `air_duct_energy` endpoint; other appliances
+(dishwashers, washing machines, dryers, ovens, …) report energy — and where applicable water —
+via the `energyConsumptionCurve` endpoint.
+
+No configuration is needed: these sensors are created automatically for device types whose mapping
+opts in (see the `statistics` block in the
+[data dictionary docs](custom_components/connectlife/data_dictionaries/README.md#statistics)).
+The statistics are fetched from a separate cloud endpoint, polled every 10 minutes, and — unlike
+the regular status entities — they stay available even while the appliance is offline.
+
 ## Service to set property values on sensors
 
 Entity service `connectlife.set_value` can be used to set values. Use with caution, as there is **no** validation

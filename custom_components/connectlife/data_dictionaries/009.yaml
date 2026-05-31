@@ -1,3 +1,6 @@
+statistics:
+  source: air_duct_energy
+  daily_energy_kwh: true
 properties:
   - property: aus_zone1_opencontrol
     number:

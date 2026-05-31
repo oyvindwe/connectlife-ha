@@ -91,6 +91,7 @@ The file contains these top level items:
 - `climate`: top level [`Climate`](#presets) configuration.
 - `properties`: list of [`Property`](#property)
 - `buttons`: list of [`Button`](#buttons) entities for write-only commands
+- `statistics`: opt the device type into [daily energy/water statistics](#statistics) sensors
 
 To make a property visible by default, just add the property to the list. Note that properties you do not map are still
 mapped to [sensor](#type-sensor) entities, but registered as disabled by default.
@@ -473,6 +474,45 @@ Example feature override disabling pause on a variant that doesn't support `Acti
 buttons:
   - key: pause
     disable: true
+```
+
+## Statistics
+
+The top-level `statistics` block opts the device type into **daily energy and water
+consumption** sensors. These are not mapped from `status_list` properties; instead the
+integration polls a separate ConnectLife cloud statistics endpoint (every 10 minutes) and
+exposes the daily totals. Because the data is cloud-side, these sensors stay available even
+when the appliance is offline.
+
+Set this block on the **base** device-type file (e.g. `015.yaml`), not on feature overrides.
+Omit the whole block for device types that have no statistics endpoint.
+
+| Item                      | Type                                            | Description                                                                                                                                            |
+|---------------------------|-------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `source`                  | `air_duct_energy`, `energy_consumption_curve`   | Required. Which cloud endpoint to poll: `air_duct_energy` for air conditioners, `energy_consumption_curve` for other appliances (dishwashers, washing machines, dryers, …). |
+| `daily_energy_kwh`        | `true`, `false`                                 | Set `true` to create the daily energy sensor (kWh). Defaults to `false`.                                                                                |
+| `daily_water_consumption` | `true`, `false`                                 | Set `true` to create the daily water consumption sensor (L), for wet appliances. Defaults to `false`.                                                   |
+
+Both sensor flags default to off, so each must be explicitly enabled with `true`.
+`daily_water_consumption` is only meaningful for the `energy_consumption_curve` source.
+
+Example for a dishwasher:
+
+```yaml
+# 015.yaml (base)
+statistics:
+  source: energy_consumption_curve
+  daily_energy_kwh: true
+  daily_water_consumption: true
+```
+
+Example for an air conditioner:
+
+```yaml
+# 009.yaml (base)
+statistics:
+  source: air_duct_energy
+  daily_energy_kwh: true
 ```
 
 ## Type `WaterHeater`

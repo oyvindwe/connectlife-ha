@@ -1,3 +1,7 @@
+statistics:
+  source: energy_consumption_curve
+  daily_energy_kwh: true
+  daily_water_consumption: true
 properties:
   - property: ADO_allowed
     binary_sensor:

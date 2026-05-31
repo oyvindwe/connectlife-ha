@@ -1,4 +1,8 @@
 # Washing machine
+statistics:
+  source: energy_consumption_curve
+  daily_energy_kwh: true
+  daily_water_consumption: true
 properties:
 - property: Child_lock_status_status
   icon: 'mdi:lock'
