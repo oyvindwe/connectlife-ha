@@ -3,7 +3,7 @@ import logging
 from collections.abc import Mapping
 from datetime import timedelta
 
-from connectlife.api import LifeConnectAuthError, LifeConnectError, ConnectLifeApi
+from connectlife.api import LifeConnectAuthError, LifeConnectError, ConnectLifeApi, EnergyResult
 from connectlife.appliance import ConnectLifeAppliance
 from homeassistant.components.recorder import get_instance
 from homeassistant.components.recorder.statistics import list_statistic_ids
@@ -15,6 +15,7 @@ from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, Upda
 from .const import DATA_STATE_CLASS_MIGRATION_DONE, DOMAIN
 from .dictionaries import Dictionaries
 from .messages import format_retry_message
+from .statistics_sources import STATISTICS_SOURCES, enabled_sensors
 
 MAX_RETRIES = 3
 ENERGY_UPDATE_INTERVAL = timedelta(minutes=10)
@@ -208,8 +209,10 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
         )
 
 
-class ConnectLifeEnergyCoordinator(DataUpdateCoordinator[dict[str, float | None]]):
-    """ConnectLife energy coordinator. Polls daily energy usage every 10 minutes."""
+class ConnectLifeEnergyCoordinator(DataUpdateCoordinator[dict[str, EnergyResult | None]]):
+    """ConnectLife statistics coordinator. Polls each appliance's statistics endpoint
+    (selected per device type via the data dictionary ``statistics_source``) every 10
+    minutes. Stores the fetched result per device; sensors extract their datapoint."""
 
     def __init__(self, hass, api: ConnectLifeApi, appliance_coordinator: ConnectLifeCoordinator):
         """Initialize energy coordinator."""
@@ -222,19 +225,26 @@ class ConnectLifeEnergyCoordinator(DataUpdateCoordinator[dict[str, float | None]
             update_interval=ENERGY_UPDATE_INTERVAL,
         )
 
-    async def _async_update_data(self) -> dict[str, float | None]:
-        """Fetch daily energy for all appliances."""
-        result: dict[str, float | None] = {}
+    async def _async_update_data(self) -> dict[str, EnergyResult | None]:
+        """Fetch statistics for appliances whose data dictionary opts into an endpoint."""
+        result: dict[str, EnergyResult | None] = {}
         for device_id, appliance in self.appliance_coordinator.data.items():
+            dictionary = Dictionaries.get_dictionary(appliance)
+            source = STATISTICS_SOURCES.get(dictionary.statistics_source or "")
+            if source is None or not enabled_sensors(
+                dictionary.statistics_source, dictionary.statistics_sensors
+            ):
+                continue
             try:
-                result[device_id] = await self.api.get_daily_energy_kwh(
-                    appliance.puid,
-                    appliance.device_type_code,
-                    appliance.device_feature_code,
-                )
+                result[device_id] = await source.fetch(self.api, appliance)
+            except LifeConnectAuthError:
+                # Token is rejected; stop rather than hammering the gateway (and any
+                # re-login) for every remaining device. Recovers on the next cycle.
+                _LOGGER.debug("Statistics auth failed; skipping remaining devices this cycle")
+                break
             except Exception:
                 _LOGGER.debug(
-                    "Failed to fetch daily energy for %s",
+                    "Failed to fetch statistics for %s",
                     appliance.device_nickname,
                     exc_info=True,
                 )

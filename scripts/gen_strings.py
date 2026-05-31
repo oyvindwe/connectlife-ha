@@ -55,7 +55,7 @@ def main(basedir):
         strings = json.load(f)
     # Entities not created based on status_list properties
     valid_properties = {
-        "sensor": {"daily_energy_kwh"},
+        "sensor": {"daily_energy_kwh", "daily_water_consumption"},
         "binary_sensor": {"offline_state"},
     }
     valid_options = {}

@@ -21,7 +21,9 @@ from .const import (
     DOMAIN,
 )
 from .coordinator import ConnectLifeCoordinator, ConnectLifeEnergyCoordinator
+from .dictionaries import Dictionaries
 from .services import async_setup_services
+from .statistics_sources import enabled_sensors
 
 PLATFORMS: list[Platform] = [
     Platform.BINARY_SENSOR,
@@ -72,10 +74,21 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         raise ConfigEntryNotReady from ex
     coordinator = ConnectLifeCoordinator(hass, api)
     await coordinator.async_config_entry_first_refresh()
-    energy_coordinator = ConnectLifeEnergyCoordinator(hass, api, coordinator)
-    await energy_coordinator.async_config_entry_first_refresh()
     hass.data[DOMAIN][entry.entry_id] = coordinator
-    hass.data[DOMAIN][f"{entry.entry_id}_energy"] = energy_coordinator
+
+    # Only create the statistics coordinator if some device opts into a statistics
+    # endpoint with at least one sensor enabled (otherwise it would poll nothing).
+    has_statistics = any(
+        enabled_sensors(
+            Dictionaries.get_dictionary(appliance).statistics_source,
+            Dictionaries.get_dictionary(appliance).statistics_sensors,
+        )
+        for appliance in coordinator.data.values()
+    )
+    if has_statistics:
+        energy_coordinator = ConnectLifeEnergyCoordinator(hass, api, coordinator)
+        await energy_coordinator.async_config_entry_first_refresh()
+        hass.data[DOMAIN][f"{entry.entry_id}_energy"] = energy_coordinator
 
     entry.async_on_unload(entry.add_update_listener(update_listener))
 

@@ -6,6 +6,25 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
+        "statistics": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["source"],
+          "properties": {
+            "source": {
+              "enum": ["air_duct_energy", "energy_consumption_curve"],
+              "description": "Which cloud statistics endpoint to poll: air_duct_energy (air conditioners) or energy_consumption_curve (other appliances). Set on the base device-type file; omit the whole block for types with no statistics endpoint."
+            },
+            "daily_energy_kwh": {
+              "type": "boolean",
+              "description": "Set true to create the daily energy sensor."
+            },
+            "daily_water_consumption": {
+              "type": "boolean",
+              "description": "Set true to create the daily water consumption sensor (wet appliances)."
+            }
+          }
+        },
         "climate": {
           "$ref": "#/$defs/ClimateDevice"
         },

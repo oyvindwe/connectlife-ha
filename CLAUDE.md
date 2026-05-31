@@ -67,6 +67,29 @@ for appliance in coordinator.data.values():
 
 Device-level platforms (climate, humidifier, water_heater) create one entity per appliance when any property has that platform type.
 
+### Statistics (daily energy/water) sensors
+
+A second coordinator, `ConnectLifeEnergyCoordinator` (`coordinator.py`), runs alongside the main
+one and powers the daily energy/water consumption sensors. These are **not** derived from
+`status_list`; they come from separate ConnectLife cloud statistics endpoints.
+
+- **Opt-in via the data dictionary**: a top-level `statistics` block (`source` +
+  per-sensor boolean flags `daily_energy_kwh` / `daily_water_consumption`) selects the endpoint
+  and which sensors to create. Parsed in `dictionaries.py` onto `Dictionary.statistics_source` /
+  `Dictionary.statistics_sensors`. Both flags default to off — explicit `true` is required.
+- **Registry** (`statistics_sources.py`): maps each `source` (`air_duct_energy` for air
+  conditioners, `energy_consumption_curve` for other appliances) to its endpoint fetch and its
+  `StatisticsSensorDef`s. `enabled_sensors(source, flags)` returns only the explicitly-enabled
+  sensor defs.
+- **Lifecycle**: `__init__.py` creates the energy coordinator only if at least one appliance has
+  an enabled statistics sensor (otherwise it would poll nothing); stored under
+  `hass.data[DOMAIN][f"{entry_id}_energy"]`. It polls every `ENERGY_UPDATE_INTERVAL` (10 minutes),
+  storing `dict[device_id, EnergyResult | None]`. On `LifeConnectAuthError` it stops the cycle
+  (no per-appliance re-login storm).
+- **Sensors** (`ConnectLifeStatisticsSensor` in `sensor.py`): generic, configured from a
+  `StatisticsSensorDef`; unique ID `{device_id}-{sensor.key}`. Unlike status entities they are
+  **not** gated on offline state — cloud-side statistics remain available while the device is offline.
+
 ### Key Design Decisions
 
 - **Unique ID format**: `{device_id}-{property_name}` (or `{device_id}-climate` etc. for device-level entities)

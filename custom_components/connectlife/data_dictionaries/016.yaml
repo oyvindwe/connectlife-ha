@@ -1,3 +1,6 @@
+statistics:
+  source: energy_consumption_curve
+  daily_energy_kwh: true
 properties:
   - property: f_ecm
     # f_ecm: appears to indicate which unit f_electricity uses (f_ecm=1

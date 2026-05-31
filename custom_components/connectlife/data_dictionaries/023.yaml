@@ -1,4 +1,7 @@
 # Oven
+statistics:
+  source: energy_consumption_curve
+  daily_energy_kwh: true
 properties:
   - property: Actions
     select:

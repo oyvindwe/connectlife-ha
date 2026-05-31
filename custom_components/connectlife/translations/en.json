@@ -3450,6 +3450,9 @@
       "daily_energy_kwh": {
         "name": "Daily energy"
       },
+      "daily_water_consumption": {
+        "name": "Daily water consumption"
+      },
       "darhcdq": {
         "name": "Darhcdq"
       },
