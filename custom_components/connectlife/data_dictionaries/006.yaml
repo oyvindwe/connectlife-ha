@@ -286,6 +286,7 @@ properties:
     climate:
       target: swing_mode
       options:
+        # Ordered logically, not by key
         0: swing
         1: auto
         7: top
@@ -298,6 +299,7 @@ properties:
     climate:
       target: swing_horizontal_mode
       options:
+        # Ordered logically, not by key
         3: swing
         2: both_sides
         4: left
