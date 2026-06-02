@@ -287,12 +287,12 @@ properties:
       options:
         0: swing
         1: auto
-        2: angle_1
-        3: angle_2
-        4: angle_3
-        5: angle_4
-        6: angle_5
-        7: angle_6
+        2: bottom
+        3: low
+        4: mid_low
+        5: mid_high
+        6: high
+        7: top
     icon: mdi:arrow-oscillating
   - property: t_swing_direction
     climate:

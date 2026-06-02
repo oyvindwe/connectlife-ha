@@ -2729,16 +2729,16 @@
         }
       },
       "t_swing_angle": {
-        "name": "Swing angle",
+        "name": "Vertical swing angle",
         "state": {
-          "angle_1": "Angle 1",
-          "angle_2": "Angle 2",
-          "angle_3": "Angle 3",
-          "angle_4": "Angle 4",
-          "angle_5": "Angle 5",
-          "angle_6": "Angle 6",
           "auto": "Auto",
-          "swing": "Swing"
+          "bottom": "Bottom",
+          "high": "High",
+          "low": "Low",
+          "mid_high": "Mid-High",
+          "mid_low": "Mid-Low",
+          "swing": "Swing",
+          "top": "Top"
         }
       },
       "t_swing_follow": {

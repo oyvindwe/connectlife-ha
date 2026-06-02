@@ -254,16 +254,16 @@
         }
       },
       "t_swing_angle": {
-        "name": "Flusso d'aria",
+        "name": "Angolo di oscillazione verticale",
         "state": {
-          "angle_1": "Posizione 1",
-          "angle_2": "Posizione 2",
-          "angle_3": "Posizione 3",
-          "angle_4": "Posizione 4",
-          "angle_5": "Posizione 5",
-          "angle_6": "Posizione 6",
           "auto": "Auto",
-          "swing": "Oscillazione"
+          "bottom": "In basso",
+          "high": "Alto",
+          "low": "Basso",
+          "mid_high": "Medio-alto",
+          "mid_low": "Medio-basso",
+          "swing": "Oscillazione",
+          "top": "In alto"
         }
       },
       "t_swing_follow": {
