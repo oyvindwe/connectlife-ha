@@ -1598,7 +1598,16 @@
             }
           },
           "swing_mode": {
-            "state": {}
+            "state": {
+              "auto": "Auto",
+              "bottom": "Nederst",
+              "high": "H\u00f8y",
+              "low": "Lav",
+              "mid_high": "Middels h\u00f8y",
+              "mid_low": "Middels lav",
+              "swing": "Sving",
+              "top": "\u00d8verst"
+            }
           }
         }
       }
@@ -2356,19 +2365,6 @@
           "for_young": "For ungdom",
           "general": "Generell",
           "off": "Av"
-        }
-      },
-      "t_swing_angle": {
-        "name": "Vertikal svingvinkel",
-        "state": {
-          "auto": "Auto",
-          "bottom": "Nederst",
-          "high": "H\u00f8y",
-          "low": "Lav",
-          "mid_high": "Middels h\u00f8y",
-          "mid_low": "Middels lav",
-          "swing": "Sving",
-          "top": "\u00d8verst"
         }
       },
       "t_swing_follow": {
@@ -8016,6 +8012,9 @@
       },
       "t_tms": {
         "name": "AI"
+      },
+      "t_up_down": {
+        "name": "Vertikal sving"
       },
       "tab_setting_status": {
         "name": "Vaskemiddel-TAB"

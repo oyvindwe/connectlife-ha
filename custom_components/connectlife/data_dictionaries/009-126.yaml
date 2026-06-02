@@ -1,5 +1,13 @@
 # t_temp range extends to the 8° heat mode low setpoint (8 °C / 46 °F).
 properties:
+  # This featureset's spec exposes only t_up_down (no t_swing_angle), so
+  # map it to the vertical swing_mode control instead of the default switch.
+  - property: t_up_down
+    climate:
+      target: swing_mode
+      options:
+        0: "off"
+        1: "on"
   - property: t_temp
     climate:
       min_value:

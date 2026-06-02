@@ -212,7 +212,16 @@
             }
           },
           "swing_mode": {
-            "state": {}
+            "state": {
+              "auto": "Auto",
+              "bottom": "In basso",
+              "high": "Alto",
+              "low": "Basso",
+              "mid_high": "Medio-alto",
+              "mid_low": "Medio-basso",
+              "swing": "Oscillazione",
+              "top": "In alto"
+            }
           }
         }
       }
@@ -251,19 +260,6 @@
           "for_young": "Per Giovani",
           "general": "Generale",
           "off": "Spento"
-        }
-      },
-      "t_swing_angle": {
-        "name": "Angolo di oscillazione verticale",
-        "state": {
-          "auto": "Auto",
-          "bottom": "In basso",
-          "high": "Alto",
-          "low": "Basso",
-          "mid_high": "Medio-alto",
-          "mid_low": "Medio-basso",
-          "swing": "Oscillazione",
-          "top": "In alto"
         }
       },
       "t_swing_follow": {
@@ -627,6 +623,9 @@
       },
       "t_tms": {
         "name": "AI"
+      },
+      "t_up_down": {
+        "name": "Oscillazione verticale"
       }
     },
     "water_heater": {

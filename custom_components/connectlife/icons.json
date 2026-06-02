@@ -11,8 +11,20 @@
           },
           "swing_mode": {
             "state": {
-              "both_sides": "mdi:arrow-left-right",
-              "forward": "mdi:arrow-down",
+              "auto": "mdi:autorenew",
+              "bottom": "mdi:chevron-double-down",
+              "high": "mdi:chevron-up",
+              "low": "mdi:chevron-down",
+              "mid_high": "mdi:menu-up",
+              "mid_low": "mdi:menu-down",
+              "swing": "mdi:arrow-oscillating",
+              "top": "mdi:chevron-double-up"
+            }
+          },
+          "swing_horizontal_mode": {
+            "state": {
+              "both_sides": "mdi:arrow-expand-horizontal",
+              "forward": "mdi:arrow-up",
               "left": "mdi:arrow-left",
               "right": "mdi:arrow-right",
               "swing": "mdi:arrow-oscillating"

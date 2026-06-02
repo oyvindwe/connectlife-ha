@@ -351,7 +351,8 @@ properties:
         2: not_follow
     icon: mdi:account-arrow-right
   - property: t_swing_angle
-    select:
+    climate:
+      target: swing_mode
       options:
         0: swing
         1: auto
@@ -361,7 +362,6 @@ properties:
         5: mid_high
         6: high
         7: top
-    icon: mdi:arrow-oscillating
   - property: t_swing_direction
     climate:
       target: swing_horizontal_mode
@@ -372,11 +372,9 @@ properties:
         3: swing
         4: left
   - property: t_up_down
-    climate:
-      target: swing_mode
-      options:
-        0: "off"
-        1: "on"
+    switch:
+      device_class: switch
+    icon: mdi:arrow-oscillating
   - property: t_temp
     climate:
       target: target_temperature
