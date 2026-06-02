@@ -15,9 +15,9 @@ properties:
       4: preheat
       5: preheat_finished
       6: prewash
-      7: main_wash
+      7: wash
       8: drying
-      9: program_finished
+      9: finished
       10: ventilating
       11: idle
       12: running
@@ -38,12 +38,12 @@ properties:
       3: mix
       4: synthetic
       5: wool
-      6: bed_linen
+      6: bedding
       7: time
-      8: baby
+      8: baby_care
       9: sensitive
       10: shirts
-      11: sports
+      11: sportswear
       12: fast89
       13: extra_hygiene
       14: remote

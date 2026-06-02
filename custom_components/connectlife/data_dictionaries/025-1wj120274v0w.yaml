@@ -13,7 +13,7 @@ properties:
       1: cotton_dry
       2: synthetic_dry
       4: refresh
-      5: anti_allergy
+      5: allergy_care
       6: drum_clean
       7: cotton
       8: synthetic
@@ -38,8 +38,8 @@ properties:
       1: weigh
       2: prewash
       3: wash
-      4: rinse
-      7: spin-dry
+      4: rinsing
+      7: spinning
       8: drying
       10: finished
       11: delay

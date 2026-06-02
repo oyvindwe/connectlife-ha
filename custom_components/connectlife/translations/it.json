@@ -292,15 +292,15 @@
         "state": {
           "delay_start_waiting": "Attesa avvio ritardato",
           "drying": "Asciugatura",
-          "main_wash": "Lavaggio principale",
+          "finished": "Terminato",
           "not_available": "Non disponibile",
           "preheat": "Preriscaldamento",
           "preheat_finished": "Preriscaldamento terminato",
           "prewash": "Prelavaggio",
-          "program_finished": "Terminato",
           "program_not_selected": "Programma non selezionato",
           "program_selected": "Programma selezionato",
-          "ventilating": "Ventilazione"
+          "ventilating": "Ventilazione",
+          "wash": "Lavaggio"
         }
       },
       "current_programphase": {
@@ -332,8 +332,8 @@
       "selected_program_id": {
         "name": "Seleziona programma",
         "state": {
-          "baby": "Bambino",
-          "bed_linen": "Lenzuola",
+          "baby_care": "Bambino",
+          "bedding": "Lenzuola",
           "cotton_storage": "Conservazione cotone",
           "extra_hygiene": "Igiene extra",
           "fast89": "Veloce 89",
@@ -343,7 +343,7 @@
           "remote": "Remoto",
           "sensitive": "Delicati",
           "shirts": "Camice",
-          "sports": "Sport",
+          "sportswear": "Sport",
           "standard": "Standard",
           "synthetic": "Sintetico",
           "time": "Tempo",

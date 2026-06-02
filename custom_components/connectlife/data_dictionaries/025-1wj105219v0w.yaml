@@ -7,12 +7,12 @@ properties:
       0: not_available
       1: weigh # not verified
       2: prewash # not verified
-      3: main_wash
+      3: wash
       4: rinsing
       5: preheat_finished # not verified
       7: spinning
       8: drying # not verified
-      10: program_finished
+      10: finished
       11: idle # not verified
       12: running # not verified
       13: anti_crease # not verified
@@ -42,25 +42,25 @@ properties:
       1: cotton_dry # not verified
       2: synthetic_dry # not verified
       4: refresh # not verified
-      6: drum_cleaning
+      6: drum_clean
       7: cotton
       8: synthetic
       9: eco_40_60
       10: wool
-      11: fast15
+      11: quick_15
       12: mix
       13: extra_hygiene # not verified
       14: spin
-      15: anti_allergy
-      16: baby
-      18: sports
+      15: allergy_care
+      16: baby_care
+      18: sportswear
       19: sensitive
-      20: rinse_and_spin
-      21: silk_and_delicates
+      20: rinse_spin
+      21: silk_delicate
       24: shirts
-      41: power49
+      41: power_49
       42: auto
-      44: bed_linen
+      44: bedding
       45: jeans
 - property: Spin_speed_rpm
   sensor: # Sample value: 10

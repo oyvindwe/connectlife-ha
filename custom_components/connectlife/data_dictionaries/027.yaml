@@ -91,14 +91,14 @@ properties:
       3: wool_manual
       4: mix_synthetic
       5: extra_hygiene
-      6: fast_20
+      6: speed_20
       7: intensive_59_32
       8: no_program_selected
-      9: sport
-      10: baby
+      9: sportswear
+      10: baby_care
       11: pet_hair_removal
       12: shirts
-      13: drum_cleaning
+      13: drum_clean
       14: spinning_draining
       15: draining
       16: rinsing_softening

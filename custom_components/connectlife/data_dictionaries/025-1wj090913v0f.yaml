@@ -23,8 +23,8 @@ properties:
       1: weigh
       2: prewash
       3: wash
-      4: rinse
-      7: spin-dry
+      4: rinsing
+      7: spinning
       8: drying
       10: finished
 
@@ -102,18 +102,18 @@ properties:
       1: "cotton_dry"
       2: "synthetic_dry"
       4: "refresh"
-      5: "anti_allergy"
-      6: "drum_cleaning"
+      5: "allergy_care"
+      6: "drum_clean"
       7: "cotton"
       8: "synthetic"
       9: "eco_40_60"
       10: "wool"
-      11: "fast15"
-      14: "spin-dry"
-      16: "baby"
+      11: "quick_15"
+      14: "spin"
+      16: "baby_care"
       20: "rinse_spin"
       22: "clean_dry_60"
-      41: "power49"
+      41: "power_49"
       42: "auto"
 
 - property: Spin_speed_rpm
