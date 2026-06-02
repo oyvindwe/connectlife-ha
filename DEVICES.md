@@ -17,6 +17,7 @@
 |                          | Dehumidifier             | 007              | 407                         |
 |                          | Dehumidifier             | 007              | 408                         |
 |                          | Dehumidifier             | 007              | 409                         |
+| Hisense HD5026TLP        | Dehumidifier             | 007              | 499                         |
 |                          | Air conditioner          | 008              | 300                         |
 |                          | Air conditioner          | 008              | 301                         |
 |                          | Air conditioner          | 008              | 302                         |
