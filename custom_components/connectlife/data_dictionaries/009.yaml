@@ -356,21 +356,21 @@ properties:
       options:
         0: swing
         1: auto
-        2: bottom
-        3: low
-        4: mid_low
-        5: mid_high
-        6: high
         7: top
+        6: high
+        5: mid_high
+        4: mid_low
+        3: low
+        2: bottom
   - property: t_swing_direction
     climate:
       target: swing_horizontal_mode
       options:
+        3: swing
+        2: both_sides
+        4: left
         0: forward
         1: right
-        2: both_sides
-        3: swing
-        4: left
   - property: t_up_down
     switch:
       device_class: switch
