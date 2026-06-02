@@ -814,16 +814,16 @@
         }
       },
       "t_swing_angle": {
-        "name": "Modo balanceo",
+        "name": "\u00c1ngulo de oscilaci\u00f3n vertical",
         "state": {
-          "angle_1": "Anglulo 1",
-          "angle_2": "Anglulo 2",
-          "angle_3": "Anglulo 3",
-          "angle_4": "Anglulo 4",
-          "angle_5": "Anglulo 5",
-          "angle_6": "Anglulo 6",
           "auto": "Auto",
-          "swing": "balanceo"
+          "bottom": "Abajo",
+          "high": "Alto",
+          "low": "Bajo",
+          "mid_high": "Medio-alto",
+          "mid_low": "Medio-bajo",
+          "swing": "balanceo",
+          "top": "Arriba"
         }
       },
       "t_swing_follow": {

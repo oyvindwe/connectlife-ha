@@ -2359,16 +2359,16 @@
         }
       },
       "t_swing_angle": {
-        "name": "Svingvinkel",
+        "name": "Vertikal svingvinkel",
         "state": {
-          "angle_1": "Vinkel 1",
-          "angle_2": "Vinkel 2",
-          "angle_3": "Vinkel 3",
-          "angle_4": "Vinkel 4",
-          "angle_5": "Vinkel 5",
-          "angle_6": "Vinkel 6",
           "auto": "Auto",
-          "swing": "Sving"
+          "bottom": "Nederst",
+          "high": "H\u00f8y",
+          "low": "Lav",
+          "mid_high": "Middels h\u00f8y",
+          "mid_low": "Middels lav",
+          "swing": "Sving",
+          "top": "\u00d8verst"
         }
       },
       "t_swing_follow": {

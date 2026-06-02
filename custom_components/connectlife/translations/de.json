@@ -1832,16 +1832,16 @@
         }
       },
       "t_swing_angle": {
-        "name": "Schwenkwinkel",
+        "name": "Vertikaler Schwenkwinkel",
         "state": {
-          "angle_1": "Winkel 1",
-          "angle_2": "Winkel 2",
-          "angle_3": "Winkel 3",
-          "angle_4": "Winkel 4",
-          "angle_5": "Winkel 5",
-          "angle_6": "Winkel 6",
           "auto": "Automatisch",
-          "swing": "Schwenken"
+          "bottom": "Unten",
+          "high": "Hoch",
+          "low": "Niedrig",
+          "mid_high": "Mittelhoch",
+          "mid_low": "Mittelniedrig",
+          "swing": "Schwenken",
+          "top": "Oben"
         }
       },
       "t_swing_follow": {

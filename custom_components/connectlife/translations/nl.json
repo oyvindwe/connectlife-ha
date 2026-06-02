@@ -2359,16 +2359,16 @@
         }
       },
       "t_swing_angle": {
-        "name": "Zwenkhoek",
+        "name": "Verticale zwenkhoek",
         "state": {
-          "angle_1": "Hoek 1",
-          "angle_2": "Hoek 2",
-          "angle_3": "Hoek 3",
-          "angle_4": "Hoek 4",
-          "angle_5": "Hoek 5",
-          "angle_6": "Hoek 6",
           "auto": "Automatisch",
-          "swing": "Zwaaien"
+          "bottom": "Onder",
+          "high": "Hoog",
+          "low": "Laag",
+          "mid_high": "Midden-hoog",
+          "mid_low": "Midden-laag",
+          "swing": "Zwaaien",
+          "top": "Boven"
         }
       },
       "t_swing_follow": {
