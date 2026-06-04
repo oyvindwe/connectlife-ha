@@ -6,11 +6,20 @@
     "error": {
       "cannot_connect": "Fallo al establecer la conexi\u00f3n",
       "invalid_auth": "Autentificaci\u00f3n Fallida",
+      "test_server_invalid": "Test server URL invalida",
+      "test_server_required": "El modo desarrollo requiere una URL del Test Server",
       "unknown": "Error desconocido"
     },
     "step": {
+      "development": {
+        "data": {
+          "test_server_url": "Test server URL"
+        },
+        "description": "Habilitar modo desarrollo para conectar al test server en vez de a ConnectLife API."
+      },
       "user": {
         "data": {
+          "development_mode": "Modo desarrollo",
           "password": "Contrase\u00f1a",
           "username": "Nombre de usuario"
         }
@@ -1671,10 +1680,6 @@
     }
   },
   "options": {
-    "error": {
-      "test_server_invalid": "Test server URL invalida",
-      "test_server_required": "El modo desarrollo requiere una URL del Test Server"
-    },
     "step": {
       "configure_device": {
         "data": {
@@ -1682,20 +1687,7 @@
         },
         "description": "Configurar un dispositivo."
       },
-      "development": {
-        "data": {
-          "development_mode": "Modo desarrollo",
-          "test_server_url": "Test server URL"
-        },
-        "description": "Habilitar modo desarrollo para conectar al test server en vez de a ConnectLife API."
-      },
       "init": {
-        "menu_options": {
-          "development": "Configurar modo desarrollo",
-          "select_device": "Configurar un dispositivo"
-        }
-      },
-      "select_device": {
         "data": {
           "device": "Seleccionar dispositivo"
         },

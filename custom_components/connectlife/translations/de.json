@@ -6,11 +6,20 @@
     "error": {
       "cannot_connect": "Verbindung fehlgeschlagen",
       "invalid_auth": "Ung\u00fcltige Authentifizierung",
+      "test_server_invalid": "Ung\u00fcltige Test-Server-URL",
+      "test_server_required": "Entwicklungsmodus erfordert eine Test-Server-URL",
       "unknown": "Unerwarteter Fehler"
     },
     "step": {
+      "development": {
+        "data": {
+          "test_server_url": "Test-Server-URL"
+        },
+        "description": "Aktiviere den Entwicklungsmodus, um eine Verbindung zum Testserver anstelle der ConnectLife-API herzustellen."
+      },
       "user": {
         "data": {
+          "development_mode": "Entwicklungsmodus",
           "password": "Passwort",
           "username": "Benutzername"
         }
@@ -3860,10 +3869,6 @@
     }
   },
   "options": {
-    "error": {
-      "test_server_invalid": "Ung\u00fcltige Test-Server-URL",
-      "test_server_required": "Entwicklungsmodus erfordert eine Test-Server-URL"
-    },
     "step": {
       "configure_device": {
         "data": {
@@ -3871,20 +3876,7 @@
         },
         "description": "Ein Ger\u00e4t konfigurieren."
       },
-      "development": {
-        "data": {
-          "development_mode": "Entwicklungsmodus",
-          "test_server_url": "Test-Server-URL"
-        },
-        "description": "Aktiviere den Entwicklungsmodus, um eine Verbindung zum Testserver anstelle der ConnectLife-API herzustellen."
-      },
       "init": {
-        "menu_options": {
-          "development": "Entwicklungsmodus konfigurieren",
-          "select_device": "Ger\u00e4t konfigurieren"
-        }
-      },
-      "select_device": {
         "data": {
           "device": "Ger\u00e4t ausw\u00e4hlen"
         },

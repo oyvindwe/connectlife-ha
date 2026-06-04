@@ -7,9 +7,20 @@
     "error": {
       "cannot_connect": "[%key:common::config_flow::error::cannot_connect%]",
       "invalid_auth": "[%key:common::config_flow::error::invalid_auth%]",
+      "test_server_invalid": "Invalid test server URL",
+      "test_server_required": "Development mode requires test server URL",
       "unknown": "[%key:common::config_flow::error::unknown%]"
     },
     "step": {
+      "development": {
+        "data": {
+          "test_server_url": "Test server URL"
+        },
+        "data_description": {
+          "test_server_url": "URL of the test server to authenticate against instead of the ConnectLife API."
+        },
+        "description": "Enter the test server to connect to instead of the ConnectLife API."
+      },
       "reauth_confirm": {
         "data": {
           "password": "[%key:common::config_flow::data::password%]",
@@ -19,11 +30,13 @@
       },
       "user": {
         "data": {
+          "development_mode": "Development mode",
           "password": "[%key:common::config_flow::data::password%]",
           "trir": "ConnectLife.TRIR (Russia/CIS) \u2014 experimental",
           "username": "[%key:common::config_flow::data::username%]"
         },
         "data_description": {
+          "development_mode": "Connect to a local test server instead of the ConnectLife API. For development only.",
           "trir": "Enable only if you sign in with the ConnectLife.TRIR app used in Russia/CIS. Experimental."
         }
       }
@@ -8822,10 +8835,6 @@
     }
   },
   "options": {
-    "error": {
-      "test_server_invalid": "Invalid test server URL",
-      "test_server_required": "Development mode requires test server URL"
-    },
     "step": {
       "configure_device": {
         "data": {
@@ -8838,20 +8847,7 @@
         },
         "description": "Configure {device_name}."
       },
-      "development": {
-        "data": {
-          "development_mode": "Development mode",
-          "test_server_url": "Test server URL"
-        },
-        "description": "Enable development mode to connect to test server instead of the ConnectLife API."
-      },
       "init": {
-        "menu_options": {
-          "development": "Configure development mode",
-          "select_device": "Configure a device"
-        }
-      },
-      "select_device": {
         "data": {
           "device": "Select device"
         },

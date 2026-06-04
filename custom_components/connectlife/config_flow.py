@@ -44,6 +44,18 @@ STEP_REAUTH_DATA_SCHEMA = vol.Schema(
 STEP_USER_DATA_SCHEMA = STEP_REAUTH_DATA_SCHEMA.extend(
     {
         vol.Optional(CONF_TRIR, default=False): bool,
+        vol.Optional(CONF_DEVELOPMENT_MODE, default=False): bool,
+    }
+)
+
+# Shown as a second step when development mode is selected, to collect the
+# test server URL to authenticate against instead of the ConnectLife API.
+STEP_DEVELOPMENT_DATA_SCHEMA = vol.Schema(
+    {
+        vol.Optional(
+            CONF_TEST_SERVER_URL,
+            description={"suggested_value": "http://localhost:8080"},
+        ): str,
     }
 )
 
@@ -76,12 +88,30 @@ class ConnectLifeConfigFlow(ConfigFlow, domain=DOMAIN):
 
     VERSION = 1
 
+    # Credentials carried from the user step to the development step when
+    # development mode is selected (auth is deferred until we have the URL).
+    _credentials: dict[str, Any] | None = None
+
+    @staticmethod
+    def _entry_data(user_input: dict[str, Any]) -> dict[str, Any]:
+        """Return the data to persist on the entry (credentials/trir only)."""
+        return {
+            k: v
+            for k, v in user_input.items()
+            if k not in (CONF_DEVELOPMENT_MODE, CONF_TEST_SERVER_URL)
+        }
+
     async def async_step_user(
         self, user_input: dict[str, Any] | None = None
     ) -> ConfigFlowResult:
         """Handle the initial step."""
         errors: dict[str, str] = {}
         if user_input is not None:
+            if user_input.get(CONF_DEVELOPMENT_MODE):
+                # Defer authentication to the development step, which collects
+                # the test server URL to authenticate against.
+                self._credentials = user_input
+                return await self.async_step_development()
             try:
                 info = await validate_input(user_input)
             except CannotConnect:
@@ -92,10 +122,59 @@ class ConnectLifeConfigFlow(ConfigFlow, domain=DOMAIN):
                 _LOGGER.exception("Unexpected exception")
                 errors["base"] = "unknown"
             else:
-                return self.async_create_entry(title=info["title"], data=user_input)
+                return self.async_create_entry(
+                    title=info["title"], data=self._entry_data(user_input)
+                )
 
         return self.async_show_form(
-            step_id="user", data_schema=STEP_USER_DATA_SCHEMA, errors=errors
+            step_id="user",
+            data_schema=self.add_suggested_values_to_schema(
+                STEP_USER_DATA_SCHEMA, user_input or {}
+            ),
+            errors=errors,
+        )
+
+    async def async_step_development(
+        self, user_input: dict[str, Any] | None = None
+    ) -> ConfigFlowResult:
+        """Collect the test server URL and authenticate against it."""
+        errors: dict[str, str] = {}
+        if user_input is not None:
+            test_server_url = user_input.get(CONF_TEST_SERVER_URL)
+            if not test_server_url:
+                errors["base"] = "test_server_required"
+            else:
+                try:
+                    vol.Schema(vol.Url())(test_server_url)  # type: ignore[call-arg]
+                except vol.Invalid:
+                    errors["base"] = "test_server_invalid"
+            if not errors:
+                data = {**(self._credentials or {}), CONF_TEST_SERVER_URL: test_server_url}
+                try:
+                    info = await validate_input(data)
+                except CannotConnect:
+                    errors["base"] = "cannot_connect"
+                except InvalidAuth:
+                    errors["base"] = "invalid_auth"
+                except Exception:  # pylint: disable=broad-except
+                    _LOGGER.exception("Unexpected exception")
+                    errors["base"] = "unknown"
+                else:
+                    return self.async_create_entry(
+                        title=f"{info['title']} (test server)",
+                        data=self._entry_data(self._credentials or {}),
+                        options={
+                            CONF_DEVELOPMENT_MODE: True,
+                            CONF_TEST_SERVER_URL: test_server_url,
+                        },
+                    )
+
+        return self.async_show_form(
+            step_id="development",
+            data_schema=self.add_suggested_values_to_schema(
+                STEP_DEVELOPMENT_DATA_SCHEMA, user_input or {}
+            ),
+            errors=errors,
         )
 
     async def async_step_reauth(
@@ -152,13 +231,7 @@ class OptionsFlowHandler(OptionsFlow):
 
     _device_id: str | None = None
 
-    async def async_step_init(self, user_input=None) -> ConfigFlowResult:
-        return self.async_show_menu(
-            step_id="init",
-            menu_options=["select_device", "development"],
-        )
-
-    async def async_step_select_device(self, user_input: dict[str, Any] | None = None) -> ConfigFlowResult:
+    async def async_step_init(self, user_input: dict[str, Any] | None = None) -> ConfigFlowResult:
         # Select device to configure
         if user_input is not None:
             self._device_id = user_input["device"]
@@ -175,7 +248,7 @@ class OptionsFlowHandler(OptionsFlow):
                 vol.Optional("device"): vol.In(devices),
             }
         )
-        return self.async_show_form(step_id="select_device", data_schema=schema)
+        return self.async_show_form(step_id="init", data_schema=schema)
 
     async def async_step_configure_device(self, user_input: dict[str, Any] | None = None) -> ConfigFlowResult:
 
@@ -209,41 +282,3 @@ class OptionsFlowHandler(OptionsFlow):
             data_schema=schema,
             description_placeholders={"device_name": device_name},
         )
-
-    async def async_step_development(self, user_input: dict[str, Any] | None = None) -> ConfigFlowResult:
-        """Manage the options."""
-
-        if user_input is not None:
-            errors: dict[str, str] = {}
-            development_mode = user_input.get(CONF_DEVELOPMENT_MODE)
-            test_server_url = user_input.get(CONF_TEST_SERVER_URL)
-            if test_server_url:
-                try:
-                    vol.Schema(vol.Url())(test_server_url)  # type: ignore[call-arg]
-                except vol.Invalid:
-                    errors["base"] = "test_server_invalid"
-            if development_mode and not test_server_url:
-                errors["base"] = "test_server_required"
-            if errors:
-                schema = vol.Schema(
-                    {
-                        vol.Optional(CONF_DEVELOPMENT_MODE, default=development_mode): bool,
-                        vol.Optional(CONF_TEST_SERVER_URL, description={"suggested_value": test_server_url}): str,
-                    }
-                )
-                return self.async_show_form(step_id="development", data_schema=schema, errors=errors)
-
-            data = self.config_entry.options.copy()
-            data[CONF_DEVELOPMENT_MODE] = development_mode
-            data[CONF_TEST_SERVER_URL] = test_server_url
-            return self.async_create_entry(title="", data=data)
-
-        development_mode = self.config_entry.options.get(CONF_DEVELOPMENT_MODE, False)
-        test_server_url = self.config_entry.options.get(CONF_TEST_SERVER_URL, "http://localhost:8080")
-        schema = vol.Schema(
-            {
-                vol.Optional(CONF_DEVELOPMENT_MODE, default=development_mode): bool,
-                vol.Optional(CONF_TEST_SERVER_URL, description={"suggested_value": test_server_url}): str,
-            }
-        )
-        return self.async_show_form(step_id="development", data_schema=schema)
