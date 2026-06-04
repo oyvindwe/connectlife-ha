@@ -6,11 +6,20 @@
     "error": {
       "cannot_connect": "\u00c9chec de l\u2019\u00e9tablissement de la connexion",
       "invalid_auth": "\u00c9chec de l\u2019authentification",
+      "test_server_invalid": "URL du serveur de test invalide",
+      "test_server_required": "Le mode d\u00e9veloppement n\u00e9cessite une URL de serveur de test",
       "unknown": "Erreur inconnue"
     },
     "step": {
+      "development": {
+        "data": {
+          "test_server_url": "URL du serveur de test"
+        },
+        "description": "Activer le mode d\u00e9veloppement pour se connecter au serveur de test au lieu de l\u2019API ConnectLife."
+      },
       "user": {
         "data": {
+          "development_mode": "Mode d\u00e9veloppement",
           "password": "Mot de passe",
           "username": "Nom d\u2019utilisateur"
         }
@@ -1240,10 +1249,6 @@
     }
   },
   "options": {
-    "error": {
-      "test_server_invalid": "URL du serveur de test invalide",
-      "test_server_required": "Le mode d\u00e9veloppement n\u00e9cessite une URL de serveur de test"
-    },
     "step": {
       "configure_device": {
         "data": {
@@ -1251,20 +1256,7 @@
         },
         "description": "Configurer un appareil."
       },
-      "development": {
-        "data": {
-          "development_mode": "Mode d\u00e9veloppement",
-          "test_server_url": "URL du serveur de test"
-        },
-        "description": "Activer le mode d\u00e9veloppement pour se connecter au serveur de test au lieu de l\u2019API ConnectLife."
-      },
       "init": {
-        "menu_options": {
-          "development": "Configurer le mode d\u00e9veloppement",
-          "select_device": "Configurer un appareil"
-        }
-      },
-      "select_device": {
         "data": {
           "device": "S\u00e9lectionner un appareil"
         },

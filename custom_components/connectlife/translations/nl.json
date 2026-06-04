@@ -7,9 +7,17 @@
     "error": {
       "cannot_connect": "Verbinding mislukt",
       "invalid_auth": "Ongeldige authenticatie",
+      "test_server_invalid": "Ongeldige test server URL",
+      "test_server_required": "Ontwikkelingsmodus vereist test server URL",
       "unknown": "Onverwachte fout"
     },
     "step": {
+      "development": {
+        "data": {
+          "test_server_url": "Test server URL"
+        },
+        "description": "Schakel ontwikkelingsmodus in om verbinding te maken met de testserver in plaats van de ConnectLife API."
+      },
       "reauth_confirm": {
         "data": {
           "password": "Wachtwoord",
@@ -19,6 +27,7 @@
       },
       "user": {
         "data": {
+          "development_mode": "Ontwikkelingsmodus",
           "password": "Wachtwoord",
           "username": "Gebruikersnaam"
         }
@@ -8109,10 +8118,6 @@
     }
   },
   "options": {
-    "error": {
-      "test_server_invalid": "Ongeldige test server URL",
-      "test_server_required": "Ontwikkelingsmodus vereist test server URL"
-    },
     "step": {
       "configure_device": {
         "data": {
@@ -8120,20 +8125,7 @@
         },
         "description": "Configureer een apparaat."
       },
-      "development": {
-        "data": {
-          "development_mode": "Ontwikkelingsmodus",
-          "test_server_url": "Test server URL"
-        },
-        "description": "Schakel ontwikkelingsmodus in om verbinding te maken met de testserver in plaats van de ConnectLife API."
-      },
       "init": {
-        "menu_options": {
-          "development": "Configureer ontwikkelingsmodus",
-          "select_device": "Configureer een apparaat"
-        }
-      },
-      "select_device": {
         "data": {
           "device": "Selecteer apparaat"
         },

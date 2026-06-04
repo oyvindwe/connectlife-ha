@@ -7,9 +7,17 @@
     "error": {
       "cannot_connect": "Kunne ikke koble til",
       "invalid_auth": "Ugyldig autentisering",
+      "test_server_invalid": "Ugyldig URL for testserver",
+      "test_server_required": "Utviklingsmodus krever URL for testserver",
       "unknown": "Uventet feil"
     },
     "step": {
+      "development": {
+        "data": {
+          "test_server_url": "URL for testserver"
+        },
+        "description": "Aktiver utviklingsmodus for \u00e5 koble til testserveren i stedet for ConnectLife-API-et."
+      },
       "reauth_confirm": {
         "data": {
           "password": "Passord",
@@ -19,6 +27,7 @@
       },
       "user": {
         "data": {
+          "development_mode": "Utviklingsmodus",
           "password": "Passord",
           "username": "Brukernavn"
         }
@@ -8109,10 +8118,6 @@
     }
   },
   "options": {
-    "error": {
-      "test_server_invalid": "Ugyldig URL for testserver",
-      "test_server_required": "Utviklingsmodus krever URL for testserver"
-    },
     "step": {
       "configure_device": {
         "data": {
@@ -8120,20 +8125,7 @@
         },
         "description": "Konfigurer en enhet."
       },
-      "development": {
-        "data": {
-          "development_mode": "Utviklingsmodus",
-          "test_server_url": "URL for testserver"
-        },
-        "description": "Aktiver utviklingsmodus for \u00e5 koble til testserveren i stedet for ConnectLife-API-et."
-      },
       "init": {
-        "menu_options": {
-          "development": "Konfigurer utviklingsmodus",
-          "select_device": "Konfigurer en enhet"
-        }
-      },
-      "select_device": {
         "data": {
           "device": "Velg enhet"
         },
