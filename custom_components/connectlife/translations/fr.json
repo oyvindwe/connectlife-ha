@@ -1254,7 +1254,7 @@
         "data": {
           "disable_beep": "D\u00e9sactiver le bip"
         },
-        "description": "Configurer un appareil."
+        "description": "Configurer {device_name}."
       },
       "init": {
         "data": {

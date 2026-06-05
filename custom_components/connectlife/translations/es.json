@@ -1685,7 +1685,7 @@
         "data": {
           "disable_beep": "Deshabilitar beep"
         },
-        "description": "Configurar un dispositivo."
+        "description": "Configurar {device_name}."
       },
       "init": {
         "data": {

@@ -3874,7 +3874,7 @@
         "data": {
           "disable_beep": "Signalton deaktivieren"
         },
-        "description": "Ein Ger\u00e4t konfigurieren."
+        "description": "{device_name} konfigurieren."
       },
       "init": {
         "data": {

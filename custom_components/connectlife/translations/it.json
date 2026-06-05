@@ -651,7 +651,7 @@
         "data": {
           "disable_beep": "Disattiva beep"
         },
-        "description": "Configura un dispositivo."
+        "description": "Configura {device_name}."
       },
       "init": {
         "data": {
