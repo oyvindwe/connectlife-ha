@@ -8123,7 +8123,7 @@
         "data": {
           "disable_beep": "Pieptoon uitschakelen"
         },
-        "description": "Configureer een apparaat."
+        "description": "{device_name} configureren."
       },
       "init": {
         "data": {

@@ -8123,7 +8123,7 @@
         "data": {
           "disable_beep": "Deaktiver pip"
         },
-        "description": "Konfigurer en enhet."
+        "description": "Konfigurer {device_name}."
       },
       "init": {
         "data": {
