@@ -854,8 +854,14 @@
       "f_e_arkgrille": {
         "name": "Cabinet grille protection alarm"
       },
+      "f_e_drive": {
+        "name": "Drive"
+      },
       "f_e_dwmachine": {
         "name": "Lower machine failure"
+      },
+      "f_e_eeprom": {
+        "name": "EEPROM"
       },
       "f_e_filterclean": {
         "name": "Filter clean"
@@ -8696,6 +8702,9 @@
       },
       "t_air": {
         "name": "Air"
+      },
+      "t_anion": {
+        "name": "Ioniser"
       },
       "t_dal": {
         "name": "DAL"

@@ -1,0 +1,14 @@
+# Dehumidifier — HiSense HD5026TLP (Matter-bridged); no auto fan speed, no clothes-dry mode
+properties:
+  - property: t_fan_speed
+    select:
+      options:
+        0: low
+        1: high
+        3: medium
+  - property: t_work_mode
+    humidifier:
+      options:
+        0: continuous
+        1: manual
+        2: auto
