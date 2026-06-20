@@ -591,11 +591,23 @@
       }
     },
     "button": {
+      "cancel": {
+        "name": "Cancelar"
+      },
+      "pause": {
+        "name": "Pausa"
+      },
+      "resume": {
+        "name": "Reanudar"
+      },
       "start": {
         "name": "Iniciar"
       },
       "stop": {
         "name": "Detener"
+      },
+      "stop_add_go": {
+        "name": "StopAddGo"
       }
     },
     "climate": {
@@ -1395,6 +1407,13 @@
       "spintime_index": {
         "name": "Duraci\u00f3n centrifugado"
       },
+      "status": {
+        "state": {
+          "add_clothes": "A\u00f1adir ropa",
+          "program_select": "Selecci\u00f3n de programa",
+          "service": "Mantenimiento"
+        }
+      },
       "step1_duration": {
         "name": "Fase 1 duraci\u00f3n"
       },
@@ -1605,6 +1624,9 @@
       },
       "child_lock_status": {
         "name": "Bloqueo ni\u00f1os"
+      },
+      "child_lock_status_status": {
+        "name": "Estado del bloqueo infantil"
       },
       "drum_light": {
         "name": "Luz tambor"

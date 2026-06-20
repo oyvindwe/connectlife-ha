@@ -195,11 +195,23 @@
       }
     },
     "button": {
+      "cancel": {
+        "name": "Annulla"
+      },
+      "pause": {
+        "name": "Pausa"
+      },
+      "resume": {
+        "name": "Riprendi"
+      },
       "start": {
         "name": "Avvia"
       },
       "stop": {
         "name": "Arresta"
+      },
+      "stop_add_go": {
+        "name": "StopAddGo"
       }
     },
     "climate": {
@@ -603,6 +615,13 @@
           "square": "Quadrata"
         }
       },
+      "status": {
+        "state": {
+          "add_clothes": "Aggiungi capi",
+          "program_select": "Selezione programma",
+          "service": "Manutenzione"
+        }
+      },
       "t_beep": {
         "name": "Beep"
       },
@@ -616,6 +635,9 @@
     "switch": {
       "child_lock_status": {
         "name": "Blocco bambini"
+      },
+      "child_lock_status_status": {
+        "name": "Stato blocco bambini"
       },
       "t_air": {
         "name": "Air"

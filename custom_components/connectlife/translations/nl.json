@@ -423,9 +423,6 @@
       "child_lock_open_door_sound_alarm": {
         "name": "Kinderbeveiliging open deur geluid alarm"
       },
-      "child_lock_status_status": {
-        "name": "Kinderbeveiliging"
-      },
       "child_lock_switch_exist": {
         "name": "Kinderbeveiliging schakelaar bestaat"
       },
@@ -1574,11 +1571,23 @@
       }
     },
     "button": {
+      "cancel": {
+        "name": "Annuleren"
+      },
+      "pause": {
+        "name": "Pauze"
+      },
+      "resume": {
+        "name": "Hervatten"
+      },
       "start": {
         "name": "Start"
       },
       "stop": {
-        "name": "Stop"
+        "name": "Stoppen"
+      },
+      "stop_add_go": {
+        "name": "StopAddGo"
       }
     },
     "climate": {
@@ -6208,14 +6217,16 @@
       "status": {
         "name": "Status",
         "state": {
+          "add_clothes": "Was toevoegen",
           "delay_time_waiting": "Wachten op uitgestelde tijd",
           "error": "Fout",
           "idle": "Inactief",
           "not_avaliable": "Niet beschikbaar",
-          "off": "Uit",
           "pause": "Pauze",
           "production": "Productie",
+          "program_select": "Programmaselectie",
           "running": "Actief",
+          "service": "Service",
           "standby": "Standby"
         }
       },
@@ -7822,6 +7833,9 @@
       },
       "child_lock_status": {
         "name": "Kinderbeveiliging"
+      },
+      "child_lock_status_status": {
+        "name": "Status kinderbeveiliging"
       },
       "cleanairstatus": {
         "name": "Schone lucht"

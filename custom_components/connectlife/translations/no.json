@@ -423,9 +423,6 @@
       "child_lock_open_door_sound_alarm": {
         "name": "Lydalarm for \u00e5pen barnesikringsd\u00f8r"
       },
-      "child_lock_status_status": {
-        "name": "Barnesikring"
-      },
       "child_lock_switch_exist": {
         "name": "Barnesikringsbryter finnes"
       },
@@ -1574,11 +1571,23 @@
       }
     },
     "button": {
+      "cancel": {
+        "name": "Avbryt"
+      },
+      "pause": {
+        "name": "Pause"
+      },
+      "resume": {
+        "name": "Fortsett"
+      },
       "start": {
         "name": "Start"
       },
       "stop": {
         "name": "Stopp"
+      },
+      "stop_add_go": {
+        "name": "StopAddGo"
       }
     },
     "climate": {
@@ -6208,14 +6217,16 @@
       "status": {
         "name": "Enhetsstatus",
         "state": {
+          "add_clothes": "Legg til kl\u00e6r",
           "delay_time_waiting": "Venter p\u00e5 utsatt tid",
           "error": "Feil",
           "idle": "Inaktiv",
           "not_avaliable": "Ikke tilgjengelig",
-          "off": "Av",
           "pause": "Pause",
           "production": "Produksjon",
+          "program_select": "Programvalg",
           "running": "Kj\u00f8rer",
+          "service": "Service",
           "standby": "Standby"
         }
       },
@@ -7822,6 +7833,9 @@
       },
       "child_lock_status": {
         "name": "Barnesikring"
+      },
+      "child_lock_status_status": {
+        "name": "Barnesikringsstatus"
       },
       "cleanairstatus": {
         "name": "Ren luft"

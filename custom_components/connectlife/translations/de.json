@@ -379,9 +379,6 @@
       "child_lock_open_door_sound_alarm": {
         "name": "T\u00fcrton-Alarm bei ge\u00f6ffneter Kindersicherung"
       },
-      "child_lock_status_status": {
-        "name": "Kindersicherung"
-      },
       "child_lock_switch_exist": {
         "name": "Kindersicherungsschalter vorhanden"
       },
@@ -1146,11 +1143,23 @@
       }
     },
     "button": {
+      "cancel": {
+        "name": "Abbrechen"
+      },
+      "pause": {
+        "name": "Pause"
+      },
+      "resume": {
+        "name": "Fortsetzen"
+      },
       "start": {
         "name": "Start"
       },
       "stop": {
         "name": "Stopp"
+      },
+      "stop_add_go": {
+        "name": "StopAddGo"
       }
     },
     "climate": {
@@ -2882,14 +2891,16 @@
       "status": {
         "name": "Ger\u00e4testatus",
         "state": {
+          "add_clothes": "W\u00e4sche hinzuf\u00fcgen",
           "delay_time_waiting": "Startverz\u00f6gerung",
           "error": "Fehler",
           "idle": "Bereit",
           "not_avaliable": "Nicht verf\u00fcgbar",
-          "off": "Aus",
           "pause": "Pause",
           "production": "Produktion",
+          "program_select": "Programmauswahl",
           "running": "L\u00e4uft",
+          "service": "Wartung",
           "standby": "Standby"
         }
       },
@@ -3689,6 +3700,9 @@
       },
       "child_lock_status": {
         "name": "Kindersicherung"
+      },
+      "child_lock_status_status": {
+        "name": "Kindersicherungsstatus"
       },
       "cleaning_reminder_setting": {
         "name": "Reinigungserinnerung"

@@ -114,6 +114,7 @@
 | Gorenje W-WaveEn-22      | Washing machine          | 027              | 000                         |
 | WPAM14A2T                | Washing machine          | 027              | washing-machine-wm22-b2plus |
 | WPNA84A2TSWIFI           | Washing machine          | 027              | washing-machine-wm22        |
+| Gorenje WNA94ARWIFI      | Washing machine          | 027              | washing-machine-wm22        |
 | DH3S80-DVW006            | Tumble dryer             | 030              | 1wk080140v0w                |
 | DH3S802BW3               | Tumble dryer             | 030              | 1wk080066v0w                |
 | DH3S902BW3               | Tumble dryer             | 030              | 1wk090106v0w                |

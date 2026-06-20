@@ -479,9 +479,6 @@
       "child_lock_open_door_sound_alarm": {
         "name": "Child lock open door sound alarm"
       },
-      "child_lock_status_status": {
-        "name": "Child lock"
-      },
       "child_lock_switch_exist": {
         "name": "Child lock switch exist"
       },
@@ -1879,11 +1876,23 @@
       }
     },
     "button": {
+      "cancel": {
+        "name": "Cancel"
+      },
+      "pause": {
+        "name": "Pause"
+      },
+      "resume": {
+        "name": "Resume"
+      },
       "start": {
         "name": "Start"
       },
       "stop": {
         "name": "Stop"
+      },
+      "stop_add_go": {
+        "name": "StopAddGo"
       }
     },
     "climate": {
@@ -6867,14 +6876,16 @@
       "status": {
         "name": "Device status",
         "state": {
+          "add_clothes": "Add clothes",
           "delay_time_waiting": "Delay time waiting",
           "error": "Error",
           "idle": "Idle",
           "not_avaliable": "Not avaliable",
-          "off": "Off",
           "pause": "Pause",
           "production": "Production",
+          "program_select": "Program select",
           "running": "Running",
+          "service": "Service",
           "standby": "Standby"
         }
       },
@@ -8515,6 +8526,9 @@
       },
       "child_lock_status": {
         "name": "Child lock"
+      },
+      "child_lock_status_status": {
+        "name": "Child lock status"
       },
       "childlockenabled": {
         "name": "Child lock"
