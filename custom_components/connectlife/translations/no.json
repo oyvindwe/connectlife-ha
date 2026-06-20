@@ -1509,6 +1509,9 @@
       "t_beep": {
         "name": "Pip"
       },
+      "t_pump": {
+        "name": "Pumpe"
+      },
       "test_mode": {
         "name": "Testmodus"
       },
