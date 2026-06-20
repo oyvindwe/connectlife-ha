@@ -305,6 +305,26 @@
         "name": "D\u00e9faut sonde cave \u00e0 vin"
       }
     },
+    "button": {
+      "cancel": {
+        "name": "Annuler"
+      },
+      "pause": {
+        "name": "Pause"
+      },
+      "resume": {
+        "name": "Reprendre"
+      },
+      "start": {
+        "name": "D\u00e9marrer"
+      },
+      "stop": {
+        "name": "Arr\u00eater"
+      },
+      "stop_add_go": {
+        "name": "StopAddGo"
+      }
+    },
     "number": {
       "delayendtime": {
         "name": "Fin diff\u00e9r\u00e9e"
@@ -1022,6 +1042,13 @@
       "standby_mode_valid": {
         "name": "Mode veille disponible"
       },
+      "status": {
+        "state": {
+          "add_clothes": "Ajouter du linge",
+          "program_select": "S\u00e9lection du programme",
+          "service": "Maintenance"
+        }
+      },
       "status_fan_c_switch": {
         "name": "\u00c9tat interrupteur ventilateur C"
       },
@@ -1188,6 +1215,9 @@
       },
       "child_lock": {
         "name": "Verrouillage enfant"
+      },
+      "child_lock_status_status": {
+        "name": "\u00c9tat de la s\u00e9curit\u00e9 enfant"
       },
       "extra_rinse": {
         "name": "Rin\u00e7age suppl\u00e9mentaire"

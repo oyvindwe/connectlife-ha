@@ -1892,7 +1892,7 @@
         "name": "Stop"
       },
       "stop_add_go": {
-        "name": "Stop add go"
+        "name": "StopAddGo"
       }
     },
     "climate": {
