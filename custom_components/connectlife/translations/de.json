@@ -6,11 +6,20 @@
     "error": {
       "cannot_connect": "Verbindung fehlgeschlagen",
       "invalid_auth": "Ung\u00fcltige Authentifizierung",
+      "test_server_invalid": "Ung\u00fcltige Test-Server-URL",
+      "test_server_required": "Entwicklungsmodus erfordert eine Test-Server-URL",
       "unknown": "Unerwarteter Fehler"
     },
     "step": {
+      "development": {
+        "data": {
+          "test_server_url": "Test-Server-URL"
+        },
+        "description": "Aktiviere den Entwicklungsmodus, um eine Verbindung zum Testserver anstelle der ConnectLife-API herzustellen."
+      },
       "user": {
         "data": {
+          "development_mode": "Entwicklungsmodus",
           "password": "Passwort",
           "username": "Benutzername"
         }
@@ -1170,7 +1179,16 @@
             }
           },
           "swing_mode": {
-            "state": {}
+            "state": {
+              "auto": "Automatisch",
+              "bottom": "Unten",
+              "high": "Hoch",
+              "low": "Niedrig",
+              "mid_high": "Mittelhoch",
+              "mid_low": "Mittelniedrig",
+              "swing": "Schwenken",
+              "top": "Oben"
+            }
           }
         }
       }
@@ -1504,32 +1522,30 @@
         "name": "Programm",
         "state": {
           "allergy_care": "Allergiepflege",
-          "anti_allergy": "Anti-Allergie",
           "auto": "Automatisch",
-          "baby": "Babyprogramm",
-          "bed_linen": "Bettw\u00e4sche",
+          "baby_care": "Babyprogramm",
           "bedding": "Bettw\u00e4sche",
           "clean_dry_60": "Sauber & Trocken 60'",
           "cotton": "Baumwolle",
           "cotton_dry": "Baumwolle trocken",
           "delicates": "Feinw\u00e4sche",
           "down": "Daunen",
-          "drum_cleaning": "Trommelreinigung",
+          "drum_clean": "Trommelreinigung",
           "eco_40_60": "Eco 40-60",
-          "fast15": "Schnell 15'",
-          "fast30": "Schnell 30'",
           "full_load_49": "Volle Ladung 49",
           "hand_wash": "Handw\u00e4sche",
           "jeans": "Jeans",
           "mix": "Mischgewebe",
           "pets": "Haustiere",
-          "power49": "Power 49'",
           "power_30": "Power 30",
+          "power_49": "Power 49'",
+          "quick_15": "Schnell 15'",
+          "quick_30": "Schnell 30'",
           "refresh": "Auffrischen",
           "rinse_spin": "Sp\u00fclen & Schleudern",
           "shirts": "Hemdprogramm",
-          "spin-dry": "Schleudern & Trocknen",
-          "sports": "Sport",
+          "silk_delicate": "Feinw\u00e4sche",
+          "spin": "Schleudern",
           "sportswear": "Sportkleidung",
           "synthetic": "Synthetik",
           "synthetic_dry": "Synthetik trocken",
@@ -1543,16 +1559,15 @@
         "name": "Programm",
         "state": {
           "auto": "Automatisch",
-          "baby": "Baby",
+          "baby_care": "Baby",
           "clean": "Reinigung",
           "color": "Farbig",
           "down_feathers": "Daunenfedern",
           "draining": "Abpumpen",
-          "drum_cleaning": "Trommelreinigung",
+          "drum_clean": "Trommelreinigung",
           "eco": "Eco",
           "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Extra Hygiene",
-          "fast_20": "Schnell 20'",
           "glass": "Glas",
           "hygiene": "Hygiene",
           "intensive": "Intensiv",
@@ -1567,8 +1582,9 @@
           "rinsing_softening": "Sp\u00fclen & Weichsp\u00fclen",
           "self_cleaning": "Selbstreinigung",
           "shirts": "Hemden",
+          "speed_20": "Schnell 20'",
           "spinning_draining": "Schleudern & Abpumpen",
-          "sport": "Sport",
+          "sportswear": "Sport",
           "time_program": "Zeitprogramm",
           "white_cotton": "Wei\u00dfe Baumwolle",
           "wool_manual": "Wolle & Manuell"
@@ -1830,19 +1846,6 @@
           "off": "Aus"
         }
       },
-      "t_swing_angle": {
-        "name": "Schwenkwinkel",
-        "state": {
-          "angle_1": "Winkel 1",
-          "angle_2": "Winkel 2",
-          "angle_3": "Winkel 3",
-          "angle_4": "Winkel 4",
-          "angle_5": "Winkel 5",
-          "angle_6": "Winkel 6",
-          "auto": "Automatisch",
-          "swing": "Schwenken"
-        }
-      },
       "t_swing_follow": {
         "name": "KI-Bel\u00fcftung",
         "state": {
@@ -2005,17 +2008,15 @@
           "drying": "Trocknen",
           "finished": "Abgeschlossen",
           "idle": "Leerlauf",
-          "main_wash": "Hauptw\u00e4sche",
           "not_available": "Nicht verf\u00fcgbar",
           "preheat": "Vorheizen",
           "preheat_finished": "Vorheizen abgeschlossen",
           "prewash": "Vorw\u00e4sche",
-          "program_finished": "Abgeschlossen",
           "program_not_selected": "Kein Programm ausgew\u00e4hlt",
           "program_selected": "Programm ausgew\u00e4hlt",
-          "rinse": "Sp\u00fclen",
+          "rinsing": "Sp\u00fclen",
           "running": "L\u00e4uft",
-          "spin-dry": "Schleudern",
+          "spinning": "Schleudern",
           "ventilating": "L\u00fcften",
           "wash": "Waschen",
           "weigh": "Wiegen"
@@ -2509,8 +2510,8 @@
       "selected_program_id": {
         "name": "Programm",
         "state": {
-          "baby": "Babymodus",
-          "bed_linen": "Bettw\u00e4sche",
+          "baby_care": "Babymodus",
+          "bedding": "Bettw\u00e4sche",
           "cotton_storage": "Baumwollspeicherung",
           "extra_hygiene": "Extra Hygiene",
           "fast89": "Schnell 89",
@@ -2520,7 +2521,7 @@
           "remote": "Fernsteuerung",
           "sensitive": "Sensitiv",
           "shirts": "Hemdprogramm",
-          "sports": "Sportmodus",
+          "sportswear": "Sportmodus",
           "standard": "Standard",
           "synthetic": "Synthetik",
           "time": "Zeitprogramm",
@@ -3815,6 +3816,9 @@
       "t_tms": {
         "name": "KI"
       },
+      "t_up_down": {
+        "name": "Vertikales Schwenken"
+      },
       "tab_setting_status": {
         "name": "Tab-Einstellung"
       },
@@ -3861,31 +3865,14 @@
     }
   },
   "options": {
-    "error": {
-      "test_server_invalid": "Ung\u00fcltige Test-Server-URL",
-      "test_server_required": "Entwicklungsmodus erfordert eine Test-Server-URL"
-    },
     "step": {
       "configure_device": {
         "data": {
           "disable_beep": "Signalton deaktivieren"
         },
-        "description": "Ein Ger\u00e4t konfigurieren."
-      },
-      "development": {
-        "data": {
-          "development_mode": "Entwicklungsmodus",
-          "test_server_url": "Test-Server-URL"
-        },
-        "description": "Aktiviere den Entwicklungsmodus, um eine Verbindung zum Testserver anstelle der ConnectLife-API herzustellen."
+        "description": "{device_name} konfigurieren."
       },
       "init": {
-        "menu_options": {
-          "development": "Entwicklungsmodus konfigurieren",
-          "select_device": "Ger\u00e4t konfigurieren"
-        }
-      },
-      "select_device": {
         "data": {
           "device": "Ger\u00e4t ausw\u00e4hlen"
         },

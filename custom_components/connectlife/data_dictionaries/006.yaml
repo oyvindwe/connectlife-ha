@@ -1,4 +1,7 @@
 # Portable air conditioner
+statistics:
+  source: air_duct_energy
+  daily_energy_kwh: true
 properties:
   - property: f-filter
     binary_sensor:
@@ -280,26 +283,28 @@ properties:
       device_class: switch
     icon: mdi:run-fast
   - property: t_swing_angle
-    select:
+    climate:
+      target: swing_mode
       options:
+        # Ordered logically, not by key
         0: swing
         1: auto
-        2: angle_1
-        3: angle_2
-        4: angle_3
-        5: angle_4
-        6: angle_5
-        7: angle_6
-    icon: mdi:arrow-oscillating
+        7: top
+        6: high
+        5: mid_high
+        4: mid_low
+        3: low
+        2: bottom
   - property: t_swing_direction
     climate:
       target: swing_horizontal_mode
       options:
+        # Ordered logically, not by key
+        3: swing
+        2: both_sides
+        4: left
         0: forward
         1: right
-        2: both_sides
-        3: swing
-        4: left
   - property: t_swing_follow
     select:
       options:
@@ -352,11 +357,9 @@ properties:
     switch:
       device_class: switch
   - property: t_up_down
-    climate:
-      target: swing_mode
-      options:
-        0: "off"
-        1: "on"
+    switch:
+      device_class: switch
+    icon: mdi:arrow-oscillating
   - property: t_work_mode
     climate:
       target: hvac_mode

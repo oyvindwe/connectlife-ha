@@ -1,3 +1,7 @@
+statistics:
+  source: energy_consumption_curve
+  daily_energy_kwh: true
+  daily_water_consumption: true
 properties:
   - property: ADO_allowed
     binary_sensor:
@@ -163,9 +167,9 @@ properties:
         4: preheat
         5: preheat_finished
         6: prewash
-        7: main_wash
+        7: wash
         8: drying
-        9: program_finished
+        9: finished
         10: ventilating
     icon: mdi:state-machine
   - property: Delay_start

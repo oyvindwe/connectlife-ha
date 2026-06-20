@@ -1,6 +1,6 @@
 import yaml
 from collections import defaultdict
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 import logging
 import pkgutil
 from typing import Any, TypedDict
@@ -33,6 +33,8 @@ BUTTONS = "buttons"
 COMMAND = "command"
 DEVICE = "device"
 DEVICE_CLASS = "device_class"
+STATISTICS = "statistics"
+SOURCE = "source"
 DISABLE = "disable"
 HIDE = "hide"
 ICON = "icon"
@@ -427,6 +429,13 @@ class Dictionary:
     climate: dict | None
     properties: dict[str, Property]
     buttons: list[Button]
+    # Cloud statistics endpoint for this device family (None = none): "air_duct_energy"
+    # (air conditioners) or "energy_consumption_curve" (appliances). Dispatched via the
+    # statistics_sources registry.
+    statistics_source: str | None = None
+    # Per-sensor flags from the `statistics` block (sensor key -> create?). A sensor is
+    # created only when listed true here; omitted or false means not created.
+    statistics_sensors: dict[str, bool] = field(default_factory=dict)
 
 
 PLATFORM_KEYS = (
@@ -521,6 +530,7 @@ class Dictionaries:
             return cls.dictionaries[key]
 
         climate: dict | None = None
+        statistics: dict | None = None
         raw_entries: dict[str, dict] = {}
         raw_buttons: list[dict] = []
 
@@ -529,6 +539,7 @@ class Dictionaries:
             f"data_dictionaries/{appliance.device_type_code}.yaml"
         )
         if base_data is not None:
+            statistics = _val(base_data, STATISTICS, statistics)
             if PROPERTIES in base_data and base_data[PROPERTIES] is not None:
                 for prop in base_data[PROPERTIES]:
                     raw_entries[prop[PROPERTY]] = prop
@@ -543,6 +554,7 @@ class Dictionaries:
                 key,
             )
         if sub_data is not None:
+            statistics = _val(sub_data, STATISTICS, statistics)
             if Platform.CLIMATE in sub_data:
                 climate = sub_data[Platform.CLIMATE]
             if PROPERTIES in sub_data and sub_data[PROPERTIES] is not None:
@@ -565,6 +577,20 @@ class Dictionaries:
 
         buttons = [Button(b) for b in raw_buttons]
 
-        dictionary = Dictionary(climate=climate, properties=properties, buttons=buttons)
+        statistics = statistics or {}
+        statistics_source = _val(statistics, SOURCE)
+        statistics_sensors = {
+            sensor_key: bool(create)
+            for sensor_key, create in statistics.items()
+            if sensor_key != SOURCE
+        }
+
+        dictionary = Dictionary(
+            climate=climate,
+            properties=properties,
+            buttons=buttons,
+            statistics_source=statistics_source,
+            statistics_sensors=statistics_sensors,
+        )
         cls.dictionaries[key] = dictionary
         return dictionary

@@ -7,9 +7,17 @@
     "error": {
       "cannot_connect": "Kunne ikke koble til",
       "invalid_auth": "Ugyldig autentisering",
+      "test_server_invalid": "Ugyldig URL for testserver",
+      "test_server_required": "Utviklingsmodus krever URL for testserver",
       "unknown": "Uventet feil"
     },
     "step": {
+      "development": {
+        "data": {
+          "test_server_url": "URL for testserver"
+        },
+        "description": "Aktiver utviklingsmodus for \u00e5 koble til testserveren i stedet for ConnectLife-API-et."
+      },
       "reauth_confirm": {
         "data": {
           "password": "Passord",
@@ -19,6 +27,7 @@
       },
       "user": {
         "data": {
+          "development_mode": "Utviklingsmodus",
           "password": "Passord",
           "username": "Brukernavn"
         }
@@ -1497,6 +1506,9 @@
       "t_beep": {
         "name": "Pip"
       },
+      "t_pump": {
+        "name": "Pumpe"
+      },
       "test_mode": {
         "name": "Testmodus"
       },
@@ -1595,7 +1607,16 @@
             }
           },
           "swing_mode": {
-            "state": {}
+            "state": {
+              "auto": "Auto",
+              "bottom": "Nederst",
+              "high": "H\u00f8y",
+              "low": "Lav",
+              "mid_high": "Middels h\u00f8y",
+              "mid_low": "Middels lav",
+              "swing": "Sving",
+              "top": "\u00d8verst"
+            }
           }
         }
       }
@@ -2018,11 +2039,8 @@
         "name": "Valgt program",
         "state": {
           "allergy_care": "Allergipleie",
-          "anti_allergy": "Anti-allergi",
           "auto": "Auto",
-          "baby": "Baby",
           "baby_care": "Babypleie",
-          "bed_linen": "Senget\u00f8y",
           "bedding": "Senget\u00f8y",
           "clean_dry_60": "Ren t\u00f8rk 60",
           "cotton": "Bomull",
@@ -2030,19 +2048,15 @@
           "delicates": "Finvask",
           "down": "Dun",
           "drum_clean": "Trommelrens",
-          "drum_cleaning": "Trommelrens",
           "duvet": "Dyne",
           "eco": "Eco",
           "eco_40_60": "Eco 40 60",
-          "fast15": "Fast15",
-          "fast30": "Hurtig 30",
           "full_load_49": "Full kapasitet 49",
           "hand_wash": "H\u00e5ndvask",
           "ion_refresh": "Ione-oppfriskning",
           "jeans": "Jeans",
           "mix": "Mix",
           "pets": "Kj\u00e6ledyr",
-          "power49": "Power49",
           "power_30": "Power 30",
           "power_49": "Power 49",
           "quick_15": "Hurtig 15",
@@ -2051,14 +2065,11 @@
           "refresh": "Oppfrisk",
           "rinse_spin": "Skyll og sentrifuger",
           "shirts": "Skjorter",
-          "silk_delicate": "Silke fin",
+          "silk_delicate": "Silke/Finvask",
           "spin": "Sentrifugering",
-          "spin-dry": "Sentrifuget\u00f8rk",
-          "sports": "Sport",
           "sportswear": "Sportst\u00f8y",
           "synthetic": "Syntet",
           "synthetic_dry": "Syntet t\u00f8rk",
-          "synthetics": "Syntet",
           "time": "Tid",
           "time_dry": "Tidst\u00f8rk",
           "towels": "H\u00e5ndkl\u00e6r",
@@ -2070,16 +2081,15 @@
         "name": "Valgt program",
         "state": {
           "auto": "Auto",
-          "baby": "Baby",
+          "baby_care": "Baby",
           "clean": "Rens",
           "color": "Farge",
           "down_feathers": "Dun",
           "draining": "T\u00f8mmer vann",
-          "drum_cleaning": "Trommelrens",
+          "drum_clean": "Trommelrens",
           "eco": "Eco",
           "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Ekstra hygiene",
-          "fast_20": "Hurtig 20'",
           "glass": "Glass",
           "hygiene": "Hygiene",
           "intensive": "Intensiv",
@@ -2094,8 +2104,9 @@
           "rinsing_softening": "Skylling og myking",
           "self_cleaning": "Selvrens",
           "shirts": "Skjorter",
+          "speed_20": "Hurtig 20'",
           "spinning_draining": "Sentrifugering og t\u00f8mming",
-          "sport": "Sport",
+          "sportswear": "Sport",
           "time_program": "Tidsprogram",
           "white_cotton": "Hvit bomull",
           "wool_manual": "Ull og manuell"
@@ -2363,19 +2374,6 @@
           "for_young": "For ungdom",
           "general": "Generell",
           "off": "Av"
-        }
-      },
-      "t_swing_angle": {
-        "name": "Svingvinkel",
-        "state": {
-          "angle_1": "Vinkel 1",
-          "angle_2": "Vinkel 2",
-          "angle_3": "Vinkel 3",
-          "angle_4": "Vinkel 4",
-          "angle_5": "Vinkel 5",
-          "angle_6": "Vinkel 6",
-          "auto": "Auto",
-          "swing": "Sving"
         }
       },
       "t_swing_follow": {
@@ -2944,17 +2942,15 @@
           "drying": "T\u00f8rking",
           "finished": "Ferdig",
           "idle": "Inaktiv",
-          "main_wash": "Hovedvask",
           "not_available": "Ikke tilgjengelig",
           "preheat": "Forvarming",
           "preheat_finished": "Forvarming ferdig",
           "prewash": "Forvask",
-          "program_finished": "Ferdig",
           "program_not_selected": "Program ikke valgt",
           "program_selected": "Program valgt",
-          "rinse": "Skylling",
+          "rinsing": "Skylling",
           "running": "Kj\u00f8rer",
-          "spin-dry": "Sentrifuget\u00f8rk",
+          "spinning": "Sentrifuget\u00f8rk",
           "ventilating": "Ventilerer",
           "wash": "Vask",
           "weigh": "Vei"
@@ -4997,8 +4993,8 @@
       "selected_program_id": {
         "name": "Valgt program",
         "state": {
-          "baby": "Baby",
-          "bed_linen": "Senget\u00f8y",
+          "baby_care": "Baby",
+          "bedding": "Senget\u00f8y",
           "cotton_storage": "Bomull lagring",
           "extra_hygiene": "Ekstra hygiene",
           "fast89": "Fast89",
@@ -5008,7 +5004,7 @@
           "remote": "Fjernstyrt",
           "sensitive": "Sensitiv",
           "shirts": "Skjorter",
-          "sports": "Sport",
+          "sportswear": "Sport",
           "standard": "Standard",
           "synthetic": "Syntet",
           "time": "Tid",
@@ -8022,6 +8018,9 @@
       "t_tms": {
         "name": "AI"
       },
+      "t_up_down": {
+        "name": "Vertikal sving"
+      },
       "tab_setting_status": {
         "name": "Vaskemiddel-TAB"
       },
@@ -8115,31 +8114,14 @@
     }
   },
   "options": {
-    "error": {
-      "test_server_invalid": "Ugyldig URL for testserver",
-      "test_server_required": "Utviklingsmodus krever URL for testserver"
-    },
     "step": {
       "configure_device": {
         "data": {
           "disable_beep": "Deaktiver pip"
         },
-        "description": "Konfigurer en enhet."
-      },
-      "development": {
-        "data": {
-          "development_mode": "Utviklingsmodus",
-          "test_server_url": "URL for testserver"
-        },
-        "description": "Aktiver utviklingsmodus for \u00e5 koble til testserveren i stedet for ConnectLife-API-et."
+        "description": "Konfigurer {device_name}."
       },
       "init": {
-        "menu_options": {
-          "development": "Konfigurer utviklingsmodus",
-          "select_device": "Konfigurer en enhet"
-        }
-      },
-      "select_device": {
         "data": {
           "device": "Velg enhet"
         },

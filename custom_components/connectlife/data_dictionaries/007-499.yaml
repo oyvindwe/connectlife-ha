@@ -1,0 +1,24 @@
+# Dehumidifier — HiSense HD5026TLP (Matter-bridged); no auto fan speed, no clothes-dry mode
+properties:
+  - property: t_fan_speed
+    select:
+      options:
+        0: low
+        1: high
+        3: medium
+  - property: t_pump
+    # Exposed read-only rather than as a switch: on this model the pump appears
+    # to run automatically whenever the unit moves water (to the tank or through
+    # a drain hose), with no documented way to control it. Toggling produced only
+    # an acknowledgement beep with no confirmed effect, so a writable switch would
+    # be misleading and potentially harmful if changed by accident.
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: t_work_mode
+    humidifier:
+      options:
+        0: continuous
+        1: manual
+        2: auto

@@ -10,16 +10,20 @@ from homeassistant.const import Platform, CONF_USERNAME, CONF_PASSWORD
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers import config_validation as cv
 from homeassistant.helpers.typing import ConfigType
-from connectlife.api import ConnectLifeApi, LifeConnectAuthError, LifeConnectError
+from connectlife.api import LifeConnectAuthError, LifeConnectError
 
+from .client import create_api
 from .const import (
     CONF_DEVELOPMENT_MODE,
     CONF_TEST_SERVER_URL,
+    CONF_TRIR,
     DATA_STATE_CLASS_MIGRATION_DONE,
     DOMAIN,
 )
-from .coordinator import ConnectLifeCoordinator, ConnectLifeEnergyCoordinator
+from .coordinator import ConnectLifeCoordinator, ConnectLifeStatisticsCoordinator
+from .dictionaries import Dictionaries
 from .services import async_setup_services
+from .statistics_sources import enabled_sensors
 
 PLATFORMS: list[Platform] = [
     Platform.BINARY_SENSOR,
@@ -56,7 +60,12 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
        if entry.options.get(CONF_DEVELOPMENT_MODE)
         else None
     )
-    api = ConnectLifeApi(entry.data[CONF_USERNAME], entry.data[CONF_PASSWORD], test_server_url)  # type: ignore[arg-type]
+    api = create_api(
+        entry.data[CONF_USERNAME],
+        entry.data[CONF_PASSWORD],
+        trir=entry.data.get(CONF_TRIR, False),
+        test_server_url=test_server_url,
+    )
     try:
         await api.login()
     except LifeConnectAuthError as ex:
@@ -65,10 +74,19 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         raise ConfigEntryNotReady from ex
     coordinator = ConnectLifeCoordinator(hass, api)
     await coordinator.async_config_entry_first_refresh()
-    energy_coordinator = ConnectLifeEnergyCoordinator(hass, api, coordinator)
-    await energy_coordinator.async_config_entry_first_refresh()
     hass.data[DOMAIN][entry.entry_id] = coordinator
-    hass.data[DOMAIN][f"{entry.entry_id}_energy"] = energy_coordinator
+
+    # Only create the statistics coordinator if some device opts into a statistics
+    # endpoint with at least one sensor enabled (otherwise it would poll nothing).
+    has_statistics = any(
+        enabled_sensors(d.statistics_source, d.statistics_sensors)
+        for appliance in coordinator.data.values()
+        if (d := Dictionaries.get_dictionary(appliance))
+    )
+    if has_statistics:
+        statistics_coordinator = ConnectLifeStatisticsCoordinator(hass, api, coordinator)
+        await statistics_coordinator.async_config_entry_first_refresh()
+        hass.data[DOMAIN][f"{entry.entry_id}_statistics"] = statistics_coordinator
 
     entry.async_on_unload(entry.add_update_listener(update_listener))
 
@@ -92,6 +110,6 @@ async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
 
     if unload_ok := await hass.config_entries.async_unload_platforms(entry, PLATFORMS):
         hass.data[DOMAIN].pop(entry.entry_id)
-        hass.data[DOMAIN].pop(f"{entry.entry_id}_energy", None)
+        hass.data[DOMAIN].pop(f"{entry.entry_id}_statistics", None)
 
     return unload_ok

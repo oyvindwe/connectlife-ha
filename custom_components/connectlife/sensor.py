@@ -5,12 +5,11 @@ import logging
 import voluptuous as vol
 from homeassistant.components.sensor import (
     SensorEntity,
-    SensorStateClass,
     SensorDeviceClass,
     SensorEntityDescription,
 )
 from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import Platform, UnitOfEnergy
+from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant, callback
 from homeassistant.exceptions import ServiceValidationError
 from homeassistant.helpers.device_registry import DeviceInfo
@@ -19,14 +18,13 @@ from homeassistant.helpers import config_validation as cv, entity_platform
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
 from .const import (
-    CONF_DEVICES,
-    CONF_EXPOSE_OFFLINE_STATE,
     DOMAIN,
     SW_VERSION_PROPERTY,
 )
-from .coordinator import ConnectLifeCoordinator, ConnectLifeEnergyCoordinator
+from .coordinator import ConnectLifeCoordinator, ConnectLifeStatisticsCoordinator
 from .dictionaries import Dictionaries, Dictionary, Property
 from .entity import ConnectLifeEntity
+from .statistics_sources import StatisticsSensorDef, enabled_sensors
 from connectlife.appliance import ConnectLifeAppliance, MAX_DATETIME
 from .utils import has_platform, to_unit
 
@@ -42,7 +40,7 @@ async def async_setup_entry(
 ) -> None:
     """Set up ConnectLife sensors."""
     coordinator = hass.data[DOMAIN][config_entry.entry_id]
-    energy_coordinator = hass.data[DOMAIN][f"{config_entry.entry_id}_energy"]
+    statistics_coordinator = hass.data[DOMAIN].get(f"{config_entry.entry_id}_statistics")
     for appliance in coordinator.data.values():
         dictionary = Dictionaries.get_dictionary(appliance)
         async_add_entities(
@@ -66,10 +64,15 @@ async def async_setup_entry(
                 for src in prop.combine
             )
         )
-    async_add_entities(
-        ConnectLifeEnergySensor(coordinator, energy_coordinator, appliance)
-        for appliance in coordinator.data.values()
-    )
+    if statistics_coordinator is not None:
+        for appliance in coordinator.data.values():
+            dictionary = Dictionaries.get_dictionary(appliance)
+            async_add_entities(
+                ConnectLifeStatisticsSensor(coordinator, statistics_coordinator, appliance, sensor)
+                for sensor in enabled_sensors(
+                    dictionary.statistics_source, dictionary.statistics_sensors
+                )
+            )
 
     platform = entity_platform.async_get_current_platform()
     platform.async_register_entity_service(
@@ -190,42 +193,47 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
         await self.async_update_device({self.status: value})
 
 
-class ConnectLifeEnergySensor(CoordinatorEntity[ConnectLifeEnergyCoordinator], SensorEntity):
-    """Sensor for daily energy consumption from the ConnectLife energy endpoint."""
+class ConnectLifeStatisticsSensor(CoordinatorEntity[ConnectLifeStatisticsCoordinator], SensorEntity):
+    """Sensor derived from a ConnectLife statistics endpoint.
+
+    The endpoint (and the sensor set) is selected per device type via the data dictionary
+    ``statistics_source``; see :mod:`.statistics_sources`. The energy coordinator stores
+    the fetched result per device and this sensor extracts its datapoint via ``sensor.value``.
+    """
 
     _attr_has_entity_name = True
-    _attr_device_class = SensorDeviceClass.ENERGY
-    _attr_state_class = SensorStateClass.TOTAL_INCREASING
-    _attr_native_unit_of_measurement = UnitOfEnergy.KILO_WATT_HOUR
-    _attr_translation_key = "daily_energy_kwh"
 
     def __init__(
         self,
         appliance_coordinator: ConnectLifeCoordinator,
-        energy_coordinator: ConnectLifeEnergyCoordinator,
+        statistics_coordinator: ConnectLifeStatisticsCoordinator,
         appliance: ConnectLifeAppliance,
+        sensor: StatisticsSensorDef,
     ):
-        """Initialize the energy sensor."""
-        super().__init__(energy_coordinator)
+        """Initialize the statistics sensor."""
+        super().__init__(statistics_coordinator)
         self._device_id = appliance.device_id
-        self._appliance_coordinator = appliance_coordinator
-        self._attr_unique_id = f"{appliance.device_id}-daily_energy_kwh"
+        self._sensor = sensor
+        self._attr_translation_key = sensor.key
+        self._attr_unique_id = f"{appliance.device_id}-{sensor.key}"
+        self._attr_device_class = sensor.device_class
+        self._attr_native_unit_of_measurement = sensor.unit
+        self._attr_state_class = sensor.state_class
+        if sensor.icon:
+            self._attr_icon = sensor.icon
         self._attr_device_info = DeviceInfo(
             identifiers={(DOMAIN, appliance.device_id)},
         )
-        device = appliance_coordinator.config_entry.options.get(CONF_DEVICES, {}).get(self._device_id, {})
-        self._expose_offline_state = device.get(CONF_EXPOSE_OFFLINE_STATE, False)
         appliance_coordinator.add_entity(self._attr_unique_id, Platform.SENSOR)
         self._update_native_value()
 
     @property
     def available(self) -> bool:
-        appliance = self._appliance_coordinator.data.get(self._device_id)
-        if appliance is None:
-            return False
+        # Cloud-side period statistics stay available even when the appliance is offline
+        # (unlike status sensors), so this is not gated on offline_state — only on the
+        # coordinator having a fetched result for this device.
         return (
             super().available
-            and (self._expose_offline_state or appliance.offline_state == 1)
             and self.coordinator.data is not None
             and self.coordinator.data.get(self._device_id) is not None
         )
@@ -237,8 +245,6 @@ class ConnectLifeEnergySensor(CoordinatorEntity[ConnectLifeEnergyCoordinator], S
         self.async_write_ha_state()
 
     def _update_native_value(self) -> None:
-        """Update native value from energy coordinator data."""
-        if self.coordinator.data and self._device_id in self.coordinator.data:
-            self._attr_native_value = self.coordinator.data[self._device_id]
-        else:
-            self._attr_native_value = None
+        """Extract this sensor's datapoint from the fetched statistics result."""
+        result = self.coordinator.data.get(self._device_id) if self.coordinator.data else None
+        self._attr_native_value = self._sensor.value(result) if result is not None else None

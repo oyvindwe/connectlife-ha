@@ -17,6 +17,7 @@
 |                          | Dehumidifier             | 007              | 407                         |
 |                          | Dehumidifier             | 007              | 408                         |
 |                          | Dehumidifier             | 007              | 409                         |
+| Hisense HD5026TLP        | Dehumidifier             | 007              | 499                         |
 |                          | Air conditioner          | 008              | 300                         |
 |                          | Air conditioner          | 008              | 301                         |
 |                          | Air conditioner          | 008              | 302                         |
@@ -80,6 +81,7 @@
 | WD3S8043BW3              | Washing machine          | 025              | 1wj080837v0w                |
 |                          | Washing machine          | 025              | 1wj090660v0w                |
 | WF5S9045BW               | Washing machine          | 025              | 1wj090728v0w                |
+| WFSE9014-LVW002          | Washing machine          | 025              | 1wj090729v0w                |
 | WD3S9043BB3              | Washing machine          | 025              | 1wj090913v0f                |
 | WF3S1014-SVW002          | Washing machine          | 025              | 1wj100404v0w                |
 | WFQR1014                 | Washing machine          | 025              | 1wj100649v0t                |
@@ -95,6 +97,7 @@
 | WD5I1045BWQ              | Washing machine          | 025              | 1wj105552v0w                |
 | WF5S1245BB               | Washing machine          | 025              | 1wj120238v0b                |
 | WDSE1214-EVAJMW          | Washing machine          | 025              | 1wj120261v0w                |
+| WDSE1214-EVAJMW          | Washing machine          | 025              | 1wj120274v0w                |
 | WFSE1214-MVW002          | Washing machine          | 025              | 1wj120389v0b                |
 |                          | Washing machine          | 025              | 1wj120407v0w                |
 | WF3S1243BB3              | Washing machine          | 025              | 1wj120459v0f                |

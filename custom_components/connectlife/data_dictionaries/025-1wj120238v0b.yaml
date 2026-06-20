@@ -29,6 +29,6 @@ properties:
         1: weigh
         2: prewash
         3: wash
-        4: rinse
-        7: spin-dry
+        4: rinsing
+        7: spinning
         10: finished

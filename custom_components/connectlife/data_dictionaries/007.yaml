@@ -1,6 +1,33 @@
 # Dehumidifier
+statistics:
+  source: energy_consumption_curve
+  daily_energy_kwh: true
 properties:
+  - property: f_e_drive
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_eeprom
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
   - property: f_e_filterclean
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_incom
     binary_sensor:
       device_class: problem
       options:
@@ -74,6 +101,21 @@ properties:
   - property: f_humidity
     humidifier:
       target: current_humidity
+  - property: f_matterOriginalProductId
+    sensor:
+      read_only: true
+    optional: true
+    entity_category: diagnostic
+  - property: f_matterOriginalVendorId
+    sensor:
+      read_only: true
+    optional: true
+    entity_category: diagnostic
+  - property: f_matterUniqueId
+    sensor:
+      read_only: true
+    optional: true
+    entity_category: diagnostic
   - property: f_power_consumption
     sensor:
       device_class: energy
@@ -95,6 +137,11 @@ properties:
       state_class: measurement
     optional: true
     entity_category: diagnostic
+  - property: t_anion
+    switch:
+      device_class: switch
+    icon: mdi:air-purifier
+    optional: true
   - property: t_beep
     binary_sensor:
       options:

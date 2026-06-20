@@ -3,6 +3,10 @@
 # be active (Remote_control_monitoring_set_commands_actions: 1); the others are
 # additionally gated on the relevant Status / StopAddGoAllowed value so each
 # button only shows when the action is applicable.
+#
+# EXPERIMENTAL: the Actions write codes and the gating status values have not
+# been confirmed on hardware. Pressing a button sends a real command, which may
+# be wrong until verified.
 buttons:
 - key: start
   icon: mdi:play
@@ -44,6 +48,10 @@ buttons:
     StopAddGoAllowed: 2  # Active
   write:
     Actions: 5
+statistics:
+  source: energy_consumption_curve
+  daily_energy_kwh: true
+  daily_water_consumption: true
 properties:
 - property: ADS_Dirtiness_setting_status
   # Sample value: 2
@@ -811,14 +819,14 @@ properties:
       3: wool_manual
       4: mix_synthetic
       5: extra_hygiene
-      6: fast_20
+      6: speed_20
       7: intensive_59_32
       8: no_program_selected
-      9: sport
-      10: baby
+      9: sportswear
+      10: baby_care
       11: pet_hair_removal
       12: shirts
-      13: drum_cleaning
+      13: drum_clean
       14: spinning_draining
       15: draining
       16: rinsing_softening

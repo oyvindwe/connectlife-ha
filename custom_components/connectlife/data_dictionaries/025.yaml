@@ -1,4 +1,8 @@
 # Washing Machine
+statistics:
+  source: energy_consumption_curve
+  daily_energy_kwh: true
+  daily_water_consumption: true
 properties:
   - property: Door_status
     icon: mdi:door

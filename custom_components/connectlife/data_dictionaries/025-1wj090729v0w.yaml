@@ -1,8 +1,10 @@
-# Washing Machine HISENSE WF5S1045BW
+# Washing Machine WFSE9014-LVW002
+# Program IDs seeded from the WF5S9045BW (1wj090728v0w) sibling, which shares the
+# index-based spin/temperature encoding of the base 025.yaml. Unconfirmed: the
+# reporter needs to enumerate programs to verify the Selected_program_ID labels.
 properties:
 - property: Current_program_phase
   sensor:
-    read_only: true
     device_class: enum
     options:
       0: not_available
@@ -16,24 +18,16 @@ properties:
 - property: Selected_program_ID
   select:
     options:
-      1: "cotton_dry"
-      2: "synthetic_dry"
-      4: "refresh"
-      5: "allergy_care"
       6: "drum_clean"
       7: "cotton"
       8: "synthetic"
       9: "eco_40_60"
       10: "wool"
       11: "quick_15"
-      12: "mix"
       14: "spin"
+      15: "allergy_care"
       16: "baby_care"
-      20: "rinse_spin"
-      21: "silk_delicate"
-      22: "clean_dry_60"
+      18: "sportswear"
       24: "shirts"
       41: "power_49"
       42: "auto"
-      44: "bedding"
-      45: "jeans"

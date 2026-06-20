@@ -1,4 +1,7 @@
 # Hood
+statistics:
+  source: energy_consumption_curve
+  daily_energy_kwh: true
 properties:
   # Top-level operating state
   - property: DeviceStatus

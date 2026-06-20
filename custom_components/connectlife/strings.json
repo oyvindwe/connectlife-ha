@@ -7,9 +7,20 @@
     "error": {
       "cannot_connect": "[%key:common::config_flow::error::cannot_connect%]",
       "invalid_auth": "[%key:common::config_flow::error::invalid_auth%]",
+      "test_server_invalid": "Invalid test server URL",
+      "test_server_required": "Development mode requires test server URL",
       "unknown": "[%key:common::config_flow::error::unknown%]"
     },
     "step": {
+      "development": {
+        "data": {
+          "test_server_url": "Test server URL"
+        },
+        "data_description": {
+          "test_server_url": "URL of the test server to authenticate against instead of the ConnectLife API."
+        },
+        "description": "Enter the test server to connect to instead of the ConnectLife API."
+      },
       "reauth_confirm": {
         "data": {
           "password": "[%key:common::config_flow::data::password%]",
@@ -19,8 +30,14 @@
       },
       "user": {
         "data": {
+          "development_mode": "Development mode",
           "password": "[%key:common::config_flow::data::password%]",
+          "trir": "ConnectLife.TRIR (Russia/CIS) \u2014 experimental",
           "username": "[%key:common::config_flow::data::username%]"
+        },
+        "data_description": {
+          "development_mode": "Connect to a local test server instead of the ConnectLife API. For development only.",
+          "trir": "Enable only if you sign in with the ConnectLife.TRIR app used in Russia/CIS. Experimental."
         }
       }
     }
@@ -834,8 +851,14 @@
       "f_e_arkgrille": {
         "name": "Cabinet grille protection alarm"
       },
+      "f_e_drive": {
+        "name": "Drive"
+      },
       "f_e_dwmachine": {
         "name": "Lower machine failure"
+      },
+      "f_e_eeprom": {
+        "name": "EEPROM"
       },
       "f_e_filterclean": {
         "name": "Filter clean"
@@ -1788,6 +1811,9 @@
       "t_beep": {
         "name": "Beep"
       },
+      "t_pump": {
+        "name": "Pump"
+      },
       "test_mode": {
         "name": "Test mode"
       },
@@ -1906,7 +1932,16 @@
             }
           },
           "swing_mode": {
-            "state": {}
+            "state": {
+              "auto": "Auto",
+              "bottom": "Bottom",
+              "high": "High",
+              "low": "Low",
+              "mid_high": "Mid-High",
+              "mid_low": "Mid-Low",
+              "swing": "Swing",
+              "top": "Top"
+            }
           }
         }
       }
@@ -2380,11 +2415,8 @@
         "name": "Selected program",
         "state": {
           "allergy_care": "Allergy care",
-          "anti_allergy": "Anti allergy",
           "auto": "Auto",
-          "baby": "Baby",
           "baby_care": "Baby care",
-          "bed_linen": "Bed linen",
           "bedding": "Bedding",
           "clean_dry_60": "Clean dry 60",
           "cotton": "Cotton",
@@ -2392,35 +2424,28 @@
           "delicates": "Delicates",
           "down": "Down",
           "drum_clean": "Drum clean",
-          "drum_cleaning": "Drum cleaning",
           "duvet": "Duvet",
           "eco": "Eco",
-          "eco_40_60": "Eco 40 60",
-          "fast15": "Fast15",
-          "fast30": "Quick 30",
+          "eco_40_60": "Eco 40-60",
           "full_load_49": "Full load 49",
           "hand_wash": "Hand wash",
           "ion_refresh": "Ion refresh",
           "jeans": "Jeans",
           "mix": "Mix",
           "pets": "Pets",
-          "power49": "Power49",
           "power_30": "Power 30",
           "power_49": "Power 49",
           "quick_15": "Quick 15",
           "quick_30": "Quick 30",
           "rack_dry": "Rack dry",
           "refresh": "Refresh",
-          "rinse_spin": "Rinse spin",
+          "rinse_spin": "Rinse + spin",
           "shirts": "Shirts",
-          "silk_delicate": "Silk delicate",
+          "silk_delicate": "Silk/Delicate",
           "spin": "Spin",
-          "spin-dry": "Spin-dry",
-          "sports": "Sports",
           "sportswear": "Sportswear",
           "synthetic": "Synthetics",
           "synthetic_dry": "Synthetic dry",
-          "synthetics": "Synthetics",
           "time": "Time",
           "time_dry": "Time dry",
           "towels": "Towels",
@@ -2432,16 +2457,15 @@
         "name": "Selected program",
         "state": {
           "auto": "Auto",
-          "baby": "Baby",
+          "baby_care": "Baby care",
           "clean": "Clean",
           "color": "Color",
           "down_feathers": "Down feathers",
           "draining": "Draining",
-          "drum_cleaning": "Drum Cleaning",
+          "drum_clean": "Drum clean",
           "eco": "Eco",
           "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Extra Hygiene",
-          "fast_20": "Fast 20'",
           "glass": "Glass",
           "hygiene": "Hygiene",
           "intensive": "Intensive",
@@ -2456,8 +2480,9 @@
           "rinsing_softening": "Rinsing & Softening",
           "self_cleaning": "Self cleaning",
           "shirts": "Shirts",
+          "speed_20": "Speed 20",
           "spinning_draining": "Spinning & Draining",
-          "sport": "Sport",
+          "sportswear": "Sportswear",
           "time_program": "Time program",
           "white_cotton": "White Cotton",
           "wool_manual": "Wool & Manual"
@@ -2749,19 +2774,6 @@
           "for_young": "For young",
           "general": "General",
           "off": "Off"
-        }
-      },
-      "t_swing_angle": {
-        "name": "Swing angle",
-        "state": {
-          "angle_1": "Angle 1",
-          "angle_2": "Angle 2",
-          "angle_3": "Angle 3",
-          "angle_4": "Angle 4",
-          "angle_5": "Angle 5",
-          "angle_6": "Angle 6",
-          "auto": "Auto",
-          "swing": "Swing"
         }
       },
       "t_swing_follow": {
@@ -3363,23 +3375,21 @@
       "current_program_phase": {
         "name": "Current program phase",
         "state": {
-          "anti_crease": "Anti crease",
+          "anti_crease": "Anti-crease",
           "delay": "Delay",
           "delay_start_waiting": "Delay start waiting",
           "drying": "Drying",
           "finished": "Finished",
           "idle": "Idle",
-          "main_wash": "Main wash",
           "not_available": "Not available",
           "preheat": "Preheat",
           "preheat_finished": "Preheat finished",
           "prewash": "Pre-wash",
-          "program_finished": "Finished",
           "program_not_selected": "Program not selected",
           "program_selected": "Program selected",
-          "rinse": "Rinse",
+          "rinsing": "Rinsing",
           "running": "Running",
-          "spin-dry": "Spin-dry",
+          "spinning": "Spinning",
           "ventilating": "Ventilating",
           "wash": "Wash",
           "weigh": "Weigh"
@@ -3426,17 +3436,17 @@
         "state": {
           "add_cloth_drain": "Add clothes drain",
           "add_cloth_drain_finish": "Add clothes drain finished",
-          "anticrease": "Anti-crease",
+          "anti_crease": "Anti-crease",
           "coolend": "Cool down end",
           "cooling": "Cooling",
           "delay": "Delay",
           "drain_water": "Draining",
-          "mainwash": "Main wash",
+          "finished": "Finished",
           "prewash": "Pre-wash",
-          "program_end": "Finished",
-          "rinse": "Rinse",
-          "spin": "Spin",
-          "stop_program": "Cancelled"
+          "rinsing": "Rinsing",
+          "spinning": "Spinning",
+          "stop_program": "Cancelled",
+          "wash": "Wash"
         }
       },
       "currentwatertemperature": {
@@ -3462,6 +3472,9 @@
       },
       "daily_energy_kwh": {
         "name": "Daily energy"
+      },
+      "daily_water_consumption": {
+        "name": "Daily water consumption"
       },
       "darhcdq": {
         "name": "Darhcdq"
@@ -5618,20 +5631,34 @@
       "selected_program_id": {
         "name": "Selected program",
         "state": {
-          "baby": "Baby",
-          "bed_linen": "Bed linen",
+          "allergy_care": "Allergy care",
+          "auto": "Auto",
+          "baby_care": "Baby care",
+          "bedding": "Bedding",
+          "cotton": "Cotton",
+          "cotton_dry": "Cotton dry",
           "cotton_storage": "Cotton storage",
+          "drum_clean": "Drum clean",
+          "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Extra hygiene",
           "fast89": "Fast89",
           "iron": "Iron",
+          "jeans": "Jeans",
           "mix": "Mix",
           "none": "None",
+          "power_49": "Power 49",
+          "quick_15": "Quick 15",
+          "refresh": "Refresh",
           "remote": "Remote",
+          "rinse_spin": "Rinse + spin",
           "sensitive": "Sensitive",
           "shirts": "Shirts",
-          "sports": "Sports",
+          "silk_delicate": "Silk/Delicate",
+          "spin": "Spin",
+          "sportswear": "Sportswear",
           "standard": "Standard",
-          "synthetic": "Synthetic",
+          "synthetic": "Synthetics",
+          "synthetic_dry": "Synthetic dry",
           "time": "Time",
           "wool": "Wool"
         }
@@ -8701,6 +8728,9 @@
       "t_air": {
         "name": "Air"
       },
+      "t_anion": {
+        "name": "Ioniser"
+      },
       "t_dal": {
         "name": "DAL"
       },
@@ -8742,6 +8772,9 @@
       },
       "t_tms": {
         "name": "AI"
+      },
+      "t_up_down": {
+        "name": "Vertical swing"
       },
       "tab_setting_status": {
         "name": "Detergent TAB"
@@ -8836,10 +8869,6 @@
     }
   },
   "options": {
-    "error": {
-      "test_server_invalid": "Invalid test server URL",
-      "test_server_required": "Development mode requires test server URL"
-    },
     "step": {
       "configure_device": {
         "data": {
@@ -8852,20 +8881,7 @@
         },
         "description": "Configure {device_name}."
       },
-      "development": {
-        "data": {
-          "development_mode": "Development mode",
-          "test_server_url": "Test server URL"
-        },
-        "description": "Enable development mode to connect to test server instead of the ConnectLife API."
-      },
       "init": {
-        "menu_options": {
-          "development": "Configure development mode",
-          "select_device": "Configure a device"
-        }
-      },
-      "select_device": {
         "data": {
           "device": "Select device"
         },

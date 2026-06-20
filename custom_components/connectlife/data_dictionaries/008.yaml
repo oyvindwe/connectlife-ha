@@ -1,4 +1,7 @@
 # Window air conditioner
+statistics:
+  source: air_duct_energy
+  daily_energy_kwh: true
 properties:
   - property: f-filter
     binary_sensor:

@@ -6,11 +6,20 @@
     "error": {
       "cannot_connect": "Fallo al establecer la conexi\u00f3n",
       "invalid_auth": "Autentificaci\u00f3n Fallida",
+      "test_server_invalid": "Test server URL invalida",
+      "test_server_required": "El modo desarrollo requiere una URL del Test Server",
       "unknown": "Error desconocido"
     },
     "step": {
+      "development": {
+        "data": {
+          "test_server_url": "Test server URL"
+        },
+        "description": "Habilitar modo desarrollo para conectar al test server en vez de a ConnectLife API."
+      },
       "user": {
         "data": {
+          "development_mode": "Modo desarrollo",
           "password": "Contrase\u00f1a",
           "username": "Nombre de usuario"
         }
@@ -608,7 +617,16 @@
             }
           },
           "swing_mode": {
-            "state": {}
+            "state": {
+              "auto": "Auto",
+              "bottom": "Abajo",
+              "high": "Alto",
+              "low": "Bajo",
+              "mid_high": "Medio-alto",
+              "mid_low": "Medio-bajo",
+              "swing": "balanceo",
+              "top": "Arriba"
+            }
           }
         }
       }
@@ -719,26 +737,27 @@
       "selected_program_id": {
         "name": "Programa seleccionado",
         "state": {
-          "anti_allergy": "Antialergias",
+          "allergy_care": "Antialergias",
           "auto": "Auto",
-          "baby": "Ropa beb\u00e9",
-          "bed_linen": "Ropa de cama",
+          "baby_care": "Ropa beb\u00e9",
+          "bedding": "Ropa de cama",
           "clean_dry_60": "Lavado Secado 60\u00b4",
           "cotton": "Algodon",
           "cotton_dry": "Secado Agod\u00f3n",
           "delicates": "Delicados",
           "down": "Bajar",
-          "drum_cleaning": "Limpieza Tambor",
+          "drum_clean": "Limpieza Tambor",
           "eco_40_60": "Eco 40-60",
-          "fast15": "Rapido 15\u00b4",
-          "fast30": "Rapido 30\u00b4",
-          "power49": "Power 49",
+          "power_49": "Power 49",
+          "quick_15": "Rapido 15\u00b4",
+          "quick_30": "Rapido 30\u00b4",
           "refresh": "Refrescar",
           "rinse_spin": "Aclarado y Centrifugado",
           "shirts": "Camisas",
-          "spin-dry": "Centrifugar",
-          "sports": "Ropa deporte",
-          "synthetic": "Sinteticos",
+          "silk_delicate": "Delicados",
+          "spin": "Centrifugar",
+          "sportswear": "Ropa deporte",
+          "synthetic": "Sint\u00e9ticos",
           "synthetic_dry": "Secado Sinteticos",
           "time": "Secado por tiempo",
           "towels": "Toalas",
@@ -812,19 +831,6 @@
           "off": "Apagado"
         }
       },
-      "t_swing_angle": {
-        "name": "Modo balanceo",
-        "state": {
-          "angle_1": "Anglulo 1",
-          "angle_2": "Anglulo 2",
-          "angle_3": "Anglulo 3",
-          "angle_4": "Anglulo 4",
-          "angle_5": "Anglulo 5",
-          "angle_6": "Anglulo 6",
-          "auto": "Auto",
-          "swing": "balanceo"
-        }
-      },
       "t_swing_follow": {
         "name": "AI ventilacion",
         "state": {
@@ -889,17 +895,15 @@
           "drying": "Secando",
           "finished": "Terminado",
           "idle": "Pausado",
-          "main_wash": "Lavado principal",
           "not_available": "No disponible",
           "preheat": "Precantamiento",
           "preheat_finished": "Precantamiento terminado",
           "prewash": "Prelavando",
-          "program_finished": "Programa Terminado",
           "program_not_selected": "Programa no seleccionado",
           "program_selected": "Programa selecionado",
-          "rinse": "Aclarando",
+          "rinsing": "Aclarando",
           "running": "En marcha",
-          "spin-dry": "Centrifugando",
+          "spinning": "Centrifugando",
           "ventilating": "Ventilaci\u00f3n",
           "wash": "Lavando",
           "weigh": "Pesando"
@@ -1092,8 +1096,8 @@
       "selected_program_id": {
         "name": "Programa seleccionado",
         "state": {
-          "baby": "Ropa beb\u00e9",
-          "bed_linen": "Ropa de cama",
+          "baby_care": "Ropa beb\u00e9",
+          "bedding": "Ropa de cama",
           "cotton_storage": "Algod\u00f3n",
           "extra_hygiene": "Extra higiene",
           "fast89": "Fast 89",
@@ -1103,9 +1107,9 @@
           "remote": "Remoto",
           "sensitive": "Delicados",
           "shirts": "Camisas",
-          "sports": "Ropa deporte",
+          "sportswear": "Ropa deporte",
           "standard": "Est\u00e1ndar",
-          "synthetic": "Sint\u00e9nticos",
+          "synthetic": "Sint\u00e9ticos",
           "time": "Tiempo",
           "wool": "Lana"
         }
@@ -1638,6 +1642,9 @@
       },
       "t_tms": {
         "name": "AI"
+      },
+      "t_up_down": {
+        "name": "Oscilaci\u00f3n vertical"
       }
     },
     "water_heater": {
@@ -1673,31 +1680,14 @@
     }
   },
   "options": {
-    "error": {
-      "test_server_invalid": "Test server URL invalida",
-      "test_server_required": "El modo desarrollo requiere una URL del Test Server"
-    },
     "step": {
       "configure_device": {
         "data": {
           "disable_beep": "Deshabilitar beep"
         },
-        "description": "Configurar un dispositivo."
-      },
-      "development": {
-        "data": {
-          "development_mode": "Modo desarrollo",
-          "test_server_url": "Test server URL"
-        },
-        "description": "Habilitar modo desarrollo para conectar al test server en vez de a ConnectLife API."
+        "description": "Configurar {device_name}."
       },
       "init": {
-        "menu_options": {
-          "development": "Configurar modo desarrollo",
-          "select_device": "Configurar un dispositivo"
-        }
-      },
-      "select_device": {
         "data": {
           "device": "Seleccionar dispositivo"
         },

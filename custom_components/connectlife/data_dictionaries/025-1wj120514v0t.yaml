@@ -7,9 +7,9 @@ properties:
       0: not_available
       1: weigh
       2: prewash
-      3: main_wash
-      4: rinse
-      7: spin-dry
+      3: wash
+      4: rinsing
+      7: spinning
       8: drying
       10: finished
       11: delay_start_waiting
@@ -32,20 +32,20 @@ properties:
       1: "cotton_dry"
       2: "synthetic_dry"
       4: "refresh"
-      5: "anti_allergy"
-      6: "drum_cleaning"
+      5: "allergy_care"
+      6: "drum_clean"
       7: "cotton"
       8: "synthetic"
       10: "wool"
-      11: "fast15"
+      11: "quick_15"
       12: "mix"
-      14: "spin-dry"
-      16: "baby"
-      18: "sports"
+      14: "spin"
+      16: "baby_care"
+      18: "sportswear"
       20: "rinse_spin"
       21: "delicates"
       22: "clean_dry_60"
-      41: "power49"
-      44: "bed_linen"
+      41: "power_49"
+      44: "bedding"
       45: "jeans"
       55: "hand_wash"

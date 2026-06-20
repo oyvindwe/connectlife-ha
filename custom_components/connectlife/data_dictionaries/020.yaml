@@ -1,4 +1,7 @@
 # Induction hob
+statistics:
+  source: energy_consumption_curve
+  daily_energy_kwh: true
 properties:
   - property: Alarm_Hob_Hood_Started
     optional: true

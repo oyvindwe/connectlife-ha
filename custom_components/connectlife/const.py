@@ -11,6 +11,7 @@ CONF_DEVELOPMENT_MODE = "development_mode"
 CONF_DISABLE_BEEP = "disable_beep"
 CONF_EXPOSE_OFFLINE_STATE = "expose_offline_state"
 CONF_TEST_SERVER_URL = "test_server_url"
+CONF_TRIR = "trir"
 
 OFFLINE_STATE = "offline_state"
 

@@ -1,11 +1,11 @@
 [project]
 name = "connectlife-ha"
-version = "0.39.0"
+version = "0.41.1"
 description = "Custom Home Assistant component for ConnectLife devices"
 readme = "README.md"
 requires-python = ">=3.13.2"
 dependencies = [
-    "connectlife==0.7.1",
+    "connectlife==0.9.1",
 ]
 
 [dependency-groups]
@@ -15,6 +15,11 @@ dev = [
     "pyright>=1.1.391",
     "homeassistant-stubs>=2024.12.0",
     "pytest-homeassistant-custom-component==0.13.190",
+    # aiodns (pulled in transitively via Home Assistant) declares pycares>=4.0.0
+    # with no upper bound; aiodns<3.3.0 breaks against pycares 5.x with a
+    # Channel.getaddrinfo() TypeError that kills all DNS resolution. Pin to the
+    # 4.x line HA effectively runs so `uv run` stays off that combination.
+    "pycares<5",
 ]
 
 [tool.pytest.ini_options]

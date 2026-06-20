@@ -1,4 +1,7 @@
 # Refrigerator
+statistics:
+  source: energy_consumption_curve
+  daily_energy_kwh: true
 properties:
   - property: AIR_FRESHNESS
     optional: true
@@ -96,6 +99,8 @@ properties:
   - property: compressor_frequency
     optional: true
     sensor:
+      device_class: frequency
+      unit: Hz
       state_class: measurement
   - property: condensation_fan_failure_status
     hide: true
@@ -696,6 +701,8 @@ properties:
   - property: power_voltage
     optional: true
     sensor:
+      device_class: voltage
+      unit: V
       state_class: measurement
   - property: quiet_mode_status
     optional: true
