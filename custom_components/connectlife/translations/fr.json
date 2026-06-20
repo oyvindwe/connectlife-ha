@@ -305,6 +305,14 @@
         "name": "D\u00e9faut sonde cave \u00e0 vin"
       }
     },
+    "button": {
+      "start": {
+        "name": "D\u00e9marrer"
+      },
+      "stop": {
+        "name": "Arr\u00eater"
+      }
+    },
     "number": {
       "delayendtime": {
         "name": "Fin diff\u00e9r\u00e9e"

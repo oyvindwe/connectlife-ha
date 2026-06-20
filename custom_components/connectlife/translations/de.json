@@ -1145,6 +1145,14 @@
         "name": "Weinsensorfehler"
       }
     },
+    "button": {
+      "start": {
+        "name": "Start"
+      },
+      "stop": {
+        "name": "Stopp"
+      }
+    },
     "climate": {
       "connectlife": {
         "state_attributes": {

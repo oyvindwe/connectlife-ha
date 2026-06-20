@@ -590,6 +590,14 @@
         "name": "Compartimento de agua lleno"
       }
     },
+    "button": {
+      "start": {
+        "name": "Iniciar"
+      },
+      "stop": {
+        "name": "Detener"
+      }
+    },
     "climate": {
       "connectlife": {
         "state_attributes": {

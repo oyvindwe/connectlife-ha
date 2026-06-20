@@ -1,4 +1,15 @@
-# Pelgrim GVWC330L
+# Pelgrim GVWC330L; also reported by Hisense HV673B66
+#
+# Action codes differ from other 015 variants: start is Actions: 3 (not 2),
+# and no Actions value opens the door on this firmware. Only start is exposed
+# until the remaining codes are confirmed.
+buttons:
+  - key: start
+    icon: mdi:play
+    available_when:
+      Remote_control_monitoring_set_commands_actions: 2
+    write:
+      Actions: 3
 properties:
   - property: Selected_program_id_status
     select:

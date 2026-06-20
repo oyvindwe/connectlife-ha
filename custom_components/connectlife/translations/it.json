@@ -194,6 +194,14 @@
         "name": "Beep"
       }
     },
+    "button": {
+      "start": {
+        "name": "Avvia"
+      },
+      "stop": {
+        "name": "Arresta"
+      }
+    },
     "climate": {
       "connectlife": {
         "state_attributes": {
