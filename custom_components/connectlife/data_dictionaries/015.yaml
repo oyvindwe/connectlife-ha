@@ -2,6 +2,20 @@ statistics:
   source: energy_consumption_curve
   daily_energy_kwh: true
   daily_water_consumption: true
+# stop (Actions: 1) and start (Actions: 2) are confirmed across most 015 models.
+# pause (Actions: 3) and open_door (Actions: 4) have no effect on the firmware
+# seen so far, so they are not exposed.
+buttons:
+  - key: stop
+    icon: mdi:stop
+    write:
+      Actions: 1
+  - key: start
+    icon: mdi:play
+    available_when:
+      Remote_control_monitoring_set_commands_actions: 2
+    write:
+      Actions: 2
 properties:
   - property: ADO_allowed
     binary_sensor:
