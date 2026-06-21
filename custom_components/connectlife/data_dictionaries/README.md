@@ -122,6 +122,15 @@ ConnectLife properties can be mapped to any of these entity types:
 
 ### Mapping tips and tricks
 
+- Property keys follow a prefix convention that's a useful starting point when deciding how to map a property:
+  - **`t_*`** — writable *target*/control values (e.g. `t_power`, `t_temp`, `t_work_mode`). Usually map to
+    `switch`/`select`/`number`, or to a writable `climate`/`humidifier`/`water_heater` target.
+  - **`f_*`** — read-only *feedback*/state (e.g. `f_temp_in`, `f_electricity`, the `f_e_*` fault flags). Usually
+    map to a `sensor` (with `read_only: true`), a `binary_sensor`, or a `current_*` climate target.
+
+  This is a convention, not a guarantee: a `t_*` control is occasionally better surfaced read-only (e.g. `t_beep`
+  as a status `binary_sensor`), and a device may advertise `t_*` controls it doesn't physically have — `disable`
+  those in the feature override (see [Property inheritance in feature overrides](#property-inheritance-in-feature-overrides)).
 - Generate a skeleton file using the [connectlife](https://pypi.org/project/connectlife/) package:
 
   ```bash
