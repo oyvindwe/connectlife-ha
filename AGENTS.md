@@ -36,8 +36,10 @@ uv run pyright
 ### Data Flow
 
 1. **Config flow** (`config_flow.py`) — user provides credentials, validated via `ConnectLifeApi.authenticate()`
-2. **Entry setup** (`__init__.py`) — creates `ConnectLifeApi`, calls `login()` (4-step OAuth2 via Gigya), initializes `ConnectLifeCoordinator`
-3. **Coordinator** (`coordinator.py`) — subclass of `DataUpdateCoordinator`, polls `api.get_appliances()` every 60s, returns `dict[str, ConnectLifeAppliance]` keyed by device_id
+2. **Entry setup** (`__init__.py`) — creates `ConnectLifeApi`, calls `login()` (4-step OAuth2 via Gigya), initializes `ConnectLifeCoordinator`, and — only if at least one appliance enables a statistics sensor — also a `ConnectLifeStatisticsCoordinator` (stored under `hass.data[DOMAIN][f"{entry_id}_statistics"]`)
+3. **Coordinators** (`coordinator.py`) — two `DataUpdateCoordinator` subclasses run side by side:
+   - `ConnectLifeCoordinator` — the main coordinator; polls `api.get_appliances()` every 60s, returns `dict[str, ConnectLifeAppliance]` keyed by device_id. Drives all status-derived entities.
+   - `ConnectLifeStatisticsCoordinator` — polls the cloud statistics endpoints every `STATISTICS_UPDATE_INTERVAL` (10 min) for the daily energy/water sensors; returns `dict[device_id, EnergyResult | None]`. See [Statistics](#statistics-daily-energywater-sensors) below.
 4. **Platform setup** — each platform iterates appliances, loads data dictionaries, creates entities for properties that match the platform
 5. **Entity updates** — coordinator notifies entities via `_handle_coordinator_update()` → `update_state()` → `async_write_ha_state()`
 6. **Commands** — entity actions call `async_update_device()` on base entity → `coordinator.async_update_device()` → `api.update_appliance()`
@@ -62,7 +64,7 @@ All per-property platforms (sensor, binary_sensor, number, select, switch) follo
 for appliance in coordinator.data.values():
     dictionary = Dictionaries.get_dictionary(appliance)
     for s in appliance.status_list:
-        if is_entity(Platform.XXX, dictionary.properties[s], appliance.status_list[s]):
+        if has_platform(Platform.XXX, dictionary.properties[s]):
             # create entity
 ```
 
@@ -95,7 +97,7 @@ one and powers the daily energy/water consumption sensors. These are **not** der
 
 - **Unique ID format**: `{device_id}-{property_name}` (or `{device_id}-climate` etc. for device-level entities)
 - **Beep disable**: When configured per-device in options, `t_beep: 0` is injected into every command (`entity.py:async_update_device`)
-- **`is_entity()` utility** (`utils.py`): gates entity creation — checks platform match, not disabled, and not in unavailable state
+- **`has_platform()` utility** (`utils.py`): gates entity creation — the property has the platform's block (`hasattr`) and is not `disable`d. (The per-property `unavailable` sentinel is applied at runtime via the entity's `available` / `_is_value_unavailable()`, not at creation time.)
 
 ### connectlife API Library
 
