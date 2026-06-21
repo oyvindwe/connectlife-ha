@@ -58,7 +58,7 @@ async def async_setup_entry(
             for name, prop in dictionary.properties.items()
             if prop.combine
             and name not in appliance.status_list
-            and hasattr(prop, Platform.SENSOR)
+            and has_platform(Platform.SENSOR, prop)
             and any(
                 src["property"] in appliance.status_list
                 for src in prop.combine

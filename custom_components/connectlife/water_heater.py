@@ -30,7 +30,7 @@ from .const import (
 from .coordinator import ConnectLifeCoordinator
 from .dictionaries import Dictionaries, Dictionary
 from .entity import ConnectLifeEntity
-from .utils import to_temperature_map, normalize_temperature_unit
+from .utils import has_platform, to_temperature_map, normalize_temperature_unit
 from connectlife.appliance import ConnectLifeAppliance
 
 _LOGGER = logging.getLogger(__name__)
@@ -57,7 +57,7 @@ async def async_setup_entry(
 
 def is_water_heater(dictionary: Dictionary):
     for prop in dictionary.properties.values():
-        if hasattr(prop, Platform.WATER_HEATER):
+        if has_platform(Platform.WATER_HEATER, prop):
             return True
     return False
 
@@ -108,7 +108,7 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
         self.unknown_values = {}
 
         for dd_entry in data_dictionary.properties.values():
-            if hasattr(dd_entry, Platform.WATER_HEATER) and dd_entry.name in appliance.status_list and dd_entry.water_heater.target is not None:
+            if has_platform(Platform.WATER_HEATER, dd_entry) and dd_entry.name in appliance.status_list and dd_entry.water_heater.target is not None:
                 target = dd_entry.water_heater.target
                 if target in self.target_map:
                     _LOGGER.warning(
