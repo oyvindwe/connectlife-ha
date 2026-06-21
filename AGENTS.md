@@ -107,6 +107,8 @@ The API library is published to PyPI as `connectlife` and developed in a separat
 
 See `custom_components/connectlife/data_dictionaries/README.md` for the authoring workflow (skeleton generation, tips, translation strings). After editing YAML, run `uv run python -m scripts.validate_mappings` and `uv run python -m scripts.gen_strings`.
 
+Mappings are data, validated by `validate_mappings` (schema) and PR review — don't add unit tests asserting a specific mapping's *content*.
+
 ## Git and pull requests
 
 - **Don't amend, drop, or squash commits on an open PR.** Once a branch has an
