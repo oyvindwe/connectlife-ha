@@ -5454,6 +5454,9 @@
       "sabbath_mode_settingstart_timeminute": {
         "name": "Sabbath mode setting start time minute"
       },
+      "sabbath_mode_status": {
+        "name": "Sabbath mode status"
+      },
       "sand_timer1_duration_in_seconds": {
         "name": "Sand timer 1 duration"
       },
@@ -8530,6 +8533,9 @@
       "child_lock_status_status": {
         "name": "Child lock status"
       },
+      "child_lock_switch_status": {
+        "name": "Child lock"
+      },
       "childlockenabled": {
         "name": "Child lock"
       },
@@ -8656,6 +8662,9 @@
       "proximitysensorstatus": {
         "name": "Proximity sensor"
       },
+      "sabbath_mode_switch_status": {
+        "name": "Sabbath mode"
+      },
       "save_mode": {
         "name": "Save mode"
       },
@@ -8703,6 +8712,9 @@
       },
       "sr_mode": {
         "name": "SR mode"
+      },
+      "standby_mode_status": {
+        "name": "Standby mode"
       },
       "startdelayfunction": {
         "name": "Start delay"
@@ -8793,6 +8805,9 @@
       },
       "welcome": {
         "name": "Welcome"
+      },
+      "wine_light": {
+        "name": "Wine light"
       }
     },
     "water_heater": {

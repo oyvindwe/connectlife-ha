@@ -973,6 +973,9 @@
       "running_status3": {
         "name": "\u00c9tat de fonctionnement 3"
       },
+      "sabbath_mode_status": {
+        "name": "\u00c9tat du mode Sabbath"
+      },
       "screen_display_brightness": {
         "name": "Luminosit\u00e9 \u00e9cran"
       },
@@ -1237,6 +1240,9 @@
       "child_lock_status_status": {
         "name": "\u00c9tat de la s\u00e9curit\u00e9 enfant"
       },
+      "child_lock_switch_status": {
+        "name": "S\u00e9curit\u00e9 enfant"
+      },
       "extra_rinse": {
         "name": "Rin\u00e7age suppl\u00e9mentaire"
       },
@@ -1255,6 +1261,9 @@
       "prewash": {
         "name": "Pr\u00e9lavage"
       },
+      "sabbath_mode_switch_status": {
+        "name": "Mode Sabbath"
+      },
       "save_mode": {
         "name": "Mode \u00e9co"
       },
@@ -1267,8 +1276,14 @@
       "sr_mode": {
         "name": "Super-refroidissement"
       },
+      "standby_mode_status": {
+        "name": "Mode veille"
+      },
       "steam": {
         "name": "Vapeur"
+      },
+      "wine_light": {
+        "name": "\u00c9clairage cave \u00e0 vin"
       }
     }
   },

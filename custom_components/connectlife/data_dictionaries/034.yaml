@@ -1,0 +1,712 @@
+# Wine cooler
+statistics:
+  source: energy_consumption_curve
+  daily_energy_kwh: true
+properties:
+  - property: AIR_FRESHNESS
+    disable: true
+  - property: ODOR_SENSOR_FAULT_FLAG
+    disable: true
+  - property: ODOR_SENSOR_NO_DISTURB_MODE_STATUS
+    disable: true
+  - property: ODOR_SENSOR_SENSITIVITY
+    disable: true
+  - property: ODOR_SENSOR_SWITHC_STATUS
+    disable: true
+  - property: STERI_PURI_CYCLE_FLAG
+    disable: true
+  - property: alarm_key
+    disable: true
+  - property: alarm_sound_volume
+    disable: true
+  - property: ali_wifi_fault_flag
+    disable: true
+  - property: automatic_ice_making
+    disable: true
+  - property: camera_state
+    disable: true
+  - property: charcoal_filter_expiration_alarm
+    disable: true
+  - property: charcoal_filter_surplus_time
+    disable: true
+  - property: charcoal_filter_time_reset
+    disable: true
+  - property: child_lock_open_alarm
+    disable: true
+  - property: child_lock_open_door_sound_alarm
+    disable: true
+  - property: child_lock_switch_exist
+    disable: true
+  - property: child_lock_switch_status
+    entity_category: config
+    switch:
+      command:
+        name: SET_CHILD_LOCK_SWITCH
+  - property: commodity_inspection
+    disable: true
+  - property: compressor_condition
+    disable: true
+  - property: compressor_frequency
+    disable: true
+  - property: compressor_operating_max_frequency
+    disable: true
+  - property: compressor_operating_min_frequency
+    disable: true
+  - property: condensation_fan_failure_status
+    disable: true
+  - property: control_failure_status
+    disable: true
+  - property: custard_room
+    disable: true
+  - property: date_display_format_status
+    disable: true
+  - property: date_format_status
+    disable: true
+  - property: date_time_format_day_state
+    disable: true
+  - property: date_time_format_month_state
+    disable: true
+  - property: date_time_format_year_state
+    disable: true
+  - property: dbd_clean_mode
+    disable: true
+  - property: debacilli_mode
+    disable: true
+  - property: display_panel_ronshen
+    disable: true
+  - property: displayboard_brand
+    disable: true
+  - property: displayboard_key_setting
+    disable: true
+  - property: displayboard_type
+    disable: true
+  - property: displayboard_version
+    disable: true
+  - property: door_close_light_status
+    disable: true
+  - property: door_close_ui_display_status
+    disable: true
+  - property: door_open_light_status
+    disable: true
+  - property: door_open_ui_display_status
+    disable: true
+  - property: electric_current
+    disable: true
+  - property: electric_energy_one_tenths_value
+    disable: true
+  - property: electric_energy_percentile_thousands_value
+    disable: true
+  - property: envi_temp_sens_head_failure
+    disable: true
+  - property: environment_humidity
+    disable: true
+  - property: environment_real_temperature
+    optional: true
+    entity_category: diagnostic
+    sensor:
+      device_class: temperature
+      unit: °C
+      state_class: measurement
+      unknown_value: -40
+  - property: existing_fuzzy_mode
+    disable: true
+  - property: existing_holiday_mode
+    disable: true
+  - property: existing_lock_fresh_mode
+    disable: true
+  - property: existing_save_mode
+    disable: true
+  - property: existing_sf_mode
+    disable: true
+  - property: existing_sr_mode
+    disable: true
+  - property: fast_store_mode_exist
+    disable: true
+  - property: fast_store_mode_status
+    disable: true
+  - property: filter_alarm_time
+    disable: true
+  - property: filter_state
+    disable: true
+  - property: free_defrosting_failure
+    disable: true
+  - property: free_evap_temp_sens_head_failure
+    disable: true
+  - property: free_fan_failure
+    disable: true
+  - property: free_key
+    disable: true
+  - property: free_room
+    disable: true
+  - property: free_room_open
+    disable: true
+  - property: free_room_open_2
+    disable: true
+  - property: free_room_over_temp_alarm_failure
+    disable: true
+  - property: free_temp_sens_head_failure
+    disable: true
+  - property: freeze_door_open_time
+    disable: true
+  - property: freeze_max_temperature
+    disable: true
+  - property: freeze_min_temperature
+    disable: true
+  - property: freeze_poweroff_ad
+    disable: true
+  - property: freeze_poweron_ad
+    disable: true
+  - property: freeze_real_temperature
+    sensor:
+      device_class: temperature
+      unit: °C
+      state_class: measurement
+      unknown_value: -40
+  - property: freeze_sensor_real_temperature
+    optional: true
+    entity_category: diagnostic
+    sensor:
+      device_class: temperature
+      unit: °C
+      state_class: measurement
+      unknown_value: -40
+  - property: freeze_temperature
+    unavailable: -40
+    number:
+      device_class: temperature
+      unit: °C
+      min_value: 5
+      max_value: 20
+      command:
+        name: SET_FREEZE_TEMPERATURE
+  - property: frost_state
+    disable: true
+  - property: froze_convert_to_refri_switch_status
+    disable: true
+  - property: fruit_vegetables_temperature
+    disable: true
+  - property: fuzzy_mode
+    disable: true
+  - property: gold_water_supply_mode
+    disable: true
+  - property: high_humidity
+    disable: true
+  - property: high_temperature
+    disable: true
+  - property: holiday_mode
+    disable: true
+  - property: human_on_off_status
+    disable: true
+  - property: human_sense_light_status
+    disable: true
+  - property: human_sense_ui_display_state
+    disable: true
+  - property: human_sensor_switch_exist
+    disable: true
+  - property: humdy_test_switch_state
+    disable: true
+  - property: humidity_sensor_failure
+    disable: true
+  - property: ice_making_b_switch_status
+    disable: true
+  - property: ice_making_full_status
+    disable: true
+  - property: ice_making_machine_failure
+    disable: true
+  - property: ice_making_state
+    disable: true
+  - property: ice_sensor_failure_flag
+    disable: true
+  - property: ice_temperature_sensor_header_failure_flag
+    disable: true
+  - property: inlet_pipe_temp_sens_head_failure
+    disable: true
+  - property: key_press_sound_volume
+    disable: true
+  - property: language_select
+    disable: true
+  - property: load_operation_status2
+    disable: true
+  - property: lock_fresh_mode
+    disable: true
+  - property: lock_key
+    disable: true
+  - property: low_humidity
+    disable: true
+  - property: low_temperature
+    disable: true
+  - property: low_wine_area_c_evaporator_fault
+    disable: true
+  - property: low_wine_area_c_fan_fault
+    disable: true
+  - property: low_wine_area_c_humdy_fault
+    disable: true
+  - property: low_wine_area_c_temp_fault
+    disable: true
+  - property: lumin_value_of_interior_light
+    optional: true
+  - property: mainboard_type
+    disable: true
+  - property: mainboard_version
+    disable: true
+  - property: market_mode_exist
+    disable: true
+  - property: measured_vibrations
+    disable: true
+  - property: medium_humidity
+    disable: true
+  - property: medium_temperature
+    disable: true
+  - property: micro_water_supply_mode
+    disable: true
+  - property: mid_wine_area_b_evaporator_fault
+    disable: true
+  - property: mid_wine_area_b_fan_fault
+    disable: true
+  - property: mid_wine_area_b_humdy_fault
+    disable: true
+  - property: mid_wine_area_b_temp_fault
+    disable: true
+  - property: mode_key
+    disable: true
+  - property: model_type
+    disable: true
+  - property: monitor
+    disable: true
+  - property: monitor_set
+    disable: true
+  - property: monitor_set_act
+    disable: true
+  - property: night_mode_end_hour
+    disable: true
+  - property: night_mode_end_min
+    disable: true
+  - property: night_mode_light_dark_level
+    disable: true
+  - property: night_mode_screen_dark_level
+    disable: true
+  - property: night_mode_start_hour
+    disable: true
+  - property: night_mode_start_min
+    disable: true
+  - property: night_mode_status
+    disable: true
+  - property: normal_sound_size
+    disable: true
+  - property: not_active
+    disable: true
+  - property: open_freeze_door_alarm
+    disable: true
+  - property: open_refrigerator_door_alarm
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: open_the_door_alarm
+    disable: true
+  - property: open_variation_door_alarm
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: pairing
+    disable: true
+  - property: pairing_active
+    disable: true
+  - property: power_hundred_ten_value
+    disable: true
+  - property: power_one_tenths_value
+    disable: true
+  - property: power_voltage
+    disable: true
+  - property: quiet_mode_status
+    disable: true
+  - property: real_humidity
+    disable: true
+  - property: real_humidity_b
+    disable: true
+  - property: real_humidity_c
+    disable: true
+  - property: ref_light
+    disable: true
+  - property: refr_defrosting_failure
+    disable: true
+  - property: refr_dry_wet_room_sens_failure
+    disable: true
+  - property: refr_evap_temp_sens_head_failure
+    disable: true
+  - property: refr_fan_failure
+    disable: true
+  - property: refr_key
+    disable: true
+  - property: refr_room
+    disable: true
+  - property: refr_room_open
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: door
+      options:
+        0: false
+        1: true
+  - property: refr_room_over_temp_alarm
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: refr_temp_sens_head_failure
+    disable: true
+  - property: refr_var_room_sens_failure
+    disable: true
+  - property: refrigerator_door_open_time
+    disable: true
+  - property: refrigerator_freeze_swith
+    disable: true
+  - property: refrigerator_freeze_swith_state
+    disable: true
+  - property: refrigerator_max_temperature
+    disable: true
+  - property: refrigerator_min_temperature
+    disable: true
+  - property: refrigerator_poweroff_ad
+    disable: true
+  - property: refrigerator_poweron_ad
+    disable: true
+  - property: refrigerator_real_temperature
+    sensor:
+      device_class: temperature
+      unit: °C
+      state_class: measurement
+      unknown_value: -40
+  - property: refrigerator_sensor_real_temperature
+    optional: true
+    entity_category: diagnostic
+    sensor:
+      device_class: temperature
+      unit: °C
+      state_class: measurement
+      unknown_value: -40
+  - property: refrigerator_temperature
+    unavailable: -40
+    number:
+      device_class: temperature
+      unit: °C
+      min_value: 5
+      max_value: 20
+      command:
+        name: SET_REFRIGERATOR_TEMPERATURE
+  - property: reserve45
+    disable: true
+  - property: reserve46
+    disable: true
+  - property: reserve47
+    disable: true
+  - property: reserve48
+    disable: true
+  - property: reserve49
+    disable: true
+  - property: reserve50
+    disable: true
+  - property: reserve51
+    disable: true
+  - property: reserve52
+    disable: true
+  - property: reserve53
+    disable: true
+  - property: reserve54
+    disable: true
+  - property: reserve55
+    disable: true
+  - property: reserve56
+    disable: true
+  - property: reserve57
+    disable: true
+  - property: reserve58
+    disable: true
+  - property: reserve59
+    disable: true
+  - property: reserve60
+    disable: true
+  - property: reserve61
+    disable: true
+  - property: reserve62
+    disable: true
+  - property: reserve63
+    disable: true
+  - property: reserve64
+    disable: true
+  - property: reserve65
+    disable: true
+  - property: reserve66
+    disable: true
+  - property: reserve67
+    disable: true
+  - property: reserve68
+    disable: true
+  - property: reserve69
+    disable: true
+  - property: reserve70
+    disable: true
+  - property: reserve71
+    disable: true
+  - property: reserve72
+    disable: true
+  - property: rgb_atmosphere_mode_b_value
+    disable: true
+  - property: rgb_atmosphere_mode_g_value
+    disable: true
+  - property: rgb_atmosphere_mode_r_value
+    disable: true
+  - property: rgb_function_mode_b_value
+    disable: true
+  - property: rgb_function_mode_g_value
+    disable: true
+  - property: rgb_function_mode_r_value
+    disable: true
+  - property: rgb_light_atmosphere_brightness
+    disable: true
+  - property: rgb_light_atmosphere_on_time
+    disable: true
+  - property: rgb_light_function_brightness
+    disable: true
+  - property: rgb_light_function_on_time
+    disable: true
+  - property: rgb_light_normal_brightness
+    disable: true
+  - property: rgb_light_state
+    disable: true
+  - property: rgb_normal_mode_b_value
+    disable: true
+  - property: rgb_normal_mode_g_value
+    disable: true
+  - property: rgb_normal_mode_r_value
+    disable: true
+  - property: right_free_sensor_failure
+    disable: true
+  - property: run_status_flag_5
+    disable: true
+  - property: running_status
+    disable: true
+  - property: running_status3
+    disable: true
+  - property: rx_failure
+    disable: true
+  - property: sabbath_mode_status
+    optional: true
+  - property: sabbath_mode_switch_status
+    entity_category: config
+    switch:
+      command:
+        name: SET_SABBATH_MODE
+  - property: save_mode
+    disable: true
+  - property: screen_display_brightness
+    disable: true
+  - property: screen_display_lock
+    disable: true
+  - property: screen_to_clock_time
+    disable: true
+  - property: screen_to_standby_time
+    disable: true
+  - property: sensor_failure_status
+    disable: true
+  - property: sensor_failure_status2
+    disable: true
+  - property: sf_mode
+    disable: true
+  - property: sf_sr_mutex_mode
+    disable: true
+  - property: shelf_light_a_state
+    disable: true
+  - property: shelf_light_atmosphere_mode_brightness
+    disable: true
+  - property: shelf_light_b_state
+    disable: true
+  - property: shelf_light_c_state
+    disable: true
+  - property: shelf_light_function_mode_brightness
+    disable: true
+  - property: shelf_light_function_on_time
+    disable: true
+  - property: shelf_light_normal_on_time
+    disable: true
+  - property: show_mode
+    disable: true
+  - property: special_space
+    disable: true
+  - property: sr_mode
+    disable: true
+  - property: standby_mode_state
+    disable: true
+  - property: standby_mode_status
+    entity_category: config
+    optional: true
+    switch:
+      command:
+        name: SET_STANDBY_MODE
+  - property: standby_mode_valid
+    disable: true
+  - property: super_water_supply_mode
+    disable: true
+  - property: temp_auto_ctrl_mode_exist
+    disable: true
+  - property: temp_auto_ctrl_mode_state
+    disable: true
+  - property: temperature_room_judge
+    optional: true
+  - property: temperature_unit
+    entity_category: config
+    optional: true
+    select:
+      options:
+        0: celsius
+        1: fahrenheit
+      command:
+        name: SET_TEMPERATURE_UNIT
+  - property: theme_color
+    disable: true
+  - property: tx_failure
+    disable: true
+  - property: unfreeze_run_status
+    disable: true
+  - property: unfreeze_switch_status
+    disable: true
+  - property: unpair_all_users
+    disable: true
+  - property: up_wine_area_a_evaporator_fault
+    disable: true
+  - property: up_wine_area_a_fan_fault
+    disable: true
+  - property: up_wine_area_a_humdy_fault
+    disable: true
+  - property: up_wine_area_a_temp_fault
+    disable: true
+  - property: user_debacilli_mode
+    disable: true
+  - property: vacuum_on_off_status
+    disable: true
+  - property: var_room_open_2
+    disable: true
+  - property: var_room_over_temp_alarm
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+  - property: vari_evap_temp_sens_head_failure
+    disable: true
+  - property: vari_key
+    disable: true
+  - property: vari_room
+    disable: true
+  - property: vari_room_open
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: door
+      options:
+        0: false
+        1: true
+  - property: vari_temp_sens_head_failure
+    disable: true
+  - property: variable_fan_failure_status
+    disable: true
+  - property: variable_heater_failure_status
+    disable: true
+  - property: variable_temperature_space
+    disable: true
+  - property: variation_door_open_time
+    disable: true
+  - property: variation_max_temperature
+    disable: true
+  - property: variation_min_temperature
+    disable: true
+  - property: variation_poweroff_ad
+    disable: true
+  - property: variation_poweron_ad
+    disable: true
+  - property: variation_real_temperature
+    sensor:
+      device_class: temperature
+      unit: °C
+      state_class: measurement
+      unknown_value: -40
+  - property: variation_sensor_real_temperature
+    optional: true
+    entity_category: diagnostic
+    sensor:
+      device_class: temperature
+      unit: °C
+      state_class: measurement
+      unknown_value: -40
+  - property: variation_temperature
+    unavailable: -40
+    number:
+      device_class: temperature
+      unit: °C
+      min_value: 5
+      max_value: 20
+      command:
+        name: SET_VARIATION_TEMPERATURE
+  - property: vibration_alarm
+    disable: true
+  - property: vibration_sensor_fault
+    disable: true
+  - property: water_box_alarm_switch_state
+    disable: true
+  - property: water_box_lack_status
+    disable: true
+  - property: water_box_mode_status
+    disable: true
+  - property: water_filter_surplus_time
+    disable: true
+  - property: water_filter_time_reset
+    disable: true
+  - property: water_tank_install_state
+    disable: true
+  - property: wet_and_dry_space
+    disable: true
+  - property: wifi_fault_flag
+    disable: true
+  - property: wifi_handshake_fault_flag
+    disable: true
+  - property: wifi_next_sendtime
+    disable: true
+  - property: wifi_rx_fault_flag
+    disable: true
+  - property: wifi_setting
+    disable: true
+  - property: wifi_tx_fault_flag
+    disable: true
+  - property: will_fresh_light_status
+    disable: true
+  - property: will_fress_light_exist
+    disable: true
+  - property: will_light_market_mode_state
+    disable: true
+  - property: will_light_mode_exist
+    disable: true
+  - property: will_light_mode_state
+    disable: true
+  - property: will_light_switch_state
+    disable: true
+  - property: wine_area_switch_status
+    disable: true
+  - property: wine_b_switch__area
+    disable: true
+  - property: wine_light
+    entity_category: config
+    switch:
+      command:
+        name: SET_WINE_LIGHT
+  - property: wine_sensor_failure_flag
+    disable: true
+  - property: work_mode1
+    disable: true
+  - property: work_mode2
+    disable: true

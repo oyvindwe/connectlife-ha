@@ -4836,6 +4836,9 @@
       "sabbath_mode_settingstart_timeminute": {
         "name": "Sabbath mode setting start time minute"
       },
+      "sabbath_mode_status": {
+        "name": "Sabbatmodus status"
+      },
       "sand_timer1_duration_in_seconds": {
         "name": "Zandloper 1 duur (seconden)"
       },
@@ -7837,6 +7840,9 @@
       "child_lock_status_status": {
         "name": "Status kinderbeveiliging"
       },
+      "child_lock_switch_status": {
+        "name": "Kinderslot"
+      },
       "cleanairstatus": {
         "name": "Schone lucht"
       },
@@ -7942,6 +7948,9 @@
       "proximitysensorstatus": {
         "name": "Nabijheidssensor"
       },
+      "sabbath_mode_switch_status": {
+        "name": "Sabbatmodus"
+      },
       "save_mode": {
         "name": "Spaarstand"
       },
@@ -7983,6 +7992,9 @@
       },
       "sr_mode": {
         "name": "SR-modus"
+      },
+      "standby_mode_status": {
+        "name": "Stand-bymodus"
       },
       "steam": {
         "name": "Stoom"
@@ -8067,6 +8079,9 @@
       },
       "welcome": {
         "name": "Welkom"
+      },
+      "wine_light": {
+        "name": "Wijnverlichting"
       }
     },
     "water_heater": {

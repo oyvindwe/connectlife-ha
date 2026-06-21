@@ -4836,6 +4836,9 @@
       "sabbath_mode_settingstart_timeminute": {
         "name": "Sabbatsmodus \u2013 start-minutt"
       },
+      "sabbath_mode_status": {
+        "name": "Status for sabbatsmodus"
+      },
       "sand_timer1_duration_in_seconds": {
         "name": "Eggur 1 \u2013 varighet"
       },
@@ -7837,6 +7840,9 @@
       "child_lock_status_status": {
         "name": "Barnesikringsstatus"
       },
+      "child_lock_switch_status": {
+        "name": "Barnesikring"
+      },
       "cleanairstatus": {
         "name": "Ren luft"
       },
@@ -7942,6 +7948,9 @@
       "proximitysensorstatus": {
         "name": "N\u00e6rhetssensor"
       },
+      "sabbath_mode_switch_status": {
+        "name": "Sabbatsmodus"
+      },
       "save_mode": {
         "name": "Sparemodus"
       },
@@ -7983,6 +7992,9 @@
       },
       "sr_mode": {
         "name": "SR-modus"
+      },
+      "standby_mode_status": {
+        "name": "Hvilemodus"
       },
       "steam": {
         "name": "Damp"
@@ -8067,6 +8079,9 @@
       },
       "welcome": {
         "name": "Velkommen"
+      },
+      "wine_light": {
+        "name": "Vinlys"
       }
     },
     "water_heater": {

@@ -2440,6 +2440,9 @@
       "running_status": {
         "name": "Laufstatus"
       },
+      "sabbath_mode_status": {
+        "name": "Sabbatmodus-Status"
+      },
       "sand_timer1_duration_in_seconds": {
         "name": "Sanduhr 1 Dauer in Sekunden"
       },
@@ -3719,6 +3722,9 @@
       "child_lock_status_status": {
         "name": "Kindersicherungsstatus"
       },
+      "child_lock_switch_status": {
+        "name": "Kindersicherung"
+      },
       "cleaning_reminder_setting": {
         "name": "Reinigungserinnerung"
       },
@@ -3791,6 +3797,9 @@
       "prewash": {
         "name": "Vorw\u00e4sche"
       },
+      "sabbath_mode_switch_status": {
+        "name": "Sabbatmodus"
+      },
       "save_mode": {
         "name": "Sparmodus"
       },
@@ -3817,6 +3826,9 @@
       },
       "sr_mode": {
         "name": "SR-Modus"
+      },
+      "standby_mode_status": {
+        "name": "Standby-Modus"
       },
       "steam": {
         "name": "Dampf"
@@ -3871,6 +3883,9 @@
       },
       "welcome": {
         "name": "Willkommen"
+      },
+      "wine_light": {
+        "name": "Weinlicht"
       }
     },
     "water_heater": {

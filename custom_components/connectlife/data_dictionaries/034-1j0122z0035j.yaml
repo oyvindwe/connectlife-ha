@@ -1,0 +1,15 @@
+# Model: Hisense Wine Cooler RW3N122GSLF
+# 2-zone wine cooler. Zone C (freeze_*) is not fitted on this model.
+properties:
+  - property: freeze_real_temperature
+    disable: true
+  - property: freeze_sensor_real_temperature
+    disable: true
+  - property: freeze_temperature
+    disable: true
+  # Sensors permanently at the -40 "no reading" sentinel on this model: no ambient
+  # sensor, and (unlike zone A) no zone B evaporator sensor.
+  - property: environment_real_temperature
+    disable: true
+  - property: refrigerator_sensor_real_temperature
+    disable: true

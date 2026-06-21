@@ -1095,6 +1095,9 @@
       "rinsenum": {
         "name": "Aclarados extra"
       },
+      "sabbath_mode_status": {
+        "name": "Estado del modo Sabbath"
+      },
       "sand_timer1_duration_in_seconds": {
         "name": "Duraci\u00f1on temporizador 1"
       },
@@ -1643,6 +1646,9 @@
       "child_lock_status_status": {
         "name": "Estado del bloqueo infantil"
       },
+      "child_lock_switch_status": {
+        "name": "Bloqueo para ni\u00f1os"
+      },
       "drum_light": {
         "name": "Luz tambor"
       },
@@ -1658,8 +1664,14 @@
       "prewash": {
         "name": "Prelavado"
       },
+      "sabbath_mode_switch_status": {
+        "name": "Modo Sabbath"
+      },
       "save_mode": {
         "name": "Modo ahorro"
+      },
+      "standby_mode_status": {
+        "name": "Modo en espera"
       },
       "steam": {
         "name": "Vapor"
@@ -1690,6 +1702,9 @@
       },
       "t_up_down": {
         "name": "Oscilaci\u00f3n vertical"
+      },
+      "wine_light": {
+        "name": "Luz de la vinoteca"
       }
     },
     "water_heater": {
