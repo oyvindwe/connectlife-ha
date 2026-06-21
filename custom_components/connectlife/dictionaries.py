@@ -50,6 +50,7 @@ MAX_VALUE = "max_value"
 MIN_VALUE = "min_value"
 MULTIPLIER = "multiplier"
 OPTIONAL = "optional"
+PRIORITY = "priority"
 TARGET = "target"
 READ_ONLY = "read_only"
 STATE_CLASS = "state_class"
@@ -103,6 +104,12 @@ class Climate:
     unknown_value: int | None
     min_value: int | dict[str, int] | None
     max_value: int | dict[str, int] | None
+    # Tie-break when several properties map to the same climate target. The
+    # lowest-priority candidate that the device actually exposes wins the
+    # target; the rest fall back to their per-property platform (if any). Lower
+    # number = preferred. Default is intentionally large so explicitly-ranked
+    # candidates win.
+    priority: int
 
     def __init__(self, name: str, climate: dict | None):
         if climate is None:
@@ -110,6 +117,7 @@ class Climate:
         self.target = _val(climate, TARGET)
         if self.target is None:
             _LOGGER.warning("Missing climate.target for for %s", name)
+        self.priority = _val(climate, PRIORITY, 100)
         self.options = _val(climate, OPTIONS, {})
         if not self.options and self.target in [
             FAN_MODE,
@@ -357,12 +365,20 @@ class Property:
         self.combine = _val(entry, COMBINE)
         self.translation_key = _val(entry, TRANSLATION_KEY)
 
-        if Platform.BINARY_SENSOR in entry:
-            self.binary_sensor = BinarySensor(self.name, entry[Platform.BINARY_SENSOR])
-        elif Platform.CLIMATE in entry:
+        # A property may carry one device-level platform (climate / humidifier /
+        # water_heater) AND one per-property platform (binary_sensor / number /
+        # select / sensor / switch). The device-level block acts as a target
+        # candidacy; when the device also exposes a higher-priority candidate for
+        # that target, this property falls back to its per-property platform.
+        if Platform.CLIMATE in entry:
             self.climate = Climate(self.name, entry[Platform.CLIMATE])
         elif Platform.HUMIDIFIER in entry:
             self.humidifier = Humidifier(self.name, entry[Platform.HUMIDIFIER])
+        elif Platform.WATER_HEATER in entry:
+            self.water_heater = WaterHeater(self.name, entry[Platform.WATER_HEATER])
+
+        if Platform.BINARY_SENSOR in entry:
+            self.binary_sensor = BinarySensor(self.name, entry[Platform.BINARY_SENSOR])
         elif Platform.NUMBER in entry:
             self.number = Number(self.name, entry[Platform.NUMBER])
         elif Platform.SENSOR in entry:
@@ -371,9 +387,7 @@ class Property:
             self.select = Select(self.name, entry[Platform.SELECT])
         elif Platform.SWITCH in entry:
             self.switch = Switch(self.name, entry[Platform.SWITCH])
-        elif Platform.WATER_HEATER in entry:
-            self.water_heater = WaterHeater(self.name, entry[Platform.WATER_HEATER])
-        else:
+        elif not any(p in entry for p in PLATFORM_KEYS):
             self.sensor = Sensor(self.name, {})
 
 
@@ -441,16 +455,22 @@ class Dictionary:
     statistics_sensors: dict[str, bool] = field(default_factory=dict)
 
 
-PLATFORM_KEYS = (
-    Platform.BINARY_SENSOR,
+# Device-level platforms own a `target` and may coexist with a per-property
+# platform on the same property (the per-property block is the fallback when
+# another property wins the target).
+DEVICE_PLATFORM_KEYS = (
     Platform.CLIMATE,
     Platform.HUMIDIFIER,
+    Platform.WATER_HEATER,
+)
+PER_PROPERTY_PLATFORM_KEYS = (
+    Platform.BINARY_SENSOR,
     Platform.NUMBER,
     Platform.SELECT,
     Platform.SENSOR,
     Platform.SWITCH,
-    Platform.WATER_HEATER,
 )
+PLATFORM_KEYS = DEVICE_PLATFORM_KEYS + PER_PROPERTY_PLATFORM_KEYS
 
 
 def _merge_property(base: dict | None, override: dict) -> dict:
@@ -466,33 +486,49 @@ def _merge_property(base: dict | None, override: dict) -> dict:
     A bare platform key in the override (``switch:`` with no value, parsed as
     ``None``) is YAML shorthand for ``{}``: it means "this property uses the
     given platform with no overrides", not "remove the platform from base".
-    To convert a property to a different platform, declare the new platform
-    key explicitly with the desired contents; to suppress an entity, use
-    ``disable: true``.
+
+    A property's platforms are merged in two independent groups — the
+    device-level platform (climate / humidifier / water_heater) and the
+    per-property platform (binary_sensor / number / select / sensor / switch).
+    Within a group, declaring a different platform key replaces the base's; an
+    override that touches only one group leaves the other intact (so a subtype
+    adding a ``climate`` candidacy keeps the base ``switch`` as the fallback,
+    and a subtype tweaking the ``switch`` keeps the inherited ``climate``).
+    To suppress an entity, use ``disable: true``.
     """
     if base is None:
         return dict(override)
 
     result = dict(base)
-    base_plat = next((p for p in PLATFORM_KEYS if p in base), None)
-    override_plat = next((p for p in PLATFORM_KEYS if p in override), None)
-
     for key, val in override.items():
         if key in PLATFORM_KEYS:
             continue
         result[key] = val
 
+    for group in (PER_PROPERTY_PLATFORM_KEYS, DEVICE_PLATFORM_KEYS):
+        _merge_platform_group(result, base, override, group)
+    return result
+
+
+def _merge_platform_group(result: dict, base: dict, override: dict, group: tuple) -> None:
+    """Merge the ``override`` platform within ``group`` onto ``result`` in place.
+
+    ``result`` already carries the base's platform for this group (it starts as
+    a copy of ``base``). If the override declares no platform in this group, the
+    base's platform is left untouched.
+    """
+    base_plat = next((p for p in group if p in base), None)
+    override_plat = next((p for p in group if p in override), None)
     if override_plat is None:
-        return result
+        return
     override_val = override[override_plat]
     if base_plat == override_plat:
         inner_override = {} if override_val is None else override_val
         result[override_plat] = _merge_platform_block(base[base_plat], inner_override)
-        return result
+        return
     if base_plat is not None:
         result.pop(base_plat, None)
     result[override_plat] = override_val
-    return result
 
 
 def _merge_platform_block(base, override):

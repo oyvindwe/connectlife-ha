@@ -285,6 +285,9 @@ properties:
   - property: t_swing_angle
     climate:
       target: swing_mode
+      # Preferred swing_mode control: this multi-position axis wins over the
+      # on/off t_up_down fallback on devices that expose both.
+      priority: 1
       options:
         # Ordered logically, not by key
         0: swing
@@ -357,8 +360,17 @@ properties:
     switch:
       device_class: switch
   - property: t_up_down
+    # On/off vertical swing. Used as the swing_mode control on devices that
+    # expose t_up_down but not the richer t_swing_angle (priority 1); when both
+    # are present, t_swing_angle wins and t_up_down falls back to this switch.
     switch:
       device_class: switch
+    climate:
+      target: swing_mode
+      priority: 2
+      options:
+        0: "off"
+        1: "on"
     icon: mdi:arrow-oscillating
   - property: t_work_mode
     climate:

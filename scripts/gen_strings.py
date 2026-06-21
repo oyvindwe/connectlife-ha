@@ -103,59 +103,62 @@ def main(basedir):
                             ):
                                 if include_option(option, filename):
                                     strings["entity"]["humidifier"]["connectlife"]["state_attributes"]["state"][option] = pretty(option)
-                    else:
-                        if "disable" in property and property["disable"]:
-                            continue
-                        key = to_key(property.get("translation_key") or property["property"])
-                        if not any(entity_type in property for entity_type in ["binary_sensor", "climate", "humidifier", "number", "select", "sensor", "switch", "water_heater"]):
-                            valid_properties.setdefault("sensor", set()).add(key)
+                    # A property may carry a per-property platform alongside a
+                    # climate/humidifier block (e.g. t_up_down is a switch that
+                    # also acts as the swing_mode fallback), so emit its name
+                    # independently of the climate/humidifier option states above.
+                    if "disable" in property and property["disable"]:
+                        continue
+                    key = to_key(property.get("translation_key") or property["property"])
+                    if not any(entity_type in property for entity_type in ["binary_sensor", "climate", "humidifier", "number", "select", "sensor", "switch", "water_heater"]):
+                        valid_properties.setdefault("sensor", set()).add(key)
+                        name = property["property"]
+                        if "sensor" not in strings["entity"]:
+                            strings["entity"]["sensor"] = {}
+                        if key not in strings["entity"]["sensor"]:
+                            strings["entity"]["sensor"][key] = {"name": pretty(name)}
+                        elif "name" not in strings["entity"]["sensor"][key]:
+                            strings["entity"]["sensor"][key]["name"] = pretty(name)
+                    for entity_type in ["binary_sensor", "switch", "number", "sensor", "select"]:
+                        if entity_type in property:
+                            if entity_type not in strings["entity"]:
+                                strings["entity"][entity_type] = {}
                             name = property["property"]
-                            if "sensor" not in strings["entity"]:
-                                strings["entity"]["sensor"] = {}
-                            if key not in strings["entity"]["sensor"]:
-                                strings["entity"]["sensor"][key] = {"name": pretty(name)}
-                            elif "name" not in strings["entity"]["sensor"][key]:
-                                strings["entity"]["sensor"][key]["name"] = pretty(name)
-                        for entity_type in ["binary_sensor", "switch", "number", "sensor", "select"]:
-                            if entity_type in property:
-                                if entity_type not in strings["entity"]:
-                                    strings["entity"][entity_type] = {}
-                                name = property["property"]
-                                key = to_key(property.get("translation_key") or name)
-                                if key not in strings["entity"][entity_type]:
-                                    strings["entity"][entity_type][key] = {"name": pretty(name)}
-                                elif "name" not in strings["entity"][entity_type][key]:
-                                    strings["entity"][entity_type][key]["name"] = pretty(name)
-                                valid_properties.setdefault(entity_type, set()).add(key)
-                                if (
-                                        property[entity_type] is not None
-                                        and "options" in property[entity_type]
-                                        and property[entity_type]["options"] is not None
-                                ):
-                                    for option in property[entity_type]["options"].values():
-                                        valid_options.setdefault((entity_type, key), set()).add(option)
-                                if (
-                                        (
-                                                (
-                                                        entity_type == "sensor"
-                                                        and entity_type in property
-                                                        and property[entity_type] is not None
-                                                        and "device_class" in property[entity_type]
-                                                        and property[entity_type]["device_class"] == "enum")
-                                                or entity_type == "select"
-                                        )
-                                        and "options" in property[entity_type]
-                                ):
-                                    for option in property[entity_type]["options"].values():
-                                        if option in ["off", "on"]:
-                                            continue
-                                        if not "state" in strings["entity"][entity_type][key]:
-                                            strings["entity"][entity_type][key]["state"] = {}
-                                        if not option in strings["entity"][entity_type][key]["state"]:
-                                            if include_option(option, filename):
-                                                strings["entity"][entity_type][key]["state"][option] = pretty(option)
-                                    if "state" in strings["entity"][entity_type][key] and not strings["entity"][entity_type][key]["state"]:
-                                        del(strings["entity"][entity_type][key]["state"])
+                            key = to_key(property.get("translation_key") or name)
+                            if key not in strings["entity"][entity_type]:
+                                strings["entity"][entity_type][key] = {"name": pretty(name)}
+                            elif "name" not in strings["entity"][entity_type][key]:
+                                strings["entity"][entity_type][key]["name"] = pretty(name)
+                            valid_properties.setdefault(entity_type, set()).add(key)
+                            if (
+                                    property[entity_type] is not None
+                                    and "options" in property[entity_type]
+                                    and property[entity_type]["options"] is not None
+                            ):
+                                for option in property[entity_type]["options"].values():
+                                    valid_options.setdefault((entity_type, key), set()).add(option)
+                            if (
+                                    (
+                                            (
+                                                    entity_type == "sensor"
+                                                    and entity_type in property
+                                                    and property[entity_type] is not None
+                                                    and "device_class" in property[entity_type]
+                                                    and property[entity_type]["device_class"] == "enum")
+                                            or entity_type == "select"
+                                    )
+                                    and "options" in property[entity_type]
+                            ):
+                                for option in property[entity_type]["options"].values():
+                                    if option in ["off", "on"]:
+                                        continue
+                                    if not "state" in strings["entity"][entity_type][key]:
+                                        strings["entity"][entity_type][key]["state"] = {}
+                                    if not option in strings["entity"][entity_type][key]["state"]:
+                                        if include_option(option, filename):
+                                            strings["entity"][entity_type][key]["state"][option] = pretty(option)
+                                if "state" in strings["entity"][entity_type][key] and not strings["entity"][entity_type][key]["state"]:
+                                    del(strings["entity"][entity_type][key]["state"])
 
             if "climate" in appliance:
                 if "presets" in appliance["climate"]:
