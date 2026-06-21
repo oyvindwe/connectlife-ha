@@ -22,6 +22,7 @@ from .const import (
 from .coordinator import ConnectLifeCoordinator
 from .dictionaries import Dictionaries, Dictionary
 from .entity import ConnectLifeEntity
+from .utils import has_platform
 from connectlife.appliance import ConnectLifeAppliance
 
 _LOGGER = logging.getLogger(__name__)
@@ -44,7 +45,7 @@ async def async_setup_entry(
 
 def is_humidifier(dictionary: Dictionary):
     for prop in dictionary.properties.values():
-        if hasattr(prop, Platform.HUMIDIFIER):
+        if has_platform(Platform.HUMIDIFIER, prop):
             return True
     return False
 
@@ -74,7 +75,7 @@ class ConnectLifeHumidifier(ConnectLifeEntity, HumidifierEntity):
 
         device_class = None
         for prop in data_dictionary.properties.values():
-            if hasattr(prop, Platform.HUMIDIFIER):
+            if has_platform(Platform.HUMIDIFIER, prop):
                 if prop.humidifier.device_class is not None:
                     device_class = prop.humidifier.device_class
                     break
@@ -87,7 +88,7 @@ class ConnectLifeHumidifier(ConnectLifeEntity, HumidifierEntity):
         )
 
         for dd_entry in data_dictionary.properties.values():
-            if hasattr(dd_entry, Platform.HUMIDIFIER) and dd_entry.name in appliance.status_list and dd_entry.humidifier.target is not None:
+            if has_platform(Platform.HUMIDIFIER, dd_entry) and dd_entry.name in appliance.status_list and dd_entry.humidifier.target is not None:
                 target = dd_entry.humidifier.target
                 if target in self.target_map:
                     _LOGGER.warning(
