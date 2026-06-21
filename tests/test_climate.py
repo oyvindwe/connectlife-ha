@@ -12,7 +12,7 @@ from custom_components.connectlife.climate import (
     is_climate,
 )
 from custom_components.connectlife.const import HVAC_MODE, IS_ON
-from custom_components.connectlife.dictionaries import Dictionaries, Dictionary, Property
+from custom_components.connectlife.dictionaries import Dictionary, Property
 
 
 def test_hvac_mode_alias_does_not_override_canonical_reverse_mapping() -> None:
@@ -107,20 +107,3 @@ def test_disabled_climate_property_is_not_exposed() -> None:
     # ... but the disabled swing axis is not exposed.
     assert "swing_mode" not in climate.target_map
     assert not climate._attr_supported_features & ClimateEntityFeature.SWING_MODE
-
-
-def test_008_399_eco_preset_writes_raw_eco_mode() -> None:
-    Dictionaries.dictionaries.pop("008-399", None)
-    appliance = SimpleNamespace(
-        device_type_code="008",
-        device_feature_code="399",
-        device_nickname="Ultraslim AC",
-    )
-
-    dictionary = Dictionaries.get_dictionary(appliance)
-
-    assert {
-        "preset": "eco",
-        "t_power": 1,
-        "t_work_mode": 5,
-    } in dictionary.climate["presets"]

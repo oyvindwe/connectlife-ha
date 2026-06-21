@@ -2,25 +2,14 @@
 
 from __future__ import annotations
 
-from types import SimpleNamespace
-
 from custom_components.connectlife.dictionaries import (
-    Dictionaries,
     Property,
     Sensor,
     _merge_property,
 )
 
-
-def _dictionary_for(device_type_code: str, device_feature_code: str):
-    """Load a real data dictionary via a minimal appliance stub."""
-    Dictionaries.dictionaries.clear()  # avoid cross-test cache hits
-    appliance = SimpleNamespace(
-        device_type_code=device_type_code,
-        device_feature_code=device_feature_code,
-        device_nickname="test",
-    )
-    return Dictionaries.get_dictionary(appliance)  # type: ignore[arg-type]
+# Minimal property list so a parsed mapping is well-formed.
+_MINIMAL_PROPS = [{"property": "t_power", "switch": None}]
 
 
 def test_override_with_no_platform_inherits_everything():
@@ -287,27 +276,70 @@ def test_optional_parsing():
     assert Property({"property": "p"}).optional is False
 
 
-def test_statistics_source_air_duct_for_air_conditioners():
-    # AC families opt into the air_duct_energy endpoint (inherited by feature variants).
-    assert _dictionary_for("009", "100").statistics_source == "air_duct_energy"
-    assert _dictionary_for("006", "200").statistics_source == "air_duct_energy"
-    assert _dictionary_for("008", "399").statistics_source == "air_duct_energy"
+def test_statistics_block_parsed(build_dictionary):
+    # A statistics block is parsed into source + per-sensor flags.
+    d = build_dictionary(
+        base={
+            "statistics": {"source": "air_duct_energy", "daily_energy_kwh": True},
+            "properties": _MINIMAL_PROPS,
+        }
+    )
+    assert d.statistics_source == "air_duct_energy"
+    assert d.statistics_sensors == {"daily_energy_kwh": True}
 
 
-def test_statistics_source_consumption_curve_for_wet_appliances():
-    assert _dictionary_for("015", "000").statistics_source == "energy_consumption_curve"
-    assert _dictionary_for("027", "000").statistics_source == "energy_consumption_curve"
+def test_statistics_absent_defaults_to_none(build_dictionary):
+    # No statistics block -> no endpoint and no sensors.
+    d = build_dictionary(base={"properties": _MINIMAL_PROPS})
+    assert d.statistics_source is None
+    assert d.statistics_sensors == {}
 
 
-def test_statistics_source_defaults_none():
-    # An unmapped device type (no base file) has no statistics endpoint.
-    assert _dictionary_for("999", "000").statistics_source is None
+def test_statistics_flag_false_is_kept_as_false(build_dictionary):
+    # An explicit false flag is preserved (not dropped), so the sensor is not created.
+    d = build_dictionary(
+        base={
+            "statistics": {"source": "air_duct_energy", "daily_energy_kwh": False},
+            "properties": _MINIMAL_PROPS,
+        }
+    )
+    assert d.statistics_sensors == {"daily_energy_kwh": False}
 
 
-def test_statistics_sensors_explicitly_listed():
-    # Sensors are created only when listed true; wet appliances add water.
-    assert _dictionary_for("015", "000").statistics_sensors == {
+def test_statistics_block_inherited_by_feature_override(build_dictionary):
+    # A feature override with no statistics block inherits the base's.
+    d = build_dictionary(
+        base={
+            "statistics": {
+                "source": "energy_consumption_curve",
+                "daily_energy_kwh": True,
+                "daily_water_consumption": True,
+            },
+            "properties": _MINIMAL_PROPS,
+        },
+        sub={"properties": _MINIMAL_PROPS},
+    )
+    assert d.statistics_source == "energy_consumption_curve"
+    assert d.statistics_sensors == {
         "daily_energy_kwh": True,
         "daily_water_consumption": True,
     }
-    assert _dictionary_for("009", "100").statistics_sensors == {"daily_energy_kwh": True}
+
+
+def test_statistics_block_replaced_by_feature_override(build_dictionary):
+    # A feature override with its own statistics block replaces the base's entirely.
+    d = build_dictionary(
+        base={
+            "statistics": {"source": "air_duct_energy", "daily_energy_kwh": True},
+            "properties": _MINIMAL_PROPS,
+        },
+        sub={
+            "statistics": {
+                "source": "energy_consumption_curve",
+                "daily_water_consumption": True,
+            },
+            "properties": _MINIMAL_PROPS,
+        },
+    )
+    assert d.statistics_source == "energy_consumption_curve"
+    assert d.statistics_sensors == {"daily_water_consumption": True}

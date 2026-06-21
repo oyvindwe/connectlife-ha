@@ -9,7 +9,7 @@ from connectlife.api import LifeConnectAuthError
 from homeassistant.util import dt as dt_util
 
 from custom_components.connectlife.coordinator import ConnectLifeStatisticsCoordinator
-from custom_components.connectlife.dictionaries import Dictionaries
+from custom_components.connectlife.dictionaries import Dictionaries, Dictionary
 from custom_components.connectlife.sensor import ConnectLifeStatisticsSensor
 from custom_components.connectlife.statistics_sources import (
     AirDuctStatisticsSource,
@@ -122,9 +122,34 @@ def _coordinator(api, data: dict):
     return coord
 
 
+# Synthetic device codes, seeded with statistics dictionaries below so the
+# coordinator's source lookup doesn't depend on any shipped mapping file.
+_AC = ("ac_type", "ac_feat")        # air_duct_energy
+_WM = ("wm_type", "wm_feat")        # energy_consumption_curve
+_NO_STATS = ("plain_type", "plain")  # no statistics endpoint
+
+
+def _dictionary(source, sensors):
+    return Dictionary(
+        climate=None,
+        properties={},
+        buttons=[],
+        statistics_source=source,
+        statistics_sensors=sensors,
+    )
+
+
 @pytest.fixture(autouse=True)
-def _clear_dictionary_cache():
+def _seed_dictionaries():
     Dictionaries.dictionaries.clear()
+    Dictionaries.dictionaries[f"{_AC[0]}-{_AC[1]}"] = _dictionary(
+        "air_duct_energy", {"daily_energy_kwh": True}
+    )
+    Dictionaries.dictionaries[f"{_WM[0]}-{_WM[1]}"] = _dictionary(
+        "energy_consumption_curve",
+        {"daily_energy_kwh": True, "daily_water_consumption": True},
+    )
+    Dictionaries.dictionaries[f"{_NO_STATS[0]}-{_NO_STATS[1]}"] = _dictionary(None, {})
     yield
     Dictionaries.dictionaries.clear()
 
@@ -136,7 +161,7 @@ async def test_coordinator_stores_results_per_device():
             electric_curve={_today_key(): "1.0"}, water_curve={_today_key(): "11.0"}
         ),
     )
-    data = {"ac": _appliance("ac", "009", "100"), "wm": _appliance("wm", "015", "000")}
+    data = {"ac": _appliance("ac", *_AC), "wm": _appliance("wm", *_WM)}
     result = await _coordinator(api, data)._async_update_data()
 
     assert set(result) == {"ac", "wm"}
@@ -148,7 +173,7 @@ async def test_coordinator_stores_results_per_device():
 async def test_coordinator_auth_error_breaks_remaining_devices():
     # AC fetched first and raises auth error -> loop breaks before the washing machine.
     api = _FakeApi(air_duct_exc=LifeConnectAuthError("token rejected"))
-    data = {"ac": _appliance("ac", "009", "100"), "wm": _appliance("wm", "015", "000")}
+    data = {"ac": _appliance("ac", *_AC), "wm": _appliance("wm", *_WM)}
     result = await _coordinator(api, data)._async_update_data()
 
     assert result == {}
@@ -163,7 +188,7 @@ async def test_coordinator_generic_error_yields_none_and_continues():
             electric_curve={_today_key(): "1.0"}, water_curve={}
         ),
     )
-    data = {"ac": _appliance("ac", "009", "100"), "wm": _appliance("wm", "015", "000")}
+    data = {"ac": _appliance("ac", *_AC), "wm": _appliance("wm", *_WM)}
     result = await _coordinator(api, data)._async_update_data()
 
     assert result["ac"] is None  # generic error -> None, not a break
@@ -173,7 +198,7 @@ async def test_coordinator_generic_error_yields_none_and_continues():
 
 async def test_coordinator_skips_device_without_statistics_source():
     api = _FakeApi()
-    data = {"x": _appliance("x", "999", "000")}  # unmapped type -> no source
+    data = {"x": _appliance("x", *_NO_STATS)}  # dictionary has no statistics source
     result = await _coordinator(api, data)._async_update_data()
 
     assert result == {}
