@@ -298,6 +298,9 @@
       "fill_salt": {
         "name": "Recargar sal"
       },
+      "filter_state": {
+        "name": "Estado del filtro"
+      },
       "float_switch": {
         "name": "Interruptor de flotador"
       },
@@ -681,6 +684,9 @@
       }
     },
     "number": {
+      "charcoal_filter_surplus_time": {
+        "name": "Tiempo del filtro de carb\u00f3n"
+      },
       "freeze_max_temperature": {
         "name": "Congelador temperatura m\u00e1xima"
       },
@@ -689,6 +695,9 @@
       },
       "freeze_temperature": {
         "name": "Temperatura Congelador"
+      },
+      "lumin_value_of_interior_light": {
+        "name": "Brillo de la luz interior"
       },
       "refrigerator_max_temperature": {
         "name": "Frigorifico temperatura m\u00e1xima"

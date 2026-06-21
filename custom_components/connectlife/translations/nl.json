@@ -696,6 +696,9 @@
       "fill_salt": {
         "name": "Onthardingszout bijvullen"
       },
+      "filter_state": {
+        "name": "Filterstatus"
+      },
       "float_switch": {
         "name": "Vlotterschakelaar"
       },
@@ -1686,6 +1689,9 @@
       "brightness_setting": {
         "name": "Helderheid"
       },
+      "charcoal_filter_surplus_time": {
+        "name": "Koolstoffiltertijd"
+      },
       "delayendtime": {
         "name": "Delay end time"
       },
@@ -1715,6 +1721,9 @@
       },
       "lightcolortemperature": {
         "name": "Light color temperature"
+      },
+      "lumin_value_of_interior_light": {
+        "name": "Helderheid binnenverlichting"
       },
       "refrigerator_max_temperature": {
         "name": "Koelkast max temperatuur"

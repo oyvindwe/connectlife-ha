@@ -1,7 +1,8 @@
 # Wine cooler
-statistics:
-  source: energy_consumption_curve
-  daily_energy_kwh: true
+#
+# Zones reuse the refrigerator property namespace: upper = variation_*, lower =
+# refrigerator_*, zone C = freeze_*. Entity names stay generic until custom
+# translation keys are supported; the upper/lower split is noted in comments below.
 properties:
   - property: AIR_FRESHNESS
     disable: true
@@ -26,9 +27,19 @@ properties:
   - property: camera_state
     disable: true
   - property: charcoal_filter_expiration_alarm
-    disable: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
   - property: charcoal_filter_surplus_time
-    disable: true
+    entity_category: config
+    number:
+      min_value: 4
+      max_value: 12
+      command:
+        name: SET_CHARCOAL_FILTER_TIME
   - property: charcoal_filter_time_reset
     disable: true
   - property: child_lock_open_alarm
@@ -53,7 +64,12 @@ properties:
   - property: compressor_operating_min_frequency
     disable: true
   - property: condensation_fan_failure_status
-    disable: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
   - property: control_failure_status
     disable: true
   - property: custard_room
@@ -97,7 +113,12 @@ properties:
   - property: electric_energy_percentile_thousands_value
     disable: true
   - property: envi_temp_sens_head_failure
-    disable: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
   - property: environment_humidity
     disable: true
   - property: environment_real_temperature
@@ -127,7 +148,12 @@ properties:
   - property: filter_alarm_time
     disable: true
   - property: filter_state
-    disable: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
   - property: free_defrosting_failure
     disable: true
   - property: free_evap_temp_sens_head_failure
@@ -170,6 +196,7 @@ properties:
       unit: °C
       state_class: measurement
       unknown_value: -40
+  # Zone C; not fitted on the known model (disabled in feature override).
   - property: freeze_temperature
     unavailable: -40
     number:
@@ -244,7 +271,13 @@ properties:
   - property: low_wine_area_c_temp_fault
     disable: true
   - property: lumin_value_of_interior_light
-    optional: true
+    entity_category: config
+    number:
+      unit: "%"
+      min_value: 50
+      max_value: 100
+      command:
+        name: SET_LUMIN_OF_INTERIOR_LIGHT
   - property: mainboard_type
     disable: true
   - property: mainboard_version
@@ -338,7 +371,12 @@ properties:
   - property: refr_dry_wet_room_sens_failure
     disable: true
   - property: refr_evap_temp_sens_head_failure
-    disable: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
   - property: refr_fan_failure
     disable: true
   - property: refr_key
@@ -360,7 +398,12 @@ properties:
         0: false
         1: true
   - property: refr_temp_sens_head_failure
-    disable: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
   - property: refr_var_room_sens_failure
     disable: true
   - property: refrigerator_door_open_time
@@ -377,6 +420,7 @@ properties:
     disable: true
   - property: refrigerator_poweron_ad
     disable: true
+  # Lower zone temperature.
   - property: refrigerator_real_temperature
     sensor:
       device_class: temperature
@@ -391,6 +435,7 @@ properties:
       unit: °C
       state_class: measurement
       unknown_value: -40
+  # Lower zone setpoint (reporter-confirmed lower = refrigerator_*).
   - property: refrigerator_temperature
     unavailable: -40
     number:
@@ -495,7 +540,12 @@ properties:
   - property: running_status3
     disable: true
   - property: rx_failure
-    disable: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
   - property: sabbath_mode_status
     optional: true
   - property: sabbath_mode_switch_status
@@ -571,7 +621,12 @@ properties:
   - property: theme_color
     disable: true
   - property: tx_failure
-    disable: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
   - property: unfreeze_run_status
     disable: true
   - property: unfreeze_switch_status
@@ -600,7 +655,12 @@ properties:
         0: false
         1: true
   - property: vari_evap_temp_sens_head_failure
-    disable: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
   - property: vari_key
     disable: true
   - property: vari_room
@@ -613,7 +673,12 @@ properties:
         0: false
         1: true
   - property: vari_temp_sens_head_failure
-    disable: true
+    entity_category: diagnostic
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
   - property: variable_fan_failure_status
     disable: true
   - property: variable_heater_failure_status
@@ -630,6 +695,7 @@ properties:
     disable: true
   - property: variation_poweron_ad
     disable: true
+  # Upper zone temperature.
   - property: variation_real_temperature
     sensor:
       device_class: temperature
@@ -644,6 +710,7 @@ properties:
       unit: °C
       state_class: measurement
       unknown_value: -40
+  # Upper zone setpoint (reporter-confirmed upper = variation_*).
   - property: variation_temperature
     unavailable: -40
     number:

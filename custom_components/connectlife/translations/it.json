@@ -55,6 +55,9 @@
       "f_e_waterfull": {
         "name": "Acqua piena"
       },
+      "filter_state": {
+        "name": "Stato del filtro"
+      },
       "selected_program_anticrease_status": {
         "name": "Antipiega"
       },
@@ -285,6 +288,14 @@
             }
           }
         }
+      }
+    },
+    "number": {
+      "charcoal_filter_surplus_time": {
+        "name": "Durata del filtro a carbone"
+      },
+      "lumin_value_of_interior_light": {
+        "name": "Luminosit\u00e0 luce interna"
       }
     },
     "select": {

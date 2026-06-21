@@ -112,6 +112,9 @@
       "f_e_waterfull": {
         "name": "R\u00e9servoir d'eau plein"
       },
+      "filter_state": {
+        "name": "\u00c9tat du filtre"
+      },
       "free_defrosting_failure": {
         "name": "D\u00e9faut d\u00e9givrage cong\u00e9lateur"
       },
@@ -344,6 +347,9 @@
       }
     },
     "number": {
+      "charcoal_filter_surplus_time": {
+        "name": "Dur\u00e9e du filtre \u00e0 charbon"
+      },
       "delayendtime": {
         "name": "Fin diff\u00e9r\u00e9e"
       },
@@ -355,6 +361,9 @@
       },
       "freeze_temperature": {
         "name": "Temp\u00e9rature cong\u00e9lateur"
+      },
+      "lumin_value_of_interior_light": {
+        "name": "Luminosit\u00e9 de l'\u00e9clairage int\u00e9rieur"
       },
       "refrigerator_max_temperature": {
         "name": "Temp\u00e9rature max frigo"

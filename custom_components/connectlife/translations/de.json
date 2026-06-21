@@ -652,6 +652,9 @@
       "fill_salt": {
         "name": "Salz nachf\u00fcllen"
       },
+      "filter_state": {
+        "name": "Filterstatus"
+      },
       "float_switch": {
         "name": "Schwimmerschalter"
       },
@@ -1249,6 +1252,9 @@
       "brightness_setting": {
         "name": "Helligkeit"
       },
+      "charcoal_filter_surplus_time": {
+        "name": "Kohlefilter-Zeit"
+      },
       "freeze_max_temperature": {
         "name": "Maximale Gefriertemperatur"
       },
@@ -1263,6 +1269,9 @@
       },
       "gratin_function_set_time_in_seconds": {
         "name": "Gratin Zeiteinstellung"
+      },
+      "lumin_value_of_interior_light": {
+        "name": "Helligkeit Innenbeleuchtung"
       },
       "refrigerator_max_temperature": {
         "name": "Maximale K\u00fchlschranktemperatur"

@@ -935,6 +935,9 @@
       "fill_salt": {
         "name": "Fill salt"
       },
+      "filter_state": {
+        "name": "Filter status"
+      },
       "float_switch": {
         "name": "Float switch"
       },
@@ -1991,6 +1994,9 @@
       "brightness_setting": {
         "name": "Brightness"
       },
+      "charcoal_filter_surplus_time": {
+        "name": "Charcoal filter time"
+      },
       "delayendtime": {
         "name": "Delay end time"
       },
@@ -2020,6 +2026,9 @@
       },
       "lightcolortemperature": {
         "name": "Light color temperature"
+      },
+      "lumin_value_of_interior_light": {
+        "name": "Interior light brightness"
       },
       "programoptiontimestartdelayhour": {
         "name": "Start delay hours"

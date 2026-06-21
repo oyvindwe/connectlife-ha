@@ -696,6 +696,9 @@
       "fill_salt": {
         "name": "Fyll salt"
       },
+      "filter_state": {
+        "name": "Filterstatus"
+      },
       "float_switch": {
         "name": "Flott\u00f8rbryter"
       },
@@ -1686,6 +1689,9 @@
       "brightness_setting": {
         "name": "Lysstyrke"
       },
+      "charcoal_filter_surplus_time": {
+        "name": "Kullfiltertid"
+      },
       "delayendtime": {
         "name": "Utsatt sluttid"
       },
@@ -1715,6 +1721,9 @@
       },
       "lightcolortemperature": {
         "name": "Fargetemperatur for lys"
+      },
+      "lumin_value_of_interior_light": {
+        "name": "Innvendig lysstyrke"
       },
       "refrigerator_max_temperature": {
         "name": "Maks kj\u00f8leskapstemperatur"
