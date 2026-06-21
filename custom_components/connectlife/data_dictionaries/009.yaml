@@ -74,12 +74,28 @@ properties:
   - property: aus_zone8_power
     switch:
       device_class: switch
+  - property: f-filter
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    icon: mdi:air-filter
+    entity_category: diagnostic
   - property: f_cool_qvalue
     sensor:
       unit: BTU/h
       state_class: measurement
     icon: mdi:snowflake
   - property: f_e_arkgrille
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_dwmachine
     binary_sensor:
       device_class: problem
       options:
@@ -207,8 +223,40 @@ properties:
         1: true
     hide: true
     entity_category: diagnostic
+  - property: f_e_over_cold
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_over_hot
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
   - property: f_e_push
     disable: true
+  - property: f_e_upmachine
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
+  - property: f_e_waterfull
+    binary_sensor:
+      device_class: problem
+      options:
+        0: false
+        1: true
+    hide: true
+    entity_category: diagnostic
   - property: f_ecm
     # f_ecm: appears to indicate which unit f_electricity uses (f_ecm=1
     # has been observed alongside mA current values; absent in 009-104,
@@ -426,3 +474,10 @@ properties:
         2: cool
         3: dry
         4: auto
+  # Observed on some units (e.g. 009-19901, 009-109, 009-117) but their
+  # meaning and value range are not yet known, so they are intentionally
+  # left unmapped (they surface as generic diagnostic sensors). Map them
+  # once their semantics are confirmed from a device that actually uses them:
+  #   - t_dal
+  #   - t_demand_response  (likely utility demand-response, unconfirmed)
+  #   - t_talr

@@ -94,6 +94,24 @@
       "existing_sr_mode": {
         "name": "Super-refroidissement disponible"
       },
+      "f-filter": {
+        "name": "Filtre"
+      },
+      "f_e_dwmachine": {
+        "name": "D\u00e9faut de l'unit\u00e9 inf\u00e9rieure"
+      },
+      "f_e_over_cold": {
+        "name": "Protection contre le froid excessif"
+      },
+      "f_e_over_hot": {
+        "name": "Protection contre la surchauffe"
+      },
+      "f_e_upmachine": {
+        "name": "D\u00e9faut de l'unit\u00e9 sup\u00e9rieure"
+      },
+      "f_e_waterfull": {
+        "name": "R\u00e9servoir d'eau plein"
+      },
       "free_defrosting_failure": {
         "name": "D\u00e9faut d\u00e9givrage cong\u00e9lateur"
       },
