@@ -1,1 +1,14 @@
-# No overrides needed; all properties covered by default 009.yaml.
+# Model: HACZ01+HAAZ01 ducted zone controller.
+# The API exposes directional controls, but they do not exist on the device,
+# so we need to explicitly disable them.
+properties:
+  - property: t_swing_angle
+    disable: true
+  - property: t_swing_direction
+    disable: true
+  - property: t_swing_follow
+    disable: true
+  - property: t_left_right
+    disable: true
+  - property: t_up_down
+    disable: true

@@ -568,8 +568,14 @@
       "existing_sr_mode": {
         "name": "Aktueller SR-Modus"
       },
+      "f-filter": {
+        "name": "Filter"
+      },
       "f_e_arkgrille": {
         "name": "Schutzalarm f\u00fcr Kabinengrill"
+      },
+      "f_e_dwmachine": {
+        "name": "Fehler untere Einheit"
       },
       "f_e_filterclean": {
         "name": "Filter reinigen"
@@ -619,6 +625,12 @@
       "f_e_outtemp": {
         "name": "Fehler des Au\u00dfentemperatursensors"
       },
+      "f_e_over_cold": {
+        "name": "Unterk\u00fchlungsschutz"
+      },
+      "f_e_over_hot": {
+        "name": "\u00dcberhitzungsschutz"
+      },
       "f_e_pump": {
         "name": "Pumpe"
       },
@@ -627,6 +639,9 @@
       },
       "f_e_tubetemp": {
         "name": "Temperatur der R\u00f6hre"
+      },
+      "f_e_upmachine": {
+        "name": "Fehler obere Einheit"
       },
       "f_e_waterfull": {
         "name": "Wasser voll"

@@ -37,6 +37,24 @@
       "delaystart_delayend_mode": {
         "name": "Partenza ritardata"
       },
+      "f-filter": {
+        "name": "Filtro"
+      },
+      "f_e_dwmachine": {
+        "name": "Guasto unit\u00e0 inferiore"
+      },
+      "f_e_over_cold": {
+        "name": "Protezione da sovraraffreddamento"
+      },
+      "f_e_over_hot": {
+        "name": "Protezione da surriscaldamento"
+      },
+      "f_e_upmachine": {
+        "name": "Guasto unit\u00e0 superiore"
+      },
+      "f_e_waterfull": {
+        "name": "Acqua piena"
+      },
       "selected_program_anticrease_status": {
         "name": "Antipiega"
       },

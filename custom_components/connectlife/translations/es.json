@@ -262,8 +262,20 @@
       "error_9": {
         "name": "Error 9"
       },
+      "f-filter": {
+        "name": "Filtro"
+      },
+      "f_e_dwmachine": {
+        "name": "Fallo de la unidad inferior"
+      },
       "f_e_filterclean": {
         "name": "Limpiar filtro"
+      },
+      "f_e_over_cold": {
+        "name": "Protecci\u00f3n contra sobreenfriamiento"
+      },
+      "f_e_over_hot": {
+        "name": "Protecci\u00f3n contra sobrecalentamiento"
       },
       "f_e_pump": {
         "name": "Bomba"
@@ -273,6 +285,9 @@
       },
       "f_e_tubetemp": {
         "name": "Temperatura tubo"
+      },
+      "f_e_upmachine": {
+        "name": "Fallo de la unidad superior"
       },
       "f_e_waterfull": {
         "name": "Agua llena"
