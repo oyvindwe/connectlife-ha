@@ -28,6 +28,7 @@ The following top-level fields always inherit, even across platform changes:
 - `disable`
 - `optional`
 - `entity_category`
+- `translation_key`
 - `unavailable`
 - `combine` — if you change the platform and want to drop the base's combine sources, clear it with
   `combine: null`.
@@ -167,6 +168,7 @@ Note that translation keys must be lowercase!
 | `icon`             | `mdi:eye`, etc.                    | Icon to use for the entity.                                                                                                                                                                                                                                                                         |
 | `unavailable`      | integer                            | If the property has this value on the device, no entity is created for it. Use for properties that the device reports as "not available" with a sentinel value.                                                                                                                                     |
 | `entity_category`  | `config`, `diagnostic`             | Whether the entity should be considered a diagnostics or config entity. Defaults to `None`. [More info in HA docs](https://developers.home-assistant.io/docs/core/entity/#registry-properties:~:text=automatic%20device%20registration.-,entity_category,-EntityCategory%20%7C%20None)              |
+| `translation_key`  | string                             | Custom translation key for the entity, used instead of the one derived from the property name. Lets a device-specific mapping name an entity (in `strings.json`/translations). Must be lowercase. Only applies to per-property platforms.                    |
 | `binary_sensor`    | [BinarySensor](#type-binarysensor) | Create a binary sensor of the property.                                                                                                                                                                                                                                                             |
 | `climate`          | [Climate](#type-climate)           | Map the property to a climate entity for the device.                                                                                                                                                                                                                                                |
 | `humidifier`       | [Humidifier](#type-humidifier)     | Map the property to a humidifier entity for the device.                                                                                                                                                                                                                                             |
