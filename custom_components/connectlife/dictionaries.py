@@ -57,6 +57,7 @@ SWITCH = "switch"
 COMBINE = "combine"
 UNAVAILABLE = "unavailable"
 ENTITY_CATEGORY = "entity_category"
+TRANSLATION_KEY = "translation_key"
 UNKNOWN_VALUE = "unknown_value"
 UNIT = "unit"
 WRITE = "write"
@@ -331,6 +332,7 @@ class Property:
     optional: bool
     unavailable: int | None
     entity_category: EntityCategory | None
+    translation_key: str | None
     combine: list[CombineSource] | None
     binary_sensor: BinarySensor
     climate: Climate
@@ -353,6 +355,7 @@ class Property:
             EntityCategory[entity_category.upper()] if entity_category is not None else None
         )
         self.combine = _val(entry, COMBINE)
+        self.translation_key = _val(entry, TRANSLATION_KEY)
 
         if Platform.BINARY_SENSOR in entry:
             self.binary_sensor = BinarySensor(self.name, entry[Platform.BINARY_SENSOR])

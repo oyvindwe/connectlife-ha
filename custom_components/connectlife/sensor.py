@@ -126,7 +126,7 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
                 dd_entry.sensor.unit, appliance=appliance, dictionary=dictionary
             ),
             state_class=state_class,
-            translation_key=self.to_translation_key(status),
+            translation_key=self.to_translation_key(dd_entry.translation_key or status),
             entity_category=dd_entry.entity_category,
         )
         self._refresh_state()

@@ -68,7 +68,7 @@ class ConnectLifeSelect(ConnectLifeEntity, SelectEntity):
             entity_registry_enabled_default=not dd_entry.optional,
             icon=dd_entry.icon,
             name=status.replace("_", " "),
-            translation_key=self.to_translation_key(status),
+            translation_key=self.to_translation_key(dd_entry.translation_key or status),
             entity_category=dd_entry.entity_category,
         )
         self._refresh_state()

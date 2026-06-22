@@ -73,7 +73,7 @@ class ConnectLifeNumberEntity(ConnectLifeEntity, NumberEntity):
             native_unit_of_measurement=to_unit(
                 dd_entry.number.unit, appliance=appliance, dictionary=dictionary
             ),
-            translation_key=self.to_translation_key(status),
+            translation_key=self.to_translation_key(dd_entry.translation_key or status),
             entity_category=dd_entry.entity_category,
         )
         self._refresh_state()

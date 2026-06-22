@@ -276,6 +276,37 @@ def test_optional_parsing():
     assert Property({"property": "p"}).optional is False
 
 
+def test_translation_key_parsing():
+    assert (
+        Property({"property": "p", "translation_key": "custom_key"}).translation_key
+        == "custom_key"
+    )
+    assert Property({"property": "p"}).translation_key is None
+    assert Property({"property": "p", "translation_key": None}).translation_key is None
+
+
+def test_translation_key_inherited_across_platform_change():
+    base = {
+        "property": "p",
+        "translation_key": "wine_zone_upper",
+        "sensor": {"device_class": "temperature", "unit": "°C"},
+    }
+    override = {"property": "p", "number": {"min_value": 5, "max_value": 20}}
+
+    merged = _merge_property(base, override)
+
+    assert merged["translation_key"] == "wine_zone_upper"
+
+
+def test_translation_key_overridden_by_feature():
+    base = {"property": "p", "translation_key": "base_key", "sensor": {}}
+    override = {"property": "p", "translation_key": "feature_key"}
+
+    merged = _merge_property(base, override)
+
+    assert merged["translation_key"] == "feature_key"
+
+
 def test_statistics_block_parsed(build_dictionary):
     # A statistics block is parsed into source + per-sensor flags.
     d = build_dictionary(
