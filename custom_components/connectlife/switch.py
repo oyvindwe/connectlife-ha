@@ -65,7 +65,7 @@ class ConnectLifeSwitch(ConnectLifeEntity, SwitchEntity):
             entity_registry_enabled_default=not dd_entry.optional,
             icon=dd_entry.icon,
             name=status.replace("_", " "),
-            translation_key=self.to_translation_key(status),
+            translation_key=self.to_translation_key(dd_entry.translation_key or status),
             device_class=dd_entry.switch.device_class,
             entity_category=dd_entry.entity_category,
         )

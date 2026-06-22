@@ -145,6 +145,12 @@
             "config",
             "diagnostic"
           ]
+        },
+        "translation_key": {
+          "type": ["string", "null"],
+          "title": "Translation key",
+          "description": "Custom translation key for the entity, overriding the default derived from the property name. Use to give an entity a device-specific name without renaming the API property. Must be lowercase.",
+          "pattern": "^[a-z0-9_]+$"
         }
       },
       "required": [
