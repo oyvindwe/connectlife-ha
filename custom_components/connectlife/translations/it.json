@@ -296,6 +296,12 @@
       },
       "lumin_value_of_interior_light": {
         "name": "Luminosit\u00e0 luce interna"
+      },
+      "wine_zone_lower_temperature": {
+        "name": "Zona inferiore"
+      },
+      "wine_zone_upper_temperature": {
+        "name": "Zona superiore"
       }
     },
     "select": {
@@ -659,6 +665,12 @@
       },
       "total_time_of_cooking_in_hours": {
         "name": "Tempo totale di cottura"
+      },
+      "wine_zone_lower_real_temperature": {
+        "name": "Temperatura zona inferiore"
+      },
+      "wine_zone_upper_real_temperature": {
+        "name": "Temperatura zona superiore"
       },
       "zone_number": {
         "name": "Number of zones"

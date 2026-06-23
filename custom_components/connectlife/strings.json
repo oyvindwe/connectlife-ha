@@ -2062,6 +2062,12 @@
       },
       "volume_setting": {
         "name": "Volume"
+      },
+      "wine_zone_lower_temperature": {
+        "name": "Lower zone"
+      },
+      "wine_zone_upper_temperature": {
+        "name": "Upper zone"
       }
     },
     "select": {
@@ -8437,6 +8443,12 @@
       },
       "wine_light": {
         "name": "Wine light"
+      },
+      "wine_zone_lower_real_temperature": {
+        "name": "Lower zone temperature"
+      },
+      "wine_zone_upper_real_temperature": {
+        "name": "Upper zone temperature"
       },
       "work_mode1": {
         "name": "Work mode 1"

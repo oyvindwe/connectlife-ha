@@ -1,8 +1,9 @@
 # Wine cooler
 #
 # Zones reuse the refrigerator property namespace: upper = variation_*, lower =
-# refrigerator_*, zone C = freeze_*. Entity names stay generic until custom
-# translation keys are supported; the upper/lower split is noted in comments below.
+# refrigerator_*, zone C = freeze_*. The upper/lower zone entities use custom
+# translation keys (wine_zone_upper_* / wine_zone_lower_*) so they read as zones
+# rather than refrigerator compartments.
 properties:
   - property: AIR_FRESHNESS
     disable: true
@@ -196,7 +197,7 @@ properties:
       unit: °C
       state_class: measurement
       unknown_value: -40
-  # Zone C; not fitted on the known model (disabled in feature override).
+  # Zone C?
   - property: freeze_temperature
     unavailable: -40
     number:
@@ -420,8 +421,8 @@ properties:
     disable: true
   - property: refrigerator_poweron_ad
     disable: true
-  # Lower zone temperature.
   - property: refrigerator_real_temperature
+    translation_key: wine_zone_lower_real_temperature
     sensor:
       device_class: temperature
       unit: °C
@@ -435,8 +436,8 @@ properties:
       unit: °C
       state_class: measurement
       unknown_value: -40
-  # Lower zone setpoint (reporter-confirmed lower = refrigerator_*).
   - property: refrigerator_temperature
+    translation_key: wine_zone_lower_temperature
     unavailable: -40
     number:
       device_class: temperature
@@ -695,8 +696,8 @@ properties:
     disable: true
   - property: variation_poweron_ad
     disable: true
-  # Upper zone temperature.
   - property: variation_real_temperature
+    translation_key: wine_zone_upper_real_temperature
     sensor:
       device_class: temperature
       unit: °C
@@ -710,8 +711,8 @@ properties:
       unit: °C
       state_class: measurement
       unknown_value: -40
-  # Upper zone setpoint (reporter-confirmed upper = variation_*).
   - property: variation_temperature
+    translation_key: wine_zone_upper_temperature
     unavailable: -40
     number:
       device_class: temperature

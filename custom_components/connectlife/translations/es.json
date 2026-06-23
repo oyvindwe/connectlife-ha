@@ -716,6 +716,12 @@
       },
       "variation_temperature": {
         "name": "Temperatura variaci\u00f3n"
+      },
+      "wine_zone_lower_temperature": {
+        "name": "Zona inferior"
+      },
+      "wine_zone_upper_temperature": {
+        "name": "Zona superior"
       }
     },
     "select": {
@@ -1631,6 +1637,12 @@
       },
       "water_consumption_in_running_program": {
         "name": "Agua consumida en programa actual"
+      },
+      "wine_zone_lower_real_temperature": {
+        "name": "Temperatura zona inferior"
+      },
+      "wine_zone_upper_real_temperature": {
+        "name": "Temperatura zona superior"
       },
       "zone_number": {
         "name": "N\u00famero de zonas"

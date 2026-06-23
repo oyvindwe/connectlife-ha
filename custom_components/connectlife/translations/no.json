@@ -1751,6 +1751,12 @@
       },
       "volume_setting": {
         "name": "Volum"
+      },
+      "wine_zone_lower_temperature": {
+        "name": "Nedre sone"
+      },
+      "wine_zone_upper_temperature": {
+        "name": "\u00d8vre sone"
       }
     },
     "select": {
@@ -7750,6 +7756,12 @@
       },
       "wine_light": {
         "name": "Vinlys"
+      },
+      "wine_zone_lower_real_temperature": {
+        "name": "Temperatur nedre sone"
+      },
+      "wine_zone_upper_real_temperature": {
+        "name": "Temperatur \u00f8vre sone"
       },
       "work_mode1": {
         "name": "Arbeidsmodus 1"

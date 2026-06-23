@@ -382,6 +382,12 @@
       },
       "variation_temperature": {
         "name": "Temp\u00e9rature zone variable"
+      },
+      "wine_zone_lower_temperature": {
+        "name": "Zone inf\u00e9rieure"
+      },
+      "wine_zone_upper_temperature": {
+        "name": "Zone sup\u00e9rieure"
       }
     },
     "select": {
@@ -1222,6 +1228,12 @@
       },
       "wine_light": {
         "name": "Voyant cave \u00e0 vin"
+      },
+      "wine_zone_lower_real_temperature": {
+        "name": "Temp\u00e9rature zone inf\u00e9rieure"
+      },
+      "wine_zone_upper_real_temperature": {
+        "name": "Temp\u00e9rature zone sup\u00e9rieure"
       },
       "work_mode1": {
         "name": "Mode de fonctionnement 1"

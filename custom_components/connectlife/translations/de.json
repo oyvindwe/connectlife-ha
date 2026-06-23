@@ -1296,6 +1296,12 @@
       },
       "volume_setting": {
         "name": "Lautst\u00e4rke"
+      },
+      "wine_zone_lower_temperature": {
+        "name": "Untere Zone"
+      },
+      "wine_zone_upper_temperature": {
+        "name": "Obere Zone"
       }
     },
     "select": {
@@ -3692,6 +3698,12 @@
           "not_detected": "Nicht erkannt",
           "present": "Vorhanden"
         }
+      },
+      "wine_zone_lower_real_temperature": {
+        "name": "Temperatur untere Zone"
+      },
+      "wine_zone_upper_real_temperature": {
+        "name": "Temperatur obere Zone"
       },
       "zone_number": {
         "name": "Anzahl der Zonen"
