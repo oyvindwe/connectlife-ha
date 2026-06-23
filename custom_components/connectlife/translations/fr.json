@@ -112,6 +112,9 @@
       "f_e_waterfull": {
         "name": "R\u00e9servoir d'eau plein"
       },
+      "filter_state": {
+        "name": "\u00c9tat du filtre"
+      },
       "free_defrosting_failure": {
         "name": "D\u00e9faut d\u00e9givrage cong\u00e9lateur"
       },
@@ -344,6 +347,9 @@
       }
     },
     "number": {
+      "charcoal_filter_surplus_time": {
+        "name": "Dur\u00e9e du filtre \u00e0 charbon"
+      },
       "delayendtime": {
         "name": "Fin diff\u00e9r\u00e9e"
       },
@@ -355,6 +361,9 @@
       },
       "freeze_temperature": {
         "name": "Temp\u00e9rature cong\u00e9lateur"
+      },
+      "lumin_value_of_interior_light": {
+        "name": "Luminosit\u00e9 de l'\u00e9clairage int\u00e9rieur"
       },
       "refrigerator_max_temperature": {
         "name": "Temp\u00e9rature max frigo"
@@ -373,6 +382,12 @@
       },
       "variation_temperature": {
         "name": "Temp\u00e9rature zone variable"
+      },
+      "wine_zone_lower_temperature": {
+        "name": "Zone inf\u00e9rieure"
+      },
+      "wine_zone_upper_temperature": {
+        "name": "Zone sup\u00e9rieure"
       }
     },
     "select": {
@@ -973,6 +988,9 @@
       "running_status3": {
         "name": "\u00c9tat de fonctionnement 3"
       },
+      "sabbath_mode_status": {
+        "name": "\u00c9tat du mode Sabbath"
+      },
       "screen_display_brightness": {
         "name": "Luminosit\u00e9 \u00e9cran"
       },
@@ -1211,6 +1229,12 @@
       "wine_light": {
         "name": "Voyant cave \u00e0 vin"
       },
+      "wine_zone_lower_real_temperature": {
+        "name": "Temp\u00e9rature zone inf\u00e9rieure"
+      },
+      "wine_zone_upper_real_temperature": {
+        "name": "Temp\u00e9rature zone sup\u00e9rieure"
+      },
       "work_mode1": {
         "name": "Mode de fonctionnement 1"
       },
@@ -1237,6 +1261,9 @@
       "child_lock_status_status": {
         "name": "\u00c9tat de la s\u00e9curit\u00e9 enfant"
       },
+      "child_lock_switch_status": {
+        "name": "S\u00e9curit\u00e9 enfant"
+      },
       "extra_rinse": {
         "name": "Rin\u00e7age suppl\u00e9mentaire"
       },
@@ -1255,6 +1282,9 @@
       "prewash": {
         "name": "Pr\u00e9lavage"
       },
+      "sabbath_mode_switch_status": {
+        "name": "Mode Sabbath"
+      },
       "save_mode": {
         "name": "Mode \u00e9co"
       },
@@ -1267,8 +1297,14 @@
       "sr_mode": {
         "name": "Super-refroidissement"
       },
+      "standby_mode_status": {
+        "name": "Mode veille"
+      },
       "steam": {
         "name": "Vapeur"
+      },
+      "wine_light": {
+        "name": "\u00c9clairage cave \u00e0 vin"
       }
     }
   },

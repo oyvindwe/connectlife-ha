@@ -696,6 +696,9 @@
       "fill_salt": {
         "name": "Onthardingszout bijvullen"
       },
+      "filter_state": {
+        "name": "Filterstatus"
+      },
       "float_switch": {
         "name": "Vlotterschakelaar"
       },
@@ -1686,6 +1689,9 @@
       "brightness_setting": {
         "name": "Helderheid"
       },
+      "charcoal_filter_surplus_time": {
+        "name": "Koolstoffiltertijd"
+      },
       "delayendtime": {
         "name": "Delay end time"
       },
@@ -1716,6 +1722,9 @@
       "lightcolortemperature": {
         "name": "Light color temperature"
       },
+      "lumin_value_of_interior_light": {
+        "name": "Helderheid binnenverlichting"
+      },
       "refrigerator_max_temperature": {
         "name": "Koelkast max temperatuur"
       },
@@ -1742,6 +1751,12 @@
       },
       "volume_setting": {
         "name": "Volume"
+      },
+      "wine_zone_lower_temperature": {
+        "name": "Onderste zone"
+      },
+      "wine_zone_upper_temperature": {
+        "name": "Bovenste zone"
       }
     },
     "select": {
@@ -4836,6 +4851,9 @@
       "sabbath_mode_settingstart_timeminute": {
         "name": "Sabbath mode setting start time minute"
       },
+      "sabbath_mode_status": {
+        "name": "Sabbatmodus status"
+      },
       "sand_timer1_duration_in_seconds": {
         "name": "Zandloper 1 duur (seconden)"
       },
@@ -7739,6 +7757,12 @@
       "wine_light": {
         "name": "Wine light"
       },
+      "wine_zone_lower_real_temperature": {
+        "name": "Temperatuur onderste zone"
+      },
+      "wine_zone_upper_real_temperature": {
+        "name": "Temperatuur bovenste zone"
+      },
       "work_mode1": {
         "name": "Work mode 1"
       },
@@ -7836,6 +7860,9 @@
       },
       "child_lock_status_status": {
         "name": "Status kinderbeveiliging"
+      },
+      "child_lock_switch_status": {
+        "name": "Kinderslot"
       },
       "cleanairstatus": {
         "name": "Schone lucht"
@@ -7942,6 +7969,9 @@
       "proximitysensorstatus": {
         "name": "Nabijheidssensor"
       },
+      "sabbath_mode_switch_status": {
+        "name": "Sabbatmodus"
+      },
       "save_mode": {
         "name": "Spaarstand"
       },
@@ -7983,6 +8013,9 @@
       },
       "sr_mode": {
         "name": "SR-modus"
+      },
+      "standby_mode_status": {
+        "name": "Stand-bymodus"
       },
       "steam": {
         "name": "Stoom"
@@ -8067,6 +8100,9 @@
       },
       "welcome": {
         "name": "Welkom"
+      },
+      "wine_light": {
+        "name": "Wijnverlichting"
       }
     },
     "water_heater": {

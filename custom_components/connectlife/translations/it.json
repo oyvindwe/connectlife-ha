@@ -55,6 +55,9 @@
       "f_e_waterfull": {
         "name": "Acqua piena"
       },
+      "filter_state": {
+        "name": "Stato del filtro"
+      },
       "selected_program_anticrease_status": {
         "name": "Antipiega"
       },
@@ -287,6 +290,20 @@
         }
       }
     },
+    "number": {
+      "charcoal_filter_surplus_time": {
+        "name": "Durata del filtro a carbone"
+      },
+      "lumin_value_of_interior_light": {
+        "name": "Luminosit\u00e0 luce interna"
+      },
+      "wine_zone_lower_temperature": {
+        "name": "Zona inferiore"
+      },
+      "wine_zone_upper_temperature": {
+        "name": "Zona superiore"
+      }
+    },
     "select": {
       "anticrease_setting": {
         "name": "Durata antipiega"
@@ -371,6 +388,9 @@
           "not_available": "Non disponibile",
           "open": "Apera"
         }
+      },
+      "sabbath_mode_status": {
+        "name": "Stato modalit\u00e0 Sabbath"
       },
       "selected_program_id": {
         "name": "Seleziona programma",
@@ -646,6 +666,12 @@
       "total_time_of_cooking_in_hours": {
         "name": "Tempo totale di cottura"
       },
+      "wine_zone_lower_real_temperature": {
+        "name": "Temperatura zona inferiore"
+      },
+      "wine_zone_upper_real_temperature": {
+        "name": "Temperatura zona superiore"
+      },
       "zone_number": {
         "name": "Number of zones"
       }
@@ -656,6 +682,15 @@
       },
       "child_lock_status_status": {
         "name": "Stato blocco bambini"
+      },
+      "child_lock_switch_status": {
+        "name": "Blocco bambini"
+      },
+      "sabbath_mode_switch_status": {
+        "name": "Modalit\u00e0 Sabbath"
+      },
+      "standby_mode_status": {
+        "name": "Modalit\u00e0 standby"
       },
       "t_air": {
         "name": "Air"
@@ -683,6 +718,9 @@
       },
       "t_up_down": {
         "name": "Oscillazione verticale"
+      },
+      "wine_light": {
+        "name": "Luce cantinetta"
       }
     },
     "water_heater": {

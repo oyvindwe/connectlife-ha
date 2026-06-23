@@ -298,6 +298,9 @@
       "fill_salt": {
         "name": "Recargar sal"
       },
+      "filter_state": {
+        "name": "Estado del filtro"
+      },
       "float_switch": {
         "name": "Interruptor de flotador"
       },
@@ -681,6 +684,9 @@
       }
     },
     "number": {
+      "charcoal_filter_surplus_time": {
+        "name": "Tiempo del filtro de carb\u00f3n"
+      },
       "freeze_max_temperature": {
         "name": "Congelador temperatura m\u00e1xima"
       },
@@ -689,6 +695,9 @@
       },
       "freeze_temperature": {
         "name": "Temperatura Congelador"
+      },
+      "lumin_value_of_interior_light": {
+        "name": "Brillo de la luz interior"
       },
       "refrigerator_max_temperature": {
         "name": "Frigorifico temperatura m\u00e1xima"
@@ -707,6 +716,12 @@
       },
       "variation_temperature": {
         "name": "Temperatura variaci\u00f3n"
+      },
+      "wine_zone_lower_temperature": {
+        "name": "Zona inferior"
+      },
+      "wine_zone_upper_temperature": {
+        "name": "Zona superior"
       }
     },
     "select": {
@@ -1094,6 +1109,9 @@
       },
       "rinsenum": {
         "name": "Aclarados extra"
+      },
+      "sabbath_mode_status": {
+        "name": "Estado del modo Sabbath"
       },
       "sand_timer1_duration_in_seconds": {
         "name": "Duraci\u00f1on temporizador 1"
@@ -1620,6 +1638,12 @@
       "water_consumption_in_running_program": {
         "name": "Agua consumida en programa actual"
       },
+      "wine_zone_lower_real_temperature": {
+        "name": "Temperatura zona inferior"
+      },
+      "wine_zone_upper_real_temperature": {
+        "name": "Temperatura zona superior"
+      },
       "zone_number": {
         "name": "N\u00famero de zonas"
       }
@@ -1643,6 +1667,9 @@
       "child_lock_status_status": {
         "name": "Estado del bloqueo infantil"
       },
+      "child_lock_switch_status": {
+        "name": "Bloqueo para ni\u00f1os"
+      },
       "drum_light": {
         "name": "Luz tambor"
       },
@@ -1658,8 +1685,14 @@
       "prewash": {
         "name": "Prelavado"
       },
+      "sabbath_mode_switch_status": {
+        "name": "Modo Sabbath"
+      },
       "save_mode": {
         "name": "Modo ahorro"
+      },
+      "standby_mode_status": {
+        "name": "Modo en espera"
       },
       "steam": {
         "name": "Vapor"
@@ -1690,6 +1723,9 @@
       },
       "t_up_down": {
         "name": "Oscilaci\u00f3n vertical"
+      },
+      "wine_light": {
+        "name": "Luz de la vinoteca"
       }
     },
     "water_heater": {

@@ -935,6 +935,9 @@
       "fill_salt": {
         "name": "Fill salt"
       },
+      "filter_state": {
+        "name": "Filter status"
+      },
       "float_switch": {
         "name": "Float switch"
       },
@@ -1991,6 +1994,9 @@
       "brightness_setting": {
         "name": "Brightness"
       },
+      "charcoal_filter_surplus_time": {
+        "name": "Charcoal filter time"
+      },
       "delayendtime": {
         "name": "Delay end time"
       },
@@ -2020,6 +2026,9 @@
       },
       "lightcolortemperature": {
         "name": "Light color temperature"
+      },
+      "lumin_value_of_interior_light": {
+        "name": "Interior light brightness"
       },
       "programoptiontimestartdelayhour": {
         "name": "Start delay hours"
@@ -2053,6 +2062,12 @@
       },
       "volume_setting": {
         "name": "Volume"
+      },
+      "wine_zone_lower_temperature": {
+        "name": "Lower zone"
+      },
+      "wine_zone_upper_temperature": {
+        "name": "Upper zone"
       }
     },
     "select": {
@@ -5454,6 +5469,9 @@
       "sabbath_mode_settingstart_timeminute": {
         "name": "Sabbath mode setting start time minute"
       },
+      "sabbath_mode_status": {
+        "name": "Sabbath mode status"
+      },
       "sand_timer1_duration_in_seconds": {
         "name": "Sand timer 1 duration"
       },
@@ -8426,6 +8444,12 @@
       "wine_light": {
         "name": "Wine light"
       },
+      "wine_zone_lower_real_temperature": {
+        "name": "Lower zone temperature"
+      },
+      "wine_zone_upper_real_temperature": {
+        "name": "Upper zone temperature"
+      },
       "work_mode1": {
         "name": "Work mode 1"
       },
@@ -8529,6 +8553,9 @@
       },
       "child_lock_status_status": {
         "name": "Child lock status"
+      },
+      "child_lock_switch_status": {
+        "name": "Child lock"
       },
       "childlockenabled": {
         "name": "Child lock"
@@ -8656,6 +8683,9 @@
       "proximitysensorstatus": {
         "name": "Proximity sensor"
       },
+      "sabbath_mode_switch_status": {
+        "name": "Sabbath mode"
+      },
       "save_mode": {
         "name": "Save mode"
       },
@@ -8703,6 +8733,9 @@
       },
       "sr_mode": {
         "name": "SR mode"
+      },
+      "standby_mode_status": {
+        "name": "Standby mode"
       },
       "startdelayfunction": {
         "name": "Start delay"
@@ -8793,6 +8826,9 @@
       },
       "welcome": {
         "name": "Welcome"
+      },
+      "wine_light": {
+        "name": "Wine light"
       }
     },
     "water_heater": {

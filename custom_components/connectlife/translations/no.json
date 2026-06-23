@@ -696,6 +696,9 @@
       "fill_salt": {
         "name": "Fyll salt"
       },
+      "filter_state": {
+        "name": "Filterstatus"
+      },
       "float_switch": {
         "name": "Flott\u00f8rbryter"
       },
@@ -1686,6 +1689,9 @@
       "brightness_setting": {
         "name": "Lysstyrke"
       },
+      "charcoal_filter_surplus_time": {
+        "name": "Kullfiltertid"
+      },
       "delayendtime": {
         "name": "Utsatt sluttid"
       },
@@ -1716,6 +1722,9 @@
       "lightcolortemperature": {
         "name": "Fargetemperatur for lys"
       },
+      "lumin_value_of_interior_light": {
+        "name": "Innvendig lysstyrke"
+      },
       "refrigerator_max_temperature": {
         "name": "Maks kj\u00f8leskapstemperatur"
       },
@@ -1742,6 +1751,12 @@
       },
       "volume_setting": {
         "name": "Volum"
+      },
+      "wine_zone_lower_temperature": {
+        "name": "Nedre sone"
+      },
+      "wine_zone_upper_temperature": {
+        "name": "\u00d8vre sone"
       }
     },
     "select": {
@@ -4836,6 +4851,9 @@
       "sabbath_mode_settingstart_timeminute": {
         "name": "Sabbatsmodus \u2013 start-minutt"
       },
+      "sabbath_mode_status": {
+        "name": "Status for sabbatsmodus"
+      },
       "sand_timer1_duration_in_seconds": {
         "name": "Eggur 1 \u2013 varighet"
       },
@@ -7739,6 +7757,12 @@
       "wine_light": {
         "name": "Vinlys"
       },
+      "wine_zone_lower_real_temperature": {
+        "name": "Temperatur nedre sone"
+      },
+      "wine_zone_upper_real_temperature": {
+        "name": "Temperatur \u00f8vre sone"
+      },
       "work_mode1": {
         "name": "Arbeidsmodus 1"
       },
@@ -7836,6 +7860,9 @@
       },
       "child_lock_status_status": {
         "name": "Barnesikringsstatus"
+      },
+      "child_lock_switch_status": {
+        "name": "Barnesikring"
       },
       "cleanairstatus": {
         "name": "Ren luft"
@@ -7942,6 +7969,9 @@
       "proximitysensorstatus": {
         "name": "N\u00e6rhetssensor"
       },
+      "sabbath_mode_switch_status": {
+        "name": "Sabbatsmodus"
+      },
       "save_mode": {
         "name": "Sparemodus"
       },
@@ -7983,6 +8013,9 @@
       },
       "sr_mode": {
         "name": "SR-modus"
+      },
+      "standby_mode_status": {
+        "name": "Hvilemodus"
       },
       "steam": {
         "name": "Damp"
@@ -8067,6 +8100,9 @@
       },
       "welcome": {
         "name": "Velkommen"
+      },
+      "wine_light": {
+        "name": "Vinlys"
       }
     },
     "water_heater": {

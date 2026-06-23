@@ -1,0 +1,33 @@
+# Model: Hisense Wine Cooler RW3N122GSLF
+# 2-zone wine cooler. Zone C (freeze_*) is not fitted on this model.
+properties:
+  - property: freeze_real_temperature
+    disable: true
+  - property: freeze_sensor_real_temperature
+    disable: true
+  - property: freeze_temperature
+    disable: true
+  # Sensors permanently at the -40 "no reading" sentinel on this model: no ambient
+  # sensor, and (unlike zone A) no zone B evaporator sensor.
+  - property: environment_real_temperature
+    disable: true
+  - property: refrigerator_sensor_real_temperature
+    disable: true
+  # Single physical door, reported via refr_room_open / open_refrigerator_door_alarm.
+  # The variation-door entities never change on this model (owner-confirmed).
+  - property: vari_room_open
+    disable: true
+  - property: open_variation_door_alarm
+    disable: true
+  # Not present on this model (owner-confirmed): no standby mode, and no wine-light
+  # on/off (only the dimmable interior light works).
+  - property: standby_mode_status
+    disable: true
+  - property: wine_light
+    disable: true
+  # Redundant: the Sabbath switch already exposes its state
+  - property: sabbath_mode_status
+    disable: true
+  # Not meaningful on this model.
+  - property: temperature_room_judge
+    disable: true
