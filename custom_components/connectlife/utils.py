@@ -10,6 +10,44 @@ def has_platform(platform: Platform, property: Property):
     return hasattr(property, platform) and not property.disable
 
 
+def climate_target_bindings(
+    appliance: ConnectLifeAppliance, dictionary: Dictionary
+) -> dict[str, str]:
+    """Resolve which property serves each climate target for this appliance.
+
+    Several properties may declare the same ``climate.target`` (e.g. both
+    ``t_swing_angle`` and ``t_up_down`` map to ``swing_mode``). Among the
+    candidates the device actually exposes (present in ``status_list`` and not
+    disabled), the one with the lowest ``priority`` wins the target; ties are
+    broken by dictionary order. Returns ``{target: property_name}``.
+    """
+    bindings: dict[str, tuple[int, str]] = {}
+    for name, prop in dictionary.properties.items():
+        if name not in appliance.status_list:
+            continue
+        if not has_platform(Platform.CLIMATE, prop):
+            continue
+        target = prop.climate.target
+        if target is None:
+            continue
+        current = bindings.get(target)
+        if current is None or prop.climate.priority < current[0]:
+            bindings[target] = (prop.climate.priority, name)
+    return {target: name for target, (_, name) in bindings.items()}
+
+
+def climate_bound_properties(
+    appliance: ConnectLifeAppliance, dictionary: Dictionary
+) -> set[str]:
+    """Property names bound to a climate target for this appliance.
+
+    A property that wins a climate target is exposed through the climate entity,
+    so its per-property platform (if any) must be suppressed to avoid a
+    duplicate entity.
+    """
+    return set(climate_target_bindings(appliance, dictionary).values())
+
+
 def to_unit(unit: str | None, appliance: ConnectLifeAppliance, dictionary: Dictionary):
     if unit is None:
         return None

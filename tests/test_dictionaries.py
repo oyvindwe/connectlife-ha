@@ -134,6 +134,50 @@ def test_different_platform_replaces_block_but_top_level_inherits():
     assert merged["select"] == {"options": {0: "a", 1: "b"}}
 
 
+def test_climate_candidacy_is_additive_with_per_property_platform():
+    """A subtype adding a climate candidacy keeps the inherited per-property
+    platform (the device-level and per-property groups merge independently),
+    so the property can fall back to its switch when it loses the target."""
+    base = {
+        "property": "t_up_down",
+        "switch": {"device_class": "switch"},
+        "icon": "mdi:arrow-oscillating",
+    }
+    override = {
+        "property": "t_up_down",
+        "climate": {"target": "swing_mode", "options": {0: "off", 1: "on"}},
+    }
+
+    merged = _merge_property(base, override)
+
+    assert merged["switch"] == {"device_class": "switch"}
+    assert merged["climate"]["target"] == "swing_mode"
+    assert merged["icon"] == "mdi:arrow-oscillating"
+
+    prop = Property(merged)
+    assert hasattr(prop, "switch")
+    assert hasattr(prop, "climate")
+
+
+def test_per_property_override_keeps_inherited_climate_candidacy():
+    """Tweaking only the per-property block leaves the inherited climate block."""
+    base = {
+        "property": "t_up_down",
+        "switch": {"device_class": "switch"},
+        "climate": {"target": "swing_mode", "priority": 2, "options": {0: "off"}},
+    }
+    override = {
+        "property": "t_up_down",
+        "switch": {"device_class": "outlet"},
+    }
+
+    merged = _merge_property(base, override)
+
+    assert merged["switch"] == {"device_class": "outlet"}
+    assert merged["climate"]["target"] == "swing_mode"
+    assert merged["climate"]["priority"] == 2
+
+
 def test_explicit_null_in_platform_unsets_base_field():
     base = {
         "property": "t_setpoint",

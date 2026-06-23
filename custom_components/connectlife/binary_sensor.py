@@ -22,7 +22,7 @@ from .coordinator import ConnectLifeCoordinator
 from .dictionaries import Dictionaries, Property
 from .entity import ConnectLifeEntity
 from connectlife.appliance import ConnectLifeAppliance
-from .utils import has_platform
+from .utils import climate_bound_properties, has_platform
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -37,12 +37,14 @@ async def async_setup_entry(
     devices = config_entry.options.get(CONF_DEVICES, {})
     for appliance in coordinator.data.values():
         dictionary = Dictionaries.get_dictionary(appliance)
+        climate_bound = climate_bound_properties(appliance, dictionary)
         async_add_entities(
             ConnectLifeBinaryStatusSensor(
                 coordinator, appliance, s, dictionary.properties[s]
             )
             for s in appliance.status_list
             if has_platform(Platform.BINARY_SENSOR, dictionary.properties[s])
+            and s not in climate_bound
         )
         if devices.get(appliance.device_id, {}).get(CONF_EXPOSE_OFFLINE_STATE, False):
             async_add_entities(

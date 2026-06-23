@@ -81,9 +81,36 @@ def _check_hvac_option_values(filename, merged_entry):
     )
 
 
+PER_PROPERTY_PLATFORMS = ('binary_sensor', 'number', 'select', 'sensor', 'switch')
+FALLBACK_UNSUPPORTED_DEVICE_PLATFORMS = ('humidifier', 'water_heater')
+
+
+def _check_device_platform_pairing(filename, merged_entry):
+    """A property may pair ``climate`` with a per-property platform — climate is
+    the only device-level platform with a per-appliance target-fallback skip
+    (``climate_bound_properties``), so the per-property entity is correctly
+    suppressed when climate wins the target (e.g. ``t_up_down``: switch +
+    ``climate`` swing_mode). ``humidifier``/``water_heater`` have no such skip,
+    so pairing one with a per-property platform would create a duplicate entity.
+    Reject it until those platforms grow the same fallback mechanism."""
+    device = next((p for p in FALLBACK_UNSUPPORTED_DEVICE_PLATFORMS if p in merged_entry), None)
+    if device is None:
+        return None
+    per_property = next((p for p in PER_PROPERTY_PLATFORMS if p in merged_entry), None)
+    if per_property is None:
+        return None
+    return (
+        f"{filename}: property '{merged_entry['property']}' pairs {device} with "
+        f"{per_property}. Only climate supports a per-property fallback; "
+        f"{device} paired with a per-property platform would create a duplicate "
+        f"entity."
+    )
+
+
 CHECKS = (
     _check_entity_category_config_on_sensor,
     _check_hvac_option_values,
+    _check_device_platform_pairing,
 )
 
 
