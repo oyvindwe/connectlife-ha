@@ -20,12 +20,7 @@ properties:
         0: false
         1: true
   - property: ice_making_b_switch_status
-    hide: true
-    entity_category: diagnostic
-    binary_sensor:
-      options:
-        0: false
-        1: true
+    disable: true
   - property: ice_making_state
     switch:
       command:

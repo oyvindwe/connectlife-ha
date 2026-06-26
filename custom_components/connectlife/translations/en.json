@@ -1025,9 +1025,6 @@
       "ice_make_room_alarm": {
         "name": "Ice maker room alarm"
       },
-      "ice_making_b_switch_status": {
-        "name": "Ice making b switch status"
-      },
       "ice_making_machine_failure": {
         "name": "Ice making machine failure"
       },
