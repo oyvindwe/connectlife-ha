@@ -1,0 +1,33 @@
+# Hisense BCD-628WP1BWF1Z10B/HC4(HAB) — RS818 family (deviceFeatureCode 1b0628z0049j)
+#
+# Cloud property catalog (connectlife property-list):
+# - automatic_ice_making: read-only status ("auto ice making" flag)
+# - SET_ICE_SWITCH: read/write command for the ice maker on/off
+# - ice_making_state: read-only status reflecting ice maker state
+properties:
+  - property: freeze_temperature
+    number:
+      min_value: -24
+      max_value: -14
+  - property: refrigerator_temperature
+    number:
+      min_value: 2
+  - property: automatic_ice_making
+    hide: true
+    entity_category: diagnostic
+    binary_sensor:
+      options:
+        0: false
+        1: true
+  - property: ice_making_b_switch_status
+    hide: true
+    entity_category: diagnostic
+    binary_sensor:
+      options:
+        0: false
+        1: true
+  - property: ice_making_state
+    entity_category: config
+    switch:
+      command:
+        name: SET_ICE_SWITCH
