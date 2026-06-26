@@ -458,6 +458,9 @@
       "auto_timer": {
         "name": "Auto timer"
       },
+      "automatic_ice_making": {
+        "name": "Automatic ice making"
+      },
       "charcoal_filter_expiration_alarm": {
         "name": "Charcoal filter expiration alarm"
       },
@@ -1021,6 +1024,9 @@
       },
       "ice_make_room_alarm": {
         "name": "Ice maker room alarm"
+      },
+      "ice_making_b_switch_status": {
+        "name": "Ice making b switch status"
       },
       "ice_making_machine_failure": {
         "name": "Ice making machine failure"

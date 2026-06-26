@@ -27,7 +27,6 @@ properties:
         0: false
         1: true
   - property: ice_making_state
-    entity_category: config
     switch:
       command:
         name: SET_ICE_SWITCH
