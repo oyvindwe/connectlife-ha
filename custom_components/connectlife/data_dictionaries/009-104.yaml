@@ -1,3 +1,14 @@
+buttons:
+# t_dimmer is write-only on this model (not reported in statusList), so it is
+# exposed as two buttons rather than a switch. Confirmed: 1 = LED on, 0 = LED off.
+- key: light_on
+  icon: mdi:lightbulb-on
+  write:
+    t_dimmer: 1
+- key: light_off
+  icon: mdi:lightbulb-off
+  write:
+    t_dimmer: 0
 climate:
   presets:
     - t_eco: 1

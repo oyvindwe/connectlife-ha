@@ -1577,6 +1577,12 @@
       "cancel": {
         "name": "Avbryt"
       },
+      "light_off": {
+        "name": "Lys av"
+      },
+      "light_on": {
+        "name": "Lys p\u00e5"
+      },
       "pause": {
         "name": "Pause"
       },

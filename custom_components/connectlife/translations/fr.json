@@ -330,6 +330,12 @@
       "cancel": {
         "name": "Annuler"
       },
+      "light_off": {
+        "name": "Lumi\u00e8re \u00e9teinte"
+      },
+      "light_on": {
+        "name": "Lumi\u00e8re allum\u00e9e"
+      },
       "pause": {
         "name": "Pause"
       },
