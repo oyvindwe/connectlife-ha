@@ -1164,6 +1164,12 @@
       "cancel": {
         "name": "Abbrechen"
       },
+      "light_off": {
+        "name": "Licht aus"
+      },
+      "light_on": {
+        "name": "Licht an"
+      },
       "pause": {
         "name": "Pause"
       },

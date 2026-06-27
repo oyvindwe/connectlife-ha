@@ -219,6 +219,12 @@
       "cancel": {
         "name": "Annulla"
       },
+      "light_off": {
+        "name": "Luce spenta"
+      },
+      "light_on": {
+        "name": "Luce accesa"
+      },
       "pause": {
         "name": "Pausa"
       },

@@ -612,6 +612,12 @@
       "cancel": {
         "name": "Cancelar"
       },
+      "light_off": {
+        "name": "Luz apagada"
+      },
+      "light_on": {
+        "name": "Luz encendida"
+      },
       "pause": {
         "name": "Pausa"
       },
