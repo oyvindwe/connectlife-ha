@@ -108,6 +108,7 @@
 | RQ5P470SEIE              | Refrigerator             | 026              | 1b0470z0026j                |
 | RF793N4SAFE              | Refrigerator             | 026              | 1b0610z0043j                |
 |                          | Refrigerator             | 026              | 1b0610z0049j                |
+| RS818N4TFE               | Refrigerator             | 026              | 1b0628z0049j                |
 |                          | Refrigerator             | 026              | 1b0628z0075j                |
 | RS818N4TIE1              | Refrigerator             | 026              | 1b0628z0146j                |
 | Hisense BCD-668WP1BWF1R1 | Refrigerator             | 026              | 1b0668z0100j                |
