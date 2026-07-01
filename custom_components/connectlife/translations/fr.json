@@ -1,7 +1,8 @@
 {
   "config": {
     "abort": {
-      "already_configured": "L\u2019appareil est d\u00e9j\u00e0 configur\u00e9"
+      "already_configured": "L\u2019appareil est d\u00e9j\u00e0 configur\u00e9",
+      "reauth_successful": "La r\u00e9-authentification a r\u00e9ussi"
     },
     "error": {
       "cannot_connect": "\u00c9chec de l\u2019\u00e9tablissement de la connexion",
@@ -15,13 +16,28 @@
         "data": {
           "test_server_url": "URL du serveur de test"
         },
+        "data_description": {
+          "test_server_url": "URL du serveur de test sur lequel s\u2019authentifier au lieu de l\u2019API ConnectLife."
+        },
         "description": "Activer le mode d\u00e9veloppement pour se connecter au serveur de test au lieu de l\u2019API ConnectLife."
+      },
+      "reauth_confirm": {
+        "data": {
+          "password": "Mot de passe",
+          "username": "Nom d\u2019utilisateur"
+        },
+        "description": "Veuillez saisir \u00e0 nouveau vos identifiants ConnectLife."
       },
       "user": {
         "data": {
           "development_mode": "Mode d\u00e9veloppement",
           "password": "Mot de passe",
+          "trir": "ConnectLife.TRIR (Russie/CEI) \u2014 exp\u00e9rimental",
           "username": "Nom d\u2019utilisateur"
+        },
+        "data_description": {
+          "development_mode": "Se connecter \u00e0 un serveur de test local au lieu de l\u2019API ConnectLife. Pour le d\u00e9veloppement uniquement.",
+          "trir": "\u00c0 activer uniquement si vous vous connectez avec l\u2019application ConnectLife.TRIR utilis\u00e9e en Russie/CEI. Exp\u00e9rimental."
         }
       }
     }
@@ -1342,7 +1358,16 @@
     "step": {
       "configure_device": {
         "data": {
-          "disable_beep": "D\u00e9sactiver le bip"
+          "disable_beep": "D\u00e9sactiver le bip",
+          "expose_offline_state": "Exposer l'\u00e9tat hors ligne",
+          "target_overrides_swing_horizontal_mode": "Contr\u00f4le du mode d'oscillation horizontale",
+          "target_overrides_swing_mode": "Contr\u00f4le du mode d'oscillation"
+        },
+        "data_description": {
+          "disable_beep": "Supprime le bip de l'appareil lors des commandes envoy\u00e9es depuis Home Assistant.",
+          "expose_offline_state": "Ajoute un capteur de connectivit\u00e9 pour cet appareil et conserve ses autres entit\u00e9s disponibles avec leurs derni\u00e8res valeurs connues m\u00eame lorsque l\u2019API le signale hors ligne, au lieu de les marquer comme indisponibles.",
+          "target_overrides_swing_horizontal_mode": "Cet appareil expose plusieurs propri\u00e9t\u00e9s pouvant piloter le mode d'oscillation horizontale. Laissez sur \u00ab auto \u00bb pour laisser l'int\u00e9gration choisir, ou fixez une propri\u00e9t\u00e9 pr\u00e9cise si votre mat\u00e9riel n'en prend en charge qu'une seule.",
+          "target_overrides_swing_mode": "Cet appareil expose plusieurs propri\u00e9t\u00e9s pouvant piloter le mode d'oscillation. Laissez sur \u00ab auto \u00bb pour laisser l'int\u00e9gration choisir, ou fixez une propri\u00e9t\u00e9 pr\u00e9cise si votre mat\u00e9riel n'en prend en charge qu'une seule (par exemple, choisissez t_up_down si t_swing_angle est affich\u00e9 mais n'a aucun effet)."
         },
         "description": "Configurer {device_name}."
       },

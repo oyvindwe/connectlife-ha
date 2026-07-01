@@ -1,7 +1,8 @@
 {
   "config": {
     "abort": {
-      "already_configured": "El dispositivo ya est\u00e1 configurado"
+      "already_configured": "El dispositivo ya est\u00e1 configurado",
+      "reauth_successful": "La reautenticaci\u00f3n se realiz\u00f3 correctamente"
     },
     "error": {
       "cannot_connect": "Fallo al establecer la conexi\u00f3n",
@@ -15,13 +16,28 @@
         "data": {
           "test_server_url": "Test server URL"
         },
+        "data_description": {
+          "test_server_url": "URL del servidor de prueba contra el que autenticarse en lugar de la API de ConnectLife."
+        },
         "description": "Habilitar modo desarrollo para conectar al test server en vez de a ConnectLife API."
+      },
+      "reauth_confirm": {
+        "data": {
+          "password": "Contrase\u00f1a",
+          "username": "Nombre de usuario"
+        },
+        "description": "Vuelve a introducir tus credenciales de ConnectLife."
       },
       "user": {
         "data": {
           "development_mode": "Modo desarrollo",
           "password": "Contrase\u00f1a",
+          "trir": "ConnectLife.TRIR (Rusia/CEI) \u2014 experimental",
           "username": "Nombre de usuario"
+        },
+        "data_description": {
+          "development_mode": "Conectar a un servidor de prueba local en lugar de a la API de ConnectLife. Solo para desarrollo.",
+          "trir": "Habil\u00edtalo solo si inicias sesi\u00f3n con la app ConnectLife.TRIR utilizada en Rusia/CEI. Experimental."
         }
       }
     }
@@ -1770,7 +1786,16 @@
     "step": {
       "configure_device": {
         "data": {
-          "disable_beep": "Deshabilitar beep"
+          "disable_beep": "Deshabilitar beep",
+          "expose_offline_state": "Exponer estado sin conexi\u00f3n",
+          "target_overrides_swing_horizontal_mode": "Control del modo de oscilaci\u00f3n horizontal",
+          "target_overrides_swing_mode": "Control del modo de oscilaci\u00f3n"
+        },
+        "data_description": {
+          "disable_beep": "Suprime el pitido del electrodom\u00e9stico en los comandos enviados desde Home Assistant.",
+          "expose_offline_state": "A\u00f1ade un sensor de conectividad para este dispositivo y mantiene sus dem\u00e1s entidades disponibles con sus \u00faltimos valores conocidos incluso cuando la API lo notifica como sin conexi\u00f3n, en lugar de marcarlas como no disponibles.",
+          "target_overrides_swing_horizontal_mode": "Este dispositivo expone m\u00e1s de una propiedad que puede controlar el modo de oscilaci\u00f3n horizontal. D\u00e9jalo en \u00abauto\u00bb para que la integraci\u00f3n elija, o fija una propiedad concreta si tu hardware solo admite una de ellas.",
+          "target_overrides_swing_mode": "Este dispositivo expone m\u00e1s de una propiedad que puede controlar el modo de oscilaci\u00f3n. D\u00e9jalo en \u00abauto\u00bb para que la integraci\u00f3n elija, o fija una propiedad concreta si tu hardware solo admite una de ellas (por ejemplo, elige t_up_down si se muestra t_swing_angle pero no hace nada)."
         },
         "description": "Configurar {device_name}."
       },
