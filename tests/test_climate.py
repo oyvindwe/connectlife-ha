@@ -11,19 +11,32 @@ from custom_components.connectlife.climate import (
     _add_hvac_mode_mapping,
     is_climate,
 )
-from custom_components.connectlife.const import HVAC_MODE, IS_ON, SWING_MODE
+from custom_components.connectlife.const import (
+    CONF_DEVICES,
+    CONF_TARGET_OVERRIDES,
+    HVAC_MODE,
+    IS_ON,
+    SWING_MODE,
+)
 from custom_components.connectlife.dictionaries import Dictionary, Property
-from custom_components.connectlife.utils import climate_bound_properties
+from custom_components.connectlife.utils import (
+    climate_bound_properties,
+    contested_climate_targets,
+)
 
 
-def _coordinator(appliance: SimpleNamespace) -> SimpleNamespace:
+def _coordinator(appliance: SimpleNamespace, options: dict | None = None) -> SimpleNamespace:
     return SimpleNamespace(
         data={appliance.device_id: appliance},
-        config_entry=SimpleNamespace(options={}, entry_id="e"),
+        config_entry=SimpleNamespace(options=options or {}, entry_id="e"),
         hass=None,
         last_update_success=True,
         add_entity=lambda *a, **k: None,
     )
+
+
+def _override_options(device_id: str, target: str, property_name: str) -> dict:
+    return {CONF_DEVICES: {device_id: {CONF_TARGET_OVERRIDES: {target: property_name}}}}
 
 
 def _swing_dictionary() -> Dictionary:
@@ -93,6 +106,46 @@ def test_swing_mode_falls_back_to_lower_priority_candidate() -> None:
 
     assert climate.target_map[SWING_MODE] == "t_up_down"
     assert "t_up_down" in climate_bound_properties(appliance, dictionary)
+
+
+def test_swing_mode_override_pins_configured_property() -> None:
+    """A per-device override pins t_up_down as swing_mode even when the
+    higher-priority t_swing_angle is also exposed (issue #607)."""
+    dictionary = _swing_dictionary()
+    appliance = _swing_appliance({"t_power": 1, "t_swing_angle": 0, "t_up_down": 0})
+    options = _override_options(appliance.device_id, SWING_MODE, "t_up_down")
+    climate = ConnectLifeClimate(_coordinator(appliance, options), appliance, dictionary)
+
+    assert climate.target_map[SWING_MODE] == "t_up_down"
+    # t_up_down now wins swing_mode, so it is no longer offered as a switch.
+    overrides = options[CONF_DEVICES][appliance.device_id][CONF_TARGET_OVERRIDES]
+    bound = climate_bound_properties(appliance, dictionary, overrides)
+    assert bound == {"t_up_down", "t_power"}
+
+
+def test_swing_mode_override_ignored_when_property_absent() -> None:
+    """An override naming a property the device doesn't expose is ignored,
+    falling back to the automatic priority-based winner."""
+    dictionary = _swing_dictionary()
+    appliance = _swing_appliance({"t_power": 1, "t_swing_angle": 0, "t_up_down": 0})
+    options = _override_options(appliance.device_id, SWING_MODE, "t_not_present")
+    climate = ConnectLifeClimate(_coordinator(appliance, options), appliance, dictionary)
+
+    assert climate.target_map[SWING_MODE] == "t_swing_angle"
+
+
+def test_contested_targets_reports_only_multi_candidate_targets() -> None:
+    """contested_climate_targets lists a target only when the device exposes
+    more than one candidate for it — that's what the options flow offers."""
+    dictionary = _swing_dictionary()
+
+    both = _swing_appliance({"t_power": 1, "t_swing_angle": 0, "t_up_down": 0})
+    assert contested_climate_targets(both, dictionary) == {
+        SWING_MODE: ["t_swing_angle", "t_up_down"]
+    }
+
+    single = _swing_appliance({"t_power": 1, "t_up_down": 0})
+    assert contested_climate_targets(single, dictionary) == {}
 
 
 def test_hvac_mode_alias_does_not_override_canonical_reverse_mapping() -> None:

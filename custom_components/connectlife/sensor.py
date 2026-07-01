@@ -26,7 +26,7 @@ from .dictionaries import Dictionaries, Dictionary, Property
 from .entity import ConnectLifeEntity
 from .statistics_sources import StatisticsSensorDef, enabled_sensors
 from connectlife.appliance import ConnectLifeAppliance, MAX_DATETIME
-from .utils import climate_bound_properties, has_platform, to_unit
+from .utils import climate_bound_properties, device_target_overrides, has_platform, to_unit
 
 SERVICE_SET_VALUE = "set_value"
 
@@ -43,7 +43,8 @@ async def async_setup_entry(
     statistics_coordinator = hass.data[DOMAIN].get(f"{config_entry.entry_id}_statistics")
     for appliance in coordinator.data.values():
         dictionary = Dictionaries.get_dictionary(appliance)
-        climate_bound = climate_bound_properties(appliance, dictionary)
+        overrides = device_target_overrides(config_entry, appliance.device_id)
+        climate_bound = climate_bound_properties(appliance, dictionary, overrides)
         async_add_entities(
             ConnectLifeStatusSensor(
                 coordinator, appliance, s, dictionary.properties[s], dictionary

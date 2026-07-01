@@ -347,6 +347,14 @@ For example, vertical swing in `009.yaml`: `t_swing_angle` (multi-position) is t
 A device exposing both gets `t_swing_angle` as `swing_mode` and `t_up_down` as a switch; a device
 exposing only `t_up_down` gets it as `swing_mode`.
 
+When two variants share a `deviceTypeCode`/`deviceFeatureCode` **and** both advertise the
+higher-priority candidate, but only one actually honours it (e.g. `t_swing_angle` is present yet
+inert on some units), there's no data-dictionary signal to tell them apart. Rather than `disable`
+the candidate for the whole feature code (which would regress the variants where it works), the user
+pins the property their hardware honours per-device via the integration options (Settings → 
+Devices & Services → ConnectLife → Configure → pick device). Each climate target with more than one
+exposed candidate gets an "auto / property" select there; `auto` keeps this priority-based binding.
+
 Not yet supported target properties:
 
 - `target_temperature_high`
