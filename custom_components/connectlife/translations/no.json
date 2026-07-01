@@ -2094,7 +2094,7 @@
           "reset_programs_to_default": "Tilbakestill programmer til standard",
           "start": "Start",
           "steam_shot": "Dampskudd",
-          "steamer_water_tank_door_open": "\u00c5pne luke til dampervanntank",
+          "steamer_water_tank_door_open": "\u00c5pne luke til dampvanntank",
           "stop": "Stopp",
           "stop_finish": "Stopp og avslutt"
         }
@@ -5119,7 +5119,7 @@
         "name": "Pauseflagg for anti-kr\u00f8ll"
       },
       "paymentenabledtimer": {
-        "name": "Tidtaker for betaling aktivert"
+        "name": "Tidsur for aktivert betaling"
       },
       "paymentsystem": {
         "name": "Betalingssystem"
@@ -5821,7 +5821,7 @@
         "name": "\u00d8ktparing \u2013 bekreftelse"
       },
       "sessionpairingrequest": {
-        "name": "Foresp\u00f8rsel om \u00f8ktparing"
+        "name": "Foresp\u00f8rsel om paring av \u00f8kt"
       },
       "sessionpairingsetting": {
         "name": "\u00d8ktparing \u2013 innstilling"
