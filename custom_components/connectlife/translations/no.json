@@ -311,8 +311,23 @@
       "alarmcleanairended": {
         "name": "Alarm \u2013 ren luft avsluttet"
       },
+      "alarmcleancondense": {
+        "name": "Rengj\u00f8r kondensator"
+      },
+      "alarmcleancondenserfilter": {
+        "name": "Rengj\u00f8r kondensatorfilter"
+      },
+      "alarmcleandoorfilter": {
+        "name": "Rengj\u00f8r d\u00f8rfilter"
+      },
+      "alarmcleanfilterwarning": {
+        "name": "Rens filter"
+      },
       "alarmcleantank": {
         "name": "Alarm \u2013 rens tank"
+      },
+      "alarmclosethedoorwarning": {
+        "name": "D\u00f8ren er ikke lukket"
       },
       "alarmdehydrate_ended": {
         "name": "Alarm \u2013 t\u00f8rking avsluttet"
@@ -332,8 +347,20 @@
       "alarmemptytankpause": {
         "name": "Alarm \u2013 tom tank pause"
       },
+      "alarmfilladcontainer1warning": {
+        "name": "Autodoseringsbeholder 1 tom"
+      },
+      "alarmfilladcontainer2warning": {
+        "name": "Autodoseringsbeholder 2 tom"
+      },
       "alarmfilltank": {
         "name": "Alarm \u2013 fyll tank"
+      },
+      "alarmfoamdetection": {
+        "name": "Skum registrert"
+      },
+      "alarmfulltank": {
+        "name": "Vanntank full"
       },
       "alarmgreasefilter": {
         "name": "Alarm \u2013 fettfilter"
@@ -347,6 +374,9 @@
       "alarmmicrowave_system_finished": {
         "name": "Alarm \u2013 mikrob\u00f8lgesystem ferdig"
       },
+      "alarmoptionnotavailable": {
+        "name": "Alternativet er ikke tilgjengelig"
+      },
       "alarmoven_system_finished": {
         "name": "Alarm \u2013 ovnssystem ferdig"
       },
@@ -356,8 +386,17 @@
       "alarmpower_failure_running": {
         "name": "Alarm \u2013 str\u00f8mbrudd under kj\u00f8ring"
       },
+      "alarmpowerfail": {
+        "name": "Str\u00f8mbrudd"
+      },
+      "alarmpowerfailalert": {
+        "name": "Str\u00f8mbrudd"
+      },
       "alarmprobe_lost_connection": {
         "name": "Alarm \u2013 steketermometer mistet tilkobling"
+      },
+      "alarmprogramfinished": {
+        "name": "Program ferdig"
       },
       "alarmrecirculationfilter1": {
         "name": "Alarm \u2013 resirkuleringsfilter 1"
@@ -389,14 +428,23 @@
       "alarmsteamclean_finished": {
         "name": "Alarm \u2013 damprens ferdig"
       },
+      "alarmsteriltubrunwarning": {
+        "name": "Sterilisering av trommel n\u00f8dvendig"
+      },
       "alarmtanklevel1": {
         "name": "Alarm \u2013 tankniv\u00e5 1"
       },
       "alarmtimerended": {
         "name": "Alarm \u2013 tidsur avsluttet"
       },
+      "alarmwashfinished": {
+        "name": "Vask ferdig"
+      },
       "ali_wifi_fault_flag": {
         "name": "WiFi-feil"
+      },
+      "alramemptywatertank": {
+        "name": "T\u00f8m vanntank"
       },
       "auto_boost": {
         "name": "Auto boost"
@@ -409,6 +457,9 @@
       },
       "auto_timer": {
         "name": "Auto-tidsur"
+      },
+      "automatic_ice_making": {
+        "name": "Automatisk isproduksjon"
       },
       "charcoal_filter_expiration_alarm": {
         "name": "Alarm for utl\u00f8p av kullfilter"
@@ -436,6 +487,9 @@
       },
       "child_lock_switch_status": {
         "name": "Status for barnesikringsbryter"
+      },
+      "childlockactive": {
+        "name": "Barnesikringsstatus"
       },
       "clean_filter": {
         "name": "Rens filter"
@@ -473,11 +527,185 @@
       "door_status": {
         "name": "D\u00f8r"
       },
+      "doorstatus": {
+        "name": "D\u00f8r"
+      },
       "eco_mode": {
         "name": "Eco-modus"
       },
       "envi_temp_sens_head_failure": {
         "name": "Feil p\u00e5 sensor for omgivelsestemperatur"
+      },
+      "error0": {
+        "name": "Feil 0"
+      },
+      "error1": {
+        "name": "Feil 1"
+      },
+      "error10": {
+        "name": "Feil 10"
+      },
+      "error11": {
+        "name": "Feil 11"
+      },
+      "error12": {
+        "name": "Feil 12"
+      },
+      "error12_1": {
+        "name": "Feil 12 1"
+      },
+      "error12_10": {
+        "name": "Feil 12 10"
+      },
+      "error12_12": {
+        "name": "Feil 12 12"
+      },
+      "error12_2": {
+        "name": "Feil 12 2"
+      },
+      "error12_3": {
+        "name": "Feil 12 3"
+      },
+      "error12_4": {
+        "name": "Feil 12 4"
+      },
+      "error12_5": {
+        "name": "Feil 12 5"
+      },
+      "error12_6": {
+        "name": "Feil 12 6"
+      },
+      "error12_7": {
+        "name": "Feil 12 7"
+      },
+      "error12_8": {
+        "name": "Feil 12 8"
+      },
+      "error12_9": {
+        "name": "Feil 12 9"
+      },
+      "error13": {
+        "name": "Feil 13"
+      },
+      "error13_1": {
+        "name": "Feil 13 1"
+      },
+      "error13_2": {
+        "name": "Feil 13 2"
+      },
+      "error13_3": {
+        "name": "Feil 13 3"
+      },
+      "error14": {
+        "name": "Feil 14"
+      },
+      "error15": {
+        "name": "Feil 15"
+      },
+      "error2": {
+        "name": "Feil 2"
+      },
+      "error22": {
+        "name": "Feil 22"
+      },
+      "error23": {
+        "name": "Feil 23"
+      },
+      "error24": {
+        "name": "Feil 24"
+      },
+      "error25": {
+        "name": "Feil 25"
+      },
+      "error26": {
+        "name": "Feil 26"
+      },
+      "error27": {
+        "name": "Feil 27"
+      },
+      "error28": {
+        "name": "Feil 28"
+      },
+      "error29": {
+        "name": "Feil 29"
+      },
+      "error3": {
+        "name": "Feil 3"
+      },
+      "error30": {
+        "name": "Feil 30"
+      },
+      "error31": {
+        "name": "Feil 31"
+      },
+      "error32": {
+        "name": "Feil 32"
+      },
+      "error33": {
+        "name": "Feil 33"
+      },
+      "error34": {
+        "name": "Feil 34"
+      },
+      "error35": {
+        "name": "Feil 35"
+      },
+      "error36": {
+        "name": "Feil 36"
+      },
+      "error37": {
+        "name": "Feil 37"
+      },
+      "error38": {
+        "name": "Feil 38"
+      },
+      "error39": {
+        "name": "Feil 39"
+      },
+      "error4": {
+        "name": "Feil 4"
+      },
+      "error40": {
+        "name": "Feil 40"
+      },
+      "error41": {
+        "name": "Feil 41"
+      },
+      "error42": {
+        "name": "Feil 42"
+      },
+      "error43": {
+        "name": "Feil 43"
+      },
+      "error44": {
+        "name": "Feil 44"
+      },
+      "error45": {
+        "name": "Feil 45"
+      },
+      "error46": {
+        "name": "Feil 46"
+      },
+      "error47": {
+        "name": "Feil 47"
+      },
+      "error5": {
+        "name": "Feil 5"
+      },
+      "error6": {
+        "name": "Feil 6"
+      },
+      "error7": {
+        "name": "Feil 7"
+      },
+      "error7_1": {
+        "name": "Feil 7 1"
+      },
+      "error8": {
+        "name": "Feil 8"
+      },
+      "error9": {
+        "name": "Feil 9"
       },
       "error_0": {
         "name": "Feil 0"
@@ -626,8 +854,14 @@
       "f_e_arkgrille": {
         "name": "Beskyttelsesalarm for skapgitter"
       },
+      "f_e_drive": {
+        "name": "Drift"
+      },
       "f_e_dwmachine": {
         "name": "Feil p\u00e5 nedre maskin"
+      },
+      "f_e_eeprom": {
+        "name": "EEPROM"
       },
       "f_e_filterclean": {
         "name": "Filterrens"
@@ -845,6 +1079,54 @@
       "mid_wine_area_b_temp_fault": {
         "name": "Vinsone B midt \u2013 temperaturfeil"
       },
+      "motorspeed1000rpmavailable": {
+        "name": "Motorhastighet 1000 o/min tilgjengelig"
+      },
+      "motorspeed100rpmavailable": {
+        "name": "Motorhastighet 100 o/min tilgjengelig"
+      },
+      "motorspeed1100rpmavailable": {
+        "name": "Motorhastighet 1100 o/min tilgjengelig"
+      },
+      "motorspeed1200rpmavailable": {
+        "name": "Motorhastighet 1200 o/min tilgjengelig"
+      },
+      "motorspeed1300rpmavailable": {
+        "name": "Motorhastighet 1300 o/min tilgjengelig"
+      },
+      "motorspeed1400rpmavailable": {
+        "name": "Motorhastighet 1400 o/min tilgjengelig"
+      },
+      "motorspeed1500rpmavailable": {
+        "name": "Motorhastighet 1500 o/min tilgjengelig"
+      },
+      "motorspeed1600rpmavailable": {
+        "name": "Motorhastighet 1600 o/min tilgjengelig"
+      },
+      "motorspeed400rpmavailable": {
+        "name": "Motorhastighet 400 o/min tilgjengelig"
+      },
+      "motorspeed500rpmavailable": {
+        "name": "Motorhastighet 500 o/min tilgjengelig"
+      },
+      "motorspeed600rpmavailable": {
+        "name": "Motorhastighet 600 o/min tilgjengelig"
+      },
+      "motorspeed800rpmavailable": {
+        "name": "Motorhastighet 800 o/min tilgjengelig"
+      },
+      "motorspeed900rpmavailable": {
+        "name": "Motorhastighet 900 o/min tilgjengelig"
+      },
+      "motorspeednodrainavailable": {
+        "name": "Motorhastighet uten t\u00f8mming tilgjengelig"
+      },
+      "motorspeednospinavailable": {
+        "name": "Motorhastighet uten sentrifugering tilgjengelig"
+      },
+      "offline_state": {
+        "name": "Tilkobling"
+      },
       "open_freeze_door_alarm": {
         "name": "Alarm for \u00e5pen fryserd\u00f8r"
       },
@@ -1049,6 +1331,9 @@
       "sl1_pot_detected": {
         "name": "Sone 1 gryte oppdaget"
       },
+      "sl1_present": {
+        "name": "Sone 1 til stede"
+      },
       "sl1_residual_heat_signal": {
         "name": "Sone 1 restvarme"
       },
@@ -1129,6 +1414,9 @@
       },
       "sl2_pot_detected": {
         "name": "Sone 2 gryte oppdaget"
+      },
+      "sl2_present": {
+        "name": "Sone 2 til stede"
       },
       "sl2_residual_heat_signal": {
         "name": "Sone 2 restvarme"
@@ -1211,6 +1499,9 @@
       "sl3_pot_detected": {
         "name": "Sone 3 gryte oppdaget"
       },
+      "sl3_present": {
+        "name": "Sone 3 til stede"
+      },
       "sl3_residual_heat_signal": {
         "name": "Sone 3 restvarme"
       },
@@ -1291,6 +1582,9 @@
       },
       "sl4_pot_detected": {
         "name": "Sone 4 gryte oppdaget"
+      },
+      "sl4_present": {
+        "name": "Sone 4 til stede"
       },
       "sl4_residual_heat_signal": {
         "name": "Sone 4 restvarme"
@@ -1373,6 +1667,9 @@
       "sl5_pot_detected": {
         "name": "Sone 5 gryte oppdaget"
       },
+      "sl5_present": {
+        "name": "Sone 5 til stede"
+      },
       "sl5_residual_heat_signal": {
         "name": "Sone 5 restvarme"
       },
@@ -1453,6 +1750,9 @@
       },
       "sl6_pot_detected": {
         "name": "Sone 6 gryte oppdaget"
+      },
+      "sl6_present": {
+        "name": "Sone 6 til stede"
       },
       "sl6_residual_heat_signal": {
         "name": "Sone 6 restvarme"
@@ -1739,6 +2039,12 @@
       "lumin_value_of_interior_light": {
         "name": "Innvendig lysstyrke"
       },
+      "programoptiontimestartdelayhour": {
+        "name": "Utsatt start (timer)"
+      },
+      "programtimesstartdelayhours": {
+        "name": "Utsatt start (timer)"
+      },
       "refrigerator_max_temperature": {
         "name": "Maks kj\u00f8leskapstemperatur"
       },
@@ -1779,10 +2085,16 @@
         "state": {
           "add_duration": "Legg til varighet",
           "add_gratin": "Legg til gratinering",
+          "cancel": "Avbryt",
+          "direct_steam": "Direkte damp",
           "none": "Ingen",
           "pause": "Pause",
+          "production_test": "Produksjonstest",
+          "program_continue": "Fortsett program",
+          "reset_programs_to_default": "Tilbakestill programmer til standard",
           "start": "Start",
           "steam_shot": "Dampskudd",
+          "steamer_water_tank_door_open": "\u00c5pne luke til dampervanntank",
           "stop": "Stopp",
           "stop_finish": "Stopp og avslutt"
         }
@@ -1824,7 +2136,14 @@
         }
       },
       "brightness": {
-        "name": "Lysstyrke"
+        "name": "Lysstyrke",
+        "state": {
+          "level_1": "Niv\u00e5 1",
+          "level_2": "Niv\u00e5 2",
+          "level_3": "Niv\u00e5 3",
+          "level_4": "Niv\u00e5 4",
+          "level_5": "Niv\u00e5 5"
+        }
       },
       "circulationmodestatus": {
         "name": "Sirkulasjonsmodus",
@@ -1854,6 +2173,13 @@
           "sensitive_detergent": "Vaskemiddel for sensitive plagg",
           "softener": "T\u00f8ymykner",
           "white_detergent": "Hvitvaskemiddel"
+        }
+      },
+      "condensewatermode": {
+        "name": "Modus for kondensvann",
+        "state": {
+          "drain": "Tapp ut",
+          "tank": "Fyll opp"
         }
       },
       "cooking_intensity": {
@@ -1917,6 +2243,23 @@
           "3": "3",
           "auto": "Auto",
           "off": "Av"
+        }
+      },
+      "displaybrightness": {
+        "name": "Skjermlysstyrke",
+        "state": {
+          "level_1": "Niv\u00e5 1",
+          "level_2": "Niv\u00e5 2",
+          "level_3": "Niv\u00e5 3",
+          "level_4": "Niv\u00e5 4",
+          "level_5": "Niv\u00e5 5"
+        }
+      },
+      "drain": {
+        "name": "Tapp ut",
+        "state": {
+          "pump": "Pumpe",
+          "valve": "Ventil"
         }
       },
       "dry_level": {
@@ -2004,24 +2347,32 @@
           "tbs": "ss"
         }
       },
+      "load": {
+        "name": "Mengde",
+        "state": {
+          "100_percent": "100 %",
+          "25_percent": "25 %",
+          "50_percent": "50 %"
+        }
+      },
       "max_rpm_allowed_stat": {
         "name": "Maks sentrifugehastighet",
         "state": {
-          "0_rpm": "0 RPM",
-          "1000_rpm": "1000 RPM",
-          "1100_rpm": "1100 RPM",
-          "1200_rpm": "1200 RPM",
-          "1300_rpm": "1300 RPM",
-          "1400_rpm": "1400 RPM",
-          "1500_rpm": "1500 RPM",
-          "1600_rpm": "1600 RPM",
-          "1700_rpm": "1700 RPM",
-          "1800_rpm": "1800 RPM",
-          "400_rpm": "400 RPM",
-          "600_rpm": "600 RPM",
-          "700_rpm": "700 RPM",
-          "800_rpm": "800 RPM",
-          "900_rpm": "900 RPM"
+          "0_rpm": "0 o/min",
+          "1000_rpm": "1000 o/min",
+          "1100_rpm": "1100 o/min",
+          "1200_rpm": "1200 o/min",
+          "1300_rpm": "1300 o/min",
+          "1400_rpm": "1400 o/min",
+          "1500_rpm": "1500 o/min",
+          "1600_rpm": "1600 o/min",
+          "1700_rpm": "1700 o/min",
+          "1800_rpm": "1800 o/min",
+          "400_rpm": "400 o/min",
+          "600_rpm": "600 o/min",
+          "700_rpm": "700 o/min",
+          "800_rpm": "800 o/min",
+          "900_rpm": "900 o/min"
         }
       },
       "motorlevel": {
@@ -2231,6 +2582,29 @@
           "800_rpm": "800"
         }
       },
+      "setmaxmotorspeed": {
+        "name": "Maks sentrifugehastighet",
+        "state": {
+          "1000_rpm": "1000 o/min",
+          "100_rpm": "100 o/min",
+          "1100_rpm": "1100 o/min",
+          "1200_rpm": "1200 o/min",
+          "1300_rpm": "1300 o/min",
+          "1400_rpm": "1400 o/min",
+          "1500_rpm": "1500 o/min",
+          "1600_rpm": "1600 o/min",
+          "400_rpm": "400 o/min",
+          "500_rpm": "500 o/min",
+          "600_rpm": "600 o/min",
+          "800_rpm": "800 o/min",
+          "900_rpm": "900 o/min",
+          "no_drain": "Ingen uttapping",
+          "no_spin": "Ingen sentrifugering",
+          "not_available": "Ikke tilgjengelig",
+          "reserved_0": "Reservert 0",
+          "reserved_7": "Reservert 7"
+        }
+      },
       "softener": {
         "name": "T\u00f8ymykner",
         "state": {
@@ -2274,11 +2648,11 @@
       "spin_speed_rpm": {
         "name": "Sentrifugehastighet",
         "state": {
-          "1000": "1000 RPM",
-          "1200": "1200 RPM",
-          "1400": "1400 RPM",
-          "600": "600 RPM",
-          "800": "800 RPM",
+          "1000": "1000 o/min",
+          "1200": "1200 o/min",
+          "1400": "1400 o/min",
+          "600": "600 o/min",
+          "800": "800 o/min",
           "none": "Ingen",
           "off": "Av"
         }
@@ -2412,7 +2786,8 @@
         "state": {
           "auto": "Auto",
           "high": "H\u00f8y",
-          "low": "Lav"
+          "low": "Lav",
+          "medium": "Middels"
         }
       },
       "t_sleep": {
@@ -2494,6 +2869,13 @@
           "not_set": "Ikke satt"
         }
       },
+      "timeiconsetting": {
+        "name": "Innstilling for tidsikon",
+        "state": {
+          "icon": "Ikon",
+          "time": "Tid"
+        }
+      },
       "timersetting": {
         "name": "Timerhandling",
         "state": {
@@ -2511,7 +2893,11 @@
         }
       },
       "view_size_setting": {
-        "name": "Visningsst\u00f8rrelse"
+        "name": "Visningsst\u00f8rrelse",
+        "state": {
+          "big_text": "Stor tekst",
+          "normal_text": "Normal tekst"
+        }
       },
       "view_size_setting_status": {
         "name": "Visningsst\u00f8rrelse",
@@ -2521,7 +2907,14 @@
         }
       },
       "volume": {
-        "name": "Volum"
+        "name": "Volum",
+        "state": {
+          "level_1": "Niv\u00e5 1",
+          "level_2": "Niv\u00e5 2",
+          "level_3": "Niv\u00e5 3",
+          "level_4": "Niv\u00e5 4",
+          "level_5": "Niv\u00e5 5"
+        }
       },
       "warming_drawer_power_level": {
         "name": "Effektniv\u00e5 for varmeskuff",
@@ -2815,6 +3208,21 @@
       "bathingwaterpumpstate": {
         "name": "Badevannspumpe-tilstand"
       },
+      "blockdetailedprogramview": {
+        "name": "Blokker detaljert programvisning"
+      },
+      "bookavailabletime": {
+        "name": "Tilgjengelig reservasjonstid"
+      },
+      "booking": {
+        "name": "Reservasjon"
+      },
+      "bookreservedtime": {
+        "name": "Reservert tid"
+      },
+      "booktimetoendreservation": {
+        "name": "Tid til reservasjon slutter"
+      },
       "brand_splash_setting": {
         "name": "Innstilling for merkevareintro"
       },
@@ -2904,6 +3312,12 @@
       },
       "cleanairstarttime": {
         "name": "Starttid for ren luft"
+      },
+      "cleancondensefilter": {
+        "name": "Rengj\u00f8r kondensatorfilter"
+      },
+      "cleandoorfilter": {
+        "name": "Rengj\u00f8r d\u00f8rfilter"
       },
       "coldwash": {
         "name": "Kaldvask"
@@ -3041,6 +3455,27 @@
       "currentprogram_medium_waterlevel_starting_waterlevelvalue": {
         "name": "Startvanniv\u00e5 ved middels vanniv\u00e5 for n\u00e5v\u00e6rende program"
       },
+      "currentprogramphase": {
+        "name": "Fase for n\u00e5v\u00e6rende program",
+        "state": {
+          "add_cloth_drain": "Legg til t\u00f8y \u2013 t\u00f8mming",
+          "add_cloth_drain_finish": "Legg til t\u00f8y \u2013 t\u00f8mming ferdig",
+          "anti_crease": "Anti-kr\u00f8ll",
+          "coolend": "Nedkj\u00f8ling ferdig",
+          "cooling": "Kj\u00f8ling",
+          "delay": "Forsinkelse",
+          "drain_water": "T\u00f8mmer vann",
+          "finished": "Ferdig",
+          "prewash": "Forvask",
+          "rinsing": "Skylling",
+          "spinning": "Sentrifuget\u00f8rk",
+          "stop_program": "Avbrutt",
+          "wash": "Vask"
+        }
+      },
+      "currentwatertemperature": {
+        "name": "N\u00e5v\u00e6rende vanntemperatur"
+      },
       "currrent_dry_level_time": {
         "name": "N\u00e5v\u00e6rende t\u00f8rkeniv\u00e5tid"
       },
@@ -3061,6 +3496,9 @@
       },
       "daily_energy_kwh": {
         "name": "Daglig energi"
+      },
+      "daily_water_consumption": {
+        "name": "Daglig vannforbruk"
       },
       "darhcdq": {
         "name": "Darhcdq"
@@ -3152,8 +3590,14 @@
       "delaystart_delayend_timestamp_status": {
         "name": "Tidsstempelstatus for utsatt start/slutt"
       },
+      "delaystartcountdowntimer": {
+        "name": "Nedtelling for utsatt start"
+      },
       "demo_mode_status": {
         "name": "Status for demomodus"
+      },
+      "demomode": {
+        "name": "Demomodus"
       },
       "descale_status": {
         "name": "Status for avkalking"
@@ -3215,12 +3659,19 @@
       "devicestatus": {
         "name": "Enhetsstatus",
         "state": {
+          "error": "Feil",
           "idle": "Inaktiv",
           "not_available": "Ikke tilgjengelig",
+          "pause": "Pause",
+          "permanent_error": "Permanent feil",
           "production": "Produksjon",
+          "program_finished": "Program ferdig",
+          "program_select": "Programvalg",
           "reserved": "Reservert",
           "running": "Kj\u00f8rer",
-          "service": "Service"
+          "service": "Service",
+          "standby": "Standby",
+          "temporary_error": "Midlertidig feil"
         }
       },
       "display_brightness_setting_status": {
@@ -3260,6 +3711,9 @@
       },
       "displaycontrast_setting": {
         "name": "Innstilling for skjermkontrast"
+      },
+      "displaylogo": {
+        "name": "Vis logo"
       },
       "door_close_light_status": {
         "name": "Lysstatus ved lukket d\u00f8r"
@@ -3468,6 +3922,9 @@
       },
       "electricit_consumption": {
         "name": "Str\u00f8mforbruk"
+      },
+      "emptywatertank": {
+        "name": "T\u00f8m vanntank"
       },
       "energy": {
         "name": "Energi"
@@ -3913,6 +4370,108 @@
       "factory_reset": {
         "name": "Tilbakestilling til fabrikkinnstillinger"
       },
+      "failurereadout1": {
+        "name": "Feil 1"
+      },
+      "failurereadout10": {
+        "name": "Feil 10"
+      },
+      "failurereadout10lastcycle": {
+        "name": "Feil 10 forrige syklus"
+      },
+      "failurereadout10numberofrepetiotion": {
+        "name": "Feil 10 gjentakelser"
+      },
+      "failurereadout11": {
+        "name": "Feil 11"
+      },
+      "failurereadout11numberofrepetiotion": {
+        "name": "Feil 11 gjentakelser"
+      },
+      "failurereadout12": {
+        "name": "Feil 12"
+      },
+      "failurereadout12numberofrepetiotion": {
+        "name": "Feil 12 gjentakelser"
+      },
+      "failurereadout1lastcycle": {
+        "name": "Feil 1 forrige syklus"
+      },
+      "failurereadout1numberofrepetiotion": {
+        "name": "Feil 1 gjentakelser"
+      },
+      "failurereadout2": {
+        "name": "Feil 2"
+      },
+      "failurereadout2lastcycle": {
+        "name": "Feil 2 forrige syklus"
+      },
+      "failurereadout2numberofrepetiotion": {
+        "name": "Feil 2 gjentakelser"
+      },
+      "failurereadout3": {
+        "name": "Feil 3"
+      },
+      "failurereadout3lastcycle": {
+        "name": "Feil 3 forrige syklus"
+      },
+      "failurereadout3numberofrepetiotion": {
+        "name": "Feil 3 gjentakelser"
+      },
+      "failurereadout4": {
+        "name": "Feil 4"
+      },
+      "failurereadout4lastcycle": {
+        "name": "Feil 4 forrige syklus"
+      },
+      "failurereadout4numberofrepetiotion": {
+        "name": "Feil 4 gjentakelser"
+      },
+      "failurereadout5": {
+        "name": "Feil 5"
+      },
+      "failurereadout5lastcycle": {
+        "name": "Feil 5 forrige syklus"
+      },
+      "failurereadout5numberofrepetiotion": {
+        "name": "Feil 5 gjentakelser"
+      },
+      "failurereadout6": {
+        "name": "Feil 6"
+      },
+      "failurereadout6lastcycle": {
+        "name": "Feil 6 forrige syklus"
+      },
+      "failurereadout6numberofrepetiotion": {
+        "name": "Feil 6 gjentakelser"
+      },
+      "failurereadout7": {
+        "name": "Feil 7"
+      },
+      "failurereadout7lastcycle": {
+        "name": "Feil 7 forrige syklus"
+      },
+      "failurereadout7numberofrepetiotion": {
+        "name": "Feil 7 gjentakelser"
+      },
+      "failurereadout8": {
+        "name": "Feil 8"
+      },
+      "failurereadout8lastcycle": {
+        "name": "Feil 8 forrige syklus"
+      },
+      "failurereadout8numberofrepetiotion": {
+        "name": "Feil 8 gjentakelser"
+      },
+      "failurereadout9": {
+        "name": "Feil 9"
+      },
+      "failurereadout9lastcycle": {
+        "name": "Feil 9 forrige syklus"
+      },
+      "failurereadout9numberofrepetiotion": {
+        "name": "Feil 9 gjentakelser"
+      },
       "fan_sequence_setting_status": {
         "name": "Viftesekvens"
       },
@@ -4175,6 +4734,9 @@
       "humdy_test_switch_state": {
         "name": "Bryterstatus for fuktighetstest"
       },
+      "humiditysensor": {
+        "name": "Fuktighetssensor"
+      },
       "ice_machine_actual_temp": {
         "name": "Faktisk temperatur i ismaskin"
       },
@@ -4204,6 +4766,15 @@
       },
       "id5": {
         "name": "ID 5"
+      },
+      "idcode": {
+        "name": "ID-kode"
+      },
+      "identified": {
+        "name": "Identifisert"
+      },
+      "idmachine": {
+        "name": "Maskin-ID"
       },
       "inactivity_timeout": {
         "name": "Tidsavbrudd ved inaktivitet"
@@ -4292,6 +4863,9 @@
       "lockpin_code": {
         "name": "PIN-kode for l\u00e5s"
       },
+      "logo": {
+        "name": "Logo"
+      },
       "logo_setting_status": {
         "name": "Innstilling for logo"
       },
@@ -4334,6 +4908,9 @@
       },
       "market_mode_exist": {
         "name": "Butikkmodus finnes"
+      },
+      "maxtimeevent": {
+        "name": "Maks tid-hendelse"
       },
       "mdo_on_demand": {
         "name": "MDO p\u00e5 foresp\u00f8rsel"
@@ -4517,6 +5094,12 @@
       "oven_usage_value_time_since_last_cleaning": {
         "name": "Tid siden siste rengj\u00f8ring (ovnsbruk)"
       },
+      "paidbycoinbox": {
+        "name": "Betalt med myntboks"
+      },
+      "paidbycoinboxoreadbs": {
+        "name": "Betalt med myntboks / EADBS"
+      },
       "pairing": {
         "name": "Paring"
       },
@@ -4534,6 +5117,12 @@
       },
       "pause_anticrease_flag": {
         "name": "Pauseflagg for anti-kr\u00f8ll"
+      },
+      "paymentenabledtimer": {
+        "name": "Tidtaker for betaling aktivert"
+      },
+      "paymentsystem": {
+        "name": "Betalingssystem"
       },
       "performancemode_flag": {
         "name": "Ytelsesmodus-flagg"
@@ -4561,6 +5150,15 @@
       },
       "powersavedeletetime": {
         "name": "Slettetid for str\u00f8msparing"
+      },
+      "ppuonlinecoinsystem": {
+        "name": "PPU nettbasert myntsystem"
+      },
+      "ppurecipss": {
+        "name": "PPU RECIPSS"
+      },
+      "ppuwashenabled": {
+        "name": "PPU-vask aktivert"
       },
       "presoak": {
         "name": "Forvask (bl\u00f8tlegging)"
@@ -4591,6 +5189,9 @@
       },
       "programfunctionvalueid": {
         "name": "Verdi-ID for programfunksjon"
+      },
+      "programremainingtime": {
+        "name": "Gjenst\u00e5ende programtid"
       },
       "proximity_sensor_setting": {
         "name": "Innstilling for n\u00e6rhetssensor"
@@ -4745,11 +5346,23 @@
       "remote_control_monitoring_set_commands_actions": {
         "name": "Overv\u00e5king av fjernkontroll \u2013 kommandohandlinger"
       },
+      "remotecontrolmode": {
+        "name": "Fjernkontrollmodus"
+      },
       "remotecontrolmonitoringsetcommands": {
         "name": "Overv\u00e5king av fjernkontroll \u2013 sett kommandoer"
       },
       "remotecontrolmonitoringsetcommandsactions": {
         "name": "Overv\u00e5king av fjernkontroll \u2013 kommandohandlinger"
+      },
+      "remotesetcontrolenabled": {
+        "name": "Fjernstyring aktivert"
+      },
+      "remotestartduration": {
+        "name": "Varighet for fjernstart"
+      },
+      "remotestartenabled": {
+        "name": "Fjernstart aktivert"
       },
       "rfpairingstatus": {
         "name": "Status for RF-paring"
@@ -5045,20 +5658,34 @@
       "selected_program_id": {
         "name": "Valgt program",
         "state": {
+          "allergy_care": "Allergipleie",
+          "auto": "Auto",
           "baby_care": "Baby",
           "bedding": "Senget\u00f8y",
+          "cotton": "Bomull",
+          "cotton_dry": "Bomull t\u00f8rk",
           "cotton_storage": "Bomull lagring",
+          "drum_clean": "Trommelrens",
+          "eco_40_60": "Eco 40 60",
           "extra_hygiene": "Ekstra hygiene",
           "fast89": "Fast89",
           "iron": "Stryking",
+          "jeans": "Jeans",
           "mix": "Mix",
           "none": "Ingen",
+          "power_49": "Power 49",
+          "quick_15": "Hurtig 15",
+          "refresh": "Oppfrisk",
           "remote": "Fjernstyrt",
+          "rinse_spin": "Skyll og sentrifuger",
           "sensitive": "Sensitiv",
           "shirts": "Skjorter",
+          "silk_delicate": "Silke/Finvask",
+          "spin": "Sentrifugering",
           "sportswear": "Sport",
           "standard": "Standard",
-          "synthetic": "Syntet",
+          "synthetic": "Syntetisk",
+          "synthetic_dry": "Syntetisk t\u00f8rk",
           "time": "Tid",
           "wool": "Ull"
         }
@@ -5142,6 +5769,18 @@
       "selected_programremaining_time_inminutes": {
         "name": "Gjenst\u00e5ende tid for valgt program"
       },
+      "selectedbasicid": {
+        "name": "Valgt basis-ID"
+      },
+      "selectedderivedid": {
+        "name": "Valgt avledet ID"
+      },
+      "selectedprogram": {
+        "name": "Valgt program"
+      },
+      "sensor3d": {
+        "name": "Sensor 3D"
+      },
       "sensor_failure_status": {
         "name": "Status for sensorfeil"
       },
@@ -5180,6 +5819,12 @@
       },
       "sessionpairingconfirmation": {
         "name": "\u00d8ktparing \u2013 bekreftelse"
+      },
+      "sessionpairingrequest": {
+        "name": "Foresp\u00f8rsel om \u00f8ktparing"
+      },
+      "sessionpairingsetting": {
+        "name": "\u00d8ktparing \u2013 innstilling"
       },
       "set_progress_type": {
         "name": "Sett fremdriftstype",
@@ -6174,6 +6819,9 @@
       "softpairing": {
         "name": "Myk paring"
       },
+      "softpairingsetting": {
+        "name": "Innstilling for myk paring"
+      },
       "soil_lever": {
         "name": "Smussniv\u00e5"
       },
@@ -6210,6 +6858,9 @@
       "spinstepfinishnotifyswitch": {
         "name": "Varselbryter for ferdig sentrifugeringstrinn"
       },
+      "spintime": {
+        "name": "Sentrifugetid"
+      },
       "spintime_flag": {
         "name": "Sentrifugetid-flagg"
       },
@@ -6245,6 +6896,9 @@
       },
       "standby_mode_valid": {
         "name": "Standby-modus gyldig"
+      },
+      "standbychoice": {
+        "name": "Standby-valg"
       },
       "status": {
         "name": "Enhetsstatus",
@@ -7302,6 +7956,25 @@
       "temperature_unit_status": {
         "name": "Status for temperaturenhet"
       },
+      "temperaturesensor1": {
+        "name": "Temperatursensor 1"
+      },
+      "temperaturesensor2": {
+        "name": "Temperatursensor 2"
+      },
+      "temperatureunit": {
+        "name": "Temperaturenhet",
+        "state": {
+          "celsius": "Celsius",
+          "fahrenheit": "Fahrenheit"
+        }
+      },
+      "temporarylanguageselected": {
+        "name": "Midlertidig spr\u00e5k valgt"
+      },
+      "temporarylanguagesettingenabled": {
+        "name": "Midlertidig spr\u00e5kinnstilling aktivert"
+      },
       "testdata_data": {
         "name": "Testdata"
       },
@@ -7331,6 +8004,9 @@
       },
       "timedateautomatic_setting": {
         "name": "Automatisk innstilling for klokkeslett og dato"
+      },
+      "timeremaining": {
+        "name": "Gjenst\u00e5ende tid"
       },
       "timerendtime": {
         "name": "Tidsur \u2013 sluttid"
@@ -7394,6 +8070,12 @@
       },
       "total_water_consumption": {
         "name": "Totalt vannforbruk"
+      },
+      "totalprogramcycles": {
+        "name": "Totalt antall programsykluser"
+      },
+      "totalprogramscycles": {
+        "name": "Totalt antall programsykluser"
       },
       "unfreeze_run_status": {
         "name": "Kj\u00f8restatus for opptining"
@@ -7806,8 +8488,14 @@
       "adaptive_sense_setting": {
         "name": "Adaptiv sansingsinnstilling"
       },
+      "addclothes": {
+        "name": "Legg til kl\u00e6r"
+      },
       "air_shower_setting_status": {
         "name": "Luftdusj"
+      },
+      "allergymodeenable": {
+        "name": "Allergimodus"
       },
       "ambientlightstatus": {
         "name": "Omgivelseslys"
@@ -7878,11 +8566,17 @@
       "child_lock_switch_status": {
         "name": "Barnesikring"
       },
+      "childlockenabled": {
+        "name": "Barnesikring"
+      },
       "cleanairstatus": {
         "name": "Ren luft"
       },
       "cleaning_reminder_setting": {
         "name": "Rengj\u00f8ringsp\u00e5minnelse"
+      },
+      "coldwash": {
+        "name": "Kaldvask"
       },
       "color_sensor_setting_status": {
         "name": "Fargesensor"
@@ -7911,10 +8605,16 @@
       "drum_light_setting_status": {
         "name": "Trommellys"
       },
+      "drumvleanprogramwarning": {
+        "name": "Varsel om trommelrensprogram"
+      },
       "extra_rinse": {
         "name": "Ekstra skyll"
       },
       "extra_rinse_status": {
+        "name": "Ekstra skyll"
+      },
+      "extrarinse": {
         "name": "Ekstra skyll"
       },
       "fota_cmd": {
@@ -7923,8 +8623,14 @@
       "greasefilterstatus": {
         "name": "Fettfiltertimer"
       },
+      "heater2enable": {
+        "name": "Tilleggsvarmer"
+      },
       "heating_power_setting": {
         "name": "Varmeeffekt"
+      },
+      "heatingsteps": {
+        "name": "Varmetrinn"
       },
       "hide_setting": {
         "name": "Skjul innstilling"
@@ -7977,6 +8683,9 @@
       "prewash": {
         "name": "Forvask"
       },
+      "programoptionanticrease": {
+        "name": "Anti-kr\u00f8ll"
+      },
       "proximitysensorsetavalibility": {
         "name": "N\u00e6rhetssensor tilgjengelig"
       },
@@ -8016,6 +8725,9 @@
       "sf_sr_mutex_mode": {
         "name": "SF/SR-mutex-modus"
       },
+      "showmeasuredtemperature": {
+        "name": "Vis m\u00e5lt temperatur"
+      },
       "smart_sync_setting": {
         "name": "Smart synk"
       },
@@ -8025,11 +8737,17 @@
       "soft_pairing_status": {
         "name": "Myk paring"
       },
+      "sound": {
+        "name": "Lyd"
+      },
       "sr_mode": {
         "name": "SR-modus"
       },
       "standby_mode_status": {
         "name": "Hvilemodus"
+      },
+      "startdelayfunction": {
+        "name": "Utsett start"
       },
       "steam": {
         "name": "Damp"
@@ -8051,6 +8769,9 @@
       },
       "t_air": {
         "name": "Luft"
+      },
+      "t_anion": {
+        "name": "Ionisator"
       },
       "t_dal": {
         "name": "DAL"
