@@ -429,7 +429,7 @@
         "name": "Stoomreiniging voltooid"
       },
       "alarmsteriltubrunwarning": {
-        "name": "Sterilisatie trommel vereist"
+        "name": "Trommelsterilisatie vereist"
       },
       "alarmtanklevel1": {
         "name": "Waterniveau laag"
@@ -444,7 +444,7 @@
         "name": "Wifi fout"
       },
       "alramemptywatertank": {
-        "name": "Watertank leeg"
+        "name": "Waterreservoir leeg"
       },
       "auto_boost": {
         "name": "Auto boost"
@@ -1119,7 +1119,7 @@
         "name": "Motortoerental 900 toeren beschikbaar"
       },
       "motorspeednodrainavailable": {
-        "name": "Motorsnelheid zonder afvoer beschikbaar"
+        "name": "Motortoerental zonder afvoer beschikbaar"
       },
       "motorspeednospinavailable": {
         "name": "Motortoerental zonder centrifugeren beschikbaar"
@@ -3924,7 +3924,7 @@
         "name": "Elektriciteitsverbruik"
       },
       "emptywatertank": {
-        "name": "Watertank leeg"
+        "name": "Waterreservoir leeg"
       },
       "energy": {
         "name": "Energie"
@@ -4910,7 +4910,7 @@
         "name": "Market mode exist"
       },
       "maxtimeevent": {
-        "name": "Max. tijd-gebeurtenis"
+        "name": "Gebeurtenis maximale tijd"
       },
       "mdo_on_demand": {
         "name": "MDO on demand"
@@ -5095,10 +5095,10 @@
         "name": "Tijd sinds laatste reiniging"
       },
       "paidbycoinbox": {
-        "name": "Betaald via muntbox"
+        "name": "Betaald via muntkast"
       },
       "paidbycoinboxoreadbs": {
-        "name": "Betaald via muntbox / EADBS"
+        "name": "Betaald via muntkast / EADBS"
       },
       "pairing": {
         "name": "Koppelen"
@@ -5152,7 +5152,7 @@
         "name": "Energiebesparing verwijdertijd"
       },
       "ppuonlinecoinsystem": {
-        "name": "PPU online muntsysteem"
+        "name": "PPU online-muntsysteem"
       },
       "ppurecipss": {
         "name": "PPU RECIPSS"
