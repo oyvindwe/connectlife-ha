@@ -311,8 +311,23 @@
       "alarmcleanairended": {
         "name": "Alarm clean air ended"
       },
+      "alarmcleancondense": {
+        "name": "Condensor reinigen"
+      },
+      "alarmcleancondenserfilter": {
+        "name": "Condensorfilter reinigen"
+      },
+      "alarmcleandoorfilter": {
+        "name": "Deurfilter reinigen"
+      },
+      "alarmcleanfilterwarning": {
+        "name": "Filter reinigen"
+      },
       "alarmcleantank": {
         "name": "Reservoir reinigen"
+      },
+      "alarmclosethedoorwarning": {
+        "name": "Deur niet gesloten"
       },
       "alarmdehydrate_ended": {
         "name": "Drogen voltooid"
@@ -332,8 +347,20 @@
       "alarmemptytankpause": {
         "name": "Pauze: reservoir leegmaken"
       },
+      "alarmfilladcontainer1warning": {
+        "name": "Autodoseerreservoir 1 leeg"
+      },
+      "alarmfilladcontainer2warning": {
+        "name": "Autodoseerreservoir 2 leeg"
+      },
       "alarmfilltank": {
         "name": "Reservoir vullen"
+      },
+      "alarmfoamdetection": {
+        "name": "Schuim gedetecteerd"
+      },
+      "alarmfulltank": {
+        "name": "Waterreservoir vol"
       },
       "alarmgreasefilter": {
         "name": "Alarm vetfilter"
@@ -347,6 +374,9 @@
       "alarmmicrowave_system_finished": {
         "name": "Magnetroncyclus voltooid"
       },
+      "alarmoptionnotavailable": {
+        "name": "Optie niet beschikbaar"
+      },
       "alarmoven_system_finished": {
         "name": "Ovencyclus voltooid"
       },
@@ -356,8 +386,17 @@
       "alarmpower_failure_running": {
         "name": "Stroomuitval tijdens programma"
       },
+      "alarmpowerfail": {
+        "name": "Stroomuitval"
+      },
+      "alarmpowerfailalert": {
+        "name": "Stroomuitval"
+      },
       "alarmprobe_lost_connection": {
         "name": "Vleesthermometer verbinding verloren"
+      },
+      "alarmprogramfinished": {
+        "name": "Programma voltooid"
       },
       "alarmrecirculationfilter1": {
         "name": "Alarm recirculatiefilter 1"
@@ -389,14 +428,23 @@
       "alarmsteamclean_finished": {
         "name": "Stoomreiniging voltooid"
       },
+      "alarmsteriltubrunwarning": {
+        "name": "Sterilisatie trommel vereist"
+      },
       "alarmtanklevel1": {
         "name": "Waterniveau laag"
       },
       "alarmtimerended": {
         "name": "Alarm timer ended"
       },
+      "alarmwashfinished": {
+        "name": "Wassen voltooid"
+      },
       "ali_wifi_fault_flag": {
         "name": "Wifi fout"
+      },
+      "alramemptywatertank": {
+        "name": "Watertank leeg"
       },
       "auto_boost": {
         "name": "Auto boost"
@@ -409,6 +457,9 @@
       },
       "auto_timer": {
         "name": "Automatische timer"
+      },
+      "automatic_ice_making": {
+        "name": "Automatisch ijs maken"
       },
       "charcoal_filter_expiration_alarm": {
         "name": "Einde levensduur koolstoffilter"
@@ -436,6 +487,9 @@
       },
       "child_lock_switch_status": {
         "name": "Kinderbeveiliging schakelaar status"
+      },
+      "childlockactive": {
+        "name": "Status kinderslot"
       },
       "clean_filter": {
         "name": "Filter reinigen"
@@ -473,11 +527,185 @@
       "door_status": {
         "name": "Deur"
       },
+      "doorstatus": {
+        "name": "Deur"
+      },
       "eco_mode": {
         "name": "ECO-modus"
       },
       "envi_temp_sens_head_failure": {
         "name": "Storing omgevingstemperatuursensor"
+      },
+      "error0": {
+        "name": "Fout 0"
+      },
+      "error1": {
+        "name": "Fout 1"
+      },
+      "error10": {
+        "name": "Fout 10"
+      },
+      "error11": {
+        "name": "Fout 11"
+      },
+      "error12": {
+        "name": "Fout 12"
+      },
+      "error12_1": {
+        "name": "Fout 12 1"
+      },
+      "error12_10": {
+        "name": "Fout 12 10"
+      },
+      "error12_12": {
+        "name": "Fout 12 12"
+      },
+      "error12_2": {
+        "name": "Fout 12 2"
+      },
+      "error12_3": {
+        "name": "Fout 12 3"
+      },
+      "error12_4": {
+        "name": "Fout 12 4"
+      },
+      "error12_5": {
+        "name": "Fout 12 5"
+      },
+      "error12_6": {
+        "name": "Fout 12 6"
+      },
+      "error12_7": {
+        "name": "Fout 12 7"
+      },
+      "error12_8": {
+        "name": "Fout 12 8"
+      },
+      "error12_9": {
+        "name": "Fout 12 9"
+      },
+      "error13": {
+        "name": "Fout 13"
+      },
+      "error13_1": {
+        "name": "Fout 13 1"
+      },
+      "error13_2": {
+        "name": "Fout 13 2"
+      },
+      "error13_3": {
+        "name": "Fout 13 3"
+      },
+      "error14": {
+        "name": "Fout 14"
+      },
+      "error15": {
+        "name": "Fout 15"
+      },
+      "error2": {
+        "name": "Fout 2"
+      },
+      "error22": {
+        "name": "Fout 22"
+      },
+      "error23": {
+        "name": "Fout 23"
+      },
+      "error24": {
+        "name": "Fout 24"
+      },
+      "error25": {
+        "name": "Fout 25"
+      },
+      "error26": {
+        "name": "Fout 26"
+      },
+      "error27": {
+        "name": "Fout 27"
+      },
+      "error28": {
+        "name": "Fout 28"
+      },
+      "error29": {
+        "name": "Fout 29"
+      },
+      "error3": {
+        "name": "Fout 3"
+      },
+      "error30": {
+        "name": "Fout 30"
+      },
+      "error31": {
+        "name": "Fout 31"
+      },
+      "error32": {
+        "name": "Fout 32"
+      },
+      "error33": {
+        "name": "Fout 33"
+      },
+      "error34": {
+        "name": "Fout 34"
+      },
+      "error35": {
+        "name": "Fout 35"
+      },
+      "error36": {
+        "name": "Fout 36"
+      },
+      "error37": {
+        "name": "Fout 37"
+      },
+      "error38": {
+        "name": "Fout 38"
+      },
+      "error39": {
+        "name": "Fout 39"
+      },
+      "error4": {
+        "name": "Fout 4"
+      },
+      "error40": {
+        "name": "Fout 40"
+      },
+      "error41": {
+        "name": "Fout 41"
+      },
+      "error42": {
+        "name": "Fout 42"
+      },
+      "error43": {
+        "name": "Fout 43"
+      },
+      "error44": {
+        "name": "Fout 44"
+      },
+      "error45": {
+        "name": "Fout 45"
+      },
+      "error46": {
+        "name": "Fout 46"
+      },
+      "error47": {
+        "name": "Fout 47"
+      },
+      "error5": {
+        "name": "Fout 5"
+      },
+      "error6": {
+        "name": "Fout 6"
+      },
+      "error7": {
+        "name": "Fout 7"
+      },
+      "error7_1": {
+        "name": "Fout 7 1"
+      },
+      "error8": {
+        "name": "Fout 8"
+      },
+      "error9": {
+        "name": "Fout 9"
       },
       "error_0": {
         "name": "Fout 0"
@@ -626,8 +854,14 @@
       "f_e_arkgrille": {
         "name": "Kastrooster alarmbeveiliging"
       },
+      "f_e_drive": {
+        "name": "Aandrijving"
+      },
       "f_e_dwmachine": {
         "name": "Storing onderste machine"
+      },
+      "f_e_eeprom": {
+        "name": "EEPROM"
       },
       "f_e_filterclean": {
         "name": "Filter reinigen"
@@ -845,6 +1079,54 @@
       "mid_wine_area_b_temp_fault": {
         "name": "Midden wijngebied b temperatuur fout"
       },
+      "motorspeed1000rpmavailable": {
+        "name": "Motortoerental 1000 toeren beschikbaar"
+      },
+      "motorspeed100rpmavailable": {
+        "name": "Motortoerental 100 toeren beschikbaar"
+      },
+      "motorspeed1100rpmavailable": {
+        "name": "Motortoerental 1100 toeren beschikbaar"
+      },
+      "motorspeed1200rpmavailable": {
+        "name": "Motortoerental 1200 toeren beschikbaar"
+      },
+      "motorspeed1300rpmavailable": {
+        "name": "Motortoerental 1300 toeren beschikbaar"
+      },
+      "motorspeed1400rpmavailable": {
+        "name": "Motortoerental 1400 toeren beschikbaar"
+      },
+      "motorspeed1500rpmavailable": {
+        "name": "Motortoerental 1500 toeren beschikbaar"
+      },
+      "motorspeed1600rpmavailable": {
+        "name": "Motortoerental 1600 toeren beschikbaar"
+      },
+      "motorspeed400rpmavailable": {
+        "name": "Motortoerental 400 toeren beschikbaar"
+      },
+      "motorspeed500rpmavailable": {
+        "name": "Motortoerental 500 toeren beschikbaar"
+      },
+      "motorspeed600rpmavailable": {
+        "name": "Motortoerental 600 toeren beschikbaar"
+      },
+      "motorspeed800rpmavailable": {
+        "name": "Motortoerental 800 toeren beschikbaar"
+      },
+      "motorspeed900rpmavailable": {
+        "name": "Motortoerental 900 toeren beschikbaar"
+      },
+      "motorspeednodrainavailable": {
+        "name": "Motorsnelheid zonder afvoer beschikbaar"
+      },
+      "motorspeednospinavailable": {
+        "name": "Motortoerental zonder centrifugeren beschikbaar"
+      },
+      "offline_state": {
+        "name": "Verbinding"
+      },
       "open_freeze_door_alarm": {
         "name": "Vriezer deur open alarm"
       },
@@ -1049,6 +1331,9 @@
       "sl1_pot_detected": {
         "name": "Zone 1 pot gedetecteerd"
       },
+      "sl1_present": {
+        "name": "Zone 1 aanwezig"
+      },
       "sl1_residual_heat_signal": {
         "name": "Zone 1 restwarmte"
       },
@@ -1129,6 +1414,9 @@
       },
       "sl2_pot_detected": {
         "name": "Zone 2 pot gedetecteerd"
+      },
+      "sl2_present": {
+        "name": "Zone 2 aanwezig"
       },
       "sl2_residual_heat_signal": {
         "name": "Zone 2 restwarmte"
@@ -1211,6 +1499,9 @@
       "sl3_pot_detected": {
         "name": "Zone 3 pot gedetecteerd"
       },
+      "sl3_present": {
+        "name": "Zone 3 aanwezig"
+      },
       "sl3_residual_heat_signal": {
         "name": "Zone 3 restwarmte"
       },
@@ -1291,6 +1582,9 @@
       },
       "sl4_pot_detected": {
         "name": "Zone 4 pot gedetecteerd"
+      },
+      "sl4_present": {
+        "name": "Zone 4 aanwezig"
       },
       "sl4_residual_heat_signal": {
         "name": "Zone 4 restwarmte"
@@ -1373,6 +1667,9 @@
       "sl5_pot_detected": {
         "name": "Zone 5 pot gedetecteerd"
       },
+      "sl5_present": {
+        "name": "Zone 5 aanwezig"
+      },
       "sl5_residual_heat_signal": {
         "name": "Zone 5 restwarmte"
       },
@@ -1453,6 +1750,9 @@
       },
       "sl6_pot_detected": {
         "name": "Zone 6 pot gedetecteerd"
+      },
+      "sl6_present": {
+        "name": "Zone 6 aanwezig"
       },
       "sl6_residual_heat_signal": {
         "name": "Zone 6 restwarmte"
@@ -1739,6 +2039,12 @@
       "lumin_value_of_interior_light": {
         "name": "Helderheid binnenverlichting"
       },
+      "programoptiontimestartdelayhour": {
+        "name": "Uren startuitstel"
+      },
+      "programtimesstartdelayhours": {
+        "name": "Uren startuitstel"
+      },
       "refrigerator_max_temperature": {
         "name": "Koelkast max temperatuur"
       },
@@ -1779,10 +2085,16 @@
         "state": {
           "add_duration": "Duur toevoegen",
           "add_gratin": "Gratin toevoegen",
+          "cancel": "Annuleren",
+          "direct_steam": "Directe stoom",
           "none": "Geen",
           "pause": "Pauze",
+          "production_test": "Productietest",
+          "program_continue": "Programma hervatten",
+          "reset_programs_to_default": "Programma's terugzetten naar standaard",
           "start": "Start",
           "steam_shot": "Stoom shot",
+          "steamer_water_tank_door_open": "Klep stoomwatertank openen",
           "stop": "Stop",
           "stop_finish": "Stop afronden"
         }
@@ -1824,7 +2136,14 @@
         }
       },
       "brightness": {
-        "name": "Helderheid"
+        "name": "Helderheid",
+        "state": {
+          "level_1": "Niveau 1",
+          "level_2": "Niveau 2",
+          "level_3": "Niveau 3",
+          "level_4": "Niveau 4",
+          "level_5": "Niveau 5"
+        }
       },
       "circulationmodestatus": {
         "name": "Circulatiemodus",
@@ -1854,6 +2173,13 @@
           "sensitive_detergent": "Wasmiddel voor gevoelige stoffen",
           "softener": "Wasverzachter",
           "white_detergent": "Witwasmiddel"
+        }
+      },
+      "condensewatermode": {
+        "name": "Condenswatermodus",
+        "state": {
+          "drain": "Afvoeren",
+          "tank": "Reservoir"
         }
       },
       "cooking_intensity": {
@@ -1917,6 +2243,23 @@
           "3": "3",
           "auto": "Auto",
           "off": "Uit"
+        }
+      },
+      "displaybrightness": {
+        "name": "Helderheid display",
+        "state": {
+          "level_1": "Niveau 1",
+          "level_2": "Niveau 2",
+          "level_3": "Niveau 3",
+          "level_4": "Niveau 4",
+          "level_5": "Niveau 5"
+        }
+      },
+      "drain": {
+        "name": "Afvoeren",
+        "state": {
+          "pump": "Pomp",
+          "valve": "Klep"
         }
       },
       "dry_level": {
@@ -2002,6 +2345,14 @@
         "state": {
           "ml": "ml",
           "tbs": "el"
+        }
+      },
+      "load": {
+        "name": "Belading",
+        "state": {
+          "100_percent": "100 procent",
+          "25_percent": "25 procent",
+          "50_percent": "50 procent"
         }
       },
       "max_rpm_allowed_stat": {
@@ -2231,6 +2582,29 @@
           "800_rpm": "800 toeren"
         }
       },
+      "setmaxmotorspeed": {
+        "name": "Maximaal centrifugetoerental",
+        "state": {
+          "1000_rpm": "1000 toeren",
+          "100_rpm": "100 toeren",
+          "1100_rpm": "1100 toeren",
+          "1200_rpm": "1200 toeren",
+          "1300_rpm": "1300 toeren",
+          "1400_rpm": "1400 toeren",
+          "1500_rpm": "1500 toeren",
+          "1600_rpm": "1600 toeren",
+          "400_rpm": "400 toeren",
+          "500_rpm": "500 toeren",
+          "600_rpm": "600 toeren",
+          "800_rpm": "800 toeren",
+          "900_rpm": "900 toeren",
+          "no_drain": "Geen afvoer",
+          "no_spin": "Niet centrifugeren",
+          "not_available": "Niet beschikbaar",
+          "reserved_0": "Gereserveerd 0",
+          "reserved_7": "Gereserveerd 7"
+        }
+      },
       "softener": {
         "name": "Wasverzachter",
         "state": {
@@ -2412,7 +2786,8 @@
         "state": {
           "auto": "Automatisch",
           "high": "Hoog",
-          "low": "Laag"
+          "low": "Laag",
+          "medium": "Gemiddeld"
         }
       },
       "t_sleep": {
@@ -2494,6 +2869,13 @@
           "not_set": "Niet ingesteld"
         }
       },
+      "timeiconsetting": {
+        "name": "Instelling tijdpictogram",
+        "state": {
+          "icon": "Pictogram",
+          "time": "Tijd"
+        }
+      },
       "timersetting": {
         "name": "Timeractie",
         "state": {
@@ -2511,7 +2893,11 @@
         }
       },
       "view_size_setting": {
-        "name": "Weergavegrootte"
+        "name": "Weergavegrootte",
+        "state": {
+          "big_text": "Grote tekst",
+          "normal_text": "Normale tekst"
+        }
       },
       "view_size_setting_status": {
         "name": "Weergavegrootte",
@@ -2521,7 +2907,14 @@
         }
       },
       "volume": {
-        "name": "Volume"
+        "name": "Volume",
+        "state": {
+          "level_1": "Niveau 1",
+          "level_2": "Niveau 2",
+          "level_3": "Niveau 3",
+          "level_4": "Niveau 4",
+          "level_5": "Niveau 5"
+        }
       },
       "warming_drawer_power_level": {
         "name": "Warmhoudlade vermogensniveau",
@@ -2815,6 +3208,21 @@
       "bathingwaterpumpstate": {
         "name": "Status waterpomp spoelbak"
       },
+      "blockdetailedprogramview": {
+        "name": "Gedetailleerde programmaweergave blokkeren"
+      },
+      "bookavailabletime": {
+        "name": "Beschikbare reserveringstijd"
+      },
+      "booking": {
+        "name": "Reservering"
+      },
+      "bookreservedtime": {
+        "name": "Gereserveerde tijd"
+      },
+      "booktimetoendreservation": {
+        "name": "Reserveringstijd tot einde"
+      },
       "brand_splash_setting": {
         "name": "Instelling merk-opstartscherm"
       },
@@ -2904,6 +3312,12 @@
       },
       "cleanairstarttime": {
         "name": "Starttijd schone lucht"
+      },
+      "cleancondensefilter": {
+        "name": "Condensorfilter reinigen"
+      },
+      "cleandoorfilter": {
+        "name": "Deurfilter reinigen"
       },
       "coldwash": {
         "name": "Koude was"
@@ -3041,6 +3455,27 @@
       "currentprogram_medium_waterlevel_starting_waterlevelvalue": {
         "name": "Huidig programma medium waterniveau startende waterniveau waarde"
       },
+      "currentprogramphase": {
+        "name": "Programmafase",
+        "state": {
+          "add_cloth_drain": "Afvoer voor wasgoed toevoegen",
+          "add_cloth_drain_finish": "Afvoer voor wasgoed toevoegen voltooid",
+          "anti_crease": "Anti-kreuk",
+          "coolend": "Einde afkoelen",
+          "cooling": "Koeling",
+          "delay": "Uitgesteld",
+          "drain_water": "Afpompen",
+          "finished": "Voltooid",
+          "prewash": "Voorwas",
+          "rinsing": "Spoelen",
+          "spinning": "Centrifugeren",
+          "stop_program": "Geannuleerd",
+          "wash": "Wassen"
+        }
+      },
+      "currentwatertemperature": {
+        "name": "Huidige watertemperatuur"
+      },
       "currrent_dry_level_time": {
         "name": "Huidige droogtijd"
       },
@@ -3061,6 +3496,9 @@
       },
       "daily_energy_kwh": {
         "name": "Dagelijks energieverbruik"
+      },
+      "daily_water_consumption": {
+        "name": "Dagelijks waterverbruik"
       },
       "darhcdq": {
         "name": "Darhcdq"
@@ -3152,7 +3590,13 @@
       "delaystart_delayend_timestamp_status": {
         "name": "Uitstel van start-/eindtijdstempel status"
       },
+      "delaystartcountdowntimer": {
+        "name": "Afteltimer uitgestelde start"
+      },
       "demo_mode_status": {
+        "name": "Demomodus"
+      },
+      "demomode": {
         "name": "Demomodus"
       },
       "descale_status": {
@@ -3215,12 +3659,19 @@
       "devicestatus": {
         "name": "Apparaatstatus",
         "state": {
+          "error": "Fout",
           "idle": "Inactief",
           "not_available": "Niet beschikbaar",
+          "pause": "Pauze",
+          "permanent_error": "Permanente fout",
           "production": "Productie",
+          "program_finished": "Programma voltooid",
+          "program_select": "Programmakeuze",
           "reserved": "Gereserveerd",
           "running": "Actief",
-          "service": "Onderhoud"
+          "service": "Onderhoud",
+          "standby": "Standby",
+          "temporary_error": "Tijdelijke fout"
         }
       },
       "display_brightness_setting_status": {
@@ -3260,6 +3711,9 @@
       },
       "displaycontrast_setting": {
         "name": "Instelling schermcontrast"
+      },
+      "displaylogo": {
+        "name": "Display-logo"
       },
       "door_close_light_status": {
         "name": "Verlichting bij gesloten deur status"
@@ -3468,6 +3922,9 @@
       },
       "electricit_consumption": {
         "name": "Elektriciteitsverbruik"
+      },
+      "emptywatertank": {
+        "name": "Watertank leeg"
       },
       "energy": {
         "name": "Energie"
@@ -3913,6 +4370,108 @@
       "factory_reset": {
         "name": "Reset naar fabrieksinstellingen"
       },
+      "failurereadout1": {
+        "name": "Storing 1"
+      },
+      "failurereadout10": {
+        "name": "Storing 10"
+      },
+      "failurereadout10lastcycle": {
+        "name": "Storing 10 laatste cyclus"
+      },
+      "failurereadout10numberofrepetiotion": {
+        "name": "Herhalingen storing 10"
+      },
+      "failurereadout11": {
+        "name": "Storing 11"
+      },
+      "failurereadout11numberofrepetiotion": {
+        "name": "Herhalingen storing 11"
+      },
+      "failurereadout12": {
+        "name": "Storing 12"
+      },
+      "failurereadout12numberofrepetiotion": {
+        "name": "Herhalingen storing 12"
+      },
+      "failurereadout1lastcycle": {
+        "name": "Storing 1 laatste cyclus"
+      },
+      "failurereadout1numberofrepetiotion": {
+        "name": "Herhalingen storing 1"
+      },
+      "failurereadout2": {
+        "name": "Storing 2"
+      },
+      "failurereadout2lastcycle": {
+        "name": "Storing 2 laatste cyclus"
+      },
+      "failurereadout2numberofrepetiotion": {
+        "name": "Herhalingen storing 2"
+      },
+      "failurereadout3": {
+        "name": "Storing 3"
+      },
+      "failurereadout3lastcycle": {
+        "name": "Storing 3 laatste cyclus"
+      },
+      "failurereadout3numberofrepetiotion": {
+        "name": "Herhalingen storing 3"
+      },
+      "failurereadout4": {
+        "name": "Storing 4"
+      },
+      "failurereadout4lastcycle": {
+        "name": "Storing 4 laatste cyclus"
+      },
+      "failurereadout4numberofrepetiotion": {
+        "name": "Herhalingen storing 4"
+      },
+      "failurereadout5": {
+        "name": "Storing 5"
+      },
+      "failurereadout5lastcycle": {
+        "name": "Storing 5 laatste cyclus"
+      },
+      "failurereadout5numberofrepetiotion": {
+        "name": "Herhalingen storing 5"
+      },
+      "failurereadout6": {
+        "name": "Storing 6"
+      },
+      "failurereadout6lastcycle": {
+        "name": "Storing 6 laatste cyclus"
+      },
+      "failurereadout6numberofrepetiotion": {
+        "name": "Herhalingen storing 6"
+      },
+      "failurereadout7": {
+        "name": "Storing 7"
+      },
+      "failurereadout7lastcycle": {
+        "name": "Storing 7 laatste cyclus"
+      },
+      "failurereadout7numberofrepetiotion": {
+        "name": "Herhalingen storing 7"
+      },
+      "failurereadout8": {
+        "name": "Storing 8"
+      },
+      "failurereadout8lastcycle": {
+        "name": "Storing 8 laatste cyclus"
+      },
+      "failurereadout8numberofrepetiotion": {
+        "name": "Herhalingen storing 8"
+      },
+      "failurereadout9": {
+        "name": "Storing 9"
+      },
+      "failurereadout9lastcycle": {
+        "name": "Storing 9 laatste cyclus"
+      },
+      "failurereadout9numberofrepetiotion": {
+        "name": "Herhalingen storing 9"
+      },
       "fan_sequence_setting_status": {
         "name": "Ventilatorvolgorde"
       },
@@ -4175,6 +4734,9 @@
       "humdy_test_switch_state": {
         "name": "Status schakelaar vochtigheidstest"
       },
+      "humiditysensor": {
+        "name": "Vochtigheidssensor"
+      },
       "ice_machine_actual_temp": {
         "name": "Werkelijke temperatuur ijsmachine"
       },
@@ -4204,6 +4766,15 @@
       },
       "id5": {
         "name": "ID 5"
+      },
+      "idcode": {
+        "name": "ID-code"
+      },
+      "identified": {
+        "name": "Ge\u00efdentificeerd"
+      },
+      "idmachine": {
+        "name": "Machine-ID"
       },
       "inactivity_timeout": {
         "name": "Time-out inactiviteit"
@@ -4292,6 +4863,9 @@
       "lockpin_code": {
         "name": "Lock pin code"
       },
+      "logo": {
+        "name": "Logo"
+      },
       "logo_setting_status": {
         "name": "Logo setting status"
       },
@@ -4334,6 +4908,9 @@
       },
       "market_mode_exist": {
         "name": "Market mode exist"
+      },
+      "maxtimeevent": {
+        "name": "Max. tijd-gebeurtenis"
       },
       "mdo_on_demand": {
         "name": "MDO on demand"
@@ -4517,6 +5094,12 @@
       "oven_usage_value_time_since_last_cleaning": {
         "name": "Tijd sinds laatste reiniging"
       },
+      "paidbycoinbox": {
+        "name": "Betaald via muntbox"
+      },
+      "paidbycoinboxoreadbs": {
+        "name": "Betaald via muntbox / EADBS"
+      },
       "pairing": {
         "name": "Koppelen"
       },
@@ -4534,6 +5117,12 @@
       },
       "pause_anticrease_flag": {
         "name": "Pause anti-crease flag"
+      },
+      "paymentenabledtimer": {
+        "name": "Timer betaling ingeschakeld"
+      },
+      "paymentsystem": {
+        "name": "Betaalsysteem"
       },
       "performancemode_flag": {
         "name": "Performance mode flag"
@@ -4561,6 +5150,15 @@
       },
       "powersavedeletetime": {
         "name": "Energiebesparing verwijdertijd"
+      },
+      "ppuonlinecoinsystem": {
+        "name": "PPU online muntsysteem"
+      },
+      "ppurecipss": {
+        "name": "PPU RECIPSS"
+      },
+      "ppuwashenabled": {
+        "name": "PPU-wasbeurt ingeschakeld"
       },
       "presoak": {
         "name": "Vooraf weken"
@@ -4591,6 +5189,9 @@
       },
       "programfunctionvalueid": {
         "name": "Program function value ID"
+      },
+      "programremainingtime": {
+        "name": "Resterende programmatijd"
       },
       "proximity_sensor_setting": {
         "name": "Nabijheidssensor instelling"
@@ -4745,11 +5346,23 @@
       "remote_control_monitoring_set_commands_actions": {
         "name": "Bediening op afstand monitoring set commands actions"
       },
+      "remotecontrolmode": {
+        "name": "Afstandsbedieningsmodus"
+      },
       "remotecontrolmonitoringsetcommands": {
         "name": "Bediening op afstand monitoring set commands"
       },
       "remotecontrolmonitoringsetcommandsactions": {
         "name": "Bediening op afstand monitoring set commands actions"
+      },
+      "remotesetcontrolenabled": {
+        "name": "Instellen op afstand ingeschakeld"
+      },
+      "remotestartduration": {
+        "name": "Duur start op afstand"
+      },
+      "remotestartenabled": {
+        "name": "Start op afstand ingeschakeld"
       },
       "rfpairingstatus": {
         "name": "RF koppeling status"
@@ -5045,20 +5658,34 @@
       "selected_program_id": {
         "name": "Geselecteerd programma",
         "state": {
+          "allergy_care": "Allergy Care",
+          "auto": "Automatisch",
           "baby_care": "Baby Care",
           "bedding": "Bedlinnen",
+          "cotton": "Katoen",
+          "cotton_dry": "Katoen droog",
           "cotton_storage": "Katoen opslag",
+          "drum_clean": "Trommelreiniging",
+          "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Extra hygi\u00ebne",
           "fast89": "Snel 89'",
           "iron": "Strijken",
+          "jeans": "Spijkerbroeken",
           "mix": "Mix",
           "none": "Geen",
+          "power_49": "Power 49",
+          "quick_15": "Snel 15",
+          "refresh": "Opfrissen",
           "remote": "Op afstand",
+          "rinse_spin": "Spoelen & centrifugeren",
           "sensitive": "Gevoelig",
           "shirts": "Shirts",
+          "silk_delicate": "Zijde/Delicaat",
+          "spin": "Centrifugeren",
           "sportswear": "Sport",
           "standard": "Standaard",
           "synthetic": "Synthetisch",
+          "synthetic_dry": "Synthetisch droog",
           "time": "Tijd",
           "wool": "Wol"
         }
@@ -5142,6 +5769,18 @@
       "selected_programremaining_time_inminutes": {
         "name": "Resterende tijd van geselecteerd programma"
       },
+      "selectedbasicid": {
+        "name": "Geselecteerd basis-ID"
+      },
+      "selectedderivedid": {
+        "name": "Geselecteerd afgeleid ID"
+      },
+      "selectedprogram": {
+        "name": "Geselecteerd programma"
+      },
+      "sensor3d": {
+        "name": "Sensor 3D"
+      },
       "sensor_failure_status": {
         "name": "Sensor failure status"
       },
@@ -5180,6 +5819,12 @@
       },
       "sessionpairingconfirmation": {
         "name": "Session pairing confirmation"
+      },
+      "sessionpairingrequest": {
+        "name": "Sessiekoppelingsverzoek"
+      },
+      "sessionpairingsetting": {
+        "name": "Sessiekoppeling instelling"
       },
       "set_progress_type": {
         "name": "Voortgangstype instellen",
@@ -6174,6 +6819,9 @@
       "softpairing": {
         "name": "Soft pairing"
       },
+      "softpairingsetting": {
+        "name": "Instelling soft pairing"
+      },
       "soil_lever": {
         "name": "Soil lever"
       },
@@ -6210,6 +6858,9 @@
       "spinstepfinishnotifyswitch": {
         "name": "Spin step finish notify switch"
       },
+      "spintime": {
+        "name": "Centrifugeertijd"
+      },
       "spintime_flag": {
         "name": "Spin time flag"
       },
@@ -6245,6 +6896,9 @@
       },
       "standby_mode_valid": {
         "name": "Standby mode valid"
+      },
+      "standbychoice": {
+        "name": "Standby-keuze"
       },
       "status": {
         "name": "Status",
@@ -7302,6 +7956,25 @@
       "temperature_unit_status": {
         "name": "Temperature unit status"
       },
+      "temperaturesensor1": {
+        "name": "Temperatuursensor 1"
+      },
+      "temperaturesensor2": {
+        "name": "Temperatuursensor 2"
+      },
+      "temperatureunit": {
+        "name": "Temperatuur eenheid",
+        "state": {
+          "celsius": "Celsius",
+          "fahrenheit": "Fahrenheit"
+        }
+      },
+      "temporarylanguageselected": {
+        "name": "Tijdelijke taal geselecteerd"
+      },
+      "temporarylanguagesettingenabled": {
+        "name": "Tijdelijke taalinstelling ingeschakeld"
+      },
       "testdata_data": {
         "name": "Test data"
       },
@@ -7331,6 +8004,9 @@
       },
       "timedateautomatic_setting": {
         "name": "Time date automatic setting"
+      },
+      "timeremaining": {
+        "name": "Resterende tijd"
       },
       "timerendtime": {
         "name": "Timer end time"
@@ -7394,6 +8070,12 @@
       },
       "total_water_consumption": {
         "name": "Totale waterverbruik"
+      },
+      "totalprogramcycles": {
+        "name": "Totaal aantal programmacycli"
+      },
+      "totalprogramscycles": {
+        "name": "Totaal aantal programmacycli"
       },
       "unfreeze_run_status": {
         "name": "Unfreeze run status"
@@ -7806,8 +8488,14 @@
       "adaptive_sense_setting": {
         "name": "Adaptive sense instelling"
       },
+      "addclothes": {
+        "name": "Was toevoegen"
+      },
       "air_shower_setting_status": {
         "name": "Air Shower"
+      },
+      "allergymodeenable": {
+        "name": "Allergiemodus"
       },
       "ambientlightstatus": {
         "name": "Sfeerverlichting"
@@ -7878,11 +8566,17 @@
       "child_lock_switch_status": {
         "name": "Kinderslot"
       },
+      "childlockenabled": {
+        "name": "Kinderbeveiliging"
+      },
       "cleanairstatus": {
         "name": "Schone lucht"
       },
       "cleaning_reminder_setting": {
         "name": "Reinigingsherinnering"
+      },
+      "coldwash": {
+        "name": "Koude was"
       },
       "color_sensor_setting_status": {
         "name": "Kleursensor"
@@ -7911,11 +8605,17 @@
       "drum_light_setting_status": {
         "name": "Trommelverlichting"
       },
+      "drumvleanprogramwarning": {
+        "name": "Waarschuwing trommelreinigingsprogramma"
+      },
       "extra_rinse": {
         "name": "Spoelen+"
       },
       "extra_rinse_status": {
         "name": "Spoelen+"
+      },
+      "extrarinse": {
+        "name": "Extra spoelen"
       },
       "fota_cmd": {
         "name": "Firmware update"
@@ -7923,8 +8623,14 @@
       "greasefilterstatus": {
         "name": "Vetfiltertimer"
       },
+      "heater2enable": {
+        "name": "Hulpverwarming"
+      },
       "heating_power_setting": {
         "name": "Verwarmingsvermogen"
+      },
+      "heatingsteps": {
+        "name": "Verwarmingsstappen"
       },
       "hide_setting": {
         "name": "Instelling verbergen"
@@ -7977,6 +8683,9 @@
       "prewash": {
         "name": "Voorwas"
       },
+      "programoptionanticrease": {
+        "name": "Anti-kreuk"
+      },
       "proximitysensorsetavalibility": {
         "name": "Nabijheidssensor beschikbaar"
       },
@@ -8016,6 +8725,9 @@
       "sf_sr_mutex_mode": {
         "name": "SF SR mutex modus"
       },
+      "showmeasuredtemperature": {
+        "name": "Gemeten temperatuur weergeven"
+      },
       "smart_sync_setting": {
         "name": "Smart sync"
       },
@@ -8025,11 +8737,17 @@
       "soft_pairing_status": {
         "name": "Soft pairing"
       },
+      "sound": {
+        "name": "Geluid"
+      },
       "sr_mode": {
         "name": "SR-modus"
       },
       "standby_mode_status": {
         "name": "Stand-bymodus"
+      },
+      "startdelayfunction": {
+        "name": "Startuitstel"
       },
       "steam": {
         "name": "Stoom"
@@ -8051,6 +8769,9 @@
       },
       "t_air": {
         "name": "Lucht"
+      },
+      "t_anion": {
+        "name": "Ionisator"
       },
       "t_dal": {
         "name": "DAL"
