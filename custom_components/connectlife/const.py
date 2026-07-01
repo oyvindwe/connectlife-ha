@@ -10,8 +10,13 @@ CONF_DEVICES = "devices"
 CONF_DEVELOPMENT_MODE = "development_mode"
 CONF_DISABLE_BEEP = "disable_beep"
 CONF_EXPOSE_OFFLINE_STATE = "expose_offline_state"
+CONF_TARGET_OVERRIDES = "target_overrides"
 CONF_TEST_SERVER_URL = "test_server_url"
 CONF_TRIR = "trir"
+
+# Sentinel option value meaning "use the automatic, priority-based binding"
+# for a contested climate target (see utils.climate_target_bindings).
+OVERRIDE_AUTO = "auto"
 
 OFFLINE_STATE = "offline_state"
 

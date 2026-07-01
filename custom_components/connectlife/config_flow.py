@@ -25,10 +25,14 @@ from .const import (
     CONF_DEVELOPMENT_MODE,
     CONF_DISABLE_BEEP,
     CONF_EXPOSE_OFFLINE_STATE,
+    CONF_TARGET_OVERRIDES,
     CONF_TEST_SERVER_URL,
     CONF_TRIR,
     DOMAIN,
+    OVERRIDE_AUTO,
 )
+from .dictionaries import Dictionaries
+from .utils import contested_climate_targets
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -252,14 +256,34 @@ class OptionsFlowHandler(OptionsFlow):
 
     async def async_step_configure_device(self, user_input: dict[str, Any] | None = None) -> ConfigFlowResult:
 
+        # A device may expose more than one property for the same climate target
+        # (e.g. both t_swing_angle and t_up_down for swing_mode). Offer a select
+        # per contested target so the user can pin the one their hardware
+        # actually honours; "auto" keeps the priority-based binding.
+        coordinator = self.hass.data[DOMAIN][self.config_entry.entry_id]
+        appliance = coordinator.data.get(self._device_id)
+        contested = (
+            contested_climate_targets(appliance, Dictionaries.get_dictionary(appliance))
+            if appliance
+            else {}
+        )
+
         # Configure the device
         if user_input is not None:
             data = self.config_entry.options.copy()
             data[CONF_DEVICES] = data[CONF_DEVICES].copy() if CONF_DEVICES in data else {}
-            data[CONF_DEVICES][self._device_id] = {
+            overrides = {
+                target: user_input[self._override_key(target)]
+                for target in contested
+                if user_input.get(self._override_key(target), OVERRIDE_AUTO) != OVERRIDE_AUTO
+            }
+            device_options: dict[str, Any] = {
                 CONF_DISABLE_BEEP: user_input[CONF_DISABLE_BEEP],
                 CONF_EXPOSE_OFFLINE_STATE: user_input[CONF_EXPOSE_OFFLINE_STATE],
             }
+            if overrides:
+                device_options[CONF_TARGET_OVERRIDES] = overrides
+            data[CONF_DEVICES][self._device_id] = device_options
             if not user_input[CONF_DISABLE_BEEP]:
                 ir.async_delete_issue(self.hass, DOMAIN, f"unsupported_beep.{self._device_id}")
             return self.async_create_entry(title="", data=data)
@@ -268,17 +292,26 @@ class OptionsFlowHandler(OptionsFlow):
         device = devices[self._device_id] if self._device_id in devices else {}
         disable_beep = device.get(CONF_DISABLE_BEEP, False)
         expose_offline_state = device.get(CONF_EXPOSE_OFFLINE_STATE, False)
-        schema = vol.Schema(
-            {
-                vol.Optional(CONF_DISABLE_BEEP, default=disable_beep): bool,
-                vol.Optional(CONF_EXPOSE_OFFLINE_STATE, default=expose_offline_state): bool,
-            }
-        )
-        coordinator = self.hass.data[DOMAIN][self.config_entry.entry_id]
-        appliance = coordinator.data.get(self._device_id)
+        current_overrides = device.get(CONF_TARGET_OVERRIDES, {})
+        schema_dict: dict[Any, Any] = {
+            vol.Optional(CONF_DISABLE_BEEP, default=disable_beep): bool,
+            vol.Optional(CONF_EXPOSE_OFFLINE_STATE, default=expose_offline_state): bool,
+        }
+        for target, properties in contested.items():
+            default = current_overrides.get(target, OVERRIDE_AUTO)
+            if default not in properties:
+                default = OVERRIDE_AUTO
+            options = {OVERRIDE_AUTO: OVERRIDE_AUTO, **{p: p for p in properties}}
+            schema_dict[vol.Optional(self._override_key(target), default=default)] = vol.In(options)
+
         device_name = (appliance.device_nickname if appliance else self._device_id) or ""
         return self.async_show_form(
             step_id="configure_device",
-            data_schema=schema,
+            data_schema=vol.Schema(schema_dict),
             description_placeholders={"device_name": device_name},
         )
+
+    @staticmethod
+    def _override_key(target: str) -> str:
+        """Options-form field key for a climate target's property override."""
+        return f"{CONF_TARGET_OVERRIDES}_{target}"

@@ -13,7 +13,7 @@ from .coordinator import ConnectLifeCoordinator
 from .dictionaries import Dictionaries, Property
 from .entity import ConnectLifeEntity
 from connectlife.appliance import ConnectLifeAppliance
-from .utils import climate_bound_properties, has_platform
+from .utils import climate_bound_properties, device_target_overrides, has_platform
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -27,7 +27,8 @@ async def async_setup_entry(
     coordinator = hass.data[DOMAIN][config_entry.entry_id]
     for appliance in coordinator.data.values():
         dictionary = Dictionaries.get_dictionary(appliance)
-        climate_bound = climate_bound_properties(appliance, dictionary)
+        overrides = device_target_overrides(config_entry, appliance.device_id)
+        climate_bound = climate_bound_properties(appliance, dictionary, overrides)
         async_add_entities(
             ConnectLifeSelect(
                 coordinator, appliance, s, dictionary.properties[s]

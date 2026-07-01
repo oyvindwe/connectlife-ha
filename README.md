@@ -76,6 +76,19 @@ This adds a `connectivity` binary sensor (a diagnostic entity) reporting whether
 the device's other entities from going unavailable while it is offline — they keep their last reported values
 until the device comes back online.
 
+## Swing mode control
+
+Some devices report more than one property that can drive the climate card's swing mode (for example, both a
+multi-position swing angle and a simple on/off swing). The integration normally picks one automatically, but a
+few devices advertise a control they don't actually honour — e.g. the swing angle options appear but only make
+the unit beep, while the on/off swing is what works.
+
+If the swing control on the climate card doesn't work, go to the
+[ConnectLife integration](https://my.home-assistant.io/redirect/integration/?domain=connectlife)
+and click "Configure" → "Configure a device", select the device, and set "Swing mode control" to the property
+your hardware actually responds to (leave it on "auto" to keep the automatic choice). This option only appears
+for devices that expose more than one swing property.
+
 ## Daily energy and water consumption sensors
 
 For supported device types, the integration exposes a **daily energy** sensor (kWh) and, for

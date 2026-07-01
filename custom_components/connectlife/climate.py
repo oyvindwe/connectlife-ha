@@ -31,7 +31,13 @@ from .const import (
 from .coordinator import ConnectLifeCoordinator
 from .dictionaries import Dictionaries, Dictionary
 from .entity import ConnectLifeEntity
-from .utils import climate_target_bindings, has_platform, to_temperature_map, normalize_temperature_unit
+from .utils import (
+    climate_target_bindings,
+    device_target_overrides,
+    has_platform,
+    to_temperature_map,
+    normalize_temperature_unit,
+)
 from connectlife.appliance import ConnectLifeAppliance
 
 _LOGGER = logging.getLogger(__name__)
@@ -146,8 +152,10 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
         self.unknown_values = {}
 
         # When several properties claim the same climate target, the lowest-
-        # priority candidate the device exposes wins (see climate_target_bindings).
-        self.target_map = climate_target_bindings(appliance, data_dictionary)
+        # priority candidate the device exposes wins (see climate_target_bindings),
+        # unless the user pinned a specific property via the options flow.
+        overrides = device_target_overrides(coordinator.config_entry, appliance.device_id)
+        self.target_map = climate_target_bindings(appliance, data_dictionary, overrides)
 
         hvac_modes: list[HVACMode] = []
         for target, status in self.target_map.items():

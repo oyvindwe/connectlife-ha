@@ -8918,11 +8918,15 @@
       "configure_device": {
         "data": {
           "disable_beep": "Disable beep",
-          "expose_offline_state": "Expose offline state"
+          "expose_offline_state": "Expose offline state",
+          "target_overrides_swing_horizontal_mode": "Horizontal swing mode control",
+          "target_overrides_swing_mode": "Swing mode control"
         },
         "data_description": {
           "disable_beep": "Suppress the appliance beep on commands sent from Home Assistant.",
-          "expose_offline_state": "Add a connectivity sensor for this device and keep its other entities available with their last known values while it is offline, instead of marking them unavailable."
+          "expose_offline_state": "Add a connectivity sensor for this device and keep its other entities available with their last known values while it is offline, instead of marking them unavailable.",
+          "target_overrides_swing_horizontal_mode": "This device exposes more than one property that can drive horizontal swing mode. Leave on \"auto\" to let the integration choose, or pin a specific property if your hardware only honours one of them.",
+          "target_overrides_swing_mode": "This device exposes more than one property that can drive swing mode. Leave on \"auto\" to let the integration choose, or pin a specific property if your hardware only honours one of them (e.g. choose t_up_down if t_swing_angle is shown but does nothing)."
         },
         "description": "Configure {device_name}."
       },
