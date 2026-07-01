@@ -16,6 +16,9 @@
         "data": {
           "test_server_url": "Test server URL"
         },
+        "data_description": {
+          "test_server_url": "URL van de testserver om tegen te authenticeren in plaats van de ConnectLife API."
+        },
         "description": "Schakel ontwikkelingsmodus in om verbinding te maken met de testserver in plaats van de ConnectLife API."
       },
       "reauth_confirm": {
@@ -29,7 +32,12 @@
         "data": {
           "development_mode": "Ontwikkelingsmodus",
           "password": "Wachtwoord",
+          "trir": "ConnectLife.TRIR (Rusland/GOS) \u2014 experimenteel",
           "username": "Gebruikersnaam"
+        },
+        "data_description": {
+          "development_mode": "Verbinden met een lokale testserver in plaats van de ConnectLife API. Alleen voor ontwikkeling.",
+          "trir": "Alleen inschakelen als je inlogt met de ConnectLife.TRIR-app die in Rusland/GOS wordt gebruikt. Experimenteel."
         }
       }
     }
@@ -8188,7 +8196,16 @@
     "step": {
       "configure_device": {
         "data": {
-          "disable_beep": "Pieptoon uitschakelen"
+          "disable_beep": "Pieptoon uitschakelen",
+          "expose_offline_state": "Offline-status tonen",
+          "target_overrides_swing_horizontal_mode": "Bediening horizontale zwenkmodus",
+          "target_overrides_swing_mode": "Bediening zwenkmodus"
+        },
+        "data_description": {
+          "disable_beep": "Onderdrukt de pieptoon van het apparaat bij opdrachten die vanuit Home Assistant worden verzonden.",
+          "expose_offline_state": "Voegt een connectiviteitssensor voor dit apparaat toe en houdt de andere entiteiten beschikbaar met hun laatst bekende waarden, zelfs wanneer de API het als offline meldt, in plaats van ze als niet beschikbaar te markeren.",
+          "target_overrides_swing_horizontal_mode": "Dit apparaat biedt meer dan \u00e9\u00e9n eigenschap die de horizontale zwenkmodus kan aansturen. Laat op \u2018auto\u2019 staan om de integratie te laten kiezen, of leg een specifieke eigenschap vast als je hardware er maar \u00e9\u00e9n ondersteunt.",
+          "target_overrides_swing_mode": "Dit apparaat biedt meer dan \u00e9\u00e9n eigenschap die de zwenkmodus kan aansturen. Laat op \u2018auto\u2019 staan om de integratie te laten kiezen, of leg een specifieke eigenschap vast als je hardware er maar \u00e9\u00e9n ondersteunt (kies bijvoorbeeld t_up_down als t_swing_angle wordt getoond maar niets doet)."
         },
         "description": "{device_name} configureren."
       },

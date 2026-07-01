@@ -1,7 +1,8 @@
 {
   "config": {
     "abort": {
-      "already_configured": "Il dispositivo \u00e8 gi\u00e0 configurato"
+      "already_configured": "Il dispositivo \u00e8 gi\u00e0 configurato",
+      "reauth_successful": "La riautenticazione \u00e8 riuscita"
     },
     "error": {
       "cannot_connect": "Impossibile connettersi",
@@ -15,13 +16,28 @@
         "data": {
           "test_server_url": "Test server URL"
         },
+        "data_description": {
+          "test_server_url": "URL del server di prova con cui autenticarsi anzich\u00e9 con l'API ConnectLife."
+        },
         "description": "Abilita la modalit\u00e0 di sviluppo per connettersi al server di test anzich\u00e9 all'API ConnectLife."
+      },
+      "reauth_confirm": {
+        "data": {
+          "password": "Password",
+          "username": "Username"
+        },
+        "description": "Reinserisci le tue credenziali ConnectLife."
       },
       "user": {
         "data": {
           "development_mode": "Modalit\u00e0 di sviluppo",
           "password": "Password",
+          "trir": "ConnectLife.TRIR (Russia/CSI) \u2014 sperimentale",
           "username": "Username"
+        },
+        "data_description": {
+          "development_mode": "Connettersi a un server di prova locale anzich\u00e9 all'API ConnectLife. Solo per lo sviluppo.",
+          "trir": "Abilita solo se accedi con l'app ConnectLife.TRIR utilizzata in Russia/CSI. Sperimentale."
         }
       }
     }
@@ -741,7 +757,16 @@
     "step": {
       "configure_device": {
         "data": {
-          "disable_beep": "Disattiva beep"
+          "disable_beep": "Disattiva beep",
+          "expose_offline_state": "Esponi stato offline",
+          "target_overrides_swing_horizontal_mode": "Controllo della modalit\u00e0 di oscillazione orizzontale",
+          "target_overrides_swing_mode": "Controllo della modalit\u00e0 di oscillazione"
+        },
+        "data_description": {
+          "disable_beep": "Disattiva il segnale acustico dell'elettrodomestico per i comandi inviati da Home Assistant.",
+          "expose_offline_state": "Aggiunge un sensore di connettivit\u00e0 per questo dispositivo e mantiene le altre entit\u00e0 disponibili con i loro ultimi valori noti anche quando l'API lo segnala offline, invece di contrassegnarle come non disponibili.",
+          "target_overrides_swing_horizontal_mode": "Questo dispositivo espone pi\u00f9 di una propriet\u00e0 in grado di controllare la modalit\u00e0 di oscillazione orizzontale. Lascia su \u00abauto\u00bb per far scegliere all'integrazione, oppure fissa una propriet\u00e0 specifica se il tuo hardware ne supporta solo una.",
+          "target_overrides_swing_mode": "Questo dispositivo espone pi\u00f9 di una propriet\u00e0 in grado di controllare la modalit\u00e0 di oscillazione. Lascia su \u00abauto\u00bb per far scegliere all'integrazione, oppure fissa una propriet\u00e0 specifica se il tuo hardware ne supporta solo una (ad esempio scegli t_up_down se viene mostrato t_swing_angle ma non ha alcun effetto)."
         },
         "description": "Configura {device_name}."
       },

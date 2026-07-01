@@ -1,7 +1,8 @@
 {
   "config": {
     "abort": {
-      "already_configured": "Ger\u00e4t ist bereits konfiguriert"
+      "already_configured": "Ger\u00e4t ist bereits konfiguriert",
+      "reauth_successful": "Erneute Authentifizierung war erfolgreich"
     },
     "error": {
       "cannot_connect": "Verbindung fehlgeschlagen",
@@ -15,13 +16,28 @@
         "data": {
           "test_server_url": "Test-Server-URL"
         },
+        "data_description": {
+          "test_server_url": "URL des Testservers, gegen den anstelle der ConnectLife-API authentifiziert werden soll."
+        },
         "description": "Aktiviere den Entwicklungsmodus, um eine Verbindung zum Testserver anstelle der ConnectLife-API herzustellen."
+      },
+      "reauth_confirm": {
+        "data": {
+          "password": "Passwort",
+          "username": "Benutzername"
+        },
+        "description": "Bitte gib deine ConnectLife-Anmeldedaten erneut ein."
       },
       "user": {
         "data": {
           "development_mode": "Entwicklungsmodus",
           "password": "Passwort",
+          "trir": "ConnectLife.TRIR (Russland/GUS) \u2014 experimentell",
           "username": "Benutzername"
+        },
+        "data_description": {
+          "development_mode": "Mit einem lokalen Testserver anstelle der ConnectLife-API verbinden. Nur f\u00fcr die Entwicklung.",
+          "trir": "Nur aktivieren, wenn du dich mit der ConnectLife.TRIR-App anmeldest, die in Russland/GUS verwendet wird. Experimentell."
         }
       }
     }
@@ -3951,7 +3967,16 @@
     "step": {
       "configure_device": {
         "data": {
-          "disable_beep": "Signalton deaktivieren"
+          "disable_beep": "Signalton deaktivieren",
+          "expose_offline_state": "Offline-Status anzeigen",
+          "target_overrides_swing_horizontal_mode": "Steuerung des horizontalen Schwenkmodus",
+          "target_overrides_swing_mode": "Steuerung des Schwenkmodus"
+        },
+        "data_description": {
+          "disable_beep": "Unterdr\u00fcckt den Signalton des Ger\u00e4ts bei Befehlen, die von Home Assistant gesendet werden.",
+          "expose_offline_state": "F\u00fcgt einen Konnektivit\u00e4tssensor f\u00fcr dieses Ger\u00e4t hinzu und h\u00e4lt seine anderen Entit\u00e4ten mit ihren zuletzt bekannten Werten verf\u00fcgbar, selbst wenn die API das Ger\u00e4t als offline meldet, anstatt sie als nicht verf\u00fcgbar zu markieren.",
+          "target_overrides_swing_horizontal_mode": "Dieses Ger\u00e4t stellt mehr als eine Eigenschaft bereit, die den horizontalen Schwenkmodus steuern kann. Belasse die Einstellung auf \u201eauto\u201c, damit die Integration w\u00e4hlt, oder lege eine bestimmte Eigenschaft fest, wenn deine Hardware nur eine davon unterst\u00fctzt.",
+          "target_overrides_swing_mode": "Dieses Ger\u00e4t stellt mehr als eine Eigenschaft bereit, die den Schwenkmodus steuern kann. Belasse die Einstellung auf \u201eauto\u201c, damit die Integration w\u00e4hlt, oder lege eine bestimmte Eigenschaft fest, wenn deine Hardware nur eine davon unterst\u00fctzt (z. B. t_up_down w\u00e4hlen, wenn t_swing_angle angezeigt wird, aber nichts bewirkt)."
         },
         "description": "{device_name} konfigurieren."
       },

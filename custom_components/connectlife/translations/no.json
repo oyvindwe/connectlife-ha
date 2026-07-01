@@ -16,6 +16,9 @@
         "data": {
           "test_server_url": "URL for testserver"
         },
+        "data_description": {
+          "test_server_url": "URL-en til testserveren som det skal autentiseres mot i stedet for ConnectLife-API-et."
+        },
         "description": "Aktiver utviklingsmodus for \u00e5 koble til testserveren i stedet for ConnectLife-API-et."
       },
       "reauth_confirm": {
@@ -29,7 +32,12 @@
         "data": {
           "development_mode": "Utviklingsmodus",
           "password": "Passord",
+          "trir": "ConnectLife.TRIR (Russland/SUS) \u2014 eksperimentell",
           "username": "Brukernavn"
+        },
+        "data_description": {
+          "development_mode": "Koble til en lokal testserver i stedet for ConnectLife-API-et. Kun for utvikling.",
+          "trir": "Aktiver kun hvis du logger inn med ConnectLife.TRIR-appen som brukes i Russland/SUS. Eksperimentell."
         }
       }
     }
@@ -8188,7 +8196,16 @@
     "step": {
       "configure_device": {
         "data": {
-          "disable_beep": "Deaktiver pip"
+          "disable_beep": "Deaktiver pip",
+          "expose_offline_state": "Vis frakoblet tilstand",
+          "target_overrides_swing_horizontal_mode": "Styring av horisontal svingemodus",
+          "target_overrides_swing_mode": "Styring av svingemodus"
+        },
+        "data_description": {
+          "disable_beep": "Undertrykker pipetonen p\u00e5 apparatet ved kommandoer sendt fra Home Assistant.",
+          "expose_offline_state": "Legger til en tilkoblingssensor for denne enheten og holder de \u00f8vrige entitetene tilgjengelige med sine sist kjente verdier selv n\u00e5r API-et rapporterer enheten som frakoblet, i stedet for \u00e5 markere dem som utilgjengelige.",
+          "target_overrides_swing_horizontal_mode": "Denne enheten eksponerer mer enn \u00e9n egenskap som kan styre horisontal svingemodus. La den st\u00e5 p\u00e5 \u00abauto\u00bb for \u00e5 la integrasjonen velge, eller l\u00e5s en bestemt egenskap hvis maskinvaren din bare st\u00f8tter \u00e9n av dem.",
+          "target_overrides_swing_mode": "Denne enheten eksponerer mer enn \u00e9n egenskap som kan styre svingemodus. La den st\u00e5 p\u00e5 \u00abauto\u00bb for \u00e5 la integrasjonen velge, eller l\u00e5s en bestemt egenskap hvis maskinvaren din bare st\u00f8tter \u00e9n av dem (velg for eksempel t_up_down hvis t_swing_angle vises, men ikke gj\u00f8r noe)."
         },
         "description": "Konfigurer {device_name}."
       },
