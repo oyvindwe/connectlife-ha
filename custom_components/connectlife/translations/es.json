@@ -114,7 +114,7 @@
         "name": "Alarma de horneado finalizada"
       },
       "alarm_baking_stoped": {
-        "name": "Alarma de cocci\u00f3n detenida"
+        "name": "Alarma de horneado detenido"
       },
       "alarm_child_lock_deactivated_on_the_oven": {
         "name": "Alarma de bloqueo infantil desactivada en el horno"
@@ -468,7 +468,7 @@
         "name": "Tiempo restante del filtro de carb\u00f3n"
       },
       "charcoal_filter_time_reset": {
-        "name": "Restablecimiento del tiempo del filtro de carb\u00f3n"
+        "name": "Restablecimiento del tiempo del filtro de carb\u00f3n activo"
       },
       "chef_mode": {
         "name": "Modo chef"
@@ -831,7 +831,7 @@
         "name": "Error 9"
       },
       "existing_fuzzy_mode": {
-        "name": "Modo difuso existente"
+        "name": "Modo fuzzy existente"
       },
       "existing_holiday_mode": {
         "name": "Modo vacaciones activo"
@@ -897,7 +897,7 @@
         "name": "Fallo de detecci\u00f3n de cruce por cero de la tensi\u00f3n interior"
       },
       "f_e_inwifi": {
-        "name": "Fallo de comunicaci\u00f3n entre el panel de control WiFi y el panel de control interior"
+        "name": "Fallo de comunicaci\u00f3n entre el panel de control Wi-Fi y el panel de control interior"
       },
       "f_e_outcoiltemp": {
         "name": "Fallo del sensor de temperatura de la bater\u00eda exterior"
@@ -969,7 +969,7 @@
         "name": "Falla en el cabezal sensor de temperatura del congelador"
       },
       "freeze_poweroff_ad": {
-        "name": "Anuncio de apagado por congelaci\u00f3n"
+        "name": "Aviso de apagado por congelaci\u00f3n"
       },
       "freeze_poweron_ad": {
         "name": "Anuncio de encendido por congelaci\u00f3n"
@@ -1053,7 +1053,7 @@
         "name": "Luz"
       },
       "lock_fresh_mode": {
-        "name": "Bloqueo del modo frescor"
+        "name": "Bloqueo del modo Fresco"
       },
       "low_wine_area_c_evaporator_fault": {
         "name": "Fallo del evaporador del \u00e1rea baja c de vino"
@@ -1263,7 +1263,7 @@
         "name": "La zona 1 se apaga autom\u00e1ticamente"
       },
       "sl1_alarm_ntc_coil": {
-        "name": "Alarma NTC de la resistencia de la zona 1"
+        "name": "Alarma NTC del serpent\u00edn de la zona 1"
       },
       "sl1_alarm_ntc_coil_overheating": {
         "name": "Sobrecalentamiento de la bobina de la zona 1"
@@ -1347,7 +1347,7 @@
         "name": "La zona 2 se apaga autom\u00e1ticamente"
       },
       "sl2_alarm_ntc_coil": {
-        "name": "Alarma NTC de la resistencia de la zona 2"
+        "name": "Alarma NTC del serpent\u00edn de la zona 2"
       },
       "sl2_alarm_ntc_coil_overheating": {
         "name": "Sobrecalentamiento de la bobina de la zona 2"
@@ -1431,7 +1431,7 @@
         "name": "La zona 3 se apaga autom\u00e1ticamente"
       },
       "sl3_alarm_ntc_coil": {
-        "name": "Alarma NTC de la resistencia de la zona 3"
+        "name": "Alarma NTC del serpent\u00edn de la zona 3"
       },
       "sl3_alarm_ntc_coil_overheating": {
         "name": "Sobrecalentamiento de la bobina de la zona 3"
@@ -2028,7 +2028,7 @@
         "name": "Tiempo ajustado de la funci\u00f3n gratinar"
       },
       "greasefiltersetlifetimeinhours": {
-        "name": "Vida \u00fatil del filtro de grasa"
+        "name": "Vida \u00fatil del filtro antigrasa"
       },
       "lightbrightness": {
         "name": "Brillo de la luz"
@@ -2307,7 +2307,7 @@
         }
       },
       "feedback_volumen_setting_status": {
-        "name": "Volumen de sonido",
+        "name": "Volumen de las se\u00f1ales ac\u00fasticas",
         "state": {
           "high": "Alto",
           "low": "Bajo",
@@ -2988,10 +2988,10 @@
         "name": "Funci\u00f3n de secado al aire"
       },
       "air_dry_function_status": {
-        "name": "Estado de la funci\u00f3n de secado al aire"
+        "name": "Estado de la funci\u00f3n de secado por aire"
       },
       "air_freshness": {
-        "name": "Frescura del aire"
+        "name": "Frescor del aire"
       },
       "airdryflag": {
         "name": "Indicador de secado al aire"
@@ -3112,7 +3112,7 @@
         }
       },
       "aquapreserve": {
-        "name": "Conservaci\u00f3n de agua"
+        "name": "Conservaci\u00f3n con agua"
       },
       "aquapreserve_flag": {
         "name": "Indicador de conservaci\u00f3n de agua"
@@ -3197,7 +3197,7 @@
         "name": "Marca de tiempo BDC de fecha/hora UTC de inicio de horneado"
       },
       "bathingwaterpump_flag": {
-        "name": "Indicador de la bomba de agua de ba\u00f1o"
+        "name": "Indicador de la bomba de agua del ba\u00f1o"
       },
       "bathingwaterpump_rinse": {
         "name": "Aclarado de la bomba de agua de ba\u00f1o"
@@ -3269,7 +3269,7 @@
         "name": "Solicitud de time-lapse de la c\u00e1mara"
       },
       "can_upload_wifi_program": {
-        "name": "Puede cargar programa Wi-Fi"
+        "name": "Puede cargar el programa Wi-Fi"
       },
       "cancel_delayend_flag": {
         "name": "Indicador de cancelaci\u00f3n de fin diferido"
@@ -3540,7 +3540,7 @@
         "name": "Modo de limpieza DBD"
       },
       "debacilli_mode": {
-        "name": "Modo antibacterias"
+        "name": "Modo antibacteriano"
       },
       "default_dry_level": {
         "name": "Nivel de secado predeterminado"
@@ -3618,7 +3618,7 @@
         "name": "Dosis de detergente restantes"
       },
       "detergent_soften_settingflag": {
-        "name": "Indicador de ajustes de suavizante y detergente"
+        "name": "Indicador de ajustes de suavizado del detergente"
       },
       "detergent_totalml": {
         "name": "Total de detergente usado"
@@ -3681,7 +3681,7 @@
         "name": "Contraste de la pantalla"
       },
       "display_logotype_setting_status": {
-        "name": "Logotipo de la pantalla"
+        "name": "Mostrar logotipo"
       },
       "display_panel_ronshen": {
         "name": "Panel de la pantalla Ronshen"
@@ -3695,7 +3695,7 @@
         }
       },
       "displayboard_brand": {
-        "name": "Marca del panel de display"
+        "name": "Marca de la placa de display"
       },
       "displayboard_key_setting": {
         "name": "Ajuste de teclas del panel de visualizaci\u00f3n"
@@ -3822,16 +3822,16 @@
         "name": "Interruptor de secado"
       },
       "dryingwizzard_clothesdrylevel": {
-        "name": "Asistente de secado nivel de secado de la ropa"
+        "name": "Nivel de secado de la ropa del asistente de secado"
       },
       "dryingwizzard_clothesdrylevel1": {
         "name": "Nivel de secado 1 de la ropa del asistente de secado"
       },
       "dryingwizzard_clothesdrytarget": {
-        "name": "Objetivo de secado de ropa del asistente de secado"
+        "name": "Objetivo de secado de la ropa del asistente de secado"
       },
       "dryingwizzard_clothesdrytarget1": {
-        "name": "Objetivo de secado de ropa 1 del asistente de secado"
+        "name": "Asistente de secado: objetivo de secado de ropa 1"
       },
       "dryingwizzard_clothesmaterialcharacteristics": {
         "name": "Caracter\u00edsticas del material de la ropa del asistente de secado"
@@ -3849,7 +3849,7 @@
         "name": "Tipo de ropa del asistente de secado"
       },
       "dryingwizzard_clothingtype_eighth": {
-        "name": "Tipo de prenda (octava) del asistente de secado"
+        "name": "Asistente de secado: tipo de prenda 8"
       },
       "dryingwizzard_clothingtype_eleventh": {
         "name": "Asistente de secado: tipo de prenda 11"
@@ -3861,13 +3861,13 @@
         "name": "Tipo de prenda (primera) del asistente de secado"
       },
       "dryingwizzard_clothingtype_fourth": {
-        "name": "Tipo de prenda (cuarta) del asistente de secado"
+        "name": "Asistente de secado: tipo de prenda 4"
       },
       "dryingwizzard_clothingtype_ninth": {
         "name": "Tipo de prenda (novena) del asistente de secado"
       },
       "dryingwizzard_clothingtype_second": {
-        "name": "Tipo de prenda (segunda) del asistente de secado"
+        "name": "Asistente de secado: tipo de prenda 2"
       },
       "dryingwizzard_clothingtype_seventh": {
         "name": "Asistente de secado: tipo de prenda 7"
@@ -3882,7 +3882,7 @@
         "name": "Tipo de prenda (tercera) del asistente de secado"
       },
       "dryingwizzard_clothingtype_thirteenth": {
-        "name": "Tipo de ropa del asistente de secado, decimotercero"
+        "name": "Asistente de secado: tipo de prenda 13"
       },
       "dryingwizzard_clothingtype_twelfth": {
         "name": "Asistente de secado: tipo de prenda 12"
@@ -4479,7 +4479,7 @@
         "name": "Modo de almacenamiento r\u00e1pido activo"
       },
       "fast_store_mode_status": {
-        "name": "Estado del modo de enfriamiento r\u00e1pido"
+        "name": "Estado del modo de conservaci\u00f3n r\u00e1pida"
       },
       "favour_program_id": {
         "name": "ID de programa favorito"
@@ -4491,7 +4491,7 @@
         "name": "Estado del filtro"
       },
       "filterclean_dry": {
-        "name": "Limpieza de filtro seco"
+        "name": "Limpieza del filtro (secado)"
       },
       "filterclean_drycount": {
         "name": "Recuento de secados para limpieza del filtro"
@@ -4573,10 +4573,10 @@
         "name": "Temperatura real sensor congelador"
       },
       "freezing_powerdown_temp_alarm": {
-        "name": "Alarma de temperatura por apagado de congelaci\u00f3n"
+        "name": "Alarma de temperatura por corte de alimentaci\u00f3n en congelaci\u00f3n"
       },
       "froze_convert_to_refri_switch_status": {
-        "name": "Estado del interruptor de conversi\u00f3n de congelador a frigor\u00edfico"
+        "name": "Estado del interruptor de conversi\u00f3n de frigor\u00edfico a congelador"
       },
       "fruit_vegetables_temperature": {
         "name": "Temperatura compartimento frutas y vegetales"
@@ -4609,7 +4609,7 @@
         "name": "Saturaci\u00f3n del filtro de grasa"
       },
       "grease_filter_set_lifetime_in_hours": {
-        "name": "Vida \u00fatil del filtro de grasa"
+        "name": "Vida \u00fatil del filtro antigrasa"
       },
       "grease_filter_status": {
         "name": "Estado del filtro de grasa"
@@ -4633,7 +4633,7 @@
         "name": "Media carga"
       },
       "hard_pairing_commond": {
-        "name": "Comando de emparejamiento forzado"
+        "name": "Comando de emparejamiento por hardware"
       },
       "hard_pairing_status": {
         "name": "Estado de emparejamiento dif\u00edcil"
@@ -4798,7 +4798,7 @@
         "name": "Refresco por iones"
       },
       "iron_dry_time": {
-        "name": "Tiempo de secado plancha"
+        "name": "Tiempo de secado para plancha"
       },
       "iscloudprogramflag": {
         "name": "Indicador de programa en la nube"
@@ -5056,7 +5056,7 @@
         "name": "Estado del sensor de olores"
       },
       "once_rinse_step_time": {
-        "name": "Tiempo de la fase de un aclarado"
+        "name": "Tiempo de la fase de aclarado \u00fanico"
       },
       "once_strong_step_time": {
         "name": "Tiempo del paso potente \u00fanico"
@@ -5074,7 +5074,7 @@
         "name": "Modelo solo lavado"
       },
       "order_time_minimum_hour": {
-        "name": "Hora m\u00ednima del tiempo de orden"
+        "name": "Hora m\u00ednima del tiempo de pedido"
       },
       "ota_num1": {
         "name": "N\u00famero OTA 1"
@@ -5095,10 +5095,10 @@
         "name": "Valor de uso del horno: tiempo desde la \u00faltima limpieza"
       },
       "paidbycoinbox": {
-        "name": "Pagado con monedero"
+        "name": "Pagado con monedero de monedas"
       },
       "paidbycoinboxoreadbs": {
-        "name": "Pagado por monedero / EADBS"
+        "name": "Pagado con monedero / EADBS"
       },
       "pairing": {
         "name": "Emparejamiento"
@@ -5110,7 +5110,7 @@
         "name": "An\u00e1lisis de biblioteca OTA"
       },
       "parse_lib_ver": {
-        "name": "Versi\u00f3n de la librer\u00eda de an\u00e1lisis"
+        "name": "Versi\u00f3n de la biblioteca de an\u00e1lisis"
       },
       "party_mode_switch_status": {
         "name": "Estado del interruptor de modo fiesta"
@@ -5293,7 +5293,7 @@
         "name": "Luz del frigor\u00edfico"
       },
       "refr_key": {
-        "name": "Tecla de refresco"
+        "name": "Tecla del frigor\u00edfico"
       },
       "refr_room": {
         "name": "Compartimento frigor\u00edfico"
@@ -5443,7 +5443,7 @@
         "name": "Estado de funcionamiento 3"
       },
       "sabbath_mode_setting": {
-        "name": "Ajuste del modo sab\u00e1tico"
+        "name": "Ajuste del modo Sabbath"
       },
       "sabbath_mode_setting_activate_weekly": {
         "name": "Ajuste del modo sab\u00e1tico: activar semanalmente"
@@ -5653,7 +5653,7 @@
         "name": "Vapor inicial ecol\u00f3gico del programa seleccionado"
       },
       "selected_program_green_leaves_prewash": {
-        "name": "Prelavado ecol\u00f3gico del programa seleccionado"
+        "name": "Prelavado de hojas verdes del programa seleccionado"
       },
       "selected_program_id": {
         "name": "Programa seleccionado",
@@ -5848,7 +5848,7 @@
         "name": "Ajustar hora"
       },
       "set_time_minutes": {
-        "name": "Minutos de tiempo configurados"
+        "name": "Minutos configurados"
       },
       "settings_day": {
         "name": "D\u00eda de ajuste"
@@ -5908,7 +5908,7 @@
         "name": "Silencio a demanda permitido"
       },
       "singleairdry": {
-        "name": "Secado al aire simple"
+        "name": "Solo secado al aire"
       },
       "skipdelayprocess": {
         "name": "Omitir proceso de retardo"
@@ -5997,7 +5997,7 @@
         }
       },
       "sl1_sand_timer_utc_start_time_hours": {
-        "name": "Zona 1 horas de inicio del temporizador de arena"
+        "name": "Horas de inicio del temporizador de arena de la zona 1"
       },
       "sl1_sand_timer_utc_start_time_minutes": {
         "name": "Zona 1 minutos de inicio del temporizador de arena"
@@ -6110,7 +6110,7 @@
         "name": "Temperatura ajustada Hestan Cue de la zona 2"
       },
       "sl2_hestan_cue_temperature": {
-        "name": "Zona 2 temperatura Hestan Cue"
+        "name": "Temperatura Hestan Cue de la zona 2"
       },
       "sl2_ntc_sensor": {
         "name": "Zona 2 sensor NTC"
@@ -6138,7 +6138,7 @@
         }
       },
       "sl2_sand_timer_utc_start_time_hours": {
-        "name": "Zona 2 horas de inicio del temporizador de arena"
+        "name": "Horas de inicio del temporizador de arena de la zona 2"
       },
       "sl2_sand_timer_utc_start_time_minutes": {
         "name": "Minutos de inicio del temporizador de arena de la zona 2"
@@ -6251,7 +6251,7 @@
         "name": "Temperatura ajustada Hestan Cue de la zona 3"
       },
       "sl3_hestan_cue_temperature": {
-        "name": "Zona 3 temperatura Hestan Cue"
+        "name": "Temperatura Hestan Cue de la zona 3"
       },
       "sl3_ntc_sensor": {
         "name": "Zona 3 sensor NTC"
@@ -6279,7 +6279,7 @@
         }
       },
       "sl3_sand_timer_utc_start_time_hours": {
-        "name": "Zona 3 horas de inicio del temporizador de arena"
+        "name": "Horas de inicio del temporizador de arena de la zona 3"
       },
       "sl3_sand_timer_utc_start_time_minutes": {
         "name": "Minutos de inicio del temporizador de arena de la zona 3"
@@ -6392,7 +6392,7 @@
         "name": "Temperatura ajustada Hestan Cue de la zona 4"
       },
       "sl4_hestan_cue_temperature": {
-        "name": "Zona 4 temperatura Hestan Cue"
+        "name": "Temperatura Hestan Cue de la zona 4"
       },
       "sl4_ntc_sensor": {
         "name": "Zona 4 sensor NTC"
@@ -6420,7 +6420,7 @@
         }
       },
       "sl4_sand_timer_utc_start_time_hours": {
-        "name": "Zona 4 horas de inicio del temporizador de arena"
+        "name": "Horas de inicio del temporizador de arena de la zona 4"
       },
       "sl4_sand_timer_utc_start_time_minutes": {
         "name": "Minutos de inicio del temporizador de arena de la zona 4"
@@ -6533,7 +6533,7 @@
         "name": "Temperatura ajustada Hestan Cue de la zona 5"
       },
       "sl5_hestan_cue_temperature": {
-        "name": "Zona 5 temperatura Hestan Cue"
+        "name": "Temperatura Hestan Cue de la zona 5"
       },
       "sl5_ntc_sensor": {
         "name": "Zona 5 sensor NTC"
@@ -6561,7 +6561,7 @@
         }
       },
       "sl5_sand_timer_utc_start_time_hours": {
-        "name": "Zona 5 horas de inicio del temporizador de arena"
+        "name": "Horas de inicio del temporizador de arena de la zona 5"
       },
       "sl5_sand_timer_utc_start_time_minutes": {
         "name": "Minutos de inicio del temporizador de arena de la zona 5"
@@ -6674,7 +6674,7 @@
         "name": "Temperatura ajustada Hestan Cue de la zona 6"
       },
       "sl6_hestan_cue_temperature": {
-        "name": "Zona 6 temperatura Hestan Cue"
+        "name": "Temperatura Hestan Cue de la zona 6"
       },
       "sl6_ntc_sensor": {
         "name": "Zona 6 sensor NTC"
@@ -6702,7 +6702,7 @@
         }
       },
       "sl6_sand_timer_utc_start_time_hours": {
-        "name": "Zona 6 horas de inicio del temporizador de arena"
+        "name": "Horas de inicio del temporizador de arena de la zona 6"
       },
       "sl6_sand_timer_utc_start_time_minutes": {
         "name": "Minutos de inicio del temporizador de arena de la zona 6"
@@ -6766,7 +6766,7 @@
         "name": "Slotdry"
       },
       "slotdry_flag": {
-        "name": "Indicador de secado por ranura"
+        "name": "Indicador de secado en compartimento"
       },
       "slotdry_flag1": {
         "name": "Indicador de secado por ranura 1"
@@ -6775,7 +6775,7 @@
         "name": "Ajuste de emparejamiento suave"
       },
       "soft_pairing_status": {
-        "name": "Estado de emparejamiento suave"
+        "name": "Estado de emparejamiento por software"
       },
       "softener_buynotifyswitch": {
         "name": "Interruptor de aviso de compra de suavizante"
@@ -6817,7 +6817,7 @@
         "name": "Indicador de dosis est\u00e1ndar de suavizante"
       },
       "softpairing": {
-        "name": "Emparejamiento suave"
+        "name": "Emparejamiento por software"
       },
       "softpairingsetting": {
         "name": "Ajuste de emparejamiento suave"
@@ -6877,13 +6877,13 @@
         "name": "Estado del tipo de ropa del programa de manchas"
       },
       "stain_program_set_stain_status": {
-        "name": "Estado de mancha configurado del programa antimanchas"
+        "name": "Estado de mancha configurado del programa de manchas"
       },
       "stain_removal": {
         "name": "Eliminaci\u00f3n de manchas"
       },
       "stand_by_time": {
-        "name": "Tiempo en espera"
+        "name": "Tiempo en espera (standby)"
       },
       "standardelectricitconsumption": {
         "name": "Consumo el\u00e9ctrico est\u00e1ndar"
@@ -6898,7 +6898,7 @@
         "name": "Modo en espera v\u00e1lido"
       },
       "standbychoice": {
-        "name": "Selecci\u00f3n de espera"
+        "name": "Selecci\u00f3n de modo en espera"
       },
       "status": {
         "name": "Estado del dispositivo",
@@ -7361,7 +7361,7 @@
           "bottom_top_heat": "Calor inferior + superior",
           "bottom_top_heat_fan": "Calor inferior + superior + ventilador",
           "bottom_top_heat_fan_steam": "Calor inferior + superior + ventilador + vapor",
-          "bottomfan": "Resistencia inferior + ventilador",
+          "bottomfan": "Calor inferior + ventilador",
           "broil": "Gratinar",
           "cleanair": "Limpieza aire",
           "convection_bake": "Aire caliente",
@@ -7416,7 +7416,7 @@
           "sabbath": "Sabbath",
           "self_clean": "Autolimpieza",
           "smallgrill": "Parrilla peque\u00f1a",
-          "smallgrill_pyro": "Grill peque\u00f1o pir\u00f3lisis",
+          "smallgrill_pyro": "Grill peque\u00f1o con pir\u00f3lisis",
           "sousvide": "Al vacio",
           "steam": "Vapor",
           "steamclean": "Limpieza vapor",
@@ -7459,7 +7459,7 @@
           "bottom_top_heat": "Calor inferior + superior",
           "bottom_top_heat_fan": "Calor inferior + superior + ventilador",
           "bottom_top_heat_fan_steam": "Calor inferior + superior + ventilador + vapor",
-          "bottomfan": "Resistencia inferior + ventilador",
+          "bottomfan": "Calor inferior + ventilador",
           "broil": "Gratinar",
           "cleanair": "Limpieza aire",
           "convection_bake": "Aire caliente",
@@ -7514,7 +7514,7 @@
           "sabbath": "Sabbath",
           "self_clean": "Autolimpieza",
           "smallgrill": "Parrilla peque\u00f1a",
-          "smallgrill_pyro": "Grill peque\u00f1o pir\u00f3lisis",
+          "smallgrill_pyro": "Grill peque\u00f1o con pir\u00f3lisis",
           "sousvide": "Al vacio",
           "steam": "Vapor",
           "steamclean": "Limpieza vapor",
@@ -7557,7 +7557,7 @@
           "bottom_top_heat": "Calor inferior + superior",
           "bottom_top_heat_fan": "Calor inferior + superior + ventilador",
           "bottom_top_heat_fan_steam": "Calor inferior + superior + ventilador + vapor",
-          "bottomfan": "Resistencia inferior + ventilador",
+          "bottomfan": "Calor inferior + ventilador",
           "broil": "Gratinar",
           "cleanair": "Limpieza aire",
           "convection_bake": "Aire caliente",
@@ -7612,7 +7612,7 @@
           "sabbath": "Sabbath",
           "self_clean": "Autolimpieza",
           "smallgrill": "Parrilla peque\u00f1a",
-          "smallgrill_pyro": "Grill peque\u00f1o pir\u00f3lisis",
+          "smallgrill_pyro": "Grill peque\u00f1o con pir\u00f3lisis",
           "sousvide": "Al vacio",
           "steam": "Vapor",
           "steamclean": "Limpieza vapor",
@@ -7663,7 +7663,7 @@
           "bottom_top_heat": "Calor inferior + superior",
           "bottom_top_heat_fan": "Calor inferior + superior + ventilador",
           "bottom_top_heat_fan_steam": "Calor inferior + superior + ventilador + vapor",
-          "bottomfan": "Resistencia inferior + ventilador",
+          "bottomfan": "Calor inferior + ventilador",
           "broil": "Gratinar",
           "cleanair": "Limpieza aire",
           "convection_bake": "Aire caliente",
@@ -7718,7 +7718,7 @@
           "sabbath": "Sabbath",
           "self_clean": "Autolimpieza",
           "smallgrill": "Parrilla peque\u00f1a",
-          "smallgrill_pyro": "Grill peque\u00f1o pir\u00f3lisis",
+          "smallgrill_pyro": "Grill peque\u00f1o con pir\u00f3lisis",
           "sousvide": "Al vacio",
           "steam": "Vapor",
           "steamclean": "Limpieza vapor",
@@ -7768,7 +7768,7 @@
           "bottom_top_heat": "Calor inferior + superior",
           "bottom_top_heat_fan": "Calor inferior + superior + ventilador",
           "bottom_top_heat_fan_steam": "Calor inferior + superior + ventilador + vapor",
-          "bottomfan": "Resistencia inferior + ventilador",
+          "bottomfan": "Calor inferior + ventilador",
           "broil": "Gratinar",
           "cleanair": "Limpieza aire",
           "convection_bake": "Aire caliente",
@@ -7823,7 +7823,7 @@
           "sabbath": "Sabbath",
           "self_clean": "Autolimpieza",
           "smallgrill": "Parrilla peque\u00f1a",
-          "smallgrill_pyro": "Grill peque\u00f1o pir\u00f3lisis",
+          "smallgrill_pyro": "Grill peque\u00f1o con pir\u00f3lisis",
           "sousvide": "Al vacio",
           "steam": "Vapor",
           "steamclean": "Limpieza vapor",
@@ -7864,13 +7864,13 @@
         "name": "Estado del modo de almacenamiento bajo demanda"
       },
       "store_dry_time": {
-        "name": "Tiempo de secado para guardar"
+        "name": "Tiempo de secado para guardar en armario"
       },
       "summerwinter_timeautomatic_setting": {
         "name": "Ajuste autom\u00e1tico de horario de verano/invierno"
       },
       "super_rinse_on_demand": {
-        "name": "Superaclarado a demanda"
+        "name": "Superaclarado bajo demanda"
       },
       "super_rinse_on_demand_allowed": {
         "name": "Superaclarado bajo demanda permitido"
@@ -7879,10 +7879,10 @@
         "name": "Estado de superaclarado"
       },
       "super_water_supply_mode": {
-        "name": "Modo de suministro de agua Super"
+        "name": "Modo de suministro de agua superr\u00e1pido"
       },
       "support_preheat_state": {
-        "name": "Estado de precalentamiento compatible"
+        "name": "Estado de compatibilidad con precalentamiento"
       },
       "synchro_start_level": {
         "name": "Nivel de inicio sincronizado"
@@ -8108,7 +8108,7 @@
         "name": "Esterilizaci\u00f3n UV"
       },
       "var_room_open_2": {
-        "name": "Sala variable abierta 2"
+        "name": "Compartimento variable abierto 2"
       },
       "vari_fan_speed": {
         "name": "Velocidad variable del ventilador"
@@ -8153,7 +8153,7 @@
         "name": "Tiempo del paso de lavado: desag\u00fce, centrifugado y parada"
       },
       "washer_to_dryer_available_for_hours_v": {
-        "name": "Horas disponibles de lavadora a secadora v"
+        "name": "Horas disponibles de lavadora a secadora"
       },
       "washer_to_dryer_program_id": {
         "name": "ID de programa de lavadora a secadora"
@@ -8231,13 +8231,13 @@
         "name": "Color de la ropa (primera) del asistente de lavado"
       },
       "washingwizzard_cloth_sensitive": {
-        "name": "Asistente de lavado ropa delicada"
+        "name": "Ropa delicada del asistente de lavado"
       },
       "washingwizzard_cloth_sensitive_first": {
         "name": "Asistente de lavado: sensibilidad de la prenda 1"
       },
       "washingwizzard_cloth_sensitive_second": {
-        "name": "Sensibilidad del tejido del asistente de lavado, segundo"
+        "name": "Asistente de lavado: sensibilidad de la prenda 2"
       },
       "washingwizzard_cloth_sensitive_third": {
         "name": "Asistente de lavado: sensibilidad de la prenda 3"
@@ -8276,7 +8276,7 @@
         "name": "Asistente de lavado: tipo de prenda 8"
       },
       "washingwizzard_clothingtype_eleventh": {
-        "name": "Tipo de ropa del asistente de lavado, und\u00e9cimo"
+        "name": "Asistente de lavado: tipo de prenda 11"
       },
       "washingwizzard_clothingtype_fifth": {
         "name": "Asistente de lavado: tipo de prenda 5"
@@ -8385,7 +8385,7 @@
         "name": "Tiempo de secado listo para usar"
       },
       "weight_runningend": {
-        "name": "Fin de la medici\u00f3n de peso"
+        "name": "Fin del pesaje"
       },
       "weight_startrunning": {
         "name": "Peso al iniciar"
@@ -8421,7 +8421,7 @@
         "name": "Estado de la luz de frescura"
       },
       "will_fress_light_exist": {
-        "name": "Existencia de luz de frescura"
+        "name": "Existe la luz de conservaci\u00f3n de frescura"
       },
       "will_light_market_mode_state": {
         "name": "Estado del modo tienda de la iluminaci\u00f3n"
@@ -8460,10 +8460,10 @@
         "name": "Temperatura zona superior"
       },
       "work_mode1": {
-        "name": "Modo de trabajo 1"
+        "name": "Modo de funcionamiento 1"
       },
       "work_mode2": {
-        "name": "Modo de trabajo 2"
+        "name": "Modo de funcionamiento 2"
       },
       "zibian_program_id": {
         "name": "ID de programa Zibian"
@@ -8582,7 +8582,7 @@
         "name": "Sensor de color"
       },
       "crisp_function_status": {
-        "name": "Estado de la funci\u00f3n crujiente"
+        "name": "Estado de la funci\u00f3n Crisp"
       },
       "demo_mode": {
         "name": "Modo demostraci\u00f3n"
@@ -8735,7 +8735,7 @@
         "name": "Sincronizaci\u00f3n inteligente"
       },
       "soft_pairing_status": {
-        "name": "Emparejamiento suave"
+        "name": "Emparejamiento por software"
       },
       "sound": {
         "name": "Sonido"
