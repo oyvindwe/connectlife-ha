@@ -129,7 +129,7 @@
         "name": "Allarme scongelamento terminato"
       },
       "alarm_descale_now": {
-        "name": "Allarme decalcificazione"
+        "name": "Allarme decalcificazione ora"
       },
       "alarm_descaling_needed": {
         "name": "Allarme decalcificazione necessaria"
@@ -252,7 +252,7 @@
         "name": "Allarme temperatura impostata raggiunta"
       },
       "alarm_steam_empty": {
-        "name": "Vapore vuoto"
+        "name": "Serbatoio vapore vuoto"
       },
       "alarm_steam_fill_alarm": {
         "name": "Allarme riempimento vapore"
@@ -270,7 +270,7 @@
         "name": "Girare il cibo"
       },
       "alarm_user_interaction_on_appliance_detected": {
-        "name": "Allarme interazione utente sull'elettrodomestico rilevata"
+        "name": "Allarme rilevata interazione utente sull'elettrodomestico"
       },
       "alarm_voltage": {
         "name": "Tensione"
@@ -303,10 +303,10 @@
         "name": "Allarme quasi terminato"
       },
       "alarmchild_lockoff": {
-        "name": "Allarme sicurezza bambini disattivata"
+        "name": "Allarme sicurezza bambini disattivato"
       },
       "alarmchild_lockon": {
-        "name": "Allarme sicurezza bambini attiva"
+        "name": "Allarme sicurezza bambini attivo"
       },
       "alarmcleanairended": {
         "name": "Allarme purificazione aria terminata"
@@ -420,7 +420,7 @@
         "name": "Allarme rinvio modalit\u00e0 Sabbath"
       },
       "alarmsteam_interrupted": {
-        "name": "Allarme vapore interrotto"
+        "name": "Allarme: vapore interrotto"
       },
       "alarmsteam_system_finished": {
         "name": "Allarme sistema vapore terminato"
@@ -441,7 +441,7 @@
         "name": "Lavaggio terminato"
       },
       "ali_wifi_fault_flag": {
-        "name": "Errore WiFi"
+        "name": "Guasto WiFi"
       },
       "alramemptywatertank": {
         "name": "Serbatoio dell'acqua vuoto"
@@ -450,7 +450,7 @@
         "name": "Boost automatico"
       },
       "auto_bridge": {
-        "name": "Bridge automatico"
+        "name": "Collegamento automatico"
       },
       "auto_dose_refill": {
         "name": "Ricarica dosaggio automatico"
@@ -969,13 +969,13 @@
         "name": "Guasto testa sensore temp. congelatore"
       },
       "freeze_poweroff_ad": {
-        "name": "Spegnimento congelatore"
+        "name": "Spegnimento per congelamento"
       },
       "freeze_poweron_ad": {
-        "name": "Blocco accensione pubblicit\u00e0"
+        "name": "Blocca pubblicit\u00e0 all'accensione"
       },
       "frize_temp_2_degree_above_starting_point": {
-        "name": "Temperatura congelatore 2\u00b0 sopra punto iniziale"
+        "name": "Temperatura congelatore 2\u00b0 sopra il valore impostato"
       },
       "frost_state": {
         "name": "Stato antigelo"
@@ -1002,10 +1002,10 @@
         "name": "Stato piastra grill"
       },
       "hard_pairing_status": {
-        "name": "Stato accoppiamento hardware"
+        "name": "Stato accoppiamento fisico"
       },
       "hardpairingstatus": {
-        "name": "Stato accoppiamento hardware"
+        "name": "Stato accoppiamento fisico"
       },
       "hardpairingunpairall": {
         "name": "Associazione forzata: dissocia tutto"
@@ -1026,7 +1026,7 @@
         "name": "Allarme vano produzione ghiaccio"
       },
       "ice_making_machine_failure": {
-        "name": "Guasto della fabbrica di ghiaccio"
+        "name": "Guasto del produttore di ghiaccio"
       },
       "ice_making_normal_status": {
         "name": "Stato normale produzione ghiaccio"
@@ -1065,7 +1065,7 @@
         "name": "Guasto umidit\u00e0 zona vini C inferiore"
       },
       "low_wine_area_c_temp_fault": {
-        "name": "Guasto temperatura zona vini inferiore C"
+        "name": "Guasto temperatura zona vino C inferiore"
       },
       "mid_wine_area_b_evaporator_fault": {
         "name": "Guasto evaporatore zona vino B centrale"
@@ -1077,7 +1077,7 @@
         "name": "Guasto umidit\u00e0 zona vini B centrale"
       },
       "mid_wine_area_b_temp_fault": {
-        "name": "Guasto temperatura zona vini centrale B"
+        "name": "Guasto temperatura zona vino B centrale"
       },
       "motorspeed1000rpmavailable": {
         "name": "Velocit\u00e0 motore 1000 giri/min disponibile"
@@ -1164,7 +1164,7 @@
         "name": "Guasto sensore ambiente secco/umido frigorifero"
       },
       "refr_evap_temp_sens_head_failure": {
-        "name": "Guasto testa sensore temperatura evaporatore frigorifero"
+        "name": "Guasto testina sensore temperatura evaporatore frigorifero"
       },
       "refr_fan_failure": {
         "name": "Guasto ventola frigorifero"
@@ -1188,7 +1188,7 @@
         "name": "Guasto sensore ambiente secco/umido frigorifero"
       },
       "refrigerator_evap_temp_sens_head_failure": {
-        "name": "Guasto testa sensore temperatura evaporatore frigorifero"
+        "name": "Guasto testina sensore temperatura evaporatore frigorifero"
       },
       "refrigerator_fan_failure": {
         "name": "Guasto ventola frigorifero"
@@ -1761,7 +1761,7 @@
         "name": "Stato della zona 6"
       },
       "soft_pairing_setting": {
-        "name": "Impostazione soft pairing"
+        "name": "Impostazione accoppiamento assistito"
       },
       "softener_state": {
         "name": "Stato ammorbidente"
@@ -1854,7 +1854,7 @@
         "name": "Temperatura variabile 2\u00b0 sopra punto iniziale"
       },
       "vari_temp_sens_head_failure": {
-        "name": "Guasto testina sensore temperatura variabile"
+        "name": "Guasto testa sensore temperatura variabile"
       },
       "variable_fan_failure_status": {
         "name": "Guasto ventola variabile"
@@ -2442,7 +2442,7 @@
           "auto": "Auto",
           "baby_care": "Bambino",
           "bedding": "Lenzuola",
-          "clean_dry_60": "Pulizia a secco 60",
+          "clean_dry_60": "Pulito e asciutto 60",
           "cotton": "Cotone",
           "cotton_dry": "Cotone asciutto",
           "delicates": "Delicati",
@@ -2453,7 +2453,7 @@
           "eco_40_60": "Eco 40-60",
           "full_load_49": "Carico completo 49",
           "hand_wash": "Lavaggio a mano",
-          "ion_refresh": "Rinfresco ioni",
+          "ion_refresh": "Rinfresco a ioni",
           "jeans": "Jeans",
           "mix": "Misto",
           "pets": "Animali domestici",
@@ -2484,7 +2484,7 @@
           "baby_care": "Bambino",
           "clean": "Pulizia",
           "color": "Colorati",
-          "down_feathers": "Piume",
+          "down_feathers": "Piumini d'oca",
           "draining": "Scarico",
           "drum_clean": "Pulizia cestello",
           "eco": "Eco",
@@ -2994,7 +2994,7 @@
         "name": "Freschezza aria"
       },
       "airdryflag": {
-        "name": "Flag asciugatura aria"
+        "name": "Indicatore asciugatura ad aria"
       },
       "airwashtime": {
         "name": "Tempo lavaggio ad aria"
@@ -3087,7 +3087,7 @@
         "name": "Temperatura colore luce ambiente"
       },
       "ancreae_mux": {
-        "name": "An creae mux"
+        "name": "Antipiega"
       },
       "anticrease_flag": {
         "name": "Indicatore antipiega"
@@ -3224,7 +3224,7 @@
         "name": "Tempo alla fine prenotazione"
       },
       "brand_splash_setting": {
-        "name": "Impostazione schermata iniziale"
+        "name": "Impostazione schermata iniziale con logo"
       },
       "brightness_setting": {
         "name": "Impostazione luminosit\u00e0"
@@ -3236,7 +3236,7 @@
         "name": "Accumulo di umidit\u00e0"
       },
       "bundling_sensor_setting_status": {
-        "name": "Stato impostazione sensore aggregato"
+        "name": "Stato impostazione sensore di raggruppamento"
       },
       "bundling_temperature": {
         "name": "Temperatura di fasciatura"
@@ -3251,7 +3251,7 @@
         "name": "Stato fotocamera"
       },
       "cameralive_feed_current_phase": {
-        "name": "Fase attuale ripresa live videocamera"
+        "name": "Fase attuale ripresa dal vivo videocamera"
       },
       "cameralive_feed_status": {
         "name": "Stato streaming telecamera"
@@ -3260,7 +3260,7 @@
         "name": "Fase attuale immagine fotocamera"
       },
       "camerapicture_request": {
-        "name": "Richiesta foto fotocamera"
+        "name": "Richiesta immagine fotocamera"
       },
       "cameratime_lapse_current_phase": {
         "name": "Fase attuale time-lapse videocamera"
@@ -3281,7 +3281,7 @@
         "name": "Impostazione sicurezza bambini"
       },
       "childlock_flag": {
-        "name": "Flag sicurezza bambini"
+        "name": "Indicatore sicurezza bambini"
       },
       "childlock_newfuntion": {
         "name": "Blocco bambini nuova funzione"
@@ -3332,7 +3332,7 @@
         "name": "Selezione scomparto"
       },
       "compressor_condition": {
-        "name": "Condizione compressore"
+        "name": "Stato compressore"
       },
       "compressor_frequency": {
         "name": "Frequenza compressore"
@@ -3480,7 +3480,7 @@
         "name": "Tempo livello di asciugatura attuale"
       },
       "custard_room": {
-        "name": "Vano crema"
+        "name": "Vano crema pasticcera"
       },
       "d1_program_id": {
         "name": "ID programma D 1"
@@ -3540,7 +3540,7 @@
         "name": "Modalit\u00e0 pulizia DBD"
       },
       "debacilli_mode": {
-        "name": "Modalit\u00e0 antibatterica"
+        "name": "Modalit\u00e0 antibatterica (Debacilli)"
       },
       "default_dry_level": {
         "name": "Livello di asciugatura predefinito"
@@ -3681,7 +3681,7 @@
         "name": "Contrasto del display"
       },
       "display_logotype_setting_status": {
-        "name": "Logotipo del display"
+        "name": "Logo sul display"
       },
       "display_panel_ronshen": {
         "name": "Pannello display Ronshen"
@@ -3713,7 +3713,7 @@
         "name": "Impostazione contrasto display"
       },
       "displaylogo": {
-        "name": "Logo display"
+        "name": "Logo sul display"
       },
       "door_close_light_status": {
         "name": "Stato luce chiusura porta"
@@ -3786,7 +3786,7 @@
         "name": "Numero cicli di pulizia cestello eseguiti"
       },
       "drumcleanflag": {
-        "name": "Flag pulizia cestello"
+        "name": "Indicatore pulizia cestello"
       },
       "drumcleanswitch": {
         "name": "Interruttore pulizia cestello"
@@ -3798,7 +3798,7 @@
         "name": "Visualizzazione livello asciugatura"
       },
       "dry_lever": {
-        "name": "Leva asciugatura"
+        "name": "Livello asciugatura"
       },
       "dry_time": {
         "name": "Tempo di asciugatura"
@@ -3828,7 +3828,7 @@
         "name": "Livello asciugatura capi assistente 1"
       },
       "dryingwizzard_clothesdrytarget": {
-        "name": "Livello asciugatura desiderato assistente"
+        "name": "Livello asciugatura desiderato assistente asciugatura"
       },
       "dryingwizzard_clothesdrytarget1": {
         "name": "Obiettivo asciugatura capi assistente 1"
@@ -3882,7 +3882,7 @@
         "name": "Tipo di capo assistente asciugatura terzo"
       },
       "dryingwizzard_clothingtype_thirteenth": {
-        "name": "Wizard asciugatura tipo di capo tredicesimo"
+        "name": "Assistente asciugatura tipo di capo tredicesimo"
       },
       "dryingwizzard_clothingtype_twelfth": {
         "name": "Assistente asciugatura tipo di capo dodicesimo"
@@ -3891,16 +3891,16 @@
         "name": "Indicatore livello asciugatura"
       },
       "drymode_flag": {
-        "name": "Flag modalit\u00e0 asciugatura"
+        "name": "Indicatore modalit\u00e0 asciugatura"
       },
       "drymodel": {
-        "name": "Modello asciugatura"
+        "name": "Modalit\u00e0 asciugatura"
       },
       "dryopen_defaultspinspeed": {
         "name": "Velocit\u00e0 di centrifuga predefinita"
       },
       "duration_of_clock": {
-        "name": "Durata dell'orologio"
+        "name": "Durata visualizzazione orologio"
       },
       "eco_mode_setting": {
         "name": "Impostazione modalit\u00e0 Eco"
@@ -4515,7 +4515,7 @@
         "name": "Flag tempo centrifuga flessibile"
       },
       "fluffysoft": {
-        "name": "Morbidezza soffice"
+        "name": "Morbido soffice"
       },
       "fluffysoft_flag": {
         "name": "Indicatore soffice morbido"
@@ -4549,7 +4549,7 @@
         "name": "Spazio libero aperto 2"
       },
       "freeri_fan_speed": {
-        "name": "Velocit\u00e0 ventola Freeri"
+        "name": "Velocit\u00e0 ventola Freerie"
       },
       "freeze_door_open_time": {
         "name": "Durata apertura porta congelatore"
@@ -4588,7 +4588,7 @@
         "name": "Asciugatura delicata"
       },
       "gentledry_flag": {
-        "name": "Flag asciugatura delicata"
+        "name": "Indicatore asciugatura delicata"
       },
       "getcurrentcityinfoflag": {
         "name": "Flag richiesta info citt\u00e0 attuale"
@@ -4633,13 +4633,13 @@
         "name": "Mezzo carico"
       },
       "hard_pairing_commond": {
-        "name": "Comando accoppiamento hard"
+        "name": "Comando accoppiamento diretto"
       },
       "hard_pairing_status": {
-        "name": "Stato accoppiamento hardware"
+        "name": "Stato accoppiamento fisico"
       },
       "hardpairingstatus": {
-        "name": "Stato accoppiamento hardware",
+        "name": "Stato accoppiamento fisico",
         "state": {
           "active": "Attivo",
           "not_active": "Non attivo",
@@ -4726,7 +4726,7 @@
         "name": "Stato display rilevamento presenza"
       },
       "human_sensor_switch_exist": {
-        "name": "Presenza interruttore sensore di presenza"
+        "name": "Interruttore sensore di presenza presente"
       },
       "humanbody_sensor_switch_status": {
         "name": "Stato interruttore sensore di presenza"
@@ -4795,7 +4795,7 @@
         "name": "Interruttore conservazione ioni"
       },
       "ion_refresh": {
-        "name": "Rinfresco ioni"
+        "name": "Rinfresco a ioni"
       },
       "iron_dry_time": {
         "name": "Tempo asciugatura stiro"
@@ -4804,7 +4804,7 @@
         "name": "Flag programma cloud"
       },
       "ispower_flag": {
-        "name": "Flag accensione"
+        "name": "Indicatore accensione"
       },
       "kettle_install_status": {
         "name": "Stato installazione bollitore"
@@ -4840,7 +4840,7 @@
         "name": "Ultimo programma eseguito"
       },
       "lidopenflag": {
-        "name": "Flag coperchio aperto"
+        "name": "Indicatore coperchio aperto"
       },
       "lights_duration_setting": {
         "name": "Impostazione durata luci"
@@ -4913,7 +4913,7 @@
         "name": "Evento tempo massimo"
       },
       "mdo_on_demand": {
-        "name": "MDO su richiesta"
+        "name": "MDO a richiesta"
       },
       "mdo_on_demand_allowed": {
         "name": "MDO su richiesta consentito"
@@ -4963,7 +4963,7 @@
         "name": "Impostazione monitor"
       },
       "monitor_set_act": {
-        "name": "Monitoraggio azioni comandi"
+        "name": "Monitoraggio valori impostati/effettivi"
       },
       "motor": {
         "name": "Motore"
@@ -5203,7 +5203,7 @@
         "name": "Impostazione sensore di prossimit\u00e0 utente vicino rilevato luce cambia a"
       },
       "proximity_sensor_settingdistant_user_detecteddisplay_change_to": {
-        "name": "Impostazione sensore di prossimit\u00e0: rilevato utente distante, il display passa a"
+        "name": "Impostazione sensore di prossimit\u00e0 utente lontano rilevato display cambia a"
       },
       "proximity_sensor_settingdistant_user_detectedlight_change_to": {
         "name": "Impostazione sensore di prossimit\u00e0 utente lontano rilevato luce cambia a"
@@ -5293,7 +5293,7 @@
         "name": "Luce frigorifero"
       },
       "refr_key": {
-        "name": "Tasto refrigerazione"
+        "name": "Tasto frigorifero"
       },
       "refr_room": {
         "name": "Scomparto frigorifero"
@@ -5317,7 +5317,7 @@
         "name": "Temperatura minima frigorifero"
       },
       "refrigerator_poweroff_ad": {
-        "name": "Spegnimento frigorifero ad"
+        "name": "Pubblicit\u00e0 allo spegnimento frigorifero"
       },
       "refrigerator_poweron_ad": {
         "name": "Pubblicit\u00e0 all'accensione frigorifero"
@@ -5425,7 +5425,7 @@
         "name": "Numero di risciacqui con risciacquo extra"
       },
       "rinsenum_index": {
-        "name": "Indice numero risciacqui"
+        "name": "Indice numero risciacquo"
       },
       "rinsestepfinishnotifyswitch": {
         "name": "Notifica fine fase di risciacquo"
@@ -5473,7 +5473,7 @@
         "name": "Impostazione modalit\u00e0 Sabbath sistema riscaldamento"
       },
       "sabbath_mode_settingstart_timehour": {
-        "name": "Impostazione modalit\u00e0 Sabbath ora di inizio"
+        "name": "Impostazione modalit\u00e0 Sabbath ora dell'ora di inizio"
       },
       "sabbath_mode_settingstart_timeminute": {
         "name": "Impostazione modalit\u00e0 Sabbath minuto ora di inizio"
@@ -5593,7 +5593,7 @@
         "name": "Blocco igienizzazione"
       },
       "sani_lock_allowed": {
-        "name": "Blocco igienizzante consentito"
+        "name": "Blocco igienizzazione consentito"
       },
       "saveelectricitvalue_decimal": {
         "name": "Decimale valore risparmio energetico"
@@ -5623,13 +5623,13 @@
         "name": "Guasto inizializzazione secondo produttore di ghiaccio"
       },
       "second_ice_maker_sensor_fault": {
-        "name": "Guasto sensore secondo produttore di ghiaccio"
+        "name": "Guasto sensore secondo fabbricatore di ghiaccio"
       },
       "selected_program": {
         "name": "Seleziona programma"
       },
       "selected_program_dry_function": {
-        "name": "Funzione asciugatura programma selezionato"
+        "name": "Funzione asciugatura del programma selezionato"
       },
       "selected_program_duration_in_minutes": {
         "name": "Durata programma selezionato"
@@ -5925,7 +5925,7 @@
         }
       },
       "sl1_bridged_to_zone": {
-        "name": "Zona 1 ponte di destinazione"
+        "name": "Ponte zona 1 (temperatura target)"
       },
       "sl1_cooking_method": {
         "name": "Metodo di cottura zona 1",
@@ -6066,7 +6066,7 @@
         }
       },
       "sl2_bridged_to_zone": {
-        "name": "Zona 2 ponte di destinazione"
+        "name": "Ponte zona 2 (temperatura target)"
       },
       "sl2_cooking_method": {
         "name": "Metodo di cottura zona 2",
@@ -6207,7 +6207,7 @@
         }
       },
       "sl3_bridged_to_zone": {
-        "name": "Zona 3 ponte di destinazione"
+        "name": "Ponte zona 3 (temperatura target)"
       },
       "sl3_cooking_method": {
         "name": "Metodo di cottura zona 3",
@@ -6348,7 +6348,7 @@
         }
       },
       "sl4_bridged_to_zone": {
-        "name": "Zona 4 ponte di destinazione"
+        "name": "Ponte zona 4 (temperatura target)"
       },
       "sl4_cooking_method": {
         "name": "Metodo di cottura zona 4",
@@ -6489,7 +6489,7 @@
         }
       },
       "sl5_bridged_to_zone": {
-        "name": "Zona 5 ponte di destinazione"
+        "name": "Ponte zona 5 (temperatura target)"
       },
       "sl5_cooking_method": {
         "name": "Metodo di cottura zona 5",
@@ -6630,7 +6630,7 @@
         }
       },
       "sl6_bridged_to_zone": {
-        "name": "Zona 6 ponte di destinazione"
+        "name": "Ponte zona 6 (temperatura target)"
       },
       "sl6_cooking_method": {
         "name": "Metodo di cottura zona 6",
@@ -6766,13 +6766,13 @@
         "name": "Slotdry"
       },
       "slotdry_flag": {
-        "name": "Flag slotdry"
+        "name": "Indicatore slotdry"
       },
       "slotdry_flag1": {
-        "name": "Flag asciugatura slot 1"
+        "name": "Indicatore asciugatura vano 1"
       },
       "soft_pairing_setting": {
-        "name": "Impostazione soft pairing"
+        "name": "Impostazione accoppiamento assistito"
       },
       "soft_pairing_status": {
         "name": "Stato accoppiamento soft"
@@ -6805,7 +6805,7 @@
         "name": "Flag scomparto ammorbidente"
       },
       "softer_flag": {
-        "name": "Flag ammorbidente"
+        "name": "Indicatore ammorbidente"
       },
       "softner_useindex": {
         "name": "Indice utilizzo ammorbidente"
@@ -6817,10 +6817,10 @@
         "name": "Flag dosaggio standard ammorbidente"
       },
       "softpairing": {
-        "name": "Associazione soft"
+        "name": "Associazione semplice"
       },
       "softpairingsetting": {
-        "name": "Impostazione soft pairing"
+        "name": "Impostazione accoppiamento assistito"
       },
       "soil_lever": {
         "name": "Livello di sporco"
@@ -6862,7 +6862,7 @@
         "name": "Durata centrifuga"
       },
       "spintime_flag": {
-        "name": "Flag tempo di centrifuga"
+        "name": "Indicatore tempo di centrifuga"
       },
       "spintime_index": {
         "name": "Indice tempo di centrifuga"
@@ -6871,7 +6871,7 @@
         "name": "Indice utilizzo tempo centrifuga"
       },
       "stage_lights_setting": {
-        "name": "Impostazione luci scena"
+        "name": "Impostazione illuminazione a fasi"
       },
       "stain_program_set_clothes_type_status": {
         "name": "Stato tipo capi impostato programma macchie"
@@ -6941,7 +6941,7 @@
         "name": "Vapore"
       },
       "steam_assist_time_used": {
-        "name": "Tempo di assistenza vapore utilizzato"
+        "name": "Tempo assistenza vapore utilizzato"
       },
       "steam_reduction_at_door_opening_setting": {
         "name": "Impostazione riduzione vapore all'apertura porta"
@@ -6967,16 +6967,16 @@
           "descale": "Decalcificazione",
           "eco_hot_air": "Aria calda eco",
           "fast_preheat": "Preriscaldamento rapido",
-          "grill_fan_micro": "Grill ventilato micro",
+          "grill_fan_micro": "Grill ventilato + microonde",
           "hot_air": "Aria calda",
           "hot_air_bottom": "Aria calda inferiore",
-          "hot_air_micro": "Aria calda micro",
+          "hot_air_micro": "Aria calda + microonde",
           "hot_air_steam_1": "Aria calda vapore 1",
           "hot_air_steam_2": "Aria calda vapore 2",
           "hot_air_steam_3": "Aria calda vapore 3",
           "keep_warm": "Mantieni caldo",
           "large_grill": "Grill grande",
-          "large_grill_fan": "Grill grande ventilato",
+          "large_grill_fan": "Grill grande con ventola",
           "low_temp_steam": "Vapore a bassa temperatura",
           "micro": "Microonde",
           "microwave_clean": "Pulizia microonde",
@@ -6993,7 +6993,7 @@
           "steam": "Vapore",
           "steam_clean": "Pulizia a vapore",
           "top": "In alto",
-          "top_bottom": "Sopra sotto",
+          "top_bottom": "Sopra/Sotto",
           "warming": "Riscaldamento"
         }
       },
@@ -7054,16 +7054,16 @@
           "descale": "Decalcificazione",
           "eco_hot_air": "Aria calda eco",
           "fast_preheat": "Preriscaldamento rapido",
-          "grill_fan_micro": "Grill ventilato micro",
+          "grill_fan_micro": "Grill ventilato + microonde",
           "hot_air": "Aria calda",
           "hot_air_bottom": "Aria calda inferiore",
-          "hot_air_micro": "Aria calda micro",
+          "hot_air_micro": "Aria calda + microonde",
           "hot_air_steam_1": "Aria calda vapore 1",
           "hot_air_steam_2": "Aria calda vapore 2",
           "hot_air_steam_3": "Aria calda vapore 3",
           "keep_warm": "Mantieni caldo",
           "large_grill": "Grill grande",
-          "large_grill_fan": "Grill grande ventilato",
+          "large_grill_fan": "Grill grande con ventola",
           "low_temp_steam": "Vapore a bassa temperatura",
           "micro": "Microonde",
           "microwave_clean": "Pulizia microonde",
@@ -7080,7 +7080,7 @@
           "steam": "Vapore",
           "steam_clean": "Pulizia a vapore",
           "top": "In alto",
-          "top_bottom": "Sopra sotto",
+          "top_bottom": "Sopra/Sotto",
           "warming": "Riscaldamento"
         }
       },
@@ -7141,16 +7141,16 @@
           "descale": "Decalcificazione",
           "eco_hot_air": "Aria calda eco",
           "fast_preheat": "Preriscaldamento rapido",
-          "grill_fan_micro": "Grill ventilato micro",
+          "grill_fan_micro": "Grill ventilato + microonde",
           "hot_air": "Aria calda",
           "hot_air_bottom": "Aria calda inferiore",
-          "hot_air_micro": "Aria calda micro",
+          "hot_air_micro": "Aria calda + microonde",
           "hot_air_steam_1": "Aria calda vapore 1",
           "hot_air_steam_2": "Aria calda vapore 2",
           "hot_air_steam_3": "Aria calda vapore 3",
           "keep_warm": "Mantieni caldo",
           "large_grill": "Grill grande",
-          "large_grill_fan": "Grill grande ventilato",
+          "large_grill_fan": "Grill grande con ventola",
           "low_temp_steam": "Vapore a bassa temperatura",
           "micro": "Microonde",
           "microwave_clean": "Pulizia microonde",
@@ -7167,7 +7167,7 @@
           "steam": "Vapore",
           "steam_clean": "Pulizia a vapore",
           "top": "In alto",
-          "top_bottom": "Sopra sotto",
+          "top_bottom": "Sopra/Sotto",
           "warming": "Riscaldamento"
         }
       },
@@ -7229,7 +7229,7 @@
         "name": "Fase 4 impostazione sistema riscaldamento"
       },
       "step4_set_microwave_wattage": {
-        "name": "Fase 4 potenza microonde impostata"
+        "name": "Fase 4 imposta potenza microonde"
       },
       "step4_set_temperature": {
         "name": "Temperatura impostata fase 4"
@@ -7651,7 +7651,7 @@
         "name": "Tempo residuo fase post-cottura"
       },
       "step_after_bake_set_heater_system": {
-        "name": "Fase dopo cottura impostazione sistema riscaldamento",
+        "name": "Sistema riscaldante fase post-cottura",
         "state": {
           "3d_hot_ai": "Aria calda 3D",
           "air_fry": "Cottura ad aria",
@@ -7915,7 +7915,7 @@
         "name": "Indice temperatura"
       },
       "temp_runing_flag": {
-        "name": "Indicatore temperatura in corso"
+        "name": "Flag temperatura attiva"
       },
       "temp_wave": {
         "name": "Onda di temperatura"
@@ -7991,7 +7991,7 @@
         "name": "Colore tema"
       },
       "time_autoflag": {
-        "name": "Flag automatico orario"
+        "name": "Indicatore orario automatico"
       },
       "time_program_set_duration_status": {
         "name": "Durata programma a tempo"
@@ -8090,7 +8090,7 @@
         "name": "Modalit\u00e0 sterilizzazione utente"
       },
       "utc_datetime_bdc_delaystart_delayend_timestamp": {
-        "name": "BDC DelayStart DelayEnd"
+        "name": "BDC Avvio ritardato / Fine ritardata"
       },
       "uv_light": {
         "name": "Luce UV"
@@ -8135,7 +8135,7 @@
         "name": "Variazione AD spegnimento"
       },
       "variation_poweron_ad": {
-        "name": "Variazione accensione ad"
+        "name": "Variazione accensione"
       },
       "variation_real_temperature": {
         "name": "Variazione temperatura reale"
@@ -8147,7 +8147,7 @@
         "name": "Impostazione volume"
       },
       "warmwaterwashing": {
-        "name": "Lavaggio ad acqua calda"
+        "name": "Lavaggio con acqua tiepida"
       },
       "wash_step_time_drain_water_spin_and_stop": {
         "name": "Tempo fase lavaggio scarico acqua centrifuga e arresto"
@@ -8159,7 +8159,7 @@
         "name": "ID programma lavatrice-asciugatrice"
       },
       "washer_to_dryerwizard_trigger_status": {
-        "name": "Stato attivazione wizard da lavatrice ad asciugatrice"
+        "name": "Stato attivazione assistente da lavatrice ad asciugatrice"
       },
       "washfunction1": {
         "name": "Funzione lavaggio 1"
@@ -8201,7 +8201,7 @@
         "name": "Tessuto assistente lavaggio"
       },
       "washingwizzard_cloth_colour": {
-        "name": "Colore capi assistente di lavaggio"
+        "name": "Colore capi assistente lavaggio"
       },
       "washingwizzard_cloth_colour_fifth": {
         "name": "Colore capo assistente lavaggio quinto"
@@ -8219,13 +8219,13 @@
         "name": "Grado di sporco capi assistente lavaggio"
       },
       "washingwizzard_cloth_dirty_first": {
-        "name": "Livello sporco capi assistente lavaggio 1"
+        "name": "Livello sporco capo assistente lavaggio 1"
       },
       "washingwizzard_cloth_dirty_second": {
-        "name": "Sporco capo assistente lavaggio secondo"
+        "name": "Livello sporco capo assistente lavaggio 2"
       },
       "washingwizzard_cloth_dirty_third": {
-        "name": "Livello sporco capi assistente lavaggio 3"
+        "name": "Livello sporco capo assistente lavaggio 3"
       },
       "washingwizzard_cloth_olour_first": {
         "name": "Colore capo assistente lavaggio primo"
@@ -8237,13 +8237,13 @@
         "name": "Assistente lavaggio delicatezza tessuto primo"
       },
       "washingwizzard_cloth_sensitive_second": {
-        "name": "Wizard lavaggio tessuto delicato secondo"
+        "name": "Assistente lavaggio delicatezza tessuto secondo"
       },
       "washingwizzard_cloth_sensitive_third": {
         "name": "Assistente lavaggio delicatezza tessuto terzo"
       },
       "washingwizzard_cloth_stains_eighth": {
-        "name": "Macchie capo assistente lavaggio ottavo"
+        "name": "Assistente lavaggio macchie tessuto ottavo"
       },
       "washingwizzard_cloth_stains_fifth": {
         "name": "Macchie capo assistente lavaggio quinto"
@@ -8252,13 +8252,13 @@
         "name": "Macchie capo assistente lavaggio primo"
       },
       "washingwizzard_cloth_stains_fourth": {
-        "name": "Macchie capo assistente lavaggio quarto"
+        "name": "Assistente lavaggio macchie tessuto quarto"
       },
       "washingwizzard_cloth_stains_ninth": {
         "name": "Macchie capo assistente lavaggio nono"
       },
       "washingwizzard_cloth_stains_second": {
-        "name": "Macchie capo assistente lavaggio secondo"
+        "name": "Assistente lavaggio macchie tessuto secondo"
       },
       "washingwizzard_cloth_stains_seventh": {
         "name": "Assistente lavaggio macchie tessuto settimo"
@@ -8270,25 +8270,25 @@
         "name": "Macchie capo assistente lavaggio terzo"
       },
       "washingwizzard_clothingtype": {
-        "name": "Tipo di capi assistente di lavaggio"
+        "name": "Tipo di capi (assistente di lavaggio)"
       },
       "washingwizzard_clothingtype_eighth": {
         "name": "Assistente lavaggio tipo di capo ottavo"
       },
       "washingwizzard_clothingtype_eleventh": {
-        "name": "Wizard lavaggio tipo di capo undicesimo"
+        "name": "Assistente lavaggio tipo di capo undicesimo"
       },
       "washingwizzard_clothingtype_fifth": {
-        "name": "Tipo di capo assistente lavaggio quinto"
+        "name": "Assistente lavaggio tipo di capo quinto"
       },
       "washingwizzard_clothingtype_first": {
-        "name": "Tipo di capo assistente lavaggio primo"
+        "name": "Assistente lavaggio tipo di capo primo"
       },
       "washingwizzard_clothingtype_fourth": {
         "name": "Assistente lavaggio tipo di capo quarto"
       },
       "washingwizzard_clothingtype_ninth": {
-        "name": "Tipo di capo assistente lavaggio nono"
+        "name": "Assistente lavaggio tipo di capo nono"
       },
       "washingwizzard_clothingtype_second": {
         "name": "Assistente lavaggio tipo di capo secondo"
@@ -8297,7 +8297,7 @@
         "name": "Assistente lavaggio tipo di capo settimo"
       },
       "washingwizzard_clothingtype_sixth": {
-        "name": "Tipo di capo assistente lavaggio sesto"
+        "name": "Assistente lavaggio tipo di capo sesto"
       },
       "washingwizzard_clothingtype_tenth": {
         "name": "Assistente lavaggio tipo di capo decimo"
@@ -8306,7 +8306,7 @@
         "name": "Assistente lavaggio tipo di capo terzo"
       },
       "washingwizzard_clothingtype_thirteenth": {
-        "name": "Wizard lavaggio tipo di capo tredicesimo"
+        "name": "Assistente lavaggio tipo di capo tredicesimo"
       },
       "washingwizzard_clothingtype_twelfth": {
         "name": "Assistente lavaggio tipo di capo dodicesimo"
@@ -8373,7 +8373,7 @@
         "name": "Livello acqua"
       },
       "waterlevel_runing_flag": {
-        "name": "Indicatore livello acqua in corso"
+        "name": "Flag livello acqua attivo"
       },
       "waterlevelflag": {
         "name": "Indicatore livello acqua"
@@ -8421,7 +8421,7 @@
         "name": "Stato luce Will Fresh"
       },
       "will_fress_light_exist": {
-        "name": "Presenza luce Fresh"
+        "name": "Presenza luce Will Fresh"
       },
       "will_light_market_mode_state": {
         "name": "Stato modalit\u00e0 esposizione luce"
@@ -8483,7 +8483,7 @@
         "name": "Modalit\u00e0 attiva"
       },
       "adapt_sense_setting_status": {
-        "name": "Adapt sense"
+        "name": "Rilevamento adattivo"
       },
       "adaptive_sense_setting": {
         "name": "Impostazione rilevamento adattivo"
@@ -8648,7 +8648,7 @@
         "name": "Luce interna"
       },
       "interior_light_at_power_off_setting_status": {
-        "name": "Luce interna a spegnimento"
+        "name": "Luce interna a dispositivo spento"
       },
       "key_sound": {
         "name": "Suono tasti"
@@ -8735,7 +8735,7 @@
         "name": "Smart sync"
       },
       "soft_pairing_status": {
-        "name": "Associazione soft"
+        "name": "Associazione semplice"
       },
       "sound": {
         "name": "Suono"
