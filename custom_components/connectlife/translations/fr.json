@@ -231,7 +231,7 @@
         "name": "Alarme : dur\u00e9e de fonctionnement sup\u00e9rieure \u00e0 la limite de 10 ou 24 heures"
       },
       "alarm_sabbath_reminder": {
-        "name": "Alarme rappel mode sabbat"
+        "name": "Alarme de rappel du mode sabbat"
       },
       "alarm_salt_refill": {
         "name": "Remplissage du sel"
@@ -240,22 +240,22 @@
         "name": "Alarme sablier 1 \u00e9coul\u00e9"
       },
       "alarm_sand_timer_2_elapsed": {
-        "name": "Alarme minuterie 2 \u00e9coul\u00e9e"
+        "name": "Alarme sablier 2 \u00e9coul\u00e9"
       },
       "alarm_sand_timer_3_elapsed": {
-        "name": "Alarme minuterie 3 \u00e9coul\u00e9e"
+        "name": "Alarme sablier 3 \u00e9coul\u00e9"
       },
       "alarm_sani_program_finished": {
-        "name": "Programme sanitaire termin\u00e9"
+        "name": "Programme d'assainissement termin\u00e9"
       },
       "alarm_set_temperature_reached": {
         "name": "Alarme temp\u00e9rature r\u00e9gl\u00e9e atteinte"
       },
       "alarm_steam_empty": {
-        "name": "R\u00e9servoir vapeur vide"
+        "name": "R\u00e9servoir de vapeur vide"
       },
       "alarm_steam_fill_alarm": {
-        "name": "Alarme remplissage vapeur"
+        "name": "Alarme de remplissage vapeur"
       },
       "alarm_steam_function_active": {
         "name": "Alarme fonction vapeur active"
@@ -369,7 +369,7 @@
         "name": "Alarme consommation \u00e9lectrique accrue"
       },
       "alarmkey_lock_on": {
-        "name": "Alarme verrouillage des commandes activ\u00e9"
+        "name": "Alarme verrouillage des commandes activ\u00e9e"
       },
       "alarmmicrowave_system_finished": {
         "name": "Alarme syst\u00e8me micro-ondes termin\u00e9"
@@ -417,7 +417,7 @@
         "name": "Alarme mode sabbat termin\u00e9"
       },
       "alarmsabbathpostpone": {
-        "name": "Alarme report mode sabbat"
+        "name": "Alarme de report du mode sabbat"
       },
       "alarmsteam_interrupted": {
         "name": "Alarme vapeur interrompue"
@@ -906,7 +906,7 @@
         "name": "Erreur EEPROM unit\u00e9 ext\u00e9rieure"
       },
       "f_e_outgastemp": {
-        "name": "D\u00e9faillance du capteur de temp\u00e9rature d'\u00e9chappement"
+        "name": "D\u00e9faillance du capteur de temp\u00e9rature de refoulement"
       },
       "f_e_outtemp": {
         "name": "D\u00e9faut du capteur de temp\u00e9rature ambiante ext\u00e9rieure"
@@ -993,7 +993,7 @@
         "name": "Fonction gratin par le bas autoris\u00e9e"
       },
       "gratin_from_below_function_status": {
-        "name": "\u00c9tat de la fonction gratin par le bas"
+        "name": "\u00c9tat de la fonction gratin par le dessous"
       },
       "gratin_status": {
         "name": "\u00c9tat gratin"
@@ -1140,7 +1140,7 @@
         "name": "Alarme porte zone variable ouverte"
       },
       "permanent_pot_detection": {
-        "name": "D\u00e9tection permanente de casserole"
+        "name": "D\u00e9tection permanente de r\u00e9cipient"
       },
       "preheat": {
         "name": "Pr\u00e9chauffage"
@@ -1263,7 +1263,7 @@
         "name": "Zone 1 arr\u00eat\u00e9e automatiquement"
       },
       "sl1_alarm_ntc_coil": {
-        "name": "Zone 1 alarme sonde CTN serpentin"
+        "name": "Zone 1 alarme sonde CTN de serpentin"
       },
       "sl1_alarm_ntc_coil_overheating": {
         "name": "Surchauffe de la bobine zone 1"
@@ -1347,7 +1347,7 @@
         "name": "Zone 2 arr\u00eat\u00e9e automatiquement"
       },
       "sl2_alarm_ntc_coil": {
-        "name": "Zone 2 alarme sonde CTN serpentin"
+        "name": "Zone 2 alarme sonde CTN de serpentin"
       },
       "sl2_alarm_ntc_coil_overheating": {
         "name": "Surchauffe de la bobine zone 2"
@@ -1431,7 +1431,7 @@
         "name": "Zone 3 arr\u00eat\u00e9e automatiquement"
       },
       "sl3_alarm_ntc_coil": {
-        "name": "Zone 3 alarme sonde CTN serpentin"
+        "name": "Zone 3 alarme sonde CTN de serpentin"
       },
       "sl3_alarm_ntc_coil_overheating": {
         "name": "Surchauffe de la bobine zone 3"
@@ -1515,7 +1515,7 @@
         "name": "Zone 4 arr\u00eat\u00e9e automatiquement"
       },
       "sl4_alarm_ntc_coil": {
-        "name": "Zone 4 alarme sonde CTN serpentin"
+        "name": "Zone 4 alarme sonde CTN de serpentin"
       },
       "sl4_alarm_ntc_coil_overheating": {
         "name": "Surchauffe de la bobine zone 4"
@@ -1599,10 +1599,10 @@
         "name": "Zone 5 arr\u00eat\u00e9e automatiquement"
       },
       "sl5_alarm_ntc_coil": {
-        "name": "Zone 5 alarme sonde CTN serpentin"
+        "name": "Zone 5 alarme sonde CTN de serpentin"
       },
       "sl5_alarm_ntc_coil_overheating": {
-        "name": "Surchauffe serpentin zone 5"
+        "name": "Surchauffe de la bobine zone 5"
       },
       "sl5_alarm_timer_ended": {
         "name": "Minuterie zone 5 termin\u00e9e"
@@ -1683,10 +1683,10 @@
         "name": "Zone 6 arr\u00eat\u00e9e automatiquement"
       },
       "sl6_alarm_ntc_coil": {
-        "name": "Zone 6 alarme sonde CTN serpentin"
+        "name": "Zone 6 alarme sonde CTN de serpentin"
       },
       "sl6_alarm_ntc_coil_overheating": {
-        "name": "Surchauffe serpentin zone 6"
+        "name": "Surchauffe de la bobine zone 6"
       },
       "sl6_alarm_timer_ended": {
         "name": "Minuterie zone 6 termin\u00e9e"
@@ -2028,7 +2028,7 @@
         "name": "Dur\u00e9e r\u00e9gl\u00e9e fonction gratin"
       },
       "greasefiltersetlifetimeinhours": {
-        "name": "Dur\u00e9e de vie du filtre \u00e0 graisse"
+        "name": "Dur\u00e9e de vie du filtre \u00e0 graisses"
       },
       "lightbrightness": {
         "name": "Luminosit\u00e9 de l'\u00e9clairage"
@@ -2083,7 +2083,7 @@
       "actions": {
         "name": "Actions",
         "state": {
-          "add_duration": "Ajouter de la dur\u00e9e",
+          "add_duration": "Prolonger la dur\u00e9e",
           "add_gratin": "Ajouter gratin",
           "cancel": "Annuler",
           "direct_steam": "Vapeur directe",
@@ -2132,7 +2132,7 @@
           "low_mid_high": "Faible/moyen/\u00e9lev\u00e9",
           "none": "Aucun",
           "not_used": "Non utilis\u00e9",
-          "rare_medium_well_done": "Saignant \u00e0 bien cuit"
+          "rare_medium_well_done": "Saignant, \u00e0 point, bien cuit"
         }
       },
       "brightness": {
@@ -2236,7 +2236,7 @@
         }
       },
       "detergent_amount_status": {
-        "name": "Quantit\u00e9 de d\u00e9tergent",
+        "name": "Quantit\u00e9 de lessive",
         "state": {
           "1": "1",
           "2": "2",
@@ -2442,9 +2442,9 @@
           "auto": "Auto",
           "baby_care": "Soin b\u00e9b\u00e9",
           "bedding": "Linge de lit",
-          "clean_dry_60": "Nettoyage sec 60",
+          "clean_dry_60": "Nettoyage \u00e0 sec 60",
           "cotton": "Coton",
-          "cotton_dry": "Coton sec",
+          "cotton_dry": "S\u00e9chage coton",
           "delicates": "D\u00e9licats",
           "down": "Bas",
           "drum_clean": "Nettoyage du tambour",
@@ -2616,7 +2616,7 @@
         }
       },
       "softener_amount_status": {
-        "name": "Quantit\u00e9 d'adoucissant",
+        "name": "Quantit\u00e9 d'assouplissant",
         "state": {
           "1": "1",
           "2": "2",
@@ -2752,7 +2752,7 @@
         }
       },
       "step_after_bake_mode": {
-        "name": "Mode de cuisson apr\u00e8s l'\u00e9tape",
+        "name": "Mode de l'\u00e9tape apr\u00e8s cuisson",
         "state": {
           "gratine": "Gratin"
         }
@@ -2795,7 +2795,7 @@
         "state": {
           "for_kid": "Enfant",
           "for_old": "Personne \u00e2g\u00e9e",
-          "for_young": "Pour enfants",
+          "for_young": "Pour jeunes enfants",
           "general": "G\u00e9n\u00e9ral",
           "off": "Arr\u00eat"
         }
@@ -2985,10 +2985,10 @@
         "name": "Interrupteur mode AI \u00e9co-\u00e9nergie"
       },
       "air_dry_function": {
-        "name": "Fonction s\u00e9chage \u00e0 l'air"
+        "name": "Fonction de s\u00e9chage \u00e0 l'air"
       },
       "air_dry_function_status": {
-        "name": "\u00c9tat de la fonction s\u00e9chage \u00e0 l'air"
+        "name": "\u00c9tat de la fonction s\u00e9chage \u00e0 froid"
       },
       "air_freshness": {
         "name": "Fra\u00eecheur de l'air"
@@ -3218,7 +3218,7 @@
         "name": "R\u00e9servation"
       },
       "bookreservedtime": {
-        "name": "Heure de r\u00e9servation"
+        "name": "Heure r\u00e9serv\u00e9e"
       },
       "booktimetoendreservation": {
         "name": "Fin de la r\u00e9servation"
@@ -3266,7 +3266,7 @@
         "name": "Phase actuelle du time-lapse de la cam\u00e9ra"
       },
       "cameratime_lapse_request": {
-        "name": "Demande d'acc\u00e9l\u00e9r\u00e9 cam\u00e9ra"
+        "name": "Demande d'acc\u00e9l\u00e9r\u00e9 (time lapse) cam\u00e9ra"
       },
       "can_upload_wifi_program": {
         "name": "Chargement de programme Wi-Fi possible"
@@ -3480,7 +3480,7 @@
         "name": "Dur\u00e9e du niveau de s\u00e9chage actuel"
       },
       "custard_room": {
-        "name": "Compartiment \u00e0 flan"
+        "name": "Compartiment flan"
       },
       "d1_program_id": {
         "name": "ID programme D 1"
@@ -3549,7 +3549,7 @@
         "name": "Vitesse essorage par d\u00e9faut"
       },
       "delay_actions_flag": {
-        "name": "Indicateur des actions diff\u00e9r\u00e9es"
+        "name": "Indicateur d'actions diff\u00e9r\u00e9es"
       },
       "delay_close_dryer_time": {
         "name": "D\u00e9lai avant fermeture du s\u00e8che-linge"
@@ -3780,7 +3780,7 @@
         "name": "Dur\u00e9e de l'\u00e9clairage inf\u00e9rieur"
       },
       "downloadprogram": {
-        "name": "Programme t\u00e9l\u00e9charg\u00e9"
+        "name": "T\u00e9l\u00e9charger le programme"
       },
       "drumcleancycle_runsnumber": {
         "name": "Nombre cycles nettoyage tambour"
@@ -3798,7 +3798,7 @@
         "name": "Affichage niveau de s\u00e9chage"
       },
       "dry_lever": {
-        "name": "Levier de s\u00e9chage"
+        "name": "Niveau de s\u00e9chage"
       },
       "dry_time": {
         "name": "Dur\u00e9e s\u00e9chage"
@@ -3822,7 +3822,7 @@
         "name": "Interrupteur de s\u00e9chage"
       },
       "dryingwizzard_clothesdrylevel": {
-        "name": "Assistant de s\u00e9chage niveau de s\u00e9chage du linge"
+        "name": "Assistant de s\u00e9chage : niveau de s\u00e9chage du linge"
       },
       "dryingwizzard_clothesdrylevel1": {
         "name": "Assistant de s\u00e9chage niveau de s\u00e9chage du linge 1"
@@ -3831,7 +3831,7 @@
         "name": "Assistant de s\u00e9chage cible de s\u00e9chage du linge"
       },
       "dryingwizzard_clothesdrytarget1": {
-        "name": "Assistant de s\u00e9chage cible de s\u00e9chage du linge 1"
+        "name": "Assistant de s\u00e9chage : cible de s\u00e9chage du linge (1)"
       },
       "dryingwizzard_clothesmaterialcharacteristics": {
         "name": "Assistant de s\u00e9chage, caract\u00e9ristiques du textile"
@@ -3849,7 +3849,7 @@
         "name": "Assistant de s\u00e9chage - type de linge"
       },
       "dryingwizzard_clothingtype_eighth": {
-        "name": "Assistant de s\u00e9chage type de linge huiti\u00e8me"
+        "name": "Assistant de s\u00e9chage : type de linge (8e)"
       },
       "dryingwizzard_clothingtype_eleventh": {
         "name": "Assistant de s\u00e9chage : type de linge (11e)"
@@ -3861,13 +3861,13 @@
         "name": "Assistant de s\u00e9chage type de linge premier"
       },
       "dryingwizzard_clothingtype_fourth": {
-        "name": "Assistant de s\u00e9chage type de linge quatri\u00e8me"
+        "name": "Assistant de s\u00e9chage : type de linge (4e)"
       },
       "dryingwizzard_clothingtype_ninth": {
         "name": "Assistant de s\u00e9chage type de linge neuvi\u00e8me"
       },
       "dryingwizzard_clothingtype_second": {
-        "name": "Assistant de s\u00e9chage type de linge deuxi\u00e8me"
+        "name": "Assistant de s\u00e9chage : type de linge (2e)"
       },
       "dryingwizzard_clothingtype_seventh": {
         "name": "Assistant de s\u00e9chage : type de linge (7e)"
@@ -3882,7 +3882,7 @@
         "name": "Assistant de s\u00e9chage type de linge troisi\u00e8me"
       },
       "dryingwizzard_clothingtype_thirteenth": {
-        "name": "Assistant de s\u00e9chage type de linge treizi\u00e8me"
+        "name": "Assistant de s\u00e9chage : type de linge (13e)"
       },
       "dryingwizzard_clothingtype_twelfth": {
         "name": "Assistant de s\u00e9chage : type de linge (12e)"
@@ -4302,7 +4302,7 @@
         "name": "Lecture erreur 1 cycle"
       },
       "error_read_out_1_status": {
-        "name": "\u00c9tat de lecture d'erreur 1"
+        "name": "\u00c9tat du relev\u00e9 d'erreur 1"
       },
       "error_read_out_2_code": {
         "name": "Code d'erreur relev\u00e9 2"
@@ -4311,7 +4311,7 @@
         "name": "Lecture erreur 2 cycle"
       },
       "error_read_out_2_status": {
-        "name": "\u00c9tat de lecture d'erreur 2"
+        "name": "\u00c9tat du relev\u00e9 d'erreur 2"
       },
       "error_read_out_3_code": {
         "name": "Code d'erreur relev\u00e9 3"
@@ -4320,13 +4320,13 @@
         "name": "Lecture erreur 3 cycle"
       },
       "error_read_out_3_status": {
-        "name": "\u00c9tat de lecture d'erreur 3"
+        "name": "\u00c9tat du relev\u00e9 d'erreur 3"
       },
       "extra_soft": {
         "name": "Extra doux"
       },
       "extra_soft_hideflag": {
-        "name": "Indicateur masquage extra doux"
+        "name": "Indicateur de masquage extra doux"
       },
       "extrarinsenum": {
         "name": "Nombre de rin\u00e7ages suppl\u00e9mentaires"
@@ -4491,16 +4491,16 @@
         "name": "\u00c9tat filtre"
       },
       "filterclean_dry": {
-        "name": "Nettoyer le filtre (s\u00e9chage)"
+        "name": "Nettoyer le filtre de s\u00e9chage"
       },
       "filterclean_drycount": {
         "name": "Nombre de s\u00e9chages avant nettoyage du filtre"
       },
       "filterclean_dryflag": {
-        "name": "Indicateur nettoyage filtre \u00e0 sec"
+        "name": "Indicateur de nettoyage \u00e0 sec du filtre"
       },
       "filterclean_wash": {
-        "name": "Lavage de nettoyage du filtre"
+        "name": "Nettoyer le filtre de lavage"
       },
       "filterclean_washcound": {
         "name": "Nombre de lavages avant nettoyage du filtre"
@@ -4518,7 +4518,7 @@
         "name": "Assouplissement renforc\u00e9"
       },
       "fluffysoft_flag": {
-        "name": "Indicateur moelleux"
+        "name": "Indicateur linge moelleux"
       },
       "fluffysoft_flag1": {
         "name": "Indicateur douceur 1"
@@ -4609,7 +4609,7 @@
         "name": "Saturation du filtre \u00e0 graisse"
       },
       "grease_filter_set_lifetime_in_hours": {
-        "name": "Dur\u00e9e de vie du filtre \u00e0 graisse"
+        "name": "Dur\u00e9e de vie du filtre \u00e0 graisses"
       },
       "grease_filter_status": {
         "name": "\u00c9tat du filtre \u00e0 graisse"
@@ -5053,7 +5053,7 @@
         "name": "Sensibilit\u00e9 du capteur d'odeurs"
       },
       "odor_sensor_swithc_status": {
-        "name": "\u00c9tat de l'interrupteur du capteur d'odeur"
+        "name": "\u00c9tat de l'interrupteur du capteur d'odeurs"
       },
       "once_rinse_step_time": {
         "name": "Dur\u00e9e de l'\u00e9tape de rin\u00e7age unique"
@@ -5152,7 +5152,7 @@
         "name": "D\u00e9lai avant \u00e9conomie d'\u00e9nergie"
       },
       "ppuonlinecoinsystem": {
-        "name": "Syst\u00e8me de monnayeur en ligne PPU"
+        "name": "Syst\u00e8me de monnayeur en ligne (PPU)"
       },
       "ppurecipss": {
         "name": "PPU RECIPSS"
@@ -5251,7 +5251,7 @@
         "name": "Dur\u00e9e de vie r\u00e9gl\u00e9e du filtre de recirculation 1"
       },
       "recirculation_filter_1_set_type": {
-        "name": "Type d\u00e9fini du filtre de recirculation 1"
+        "name": "Type r\u00e9gl\u00e9 du filtre de recirculation 1"
       },
       "recirculation_filter_1_status": {
         "name": "\u00c9tat du filtre de recirculation 1"
@@ -5266,7 +5266,7 @@
         "name": "Heures d'utilisation du filtre de recirculation 1"
       },
       "recirculationfilter1lifetimeinhours": {
-        "name": "Dur\u00e9e de vie du filtre de recyclage 1 en heures"
+        "name": "Dur\u00e9e de vie du filtre de recirculation 1 en heures"
       },
       "recirculationfilter1status": {
         "name": "\u00c9tat du filtre de recirculation 1"
@@ -5278,7 +5278,7 @@
         "name": "Heures d'utilisation du filtre de recirculation 1"
       },
       "recirculationfilter2lifetimeinhours": {
-        "name": "Dur\u00e9e de vie du filtre de recyclage 2 en heures"
+        "name": "Dur\u00e9e de vie du filtre de recirculation 2 en heures"
       },
       "recirculationfilter2status": {
         "name": "\u00c9tat du filtre de recirculation 2"
@@ -5485,7 +5485,7 @@
         "name": "Dur\u00e9e du sablier 1"
       },
       "sand_timer1_start_utc_datetime_bdc_timestamp": {
-        "name": "D\u00e9marrage du minuteur de sable 1, date/heure UTC, horodatage BDC"
+        "name": "D\u00e9marrage du sablier 1, date/heure UTC, horodatage BDC"
       },
       "sand_timer1_status": {
         "name": "\u00c9tat minuterie 1",
@@ -5499,7 +5499,7 @@
         "name": "Dur\u00e9e minuterie 2"
       },
       "sand_timer2_start_utc_datetime_bdc_timestamp": {
-        "name": "D\u00e9marrage du minuteur de sable 2, date/heure UTC, horodatage BDC"
+        "name": "D\u00e9marrage du sablier 2, date/heure UTC, horodatage BDC"
       },
       "sand_timer2_status": {
         "name": "\u00c9tat minuterie 2",
@@ -5513,7 +5513,7 @@
         "name": "Dur\u00e9e minuterie 3"
       },
       "sand_timer3_start_utc_datetime_bdc_timestamp": {
-        "name": "D\u00e9marrage du minuteur de sable 3, date/heure UTC, horodatage BDC"
+        "name": "D\u00e9marrage du sablier 3, date/heure UTC, horodatage BDC"
       },
       "sand_timer3_status": {
         "name": "\u00c9tat minuterie 3",
@@ -5527,13 +5527,13 @@
         "name": "Dur\u00e9e du sablier 1"
       },
       "sand_timer_1_end_utc_datetime_bdc_timestamp": {
-        "name": "Fin du minuteur de sable 1, date/heure UTC, horodatage BDC"
+        "name": "Fin du sablier 1, date/heure UTC, horodatage BDC"
       },
       "sand_timer_1_paused_total_seconds": {
         "name": "Total pause sablier 1"
       },
       "sand_timer_1_start_utc_datetime_bdc_timestamp": {
-        "name": "D\u00e9marrage du minuteur de sable 1, date/heure UTC, horodatage BDC"
+        "name": "D\u00e9marrage du sablier 1, date/heure UTC, horodatage BDC"
       },
       "sand_timer_1_status": {
         "name": "\u00c9tat du sablier 1",
@@ -5549,13 +5549,13 @@
         "name": "Dur\u00e9e du sablier 2"
       },
       "sand_timer_2_end_utc_datetime_bdc_timestamp": {
-        "name": "Fin du minuteur de sable 2, date/heure UTC, horodatage BDC"
+        "name": "Fin du sablier 2, date/heure UTC, horodatage BDC"
       },
       "sand_timer_2_paused_total_seconds": {
         "name": "Total de pause du sablier 2"
       },
       "sand_timer_2_start_utc_datetime_bdc_timestamp": {
-        "name": "D\u00e9marrage du minuteur de sable 2, date/heure UTC, horodatage BDC"
+        "name": "D\u00e9marrage du sablier 2, date/heure UTC, horodatage BDC"
       },
       "sand_timer_2_status": {
         "name": "\u00c9tat du sablier 2",
@@ -5571,13 +5571,13 @@
         "name": "Dur\u00e9e du sablier 3"
       },
       "sand_timer_3_end_utc_datetime_bdc_timestamp": {
-        "name": "Fin du minuteur de sable 3, date/heure UTC, horodatage BDC"
+        "name": "Fin du sablier 3, date/heure UTC, horodatage BDC"
       },
       "sand_timer_3_paused_total_seconds": {
         "name": "Total de pause du sablier 3"
       },
       "sand_timer_3_start_utc_datetime_bdc_timestamp": {
-        "name": "D\u00e9marrage du minuteur de sable 3, date/heure UTC, horodatage BDC"
+        "name": "D\u00e9marrage du sablier 3, date/heure UTC, horodatage BDC"
       },
       "sand_timer_3_status": {
         "name": "\u00c9tat du sablier 3",
@@ -5647,10 +5647,10 @@
         "name": "Fonction s\u00e9chage suppl\u00e9mentaire du programme s\u00e9lectionn\u00e9"
       },
       "selected_program_green_leaves_anticrease": {
-        "name": "Anti-froissage green leaves du programme s\u00e9lectionn\u00e9"
+        "name": "Anti-froissage \u00e9cologique du programme s\u00e9lectionn\u00e9"
       },
       "selected_program_green_leaves_entry_steam": {
-        "name": "Vapeur d'entr\u00e9e green leaves du programme s\u00e9lectionn\u00e9"
+        "name": "Vapeur initiale \u00e9cologique du programme s\u00e9lectionn\u00e9"
       },
       "selected_program_green_leaves_prewash": {
         "name": "Pr\u00e9lavage green leaves du programme s\u00e9lectionn\u00e9"
@@ -5663,11 +5663,11 @@
           "baby_care": "Soin b\u00e9b\u00e9",
           "bedding": "Linge de lit",
           "cotton": "Coton",
-          "cotton_dry": "Coton sec",
-          "cotton_storage": "Rangement coton",
+          "cotton_dry": "S\u00e9chage coton",
+          "cotton_storage": "Coton pr\u00eat \u00e0 ranger",
           "drum_clean": "Nettoyage du tambour",
           "eco_40_60": "Eco 40-60",
-          "extra_hygiene": "Hygi\u00e8ne extra",
+          "extra_hygiene": "Hygi\u00e8ne renforc\u00e9e",
           "fast89": "Fast89",
           "iron": "Repassage",
           "jeans": "Jeans",
@@ -5697,7 +5697,7 @@
         "name": "Mode intensif du programme s\u00e9lectionn\u00e9"
       },
       "selected_program_load_status": {
-        "name": "\u00c9tat de charge du programme s\u00e9lectionn\u00e9"
+        "name": "\u00c9tat du chargement du programme s\u00e9lectionn\u00e9"
       },
       "selected_program_lower_wash_function": {
         "name": "Fonction de lavage inf\u00e9rieure du programme s\u00e9lectionn\u00e9"
@@ -5827,7 +5827,7 @@
         "name": "R\u00e9glage d'appairage de session"
       },
       "set_progress_type": {
-        "name": "Type de progression d\u00e9fini",
+        "name": "R\u00e9gler le type de progression",
         "state": {
           "cleaning": "Nettoyage",
           "culi_set": "R\u00e9glage culinaire",
@@ -5908,7 +5908,7 @@
         "name": "Mode silence \u00e0 la demande autoris\u00e9"
       },
       "singleairdry": {
-        "name": "S\u00e9chage \u00e0 air simple"
+        "name": "S\u00e9chage \u00e0 l'air simple"
       },
       "skipdelayprocess": {
         "name": "Ignorer le d\u00e9part diff\u00e9r\u00e9"
@@ -5997,7 +5997,7 @@
         }
       },
       "sl1_sand_timer_utc_start_time_hours": {
-        "name": "Heure de d\u00e9but du sablier de la zone 1"
+        "name": "Heures de d\u00e9but du sablier de la zone 1"
       },
       "sl1_sand_timer_utc_start_time_minutes": {
         "name": "Zone 1 minutes de d\u00e9marrage du sablier"
@@ -6138,7 +6138,7 @@
         }
       },
       "sl2_sand_timer_utc_start_time_hours": {
-        "name": "Heure de d\u00e9but du sablier de la zone 2"
+        "name": "Heures de d\u00e9but du sablier de la zone 2"
       },
       "sl2_sand_timer_utc_start_time_minutes": {
         "name": "Zone 2 minutes de d\u00e9marrage du sablier"
@@ -6171,7 +6171,7 @@
         "name": "Temp\u00e9rature zone 2"
       },
       "sl2_timer_utc_end_time_hours": {
-        "name": "Heures de fin de minuterie zone 2"
+        "name": "Zone 2 heure de fin de minuterie"
       },
       "sl2_timer_utc_end_time_minutes": {
         "name": "Minutes de fin de minuterie zone 2"
@@ -6218,7 +6218,7 @@
         }
       },
       "sl3_function_status": {
-        "name": "\u00c9tat de fonction zone 3",
+        "name": "Zone 3 \u00e9tat de la fonction",
         "state": {
           "function_1": "Fonction 1",
           "function_2": "Fonction 2",
@@ -6263,7 +6263,7 @@
         }
       },
       "sl3_power_level_max": {
-        "name": "Niveau de puissance max. zone 3"
+        "name": "Zone 3 niveau de puissance maximal"
       },
       "sl3_sand_timer_paused_total_seconds": {
         "name": "Sablier zone 3 en pause"
@@ -6279,7 +6279,7 @@
         }
       },
       "sl3_sand_timer_utc_start_time_hours": {
-        "name": "Heure de d\u00e9but du sablier de la zone 3"
+        "name": "Heures de d\u00e9but du sablier de la zone 3"
       },
       "sl3_sand_timer_utc_start_time_minutes": {
         "name": "Zone 3 minutes de d\u00e9marrage du sablier"
@@ -6312,7 +6312,7 @@
         "name": "Temp\u00e9rature zone 3"
       },
       "sl3_timer_utc_end_time_hours": {
-        "name": "Heures de fin de minuterie zone 3"
+        "name": "Zone 3 heure de fin de minuterie"
       },
       "sl3_timer_utc_end_time_minutes": {
         "name": "Minutes de fin de minuterie zone 3"
@@ -6359,7 +6359,7 @@
         }
       },
       "sl4_function_status": {
-        "name": "\u00c9tat de fonction zone 4",
+        "name": "Zone 4 \u00e9tat de la fonction",
         "state": {
           "function_1": "Fonction 1",
           "function_2": "Fonction 2",
@@ -6404,7 +6404,7 @@
         }
       },
       "sl4_power_level_max": {
-        "name": "Niveau de puissance max. zone 4"
+        "name": "Zone 4 niveau de puissance maximal"
       },
       "sl4_sand_timer_paused_total_seconds": {
         "name": "Sablier zone 4 en pause"
@@ -6420,7 +6420,7 @@
         }
       },
       "sl4_sand_timer_utc_start_time_hours": {
-        "name": "Heure de d\u00e9but du sablier de la zone 4"
+        "name": "Heures de d\u00e9but du sablier de la zone 4"
       },
       "sl4_sand_timer_utc_start_time_minutes": {
         "name": "Zone 4 minutes de d\u00e9marrage du sablier"
@@ -6453,7 +6453,7 @@
         "name": "Temp\u00e9rature zone 4"
       },
       "sl4_timer_utc_end_time_hours": {
-        "name": "Heures de fin de minuterie zone 4"
+        "name": "Zone 4 heure de fin de minuterie"
       },
       "sl4_timer_utc_end_time_minutes": {
         "name": "Minutes de fin de minuterie zone 4"
@@ -6500,7 +6500,7 @@
         }
       },
       "sl5_function_status": {
-        "name": "\u00c9tat de fonction zone 5",
+        "name": "Zone 5 \u00e9tat de la fonction",
         "state": {
           "function_1": "Fonction 1",
           "function_2": "Fonction 2",
@@ -6545,7 +6545,7 @@
         }
       },
       "sl5_power_level_max": {
-        "name": "Niveau de puissance max. zone 5"
+        "name": "Zone 5 niveau de puissance maximal"
       },
       "sl5_sand_timer_paused_total_seconds": {
         "name": "Sablier zone 5 en pause"
@@ -6561,7 +6561,7 @@
         }
       },
       "sl5_sand_timer_utc_start_time_hours": {
-        "name": "Heure de d\u00e9but du sablier de la zone 5"
+        "name": "Heures de d\u00e9but du sablier de la zone 5"
       },
       "sl5_sand_timer_utc_start_time_minutes": {
         "name": "Zone 5 minutes de d\u00e9marrage du sablier"
@@ -6594,7 +6594,7 @@
         "name": "Temp\u00e9rature zone 5"
       },
       "sl5_timer_utc_end_time_hours": {
-        "name": "Heures de fin de minuterie zone 5"
+        "name": "Zone 5 heure de fin de minuterie"
       },
       "sl5_timer_utc_end_time_minutes": {
         "name": "Minutes de fin de minuterie zone 5"
@@ -6641,7 +6641,7 @@
         }
       },
       "sl6_function_status": {
-        "name": "\u00c9tat de fonction zone 6",
+        "name": "Zone 6 \u00e9tat de la fonction",
         "state": {
           "function_1": "Fonction 1",
           "function_2": "Fonction 2",
@@ -6686,7 +6686,7 @@
         }
       },
       "sl6_power_level_max": {
-        "name": "Niveau de puissance max. zone 6"
+        "name": "Zone 6 niveau de puissance maximal"
       },
       "sl6_sand_timer_paused_total_seconds": {
         "name": "Sablier zone 6 en pause"
@@ -6702,7 +6702,7 @@
         }
       },
       "sl6_sand_timer_utc_start_time_hours": {
-        "name": "Heure de d\u00e9but du sablier de la zone 6"
+        "name": "Heures de d\u00e9but du sablier de la zone 6"
       },
       "sl6_sand_timer_utc_start_time_minutes": {
         "name": "Zone 6 minutes de d\u00e9marrage du sablier"
@@ -6735,7 +6735,7 @@
         "name": "Temp\u00e9rature zone 6"
       },
       "sl6_timer_utc_end_time_hours": {
-        "name": "Heures de fin de minuterie zone 6"
+        "name": "Zone 6 heure de fin de minuterie"
       },
       "sl6_timer_utc_end_time_minutes": {
         "name": "Minutes de fin de minuterie zone 6"
@@ -6778,7 +6778,7 @@
         "name": "\u00c9tat de l'appairage logiciel"
       },
       "softener_buynotifyswitch": {
-        "name": "Notification d'achat d'adoucissant"
+        "name": "Notification d'achat d'assouplissant"
       },
       "softener_compartment": {
         "name": "Compartiment adoucissant"
@@ -6796,7 +6796,7 @@
         "name": "R\u00e9servoir d'assouplissant"
       },
       "softener_totalml": {
-        "name": "Total d'assouplissant utilis\u00e9"
+        "name": "Quantit\u00e9 totale d'assouplissant utilis\u00e9e"
       },
       "softener_totalnum": {
         "name": "Total des doses d'assouplissant utilis\u00e9es"
@@ -7352,14 +7352,14 @@
         "name": "\u00c9tape 1 syst\u00e8me de chauffe r\u00e9gl\u00e9",
         "state": {
           "3d_hot_ai": "Air chaud 3D",
-          "air_fry": "Friture \u00e0 air",
+          "air_fry": "Air Fry",
           "aquaclean": "AquaClean",
           "bake": "Cuisson",
           "bottom": "Sole",
           "bottom_infra": "Sole + infrarouge",
           "bottom_infra_fan": "Sole + infrarouge + ventilateur",
           "bottom_top_heat": "Chaleur sole + vo\u00fbte",
-          "bottom_top_heat_fan": "Sole + vo\u00fbte + ventilateur",
+          "bottom_top_heat_fan": "Sole + vo\u00fbte + chaleur tournante",
           "bottom_top_heat_fan_steam": "Sole + vo\u00fbte + chaleur puls\u00e9e + vapeur",
           "bottomfan": "Sole + ventilateur",
           "broil": "Gril",
@@ -7450,14 +7450,14 @@
         "name": "\u00c9tape 2 syst\u00e8me de chauffe r\u00e9gl\u00e9",
         "state": {
           "3d_hot_ai": "Air chaud 3D",
-          "air_fry": "Friture \u00e0 air",
+          "air_fry": "Air Fry",
           "aquaclean": "AquaClean",
           "bake": "Cuisson",
           "bottom": "Sole",
           "bottom_infra": "Sole + infrarouge",
           "bottom_infra_fan": "Sole + infrarouge + ventilateur",
           "bottom_top_heat": "Chaleur sole + vo\u00fbte",
-          "bottom_top_heat_fan": "Sole + vo\u00fbte + ventilateur",
+          "bottom_top_heat_fan": "Sole + vo\u00fbte + chaleur tournante",
           "bottom_top_heat_fan_steam": "Sole + vo\u00fbte + chaleur puls\u00e9e + vapeur",
           "bottomfan": "Sole + ventilateur",
           "broil": "Gril",
@@ -7548,14 +7548,14 @@
         "name": "\u00c9tape 3 syst\u00e8me de chauffe r\u00e9gl\u00e9",
         "state": {
           "3d_hot_ai": "Air chaud 3D",
-          "air_fry": "Friture \u00e0 air",
+          "air_fry": "Air Fry",
           "aquaclean": "AquaClean",
           "bake": "Cuisson",
           "bottom": "Sole",
           "bottom_infra": "Sole + infrarouge",
           "bottom_infra_fan": "Sole + infrarouge + ventilateur",
           "bottom_top_heat": "Chaleur sole + vo\u00fbte",
-          "bottom_top_heat_fan": "Sole + vo\u00fbte + ventilateur",
+          "bottom_top_heat_fan": "Sole + vo\u00fbte + chaleur tournante",
           "bottom_top_heat_fan_steam": "Sole + vo\u00fbte + chaleur puls\u00e9e + vapeur",
           "bottomfan": "Sole + ventilateur",
           "broil": "Gril",
@@ -7654,14 +7654,14 @@
         "name": "Syst\u00e8me de chauffe r\u00e9gl\u00e9 apr\u00e8s cuisson",
         "state": {
           "3d_hot_ai": "Air chaud 3D",
-          "air_fry": "Friture \u00e0 air",
+          "air_fry": "Air Fry",
           "aquaclean": "AquaClean",
           "bake": "Cuisson",
           "bottom": "Sole",
           "bottom_infra": "Sole + infrarouge",
           "bottom_infra_fan": "Sole + infrarouge + ventilateur",
           "bottom_top_heat": "Chaleur sole + vo\u00fbte",
-          "bottom_top_heat_fan": "Sole + vo\u00fbte + ventilateur",
+          "bottom_top_heat_fan": "Sole + vo\u00fbte + chaleur tournante",
           "bottom_top_heat_fan_steam": "Sole + vo\u00fbte + chaleur puls\u00e9e + vapeur",
           "bottomfan": "Sole + ventilateur",
           "broil": "Gril",
@@ -7732,7 +7732,7 @@
         "name": "\u00c9tape apr\u00e8s cuisson temp\u00e9rature d\u00e9finie"
       },
       "step_after_bake_setmulti_level_baking": {
-        "name": "\u00c9tape apr\u00e8s cuisson r\u00e9glage cuisson multiniveau"
+        "name": "\u00c9tape apr\u00e8s cuisson : cuisson multiniveaux r\u00e9gl\u00e9e"
       },
       "step_after_bakeadd_moist_status": {
         "name": "\u00c9tat ajout de vapeur apr\u00e8s cuisson"
@@ -7759,14 +7759,14 @@
         "name": "\u00c9tape avant cuisson syst\u00e8me de chauffe d\u00e9fini",
         "state": {
           "3d_hot_ai": "Air chaud 3D",
-          "air_fry": "Friture \u00e0 air",
+          "air_fry": "Air Fry",
           "aquaclean": "AquaClean",
           "bake": "Cuisson",
           "bottom": "Sole",
           "bottom_infra": "Sole + infrarouge",
           "bottom_infra_fan": "Sole + infrarouge + ventilateur",
           "bottom_top_heat": "Chaleur sole + vo\u00fbte",
-          "bottom_top_heat_fan": "Sole + vo\u00fbte + ventilateur",
+          "bottom_top_heat_fan": "Sole + vo\u00fbte + chaleur tournante",
           "bottom_top_heat_fan_steam": "Sole + vo\u00fbte + chaleur puls\u00e9e + vapeur",
           "bottomfan": "Sole + ventilateur",
           "broil": "Gril",
@@ -7840,10 +7840,10 @@
         "name": "\u00c9tape de pr\u00e9cuisson : cuisson multiniveaux r\u00e9gl\u00e9e"
       },
       "step_pre_bakeadd_moist_status": {
-        "name": "\u00c9tat d'ajout d'humidit\u00e9 de l'\u00e9tape de pr\u00e9cuisson"
+        "name": "\u00c9tat d'ajout de vapeur de l'\u00e9tape de pr\u00e9cuisson"
       },
       "step_pre_bakeadd_moiststart_at_minute": {
-        "name": "\u00c9tape pr\u00e9-cuisson d\u00e9but d'humidification \u00e0 la minute"
+        "name": "\u00c9tape de pr\u00e9cuisson : d\u00e9but de l'humidification (minute)"
       },
       "step_pre_bakeadd_moistvalve_open_percentage": {
         "name": "\u00c9tape de pr\u00e9-cuisson, humidification, pourcentage d'ouverture de la vanne"
@@ -7864,7 +7864,7 @@
         "name": "\u00c9tat du mode stockage \u00e0 la demande"
       },
       "store_dry_time": {
-        "name": "Dur\u00e9e de s\u00e9chage m\u00e9moris\u00e9e"
+        "name": "Dur\u00e9e de s\u00e9chage \"pr\u00eat \u00e0 ranger\""
       },
       "summerwinter_timeautomatic_setting": {
         "name": "R\u00e9glage automatique heure d'\u00e9t\u00e9/hiver"
@@ -8045,7 +8045,7 @@
         "name": "Nombre total de cycles"
       },
       "total_oven_usage_value": {
-        "name": "Valeur d'utilisation totale du four"
+        "name": "Dur\u00e9e totale d'utilisation du four"
       },
       "total_passed_time": {
         "name": "Temps total \u00e9coul\u00e9"
@@ -8147,7 +8147,7 @@
         "name": "R\u00e9glage du volume"
       },
       "warmwaterwashing": {
-        "name": "Lavage \u00e0 l'eau chaude"
+        "name": "Lavage \u00e0 l'eau ti\u00e8de"
       },
       "wash_step_time_drain_water_spin_and_stop": {
         "name": "Dur\u00e9e d'\u00e9tape de lavage vidange essorage et arr\u00eat"
@@ -8219,28 +8219,28 @@
         "name": "Assistant de lavage - degr\u00e9 de salissure"
       },
       "washingwizzard_cloth_dirty_first": {
-        "name": "Assistant de lavage salet\u00e9 du linge premier"
+        "name": "Assistant de lavage salissure du linge (1er)"
       },
       "washingwizzard_cloth_dirty_second": {
-        "name": "Assistant de lavage salet\u00e9 du linge deuxi\u00e8me"
+        "name": "Assistant de lavage salissure du linge (2e)"
       },
       "washingwizzard_cloth_dirty_third": {
-        "name": "Assistant de lavage salet\u00e9 du linge troisi\u00e8me"
+        "name": "Assistant de lavage salissure du linge (3e)"
       },
       "washingwizzard_cloth_olour_first": {
         "name": "Assistant de lavage couleur du linge premier"
       },
       "washingwizzard_cloth_sensitive": {
-        "name": "Assistant de lavage tissu d\u00e9licat"
+        "name": "Assistant de lavage sensibilit\u00e9 du linge"
       },
       "washingwizzard_cloth_sensitive_first": {
         "name": "Assistant de lavage : sensibilit\u00e9 du linge (1er)"
       },
       "washingwizzard_cloth_sensitive_second": {
-        "name": "Assistant de lavage type d\u00e9licat deuxi\u00e8me"
+        "name": "Assistant de lavage : sensibilit\u00e9 du linge (2e)"
       },
       "washingwizzard_cloth_sensitive_third": {
-        "name": "Assistant de lavage type d\u00e9licat troisi\u00e8me"
+        "name": "Assistant de lavage : sensibilit\u00e9 du linge (3e)"
       },
       "washingwizzard_cloth_stains_eighth": {
         "name": "Assistant de lavage : taches du linge (8e)"
@@ -8270,13 +8270,13 @@
         "name": "Assistant de lavage taches du linge troisi\u00e8me"
       },
       "washingwizzard_clothingtype": {
-        "name": "Type de linge assistant de lavage"
+        "name": "Type de linge - assistant de lavage"
       },
       "washingwizzard_clothingtype_eighth": {
         "name": "Assistant de lavage : type de linge (8e)"
       },
       "washingwizzard_clothingtype_eleventh": {
-        "name": "Assistant de lavage type de linge onzi\u00e8me"
+        "name": "Assistant de lavage : type de linge (11e)"
       },
       "washingwizzard_clothingtype_fifth": {
         "name": "Assistant de lavage : type de linge (5e)"
@@ -8294,7 +8294,7 @@
         "name": "Assistant de lavage : type de linge (2e)"
       },
       "washingwizzard_clothingtype_seventh": {
-        "name": "Assistant de lavage type de linge septi\u00e8me"
+        "name": "Assistant de lavage : type de linge (7e)"
       },
       "washingwizzard_clothingtype_sixth": {
         "name": "Assistant de lavage : type de linge (6e)"
@@ -8306,10 +8306,10 @@
         "name": "Assistant de lavage : type de linge (3e)"
       },
       "washingwizzard_clothingtype_thirteenth": {
-        "name": "Assistant de lavage type de linge treizi\u00e8me"
+        "name": "Assistant de lavage : type de linge (13e)"
       },
       "washingwizzard_clothingtype_twelfth": {
-        "name": "Assistant de lavage type de linge douzi\u00e8me"
+        "name": "Assistant de lavage : type de linge (12e)"
       },
       "washingwizzard_flag": {
         "name": "Indicateur de l'assistant de lavage"
@@ -8382,7 +8382,7 @@
         "name": "Indice du niveau d'eau"
       },
       "wear_dry_time": {
-        "name": "Dur\u00e9e s\u00e9chage pr\u00eat-\u00e0-porter"
+        "name": "Dur\u00e9e de s\u00e9chage \"pr\u00eat \u00e0 porter\""
       },
       "weight_runningend": {
         "name": "Fin de mesure du poids"
@@ -8421,7 +8421,7 @@
         "name": "\u00c9tat de l'\u00e9clairage Will Fresh"
       },
       "will_fress_light_exist": {
-        "name": "\u00c9clairage frais disponible"
+        "name": "\u00c9clairage \"fresh\" disponible"
       },
       "will_light_market_mode_state": {
         "name": "\u00c9tat du mode d\u00e9monstration de l'\u00e9clairage"
@@ -8582,7 +8582,7 @@
         "name": "Capteur de couleur"
       },
       "crisp_function_status": {
-        "name": "\u00c9tat de la fonction croustillant"
+        "name": "\u00c9tat de la fonction Crisp"
       },
       "demo_mode": {
         "name": "Mode d\u00e9mo"
@@ -8702,7 +8702,7 @@
         "name": "Anti froissage"
       },
       "selected_program_entry_steam_status": {
-        "name": "Vapeur d'entr\u00e9e"
+        "name": "Vapeur initiale"
       },
       "selected_program_prewash_status": {
         "name": "Pr\u00e9lavage"
