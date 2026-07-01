@@ -3218,7 +3218,7 @@
         "name": "Buchung"
       },
       "bookreservedtime": {
-        "name": "Reservierte Buchungszeit"
+        "name": "Reservierte Zeit"
       },
       "booktimetoendreservation": {
         "name": "Restzeit bis Buchungsende"
@@ -3254,10 +3254,10 @@
         "name": "Aktuelle Phase des Kamera-Livebilds"
       },
       "cameralive_feed_status": {
-        "name": "Status Kamera-Livebild"
+        "name": "Status Kamera-Livestream"
       },
       "camerapicture_current_phase": {
-        "name": "Aktuelle Phase Kamerabild"
+        "name": "Aktuelle Phase des Kamerabilds"
       },
       "camerapicture_request": {
         "name": "Kamera-Bildanforderung"
@@ -3576,7 +3576,7 @@
         "name": "Verz\u00f6gerungsendzeit"
       },
       "delayendtime_minute": {
-        "name": "Startzeit Endezeit Minute"
+        "name": "Startzeitvorwahl (Minute)"
       },
       "delaystart_delayend_duration_inminutes": {
         "name": "Verz\u00f6gerungsdauer"
@@ -3695,7 +3695,7 @@
         }
       },
       "displayboard_brand": {
-        "name": "Marke der Anzeigetafel"
+        "name": "Marke der Anzeigeplatine"
       },
       "displayboard_key_setting": {
         "name": "Bedienfeld-Tasteneinstellung"
@@ -3798,7 +3798,7 @@
         "name": "Anzeige Trockenstufe"
       },
       "dry_lever": {
-        "name": "Trocknungshebel"
+        "name": "Trockengrad"
       },
       "dry_time": {
         "name": "Trocknungszeit"
@@ -3861,16 +3861,16 @@
         "name": "Trocknungsassistent W\u00e4scheart erste"
       },
       "dryingwizzard_clothingtype_fourth": {
-        "name": "Trockenassistent W\u00e4scheart vierte"
+        "name": "Trocknungsassistent W\u00e4scheart vierte"
       },
       "dryingwizzard_clothingtype_ninth": {
         "name": "Trocknungsassistent W\u00e4scheart neunte"
       },
       "dryingwizzard_clothingtype_second": {
-        "name": "Trockenassistent W\u00e4scheart zweite"
+        "name": "Trocknungsassistent W\u00e4scheart zweite"
       },
       "dryingwizzard_clothingtype_seventh": {
-        "name": "Trockenassistent W\u00e4scheart siebte"
+        "name": "Trocknungsassistent W\u00e4scheart siebte"
       },
       "dryingwizzard_clothingtype_sixth": {
         "name": "Trocknungsassistent W\u00e4scheart sechste"
@@ -3885,7 +3885,7 @@
         "name": "Trockenassistent W\u00e4scheart dreizehnte"
       },
       "dryingwizzard_clothingtype_twelfth": {
-        "name": "Trockenassistent W\u00e4scheart zw\u00f6lfte"
+        "name": "Trocknungsassistent W\u00e4scheart zw\u00f6lfte"
       },
       "dryleve_flag": {
         "name": "Kennung Trockenstufe"
@@ -3915,10 +3915,10 @@
         "name": "Stromst\u00e4rke"
       },
       "electric_energy_one_tenths_value": {
-        "name": "Stromverbrauch Zehntelwert"
+        "name": "Stromverbrauch Zehntelwert (0,1)"
       },
       "electric_energy_percentile_thousands_value": {
-        "name": "Elektrische Energie Tausenderstelle Wert"
+        "name": "Elektrische Energie Wert der Tausenderstelle"
       },
       "electricit_consumption": {
         "name": "Stromverbrauch"
@@ -4335,7 +4335,7 @@
         "name": "Extra-Sp\u00fclg\u00e4nge-Z\u00e4hler-Flag"
       },
       "extrasoft_runing_flag": {
-        "name": "Extra-Sanft-Betriebsflag"
+        "name": "Kennzeichen Extra-Sanftbetrieb"
       },
       "f_cool_qvalue": {
         "name": "K\u00fchlung"
@@ -4479,7 +4479,7 @@
         "name": "Schnellspeichermodus vorhanden"
       },
       "fast_store_mode_status": {
-        "name": "Status Schnellk\u00fchlmodus"
+        "name": "Status Schnellspeichermodus"
       },
       "favour_program_id": {
         "name": "ID des Favoritenprogramms"
@@ -4543,13 +4543,13 @@
         "name": "Frei-Taste"
       },
       "free_room": {
-        "name": "Freier Bereich"
+        "name": "Freezer-Fach"
       },
       "free_room_open_2": {
         "name": "Freiraum offen 2"
       },
       "freeri_fan_speed": {
-        "name": "Freeri-L\u00fcftergeschwindigkeit"
+        "name": "Freeri-L\u00fcfterdrehzahl"
       },
       "freeze_door_open_time": {
         "name": "Gefrierfach T\u00fcr \u00d6ffnungszeit"
@@ -4558,7 +4558,7 @@
         "name": "Innentemperatur Gefrierfach"
       },
       "freeze_fan_speed": {
-        "name": "Gefrier-L\u00fcftergeschwindigkeit"
+        "name": "Gefrier-L\u00fcfterdrehzahl"
       },
       "freeze_max_temperature": {
         "name": "Maximale Gefriertemperatur"
@@ -4576,7 +4576,7 @@
         "name": "Temperaturalarm Frostabschaltung"
       },
       "froze_convert_to_refri_switch_status": {
-        "name": "Status Umschaltung Gefrieren zu K\u00fchlen"
+        "name": "Status Umschaltung Gefrieren zu K\u00fchlen (K\u00fchlfach)"
       },
       "fruit_vegetables_temperature": {
         "name": "Frucht- und Gem\u00fcse-Temperatur"
@@ -4591,7 +4591,7 @@
         "name": "Schongang-Flag"
       },
       "getcurrentcityinfoflag": {
-        "name": "Kennung Aktuelle Stadtinfo abrufen"
+        "name": "Kennung: Aktuelle Stadtinfo abrufen"
       },
       "gratin_total_allowed_time_in_minutes": {
         "name": "Gratin erlaubte Gesamtzeit"
@@ -4714,7 +4714,7 @@
         "name": "Betriebsstunden Abzugshaube"
       },
       "hottime": {
-        "name": "Hei\u00dfzeit"
+        "name": "Warmhaltezeit"
       },
       "human_on_off_status": {
         "name": "Status Personenerkennung"
@@ -4726,7 +4726,7 @@
         "name": "Anzeige Personenerkennung"
       },
       "human_sensor_switch_exist": {
-        "name": "Bewegungssensor-Schalter vorhanden"
+        "name": "Pr\u00e4senzsensor-Schalter vorhanden"
       },
       "humanbody_sensor_switch_status": {
         "name": "Status Bewegungssensor-Schalter"
@@ -4777,7 +4777,7 @@
         "name": "Ger\u00e4te-ID"
       },
       "inactivity_timeout": {
-        "name": "Inaktivit\u00e4ts-Timeout"
+        "name": "Zeitlimit bei Inaktivit\u00e4t"
       },
       "initializationprogramid": {
         "name": "Initialisierungsprogramm-ID"
@@ -4792,7 +4792,7 @@
         "name": "Innenbeleuchtungsstatus"
       },
       "ion_preservation_switch": {
-        "name": "Ionen-Konservierung-Schalter"
+        "name": "Ionenerhaltungsschalter"
       },
       "ion_refresh": {
         "name": "Ionen-Auffrischung"
@@ -5134,7 +5134,7 @@
         "name": "Dauerhafter Fernstart"
       },
       "position_of_tower": {
-        "name": "Position des Turms"
+        "name": "Turmposition"
       },
       "power_one_tenths_value": {
         "name": "Leistung Zehntelwert"
@@ -5203,10 +5203,10 @@
         "name": "N\u00e4herungssensor-Einstellung Beleuchtung wechselt zu bei erkanntem nahem Benutzer"
       },
       "proximity_sensor_settingdistant_user_detecteddisplay_change_to": {
-        "name": "N\u00e4herungssensor-Einstellung Anzeige wechselt zu bei erkanntem entferntem Benutzer"
+        "name": "N\u00e4herungssensor-Einstellung: Anzeige wechselt bei erkanntem entferntem Benutzer zu"
       },
       "proximity_sensor_settingdistant_user_detectedlight_change_to": {
-        "name": "N\u00e4herungssensor-Einstellung Beleuchtung wechselt zu bei erkanntem entferntem Benutzer"
+        "name": "N\u00e4herungssensor-Einstellung: Beleuchtung wechselt bei erkanntem entferntem Benutzer zu"
       },
       "proximitysensor": {
         "name": "N\u00e4herungssensor"
@@ -5320,7 +5320,7 @@
         "name": "K\u00fchlschrank-Werbung bei Ausschaltung"
       },
       "refrigerator_poweron_ad": {
-        "name": "K\u00fchlschrank Einschalt-Werbung"
+        "name": "K\u00fchlschrank-Werbung beim Einschalten"
       },
       "refrigerator_real_temperature": {
         "name": "Reale K\u00fchlschranktemperatur"
@@ -5599,7 +5599,7 @@
         "name": "Stromsparwert Dezimalstelle"
       },
       "saveelectricitvalue_int": {
-        "name": "Stromsparwert (ganzzahlig)"
+        "name": "Stromsparwert (Ganzzahl)"
       },
       "screen_display_brightness": {
         "name": "Bildschirmhelligkeit"
@@ -5608,7 +5608,7 @@
         "name": "Displaysperre"
       },
       "screen_to_clock_time": {
-        "name": "Zeit bis Uhranzeige"
+        "name": "Zeit bis Uhrzeitanzeige"
       },
       "screen_to_standby_time": {
         "name": "Zeit bis Bildschirm-Standby"
@@ -5617,7 +5617,7 @@
         "name": "Bildschirmschoner-Zeit"
       },
       "second_ice_maker_full_status": {
-        "name": "Status zweiter Eisbereiter voll"
+        "name": "Status zweiter Eisbereiter voll (Voll-Status zweiter Eisbereiter)"
       },
       "second_ice_maker_init_fault": {
         "name": "Initialisierungsfehler zweiter Eisbereiter"
@@ -5875,7 +5875,7 @@
         "name": "Helligkeit Regal-Ambientelicht"
       },
       "shelf_light_atmosphere_mode_brightness": {
-        "name": "Regalbeleuchtung Atmosph\u00e4renmodus Helligkeit"
+        "name": "Helligkeit Ablagelicht Atmosph\u00e4renmodus"
       },
       "shelf_light_b_state": {
         "name": "Status Regalbeleuchtung B"
@@ -7022,7 +7022,7 @@
         "name": "Schritt 1 Befeuchtung Status"
       },
       "step1add_moiststart_at_minute": {
-        "name": "Schritt 1 Dampfzugabe Startminute"
+        "name": "Schritt 1 Feuchtigkeitszugabe Start bei Minute"
       },
       "step1add_moistvalve_open_percentage": {
         "name": "Schritt 1 Befeuchtungsventil \u00d6ffnungsgrad in Prozent"
@@ -7109,7 +7109,7 @@
         "name": "Schritt 2 Befeuchtung Status"
       },
       "step2add_moiststart_at_minute": {
-        "name": "Schritt 2 Dampfzugabe Startminute"
+        "name": "Schritt 2 Feuchtigkeitszugabe Start bei Minute"
       },
       "step2add_moistvalve_open_percentage": {
         "name": "Schritt 2 Befeuchtungsventil \u00d6ffnungsgrad in Prozent"
@@ -7196,7 +7196,7 @@
         "name": "Schritt 3 Befeuchtung Status"
       },
       "step3add_moiststart_at_minute": {
-        "name": "Schritt 3 Dampfzugabe Startminute"
+        "name": "Schritt 3 Feuchtigkeitszugabe Start bei Minute"
       },
       "step3add_moistvalve_open_percentage": {
         "name": "Schritt 3 Befeuchtungsventil \u00d6ffnungsgrad in Prozent"
@@ -7250,7 +7250,7 @@
         "name": "Schritt 4 Befeuchtung Status"
       },
       "step4add_moiststart_at_minute": {
-        "name": "Schritt 4 Dampfzugabe Startminute"
+        "name": "Schritt 4 Feuchtigkeitszugabe Start bei Minute"
       },
       "step4add_moistvalve_open_percentage": {
         "name": "Schritt 4 Befeuchtungsventil \u00d6ffnungsgrad in Prozent"
@@ -7271,7 +7271,7 @@
         "name": "Schritt 4 Dampfunterst\u00fctzung"
       },
       "step4steam_assist_intensity": {
-        "name": "Schritt 4 Dampfunterst\u00fctzung Intensit\u00e4t"
+        "name": "Schritt 4 Intensit\u00e4t der Dampfunterst\u00fctzung"
       },
       "step4steam_assistset_time_in_minutes": {
         "name": "Schritt 4 Dampfunterst\u00fctzung Zeit in Minuten festlegen"
@@ -7313,7 +7313,7 @@
         "name": "Schritt 5 Befeuchtung Status"
       },
       "step5add_moiststart_at_minute": {
-        "name": "Schritt 5 Dampfzugabe Startminute"
+        "name": "Schritt 5 Feuchtigkeitszugabe Start bei Minute"
       },
       "step5add_moistvalve_open_percentage": {
         "name": "Schritt 5 Befeuchtungsventil \u00d6ffnungsgrad in Prozent"
@@ -7334,7 +7334,7 @@
         "name": "Schritt 5 Dampfunterst\u00fctzung"
       },
       "step5steam_assist_intensity": {
-        "name": "Schritt 5 Dampfunterst\u00fctzung Intensit\u00e4t"
+        "name": "Schritt 5 Intensit\u00e4t der Dampfunterst\u00fctzung"
       },
       "step5steam_assistset_time_in_minutes": {
         "name": "Schritt 5 Dampfunterst\u00fctzung Zeit in Minuten festlegen"
@@ -7735,7 +7735,7 @@
         "name": "Schritt nach dem Backen Mehrebenen-Backen festlegen"
       },
       "step_after_bakeadd_moist_status": {
-        "name": "Status Dampfzugabe nach Backschritt"
+        "name": "Status Feuchtigkeitszugabe nach Backschritt"
       },
       "step_after_bakeadd_moiststart_at_minute": {
         "name": "Schritt nach dem Backen Befeuchtung Start bei Minute"
@@ -7873,7 +7873,7 @@
         "name": "Intensivsp\u00fclen auf Anforderung"
       },
       "super_rinse_on_demand_allowed": {
-        "name": "Extrasp\u00fclen auf Anforderung erlaubt"
+        "name": "Intensivsp\u00fclen auf Anforderung erlaubt"
       },
       "super_rinse_status": {
         "name": "Status Extrasp\u00fclen"
@@ -7915,7 +7915,7 @@
         "name": "Temperaturindex"
       },
       "temp_runing_flag": {
-        "name": "Temperatur-Betriebsflag"
+        "name": "Temperatur-Betriebskennung"
       },
       "temp_wave": {
         "name": "Temperaturwelle"
@@ -8132,7 +8132,7 @@
         "name": "Minimale Temperatur der Variation"
       },
       "variation_poweroff_ad": {
-        "name": "Abweichung Werbung bei Abschaltung"
+        "name": "Werbung bei Abschaltung \u2013 Variante"
       },
       "variation_poweron_ad": {
         "name": "Variation Einschalt-AD"
@@ -8153,7 +8153,7 @@
         "name": "Waschschritt Zeit Wasser abpumpen, schleudern und stoppen"
       },
       "washer_to_dryer_available_for_hours_v": {
-        "name": "Waschen-zu-Trocknen verf\u00fcgbar f\u00fcr Stunden"
+        "name": "Waschen-zu-Trocknen f\u00fcr Stunden verf\u00fcgbar"
       },
       "washer_to_dryer_program_id": {
         "name": "Programm-ID Waschmaschine zu Trockner"
@@ -8192,7 +8192,7 @@
         "name": "Waschzeit-Nutzungsindex"
       },
       "washingtime_waterlevel_flag": {
-        "name": "Wasserstand nach Waschzeit"
+        "name": "Wasserstand Waschzeit"
       },
       "washingtimeindex": {
         "name": "Index Waschdauer"
@@ -8204,7 +8204,7 @@
         "name": "Waschassistent Textilfarbe"
       },
       "washingwizzard_cloth_colour_fifth": {
-        "name": "Waschassistent Farbe f\u00fcnfte W\u00e4sche"
+        "name": "Waschassistent W\u00e4schefarbe f\u00fcnfte"
       },
       "washingwizzard_cloth_colour_fourth": {
         "name": "Waschassistent W\u00e4schefarbe vierte"
@@ -8213,10 +8213,10 @@
         "name": "Waschassistent W\u00e4schefarbe zweite"
       },
       "washingwizzard_cloth_colour_third": {
-        "name": "Waschassistent Farbe dritte W\u00e4sche"
+        "name": "Waschassistent W\u00e4schefarbe dritte"
       },
       "washingwizzard_cloth_dirty": {
-        "name": "Waschassistent Verschmutzungsgrad"
+        "name": "Waschassistent W\u00e4sche-Verschmutzung"
       },
       "washingwizzard_cloth_dirty_first": {
         "name": "Waschassistent Verschmutzung erste W\u00e4sche"
@@ -8228,7 +8228,7 @@
         "name": "Waschassistent Verschmutzung dritte W\u00e4sche"
       },
       "washingwizzard_cloth_olour_first": {
-        "name": "Waschassistent Farbe erste W\u00e4sche"
+        "name": "Waschassistent W\u00e4schefarbe erste"
       },
       "washingwizzard_cloth_sensitive": {
         "name": "Waschassistent Empfindlichkeit W\u00e4sche"
@@ -8373,7 +8373,7 @@
         "name": "Wasserstand"
       },
       "waterlevel_runing_flag": {
-        "name": "Wasserstand-Betriebsflag"
+        "name": "Wasserstand-Betriebskennung"
       },
       "waterlevelflag": {
         "name": "Wasserstand-Kennung"
@@ -8792,7 +8792,7 @@
         "name": "Frischluft"
       },
       "t_left_right": {
-        "name": "Horizontale Schwenkung"
+        "name": "Horizontales Schwenken"
       },
       "t_pump": {
         "name": "Pumpe"
@@ -8861,7 +8861,7 @@
             "title": "Verwaiste Langzeitstatistiken l\u00f6schen"
           },
           "init": {
-            "description": "{count} ConnectLife-Sensoren haben gespeicherte Langzeitstatistik (LTS), melden aber keine State-Klasse mehr. Home Assistant erzeugt f\u00fcr jeden einzelnen eine separate Reparatur.\n\nDies wird durch eine k\u00fcrzliche \u00c4nderung in der Integration verursacht: Numerische Eigenschaften verwenden nicht mehr standardm\u00e4\u00dfig `state_class: measurement`, sodass Statuscodes, Modus-Flags und Sollwerte nicht mehr als LTS aufgezeichnet werden.\n\n**Verwaiste Statistik l\u00f6schen** entfernt die gespeicherten LTS-Eintr\u00e4ge f\u00fcr alle {count} Sensoren auf einmal. Die historischen Daten dieser Sensoren unter Einstellungen \u2192 Statistik werden gel\u00f6scht und k\u00f6nnen nicht wiederhergestellt werden. Die einzelnen Home-Assistant-Reparaturen verschwinden, sobald Home Assistant die Statistik das n\u00e4chste Mal neu validiert \u2013 was geschieht, wenn Sie die Entwicklerwerkzeuge \u2192 Statistik \u00f6ffnen. Diese Sammelreparatur erscheint f\u00fcr diesen Konfigurationseintrag nicht erneut.\n\n**Ignorieren** blendet diese Sammelaktion aus und bel\u00e4sst die einzelnen Reparaturen \u2013 beheben oder ignorieren Sie jede einzeln, wenn Sie feiner steuern m\u00f6chten, welche Sensoren ihren Verlauf behalten. Sie k\u00f6nnen sp\u00e4ter zur Sammelaktion zur\u00fcckkehren, indem Sie im \u00dcberlaufmen\u00fc oben rechts unter Einstellungen \u2192 Reparaturen \u201eIgnorierte Reparaturen anzeigen\u201c ausw\u00e4hlen und diese Reparatur erneut \u00f6ffnen.\n\nUm die einzelnen Sensorreparaturen vor der Entscheidung zu pr\u00fcfen, schlie\u00dfen Sie einfach dieses Fenster \u2013 die Sammelreparatur bleibt unver\u00e4ndert verf\u00fcgbar.\n\nHinweis: Dieses Problem ist nur als kritisch markiert, damit es \u00fcber den einzelnen Recorder-Reparaturen einsortiert wird. Es ist nicht dringend.",
+            "description": "{count} ConnectLife-Sensoren haben gespeicherte Langzeitstatistik (LTS), melden aber keine Statusklasse mehr. Home Assistant erzeugt f\u00fcr jeden einzelnen eine separate Reparatur.\n\nDies wird durch eine k\u00fcrzliche \u00c4nderung in der Integration verursacht: Numerische Eigenschaften verwenden nicht mehr standardm\u00e4\u00dfig `state_class: measurement`, sodass Statuscodes, Modus-Flags und Sollwerte nicht mehr als LTS aufgezeichnet werden.\n\n**Verwaiste Statistik l\u00f6schen** entfernt die gespeicherten LTS-Eintr\u00e4ge f\u00fcr alle {count} Sensoren auf einmal. Die historischen Daten dieser Sensoren unter Einstellungen \u2192 Statistik werden gel\u00f6scht und k\u00f6nnen nicht wiederhergestellt werden. Die einzelnen Home-Assistant-Reparaturen verschwinden, sobald Home Assistant die Statistik das n\u00e4chste Mal neu validiert \u2013 was geschieht, wenn Sie die Entwicklerwerkzeuge \u2192 Statistik \u00f6ffnen. Diese Sammelreparatur erscheint f\u00fcr diesen Konfigurationseintrag nicht erneut.\n\n**Ignorieren** blendet diese Sammelaktion aus und bel\u00e4sst die einzelnen Reparaturen \u2013 beheben oder ignorieren Sie jede einzeln, wenn Sie feiner steuern m\u00f6chten, welche Sensoren ihren Verlauf behalten. Sie k\u00f6nnen sp\u00e4ter zur Sammelaktion zur\u00fcckkehren, indem Sie im \u00dcberlaufmen\u00fc oben rechts unter Einstellungen \u2192 Reparaturen \u201eIgnorierte Reparaturen anzeigen\u201c ausw\u00e4hlen und diese Reparatur erneut \u00f6ffnen.\n\nUm die einzelnen Sensorreparaturen vor der Entscheidung zu pr\u00fcfen, schlie\u00dfen Sie einfach dieses Fenster \u2013 die Sammelreparatur bleibt unver\u00e4ndert verf\u00fcgbar.\n\nHinweis: Dieses Problem ist nur als kritisch markiert, damit es \u00fcber den einzelnen Recorder-Reparaturen einsortiert wird. Es ist nicht dringend.",
             "menu_options": {
               "clear": "Verwaiste Statistiken l\u00f6schen",
               "ignore": "Ignorieren"
