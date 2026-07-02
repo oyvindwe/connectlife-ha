@@ -2040,10 +2040,10 @@
         "name": "Helderheid binnenverlichting"
       },
       "programoptiontimestartdelayhour": {
-        "name": "Uren startuitstel"
+        "name": "Startuitstel"
       },
       "programtimesstartdelayhours": {
-        "name": "Uren startuitstel"
+        "name": "Startuitstel"
       },
       "refrigerator_max_temperature": {
         "name": "Koelkast max temperatuur"
@@ -3075,7 +3075,7 @@
         "name": "Bijna voltooid notificatie"
       },
       "almost_finished_notification_settingtimer_in_minutes": {
-        "name": "Bijna voltooid notificatie timer in minuten"
+        "name": "Bijna voltooid notificatie timer"
       },
       "ambient_sound_setting": {
         "name": "Instelling omgevingsgeluid"
@@ -3173,7 +3173,7 @@
         "name": "Instelling automatisch openen deur na programmaverloop"
       },
       "automatic_door_open_at_program_end_after_time_settingtimer_in_minutes": {
-        "name": "Timer automatisch openen deur na programmaverloop (minuten)"
+        "name": "Vertraging automatische deuropening bij programma-einde"
       },
       "automatic_door_open_at_program_end_setting": {
         "name": "Instelling automatisch openen deur na programma"
@@ -3296,19 +3296,19 @@
         "name": "Reinigingsmodus schakelaar status"
       },
       "cleanairactivepassedhours": {
-        "name": "Verstreken uren schone lucht actief"
+        "name": "Verstreken tijd schone lucht actief"
       },
       "cleanairactivetotalhours": {
-        "name": "Totale uren schone lucht actief"
+        "name": "Totale tijd schone lucht actief"
       },
       "cleanairdurationofcycleinminutes": {
-        "name": "Duur schone-luchtcyclus in minuten"
+        "name": "Duur schone-luchtcyclus"
       },
       "cleanairmotorlevel": {
         "name": "Motorniveau schone lucht"
       },
       "cleanairruncycleeverynumberofminutes": {
-        "name": "Schone-luchtcyclus elke x minuten"
+        "name": "Interval schone-luchtcyclus"
       },
       "cleanairstarttime": {
         "name": "Starttijd schone lucht"
@@ -3561,7 +3561,7 @@
         "name": "Resterende tijd uitgestelde start"
       },
       "delay_start_remaining_time_in_minutes": {
-        "name": "Resterende tijd uitgestelde start in minuten"
+        "name": "Resterende tijd uitgestelde start"
       },
       "delay_start_set_time": {
         "name": "Ingestelde tijd uitgestelde start"
@@ -3573,7 +3573,7 @@
         "name": "Uitstel sluiten"
       },
       "delayendtime": {
-        "name": "Eindtijd uitstel"
+        "name": "Uitgestelde eindtijd"
       },
       "delayendtime_minute": {
         "name": "Eindtijd uitstel minuten"
@@ -4594,10 +4594,10 @@
         "name": "Indicator huidige stadsinfo ophalen"
       },
       "gratin_total_allowed_time_in_minutes": {
-        "name": "Maximale gratineertijd (minuten)"
+        "name": "Maximale gratineertijd"
       },
       "gratin_total_passed_time_in_minutes": {
-        "name": "Verstreken gratineertijd (minuten)"
+        "name": "Verstreken gratineertijd"
       },
       "grease_filter_cleaning_interval_in_hours": {
         "name": "Reinigingsinterval vetfilter"
@@ -4618,13 +4618,13 @@
         "name": "Vetfilter timer actief"
       },
       "grease_filter_used_hours": {
-        "name": "Vetfilter gebruikte uren"
+        "name": "Vetfiltergebruik"
       },
       "greasefiltercleaningintervalinhours": {
-        "name": "Vetfilter reinigingsinterval in uren"
+        "name": "Vetfilter reinigingsinterval"
       },
       "greasefilterusedhours": {
-        "name": "Vetfilter gebruikte uren"
+        "name": "Vetfiltergebruik"
       },
       "grill_plate_measured_temperature": {
         "name": "Gemeten temperatuur grillplaat"
@@ -5074,7 +5074,7 @@
         "name": "Only wash model"
       },
       "order_time_minimum_hour": {
-        "name": "Order time minimum (uur)"
+        "name": "Minimale besteltijd"
       },
       "ota_num1": {
         "name": "OTA nummer 1"
@@ -5179,7 +5179,7 @@
         "name": "Voorwas stap voltooid melding schakelaar"
       },
       "program_end_to_shutdown_time_in_minutes": {
-        "name": "Tijd programma-einde tot uitschakelen (in minuten)"
+        "name": "Tijd programma-einde tot uitschakelen"
       },
       "program_settingsdefault": {
         "name": "Program settings default"
@@ -5242,7 +5242,7 @@
         "name": "Werkelijke vochtigheid c"
       },
       "recirculation_filter_1_lifetime_in_hours": {
-        "name": "Recirculatie filter 1 levensduur in uren"
+        "name": "Recirculatie filter 1 levensduur"
       },
       "recirculation_filter_1_reset_counter": {
         "name": "Recirculatie filter 1 reset teller"
@@ -5263,10 +5263,10 @@
         "name": "Recirculatie filter 1 type"
       },
       "recirculation_filter_1_used_hours": {
-        "name": "Recirculatie filter 1 gebruikte uren"
+        "name": "Gebruik recirculatiefilter 1"
       },
       "recirculationfilter1lifetimeinhours": {
-        "name": "Recirculatie filter 1 levensduur in uren"
+        "name": "Recirculatie filter 1 levensduur"
       },
       "recirculationfilter1status": {
         "name": "Recirculatie filter 1 status"
@@ -5275,10 +5275,10 @@
         "name": "Recirculatie filter 1 type"
       },
       "recirculationfilter1usedhours": {
-        "name": "Recirculatie filter 1 gebruikte uren"
+        "name": "Gebruik recirculatiefilter 1"
       },
       "recirculationfilter2lifetimeinhours": {
-        "name": "Recirculatie filter 2 levensduur in uren"
+        "name": "Recirculatie filter 2 levensduur"
       },
       "recirculationfilter2status": {
         "name": "Recirculatie filter 2 status"
@@ -5287,7 +5287,7 @@
         "name": "Recirculatie filter 2 type"
       },
       "recirculationfilter2usedhours": {
-        "name": "Recirculatie filter 2 gebruikte uren"
+        "name": "Gebruik recirculatiefilter 2"
       },
       "ref_light": {
         "name": "Ref light"
@@ -5482,7 +5482,7 @@
         "name": "Sabbatmodus status"
       },
       "sand_timer1_duration_in_seconds": {
-        "name": "Zandloper 1 duur (seconden)"
+        "name": "Zandloper 1 duur"
       },
       "sand_timer1_start_utc_datetime_bdc_timestamp": {
         "name": "Sand timer 1 start UTC datetime BDC timestamp"
@@ -5496,7 +5496,7 @@
         }
       },
       "sand_timer2_duration_in_seconds": {
-        "name": "Zandloper 2 duur (seconden)"
+        "name": "Zandloper 2 duur"
       },
       "sand_timer2_start_utc_datetime_bdc_timestamp": {
         "name": "Sand timer 2 start UTC datetime BDC timestamp"
@@ -5510,7 +5510,7 @@
         }
       },
       "sand_timer3_duration_in_seconds": {
-        "name": "Zandloper 3 duur (seconden)"
+        "name": "Zandloper 3 duur"
       },
       "sand_timer3_start_utc_datetime_bdc_timestamp": {
         "name": "Sand timer 3 start UTC datetime BDC timestamp"
@@ -5530,7 +5530,7 @@
         "name": "Zandloper 1 einde (UTC tijdstip)"
       },
       "sand_timer_1_paused_total_seconds": {
-        "name": "Totaal gepauzeerde tijd zandloper 1 (seconden)"
+        "name": "Totaal gepauzeerde tijd zandloper 1"
       },
       "sand_timer_1_start_utc_datetime_bdc_timestamp": {
         "name": "Zandloper 1 start (UTC tijdstip)"
@@ -5552,7 +5552,7 @@
         "name": "Zandloper 2 einde (UTC tijdstip)"
       },
       "sand_timer_2_paused_total_seconds": {
-        "name": "Totaal gepauzeerde tijd zandloper 2 (seconden)"
+        "name": "Totaal gepauzeerde tijd zandloper 2"
       },
       "sand_timer_2_start_utc_datetime_bdc_timestamp": {
         "name": "Zandloper 2 start (UTC tijdstip)"
@@ -5574,7 +5574,7 @@
         "name": "Zandloper 3 einde (UTC tijdstip)"
       },
       "sand_timer_3_paused_total_seconds": {
-        "name": "Totaal gepauzeerde tijd zandloper 3 (seconden)"
+        "name": "Totaal gepauzeerde tijd zandloper 3"
       },
       "sand_timer_3_start_utc_datetime_bdc_timestamp": {
         "name": "Zandloper 3 start (UTC tijdstip)"
@@ -5730,13 +5730,13 @@
         "name": "Totale looptijd geselecteerd programma"
       },
       "selected_program_total_running_time_in_minutes": {
-        "name": "Totale looptijd geselecteerd programma (minuten)"
+        "name": "Totale looptijd geselecteerd programma"
       },
       "selected_program_total_time": {
         "name": "Totale tijd geselecteerd programma"
       },
       "selected_program_total_time_in_minutes": {
-        "name": "Totale tijd geselecteerd programma (minuten)"
+        "name": "Totale tijd geselecteerd programma"
       },
       "selected_program_upper_wash_function": {
         "name": "Selected program upper wash function"
@@ -8015,7 +8015,7 @@
         "name": "Timer paused time"
       },
       "timerpausedtotalseconds": {
-        "name": "Timer paused total seconds"
+        "name": "Totale pauzetijd timer"
       },
       "timerstarttime": {
         "name": "Timer start time"
@@ -8051,13 +8051,13 @@
         "name": "Totale verstreken tijd"
       },
       "total_passed_time_seconds": {
-        "name": "Totaal verstreken tijd in seconden"
+        "name": "Totaal verstreken tijd"
       },
       "total_remaining_time": {
         "name": "Totale resterende tijd"
       },
       "total_remaining_time_seconds": {
-        "name": "Totaal resterende tijd in seconden"
+        "name": "Totaal resterende tijd"
       },
       "total_run_time": {
         "name": "Totale looptijd"
