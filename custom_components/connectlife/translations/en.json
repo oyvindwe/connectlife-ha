@@ -303,10 +303,10 @@
         "name": "Alarm almost finished"
       },
       "alarmchild_lockoff": {
-        "name": "Alarmchild lockoff"
+        "name": "Alarm child lock off"
       },
       "alarmchild_lockon": {
-        "name": "Alarmchild lockon"
+        "name": "Alarm child lock on"
       },
       "alarmcleanairended": {
         "name": "Alarm clean air ended"
@@ -378,13 +378,13 @@
         "name": "Option not available"
       },
       "alarmoven_system_finished": {
-        "name": "Alarmoven system finished"
+        "name": "Alarm oven system finished"
       },
       "alarmpoptankopened": {
         "name": "Alarm pop tank opened"
       },
       "alarmpower_failure_running": {
-        "name": "Alarmpower failure running"
+        "name": "Alarm power failure running"
       },
       "alarmpowerfail": {
         "name": "Power failure"
@@ -2040,10 +2040,10 @@
         "name": "Interior light brightness"
       },
       "programoptiontimestartdelayhour": {
-        "name": "Start delay hours"
+        "name": "Start delay"
       },
       "programtimesstartdelayhours": {
-        "name": "Start delay hours"
+        "name": "Start delay"
       },
       "refrigerator_max_temperature": {
         "name": "Refrigerator max temperature"
@@ -3075,7 +3075,7 @@
         "name": "Almost finished notification setting"
       },
       "almost_finished_notification_settingtimer_in_minutes": {
-        "name": "Almost finished notification settingtimer in minutes"
+        "name": "Almost finished notification setting timer"
       },
       "ambient_sound_setting": {
         "name": "Ambient sound setting"
@@ -3173,7 +3173,7 @@
         "name": "Automatic door open at program end after time setting"
       },
       "automatic_door_open_at_program_end_after_time_settingtimer_in_minutes": {
-        "name": "Automatic door open at program end after time setting timer in minutes"
+        "name": "Automatic door open at program end delay"
       },
       "automatic_door_open_at_program_end_setting": {
         "name": "Automatic door open at program end setting"
@@ -3296,19 +3296,19 @@
         "name": "Clean mode switch status"
       },
       "cleanairactivepassedhours": {
-        "name": "Clean air active passed hours"
+        "name": "Clean air active elapsed time"
       },
       "cleanairactivetotalhours": {
-        "name": "Clean air active total hours"
+        "name": "Clean air active total time"
       },
       "cleanairdurationofcycleinminutes": {
-        "name": "Clean air duration of cycle in minutes"
+        "name": "Clean air duration of cycle"
       },
       "cleanairmotorlevel": {
         "name": "Clean air motor level"
       },
       "cleanairruncycleeverynumberofminutes": {
-        "name": "Clean air run cycle every number of minutes"
+        "name": "Clean air cycle interval"
       },
       "cleanairstarttime": {
         "name": "Clean air start time"
@@ -3420,7 +3420,7 @@
         }
       },
       "current_programphase": {
-        "name": "Current programphase",
+        "name": "Current program phase",
         "state": {
           "running": "Running"
         }
@@ -3561,7 +3561,7 @@
         "name": "Delay start remaining time"
       },
       "delay_start_remaining_time_in_minutes": {
-        "name": "Delay start remaining time in minutes"
+        "name": "Delay start remaining time"
       },
       "delay_start_set_time": {
         "name": "Delay start set time"
@@ -4594,10 +4594,10 @@
         "name": "Get current city info flag"
       },
       "gratin_total_allowed_time_in_minutes": {
-        "name": "Gratin total allowed time in minutes"
+        "name": "Gratin total allowed time"
       },
       "gratin_total_passed_time_in_minutes": {
-        "name": "Gratin total passed time in minutes"
+        "name": "Gratin total passed time"
       },
       "grease_filter_cleaning_interval_in_hours": {
         "name": "Grease filter cleaning interval"
@@ -4618,13 +4618,13 @@
         "name": "Grease filter timer active"
       },
       "grease_filter_used_hours": {
-        "name": "Grease filter used hours"
+        "name": "Grease filter usage"
       },
       "greasefiltercleaningintervalinhours": {
-        "name": "Grease filter cleaning interval in hours"
+        "name": "Grease filter cleaning interval"
       },
       "greasefilterusedhours": {
-        "name": "Grease filter used hours"
+        "name": "Grease filter usage"
       },
       "grill_plate_measured_temperature": {
         "name": "Grill plate measured temperature"
@@ -4711,7 +4711,7 @@
         "name": "Hood status"
       },
       "hood_total_used_hours": {
-        "name": "Hood runtime hours"
+        "name": "Hood runtime"
       },
       "hottime": {
         "name": "Hot time"
@@ -5074,7 +5074,7 @@
         "name": "Only wash model"
       },
       "order_time_minimum_hour": {
-        "name": "Order time minimum hour"
+        "name": "Order time minimum"
       },
       "ota_num1": {
         "name": "OTA number 1"
@@ -5179,7 +5179,7 @@
         "name": "Prewash step finish notify switch"
       },
       "program_end_to_shutdown_time_in_minutes": {
-        "name": "Program end to shutdown time in minutes"
+        "name": "Program end to shutdown time"
       },
       "program_settingsdefault": {
         "name": "Program settings default"
@@ -5230,7 +5230,7 @@
         "name": "Quicker mode"
       },
       "quiet_model": {
-        "name": "Quiet model"
+        "name": "Quiet mode"
       },
       "real_humidity": {
         "name": "Real humidity"
@@ -5263,10 +5263,10 @@
         "name": "Recirculation filter 1 type"
       },
       "recirculation_filter_1_used_hours": {
-        "name": "Recirculation filter 1 used hours"
+        "name": "Recirculation filter 1 usage"
       },
       "recirculationfilter1lifetimeinhours": {
-        "name": "Recirculation filter 1 lifetime in hours"
+        "name": "Recirculation filter 1 lifetime"
       },
       "recirculationfilter1status": {
         "name": "Recirculation filter 1 status"
@@ -5275,10 +5275,10 @@
         "name": "Recirculation filter 1 type"
       },
       "recirculationfilter1usedhours": {
-        "name": "Recirculation filter 1 used hours"
+        "name": "Recirculation filter 1 usage"
       },
       "recirculationfilter2lifetimeinhours": {
-        "name": "Recirculation filter 2 lifetime in hours"
+        "name": "Recirculation filter 2 lifetime"
       },
       "recirculationfilter2status": {
         "name": "Recirculation filter 2 status"
@@ -5287,7 +5287,7 @@
         "name": "Recirculation filter 2 type"
       },
       "recirculationfilter2usedhours": {
-        "name": "Recirculation filter 2 used hours"
+        "name": "Recirculation filter 2 usage"
       },
       "ref_light": {
         "name": "Ref light"
@@ -6805,7 +6805,7 @@
         "name": "Softener compartment flag"
       },
       "softer_flag": {
-        "name": "Softer flag"
+        "name": "Softener flag"
       },
       "softner_useindex": {
         "name": "Softener use index"
@@ -6823,10 +6823,10 @@
         "name": "Soft pairing setting"
       },
       "soil_lever": {
-        "name": "Soil lever"
+        "name": "Soil level"
       },
       "soilleverflag": {
-        "name": "Soil lever flag"
+        "name": "Soil level flag"
       },
       "sound_setting": {
         "name": "Sound setting"
@@ -6841,7 +6841,7 @@
         "name": "Speed on demand"
       },
       "spend_on_demand_allowed": {
-        "name": "Spend on demand allowed"
+        "name": "Speed on demand allowed"
       },
       "spin_speed_rpm": {
         "name": "Spin speed RPM"
@@ -6907,7 +6907,7 @@
           "delay_time_waiting": "Delay time waiting",
           "error": "Error",
           "idle": "Idle",
-          "not_avaliable": "Not avaliable",
+          "not_avaliable": "Not available",
           "pause": "Pause",
           "production": "Production",
           "program_select": "Program select",
@@ -7274,7 +7274,7 @@
         "name": "Step 4 steam assist intensity"
       },
       "step4steam_assistset_time_in_minutes": {
-        "name": "Step 4 steam assist set time in minutes"
+        "name": "Step 4 steam assist set time"
       },
       "step5_bake_mode": {
         "name": "Step 5 bake mode"
@@ -7337,7 +7337,7 @@
         "name": "Step 5 steam assist intensity"
       },
       "step5steam_assistset_time_in_minutes": {
-        "name": "Step 5 steam assist set time in minutes"
+        "name": "Step 5 steam assist set time"
       },
       "step_1_duration": {
         "name": "Step 1 duration"
@@ -7945,7 +7945,7 @@
         "name": "Temperature 9 default main wash time"
       },
       "temperature_default_defaultmainwashtime": {
-        "name": "Temperature default default main wash time"
+        "name": "Temperature default main wash time"
       },
       "temperature_reached_notification_setting": {
         "name": "Temperature reached notification setting"
@@ -8015,7 +8015,7 @@
         "name": "Timer paused time"
       },
       "timerpausedtotalseconds": {
-        "name": "Timer paused total seconds"
+        "name": "Timer paused total"
       },
       "timerstarttime": {
         "name": "Timer start time"
@@ -8153,7 +8153,7 @@
         "name": "Wash step time drain water spin and stop"
       },
       "washer_to_dryer_available_for_hours_v": {
-        "name": "Washer to dryer available for hours v"
+        "name": "Washer to dryer available"
       },
       "washer_to_dryer_program_id": {
         "name": "Washer to dryer program ID"

@@ -2040,10 +2040,10 @@
         "name": "Luminosit\u00e9 de l'\u00e9clairage int\u00e9rieur"
       },
       "programoptiontimestartdelayhour": {
-        "name": "Heures de d\u00e9part diff\u00e9r\u00e9"
+        "name": "D\u00e9part diff\u00e9r\u00e9"
       },
       "programtimesstartdelayhours": {
-        "name": "Heures de d\u00e9part diff\u00e9r\u00e9"
+        "name": "D\u00e9part diff\u00e9r\u00e9"
       },
       "refrigerator_max_temperature": {
         "name": "Temp\u00e9rature max frigo"
@@ -3075,7 +3075,7 @@
         "name": "R\u00e9glage de la notification de fin imminente"
       },
       "almost_finished_notification_settingtimer_in_minutes": {
-        "name": "R\u00e9glage de la notification de fin proche, minuteur en minutes"
+        "name": "R\u00e9glage de la notification de fin proche, minuteur"
       },
       "ambient_sound_setting": {
         "name": "R\u00e9glage du son ambiant"
@@ -3173,7 +3173,7 @@
         "name": "R\u00e9glage d'ouverture automatique de la porte \u00e0 la fin du programme apr\u00e8s un d\u00e9lai"
       },
       "automatic_door_open_at_program_end_after_time_settingtimer_in_minutes": {
-        "name": "R\u00e9glage d'ouverture automatique de la porte \u00e0 la fin du programme apr\u00e8s un d\u00e9lai, minuteur en minutes"
+        "name": "D\u00e9lai d'ouverture automatique de la porte en fin de programme"
       },
       "automatic_door_open_at_program_end_setting": {
         "name": "R\u00e9glage d'ouverture automatique de la porte en fin de programme"
@@ -3296,19 +3296,19 @@
         "name": "\u00c9tat mode nettoyage"
       },
       "cleanairactivepassedhours": {
-        "name": "Heures \u00e9coul\u00e9es air pur actif"
+        "name": "Temps \u00e9coul\u00e9 air pur actif"
       },
       "cleanairactivetotalhours": {
-        "name": "Heures totales air pur actif"
+        "name": "Temps total air pur actif"
       },
       "cleanairdurationofcycleinminutes": {
-        "name": "Dur\u00e9e du cycle d'air pur en minutes"
+        "name": "Dur\u00e9e du cycle d'air pur"
       },
       "cleanairmotorlevel": {
         "name": "Niveau du moteur de purification de l'air"
       },
       "cleanairruncycleeverynumberofminutes": {
-        "name": "Cycle d'air pur ex\u00e9cut\u00e9 toutes les X minutes"
+        "name": "Intervalle du cycle d'air pur"
       },
       "cleanairstarttime": {
         "name": "Heure de d\u00e9marrage air pur"
@@ -3561,10 +3561,10 @@
         "name": "Temps restant avant d\u00e9part diff\u00e9r\u00e9"
       },
       "delay_start_remaining_time_in_minutes": {
-        "name": "Temps restant avant d\u00e9part diff\u00e9r\u00e9 en minutes"
+        "name": "Temps restant avant d\u00e9part diff\u00e9r\u00e9"
       },
       "delay_start_set_time": {
-        "name": "Heure r\u00e9gl\u00e9e du d\u00e9part diff\u00e9r\u00e9"
+        "name": "Dur\u00e9e r\u00e9gl\u00e9e du d\u00e9part diff\u00e9r\u00e9"
       },
       "delay_time_hour_min": {
         "name": "D\u00e9lai (h:min)"
@@ -4594,10 +4594,10 @@
         "name": "Indicateur d'obtention des infos de la ville actuelle"
       },
       "gratin_total_allowed_time_in_minutes": {
-        "name": "Temps total autoris\u00e9 du gratin (minutes)"
+        "name": "Temps total autoris\u00e9 du gratin"
       },
       "gratin_total_passed_time_in_minutes": {
-        "name": "Temps total \u00e9coul\u00e9 du gratin (minutes)"
+        "name": "Temps total \u00e9coul\u00e9 du gratin"
       },
       "grease_filter_cleaning_interval_in_hours": {
         "name": "Intervalle de nettoyage du filtre \u00e0 graisse"
@@ -4618,13 +4618,13 @@
         "name": "Minuterie du filtre \u00e0 graisse active"
       },
       "grease_filter_used_hours": {
-        "name": "Heures d'utilisation du filtre \u00e0 graisse"
+        "name": "Utilisation du filtre \u00e0 graisse"
       },
       "greasefiltercleaningintervalinhours": {
-        "name": "Intervalle de nettoyage du filtre \u00e0 graisse en heures"
+        "name": "Intervalle de nettoyage du filtre \u00e0 graisse"
       },
       "greasefilterusedhours": {
-        "name": "Heures d'utilisation du filtre \u00e0 graisse"
+        "name": "Utilisation du filtre \u00e0 graisse"
       },
       "grill_plate_measured_temperature": {
         "name": "Temp\u00e9rature mesur\u00e9e de la plaque de gril"
@@ -4711,7 +4711,7 @@
         "name": "\u00c9tat de la hotte"
       },
       "hood_total_used_hours": {
-        "name": "Heures de fonctionnement de la hotte"
+        "name": "Dur\u00e9e de fonctionnement de la hotte"
       },
       "hottime": {
         "name": "Dur\u00e9e de chauffe"
@@ -5074,7 +5074,7 @@
         "name": "Mod\u00e8le lavage seul"
       },
       "order_time_minimum_hour": {
-        "name": "Heure minimale de commande"
+        "name": "Temps minimum de commande"
       },
       "ota_num1": {
         "name": "Num\u00e9ro OTA 1"
@@ -5179,7 +5179,7 @@
         "name": "Notification de fin d'\u00e9tape de pr\u00e9lavage"
       },
       "program_end_to_shutdown_time_in_minutes": {
-        "name": "Temps entre fin de programme et arr\u00eat en minutes"
+        "name": "Temps entre fin de programme et arr\u00eat"
       },
       "program_settingsdefault": {
         "name": "R\u00e9glages du programme par d\u00e9faut"
@@ -5263,10 +5263,10 @@
         "name": "Type du filtre de recyclage 1"
       },
       "recirculation_filter_1_used_hours": {
-        "name": "Heures d'utilisation du filtre de recirculation 1"
+        "name": "Utilisation du filtre de recirculation 1"
       },
       "recirculationfilter1lifetimeinhours": {
-        "name": "Dur\u00e9e de vie du filtre de recirculation 1 en heures"
+        "name": "Dur\u00e9e de vie du filtre de recirculation 1"
       },
       "recirculationfilter1status": {
         "name": "\u00c9tat du filtre de recirculation 1"
@@ -5275,10 +5275,10 @@
         "name": "Type du filtre de recyclage 1"
       },
       "recirculationfilter1usedhours": {
-        "name": "Heures d'utilisation du filtre de recirculation 1"
+        "name": "Utilisation du filtre de recirculation 1"
       },
       "recirculationfilter2lifetimeinhours": {
-        "name": "Dur\u00e9e de vie du filtre de recirculation 2 en heures"
+        "name": "Dur\u00e9e de vie du filtre de recirculation 2"
       },
       "recirculationfilter2status": {
         "name": "\u00c9tat du filtre de recirculation 2"
@@ -5287,7 +5287,7 @@
         "name": "Type du filtre de recyclage 2"
       },
       "recirculationfilter2usedhours": {
-        "name": "Heures d'utilisation du filtre de recirculation 2"
+        "name": "Utilisation du filtre de recirculation 2"
       },
       "ref_light": {
         "name": "Voyant frigo"
@@ -7274,7 +7274,7 @@
         "name": "\u00c9tape 4 intensit\u00e9 de l'assistance vapeur"
       },
       "step4steam_assistset_time_in_minutes": {
-        "name": "\u00c9tape 4 dur\u00e9e r\u00e9gl\u00e9e de l'assistance vapeur en minutes"
+        "name": "\u00c9tape 4 dur\u00e9e r\u00e9gl\u00e9e de l'assistance vapeur"
       },
       "step5_bake_mode": {
         "name": "Mode de cuisson \u00e9tape 5"
@@ -7337,7 +7337,7 @@
         "name": "\u00c9tape 5 intensit\u00e9 de l'assistance vapeur"
       },
       "step5steam_assistset_time_in_minutes": {
-        "name": "\u00c9tape 5 dur\u00e9e r\u00e9gl\u00e9e de l'assistance vapeur en minutes"
+        "name": "\u00c9tape 5 dur\u00e9e r\u00e9gl\u00e9e de l'assistance vapeur"
       },
       "step_1_duration": {
         "name": "Dur\u00e9e \u00e9tape 1"
@@ -8015,7 +8015,7 @@
         "name": "Dur\u00e9e de pause de la minuterie"
       },
       "timerpausedtotalseconds": {
-        "name": "Secondes totales de pause de la minuterie"
+        "name": "Pause totale de la minuterie"
       },
       "timerstarttime": {
         "name": "Heure de d\u00e9but de la minuterie"
@@ -8153,7 +8153,7 @@
         "name": "Dur\u00e9e d'\u00e9tape de lavage vidange essorage et arr\u00eat"
       },
       "washer_to_dryer_available_for_hours_v": {
-        "name": "Lavage vers s\u00e9chage disponible pendant heures v"
+        "name": "Lavage vers s\u00e9chage disponible"
       },
       "washer_to_dryer_program_id": {
         "name": "ID de programme lavage vers s\u00e9chage"

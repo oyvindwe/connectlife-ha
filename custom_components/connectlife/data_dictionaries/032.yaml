@@ -493,6 +493,10 @@ properties:
         name: Volume_setting_set
   - property: Washer_to_Dryer_available_for_hours_v
     hide: true
+    entity_category: diagnostic
+    sensor:
+      device_class: duration
+      unit: h
     # Example value: 1
   - property: Washer_to_Dryer_program_ID
     hide: true

@@ -2040,10 +2040,10 @@
         "name": "Helligkeit Innenbeleuchtung"
       },
       "programoptiontimestartdelayhour": {
-        "name": "Startverz\u00f6gerung in Stunden"
+        "name": "Startverz\u00f6gerung"
       },
       "programtimesstartdelayhours": {
-        "name": "Startverz\u00f6gerung in Stunden"
+        "name": "Startverz\u00f6gerung"
       },
       "refrigerator_max_temperature": {
         "name": "Maximale K\u00fchlschranktemperatur"
@@ -3173,7 +3173,7 @@
         "name": "Einstellung automatisches T\u00fcr\u00f6ffnen bei Programmende nach Zeitablauf"
       },
       "automatic_door_open_at_program_end_after_time_settingtimer_in_minutes": {
-        "name": "Einstellung automatisches T\u00fcr\u00f6ffnen bei Programmende nach Zeitablauf Timer in Minuten"
+        "name": "Verz\u00f6gerung f\u00fcr automatische T\u00fcr\u00f6ffnung bei Programmende"
       },
       "automatic_door_open_at_program_end_setting": {
         "name": "Einstellung automatisches T\u00fcr\u00f6ffnen bei Programmende"
@@ -3296,19 +3296,19 @@
         "name": "Reinigungsmodus-Schalter-Status"
       },
       "cleanairactivepassedhours": {
-        "name": "Reinluft aktiv vergangene Stunden"
+        "name": "Reinluft aktiv \u2013 verstrichene Zeit"
       },
       "cleanairactivetotalhours": {
-        "name": "Reinluft aktiv Gesamtstunden"
+        "name": "Reinluft aktiv \u2013 Gesamtzeit"
       },
       "cleanairdurationofcycleinminutes": {
-        "name": "Dauer des Frischluftzyklus in Minuten"
+        "name": "Dauer des Frischluftzyklus"
       },
       "cleanairmotorlevel": {
         "name": "Luftreinigung Motorstufe"
       },
       "cleanairruncycleeverynumberofminutes": {
-        "name": "Frischluftzyklus alle Anzahl Minuten ausf\u00fchren"
+        "name": "Reinluft-Zyklusintervall"
       },
       "cleanairstarttime": {
         "name": "Startzeit Luftreinigung"
@@ -4618,13 +4618,13 @@
         "name": "Fettfilter-Timer aktiv"
       },
       "grease_filter_used_hours": {
-        "name": "Fettfilter-Betriebsstunden"
+        "name": "Fettfilternutzung"
       },
       "greasefiltercleaningintervalinhours": {
-        "name": "Fettfilter-Reinigungsintervall in Stunden"
+        "name": "Fettfilter-Reinigungsintervall"
       },
       "greasefilterusedhours": {
-        "name": "Fettfilter-Betriebsstunden"
+        "name": "Fettfilternutzung"
       },
       "grill_plate_measured_temperature": {
         "name": "Grillplatte gemessene Temperatur"
@@ -5074,7 +5074,7 @@
         "name": "Nur-Waschen-Modell"
       },
       "order_time_minimum_hour": {
-        "name": "Mindestbestellzeit in Stunden"
+        "name": "Mindestbestellzeit"
       },
       "ota_num1": {
         "name": "OTA-Nummer 1"
@@ -5179,7 +5179,7 @@
         "name": "Benachrichtigungsschalter Vorw\u00e4scheende"
       },
       "program_end_to_shutdown_time_in_minutes": {
-        "name": "Zeit bis zum Herunterfahren nach Programmende (Minuten)"
+        "name": "Zeit bis zum Herunterfahren nach Programmende"
       },
       "program_settingsdefault": {
         "name": "Programmeinstellungen Standard"
@@ -5263,10 +5263,10 @@
         "name": "Umluftfilter 1 Typ"
       },
       "recirculation_filter_1_used_hours": {
-        "name": "Betriebsstunden Umluftfilter 1"
+        "name": "Nutzung Umluftfilter 1"
       },
       "recirculationfilter1lifetimeinhours": {
-        "name": "Umluftfilter 1 Lebensdauer in Stunden"
+        "name": "Umluftfilter 1 Lebensdauer"
       },
       "recirculationfilter1status": {
         "name": "Status Umluftfilter 1"
@@ -5275,10 +5275,10 @@
         "name": "Umluftfilter 1 Typ"
       },
       "recirculationfilter1usedhours": {
-        "name": "Betriebsstunden Umluftfilter 1"
+        "name": "Nutzung Umluftfilter 1"
       },
       "recirculationfilter2lifetimeinhours": {
-        "name": "Umluftfilter 2 Lebensdauer in Stunden"
+        "name": "Umluftfilter 2 Lebensdauer"
       },
       "recirculationfilter2status": {
         "name": "Status Umluftfilter 2"
@@ -5287,7 +5287,7 @@
         "name": "Umluftfilter 2 Typ"
       },
       "recirculationfilter2usedhours": {
-        "name": "Betriebsstunden Umluftfilter 2"
+        "name": "Nutzung Umluftfilter 2"
       },
       "ref_light": {
         "name": "K\u00fchlraumbeleuchtung"
@@ -5482,7 +5482,7 @@
         "name": "Sabbatmodus-Status"
       },
       "sand_timer1_duration_in_seconds": {
-        "name": "Sanduhr 1 Dauer in Sekunden"
+        "name": "Sanduhr 1 Dauer"
       },
       "sand_timer1_start_utc_datetime_bdc_timestamp": {
         "name": "Timer 1 Startzeit UTC"
@@ -7274,7 +7274,7 @@
         "name": "Schritt 4 Intensit\u00e4t der Dampfunterst\u00fctzung"
       },
       "step4steam_assistset_time_in_minutes": {
-        "name": "Schritt 4 Dampfunterst\u00fctzung Zeit in Minuten festlegen"
+        "name": "Schritt 4 Dampfunterst\u00fctzung Zeit festlegen"
       },
       "step5_bake_mode": {
         "name": "Schritt 5 Backmodus"
@@ -7337,7 +7337,7 @@
         "name": "Schritt 5 Intensit\u00e4t der Dampfunterst\u00fctzung"
       },
       "step5steam_assistset_time_in_minutes": {
-        "name": "Schritt 5 Dampfunterst\u00fctzung Zeit in Minuten festlegen"
+        "name": "Schritt 5 Dampfunterst\u00fctzung Zeit festlegen"
       },
       "step_1_duration": {
         "name": "Schritt 1 Dauer"
@@ -8015,7 +8015,7 @@
         "name": "Timer-Pausenzeit"
       },
       "timerpausedtotalseconds": {
-        "name": "Timer-Pause Sekunden gesamt"
+        "name": "Timer-Pause gesamt"
       },
       "timerstarttime": {
         "name": "Timer-Startzeit"
@@ -8153,7 +8153,7 @@
         "name": "Waschschritt Zeit Wasser abpumpen, schleudern und stoppen"
       },
       "washer_to_dryer_available_for_hours_v": {
-        "name": "Waschen-zu-Trocknen f\u00fcr Stunden verf\u00fcgbar"
+        "name": "Waschen-zu-Trocknen verf\u00fcgbar"
       },
       "washer_to_dryer_program_id": {
         "name": "Programm-ID Waschmaschine zu Trockner"

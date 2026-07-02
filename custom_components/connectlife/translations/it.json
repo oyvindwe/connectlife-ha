@@ -2040,10 +2040,10 @@
         "name": "Luminosit\u00e0 luce interna"
       },
       "programoptiontimestartdelayhour": {
-        "name": "Ore ritardo avvio"
+        "name": "Ritardo avvio"
       },
       "programtimesstartdelayhours": {
-        "name": "Ore ritardo avvio"
+        "name": "Ritardo avvio"
       },
       "refrigerator_max_temperature": {
         "name": "Temperatura massima frigorifero"
@@ -3075,7 +3075,7 @@
         "name": "Impostazione notifica quasi terminato"
       },
       "almost_finished_notification_settingtimer_in_minutes": {
-        "name": "Impostazione notifica quasi terminato timer in minuti"
+        "name": "Impostazione notifica quasi terminato timer"
       },
       "ambient_sound_setting": {
         "name": "Impostazione suono ambiente"
@@ -3173,7 +3173,7 @@
         "name": "Impostazione apertura automatica porta a fine programma dopo il tempo"
       },
       "automatic_door_open_at_program_end_after_time_settingtimer_in_minutes": {
-        "name": "Apertura automatica dello sportello a fine programma dopo il tempo impostato (timer in minuti)"
+        "name": "Ritardo apertura automatica porta a fine programma"
       },
       "automatic_door_open_at_program_end_setting": {
         "name": "Impostazione apertura automatica porta a fine programma"
@@ -3296,19 +3296,19 @@
         "name": "Stato modalit\u00e0 pulizia"
       },
       "cleanairactivepassedhours": {
-        "name": "Ore trascorse aria pulita attiva"
+        "name": "Tempo trascorso aria pulita attiva"
       },
       "cleanairactivetotalhours": {
-        "name": "Ore totali aria pulita attiva"
+        "name": "Tempo totale aria pulita attiva"
       },
       "cleanairdurationofcycleinminutes": {
-        "name": "Durata ciclo aria pulita in minuti"
+        "name": "Durata ciclo aria pulita"
       },
       "cleanairmotorlevel": {
         "name": "Livello motore aria pulita"
       },
       "cleanairruncycleeverynumberofminutes": {
-        "name": "Ciclo aria pulita ogni numero di minuti"
+        "name": "Intervallo ciclo aria pulita"
       },
       "cleanairstarttime": {
         "name": "Ora avvio aria pulita"
@@ -3561,7 +3561,7 @@
         "name": "Tempo rimanente avvio ritardato"
       },
       "delay_start_remaining_time_in_minutes": {
-        "name": "Tempo residuo avvio ritardato in minuti"
+        "name": "Tempo residuo avvio ritardato"
       },
       "delay_start_set_time": {
         "name": "Orario impostato avvio ritardato"
@@ -4594,10 +4594,10 @@
         "name": "Flag richiesta info citt\u00e0 attuale"
       },
       "gratin_total_allowed_time_in_minutes": {
-        "name": "Tempo totale consentito gratin in minuti"
+        "name": "Tempo totale consentito gratin"
       },
       "gratin_total_passed_time_in_minutes": {
-        "name": "Tempo totale trascorso gratin in minuti"
+        "name": "Tempo totale trascorso gratin"
       },
       "grease_filter_cleaning_interval_in_hours": {
         "name": "Intervallo pulizia filtro grassi"
@@ -4618,13 +4618,13 @@
         "name": "Timer filtro grassi attivo"
       },
       "grease_filter_used_hours": {
-        "name": "Ore di utilizzo filtro antigrasso"
+        "name": "Utilizzo filtro antigrasso"
       },
       "greasefiltercleaningintervalinhours": {
-        "name": "Intervallo pulizia filtro grassi in ore"
+        "name": "Intervallo pulizia filtro grassi"
       },
       "greasefilterusedhours": {
-        "name": "Ore di utilizzo filtro antigrasso"
+        "name": "Utilizzo filtro antigrasso"
       },
       "grill_plate_measured_temperature": {
         "name": "Temperatura misurata piastra grill"
@@ -4711,7 +4711,7 @@
         "name": "Stato cappa"
       },
       "hood_total_used_hours": {
-        "name": "Ore di funzionamento cappa"
+        "name": "Tempo di funzionamento cappa"
       },
       "hottime": {
         "name": "Tempo di riscaldamento"
@@ -5074,7 +5074,7 @@
         "name": "Modello solo lavaggio"
       },
       "order_time_minimum_hour": {
-        "name": "Ora minima programmazione"
+        "name": "Tempo minimo di ordine"
       },
       "ota_num1": {
         "name": "Numero OTA 1"
@@ -5179,7 +5179,7 @@
         "name": "Notifica fine fase prelavaggio"
       },
       "program_end_to_shutdown_time_in_minutes": {
-        "name": "Tempo da fine programma a spegnimento in minuti"
+        "name": "Tempo da fine programma a spegnimento"
       },
       "program_settingsdefault": {
         "name": "Impostazioni programma predefinite"
@@ -5263,10 +5263,10 @@
         "name": "Tipo filtro ricircolo 1"
       },
       "recirculation_filter_1_used_hours": {
-        "name": "Ore d'uso filtro ricircolo 1"
+        "name": "Utilizzo filtro ricircolo 1"
       },
       "recirculationfilter1lifetimeinhours": {
-        "name": "Durata filtro ricircolo 1 in ore"
+        "name": "Durata filtro ricircolo 1"
       },
       "recirculationfilter1status": {
         "name": "Stato filtro di ricircolo 1"
@@ -5275,10 +5275,10 @@
         "name": "Tipo filtro ricircolo 1"
       },
       "recirculationfilter1usedhours": {
-        "name": "Ore d'uso filtro ricircolo 1"
+        "name": "Utilizzo filtro ricircolo 1"
       },
       "recirculationfilter2lifetimeinhours": {
-        "name": "Durata filtro ricircolo 2 in ore"
+        "name": "Durata filtro ricircolo 2"
       },
       "recirculationfilter2status": {
         "name": "Stato filtro di ricircolo 2"
@@ -5287,7 +5287,7 @@
         "name": "Tipo filtro ricircolo 2"
       },
       "recirculationfilter2usedhours": {
-        "name": "Ore d'uso filtro ricircolo 2"
+        "name": "Utilizzo filtro ricircolo 2"
       },
       "ref_light": {
         "name": "Luce frigorifero"
@@ -7274,7 +7274,7 @@
         "name": "Fase 4 intensit\u00e0 assistenza vapore"
       },
       "step4steam_assistset_time_in_minutes": {
-        "name": "Fase 4 impostazione tempo assistenza vapore in minuti"
+        "name": "Fase 4 impostazione tempo assistenza vapore"
       },
       "step5_bake_mode": {
         "name": "Modalit\u00e0 cottura fase 5"
@@ -7337,7 +7337,7 @@
         "name": "Fase 5 intensit\u00e0 assistenza vapore"
       },
       "step5steam_assistset_time_in_minutes": {
-        "name": "Fase 5 impostazione tempo assistenza vapore in minuti"
+        "name": "Fase 5 impostazione tempo assistenza vapore"
       },
       "step_1_duration": {
         "name": "Durata fase 1"
@@ -8015,7 +8015,7 @@
         "name": "Tempo timer in pausa"
       },
       "timerpausedtotalseconds": {
-        "name": "Secondi totali timer in pausa"
+        "name": "Pausa totale timer"
       },
       "timerstarttime": {
         "name": "Ora di avvio timer"
@@ -8153,7 +8153,7 @@
         "name": "Tempo fase lavaggio scarico acqua centrifuga e arresto"
       },
       "washer_to_dryer_available_for_hours_v": {
-        "name": "Passaggio da lavatrice ad asciugatrice disponibile per ore v"
+        "name": "Passaggio da lavatrice ad asciugatrice disponibile"
       },
       "washer_to_dryer_program_id": {
         "name": "ID programma lavatrice-asciugatrice"

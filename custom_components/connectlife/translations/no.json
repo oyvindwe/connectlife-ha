@@ -2040,10 +2040,10 @@
         "name": "Innvendig lysstyrke"
       },
       "programoptiontimestartdelayhour": {
-        "name": "Utsatt start (timer)"
+        "name": "Utsatt start"
       },
       "programtimesstartdelayhours": {
-        "name": "Utsatt start (timer)"
+        "name": "Utsatt start"
       },
       "refrigerator_max_temperature": {
         "name": "Maks kj\u00f8leskapstemperatur"
@@ -3075,7 +3075,7 @@
         "name": "Varselinnstilling for nesten ferdig"
       },
       "almost_finished_notification_settingtimer_in_minutes": {
-        "name": "Varseltidur for nesten ferdig (minutter)"
+        "name": "Varseltidur for nesten ferdig"
       },
       "ambient_sound_setting": {
         "name": "Lydinnstilling for omgivelser"
@@ -3173,7 +3173,7 @@
         "name": "Automatisk d\u00f8r\u00e5pning etter tid ved programslutt"
       },
       "automatic_door_open_at_program_end_after_time_settingtimer_in_minutes": {
-        "name": "Automatisk d\u00f8r\u00e5pning etter tid ved programslutt \u2013 tidsur (minutter)"
+        "name": "Forsinkelse for automatisk d\u00f8r\u00e5pning ved programslutt"
       },
       "automatic_door_open_at_program_end_setting": {
         "name": "Automatisk d\u00f8r\u00e5pning ved programslutt"
@@ -3296,19 +3296,19 @@
         "name": "Bryterstatus for rensmodus"
       },
       "cleanairactivepassedhours": {
-        "name": "Ren luft \u2013 aktive timer brukt"
+        "name": "Ren luft \u2013 aktiv tid forl\u00f8pt"
       },
       "cleanairactivetotalhours": {
-        "name": "Ren luft \u2013 aktive timer totalt"
+        "name": "Ren luft \u2013 total aktiv tid"
       },
       "cleanairdurationofcycleinminutes": {
-        "name": "Ren luft \u2013 syklusvarighet (minutter)"
+        "name": "Ren luft \u2013 syklusvarighet"
       },
       "cleanairmotorlevel": {
         "name": "Ren luft \u2013 motorniv\u00e5"
       },
       "cleanairruncycleeverynumberofminutes": {
-        "name": "Ren luft \u2013 kj\u00f8r syklus hvert antall minutter"
+        "name": "Ren luft \u2013 syklusintervall"
       },
       "cleanairstarttime": {
         "name": "Starttid for ren luft"
@@ -3561,7 +3561,7 @@
         "name": "Gjenst\u00e5ende tid for utsatt start"
       },
       "delay_start_remaining_time_in_minutes": {
-        "name": "Gjenst\u00e5ende tid for utsatt start (minutter)"
+        "name": "Gjenst\u00e5ende tid for utsatt start"
       },
       "delay_start_set_time": {
         "name": "Innstilt tid for utsatt start"
@@ -4594,10 +4594,10 @@
         "name": "Hent flagg for byinfo"
       },
       "gratin_total_allowed_time_in_minutes": {
-        "name": "Total tillatt gratineringstid (minutter)"
+        "name": "Total tillatt gratineringstid"
       },
       "gratin_total_passed_time_in_minutes": {
-        "name": "Total brukt gratineringstid (minutter)"
+        "name": "Total brukt gratineringstid"
       },
       "grease_filter_cleaning_interval_in_hours": {
         "name": "Rengj\u00f8ringsintervall for fettfilter"
@@ -4618,13 +4618,13 @@
         "name": "Tidsur for fettfilter aktivt"
       },
       "grease_filter_used_hours": {
-        "name": "Brukte timer for fettfilter"
+        "name": "Bruk av fettfilter"
       },
       "greasefiltercleaningintervalinhours": {
-        "name": "Rengj\u00f8ringsintervall for fettfilter (timer)"
+        "name": "Rengj\u00f8ringsintervall for fettfilter"
       },
       "greasefilterusedhours": {
-        "name": "Brukte timer for fettfilter"
+        "name": "Bruk av fettfilter"
       },
       "grill_plate_measured_temperature": {
         "name": "M\u00e5lt temperatur for grillplate"
@@ -5074,7 +5074,7 @@
         "name": "Kun vaskemodell"
       },
       "order_time_minimum_hour": {
-        "name": "Bestillingstid minimum time"
+        "name": "Bestillingstid minimum"
       },
       "ota_num1": {
         "name": "OTA-nummer 1"
@@ -5179,7 +5179,7 @@
         "name": "Varselbryter for ferdig forvasketrinn"
       },
       "program_end_to_shutdown_time_in_minutes": {
-        "name": "Tid fra programslutt til avslag (minutter)"
+        "name": "Tid fra programslutt til avslag"
       },
       "program_settingsdefault": {
         "name": "Standard programinnstillinger"
@@ -5263,10 +5263,10 @@
         "name": "Type for resirkuleringsfilter 1"
       },
       "recirculation_filter_1_used_hours": {
-        "name": "Brukte timer for resirkuleringsfilter 1"
+        "name": "Bruk av resirkuleringsfilter 1"
       },
       "recirculationfilter1lifetimeinhours": {
-        "name": "Levetid for resirkuleringsfilter 1 (timer)"
+        "name": "Levetid for resirkuleringsfilter 1"
       },
       "recirculationfilter1status": {
         "name": "Status for resirkuleringsfilter 1"
@@ -5275,10 +5275,10 @@
         "name": "Type for resirkuleringsfilter 1"
       },
       "recirculationfilter1usedhours": {
-        "name": "Brukte timer for resirkuleringsfilter 1"
+        "name": "Bruk av resirkuleringsfilter 1"
       },
       "recirculationfilter2lifetimeinhours": {
-        "name": "Levetid for resirkuleringsfilter 2 (timer)"
+        "name": "Levetid for resirkuleringsfilter 2"
       },
       "recirculationfilter2status": {
         "name": "Status for resirkuleringsfilter 2"
@@ -5287,7 +5287,7 @@
         "name": "Type for resirkuleringsfilter 2"
       },
       "recirculationfilter2usedhours": {
-        "name": "Brukte timer for resirkuleringsfilter 2"
+        "name": "Bruk av resirkuleringsfilter 2"
       },
       "ref_light": {
         "name": "Kj\u00f8lelys"
@@ -7274,7 +7274,7 @@
         "name": "Trinn 4 \u2013 dampintensitet"
       },
       "step4steam_assistset_time_in_minutes": {
-        "name": "Trinn 4 \u2013 innstilt damptid (minutter)"
+        "name": "Trinn 4 \u2013 innstilt damptid"
       },
       "step5_bake_mode": {
         "name": "Trinn 5 \u2013 stekemodus"
@@ -7337,7 +7337,7 @@
         "name": "Trinn 5 \u2013 dampintensitet"
       },
       "step5steam_assistset_time_in_minutes": {
-        "name": "Trinn 5 \u2013 innstilt damptid (minutter)"
+        "name": "Trinn 5 \u2013 innstilt damptid"
       },
       "step_1_duration": {
         "name": "Trinn 1 \u2013 varighet"
@@ -8015,7 +8015,7 @@
         "name": "Tidsur \u2013 pausetid"
       },
       "timerpausedtotalseconds": {
-        "name": "Tidsur \u2013 totale pausesekunder"
+        "name": "Tidsur \u2013 total pausetid"
       },
       "timerstarttime": {
         "name": "Tidsur \u2013 starttid"
@@ -8153,7 +8153,7 @@
         "name": "Vasketrinntid \u2013 t\u00f8m, sentrifuger og stopp"
       },
       "washer_to_dryer_available_for_hours_v": {
-        "name": "Vasker \u2192 t\u00f8rker tilgjengelig (timer)"
+        "name": "Vasker \u2192 t\u00f8rker tilgjengelig"
       },
       "washer_to_dryer_program_id": {
         "name": "Vasker \u2192 t\u00f8rker program-ID"

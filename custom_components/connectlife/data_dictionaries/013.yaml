@@ -313,6 +313,9 @@ properties:
   optional: true
 - property: Automatic_door_open_at_program_end_after_time_settingTimer_in_minutes
   optional: true
+  sensor:
+    device_class: duration
+    unit: min
 - property: Automatic_door_open_at_program_end_setting
   optional: true
 - property: Automatic_water_tank_opening_setting
@@ -1364,6 +1367,9 @@ properties:
   optional: true
 - property: Step4Steam_assistSet_time_in_minutes
   optional: true
+  sensor:
+    device_class: duration
+    unit: min
 - property: Step4Steam_assist_intensity
   optional: true
 - property: Step4_bake_mode
@@ -1406,6 +1412,9 @@ properties:
   optional: true
 - property: Step5Steam_assistSet_time_in_minutes
   optional: true
+  sensor:
+    device_class: duration
+    unit: min
 - property: Step5Steam_assist_intensity
   optional: true
 - property: Step5_bake_mode
