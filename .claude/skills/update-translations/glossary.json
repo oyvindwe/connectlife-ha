@@ -1,0 +1,1780 @@
+[
+ {
+  "en": "Abnormal drying (for tumble dryer models)",
+  "category": "error",
+  "es": "Secado anormal (para modelos de secadora)"
+ },
+ {
+  "en": "Acoustic signal",
+  "category": "setting",
+  "de": "Akustisches Signal"
+ },
+ {
+  "en": "AdaptTech",
+  "category": "setting",
+  "de": "AdaptTech"
+ },
+ {
+  "en": "Add clothes",
+  "category": "option",
+  "de": "Kleidung hinzufügen",
+  "es": "Añadir ropa"
+ },
+ {
+  "en": "AddClothes",
+  "category": "option",
+  "de": "AddClothes"
+ },
+ {
+  "en": "Additional functions",
+  "category": "option",
+  "de": "Zusätzliche Funktionen"
+ },
+ {
+  "en": "Airdry function",
+  "category": "option",
+  "de": "Airdry-Funktion"
+ },
+ {
+  "en": "Allergy Care",
+  "category": "program",
+  "es": "Anti-Alergias"
+ },
+ {
+  "en": "Anti crease",
+  "category": "option",
+  "de": "Knitterschutz",
+  "es": "Anti-Arrugas"
+ },
+ {
+  "en": "Anti-Crease function",
+  "category": "option",
+  "de": "Anti-Crease function"
+ },
+ {
+  "en": "AquaStop",
+  "category": "setting",
+  "de": "AquaStop"
+ },
+ {
+  "en": "AS (Humidity sensor error)",
+  "category": "error",
+  "de": "AS (Feuchte-Sensorfehler)",
+  "es": "AS (Error del sensor de humedad)",
+  "fr": "AS (Erreur de capteur d'humidité)",
+  "it": "AS (Errore modulo sensore di umidità)",
+  "nl": "AS (Fout vochtigheidssensor)",
+  "no": "AS (Feil på luftfuktighets-sensor)"
+ },
+ {
+  "en": "Auto defrost",
+  "category": "mode",
+  "de": "Automatischer Abtaubetrieb",
+  "es": "descongelación automática",
+  "fr": "dégivrage automatique",
+  "it": "scongelamento automatico",
+  "nl": "Automatisch ontdooien",
+  "no": "Automatisk avtining"
+ },
+ {
+  "en": "Auto Dose",
+  "category": "option",
+  "es": "Dosis automática"
+ },
+ {
+  "en": "Auto restart",
+  "category": "status",
+  "de": "Automatischer Neustart",
+  "es": "Reinicio automático",
+  "fr": "Redémarrage Automatique",
+  "it": "Riavvio automatico",
+  "nl": "Automatisch herstarten",
+  "no": "Auto-restart"
+ },
+ {
+  "en": "Auto shut off",
+  "category": "status",
+  "de": "Automatische Abschaltung",
+  "es": "Autoapagado",
+  "fr": "Arrêt Automatique",
+  "it": "Spegnimento automatico",
+  "nl": "Automatisch uitschakelen",
+  "no": "Auto avstenging"
+ },
+ {
+  "en": "Auto start",
+  "category": "setting",
+  "de": "Autostart",
+  "es": "encendido automático",
+  "fr": "auto démarrage",
+  "it": "Auto start",
+  "nl": "Automatisch starten",
+  "no": "Auto start"
+ },
+ {
+  "en": "Auto stop",
+  "category": "setting",
+  "de": "Autostopp",
+  "es": "apagado automático",
+  "fr": "auto arrêt",
+  "it": "Auto Stop",
+  "nl": "Automatisch stoppen",
+  "no": "Auto stopp"
+ },
+ {
+  "en": "AUTO-RESTART",
+  "category": "option",
+  "de": "AUTO-RESTART",
+  "es": "AUTO-RESTART",
+  "fr": "AUTO-RESTART",
+  "it": "AUTO-RESTART",
+  "nl": "AUTO-RESTART"
+ },
+ {
+  "en": "Baby",
+  "category": "program",
+  "de": "Baby",
+  "es": "Baby",
+  "fr": "Bébé",
+  "nl": "Baby"
+ },
+ {
+  "en": "Baby Care",
+  "category": "program",
+  "es": "Cuidado del Bebé"
+ },
+ {
+  "en": "Baby clothes",
+  "category": "program",
+  "de": "Baby-Wäsche"
+ },
+ {
+  "en": "Bedding",
+  "category": "program",
+  "es": "Ropa de Cama"
+ },
+ {
+  "en": "Bucket full",
+  "category": "status",
+  "de": "voller Eimer",
+  "es": "depósito lleno",
+  "fr": "plein de seau",
+  "it": "serbatoio pieno",
+  "nl": "Reservoir vol",
+  "no": "Bøtte full"
+ },
+ {
+  "en": "Child Lock",
+  "category": "setting",
+  "de": "Kindersicherung",
+  "es": "Bloqueo infantil"
+ },
+ {
+  "en": "ChildLock",
+  "category": "setting",
+  "de": "Kindersicherung"
+ },
+ {
+  "en": "Clean filter",
+  "category": "status",
+  "de": "Filter reinigen",
+  "es": "limpieza de filtro",
+  "fr": "Nettoyer le filtre",
+  "it": "Pulire il filtro",
+  "nl": "Filter reinigen",
+  "no": "Rengjør filter"
+ },
+ {
+  "en": "Cold wash",
+  "category": "option",
+  "de": "Kaltwäsche",
+  "es": "Lavado en frío"
+ },
+ {
+  "en": "Colour",
+  "category": "program",
+  "de": "Bunt"
+ },
+ {
+  "en": "Comfort dehumidifying operation",
+  "category": "mode",
+  "de": "Komfortentfeuchtung",
+  "es": "deshumidificación confortable",
+  "fr": "fonctionnement sans à-coups",
+  "it": "deumidificazione comfort",
+  "nl": "comfort ontvochtiger",
+  "no": "komfortavfukting"
+ },
+ {
+  "en": "Connect",
+  "category": "setting",
+  "de": "Verbindung"
+ },
+ {
+  "en": "Connecting",
+  "category": "status",
+  "es": "Conectando"
+ },
+ {
+  "en": "Connection",
+  "category": "status",
+  "de": "Verbindung"
+ },
+ {
+  "en": "Continuous",
+  "category": "mode",
+  "de": "Dauerbetrieb",
+  "es": "continuo",
+  "fr": "continu",
+  "it": "continuo",
+  "nl": "Continue",
+  "no": "Kontinuerlig"
+ },
+ {
+  "en": "Continuous dehumidifying operation",
+  "category": "mode",
+  "de": "kontinuierlicher Entfeuchtungsbetrieb",
+  "es": "funcionamiento de deshumidificación continuo",
+  "fr": "fonctionnement continu",
+  "it": "deumidificazione continua",
+  "nl": "continue ontvochtigingswerking",
+  "no": "kontinuerlig avfukting"
+ },
+ {
+  "en": "Control pads",
+  "category": "other",
+  "de": "Bedienfeld",
+  "es": "Botones de control",
+  "fr": "Panneau de commande",
+  "it": "Tasti di controllo",
+  "nl": "Bedieningstoetsen",
+  "no": "Kontrollbrytere"
+ },
+ {
+  "en": "Control panel",
+  "category": "other",
+  "de": "Bedienfeld",
+  "es": "Panel de control",
+  "fr": "Panneau de commande",
+  "it": "Pannello di controllo",
+  "nl": "Bedieningspaneel",
+  "no": "Kontrollpanel"
+ },
+ {
+  "en": "Convection bake",
+  "category": "program",
+  "de": "Umluft",
+  "fr": "Convection forcée",
+  "it": "Ventilato"
+ },
+ {
+  "en": "Conventional (Top and Bottom Heat)",
+  "category": "program",
+  "de": "Ober- & Unterhitze",
+  "fr": "Convection naturelle",
+  "it": "Statico"
+ },
+ {
+  "en": "Cooking tables",
+  "category": "other",
+  "de": "Gartabellen",
+  "fr": "Tableaux de cuisson",
+  "it": "Tabelle di cottura"
+ },
+ {
+  "en": "Cooking time",
+  "category": "setting",
+  "de": "Garzeit",
+  "fr": "Temps de cuisson",
+  "it": "Tempo di cottura"
+ },
+ {
+  "en": "Cool",
+  "category": "mode",
+  "de": "Kühlung",
+  "es": "enfriar",
+  "it": "raffreddamento",
+  "nl": "cool modus"
+ },
+ {
+  "en": "COOL operation",
+  "category": "mode",
+  "de": "COOL-Betrieb (Kühlung)",
+  "es": "Funcionamiento COOL",
+  "fr": "Fonctionnement COOL",
+  "it": "Funzione COOL",
+  "nl": "COOL-werking"
+ },
+ {
+  "en": "Cotton",
+  "category": "program",
+  "de": "Baumwolle",
+  "es": "Algodón"
+ },
+ {
+  "en": "Cotton Dry",
+  "category": "program",
+  "es": "Algodón Seco"
+ },
+ {
+  "en": "Cotton white",
+  "category": "program",
+  "de": "Baumwolle weiß"
+ },
+ {
+  "en": "Cottons",
+  "category": "program",
+  "de": "Baumwolle",
+  "es": "Algodón",
+  "fr": "Coton",
+  "nl": "Katoen"
+ },
+ {
+  "en": "Cottons +",
+  "category": "program",
+  "de": "Baumwolle +",
+  "es": "Algodón +",
+  "fr": "Coton +",
+  "nl": "Katoen +"
+ },
+ {
+  "en": "Crease prevention",
+  "category": "option",
+  "de": "Knitterschutz"
+ },
+ {
+  "en": "Cupboard",
+  "category": "option",
+  "es": "Armario"
+ },
+ {
+  "en": "Cycle Mode",
+  "category": "mode",
+  "es": "Modo ciclo"
+ },
+ {
+  "en": "Daily use",
+  "category": "other",
+  "de": "Tägliche Verwendung",
+  "fr": "Usage quotidien",
+  "it": "Uso quotidiano"
+ },
+ {
+  "en": "Default",
+  "category": "option",
+  "de": "Standard"
+ },
+ {
+  "en": "Defrost",
+  "category": "program",
+  "de": "Auftauen",
+  "fr": "Décongélation",
+  "it": "Scongelamento"
+ },
+ {
+  "en": "Dehumidifier",
+  "category": "other",
+  "de": "Luftentfeuchter",
+  "es": "Deshumidificador",
+  "fr": "Déshumidificateur / Dessécheuse",
+  "it": "Deumidificatore",
+  "nl": "Luchtontvochtiger",
+  "no": "Avfukter"
+ },
+ {
+  "en": "Delay End",
+  "category": "option",
+  "de": "Startzeit",
+  "es": "Final. Dif."
+ },
+ {
+  "en": "Delay start",
+  "category": "option",
+  "de": "STARTZEITVORWAHL",
+  "es": "INICIO DIFERIDO",
+  "fr": "DEPART DIFFERE",
+  "nl": "UITGESTELDE START"
+ },
+ {
+  "en": "Delaying the end of the washing program",
+  "category": "option",
+  "de": "Ende verzögern"
+ },
+ {
+  "en": "Delicate",
+  "category": "program",
+  "de": "Feinwäsche",
+  "es": "Delicados",
+  "fr": "Délicat",
+  "nl": "Delicaat"
+ },
+ {
+  "en": "Description of function",
+  "category": "other",
+  "de": "Funktionsbeschreibung",
+  "fr": "Description des fonctions",
+  "it": "Descrizione Funzione"
+ },
+ {
+  "en": "Detergent",
+  "category": "setting",
+  "es": "Detergente"
+ },
+ {
+  "en": "Digital display",
+  "category": "status",
+  "es": "Display digital"
+ },
+ {
+  "en": "Dispenser 2",
+  "category": "setting",
+  "es": "Dispensador 2"
+ },
+ {
+  "en": "Display",
+  "category": "setting",
+  "de": "Anzeige",
+  "es": "Pantalla",
+  "fr": "Affichage",
+  "it": "Display",
+  "nl": "Display",
+  "no": "Display"
+ },
+ {
+  "en": "Displays error codes",
+  "category": "status",
+  "de": "Zeigt Fehlercodes an",
+  "es": "Muestra los códigos de error",
+  "fr": "Affiche les codes d'erreur",
+  "it": "Mostra i codici di errore",
+  "nl": "Toont foutcodes"
+ },
+ {
+  "en": "Displays protection code",
+  "category": "status",
+  "de": "Zeigt den Schutzcode an",
+  "es": "Muestra el código de protección",
+  "fr": "Affiche le code de protection",
+  "it": "Mostra i codici di protezione",
+  "nl": "Toont de beveiligingscode"
+ },
+ {
+  "en": "Door Lock",
+  "category": "status",
+  "es": "Bloqueo de la puerta"
+ },
+ {
+  "en": "DOOR LOCK ERROR",
+  "category": "error",
+  "de": "Fehler Lukenentriegelung"
+ },
+ {
+  "en": "Door lock lever",
+  "category": "status",
+  "es": "Palanca de bloqueo de la puerta"
+ },
+ {
+  "en": "DOOR LOCKED",
+  "category": "status",
+  "de": "TÜRVERRIEGELUNG",
+  "es": "SEGURIDAD PUERTA",
+  "fr": "PORTE SECURISEE",
+  "nl": "DEUR BEVEILIGING"
+ },
+ {
+  "en": "Door locking fault",
+  "category": "error",
+  "es": "Fallo de bloqueo de la puerta"
+ },
+ {
+  "en": "Door unlocking fault",
+  "category": "error",
+  "es": "Fallo de desbloqueo de la puerta"
+ },
+ {
+  "en": "Dose aid",
+  "category": "option",
+  "de": "DOSE AID"
+ },
+ {
+  "en": "Drain",
+  "category": "program",
+  "de": "Abpumpen"
+ },
+ {
+  "en": "Drain + Spin",
+  "category": "phase",
+  "de": "Schleudern +Abpumpen",
+  "es": "Centrifugado + Desagüe",
+  "fr": "Vidange + Essorage",
+  "nl": "Centrifugeren + Afvoeren"
+ },
+ {
+  "en": "Drum Clean",
+  "category": "program",
+  "de": "Trommelreinigung",
+  "es": "Limpieza del Tambor"
+ },
+ {
+  "en": "Drum illumination",
+  "category": "other",
+  "de": "Trommelinnenbeleuchtung"
+ },
+ {
+  "en": "DrumClean",
+  "category": "program",
+  "de": "DrumClean"
+ },
+ {
+  "en": "Dry",
+  "category": "phase",
+  "de": "Trocken",
+  "es": "secar",
+  "it": "Deumidificatore",
+  "nl": "ontvochtigen"
+ },
+ {
+  "en": "Dry Level",
+  "category": "option",
+  "es": "Nivel secado"
+ },
+ {
+  "en": "DRY operation",
+  "category": "mode",
+  "de": "DRY Betrieb (Trocken)",
+  "es": "Funcionamiento DRY",
+  "fr": "Opération DRY",
+  "it": "Funzione Deumidificatore",
+  "nl": "DRY-werking"
+ },
+ {
+  "en": "Drying",
+  "category": "phase",
+  "es": "Secado"
+ },
+ {
+  "en": "E1 - Room temperature sensor error",
+  "category": "error",
+  "de": "E1 - Fehler des Raumtemperatursensors",
+  "es": "E1 - Error del sensor de temperatura de la habitación",
+  "fr": "E1 - Erreur du capteur de température ambiante",
+  "it": "E1 - Errore del sensore della temperatura dell'ambiente",
+  "nl": "E1 - kamertemperatuursensor fout"
+ },
+ {
+  "en": "E2 - Evaporator temperature sensor error",
+  "category": "error",
+  "de": "E2 - Fehler im Temperaturfühler des Verdampfers",
+  "es": "E2 - Error del sensor de temperatura del evaporador",
+  "fr": "E2 - Erreur du capteur de température d'évaporateur",
+  "it": "E2 - Errore del sensore della temperatura dell'evaporatore",
+  "nl": "E2 - Verdamper temperatuursensor fout"
+ },
+ {
+  "en": "E4 - Display panel communication error",
+  "category": "error",
+  "de": "E4 - Kommunikationsfehler im Bedienfeld",
+  "es": "E4 - Error de comunicación del panel indicador",
+  "fr": "E4 - Erreur de communication du panneau d'affichage",
+  "it": "E4 - Errore di comunicazione del display",
+  "nl": "E4 - Displaypaneel communicatiefout"
+ },
+ {
+  "en": "Easy ironing",
+  "category": "option",
+  "de": "Einfaches Bügeln"
+ },
+ {
+  "en": "Eb (Bucket removed or not in right position)",
+  "category": "error",
+  "de": "Eb (Eimer ist entfernt oder nicht in der richtigen Position)",
+  "es": "Eb (El depósito no está en posición correcta)",
+  "fr": "Eb (Le seau est déplacé ou n'est pas mis à sa place)",
+  "it": "Eb (Il serbatoio è stato rimosso o non è nella posizione corretta)",
+  "nl": "Eb (Reservoir is verwijderd of niet in de correcte positie)",
+  "no": "Eb (Bøtten er fjernet eller ikke i riktig posisjon)"
+ },
+ {
+  "en": "EC - Refrigerant leakage detection malfunction",
+  "category": "error",
+  "de": "EC - Fehlfunktion der Erkennung von Kältemittelleckagen",
+  "es": "EC - Fallo de detección de fugas de refrigerante",
+  "fr": "EC - Dysfonctionnement de la détection de fuite de réfrigérant",
+  "it": "EC - Malfunzionamento del rilevamento di perdite di liquido refrigerante",
+  "nl": "EC - Koelmiddel lekkagedetectie storing"
+ },
+ {
+  "en": "Eco 40-60",
+  "category": "program",
+  "de": "Eco 40-60",
+  "es": "Eco 40-60",
+  "fr": "Éco 40-60",
+  "nl": "Eco 40-60"
+ },
+ {
+  "en": "Eco 40–60 °C",
+  "category": "program",
+  "de": "Eco 40–60 °C"
+ },
+ {
+  "en": "Electronic module fault",
+  "category": "error",
+  "es": "Fallo del módulo electrónico"
+ },
+ {
+  "en": "End",
+  "category": "status",
+  "de": "End",
+  "es": "Fin del programa",
+  "fr": "End",
+  "nl": "End"
+ },
+ {
+  "en": "End of washing setting",
+  "category": "option",
+  "de": "Einstellung für das Ende des Waschvorgangs"
+ },
+ {
+  "en": "Error while locking the door",
+  "category": "error",
+  "de": "Fehler Lukenverriegelung"
+ },
+ {
+  "en": "Error while unlocking the door",
+  "category": "error",
+  "de": "Fehler beim Entriegeln der Tür"
+ },
+ {
+  "en": "ES (Tube temperature sensor error)",
+  "category": "error",
+  "de": "ES (Röhrentemperatursensor des Verdampferfehlers)",
+  "es": "ES (Error del sensor de temperatura del tubo del evaporador)",
+  "fr": "ES (Erreur de capteur de température)",
+  "it": "ES (Errore del sensore di temperatura)",
+  "nl": "ES (Fout temperatuursensor van de verdamper)",
+  "no": "ES (Feil på temperatursensoren)"
+ },
+ {
+  "en": "Excessive amount of detergent",
+  "category": "error",
+  "de": "Übermäßige Menge Waschmittel"
+ },
+ {
+  "en": "Extra Dry",
+  "category": "option",
+  "es": "Secado extra"
+ },
+ {
+  "en": "Extra functions",
+  "category": "option",
+  "de": "Zusätzliche Funktionen"
+ },
+ {
+  "en": "Extra hygiene",
+  "category": "program",
+  "de": "Extra hygiene"
+ },
+ {
+  "en": "Extra water",
+  "category": "option",
+  "de": "Hoher Wasserstand"
+ },
+ {
+  "en": "ExtraHygiene",
+  "category": "program",
+  "de": "ExtraHygiene"
+ },
+ {
+  "en": "Fan",
+  "category": "mode",
+  "de": "FAN-Betrieb",
+  "es": "ventilador",
+  "fr": "Opération FAN",
+  "it": "Funzione FAN",
+  "nl": "FAN-werking"
+ },
+ {
+  "en": "FAN operation",
+  "category": "mode",
+  "de": "FAN-Betrieb",
+  "es": "Funcionamiento FAN",
+  "fr": "Opération FAN",
+  "it": "Funzione FAN",
+  "nl": "FAN-werking"
+ },
+ {
+  "en": "FAN SPEED",
+  "category": "setting",
+  "de": "Lüftergeschwindigkeit",
+  "es": "velocidad del ventilador",
+  "fr": "vitesse du ventilateur",
+  "it": "velocità della ventola",
+  "nl": "ventilatorsnelheid",
+  "no": "viftehastighet"
+ },
+ {
+  "en": "Fast",
+  "category": "option",
+  "de": "Schnell"
+ },
+ {
+  "en": "FastWashing function",
+  "category": "option",
+  "de": "FastWashing"
+ },
+ {
+  "en": "Faults",
+  "category": "error",
+  "de": "Störungen"
+ },
+ {
+  "en": "Faults and errors table",
+  "category": "error",
+  "de": "Tabelle Störungen und Fehler"
+ },
+ {
+  "en": "Filter",
+  "category": "other",
+  "de": "Filter",
+  "es": "Filter",
+  "fr": "Filtre",
+  "it": "Filtro",
+  "nl": "Filter",
+  "no": "Filter"
+ },
+ {
+  "en": "Foam sensor",
+  "category": "other",
+  "de": "Schaumsensor"
+ },
+ {
+  "en": "FOLLOW ME/TEMP SENSING",
+  "category": "option",
+  "de": "FOLLOW ME/TEMP SENSING",
+  "es": "FOLLOW ME/TEMP SENSING",
+  "fr": "FOLLOW ME/TEMP SENSING",
+  "it": "FOLLOW ME/TEMP SENSING",
+  "nl": "FOLLOW ME/TEMP SENSING"
+ },
+ {
+  "en": "Forced air",
+  "category": "program",
+  "de": "Heissluft",
+  "fr": "Chaleur pulsée",
+  "it": "Termoventilato"
+ },
+ {
+  "en": "Full",
+  "category": "status",
+  "de": "Full",
+  "es": "Full",
+  "fr": "Full",
+  "it": "Full",
+  "nl": "Full",
+  "no": "Full"
+ },
+ {
+  "en": "Full load",
+  "category": "other",
+  "de": "Nennkapazität"
+ },
+ {
+  "en": "Full load 49'",
+  "category": "program",
+  "es": "Carga completa 49'"
+ },
+ {
+  "en": "Function",
+  "category": "other",
+  "de": "Funktion",
+  "fr": "Fonction",
+  "it": "Funzione"
+ },
+ {
+  "en": "Grill",
+  "category": "program",
+  "de": "Grill",
+  "fr": "Gril",
+  "it": "Grill"
+ },
+ {
+  "en": "Grilling with fan",
+  "category": "program",
+  "de": "Grillen mit Heissluft",
+  "fr": "Gril avec ventilateur",
+  "it": "Grill con ventola"
+ },
+ {
+  "en": "high",
+  "category": "option",
+  "de": "Hoch",
+  "es": "Alta",
+  "fr": "Élevé",
+  "it": "Alto",
+  "nl": "Hoog",
+  "no": "Kraftig"
+ },
+ {
+  "en": "High fan speed",
+  "category": "option",
+  "de": "Hohe Drehzahl des Lüfters",
+  "es": "Velocidad alta de ventilador",
+  "fr": "Vitesse élevée de ventilateur",
+  "it": "Alta velocità della ventola",
+  "nl": "Hoge ventilator",
+  "no": "Kraftig vifte"
+ },
+ {
+  "en": "High water level",
+  "category": "option",
+  "de": "Hoher Wasserstand"
+ },
+ {
+  "en": "Humidity level",
+  "category": "setting",
+  "de": "Feuchtigkeitsgrad",
+  "es": "Nivel de humedad",
+  "fr": "Niveau d'humidité",
+  "it": "Livello di umidità",
+  "nl": "Vochtigheidsgraad",
+  "no": "Fuktighetsnivå"
+ },
+ {
+  "en": "INCORRECT SETTINGS",
+  "category": "error",
+  "de": "Falsche Einstellungen"
+ },
+ {
+  "en": "IntensiveCare",
+  "category": "mode",
+  "de": "IntensiveCare"
+ },
+ {
+  "en": "Iron",
+  "category": "option",
+  "es": "Plancha"
+ },
+ {
+  "en": "Jeans",
+  "category": "program",
+  "de": "Jeans",
+  "es": "Jeans",
+  "fr": "Jeans",
+  "nl": "Jeans"
+ },
+ {
+  "en": "KEY LOCK",
+  "category": "setting",
+  "de": "Tastensperre",
+  "es": "Bloqueo de tecla",
+  "fr": "Verrouillage des commandes",
+  "nl": "Knoppenvergrendeling"
+ },
+ {
+  "en": "Language",
+  "category": "setting",
+  "es": "Idioma"
+ },
+ {
+  "en": "Laundry adding",
+  "category": "option",
+  "de": "Wäsche hinzufügen"
+ },
+ {
+  "en": "LED display",
+  "category": "other",
+  "de": "LED-Anzeige",
+  "es": "Display LED",
+  "fr": "Écran LED",
+  "it": "Display a LED",
+  "nl": "LED-display"
+ },
+ {
+  "en": "LED thermostat/preheating",
+  "category": "status",
+  "de": "Kontrollleuchte Thermostat/Vorheizen",
+  "fr": "Voyant thermostat/préchauffage",
+  "it": "Spia termostato/preriscaldamento"
+ },
+ {
+  "en": "Level",
+  "category": "other",
+  "es": "Nivel"
+ },
+ {
+  "en": "Light",
+  "category": "option",
+  "de": "Lampen",
+  "fr": "Éclairage",
+  "it": "Lampada"
+ },
+ {
+  "en": "Load sensor",
+  "category": "other",
+  "de": "Load sensor"
+ },
+ {
+  "en": "Lockable control panel",
+  "category": "setting",
+  "de": "Kindersicherung"
+ },
+ {
+  "en": "Low (fan speed)",
+  "category": "option",
+  "de": "Niedrig",
+  "es": "Baja",
+  "fr": "Basse",
+  "it": "Bassa",
+  "nl": "Laag"
+ },
+ {
+  "en": "Low standby mode",
+  "category": "setting",
+  "de": "Standby-Modus"
+ },
+ {
+  "en": "Main wash",
+  "category": "phase",
+  "de": "Hauptwäsche",
+  "es": "Lavado"
+ },
+ {
+  "en": "Manual",
+  "category": "mode",
+  "de": "Manuell",
+  "fr": "Manuelle",
+  "it": "Manuale"
+ },
+ {
+  "en": "Mix 20°",
+  "category": "program",
+  "de": "Mix 20°",
+  "es": "Mix 20°",
+  "fr": "Mix 20°",
+  "nl": "Mix 20°"
+ },
+ {
+  "en": "Mix/Synthetics",
+  "category": "program",
+  "de": "Mix/Synthetics"
+ },
+ {
+  "en": "Mixed laundry/Synthetics",
+  "category": "program",
+  "de": "Pflegeleicht/Synthetik"
+ },
+ {
+  "en": "MODE",
+  "category": "setting",
+  "de": "MODUS-Taste",
+  "es": "Botón MODE",
+  "fr": "Bouton MODE",
+  "it": "Tasto MODE",
+  "nl": "MODE-toets"
+ },
+ {
+  "en": "Mode indicator light",
+  "category": "status",
+  "de": "Modusanzeige",
+  "it": "Spia della modalità"
+ },
+ {
+  "en": "Motor control error",
+  "category": "error",
+  "de": "Fehler Motorsteuerung"
+ },
+ {
+  "en": "Mute",
+  "category": "setting",
+  "es": "Silencio"
+ },
+ {
+  "en": "Neutral",
+  "category": "phase",
+  "es": "Neutro"
+ },
+ {
+  "en": "Normal",
+  "category": "option",
+  "de": "Normal",
+  "es": "Normal",
+  "fr": "Normal",
+  "it": "Normale",
+  "nl": "Normaal",
+  "no": "Normal"
+ },
+ {
+  "en": "NormalCare",
+  "category": "mode",
+  "de": "NormalCare"
+ },
+ {
+  "en": "Number of completed wash cycles",
+  "category": "status",
+  "de": "Anzahl abgeschlossener Waschgänge"
+ },
+ {
+  "en": "Number of programmes",
+  "category": "other",
+  "de": "Programmanzahl"
+ },
+ {
+  "en": "ON/OFF",
+  "category": "other",
+  "de": "Ein/Aus"
+ },
+ {
+  "en": "Options",
+  "category": "option",
+  "de": "Extras",
+  "es": "Opciones",
+  "fr": "Options",
+  "nl": "Opties"
+ },
+ {
+  "en": "Oven functions table",
+  "category": "other",
+  "de": "Übersicht Betriebsarten des Geräts",
+  "fr": "Tableau des Fonctions du four",
+  "it": "Tabella Funzioni Forno"
+ },
+ {
+  "en": "Oven off",
+  "category": "mode",
+  "de": "Backofen aus",
+  "fr": "Arrêt four",
+  "it": "Forno spento"
+ },
+ {
+  "en": "OVERFLOW",
+  "category": "error",
+  "es": "Desbordamiento"
+ },
+ {
+  "en": "Overflow protection",
+  "category": "setting",
+  "de": "Überlaufschutz"
+ },
+ {
+  "en": "P1 - Bottom tray is full",
+  "category": "error",
+  "de": "P1 - Bodenwanne ist voll",
+  "es": "P1 - La bandeja inferior está llena",
+  "fr": "P1 - Le bac inférieur est plein",
+  "it": "P1 - La vaschetta inferiore è piena",
+  "nl": "P1 - Opvangbak is vol"
+ },
+ {
+  "en": "P2 (Bucket full or not in right position)",
+  "category": "error",
+  "de": "P2 (Der Eimer ist voll oder nicht in der richtigen Position)",
+  "es": "P2 (El depósito está lleno o no está en posición correcta)",
+  "fr": "P2 (Le seau est plein ou n'est pas mis à sa place)",
+  "it": "P2 (Il serbatoio è pieno o non è nella posizione corretta)",
+  "nl": "P2 (Reservoir is vol of bevindt zich niet in de correcte positie)",
+  "no": "P2 (Bøtten er full eller satt til feil posisjon)"
+ },
+ {
+  "en": "PAUSE",
+  "category": "status",
+  "de": "Pause",
+  "es": "Pausa"
+ },
+ {
+  "en": "Pause button",
+  "category": "other",
+  "de": "Pause - Taste"
+ },
+ {
+  "en": "Personal settings",
+  "category": "setting",
+  "de": "Eigene Einstellungen"
+ },
+ {
+  "en": "Personal settings saving",
+  "category": "setting",
+  "de": "Persönliche Einstellungen speichern"
+ },
+ {
+  "en": "Pets",
+  "category": "program",
+  "de": "Pets",
+  "es": "Mascotas"
+ },
+ {
+  "en": "Pillow",
+  "category": "program",
+  "de": "Daunen"
+ },
+ {
+  "en": "Power",
+  "category": "setting",
+  "de": "Ein/Ausschaltung",
+  "es": "Encendido",
+  "fr": "Alimentation",
+  "it": "Accensione",
+  "nl": "Aan/Uit",
+  "no": "Av/på"
+ },
+ {
+  "en": "Power 30'",
+  "category": "program",
+  "es": "Potencia 30'"
+ },
+ {
+  "en": "Power 59´|32´",
+  "category": "program",
+  "de": "Power 59´|32´"
+ },
+ {
+  "en": "Power failure",
+  "category": "error",
+  "de": "Stromausfall"
+ },
+ {
+  "en": "Power indicator light",
+  "category": "status",
+  "de": "Stromanzeige",
+  "it": "Energia spia",
+  "nl": "Power controlelampje"
+ },
+ {
+  "en": "Power switch",
+  "category": "setting",
+  "de": "Netzschalter",
+  "es": "Botón de encendido",
+  "fr": "Bouton d'alimentation",
+  "it": "Tasto di accensione",
+  "nl": "Aan/Uit-knop"
+ },
+ {
+  "en": "PowerWash 59'",
+  "category": "program",
+  "de": "PowerWash 59'"
+ },
+ {
+  "en": "Preheating",
+  "category": "phase",
+  "de": "Vorheizen",
+  "fr": "Préchauffage",
+  "it": "Preriscaldamento"
+ },
+ {
+  "en": "Prewash",
+  "category": "option",
+  "de": "Vorwäsche",
+  "es": "Prelavado",
+  "fr": "Prélavage",
+  "nl": "Voorwas"
+ },
+ {
+  "en": "Program end",
+  "category": "status",
+  "es": "Fin del programa"
+ },
+ {
+  "en": "Programmable",
+  "category": "setting",
+  "de": "Programmierbar"
+ },
+ {
+  "en": "Programme selector",
+  "category": "other",
+  "de": "Programmwahlschalter",
+  "es": "Selector de programas con posición OFF"
+ },
+ {
+  "en": "Pump operation",
+  "category": "mode",
+  "de": "Pumpenbetrieb",
+  "es": "Funcionamiento de la bomba",
+  "fr": "Opération de la pompe",
+  "it": "Funzionamento della pompa",
+  "nl": "Pompwerking",
+  "no": "Pumpe operasjon"
+ },
+ {
+  "en": "Pump stop",
+  "category": "option",
+  "de": "Pumpenstopp"
+ },
+ {
+  "en": "Quick 15'",
+  "category": "program",
+  "es": "Rápido 15'"
+ },
+ {
+  "en": "Quick 20'",
+  "category": "program",
+  "de": "Speed 20'"
+ },
+ {
+  "en": "Quick wash programme",
+  "category": "option",
+  "de": "Schnellwaschprogramm"
+ },
+ {
+  "en": "Quicker",
+  "category": "option",
+  "es": "Más rápido"
+ },
+ {
+  "en": "Rapid 14'",
+  "category": "program",
+  "de": "Kurz 14'",
+  "fr": "Rapide 14'",
+  "nl": "Snel 14'"
+ },
+ {
+  "en": "Rapid 59'",
+  "category": "program",
+  "de": "Kurz 59'",
+  "es": "Rápidos 59'",
+  "fr": "Rapide 59'",
+  "nl": "Snel 59'"
+ },
+ {
+  "en": "Refresh",
+  "category": "program",
+  "es": "Refrescar"
+ },
+ {
+  "en": "Remote Control",
+  "category": "setting",
+  "de": "Fernsteuerung",
+  "es": "Control remoto"
+ },
+ {
+  "en": "Remote Control (icon)",
+  "category": "status",
+  "es": "Control remoto"
+ },
+ {
+  "en": "Remote start",
+  "category": "setting",
+  "de": "Fernbedienung Start"
+ },
+ {
+  "en": "Rinse",
+  "category": "phase",
+  "de": "Spülen",
+  "es": "Aclarados",
+  "fr": "Rinçage",
+  "nl": "Spoelen"
+ },
+ {
+  "en": "Rinse/softening",
+  "category": "program",
+  "de": "Spülen / Einweichen"
+ },
+ {
+  "en": "Rinse&Softening",
+  "category": "program",
+  "de": "Spülen&Weichspülen"
+ },
+ {
+  "en": "Rinse+Spin",
+  "category": "program",
+  "es": "Aclarado+ Centrifugado"
+ },
+ {
+  "en": "Selection knob",
+  "category": "other",
+  "de": "Auswahlknopf",
+  "fr": "Bouton de sélection",
+  "it": "Manopola di selezione"
+ },
+ {
+  "en": "Self cleaning program",
+  "category": "program",
+  "de": "Selbstreinigungs-Programm"
+ },
+ {
+  "en": "Self-cleaning programme",
+  "category": "program",
+  "de": "Selbstreinigungsprogramm"
+ },
+ {
+  "en": "Setting the timer",
+  "category": "setting",
+  "de": "Einstellen des Timers",
+  "fr": "Réglage de la minuterie",
+  "it": "Impostazione del timer"
+ },
+ {
+  "en": "Shirts",
+  "category": "program",
+  "de": "Hemden/Blusen",
+  "es": "Camisas",
+  "fr": "Chemises",
+  "nl": "Hemden"
+ },
+ {
+  "en": "Shirts with steam",
+  "category": "program",
+  "de": "Hemden mit Dampf"
+ },
+ {
+  "en": "ShirtsSteam",
+  "category": "program",
+  "de": "ShirtsSteam"
+ },
+ {
+  "en": "Skip spin",
+  "category": "option",
+  "de": "Schleudern überspringen"
+ },
+ {
+  "en": "SLEEP/ECO operation",
+  "category": "mode",
+  "de": "SLEEP/ECO-Betrieb",
+  "es": "Funcionamiento SLEEP/ECO",
+  "fr": "Opération SLEEP / ECO",
+  "it": "Funzionalità SLEEP/ECO",
+  "nl": "SLEEP/ECO-werking"
+ },
+ {
+  "en": "Softener",
+  "category": "setting",
+  "es": "Suavizante"
+ },
+ {
+  "en": "Softening",
+  "category": "phase",
+  "de": "Weichspülen"
+ },
+ {
+  "en": "Sound off",
+  "category": "setting",
+  "de": "Ton aus"
+ },
+ {
+  "en": "Sound on/off",
+  "category": "setting",
+  "de": "Ton Ein/Aus"
+ },
+ {
+  "en": "Sound signal",
+  "category": "setting",
+  "de": "Akustisches Signal"
+ },
+ {
+  "en": "Speed 20'",
+  "category": "option",
+  "de": "Speed 20'"
+ },
+ {
+  "en": "Speed 20´",
+  "category": "program",
+  "de": "Schnell 20'"
+ },
+ {
+  "en": "Spin",
+  "category": "program",
+  "de": "Schleudern",
+  "es": "Centrifugado"
+ },
+ {
+  "en": "Spin & Drain",
+  "category": "program",
+  "de": "Schleudern +Abpumpen",
+  "es": "Centrifugado + Desagüe",
+  "fr": "Vidange + Essorage",
+  "nl": "Centrifugeren + Afvoeren"
+ },
+ {
+  "en": "Spin and Dry",
+  "category": "program",
+  "es": "Centrifugar y secar"
+ },
+ {
+  "en": "Spin speed",
+  "category": "option",
+  "de": "Schleudergeschwindigkeit",
+  "es": "Selección centrifugado",
+  "fr": "Sélection essorage",
+  "nl": "Centrifuge selectie"
+ },
+ {
+  "en": "Spin/drain",
+  "category": "program",
+  "de": "Schleudern/Ablassen"
+ },
+ {
+  "en": "Spin|Drain",
+  "category": "program",
+  "de": "Schleudern | Abpumpen"
+ },
+ {
+  "en": "Spinning",
+  "category": "phase",
+  "de": "Schleudern"
+ },
+ {
+  "en": "Spinning rate",
+  "category": "option",
+  "de": "Schleuderdrehzahl"
+ },
+ {
+  "en": "Sport",
+  "category": "program",
+  "de": "Sport",
+  "es": "Sport",
+  "fr": "Sport",
+  "nl": "Sport"
+ },
+ {
+  "en": "Sports",
+  "category": "program",
+  "de": "Sportbekleidung"
+ },
+ {
+  "en": "Sportswear",
+  "category": "program",
+  "de": "Sportbekleidung"
+ },
+ {
+  "en": "SportWash",
+  "category": "program",
+  "de": "Sport"
+ },
+ {
+  "en": "STAIN LEVEL",
+  "category": "option",
+  "de": "Kurzprogramme/Verschmutzungsgrad",
+  "es": "Rápidos / Nivel de suciedad",
+  "fr": "Degré de salissure",
+  "nl": "Snel / Vuilgraad"
+ },
+ {
+  "en": "Stain Removal",
+  "category": "option",
+  "es": "Eliminación de manchas"
+ },
+ {
+  "en": "Standby",
+  "category": "status",
+  "de": "Bereitschaftszustand",
+  "es": "En espera"
+ },
+ {
+  "en": "START",
+  "category": "other",
+  "de": "Start",
+  "es": "Inicio"
+ },
+ {
+  "en": "Start/Pause",
+  "category": "status",
+  "de": "Start/Pause",
+  "es": "Inicio/Pausa",
+  "fr": "Départ/Pause",
+  "nl": "Start/Pauze"
+ },
+ {
+  "en": "Start/stop button",
+  "category": "other",
+  "de": "Start/Stopp-Taste"
+ },
+ {
+  "en": "Steam",
+  "category": "option",
+  "de": "Dampf",
+  "es": "Vapor"
+ },
+ {
+  "en": "Steam function",
+  "category": "other",
+  "de": "Dampffunktion"
+ },
+ {
+  "en": "SteamRefresh",
+  "category": "program",
+  "de": "SteamRefresh"
+ },
+ {
+  "en": "Super fast",
+  "category": "option",
+  "de": "Super schnell"
+ },
+ {
+  "en": "Synthetics",
+  "category": "program",
+  "de": "Synthetik",
+  "es": "Sintéticos",
+  "fr": "Synthétique",
+  "nl": "Synthetische stoffen"
+ },
+ {
+  "en": "Synthetics Dry",
+  "category": "program",
+  "es": "Sintéticos seco"
+ },
+ {
+  "en": "Temp.",
+  "category": "setting",
+  "es": "Temp."
+ },
+ {
+  "en": "Temperature",
+  "category": "option",
+  "de": "Temperatur",
+  "es": "Temp.",
+  "fr": "Température",
+  "it": "Temperatura"
+ },
+ {
+  "en": "TEMPERATURE SELECTION",
+  "category": "option",
+  "de": "WASCHTEMPERATURWAHL",
+  "es": "SELECCIÓN TEMPERATURA",
+  "fr": "SELECTION TEMPERATURE",
+  "nl": "TEMPERATUUR SELECTIE"
+ },
+ {
+  "en": "Temperature sensor",
+  "category": "other",
+  "de": "Temperatursensor"
+ },
+ {
+  "en": "Temperature sensor error",
+  "category": "error",
+  "de": "Temperatursensorfehler"
+ },
+ {
+  "en": "Temperature setting",
+  "category": "option",
+  "de": "Einstellen der Temperatur"
+ },
+ {
+  "en": "Thermostat knob",
+  "category": "other",
+  "de": "Thermostatregler",
+  "fr": "Bouton du thermostat",
+  "it": "Manopola del termostato"
+ },
+ {
+  "en": "Time Dry",
+  "category": "option",
+  "es": "Tiempo de secado"
+ },
+ {
+  "en": "Time knob",
+  "category": "other",
+  "de": "Zeitregler",
+  "fr": "Bouton de l'heure",
+  "it": "Manopola del timer"
+ },
+ {
+  "en": "TimeCare",
+  "category": "mode",
+  "de": "TimeCare"
+ },
+ {
+  "en": "Timer",
+  "category": "option",
+  "de": "Timer",
+  "es": "Timer",
+  "fr": "Minuterie",
+  "it": "Timer",
+  "nl": "Timer",
+  "no": "Timer"
+ },
+ {
+  "en": "Timer Off",
+  "category": "status",
+  "de": "Timer Off",
+  "es": "Timer Off",
+  "fr": "Timer Off",
+  "it": "Timer Off",
+  "nl": "Timer Off",
+  "no": "Timer Av"
+ },
+ {
+  "en": "Timer On",
+  "category": "status",
+  "de": "Timer On",
+  "es": "Timer On",
+  "fr": "Timer On",
+  "it": "Timer On",
+  "nl": "Timer On",
+  "no": "Timer På"
+ },
+ {
+  "en": "Timer on/off",
+  "category": "setting",
+  "de": "Timer Ein / Aus",
+  "es": "encender/apagar temporizador",
+  "fr": "minuterie on/off",
+  "it": "accensione/spegnimento del timer",
+  "nl": "Timer aan/uit",
+  "no": "Timer på/av"
+ },
+ {
+  "en": "Total AquaStop",
+  "category": "setting",
+  "de": "Totaler AquaStop"
+ },
+ {
+  "en": "Tumble dryers",
+  "category": "other",
+  "de": "Wäschetrockner"
+ },
+ {
+  "en": "Type of display",
+  "category": "other",
+  "de": "LED display"
+ },
+ {
+  "en": "Unbalance alarm",
+  "category": "error",
+  "es": "Alarma de desequilibrio"
+ },
+ {
+  "en": "Up (+) / Down (-) buttons",
+  "category": "setting",
+  "de": "Aufwärts (+) und Abwärts (-) Tasten",
+  "es": "botones ADJUST + / -",
+  "fr": "Touches Haut (+) et Bas (-)",
+  "it": "Tasti Su (+) e Giù (-)",
+  "nl": "ADJUST-toetsen + / -"
+ },
+ {
+  "en": "Up/Down",
+  "category": "option",
+  "de": "Auf / Ab",
+  "es": "Up/Down (Subir/Bajar)",
+  "fr": "Haut / Bas",
+  "it": "Su/giù",
+  "nl": "Omhoog/Omlaag",
+  "no": "Opp/Ned"
+ },
+ {
+  "en": "Wash",
+  "category": "phase",
+  "es": "Solo lavar"
+ },
+ {
+  "en": "Wash (mode)",
+  "category": "mode",
+  "es": "Lavar"
+ },
+ {
+  "en": "Wash & Dry 49'",
+  "category": "program",
+  "es": "Lavado y Secado 49'"
+ },
+ {
+  "en": "Wash and Dry",
+  "category": "program",
+  "es": "Lavar y secar"
+ },
+ {
+  "en": "Washer dryer",
+  "category": "other",
+  "de": "Waschtrockner"
+ },
+ {
+  "en": "Washing machine",
+  "category": "other",
+  "de": "Waschmaschine"
+ },
+ {
+  "en": "Washing temperature",
+  "category": "option",
+  "de": "Waschtemperatur"
+ },
+ {
+  "en": "Water discharge fault",
+  "category": "error",
+  "es": "Fallo de descarga de agua"
+ },
+ {
+  "en": "Water draining error",
+  "category": "error",
+  "de": "Fehler Abpumpen"
+ },
+ {
+  "en": "WATER FILLING ERROR",
+  "category": "error",
+  "de": "Fehler Wasserzulauf"
+ },
+ {
+  "en": "Water heating error",
+  "category": "error",
+  "de": "Fehler Heizung"
+ },
+ {
+  "en": "Water inflow fault",
+  "category": "error",
+  "es": "Fallo de entrada de agua"
+ },
+ {
+  "en": "Water leak detected in the washing machine area",
+  "category": "error",
+  "de": "Im Waschmaschinenbereich wurde ein Wasserleck festgestellt"
+ },
+ {
+  "en": "Water level sensor",
+  "category": "other",
+  "de": "Wasserpegelsensor"
+ },
+ {
+  "en": "WATER LEVEL SENSOR ERROR",
+  "category": "error",
+  "de": "Fehler des Wasserstandsensors"
+ },
+ {
+  "en": "Water overflow",
+  "category": "error",
+  "de": "Fehler Überlauf"
+ },
+ {
+  "en": "Water+",
+  "category": "option",
+  "de": "Wasser+"
+ },
+ {
+  "en": "WaterPlus",
+  "category": "option",
+  "de": "WaterPlus"
+ },
+ {
+  "en": "Wi-Fi menu",
+  "category": "setting",
+  "de": "Menü Wi-Fi"
+ },
+ {
+  "en": "Wireless connection mode",
+  "category": "other",
+  "de": "Kabelloser Verbindungsmodus",
+  "es": "modo de conexión inalámbrico",
+  "fr": "mode de connexion sans fil",
+  "it": "modalità di connessione wireless",
+  "nl": "draadloze verbindingsmodus",
+  "no": "trådløs tilkoblingsmodus"
+ },
+ {
+  "en": "Wool",
+  "category": "program",
+  "es": "Lana"
+ },
+ {
+  "en": "Wool / Hand wash",
+  "category": "program",
+  "de": "Wolle/Handwäsche"
+ },
+ {
+  "en": "Wool & Hand",
+  "category": "program",
+  "de": "Wolle",
+  "es": "Lana/a Mano",
+  "fr": "Laine/Lavage Main",
+  "nl": "Wol/Handwas"
+ },
+ {
+  "en": "Wool&Hand",
+  "category": "program",
+  "de": "Wolle&Handwäsche"
+ }
+]
