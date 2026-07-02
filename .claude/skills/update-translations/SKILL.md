@@ -41,8 +41,12 @@ Read [CONVENTIONS.md](CONVENTIONS.md) first — it holds the locked terminology 
 
 5. **Keep units in the mapping, not in names.** If an entity name bakes in a time unit (`… in minutes`, `… used hours`, `(minuten)`, leading `Horas de …`), set `device_class: duration` + `unit` on the property's `sensor`/`number` block in the data dictionary and drop the unit word from the name in every language. Then verify both directions:
    ```bash
-   python3 .claude/skills/update-translations/scripts/check_name_units.py    # names vs mapping units, both ways
+   # Scope to what this change introduces (recommended) — pass the last release tag:
+   python3 .claude/skills/update-translations/scripts/check_name_units.py --base "$(git describe --tags --abbrev=0)"
+   # Or a full audit of the whole corpus (noisy — re-lists long-shipped exceptions):
+   python3 .claude/skills/update-translations/scripts/check_name_units.py
    ```
+   `--base <git-ref>` runs the same check at that ref and drops any finding already present there, so only newly-introduced redundancies remain. A full audit still surfaces pre-existing inconsistencies worth cleaning up opportunistically.
 
 6. **Open one PR per language.** Branch `add-<lang>-translations`; commit only that language's file; keep the PR description functional (see CONVENTIONS). Don't push until the user asks.
 

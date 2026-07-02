@@ -16,12 +16,25 @@ Unit detection is word-boundary based and per-language, and deliberately skips
 ambiguous short tokens: Norwegian "timer" (= hours OR timer) and bare Dutch
 "uur"/Italian "ore" are only matched when clearly separate tokens.
 
-Usage:  python3 .../check_name_units.py
-Run from the repository root. Exit code 1 if any REDUNDANT issue is found.
+By default this audits the entire committed corpus, which re-reports findings
+that have shipped for releases. Pass --base <git-ref> to scope the report to
+findings this change *newly introduces*: the same check is run against the tree
+at <git-ref> and any finding already present there (pre-existing) is dropped.
+This catches both ways a redundancy appears — a name gaining a unit word, or a
+mapping gaining a unit — since it diffs the resulting findings, not just names.
+
+Usage:
+  python3 .../check_name_units.py                 # full audit (all languages)
+  python3 .../check_name_units.py --base v0.45.0   # only findings new since a release
+  python3 .../check_name_units.py --base origin/main  # only findings new on this branch
+Run from the repository root. Exit code 1 if any *reported* REDUNDANT issue is
+found (i.e. new ones only when --base is given).
 """
+import argparse
 import glob
 import json
 import re
+import subprocess
 import sys
 
 import yaml
@@ -44,11 +57,24 @@ DET = {
 }
 
 
-def build_property_map():
-    pm = {}  # key -> (kind, device_class, unit)
+def git_show(ref, path):
+    """Return the bytes of `path` at `ref`, or None if it did not exist there."""
+    r = subprocess.run(
+        ["git", "show", f"{ref}:{path}"],
+        capture_output=True,
+    )
+    return r.stdout if r.returncode == 0 else None
+
+
+def build_property_map(read):
+    """read(path) -> raw bytes/str or None. Builds key -> (kind, device_class, unit)."""
+    pm = {}
     for path in sorted(glob.glob(f"{DD}/*.yaml")):
+        raw = read(path)
+        if raw is None:
+            continue
         try:
-            doc = yaml.safe_load(open(path))
+            doc = yaml.safe_load(raw)
         except Exception:
             continue
         if not doc or not doc.get("properties"):
@@ -64,15 +90,24 @@ def build_property_map():
     return pm
 
 
+def load_lang_files(read):
+    files = {}
+    for l in LANGS:
+        raw = read(f"{TR}/{l}.json")
+        files[l] = json.loads(raw) if raw is not None else {}
+    return files
+
+
 def name_of(data, kind, key):
     return (((data.get("entity", {}) or {}).get(kind, {}) or {}).get(key, {}) or {}).get("name")
 
 
-def main():
-    pm = build_property_map()
-    files = {l: json.load(open(f"{TR}/{l}.json")) for l in LANGS}
+def collect_findings(pm, files):
+    """Return {(lang, key, category): (dc, unit, name)} for every unit-word hit.
 
-    redundant, unit_only = [], []
+    category is "A" (redundant: mapping has a unit) or "B" (unit word, no mapping unit).
+    """
+    out = {}
     for lang in LANGS:
         rx = re.compile(DET[lang], re.I)
         for key, (kind, dc, unit) in pm.items():
@@ -81,19 +116,51 @@ def main():
             n = name_of(files[lang], kind, key)
             if not isinstance(n, str) or not rx.search(n):
                 continue
-            (redundant if unit else unit_only).append((lang, key, dc, unit, n))
+            out[(lang, key, "A" if unit else "B")] = (dc, unit, n)
+    return out
 
-    print(f"A. REDUNDANT unit word in a name that already has a mapping unit: {len(redundant)}")
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument(
+        "--base",
+        metavar="GIT_REF",
+        help="only report findings not already present at this ref "
+        "(e.g. a release tag or origin/main); omit for a full audit",
+    )
+    args = ap.parse_args()
+
+    current = collect_findings(
+        build_property_map(lambda p: open(p, "rb").read()),
+        load_lang_files(lambda p: open(p, "rb").read()),
+    )
+
+    baseline = {}
+    if args.base:
+        if git_show(args.base, "custom_components/connectlife/manifest.json") is None:
+            sys.exit(f"error: git ref {args.base!r} not found (fetch it or check the name)")
+        baseline = collect_findings(
+            build_property_map(lambda p: git_show(args.base, p)),
+            load_lang_files(lambda p: git_show(args.base, p)),
+        )
+
+    # Scope to findings this change introduces: drop any already present at base.
+    new = {k: v for k, v in current.items() if k not in baseline}
+    redundant = sorted([(l, key, *new[(l, key, c)]) for (l, key, c) in new if c == "A"])
+    unit_only = sorted([(l, key, *new[(l, key, c)]) for (l, key, c) in new if c == "B"])
+
+    scope = f" new since {args.base}" if args.base else ""
+    print(f"A. REDUNDANT unit word in a name that already has a mapping unit{scope}: {len(redundant)}")
     for lang, key, dc, unit, n in redundant:
         print(f"   [{lang}] {key} (unit={unit}): {n!r}")
-    print(f"\nB. Unit word in a name but NO unit set in the mapping: {len(unit_only)}")
+    print(f"\nB. Unit word in a name but NO unit set in the mapping{scope}: {len(unit_only)}")
     for lang, key, dc, unit, n in unit_only:
         print(f"   [{lang}] {key} (device_class={dc}): {n!r}")
 
     if redundant:
         print("\nFix A: strip the unit word from these names (unit is rendered from the mapping).")
         sys.exit(1)
-    print("\nOK: no redundant unit words in unit-backed names.")
+    print(f"\nOK: no redundant unit words in unit-backed names{scope}.")
 
 
 if __name__ == "__main__":
