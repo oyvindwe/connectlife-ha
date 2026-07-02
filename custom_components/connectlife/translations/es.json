@@ -2007,7 +2007,7 @@
         "name": "Tiempo del filtro de carb\u00f3n"
       },
       "delayendtime": {
-        "name": "Hora de finalizaci\u00f3n diferida"
+        "name": "Finalizaci\u00f3n diferida"
       },
       "delayendtime_hour": {
         "name": "Hora de finalizaci\u00f3n diferida"
@@ -2186,7 +2186,7 @@
         "name": "Intensidad de cocci\u00f3n"
       },
       "delayendtime": {
-        "name": "Hora de finalizaci\u00f3n diferida",
+        "name": "Finalizaci\u00f3n diferida",
         "state": {
           "10_hours": "10 horas",
           "11_hours": "11 horas",
