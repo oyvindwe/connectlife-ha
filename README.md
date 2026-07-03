@@ -129,11 +129,6 @@ The integration polls the ConnectLife API every 60 seconds to avoid overloading 
 
 ### Climate entities
 
-Please ignore the following warning in the log:
-```
-Entity None (<class 'custom_components.connectlife.climate.ConnectLifeClimate'>) implements HVACMode(s): auto, off and therefore implicitly supports the turn_on/turn_off methods without setting the proper ClimateEntityFeature. Please report it to the author of the 'connectlife' custom integration
-```
-
 Missing features:
 - Setting `target_temperature_high`/`target_temperature_low`
 
