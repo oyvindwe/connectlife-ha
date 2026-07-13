@@ -27,6 +27,7 @@ properties:
     sensor:
       device_class: energy
       unit: kWh
+      multiplier: 0.01
       read_only: true
       state_class: total_increasing
     icon: mdi:lightning-bolt
