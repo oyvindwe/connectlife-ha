@@ -9,9 +9,11 @@ ConnectLife integration for Home Assistant
 You can install using HACS or download.
 
 ### HACS
-If you have HACS installed, add this repository (`oyvindwe/connectlife-ha`) as a custom repository of type "Integration."
 
-See https://hacs.xyz/docs/faq/custom_repositories/ 
+If you have HACS installed use the button below:
+
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=oyvindwe&repository=connectlife-ha&category=integration)
+
 
 ### Download
 
@@ -22,7 +24,7 @@ After installing, you need to restart Home Assistant.
 Finally, add "ConnectLife" as an integration in the UI, and provide the username and password for your ConnectLife account.
 Users in Russia/CIS who sign in with the ConnectLife.TRIR app should enable the experimental "TRIR" option in the setup dialog.
 
-Your device and all their status values should show up.
+Your devices and all their properties should show up.
 
 ## Supported ConnectLife devices
 
