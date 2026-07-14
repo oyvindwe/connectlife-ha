@@ -2484,6 +2484,7 @@
           "baby_care": "Baby",
           "clean": "Schoon",
           "color": "Kleur",
+          "crystal_glass": "Kristalglas",
           "down_feathers": "Donsveren",
           "draining": "Afpompen",
           "drum_clean": "Trommelreiniging",
@@ -2499,6 +2500,7 @@
           "no_program_selected": "Geen programma geselecteerd",
           "one_hour": "1 uur",
           "pet_hair_removal": "Huisdierhaar verwijderen",
+          "preheated": "Voorverwarmd",
           "quick_pro": "Quick pro",
           "rinse_and_hold": "Spoelen en wachten",
           "rinsing_softening": "Spoelen & verzachten",
@@ -2508,6 +2510,7 @@
           "spinning_draining": "Centrifugeren & afpompen",
           "sportswear": "Sport",
           "time_program": "Tijdprogramma",
+          "universal": "Universeel",
           "white_cotton": "Wit katoen",
           "wool_manual": "Wol & Handmatig"
         }

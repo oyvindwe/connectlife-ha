@@ -2484,6 +2484,7 @@
           "baby_care": "Bambino",
           "clean": "Pulizia",
           "color": "Colorati",
+          "crystal_glass": "Cristallo",
           "down_feathers": "Piumini d'oca",
           "draining": "Scarico",
           "drum_clean": "Pulizia cestello",
@@ -2499,6 +2500,7 @@
           "no_program_selected": "Nessun programma selezionato",
           "one_hour": "Un'ora",
           "pet_hair_removal": "Rimozione peli di animali",
+          "preheated": "Preriscaldato",
           "quick_pro": "Quick pro",
           "rinse_and_hold": "Risciacquo e attesa",
           "rinsing_softening": "Risciacquo e ammorbidente",
@@ -2508,6 +2510,7 @@
           "spinning_draining": "Centrifuga e scarico",
           "sportswear": "Sport",
           "time_program": "Programma a tempo",
+          "universal": "Universale",
           "white_cotton": "Cotone bianco",
           "wool_manual": "Lana e Manuale"
         }

@@ -2484,6 +2484,7 @@
           "baby_care": "Soin b\u00e9b\u00e9",
           "clean": "Nettoyage",
           "color": "Couleurs",
+          "crystal_glass": "Cristal",
           "down_feathers": "Duvet",
           "draining": "Vidange",
           "drum_clean": "Nettoyage du tambour",
@@ -2499,6 +2500,7 @@
           "no_program_selected": "Aucun programme s\u00e9lectionn\u00e9",
           "one_hour": "Une heure",
           "pet_hair_removal": "\u00c9limination des poils d'animaux",
+          "preheated": "Pr\u00e9chauff\u00e9",
           "quick_pro": "Quick pro",
           "rinse_and_hold": "Rin\u00e7age et maintien",
           "rinsing_softening": "Rin\u00e7age et assouplissement",
@@ -2508,6 +2510,7 @@
           "spinning_draining": "Essorage et vidange",
           "sportswear": "V\u00eatements de sport",
           "time_program": "Programme minut\u00e9",
+          "universal": "Universel",
           "white_cotton": "Coton blanc",
           "wool_manual": "Laine et manuel"
         }

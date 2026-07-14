@@ -1,16 +1,16 @@
-# Assumed ASKO family (untested); labels copied from 015-dishwasher-60.2
+# ASKO dishwasher (DFI777UXXL family).
 properties:
   - property: Selected_program_id_status
     select:
       options:
         0: eco
         1: auto
-        2: intensive
-        3: quick_pro
-        4: time_program
-        5: hygiene
-        6: rinse_and_hold
-        7: self_cleaning
+        2: universal
+        3: intensive
+        4: quick_pro
+        5: preheated
+        6: crystal_glass
+        7: time_program
       command:
         name: Selected_program_id
   - property: Selected_program_mode

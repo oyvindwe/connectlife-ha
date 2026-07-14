@@ -2484,6 +2484,7 @@
           "baby_care": "Ropa beb\u00e9",
           "clean": "Limpieza",
           "color": "Color",
+          "crystal_glass": "Cristaler\u00eda",
           "down_feathers": "Plum\u00f3n",
           "draining": "Desag\u00fce",
           "drum_clean": "Limpieza Tambor",
@@ -2499,6 +2500,7 @@
           "no_program_selected": "Ning\u00fan programa seleccionado",
           "one_hour": "1 hora",
           "pet_hair_removal": "Eliminaci\u00f3n de pelo de mascotas",
+          "preheated": "Precalentado",
           "quick_pro": "Quick pro",
           "rinse_and_hold": "Aclarar y esperar",
           "rinsing_softening": "Aclarado y suavizado",
@@ -2508,6 +2510,7 @@
           "spinning_draining": "Centrifugado y desag\u00fce",
           "sportswear": "Ropa deporte",
           "time_program": "Programa temporizado",
+          "universal": "Universal",
           "white_cotton": "Algod\u00f3n blanco",
           "wool_manual": "Lana y manual"
         }
