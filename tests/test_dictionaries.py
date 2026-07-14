@@ -401,6 +401,48 @@ def test_statistics_block_inherited_by_feature_override(build_dictionary):
     }
 
 
+def test_presets_parsed_into_name_keyed_map(build_dictionary):
+    """A climate `presets` block is parsed into a name -> values map, with the
+    `preset` name stripped from the value so it can be matched against a device
+    status list (issue #627)."""
+    d = build_dictionary(
+        sub={
+            "climate": {
+                "presets": [
+                    {"t_eco": 1, "t_power": 1, "preset": "eco"},
+                    {"t_eco": 0, "t_fan_mute": 1, "t_power": 1, "preset": "mute"},
+                ]
+            },
+            "properties": _MINIMAL_PROPS,
+        }
+    )
+    assert d.presets == {
+        "eco": {"t_eco": 1, "t_power": 1},
+        "mute": {"t_eco": 0, "t_fan_mute": 1, "t_power": 1},
+    }
+
+
+def test_presets_absent_defaults_to_empty(build_dictionary):
+    """No climate/presets block -> an empty preset map."""
+    d = build_dictionary(sub={"properties": _MINIMAL_PROPS})
+    assert d.presets == {}
+
+
+def test_presets_parse_does_not_mutate_source(build_dictionary):
+    """Parsing must not strip the name from the source presets, so a second
+    parse (as on reload) still resolves the names (issue #77 reload)."""
+    sub = {
+        "climate": {"presets": [{"t_eco": 1, "t_power": 1, "preset": "eco"}]},
+        "properties": _MINIMAL_PROPS,
+    }
+    build_dictionary(sub=sub)
+    # Source presets still carry the name.
+    assert sub["climate"]["presets"][0]["preset"] == "eco"
+    # A second parse still resolves it.
+    d = build_dictionary(sub=sub)
+    assert set(d.presets) == {"eco"}
+
+
 def test_statistics_block_replaced_by_feature_override(build_dictionary):
     # A feature override with its own statistics block replaces the base's entirely.
     d = build_dictionary(

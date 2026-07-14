@@ -64,6 +64,9 @@
           "type": "string"
         }
       },
+      "required": [
+        "preset"
+      ],
       "additionalProperties": {
         "type": "integer"
       },

@@ -4,7 +4,11 @@ from __future__ import annotations
 
 from types import SimpleNamespace
 
-from homeassistant.components.climate import ClimateEntityFeature, HVACMode
+from homeassistant.components.climate import (
+    ClimateEntityFeature,
+    HVACMode,
+    PRESET_NONE,
+)
 
 from custom_components.connectlife.climate import (
     ConnectLifeClimate,
@@ -146,6 +150,69 @@ def test_contested_targets_reports_only_multi_candidate_targets() -> None:
 
     single = _swing_appliance({"t_power": 1, "t_up_down": 0})
     assert contested_climate_targets(single, dictionary) == {}
+
+
+# Presets as parsed by Dictionaries: keyed by name, name stripped from the value
+# (see test_dictionaries for the parsing itself). Mirrors 009-100.yaml.
+_PRESETS = {
+    "eco": {"t_eco": 1, "t_fan_mute": 0, "t_power": 1, "t_sleep": 0, "t_super": 0},
+    "mute": {"t_eco": 0, "t_fan_mute": 1, "t_power": 1},
+}
+
+
+def _preset_dictionary() -> Dictionary:
+    """A climate device exposing `eco` and `mute` presets."""
+    return Dictionary(
+        climate=None,
+        properties={
+            "t_power": Property(
+                {"property": "t_power", "climate": {"target": "is_on"}}
+            ),
+        },
+        buttons=[],
+        presets=_PRESETS,
+    )
+
+
+def _preset_appliance(status_list: dict[str, int]) -> SimpleNamespace:
+    return SimpleNamespace(
+        device_id="dev1",
+        device_nickname="AC",
+        device_feature_name="100",
+        device_type_code="009",
+        device_feature_code="100",
+        room_name="Bedroom",
+        status_list=status_list,
+    )
+
+
+def test_preset_mode_reads_back_active_preset() -> None:
+    """When the status list matches a preset's values, `preset_mode` reflects it.
+
+    Regression test for issue #627: `preset_mode` previously always read `none`
+    because the preset name key leaked into the value and never matched the
+    device status list.
+    """
+    dictionary = _preset_dictionary()
+    # Status list matching the `eco` preset exactly.
+    appliance = _preset_appliance(
+        {"t_power": 1, "t_eco": 1, "t_fan_mute": 0, "t_sleep": 0, "t_super": 0}
+    )
+    climate = ConnectLifeClimate(_coordinator(appliance), appliance, dictionary)
+
+    assert climate._attr_preset_mode == "eco"
+
+
+def test_preset_modes_expose_parsed_names_plus_none() -> None:
+    """The entity offers the parsed preset names plus PRESET_NONE, and enables
+    the PRESET_MODE feature."""
+    dictionary = _preset_dictionary()
+    appliance = _preset_appliance({"t_power": 1, "t_eco": 0, "t_fan_mute": 0})
+    climate = ConnectLifeClimate(_coordinator(appliance), appliance, dictionary)
+
+    assert climate.preset_map is dictionary.presets
+    assert set(climate._attr_preset_modes) == {"eco", "mute", PRESET_NONE}
+    assert climate._attr_supported_features & ClimateEntityFeature.PRESET_MODE
 
 
 def test_hvac_mode_alias_does_not_override_canonical_reverse_mapping() -> None:

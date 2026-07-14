@@ -20,8 +20,6 @@ from .const import (
     HVAC_MODE,
     HVAC_ACTION,
     IS_ON,
-    PRESET,
-    PRESETS,
     SWING_MODE,
     SWING_HORIZONTAL_MODE,
     TARGET_HUMIDITY,
@@ -218,9 +216,8 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
                         _LOGGER.warning("Not mapping %d to unknown HVACAction %s", k, v)
             self.unknown_values[status] = data_dictionary.properties[status].climate.unknown_value
 
-        if data_dictionary.climate and PRESETS in data_dictionary.climate:
-            # TODO: Check that all presets have names and convert to map in Dictionaries.
-            self.preset_map = {preset.copy().pop(PRESET): preset for preset in data_dictionary.climate[PRESETS]}
+        if data_dictionary.presets:
+            self.preset_map = data_dictionary.presets
             self._attr_preset_modes = list(self.preset_map.keys())
             if PRESET_NONE not in self._attr_preset_modes:
                 self._attr_preset_modes.append(PRESET_NONE)

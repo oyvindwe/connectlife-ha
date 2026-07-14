@@ -43,6 +43,7 @@ NAME = "name"
 OFF = "off"
 ON = "on"
 OPTIONS = "options"
+PRESET = "preset"
 PRESETS = "presets"
 PROPERTY = "property"
 PROPERTIES = "properties"
@@ -446,6 +447,9 @@ class Dictionary:
     climate: dict | None
     properties: dict[str, Property]
     buttons: list[Button]
+    # Presets parsed from the climate block, keyed by preset name with the name
+    # stripped from the value so it can be matched against a device status list.
+    presets: dict[str, dict[str, int]] = field(default_factory=dict)
     # Cloud statistics endpoint for this device family (None = none): "air_duct_energy"
     # (air conditioners) or "energy_consumption_curve" (appliances). Dispatched via the
     # statistics_sources registry.
@@ -624,10 +628,18 @@ class Dictionaries:
             if sensor_key != SOURCE
         }
 
+        # Parse presets into a name -> values map. The preset name is stripped
+        # from the value so it can be matched against a device status list.
+        presets = {
+            preset[PRESET]: {k: v for k, v in preset.items() if k != PRESET}
+            for preset in _val(climate or {}, PRESETS, [])
+        }
+
         dictionary = Dictionary(
             climate=climate,
             properties=properties,
             buttons=buttons,
+            presets=presets,
             statistics_source=statistics_source,
             statistics_sensors=statistics_sensors,
         )
