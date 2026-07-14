@@ -2484,6 +2484,7 @@
           "baby_care": "Baby",
           "clean": "Reinigung",
           "color": "Farbig",
+          "crystal_glass": "Kristallglas",
           "down_feathers": "Daunenfedern",
           "draining": "Abpumpen",
           "drum_clean": "Trommelreinigung",
@@ -2499,6 +2500,7 @@
           "no_program_selected": "Kein Programm ausgew\u00e4hlt",
           "one_hour": "1 Stunde",
           "pet_hair_removal": "Tierhaarentfernung",
+          "preheated": "Vorgew\u00e4rmt",
           "quick_pro": "Quick pro",
           "rinse_and_hold": "Sp\u00fclen & Warten",
           "rinsing_softening": "Sp\u00fclen & Weichsp\u00fclen",
@@ -2508,6 +2510,7 @@
           "spinning_draining": "Schleudern & Abpumpen",
           "sportswear": "Sport",
           "time_program": "Zeitprogramm",
+          "universal": "Universal",
           "white_cotton": "Wei\u00dfe Baumwolle",
           "wool_manual": "Wolle & Manuell"
         }

@@ -2484,6 +2484,7 @@
           "baby_care": "Baby",
           "clean": "Rens",
           "color": "Farge",
+          "crystal_glass": "Krystallglass",
           "down_feathers": "Dun",
           "draining": "T\u00f8mmer vann",
           "drum_clean": "Trommelrens",
@@ -2499,6 +2500,7 @@
           "no_program_selected": "Intet program valgt",
           "one_hour": "\u00c9n time",
           "pet_hair_removal": "Fjerning av kj\u00e6ledyrh\u00e5r",
+          "preheated": "Forvarmet",
           "quick_pro": "Hurtig pro",
           "rinse_and_hold": "Skyll og hold",
           "rinsing_softening": "Skylling og myking",
@@ -2508,6 +2510,7 @@
           "spinning_draining": "Sentrifugering og t\u00f8mming",
           "sportswear": "Sport",
           "time_program": "Tidsprogram",
+          "universal": "Universal",
           "white_cotton": "Hvit bomull",
           "wool_manual": "Ull og manuell"
         }
