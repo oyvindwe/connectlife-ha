@@ -308,6 +308,29 @@
       "anticrease_setting": {
         "name": "Durata antipiega"
       },
+      "selected_program_id": {
+        "name": "Seleziona programma",
+        "state": {
+          "allergy_care": "Allergy Care",
+          "auto": "Auto",
+          "baby_care": "Baby Care",
+          "bedding": "Lenzuola",
+          "cotton": "Cotone",
+          "drum_clean": "Pulizia cestello",
+          "duvet": "Piumini",
+          "eco_40_60": "Eco 40-60",
+          "full_load_59": "Pieno carico 59'",
+          "pets": "Animali",
+          "power_39": "Power 39'",
+          "quick_15": "Rapido 15'",
+          "refresh": "Refresh",
+          "rinse_spin": "Risciacquo + Centrifuga",
+          "spin": "Centrifuga",
+          "sportswear": "Sport",
+          "synthetic": "Sintetici",
+          "wool": "Lana"
+        }
+      },
       "t_fan_speed": {
         "name": "Fan speed",
         "state": {

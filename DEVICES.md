@@ -78,6 +78,7 @@
 |                          | Heat pump                | 016              | 502                         |
 |                          | Induction hob            | 020              | 63c45b513e1a4bf7            |
 |                          | Oven                     | 023              | 295608422d362be1            |
+| WH5I8043BWF              | Washing machine          | 025              | 1wj0803f2v0w                |
 | WD3S8043BW3              | Washing machine          | 025              | 1wj080837v0w                |
 |                          | Washing machine          | 025              | 1wj090660v0w                |
 | WF5S9045BW               | Washing machine          | 025              | 1wj090728v0w                |
