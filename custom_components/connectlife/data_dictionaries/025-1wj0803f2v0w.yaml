@@ -1,0 +1,28 @@
+# Washing machine, feature code 1wj0803f2v0w.
+# Model-specific override. Program IDs are model-specific, so expose
+# Selected_program_ID as a select with the program names observed on this
+# machine. Reads and writes use the raw ID on the same property (confirmed
+# working via the set_value service), so no command/adjust is needed.
+properties:
+  - property: Selected_program_ID
+    icon: mdi:tshirt-crew
+    select:
+      options:
+        4: refresh
+        6: drum_clean
+        7: cotton
+        8: synthetic
+        9: eco_40_60
+        10: wool
+        11: quick_15
+        14: spin
+        15: allergy_care
+        16: baby_care
+        18: sportswear
+        19: duvet
+        20: rinse_spin
+        42: auto
+        44: bedding
+        52: power_39
+        56: pets
+        57: full_load_59
