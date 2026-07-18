@@ -1,4 +1,3 @@
-
 | Device name              | Device type              | Device type code | Device feature code         |
 |--------------------------|--------------------------|------------------|-----------------------------|
 | ASKO Pro Washing Machine | Washing machine          | 003              | 000                         |
@@ -112,6 +111,7 @@
 | RS819N4ISU               | Refrigerator             | 026              | 1b0628z0075j                |
 | RS818N4TIE1              | Refrigerator             | 026              | 1b0628z0146j                |
 | Hisense BCD-668WP1BWF1R1 | Refrigerator             | 026              | 1b0668z0100j                |
+| Gorenje NRB620E61X4WFE   | Refrigerator             | 026              | 8b0413z0011j                |
 | Gorenje W-WaveEn-22      | Washing machine          | 027              | 000                         |
 | WPAM14A2T                | Washing machine          | 027              | washing-machine-wm22-b2plus |
 | WPNA84A2TSWIFI           | Washing machine          | 027              | washing-machine-wm22        |
