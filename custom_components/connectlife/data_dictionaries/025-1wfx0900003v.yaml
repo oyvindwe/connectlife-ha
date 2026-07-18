@@ -1,0 +1,191 @@
+# Hisense WD5I9043BBFS washer-dryer (025-1wfx0900003v)
+# 9 kg wash / 6 kg dry, 1400 rpm, AutoDose
+properties:
+  - property: Current_program_phase
+    sensor:
+      read_only: true
+      device_class: enum
+      options:
+        0: not_available
+        1: weigh
+        2: prewash
+        3: wash
+        4: rinsing
+        7: spinning
+        8: drying
+        10: finished
+        11: delay
+
+  - property: Selected_program_ID
+    select:
+      options:
+        1: cotton_dry
+        2: synthetic_dry
+        4: refresh
+        6: drum_clean
+        7: cotton
+        8: synthetic
+        9: eco_40_60
+        10: wool
+        11: quick_15
+        14: spin
+        15: allergy_care
+        16: baby_care
+        20: rinse_spin
+        22: wash_and_dry_49
+        41: power_49
+        42: auto
+        44: bedding
+        52: power_30
+        56: pets
+        57: full_load_49
+
+  - property: Spin_speed_rpm
+    select:
+      options:
+        0: none
+        6: "600"
+        8: "800"
+        10: "1000"
+        12: "1200"
+        14: "1400"
+
+  - property: DefaultSpinSpeed
+    sensor:
+      read_only: true
+      device_class: enum
+      options:
+        0: none
+        6: "600"
+        8: "800"
+        10: "1000"
+        12: "1200"
+        14: "1400"
+
+  - property: DryOpen_DefaultSpinSpeed
+    sensor:
+      read_only: true
+      device_class: enum
+      options:
+        0: none
+        6: "600"
+        8: "800"
+        10: "1000"
+        12: "1200"
+        14: "1400"
+
+  - property: temperature
+    select:
+      options:
+        0: cold
+        2: "20"
+        3: "30"
+        4: "40"
+        6: "60"
+        9: "90"
+
+  - property: dry_time
+    select:
+      options:
+        0: "off"
+        1: iron
+        2: cupboard
+        3: extra_dry
+        30: "30"
+        40: "40"
+        50: "50"
+        60: "60"
+        90: "90"
+        120: "120"
+        180: "180"
+        240: "240"
+
+  - property: ExtraRinseNum
+    select:
+      options:
+        0: "0"
+        1: "1"
+        2: "2"
+        3: "3"
+
+  - property: DelayEndTime
+    select:
+      options:
+        0: none
+        1: 1_hour
+        2: 2_hours
+        3: 3_hours
+        4: 4_hours
+        5: 5_hours
+        6: 6_hours
+        7: 7_hours
+        8: 8_hours
+        9: 9_hours
+        10: 10_hours
+        11: 11_hours
+        12: 12_hours
+        13: 13_hours
+        14: 14_hours
+        15: 15_hours
+        16: 16_hours
+        17: 17_hours
+        18: 18_hours
+        19: 19_hours
+        20: 20_hours
+        21: 21_hours
+        22: 22_hours
+        23: 23_hours
+        24: 24_hours
+
+  - property: Actions
+    select:
+      options:
+        0: none
+        1: stop
+        2: start
+        3: pause
+
+  - property: Detergent
+    select:
+      options:
+        0: "off"
+        1: auto
+        2: less
+        3: standard
+        4: more
+
+  - property: Softener
+    select:
+      options:
+        0: "off"
+        1: auto
+        2: less
+        3: standard
+        4: more
+
+  - property: AntiCrease
+    switch: {}
+
+  - property: AutoDose
+    entity_category: config
+    switch: {}
+
+  - property: Child_lock
+    entity_category: config
+    switch: {}
+
+  - property: Extra_Rinse
+    switch: {}
+
+  - property: mute
+    entity_category: config
+    switch: {}
+
+  - property: Prewash
+    switch: {}
+
+  - property: Steam
+    switch: {}
+
+  - property: Time_Save
+    switch: {}
