@@ -13,6 +13,7 @@ properties:
         5: hygiene
         6: night
         7: clean
+        8: iontech
       command:
         name: Selected_program_id
   - property: Selected_program_mode
