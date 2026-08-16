@@ -1,0 +1,51 @@
+# Hisense Series 8i 10 kg front load washer — HWF8I1015BX / HWF8I1015B (AU/NZ)
+# Feature code 025-1wfj1000018v. Internal model string reported by the API:
+# WF5i1015-QVB002-000.
+#
+# Selected_program_ID: all 17 programmes taken from the HWF8I1015BX user manual
+#   (Baby Care, Synthetics, Quick 15', Cotton, Allergy Care, Auto, Refresh, Pets,
+#   Power 30', Full load 49', Bedding, Wool, Sportswear, Down, Rinse+Spin,
+#   Drum Clean, Spin). ID 19 = down confirmed on the machine's own panel.
+#
+# Current_program_phase: sequence observed over a complete live cycle was
+#   1 -> 3 -> 4 -> 7 -> 10 -> 0, matching the usual Hisense front-loader values.
+#   2 (prewash), 5 (preheat_finished) and 11 (delay_start_waiting) are carried
+#   over from sibling dictionaries and are not yet directly observed on this model.
+properties:
+  - property: Current_program_phase
+    sensor:
+      read_only: true
+      device_class: enum
+      options:
+        0: not_available
+        1: weigh
+        2: prewash          # not observed
+        3: wash
+        4: rinsing
+        5: preheat_finished # not observed
+        7: spinning
+        10: finished
+        11: delay_start_waiting # not observed
+
+  - property: Selected_program_ID
+    sensor:
+      read_only: true
+      device_class: enum
+      options:
+        4: refresh
+        6: drum_clean
+        7: cotton
+        8: synthetic
+        10: wool
+        11: quick_15
+        14: spin
+        15: allergy_care
+        16: baby_care
+        18: sportswear
+        19: down
+        20: rinse_spin
+        42: auto
+        44: bedding
+        52: power_30
+        56: pets
+        57: full_load_49
