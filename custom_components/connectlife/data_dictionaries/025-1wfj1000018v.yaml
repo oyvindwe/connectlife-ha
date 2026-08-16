@@ -5,22 +5,26 @@
 # Selected_program_ID: all 17 programmes taken from the HWF8I1015BX user manual
 #   (Baby Care, Synthetics, Quick 15', Cotton, Allergy Care, Auto, Refresh, Pets,
 #   Power 30', Full load 49', Bedding, Wool, Sportswear, Down, Rinse+Spin,
-#   Drum Clean, Spin). IDs 7 (cotton) and 19 (down) confirmed against the
-#   machine's own panel; the rest follow the manual's programme order.
+#   Drum Clean, Spin). IDs 6 (drum_clean), 7 (cotton) and 19 (down) confirmed
+#   against the machine's own panel; the rest follow the manual's programme
+#   order. Note that selecting a programme is enough to verify its ID — the
+#   sensor reports the selection whether or not the cycle is started.
 #
 # Current_program_phase: 0, 1, 2, 3, 4, 7 and 10 have all been observed directly
 #   on this machine, over several complete cycles:
 #     - 30 °C cycle, no prewash:  0 -> 1 -> 3 -> 4 -> 7 -> 10 -> 0
 #     - cold Cotton with prewash: 0 -> 1 -> 2 (prewash appears between weigh
 #       and wash, and adds ~20 min to the reported programme total)
+#     - 40 °C Cotton:             0 -> 1 -> 3 for the whole wash
 #   Phase 1 is brief — around 60 s — so it is easy to miss between polls.
 #
 #   5 (preheat_finished) and 11 (delay_start_waiting) are carried over from
-#   sibling dictionaries and are NOT yet observed on this model. Worth noting
-#   for 5: a 30 °C wash drew ~1.9 kW at the heater for the first ~8 minutes of
-#   phase 3 and never reported phase 5 at any point, so on this model heating
-#   appears to happen wholly inside phase 3. If a hotter wash also fails to
-#   emit 5, it should probably be dropped for this feature code.
+#   sibling dictionaries and are NOT observed on this model. On phase 5 the
+#   evidence is now fairly strong: two heated cycles (30 °C and 40 °C) drew
+#   ~1.8-1.9 kW at the heater, in both cases entirely inside phase 3, and the
+#   machine never emitted phase 5 at any point — neither when heating began nor
+#   when it finished. Heating appears to happen wholly within phase 3 on this
+#   model, and 5 is a candidate for removal.
 properties:
   - property: Current_program_phase
     sensor:
