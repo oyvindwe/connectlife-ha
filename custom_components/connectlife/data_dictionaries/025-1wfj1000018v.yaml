@@ -2,13 +2,22 @@
 # Feature code 025-1wfj1000018v. Internal model string reported by the API:
 # WF5i1015-QVB002-000.
 #
-# Selected_program_ID: all 17 programmes taken from the HWF8I1015BX user manual
-#   (Baby Care, Synthetics, Quick 15', Cotton, Allergy Care, Auto, Refresh, Pets,
-#   Power 30', Full load 49', Bedding, Wool, Sportswear, Down, Rinse+Spin,
-#   Drum Clean, Spin). IDs 6 (drum_clean), 7 (cotton) and 19 (down) confirmed
-#   against the machine's own panel; the rest follow the manual's programme
-#   order. Note that selecting a programme is enough to verify its ID — the
-#   sensor reports the selection whether or not the cycle is started.
+# Selected_program_ID: the official HWF8I1015BX manual lists exactly 17
+#   programmes — Cotton, Synthetics, Auto, Refresh, Baby Care, Allergy Care,
+#   Pets, Full load 49', Power 30', Quick 15', Bedding, Wool, Sportswear, Down,
+#   Rinse+Spin, Drum Clean, Spin — which is the set mapped below.
+#
+#   IDs 6 (drum_clean), 7 (cotton) and 19 (down) are confirmed against the
+#   machine's own panel. The remaining ID assignments are taken from sibling
+#   dictionaries in this repo (the 025-1wj1202xx family, where ID 19 is `down`
+#   rather than the `sensitive` of 025-1wj105219v0w — our panel confirmation of
+#   19 is what rules in that family). They do NOT follow the manual's printed
+#   order: the manual lists Cotton first but its ID is 7, and Drum Clean
+#   sixteenth but its ID is 6. So the manual corroborates which programmes exist,
+#   not which number each one carries.
+#
+#   Verifying an ID is cheap: selecting a programme is enough, since the sensor
+#   reports the selection whether or not the cycle is started.
 #
 # Current_program_phase: 0, 1, 2, 3, 4, 7, 10 and 11 have all been observed
 #   directly on this machine:
@@ -21,9 +30,11 @@
 #   Phase 1 is brief, around 60 s, so it is easy to miss between polls.
 #
 #   Note this model offers a delay-END ("finish by") time rather than a delay
-#   start, reported through Delay_end_time in hours. Phase 11 is still what the
-#   machine shows while waiting, so delay_start_waiting remains an accurate name.
-#   Delay is not settable over the API — the panel is the only way to set it.
+#   start — the manual requires that "the reservation time must be greater than
+#   the program running time". It is reported through Delay_end_time in hours.
+#   Phase 11 is still what the machine shows while waiting, so
+#   delay_start_waiting remains an accurate name. Delay is not settable over the
+#   API; the panel is the only way to set it.
 #
 #   5 (preheat_finished) is carried over from sibling dictionaries and is NOT
 #   emitted by this model. Four heated cycles across three programmes and three
