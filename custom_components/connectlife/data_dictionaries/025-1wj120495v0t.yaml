@@ -1,0 +1,32 @@
+# Hisense WF3S1214-MVT002-001 washing machine.
+# The 025 base dictionary defines both properties below, but without options,
+# so they surface as raw integers. Program codes are from the appliance's own
+# program dial; codes not listed here have not been observed on this machine.
+properties:
+- property: Current_program_phase
+  sensor:
+    device_class: enum
+    options:
+      0: not_available
+      1: weigh
+      2: prewash
+      3: wash
+      4: rinsing
+      7: spinning
+      8: drying
+      10: finished
+      11: delay_start_waiting
+- property: Selected_program_ID
+  sensor:
+    device_class: enum
+    options:
+      0: eco
+      1: cotton_white
+      2: colour
+      3: wool_hand
+      4: mix_synthetics
+      5: extra_hygiene
+      9: eco_40_60
+      13: drum_clean
+      25: stain_expert
+      42: auto
