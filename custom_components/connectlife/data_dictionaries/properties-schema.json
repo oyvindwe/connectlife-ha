@@ -22,6 +22,30 @@
             "daily_water_consumption": {
               "type": "boolean",
               "description": "Set true to create the daily water consumption sensor (wet appliances)."
+            },
+            "cycle_totals": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["phase", "finished", "energy", "water"],
+              "description": "Opt in to deriving the daily energy/water sensors from the appliance's own per-cycle telemetry instead of the cloud endpoint: each cycle's final energy/water is added once when the phase property reports the finished value. Only set on a feature file whose phase enum and counters have been verified against the appliance's display.",
+              "properties": {
+                "phase": {
+                  "type": "string",
+                  "description": "Property holding the program phase."
+                },
+                "finished": {
+                  "type": "integer",
+                  "description": "Value of the phase property that means the cycle has finished."
+                },
+                "energy": {
+                  "type": "string",
+                  "description": "Property holding the finished cycle's energy in kWh (may be a combined property)."
+                },
+                "water": {
+                  "type": "string",
+                  "description": "Property holding the finished cycle's water in litres (may be a combined property)."
+                }
+              }
             }
           }
         },

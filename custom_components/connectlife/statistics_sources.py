@@ -18,6 +18,8 @@ from homeassistant.components.sensor import SensorDeviceClass, SensorStateClass
 from homeassistant.const import UnitOfEnergy, UnitOfVolume
 from homeassistant.util import dt as dt_util
 
+from .cycle_totals import DailyCycleTotals
+
 
 def _as_float(value: Any) -> float | None:
     if value is None:
@@ -46,7 +48,9 @@ class StatisticsSensorDef:
     ``key`` is both the translation key and the unique-id suffix (and the per-sensor key
     in the data dictionary ``statistics`` block — a sensor is created only when the block
     lists ``<key>: true``). ``value`` extracts the sensor's native value from the fetched
-    result (an ``EnergyResult`` subclass).
+    result (an ``EnergyResult`` subclass). ``cycle_value``, when set, extracts it from an
+    appliance's :class:`DailyCycleTotals` instead, for devices that opt in to deriving the
+    daily totals from their own per-cycle telemetry (which then takes precedence).
     """
 
     key: str
@@ -55,6 +59,7 @@ class StatisticsSensorDef:
     state_class: SensorStateClass
     value: Callable[[Any], float | None]
     icon: str | None = None
+    cycle_value: Callable[[DailyCycleTotals], float] | None = None
 
 
 class StatisticsSource:
@@ -104,6 +109,7 @@ class ConsumptionStatisticsSource(StatisticsSource):
             UnitOfEnergy.KILO_WATT_HOUR,
             SensorStateClass.TOTAL_INCREASING,
             lambda r: _curve_today(r.electric_curve),
+            cycle_value=lambda t: t.energy_kwh,
         ),
         StatisticsSensorDef(
             "daily_water_consumption",
@@ -112,6 +118,7 @@ class ConsumptionStatisticsSource(StatisticsSource):
             SensorStateClass.TOTAL_INCREASING,
             lambda r: _curve_today(r.water_curve),
             icon="mdi:water",
+            cycle_value=lambda t: t.water_l,
         ),
     )
 

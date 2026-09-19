@@ -89,6 +89,14 @@ one and powers the daily energy/water consumption sensors. These are **not** der
   `hass.data[DOMAIN][f"{entry_id}_statistics"]`. It polls every `STATISTICS_UPDATE_INTERVAL` (10 minutes),
   storing `dict[device_id, EnergyResult | None]`. On `LifeConnectAuthError` it stops the cycle
   (no per-appliance re-login storm).
+- **Cycle totals** (`cycle_totals.py`): the cloud endpoint is unreliable for some appliances (it
+  re-credits completed cycles hourly, #669), so a feature file can opt in via
+  `statistics.cycle_totals` (phase property, `finished` value, per-cycle energy/water properties).
+  The statistics coordinator then observes every main-coordinator refresh (60s), adds each finished
+  cycle's own counters once to a per-day total (`DailyCycleTotals`, persisted in the same `Store`),
+  and skips the cloud fetch for that device. `StatisticsSensorDef.cycle_value` makes the existing
+  daily sensors read those totals (same entity IDs); devices without the block or the properties
+  read the cloud endpoint unchanged. A cycle counts for the local day it finishes.
 - **Sensors** (`ConnectLifeStatisticsSensor` in `sensor.py`): generic, configured from a
   `StatisticsSensorDef`; unique ID `{device_id}-{sensor.key}`. Unlike status entities they are
   **not** gated on offline state — cloud-side statistics remain available while the device is offline.

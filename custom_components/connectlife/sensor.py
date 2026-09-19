@@ -230,14 +230,24 @@ class ConnectLifeStatisticsSensor(CoordinatorEntity[ConnectLifeStatisticsCoordin
         appliance_coordinator.add_entity(self._attr_unique_id, Platform.SENSOR)
         self._update_native_value()
 
+    def _cycle_total(self) -> float | None:
+        """This sensor's value from the appliance's own finished-cycle totals, if it has any."""
+        totals = self.coordinator.cycle_totals.get(self._device_id)
+        if totals is None or self._sensor.cycle_value is None:
+            return None
+        return self._sensor.cycle_value(totals)
+
     @property
     def available(self) -> bool:
         # Cloud-side period statistics stay available even when the appliance is offline
         # (unlike status sensors), so this is not gated on offline_state — only on the
-        # coordinator having a fetched result for this device.
+        # coordinator having a fetched result (or cycle totals) for this device.
+        if not super().available:
+            return False
+        if self._cycle_total() is not None:
+            return True
         return (
-            super().available
-            and self.coordinator.data is not None
+            self.coordinator.data is not None
             and self.coordinator.data.get(self._device_id) is not None
         )
 
@@ -248,6 +258,11 @@ class ConnectLifeStatisticsSensor(CoordinatorEntity[ConnectLifeStatisticsCoordin
         self.async_write_ha_state()
 
     def _update_native_value(self) -> None:
-        """Extract this sensor's datapoint from the fetched statistics result."""
+        """Extract this sensor's datapoint: from the appliance's finished-cycle totals when
+        it has them, otherwise from the fetched statistics result."""
+        cycle_total = self._cycle_total()
+        if cycle_total is not None:
+            self._attr_native_value = cycle_total
+            return
         result = self.coordinator.data.get(self._device_id) if self.coordinator.data else None
         self._attr_native_value = self._sensor.value(result) if result is not None else None

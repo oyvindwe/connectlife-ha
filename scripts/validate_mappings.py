@@ -107,6 +107,32 @@ def _check_device_platform_pairing(filename, merged_entry):
     )
 
 
+def _check_cycle_totals(filename, statistics, merged_props):
+    """``statistics.cycle_totals`` silently does nothing at runtime if it names a property
+    the dictionary doesn't define, or a ``finished`` value the phase property has no option
+    for, so fail the PR instead. ``merged_props`` maps property name -> merged entry."""
+    cycle = (statistics or {}).get('cycle_totals')
+    if not cycle:
+        return []
+    errors = []
+    for key in ('phase', 'energy', 'water'):
+        if cycle[key] not in merged_props:
+            errors.append(
+                f"{filename}: statistics.cycle_totals.{key} names unknown property "
+                f"'{cycle[key]}'."
+            )
+    phase = merged_props.get(cycle['phase'])
+    options = ((phase or {}).get('sensor') or {}).get('options')
+    if phase is not None and options is not None and str(cycle['finished']) not in {
+        str(k) for k in options
+    }:
+        errors.append(
+            f"{filename}: statistics.cycle_totals.finished ({cycle['finished']}) is not "
+            f"one of {cycle['phase']}'s sensor options."
+        )
+    return errors
+
+
 CHECKS = (
     _check_entity_category_config_on_sensor,
     _check_hvac_option_values,
@@ -156,14 +182,19 @@ def main(basedir):
         is_subtype = '-' in filename.removesuffix('.yaml')
         type_code = filename.split('-')[0] if is_subtype else filename.removesuffix('.yaml')
         base_props = bases.get(type_code, {}) if is_subtype else {}
+        merged_props = dict(base_props)
         for prop in (mappings_yaml.get('properties') or []):
             name = prop['property']
             merged = _merge_property(base_props.get(name), prop) if is_subtype else prop
+            merged_props[name] = merged
             for check in CHECKS:
                 err = check(filename, merged)
                 if err:
                     print(err)
                     errors.append(filename)
+        for err in _check_cycle_totals(filename, mappings_yaml.get('statistics'), merged_props):
+            print(err)
+            errors.append(filename)
 
     if errors:
         sys.exit(1)

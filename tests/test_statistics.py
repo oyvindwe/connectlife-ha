@@ -119,6 +119,7 @@ def _coordinator(api, data: dict):
     coord = ConnectLifeStatisticsCoordinator.__new__(ConnectLifeStatisticsCoordinator)
     coord.api = api  # type: ignore[assignment]
     coord.appliance_coordinator = SimpleNamespace(data=data)  # type: ignore[assignment]
+    coord.cycle_totals = {}
     return coord
 
 
@@ -213,6 +214,7 @@ class _FakeStatsCoordinator:
     def __init__(self, data, last_update_success=True):
         self.data = data
         self.last_update_success = last_update_success
+        self.cycle_totals = {}
 
 
 def _energy_sensor_def():

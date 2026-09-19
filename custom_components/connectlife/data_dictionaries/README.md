@@ -544,7 +544,7 @@ integration polls a separate ConnectLife cloud statistics endpoint (every 10 min
 exposes the daily totals. Because the data is cloud-side, these sensors stay available even
 when the appliance is offline.
 
-Set this block on the **base** device-type file (e.g. `015.yaml`), not on feature overrides.
+Set this block on the **base** device-type file (e.g. `015.yaml`); the one exception is `cycle_totals` (below), which belongs on a feature file.
 Omit the whole block for device types that have no statistics endpoint.
 
 | Item                      | Type                                            | Description                                                                                                                                            |
@@ -555,6 +555,43 @@ Omit the whole block for device types that have no statistics endpoint.
 
 Both sensor flags default to off, so each must be explicitly enabled with `true`.
 `daily_water_consumption` is only meaningful for the `energy_consumption_curve` source.
+
+### Deriving the daily totals from per-cycle telemetry (`cycle_totals`)
+
+For some appliances the cloud endpoint is unreliable: it credits completed cycles again hourly
+and can report energy for days with no cycles. If the appliance itself reports each cycle's
+energy and water (matching its display), the optional `cycle_totals` block makes the daily
+sensors sum those instead of reading the cloud endpoint. The sensors keep their entity IDs.
+
+| Item       | Type    | Description                                                                                                  |
+|------------|---------|--------------------------------------------------------------------------------------------------------------|
+| `phase`    | string  | Property holding the program phase.                                                                          |
+| `finished` | integer | Value of `phase` meaning the cycle has finished.                                                             |
+| `energy`   | string  | Property holding the finished cycle's energy in kWh. May be a [`combine`](#combine)d property.                |
+| `water`    | string  | Property holding the finished cycle's water in litres. May be a [`combine`](#combine)d property.             |
+
+When `phase` first reports `finished`, that cycle's `energy` and `water` are added once to the local
+day's total (a cycle that finishes after midnight counts for the new day). A `finished` phase that
+persists for hours is not counted again. The totals are persisted across restarts. Only cycles that
+reach `finished` are counted. If the appliance doesn't report all four properties, the cloud endpoint
+is used as before.
+
+Because the `finished` value differs between models, set `cycle_totals` on the **feature** file of a
+model you have verified, not on the base file. A feature file's `statistics` block replaces the
+base file's entirely, so it must repeat `source` and the sensor flags:
+
+```yaml
+# 025-1wj120596v0f.yaml (feature)
+statistics:
+  source: energy_consumption_curve
+  daily_energy_kwh: true
+  daily_water_consumption: true
+  cycle_totals:
+    phase: Current_program_phase
+    finished: 10
+    energy: Electricit_consumption
+    water: Water_consumption
+```
 
 Example for a dishwasher:
 

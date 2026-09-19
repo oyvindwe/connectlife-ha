@@ -35,6 +35,11 @@ DEVICE = "device"
 DEVICE_CLASS = "device_class"
 STATISTICS = "statistics"
 SOURCE = "source"
+CYCLE_TOTALS = "cycle_totals"
+PHASE = "phase"
+FINISHED = "finished"
+ENERGY = "energy"
+WATER = "water"
 DISABLE = "disable"
 HIDE = "hide"
 ICON = "icon"
@@ -439,6 +444,22 @@ def _merge_buttons(base: list[dict], override: list[dict]) -> list[dict]:
     return [by_key[k] for k in order if not by_key[k].get(DISABLE)]
 
 
+@dataclass(frozen=True)
+class CycleTotalsConfig:
+    """Opt-in config to derive the daily energy/water sensors from an appliance's own
+    per-cycle telemetry instead of the cloud statistics endpoint.
+
+    ``phase`` is the property holding the program phase and ``finished`` the value it
+    reports once a cycle has finished. ``energy`` (kWh) and ``water`` (L) name the
+    dictionary properties holding the finished cycle's totals (they may be ``combine``d).
+    """
+
+    phase: str
+    finished: int
+    energy: str
+    water: str
+
+
 @dataclass
 class Dictionary:
     """Data dictionary for a ConnectLife appliance"""
@@ -457,6 +478,9 @@ class Dictionary:
     # Per-sensor flags from the `statistics` block (sensor key -> create?). A sensor is
     # created only when listed true here; omitted or false means not created.
     statistics_sensors: dict[str, bool] = field(default_factory=dict)
+    # When set (and the appliance reports the properties), the daily sensors are summed
+    # from finished cycles' own telemetry rather than read from the cloud endpoint.
+    cycle_totals: CycleTotalsConfig | None = None
 
 
 # Device-level platforms own a `target` and may coexist with a per-property
@@ -625,8 +649,19 @@ class Dictionaries:
         statistics_sensors = {
             sensor_key: bool(create)
             for sensor_key, create in statistics.items()
-            if sensor_key != SOURCE
+            if sensor_key not in (SOURCE, CYCLE_TOTALS)
         }
+        raw_cycle_totals = _val(statistics, CYCLE_TOTALS)
+        cycle_totals = (
+            CycleTotalsConfig(
+                phase=raw_cycle_totals[PHASE],
+                finished=int(raw_cycle_totals[FINISHED]),
+                energy=raw_cycle_totals[ENERGY],
+                water=raw_cycle_totals[WATER],
+            )
+            if raw_cycle_totals is not None
+            else None
+        )
 
         # Parse presets into a name -> values map. The preset name is stripped
         # from the value so it can be matched against a device status list.
@@ -642,6 +677,7 @@ class Dictionaries:
             presets=presets,
             statistics_source=statistics_source,
             statistics_sensors=statistics_sensors,
+            cycle_totals=cycle_totals,
         )
         cls.dictionaries[key] = dictionary
         return dictionary
