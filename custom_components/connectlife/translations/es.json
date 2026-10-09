@@ -2481,6 +2481,7 @@
       "selected_program_id_status": {
         "name": "Programa seleccionado",
         "state": {
+          "airtech": "AirTech",
           "auto": "Auto",
           "baby_care": "Ropa beb\u00e9",
           "clean": "Limpieza",

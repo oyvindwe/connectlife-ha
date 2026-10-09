@@ -2483,6 +2483,7 @@
       "selected_program_id_status": {
         "name": "Seleziona programma",
         "state": {
+          "airtech": "AirTech",
           "auto": "Auto",
           "baby_care": "Bambino",
           "clean": "Pulizia",
