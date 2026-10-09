@@ -21,12 +21,17 @@ properties:
     device_class: enum
     options:
       0: eco
-      1: cotton_white
-      2: colour
-      3: wool_hand
-      4: mix_synthetics
-      5: extra_hygiene
-      9: eco_40_60
-      13: drum_clean
-      25: stain_expert
+      5: allergy_care
+      6: drum_clean
+      7: cotton
+      8: synthetic
+      10: wool
+      11: quick_15
+      14: spin
+      16: baby_care
+      18: sportswear
+      19: down
+      20: rinse_spin
+      24: shirts
+      41: power_49
       42: auto
