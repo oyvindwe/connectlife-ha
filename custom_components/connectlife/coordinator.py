@@ -3,7 +3,13 @@ import logging
 from collections.abc import Mapping
 from datetime import timedelta
 
-from connectlife.api import LifeConnectAuthError, LifeConnectError, ConnectLifeApi, EnergyResult
+from connectlife.api import (
+    ConnectLifeApi,
+    EnergyResult,
+    LifeConnectAuthError,
+    LifeConnectError,
+    LifeConnectTermsNotAcceptedError,
+)
 from connectlife.appliance import ConnectLifeAppliance
 from homeassistant.components.recorder import get_instance
 from homeassistant.components.recorder.statistics import list_statistic_ids
@@ -16,6 +22,7 @@ from .const import DATA_STATE_CLASS_MIGRATION_DONE, DOMAIN
 from .dictionaries import Dictionaries
 from .messages import format_retry_message
 from .statistics_sources import STATISTICS_SOURCES, enabled_sensors
+from .terms import terms_accepted, terms_not_accepted, terms_retry_throttled
 
 MAX_RETRIES = 3
 STATISTICS_UPDATE_INTERVAL = timedelta(minutes=10)
@@ -46,6 +53,9 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
 
     async def _async_update_data(self):
         """Fetch data from API endpoint."""
+        if terms_retry_throttled(self.hass, self.config_entry):
+            _LOGGER.debug("Terms & Conditions not accepted recently, skipping update")
+            raise UpdateFailed(translation_domain=DOMAIN, translation_key="terms_not_accepted")
         try:
             # Note: aiohttp.ClientError is already handled by the data update
             # coordinator. TimeoutError is retried here so the UI gets the
@@ -53,6 +63,14 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
             async with async_timeout.timeout(30):
                 await self.api.get_appliances()
                 self.error_count = 0
+            terms_accepted(self.hass, self.config_entry)
+        except LifeConnectTermsNotAcceptedError as err:
+            # Not fixable by re-entering credentials, so don't start reauth. Keep
+            # polling (throttled) so the entry recovers once the terms are accepted.
+            terms_not_accepted(self.hass, self.config_entry)
+            raise UpdateFailed(
+                translation_domain=DOMAIN, translation_key="terms_not_accepted"
+            ) from err
         except LifeConnectAuthError as err:
             # Raising ConfigEntryAuthFailed will cancel future updates
             # and start a config flow with SOURCE_REAUTH (async_step_reauth)
