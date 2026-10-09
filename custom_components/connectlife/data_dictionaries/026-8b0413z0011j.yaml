@@ -1,9 +1,7 @@
 # Gorenje NRB620E61X4WFE Refrigerator (feature code 8b0413z0011j)
-# This device has Away mode (holiday_mode) and Eco mode (save_mode)
-# Disables wine cooler and variation room properties not present on this model
 
 properties:
-  # Temperature controls - main features
+  # Temperature ranges as shown in the app
   - property: refrigerator_temperature
     number:
       device_class: temperature
@@ -22,136 +20,21 @@ properties:
       command:
         name: SET_FREEZE_TEMPERATURE
 
-  # Modes and features
-  - property: save_mode
-    entity_category: config
-    switch: {}
-
-  - property: holiday_mode
-    entity_category: config
-    switch:
-      command:
-        name: SET_HOLIDAY_MODE
-
+  # No ice maker on this model
   - property: automatic_ice_making
-    entity_category: config
-    switch: {}
+    disable: true
 
-  # Door and alarms - important diagnostics
-  - property: open_refrigerator_door_alarm
-    entity_category: diagnostic
-    binary_sensor:
-      device_class: problem
-      options:
-        0: false
-        1: true
-
-  - property: open_freeze_door_alarm
-    entity_category: diagnostic
-    binary_sensor:
-      device_class: problem
-      options:
-        0: false
-        1: true
-
-  - property: refrigerator_room_open
-    entity_category: diagnostic
-    binary_sensor:
-      device_class: door
-      options:
-        0: false
-        1: true
-
-  - property: free_room_open
-    entity_category: diagnostic
-    binary_sensor:
-      device_class: door
-      options:
-        0: false
-        1: true
-
-  # Temperature sensors
-  - property: refrigerator_real_temperature
-    sensor:
-      device_class: temperature
-      unit: °C
-      state_class: measurement
-      read_only: true
-
-  - property: freeze_real_temperature
-    sensor:
-      device_class: temperature
-      unit: °C
-      state_class: measurement
-      read_only: true
-
-  - property: environment_real_temperature
-    sensor:
-      device_class: temperature
-      unit: °C
-      state_class: measurement
-      read_only: true
-
-  - property: environment_humidity
-    sensor:
-      device_class: humidity
-      unit: "%"
-      state_class: measurement
-      read_only: true
-
-  # Ice maker
   - property: ice_making_state
-    entity_category: diagnostic
-    binary_sensor:
-      options:
-        0: false
-        1: true
+    disable: true
 
   - property: ice_making_stop_status
-    entity_category: diagnostic
-    binary_sensor:
-      options:
-        0: false
-        1: true
-
-  # Disable wine cooler properties - not present on this model
-  - property: low_wine_area_c_evaporator_fault
     disable: true
 
-  - property: low_wine_area_c_fan_fault
+  # No humidity sensor (always reads 0)
+  - property: environment_humidity
     disable: true
 
-  - property: low_wine_area_c_humdy_fault
-    disable: true
-
-  - property: low_wine_area_c_temp_fault
-    disable: true
-
-  - property: mid_wine_area_b_evaporator_fault
-    disable: true
-
-  - property: mid_wine_area_b_fan_fault
-    disable: true
-
-  - property: mid_wine_area_b_humdy_fault
-    disable: true
-
-  - property: mid_wine_area_b_temp_fault
-    disable: true
-
-  - property: up_wine_area_a_evaporator_fault
-    disable: true
-
-  - property: up_wine_area_a_fan_fault
-    disable: true
-
-  - property: up_wine_area_a_humdy_fault
-    disable: true
-
-  - property: up_wine_area_a_temp_fault
-    disable: true
-
-  # Disable variation/variable room - all values -40 (not present)
+  # No variable temperature room (all values -40)
   - property: variation_temperature
     disable: true
 
@@ -171,9 +54,6 @@ properties:
     disable: true
 
   - property: variation_door_open_time
-    disable: true
-
-  - property: variable_room_open
     disable: true
 
   - property: variable_heater_failure_status

@@ -1,3 +1,4 @@
+
 | Device name              | Device type              | Device type code | Device feature code         |
 |--------------------------|--------------------------|------------------|-----------------------------|
 | ASKO Pro Washing Machine | Washing machine          | 003              | 000                         |
