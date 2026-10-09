@@ -8888,7 +8888,7 @@
         },
         "step": {
           "confirm": {
-            "description": "ConnectLife weigert de aanmelding voor \"{title}\" totdat de bijgewerkte algemene voorwaarden zijn geaccepteerd. Je wachtwoord opnieuw invoeren helpt niet.\n\n1. Open de ConnectLife-app en zet de taal van de app op **Engels**.\n2. Sluit de app geforceerd af (niet alleen naar de achtergrond) en open hem opnieuw.\n3. Accepteer de nieuwe algemene voorwaarden wanneer daarom wordt gevraagd.\n4. Kies **Verzenden** om het nu opnieuw te proberen. Anders probeert de integratie het elke 15 minuten opnieuw.\n\nDaarna kun je de taal van de app weer terugzetten. De taalwijziging is nodig omdat de app de vraag kan overslaan als de voorwaarden nog niet in jouw taal zijn vertaald. [Meer informatie](https://github.com/oyvindwe/connectlife-ha#updated-terms--conditions)",
+            "description": "ConnectLife weigert de aanmelding voor \"{title}\" totdat de bijgewerkte algemene voorwaarden zijn geaccepteerd. Je wachtwoord opnieuw invoeren helpt niet.\n\n1. Open de ConnectLife-app en zet de taal van de app op **Engels**.\n2. Sluit de app geforceerd af (niet alleen naar de achtergrond) en open hem opnieuw.\n3. Accepteer de nieuwe algemene voorwaarden wanneer daarom wordt gevraagd.\n4. Kies **Verzenden** om het nu opnieuw te proberen. Anders probeert de integratie het elke 15 minuten opnieuw.\n\nDaarna kun je de taal van de app weer terugzetten. De taalwijziging is nodig omdat de app de vraag kan overslaan als de voorwaarden nog niet in jouw taal zijn vertaald. [Meer informatie]({url})",
             "title": "Bijgewerkte algemene voorwaarden van ConnectLife accepteren"
           }
         }

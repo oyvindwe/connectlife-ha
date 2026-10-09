@@ -8888,7 +8888,7 @@
         },
         "step": {
           "confirm": {
-            "description": "ConnectLife rejects the login for \"{title}\" until the updated Terms & Conditions are accepted. Re-entering your password will not help.\n\n1. Open the ConnectLife mobile app and change the app language to **English**.\n2. Force close the app (not just background it), then reopen it.\n3. Accept the new Terms & Conditions when prompted.\n4. Select **Submit** to retry now. Otherwise the integration retries every 15 minutes.\n\nYou can change the app language back afterwards. The language change is needed because the app may skip the prompt when the terms are not yet translated to your language. [More information](https://github.com/oyvindwe/connectlife-ha#updated-terms--conditions)",
+            "description": "ConnectLife rejects the login for \"{title}\" until the updated Terms & Conditions are accepted. Re-entering your password will not help.\n\n1. Open the ConnectLife mobile app and change the app language to **English**.\n2. Force close the app (not just background it), then reopen it.\n3. Accept the new Terms & Conditions when prompted.\n4. Select **Submit** to retry now. Otherwise the integration retries every 15 minutes.\n\nYou can change the app language back afterwards. The language change is needed because the app may skip the prompt when the terms are not yet translated to your language. [More information]({url})",
             "title": "Accept updated ConnectLife Terms & Conditions"
           }
         }

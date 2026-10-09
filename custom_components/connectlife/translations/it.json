@@ -8888,7 +8888,7 @@
         },
         "step": {
           "confirm": {
-            "description": "ConnectLife rifiuta l'accesso per \"{title}\" finch\u00e9 non vengono accettati i Termini e Condizioni aggiornati. Reinserire la password non serve.\n\n1. Apri l'app ConnectLife e imposta la lingua dell'app su **inglese**.\n2. Forza la chiusura dell'app (non solo in background) e riaprila.\n3. Accetta i nuovi Termini e Condizioni quando richiesto.\n4. Seleziona **Invia** per riprovare subito. Altrimenti l'integrazione riprova ogni 15 minuti.\n\nIn seguito puoi reimpostare la lingua dell'app. Il cambio di lingua \u00e8 necessario perch\u00e9 l'app pu\u00f2 saltare la richiesta se i termini non sono ancora tradotti nella tua lingua. [Maggiori informazioni](https://github.com/oyvindwe/connectlife-ha#updated-terms--conditions)",
+            "description": "ConnectLife rifiuta l'accesso per \"{title}\" finch\u00e9 non vengono accettati i Termini e Condizioni aggiornati. Reinserire la password non serve.\n\n1. Apri l'app ConnectLife e imposta la lingua dell'app su **inglese**.\n2. Forza la chiusura dell'app (non solo in background) e riaprila.\n3. Accetta i nuovi Termini e Condizioni quando richiesto.\n4. Seleziona **Invia** per riprovare subito. Altrimenti l'integrazione riprova ogni 15 minuti.\n\nIn seguito puoi reimpostare la lingua dell'app. Il cambio di lingua \u00e8 necessario perch\u00e9 l'app pu\u00f2 saltare la richiesta se i termini non sono ancora tradotti nella tua lingua. [Maggiori informazioni]({url})",
             "title": "Accetta i Termini e Condizioni aggiornati di ConnectLife"
           }
         }

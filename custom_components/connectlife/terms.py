@@ -20,6 +20,8 @@ DATA_TERMS_NOT_ACCEPTED = f"{DOMAIN}_terms_not_accepted"
 
 ISSUE_ID_PREFIX = "terms_not_accepted."
 
+TERMS_NOT_ACCEPTED_URL = "https://github.com/oyvindwe/connectlife-ha#updated-terms--conditions"
+
 
 def terms_retry_throttled(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     """Return True if a login was rejected for this entry too recently to retry."""

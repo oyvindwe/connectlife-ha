@@ -11,7 +11,11 @@ from homeassistant.helpers import device_registry as dr, issue_registry as ir
 
 from .const import CONF_DEVICES, CONF_DISABLE_BEEP, DATA_STATE_CLASS_MIGRATION_DONE, DOMAIN
 from .coordinator import ConnectLifeCoordinator
-from .terms import ISSUE_ID_PREFIX as TERMS_ISSUE_ID_PREFIX, clear_terms_retry_throttle
+from .terms import (
+    ISSUE_ID_PREFIX as TERMS_ISSUE_ID_PREFIX,
+    TERMS_NOT_ACCEPTED_URL,
+    clear_terms_retry_throttle,
+)
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -203,7 +207,7 @@ class TermsNotAcceptedRepairFlow(RepairsFlow):
         return self.async_show_form(
             step_id="confirm",
             errors=errors,
-            description_placeholders={"title": entry.title},
+            description_placeholders={"title": entry.title, "url": TERMS_NOT_ACCEPTED_URL},
         )
 
 

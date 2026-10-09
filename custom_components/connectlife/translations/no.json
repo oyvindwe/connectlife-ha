@@ -8888,7 +8888,7 @@
         },
         "step": {
           "confirm": {
-            "description": "ConnectLife avviser innloggingen for \u00ab{title}\u00bb til de oppdaterte vilk\u00e5rene er godtatt. \u00c5 skrive inn passordet p\u00e5 nytt hjelper ikke.\n\n1. \u00c5pne ConnectLife-appen og bytt spr\u00e5k i appen til **engelsk**.\n2. Tving appen til \u00e5 lukkes (ikke bare legg den i bakgrunnen), og \u00e5pne den igjen.\n3. Godta de nye vilk\u00e5rene n\u00e5r du blir bedt om det.\n4. Velg **Send** for \u00e5 pr\u00f8ve igjen n\u00e5. Ellers pr\u00f8ver integrasjonen p\u00e5 nytt hvert 15. minutt.\n\nDu kan bytte tilbake spr\u00e5ket i appen etterp\u00e5. Spr\u00e5kbyttet er n\u00f8dvendig fordi appen kan hoppe over sp\u00f8rsm\u00e5let n\u00e5r vilk\u00e5rene enn\u00e5 ikke er oversatt til ditt spr\u00e5k. [Mer informasjon](https://github.com/oyvindwe/connectlife-ha#updated-terms--conditions)",
+            "description": "ConnectLife avviser innloggingen for \u00ab{title}\u00bb til de oppdaterte vilk\u00e5rene er godtatt. \u00c5 skrive inn passordet p\u00e5 nytt hjelper ikke.\n\n1. \u00c5pne ConnectLife-appen og bytt spr\u00e5k i appen til **engelsk**.\n2. Tving appen til \u00e5 lukkes (ikke bare legg den i bakgrunnen), og \u00e5pne den igjen.\n3. Godta de nye vilk\u00e5rene n\u00e5r du blir bedt om det.\n4. Velg **Send** for \u00e5 pr\u00f8ve igjen n\u00e5. Ellers pr\u00f8ver integrasjonen p\u00e5 nytt hvert 15. minutt.\n\nDu kan bytte tilbake spr\u00e5ket i appen etterp\u00e5. Spr\u00e5kbyttet er n\u00f8dvendig fordi appen kan hoppe over sp\u00f8rsm\u00e5let n\u00e5r vilk\u00e5rene enn\u00e5 ikke er oversatt til ditt spr\u00e5k. [Mer informasjon]({url})",
             "title": "Godta oppdaterte vilk\u00e5r for ConnectLife"
           }
         }
