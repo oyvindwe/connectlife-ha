@@ -7,6 +7,7 @@
     "error": {
       "cannot_connect": "Nepoda\u0159ilo se p\u0159ipojit",
       "invalid_auth": "Neplatn\u00e9 ov\u011b\u0159en\u00ed",
+      "terms_not_accepted": "ConnectLife vy\u017eaduje p\u0159ijet\u00ed aktualizovan\u00fdch obchodn\u00edch podm\u00ednek. P\u0159epn\u011bte jazyk aplikace ConnectLife na angli\u010dtinu, aplikaci vynucen\u011b ukon\u010dete a znovu otev\u0159ete, p\u0159ijm\u011bte nov\u00e9 podm\u00ednky a zkuste to znovu.",
       "test_server_invalid": "Neplatn\u00e1 URL testovac\u00edho serveru",
       "test_server_required": "V\u00fdvojov\u00fd re\u017eim vy\u017eaduje URL testovac\u00edho serveru",
       "unknown": "Neo\u010dek\u00e1van\u00e1 chyba"
@@ -2452,12 +2453,14 @@
           "eco": "Eko",
           "eco_40_60": "Eko 40-60",
           "full_load_49": "Pln\u00e1 n\u00e1pl\u0148 49",
+          "full_load_59": "Pln\u00e1 n\u00e1pl\u0148 59",
           "hand_wash": "Ru\u010dn\u00ed pran\u00ed",
           "ion_refresh": "Ionizace osv\u011b\u017een\u00ed",
           "jeans": "D\u017e\u00edny",
           "mix": "Sm\u011bs",
           "pets": "Dom\u00e1c\u00ed mazl\u00ed\u010dci",
           "power_30": "V\u00fdkon 30",
+          "power_39": "V\u00fdkon 39",
           "power_49": "V\u00fdkon 49",
           "quick_15": "Rychl\u00fd 15",
           "quick_30": "Rychl\u00fd 30",
@@ -2480,6 +2483,7 @@
       "selected_program_id_status": {
         "name": "Vybran\u00fd program",
         "state": {
+          "airtech": "AirTech",
           "auto": "Auto",
           "baby_care": "P\u00e9\u010de o miminko",
           "clean": "\u010ci\u0161t\u011bn\u00ed",
@@ -8848,6 +8852,11 @@
       }
     }
   },
+  "exceptions": {
+    "terms_not_accepted": {
+      "message": "Aktualizovan\u00e9 obchodn\u00ed podm\u00ednky ConnectLife je nutn\u00e9 p\u0159ijmout v aplikaci ConnectLife"
+    }
+  },
   "issues": {
     "orphaned_statistics": {
       "fix_flow": {
@@ -8871,6 +8880,23 @@
         }
       },
       "title": "Osi\u0159el\u00e9 dlouhodob\u00e9 statistiky ({count} senzor\u016f)"
+    },
+    "terms_not_accepted": {
+      "fix_flow": {
+        "abort": {
+          "entry_removed": "Konfigura\u010dn\u00ed z\u00e1znam ConnectLife ji\u017e neexistuje."
+        },
+        "error": {
+          "still_not_accepted": "ConnectLife st\u00e1le odm\u00edt\u00e1 p\u0159ihl\u00e1\u0161en\u00ed. Ujist\u011bte se, \u017ee jsou v aplikaci p\u0159ijaty nov\u00e9 obchodn\u00ed podm\u00ednky, a zkuste to znovu."
+        },
+        "step": {
+          "confirm": {
+            "description": "ConnectLife odm\u00edt\u00e1 p\u0159ihl\u00e1\u0161en\u00ed pro \u201e{title}\u201c, dokud nejsou p\u0159ijaty aktualizovan\u00e9 obchodn\u00ed podm\u00ednky. Op\u011btovn\u00e9 zad\u00e1n\u00ed hesla nepom\u016f\u017ee.\n\n1. Otev\u0159ete mobiln\u00ed aplikaci ConnectLife a p\u0159epn\u011bte jazyk aplikace na **angli\u010dtinu**.\n2. Aplikaci vynucen\u011b ukon\u010dete (nesta\u010d\u00ed ji jen poslat do pozad\u00ed) a znovu ji otev\u0159ete.\n3. Po vyzv\u00e1n\u00ed p\u0159ijm\u011bte nov\u00e9 obchodn\u00ed podm\u00ednky.\n4. Vyberte **Odeslat** pro okam\u017eit\u00fd nov\u00fd pokus. Jinak se integrace pokus\u00ed znovu ka\u017ed\u00fdch 15 minut.\n\nJazyk aplikace m\u016f\u017eete pot\u00e9 zm\u011bnit zp\u011bt. Zm\u011bna jazyka je nutn\u00e1, proto\u017ee aplikace m\u016f\u017ee v\u00fdzvu p\u0159esko\u010dit, pokud podm\u00ednky je\u0161t\u011b nejsou p\u0159elo\u017eeny do va\u0161eho jazyka. [V\u00edce informac\u00ed]({url})",
+            "title": "P\u0159ijm\u011bte aktualizovan\u00e9 obchodn\u00ed podm\u00ednky ConnectLife"
+          }
+        }
+      },
+      "title": "P\u0159ijm\u011bte aktualizovan\u00e9 obchodn\u00ed podm\u00ednky ConnectLife"
     },
     "unavailable_device": {
       "fix_flow": {
