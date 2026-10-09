@@ -1,3 +1,4 @@
+# Hisense RQ760N4SASE (026-1b0522z0308j)
 properties:
   - property: automatic_ice_making
     switch:
@@ -5,6 +6,8 @@ properties:
       command:
         name: SET_ICE_SWITCH
   - property: variation_temperature
+    hide: false
+    entity_category: config
     number:
       device_class: temperature
       unit: °C
