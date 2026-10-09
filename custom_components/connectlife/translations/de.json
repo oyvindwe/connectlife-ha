@@ -7,6 +7,7 @@
     "error": {
       "cannot_connect": "Verbindung fehlgeschlagen",
       "invalid_auth": "Ung\u00fcltige Authentifizierung",
+      "terms_not_accepted": "ConnectLife verlangt die Zustimmung zu aktualisierten Nutzungsbedingungen. Stelle die Sprache der ConnectLife-App auf Englisch, beende die App vollst\u00e4ndig, \u00f6ffne sie erneut, akzeptiere die neuen Bedingungen und versuche es dann noch einmal.",
       "test_server_invalid": "Ung\u00fcltige Test-Server-URL",
       "test_server_required": "Entwicklungsmodus erfordert eine Test-Server-URL",
       "unknown": "Unerwarteter Fehler"
@@ -8848,6 +8849,11 @@
       }
     }
   },
+  "exceptions": {
+    "terms_not_accepted": {
+      "message": "Aktualisierte ConnectLife-Nutzungsbedingungen m\u00fcssen in der ConnectLife-App akzeptiert werden"
+    }
+  },
   "issues": {
     "orphaned_statistics": {
       "fix_flow": {
@@ -8871,6 +8877,23 @@
         }
       },
       "title": "Verwaiste Langzeitstatistik ({count} Sensoren)"
+    },
+    "terms_not_accepted": {
+      "fix_flow": {
+        "abort": {
+          "entry_removed": "Der ConnectLife-Konfigurationseintrag existiert nicht mehr."
+        },
+        "error": {
+          "still_not_accepted": "ConnectLife lehnt die Anmeldung weiterhin ab. Stelle sicher, dass die neuen Nutzungsbedingungen in der App akzeptiert wurden, und versuche es erneut."
+        },
+        "step": {
+          "confirm": {
+            "description": "ConnectLife lehnt die Anmeldung f\u00fcr \"{title}\" ab, bis die aktualisierten Nutzungsbedingungen akzeptiert wurden. Das erneute Eingeben des Passworts hilft nicht.\n\n1. \u00d6ffne die ConnectLife-App und stelle die App-Sprache auf **Englisch**.\n2. Beende die App vollst\u00e4ndig (nicht nur in den Hintergrund) und \u00f6ffne sie erneut.\n3. Akzeptiere die neuen Nutzungsbedingungen, wenn du dazu aufgefordert wirst.\n4. W\u00e4hle **Absenden**, um es sofort erneut zu versuchen. Andernfalls versucht es die Integration alle 15 Minuten erneut.\n\nDanach kannst du die App-Sprache wieder zur\u00fcckstellen. Der Sprachwechsel ist n\u00f6tig, weil die App die Abfrage \u00fcberspringen kann, wenn die Bedingungen noch nicht in deine Sprache \u00fcbersetzt sind. [Weitere Informationen](https://github.com/oyvindwe/connectlife-ha#updated-terms--conditions)",
+            "title": "Aktualisierte ConnectLife-Nutzungsbedingungen akzeptieren"
+          }
+        }
+      },
+      "title": "Aktualisierte ConnectLife-Nutzungsbedingungen akzeptieren"
     },
     "unavailable_device": {
       "fix_flow": {

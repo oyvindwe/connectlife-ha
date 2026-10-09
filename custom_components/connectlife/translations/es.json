@@ -7,6 +7,7 @@
     "error": {
       "cannot_connect": "Fallo al establecer la conexi\u00f3n",
       "invalid_auth": "Autentificaci\u00f3n Fallida",
+      "terms_not_accepted": "ConnectLife requiere que aceptes los T\u00e9rminos y Condiciones actualizados. Cambia el idioma de la app ConnectLife a ingl\u00e9s, fuerza el cierre de la app, vuelve a abrirla, acepta los nuevos t\u00e9rminos y vuelve a intentarlo.",
       "test_server_invalid": "Test server URL invalida",
       "test_server_required": "El modo desarrollo requiere una URL del Test Server",
       "unknown": "Error desconocido"
@@ -8848,6 +8849,11 @@
       }
     }
   },
+  "exceptions": {
+    "terms_not_accepted": {
+      "message": "Hay que aceptar los T\u00e9rminos y Condiciones actualizados de ConnectLife en la app ConnectLife"
+    }
+  },
   "issues": {
     "orphaned_statistics": {
       "fix_flow": {
@@ -8871,6 +8877,23 @@
         }
       },
       "title": "Estad\u00edsticas a largo plazo hu\u00e9rfanas ({count} sensores)"
+    },
+    "terms_not_accepted": {
+      "fix_flow": {
+        "abort": {
+          "entry_removed": "La entrada de configuraci\u00f3n de ConnectLife ya no existe."
+        },
+        "error": {
+          "still_not_accepted": "ConnectLife sigue rechazando el inicio de sesi\u00f3n. Aseg\u00farate de haber aceptado los nuevos T\u00e9rminos y Condiciones en la app y vuelve a intentarlo."
+        },
+        "step": {
+          "confirm": {
+            "description": "ConnectLife rechaza el inicio de sesi\u00f3n de \"{title}\" hasta que se acepten los T\u00e9rminos y Condiciones actualizados. Volver a introducir la contrase\u00f1a no ayudar\u00e1.\n\n1. Abre la app ConnectLife y cambia el idioma de la app a **ingl\u00e9s**.\n2. Fuerza el cierre de la app (no solo en segundo plano) y vuelve a abrirla.\n3. Acepta los nuevos T\u00e9rminos y Condiciones cuando se te solicite.\n4. Selecciona **Enviar** para reintentar ahora. De lo contrario, la integraci\u00f3n lo reintenta cada 15 minutos.\n\nDespu\u00e9s puedes volver a cambiar el idioma de la app. El cambio de idioma es necesario porque la app puede omitir la solicitud si los t\u00e9rminos a\u00fan no est\u00e1n traducidos a tu idioma. [M\u00e1s informaci\u00f3n](https://github.com/oyvindwe/connectlife-ha#updated-terms--conditions)",
+            "title": "Aceptar los T\u00e9rminos y Condiciones actualizados de ConnectLife"
+          }
+        }
+      },
+      "title": "Aceptar los T\u00e9rminos y Condiciones actualizados de ConnectLife"
     },
     "unavailable_device": {
       "fix_flow": {

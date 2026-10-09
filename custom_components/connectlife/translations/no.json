@@ -7,6 +7,7 @@
     "error": {
       "cannot_connect": "Kunne ikke koble til",
       "invalid_auth": "Ugyldig autentisering",
+      "terms_not_accepted": "ConnectLife krever at du godtar oppdaterte vilk\u00e5r. Bytt spr\u00e5k i ConnectLife-appen til engelsk, tving appen til \u00e5 lukkes, \u00e5pne den igjen, godta de nye vilk\u00e5rene og pr\u00f8v p\u00e5 nytt.",
       "test_server_invalid": "Ugyldig URL for testserver",
       "test_server_required": "Utviklingsmodus krever URL for testserver",
       "unknown": "Uventet feil"
@@ -8848,6 +8849,11 @@
       }
     }
   },
+  "exceptions": {
+    "terms_not_accepted": {
+      "message": "Oppdaterte vilk\u00e5r for ConnectLife m\u00e5 godtas i ConnectLife-appen"
+    }
+  },
   "issues": {
     "orphaned_statistics": {
       "fix_flow": {
@@ -8871,6 +8877,23 @@
         }
       },
       "title": "Foreldrel\u00f8se langtidsstatistikker ({count} sensorer)"
+    },
+    "terms_not_accepted": {
+      "fix_flow": {
+        "abort": {
+          "entry_removed": "ConnectLife-oppf\u00f8ringen finnes ikke lenger."
+        },
+        "error": {
+          "still_not_accepted": "ConnectLife avviser fortsatt innloggingen. Sjekk at de nye vilk\u00e5rene er godtatt i appen, og pr\u00f8v igjen."
+        },
+        "step": {
+          "confirm": {
+            "description": "ConnectLife avviser innloggingen for \u00ab{title}\u00bb til de oppdaterte vilk\u00e5rene er godtatt. \u00c5 skrive inn passordet p\u00e5 nytt hjelper ikke.\n\n1. \u00c5pne ConnectLife-appen og bytt spr\u00e5k i appen til **engelsk**.\n2. Tving appen til \u00e5 lukkes (ikke bare legg den i bakgrunnen), og \u00e5pne den igjen.\n3. Godta de nye vilk\u00e5rene n\u00e5r du blir bedt om det.\n4. Velg **Send** for \u00e5 pr\u00f8ve igjen n\u00e5. Ellers pr\u00f8ver integrasjonen p\u00e5 nytt hvert 15. minutt.\n\nDu kan bytte tilbake spr\u00e5ket i appen etterp\u00e5. Spr\u00e5kbyttet er n\u00f8dvendig fordi appen kan hoppe over sp\u00f8rsm\u00e5let n\u00e5r vilk\u00e5rene enn\u00e5 ikke er oversatt til ditt spr\u00e5k. [Mer informasjon](https://github.com/oyvindwe/connectlife-ha#updated-terms--conditions)",
+            "title": "Godta oppdaterte vilk\u00e5r for ConnectLife"
+          }
+        }
+      },
+      "title": "Godta oppdaterte vilk\u00e5r for ConnectLife"
     },
     "unavailable_device": {
       "fix_flow": {
