@@ -2485,6 +2485,7 @@
           "baby_care": "Baby care",
           "clean": "Clean",
           "color": "Color",
+          "crystal_glass": "Crystal glass",
           "down_feathers": "Down feathers",
           "draining": "Draining",
           "drum_clean": "Drum clean",
@@ -2500,6 +2501,7 @@
           "no_program_selected": "No program selected",
           "one_hour": "One hour",
           "pet_hair_removal": "Pet hair removal",
+          "preheated": "Preheated",
           "quick_pro": "Quick pro",
           "rinse_and_hold": "Rinse and hold",
           "rinsing_softening": "Rinsing & Softening",
@@ -2509,6 +2511,7 @@
           "spinning_draining": "Spinning & Draining",
           "sportswear": "Sportswear",
           "time_program": "Time program",
+          "universal": "Universal",
           "white_cotton": "White Cotton",
           "wool_manual": "Wool & Manual"
         }
