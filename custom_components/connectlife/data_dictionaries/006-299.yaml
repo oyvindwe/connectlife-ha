@@ -1,10 +1,1 @@
-# Portable air conditioner
-properties:
-  - property: t_work_mode
-    climate:
-      options:
-        0: fan_only
-        1: heat
-        2: cool
-        3: dry
-        4: auto
+# Uses default mappings
