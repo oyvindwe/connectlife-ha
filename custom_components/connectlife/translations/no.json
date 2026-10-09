@@ -2481,6 +2481,7 @@
       "selected_program_id_status": {
         "name": "Valgt program",
         "state": {
+          "airtech": "AirTech",
           "auto": "Auto",
           "baby_care": "Baby",
           "clean": "Rens",
