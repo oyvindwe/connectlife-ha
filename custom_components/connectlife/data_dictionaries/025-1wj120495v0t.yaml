@@ -20,11 +20,11 @@ properties:
   sensor:
     device_class: enum
     options:
-      0: eco
       5: allergy_care
       6: drum_clean
       7: cotton
       8: synthetic
+      9: eco_40_60
       10: wool
       11: quick_15
       14: spin
