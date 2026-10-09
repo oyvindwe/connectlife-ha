@@ -7,6 +7,7 @@
     "error": {
       "cannot_connect": "Impossibile connettersi",
       "invalid_auth": "Autenticazione non valida",
+      "terms_not_accepted": "ConnectLife richiede di accettare i Termini e Condizioni aggiornati. Imposta la lingua dell'app ConnectLife su inglese, forza la chiusura dell'app, riaprila, accetta i nuovi termini e riprova.",
       "test_server_invalid": "Invalid test server URL",
       "test_server_required": "La modalit\u00e0 di sviluppo richiede l'URL del server di prova",
       "unknown": "Errore imprevisto"
@@ -2452,12 +2453,14 @@
           "eco": "Eco",
           "eco_40_60": "Eco 40-60",
           "full_load_49": "Carico completo 49",
+          "full_load_59": "Carico completo 59",
           "hand_wash": "Lavaggio a mano",
           "ion_refresh": "Rinfresco a ioni",
           "jeans": "Jeans",
           "mix": "Misto",
           "pets": "Animali domestici",
           "power_30": "Power 30",
+          "power_39": "Power 39",
           "power_49": "Power 49",
           "quick_15": "Rapido 15",
           "quick_30": "Rapido 30",
@@ -8848,6 +8851,11 @@
       }
     }
   },
+  "exceptions": {
+    "terms_not_accepted": {
+      "message": "I Termini e Condizioni aggiornati di ConnectLife devono essere accettati nell'app ConnectLife"
+    }
+  },
   "issues": {
     "orphaned_statistics": {
       "fix_flow": {
@@ -8871,6 +8879,23 @@
         }
       },
       "title": "Statistiche a lungo termine orfane ({count} sensori)"
+    },
+    "terms_not_accepted": {
+      "fix_flow": {
+        "abort": {
+          "entry_removed": "La voce di configurazione di ConnectLife non esiste pi\u00f9."
+        },
+        "error": {
+          "still_not_accepted": "ConnectLife rifiuta ancora l'accesso. Assicurati di aver accettato i nuovi Termini e Condizioni nell'app e riprova."
+        },
+        "step": {
+          "confirm": {
+            "description": "ConnectLife rifiuta l'accesso per \"{title}\" finch\u00e9 non vengono accettati i Termini e Condizioni aggiornati. Reinserire la password non serve.\n\n1. Apri l'app ConnectLife e imposta la lingua dell'app su **inglese**.\n2. Forza la chiusura dell'app (non solo in background) e riaprila.\n3. Accetta i nuovi Termini e Condizioni quando richiesto.\n4. Seleziona **Invia** per riprovare subito. Altrimenti l'integrazione riprova ogni 15 minuti.\n\nIn seguito puoi reimpostare la lingua dell'app. Il cambio di lingua \u00e8 necessario perch\u00e9 l'app pu\u00f2 saltare la richiesta se i termini non sono ancora tradotti nella tua lingua. [Maggiori informazioni]({url})",
+            "title": "Accetta i Termini e Condizioni aggiornati di ConnectLife"
+          }
+        }
+      },
+      "title": "Accetta i Termini e Condizioni aggiornati di ConnectLife"
     },
     "unavailable_device": {
       "fix_flow": {
