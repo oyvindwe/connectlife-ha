@@ -7,6 +7,7 @@
     "error": {
       "cannot_connect": "Failed to connect",
       "invalid_auth": "Invalid authentication",
+      "terms_not_accepted": "ConnectLife requires you to accept updated Terms & Conditions. Change the ConnectLife app language to English, force close and reopen the app, accept the new terms, then try again.",
       "test_server_invalid": "Invalid test server URL",
       "test_server_required": "Development mode requires test server URL",
       "unknown": "Unexpected error"
@@ -8848,6 +8849,11 @@
       }
     }
   },
+  "exceptions": {
+    "terms_not_accepted": {
+      "message": "Updated ConnectLife Terms & Conditions must be accepted in the ConnectLife app"
+    }
+  },
   "issues": {
     "orphaned_statistics": {
       "fix_flow": {
@@ -8871,6 +8877,23 @@
         }
       },
       "title": "Orphaned long-term statistics ({count} sensors)"
+    },
+    "terms_not_accepted": {
+      "fix_flow": {
+        "abort": {
+          "entry_removed": "The ConnectLife configuration entry no longer exists."
+        },
+        "error": {
+          "still_not_accepted": "ConnectLife still rejects the login. Make sure the new Terms & Conditions are accepted in the app and try again."
+        },
+        "step": {
+          "confirm": {
+            "description": "ConnectLife rejects the login for \"{title}\" until the updated Terms & Conditions are accepted. Re-entering your password will not help.\n\n1. Open the ConnectLife mobile app and change the app language to **English**.\n2. Force close the app (not just background it), then reopen it.\n3. Accept the new Terms & Conditions when prompted.\n4. Select **Submit** to retry now. Otherwise the integration retries every 15 minutes.\n\nYou can change the app language back afterwards. The language change is needed because the app may skip the prompt when the terms are not yet translated to your language. [More information]({url})",
+            "title": "Accept updated ConnectLife Terms & Conditions"
+          }
+        }
+      },
+      "title": "Accept updated ConnectLife Terms & Conditions"
     },
     "unavailable_device": {
       "fix_flow": {
