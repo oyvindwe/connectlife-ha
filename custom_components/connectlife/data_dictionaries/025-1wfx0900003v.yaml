@@ -40,22 +40,13 @@ properties:
         56: pets
         57: full_load_49
 
-  - property: Spin_speed_rpm
-    select:
-      options:
-        0: none
-        6: "600"
-        8: "800"
-        10: "1000"
-        12: "1200"
-        14: "1400"
-
   - property: DefaultSpinSpeed
     sensor:
       read_only: true
       device_class: enum
       options:
         0: none
+        4: "400"
         6: "600"
         8: "800"
         10: "1000"
@@ -68,21 +59,12 @@ properties:
       device_class: enum
       options:
         0: none
+        4: "400"
         6: "600"
         8: "800"
         10: "1000"
         12: "1200"
         14: "1400"
-
-  - property: temperature
-    select:
-      options:
-        0: cold
-        2: "20"
-        3: "30"
-        4: "40"
-        6: "60"
-        9: "90"
 
   - property: dry_time
     select:
@@ -107,85 +89,3 @@ properties:
         1: "1"
         2: "2"
         3: "3"
-
-  - property: DelayEndTime
-    select:
-      options:
-        0: none
-        1: 1_hour
-        2: 2_hours
-        3: 3_hours
-        4: 4_hours
-        5: 5_hours
-        6: 6_hours
-        7: 7_hours
-        8: 8_hours
-        9: 9_hours
-        10: 10_hours
-        11: 11_hours
-        12: 12_hours
-        13: 13_hours
-        14: 14_hours
-        15: 15_hours
-        16: 16_hours
-        17: 17_hours
-        18: 18_hours
-        19: 19_hours
-        20: 20_hours
-        21: 21_hours
-        22: 22_hours
-        23: 23_hours
-        24: 24_hours
-
-  - property: Actions
-    select:
-      options:
-        0: none
-        1: stop
-        2: start
-        3: pause
-
-  - property: Detergent
-    select:
-      options:
-        0: "off"
-        1: auto
-        2: less
-        3: standard
-        4: more
-
-  - property: Softener
-    select:
-      options:
-        0: "off"
-        1: auto
-        2: less
-        3: standard
-        4: more
-
-  - property: AntiCrease
-    switch: {}
-
-  - property: AutoDose
-    entity_category: config
-    switch: {}
-
-  - property: Child_lock
-    entity_category: config
-    switch: {}
-
-  - property: Extra_Rinse
-    switch: {}
-
-  - property: mute
-    entity_category: config
-    switch: {}
-
-  - property: Prewash
-    switch: {}
-
-  - property: Steam
-    switch: {}
-
-  - property: Time_Save
-    switch: {}
