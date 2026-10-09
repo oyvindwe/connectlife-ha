@@ -168,7 +168,9 @@ There are two workarounds is you have logged in using a 3rd party identity provi
 
 ConnectLife periodically updates their Terms & Conditions. When this happens, the integration may stop working
 with errors like `Account Pending Registration` or `Missing required fields for registration`, or devices may
-silently become unavailable.
+silently become unavailable. Home Assistant shows this as the repair issue
+**Accept updated ConnectLife Terms & Conditions**. The integration retries every 15 minutes until the terms are
+accepted; select **Submit** in the repair to retry right away.
 
 To resolve this, you need to accept the new Terms & Conditions in the ConnectLife mobile app:
 

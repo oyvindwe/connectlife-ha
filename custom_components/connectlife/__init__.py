@@ -10,7 +10,11 @@ from homeassistant.const import Platform, CONF_USERNAME, CONF_PASSWORD
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers import config_validation as cv
 from homeassistant.helpers.typing import ConfigType
-from connectlife.api import LifeConnectAuthError, LifeConnectError
+from connectlife.api import (
+    LifeConnectAuthError,
+    LifeConnectError,
+    LifeConnectTermsNotAcceptedError,
+)
 
 from .client import create_api
 from .const import (
@@ -24,6 +28,7 @@ from .coordinator import ConnectLifeCoordinator, ConnectLifeStatisticsCoordinato
 from .dictionaries import Dictionaries
 from .services import async_setup_services
 from .statistics_sources import enabled_sensors
+from .terms import terms_accepted, terms_not_accepted, terms_retry_throttled
 
 PLATFORMS: list[Platform] = [
     Platform.BINARY_SENSOR,
@@ -66,12 +71,25 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         trir=entry.data.get(CONF_TRIR, False),
         test_server_url=test_server_url,
     )
+    if terms_retry_throttled(hass, entry):
+        _LOGGER.debug("Terms & Conditions not accepted recently, skipping login")
+        raise ConfigEntryNotReady(
+            translation_domain=DOMAIN, translation_key="terms_not_accepted"
+        )
     try:
         await api.login()
+    except LifeConnectTermsNotAcceptedError as ex:
+        # Re-entering credentials can't fix this, so retry setup (throttled)
+        # instead of starting reauth; it recovers once the terms are accepted.
+        terms_not_accepted(hass, entry)
+        raise ConfigEntryNotReady(
+            translation_domain=DOMAIN, translation_key="terms_not_accepted"
+        ) from ex
     except LifeConnectAuthError as ex:
         raise ConfigEntryAuthFailed from ex
     except LifeConnectError as ex:
         raise ConfigEntryNotReady from ex
+    terms_accepted(hass, entry)
     coordinator = ConnectLifeCoordinator(hass, api)
     await coordinator.async_config_entry_first_refresh()
     hass.data[DOMAIN][entry.entry_id] = coordinator
