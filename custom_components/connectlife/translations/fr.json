@@ -7,6 +7,7 @@
     "error": {
       "cannot_connect": "\u00c9chec de l\u2019\u00e9tablissement de la connexion",
       "invalid_auth": "\u00c9chec de l\u2019authentification",
+      "terms_not_accepted": "ConnectLife exige l'acceptation de Conditions g\u00e9n\u00e9rales mises \u00e0 jour. Passez la langue de l'application ConnectLife en anglais, forcez la fermeture de l'application, rouvrez-la, acceptez les nouvelles conditions, puis r\u00e9essayez.",
       "test_server_invalid": "URL du serveur de test invalide",
       "test_server_required": "Le mode d\u00e9veloppement n\u00e9cessite une URL de serveur de test",
       "unknown": "Erreur inconnue"
@@ -2480,6 +2481,7 @@
       "selected_program_id_status": {
         "name": "Programme",
         "state": {
+          "airtech": "AirTech",
           "auto": "Auto",
           "baby_care": "Soin b\u00e9b\u00e9",
           "clean": "Nettoyage",
@@ -8848,6 +8850,11 @@
       }
     }
   },
+  "exceptions": {
+    "terms_not_accepted": {
+      "message": "Les Conditions g\u00e9n\u00e9rales ConnectLife mises \u00e0 jour doivent \u00eatre accept\u00e9es dans l'application ConnectLife"
+    }
+  },
   "issues": {
     "orphaned_statistics": {
       "fix_flow": {
@@ -8871,6 +8878,23 @@
         }
       },
       "title": "Statistiques \u00e0 long terme orphelines ({count} capteurs)"
+    },
+    "terms_not_accepted": {
+      "fix_flow": {
+        "abort": {
+          "entry_removed": "L'entr\u00e9e de configuration ConnectLife n'existe plus."
+        },
+        "error": {
+          "still_not_accepted": "ConnectLife refuse toujours la connexion. V\u00e9rifiez que les nouvelles Conditions g\u00e9n\u00e9rales ont \u00e9t\u00e9 accept\u00e9es dans l'application et r\u00e9essayez."
+        },
+        "step": {
+          "confirm": {
+            "description": "ConnectLife refuse la connexion pour \u00ab {title} \u00bb tant que les Conditions g\u00e9n\u00e9rales mises \u00e0 jour n'ont pas \u00e9t\u00e9 accept\u00e9es. Saisir \u00e0 nouveau votre mot de passe ne r\u00e9soudra pas le probl\u00e8me.\n\n1. Ouvrez l'application ConnectLife et passez la langue de l'application en **anglais**.\n2. Forcez la fermeture de l'application (pas seulement en arri\u00e8re-plan), puis rouvrez-la.\n3. Acceptez les nouvelles Conditions g\u00e9n\u00e9rales lorsque cela vous est demand\u00e9.\n4. S\u00e9lectionnez **Valider** pour r\u00e9essayer maintenant. Sinon, l'int\u00e9gration r\u00e9essaie toutes les 15 minutes.\n\nVous pouvez ensuite r\u00e9tablir la langue de l'application. Le changement de langue est n\u00e9cessaire car l'application peut ignorer la demande lorsque les conditions ne sont pas encore traduites dans votre langue. [Plus d'informations]({url})",
+            "title": "Accepter les Conditions g\u00e9n\u00e9rales ConnectLife mises \u00e0 jour"
+          }
+        }
+      },
+      "title": "Accepter les Conditions g\u00e9n\u00e9rales ConnectLife mises \u00e0 jour"
     },
     "unavailable_device": {
       "fix_flow": {
