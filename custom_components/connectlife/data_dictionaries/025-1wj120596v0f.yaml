@@ -35,12 +35,3 @@ properties:
       8: drying
       10: finished
       11: delay_start_waiting
-- property: ApplicationPermissions
-  sensor:
-    read_only: true
-    device_class: enum
-    options:
-      0: "disabled"
-      1: "enabled"
-      2: "not_granted"
-      3: "granted"
