@@ -103,6 +103,7 @@
 | WFSE1214-MVW002          | Washing machine          | 025              | 1wj120389v0b                |
 |                          | Washing machine          | 025              | 1wj120407v0w                |
 | WF3S1243BB3              | Washing machine          | 025              | 1wj120459v0f                |
+| WF3S1214-MVT002-001      | Washing machine          | 025              | 1wj120495v0t                |
 |                          | Washing machine          | 025              | 1wj120514v0t                |
 | WF5i1214-RVW002          | Washing machine          | 025              | 1wj120560v0w                |
 | Gorenje WDG38014-PVW004  | Washing machine          | 025              | vwj080553v0w                |
