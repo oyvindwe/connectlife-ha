@@ -1,0 +1,97 @@
+# Hisense Hi-Therma II Inner (VRF indoor unit via Hi-Mit II gateway).
+# Mode and fan speed are one on/off flag per value, see climate.hvac_modes/fan_modes.
+climate:
+  hvac_modes:
+    - hvac_mode: cool
+      modeRefrigeration: 1
+      modeHeating: 0
+      modeAutomatic: 0
+      modeDeHumidification: 0
+      modeSupplyAir: 0
+    - hvac_mode: heat
+      modeRefrigeration: 0
+      modeHeating: 1
+      modeAutomatic: 0
+      modeDeHumidification: 0
+      modeSupplyAir: 0
+    - hvac_mode: auto
+      modeRefrigeration: 0
+      modeHeating: 0
+      modeAutomatic: 1
+      modeDeHumidification: 0
+      modeSupplyAir: 0
+    - hvac_mode: dry
+      modeRefrigeration: 0
+      modeHeating: 0
+      modeAutomatic: 0
+      modeDeHumidification: 1
+      modeSupplyAir: 0
+    - hvac_mode: fan_only
+      modeRefrigeration: 0
+      modeHeating: 0
+      modeAutomatic: 0
+      modeDeHumidification: 0
+      modeSupplyAir: 1
+  # isAutoAirVolume is 1 whenever the unit is on, even at a manual speed, so it
+  # is not the auto fan flag. setAutomatic (next to the speed flags) is assumed
+  # to be. Super high, medium-low and quiet are skipped (isJump* = 1) on known units.
+  fan_modes:
+    - fan_mode: auto
+      setAutomatic: 1
+      setLowWind: 0
+      setMediumWind: 0
+      setHighWind: 0
+    - fan_mode: low
+      setAutomatic: 0
+      setLowWind: 1
+      setMediumWind: 0
+      setHighWind: 0
+    - fan_mode: medium
+      setAutomatic: 0
+      setLowWind: 0
+      setMediumWind: 1
+      setHighWind: 0
+    - fan_mode: high
+      setAutomatic: 0
+      setLowWind: 0
+      setMediumWind: 0
+      setHighWind: 1
+properties:
+  - property: Y_K_Q_control
+    climate:
+      target: is_on
+  - property: powerSwitch
+    disable: true
+  - property: setTemp
+    climate:
+      target: target_temperature
+      min_value: 16
+      max_value: 32
+  - property: suctionAirTemp
+    climate:
+      target: current_temperature
+  - property: windFeflectorPosition_1
+    climate:
+      target: swing_mode
+      options:
+        0: "off"
+        1: position_1
+        2: position_2
+  - property: actualOperatingState
+    sensor:
+      device_class: enum
+      options:
+        0: "off"
+        1: idle
+        2: running
+    entity_category: diagnostic
+  - property: eTwi
+    sensor:
+      device_class: temperature
+      unit: °C
+      state_class: measurement
+    hide: true
+  - property: alarmCode
+    sensor:
+      read_only: true
+    entity_category: diagnostic

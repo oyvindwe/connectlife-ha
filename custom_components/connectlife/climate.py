@@ -71,6 +71,14 @@ def _add_hvac_mode_mapping(
             hvac_mode_reverse_map[mode] = raw_mode
 
 
+def _first_match(modes: dict, status_list: dict):
+    """The first mode whose values all match the status list, or None."""
+    for mode, values in modes.items():
+        if values.items() <= status_list.items():
+            return mode
+    return None
+
+
 async def async_setup_entry(
         hass: HomeAssistant,
         config_entry: ConfigEntry,
@@ -113,6 +121,8 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
     hvac_mode_map: dict[int, HVACMode]
     hvac_mode_reverse_map: dict[HVACMode, int]
     preset_map: dict[str, dict[str, int]]
+    hvac_mode_values: dict[HVACMode, dict[str, int]]
+    fan_mode_values: dict[str, dict[str, int]]
     swing_mode_map: dict[int, str]
     swing_mode_reverse_map: dict[str, int]
     temperature_unit_map: dict[int, UnitOfTemperature]
@@ -140,6 +150,8 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
         self.hvac_mode_map = {}
         self.hvac_mode_reverse_map = {}
         self.preset_map = {}
+        self.hvac_mode_values = {}
+        self.fan_mode_values = {}
         self.swing_mode_map = {}
         self.swing_mode_reverse_map = {}
         self.swing_horizontal_mode_map = {}
@@ -224,6 +236,23 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
             # Show decimal setpoints even if the mapping doesn't set a precision.
             self._attr_precision = PRECISION_TENTHS
 
+        # Modes set by several properties apply only when no single property
+        # claims the target.
+        if data_dictionary.hvac_modes and HVAC_MODE not in self.target_map:
+            for name, values in data_dictionary.hvac_modes.items():
+                if name in HVAC_MODE_VALUES and name != HVACMode.OFF:
+                    mode = HVACMode(name)
+                    self.hvac_mode_values[mode] = values
+                    if mode not in hvac_modes:
+                        hvac_modes.append(mode)
+                else:
+                    _LOGGER.warning("Not mapping unknown HVAC mode %s for %s", name, self.nickname)
+        if data_dictionary.fan_modes and FAN_MODE not in self.target_map:
+            self.fan_mode_values = data_dictionary.fan_modes
+            self._attr_fan_modes = list(self.fan_mode_values.keys())
+            self._attr_supported_features |= ClimateEntityFeature.FAN_MODE
+            self._attr_fan_mode = None
+
         if data_dictionary.presets:
             self.preset_map = data_dictionary.presets
             self._attr_preset_modes = list(self.preset_map.keys())
@@ -232,7 +261,7 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
             self._attr_preset_mode = None
             self._attr_supported_features |= ClimateEntityFeature.PRESET_MODE
 
-        if HVAC_MODE not in self.target_map:
+        if HVAC_MODE not in self.target_map and not self.hvac_mode_values:
             # Assume auto
             hvac_modes.append(HVACMode.AUTO)
             if IS_ON not in self.target_map:
@@ -296,9 +325,14 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
                         value = None
                     setattr(self, f"_attr_{target}", value)
 
+        status_list = self.coordinator.data[self.device_id].status_list
+        if self.hvac_mode_values:
+            hvac_mode = _first_match(self.hvac_mode_values, status_list)
+        if self.fan_mode_values:
+            self._attr_fan_mode = _first_match(self.fan_mode_values, status_list)
+
         if self._attr_supported_features & ClimateEntityFeature.PRESET_MODE:
             # If current preset matches, don't change
-            status_list = self.coordinator.data[self.device_id].status_list
             if (
                     self._attr_preset_mode not in self.preset_map
                     or not self.preset_map[self._attr_preset_mode].items() <= status_list.items()
@@ -350,13 +384,18 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
                 request[self.target_map[IS_ON]] = 1
             if HVAC_MODE in self.target_map:
                 request[self.target_map[HVAC_MODE]] = self.hvac_mode_reverse_map[hvac_mode]
+            elif hvac_mode in self.hvac_mode_values:
+                request.update(self.hvac_mode_values[hvac_mode])
             await self.async_update_device(self.add_target_temperature(request))
 
     async def async_set_fan_mode(self, fan_mode: str) -> None:
         """Set the fan mode."""
-        await self.async_update_device({
-            self.target_map[FAN_MODE]: self.fan_mode_reverse_map[fan_mode]
-        })
+        if fan_mode in self.fan_mode_values:
+            await self.async_update_device(dict(self.fan_mode_values[fan_mode]))
+        else:
+            await self.async_update_device({
+                self.target_map[FAN_MODE]: self.fan_mode_reverse_map[fan_mode]
+            })
 
     async def async_set_preset_mode(self, preset_mode: str) -> None:
         """Set the preset mode."""

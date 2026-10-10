@@ -1953,6 +1953,8 @@
               "low": "N\u00edzko",
               "mid_high": "St\u0159edn\u011b vysoko",
               "mid_low": "St\u0159edn\u011b n\u00edzko",
+              "position_1": "Poloha 1",
+              "position_2": "Poloha 2",
               "swing": "V\u00fdkyv",
               "top": "Naho\u0159e"
             }
@@ -2962,6 +2964,13 @@
       "activemodemotorlevel": {
         "name": "\u00darove\u0148 motoru aktivn\u00edho re\u017eimu"
       },
+      "actualoperatingstate": {
+        "name": "Provozn\u00ed stav",
+        "state": {
+          "idle": "Ne\u010dinn\u00fd",
+          "running": "V provozu"
+        }
+      },
       "adapttech_setting": {
         "name": "Nastaven\u00ed AdaptTech"
       },
@@ -3075,6 +3084,9 @@
       },
       "alarm_sound_volume": {
         "name": "Hlasitost alarmu"
+      },
+      "alarmcode": {
+        "name": "K\u00f3d alarmu"
       },
       "almost_finished_notification_setting": {
         "name": "Nastaven\u00ed ozn\u00e1men\u00ed t\u00e9m\u011b\u0159 hotovo"
@@ -4326,6 +4338,9 @@
       },
       "error_read_out_3_status": {
         "name": "Stav chyby 3"
+      },
+      "etwi": {
+        "name": "Sekund\u00e1rn\u00ed teplota"
       },
       "extra_soft": {
         "name": "Extra jemn\u00e9"

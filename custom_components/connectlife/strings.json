@@ -1953,6 +1953,8 @@
               "low": "Low",
               "mid_high": "Mid-High",
               "mid_low": "Mid-Low",
+              "position_1": "Position 1",
+              "position_2": "Position 2",
               "swing": "Swing",
               "top": "Top"
             }
@@ -2962,6 +2964,13 @@
       "activemodemotorlevel": {
         "name": "Active mode motor level"
       },
+      "actualoperatingstate": {
+        "name": "Operating state",
+        "state": {
+          "idle": "Idle",
+          "running": "Running"
+        }
+      },
       "adapttech_setting": {
         "name": "Adapt tech setting"
       },
@@ -3075,6 +3084,9 @@
       },
       "alarm_sound_volume": {
         "name": "Alarm sound volume"
+      },
+      "alarmcode": {
+        "name": "Alarm code"
       },
       "almost_finished_notification_setting": {
         "name": "Almost finished notification setting"
@@ -4326,6 +4338,9 @@
       },
       "error_read_out_3_status": {
         "name": "Error read out 3 status"
+      },
+      "etwi": {
+        "name": "Secondary temperature"
       },
       "extra_soft": {
         "name": "Extra soft"

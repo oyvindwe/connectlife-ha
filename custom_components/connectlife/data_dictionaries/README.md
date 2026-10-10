@@ -92,7 +92,8 @@ or if you need help with the mapping, please open a PR on GitHub with the file!
 
 The file contains these top level items:
 
-- `climate`: top level [`Climate`](#presets) configuration ([presets](#presets) and [precision](#precision)).
+- `climate`: top level [`Climate`](#presets) configuration ([presets](#presets), [precision](#precision), and
+  [HVAC and fan modes from several properties](#hvac-and-fan-modes-from-several-properties)).
 - `properties`: list of [`Property`](#property)
 - `buttons`: list of [`Button`](#buttons) entities for write-only commands
 - `statistics`: opt the device type into [daily energy/water statistics](#statistics) sensors
@@ -401,6 +402,43 @@ Use it when the device reports decimal temperatures but only accepts whole-degre
 climate:
   precision: 0.1
 ```
+
+### HVAC and fan modes from several properties
+
+Some devices have no single property for HVAC mode or fan mode, but one on/off flag per mode instead. Map these on the
+top level `climate` with `hvac_modes` and `fan_modes`. Like presets, each entry is a map of device properties to their
+values for that mode. The first entry whose values all match the device status is shown, and selecting a mode sends all
+its values in one command. List every flag in every entry, so that selecting a mode also clears the other flags.
+
+E.g.:
+
+```yaml
+climate:
+  hvac_modes:
+    - hvac_mode: cool
+      modeRefrigeration: 1
+      modeHeating: 0
+    - hvac_mode: heat
+      modeRefrigeration: 0
+      modeHeating: 1
+  fan_modes:
+    - fan_mode: auto
+      setAutomatic: 1
+      setLowWind: 0
+      setHighWind: 0
+    - fan_mode: low
+      setAutomatic: 0
+      setLowWind: 1
+      setHighWind: 0
+    - fan_mode: high
+      setAutomatic: 0
+      setLowWind: 0
+      setHighWind: 1
+```
+
+`hvac_mode` must be one of `auto`, `cool`, `dry`, `fan_only`, `heat`, or `heat_cool`. `off` comes from the `is_on`
+target. `hvac_modes` and `fan_modes` are only used if no property has target `hvac_mode` or `fan_mode`. Remember to add
+[translation strings](#translation-strings) for new fan modes.
 
 ## Type `Humidifier`
 

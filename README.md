@@ -52,6 +52,7 @@ Default mapping files are provided for the following device types:
 | Tumble dryer             | [030](custom_components/connectlife/data_dictionaries/030.yaml) |
 | Tumble dryer             | [032](custom_components/connectlife/data_dictionaries/032.yaml) |
 | Wine cooler              | [034](custom_components/connectlife/data_dictionaries/034.yaml) |
+| VRF indoor unit          | [045](custom_components/connectlife/data_dictionaries/045.yaml) |
 
 Any devices of these types will use the default mapping file, but it may not be fully functional until a
 feature-specific mapping file is provided.
