@@ -466,7 +466,6 @@ properties:
         5: "offset_plus_5"
         6: "offset_plus_6"
         7: "offset_plus_7"
-        8: "factory_default"
     icon: mdi:thermometer-plus
     entity_category: config
   - property: t_temp_type
