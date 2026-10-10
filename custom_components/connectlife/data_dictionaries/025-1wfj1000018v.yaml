@@ -1,48 +1,7 @@
-# Hisense Series 8i 10 kg front load washer — HWF8I1015BX / HWF8I1015B (AU/NZ)
-# Feature code 025-1wfj1000018v. Internal model string reported by the API:
-# WF5i1015-QVB002-000.
-#
-# Selected_program_ID: the official HWF8I1015BX manual lists exactly 17
-#   programmes — Cotton, Synthetics, Auto, Refresh, Baby Care, Allergy Care,
-#   Pets, Full load 49', Power 30', Quick 15', Bedding, Wool, Sportswear, Down,
-#   Rinse+Spin, Drum Clean, Spin — which is the set mapped below.
-#
-#   IDs 6 (drum_clean), 7 (cotton) and 19 (down) are confirmed against the
-#   machine's own panel. The remaining ID assignments are taken from sibling
-#   dictionaries in this repo (the 025-1wj1202xx family, where ID 19 is `down`
-#   rather than the `sensitive` of 025-1wj105219v0w — our panel confirmation of
-#   19 is what rules in that family). They do NOT follow the manual's printed
-#   order: the manual lists Cotton first but its ID is 7, and Drum Clean
-#   sixteenth but its ID is 6. So the manual corroborates which programmes exist,
-#   not which number each one carries.
-#
-#   Verifying an ID is cheap: selecting a programme is enough, since the sensor
-#   reports the selection whether or not the cycle is started.
-#
-# Current_program_phase: 0, 1, 2, 3, 4, 7, 10 and 11 have all been observed
-#   directly on this machine:
-#     - 30 °C Down, no prewash:    0 -> 1 -> 3 -> 4 -> 7 -> 10 -> 0
-#     - cold Cotton with prewash:  0 -> 1 -> 2 (prewash sits between weigh and
-#       wash, and adds ~20 min to the reported programme total)
-#     - 40 °C Cotton:              3 for the whole wash
-#     - 90 °C Drum Clean:          3 -> 4 -> 7 -> 10 (phase 1 skipped — empty drum)
-#     - delayed finish:            11 while waiting to start
-#   Phase 1 is brief, around 60 s, so it is easy to miss between polls.
-#
-#   Note this model offers a delay-END ("finish by") time rather than a delay
-#   start — the manual requires that "the reservation time must be greater than
-#   the program running time". It is reported through Delay_end_time in hours.
-#   Phase 11 is still what the machine shows while waiting, so
-#   delay_start_waiting remains an accurate name. Delay is not settable over the
-#   API; the panel is the only way to set it.
-#
-#   5 (preheat_finished) is carried over from sibling dictionaries and is NOT
-#   emitted by this model. Four heated cycles across three programmes and three
-#   temperatures (30 °C, 40 °C, 90 °C) all showed the heater plainly in the plug
-#   trace while the phase stayed on 3. The 90 °C Drum Clean is decisive: 31 min
-#   of continuous ~1.88 kW heating ending abruptly, then a 25 min soak, with the
-#   phase holding at 3 for 58 minutes straight. Recommended for removal — left
-#   in place pending maintainer preference.
+# Hisense HWF8I1015BX / HWF8I1015B washer (025-1wfj1000018v), API model WF5i1015-QVB002.
+# Phases 0, 1, 2, 3, 4, 7, 10 and 11 observed on the machine; 5 (preheat) is never emitted.
+# Programs 6, 7 and 19 confirmed on the panel; the other IDs follow sibling 025 mappings.
+# Delay is a "finish by" time (Delay_end_time, hours), set on the panel only.
 properties:
   - property: Current_program_phase
     sensor:
@@ -54,7 +13,6 @@ properties:
         2: prewash
         3: wash
         4: rinsing
-        5: preheat_finished # not emitted by this model — see note above
         7: spinning
         10: finished
         11: delay_start_waiting
