@@ -129,6 +129,10 @@ The integration polls the ConnectLife API every 60 seconds to avoid overloading 
 
 ## Issues
 
+When reporting an issue with a device, please attach its diagnostics: go to the device page, open the ⋮ menu, and
+select **Download diagnostics**. The file contains the device type and feature code, the raw status values, and which
+properties are not mapped. Device IDs, names and rooms are left out.
+
 ### Climate entities
 
 Missing features:
