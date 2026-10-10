@@ -1914,7 +1914,8 @@
           "fan_mode": {
             "state": {
               "middle_high": "St\u0159edn\u011b vysok\u00e1",
-              "middle_low": "St\u0159edn\u011b n\u00edzk\u00e1"
+              "middle_low": "St\u0159edn\u011b n\u00edzk\u00e1",
+              "quiet": "Tich\u00e1"
             }
           },
           "preset_mode": {

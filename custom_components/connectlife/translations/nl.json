@@ -1914,7 +1914,8 @@
           "fan_mode": {
             "state": {
               "middle_high": "Midden hoog",
-              "middle_low": "Midden laag"
+              "middle_low": "Midden laag",
+              "quiet": "Stil"
             }
           },
           "preset_mode": {
