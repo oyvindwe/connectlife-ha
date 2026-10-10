@@ -107,6 +107,7 @@
 | WF3S1214-MVT002-001      | Washing machine          | 025              | 1wj120495v0t                |
 |                          | Washing machine          | 025              | 1wj120514v0t                |
 | WF5i1214-RVW002          | Washing machine          | 025              | 1wj120560v0w                |
+| WD5I1245BBR              | Washing machine          | 025              | 1wj120596v0f                |
 | Gorenje WDG38014-PVW004  | Washing machine          | 025              | vwj080553v0w                |
 |                          | Refrigerator             | 026              | 1b0330z0079j                |
 | HRCD483TBW               | Refrigerator             | 026              | 1b0470z0012j                |

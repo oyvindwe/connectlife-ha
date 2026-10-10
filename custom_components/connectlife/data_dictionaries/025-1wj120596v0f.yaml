@@ -1,0 +1,37 @@
+# Hisense WD5I1245BBR washer-dryer (025-1wj120596v0f)
+properties:
+- property: Selected_program_ID
+  select:
+    options:
+      1: cotton_dry
+      2: synthetic_dry
+      4: refresh
+      6: drum_clean
+      7: cotton
+      8: synthetic
+      9: eco_40_60
+      10: wool
+      11: quick_15
+      14: spin
+      15: allergy_care
+      16: baby_care
+      20: rinse_spin
+      22: wash_and_dry_49
+      42: auto
+      44: bedding
+      52: power_30
+      56: pets
+      57: full_load_49
+- property: Current_program_phase
+  sensor:
+    device_class: enum
+    options:
+      0: not_available
+      1: weigh
+      2: prewash
+      3: wash
+      4: rinsing
+      7: spinning
+      8: drying
+      10: finished
+      11: delay_start_waiting
