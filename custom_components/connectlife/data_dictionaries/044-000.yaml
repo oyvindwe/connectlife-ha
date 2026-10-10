@@ -1,0 +1,196 @@
+# Hisense Hi-Therma II Indoor Unit
+# Hardware ID: 044-000
+#
+# Community mapping based on live device testing.
+#
+# Verified writable properties:
+# - TDHWS (DHW Setpoint)
+# - Ts_c1_water (Outlet Temperature Setpoint)
+# - A2W_SW_ON (Heat Pump Enable)
+# - DHW_SW_ON (DHW Enable)
+# - c1_SW_ON (Space Heating Enable)
+# - controlDid18 (Night Mode)
+# - controlDid19 (Silent Mode)
+#
+# Verified readable properties:
+# - fixedDid16 (DHW Temperature)
+# - fixedDid18 (Outlet / Leaving Water Temperature)
+# - fixedDid30 (Configured DHW Maximum Temperature Limit)
+
+properties:
+
+  # Main heat pump enable
+  - property: A2W_SW_ON
+    name: WP Heat Pump Enable
+    switch:
+      options:
+        0: off
+        1: on
+
+  # Domestic hot water enable
+  - property: DHW_SW_ON
+    name: WP DHW Enable
+    switch:
+      options:
+        0: off
+        1: on
+
+  # Heating circuit enable
+  - property: c1_SW_ON
+    name: WP Space Heating Enable
+    switch:
+      options:
+        0: off
+        1: on
+
+  # Night mode
+  - property: controlDid18
+    name: WP Night Mode
+    switch:
+      options:
+        0: off
+        1: on
+
+  # Silent mode
+  - property: controlDid19
+    name: WP Silent Mode
+    switch:
+      options:
+        0: off
+        1: on
+
+  # Unknown control flag
+  - property: controlDid33
+    name: WP Control 33
+    binary_sensor:
+      options:
+        0: off
+        1: on
+
+  # Anti-legionella sterilization cycle
+  - property: Anti_Legionella_s
+    name: WP Sterilization
+    binary_sensor:
+      options:
+        0: off
+        1: on
+
+  # Electric backup heater active
+  - property: isEleHeatingTurnon
+    name: WP Electric Heater Active
+    binary_sensor:
+      device_class: power
+      options:
+        0: off
+        1: on
+
+  # Alarm present
+  - property: alarmCode
+    name: WP Alarm
+    binary_sensor:
+      device_class: problem
+      options:
+        0: off
+        1: on
+
+  # DHW defrost active
+  - property: Defrost_DHW_s
+    name: WP DHW Defrost
+    binary_sensor:
+      options:
+        0: off
+        1: on
+
+  # Space heating defrost active
+  - property: Defrost_Spaceheat_s
+    name: WP Space Heating Defrost
+    binary_sensor:
+      options:
+        0: off
+        1: on
+
+  # Current domestic hot water temperature
+  - property: fixedDid16
+    name: WP DHW Temperature
+    sensor:
+      unit: °C
+      device_class: temperature
+      state_class: measurement
+
+  # DHW target temperature
+  - property: TDHWS
+    name: WP DHW Setpoint
+    number:
+      unit: °C
+      min: 35
+      max: 60
+      step: 1
+
+  # Heating circuit outlet temperature target
+  - property: Ts_c1_water
+    name: WP Outlet Temperature Setpoint
+    number:
+      unit: °C
+      min: 20
+      max: 60
+      step: 1
+
+  # Actual leaving water temperature (LWT)
+  - property: fixedDid18
+    name: WP Outlet Temperature
+    sensor:
+      unit: °C
+      device_class: temperature
+      state_class: measurement
+
+  # Unknown temperature sensor
+  - property: fixedDid29
+    name: WP Temperature 29
+    sensor:
+      unit: °C
+      device_class: temperature
+      state_class: measurement
+
+  # Configured maximum DHW temperature limit
+  - property: fixedDid30
+    name: WP DHW Maximum Temperature Limit
+    sensor:
+      unit: °C
+      device_class: temperature
+      state_class: measurement
+
+  # Unknown temperature sensor
+  - property: fixedDid31
+    name: WP Temperature 31
+    sensor:
+      unit: °C
+      device_class: temperature
+      state_class: measurement
+
+  # Unknown temperature sensor
+  - property: fixedDid32
+    name: WP Temperature 32
+    sensor:
+      unit: °C
+      device_class: temperature
+      state_class: measurement
+
+  # Outdoor air temperature
+  - property: swj_Ta
+    name: WP Outdoor Temperature
+    sensor:
+      unit: °C
+      device_class: temperature
+      state_class: measurement
+
+  # Electric heater stage 1
+  - property: EH1_Power
+    name: WP Electric Heater Stage 1
+    sensor:
+      state_class: measurement
+
+  # Electric heater stage 2
+  - property: EH2_Power
+    name: WP Electric Heater Stage 2
+    sensor:
+      state_class: measurement
