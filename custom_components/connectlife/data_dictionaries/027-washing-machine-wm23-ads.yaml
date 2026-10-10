@@ -1,0 +1,6 @@
+# Gorenje WNS14A4ATS (WM23 ADS)
+properties:
+# Child_lock_status_status is the actual lock and can be set from HA (#678).
+# Child_lock_setting_status always reads on and has no visible effect.
+- property: Child_lock_setting_status
+  disable: true
