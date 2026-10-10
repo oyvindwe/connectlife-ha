@@ -1,0 +1,99 @@
+# Washing Machine WFSE1114-LVW002: 025-1wj105064v0w
+# Derived from live dump_appliance sample and the existing WFSE1114-LVW002
+# dictionary 025-1wj105219v0w. Program names not directly observed in the
+# current dump keep the upstream "not verified" comments from that close model.
+properties:
+- property: Door_status
+  # Live: value 0 observed with machine on, idle, door physically closed
+  # (base marks 0 as unavailable). Map it to closed instead.
+  icon: mdi:door
+  sensor:
+    device_class: enum
+    read_only: true
+    options:
+      0: closed
+      1: open
+      2: other
+      3: closed
+- property: Current_program_phase
+  sensor:
+    device_class: enum
+    options:
+      0: not_available
+      1: weigh # not verified
+      2: prewash # not verified
+      3: wash
+      4: rinsing
+      5: preheat_finished # not verified
+      7: spinning
+      8: drying # not verified
+      10: finished
+      11: idle # not verified
+      12: running # not verified
+      13: anti_crease # not verified
+      14: delay # not verified
+- property: DefaultSpinSpeed
+  sensor:
+    multiplier: 100
+- property: DryOpen_DefaultSpinSpeed
+  # Live sample value: 14
+  sensor:
+    read_only: true
+    unit: rpm
+    multiplier: 100
+- property: Electricit_consumption
+  sensor:
+    state_class: total
+  combine:
+    - property: Electricit_consumption_decimal
+- property: RinseNum
+  sensor: # Live sample value: 2
+    unit: times
+- property: Selected_program_ID
+  sensor: # Live sample value: 9 (eco_40_60)
+    read_only: true
+    device_class: enum
+    options:
+      1: cotton_dry # not verified
+      2: synthetic_dry # not verified
+      4: refresh # not verified
+      6: drum_clean
+      7: cotton
+      8: synthetic
+      9: eco_40_60
+      10: wool
+      11: quick_15
+      12: mix
+      13: extra_hygiene # not verified
+      14: spin
+      15: allergy_care
+      16: baby_care
+      18: sportswear
+      19: sensitive
+      20: rinse_spin
+      21: silk_delicate
+      24: shirts
+      41: power_49
+      42: auto
+      44: bedding
+      45: jeans
+- property: Spin_speed_rpm
+  sensor: # Live sample value: 12
+    read_only: true
+    unit: rpm
+    multiplier: 100
+- property: temperature
+  sensor:   # Live sample value: 6
+    read_only: true
+    device_class: temperature
+    unit: °C
+    multiplier: 10
+    state_class: measurement
+- property: Selected_program_remaining_time_in_minutes
+  # Live 2026-10-04: value 87 during wash phase
+  sensor:
+    state_class: measurement
+- property: Energy_estimate
+  # Live 2026-10-04: value 70 (estimated Wh for the running cycle)
+  sensor:
+    unit: Wh

@@ -50,9 +50,14 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
         self.nickname = appliance.device_nickname
         self._attr_unique_id = f'{appliance.device_id}-{entity_name}'
         sw_version = appliance.status_list.get(SW_VERSION_PROPERTY)
+        # Some appliances (e.g. certain ACs) report a non-Latin market name as
+        # device_feature_name; fall back to a readable type-feature identifier.
+        feature_name = appliance.device_feature_name
+        if feature_name and not feature_name.isascii():
+            feature_name = f'ConnectLife {appliance.device_type_code}-{appliance.device_feature_code}'
         self._attr_device_info = DeviceInfo(
             identifiers={(DOMAIN, appliance.device_id)},
-            model=appliance.device_feature_name,
+            model=feature_name,
             hw_version=f'{appliance.device_type_code}-{appliance.device_feature_code}',
             name=appliance.device_nickname,
             suggested_area=appliance.room_name,
