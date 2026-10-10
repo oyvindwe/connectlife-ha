@@ -45,6 +45,8 @@ ON = "on"
 OPTIONS = "options"
 PRESET = "preset"
 PRESETS = "presets"
+FAN_MODES = "fan_modes"
+HVAC_MODES = "hvac_modes"
 PROPERTY = "property"
 PROPERTIES = "properties"
 MAX_VALUE = "max_value"
@@ -460,6 +462,10 @@ class Dictionary:
     # Display precision of the climate entity's temperatures (None = whole degrees,
     # or tenths if the target temperature step is below 1).
     precision: float | None = None
+    # HVAC and fan modes set by several properties (e.g. one on/off flag per
+    # mode), parsed from the climate block like presets: mode name -> values.
+    hvac_modes: dict[str, dict[str, int]] = field(default_factory=dict)
+    fan_modes: dict[str, dict[str, int]] = field(default_factory=dict)
     # Cloud statistics endpoint for this device family (None = none): "air_duct_energy"
     # (air conditioners) or "energy_consumption_curve" (appliances). Dispatched via the
     # statistics_sources registry.
@@ -555,6 +561,18 @@ def _merge_platform_block(base, override):
     return result
 
 
+def _value_sets(climate: dict | None, key: str, name_key: str) -> dict[str, dict[str, int]]:
+    """Parse a list of ``{name_key: name, property: value, ...}`` into name -> values.
+
+    The name is stripped from the values so they can be matched against a device
+    status list and sent as a command.
+    """
+    return {
+        entry[name_key]: {k: v for k, v in entry.items() if k != name_key}
+        for entry in _val(climate or {}, key, [])
+    }
+
+
 def _load_yaml(path: str) -> tuple[bool, Any]:
     """Return ``(found, parsed_yaml)``.
 
@@ -587,12 +605,13 @@ class Dictionaries:
         raw_entries: dict[str, dict] = {}
         raw_buttons: list[dict] = []
 
-        # TODO: Support default climate section
         _, base_data = _load_yaml(
             f"data_dictionaries/{appliance.device_type_code}.yaml"
         )
         if base_data is not None:
             statistics = _val(base_data, STATISTICS, statistics)
+            if base_data.get(Platform.CLIMATE) is not None:
+                climate = dict(base_data[Platform.CLIMATE])
             if PROPERTIES in base_data and base_data[PROPERTIES] is not None:
                 for prop in base_data[PROPERTIES]:
                     raw_entries[prop[PROPERTY]] = prop
@@ -608,8 +627,9 @@ class Dictionaries:
             )
         if sub_data is not None:
             statistics = _val(sub_data, STATISTICS, statistics)
-            if Platform.CLIMATE in sub_data:
-                climate = sub_data[Platform.CLIMATE]
+            if sub_data.get(Platform.CLIMATE) is not None:
+                # Each key (presets, hvac_modes, fan_modes) replaces the base's as a whole.
+                climate = {**(climate or {}), **sub_data[Platform.CLIMATE]}
             if PROPERTIES in sub_data and sub_data[PROPERTIES] is not None:
                 for prop in sub_data[PROPERTIES]:
                     name = prop[PROPERTY]
@@ -640,10 +660,10 @@ class Dictionaries:
 
         # Parse presets into a name -> values map. The preset name is stripped
         # from the value so it can be matched against a device status list.
-        presets = {
-            preset[PRESET]: {k: v for k, v in preset.items() if k != PRESET}
-            for preset in _val(climate or {}, PRESETS, [])
-        }
+        presets = _value_sets(climate, PRESETS, PRESET)
+
+        hvac_modes = _value_sets(climate, HVAC_MODES, HVAC_MODE)
+        fan_modes = _value_sets(climate, FAN_MODES, FAN_MODE)
 
         precision = _val(climate or {}, PRECISION)
         if precision is not None and precision not in (0.1, 0.5, 1):
@@ -656,6 +676,8 @@ class Dictionaries:
             buttons=buttons,
             presets=presets,
             precision=precision,
+            hvac_modes=hvac_modes,
+            fan_modes=fan_modes,
             statistics_source=statistics_source,
             statistics_sensors=statistics_sensors,
         )

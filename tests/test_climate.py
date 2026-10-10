@@ -13,6 +13,7 @@ from homeassistant.components.climate import (
 from custom_components.connectlife.climate import (
     ConnectLifeClimate,
     _add_hvac_mode_mapping,
+    _first_match,
     is_climate,
 )
 from custom_components.connectlife.const import (
@@ -317,3 +318,40 @@ def test_round_temperature_follows_step() -> None:
     assert climate.round_temperature(21.4) == 21.5
     assert climate.round_temperature(21.9) == 22
     assert isinstance(climate.round_temperature(21.9), int)
+
+
+async def test_mode_value_sets_read_and_write() -> None:
+    climate = ConnectLifeClimate.__new__(ConnectLifeClimate)
+    climate.target_map = {IS_ON: "power"}
+    climate.hvac_mode_values = {
+        HVACMode.COOL: {"modeCool": 1, "modeHeat": 0},
+        HVACMode.HEAT: {"modeCool": 0, "modeHeat": 1},
+    }
+    climate.fan_mode_values = {
+        "auto": {"autoFan": 1},
+        "low": {"autoFan": 0, "lowFan": 1},
+    }
+    climate._attr_supported_features = ClimateEntityFeature.TURN_ON
+    requests: list[dict[str, int]] = []
+
+    async def async_update_device(request: dict[str, int]) -> None:
+        requests.append(request)
+
+    climate.async_update_device = async_update_device
+    climate.add_target_temperature = lambda request: request
+
+    # Auto is listed first, so it wins even though lowFan is also set.
+    status = {"modeCool": 0, "modeHeat": 1, "autoFan": 1, "lowFan": 1}
+    assert _first_match(climate.hvac_mode_values, status) == HVACMode.HEAT
+    assert _first_match(climate.fan_mode_values, status) == "auto"
+    assert _first_match(climate.fan_mode_values, {"autoFan": 0, "lowFan": 0}) is None
+
+    await climate.async_set_hvac_mode(HVACMode.COOL)
+    await climate.async_set_fan_mode("low")
+
+    assert requests == [
+        {"power": 1, "modeCool": 1, "modeHeat": 0},
+        {"autoFan": 0, "lowFan": 1},
+    ]
+    # Sending a mode must not change the mapping.
+    assert climate.fan_mode_values["low"] == {"autoFan": 0, "lowFan": 1}

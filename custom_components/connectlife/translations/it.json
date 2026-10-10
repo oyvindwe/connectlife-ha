@@ -1953,6 +1953,8 @@
               "low": "Basso",
               "mid_high": "Medio-alto",
               "mid_low": "Medio-basso",
+              "position_1": "Posizione 1",
+              "position_2": "Posizione 2",
               "swing": "Oscillazione",
               "top": "In alto"
             }
@@ -2962,6 +2964,13 @@
       "activemodemotorlevel": {
         "name": "Livello motore modalit\u00e0 attiva"
       },
+      "actualoperatingstate": {
+        "name": "Stato operativo",
+        "state": {
+          "idle": "Inattivo",
+          "running": "In funzione"
+        }
+      },
       "adapttech_setting": {
         "name": "Impostazione AdaptTech"
       },
@@ -3075,6 +3084,9 @@
       },
       "alarm_sound_volume": {
         "name": "Volume segnale acustico"
+      },
+      "alarmcode": {
+        "name": "Codice allarme"
       },
       "almost_finished_notification_setting": {
         "name": "Impostazione notifica quasi terminato"
@@ -4326,6 +4338,9 @@
       },
       "error_read_out_3_status": {
         "name": "Stato lettura errore 3"
+      },
+      "etwi": {
+        "name": "Temperatura secondaria"
       },
       "extra_soft": {
         "name": "Extra delicato"
