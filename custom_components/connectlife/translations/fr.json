@@ -7,6 +7,7 @@
     "error": {
       "cannot_connect": "\u00c9chec de l\u2019\u00e9tablissement de la connexion",
       "invalid_auth": "\u00c9chec de l\u2019authentification",
+      "terms_not_accepted": "ConnectLife exige l'acceptation de Conditions g\u00e9n\u00e9rales mises \u00e0 jour. Passez la langue de l'application ConnectLife en anglais, forcez la fermeture de l'application, rouvrez-la, acceptez les nouvelles conditions, puis r\u00e9essayez.",
       "test_server_invalid": "URL du serveur de test invalide",
       "test_server_required": "Le mode d\u00e9veloppement n\u00e9cessite une URL de serveur de test",
       "unknown": "Erreur inconnue"
@@ -1913,7 +1914,8 @@
           "fan_mode": {
             "state": {
               "middle_high": "Moyen-\u00e9lev\u00e9",
-              "middle_low": "Moyen bas"
+              "middle_low": "Moyen bas",
+              "quiet": "Silencieux"
             }
           },
           "preset_mode": {
@@ -2446,7 +2448,7 @@
           "cotton": "Coton",
           "cotton_dry": "S\u00e9chage coton",
           "delicates": "D\u00e9licats",
-          "down": "Bas",
+          "down": "Duvet",
           "drum_clean": "Nettoyage du tambour",
           "duvet": "Couette",
           "eco": "\u00c9co",
@@ -2480,34 +2482,57 @@
       "selected_program_id_status": {
         "name": "Programme",
         "state": {
+          "activewear": "V\u00eatements techniques",
+          "airtech": "AirTech",
+          "allergy_safe": "Anti-allergie",
           "auto": "Auto",
           "baby_care": "Soin b\u00e9b\u00e9",
+          "bedding": "Linge de lit",
+          "bleaching": "Blanchiment",
           "clean": "Nettoyage",
           "color": "Couleurs",
+          "curtains": "Rideaux",
+          "dark_clothes": "V\u00eatements fonc\u00e9s",
           "down_feathers": "Duvet",
           "draining": "Vidange",
           "drum_clean": "Nettoyage du tambour",
           "eco": "\u00c9co",
           "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Hygi\u00e8ne suppl\u00e9mentaire",
+          "fabric_care": "Soin des textiles",
           "glass": "Verre",
           "hygiene": "Hygi\u00e8ne",
           "intensive": "Intensif",
           "intensive_59_32": "Intensif 59'/32'",
+          "jeans": "Jeans",
+          "kids_wear": "V\u00eatements enfants",
+          "kitchen_towels": "Torchons",
+          "lingerie": "Lingerie",
           "mix_synthetic": "Mixte/Synth\u00e9tique",
+          "new_clothes": "V\u00eatements neufs",
           "night": "Nuit",
           "no_program_selected": "Aucun programme s\u00e9lectionn\u00e9",
           "one_hour": "Une heure",
           "pet_hair_removal": "\u00c9limination des poils d'animaux",
+          "pets": "Animaux",
+          "pillow": "Oreiller",
+          "plush_toys": "Peluches",
+          "power_39": "Power 39",
           "quick_pro": "Quick pro",
           "rinse_and_hold": "Rin\u00e7age et maintien",
           "rinsing_softening": "Rin\u00e7age et assouplissement",
           "self_cleaning": "Autonettoyage",
           "shirts": "Chemises",
+          "shoes": "Chaussures",
+          "speed_14": "Rapide 14",
           "speed_20": "Speed 20",
           "spinning_draining": "Essorage et vidange",
           "sportswear": "V\u00eatements de sport",
+          "steam_refresh": "Rafra\u00eechir vapeur",
+          "swimwear": "Maillots de bain",
+          "tights_stockings": "Collants/Bas",
           "time_program": "Programme minut\u00e9",
+          "waterproof": "Imperm\u00e9able",
           "white_cotton": "Coton blanc",
           "wool_manual": "Laine et manuel"
         }
@@ -3546,7 +3571,10 @@
         "name": "Niveau de s\u00e9chage par d\u00e9faut"
       },
       "defaultspinspeed": {
-        "name": "Vitesse essorage par d\u00e9faut"
+        "name": "Vitesse essorage par d\u00e9faut",
+        "state": {
+          "none": "Aucun"
+        }
       },
       "delay_actions_flag": {
         "name": "Indicateur d'actions diff\u00e9r\u00e9es"
@@ -3897,7 +3925,10 @@
         "name": "Mode s\u00e9chage"
       },
       "dryopen_defaultspinspeed": {
-        "name": "Vitesse d'essorage par d\u00e9faut porte ouverte"
+        "name": "Vitesse d'essorage par d\u00e9faut porte ouverte",
+        "state": {
+          "none": "Aucun"
+        }
       },
       "duration_of_clock": {
         "name": "Dur\u00e9e de l'horloge"
@@ -5665,6 +5696,8 @@
           "cotton": "Coton",
           "cotton_dry": "S\u00e9chage coton",
           "cotton_storage": "Coton pr\u00eat \u00e0 ranger",
+          "daily_wash": "Lavage quotidien",
+          "down": "Duvet",
           "drum_clean": "Nettoyage du tambour",
           "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Hygi\u00e8ne renforc\u00e9e",
@@ -8848,6 +8881,11 @@
       }
     }
   },
+  "exceptions": {
+    "terms_not_accepted": {
+      "message": "Les Conditions g\u00e9n\u00e9rales ConnectLife mises \u00e0 jour doivent \u00eatre accept\u00e9es dans l'application ConnectLife"
+    }
+  },
   "issues": {
     "orphaned_statistics": {
       "fix_flow": {
@@ -8871,6 +8909,23 @@
         }
       },
       "title": "Statistiques \u00e0 long terme orphelines ({count} capteurs)"
+    },
+    "terms_not_accepted": {
+      "fix_flow": {
+        "abort": {
+          "entry_removed": "L'entr\u00e9e de configuration ConnectLife n'existe plus."
+        },
+        "error": {
+          "still_not_accepted": "ConnectLife refuse toujours la connexion. V\u00e9rifiez que les nouvelles Conditions g\u00e9n\u00e9rales ont \u00e9t\u00e9 accept\u00e9es dans l'application et r\u00e9essayez."
+        },
+        "step": {
+          "confirm": {
+            "description": "ConnectLife refuse la connexion pour \u00ab {title} \u00bb tant que les Conditions g\u00e9n\u00e9rales mises \u00e0 jour n'ont pas \u00e9t\u00e9 accept\u00e9es. Saisir \u00e0 nouveau votre mot de passe ne r\u00e9soudra pas le probl\u00e8me.\n\n1. Ouvrez l'application ConnectLife et passez la langue de l'application en **anglais**.\n2. Forcez la fermeture de l'application (pas seulement en arri\u00e8re-plan), puis rouvrez-la.\n3. Acceptez les nouvelles Conditions g\u00e9n\u00e9rales lorsque cela vous est demand\u00e9.\n4. S\u00e9lectionnez **Valider** pour r\u00e9essayer maintenant. Sinon, l'int\u00e9gration r\u00e9essaie toutes les 15 minutes.\n\nVous pouvez ensuite r\u00e9tablir la langue de l'application. Le changement de langue est n\u00e9cessaire car l'application peut ignorer la demande lorsque les conditions ne sont pas encore traduites dans votre langue. [Plus d'informations]({url})",
+            "title": "Accepter les Conditions g\u00e9n\u00e9rales ConnectLife mises \u00e0 jour"
+          }
+        }
+      },
+      "title": "Accepter les Conditions g\u00e9n\u00e9rales ConnectLife mises \u00e0 jour"
     },
     "unavailable_device": {
       "fix_flow": {

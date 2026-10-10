@@ -78,7 +78,9 @@
 |                          | Heat pump                | 016              | 502                         |
 |                          | Induction hob            | 020              | 63c45b513e1a4bf7            |
 |                          | Oven                     | 023              | 295608422d362be1            |
-| WF5i1015-QVB002          | Washing machine          | 025              | 1wfj1000018v                |
+| HWF8I1015BX              | Washing machine          | 025              | 1wfj1000018v                |
+| WD5I9043BBFS             | Washing machine          | 025              | 1wfx0900003v                |
+| WF5I8043BWF              | Washing machine          | 025              | 1wj0803f2v0w                |
 | WD3S8043BW3              | Washing machine          | 025              | 1wj080837v0w                |
 |                          | Washing machine          | 025              | 1wj090660v0w                |
 | WF5S9045BW               | Washing machine          | 025              | 1wj090728v0w                |
@@ -102,8 +104,10 @@
 | WFSE1214-MVW002          | Washing machine          | 025              | 1wj120389v0b                |
 |                          | Washing machine          | 025              | 1wj120407v0w                |
 | WF3S1243BB3              | Washing machine          | 025              | 1wj120459v0f                |
+| WF3S1214-MVT002-001      | Washing machine          | 025              | 1wj120495v0t                |
 |                          | Washing machine          | 025              | 1wj120514v0t                |
 | WF5i1214-RVW002          | Washing machine          | 025              | 1wj120560v0w                |
+| Gorenje WDG38014-PVW004  | Washing machine          | 025              | vwj080553v0w                |
 |                          | Refrigerator             | 026              | 1b0330z0079j                |
 | HRCD483TBW               | Refrigerator             | 026              | 1b0470z0012j                |
 | RQ5P470SEIE              | Refrigerator             | 026              | 1b0470z0026j                |
@@ -113,10 +117,12 @@
 | RS819N4ISU               | Refrigerator             | 026              | 1b0628z0075j                |
 | RS818N4TIE1              | Refrigerator             | 026              | 1b0628z0146j                |
 | Hisense BCD-668WP1BWF1R1 | Refrigerator             | 026              | 1b0668z0100j                |
+| Gorenje NRB620E61X4WFE   | Refrigerator             | 026              | 8b0413z0011j                |
 | Gorenje W-WaveEn-22      | Washing machine          | 027              | 000                         |
 | WPAM14A2T                | Washing machine          | 027              | washing-machine-wm22-b2plus |
 | WPNA84A2TSWIFI           | Washing machine          | 027              | washing-machine-wm22        |
 | Gorenje WNA94ARWIFI      | Washing machine          | 027              | washing-machine-wm22        |
+| Gorenje WG486A21         | Washing machine          | 027              | washing-machine-wm26-g400   |
 | DH3S80-DVW006            | Tumble dryer             | 030              | 1wk080140v0w                |
 | DH3S802BW3               | Tumble dryer             | 030              | 1wk080066v0w                |
 | DH3S902BW3               | Tumble dryer             | 030              | 1wk090106v0w                |

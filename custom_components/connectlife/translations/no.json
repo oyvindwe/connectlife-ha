@@ -7,6 +7,7 @@
     "error": {
       "cannot_connect": "Kunne ikke koble til",
       "invalid_auth": "Ugyldig autentisering",
+      "terms_not_accepted": "ConnectLife krever at du godtar oppdaterte vilk\u00e5r. Bytt spr\u00e5k i ConnectLife-appen til engelsk, tving appen til \u00e5 lukkes, \u00e5pne den igjen, godta de nye vilk\u00e5rene og pr\u00f8v p\u00e5 nytt.",
       "test_server_invalid": "Ugyldig URL for testserver",
       "test_server_required": "Utviklingsmodus krever URL for testserver",
       "unknown": "Uventet feil"
@@ -1913,7 +1914,8 @@
           "fan_mode": {
             "state": {
               "middle_high": "Middels h\u00f8y",
-              "middle_low": "Middels lav"
+              "middle_low": "Middels lav",
+              "quiet": "Stille"
             }
           },
           "preset_mode": {
@@ -2480,34 +2482,57 @@
       "selected_program_id_status": {
         "name": "Valgt program",
         "state": {
+          "activewear": "Aktivkl\u00e6r",
+          "airtech": "AirTech",
+          "allergy_safe": "Allergi",
           "auto": "Auto",
           "baby_care": "Baby",
+          "bedding": "Senget\u00f8y",
+          "bleaching": "Bleking",
           "clean": "Rens",
           "color": "Farge",
+          "curtains": "Gardiner",
+          "dark_clothes": "M\u00f8rke kl\u00e6r",
           "down_feathers": "Dun",
           "draining": "T\u00f8mmer vann",
           "drum_clean": "Trommelrens",
           "eco": "Eco",
           "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Ekstra hygiene",
+          "fabric_care": "Tekstilpleie",
           "glass": "Glass",
           "hygiene": "Hygiene",
           "intensive": "Intensiv",
           "intensive_59_32": "Intensiv 59'/32'",
+          "jeans": "Jeans",
+          "kids_wear": "Barnekl\u00e6r",
+          "kitchen_towels": "Kj\u00f8kkenh\u00e5ndkl\u00e6r",
+          "lingerie": "Undert\u00f8y",
           "mix_synthetic": "Mix/Syntet",
+          "new_clothes": "Nye kl\u00e6r",
           "night": "Natt",
           "no_program_selected": "Intet program valgt",
           "one_hour": "\u00c9n time",
           "pet_hair_removal": "Fjerning av kj\u00e6ledyrh\u00e5r",
+          "pets": "Kj\u00e6ledyr",
+          "pillow": "Pute",
+          "plush_toys": "Kosedyr",
+          "power_39": "Power 39",
           "quick_pro": "Hurtig pro",
           "rinse_and_hold": "Skyll og hold",
           "rinsing_softening": "Skylling og myking",
           "self_cleaning": "Selvrens",
           "shirts": "Skjorter",
+          "shoes": "Sko",
+          "speed_14": "Hurtig 14",
           "speed_20": "Hurtig 20'",
           "spinning_draining": "Sentrifugering og t\u00f8mming",
           "sportswear": "Sport",
+          "steam_refresh": "Damputlufting",
+          "swimwear": "Badet\u00f8y",
+          "tights_stockings": "Str\u00f8mpebukser",
           "time_program": "Tidsprogram",
+          "waterproof": "Vanntett",
           "white_cotton": "Hvit bomull",
           "wool_manual": "Ull og manuell"
         }
@@ -3546,7 +3571,10 @@
         "name": "Standard t\u00f8rkeniv\u00e5"
       },
       "defaultspinspeed": {
-        "name": "Standard sentrifugehastighet"
+        "name": "Standard sentrifugehastighet",
+        "state": {
+          "none": "Ingen"
+        }
       },
       "delay_actions_flag": {
         "name": "Flagg for forsinkede handlinger"
@@ -3897,7 +3925,10 @@
         "name": "T\u00f8rkemodell"
       },
       "dryopen_defaultspinspeed": {
-        "name": "Standard sentrifugehastighet ved t\u00f8rr\u00e5pning"
+        "name": "Standard sentrifugehastighet ved t\u00f8rr\u00e5pning",
+        "state": {
+          "none": "Ingen"
+        }
       },
       "duration_of_clock": {
         "name": "Klokkevarighet"
@@ -5665,6 +5696,8 @@
           "cotton": "Bomull",
           "cotton_dry": "Bomull t\u00f8rk",
           "cotton_storage": "Bomull lagring",
+          "daily_wash": "Daglig vask",
+          "down": "Dun",
           "drum_clean": "Trommelrens",
           "eco_40_60": "Eco 40 60",
           "extra_hygiene": "Ekstra hygiene",
@@ -8848,6 +8881,11 @@
       }
     }
   },
+  "exceptions": {
+    "terms_not_accepted": {
+      "message": "Oppdaterte vilk\u00e5r for ConnectLife m\u00e5 godtas i ConnectLife-appen"
+    }
+  },
   "issues": {
     "orphaned_statistics": {
       "fix_flow": {
@@ -8871,6 +8909,23 @@
         }
       },
       "title": "Foreldrel\u00f8se langtidsstatistikker ({count} sensorer)"
+    },
+    "terms_not_accepted": {
+      "fix_flow": {
+        "abort": {
+          "entry_removed": "ConnectLife-oppf\u00f8ringen finnes ikke lenger."
+        },
+        "error": {
+          "still_not_accepted": "ConnectLife avviser fortsatt innloggingen. Sjekk at de nye vilk\u00e5rene er godtatt i appen, og pr\u00f8v igjen."
+        },
+        "step": {
+          "confirm": {
+            "description": "ConnectLife avviser innloggingen for \u00ab{title}\u00bb til de oppdaterte vilk\u00e5rene er godtatt. \u00c5 skrive inn passordet p\u00e5 nytt hjelper ikke.\n\n1. \u00c5pne ConnectLife-appen og bytt spr\u00e5k i appen til **engelsk**.\n2. Tving appen til \u00e5 lukkes (ikke bare legg den i bakgrunnen), og \u00e5pne den igjen.\n3. Godta de nye vilk\u00e5rene n\u00e5r du blir bedt om det.\n4. Velg **Send** for \u00e5 pr\u00f8ve igjen n\u00e5. Ellers pr\u00f8ver integrasjonen p\u00e5 nytt hvert 15. minutt.\n\nDu kan bytte tilbake spr\u00e5ket i appen etterp\u00e5. Spr\u00e5kbyttet er n\u00f8dvendig fordi appen kan hoppe over sp\u00f8rsm\u00e5let n\u00e5r vilk\u00e5rene enn\u00e5 ikke er oversatt til ditt spr\u00e5k. [Mer informasjon]({url})",
+            "title": "Godta oppdaterte vilk\u00e5r for ConnectLife"
+          }
+        }
+      },
+      "title": "Godta oppdaterte vilk\u00e5r for ConnectLife"
     },
     "unavailable_device": {
       "fix_flow": {

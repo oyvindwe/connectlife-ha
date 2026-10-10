@@ -7,6 +7,7 @@
     "error": {
       "cannot_connect": "Verbindung fehlgeschlagen",
       "invalid_auth": "Ung\u00fcltige Authentifizierung",
+      "terms_not_accepted": "ConnectLife verlangt die Zustimmung zu aktualisierten Nutzungsbedingungen. Stelle die Sprache der ConnectLife-App auf Englisch, beende die App vollst\u00e4ndig, \u00f6ffne sie erneut, akzeptiere die neuen Bedingungen und versuche es dann noch einmal.",
       "test_server_invalid": "Ung\u00fcltige Test-Server-URL",
       "test_server_required": "Entwicklungsmodus erfordert eine Test-Server-URL",
       "unknown": "Unerwarteter Fehler"
@@ -1913,7 +1914,8 @@
           "fan_mode": {
             "state": {
               "middle_high": "Mittel hoch",
-              "middle_low": "Mittel niedrig"
+              "middle_low": "Mittel niedrig",
+              "quiet": "Leise"
             }
           },
           "preset_mode": {
@@ -2480,34 +2482,57 @@
       "selected_program_id_status": {
         "name": "Programm",
         "state": {
+          "activewear": "Funktionskleidung",
+          "airtech": "AirTech",
+          "allergy_safe": "Allergiker",
           "auto": "Automatisch",
           "baby_care": "Baby",
+          "bedding": "Bettw\u00e4sche",
+          "bleaching": "Bleichen",
           "clean": "Reinigung",
           "color": "Farbig",
+          "curtains": "Gardinen",
+          "dark_clothes": "Dunkle W\u00e4sche",
           "down_feathers": "Daunenfedern",
           "draining": "Abpumpen",
           "drum_clean": "Trommelreinigung",
           "eco": "Eco",
           "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Extra Hygiene",
+          "fabric_care": "Textilpflege",
           "glass": "Glas",
           "hygiene": "Hygiene",
           "intensive": "Intensiv",
           "intensive_59_32": "Intensiv 59'/32'",
+          "jeans": "Jeans",
+          "kids_wear": "Kinderkleidung",
+          "kitchen_towels": "K\u00fcchent\u00fccher",
+          "lingerie": "Unterw\u00e4sche",
           "mix_synthetic": "Mix/Synthetik",
+          "new_clothes": "Neue Kleidung",
           "night": "Nacht",
           "no_program_selected": "Kein Programm ausgew\u00e4hlt",
           "one_hour": "1 Stunde",
           "pet_hair_removal": "Tierhaarentfernung",
+          "pets": "Haustiere",
+          "pillow": "Kopfkissen",
+          "plush_toys": "Pl\u00fcschtiere",
+          "power_39": "Power 39",
           "quick_pro": "Quick pro",
           "rinse_and_hold": "Sp\u00fclen & Warten",
           "rinsing_softening": "Sp\u00fclen & Weichsp\u00fclen",
           "self_cleaning": "Selbstreinigung",
           "shirts": "Hemden",
+          "shoes": "Schuhe",
+          "speed_14": "Schnell 14",
           "speed_20": "Schnell 20'",
           "spinning_draining": "Schleudern & Abpumpen",
           "sportswear": "Sport",
+          "steam_refresh": "Dampfauffrischung",
+          "swimwear": "Badebekleidung",
+          "tights_stockings": "Strumpfhosen",
           "time_program": "Zeitprogramm",
+          "waterproof": "Wasserdicht",
           "white_cotton": "Wei\u00dfe Baumwolle",
           "wool_manual": "Wolle & Manuell"
         }
@@ -3546,7 +3571,10 @@
         "name": "Standard-Trockengrad"
       },
       "defaultspinspeed": {
-        "name": "Schleuderdrehzahl Standard"
+        "name": "Schleuderdrehzahl Standard",
+        "state": {
+          "none": "Keine"
+        }
       },
       "delay_actions_flag": {
         "name": "Flag Verz\u00f6gerungsaktionen"
@@ -3897,7 +3925,10 @@
         "name": "Trocknungsmodus"
       },
       "dryopen_defaultspinspeed": {
-        "name": "Standard Schleudergeschwindigkeit"
+        "name": "Standard Schleudergeschwindigkeit",
+        "state": {
+          "none": "Keine"
+        }
       },
       "duration_of_clock": {
         "name": "Anzeigedauer der Uhr"
@@ -5665,6 +5696,8 @@
           "cotton": "Baumwolle",
           "cotton_dry": "Baumwolle trocken",
           "cotton_storage": "Baumwollspeicherung",
+          "daily_wash": "T\u00e4gliche W\u00e4sche",
+          "down": "Daunen",
           "drum_clean": "Trommelreinigung",
           "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Extra Hygiene",
@@ -8848,6 +8881,11 @@
       }
     }
   },
+  "exceptions": {
+    "terms_not_accepted": {
+      "message": "Aktualisierte ConnectLife-Nutzungsbedingungen m\u00fcssen in der ConnectLife-App akzeptiert werden"
+    }
+  },
   "issues": {
     "orphaned_statistics": {
       "fix_flow": {
@@ -8871,6 +8909,23 @@
         }
       },
       "title": "Verwaiste Langzeitstatistik ({count} Sensoren)"
+    },
+    "terms_not_accepted": {
+      "fix_flow": {
+        "abort": {
+          "entry_removed": "Der ConnectLife-Konfigurationseintrag existiert nicht mehr."
+        },
+        "error": {
+          "still_not_accepted": "ConnectLife lehnt die Anmeldung weiterhin ab. Stelle sicher, dass die neuen Nutzungsbedingungen in der App akzeptiert wurden, und versuche es erneut."
+        },
+        "step": {
+          "confirm": {
+            "description": "ConnectLife lehnt die Anmeldung f\u00fcr \"{title}\" ab, bis die aktualisierten Nutzungsbedingungen akzeptiert wurden. Das erneute Eingeben des Passworts hilft nicht.\n\n1. \u00d6ffne die ConnectLife-App und stelle die App-Sprache auf **Englisch**.\n2. Beende die App vollst\u00e4ndig (nicht nur in den Hintergrund) und \u00f6ffne sie erneut.\n3. Akzeptiere die neuen Nutzungsbedingungen, wenn du dazu aufgefordert wirst.\n4. W\u00e4hle **Absenden**, um es sofort erneut zu versuchen. Andernfalls versucht es die Integration alle 15 Minuten erneut.\n\nDanach kannst du die App-Sprache wieder zur\u00fcckstellen. Der Sprachwechsel ist n\u00f6tig, weil die App die Abfrage \u00fcberspringen kann, wenn die Bedingungen noch nicht in deine Sprache \u00fcbersetzt sind. [Weitere Informationen]({url})",
+            "title": "Aktualisierte ConnectLife-Nutzungsbedingungen akzeptieren"
+          }
+        }
+      },
+      "title": "Aktualisierte ConnectLife-Nutzungsbedingungen akzeptieren"
     },
     "unavailable_device": {
       "fix_flow": {

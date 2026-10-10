@@ -1,0 +1,91 @@
+# Hisense WD5I9043BBFS washer-dryer (025-1wfx0900003v)
+# 9 kg wash / 6 kg dry, 1400 rpm, AutoDose
+properties:
+  - property: Current_program_phase
+    sensor:
+      read_only: true
+      device_class: enum
+      options:
+        0: not_available
+        1: weigh
+        2: prewash
+        3: wash
+        4: rinsing
+        7: spinning
+        8: drying
+        10: finished
+        11: delay
+
+  - property: Selected_program_ID
+    select:
+      options:
+        1: cotton_dry
+        2: synthetic_dry
+        4: refresh
+        6: drum_clean
+        7: cotton
+        8: synthetic
+        9: eco_40_60
+        10: wool
+        11: quick_15
+        14: spin
+        15: allergy_care
+        16: baby_care
+        20: rinse_spin
+        22: wash_and_dry_49
+        41: power_49
+        42: auto
+        44: bedding
+        52: power_30
+        56: pets
+        57: full_load_49
+
+  - property: DefaultSpinSpeed
+    sensor:
+      read_only: true
+      device_class: enum
+      options:
+        0: none
+        4: "400"
+        6: "600"
+        8: "800"
+        10: "1000"
+        12: "1200"
+        14: "1400"
+
+  - property: DryOpen_DefaultSpinSpeed
+    sensor:
+      read_only: true
+      device_class: enum
+      options:
+        0: none
+        4: "400"
+        6: "600"
+        8: "800"
+        10: "1000"
+        12: "1200"
+        14: "1400"
+
+  - property: dry_time
+    select:
+      options:
+        0: "off"
+        1: iron
+        2: cupboard
+        3: extra_dry
+        30: "30"
+        40: "40"
+        50: "50"
+        60: "60"
+        90: "90"
+        120: "120"
+        180: "180"
+        240: "240"
+
+  - property: ExtraRinseNum
+    select:
+      options:
+        0: "0"
+        1: "1"
+        2: "2"
+        3: "3"
