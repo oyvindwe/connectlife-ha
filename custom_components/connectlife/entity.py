@@ -118,7 +118,11 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
         self._refresh_state()
         self.async_write_ha_state()
 
-    async def async_update_device(self, command: dict[str, int], properties: dict[str, int] | None = None):
+    async def async_update_device(
+            self,
+            command: dict[str, int] | dict[str, int | float],
+            properties: dict[str, int] | dict[str, int | float] | None = None,
+    ):
         if properties is None:
             properties = command.copy()
         try:

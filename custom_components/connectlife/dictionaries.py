@@ -51,10 +51,12 @@ MAX_VALUE = "max_value"
 MIN_VALUE = "min_value"
 MULTIPLIER = "multiplier"
 OPTIONAL = "optional"
+PRECISION = "precision"
 PRIORITY = "priority"
 TARGET = "target"
 READ_ONLY = "read_only"
 STATE_CLASS = "state_class"
+STEP = "step"
 SWITCH = "switch"
 COMBINE = "combine"
 UNAVAILABLE = "unavailable"
@@ -105,6 +107,7 @@ class Climate:
     unknown_value: int | None
     min_value: int | dict[str, int] | None
     max_value: int | dict[str, int] | None
+    step: float | None
     # Tie-break when several properties map to the same climate target. The
     # lowest-priority candidate that the device actually exposes wins the
     # target; the rest fall back to their per-property platform (if any). Lower
@@ -131,6 +134,10 @@ class Climate:
         self.unknown_value = _val(climate, UNKNOWN_VALUE)
         self.min_value = _val(climate, MIN_VALUE)
         self.max_value = _val(climate, MAX_VALUE)
+        self.step = _val(climate, STEP)
+        if self.step is not None and self.step <= 0:
+            _LOGGER.warning("Ignoring climate.step %s for %s, must be positive", self.step, name)
+            self.step = None
 
 
 class Humidifier:
@@ -450,6 +457,9 @@ class Dictionary:
     # Presets parsed from the climate block, keyed by preset name with the name
     # stripped from the value so it can be matched against a device status list.
     presets: dict[str, dict[str, int]] = field(default_factory=dict)
+    # Display precision of the climate entity's temperatures (None = whole degrees,
+    # or tenths if the target temperature step is below 1).
+    precision: float | None = None
     # Cloud statistics endpoint for this device family (None = none): "air_duct_energy"
     # (air conditioners) or "energy_consumption_curve" (appliances). Dispatched via the
     # statistics_sources registry.
@@ -635,11 +645,17 @@ class Dictionaries:
             for preset in _val(climate or {}, PRESETS, [])
         }
 
+        precision = _val(climate or {}, PRECISION)
+        if precision is not None and precision not in (0.1, 0.5, 1):
+            _LOGGER.warning("Ignoring climate.precision %s for %s, must be 0.1, 0.5 or 1", precision, key)
+            precision = None
+
         dictionary = Dictionary(
             climate=climate,
             properties=properties,
             buttons=buttons,
             presets=presets,
+            precision=precision,
             statistics_source=statistics_source,
             statistics_sensors=statistics_sensors,
         )
