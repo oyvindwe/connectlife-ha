@@ -1,4 +1,4 @@
-# Gorenje washer-dryer (025-vwj080553v0w)
+# Gorenje WDG38014-PVW004 washer-dryer (025-vwj080553v0w)
 # Values observed over several cycles (#674); writes not tested.
 properties:
 - property: Current_program_phase
