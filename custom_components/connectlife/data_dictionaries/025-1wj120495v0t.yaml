@@ -1,7 +1,7 @@
 # Hisense WF3S1214-MVT002-001 washing machine.
 # The 025 base dictionary defines both properties below, but without options,
-# so they surface as raw integers. Program codes are from the appliance's own
-# program dial; codes not listed here have not been observed on this machine.
+# so they surface as raw integers. Program IDs are the values reported when
+# each program is selected on the dial; all have been observed on this machine.
 properties:
 - property: Current_program_phase
   sensor:
