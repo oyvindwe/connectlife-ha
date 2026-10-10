@@ -831,6 +831,72 @@
       "error_9": {
         "name": "Fout 9"
       },
+      "error_f10": {
+        "name": "F10 te veel water 1"
+      },
+      "error_f11": {
+        "name": "F11 storing waterafvoer"
+      },
+      "error_f12": {
+        "name": "F12 storing watertoevoer 1"
+      },
+      "error_f40": {
+        "name": "F40 lekkage inlaatklep"
+      },
+      "error_f41": {
+        "name": "F41 storing verwarming 1"
+      },
+      "error_f42": {
+        "name": "F42 storing temperatuursensor"
+      },
+      "error_f43": {
+        "name": "F43 storing druksensor"
+      },
+      "error_f44": {
+        "name": "Fout F44"
+      },
+      "error_f45": {
+        "name": "F45 storing omschakelaar"
+      },
+      "error_f46": {
+        "name": "Fout F46"
+      },
+      "error_f52": {
+        "name": "F52 storing waterniveau"
+      },
+      "error_f54": {
+        "name": "F54 te veel water 2"
+      },
+      "error_f56": {
+        "name": "F56 storing circulatiepomp"
+      },
+      "error_f61": {
+        "name": "Fout F61"
+      },
+      "error_f62": {
+        "name": "Fout F62"
+      },
+      "error_f65": {
+        "name": "F65 storing displayprint"
+      },
+      "error_f67": {
+        "name": "F67 storing watertoevoer 2"
+      },
+      "error_f68": {
+        "name": "F68 storing afvoerpomp"
+      },
+      "error_f69": {
+        "name": "Fout F69"
+      },
+      "error_f72": {
+        "name": "Fout F72"
+      },
+      "error_f74": {
+        "name": "Fout F74"
+      },
+      "error_f75": {
+        "name": "Fout F75"
+      },
       "existing_fuzzy_mode": {
         "name": "Bestaande fuzzy-modus"
       },
@@ -4255,74 +4321,8 @@
           "unbalance_alarm": "Onbalansalarm"
         }
       },
-      "error_f10": {
-        "name": "Fout f10"
-      },
-      "error_f11": {
-        "name": "Fout f11"
-      },
-      "error_f12": {
-        "name": "Fout f12"
-      },
-      "error_f40": {
-        "name": "Fout f40"
-      },
-      "error_f41": {
-        "name": "Fout f41"
-      },
-      "error_f42": {
-        "name": "Fout f42"
-      },
-      "error_f43": {
-        "name": "Fout f43"
-      },
-      "error_f44": {
-        "name": "Fout f44"
-      },
-      "error_f45": {
-        "name": "Fout f45"
-      },
-      "error_f46": {
-        "name": "Fout f46"
-      },
-      "error_f52": {
-        "name": "Fout f52"
-      },
-      "error_f54": {
-        "name": "Fout f54"
-      },
-      "error_f56": {
-        "name": "Fout f56"
-      },
-      "error_f61": {
-        "name": "Fout f61"
-      },
-      "error_f62": {
-        "name": "Fout f62"
-      },
-      "error_f65": {
-        "name": "Fout f65"
-      },
-      "error_f67": {
-        "name": "Fout f67"
-      },
-      "error_f68": {
-        "name": "Fout f68"
-      },
-      "error_f69": {
-        "name": "Fout f69"
-      },
       "error_f70": {
         "name": "Fout f70"
-      },
-      "error_f72": {
-        "name": "Fout f72"
-      },
-      "error_f74": {
-        "name": "Fout f74"
-      },
-      "error_f75": {
-        "name": "Fout f75"
       },
       "error_f76": {
         "name": "Fout f76"
