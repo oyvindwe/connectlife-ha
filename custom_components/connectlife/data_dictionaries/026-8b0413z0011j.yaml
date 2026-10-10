@@ -4,21 +4,12 @@ properties:
   # Temperature ranges as shown in the app
   - property: refrigerator_temperature
     number:
-      device_class: temperature
-      unit: °C
       min_value: 2
-      max_value: 8
-      command:
-        name: SET_REFRIGERATOR_TEMPERATURE
 
   - property: freeze_temperature
     number:
-      device_class: temperature
-      unit: °C
       min_value: -24
       max_value: -14
-      command:
-        name: SET_FREEZE_TEMPERATURE
 
   # No ice maker on this model
   - property: automatic_ice_making
