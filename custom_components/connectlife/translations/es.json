@@ -7,6 +7,7 @@
     "error": {
       "cannot_connect": "Fallo al establecer la conexi\u00f3n",
       "invalid_auth": "Autentificaci\u00f3n Fallida",
+      "terms_not_accepted": "ConnectLife requiere que aceptes los T\u00e9rminos y Condiciones actualizados. Cambia el idioma de la app ConnectLife a ingl\u00e9s, fuerza el cierre de la app, vuelve a abrirla, acepta los nuevos t\u00e9rminos y vuelve a intentarlo.",
       "test_server_invalid": "Test server URL invalida",
       "test_server_required": "El modo desarrollo requiere una URL del Test Server",
       "unknown": "Error desconocido"
@@ -1913,7 +1914,8 @@
           "fan_mode": {
             "state": {
               "middle_high": "Medio alto",
-              "middle_low": "Medio bajo"
+              "middle_low": "Medio bajo",
+              "quiet": "Silencioso"
             }
           },
           "preset_mode": {
@@ -2480,34 +2482,57 @@
       "selected_program_id_status": {
         "name": "Programa seleccionado",
         "state": {
+          "activewear": "Ropa deportiva",
+          "airtech": "AirTech",
+          "allergy_safe": "Antial\u00e9rgico",
           "auto": "Auto",
           "baby_care": "Ropa beb\u00e9",
+          "bedding": "Ropa de cama",
+          "bleaching": "Blanqueo",
           "clean": "Limpieza",
           "color": "Color",
+          "curtains": "Cortinas",
+          "dark_clothes": "Ropa oscura",
           "down_feathers": "Plum\u00f3n",
           "draining": "Desag\u00fce",
           "drum_clean": "Limpieza Tambor",
           "eco": "Eco",
           "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Higiene extra",
+          "fabric_care": "Cuidado de tejidos",
           "glass": "Cristal",
           "hygiene": "Higiene",
           "intensive": "Intensivo",
           "intensive_59_32": "Intensivo 59'/32'",
+          "jeans": "Jeans",
+          "kids_wear": "Ropa infantil",
+          "kitchen_towels": "Pa\u00f1os de cocina",
+          "lingerie": "Lencer\u00eda",
           "mix_synthetic": "Mixto/Sint\u00e9ticos",
+          "new_clothes": "Ropa nueva",
           "night": "Noche",
           "no_program_selected": "Ning\u00fan programa seleccionado",
           "one_hour": "1 hora",
           "pet_hair_removal": "Eliminaci\u00f3n de pelo de mascotas",
+          "pets": "Mascotas",
+          "pillow": "Almohada",
+          "plush_toys": "Peluches",
+          "power_39": "Power 39",
           "quick_pro": "Quick pro",
           "rinse_and_hold": "Aclarar y esperar",
           "rinsing_softening": "Aclarado y suavizado",
           "self_cleaning": "Autolimpieza",
           "shirts": "Camisas",
+          "shoes": "Zapatillas",
+          "speed_14": "R\u00e1pido 14",
           "speed_20": "Speed 20",
           "spinning_draining": "Centrifugado y desag\u00fce",
           "sportswear": "Ropa deporte",
+          "steam_refresh": "Refresco con vapor",
+          "swimwear": "Ropa de ba\u00f1o",
+          "tights_stockings": "Medias",
           "time_program": "Programa temporizado",
+          "waterproof": "Impermeable",
           "white_cotton": "Algod\u00f3n blanco",
           "wool_manual": "Lana y manual"
         }
@@ -5665,6 +5690,7 @@
           "cotton": "Algodon",
           "cotton_dry": "Secado Agod\u00f3n",
           "cotton_storage": "Algod\u00f3n",
+          "daily_wash": "Lavado diario",
           "drum_clean": "Limpieza Tambor",
           "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Extra higiene",
@@ -8848,6 +8874,11 @@
       }
     }
   },
+  "exceptions": {
+    "terms_not_accepted": {
+      "message": "Hay que aceptar los T\u00e9rminos y Condiciones actualizados de ConnectLife en la app ConnectLife"
+    }
+  },
   "issues": {
     "orphaned_statistics": {
       "fix_flow": {
@@ -8871,6 +8902,23 @@
         }
       },
       "title": "Estad\u00edsticas a largo plazo hu\u00e9rfanas ({count} sensores)"
+    },
+    "terms_not_accepted": {
+      "fix_flow": {
+        "abort": {
+          "entry_removed": "La entrada de configuraci\u00f3n de ConnectLife ya no existe."
+        },
+        "error": {
+          "still_not_accepted": "ConnectLife sigue rechazando el inicio de sesi\u00f3n. Aseg\u00farate de haber aceptado los nuevos T\u00e9rminos y Condiciones en la app y vuelve a intentarlo."
+        },
+        "step": {
+          "confirm": {
+            "description": "ConnectLife rechaza el inicio de sesi\u00f3n de \"{title}\" hasta que se acepten los T\u00e9rminos y Condiciones actualizados. Volver a introducir la contrase\u00f1a no ayudar\u00e1.\n\n1. Abre la app ConnectLife y cambia el idioma de la app a **ingl\u00e9s**.\n2. Fuerza el cierre de la app (no solo en segundo plano) y vuelve a abrirla.\n3. Acepta los nuevos T\u00e9rminos y Condiciones cuando se te solicite.\n4. Selecciona **Enviar** para reintentar ahora. De lo contrario, la integraci\u00f3n lo reintenta cada 15 minutos.\n\nDespu\u00e9s puedes volver a cambiar el idioma de la app. El cambio de idioma es necesario porque la app puede omitir la solicitud si los t\u00e9rminos a\u00fan no est\u00e1n traducidos a tu idioma. [M\u00e1s informaci\u00f3n]({url})",
+            "title": "Aceptar los T\u00e9rminos y Condiciones actualizados de ConnectLife"
+          }
+        }
+      },
+      "title": "Aceptar los T\u00e9rminos y Condiciones actualizados de ConnectLife"
     },
     "unavailable_device": {
       "fix_flow": {

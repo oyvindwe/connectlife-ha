@@ -129,6 +129,10 @@ The integration polls the ConnectLife API every 60 seconds to avoid overloading 
 
 ## Issues
 
+When reporting an issue with a device, please attach its diagnostics: go to the device page, open the ⋮ menu, and
+select **Download diagnostics**. The file contains the device type and feature code, the raw status values, and which
+properties are not mapped. Device IDs, names and rooms are left out.
+
 ### Climate entities
 
 Missing features:
@@ -168,7 +172,9 @@ There are two workarounds is you have logged in using a 3rd party identity provi
 
 ConnectLife periodically updates their Terms & Conditions. When this happens, the integration may stop working
 with errors like `Account Pending Registration` or `Missing required fields for registration`, or devices may
-silently become unavailable.
+silently become unavailable. Home Assistant shows this as the repair issue
+**Accept updated ConnectLife Terms & Conditions**. The integration retries every 15 minutes until the terms are
+accepted; select **Submit** in the repair to retry right away.
 
 To resolve this, you need to accept the new Terms & Conditions in the ConnectLife mobile app:
 

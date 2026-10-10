@@ -92,7 +92,7 @@ or if you need help with the mapping, please open a PR on GitHub with the file!
 
 The file contains these top level items:
 
-- `climate`: top level [`Climate`](#presets) configuration.
+- `climate`: top level [`Climate`](#presets) configuration ([presets](#presets) and [precision](#precision)).
 - `properties`: list of [`Property`](#property)
 - `buttons`: list of [`Button`](#buttons) entities for write-only commands
 - `statistics`: opt the device type into [daily energy/water statistics](#statistics) sensors
@@ -136,6 +136,8 @@ ConnectLife properties can be mapped to any of these entity types:
   This is a convention, not a guarantee: a `t_*` control is occasionally better surfaced read-only (e.g. `t_beep`
   as a status `binary_sensor`), and a device may advertise `t_*` controls it doesn't physically have — `disable`
   those in the feature override (see [Property inheritance in feature overrides](#property-inheritance-in-feature-overrides)).
+- Download diagnostics for the device (device page → ⋮ → **Download diagnostics**) to see all its properties,
+  their current values, and which ones are not mapped yet.
 - Generate a skeleton file using the [connectlife](https://pypi.org/project/connectlife/) package:
 
   ```bash
@@ -287,6 +289,7 @@ type `climate`, a climate entity is created for the appliance.
 | `unknown_value` | integer                                            | The value used by the API to signal unknown value.                                                                                                                                                                                                                                                                                         |
 | `min_value`     | [IntegerOrTemperature](#type-integerortemperature) | Minimum allowed value. Supported for `target_humidity` (integer) and `target_temperature` (temperature).                                                                                                                                                                                                                                   |
 | `max_value`     | [IntegerOrTemperature](#type-integerortemperature) | Maximum allowed value. Supported for `target_humidity` (integer) and `target_temperature` (temperature).                                                                                                                                                                                                                                   |
+| `step`          | number                                             | Target temperature step, e.g. `0.5`. Supported for `target_temperature`. Defaults to 1. If [`precision`](#precision) is not set, a step below 1 also shows temperatures with one decimal.                                                                                                                                                  |
 
 `temperature_unit` defaults to Celsius.
 
@@ -387,6 +390,17 @@ E.g., with the above preset definitions, if `t_eco` is 1, `t_fan_speed` is 0, _a
 as the selected preset.
 
 Presets only has effect for devices with climate mappings.
+
+### Precision
+
+`precision` on the top level `climate` sets how temperatures are displayed: `0.1`, `0.5` or `1`. It applies to both
+current and target temperature. Defaults to `1`, or `0.1` if the target temperature [`step`](#type-climate) is below 1.
+Use it when the device reports decimal temperatures but only accepts whole-degree setpoints:
+
+```yaml
+climate:
+  precision: 0.1
+```
 
 ## Type `Humidifier`
 

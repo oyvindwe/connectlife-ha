@@ -7,6 +7,7 @@
     "error": {
       "cannot_connect": "[%key:common::config_flow::error::cannot_connect%]",
       "invalid_auth": "[%key:common::config_flow::error::invalid_auth%]",
+      "terms_not_accepted": "ConnectLife requires you to accept updated Terms & Conditions. Change the ConnectLife app language to English, force close and reopen the app, accept the new terms, then try again.",
       "test_server_invalid": "Invalid test server URL",
       "test_server_required": "Development mode requires test server URL",
       "unknown": "[%key:common::config_flow::error::unknown%]"
@@ -1913,7 +1914,8 @@
           "fan_mode": {
             "state": {
               "middle_high": "Middle high",
-              "middle_low": "Middle low"
+              "middle_low": "Middle low",
+              "quiet": "Quiet"
             }
           },
           "preset_mode": {
@@ -2452,12 +2454,14 @@
           "eco": "Eco",
           "eco_40_60": "Eco 40-60",
           "full_load_49": "Full load 49",
+          "full_load_59": "Full load 59",
           "hand_wash": "Hand wash",
           "ion_refresh": "Ion refresh",
           "jeans": "Jeans",
           "mix": "Mix",
           "pets": "Pets",
           "power_30": "Power 30",
+          "power_39": "Power 39",
           "power_49": "Power 49",
           "quick_15": "Quick 15",
           "quick_30": "Quick 30",
@@ -2480,34 +2484,57 @@
       "selected_program_id_status": {
         "name": "Selected program",
         "state": {
+          "activewear": "Activewear",
+          "airtech": "AirTech",
+          "allergy_safe": "Allergy safe",
           "auto": "Auto",
           "baby_care": "Baby care",
+          "bedding": "Bedding",
+          "bleaching": "Bleaching",
           "clean": "Clean",
           "color": "Color",
+          "curtains": "Curtains",
+          "dark_clothes": "Dark clothes",
           "down_feathers": "Down feathers",
           "draining": "Draining",
           "drum_clean": "Drum clean",
           "eco": "Eco",
           "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Extra Hygiene",
+          "fabric_care": "Fabric care",
           "glass": "Glass",
           "hygiene": "Hygiene",
           "intensive": "Intensive",
           "intensive_59_32": "Intensive 59'/32'",
+          "jeans": "Jeans",
+          "kids_wear": "Kids wear",
+          "kitchen_towels": "Kitchen towels",
+          "lingerie": "Lingerie",
           "mix_synthetic": "Mix/Synthetic",
+          "new_clothes": "New clothes",
           "night": "Night",
           "no_program_selected": "No program selected",
           "one_hour": "One hour",
           "pet_hair_removal": "Pet hair removal",
+          "pets": "Pets",
+          "pillow": "Pillow",
+          "plush_toys": "Plush toys",
+          "power_39": "Power 39",
           "quick_pro": "Quick pro",
           "rinse_and_hold": "Rinse and hold",
           "rinsing_softening": "Rinsing & Softening",
           "self_cleaning": "Self cleaning",
           "shirts": "Shirts",
+          "shoes": "Shoes",
+          "speed_14": "Speed 14",
           "speed_20": "Speed 20",
           "spinning_draining": "Spinning & Draining",
           "sportswear": "Sportswear",
+          "steam_refresh": "Steam refresh",
+          "swimwear": "Swimwear",
+          "tights_stockings": "Tights/Stockings",
           "time_program": "Time program",
+          "waterproof": "Waterproof",
           "white_cotton": "White Cotton",
           "wool_manual": "Wool & Manual"
         }
@@ -5665,6 +5692,7 @@
           "cotton": "Cotton",
           "cotton_dry": "Cotton dry",
           "cotton_storage": "Cotton storage",
+          "daily_wash": "Daily wash",
           "down": "Down",
           "drum_clean": "Drum clean",
           "eco_40_60": "Eco 40-60",
@@ -8849,6 +8877,11 @@
       }
     }
   },
+  "exceptions": {
+    "terms_not_accepted": {
+      "message": "Updated ConnectLife Terms & Conditions must be accepted in the ConnectLife app"
+    }
+  },
   "issues": {
     "orphaned_statistics": {
       "fix_flow": {
@@ -8872,6 +8905,23 @@
         }
       },
       "title": "Orphaned long-term statistics ({count} sensors)"
+    },
+    "terms_not_accepted": {
+      "fix_flow": {
+        "abort": {
+          "entry_removed": "The ConnectLife configuration entry no longer exists."
+        },
+        "error": {
+          "still_not_accepted": "ConnectLife still rejects the login. Make sure the new Terms & Conditions are accepted in the app and try again."
+        },
+        "step": {
+          "confirm": {
+            "description": "ConnectLife rejects the login for \"{title}\" until the updated Terms & Conditions are accepted. Re-entering your password will not help.\n\n1. Open the ConnectLife mobile app and change the app language to **English**.\n2. Force close the app (not just background it), then reopen it.\n3. Accept the new Terms & Conditions when prompted.\n4. Select **Submit** to retry now. Otherwise the integration retries every 15 minutes.\n\nYou can change the app language back afterwards. The language change is needed because the app may skip the prompt when the terms are not yet translated to your language. [More information]({url})",
+            "title": "Accept updated ConnectLife Terms & Conditions"
+          }
+        }
+      },
+      "title": "Accept updated ConnectLife Terms & Conditions"
     },
     "unavailable_device": {
       "fix_flow": {

@@ -7,6 +7,7 @@
     "error": {
       "cannot_connect": "Verbinding mislukt",
       "invalid_auth": "Ongeldige authenticatie",
+      "terms_not_accepted": "ConnectLife vereist dat je de bijgewerkte algemene voorwaarden accepteert. Zet de taal van de ConnectLife-app op Engels, sluit de app geforceerd af, open hem opnieuw, accepteer de nieuwe voorwaarden en probeer het daarna opnieuw.",
       "test_server_invalid": "Ongeldige test server URL",
       "test_server_required": "Ontwikkelingsmodus vereist test server URL",
       "unknown": "Onverwachte fout"
@@ -1913,7 +1914,8 @@
           "fan_mode": {
             "state": {
               "middle_high": "Midden hoog",
-              "middle_low": "Midden laag"
+              "middle_low": "Midden laag",
+              "quiet": "Stil"
             }
           },
           "preset_mode": {
@@ -2480,34 +2482,57 @@
       "selected_program_id_status": {
         "name": "Geselecteerd programma",
         "state": {
+          "activewear": "Sportkleding",
+          "airtech": "AirTech",
+          "allergy_safe": "Allergievrij",
           "auto": "Auto",
           "baby_care": "Baby",
+          "bedding": "Beddengoed",
+          "bleaching": "Bleken",
           "clean": "Schoon",
           "color": "Kleur",
+          "curtains": "Gordijnen",
+          "dark_clothes": "Donkere was",
           "down_feathers": "Donsveren",
           "draining": "Afpompen",
           "drum_clean": "Trommelreiniging",
           "eco": "Eco",
           "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Extra hygi\u00ebne",
+          "fabric_care": "Textielverzorging",
           "glass": "Glas",
           "hygiene": "Hygi\u00ebne",
           "intensive": "Intensief",
           "intensive_59_32": "Intensief 59'/32'",
+          "jeans": "Spijkerbroeken",
+          "kids_wear": "Kinderkleding",
+          "kitchen_towels": "Keukendoeken",
+          "lingerie": "Lingerie",
           "mix_synthetic": "Mix/Synthetisch",
+          "new_clothes": "Nieuwe kleding",
           "night": "Nacht",
           "no_program_selected": "Geen programma geselecteerd",
           "one_hour": "1 uur",
           "pet_hair_removal": "Huisdierhaar verwijderen",
+          "pets": "Huisdieren",
+          "pillow": "Kussen",
+          "plush_toys": "Knuffels",
+          "power_39": "Power 39",
           "quick_pro": "Quick pro",
           "rinse_and_hold": "Spoelen en wachten",
           "rinsing_softening": "Spoelen & verzachten",
           "self_cleaning": "Zelfreiniging",
           "shirts": "Shirts",
+          "shoes": "Schoenen",
+          "speed_14": "Snel 14",
           "speed_20": "Snel 20'",
           "spinning_draining": "Centrifugeren & afpompen",
           "sportswear": "Sport",
+          "steam_refresh": "Stoomverfrissing",
+          "swimwear": "Badkleding",
+          "tights_stockings": "Panty\u2019s/Kousen",
           "time_program": "Tijdprogramma",
+          "waterproof": "Waterdicht",
           "white_cotton": "Wit katoen",
           "wool_manual": "Wol & Handmatig"
         }
@@ -5665,6 +5690,7 @@
           "cotton": "Katoen",
           "cotton_dry": "Katoen droog",
           "cotton_storage": "Katoen opslag",
+          "daily_wash": "Dagelijkse was",
           "drum_clean": "Trommelreiniging",
           "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Extra hygi\u00ebne",
@@ -8848,6 +8874,11 @@
       }
     }
   },
+  "exceptions": {
+    "terms_not_accepted": {
+      "message": "Bijgewerkte algemene voorwaarden van ConnectLife moeten in de ConnectLife-app worden geaccepteerd"
+    }
+  },
   "issues": {
     "orphaned_statistics": {
       "fix_flow": {
@@ -8871,6 +8902,23 @@
         }
       },
       "title": "Orphaned long-term statistics ({count} sensors)"
+    },
+    "terms_not_accepted": {
+      "fix_flow": {
+        "abort": {
+          "entry_removed": "De ConnectLife-configuratie bestaat niet meer."
+        },
+        "error": {
+          "still_not_accepted": "ConnectLife weigert de aanmelding nog steeds. Controleer of de nieuwe algemene voorwaarden in de app zijn geaccepteerd en probeer het opnieuw."
+        },
+        "step": {
+          "confirm": {
+            "description": "ConnectLife weigert de aanmelding voor \"{title}\" totdat de bijgewerkte algemene voorwaarden zijn geaccepteerd. Je wachtwoord opnieuw invoeren helpt niet.\n\n1. Open de ConnectLife-app en zet de taal van de app op **Engels**.\n2. Sluit de app geforceerd af (niet alleen naar de achtergrond) en open hem opnieuw.\n3. Accepteer de nieuwe algemene voorwaarden wanneer daarom wordt gevraagd.\n4. Kies **Verzenden** om het nu opnieuw te proberen. Anders probeert de integratie het elke 15 minuten opnieuw.\n\nDaarna kun je de taal van de app weer terugzetten. De taalwijziging is nodig omdat de app de vraag kan overslaan als de voorwaarden nog niet in jouw taal zijn vertaald. [Meer informatie]({url})",
+            "title": "Bijgewerkte algemene voorwaarden van ConnectLife accepteren"
+          }
+        }
+      },
+      "title": "Bijgewerkte algemene voorwaarden van ConnectLife accepteren"
     },
     "unavailable_device": {
       "fix_flow": {

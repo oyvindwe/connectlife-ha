@@ -12,3 +12,6 @@ properties:
     disable: true
   - property: t_up_down
     disable: true
+  - property: t_temp
+    climate:
+      step: 0.5
