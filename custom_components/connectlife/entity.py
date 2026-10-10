@@ -127,7 +127,8 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
             properties = command.copy()
         try:
             if self._disable_beep:
-                command["t_beep"] = 0
+                # Copy, so callers passing a stored mapping (e.g. a preset) keep it unchanged.
+                command = {**command, "t_beep": 0}
                 try:
                     await self.coordinator.async_update_device(self.device_id, command, properties)
                     self._disable_beep_failure_count = 0
