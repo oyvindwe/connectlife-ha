@@ -89,3 +89,19 @@ Configure the integration to access the test server:
 ![img.png](img.png)
 
 ![img_1.png](img_1.png)
+
+## Testing a pull request
+
+HACS can't install pull request branches, so a pull request has to be installed by hand:
+
+1. Download the PR branch as a zip:
+   `https://github.com/oyvindwe/connectlife-ha/archive/refs/heads/<branch>.zip`. The branch name is shown at the top
+   of the PR. For a PR from a fork, use the fork's owner and repository instead of `oyvindwe/connectlife-ha`.
+2. Replace the `custom_components/connectlife` folder in your Home Assistant config with the one from the zip. Keep a
+   copy of the old folder to roll back.
+3. Restart Home Assistant.
+
+When reporting back, attach diagnostics for the device (device page → ⋮ → **Download diagnostics**) if something
+doesn't work.
+
+To go back, restore the old folder, or reinstall the latest release in HACS, and restart Home Assistant.
