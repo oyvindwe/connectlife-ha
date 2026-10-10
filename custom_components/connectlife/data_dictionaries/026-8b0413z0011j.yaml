@@ -1,0 +1,116 @@
+# Gorenje NRB620E61X4WFE Refrigerator (feature code 8b0413z0011j)
+
+properties:
+  # Temperature ranges as shown in the app
+  - property: refrigerator_temperature
+    number:
+      min_value: 2
+
+  - property: freeze_temperature
+    number:
+      min_value: -24
+      max_value: -14
+
+  # No ice maker on this model
+  - property: automatic_ice_making
+    disable: true
+
+  - property: ice_making_state
+    disable: true
+
+  - property: ice_making_stop_status
+    disable: true
+
+  # No humidity sensor (always reads 0)
+  - property: environment_humidity
+    disable: true
+
+  # No variable temperature room (all values -40)
+  - property: variation_temperature
+    disable: true
+
+  - property: variation_real_temperature
+    disable: true
+
+  - property: variation_max_temperature
+    disable: true
+
+  - property: variation_min_temperature
+    disable: true
+
+  - property: variation_sensor_real_temperature
+    disable: true
+
+  - property: variable_temperature_space
+    disable: true
+
+  - property: variation_door_open_time
+    disable: true
+
+  - property: variable_heater_failure_status
+    disable: true
+
+  - property: variable_fan_failure_status
+    disable: true
+
+  # Hide unnecessary "existing_*" status sensors
+  - property: existing_holiday_mode
+    disable: true
+
+  - property: existing_save_mode
+    disable: true
+
+  - property: existing_fuzzy_mode
+    disable: true
+
+  - property: existing_lock_fresh_mode
+    disable: true
+
+  - property: existing_sf_mode
+    disable: true
+
+  - property: existing_sr_mode
+    disable: true
+
+  # Hide RGB/aesthetic properties
+  - property: rgb_atmosphere_mode_b_value
+    disable: true
+
+  - property: rgb_atmosphere_mode_g_value
+    disable: true
+
+  - property: rgb_atmosphere_mode_r_value
+    disable: true
+
+  - property: rgb_function_mode_b_value
+    disable: true
+
+  - property: rgb_function_mode_g_value
+    disable: true
+
+  - property: rgb_function_mode_r_value
+    disable: true
+
+  - property: rgb_light_atmosphere_brightness
+    disable: true
+
+  - property: rgb_light_atmosphere_on_time
+    disable: true
+
+  - property: rgb_light_function_brightness
+    disable: true
+
+  - property: rgb_light_function_on_time
+    disable: true
+
+  - property: rgb_light_normal_brightness
+    disable: true
+
+  - property: rgb_normal_mode_b_value
+    disable: true
+
+  - property: rgb_normal_mode_g_value
+    disable: true
+
+  - property: rgb_normal_mode_r_value
+    disable: true
