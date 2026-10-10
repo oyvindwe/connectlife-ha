@@ -82,6 +82,11 @@ climate:
       t_super: 0
       preset: eco_sleep_4
 properties:
+  # This subtype has only vertical oscillation. The cloud still reports
+  # t_swing_direction=7, but the unit has no motorized horizontal swing,
+  # so do not expose it as a horizontal climate mode.
+  - property: t_swing_direction
+    disable: true
   - property: f_electricity
     sensor:
       device_class: power

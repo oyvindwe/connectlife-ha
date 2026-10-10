@@ -93,6 +93,7 @@
 | WFQA1014                 | Washing machine          | 025              | 1wj105080v0w                |
 |                          | Washing machine          | 025              | 1wj105091v0t                |
 | WFSE1114-LVW002          | Washing machine          | 025              | 1wj105219v0w                |
+| WFSE1114-LVW002          | Washing machine          | 025              | 1wj105064v0w                |
 | WF3S1114-LVW004          | Washing machine          | 025              | 1wj105246v0w                |
 |                          | Washing machine          | 025              | 1wj105418v0t                |
 | WD5I1045BWQ              | Washing machine          | 025              | 1wj105552v0w                |
@@ -124,5 +125,6 @@
 | DHSE10                   | Tumble dryer             | 030              | 1wk100130v0f                |
 | DH5S102BB                | Tumble dryer             | 030              | 1wk100266v0f                |
 | DHSE80-BEW001            | Tumble dryer             | 030              | 1wk080027e0w                |
+|                          | Tumble dryer             | 030              | 1wk100163v0w                |
 | DPNA83W                  | Tumble dryer             | 032              | 000                         |
 | Hisense RW3N122GSLF      | Wine cooler              | 034              | 1j0122z0035j                |
