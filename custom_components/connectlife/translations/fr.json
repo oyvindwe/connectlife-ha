@@ -3548,7 +3548,10 @@
         "name": "Niveau de s\u00e9chage par d\u00e9faut"
       },
       "defaultspinspeed": {
-        "name": "Vitesse essorage par d\u00e9faut"
+        "name": "Vitesse essorage par d\u00e9faut",
+        "state": {
+          "none": "Aucun"
+        }
       },
       "delay_actions_flag": {
         "name": "Indicateur d'actions diff\u00e9r\u00e9es"
@@ -3899,7 +3902,10 @@
         "name": "Mode s\u00e9chage"
       },
       "dryopen_defaultspinspeed": {
-        "name": "Vitesse d'essorage par d\u00e9faut porte ouverte"
+        "name": "Vitesse d'essorage par d\u00e9faut porte ouverte",
+        "state": {
+          "none": "Aucun"
+        }
       },
       "duration_of_clock": {
         "name": "Dur\u00e9e de l'horloge"

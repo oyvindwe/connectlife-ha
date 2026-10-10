@@ -3550,7 +3550,10 @@
         "name": "Livello di asciugatura predefinito"
       },
       "defaultspinspeed": {
-        "name": "Velocit\u00e0 di centrifuga predefinita"
+        "name": "Velocit\u00e0 di centrifuga predefinita",
+        "state": {
+          "none": "Nessuno"
+        }
       },
       "delay_actions_flag": {
         "name": "Flag azioni ritardate"
@@ -3901,7 +3904,10 @@
         "name": "Modalit\u00e0 asciugatura"
       },
       "dryopen_defaultspinspeed": {
-        "name": "Velocit\u00e0 di centrifuga predefinita"
+        "name": "Velocit\u00e0 di centrifuga predefinita",
+        "state": {
+          "none": "Nessuno"
+        }
       },
       "duration_of_clock": {
         "name": "Durata visualizzazione orologio"

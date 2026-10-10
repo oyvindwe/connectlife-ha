@@ -3548,7 +3548,10 @@
         "name": "Standard-Trockengrad"
       },
       "defaultspinspeed": {
-        "name": "Schleuderdrehzahl Standard"
+        "name": "Schleuderdrehzahl Standard",
+        "state": {
+          "none": "Keine"
+        }
       },
       "delay_actions_flag": {
         "name": "Flag Verz\u00f6gerungsaktionen"
@@ -3899,7 +3902,10 @@
         "name": "Trocknungsmodus"
       },
       "dryopen_defaultspinspeed": {
-        "name": "Standard Schleudergeschwindigkeit"
+        "name": "Standard Schleudergeschwindigkeit",
+        "state": {
+          "none": "Keine"
+        }
       },
       "duration_of_clock": {
         "name": "Anzeigedauer der Uhr"

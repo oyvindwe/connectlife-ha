@@ -3548,7 +3548,10 @@
         "name": "Standard t\u00f8rkeniv\u00e5"
       },
       "defaultspinspeed": {
-        "name": "Standard sentrifugehastighet"
+        "name": "Standard sentrifugehastighet",
+        "state": {
+          "none": "Ingen"
+        }
       },
       "delay_actions_flag": {
         "name": "Flagg for forsinkede handlinger"
@@ -3899,7 +3902,10 @@
         "name": "T\u00f8rkemodell"
       },
       "dryopen_defaultspinspeed": {
-        "name": "Standard sentrifugehastighet ved t\u00f8rr\u00e5pning"
+        "name": "Standard sentrifugehastighet ved t\u00f8rr\u00e5pning",
+        "state": {
+          "none": "Ingen"
+        }
       },
       "duration_of_clock": {
         "name": "Klokkevarighet"

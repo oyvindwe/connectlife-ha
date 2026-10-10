@@ -3550,7 +3550,10 @@
         "name": "V\u00fdchoz\u00ed \u00farove\u0148 su\u0161en\u00ed"
       },
       "defaultspinspeed": {
-        "name": "V\u00fdchoz\u00ed rychlost odst\u0159ed\u011bn\u00ed"
+        "name": "V\u00fdchoz\u00ed rychlost odst\u0159ed\u011bn\u00ed",
+        "state": {
+          "none": "\u017d\u00e1dn\u00fd"
+        }
       },
       "delay_actions_flag": {
         "name": "P\u0159\u00edznak zpo\u017ed\u011bn\u00fdch akc\u00ed"
@@ -3901,7 +3904,10 @@
         "name": "Re\u017eim su\u0161en\u00ed"
       },
       "dryopen_defaultspinspeed": {
-        "name": "V\u00fdchoz\u00ed rychlost odst\u0159ed\u011bn\u00ed pro su\u0161en\u00ed"
+        "name": "V\u00fdchoz\u00ed rychlost odst\u0159ed\u011bn\u00ed pro su\u0161en\u00ed",
+        "state": {
+          "none": "\u017d\u00e1dn\u00fd"
+        }
       },
       "duration_of_clock": {
         "name": "Doba hodin"
