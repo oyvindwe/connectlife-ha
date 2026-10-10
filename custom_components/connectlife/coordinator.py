@@ -100,7 +100,7 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
                 raise UpdateFailed(format_retry_message(err)) from err
         return {a.device_id: a for a in self.api.appliances}
 
-    async def async_update_device(self, device_id: str, command: Mapping[str, int | str], properties: Mapping[str, int | str]):
+    async def async_update_device(self, device_id: str, command: Mapping[str, int | float | str], properties: Mapping[str, int | float | str]):
         """Updates the device, and sets the properties in local copy and notify to avoid refetching."""
         await self.api.update_appliance(self.data[device_id].puid, {k: str(v) for k, v in command.items()})
         self.data[device_id].status_list.update(properties)
