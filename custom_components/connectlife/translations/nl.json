@@ -1914,7 +1914,8 @@
           "fan_mode": {
             "state": {
               "middle_high": "Midden hoog",
-              "middle_low": "Midden laag"
+              "middle_low": "Midden laag",
+              "quiet": "Stil"
             }
           },
           "preset_mode": {
@@ -2481,35 +2482,57 @@
       "selected_program_id_status": {
         "name": "Geselecteerd programma",
         "state": {
+          "activewear": "Sportkleding",
           "airtech": "AirTech",
+          "allergy_safe": "Allergievrij",
           "auto": "Auto",
           "baby_care": "Baby",
+          "bedding": "Beddengoed",
+          "bleaching": "Bleken",
           "clean": "Schoon",
           "color": "Kleur",
+          "curtains": "Gordijnen",
+          "dark_clothes": "Donkere was",
           "down_feathers": "Donsveren",
           "draining": "Afpompen",
           "drum_clean": "Trommelreiniging",
           "eco": "Eco",
           "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Extra hygi\u00ebne",
+          "fabric_care": "Textielverzorging",
           "glass": "Glas",
           "hygiene": "Hygi\u00ebne",
           "intensive": "Intensief",
           "intensive_59_32": "Intensief 59'/32'",
+          "jeans": "Spijkerbroeken",
+          "kids_wear": "Kinderkleding",
+          "kitchen_towels": "Keukendoeken",
+          "lingerie": "Lingerie",
           "mix_synthetic": "Mix/Synthetisch",
+          "new_clothes": "Nieuwe kleding",
           "night": "Nacht",
           "no_program_selected": "Geen programma geselecteerd",
           "one_hour": "1 uur",
           "pet_hair_removal": "Huisdierhaar verwijderen",
+          "pets": "Huisdieren",
+          "pillow": "Kussen",
+          "plush_toys": "Knuffels",
+          "power_39": "Power 39",
           "quick_pro": "Quick pro",
           "rinse_and_hold": "Spoelen en wachten",
           "rinsing_softening": "Spoelen & verzachten",
           "self_cleaning": "Zelfreiniging",
           "shirts": "Shirts",
+          "shoes": "Schoenen",
+          "speed_14": "Snel 14",
           "speed_20": "Snel 20'",
           "spinning_draining": "Centrifugeren & afpompen",
           "sportswear": "Sport",
+          "steam_refresh": "Stoomverfrissing",
+          "swimwear": "Badkleding",
+          "tights_stockings": "Panty\u2019s/Kousen",
           "time_program": "Tijdprogramma",
+          "waterproof": "Waterdicht",
           "white_cotton": "Wit katoen",
           "wool_manual": "Wol & Handmatig"
         }
@@ -3548,7 +3571,10 @@
         "name": "Standaard droogniveau"
       },
       "defaultspinspeed": {
-        "name": "Standaard centrifugesnelheid"
+        "name": "Standaard centrifugesnelheid",
+        "state": {
+          "none": "Geen"
+        }
       },
       "delay_actions_flag": {
         "name": "Uitstel acties"
@@ -3899,7 +3925,10 @@
         "name": "Droger model"
       },
       "dryopen_defaultspinspeed": {
-        "name": "Standaard centrifugesnelheid (open drogen)"
+        "name": "Standaard centrifugesnelheid (open drogen)",
+        "state": {
+          "none": "Geen"
+        }
       },
       "duration_of_clock": {
         "name": "Duur klok"
@@ -5667,14 +5696,19 @@
           "cotton": "Katoen",
           "cotton_dry": "Katoen droog",
           "cotton_storage": "Katoen opslag",
+          "daily_wash": "Dagelijkse was",
+          "down": "Dons",
           "drum_clean": "Trommelreiniging",
           "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Extra hygi\u00ebne",
           "fast89": "Snel 89'",
+          "full_load_49": "Volle lading 49'",
           "iron": "Strijken",
           "jeans": "Spijkerbroeken",
           "mix": "Mix",
           "none": "Geen",
+          "pets": "Huisdieren",
+          "power_30": "Power 30'",
           "power_49": "Power 49",
           "quick_15": "Snel 15",
           "refresh": "Opfrissen",

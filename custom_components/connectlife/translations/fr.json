@@ -1914,7 +1914,8 @@
           "fan_mode": {
             "state": {
               "middle_high": "Moyen-\u00e9lev\u00e9",
-              "middle_low": "Moyen bas"
+              "middle_low": "Moyen bas",
+              "quiet": "Silencieux"
             }
           },
           "preset_mode": {
@@ -2447,7 +2448,7 @@
           "cotton": "Coton",
           "cotton_dry": "S\u00e9chage coton",
           "delicates": "D\u00e9licats",
-          "down": "Bas",
+          "down": "Duvet",
           "drum_clean": "Nettoyage du tambour",
           "duvet": "Couette",
           "eco": "\u00c9co",
@@ -2481,35 +2482,57 @@
       "selected_program_id_status": {
         "name": "Programme",
         "state": {
+          "activewear": "V\u00eatements techniques",
           "airtech": "AirTech",
+          "allergy_safe": "Anti-allergie",
           "auto": "Auto",
           "baby_care": "Soin b\u00e9b\u00e9",
+          "bedding": "Linge de lit",
+          "bleaching": "Blanchiment",
           "clean": "Nettoyage",
           "color": "Couleurs",
+          "curtains": "Rideaux",
+          "dark_clothes": "V\u00eatements fonc\u00e9s",
           "down_feathers": "Duvet",
           "draining": "Vidange",
           "drum_clean": "Nettoyage du tambour",
           "eco": "\u00c9co",
           "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Hygi\u00e8ne suppl\u00e9mentaire",
+          "fabric_care": "Soin des textiles",
           "glass": "Verre",
           "hygiene": "Hygi\u00e8ne",
           "intensive": "Intensif",
           "intensive_59_32": "Intensif 59'/32'",
+          "jeans": "Jeans",
+          "kids_wear": "V\u00eatements enfants",
+          "kitchen_towels": "Torchons",
+          "lingerie": "Lingerie",
           "mix_synthetic": "Mixte/Synth\u00e9tique",
+          "new_clothes": "V\u00eatements neufs",
           "night": "Nuit",
           "no_program_selected": "Aucun programme s\u00e9lectionn\u00e9",
           "one_hour": "Une heure",
           "pet_hair_removal": "\u00c9limination des poils d'animaux",
+          "pets": "Animaux",
+          "pillow": "Oreiller",
+          "plush_toys": "Peluches",
+          "power_39": "Power 39",
           "quick_pro": "Quick pro",
           "rinse_and_hold": "Rin\u00e7age et maintien",
           "rinsing_softening": "Rin\u00e7age et assouplissement",
           "self_cleaning": "Autonettoyage",
           "shirts": "Chemises",
+          "shoes": "Chaussures",
+          "speed_14": "Rapide 14",
           "speed_20": "Speed 20",
           "spinning_draining": "Essorage et vidange",
           "sportswear": "V\u00eatements de sport",
+          "steam_refresh": "Rafra\u00eechir vapeur",
+          "swimwear": "Maillots de bain",
+          "tights_stockings": "Collants/Bas",
           "time_program": "Programme minut\u00e9",
+          "waterproof": "Imperm\u00e9able",
           "white_cotton": "Coton blanc",
           "wool_manual": "Laine et manuel"
         }
@@ -3548,7 +3571,10 @@
         "name": "Niveau de s\u00e9chage par d\u00e9faut"
       },
       "defaultspinspeed": {
-        "name": "Vitesse essorage par d\u00e9faut"
+        "name": "Vitesse essorage par d\u00e9faut",
+        "state": {
+          "none": "Aucun"
+        }
       },
       "delay_actions_flag": {
         "name": "Indicateur d'actions diff\u00e9r\u00e9es"
@@ -3899,7 +3925,10 @@
         "name": "Mode s\u00e9chage"
       },
       "dryopen_defaultspinspeed": {
-        "name": "Vitesse d'essorage par d\u00e9faut porte ouverte"
+        "name": "Vitesse d'essorage par d\u00e9faut porte ouverte",
+        "state": {
+          "none": "Aucun"
+        }
       },
       "duration_of_clock": {
         "name": "Dur\u00e9e de l'horloge"
@@ -5667,14 +5696,19 @@
           "cotton": "Coton",
           "cotton_dry": "S\u00e9chage coton",
           "cotton_storage": "Coton pr\u00eat \u00e0 ranger",
+          "daily_wash": "Lavage quotidien",
+          "down": "Duvet",
           "drum_clean": "Nettoyage du tambour",
           "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Hygi\u00e8ne renforc\u00e9e",
           "fast89": "Fast89",
+          "full_load_49": "Charge compl\u00e8te 49",
           "iron": "Repassage",
           "jeans": "Jeans",
           "mix": "Mixte",
           "none": "Aucun",
+          "pets": "Animaux",
+          "power_30": "Power 30",
           "power_49": "Power 49",
           "quick_15": "Rapide 15",
           "refresh": "Rafra\u00eechir",
