@@ -3573,7 +3573,10 @@
         "name": "Default dry level"
       },
       "defaultspinspeed": {
-        "name": "Default spin speed"
+        "name": "Default spin speed",
+        "state": {
+          "none": "None"
+        }
       },
       "delay_actions_flag": {
         "name": "Delay actions flag"
@@ -3924,7 +3927,10 @@
         "name": "Dry model"
       },
       "dryopen_defaultspinspeed": {
-        "name": "Dry open default spin speed"
+        "name": "Dry open default spin speed",
+        "state": {
+          "none": "None"
+        }
       },
       "duration_of_clock": {
         "name": "Duration of clock"

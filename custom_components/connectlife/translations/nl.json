@@ -3571,7 +3571,10 @@
         "name": "Standaard droogniveau"
       },
       "defaultspinspeed": {
-        "name": "Standaard centrifugesnelheid"
+        "name": "Standaard centrifugesnelheid",
+        "state": {
+          "none": "Geen"
+        }
       },
       "delay_actions_flag": {
         "name": "Uitstel acties"
@@ -3922,7 +3925,10 @@
         "name": "Droger model"
       },
       "dryopen_defaultspinspeed": {
-        "name": "Standaard centrifugesnelheid (open drogen)"
+        "name": "Standaard centrifugesnelheid (open drogen)",
+        "state": {
+          "none": "Geen"
+        }
       },
       "duration_of_clock": {
         "name": "Duur klok"

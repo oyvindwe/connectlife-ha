@@ -3571,7 +3571,10 @@
         "name": "Nivel de secado predeterminado"
       },
       "defaultspinspeed": {
-        "name": "Velocidad de centrifugado predeterminada"
+        "name": "Velocidad de centrifugado predeterminada",
+        "state": {
+          "none": "No centrifugar"
+        }
       },
       "delay_actions_flag": {
         "name": "Indicador de acciones diferidas"
@@ -3922,7 +3925,10 @@
         "name": "Modelo de secado"
       },
       "dryopen_defaultspinspeed": {
-        "name": "Velocidad de centrifugado predeterminada de secado abierto"
+        "name": "Velocidad de centrifugado predeterminada de secado abierto",
+        "state": {
+          "none": "No centrifugar"
+        }
       },
       "duration_of_clock": {
         "name": "Duraci\u00f3n del reloj"
