@@ -13,7 +13,7 @@ properties:
         5: low
         7: medium
         9: high
-  - property: measured_grid_voltage
+  - property: f_votage
     # Reports twice the voltage: ~244 on a 120 V circuit (#313).
     sensor:
       multiplier: 0.5
