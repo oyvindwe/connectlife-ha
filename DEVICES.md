@@ -124,6 +124,7 @@
 | Gorenje WNA94ARWIFI      | Washing machine          | 027              | washing-machine-wm22        |
 | Gorenje WNS14A4ATS       | Washing machine          | 027              | washing-machine-wm23-ads    |
 | Gorenje WG486A21         | Washing machine          | 027              | washing-machine-wm26-g400   |
+|                          | Tumble dryer             | 030              | 1wk080135v0w                |
 | DH3S80-DVW006            | Tumble dryer             | 030              | 1wk080140v0w                |
 | DH3S802BW3               | Tumble dryer             | 030              | 1wk080066v0w                |
 | DH3S902BW3               | Tumble dryer             | 030              | 1wk090106v0w                |
