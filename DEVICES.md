@@ -63,6 +63,7 @@
 |                          | Air conditioner          | 009              | 129                         |
 |                          | Air conditioner          | 009              | 199                         |
 | HACZ01+HAAZ01            | Air conditioner          | 009              | 19901                       |
+| HI29672SV                | Induction hob            | 010              | 000                         |
 | HI21472SV                | Induction hob            | 010              | hob-pind                    |
 |                          | Hood                     | 012              | 000                         |
 |                          | Hood                     | 012              | hood-aa-lightfeedback       |
