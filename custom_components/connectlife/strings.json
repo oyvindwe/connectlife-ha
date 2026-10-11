@@ -875,6 +875,72 @@
       "error_9": {
         "name": "Error 9"
       },
+      "error_f10": {
+        "name": "F10 overfilling water 1"
+      },
+      "error_f11": {
+        "name": "F11 water outlet fault"
+      },
+      "error_f12": {
+        "name": "F12 water inlet fault 1"
+      },
+      "error_f40": {
+        "name": "F40 inlet valve leakage"
+      },
+      "error_f41": {
+        "name": "F41 heater fault 1"
+      },
+      "error_f42": {
+        "name": "F42 temperature sensor fault"
+      },
+      "error_f43": {
+        "name": "F43 pressure sensor fault"
+      },
+      "error_f44": {
+        "name": "Error F44"
+      },
+      "error_f45": {
+        "name": "F45 diverter fault"
+      },
+      "error_f46": {
+        "name": "Error F46"
+      },
+      "error_f52": {
+        "name": "F52 water level fault"
+      },
+      "error_f54": {
+        "name": "F54 overfilling water 2"
+      },
+      "error_f56": {
+        "name": "F56 circulation pump fault"
+      },
+      "error_f61": {
+        "name": "Error F61"
+      },
+      "error_f62": {
+        "name": "Error F62"
+      },
+      "error_f65": {
+        "name": "F65 display board fault"
+      },
+      "error_f67": {
+        "name": "F67 water inlet fault 2"
+      },
+      "error_f68": {
+        "name": "F68 drain pump fault"
+      },
+      "error_f69": {
+        "name": "Error F69"
+      },
+      "error_f72": {
+        "name": "Error F72"
+      },
+      "error_f74": {
+        "name": "Error F74"
+      },
+      "error_f75": {
+        "name": "Error F75"
+      },
       "existing_fuzzy_mode": {
         "name": "Existing fuzzy mode"
       },
@@ -2558,6 +2624,7 @@
           "new_clothes": "New clothes",
           "night": "Night",
           "no_program_selected": "No program selected",
+          "odor_control": "Odor control",
           "one_hour": "One hour",
           "pet_hair_removal": "Pet hair removal",
           "pets": "Pets",
@@ -4300,74 +4367,8 @@
           "unbalance_alarm": "Unbalance alarm"
         }
       },
-      "error_f10": {
-        "name": "Error f10"
-      },
-      "error_f11": {
-        "name": "Error f11"
-      },
-      "error_f12": {
-        "name": "Error f12"
-      },
-      "error_f40": {
-        "name": "Error f40"
-      },
-      "error_f41": {
-        "name": "Error f41"
-      },
-      "error_f42": {
-        "name": "Error f42"
-      },
-      "error_f43": {
-        "name": "Error f43"
-      },
-      "error_f44": {
-        "name": "Error f44"
-      },
-      "error_f45": {
-        "name": "Error f45"
-      },
-      "error_f46": {
-        "name": "Error f46"
-      },
-      "error_f52": {
-        "name": "Error f52"
-      },
-      "error_f54": {
-        "name": "Error f54"
-      },
-      "error_f56": {
-        "name": "Error f56"
-      },
-      "error_f61": {
-        "name": "Error f61"
-      },
-      "error_f62": {
-        "name": "Error f62"
-      },
-      "error_f65": {
-        "name": "Error f65"
-      },
-      "error_f67": {
-        "name": "Error f67"
-      },
-      "error_f68": {
-        "name": "Error f68"
-      },
-      "error_f69": {
-        "name": "Error f69"
-      },
       "error_f70": {
         "name": "Error f70"
-      },
-      "error_f72": {
-        "name": "Error f72"
-      },
-      "error_f74": {
-        "name": "Error f74"
-      },
-      "error_f75": {
-        "name": "Error f75"
       },
       "error_f76": {
         "name": "Error f76"

@@ -864,6 +864,72 @@
       "error_9": {
         "name": "Feil 9"
       },
+      "error_f10": {
+        "name": "F10 overfylling av vann 1"
+      },
+      "error_f11": {
+        "name": "F11 feil p\u00e5 vannutl\u00f8p"
+      },
+      "error_f12": {
+        "name": "F12 feil p\u00e5 vanninntak 1"
+      },
+      "error_f40": {
+        "name": "F40 lekkasje i innl\u00f8psventil"
+      },
+      "error_f41": {
+        "name": "F41 feil p\u00e5 varmeelement 1"
+      },
+      "error_f42": {
+        "name": "F42 feil p\u00e5 temperatursensor"
+      },
+      "error_f43": {
+        "name": "F43 feil p\u00e5 trykksensor"
+      },
+      "error_f44": {
+        "name": "Feil F44"
+      },
+      "error_f45": {
+        "name": "F45 feil p\u00e5 fordeler"
+      },
+      "error_f46": {
+        "name": "Feil F46"
+      },
+      "error_f52": {
+        "name": "F52 feil p\u00e5 vanniv\u00e5"
+      },
+      "error_f54": {
+        "name": "F54 overfylling av vann 2"
+      },
+      "error_f56": {
+        "name": "F56 feil p\u00e5 sirkulasjonspumpe"
+      },
+      "error_f61": {
+        "name": "Feil F61"
+      },
+      "error_f62": {
+        "name": "Feil F62"
+      },
+      "error_f65": {
+        "name": "F65 feil p\u00e5 skjermkort"
+      },
+      "error_f67": {
+        "name": "F67 feil p\u00e5 vanninntak 2"
+      },
+      "error_f68": {
+        "name": "F68 feil p\u00e5 t\u00f8mmepumpe"
+      },
+      "error_f69": {
+        "name": "Feil F69"
+      },
+      "error_f72": {
+        "name": "Feil F72"
+      },
+      "error_f74": {
+        "name": "Feil F74"
+      },
+      "error_f75": {
+        "name": "Feil F75"
+      },
       "existing_fuzzy_mode": {
         "name": "Eksisterende fuzzy-modus"
       },
@@ -2545,6 +2611,7 @@
           "new_clothes": "Nye kl\u00e6r",
           "night": "Natt",
           "no_program_selected": "Intet program valgt",
+          "odor_control": "Luktkontroll",
           "one_hour": "\u00c9n time",
           "pet_hair_removal": "Fjerning av kj\u00e6ledyrh\u00e5r",
           "pets": "Kj\u00e6ledyr",
@@ -4287,74 +4354,8 @@
           "unbalance_alarm": "Ubalansealarm"
         }
       },
-      "error_f10": {
-        "name": "Feil f10"
-      },
-      "error_f11": {
-        "name": "Feil f11"
-      },
-      "error_f12": {
-        "name": "Feil f12"
-      },
-      "error_f40": {
-        "name": "Feil f40"
-      },
-      "error_f41": {
-        "name": "Feil f41"
-      },
-      "error_f42": {
-        "name": "Feil f42"
-      },
-      "error_f43": {
-        "name": "Feil f43"
-      },
-      "error_f44": {
-        "name": "Feil f44"
-      },
-      "error_f45": {
-        "name": "Feil f45"
-      },
-      "error_f46": {
-        "name": "Feil f46"
-      },
-      "error_f52": {
-        "name": "Feil f52"
-      },
-      "error_f54": {
-        "name": "Feil f54"
-      },
-      "error_f56": {
-        "name": "Feil f56"
-      },
-      "error_f61": {
-        "name": "Feil f61"
-      },
-      "error_f62": {
-        "name": "Feil f62"
-      },
-      "error_f65": {
-        "name": "Feil f65"
-      },
-      "error_f67": {
-        "name": "Feil f67"
-      },
-      "error_f68": {
-        "name": "Feil f68"
-      },
-      "error_f69": {
-        "name": "Feil f69"
-      },
       "error_f70": {
         "name": "Feil f70"
-      },
-      "error_f72": {
-        "name": "Feil f72"
-      },
-      "error_f74": {
-        "name": "Feil f74"
-      },
-      "error_f75": {
-        "name": "Feil f75"
       },
       "error_f76": {
         "name": "Feil f76"

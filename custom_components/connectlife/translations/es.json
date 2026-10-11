@@ -864,6 +864,72 @@
       "error_9": {
         "name": "Error 9"
       },
+      "error_f10": {
+        "name": "F10 exceso de agua 1"
+      },
+      "error_f11": {
+        "name": "F11 fallo de salida de agua"
+      },
+      "error_f12": {
+        "name": "F12 fallo de entrada de agua 1"
+      },
+      "error_f40": {
+        "name": "F40 fuga en la v\u00e1lvula de entrada"
+      },
+      "error_f41": {
+        "name": "F41 fallo del calentador 1"
+      },
+      "error_f42": {
+        "name": "F42 fallo del sensor de temperatura"
+      },
+      "error_f43": {
+        "name": "F43 fallo del sensor de presi\u00f3n"
+      },
+      "error_f44": {
+        "name": "Error F44"
+      },
+      "error_f45": {
+        "name": "F45 fallo del desviador"
+      },
+      "error_f46": {
+        "name": "Error F46"
+      },
+      "error_f52": {
+        "name": "F52 fallo de nivel de agua"
+      },
+      "error_f54": {
+        "name": "F54 exceso de agua 2"
+      },
+      "error_f56": {
+        "name": "F56 fallo de la bomba de circulaci\u00f3n"
+      },
+      "error_f61": {
+        "name": "Error F61"
+      },
+      "error_f62": {
+        "name": "Error F62"
+      },
+      "error_f65": {
+        "name": "F65 fallo de la placa de la pantalla"
+      },
+      "error_f67": {
+        "name": "F67 fallo de entrada de agua 2"
+      },
+      "error_f68": {
+        "name": "F68 fallo de la bomba de desag\u00fce"
+      },
+      "error_f69": {
+        "name": "Error F69"
+      },
+      "error_f72": {
+        "name": "Error F72"
+      },
+      "error_f74": {
+        "name": "Error F74"
+      },
+      "error_f75": {
+        "name": "Error F75"
+      },
       "existing_fuzzy_mode": {
         "name": "Modo fuzzy existente"
       },
@@ -2545,6 +2611,7 @@
           "new_clothes": "Ropa nueva",
           "night": "Noche",
           "no_program_selected": "Ning\u00fan programa seleccionado",
+          "odor_control": "Control de olores",
           "one_hour": "1 hora",
           "pet_hair_removal": "Eliminaci\u00f3n de pelo de mascotas",
           "pets": "Mascotas",
@@ -4287,74 +4354,8 @@
           "unbalance_alarm": "Alarma de desequilibrio"
         }
       },
-      "error_f10": {
-        "name": "Error f10"
-      },
-      "error_f11": {
-        "name": "Error f11"
-      },
-      "error_f12": {
-        "name": "Error f12"
-      },
-      "error_f40": {
-        "name": "Error f40"
-      },
-      "error_f41": {
-        "name": "Error f41"
-      },
-      "error_f42": {
-        "name": "Error f42"
-      },
-      "error_f43": {
-        "name": "Error f43"
-      },
-      "error_f44": {
-        "name": "Error f44"
-      },
-      "error_f45": {
-        "name": "Error f45"
-      },
-      "error_f46": {
-        "name": "Error f46"
-      },
-      "error_f52": {
-        "name": "Error f52"
-      },
-      "error_f54": {
-        "name": "Error f54"
-      },
-      "error_f56": {
-        "name": "Error f56"
-      },
-      "error_f61": {
-        "name": "Error f61"
-      },
-      "error_f62": {
-        "name": "Error f62"
-      },
-      "error_f65": {
-        "name": "Error f65"
-      },
-      "error_f67": {
-        "name": "Error f67"
-      },
-      "error_f68": {
-        "name": "Error f68"
-      },
-      "error_f69": {
-        "name": "Error f69"
-      },
       "error_f70": {
         "name": "Error f70"
-      },
-      "error_f72": {
-        "name": "Error f72"
-      },
-      "error_f74": {
-        "name": "Error f74"
-      },
-      "error_f75": {
-        "name": "Error f75"
       },
       "error_f76": {
         "name": "Error f76"

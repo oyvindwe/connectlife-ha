@@ -864,6 +864,72 @@
       "error_9": {
         "name": "Errore 9"
       },
+      "error_f10": {
+        "name": "F10 troppa acqua 1"
+      },
+      "error_f11": {
+        "name": "F11 guasto scarico acqua"
+      },
+      "error_f12": {
+        "name": "F12 guasto carico acqua 1"
+      },
+      "error_f40": {
+        "name": "F40 perdita valvola di carico"
+      },
+      "error_f41": {
+        "name": "F41 guasto resistenza 1"
+      },
+      "error_f42": {
+        "name": "F42 guasto sensore di temperatura"
+      },
+      "error_f43": {
+        "name": "F43 guasto sensore di pressione"
+      },
+      "error_f44": {
+        "name": "Errore F44"
+      },
+      "error_f45": {
+        "name": "F45 guasto deviatore"
+      },
+      "error_f46": {
+        "name": "Errore F46"
+      },
+      "error_f52": {
+        "name": "F52 guasto livello acqua"
+      },
+      "error_f54": {
+        "name": "F54 troppa acqua 2"
+      },
+      "error_f56": {
+        "name": "F56 guasto pompa di circolazione"
+      },
+      "error_f61": {
+        "name": "Errore F61"
+      },
+      "error_f62": {
+        "name": "Errore F62"
+      },
+      "error_f65": {
+        "name": "F65 guasto scheda display"
+      },
+      "error_f67": {
+        "name": "F67 guasto carico acqua 2"
+      },
+      "error_f68": {
+        "name": "F68 guasto pompa di scarico"
+      },
+      "error_f69": {
+        "name": "Errore F69"
+      },
+      "error_f72": {
+        "name": "Errore F72"
+      },
+      "error_f74": {
+        "name": "Errore F74"
+      },
+      "error_f75": {
+        "name": "Errore F75"
+      },
       "existing_fuzzy_mode": {
         "name": "Modalit\u00e0 fuzzy presente"
       },
@@ -2547,6 +2613,7 @@
           "new_clothes": "Capi nuovi",
           "night": "Notte",
           "no_program_selected": "Nessun programma selezionato",
+          "odor_control": "Controllo odori",
           "one_hour": "Un'ora",
           "pet_hair_removal": "Rimozione peli di animali",
           "pets": "Animali domestici",
@@ -4289,74 +4356,8 @@
           "unbalance_alarm": "Allarme di squilibrio"
         }
       },
-      "error_f10": {
-        "name": "Errore f10"
-      },
-      "error_f11": {
-        "name": "Errore f11"
-      },
-      "error_f12": {
-        "name": "Errore f12"
-      },
-      "error_f40": {
-        "name": "Errore f40"
-      },
-      "error_f41": {
-        "name": "Errore f41"
-      },
-      "error_f42": {
-        "name": "Errore f42"
-      },
-      "error_f43": {
-        "name": "Errore f43"
-      },
-      "error_f44": {
-        "name": "Errore f44"
-      },
-      "error_f45": {
-        "name": "Errore f45"
-      },
-      "error_f46": {
-        "name": "Errore f46"
-      },
-      "error_f52": {
-        "name": "Errore f52"
-      },
-      "error_f54": {
-        "name": "Errore f54"
-      },
-      "error_f56": {
-        "name": "Errore f56"
-      },
-      "error_f61": {
-        "name": "Errore f61"
-      },
-      "error_f62": {
-        "name": "Errore f62"
-      },
-      "error_f65": {
-        "name": "Errore f65"
-      },
-      "error_f67": {
-        "name": "Errore f67"
-      },
-      "error_f68": {
-        "name": "Errore f68"
-      },
-      "error_f69": {
-        "name": "Errore f69"
-      },
       "error_f70": {
         "name": "Errore f70"
-      },
-      "error_f72": {
-        "name": "Errore f72"
-      },
-      "error_f74": {
-        "name": "Errore f74"
-      },
-      "error_f75": {
-        "name": "Errore f75"
       },
       "error_f76": {
         "name": "Errore f76"
