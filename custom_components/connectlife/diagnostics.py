@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import dataclasses
 from typing import Any
 
 from aiohttp import ClientError
@@ -14,7 +15,7 @@ from homeassistant.helpers.device_registry import DeviceEntry
 from connectlife.appliance import ConnectLifeAppliance
 
 from .const import CONF_DEVICES, DOMAIN
-from .coordinator import ConnectLifeCoordinator
+from .coordinator import ConnectLifeCoordinator, ConnectLifeStatisticsCoordinator
 from .dictionaries import Dictionaries, _load_yaml
 from .statistics_sources import enabled_sensors
 
@@ -42,7 +43,7 @@ async def async_get_config_entry_diagnostics(
     coordinator: ConnectLifeCoordinator = hass.data[DOMAIN][entry.entry_id]
     return {
         "appliances": [
-            await _appliance_diagnostics(entry, coordinator.api, appliance)
+            await _appliance_diagnostics(hass, entry, coordinator.api, appliance)
             for appliance in coordinator.data.values()
         ],
     }
@@ -56,13 +57,16 @@ async def async_get_device_diagnostics(
     for domain, device_id in device.identifiers:
         if domain == DOMAIN and device_id in coordinator.data:
             return await _appliance_diagnostics(
-                entry, coordinator.api, coordinator.data[device_id]
+                hass, entry, coordinator.api, coordinator.data[device_id]
             )
     return {}
 
 
 async def _appliance_diagnostics(
-        entry: ConfigEntry, api: ConnectLifeApi, appliance: ConnectLifeAppliance
+        hass: HomeAssistant,
+        entry: ConfigEntry,
+        api: ConnectLifeApi,
+        appliance: ConnectLifeAppliance,
 ) -> dict[str, Any]:
     """Appliance status and how it is mapped, without device IDs or names."""
     type_code = appliance.device_type_code
@@ -97,7 +101,35 @@ async def _appliance_diagnostics(
         "unmapped_properties": unmapped,
         "status_list": appliance.status_list,
         "static_data": await _static_data(api, appliance),
+        "statistics": _statistics(hass, entry, appliance, dictionary.statistics_source),
     }, TO_REDACT)
+
+
+def _statistics(
+        hass: HomeAssistant,
+        entry: ConfigEntry,
+        appliance: ConnectLifeAppliance,
+        source: str | None,
+) -> dict[str, Any] | None:
+    """The last energy statistics fetched for the appliance.
+
+    ``result`` is None when the request failed or returned no data, which makes the
+    statistics sensors unavailable.
+    """
+    if source is None:
+        return None
+    coordinator: ConnectLifeStatisticsCoordinator | None = hass.data[DOMAIN].get(
+        f"{entry.entry_id}_statistics"
+    )
+    if coordinator is None:
+        return {"source": source, "result": None}
+    result = (coordinator.data or {}).get(appliance.device_id)
+    identifiers = {i for i in (appliance.puid, appliance.device_id, appliance.wifi_id) if i}
+    return {
+        "source": source,
+        "last_update_success": coordinator.last_update_success,
+        "result": _redact_values(dataclasses.asdict(result), identifiers) if result else None,
+    }
 
 
 async def _static_data(api: ConnectLifeApi, appliance: ConnectLifeAppliance) -> Any:
