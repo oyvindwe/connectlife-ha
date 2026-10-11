@@ -8,7 +8,9 @@ from unittest.mock import patch
 from connectlife.api import LifeConnectError
 
 import custom_components.connectlife.diagnostics as diagmod
-from custom_components.connectlife.const import CONF_DEVICES, CONF_EXPOSE_OFFLINE_STATE
+from connectlife.api import EnergyConsumption
+
+from custom_components.connectlife.const import CONF_DEVICES, CONF_EXPOSE_OFFLINE_STATE, DOMAIN
 
 
 def _appliance(status_list: dict) -> SimpleNamespace:
@@ -25,6 +27,11 @@ def _appliance(status_list: dict) -> SimpleNamespace:
         offline_state=1,
         status_list=status_list,
     )
+
+
+def _hass(statistics_coordinator=None) -> SimpleNamespace:
+    data = {} if statistics_coordinator is None else {"entry-1_statistics": statistics_coordinator}
+    return SimpleNamespace(data={DOMAIN: data})
 
 
 class _FakeApi:
@@ -44,14 +51,15 @@ async def test_appliance_diagnostics_reports_mapping_without_private_data(build_
     build_dictionary(base={"properties": [{"property": "t_power", "switch": {}}]})
     appliance = _appliance({"t_power": 1, "f_unknown": 7, "mac": "aa:bb:cc"})
     entry = SimpleNamespace(
-        options={CONF_DEVICES: {"secret-device-id": {CONF_EXPOSE_OFFLINE_STATE: True}}}
+        entry_id="entry-1",
+        options={CONF_DEVICES: {"secret-device-id": {CONF_EXPOSE_OFFLINE_STATE: True}}},
     )
 
     def fake_load(path):
         return path == "data_dictionaries/999.yaml", None
 
     with patch.object(diagmod, "_load_yaml", side_effect=fake_load):
-        result = await diagmod._appliance_diagnostics(entry, _FakeApi({}), appliance)
+        result = await diagmod._appliance_diagnostics(_hass(), entry, _FakeApi({}), appliance)
 
     assert result["mapping_files"] == {"999.yaml": True, "999-000.yaml": False}
     assert result["unmapped_properties"] == ["f_unknown", "mac"]
@@ -88,3 +96,37 @@ async def test_static_data_error_is_reported() -> None:
     result = await diagmod._static_data(api, _appliance({}))
 
     assert result == {"error": "Unexpected response from HijuConn gateway: code=1"}
+
+
+ENTRY = SimpleNamespace(entry_id="entry-1", options={})
+
+
+def test_statistics_report_the_last_result_without_identifiers() -> None:
+    result = EnergyConsumption(
+        stat_type="week", date_start="2026-10-05", date_end="2026-10-11",
+        electric_total=5.0, electric_curve={"2026-10-11": "0.5"},
+        raw={"electricUsage": "5.00", "echo": "secret-puid"},
+        water_total=55.0, run_time=None, cycles=None,
+        norm_electric_total=None, norm_water_total=None,
+        water_curve={}, energy_period=[],
+    )
+    coordinator = SimpleNamespace(last_update_success=True, data={"secret-device-id": result})
+
+    statistics = diagmod._statistics(_hass(coordinator), ENTRY, _appliance({}), "energy_consumption_curve")
+
+    assert statistics["source"] == "energy_consumption_curve"
+    assert statistics["last_update_success"] is True
+    assert statistics["result"]["electric_total"] == 5.0
+    assert statistics["result"]["raw"]["echo"] == "**REDACTED**"
+
+
+def test_statistics_without_data_report_none() -> None:
+    coordinator = SimpleNamespace(last_update_success=True, data={"secret-device-id": None})
+
+    statistics = diagmod._statistics(_hass(coordinator), ENTRY, _appliance({}), "energy_consumption_curve")
+
+    assert statistics == {"source": "energy_consumption_curve", "last_update_success": True, "result": None}
+
+
+def test_statistics_absent_without_source() -> None:
+    assert diagmod._statistics(_hass(), ENTRY, _appliance({}), None) is None
