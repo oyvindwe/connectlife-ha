@@ -5782,19 +5782,6 @@
       "selected_program_uv_function": {
         "name": "Funzione UV programma selezionato"
       },
-      "selected_program_washing_spin_speed_rpm_status": {
-        "name": "Velocit\u00e0 di centrifuga",
-        "state": {
-          "0_rpm": "0",
-          "1000_rpm": "1000",
-          "1200_rpm": "1200",
-          "1400_rpm": "1400",
-          "400_rpm": "400",
-          "800_rpm": "800",
-          "no_spin": "Nessuna centrifuga",
-          "not_available": "Non disponibile"
-        }
-      },
       "selected_program_water_add": {
         "name": "Aggiunta acqua programma selezionato"
       },
