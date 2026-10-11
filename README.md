@@ -105,16 +105,16 @@ opts in (see the `statistics` block in the
 The statistics are fetched from a separate cloud endpoint, polled every 10 minutes, and — unlike
 the regular status entities — they stay available even while the appliance is offline.
 
-## Service to set property values on sensors
+## Action to set property values on sensors
 
-Entity service `connectlife.set_value` can be used to set values. Use with caution, as there is **no** validation
+Entity action `connectlife.set_value` can be used to set values. Use with caution, as there is **no** validation
 if property is writeable or that the value is legal to set.
 
-1. The service can be accessed from [Developer tools - Services](https://my.home-assistant.io/redirect/developer_services/).
-2. Search for service name "ConnectLife: Set value"
+1. The action can be accessed from [Settings → Tools → Actions](https://my.home-assistant.io/redirect/developer_services/).
+2. Search for action name "ConnectLife: Set value"
 3. Select entity as target.
 4. Enter value
-5. Call service.
+5. Perform action.
 
 It is possible to guard against `set_value` by setting `read_only: true` in the data dictionary on the sensor, e.g.
 ```yaml
