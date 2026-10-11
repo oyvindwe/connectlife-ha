@@ -2,15 +2,22 @@
   "config": {
     "abort": {
       "already_configured": "Ger\u00e4t ist bereits konfiguriert",
-      "reauth_successful": "Erneute Authentifizierung war erfolgreich"
+      "already_configured_elsewhere": "Die Ger\u00e4te dieses Kontos sind bereits in einem anderen ConnectLife-Eintrag eingerichtet. Um die Anmeldung dieses Eintrags zu \u00e4ndern, w\u00e4hle dort Neu konfigurieren. Um ihn durch einen neuen Eintrag zu ersetzen, deaktiviere ihn zuerst.",
+      "cannot_connect": "Verbindung fehlgeschlagen",
+      "reauth_successful": "Erneute Authentifizierung war erfolgreich",
+      "reconfigure_successful": "Die Neukonfiguration war erfolgreich"
     },
     "error": {
+      "already_configured_elsewhere": "Die Ger\u00e4te dieses Kontos sind bereits in einem anderen ConnectLife-Eintrag eingerichtet. Um die Anmeldung dieses Eintrags zu \u00e4ndern, w\u00e4hle dort Neu konfigurieren. Um ihn durch einen neuen Eintrag zu ersetzen, deaktiviere ihn zuerst.",
       "cannot_connect": "Verbindung fehlgeschlagen",
       "invalid_auth": "Ung\u00fcltige Authentifizierung",
       "terms_not_accepted": "ConnectLife verlangt die Zustimmung zu aktualisierten Nutzungsbedingungen. Stelle die Sprache der ConnectLife-App auf Englisch, beende die App vollst\u00e4ndig, \u00f6ffne sie erneut, akzeptiere die neuen Bedingungen und versuche es dann noch einmal.",
       "test_server_invalid": "Ung\u00fcltige Test-Server-URL",
       "test_server_required": "Entwicklungsmodus erfordert eine Test-Server-URL",
       "unknown": "Unerwarteter Fehler"
+    },
+    "initiate_flow": {
+      "user": "Konto hinzuf\u00fcgen"
     },
     "step": {
       "development": {
@@ -22,14 +29,7 @@
         },
         "description": "Aktiviere den Entwicklungsmodus, um eine Verbindung zum Testserver anstelle der ConnectLife-API herzustellen."
       },
-      "reauth_confirm": {
-        "data": {
-          "password": "Passwort",
-          "username": "Benutzername"
-        },
-        "description": "Bitte gib deine ConnectLife-Anmeldedaten erneut ein."
-      },
-      "user": {
+      "password": {
         "data": {
           "development_mode": "Entwicklungsmodus",
           "password": "Passwort",
@@ -39,6 +39,39 @@
         "data_description": {
           "development_mode": "Mit einem lokalen Testserver anstelle der ConnectLife-API verbinden. Nur f\u00fcr die Entwicklung.",
           "trir": "Nur aktivieren, wenn du dich mit der ConnectLife.TRIR-App anmeldest, die in Russland/GUS verwendet wird. Experimentell."
+        }
+      },
+      "reauth_confirm": {
+        "data": {
+          "password": "Passwort",
+          "username": "Benutzername"
+        },
+        "description": "Bitte gib deine ConnectLife-Anmeldedaten erneut ein."
+      },
+      "reauth_oauth": {
+        "description": "Deine ConnectLife-Anmeldung ist abgelaufen. Melde dich erneut auf der ConnectLife-Website an. Dort kannst du auch aktualisierten Nutzungsbedingungen zustimmen.",
+        "title": "Erneut anmelden"
+      },
+      "reconfigure": {
+        "menu_options": {
+          "pick_implementation": "Auf der ConnectLife-Website anmelden (auch mit Google-, Apple-, Facebook- oder Microsoft-Konto)",
+          "reconfigure_password": "Benutzername und Passwort eingeben"
+        }
+      },
+      "reconfigure_password": {
+        "data": {
+          "password": "Passwort",
+          "trir": "ConnectLife.TRIR (Russland/GUS) \u2014 experimentell",
+          "username": "Benutzername"
+        },
+        "data_description": {
+          "trir": "Nur aktivieren, wenn du dich mit der ConnectLife.TRIR-App anmeldest, die in Russland/GUS verwendet wird. Experimentell."
+        }
+      },
+      "user": {
+        "menu_options": {
+          "password": "Benutzername und Passwort eingeben",
+          "pick_implementation": "Auf der ConnectLife-Website anmelden (auch mit Google-, Apple-, Facebook- oder Microsoft-Konto)"
         }
       }
     }

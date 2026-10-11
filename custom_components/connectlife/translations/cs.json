@@ -2,15 +2,22 @@
   "config": {
     "abort": {
       "already_configured": "Za\u0159\u00edzen\u00ed je ji\u017e nakonfigurov\u00e1no",
-      "reauth_successful": "Op\u011btovn\u00e9 ov\u011b\u0159en\u00ed bylo \u00fasp\u011b\u0161n\u00e9"
+      "already_configured_elsewhere": "Za\u0159\u00edzen\u00ed tohoto \u00fa\u010dtu jsou ji\u017e nastavena v jin\u00e9 polo\u017ece ConnectLife. Chcete-li zm\u011bnit zp\u016fsob p\u0159ihl\u00e1\u0161en\u00ed t\u00e9to polo\u017eky, zvolte u n\u00ed P\u0159enastavit. Chcete-li ji nahradit novou polo\u017ekou, nejprve ji deaktivujte.",
+      "cannot_connect": "Nepoda\u0159ilo se p\u0159ipojit",
+      "reauth_successful": "Op\u011btovn\u00e9 ov\u011b\u0159en\u00ed bylo \u00fasp\u011b\u0161n\u00e9",
+      "reconfigure_successful": "P\u0159ekonfigurov\u00e1n\u00ed bylo \u00fasp\u011b\u0161n\u00e9"
     },
     "error": {
+      "already_configured_elsewhere": "Za\u0159\u00edzen\u00ed tohoto \u00fa\u010dtu jsou ji\u017e nastavena v jin\u00e9 polo\u017ece ConnectLife. Chcete-li zm\u011bnit zp\u016fsob p\u0159ihl\u00e1\u0161en\u00ed t\u00e9to polo\u017eky, zvolte u n\u00ed P\u0159enastavit. Chcete-li ji nahradit novou polo\u017ekou, nejprve ji deaktivujte.",
       "cannot_connect": "Nepoda\u0159ilo se p\u0159ipojit",
       "invalid_auth": "Neplatn\u00e9 ov\u011b\u0159en\u00ed",
       "terms_not_accepted": "ConnectLife vy\u017eaduje p\u0159ijet\u00ed aktualizovan\u00fdch obchodn\u00edch podm\u00ednek. P\u0159epn\u011bte jazyk aplikace ConnectLife na angli\u010dtinu, aplikaci vynucen\u011b ukon\u010dete a znovu otev\u0159ete, p\u0159ijm\u011bte nov\u00e9 podm\u00ednky a zkuste to znovu.",
       "test_server_invalid": "Neplatn\u00e1 URL testovac\u00edho serveru",
       "test_server_required": "V\u00fdvojov\u00fd re\u017eim vy\u017eaduje URL testovac\u00edho serveru",
       "unknown": "Neo\u010dek\u00e1van\u00e1 chyba"
+    },
+    "initiate_flow": {
+      "user": "P\u0159idat \u00fa\u010det"
     },
     "step": {
       "development": {
@@ -22,14 +29,7 @@
         },
         "description": "Zadejte testovac\u00ed server pro p\u0159ipojen\u00ed nam\u00edsto ConnectLife API."
       },
-      "reauth_confirm": {
-        "data": {
-          "password": "Heslo",
-          "username": "U\u017eivatelsk\u00e9 jm\u00e9no"
-        },
-        "description": "Znovu zadejte sv\u00e9 p\u0159ihla\u0161ovac\u00ed \u00fadaje k ConnectLife."
-      },
-      "user": {
+      "password": {
         "data": {
           "development_mode": "V\u00fdvojov\u00fd re\u017eim",
           "password": "Heslo",
@@ -39,6 +39,39 @@
         "data_description": {
           "development_mode": "P\u0159ipojit k lok\u00e1ln\u00edmu testovac\u00edmu serveru nam\u00edsto ConnectLife API. Pouze pro v\u00fdvoj.",
           "trir": "Povolte pouze pokud se p\u0159ihla\u0161ujete pomoc\u00ed aplikace ConnectLife.TRIR pou\u017e\u00edvan\u00e9 v Rusku/SNS. Experiment\u00e1ln\u00ed."
+        }
+      },
+      "reauth_confirm": {
+        "data": {
+          "password": "Heslo",
+          "username": "U\u017eivatelsk\u00e9 jm\u00e9no"
+        },
+        "description": "Znovu zadejte sv\u00e9 p\u0159ihla\u0161ovac\u00ed \u00fadaje k ConnectLife."
+      },
+      "reauth_oauth": {
+        "description": "Va\u0161e p\u0159ihl\u00e1\u0161en\u00ed ke ConnectLife vypr\u0161elo. P\u0159ihlaste se znovu na webu ConnectLife, kde m\u016f\u017eete tak\u00e9 p\u0159ijmout aktualizovan\u00e9 obchodn\u00ed podm\u00ednky.",
+        "title": "P\u0159ihl\u00e1sit se znovu"
+      },
+      "reconfigure": {
+        "menu_options": {
+          "pick_implementation": "P\u0159ihl\u00e1sit se na webu ConnectLife (tak\u00e9 \u00fa\u010dty Google, Apple, Facebook nebo Microsoft)",
+          "reconfigure_password": "Zadat u\u017eivatelsk\u00e9 jm\u00e9no a heslo"
+        }
+      },
+      "reconfigure_password": {
+        "data": {
+          "password": "Heslo",
+          "trir": "ConnectLife.TRIR (Rusko/SNS) \u2014 experiment\u00e1ln\u00ed",
+          "username": "U\u017eivatelsk\u00e9 jm\u00e9no"
+        },
+        "data_description": {
+          "trir": "Povolte pouze pokud se p\u0159ihla\u0161ujete pomoc\u00ed aplikace ConnectLife.TRIR pou\u017e\u00edvan\u00e9 v Rusku/SNS. Experiment\u00e1ln\u00ed."
+        }
+      },
+      "user": {
+        "menu_options": {
+          "password": "Zadat u\u017eivatelsk\u00e9 jm\u00e9no a heslo",
+          "pick_implementation": "P\u0159ihl\u00e1sit se na webu ConnectLife (tak\u00e9 \u00fa\u010dty Google, Apple, Facebook nebo Microsoft)"
         }
       }
     }

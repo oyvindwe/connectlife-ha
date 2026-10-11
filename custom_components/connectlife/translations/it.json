@@ -2,15 +2,22 @@
   "config": {
     "abort": {
       "already_configured": "Il dispositivo \u00e8 gi\u00e0 configurato",
-      "reauth_successful": "La riautenticazione \u00e8 riuscita"
+      "already_configured_elsewhere": "I dispositivi di questo account sono gi\u00e0 configurati in un'altra voce ConnectLife. Per cambiare il modo in cui quella voce accede, scegli Riconfigura su di essa. Per sostituirla con una nuova voce, disattivala prima.",
+      "cannot_connect": "Impossibile connettersi",
+      "reauth_successful": "La riautenticazione \u00e8 riuscita",
+      "reconfigure_successful": "La riconfigurazione \u00e8 stata completata"
     },
     "error": {
+      "already_configured_elsewhere": "I dispositivi di questo account sono gi\u00e0 configurati in un'altra voce ConnectLife. Per cambiare il modo in cui quella voce accede, scegli Riconfigura su di essa. Per sostituirla con una nuova voce, disattivala prima.",
       "cannot_connect": "Impossibile connettersi",
       "invalid_auth": "Autenticazione non valida",
       "terms_not_accepted": "ConnectLife richiede di accettare i Termini e Condizioni aggiornati. Imposta la lingua dell'app ConnectLife su inglese, forza la chiusura dell'app, riaprila, accetta i nuovi termini e riprova.",
       "test_server_invalid": "Invalid test server URL",
       "test_server_required": "La modalit\u00e0 di sviluppo richiede l'URL del server di prova",
       "unknown": "Errore imprevisto"
+    },
+    "initiate_flow": {
+      "user": "Aggiungi account"
     },
     "step": {
       "development": {
@@ -22,14 +29,7 @@
         },
         "description": "Abilita la modalit\u00e0 di sviluppo per connettersi al server di test anzich\u00e9 all'API ConnectLife."
       },
-      "reauth_confirm": {
-        "data": {
-          "password": "Password",
-          "username": "Username"
-        },
-        "description": "Reinserisci le tue credenziali ConnectLife."
-      },
-      "user": {
+      "password": {
         "data": {
           "development_mode": "Modalit\u00e0 di sviluppo",
           "password": "Password",
@@ -39,6 +39,39 @@
         "data_description": {
           "development_mode": "Connettersi a un server di prova locale anzich\u00e9 all'API ConnectLife. Solo per lo sviluppo.",
           "trir": "Abilita solo se accedi con l'app ConnectLife.TRIR utilizzata in Russia/CSI. Sperimentale."
+        }
+      },
+      "reauth_confirm": {
+        "data": {
+          "password": "Password",
+          "username": "Username"
+        },
+        "description": "Reinserisci le tue credenziali ConnectLife."
+      },
+      "reauth_oauth": {
+        "description": "Il tuo accesso a ConnectLife \u00e8 scaduto. Accedi di nuovo sul sito web di ConnectLife, dove puoi anche accettare i Termini e Condizioni aggiornati.",
+        "title": "Accedi di nuovo"
+      },
+      "reconfigure": {
+        "menu_options": {
+          "pick_implementation": "Accedi sul sito web di ConnectLife (anche con account Google, Apple, Facebook o Microsoft)",
+          "reconfigure_password": "Inserisci nome utente e password"
+        }
+      },
+      "reconfigure_password": {
+        "data": {
+          "password": "Password",
+          "trir": "ConnectLife.TRIR (Russia/CSI) \u2014 sperimentale",
+          "username": "Username"
+        },
+        "data_description": {
+          "trir": "Abilita solo se accedi con l'app ConnectLife.TRIR utilizzata in Russia/CSI. Sperimentale."
+        }
+      },
+      "user": {
+        "menu_options": {
+          "password": "Inserisci nome utente e password",
+          "pick_implementation": "Accedi sul sito web di ConnectLife (anche con account Google, Apple, Facebook o Microsoft)"
         }
       }
     }

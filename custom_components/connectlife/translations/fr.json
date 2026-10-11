@@ -2,15 +2,22 @@
   "config": {
     "abort": {
       "already_configured": "L\u2019appareil est d\u00e9j\u00e0 configur\u00e9",
-      "reauth_successful": "La r\u00e9-authentification a r\u00e9ussi"
+      "already_configured_elsewhere": "Les appareils de ce compte sont d\u00e9j\u00e0 configur\u00e9s dans une autre entr\u00e9e ConnectLife. Pour changer la m\u00e9thode de connexion de cette entr\u00e9e, choisissez Reconfigurer sur celle-ci. Pour la remplacer par une nouvelle entr\u00e9e, d\u00e9sactivez-la d'abord.",
+      "cannot_connect": "\u00c9chec de l\u2019\u00e9tablissement de la connexion",
+      "reauth_successful": "La r\u00e9-authentification a r\u00e9ussi",
+      "reconfigure_successful": "La reconfiguration a r\u00e9ussi"
     },
     "error": {
+      "already_configured_elsewhere": "Les appareils de ce compte sont d\u00e9j\u00e0 configur\u00e9s dans une autre entr\u00e9e ConnectLife. Pour changer la m\u00e9thode de connexion de cette entr\u00e9e, choisissez Reconfigurer sur celle-ci. Pour la remplacer par une nouvelle entr\u00e9e, d\u00e9sactivez-la d'abord.",
       "cannot_connect": "\u00c9chec de l\u2019\u00e9tablissement de la connexion",
       "invalid_auth": "\u00c9chec de l\u2019authentification",
       "terms_not_accepted": "ConnectLife exige l'acceptation de Conditions g\u00e9n\u00e9rales mises \u00e0 jour. Passez la langue de l'application ConnectLife en anglais, forcez la fermeture de l'application, rouvrez-la, acceptez les nouvelles conditions, puis r\u00e9essayez.",
       "test_server_invalid": "URL du serveur de test invalide",
       "test_server_required": "Le mode d\u00e9veloppement n\u00e9cessite une URL de serveur de test",
       "unknown": "Erreur inconnue"
+    },
+    "initiate_flow": {
+      "user": "Ajouter un compte"
     },
     "step": {
       "development": {
@@ -22,14 +29,7 @@
         },
         "description": "Activer le mode d\u00e9veloppement pour se connecter au serveur de test au lieu de l\u2019API ConnectLife."
       },
-      "reauth_confirm": {
-        "data": {
-          "password": "Mot de passe",
-          "username": "Nom d\u2019utilisateur"
-        },
-        "description": "Veuillez saisir \u00e0 nouveau vos identifiants ConnectLife."
-      },
-      "user": {
+      "password": {
         "data": {
           "development_mode": "Mode d\u00e9veloppement",
           "password": "Mot de passe",
@@ -39,6 +39,39 @@
         "data_description": {
           "development_mode": "Se connecter \u00e0 un serveur de test local au lieu de l\u2019API ConnectLife. Pour le d\u00e9veloppement uniquement.",
           "trir": "\u00c0 activer uniquement si vous vous connectez avec l\u2019application ConnectLife.TRIR utilis\u00e9e en Russie/CEI. Exp\u00e9rimental."
+        }
+      },
+      "reauth_confirm": {
+        "data": {
+          "password": "Mot de passe",
+          "username": "Nom d\u2019utilisateur"
+        },
+        "description": "Veuillez saisir \u00e0 nouveau vos identifiants ConnectLife."
+      },
+      "reauth_oauth": {
+        "description": "Votre connexion \u00e0 ConnectLife a expir\u00e9. Reconnectez-vous sur le site ConnectLife, o\u00f9 vous pouvez aussi accepter les Conditions g\u00e9n\u00e9rales mises \u00e0 jour.",
+        "title": "Se reconnecter"
+      },
+      "reconfigure": {
+        "menu_options": {
+          "pick_implementation": "Se connecter sur le site ConnectLife (aussi avec un compte Google, Apple, Facebook ou Microsoft)",
+          "reconfigure_password": "Saisir l'identifiant et le mot de passe"
+        }
+      },
+      "reconfigure_password": {
+        "data": {
+          "password": "Mot de passe",
+          "trir": "ConnectLife.TRIR (Russie/CEI) \u2014 exp\u00e9rimental",
+          "username": "Nom d\u2019utilisateur"
+        },
+        "data_description": {
+          "trir": "\u00c0 activer uniquement si vous vous connectez avec l\u2019application ConnectLife.TRIR utilis\u00e9e en Russie/CEI. Exp\u00e9rimental."
+        }
+      },
+      "user": {
+        "menu_options": {
+          "password": "Saisir l'identifiant et le mot de passe",
+          "pick_implementation": "Se connecter sur le site ConnectLife (aussi avec un compte Google, Apple, Facebook ou Microsoft)"
         }
       }
     }

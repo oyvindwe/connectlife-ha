@@ -2,15 +2,22 @@
   "config": {
     "abort": {
       "already_configured": "El dispositivo ya est\u00e1 configurado",
-      "reauth_successful": "La reautenticaci\u00f3n se realiz\u00f3 correctamente"
+      "already_configured_elsewhere": "Los dispositivos de esta cuenta ya est\u00e1n configurados en otra entrada de ConnectLife. Para cambiar c\u00f3mo inicia sesi\u00f3n esa entrada, elige Reconfigurar en ella. Para sustituirla por una entrada nueva, desact\u00edvala primero.",
+      "cannot_connect": "Fallo al establecer la conexi\u00f3n",
+      "reauth_successful": "La reautenticaci\u00f3n se realiz\u00f3 correctamente",
+      "reconfigure_successful": "La reconfiguraci\u00f3n se ha realizado correctamente"
     },
     "error": {
+      "already_configured_elsewhere": "Los dispositivos de esta cuenta ya est\u00e1n configurados en otra entrada de ConnectLife. Para cambiar c\u00f3mo inicia sesi\u00f3n esa entrada, elige Reconfigurar en ella. Para sustituirla por una entrada nueva, desact\u00edvala primero.",
       "cannot_connect": "Fallo al establecer la conexi\u00f3n",
       "invalid_auth": "Autentificaci\u00f3n Fallida",
       "terms_not_accepted": "ConnectLife requiere que aceptes los T\u00e9rminos y Condiciones actualizados. Cambia el idioma de la app ConnectLife a ingl\u00e9s, fuerza el cierre de la app, vuelve a abrirla, acepta los nuevos t\u00e9rminos y vuelve a intentarlo.",
       "test_server_invalid": "Test server URL invalida",
       "test_server_required": "El modo desarrollo requiere una URL del Test Server",
       "unknown": "Error desconocido"
+    },
+    "initiate_flow": {
+      "user": "A\u00f1adir cuenta"
     },
     "step": {
       "development": {
@@ -22,14 +29,7 @@
         },
         "description": "Habilitar modo desarrollo para conectar al test server en vez de a ConnectLife API."
       },
-      "reauth_confirm": {
-        "data": {
-          "password": "Contrase\u00f1a",
-          "username": "Nombre de usuario"
-        },
-        "description": "Vuelve a introducir tus credenciales de ConnectLife."
-      },
-      "user": {
+      "password": {
         "data": {
           "development_mode": "Modo desarrollo",
           "password": "Contrase\u00f1a",
@@ -39,6 +39,39 @@
         "data_description": {
           "development_mode": "Conectar a un servidor de prueba local en lugar de a la API de ConnectLife. Solo para desarrollo.",
           "trir": "Habil\u00edtalo solo si inicias sesi\u00f3n con la app ConnectLife.TRIR utilizada en Rusia/CEI. Experimental."
+        }
+      },
+      "reauth_confirm": {
+        "data": {
+          "password": "Contrase\u00f1a",
+          "username": "Nombre de usuario"
+        },
+        "description": "Vuelve a introducir tus credenciales de ConnectLife."
+      },
+      "reauth_oauth": {
+        "description": "Tu sesi\u00f3n de ConnectLife ha caducado. Vuelve a iniciar sesi\u00f3n en el sitio web de ConnectLife, donde tambi\u00e9n puedes aceptar los T\u00e9rminos y Condiciones actualizados.",
+        "title": "Volver a iniciar sesi\u00f3n"
+      },
+      "reconfigure": {
+        "menu_options": {
+          "pick_implementation": "Iniciar sesi\u00f3n en el sitio web de ConnectLife (tambi\u00e9n con cuentas de Google, Apple, Facebook o Microsoft)",
+          "reconfigure_password": "Introducir usuario y contrase\u00f1a"
+        }
+      },
+      "reconfigure_password": {
+        "data": {
+          "password": "Contrase\u00f1a",
+          "trir": "ConnectLife.TRIR (Rusia/CEI) \u2014 experimental",
+          "username": "Nombre de usuario"
+        },
+        "data_description": {
+          "trir": "Habil\u00edtalo solo si inicias sesi\u00f3n con la app ConnectLife.TRIR utilizada en Rusia/CEI. Experimental."
+        }
+      },
+      "user": {
+        "menu_options": {
+          "password": "Introducir usuario y contrase\u00f1a",
+          "pick_implementation": "Iniciar sesi\u00f3n en el sitio web de ConnectLife (tambi\u00e9n con cuentas de Google, Apple, Facebook o Microsoft)"
         }
       }
     }

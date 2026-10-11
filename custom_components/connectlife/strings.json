@@ -2,15 +2,30 @@
   "config": {
     "abort": {
       "already_configured": "[%key:common::config_flow::abort::already_configured_device%]",
-      "reauth_successful": "[%key:common::config_flow::abort::reauth_successful%]"
+      "already_configured_elsewhere": "The devices of this account are already set up in another ConnectLife entry. To change how that entry signs in, choose Reconfigure on it. To replace it with a new entry, disable it first.",
+      "authorize_url_timeout": "[%key:common::config_flow::abort::oauth2_authorize_url_timeout%]",
+      "cannot_connect": "[%key:common::config_flow::error::cannot_connect%]",
+      "missing_configuration": "[%key:common::config_flow::abort::oauth2_missing_configuration%]",
+      "no_url_available": "[%key:common::config_flow::abort::oauth2_no_url_available%]",
+      "oauth_error": "[%key:common::config_flow::abort::oauth2_error%]",
+      "oauth_failed": "[%key:common::config_flow::abort::oauth2_failed%]",
+      "oauth_timeout": "[%key:common::config_flow::abort::oauth2_timeout%]",
+      "oauth_unauthorized": "[%key:common::config_flow::abort::oauth2_unauthorized%]",
+      "reauth_successful": "[%key:common::config_flow::abort::reauth_successful%]",
+      "reconfigure_successful": "[%key:common::config_flow::abort::reconfigure_successful%]",
+      "user_rejected_authorize": "[%key:common::config_flow::abort::oauth2_user_rejected_authorize%]"
     },
     "error": {
+      "already_configured_elsewhere": "The devices of this account are already set up in another ConnectLife entry. To change how that entry signs in, choose Reconfigure on it. To replace it with a new entry, disable it first.",
       "cannot_connect": "[%key:common::config_flow::error::cannot_connect%]",
       "invalid_auth": "[%key:common::config_flow::error::invalid_auth%]",
       "terms_not_accepted": "ConnectLife requires you to accept updated Terms & Conditions. Change the ConnectLife app language to English, force close and reopen the app, accept the new terms, then try again.",
       "test_server_invalid": "Invalid test server URL",
       "test_server_required": "Development mode requires test server URL",
       "unknown": "[%key:common::config_flow::error::unknown%]"
+    },
+    "initiate_flow": {
+      "user": "[%key:common::config_flow::initiate_flow::account%]"
     },
     "step": {
       "development": {
@@ -22,14 +37,7 @@
         },
         "description": "Enter the test server to connect to instead of the ConnectLife API."
       },
-      "reauth_confirm": {
-        "data": {
-          "password": "[%key:common::config_flow::data::password%]",
-          "username": "[%key:common::config_flow::data::username%]"
-        },
-        "description": "Please re-enter your ConnectLife credentials."
-      },
-      "user": {
+      "password": {
         "data": {
           "development_mode": "Development mode",
           "password": "[%key:common::config_flow::data::password%]",
@@ -39,6 +47,42 @@
         "data_description": {
           "development_mode": "Connect to a local test server instead of the ConnectLife API. For development only.",
           "trir": "Enable only if you sign in with the ConnectLife.TRIR app used in Russia/CIS. Experimental."
+        }
+      },
+      "pick_implementation": {
+        "title": "[%key:common::config_flow::title::oauth2_pick_implementation%]"
+      },
+      "reauth_confirm": {
+        "data": {
+          "password": "[%key:common::config_flow::data::password%]",
+          "username": "[%key:common::config_flow::data::username%]"
+        },
+        "description": "Please re-enter your ConnectLife credentials."
+      },
+      "reauth_oauth": {
+        "description": "Your ConnectLife sign-in has expired. Sign in again on the ConnectLife website, where you can also accept updated Terms & Conditions.",
+        "title": "Sign in again"
+      },
+      "reconfigure": {
+        "menu_options": {
+          "pick_implementation": "Sign in on the ConnectLife website (also Google, Apple, Facebook or Microsoft accounts)",
+          "reconfigure_password": "Enter username and password"
+        }
+      },
+      "reconfigure_password": {
+        "data": {
+          "password": "[%key:common::config_flow::data::password%]",
+          "trir": "ConnectLife.TRIR (Russia/CIS) \u2014 experimental",
+          "username": "[%key:common::config_flow::data::username%]"
+        },
+        "data_description": {
+          "trir": "Enable only if you sign in with the ConnectLife.TRIR app used in Russia/CIS. Experimental."
+        }
+      },
+      "user": {
+        "menu_options": {
+          "password": "Enter username and password",
+          "pick_implementation": "Sign in on the ConnectLife website (also Google, Apple, Facebook or Microsoft accounts)"
         }
       }
     }

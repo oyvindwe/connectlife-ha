@@ -2,15 +2,22 @@
   "config": {
     "abort": {
       "already_configured": "Enheten er allerede konfigurert",
-      "reauth_successful": "Re-autentisering var vellykket"
+      "already_configured_elsewhere": "Enhetene p\u00e5 denne kontoen er allerede satt opp i en annen ConnectLife-oppf\u00f8ring. Velg Rekonfigurer p\u00e5 den oppf\u00f8ringen for \u00e5 endre hvordan den logger inn. Deaktiver den f\u00f8rst for \u00e5 erstatte den med en ny oppf\u00f8ring.",
+      "cannot_connect": "Kunne ikke koble til",
+      "reauth_successful": "Re-autentisering var vellykket",
+      "reconfigure_successful": "Rekonfigureringen var vellykket"
     },
     "error": {
+      "already_configured_elsewhere": "Enhetene p\u00e5 denne kontoen er allerede satt opp i en annen ConnectLife-oppf\u00f8ring. Velg Rekonfigurer p\u00e5 den oppf\u00f8ringen for \u00e5 endre hvordan den logger inn. Deaktiver den f\u00f8rst for \u00e5 erstatte den med en ny oppf\u00f8ring.",
       "cannot_connect": "Kunne ikke koble til",
       "invalid_auth": "Ugyldig autentisering",
       "terms_not_accepted": "ConnectLife krever at du godtar oppdaterte vilk\u00e5r. Bytt spr\u00e5k i ConnectLife-appen til engelsk, tving appen til \u00e5 lukkes, \u00e5pne den igjen, godta de nye vilk\u00e5rene og pr\u00f8v p\u00e5 nytt.",
       "test_server_invalid": "Ugyldig URL for testserver",
       "test_server_required": "Utviklingsmodus krever URL for testserver",
       "unknown": "Uventet feil"
+    },
+    "initiate_flow": {
+      "user": "Legg til konto"
     },
     "step": {
       "development": {
@@ -22,14 +29,7 @@
         },
         "description": "Aktiver utviklingsmodus for \u00e5 koble til testserveren i stedet for ConnectLife-API-et."
       },
-      "reauth_confirm": {
-        "data": {
-          "password": "Passord",
-          "username": "Brukernavn"
-        },
-        "description": "Skriv inn ConnectLife-p\u00e5loggingsinformasjonen din p\u00e5 nytt."
-      },
-      "user": {
+      "password": {
         "data": {
           "development_mode": "Utviklingsmodus",
           "password": "Passord",
@@ -39,6 +39,39 @@
         "data_description": {
           "development_mode": "Koble til en lokal testserver i stedet for ConnectLife-API-et. Kun for utvikling.",
           "trir": "Aktiver kun hvis du logger inn med ConnectLife.TRIR-appen som brukes i Russland/SUS. Eksperimentell."
+        }
+      },
+      "reauth_confirm": {
+        "data": {
+          "password": "Passord",
+          "username": "Brukernavn"
+        },
+        "description": "Skriv inn ConnectLife-p\u00e5loggingsinformasjonen din p\u00e5 nytt."
+      },
+      "reauth_oauth": {
+        "description": "ConnectLife-p\u00e5loggingen din har utl\u00f8pt. Logg inn p\u00e5 nytt p\u00e5 ConnectLife-nettstedet, der du ogs\u00e5 kan godta oppdaterte vilk\u00e5r.",
+        "title": "Logg inn p\u00e5 nytt"
+      },
+      "reconfigure": {
+        "menu_options": {
+          "pick_implementation": "Logg inn p\u00e5 ConnectLife-nettstedet (ogs\u00e5 med Google-, Apple-, Facebook- eller Microsoft-konto)",
+          "reconfigure_password": "Skriv inn brukernavn og passord"
+        }
+      },
+      "reconfigure_password": {
+        "data": {
+          "password": "Passord",
+          "trir": "ConnectLife.TRIR (Russland/SUS) \u2014 eksperimentell",
+          "username": "Brukernavn"
+        },
+        "data_description": {
+          "trir": "Aktiver kun hvis du logger inn med ConnectLife.TRIR-appen som brukes i Russland/SUS. Eksperimentell."
+        }
+      },
+      "user": {
+        "menu_options": {
+          "password": "Skriv inn brukernavn og passord",
+          "pick_implementation": "Logg inn p\u00e5 ConnectLife-nettstedet (ogs\u00e5 med Google-, Apple-, Facebook- eller Microsoft-konto)"
         }
       }
     }
