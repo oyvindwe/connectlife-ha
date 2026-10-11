@@ -4,7 +4,9 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.components.diagnostics import async_redact_data
+from aiohttp import ClientError
+from connectlife.api import ConnectLifeApi, LifeConnectError
+from homeassistant.components.diagnostics import REDACTED, async_redact_data
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.device_registry import DeviceEntry
@@ -20,6 +22,7 @@ from .statistics_sources import enabled_sensors
 # net in case an appliance reports something private in its status list.
 TO_REDACT = {
     "deviceId",
+    "device_id",
     "deviceNickName",
     "ip",
     "mac",
@@ -28,6 +31,7 @@ TO_REDACT = {
     "serial",
     "ssid",
     "wifiId",
+    "wifi_id",
 }
 
 
@@ -38,7 +42,7 @@ async def async_get_config_entry_diagnostics(
     coordinator: ConnectLifeCoordinator = hass.data[DOMAIN][entry.entry_id]
     return {
         "appliances": [
-            _appliance_diagnostics(entry, appliance)
+            await _appliance_diagnostics(entry, coordinator.api, appliance)
             for appliance in coordinator.data.values()
         ],
     }
@@ -51,11 +55,15 @@ async def async_get_device_diagnostics(
     coordinator: ConnectLifeCoordinator = hass.data[DOMAIN][entry.entry_id]
     for domain, device_id in device.identifiers:
         if domain == DOMAIN and device_id in coordinator.data:
-            return _appliance_diagnostics(entry, coordinator.data[device_id])
+            return await _appliance_diagnostics(
+                entry, coordinator.api, coordinator.data[device_id]
+            )
     return {}
 
 
-def _appliance_diagnostics(entry: ConfigEntry, appliance: ConnectLifeAppliance) -> dict[str, Any]:
+async def _appliance_diagnostics(
+        entry: ConfigEntry, api: ConnectLifeApi, appliance: ConnectLifeAppliance
+) -> dict[str, Any]:
     """Appliance status and how it is mapped, without device IDs or names."""
     type_code = appliance.device_type_code
     feature_code = appliance.device_feature_code
@@ -88,4 +96,30 @@ def _appliance_diagnostics(entry: ConfigEntry, appliance: ConnectLifeAppliance) 
         "options": entry.options.get(CONF_DEVICES, {}).get(appliance.device_id, {}),
         "unmapped_properties": unmapped,
         "status_list": appliance.status_list,
+        "static_data": await _static_data(api, appliance),
     }, TO_REDACT)
+
+
+async def _static_data(api: ConnectLifeApi, appliance: ConnectLifeAppliance) -> Any:
+    """The appliance's static data: the settings and values it supports, and its firmware versions.
+
+    The response is undocumented and echoes the appliance's identifiers, so any
+    value equal to one of them is redacted as well.
+    """
+    try:
+        static_data = await api.query_static_data(appliance.puid)
+    except (LifeConnectError, ClientError, TimeoutError) as err:
+        return {"error": str(err) or type(err).__name__}
+    identifiers = {i for i in (appliance.puid, appliance.device_id, appliance.wifi_id) if i}
+    return _redact_values(static_data, identifiers)
+
+
+def _redact_values(value: Any, identifiers: set[str]) -> Any:
+    """Replace every string equal to one of ``identifiers``."""
+    if isinstance(value, dict):
+        return {k: _redact_values(v, identifiers) for k, v in value.items()}
+    if isinstance(value, list):
+        return [_redact_values(v, identifiers) for v in value]
+    if isinstance(value, str) and value in identifiers:
+        return REDACTED
+    return value
