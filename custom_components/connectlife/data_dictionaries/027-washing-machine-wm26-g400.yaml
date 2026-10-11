@@ -1,4 +1,13 @@
 # Gorenje WG486A21 (WM26 G400)
+buttons:
+# The machine only uses the program options when they are sent with the start
+# command (#655). Programs without a temperature or spin option report 0, which
+# is skipped.
+- key: start
+  include:
+    - Selected_program_id_status
+    - Selected_program_set_temperature_status
+    - Selected_program_washing_spin_speed_rpm_status
 properties:
 - property: Selected_program_id_status
   select:
