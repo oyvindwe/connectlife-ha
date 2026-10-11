@@ -9,7 +9,7 @@ import yaml
 from homeassistant.components.climate import HVACAction
 
 from custom_components.connectlife.climate import HVAC_MODE_ALIASES, HVAC_MODE_VALUES
-from custom_components.connectlife.dictionaries import _merge_property
+from custom_components.connectlife.dictionaries import _merge_buttons, _merge_property
 
 PLATFORMS = ('binary_sensor', 'climate', 'humidifier', 'number', 'select',
              'sensor', 'switch', 'water_heater')
@@ -113,6 +113,34 @@ CHECKS = (
     _check_device_platform_pairing,
 )
 
+WRITABLE_PLATFORMS = ('climate', 'number', 'select', 'switch')
+
+
+def _check_includes(filename, properties, buttons):
+    """Every ``include`` must name a property of the merged mapping that is
+    enabled and writable (climate, number, select or switch), and a property
+    can't include itself. At runtime an unknown name is skipped silently, so a
+    typo would only show up as a device ignoring the command."""
+    errors = []
+    owners = [(f"property '{p['property']}'", p['property'], p.get('include') or [])
+              for p in properties.values()]
+    owners += [(f"button '{b['key']}'", None, b.get('include') or []) for b in buttons]
+    for owner, own_name, include in owners:
+        for name in include:
+            prop = properties.get(name)
+            if name == own_name:
+                problem = "includes itself"
+            elif prop is None:
+                problem = f"includes unknown property '{name}'"
+            elif prop.get('disable'):
+                problem = f"includes disabled property '{name}'"
+            elif not any(p in prop for p in WRITABLE_PLATFORMS):
+                problem = f"includes '{name}', which isn't writable (climate, number, select or switch)"
+            else:
+                continue
+            errors.append(f"{filename}: {owner} {problem}.")
+    return errors
+
 
 def main(basedir):
     yaml.SafeLoader.construct_mapping_org = yaml.SafeLoader.construct_mapping
@@ -136,7 +164,10 @@ def main(basedir):
         type_code = filename.removesuffix('.yaml')
         with open(f"{device_dir}/{filename}") as f:
             doc = yaml.safe_load(f) or {}
-        bases[type_code] = {p['property']: p for p in (doc.get('properties') or [])}
+        bases[type_code] = (
+            {p['property']: p for p in (doc.get('properties') or [])},
+            list(doc.get('buttons') or []),
+        )
 
     errors = []
     for filename in filenames:
@@ -155,15 +186,22 @@ def main(basedir):
         # Cross-cutting rule checks on merged property entries
         is_subtype = '-' in filename.removesuffix('.yaml')
         type_code = filename.split('-')[0] if is_subtype else filename.removesuffix('.yaml')
-        base_props = bases.get(type_code, {}) if is_subtype else {}
+        base_props, base_buttons = bases.get(type_code, ({}, [])) if is_subtype else ({}, [])
+        merged_props = dict(base_props)
         for prop in (mappings_yaml.get('properties') or []):
             name = prop['property']
             merged = _merge_property(base_props.get(name), prop) if is_subtype else prop
+            merged_props[name] = merged
             for check in CHECKS:
                 err = check(filename, merged)
                 if err:
                     print(err)
                     errors.append(filename)
+
+        merged_buttons = _merge_buttons(base_buttons, mappings_yaml.get('buttons') or [])
+        for err in _check_includes(filename, merged_props, merged_buttons):
+            print(err)
+            errors.append(filename)
 
     if errors:
         sys.exit(1)
