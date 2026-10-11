@@ -556,15 +556,15 @@ wheels = [
 
 [[package]]
 name = "connectlife"
-version = "0.11.0"
+version = "0.11.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "aiohttp" },
     { name = "cryptography" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/49/ba/eae0d0eefc0b746f79a3003e9c3dcc01beb7bdd5a218609d62d1b3bdf9d4/connectlife-0.11.0.tar.gz", hash = "sha256:1af6be11d82110f3d242a2d85c4c5e51113496b80006e782b00402b773792c32", size = 169338 }
+sdist = { url = "https://files.pythonhosted.org/packages/e7/30/d8134a4a7bfc7c53a7ae3e56686061407dfc31188f8a7a90e2772fb7f85f/connectlife-0.11.1.tar.gz", hash = "sha256:7f0984c69406b7da50ee925da879187776270a26114b532e66a6140aaa576aac", size = 170263 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/c0/a4/45e60198a7cee59a74eb5d0f4fdcad26f7022768085cbad60ebd8c40a320/connectlife-0.11.0-py3-none-any.whl", hash = "sha256:0cfa2e97e8c72f95a2701b58125ef6040eb1ed1e762025f3969e377c41b13d6f", size = 49762 },
+    { url = "https://files.pythonhosted.org/packages/37/00/99c65e1f0945a2c353d7524ee6250164d00d0d923e83c8d747713fb6ba4c/connectlife-0.11.1-py3-none-any.whl", hash = "sha256:f4d28217033022e599af956598c88e2f69b68acaa3b5c7eada706f0665c073e5", size = 50621 },
 ]
 
 [[package]]
@@ -586,7 +586,7 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "connectlife", specifier = "==0.11.0" }]
+requires-dist = [{ name = "connectlife", specifier = "==0.11.1" }]
 
 [package.metadata.requires-dev]
 dev = [
