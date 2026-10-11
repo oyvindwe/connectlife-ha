@@ -831,6 +831,72 @@
       "error_9": {
         "name": "Chyba 9"
       },
+      "error_f10": {
+        "name": "F10 p\u0159epln\u011bn\u00ed vodou 1"
+      },
+      "error_f11": {
+        "name": "F11 porucha odtoku vody"
+      },
+      "error_f12": {
+        "name": "F12 porucha p\u0159\u00edvodu vody 1"
+      },
+      "error_f40": {
+        "name": "F40 net\u011bsnost napou\u0161t\u011bc\u00edho ventilu"
+      },
+      "error_f41": {
+        "name": "F41 porucha topen\u00ed 1"
+      },
+      "error_f42": {
+        "name": "F42 porucha teplotn\u00edho \u010didla"
+      },
+      "error_f43": {
+        "name": "F43 porucha tlakov\u00e9ho \u010didla"
+      },
+      "error_f44": {
+        "name": "Chyba F44"
+      },
+      "error_f45": {
+        "name": "F45 porucha p\u0159ep\u00edna\u010de"
+      },
+      "error_f46": {
+        "name": "Chyba F46"
+      },
+      "error_f52": {
+        "name": "F52 porucha hladiny vody"
+      },
+      "error_f54": {
+        "name": "F54 p\u0159epln\u011bn\u00ed vodou 2"
+      },
+      "error_f56": {
+        "name": "F56 porucha ob\u011bhov\u00e9ho \u010derpadla"
+      },
+      "error_f61": {
+        "name": "Chyba F61"
+      },
+      "error_f62": {
+        "name": "Chyba F62"
+      },
+      "error_f65": {
+        "name": "F65 porucha desky displeje"
+      },
+      "error_f67": {
+        "name": "F67 porucha p\u0159\u00edvodu vody 2"
+      },
+      "error_f68": {
+        "name": "F68 porucha vypou\u0161t\u011bc\u00edho \u010derpadla"
+      },
+      "error_f69": {
+        "name": "Chyba F69"
+      },
+      "error_f72": {
+        "name": "Chyba F72"
+      },
+      "error_f74": {
+        "name": "Chyba F74"
+      },
+      "error_f75": {
+        "name": "Chyba F75"
+      },
       "existing_fuzzy_mode": {
         "name": "Existuj\u00edc\u00ed fuzzy re\u017eim"
       },
@@ -4257,74 +4323,8 @@
           "unbalance_alarm": "Alarm nevyv\u00e1\u017een\u00ed"
         }
       },
-      "error_f10": {
-        "name": "Chyba f10"
-      },
-      "error_f11": {
-        "name": "Chyba f11"
-      },
-      "error_f12": {
-        "name": "Chyba f12"
-      },
-      "error_f40": {
-        "name": "Chyba f40"
-      },
-      "error_f41": {
-        "name": "Chyba f41"
-      },
-      "error_f42": {
-        "name": "Chyba f42"
-      },
-      "error_f43": {
-        "name": "Chyba f43"
-      },
-      "error_f44": {
-        "name": "Chyba f44"
-      },
-      "error_f45": {
-        "name": "Chyba f45"
-      },
-      "error_f46": {
-        "name": "Chyba f46"
-      },
-      "error_f52": {
-        "name": "Chyba f52"
-      },
-      "error_f54": {
-        "name": "Chyba f54"
-      },
-      "error_f56": {
-        "name": "Chyba f56"
-      },
-      "error_f61": {
-        "name": "Chyba f61"
-      },
-      "error_f62": {
-        "name": "Chyba f62"
-      },
-      "error_f65": {
-        "name": "Chyba f65"
-      },
-      "error_f67": {
-        "name": "Chyba f67"
-      },
-      "error_f68": {
-        "name": "Chyba f68"
-      },
-      "error_f69": {
-        "name": "Chyba f69"
-      },
       "error_f70": {
         "name": "Chyba f70"
-      },
-      "error_f72": {
-        "name": "Chyba f72"
-      },
-      "error_f74": {
-        "name": "Chyba f74"
-      },
-      "error_f75": {
-        "name": "Chyba f75"
       },
       "error_f76": {
         "name": "Chyba f76"

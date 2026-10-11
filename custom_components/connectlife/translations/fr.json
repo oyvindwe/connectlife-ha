@@ -831,6 +831,72 @@
       "error_9": {
         "name": "Erreur 9"
       },
+      "error_f10": {
+        "name": "F10 trop-plein d'eau 1"
+      },
+      "error_f11": {
+        "name": "F11 d\u00e9faut de vidange"
+      },
+      "error_f12": {
+        "name": "F12 d\u00e9faut d'arriv\u00e9e d'eau 1"
+      },
+      "error_f40": {
+        "name": "F40 fuite de la vanne d'arriv\u00e9e"
+      },
+      "error_f41": {
+        "name": "F41 d\u00e9faut de chauffage 1"
+      },
+      "error_f42": {
+        "name": "F42 d\u00e9faut de la sonde de temp\u00e9rature"
+      },
+      "error_f43": {
+        "name": "F43 d\u00e9faut du capteur de pression"
+      },
+      "error_f44": {
+        "name": "Erreur F44"
+      },
+      "error_f45": {
+        "name": "F45 d\u00e9faut du r\u00e9partiteur"
+      },
+      "error_f46": {
+        "name": "Erreur F46"
+      },
+      "error_f52": {
+        "name": "F52 d\u00e9faut de niveau d'eau"
+      },
+      "error_f54": {
+        "name": "F54 trop-plein d'eau 2"
+      },
+      "error_f56": {
+        "name": "F56 d\u00e9faut de la pompe de cyclage"
+      },
+      "error_f61": {
+        "name": "Erreur F61"
+      },
+      "error_f62": {
+        "name": "Erreur F62"
+      },
+      "error_f65": {
+        "name": "F65 d\u00e9faut de la carte d'affichage"
+      },
+      "error_f67": {
+        "name": "F67 d\u00e9faut d'arriv\u00e9e d'eau 2"
+      },
+      "error_f68": {
+        "name": "F68 d\u00e9faut de la pompe de vidange"
+      },
+      "error_f69": {
+        "name": "Erreur F69"
+      },
+      "error_f72": {
+        "name": "Erreur F72"
+      },
+      "error_f74": {
+        "name": "Erreur F74"
+      },
+      "error_f75": {
+        "name": "Erreur F75"
+      },
       "existing_fuzzy_mode": {
         "name": "Mode AI disponible"
       },
@@ -4255,74 +4321,8 @@
           "unbalance_alarm": "Alarme d\u00e9s\u00e9quilibre"
         }
       },
-      "error_f10": {
-        "name": "Erreur f10"
-      },
-      "error_f11": {
-        "name": "Erreur f11"
-      },
-      "error_f12": {
-        "name": "Erreur f12"
-      },
-      "error_f40": {
-        "name": "Erreur f40"
-      },
-      "error_f41": {
-        "name": "Erreur f41"
-      },
-      "error_f42": {
-        "name": "Erreur f42"
-      },
-      "error_f43": {
-        "name": "Erreur f43"
-      },
-      "error_f44": {
-        "name": "Erreur f44"
-      },
-      "error_f45": {
-        "name": "Erreur f45"
-      },
-      "error_f46": {
-        "name": "Erreur f46"
-      },
-      "error_f52": {
-        "name": "Erreur f52"
-      },
-      "error_f54": {
-        "name": "Erreur f54"
-      },
-      "error_f56": {
-        "name": "Erreur f56"
-      },
-      "error_f61": {
-        "name": "Erreur f61"
-      },
-      "error_f62": {
-        "name": "Erreur f62"
-      },
-      "error_f65": {
-        "name": "Erreur f65"
-      },
-      "error_f67": {
-        "name": "Erreur f67"
-      },
-      "error_f68": {
-        "name": "Erreur f68"
-      },
-      "error_f69": {
-        "name": "Erreur f69"
-      },
       "error_f70": {
         "name": "Erreur f70"
-      },
-      "error_f72": {
-        "name": "Erreur f72"
-      },
-      "error_f74": {
-        "name": "Erreur f74"
-      },
-      "error_f75": {
-        "name": "Erreur f75"
       },
       "error_f76": {
         "name": "Erreur f76"
