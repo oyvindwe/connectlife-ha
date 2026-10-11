@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from collections.abc import Awaitable, Callable
 import dataclasses
 from typing import Any
 
@@ -41,9 +42,11 @@ async def async_get_config_entry_diagnostics(
 ) -> dict[str, Any]:
     """Return diagnostics for all appliances of a config entry."""
     coordinator: ConnectLifeCoordinator = hass.data[DOMAIN][entry.entry_id]
+    # The property list is per feature code, so fetch it once for identical appliances.
+    property_lists: dict[str, Any] = {}
     return {
         "appliances": [
-            await _appliance_diagnostics(hass, entry, coordinator.api, appliance)
+            await _appliance_diagnostics(hass, entry, coordinator.api, appliance, property_lists)
             for appliance in coordinator.data.values()
         ],
     }
@@ -67,6 +70,7 @@ async def _appliance_diagnostics(
         entry: ConfigEntry,
         api: ConnectLifeApi,
         appliance: ConnectLifeAppliance,
+        property_lists: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     """Appliance status and how it is mapped, without device IDs or names."""
     type_code = appliance.device_type_code
@@ -100,7 +104,11 @@ async def _appliance_diagnostics(
         "options": entry.options.get(CONF_DEVICES, {}).get(appliance.device_id, {}),
         "unmapped_properties": unmapped,
         "status_list": appliance.status_list,
-        "static_data": await _static_data(api, appliance),
+        "static_data": await _device_request(appliance, lambda: api.query_static_data(appliance.puid)),
+        "system_data": await _device_request(appliance, lambda: api.query_system_data(appliance.puid)),
+        "self_check": await _device_request(appliance, lambda: api.get_self_check(appliance.puid)),
+        "hour_power": await _device_request(appliance, lambda: api.get_hour_power(appliance.puid)),
+        "property_list": await _property_list(api, appliance, {} if property_lists is None else property_lists),
         "statistics": _statistics(hass, entry, appliance, dictionary.statistics_source),
     }, TO_REDACT)
 
@@ -132,18 +140,35 @@ def _statistics(
     }
 
 
-async def _static_data(api: ConnectLifeApi, appliance: ConnectLifeAppliance) -> Any:
-    """The appliance's static data: the settings and values it supports, and its firmware versions.
+async def _device_request(
+        appliance: ConnectLifeAppliance, request: Callable[[], Awaitable[Any]]
+) -> Any:
+    """The raw response to an undocumented per-device request, or the error.
 
-    The response is undocumented and echoes the appliance's identifiers, so any
-    value equal to one of them is redacted as well.
+    Static data lists the settings and values the appliance supports and its firmware
+    versions, system data e.g. a dishwasher's programs and their options, self-check the
+    faults it can report, and hour power today's hourly energy use. The responses echo
+    the appliance's identifiers, so any value equal to one of them is redacted.
     """
     try:
-        static_data = await api.query_static_data(appliance.puid)
+        response = await request()
     except (LifeConnectError, ClientError, TimeoutError) as err:
         return {"error": str(err) or type(err).__name__}
     identifiers = {i for i in (appliance.puid, appliance.device_id, appliance.wifi_id) if i}
-    return _redact_values(static_data, identifiers)
+    return _redact_values(response, identifiers)
+
+
+async def _property_list(
+        api: ConnectLifeApi, appliance: ConnectLifeAppliance, cache: dict[str, Any]
+) -> Any:
+    """The feature code's property list: readable/writable, value lists and ranges."""
+    key = f"{appliance.device_type_code}-{appliance.device_feature_code}"
+    if key not in cache:
+        cache[key] = await _device_request(
+            appliance,
+            lambda: api.get_property_list(appliance.device_type_code, appliance.device_feature_code),
+        )
+    return cache[key]
 
 
 def _redact_values(value: Any, identifiers: set[str]) -> Any:

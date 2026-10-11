@@ -35,16 +35,33 @@ def _hass(statistics_coordinator=None) -> SimpleNamespace:
 
 
 class _FakeApi:
-    def __init__(self, static_data=None, error=None):
-        self.static_data = static_data
-        self.error = error
-        self.puids: list[str] = []
+    """Answers every per-device request with ``response``, or raises ``error``."""
 
-    async def query_static_data(self, puid):
-        self.puids.append(puid)
+    def __init__(self, response=None, error=None):
+        self.response = response
+        self.error = error
+        self.calls: list[tuple] = []
+
+    async def _answer(self, *args):
+        self.calls.append(args)
         if self.error is not None:
             raise self.error
-        return self.static_data
+        return self.response
+
+    async def query_static_data(self, puid):
+        return await self._answer("static", puid)
+
+    async def query_system_data(self, puid):
+        return await self._answer("system", puid)
+
+    async def get_self_check(self, puid):
+        return await self._answer("self_check", puid)
+
+    async def get_hour_power(self, puid):
+        return await self._answer("hour_power", puid)
+
+    async def get_property_list(self, device_type_code, device_feature_code):
+        return await self._answer("property_list", device_type_code, device_feature_code)
 
 
 async def test_appliance_diagnostics_reports_mapping_without_private_data(build_dictionary) -> None:
@@ -65,6 +82,8 @@ async def test_appliance_diagnostics_reports_mapping_without_private_data(build_
     assert result["unmapped_properties"] == ["f_unknown", "mac"]
     assert result["options"] == {CONF_EXPOSE_OFFLINE_STATE: True}
     assert result["status_list"]["mac"] == "**REDACTED**"
+    for key in ("static_data", "system_data", "self_check", "hour_power", "property_list"):
+        assert result[key] == {}
     text = repr(result)
     for private in ("secret-device-id", "Living room"):
         assert private not in text
@@ -81,9 +100,12 @@ async def test_static_data_is_included_without_identifiers() -> None:
         "data": {"Actions_start": "1", "echo": "secret-device-id", "Mcu_sw_version_major": "\u0000\u0000Z"},
     })
 
-    result = diagmod.async_redact_data(await diagmod._static_data(api, appliance), diagmod.TO_REDACT)
+    result = diagmod.async_redact_data(
+        await diagmod._device_request(appliance, lambda: api.query_static_data(appliance.puid)),
+        diagmod.TO_REDACT,
+    )
 
-    assert api.puids == ["secret-puid"]
+    assert api.calls == [("static", "secret-puid")]
     assert result["data"]["Actions_start"] == "1"
     assert result["data"]["Mcu_sw_version_major"] == "\u0000\u0000Z"
     assert result["data"]["echo"] == "**REDACTED**"
@@ -93,7 +115,8 @@ async def test_static_data_is_included_without_identifiers() -> None:
 async def test_static_data_error_is_reported() -> None:
     api = _FakeApi(error=LifeConnectError("Unexpected response from HijuConn gateway: code=1"))
 
-    result = await diagmod._static_data(api, _appliance({}))
+    appliance = _appliance({})
+    result = await diagmod._device_request(appliance, lambda: api.query_static_data(appliance.puid))
 
     assert result == {"error": "Unexpected response from HijuConn gateway: code=1"}
 
@@ -130,3 +153,14 @@ def test_statistics_without_data_report_none() -> None:
 
 def test_statistics_absent_without_source() -> None:
     assert diagmod._statistics(_hass(), ENTRY, _appliance({}), None) is None
+
+
+async def test_property_list_is_fetched_once_per_feature_code() -> None:
+    api = _FakeApi({"properties": []})
+    cache: dict = {}
+
+    first = await diagmod._property_list(api, _appliance({}), cache)  # type: ignore[arg-type]
+    second = await diagmod._property_list(api, _appliance({}), cache)  # type: ignore[arg-type]
+
+    assert first == second == {"properties": []}
+    assert api.calls == [("property_list", "999", "000")]
