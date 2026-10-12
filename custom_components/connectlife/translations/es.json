@@ -7,6 +7,7 @@
     "error": {
       "cannot_connect": "Fallo al establecer la conexi\u00f3n",
       "invalid_auth": "Autentificaci\u00f3n Fallida",
+      "terms_not_accepted": "ConnectLife requiere que aceptes los T\u00e9rminos y Condiciones actualizados. Cambia el idioma de la app ConnectLife a ingl\u00e9s, fuerza el cierre de la app, vuelve a abrirla, acepta los nuevos t\u00e9rminos y vuelve a intentarlo.",
       "test_server_invalid": "Test server URL invalida",
       "test_server_required": "El modo desarrollo requiere una URL del Test Server",
       "unknown": "Error desconocido"
@@ -829,6 +830,72 @@
       },
       "error_9": {
         "name": "Error 9"
+      },
+      "error_f10": {
+        "name": "F10 exceso de agua 1"
+      },
+      "error_f11": {
+        "name": "F11 fallo de salida de agua"
+      },
+      "error_f12": {
+        "name": "F12 fallo de entrada de agua 1"
+      },
+      "error_f40": {
+        "name": "F40 fuga en la v\u00e1lvula de entrada"
+      },
+      "error_f41": {
+        "name": "F41 fallo del calentador 1"
+      },
+      "error_f42": {
+        "name": "F42 fallo del sensor de temperatura"
+      },
+      "error_f43": {
+        "name": "F43 fallo del sensor de presi\u00f3n"
+      },
+      "error_f44": {
+        "name": "Error F44"
+      },
+      "error_f45": {
+        "name": "F45 fallo del desviador"
+      },
+      "error_f46": {
+        "name": "Error F46"
+      },
+      "error_f52": {
+        "name": "F52 fallo de nivel de agua"
+      },
+      "error_f54": {
+        "name": "F54 exceso de agua 2"
+      },
+      "error_f56": {
+        "name": "F56 fallo de la bomba de circulaci\u00f3n"
+      },
+      "error_f61": {
+        "name": "Error F61"
+      },
+      "error_f62": {
+        "name": "Error F62"
+      },
+      "error_f65": {
+        "name": "F65 fallo de la placa de la pantalla"
+      },
+      "error_f67": {
+        "name": "F67 fallo de entrada de agua 2"
+      },
+      "error_f68": {
+        "name": "F68 fallo de la bomba de desag\u00fce"
+      },
+      "error_f69": {
+        "name": "Error F69"
+      },
+      "error_f72": {
+        "name": "Error F72"
+      },
+      "error_f74": {
+        "name": "Error F74"
+      },
+      "error_f75": {
+        "name": "Error F75"
       },
       "existing_fuzzy_mode": {
         "name": "Modo fuzzy existente"
@@ -1913,7 +1980,8 @@
           "fan_mode": {
             "state": {
               "middle_high": "Medio alto",
-              "middle_low": "Medio bajo"
+              "middle_low": "Medio bajo",
+              "quiet": "Silencioso"
             }
           },
           "preset_mode": {
@@ -2446,7 +2514,7 @@
           "cotton": "Algodon",
           "cotton_dry": "Secado Agod\u00f3n",
           "delicates": "Delicados",
-          "down": "Bajar",
+          "down": "Plum\u00f3n",
           "drum_clean": "Limpieza Tambor",
           "duvet": "Edred\u00f3n",
           "eco": "Eco",
@@ -2480,37 +2548,58 @@
       "selected_program_id_status": {
         "name": "Programa seleccionado",
         "state": {
+          "activewear": "Ropa deportiva",
+          "airtech": "AirTech",
+          "allergy_safe": "Antial\u00e9rgico",
           "auto": "Auto",
           "baby_care": "Ropa beb\u00e9",
+          "bedding": "Ropa de cama",
+          "bleaching": "Blanqueo",
           "clean": "Limpieza",
           "color": "Color",
-          "crystal_glass": "Cristaler\u00eda",
+          "curtains": "Cortinas",
+          "dark_clothes": "Ropa oscura",
           "down_feathers": "Plum\u00f3n",
           "draining": "Desag\u00fce",
           "drum_clean": "Limpieza Tambor",
           "eco": "Eco",
           "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Higiene extra",
+          "fabric_care": "Cuidado de tejidos",
           "glass": "Cristal",
           "hygiene": "Higiene",
           "intensive": "Intensivo",
           "intensive_59_32": "Intensivo 59'/32'",
+          "jeans": "Jeans",
+          "kids_wear": "Ropa infantil",
+          "kitchen_towels": "Pa\u00f1os de cocina",
+          "lingerie": "Lencer\u00eda",
           "mix_synthetic": "Mixto/Sint\u00e9ticos",
+          "new_clothes": "Ropa nueva",
           "night": "Noche",
           "no_program_selected": "Ning\u00fan programa seleccionado",
+          "odor_control": "Control de olores",
           "one_hour": "1 hora",
           "pet_hair_removal": "Eliminaci\u00f3n de pelo de mascotas",
-          "preheated": "Precalentado",
+          "pets": "Mascotas",
+          "pillow": "Almohada",
+          "plush_toys": "Peluches",
+          "power_39": "Power 39",
           "quick_pro": "Quick pro",
           "rinse_and_hold": "Aclarar y esperar",
           "rinsing_softening": "Aclarado y suavizado",
           "self_cleaning": "Autolimpieza",
           "shirts": "Camisas",
+          "shoes": "Zapatillas",
+          "speed_14": "R\u00e1pido 14",
           "speed_20": "Speed 20",
           "spinning_draining": "Centrifugado y desag\u00fce",
           "sportswear": "Ropa deporte",
+          "steam_refresh": "Refresco con vapor",
+          "swimwear": "Ropa de ba\u00f1o",
+          "tights_stockings": "Medias",
           "time_program": "Programa temporizado",
-          "universal": "Universal",
+          "waterproof": "Impermeable",
           "white_cotton": "Algod\u00f3n blanco",
           "wool_manual": "Lana y manual"
         }
@@ -3549,7 +3638,10 @@
         "name": "Nivel de secado predeterminado"
       },
       "defaultspinspeed": {
-        "name": "Velocidad de centrifugado predeterminada"
+        "name": "Velocidad de centrifugado predeterminada",
+        "state": {
+          "none": "No centrifugar"
+        }
       },
       "delay_actions_flag": {
         "name": "Indicador de acciones diferidas"
@@ -3900,7 +3992,10 @@
         "name": "Modelo de secado"
       },
       "dryopen_defaultspinspeed": {
-        "name": "Velocidad de centrifugado predeterminada de secado abierto"
+        "name": "Velocidad de centrifugado predeterminada de secado abierto",
+        "state": {
+          "none": "No centrifugar"
+        }
       },
       "duration_of_clock": {
         "name": "Duraci\u00f3n del reloj"
@@ -4226,74 +4321,8 @@
           "unbalance_alarm": "Alarma de desequilibrio"
         }
       },
-      "error_f10": {
-        "name": "Error f10"
-      },
-      "error_f11": {
-        "name": "Error f11"
-      },
-      "error_f12": {
-        "name": "Error f12"
-      },
-      "error_f40": {
-        "name": "Error f40"
-      },
-      "error_f41": {
-        "name": "Error f41"
-      },
-      "error_f42": {
-        "name": "Error f42"
-      },
-      "error_f43": {
-        "name": "Error f43"
-      },
-      "error_f44": {
-        "name": "Error f44"
-      },
-      "error_f45": {
-        "name": "Error f45"
-      },
-      "error_f46": {
-        "name": "Error f46"
-      },
-      "error_f52": {
-        "name": "Error f52"
-      },
-      "error_f54": {
-        "name": "Error f54"
-      },
-      "error_f56": {
-        "name": "Error f56"
-      },
-      "error_f61": {
-        "name": "Error f61"
-      },
-      "error_f62": {
-        "name": "Error f62"
-      },
-      "error_f65": {
-        "name": "Error f65"
-      },
-      "error_f67": {
-        "name": "Error f67"
-      },
-      "error_f68": {
-        "name": "Error f68"
-      },
-      "error_f69": {
-        "name": "Error f69"
-      },
       "error_f70": {
         "name": "Error f70"
-      },
-      "error_f72": {
-        "name": "Error f72"
-      },
-      "error_f74": {
-        "name": "Error f74"
-      },
-      "error_f75": {
-        "name": "Error f75"
       },
       "error_f76": {
         "name": "Error f76"
@@ -5668,14 +5697,19 @@
           "cotton": "Algodon",
           "cotton_dry": "Secado Agod\u00f3n",
           "cotton_storage": "Algod\u00f3n",
+          "daily_wash": "Lavado diario",
+          "down": "Plum\u00f3n",
           "drum_clean": "Limpieza Tambor",
           "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Extra higiene",
           "fast89": "Fast 89",
+          "full_load_49": "Carga completa 49",
           "iron": "Plancha",
           "jeans": "Jeans",
           "mix": "Mix",
           "none": "Nada",
+          "pets": "Mascotas",
+          "power_30": "Potencia 30",
           "power_49": "Power 49",
           "quick_15": "Rapido 15\u00b4",
           "refresh": "Refrescar",
@@ -5746,19 +5780,6 @@
       },
       "selected_program_uv_function": {
         "name": "Funci\u00f3n UV del programa seleccionado"
-      },
-      "selected_program_washing_spin_speed_rpm_status": {
-        "name": "Centrifugado",
-        "state": {
-          "0_rpm": "0",
-          "1000_rpm": "1000",
-          "1200_rpm": "1200",
-          "1400_rpm": "1400",
-          "400_rpm": "400",
-          "800_rpm": "800",
-          "no_spin": "Sin centrifugado",
-          "not_available": "No disponible"
-        }
       },
       "selected_program_water_add": {
         "name": "Agua a\u00f1adida del programa seleccionado"
@@ -8851,6 +8872,11 @@
       }
     }
   },
+  "exceptions": {
+    "terms_not_accepted": {
+      "message": "Hay que aceptar los T\u00e9rminos y Condiciones actualizados de ConnectLife en la app ConnectLife"
+    }
+  },
   "issues": {
     "orphaned_statistics": {
       "fix_flow": {
@@ -8864,7 +8890,7 @@
             "title": "Borrar estad\u00edsticas a largo plazo hu\u00e9rfanas"
           },
           "init": {
-            "description": "{count} sensores de ConnectLife tienen estad\u00edsticas a largo plazo (LTS) almacenadas, pero ya no informan de una clase de estado. Home Assistant emite una reparaci\u00f3n independiente para cada uno.\n\nEsto se debe a un cambio reciente en la integraci\u00f3n: las propiedades num\u00e9ricas ya no toman `state_class: measurement` de forma predeterminada, por lo que los c\u00f3digos de estado, los indicadores de modo y las consignas ya no se registran como LTS.\n\n**Borrar estad\u00edsticas hu\u00e9rfanas** elimina las filas de LTS almacenadas de los {count} sensores de una sola vez. Los datos hist\u00f3ricos de estos sensores en Ajustes \u2192 Estad\u00edsticas se eliminar\u00e1n y no podr\u00e1n recuperarse. Las reparaciones por entidad de Home Assistant desaparecer\u00e1n la pr\u00f3xima vez que Home Assistant vuelva a validar las estad\u00edsticas, lo que ocurre al abrir Herramientas para desarrolladores \u2192 Estad\u00edsticas. Esta reparaci\u00f3n masiva no volver\u00e1 a aparecer en esta entrada de configuraci\u00f3n.\n\n**Ignorar** oculta esta acci\u00f3n masiva y mantiene las reparaciones por entidad; corrige o ignora cada una individualmente si quieres un control m\u00e1s preciso sobre qu\u00e9 sensores conservan su historial. Puedes volver a la acci\u00f3n masiva m\u00e1s tarde seleccionando \u00abMostrar reparaciones ignoradas\u00bb en el men\u00fa desplegable de la parte superior derecha de Ajustes \u2192 Reparaciones y reabriendo esta reparaci\u00f3n.\n\nPara revisar las reparaciones de sensores individuales antes de decidir, simplemente cierra esta ventana: la reparaci\u00f3n masiva permanece disponible tal cual.\n\nNota: este problema se marca como cr\u00edtico solo para que aparezca por encima de las reparaciones del registrador por entidad. No es urgente.",
+            "description": "{count} sensores de ConnectLife tienen estad\u00edsticas a largo plazo (LTS) almacenadas, pero ya no informan de una clase de estado. Home Assistant emite una reparaci\u00f3n independiente para cada uno.\n\nEsto se debe a un cambio reciente en la integraci\u00f3n: las propiedades num\u00e9ricas ya no toman `state_class: measurement` de forma predeterminada, por lo que los c\u00f3digos de estado, los indicadores de modo y las consignas ya no se registran como LTS.\n\n**Borrar estad\u00edsticas hu\u00e9rfanas** elimina las filas de LTS almacenadas de los {count} sensores de una sola vez. Los datos hist\u00f3ricos de estos sensores en Configuraci\u00f3n \u2192 Herramientas \u2192 Estad\u00edsticas se eliminar\u00e1n y no podr\u00e1n recuperarse. Las reparaciones por entidad de Home Assistant desaparecer\u00e1n la pr\u00f3xima vez que Home Assistant vuelva a validar las estad\u00edsticas, lo que ocurre al abrir Configuraci\u00f3n \u2192 Herramientas \u2192 Estad\u00edsticass. Esta reparaci\u00f3n masiva no volver\u00e1 a aparecer en esta entrada de configuraci\u00f3n.\n\n**Ignorar** oculta esta acci\u00f3n masiva y mantiene las reparaciones por entidad; corrige o ignora cada una individualmente si quieres un control m\u00e1s preciso sobre qu\u00e9 sensores conservan su historial. Puedes volver a la acci\u00f3n masiva m\u00e1s tarde seleccionando \u00abMostrar reparaciones ignoradas\u00bb en el men\u00fa desplegable de la parte superior derecha de Configuraci\u00f3n \u2192 Reparaciones y reabriendo esta reparaci\u00f3n.\n\nPara revisar las reparaciones de sensores individuales antes de decidir, simplemente cierra esta ventana: la reparaci\u00f3n masiva permanece disponible tal cual.\n\nNota: este problema se marca como cr\u00edtico solo para que aparezca por encima de las reparaciones del registrador por entidad. No es urgente.",
             "menu_options": {
               "clear": "Borrar estad\u00edsticas hu\u00e9rfanas",
               "ignore": "Ignorar"
@@ -8874,6 +8900,23 @@
         }
       },
       "title": "Estad\u00edsticas a largo plazo hu\u00e9rfanas ({count} sensores)"
+    },
+    "terms_not_accepted": {
+      "fix_flow": {
+        "abort": {
+          "entry_removed": "La entrada de configuraci\u00f3n de ConnectLife ya no existe."
+        },
+        "error": {
+          "still_not_accepted": "ConnectLife sigue rechazando el inicio de sesi\u00f3n. Aseg\u00farate de haber aceptado los nuevos T\u00e9rminos y Condiciones en la app y vuelve a intentarlo."
+        },
+        "step": {
+          "confirm": {
+            "description": "ConnectLife rechaza el inicio de sesi\u00f3n de \"{title}\" hasta que se acepten los T\u00e9rminos y Condiciones actualizados. Volver a introducir la contrase\u00f1a no ayudar\u00e1.\n\n1. Abre la app ConnectLife y cambia el idioma de la app a **ingl\u00e9s**.\n2. Fuerza el cierre de la app (no solo en segundo plano) y vuelve a abrirla.\n3. Acepta los nuevos T\u00e9rminos y Condiciones cuando se te solicite.\n4. Selecciona **Enviar** para reintentar ahora. De lo contrario, la integraci\u00f3n lo reintenta cada 15 minutos.\n\nDespu\u00e9s puedes volver a cambiar el idioma de la app. El cambio de idioma es necesario porque la app puede omitir la solicitud si los t\u00e9rminos a\u00fan no est\u00e1n traducidos a tu idioma. [M\u00e1s informaci\u00f3n]({url})",
+            "title": "Aceptar los T\u00e9rminos y Condiciones actualizados de ConnectLife"
+          }
+        }
+      },
+      "title": "Aceptar los T\u00e9rminos y Condiciones actualizados de ConnectLife"
     },
     "unavailable_device": {
       "fix_flow": {

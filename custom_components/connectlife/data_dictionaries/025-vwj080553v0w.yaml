@@ -1,0 +1,28 @@
+# Gorenje WDG38014-PVW004 washer-dryer (025-vwj080553v0w)
+# Values observed over several cycles (#674); writes not tested.
+properties:
+- property: Current_program_phase
+  sensor:
+    device_class: enum
+    options:
+      1: weigh
+      3: wash
+      4: rinsing
+      7: spinning
+      8: drying
+      10: finished
+- property: Selected_program_ID
+  sensor:
+    read_only: true
+    device_class: enum
+    options:
+      1: cotton_dry
+      2: synthetic_dry
+      4: refresh
+      7: cotton
+      8: synthetic
+      9: eco_40_60
+      10: wool
+      11: quick_15
+      41: power_49
+      49: daily_wash

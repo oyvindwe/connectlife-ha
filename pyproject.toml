@@ -1,11 +1,11 @@
 [project]
 name = "connectlife-ha"
-version = "0.45.1"
+version = "0.49.0"
 description = "Custom Home Assistant component for ConnectLife devices"
 readme = "README.md"
 requires-python = ">=3.13.2"
 dependencies = [
-    "connectlife==0.9.1",
+    "connectlife==0.13.0",
 ]
 
 [dependency-groups]
@@ -13,8 +13,8 @@ dev = [
     "jschon==0.11.1",
     "pyyaml>=6.0.2",
     "pyright>=1.1.391",
-    "homeassistant-stubs>=2024.12.0",
-    "pytest-homeassistant-custom-component==0.13.190",
+    "homeassistant-stubs==2025.11.3",
+    "pytest-homeassistant-custom-component==0.13.297",
     # aiodns (pulled in transitively via Home Assistant) declares pycares>=4.0.0
     # with no upper bound; aiodns<3.3.0 breaks against pycares 5.x with a
     # Channel.getaddrinfo() TypeError that kills all DNS resolution. Pin to the

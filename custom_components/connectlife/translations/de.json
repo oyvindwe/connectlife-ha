@@ -7,6 +7,7 @@
     "error": {
       "cannot_connect": "Verbindung fehlgeschlagen",
       "invalid_auth": "Ung\u00fcltige Authentifizierung",
+      "terms_not_accepted": "ConnectLife verlangt die Zustimmung zu aktualisierten Nutzungsbedingungen. Stelle die Sprache der ConnectLife-App auf Englisch, beende die App vollst\u00e4ndig, \u00f6ffne sie erneut, akzeptiere die neuen Bedingungen und versuche es dann noch einmal.",
       "test_server_invalid": "Ung\u00fcltige Test-Server-URL",
       "test_server_required": "Entwicklungsmodus erfordert eine Test-Server-URL",
       "unknown": "Unerwarteter Fehler"
@@ -829,6 +830,72 @@
       },
       "error_9": {
         "name": "Fehler 9"
+      },
+      "error_f10": {
+        "name": "F10 Wasser\u00fcberf\u00fcllung 1"
+      },
+      "error_f11": {
+        "name": "F11 Fehler Wasserablauf"
+      },
+      "error_f12": {
+        "name": "F12 Fehler Wasserzulauf 1"
+      },
+      "error_f40": {
+        "name": "F40 Zulaufventil undicht"
+      },
+      "error_f41": {
+        "name": "F41 Fehler Heizung 1"
+      },
+      "error_f42": {
+        "name": "F42 Fehler Temperatursensor"
+      },
+      "error_f43": {
+        "name": "F43 Fehler Drucksensor"
+      },
+      "error_f44": {
+        "name": "Fehler F44"
+      },
+      "error_f45": {
+        "name": "F45 Fehler Umschaltventil"
+      },
+      "error_f46": {
+        "name": "Fehler F46"
+      },
+      "error_f52": {
+        "name": "F52 Fehler Wasserstand"
+      },
+      "error_f54": {
+        "name": "F54 Wasser\u00fcberf\u00fcllung 2"
+      },
+      "error_f56": {
+        "name": "F56 Fehler Umw\u00e4lzpumpe"
+      },
+      "error_f61": {
+        "name": "Fehler F61"
+      },
+      "error_f62": {
+        "name": "Fehler F62"
+      },
+      "error_f65": {
+        "name": "F65 Fehler Displayplatine"
+      },
+      "error_f67": {
+        "name": "F67 Fehler Wasserzulauf 2"
+      },
+      "error_f68": {
+        "name": "F68 Fehler Ablaufpumpe"
+      },
+      "error_f69": {
+        "name": "Fehler F69"
+      },
+      "error_f72": {
+        "name": "Fehler F72"
+      },
+      "error_f74": {
+        "name": "Fehler F74"
+      },
+      "error_f75": {
+        "name": "Fehler F75"
       },
       "existing_fuzzy_mode": {
         "name": "Aktueller Fuzzy-Modus"
@@ -1913,7 +1980,8 @@
           "fan_mode": {
             "state": {
               "middle_high": "Mittel hoch",
-              "middle_low": "Mittel niedrig"
+              "middle_low": "Mittel niedrig",
+              "quiet": "Leise"
             }
           },
           "preset_mode": {
@@ -2480,37 +2548,58 @@
       "selected_program_id_status": {
         "name": "Programm",
         "state": {
+          "activewear": "Funktionskleidung",
+          "airtech": "AirTech",
+          "allergy_safe": "Allergiker",
           "auto": "Automatisch",
           "baby_care": "Baby",
+          "bedding": "Bettw\u00e4sche",
+          "bleaching": "Bleichen",
           "clean": "Reinigung",
           "color": "Farbig",
-          "crystal_glass": "Kristallglas",
+          "curtains": "Gardinen",
+          "dark_clothes": "Dunkle W\u00e4sche",
           "down_feathers": "Daunenfedern",
           "draining": "Abpumpen",
           "drum_clean": "Trommelreinigung",
           "eco": "Eco",
           "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Extra Hygiene",
+          "fabric_care": "Textilpflege",
           "glass": "Glas",
           "hygiene": "Hygiene",
           "intensive": "Intensiv",
           "intensive_59_32": "Intensiv 59'/32'",
+          "jeans": "Jeans",
+          "kids_wear": "Kinderkleidung",
+          "kitchen_towels": "K\u00fcchent\u00fccher",
+          "lingerie": "Unterw\u00e4sche",
           "mix_synthetic": "Mix/Synthetik",
+          "new_clothes": "Neue Kleidung",
           "night": "Nacht",
           "no_program_selected": "Kein Programm ausgew\u00e4hlt",
+          "odor_control": "Geruchskontrolle",
           "one_hour": "1 Stunde",
           "pet_hair_removal": "Tierhaarentfernung",
-          "preheated": "Vorgew\u00e4rmt",
+          "pets": "Haustiere",
+          "pillow": "Kopfkissen",
+          "plush_toys": "Pl\u00fcschtiere",
+          "power_39": "Power 39",
           "quick_pro": "Quick pro",
           "rinse_and_hold": "Sp\u00fclen & Warten",
           "rinsing_softening": "Sp\u00fclen & Weichsp\u00fclen",
           "self_cleaning": "Selbstreinigung",
           "shirts": "Hemden",
+          "shoes": "Schuhe",
+          "speed_14": "Schnell 14",
           "speed_20": "Schnell 20'",
           "spinning_draining": "Schleudern & Abpumpen",
           "sportswear": "Sport",
+          "steam_refresh": "Dampfauffrischung",
+          "swimwear": "Badebekleidung",
+          "tights_stockings": "Strumpfhosen",
           "time_program": "Zeitprogramm",
-          "universal": "Universal",
+          "waterproof": "Wasserdicht",
           "white_cotton": "Wei\u00dfe Baumwolle",
           "wool_manual": "Wolle & Manuell"
         }
@@ -3549,7 +3638,10 @@
         "name": "Standard-Trockengrad"
       },
       "defaultspinspeed": {
-        "name": "Schleuderdrehzahl Standard"
+        "name": "Schleuderdrehzahl Standard",
+        "state": {
+          "none": "Keine"
+        }
       },
       "delay_actions_flag": {
         "name": "Flag Verz\u00f6gerungsaktionen"
@@ -3900,7 +3992,10 @@
         "name": "Trocknungsmodus"
       },
       "dryopen_defaultspinspeed": {
-        "name": "Standard Schleudergeschwindigkeit"
+        "name": "Standard Schleudergeschwindigkeit",
+        "state": {
+          "none": "Keine"
+        }
       },
       "duration_of_clock": {
         "name": "Anzeigedauer der Uhr"
@@ -4226,74 +4321,8 @@
           "unbalance_alarm": "Unwucht-Alarm"
         }
       },
-      "error_f10": {
-        "name": "Fehler f10"
-      },
-      "error_f11": {
-        "name": "Fehler f11"
-      },
-      "error_f12": {
-        "name": "Fehler f12"
-      },
-      "error_f40": {
-        "name": "Fehler f40"
-      },
-      "error_f41": {
-        "name": "Fehler f41"
-      },
-      "error_f42": {
-        "name": "Fehler f42"
-      },
-      "error_f43": {
-        "name": "Fehler f43"
-      },
-      "error_f44": {
-        "name": "Fehler f44"
-      },
-      "error_f45": {
-        "name": "Fehler f45"
-      },
-      "error_f46": {
-        "name": "Fehler f46"
-      },
-      "error_f52": {
-        "name": "Fehler f52"
-      },
-      "error_f54": {
-        "name": "Fehler f54"
-      },
-      "error_f56": {
-        "name": "Fehler f56"
-      },
-      "error_f61": {
-        "name": "Fehler f61"
-      },
-      "error_f62": {
-        "name": "Fehler f62"
-      },
-      "error_f65": {
-        "name": "Fehler f65"
-      },
-      "error_f67": {
-        "name": "Fehler f67"
-      },
-      "error_f68": {
-        "name": "Fehler f68"
-      },
-      "error_f69": {
-        "name": "Fehler f69"
-      },
       "error_f70": {
         "name": "Fehler f70"
-      },
-      "error_f72": {
-        "name": "Fehler f72"
-      },
-      "error_f74": {
-        "name": "Fehler f74"
-      },
-      "error_f75": {
-        "name": "Fehler f75"
       },
       "error_f76": {
         "name": "Fehler f76"
@@ -5668,14 +5697,19 @@
           "cotton": "Baumwolle",
           "cotton_dry": "Baumwolle trocken",
           "cotton_storage": "Baumwollspeicherung",
+          "daily_wash": "T\u00e4gliche W\u00e4sche",
+          "down": "Daunen",
           "drum_clean": "Trommelreinigung",
           "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Extra Hygiene",
           "fast89": "Schnell 89",
+          "full_load_49": "Volle Ladung 49",
           "iron": "B\u00fcgeln",
           "jeans": "Jeans",
           "mix": "Mischprogramm",
           "none": "Kein Programm",
+          "pets": "Haustiere",
+          "power_30": "Power 30",
           "power_49": "Power 49'",
           "quick_15": "Schnell 15'",
           "refresh": "Auffrischen",
@@ -5746,19 +5780,6 @@
       },
       "selected_program_uv_function": {
         "name": "UV-Funktion des gew\u00e4hlten Programms"
-      },
-      "selected_program_washing_spin_speed_rpm_status": {
-        "name": "Programm Schleuderdrehzahl",
-        "state": {
-          "0_rpm": "0 U/min",
-          "1000_rpm": "1000 U/min",
-          "1200_rpm": "1200 U/min",
-          "1400_rpm": "1400 U/min",
-          "400_rpm": "400 U/min",
-          "800_rpm": "800 U/min",
-          "no_spin": "Kein Schleudern",
-          "not_available": "Nicht verf\u00fcgbar"
-        }
       },
       "selected_program_water_add": {
         "name": "Wasserzugabe des gew\u00e4hlten Programms"
@@ -8851,6 +8872,11 @@
       }
     }
   },
+  "exceptions": {
+    "terms_not_accepted": {
+      "message": "Aktualisierte ConnectLife-Nutzungsbedingungen m\u00fcssen in der ConnectLife-App akzeptiert werden"
+    }
+  },
   "issues": {
     "orphaned_statistics": {
       "fix_flow": {
@@ -8864,7 +8890,7 @@
             "title": "Verwaiste Langzeitstatistiken l\u00f6schen"
           },
           "init": {
-            "description": "{count} ConnectLife-Sensoren haben gespeicherte Langzeitstatistik (LTS), melden aber keine Statusklasse mehr. Home Assistant erzeugt f\u00fcr jeden einzelnen eine separate Reparatur.\n\nDies wird durch eine k\u00fcrzliche \u00c4nderung in der Integration verursacht: Numerische Eigenschaften verwenden nicht mehr standardm\u00e4\u00dfig `state_class: measurement`, sodass Statuscodes, Modus-Flags und Sollwerte nicht mehr als LTS aufgezeichnet werden.\n\n**Verwaiste Statistik l\u00f6schen** entfernt die gespeicherten LTS-Eintr\u00e4ge f\u00fcr alle {count} Sensoren auf einmal. Die historischen Daten dieser Sensoren unter Einstellungen \u2192 Statistik werden gel\u00f6scht und k\u00f6nnen nicht wiederhergestellt werden. Die einzelnen Home-Assistant-Reparaturen verschwinden, sobald Home Assistant die Statistik das n\u00e4chste Mal neu validiert \u2013 was geschieht, wenn Sie die Entwicklerwerkzeuge \u2192 Statistik \u00f6ffnen. Diese Sammelreparatur erscheint f\u00fcr diesen Konfigurationseintrag nicht erneut.\n\n**Ignorieren** blendet diese Sammelaktion aus und bel\u00e4sst die einzelnen Reparaturen \u2013 beheben oder ignorieren Sie jede einzeln, wenn Sie feiner steuern m\u00f6chten, welche Sensoren ihren Verlauf behalten. Sie k\u00f6nnen sp\u00e4ter zur Sammelaktion zur\u00fcckkehren, indem Sie im \u00dcberlaufmen\u00fc oben rechts unter Einstellungen \u2192 Reparaturen \u201eIgnorierte Reparaturen anzeigen\u201c ausw\u00e4hlen und diese Reparatur erneut \u00f6ffnen.\n\nUm die einzelnen Sensorreparaturen vor der Entscheidung zu pr\u00fcfen, schlie\u00dfen Sie einfach dieses Fenster \u2013 die Sammelreparatur bleibt unver\u00e4ndert verf\u00fcgbar.\n\nHinweis: Dieses Problem ist nur als kritisch markiert, damit es \u00fcber den einzelnen Recorder-Reparaturen einsortiert wird. Es ist nicht dringend.",
+            "description": "{count} ConnectLife-Sensoren haben gespeicherte Langzeitstatistik (LTS), melden aber keine Statusklasse mehr. Home Assistant erzeugt f\u00fcr jeden einzelnen eine separate Reparatur.\n\nDies wird durch eine k\u00fcrzliche \u00c4nderung in der Integration verursacht: Numerische Eigenschaften verwenden nicht mehr standardm\u00e4\u00dfig `state_class: measurement`, sodass Statuscodes, Modus-Flags und Sollwerte nicht mehr als LTS aufgezeichnet werden.\n\n**Verwaiste Statistik l\u00f6schen** entfernt die gespeicherten LTS-Eintr\u00e4ge f\u00fcr alle {count} Sensoren auf einmal. Die historischen Daten dieser Sensoren unter Einstellungen \u2192 Werkzeuge \u2192 Statistik werden gel\u00f6scht und k\u00f6nnen nicht wiederhergestellt werden. Die einzelnen Home-Assistant-Reparaturen verschwinden, sobald Home Assistant die Statistik das n\u00e4chste Mal neu validiert \u2013 was geschieht, wenn Sie Einstellungen \u2192 Werkzeuge \u2192 Statistik \u00f6ffnen. Diese Sammelreparatur erscheint f\u00fcr diesen Konfigurationseintrag nicht erneut.\n\n**Ignorieren** blendet diese Sammelaktion aus und bel\u00e4sst die einzelnen Reparaturen \u2013 beheben oder ignorieren Sie jede einzeln, wenn Sie feiner steuern m\u00f6chten, welche Sensoren ihren Verlauf behalten. Sie k\u00f6nnen sp\u00e4ter zur Sammelaktion zur\u00fcckkehren, indem Sie im \u00dcberlaufmen\u00fc oben rechts unter Einstellungen \u2192 Reparaturen \u201eIgnorierte Reparaturen anzeigen\u201c ausw\u00e4hlen und diese Reparatur erneut \u00f6ffnen.\n\nUm die einzelnen Sensorreparaturen vor der Entscheidung zu pr\u00fcfen, schlie\u00dfen Sie einfach dieses Fenster \u2013 die Sammelreparatur bleibt unver\u00e4ndert verf\u00fcgbar.\n\nHinweis: Dieses Problem ist nur als kritisch markiert, damit es \u00fcber den einzelnen Recorder-Reparaturen einsortiert wird. Es ist nicht dringend.",
             "menu_options": {
               "clear": "Verwaiste Statistiken l\u00f6schen",
               "ignore": "Ignorieren"
@@ -8874,6 +8900,23 @@
         }
       },
       "title": "Verwaiste Langzeitstatistik ({count} Sensoren)"
+    },
+    "terms_not_accepted": {
+      "fix_flow": {
+        "abort": {
+          "entry_removed": "Der ConnectLife-Konfigurationseintrag existiert nicht mehr."
+        },
+        "error": {
+          "still_not_accepted": "ConnectLife lehnt die Anmeldung weiterhin ab. Stelle sicher, dass die neuen Nutzungsbedingungen in der App akzeptiert wurden, und versuche es erneut."
+        },
+        "step": {
+          "confirm": {
+            "description": "ConnectLife lehnt die Anmeldung f\u00fcr \"{title}\" ab, bis die aktualisierten Nutzungsbedingungen akzeptiert wurden. Das erneute Eingeben des Passworts hilft nicht.\n\n1. \u00d6ffne die ConnectLife-App und stelle die App-Sprache auf **Englisch**.\n2. Beende die App vollst\u00e4ndig (nicht nur in den Hintergrund) und \u00f6ffne sie erneut.\n3. Akzeptiere die neuen Nutzungsbedingungen, wenn du dazu aufgefordert wirst.\n4. W\u00e4hle **Absenden**, um es sofort erneut zu versuchen. Andernfalls versucht es die Integration alle 15 Minuten erneut.\n\nDanach kannst du die App-Sprache wieder zur\u00fcckstellen. Der Sprachwechsel ist n\u00f6tig, weil die App die Abfrage \u00fcberspringen kann, wenn die Bedingungen noch nicht in deine Sprache \u00fcbersetzt sind. [Weitere Informationen]({url})",
+            "title": "Aktualisierte ConnectLife-Nutzungsbedingungen akzeptieren"
+          }
+        }
+      },
+      "title": "Aktualisierte ConnectLife-Nutzungsbedingungen akzeptieren"
     },
     "unavailable_device": {
       "fix_flow": {

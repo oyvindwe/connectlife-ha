@@ -5,11 +5,17 @@ import logging
 from homeassistant import data_entry_flow
 from homeassistant.components.recorder import get_instance
 from homeassistant.components.repairs import RepairsFlow
+from homeassistant.config_entries import ConfigEntryState
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers import device_registry as dr, issue_registry as ir
 
 from .const import CONF_DEVICES, CONF_DISABLE_BEEP, DATA_STATE_CLASS_MIGRATION_DONE, DOMAIN
 from .coordinator import ConnectLifeCoordinator
+from .terms import (
+    ISSUE_ID_PREFIX as TERMS_ISSUE_ID_PREFIX,
+    TERMS_NOT_ACCEPTED_URL,
+    clear_terms_retry_throttle,
+)
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -164,6 +170,47 @@ class OrphanedStatisticsRepairFlow(RepairsFlow):
         return self.async_abort(reason="issue_ignored")
 
 
+class TermsNotAcceptedRepairFlow(RepairsFlow):
+    """Explain how to accept updated Terms & Conditions, and retry login on demand."""
+
+    def __init__(self, issue_id: str, data: dict[str, str | int | float | None] | None) -> None:
+        self.issue_id = issue_id
+        self.data = data
+
+    async def async_step_init(
+            self, user_input: dict[str, str] | None = None
+    ) -> data_entry_flow.FlowResult:
+        # HA passes {"issue_id": ...} as user_input to the init step when the dialog
+        # opens, so it can't tell an open from a submit; confirm in a separate step.
+        return await self.async_step_confirm()
+
+    async def async_step_confirm(
+            self, user_input: dict[str, str] | None = None
+    ) -> data_entry_flow.FlowResult:
+        entry_id = str(self.data["entry_id"]) if self.data else ""
+        entry = self.hass.config_entries.async_get_entry(entry_id)
+        if entry is None:
+            return self.async_abort(reason="entry_removed")
+
+        errors: dict[str, str] = {}
+        if user_input is not None:
+            # Bypass the retry throttle: the user says the terms are accepted now.
+            clear_terms_retry_throttle(self.hass, entry_id)
+            await self.hass.config_entries.async_reload(entry_id)
+            # A successful login deletes the issue; otherwise setup recreated it.
+            if entry.state is ConfigEntryState.LOADED or ir.async_get(self.hass).async_get_issue(
+                DOMAIN, self.issue_id
+            ) is None:
+                return self.async_create_entry(title="", data={})
+            errors["base"] = "still_not_accepted"
+
+        return self.async_show_form(
+            step_id="confirm",
+            errors=errors,
+            description_placeholders={"title": entry.title, "url": TERMS_NOT_ACCEPTED_URL},
+        )
+
+
 async def async_create_fix_flow(
         hass: HomeAssistant,
         issue_id: str,
@@ -176,4 +223,6 @@ async def async_create_fix_flow(
         return UnsupportedBeepRepairFlow(issue_id, data)
     if issue_id.startswith("orphaned_statistics."):
         return OrphanedStatisticsRepairFlow(issue_id, data)
+    if issue_id.startswith(TERMS_ISSUE_ID_PREFIX):
+        return TermsNotAcceptedRepairFlow(issue_id, data)
     raise ValueError(f"Unknown issue: {issue_id}")

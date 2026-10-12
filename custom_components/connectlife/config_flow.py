@@ -18,6 +18,11 @@ from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
 from homeassistant.core import callback
 from homeassistant.exceptions import HomeAssistantError
 from homeassistant.helpers import issue_registry as ir
+from connectlife.api import (
+    LifeConnectAuthError,
+    LifeConnectError,
+    LifeConnectTermsNotAcceptedError,
+)
 
 from .client import create_api
 from .const import (
@@ -32,6 +37,7 @@ from .const import (
     OVERRIDE_AUTO,
 )
 from .dictionaries import Dictionaries
+from .terms import clear_terms_retry_throttle
 from .utils import contested_climate_targets
 
 _LOGGER = logging.getLogger(__name__)
@@ -75,13 +81,14 @@ async def validate_input(data: dict[str, Any]) -> dict[str, Any]:
         test_server_url=test_server_url,
     )
 
-    if not await api.authenticate():
-        raise InvalidAuth
-
-    # If you cannot connect:
-    # throw CannotConnect
-    # If the authentication is wrong:
-    # InvalidAuth
+    try:
+        await api.login()
+    except LifeConnectTermsNotAcceptedError as ex:
+        raise TermsNotAccepted from ex
+    except LifeConnectAuthError as ex:
+        raise InvalidAuth from ex
+    except LifeConnectError as ex:
+        raise CannotConnect from ex
 
     # Return info that you want to store in the config entry.
     return {"title": f"ConnectLife ({data[CONF_USERNAME]})"}
@@ -122,6 +129,8 @@ class ConnectLifeConfigFlow(ConfigFlow, domain=DOMAIN):
                 errors["base"] = "cannot_connect"
             except InvalidAuth:
                 errors["base"] = "invalid_auth"
+            except TermsNotAccepted:
+                errors["base"] = "terms_not_accepted"
             except Exception:  # pylint: disable=broad-except
                 _LOGGER.exception("Unexpected exception")
                 errors["base"] = "unknown"
@@ -160,6 +169,8 @@ class ConnectLifeConfigFlow(ConfigFlow, domain=DOMAIN):
                     errors["base"] = "cannot_connect"
                 except InvalidAuth:
                     errors["base"] = "invalid_auth"
+                except TermsNotAccepted:
+                    errors["base"] = "terms_not_accepted"
                 except Exception:  # pylint: disable=broad-except
                     _LOGGER.exception("Unexpected exception")
                     errors["base"] = "unknown"
@@ -201,10 +212,14 @@ class ConnectLifeConfigFlow(ConfigFlow, domain=DOMAIN):
                 errors["base"] = "cannot_connect"
             except InvalidAuth:
                 errors["base"] = "invalid_auth"
+            except TermsNotAccepted:
+                errors["base"] = "terms_not_accepted"
             except Exception:  # pylint: disable=broad-except
                 _LOGGER.exception("Unexpected exception")
                 errors["base"] = "unknown"
             else:
+                # Login just succeeded, so don't let the throttle block the reload.
+                clear_terms_retry_throttle(self.hass, reauth_entry.entry_id)
                 return self.async_update_reload_and_abort(reauth_entry, data=data)
 
         return self.async_show_form(
@@ -228,6 +243,10 @@ class CannotConnect(HomeAssistantError):
 
 class InvalidAuth(HomeAssistantError):
     """Error to indicate there is invalid auth."""
+
+
+class TermsNotAccepted(HomeAssistantError):
+    """Error to indicate updated Terms & Conditions must be accepted in the app."""
 
 
 class OptionsFlowHandler(OptionsFlow):

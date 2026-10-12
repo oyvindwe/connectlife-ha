@@ -10,7 +10,7 @@ from homeassistant.components.climate import (
     PRESET_NONE
 )
 from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_TEMPERATURE, Platform, PRECISION_WHOLE, UnitOfTemperature
+from homeassistant.const import ATTR_TEMPERATURE, Platform, PRECISION_TENTHS, PRECISION_WHOLE, UnitOfTemperature
 from homeassistant.core import HomeAssistant, callback
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
@@ -175,6 +175,8 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
                 self.max_temperature_map = to_temperature_map(data_dictionary.properties[status].climate.max_value)
                 if max_temp := self.get_temperature_limit(self.max_temperature_map):
                     self._attr_max_temp = max_temp
+                if step := data_dictionary.properties[status].climate.step:
+                    self._attr_target_temperature_step = step
             elif target == TEMPERATURE_UNIT:
                 for k, v in data_dictionary.properties[status].climate.options.items():
                     unit = normalize_temperature_unit(v)
@@ -215,6 +217,12 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
                     else:
                         _LOGGER.warning("Not mapping %d to unknown HVACAction %s", k, v)
             self.unknown_values[status] = data_dictionary.properties[status].climate.unknown_value
+
+        if data_dictionary.precision is not None:
+            self._attr_precision = data_dictionary.precision
+        elif (self._attr_target_temperature_step or 1) < 1:
+            # Show decimal setpoints even if the mapping doesn't set a precision.
+            self._attr_precision = PRECISION_TENTHS
 
         if data_dictionary.presets:
             self.preset_map = data_dictionary.presets
@@ -318,7 +326,7 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
         """Set new target temperature."""
         if ATTR_TEMPERATURE in kwargs:
             await self.async_update_device({
-                self.target_map[TARGET_TEMPERATURE]: round(kwargs[ATTR_TEMPERATURE])
+                self.target_map[TARGET_TEMPERATURE]: self.round_temperature(kwargs[ATTR_TEMPERATURE])
             })
 
     async def async_turn_on(self):
@@ -368,7 +376,15 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
             self.target_map[SWING_HORIZONTAL_MODE]: self.swing_horizontal_mode_reverse_map[swing_horizontal_mode]
         })
 
-    def add_target_temperature(self, request: dict[str, int]) -> dict[str, int]:
+    def add_target_temperature(self, request: dict[str, int | float]) -> dict[str, int | float]:
         if TARGET_TEMPERATURE in self.target_map and self._attr_target_temperature is not None:
-            request[self.target_map[TARGET_TEMPERATURE]] = round(self._attr_target_temperature)
+            request[self.target_map[TARGET_TEMPERATURE]] = self.round_temperature(self._attr_target_temperature)
         return request
+
+    def round_temperature(self, temperature: float) -> int | float:
+        """Round to the target temperature step, keeping integers for whole-degree devices."""
+        step = self._attr_target_temperature_step or 1
+        if step >= 1:
+            return round(temperature)
+        rounded = round(round(temperature / step) * step, 2)
+        return int(rounded) if rounded.is_integer() else rounded

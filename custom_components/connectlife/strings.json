@@ -7,6 +7,7 @@
     "error": {
       "cannot_connect": "[%key:common::config_flow::error::cannot_connect%]",
       "invalid_auth": "[%key:common::config_flow::error::invalid_auth%]",
+      "terms_not_accepted": "ConnectLife requires you to accept updated Terms & Conditions. Change the ConnectLife app language to English, force close and reopen the app, accept the new terms, then try again.",
       "test_server_invalid": "Invalid test server URL",
       "test_server_required": "Development mode requires test server URL",
       "unknown": "[%key:common::config_flow::error::unknown%]"
@@ -829,6 +830,72 @@
       },
       "error_9": {
         "name": "Error 9"
+      },
+      "error_f10": {
+        "name": "F10 overfilling water 1"
+      },
+      "error_f11": {
+        "name": "F11 water outlet fault"
+      },
+      "error_f12": {
+        "name": "F12 water inlet fault 1"
+      },
+      "error_f40": {
+        "name": "F40 inlet valve leakage"
+      },
+      "error_f41": {
+        "name": "F41 heater fault 1"
+      },
+      "error_f42": {
+        "name": "F42 temperature sensor fault"
+      },
+      "error_f43": {
+        "name": "F43 pressure sensor fault"
+      },
+      "error_f44": {
+        "name": "Error F44"
+      },
+      "error_f45": {
+        "name": "F45 diverter fault"
+      },
+      "error_f46": {
+        "name": "Error F46"
+      },
+      "error_f52": {
+        "name": "F52 water level fault"
+      },
+      "error_f54": {
+        "name": "F54 overfilling water 2"
+      },
+      "error_f56": {
+        "name": "F56 circulation pump fault"
+      },
+      "error_f61": {
+        "name": "Error F61"
+      },
+      "error_f62": {
+        "name": "Error F62"
+      },
+      "error_f65": {
+        "name": "F65 display board fault"
+      },
+      "error_f67": {
+        "name": "F67 water inlet fault 2"
+      },
+      "error_f68": {
+        "name": "F68 drain pump fault"
+      },
+      "error_f69": {
+        "name": "Error F69"
+      },
+      "error_f72": {
+        "name": "Error F72"
+      },
+      "error_f74": {
+        "name": "Error F74"
+      },
+      "error_f75": {
+        "name": "Error F75"
       },
       "existing_fuzzy_mode": {
         "name": "Existing fuzzy mode"
@@ -1913,7 +1980,8 @@
           "fan_mode": {
             "state": {
               "middle_high": "Middle high",
-              "middle_low": "Middle low"
+              "middle_low": "Middle low",
+              "quiet": "Quiet"
             }
           },
           "preset_mode": {
@@ -2452,12 +2520,14 @@
           "eco": "Eco",
           "eco_40_60": "Eco 40-60",
           "full_load_49": "Full load 49",
+          "full_load_59": "Full load 59",
           "hand_wash": "Hand wash",
           "ion_refresh": "Ion refresh",
           "jeans": "Jeans",
           "mix": "Mix",
           "pets": "Pets",
           "power_30": "Power 30",
+          "power_39": "Power 39",
           "power_49": "Power 49",
           "quick_15": "Quick 15",
           "quick_30": "Quick 30",
@@ -2480,37 +2550,58 @@
       "selected_program_id_status": {
         "name": "Selected program",
         "state": {
+          "activewear": "Activewear",
+          "airtech": "AirTech",
+          "allergy_safe": "Allergy safe",
           "auto": "Auto",
           "baby_care": "Baby care",
+          "bedding": "Bedding",
+          "bleaching": "Bleaching",
           "clean": "Clean",
           "color": "Color",
-          "crystal_glass": "Crystal glass",
+          "curtains": "Curtains",
+          "dark_clothes": "Dark clothes",
           "down_feathers": "Down feathers",
           "draining": "Draining",
           "drum_clean": "Drum clean",
           "eco": "Eco",
           "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Extra Hygiene",
+          "fabric_care": "Fabric care",
           "glass": "Glass",
           "hygiene": "Hygiene",
           "intensive": "Intensive",
           "intensive_59_32": "Intensive 59'/32'",
+          "jeans": "Jeans",
+          "kids_wear": "Kids wear",
+          "kitchen_towels": "Kitchen towels",
+          "lingerie": "Lingerie",
           "mix_synthetic": "Mix/Synthetic",
+          "new_clothes": "New clothes",
           "night": "Night",
           "no_program_selected": "No program selected",
+          "odor_control": "Odor control",
           "one_hour": "One hour",
           "pet_hair_removal": "Pet hair removal",
-          "preheated": "Preheated",
+          "pets": "Pets",
+          "pillow": "Pillow",
+          "plush_toys": "Plush toys",
+          "power_39": "Power 39",
           "quick_pro": "Quick pro",
           "rinse_and_hold": "Rinse and hold",
           "rinsing_softening": "Rinsing & Softening",
           "self_cleaning": "Self cleaning",
           "shirts": "Shirts",
+          "shoes": "Shoes",
+          "speed_14": "Speed 14",
           "speed_20": "Speed 20",
           "spinning_draining": "Spinning & Draining",
           "sportswear": "Sportswear",
+          "steam_refresh": "Steam refresh",
+          "swimwear": "Swimwear",
+          "tights_stockings": "Tights/Stockings",
           "time_program": "Time program",
-          "universal": "Universal",
+          "waterproof": "Waterproof",
           "white_cotton": "White Cotton",
           "wool_manual": "Wool & Manual"
         }
@@ -3549,7 +3640,10 @@
         "name": "Default dry level"
       },
       "defaultspinspeed": {
-        "name": "Default spin speed"
+        "name": "Default spin speed",
+        "state": {
+          "none": "None"
+        }
       },
       "delay_actions_flag": {
         "name": "Delay actions flag"
@@ -3900,7 +3994,10 @@
         "name": "Dry model"
       },
       "dryopen_defaultspinspeed": {
-        "name": "Dry open default spin speed"
+        "name": "Dry open default spin speed",
+        "state": {
+          "none": "None"
+        }
       },
       "duration_of_clock": {
         "name": "Duration of clock"
@@ -4226,74 +4323,8 @@
           "unbalance_alarm": "Unbalance alarm"
         }
       },
-      "error_f10": {
-        "name": "Error f10"
-      },
-      "error_f11": {
-        "name": "Error f11"
-      },
-      "error_f12": {
-        "name": "Error f12"
-      },
-      "error_f40": {
-        "name": "Error f40"
-      },
-      "error_f41": {
-        "name": "Error f41"
-      },
-      "error_f42": {
-        "name": "Error f42"
-      },
-      "error_f43": {
-        "name": "Error f43"
-      },
-      "error_f44": {
-        "name": "Error f44"
-      },
-      "error_f45": {
-        "name": "Error f45"
-      },
-      "error_f46": {
-        "name": "Error f46"
-      },
-      "error_f52": {
-        "name": "Error f52"
-      },
-      "error_f54": {
-        "name": "Error f54"
-      },
-      "error_f56": {
-        "name": "Error f56"
-      },
-      "error_f61": {
-        "name": "Error f61"
-      },
-      "error_f62": {
-        "name": "Error f62"
-      },
-      "error_f65": {
-        "name": "Error f65"
-      },
-      "error_f67": {
-        "name": "Error f67"
-      },
-      "error_f68": {
-        "name": "Error f68"
-      },
-      "error_f69": {
-        "name": "Error f69"
-      },
       "error_f70": {
         "name": "Error f70"
-      },
-      "error_f72": {
-        "name": "Error f72"
-      },
-      "error_f74": {
-        "name": "Error f74"
-      },
-      "error_f75": {
-        "name": "Error f75"
       },
       "error_f76": {
         "name": "Error f76"
@@ -5668,14 +5699,19 @@
           "cotton": "Cotton",
           "cotton_dry": "Cotton dry",
           "cotton_storage": "Cotton storage",
+          "daily_wash": "Daily wash",
+          "down": "Down",
           "drum_clean": "Drum clean",
           "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Extra hygiene",
           "fast89": "Fast89",
+          "full_load_49": "Full load 49",
           "iron": "Iron",
           "jeans": "Jeans",
           "mix": "Mix",
           "none": "None",
+          "pets": "Pets",
+          "power_30": "Power 30",
           "power_49": "Power 49",
           "quick_15": "Quick 15",
           "refresh": "Refresh",
@@ -5746,19 +5782,6 @@
       },
       "selected_program_uv_function": {
         "name": "Selected program UV function"
-      },
-      "selected_program_washing_spin_speed_rpm_status": {
-        "name": "Spin speed",
-        "state": {
-          "0_rpm": "0",
-          "1000_rpm": "1000",
-          "1200_rpm": "1200",
-          "1400_rpm": "1400",
-          "400_rpm": "400",
-          "800_rpm": "800",
-          "no_spin": "No spin",
-          "not_available": "Not available"
-        }
       },
       "selected_program_water_add": {
         "name": "Selected program water add"
@@ -8851,6 +8874,11 @@
       }
     }
   },
+  "exceptions": {
+    "terms_not_accepted": {
+      "message": "Updated ConnectLife Terms & Conditions must be accepted in the ConnectLife app"
+    }
+  },
   "issues": {
     "orphaned_statistics": {
       "fix_flow": {
@@ -8864,7 +8892,7 @@
             "title": "Clear orphaned long-term statistics"
           },
           "init": {
-            "description": "{count} ConnectLife sensors have stored long-term statistics (LTS) but no longer report a state class. Home Assistant emits a separate repair for each one.\n\nThis is caused by a recent change in the integration: numeric properties no longer default to `state_class: measurement`, so state codes, mode flags, and setpoints are no longer recorded as LTS.\n\n**Clear orphaned statistics** removes the stored LTS rows for all {count} sensors at once. The historical data for these sensors in Settings \u2192 Statistics will be deleted and cannot be recovered. The per-entity Home Assistant repairs will disappear the next time Home Assistant re-validates statistics \u2014 which happens when you open Developer Tools \u2192 Statistics. This bulk repair will not appear again on this configuration entry.\n\n**Ignore** hides this bulk action and leaves the per-entity repairs in place \u2014 fix or ignore each one individually if you want finer-grained control over which sensors keep their history. You can come back to the bulk action later by selecting \"Show ignored repairs\" in the overflow menu on the top right of Settings \u2192 Repairs, then reopening this repair.\n\nTo review the individual sensor repairs before deciding, simply close this window \u2014 the bulk repair stays available as-is.\n\nNote: this issue is marked critical only so it sorts above the per-entity recorder repairs. It is not urgent.",
+            "description": "{count} ConnectLife sensors have stored long-term statistics (LTS) but no longer report a state class. Home Assistant emits a separate repair for each one.\n\nThis is caused by a recent change in the integration: numeric properties no longer default to `state_class: measurement`, so state codes, mode flags, and setpoints are no longer recorded as LTS.\n\n**Clear orphaned statistics** removes the stored LTS rows for all {count} sensors at once. The historical data for these sensors in Settings \u2192 Tools \u2192 Statistics will be deleted and cannot be recovered. The per-entity Home Assistant repairs will disappear the next time Home Assistant re-validates statistics \u2014 which happens when you open Settings \u2192 Tools \u2192 Statistics. This bulk repair will not appear again on this configuration entry.\n\n**Ignore** hides this bulk action and leaves the per-entity repairs in place \u2014 fix or ignore each one individually if you want finer-grained control over which sensors keep their history. You can come back to the bulk action later by selecting \"Show ignored repairs\" in the overflow menu on the top right of Settings \u2192 Repairs, then reopening this repair.\n\nTo review the individual sensor repairs before deciding, simply close this window \u2014 the bulk repair stays available as-is.\n\nNote: this issue is marked critical only so it sorts above the per-entity recorder repairs. It is not urgent.",
             "menu_options": {
               "clear": "Clear orphaned statistics",
               "ignore": "Ignore"
@@ -8874,6 +8902,23 @@
         }
       },
       "title": "Orphaned long-term statistics ({count} sensors)"
+    },
+    "terms_not_accepted": {
+      "fix_flow": {
+        "abort": {
+          "entry_removed": "The ConnectLife configuration entry no longer exists."
+        },
+        "error": {
+          "still_not_accepted": "ConnectLife still rejects the login. Make sure the new Terms & Conditions are accepted in the app and try again."
+        },
+        "step": {
+          "confirm": {
+            "description": "ConnectLife rejects the login for \"{title}\" until the updated Terms & Conditions are accepted. Re-entering your password will not help.\n\n1. Open the ConnectLife mobile app and change the app language to **English**.\n2. Force close the app (not just background it), then reopen it.\n3. Accept the new Terms & Conditions when prompted.\n4. Select **Submit** to retry now. Otherwise the integration retries every 15 minutes.\n\nYou can change the app language back afterwards. The language change is needed because the app may skip the prompt when the terms are not yet translated to your language. [More information]({url})",
+            "title": "Accept updated ConnectLife Terms & Conditions"
+          }
+        }
+      },
+      "title": "Accept updated ConnectLife Terms & Conditions"
     },
     "unavailable_device": {
       "fix_flow": {

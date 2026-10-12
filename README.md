@@ -105,16 +105,16 @@ opts in (see the `statistics` block in the
 The statistics are fetched from a separate cloud endpoint, polled every 10 minutes, and — unlike
 the regular status entities — they stay available even while the appliance is offline.
 
-## Service to set property values on sensors
+## Action to set property values on sensors
 
-Entity service `connectlife.set_value` can be used to set values. Use with caution, as there is **no** validation
+Entity action `connectlife.set_value` can be used to set values. Use with caution, as there is **no** validation
 if property is writeable or that the value is legal to set.
 
-1. The service can be accessed from [Developer tools - Services](https://my.home-assistant.io/redirect/developer_services/).
-2. Search for service name "ConnectLife: Set value"
+1. The action can be accessed from [Settings → Tools → Actions](https://my.home-assistant.io/redirect/developer_services/).
+2. Search for action name "ConnectLife: Set value"
 3. Select entity as target.
 4. Enter value
-5. Call service.
+5. Perform action.
 
 It is possible to guard against `set_value` by setting `read_only: true` in the data dictionary on the sensor, e.g.
 ```yaml
@@ -128,6 +128,12 @@ It is possible to guard against `set_value` by setting `read_only: true` in the 
 The integration polls the ConnectLife API every 60 seconds to avoid overloading the API and risking being banned. When a command is sent from Home Assistant, only the properties included in that command are updated immediately in the HA UI. Any side effects on other properties (e.g., turning on an AC may also change fan mode or current temperature) will not appear until the next poll. Changes made outside Home Assistant (e.g., from the ConnectLife mobile app or physical device controls) may also take up to 60 seconds to appear.
 
 ## Issues
+
+When reporting an issue with a device, please attach its diagnostics: go to the device page, open the ⋮ menu, and
+select **Download diagnostics**. The file contains the device type and feature code, the raw status values, which
+properties are not mapped, what ConnectLife reports about the device (the settings it supports, its firmware
+versions, its programs and their options, the faults it can report, its property list and today's hourly energy use),
+and the last energy statistics. Device IDs, names and rooms are left out.
 
 ### Climate entities
 
@@ -168,7 +174,9 @@ There are two workarounds is you have logged in using a 3rd party identity provi
 
 ConnectLife periodically updates their Terms & Conditions. When this happens, the integration may stop working
 with errors like `Account Pending Registration` or `Missing required fields for registration`, or devices may
-silently become unavailable.
+silently become unavailable. Home Assistant shows this as the repair issue
+**Accept updated ConnectLife Terms & Conditions**. The integration retries every 15 minutes until the terms are
+accepted; select **Submit** in the repair to retry right away.
 
 To resolve this, you need to accept the new Terms & Conditions in the ConnectLife mobile app:
 

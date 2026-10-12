@@ -7,6 +7,7 @@
     "error": {
       "cannot_connect": "Verbinding mislukt",
       "invalid_auth": "Ongeldige authenticatie",
+      "terms_not_accepted": "ConnectLife vereist dat je de bijgewerkte algemene voorwaarden accepteert. Zet de taal van de ConnectLife-app op Engels, sluit de app geforceerd af, open hem opnieuw, accepteer de nieuwe voorwaarden en probeer het daarna opnieuw.",
       "test_server_invalid": "Ongeldige test server URL",
       "test_server_required": "Ontwikkelingsmodus vereist test server URL",
       "unknown": "Onverwachte fout"
@@ -829,6 +830,72 @@
       },
       "error_9": {
         "name": "Fout 9"
+      },
+      "error_f10": {
+        "name": "F10 te veel water 1"
+      },
+      "error_f11": {
+        "name": "F11 storing waterafvoer"
+      },
+      "error_f12": {
+        "name": "F12 storing watertoevoer 1"
+      },
+      "error_f40": {
+        "name": "F40 lekkage inlaatklep"
+      },
+      "error_f41": {
+        "name": "F41 storing verwarming 1"
+      },
+      "error_f42": {
+        "name": "F42 storing temperatuursensor"
+      },
+      "error_f43": {
+        "name": "F43 storing druksensor"
+      },
+      "error_f44": {
+        "name": "Fout F44"
+      },
+      "error_f45": {
+        "name": "F45 storing omschakelaar"
+      },
+      "error_f46": {
+        "name": "Fout F46"
+      },
+      "error_f52": {
+        "name": "F52 storing waterniveau"
+      },
+      "error_f54": {
+        "name": "F54 te veel water 2"
+      },
+      "error_f56": {
+        "name": "F56 storing circulatiepomp"
+      },
+      "error_f61": {
+        "name": "Fout F61"
+      },
+      "error_f62": {
+        "name": "Fout F62"
+      },
+      "error_f65": {
+        "name": "F65 storing displayprint"
+      },
+      "error_f67": {
+        "name": "F67 storing watertoevoer 2"
+      },
+      "error_f68": {
+        "name": "F68 storing afvoerpomp"
+      },
+      "error_f69": {
+        "name": "Fout F69"
+      },
+      "error_f72": {
+        "name": "Fout F72"
+      },
+      "error_f74": {
+        "name": "Fout F74"
+      },
+      "error_f75": {
+        "name": "Fout F75"
       },
       "existing_fuzzy_mode": {
         "name": "Bestaande fuzzy-modus"
@@ -1913,7 +1980,8 @@
           "fan_mode": {
             "state": {
               "middle_high": "Midden hoog",
-              "middle_low": "Midden laag"
+              "middle_low": "Midden laag",
+              "quiet": "Stil"
             }
           },
           "preset_mode": {
@@ -2480,37 +2548,58 @@
       "selected_program_id_status": {
         "name": "Geselecteerd programma",
         "state": {
+          "activewear": "Sportkleding",
+          "airtech": "AirTech",
+          "allergy_safe": "Allergievrij",
           "auto": "Auto",
           "baby_care": "Baby",
+          "bedding": "Beddengoed",
+          "bleaching": "Bleken",
           "clean": "Schoon",
           "color": "Kleur",
-          "crystal_glass": "Kristalglas",
+          "curtains": "Gordijnen",
+          "dark_clothes": "Donkere was",
           "down_feathers": "Donsveren",
           "draining": "Afpompen",
           "drum_clean": "Trommelreiniging",
           "eco": "Eco",
           "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Extra hygi\u00ebne",
+          "fabric_care": "Textielverzorging",
           "glass": "Glas",
           "hygiene": "Hygi\u00ebne",
           "intensive": "Intensief",
           "intensive_59_32": "Intensief 59'/32'",
+          "jeans": "Spijkerbroeken",
+          "kids_wear": "Kinderkleding",
+          "kitchen_towels": "Keukendoeken",
+          "lingerie": "Lingerie",
           "mix_synthetic": "Mix/Synthetisch",
+          "new_clothes": "Nieuwe kleding",
           "night": "Nacht",
           "no_program_selected": "Geen programma geselecteerd",
+          "odor_control": "Geurbeheersing",
           "one_hour": "1 uur",
           "pet_hair_removal": "Huisdierhaar verwijderen",
-          "preheated": "Voorverwarmd",
+          "pets": "Huisdieren",
+          "pillow": "Kussen",
+          "plush_toys": "Knuffels",
+          "power_39": "Power 39",
           "quick_pro": "Quick pro",
           "rinse_and_hold": "Spoelen en wachten",
           "rinsing_softening": "Spoelen & verzachten",
           "self_cleaning": "Zelfreiniging",
           "shirts": "Shirts",
+          "shoes": "Schoenen",
+          "speed_14": "Snel 14",
           "speed_20": "Snel 20'",
           "spinning_draining": "Centrifugeren & afpompen",
           "sportswear": "Sport",
+          "steam_refresh": "Stoomverfrissing",
+          "swimwear": "Badkleding",
+          "tights_stockings": "Panty\u2019s/Kousen",
           "time_program": "Tijdprogramma",
-          "universal": "Universeel",
+          "waterproof": "Waterdicht",
           "white_cotton": "Wit katoen",
           "wool_manual": "Wol & Handmatig"
         }
@@ -3549,7 +3638,10 @@
         "name": "Standaard droogniveau"
       },
       "defaultspinspeed": {
-        "name": "Standaard centrifugesnelheid"
+        "name": "Standaard centrifugesnelheid",
+        "state": {
+          "none": "Geen"
+        }
       },
       "delay_actions_flag": {
         "name": "Uitstel acties"
@@ -3900,7 +3992,10 @@
         "name": "Droger model"
       },
       "dryopen_defaultspinspeed": {
-        "name": "Standaard centrifugesnelheid (open drogen)"
+        "name": "Standaard centrifugesnelheid (open drogen)",
+        "state": {
+          "none": "Geen"
+        }
       },
       "duration_of_clock": {
         "name": "Duur klok"
@@ -4226,74 +4321,8 @@
           "unbalance_alarm": "Onbalansalarm"
         }
       },
-      "error_f10": {
-        "name": "Fout f10"
-      },
-      "error_f11": {
-        "name": "Fout f11"
-      },
-      "error_f12": {
-        "name": "Fout f12"
-      },
-      "error_f40": {
-        "name": "Fout f40"
-      },
-      "error_f41": {
-        "name": "Fout f41"
-      },
-      "error_f42": {
-        "name": "Fout f42"
-      },
-      "error_f43": {
-        "name": "Fout f43"
-      },
-      "error_f44": {
-        "name": "Fout f44"
-      },
-      "error_f45": {
-        "name": "Fout f45"
-      },
-      "error_f46": {
-        "name": "Fout f46"
-      },
-      "error_f52": {
-        "name": "Fout f52"
-      },
-      "error_f54": {
-        "name": "Fout f54"
-      },
-      "error_f56": {
-        "name": "Fout f56"
-      },
-      "error_f61": {
-        "name": "Fout f61"
-      },
-      "error_f62": {
-        "name": "Fout f62"
-      },
-      "error_f65": {
-        "name": "Fout f65"
-      },
-      "error_f67": {
-        "name": "Fout f67"
-      },
-      "error_f68": {
-        "name": "Fout f68"
-      },
-      "error_f69": {
-        "name": "Fout f69"
-      },
       "error_f70": {
         "name": "Fout f70"
-      },
-      "error_f72": {
-        "name": "Fout f72"
-      },
-      "error_f74": {
-        "name": "Fout f74"
-      },
-      "error_f75": {
-        "name": "Fout f75"
       },
       "error_f76": {
         "name": "Fout f76"
@@ -5668,14 +5697,19 @@
           "cotton": "Katoen",
           "cotton_dry": "Katoen droog",
           "cotton_storage": "Katoen opslag",
+          "daily_wash": "Dagelijkse was",
+          "down": "Dons",
           "drum_clean": "Trommelreiniging",
           "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Extra hygi\u00ebne",
           "fast89": "Snel 89'",
+          "full_load_49": "Volle lading 49'",
           "iron": "Strijken",
           "jeans": "Spijkerbroeken",
           "mix": "Mix",
           "none": "Geen",
+          "pets": "Huisdieren",
+          "power_30": "Power 30'",
           "power_49": "Power 49",
           "quick_15": "Snel 15",
           "refresh": "Opfrissen",
@@ -5746,19 +5780,6 @@
       },
       "selected_program_uv_function": {
         "name": "Selected program UV function"
-      },
-      "selected_program_washing_spin_speed_rpm_status": {
-        "name": "Centrifugeersnelheid",
-        "state": {
-          "0_rpm": "0 toeren",
-          "1000_rpm": "1000 toeren",
-          "1200_rpm": "1200 toeren",
-          "1400_rpm": "1400 toeren",
-          "400_rpm": "400 toeren",
-          "800_rpm": "800 toeren",
-          "no_spin": "Niet centrifugeren",
-          "not_available": "Niet beschikbaar"
-        }
       },
       "selected_program_water_add": {
         "name": "Selected program water add"
@@ -8851,6 +8872,11 @@
       }
     }
   },
+  "exceptions": {
+    "terms_not_accepted": {
+      "message": "Bijgewerkte algemene voorwaarden van ConnectLife moeten in de ConnectLife-app worden geaccepteerd"
+    }
+  },
   "issues": {
     "orphaned_statistics": {
       "fix_flow": {
@@ -8864,7 +8890,7 @@
             "title": "Clear orphaned long-term statistics"
           },
           "init": {
-            "description": "{count} ConnectLife sensors have stored long-term statistics (LTS) but no longer report a state class. Home Assistant emits a separate repair for each one.\n\nThis is caused by a recent change in the integration: numeric properties no longer default to `state_class: measurement`, so state codes, mode flags, and setpoints are no longer recorded as LTS.\n\n**Clear orphaned statistics** removes the stored LTS rows for all {count} sensors at once. The historical data for these sensors in Settings \u2192 Statistics will be deleted and cannot be recovered. The per-entity Home Assistant repairs will disappear the next time Home Assistant re-validates statistics \u2014 which happens when you open Developer Tools \u2192 Statistics. This bulk repair will not appear again on this configuration entry.\n\n**Ignore** hides this bulk action and leaves the per-entity repairs in place \u2014 fix or ignore each one individually if you want finer-grained control over which sensors keep their history. You can come back to the bulk action later by selecting \"Show ignored repairs\" in the overflow menu on the top right of Settings \u2192 Repairs, then reopening this repair.\n\nTo review the individual sensor repairs before deciding, simply close this window \u2014 the bulk repair stays available as-is.\n\nNote: this issue is marked critical only so it sorts above the per-entity recorder repairs. It is not urgent.",
+            "description": "{count} ConnectLife sensors have stored long-term statistics (LTS) but no longer report a state class. Home Assistant emits a separate repair for each one.\n\nThis is caused by a recent change in the integration: numeric properties no longer default to `state_class: measurement`, so state codes, mode flags, and setpoints are no longer recorded as LTS.\n\n**Clear orphaned statistics** removes the stored LTS rows for all {count} sensors at once. The historical data for these sensors in Settings \u2192 Tools \u2192 Statistics will be deleted and cannot be recovered. The per-entity Home Assistant repairs will disappear the next time Home Assistant re-validates statistics \u2014 which happens when you open Settings \u2192 Tools \u2192 Statistics. This bulk repair will not appear again on this configuration entry.\n\n**Ignore** hides this bulk action and leaves the per-entity repairs in place \u2014 fix or ignore each one individually if you want finer-grained control over which sensors keep their history. You can come back to the bulk action later by selecting \"Show ignored repairs\" in the overflow menu on the top right of Settings \u2192 Repairs, then reopening this repair.\n\nTo review the individual sensor repairs before deciding, simply close this window \u2014 the bulk repair stays available as-is.\n\nNote: this issue is marked critical only so it sorts above the per-entity recorder repairs. It is not urgent.",
             "menu_options": {
               "clear": "Clear orphaned statistics",
               "ignore": "Ignore"
@@ -8874,6 +8900,23 @@
         }
       },
       "title": "Orphaned long-term statistics ({count} sensors)"
+    },
+    "terms_not_accepted": {
+      "fix_flow": {
+        "abort": {
+          "entry_removed": "De ConnectLife-configuratie bestaat niet meer."
+        },
+        "error": {
+          "still_not_accepted": "ConnectLife weigert de aanmelding nog steeds. Controleer of de nieuwe algemene voorwaarden in de app zijn geaccepteerd en probeer het opnieuw."
+        },
+        "step": {
+          "confirm": {
+            "description": "ConnectLife weigert de aanmelding voor \"{title}\" totdat de bijgewerkte algemene voorwaarden zijn geaccepteerd. Je wachtwoord opnieuw invoeren helpt niet.\n\n1. Open de ConnectLife-app en zet de taal van de app op **Engels**.\n2. Sluit de app geforceerd af (niet alleen naar de achtergrond) en open hem opnieuw.\n3. Accepteer de nieuwe algemene voorwaarden wanneer daarom wordt gevraagd.\n4. Kies **Verzenden** om het nu opnieuw te proberen. Anders probeert de integratie het elke 15 minuten opnieuw.\n\nDaarna kun je de taal van de app weer terugzetten. De taalwijziging is nodig omdat de app de vraag kan overslaan als de voorwaarden nog niet in jouw taal zijn vertaald. [Meer informatie]({url})",
+            "title": "Bijgewerkte algemene voorwaarden van ConnectLife accepteren"
+          }
+        }
+      },
+      "title": "Bijgewerkte algemene voorwaarden van ConnectLife accepteren"
     },
     "unavailable_device": {
       "fix_flow": {

@@ -85,7 +85,10 @@ class AirDuctStatisticsSource(StatisticsSource):
 
     async def fetch(self, api, appliance):
         return await api.get_air_duct_energy(
-            appliance.puid, appliance.device_type_code, appliance.device_feature_code
+            appliance.puid,
+            appliance.device_type_code,
+            appliance.device_feature_code,
+            date=dt_util.now(),
         )
 
 
@@ -117,7 +120,10 @@ class ConsumptionStatisticsSource(StatisticsSource):
 
     async def fetch(self, api, appliance):
         return await api.get_energy_consumption_curve(
-            appliance.puid, appliance.device_type_code, appliance.device_feature_code
+            appliance.puid,
+            appliance.device_type_code,
+            appliance.device_feature_code,
+            date=dt_util.now(),
         )
 
 

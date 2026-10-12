@@ -54,6 +54,10 @@
             "$ref": "#/$defs/Preset"
           },
           "description": "List of presets"
+        },
+        "precision": {
+          "enum": [0.1, 0.5, 1],
+          "description": "Display precision of current and target temperature. Defaults to 1, or 0.1 if the target temperature step is below 1."
         }
       }
     },
@@ -252,6 +256,12 @@
         },
         "min_value": {
           "$ref": "#/$defs/IntegerOrTemperature"
+        },
+        "step": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Target temperature step. Supported for target_temperature. Defaults to 1. If precision is not set, a step below 1 also shows temperatures with one decimal.",
+          "examples": [0.5]
         },
         "options": {
           "type": ["object", "null"],
