@@ -1,6 +1,6 @@
 import async_timeout
 import logging
-from collections.abc import Mapping
+from collections.abc import Iterable, Mapping
 from datetime import timedelta
 
 from connectlife.api import (
@@ -44,6 +44,9 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
         # toggling a per-device option — starts fresh and prunes entities that
         # are no longer created, such as the offline-state binary sensor.
         self.entities: dict[str, Platform] = {}
+        # Device IDs from the first poll. Entities are only created at setup, so a
+        # device that shows up later needs a reload of the config entry.
+        self._setup_device_ids: set[str] | None = None
         super().__init__(
             hass,
             _LOGGER,
@@ -98,7 +101,32 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
                 )
             else:
                 raise UpdateFailed(format_retry_message(err)) from err
-        return {a.device_id: a for a in self.api.appliances}
+        data = {a.device_id: a for a in self.api.appliances}
+        if self._setup_device_ids is None:
+            self._setup_device_ids = set(data)
+        elif data.keys() != self.data.keys():
+            # Setup creates the repair issues; after that, update them when the device list changes.
+            self._update_unavailable_device_issues(data.keys())
+            new_device_ids = data.keys() - self._setup_device_ids
+            # A device that is back after being deleted in Home Assistant (e.g. from its
+            # repair) has no entities either.
+            deleted_device_ids = (data.keys() - self.data.keys() - new_device_ids) - self._registered_device_ids()
+            if reload_device_ids := new_device_ids | deleted_device_ids:
+                _LOGGER.info("New ConnectLife devices %s, reloading", ", ".join(sorted(reload_device_ids)))
+                # Only reload once; the reload creates a new coordinator.
+                self._setup_device_ids |= new_device_ids
+                self.hass.config_entries.async_schedule_reload(self.config_entry.entry_id)
+        return data
+
+    def _registered_device_ids(self) -> set[str]:
+        """Return the IDs of the devices registered for this config entry."""
+        device_reg = dr.async_get(self.hass)
+        return {
+            device_id
+            for device in dr.async_entries_for_config_entry(device_reg, self.config_entry.entry_id)
+            for (domain, device_id) in device.identifiers
+            if domain == DOMAIN
+        }
 
     async def async_update_device(self, device_id: str, command: Mapping[str, int | float | str], properties: Mapping[str, int | float | str]):
         """Updates the device, and sets the properties in local copy and notify to avoid refetching."""
@@ -138,10 +166,19 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
                         )
                         entity_reg.async_remove(entity.entity_id)
 
+        self._update_unavailable_device_issues(self.data.keys())
+
+    def _update_unavailable_device_issues(self, device_ids: Iterable[str]) -> None:
+        """Create a repair issue for each registered device missing from the device list.
+
+        Clears the issue again for devices that are back.
+        """
+        device_ids = set(device_ids)
+        device_reg = dr.async_get(self.hass)
         for device in dr.async_entries_for_config_entry(device_reg, self.config_entry.entry_id):
             for (domain, device_id) in device.identifiers:
                 if domain == DOMAIN:
-                    if device_id not in self.data:
+                    if device_id not in device_ids:
                         _LOGGER.warning("Unavailable device: %s", device.name)
                         ir.async_create_issue(
                             self.hass,

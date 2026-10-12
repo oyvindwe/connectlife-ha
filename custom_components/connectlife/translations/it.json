@@ -8,14 +8,14 @@
       "cannot_connect": "Impossibile connettersi",
       "invalid_auth": "Autenticazione non valida",
       "terms_not_accepted": "ConnectLife richiede di accettare i Termini e Condizioni aggiornati. Imposta la lingua dell'app ConnectLife su inglese, forza la chiusura dell'app, riaprila, accetta i nuovi termini e riprova.",
-      "test_server_invalid": "Invalid test server URL",
+      "test_server_invalid": "URL del server di prova non valido",
       "test_server_required": "La modalit\u00e0 di sviluppo richiede l'URL del server di prova",
       "unknown": "Errore imprevisto"
     },
     "step": {
       "development": {
         "data": {
-          "test_server_url": "Test server URL"
+          "test_server_url": "URL del server di prova"
         },
         "data_description": {
           "test_server_url": "URL del server di prova con cui autenticarsi anzich\u00e9 con l'API ConnectLife."
@@ -2885,7 +2885,7 @@
         }
       },
       "t_fan_speed": {
-        "name": "Fan speed",
+        "name": "Velocit\u00e0 ventola",
         "state": {
           "auto": "Auto",
           "high": "High",
@@ -8531,7 +8531,7 @@
         "name": "ID programma Zibian"
       },
       "zone_number": {
-        "name": "Number of zones"
+        "name": "Numero di zone"
       }
     },
     "switch": {
