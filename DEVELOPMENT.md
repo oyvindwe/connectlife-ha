@@ -101,7 +101,7 @@ HACS can't install pull request branches, so a pull request has to be installed 
    copy of the old folder to roll back.
 3. Restart Home Assistant.
 
-When reporting back, attach diagnostics for the device (device page → ⋮ → **Download diagnostics**) if something
+When reporting back, attach diagnostics for the device (device page → Device info → **Download diagnostics**) if something
 doesn't work.
 
 To go back, restore the old folder, or reinstall the latest release in HACS, and restart Home Assistant.

@@ -491,6 +491,9 @@
       "alramemptywatertank": {
         "name": "Empty water tank"
       },
+      "anti_legionella_s": {
+        "name": "Sterilization"
+      },
       "auto_boost": {
         "name": "Auto boost"
       },
@@ -544,6 +547,12 @@
       },
       "control_failure_status": {
         "name": "Control failure status"
+      },
+      "defrost_dhw_s": {
+        "name": "DHW defrost"
+      },
+      "defrost_spaceheat_s": {
+        "name": "Space heating defrost"
       },
       "delay_start": {
         "name": "Delay start"
@@ -1159,6 +1168,9 @@
       },
       "interior_light_control_available": {
         "name": "Interior light control available"
+      },
+      "iseleheatingturnon": {
+        "name": "Electric heater active"
       },
       "light": {
         "name": "Light"
@@ -2172,6 +2184,12 @@
       "t_fanspeedcv": {
         "name": "Variable fan speed"
       },
+      "tdhws": {
+        "name": "DHW setpoint"
+      },
+      "ts_c1_water": {
+        "name": "Outlet temperature setpoint"
+      },
       "variation_max_temperature": {
         "name": "Variation max temperature"
       },
@@ -2603,6 +2621,7 @@
           "bleaching": "Bleaching",
           "clean": "Clean",
           "color": "Color",
+          "crystal_glass": "Crystal glass",
           "curtains": "Curtains",
           "dark_clothes": "Dark clothes",
           "down_feathers": "Down feathers",
@@ -2620,6 +2639,7 @@
           "kids_wear": "Kids wear",
           "kitchen_towels": "Kitchen towels",
           "lingerie": "Lingerie",
+          "lower_half": "Lower half",
           "mix_synthetic": "Mix/Synthetic",
           "new_clothes": "New clothes",
           "night": "Night",
@@ -2629,8 +2649,10 @@
           "pet_hair_removal": "Pet hair removal",
           "pets": "Pets",
           "pillow": "Pillow",
+          "plastic": "Plastic",
           "plush_toys": "Plush toys",
           "power_39": "Power 39",
+          "preheated": "Preheated",
           "quick_pro": "Quick pro",
           "rinse_and_hold": "Rinse and hold",
           "rinsing_softening": "Rinsing & Softening",
@@ -2645,6 +2667,8 @@
           "swimwear": "Swimwear",
           "tights_stockings": "Tights/Stockings",
           "time_program": "Time program",
+          "universal": "Universal",
+          "upper_half": "Upper half",
           "waterproof": "Waterproof",
           "white_cotton": "White Cotton",
           "wool_manual": "Wool & Manual"
@@ -2662,10 +2686,13 @@
         "name": "Mode",
         "state": {
           "fast": "Fast",
+          "green": "Green",
+          "intensive": "Intensive",
           "night": "Night",
           "normal": "Normal",
           "not_available": "Not available",
-          "speed": "Speed"
+          "speed": "Speed",
+          "uv": "UV"
         }
       },
       "selected_program_mode2": {
@@ -3208,6 +3235,9 @@
       },
       "alarm_sound_volume": {
         "name": "Alarm sound volume"
+      },
+      "alarmcode": {
+        "name": "Alarm code"
       },
       "almost_finished_notification_setting": {
         "name": "Almost finished notification setting"
@@ -4055,6 +4085,12 @@
       "ecomode": {
         "name": "Eco mode"
       },
+      "eh1_power": {
+        "name": "Electric heater stage 1"
+      },
+      "eh2_power": {
+        "name": "Electric heater stage 2"
+      },
       "electric_current": {
         "name": "Electric current"
       },
@@ -4588,6 +4624,15 @@
       },
       "filterclean_washflag": {
         "name": "Filter clean wash flag"
+      },
+      "fixeddid16": {
+        "name": "DHW temperature"
+      },
+      "fixeddid18": {
+        "name": "Outlet temperature"
+      },
+      "fixeddid30": {
+        "name": "DHW maximum temperature"
       },
       "flexiblespintime_flag": {
         "name": "Flexible spin time flag"
@@ -7954,6 +7999,9 @@
       "support_preheat_state": {
         "name": "Support preheat state"
       },
+      "swj_ta": {
+        "name": "Outdoor temperature"
+      },
       "synchro_start_level": {
         "name": "Synchro start level"
       },
@@ -8543,6 +8591,9 @@
       }
     },
     "switch": {
+      "a2w_sw_on": {
+        "name": "Heat pump"
+      },
       "activemodelightstatus": {
         "name": "Active mode light"
       },
@@ -8621,6 +8672,9 @@
       "buzzer_setting": {
         "name": "Buzzer"
       },
+      "c1_sw_on": {
+        "name": "Space heating"
+      },
       "child_lock": {
         "name": "Child lock"
       },
@@ -8651,6 +8705,12 @@
       "color_sensor_setting_status": {
         "name": "Color sensor"
       },
+      "controldid18": {
+        "name": "Night mode"
+      },
+      "controldid19": {
+        "name": "Silent mode"
+      },
       "crisp_function_status": {
         "name": "Crisp function status"
       },
@@ -8659,6 +8719,9 @@
       },
       "demo_mode_status": {
         "name": "Demo mode"
+      },
+      "dhw_sw_on": {
+        "name": "Domestic hot water"
       },
       "display_standby": {
         "name": "Display standby"
@@ -8919,6 +8982,9 @@
     }
   },
   "exceptions": {
+    "command_rejected": {
+      "message": "The device doesn't accept this command in its current state"
+    },
     "terms_not_accepted": {
       "message": "Updated ConnectLife Terms & Conditions must be accepted in the ConnectLife app"
     }

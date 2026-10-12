@@ -12,7 +12,7 @@
       "cannot_connect": "Impossibile connettersi",
       "invalid_auth": "Autenticazione non valida",
       "terms_not_accepted": "ConnectLife richiede di accettare i Termini e Condizioni aggiornati. Imposta la lingua dell'app ConnectLife su inglese, forza la chiusura dell'app, riaprila, accetta i nuovi termini e riprova.",
-      "test_server_invalid": "Invalid test server URL",
+      "test_server_invalid": "URL del server di prova non valido",
       "test_server_required": "La modalit\u00e0 di sviluppo richiede l'URL del server di prova",
       "unknown": "Errore imprevisto"
     },
@@ -22,7 +22,7 @@
     "step": {
       "development": {
         "data": {
-          "test_server_url": "Test server URL"
+          "test_server_url": "URL del server di prova"
         },
         "data_description": {
           "test_server_url": "URL del server di prova con cui autenticarsi anzich\u00e9 con l'API ConnectLife."
@@ -2592,6 +2592,7 @@
           "bleaching": "Candeggio",
           "clean": "Pulizia",
           "color": "Colorati",
+          "crystal_glass": "Cristallo",
           "curtains": "Tende",
           "dark_clothes": "Capi scuri",
           "down_feathers": "Piumini d'oca",
@@ -2609,6 +2610,7 @@
           "kids_wear": "Abbigliamento bambini",
           "kitchen_towels": "Strofinacci",
           "lingerie": "Lingerie",
+          "lower_half": "Met\u00e0 inferiore",
           "mix_synthetic": "Misti/Sintetici",
           "new_clothes": "Capi nuovi",
           "night": "Notte",
@@ -2618,8 +2620,10 @@
           "pet_hair_removal": "Rimozione peli di animali",
           "pets": "Animali domestici",
           "pillow": "Cuscino",
+          "plastic": "Plastica",
           "plush_toys": "Peluche",
           "power_39": "Power 39",
+          "preheated": "Preriscaldato",
           "quick_pro": "Quick pro",
           "rinse_and_hold": "Risciacquo e attesa",
           "rinsing_softening": "Risciacquo e ammorbidente",
@@ -2634,6 +2638,8 @@
           "swimwear": "Costumi da bagno",
           "tights_stockings": "Collant/Calze",
           "time_program": "Programma a tempo",
+          "universal": "Universale",
+          "upper_half": "Met\u00e0 superiore",
           "waterproof": "Impermeabile",
           "white_cotton": "Cotone bianco",
           "wool_manual": "Lana e Manuale"
@@ -2651,10 +2657,13 @@
         "name": "Modalit\u00e0",
         "state": {
           "fast": "Rapido",
+          "green": "Verde",
+          "intensive": "Intensivo",
           "night": "Notte",
           "normal": "Normale",
           "not_available": "Non disponibile",
-          "speed": "Velocit\u00e0"
+          "speed": "Velocit\u00e0",
+          "uv": "UV"
         }
       },
       "selected_program_mode2": {
@@ -2909,7 +2918,7 @@
         }
       },
       "t_fan_speed": {
-        "name": "Fan speed",
+        "name": "Velocit\u00e0 ventola",
         "state": {
           "auto": "Auto",
           "high": "High",
@@ -8528,7 +8537,7 @@
         "name": "ID programma Zibian"
       },
       "zone_number": {
-        "name": "Number of zones"
+        "name": "Numero di zone"
       }
     },
     "switch": {
@@ -8908,6 +8917,9 @@
     }
   },
   "exceptions": {
+    "command_rejected": {
+      "message": "Il dispositivo non accetta questo comando nello stato attuale"
+    },
     "terms_not_accepted": {
       "message": "I Termini e Condizioni aggiornati di ConnectLife devono essere accettati nell'app ConnectLife"
     }

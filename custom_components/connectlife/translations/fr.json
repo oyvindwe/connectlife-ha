@@ -2553,12 +2553,14 @@
           "eco": "\u00c9co",
           "eco_40_60": "Eco 40-60",
           "full_load_49": "Charge compl\u00e8te 49",
+          "full_load_59": "Charge compl\u00e8te 59",
           "hand_wash": "Lavage \u00e0 la main",
           "ion_refresh": "Rafra\u00eechissement ionique",
           "jeans": "Jeans",
           "mix": "Mixte",
           "pets": "Animaux",
           "power_30": "Power 30",
+          "power_39": "Power 39",
           "power_49": "Power 49",
           "quick_15": "Rapide 15",
           "quick_30": "Rapide 30",
@@ -2590,6 +2592,7 @@
           "bleaching": "Blanchiment",
           "clean": "Nettoyage",
           "color": "Couleurs",
+          "crystal_glass": "Cristal",
           "curtains": "Rideaux",
           "dark_clothes": "V\u00eatements fonc\u00e9s",
           "down_feathers": "Duvet",
@@ -2607,6 +2610,7 @@
           "kids_wear": "V\u00eatements enfants",
           "kitchen_towels": "Torchons",
           "lingerie": "Lingerie",
+          "lower_half": "Moiti\u00e9 inf\u00e9rieure",
           "mix_synthetic": "Mixte/Synth\u00e9tique",
           "new_clothes": "V\u00eatements neufs",
           "night": "Nuit",
@@ -2616,8 +2620,10 @@
           "pet_hair_removal": "\u00c9limination des poils d'animaux",
           "pets": "Animaux",
           "pillow": "Oreiller",
+          "plastic": "Plastique",
           "plush_toys": "Peluches",
           "power_39": "Power 39",
+          "preheated": "Pr\u00e9chauff\u00e9",
           "quick_pro": "Quick pro",
           "rinse_and_hold": "Rin\u00e7age et maintien",
           "rinsing_softening": "Rin\u00e7age et assouplissement",
@@ -2632,6 +2638,8 @@
           "swimwear": "Maillots de bain",
           "tights_stockings": "Collants/Bas",
           "time_program": "Programme minut\u00e9",
+          "universal": "Universel",
+          "upper_half": "Moiti\u00e9 sup\u00e9rieure",
           "waterproof": "Imperm\u00e9able",
           "white_cotton": "Coton blanc",
           "wool_manual": "Laine et manuel"
@@ -2649,10 +2657,13 @@
         "name": "Mode",
         "state": {
           "fast": "Rapide",
+          "green": "Vert",
+          "intensive": "Intensif",
           "night": "Nuit",
           "normal": "Normal",
           "not_available": "Non disponible",
-          "speed": "Vitesse"
+          "speed": "Vitesse",
+          "uv": "UV"
         }
       },
       "selected_program_mode2": {
@@ -8906,6 +8917,9 @@
     }
   },
   "exceptions": {
+    "command_rejected": {
+      "message": "L'appareil n'accepte pas cette commande dans son \u00e9tat actuel"
+    },
     "terms_not_accepted": {
       "message": "Les Conditions g\u00e9n\u00e9rales ConnectLife mises \u00e0 jour doivent \u00eatre accept\u00e9es dans l'application ConnectLife"
     }

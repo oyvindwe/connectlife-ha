@@ -2592,6 +2592,7 @@
           "bleaching": "B\u011blen\u00ed",
           "clean": "\u010ci\u0161t\u011bn\u00ed",
           "color": "Barevn\u00e9",
+          "crystal_glass": "K\u0159i\u0161\u0165\u00e1lov\u00e9 sklo",
           "curtains": "Z\u00e1clony",
           "dark_clothes": "Tmav\u00e9 pr\u00e1dlo",
           "down_feathers": "Pe\u0159\u00ed",
@@ -2609,6 +2610,7 @@
           "kids_wear": "D\u011btsk\u00e9 oble\u010den\u00ed",
           "kitchen_towels": "Kuchy\u0148sk\u00e9 ut\u011brky",
           "lingerie": "Spodn\u00ed pr\u00e1dlo",
+          "lower_half": "Spodn\u00ed ko\u0161",
           "mix_synthetic": "Sm\u011bs/syntetika",
           "new_clothes": "Nov\u00e9 oble\u010den\u00ed",
           "night": "No\u010dn\u00ed",
@@ -2618,8 +2620,10 @@
           "pet_hair_removal": "Odstra\u0148ov\u00e1n\u00ed chlup\u016f",
           "pets": "Dom\u00e1c\u00ed mazl\u00ed\u010dci",
           "pillow": "Pol\u0161t\u00e1\u0159",
+          "plastic": "Plasty",
           "plush_toys": "Ply\u0161ov\u00e9 hra\u010dky",
           "power_39": "V\u00fdkon 39",
+          "preheated": "P\u0159edeh\u0159\u00e1t\u00ed",
           "quick_pro": "Rychl\u00fd pro",
           "rinse_and_hold": "M\u00e1ch\u00e1n\u00ed a podr\u017een\u00ed",
           "rinsing_softening": "M\u00e1ch\u00e1n\u00ed a zm\u011bk\u010den\u00ed",
@@ -2634,6 +2638,8 @@
           "swimwear": "Plavky",
           "tights_stockings": "Pun\u010dochy",
           "time_program": "\u010casov\u00fd program",
+          "universal": "Univerz\u00e1ln\u00ed",
+          "upper_half": "Horn\u00ed ko\u0161",
           "waterproof": "Nepromokav\u00e9",
           "white_cotton": "B\u00edl\u00e1 bavlna",
           "wool_manual": "Vlna a manu\u00e1ln\u00ed"
@@ -2651,10 +2657,13 @@
         "name": "Re\u017eim",
         "state": {
           "fast": "Rychl\u00fd",
+          "green": "Zelen\u00fd",
+          "intensive": "Intenzivn\u00ed",
           "night": "No\u010dn\u00ed",
           "normal": "Norm\u00e1ln\u00ed",
           "not_available": "Nen\u00ed k dispozici",
-          "speed": "Rychlostn\u00ed"
+          "speed": "Rychlostn\u00ed",
+          "uv": "UV"
         }
       },
       "selected_program_mode2": {
@@ -8908,6 +8917,9 @@
     }
   },
   "exceptions": {
+    "command_rejected": {
+      "message": "Za\u0159\u00edzen\u00ed v aktu\u00e1ln\u00edm stavu tento p\u0159\u00edkaz nep\u0159ij\u00edm\u00e1"
+    },
     "terms_not_accepted": {
       "message": "Aktualizovan\u00e9 obchodn\u00ed podm\u00ednky ConnectLife je nutn\u00e9 p\u0159ijmout v aplikaci ConnectLife"
     }

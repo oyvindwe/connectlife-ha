@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import logging
 from types import SimpleNamespace
 from unittest.mock import AsyncMock, patch
 
@@ -14,9 +15,10 @@ from homeassistant.helpers import config_entry_oauth2_flow, device_registry as d
 from homeassistant.setup import async_setup_component
 from pytest_homeassistant_custom_component.common import MockConfigEntry
 
-from connectlife.api import LifeConnectError
+from connectlife.api import LifeConnectAuthError, LifeConnectError
 from connectlife.oauth import OAUTH2_AUTHORIZE_URL, OAUTH2_TOKEN_URL, OAuthConnectLifeApi
 
+from custom_components.connectlife.config_flow import CannotConnect, InvalidAuth, validate_input
 from custom_components.connectlife.const import (
     AUTH_TYPE_OAUTH,
     AUTH_TYPE_PASSWORD,
@@ -306,3 +308,27 @@ async def test_reconfigure_switches_to_password(hass: HomeAssistant) -> None:
     assert entry.data["username"] == "user@example.com"
     assert "token" not in entry.data
     assert "auth_implementation" not in entry.data
+
+
+DATA = {"username": "user@example.com", "password": "secret"}
+
+
+@pytest.mark.parametrize(
+    ("error", "expected"),
+    [
+        (LifeConnectAuthError("Failed to login. Code: 403042 Message: 'Invalid LoginID'"), InvalidAuth),
+        (LifeConnectError("Unexpected response from getJWT: status=503"), CannotConnect),
+    ],
+)
+async def test_validate_input_logs_login_failure(caplog, error, expected) -> None:
+    api = AsyncMock()
+    api.login.side_effect = error
+    with (
+        patch("custom_components.connectlife.config_flow.create_api", return_value=api),
+        caplog.at_level(logging.WARNING),
+        pytest.raises(expected),
+    ):
+        await validate_input(DATA)
+
+    assert f"ConnectLife login failed: {error}" in caplog.text
+    assert "secret" not in caplog.text

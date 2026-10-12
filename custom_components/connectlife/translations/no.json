@@ -481,7 +481,7 @@
         "name": "T\u00f8m vanntank"
       },
       "auto_boost": {
-        "name": "Auto boost"
+        "name": "Automatisk boost"
       },
       "auto_bridge": {
         "name": "Auto bro"
@@ -2553,12 +2553,14 @@
           "eco": "Eco",
           "eco_40_60": "Eco 40 60",
           "full_load_49": "Full kapasitet 49",
+          "full_load_59": "Full kapasitet 59",
           "hand_wash": "H\u00e5ndvask",
           "ion_refresh": "Ione-oppfriskning",
           "jeans": "Jeans",
           "mix": "Mix",
           "pets": "Kj\u00e6ledyr",
           "power_30": "Power 30",
+          "power_39": "Power 39",
           "power_49": "Power 49",
           "quick_15": "Hurtig 15",
           "quick_30": "Hurtig 30",
@@ -2590,6 +2592,7 @@
           "bleaching": "Bleking",
           "clean": "Rens",
           "color": "Farge",
+          "crystal_glass": "Krystallglass",
           "curtains": "Gardiner",
           "dark_clothes": "M\u00f8rke kl\u00e6r",
           "down_feathers": "Dun",
@@ -2607,6 +2610,7 @@
           "kids_wear": "Barnekl\u00e6r",
           "kitchen_towels": "Kj\u00f8kkenh\u00e5ndkl\u00e6r",
           "lingerie": "Undert\u00f8y",
+          "lower_half": "Nedre del",
           "mix_synthetic": "Mix/Syntet",
           "new_clothes": "Nye kl\u00e6r",
           "night": "Natt",
@@ -2616,8 +2620,10 @@
           "pet_hair_removal": "Fjerning av kj\u00e6ledyrh\u00e5r",
           "pets": "Kj\u00e6ledyr",
           "pillow": "Pute",
+          "plastic": "Plast",
           "plush_toys": "Kosedyr",
           "power_39": "Power 39",
+          "preheated": "Forvarmet",
           "quick_pro": "Hurtig pro",
           "rinse_and_hold": "Skyll og hold",
           "rinsing_softening": "Skylling og myking",
@@ -2632,6 +2638,8 @@
           "swimwear": "Badet\u00f8y",
           "tights_stockings": "Str\u00f8mpebukser",
           "time_program": "Tidsprogram",
+          "universal": "Universal",
+          "upper_half": "\u00d8vre del",
           "waterproof": "Vanntett",
           "white_cotton": "Hvit bomull",
           "wool_manual": "Ull og manuell"
@@ -2649,10 +2657,13 @@
         "name": "Modus",
         "state": {
           "fast": "Hurtig",
+          "green": "Gr\u00f8nn",
+          "intensive": "Intensiv",
           "night": "Natt",
           "normal": "Normal",
           "not_available": "Ikke tilgjengelig",
-          "speed": "Hastighet"
+          "speed": "Hastighet",
+          "uv": "UV"
         }
       },
       "selected_program_mode2": {
@@ -2796,9 +2807,9 @@
         "state": {
           "autobake": "AutoBake",
           "extrabake": "ExtraBake",
-          "extrabake_cleaning": "ExtraBake - Cleaning",
-          "extrabake_fastpreheat": "ExtraBake - Fast preheat",
-          "extrabake_warming": "ExtraBake - Warming",
+          "extrabake_cleaning": "ExtraBake - Rengj\u00f8ring",
+          "extrabake_fastpreheat": "ExtraBake - Hurtigforvarming",
+          "extrabake_warming": "ExtraBake - Oppvarming",
           "meatprobebake": "MeatProbeBake",
           "probake": "ProBake",
           "recipe": "Oppskrift",
@@ -8906,6 +8917,9 @@
     }
   },
   "exceptions": {
+    "command_rejected": {
+      "message": "Enheten godtar ikke denne kommandoen i n\u00e5v\u00e6rende tilstand"
+    },
     "terms_not_accepted": {
       "message": "Oppdaterte vilk\u00e5r for ConnectLife m\u00e5 godtas i ConnectLife-appen"
     }

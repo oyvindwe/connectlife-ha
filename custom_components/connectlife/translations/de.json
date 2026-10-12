@@ -2553,12 +2553,14 @@
           "eco": "Eco",
           "eco_40_60": "Eco 40-60",
           "full_load_49": "Volle Ladung 49",
+          "full_load_59": "Volle Ladung 59",
           "hand_wash": "Handw\u00e4sche",
           "ion_refresh": "Ionen-Auffrischung",
           "jeans": "Jeans",
           "mix": "Mischgewebe",
           "pets": "Haustiere",
           "power_30": "Power 30",
+          "power_39": "Power 39'",
           "power_49": "Power 49'",
           "quick_15": "Schnell 15'",
           "quick_30": "Schnell 30'",
@@ -2590,6 +2592,7 @@
           "bleaching": "Bleichen",
           "clean": "Reinigung",
           "color": "Farbig",
+          "crystal_glass": "Kristallglas",
           "curtains": "Gardinen",
           "dark_clothes": "Dunkle W\u00e4sche",
           "down_feathers": "Daunenfedern",
@@ -2607,6 +2610,7 @@
           "kids_wear": "Kinderkleidung",
           "kitchen_towels": "K\u00fcchent\u00fccher",
           "lingerie": "Unterw\u00e4sche",
+          "lower_half": "Untere H\u00e4lfte",
           "mix_synthetic": "Mix/Synthetik",
           "new_clothes": "Neue Kleidung",
           "night": "Nacht",
@@ -2616,8 +2620,10 @@
           "pet_hair_removal": "Tierhaarentfernung",
           "pets": "Haustiere",
           "pillow": "Kopfkissen",
+          "plastic": "Kunststoff",
           "plush_toys": "Pl\u00fcschtiere",
           "power_39": "Power 39",
+          "preheated": "Vorgew\u00e4rmt",
           "quick_pro": "Quick pro",
           "rinse_and_hold": "Sp\u00fclen & Warten",
           "rinsing_softening": "Sp\u00fclen & Weichsp\u00fclen",
@@ -2632,6 +2638,8 @@
           "swimwear": "Badebekleidung",
           "tights_stockings": "Strumpfhosen",
           "time_program": "Zeitprogramm",
+          "universal": "Universal",
+          "upper_half": "Obere H\u00e4lfte",
           "waterproof": "Wasserdicht",
           "white_cotton": "Wei\u00dfe Baumwolle",
           "wool_manual": "Wolle & Manuell"
@@ -2649,10 +2657,13 @@
         "name": "Programm Modus",
         "state": {
           "fast": "Schnell",
+          "green": "Gr\u00fcn",
+          "intensive": "Intensiv",
           "night": "Nacht",
           "normal": "Normal",
           "not_available": "Nicht verf\u00fcgbar",
-          "speed": "Schnell"
+          "speed": "Schnell",
+          "uv": "UV"
         }
       },
       "selected_program_mode2": {
@@ -8906,6 +8917,9 @@
     }
   },
   "exceptions": {
+    "command_rejected": {
+      "message": "Das Ger\u00e4t nimmt diesen Befehl im aktuellen Zustand nicht an"
+    },
     "terms_not_accepted": {
       "message": "Aktualisierte ConnectLife-Nutzungsbedingungen m\u00fcssen in der ConnectLife-App akzeptiert werden"
     }

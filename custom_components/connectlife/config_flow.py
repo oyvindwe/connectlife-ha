@@ -111,11 +111,13 @@ async def validate_input(data: dict[str, Any]) -> dict[str, Any]:
     try:
         await api.login()
         appliances = await api.get_appliances()
-    except LifeConnectTermsNotAcceptedError as ex:
-        raise TermsNotAccepted from ex
-    except LifeConnectAuthError as ex:
-        raise InvalidAuth from ex
     except LifeConnectError as ex:
+        # The form only shows a generic error, so log the reason.
+        _LOGGER.warning("ConnectLife login failed: %s", ex)
+        if isinstance(ex, LifeConnectTermsNotAcceptedError):
+            raise TermsNotAccepted from ex
+        if isinstance(ex, LifeConnectAuthError):
+            raise InvalidAuth from ex
         raise CannotConnect from ex
 
     # Return info that you want to store in the config entry.

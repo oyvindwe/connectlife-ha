@@ -63,12 +63,14 @@
 |                          | Air conditioner          | 009              | 129                         |
 |                          | Air conditioner          | 009              | 199                         |
 | HACZ01+HAAZ01            | Air conditioner          | 009              | 19901                       |
+| HI29672SV                | Induction hob            | 010              | 000                         |
 | HI21472SV                | Induction hob            | 010              | hob-pind                    |
 |                          | Hood                     | 012              | 000                         |
 |                          | Hood                     | 012              | hood-aa-lightfeedback       |
 |                          | Hood                     | 012              | hood-aa-tactile             |
 |                          | Oven                     | 013              | 000                         |
 | Bio21                    | Oven                     | 013              | oven-bio21-iconledplus      |
+| Hi8                      | Oven                     | 013              | oven-hi8                    |
 | W-DW50/60-22             | Dishwasher               | 015              | 000                         |
 | Gorenje GS673B60W        | Dishwasher               | 015              | dishwasher-50.2f            |
 |                          | Dishwasher               | 015              | dishwasher-50.2t            |
@@ -95,6 +97,7 @@
 | WFQA1014                 | Washing machine          | 025              | 1wj105080v0w                |
 |                          | Washing machine          | 025              | 1wj105091v0t                |
 | WFSE1114-LVW002          | Washing machine          | 025              | 1wj105219v0w                |
+| WFSE1114-LVW002          | Washing machine          | 025              | 1wj105064v0w                |
 | WF3S1114-LVW004          | Washing machine          | 025              | 1wj105246v0w                |
 |                          | Washing machine          | 025              | 1wj105418v0t                |
 | WD5I1045BWQ              | Washing machine          | 025              | 1wj105552v0w                |
@@ -102,12 +105,15 @@
 | WDSE1214-EVAJMW          | Washing machine          | 025              | 1wj120261v0w                |
 | WDSE1214-EVAJMW          | Washing machine          | 025              | 1wj120274v0w                |
 | WFSE1214-MVW002          | Washing machine          | 025              | 1wj120389v0b                |
+|                          | Washing machine          | 025              | 1wj120401v0f                |
 |                          | Washing machine          | 025              | 1wj120407v0w                |
 | WF3S1243BB3              | Washing machine          | 025              | 1wj120459v0f                |
 | WF3S1214-MVT002-001      | Washing machine          | 025              | 1wj120495v0t                |
 |                          | Washing machine          | 025              | 1wj120514v0t                |
 | WF5i1214-RVW002          | Washing machine          | 025              | 1wj120560v0w                |
 | Gorenje WDG38014-PVW004  | Washing machine          | 025              | vwj080553v0w                |
+| BC-303WP2BWQ1            | Refrigerator             | 026              | 1b0303z0009j                |
+| BD/BC-310WP2BWF1         | Refrigerator             | 026              | 1b0310z0010j                |
 |                          | Refrigerator             | 026              | 1b0330z0079j                |
 | HRCD483TBW               | Refrigerator             | 026              | 1b0470z0012j                |
 | RQ5P470SEIE              | Refrigerator             | 026              | 1b0470z0026j                |
@@ -133,5 +139,8 @@
 | DHSE10                   | Tumble dryer             | 030              | 1wk100130v0f                |
 | DH5S102BB                | Tumble dryer             | 030              | 1wk100266v0f                |
 | DHSE80-BEW001            | Tumble dryer             | 030              | 1wk080027e0w                |
+|                          | Tumble dryer             | 030              | 1wk100163v0w                |
+|                          | Tumble dryer             | 030              | 1wk100248v0f                |
 | DPNA83W                  | Tumble dryer             | 032              | 000                         |
 | Hisense RW3N122GSLF      | Wine cooler              | 034              | 1j0122z0035j                |
+| Hisense Hi-Therma II     | Heat pump                | 044              | 000                         |
