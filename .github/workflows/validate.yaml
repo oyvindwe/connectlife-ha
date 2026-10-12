@@ -29,6 +29,14 @@ jobs:
             exit 1
           fi
 
+  translations:
+    # Only reports missing translations (warnings and job summary); never fails,
+    # as contributors can't be expected to translate.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - run: python3 -m scripts.check_translations --github
+
   test:
     runs-on: ubuntu-latest
     steps:
