@@ -127,7 +127,7 @@ It is possible to guard against `set_value` by setting `read_only: true` in the 
 
 The integration polls the ConnectLife API every 60 seconds to avoid overloading the API and risking being banned. When a command is sent from Home Assistant, only the properties included in that command are updated immediately in the HA UI. Any side effects on other properties (e.g., turning on an AC may also change fan mode or current temperature) will not appear until the next poll. Changes made outside Home Assistant (e.g., from the ConnectLife mobile app or physical device controls) may also take up to 60 seconds to appear.
 
-## Issues
+## Troubleshooting
 
 When reporting an issue with a device, please attach its diagnostics: go to the device page and click **Download
 diagnostics** in the Device info card. The file contains the device type and feature code, the raw status values,
@@ -156,7 +156,7 @@ discussion in https://github.com/bilan/connectlife-api-connector/issues/25
 You have to create a ConnectLife account with username/password. Login with SSO using 3rd party identity providers
 (Google, Apple, etc.) is not supported (See https://github.com/oyvindwe/connectlife-ha/issues/99).
 
-There are two workarounds is you have logged in using a 3rd party identity provider: 
+There are two workarounds if you have logged in using a 3rd party identity provider:
 
 #### Set password on current user account
 
@@ -169,6 +169,14 @@ There are two workarounds is you have logged in using a 3rd party identity provi
 2. Still in the mobile app, switch accounts back to your SSO account, go to the device/s you have already setup in your SSO account, select them 1 by 1, scrolling to the bottom to get to the "Share Device" option and adding your new email to the shared accounts list.
 3. In the connectlife-ha integration within Home Assistant, use the email and password from the new account you set up, which will now have the device(s) shared with it.
 4. Forget your new email version of your account exists, you don't have to accept device shares or use that account for any other reason.
+
+### Password works in the app but not in Home Assistant
+
+If login fails with "Invalid authentication" and the log shows `Code: 403042 … invalid loginID or password`, although
+the same password works in the ConnectLife app, the password may be longer than the app accepts or contain special
+characters it doesn't allow. The app may silently cut off or change such a password, so Home Assistant sends a
+different one. Set a new, shorter password in the app (e.g. at most 20 characters, with letters, digits and common
+special characters) and use that.
 
 ### Updated Terms & Conditions
 
