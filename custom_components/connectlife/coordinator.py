@@ -44,6 +44,9 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
         # toggling a per-device option — starts fresh and prunes entities that
         # are no longer created, such as the offline-state binary sensor.
         self.entities: dict[str, Platform] = {}
+        # Device IDs from the first poll. Entities are only created at setup, so a
+        # device that shows up later needs a reload of the config entry.
+        self._setup_device_ids: set[str] | None = None
         super().__init__(
             hass,
             _LOGGER,
@@ -98,7 +101,15 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
                 )
             else:
                 raise UpdateFailed(format_retry_message(err)) from err
-        return {a.device_id: a for a in self.api.appliances}
+        data = {a.device_id: a for a in self.api.appliances}
+        if self._setup_device_ids is None:
+            self._setup_device_ids = set(data)
+        elif new_device_ids := data.keys() - self._setup_device_ids:
+            _LOGGER.info("New ConnectLife devices %s, reloading", ", ".join(sorted(new_device_ids)))
+            # Only reload once; the reload creates a new coordinator.
+            self._setup_device_ids |= new_device_ids
+            self.hass.config_entries.async_schedule_reload(self.config_entry.entry_id)
+        return data
 
     async def async_update_device(self, device_id: str, command: Mapping[str, int | float | str], properties: Mapping[str, int | float | str]):
         """Updates the device, and sets the properties in local copy and notify to avoid refetching."""
