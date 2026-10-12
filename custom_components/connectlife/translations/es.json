@@ -15,7 +15,7 @@
     "step": {
       "development": {
         "data": {
-          "test_server_url": "Test server URL"
+          "test_server_url": "URL del servidor de prueba"
         },
         "data_description": {
           "test_server_url": "URL del servidor de prueba contra el que autenticarse en lugar de la API de ConnectLife."
@@ -100,7 +100,7 @@
         "name": "Programa autom\u00e1tico finalizado"
       },
       "alarm_auto_program_notification": {
-        "name": "Auto program notification"
+        "name": "Notificaci\u00f3n de programa autom\u00e1tico"
       },
       "alarm_autodose_level10": {
         "name": "Autodosificador nivel 10"
@@ -1246,7 +1246,7 @@
         "name": "Fallo en el cabezal del sensor de temperatura"
       },
       "refr_var_room_sens_failure": {
-        "name": "Refrigerator var room sens failure"
+        "name": "Fallo del sensor de la zona variable del frigor\u00edfico"
       },
       "refrigerator_defrosting_failure": {
         "name": "Fallo en el descongelamiento del refrigerador"
@@ -1270,7 +1270,7 @@
         "name": "Fallo en el cabezal del sensor de temperatura"
       },
       "refrigerator_var_room_sens_failure": {
-        "name": "Refrigerator var room sens failure"
+        "name": "Fallo del sensor de la zona variable del frigor\u00edfico"
       },
       "remote_control_mode_monitoring": {
         "name": "Monitoreo del modo de control remoto"
@@ -2520,12 +2520,14 @@
           "eco": "Eco",
           "eco_40_60": "Eco 40-60",
           "full_load_49": "Carga completa 49",
+          "full_load_59": "Carga completa 59",
           "hand_wash": "Lavado a mano",
           "ion_refresh": "Refresco por iones",
           "jeans": "Jeans",
           "mix": "Mix",
           "pets": "Mascotas",
           "power_30": "Potencia 30",
+          "power_39": "Power 39",
           "power_49": "Power 49",
           "quick_15": "Rapido 15\u00b4",
           "quick_30": "Rapido 30\u00b4",
@@ -7984,7 +7986,7 @@
         "name": "Ajuste de notificaci\u00f3n de temperatura alcanzada"
       },
       "temperature_room_judge": {
-        "name": "Temperature room judge"
+        "name": "Evaluaci\u00f3n de temperatura del compartimento"
       },
       "temperature_unit_status": {
         "name": "Estado de la unidad de temperatura"

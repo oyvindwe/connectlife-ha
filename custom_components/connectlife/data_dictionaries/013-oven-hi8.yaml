@@ -1,0 +1,5 @@
+# Hisense Hi8 oven.
+# ConnectLife returns no energy statistics for this model (#667).
+statistics:
+  source: energy_consumption_curve
+  daily_energy_kwh: false

@@ -1,8 +1,7 @@
 ---
-name: release-notes
+name: draft-release-notes
 description: Generate release notes for a new version by analyzing commits since the last git tag. Groups changes into categorized sections with contributor attribution.
 argument-hint: [version]
-disable-model-invocation: true
 allowed-tools: Bash(git *) Bash(gh *)
 ---
 
