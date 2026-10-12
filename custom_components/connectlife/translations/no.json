@@ -4634,6 +4634,9 @@
       "getcurrentcityinfoflag": {
         "name": "Hent flagg for byinfo"
       },
+      "global_timer_remaining_time_in_minutes": {
+        "name": "Gjenst\u00e5ende tid for hovedtidsur"
+      },
       "gratin_total_allowed_time_in_minutes": {
         "name": "Total tillatt gratineringstid"
       },
@@ -4816,6 +4819,24 @@
       },
       "idmachine": {
         "name": "Maskin-ID"
+      },
+      "igbttemperatureg01": {
+        "name": "Temperatur i effektmodul G01"
+      },
+      "igbttemperatureg02": {
+        "name": "Temperatur i effektmodul G02"
+      },
+      "igbttemperatureg11": {
+        "name": "Temperatur i effektmodul G11"
+      },
+      "igbttemperatureg12": {
+        "name": "Temperatur i effektmodul G12"
+      },
+      "igbttemperatureg21": {
+        "name": "Temperatur i effektmodul G21"
+      },
+      "igbttemperatureg22": {
+        "name": "Temperatur i effektmodul G22"
       },
       "inactivity_timeout": {
         "name": "Tidsavbrudd ved inaktivitet"
@@ -8109,6 +8130,12 @@
       },
       "totalprogramscycles": {
         "name": "Totalt antall programsykluser"
+      },
+      "totaltimeofcookinginminutes": {
+        "name": "Total koketid"
+      },
+      "uitemperature": {
+        "name": "Temperatur i kontrollpanelet"
       },
       "unfreeze_run_status": {
         "name": "Kj\u00f8restatus for opptining"

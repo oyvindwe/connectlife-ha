@@ -141,3 +141,4 @@
 |                          | Tumble dryer             | 030              | 1wk100163v0w                |
 | DPNA83W                  | Tumble dryer             | 032              | 000                         |
 | Hisense RW3N122GSLF      | Wine cooler              | 034              | 1j0122z0035j                |
+|                          | Induction hob            | 036              | hob-midi-gmi24-better       |

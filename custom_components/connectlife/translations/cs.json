@@ -4636,6 +4636,9 @@
       "getcurrentcityinfoflag": {
         "name": "P\u0159\u00edznak z\u00edsk\u00e1n\u00ed informac\u00ed o aktu\u00e1ln\u00edm m\u011bst\u011b"
       },
+      "global_timer_remaining_time_in_minutes": {
+        "name": "Zb\u00fdvaj\u00edc\u00ed \u010das hlavn\u00edho \u010dasova\u010de"
+      },
       "gratin_total_allowed_time_in_minutes": {
         "name": "Celkov\u00fd povolen\u00fd \u010das gratinov\u00e1n\u00ed"
       },
@@ -4818,6 +4821,24 @@
       },
       "idmachine": {
         "name": "ID stroje"
+      },
+      "igbttemperatureg01": {
+        "name": "Teplota v\u00fdkonov\u00e9ho modulu G01"
+      },
+      "igbttemperatureg02": {
+        "name": "Teplota v\u00fdkonov\u00e9ho modulu G02"
+      },
+      "igbttemperatureg11": {
+        "name": "Teplota v\u00fdkonov\u00e9ho modulu G11"
+      },
+      "igbttemperatureg12": {
+        "name": "Teplota v\u00fdkonov\u00e9ho modulu G12"
+      },
+      "igbttemperatureg21": {
+        "name": "Teplota v\u00fdkonov\u00e9ho modulu G21"
+      },
+      "igbttemperatureg22": {
+        "name": "Teplota v\u00fdkonov\u00e9ho modulu G22"
       },
       "inactivity_timeout": {
         "name": "Timeout ne\u010dinnosti"
@@ -8111,6 +8132,12 @@
       },
       "totalprogramscycles": {
         "name": "Celkov\u00fd po\u010det cykl\u016f programu"
+      },
+      "totaltimeofcookinginminutes": {
+        "name": "Celkov\u00e1 doba va\u0159en\u00ed"
+      },
+      "uitemperature": {
+        "name": "Teplota ovl\u00e1dac\u00edho panelu"
       },
       "unfreeze_run_status": {
         "name": "Stav b\u011bhu odmrazov\u00e1n\u00ed"

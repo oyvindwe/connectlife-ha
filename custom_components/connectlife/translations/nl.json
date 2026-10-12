@@ -4634,6 +4634,9 @@
       "getcurrentcityinfoflag": {
         "name": "Indicator huidige stadsinfo ophalen"
       },
+      "global_timer_remaining_time_in_minutes": {
+        "name": "Resterende tijd hoofdtimer"
+      },
       "gratin_total_allowed_time_in_minutes": {
         "name": "Maximale gratineertijd"
       },
@@ -4816,6 +4819,24 @@
       },
       "idmachine": {
         "name": "Machine-ID"
+      },
+      "igbttemperatureg01": {
+        "name": "Temperatuur vermogensmodule G01"
+      },
+      "igbttemperatureg02": {
+        "name": "Temperatuur vermogensmodule G02"
+      },
+      "igbttemperatureg11": {
+        "name": "Temperatuur vermogensmodule G11"
+      },
+      "igbttemperatureg12": {
+        "name": "Temperatuur vermogensmodule G12"
+      },
+      "igbttemperatureg21": {
+        "name": "Temperatuur vermogensmodule G21"
+      },
+      "igbttemperatureg22": {
+        "name": "Temperatuur vermogensmodule G22"
       },
       "inactivity_timeout": {
         "name": "Time-out inactiviteit"
@@ -8109,6 +8130,12 @@
       },
       "totalprogramscycles": {
         "name": "Totaal aantal programmacycli"
+      },
+      "totaltimeofcookinginminutes": {
+        "name": "Totale kooktijd"
+      },
+      "uitemperature": {
+        "name": "Temperatuur bedieningspaneel"
       },
       "unfreeze_run_status": {
         "name": "Unfreeze run status"
