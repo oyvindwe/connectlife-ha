@@ -8882,6 +8882,9 @@
     }
   },
   "exceptions": {
+    "command_rejected": {
+      "message": "El dispositivo no acepta este comando en su estado actual"
+    },
     "terms_not_accepted": {
       "message": "Hay que aceptar los T\u00e9rminos y Condiciones actualizados de ConnectLife en la app ConnectLife"
     }

@@ -8884,6 +8884,9 @@
     }
   },
   "exceptions": {
+    "command_rejected": {
+      "message": "Za\u0159\u00edzen\u00ed v aktu\u00e1ln\u00edm stavu tento p\u0159\u00edkaz nep\u0159ij\u00edm\u00e1"
+    },
     "terms_not_accepted": {
       "message": "Aktualizovan\u00e9 obchodn\u00ed podm\u00ednky ConnectLife je nutn\u00e9 p\u0159ijmout v aplikaci ConnectLife"
     }

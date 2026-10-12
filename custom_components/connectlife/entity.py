@@ -25,6 +25,12 @@ from .coordinator import ConnectLifeCoordinator
 
 _LOGGER = logging.getLogger(__name__)
 DISABLE_BEEP_FAILURE_THRESHOLD = 3
+# The cloud rejects commands the device doesn't accept in its current state with this error.
+COMMAND_REJECTED_DESCRIPTION = "Command status mutex"
+
+
+def _is_command_rejected(err: LifeConnectError) -> bool:
+    return COMMAND_REJECTED_DESCRIPTION in str(err)
 
 
 class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
@@ -138,6 +144,9 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
                         f"unsupported_beep.{self.device_id}",
                     )
                 except LifeConnectError as err:
+                    if _is_command_rejected(err):
+                        # Not caused by t_beep, so don't retry or count it as a beep failure.
+                        raise
                     _LOGGER.debug(
                         "Command failed with t_beep for %s (%s), retrying without",
                         self.nickname,
@@ -169,6 +178,10 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
             else:
                 await self.coordinator.async_update_device(self.device_id, command, properties)
         except LifeConnectError as api_error:
+            if _is_command_rejected(api_error):
+                raise ServiceValidationError(
+                    translation_domain=DOMAIN, translation_key="command_rejected"
+                ) from api_error
             raise ServiceValidationError(str(api_error)) from api_error
 
     def to_translation_key(self, property_name: str) -> str:

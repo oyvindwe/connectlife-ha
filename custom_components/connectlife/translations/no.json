@@ -8882,6 +8882,9 @@
     }
   },
   "exceptions": {
+    "command_rejected": {
+      "message": "Enheten godtar ikke denne kommandoen i n\u00e5v\u00e6rende tilstand"
+    },
     "terms_not_accepted": {
       "message": "Oppdaterte vilk\u00e5r for ConnectLife m\u00e5 godtas i ConnectLife-appen"
     }
