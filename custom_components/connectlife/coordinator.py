@@ -74,7 +74,7 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
         except LifeConnectAuthError as err:
             # Raising ConfigEntryAuthFailed will cancel future updates
             # and start a config flow with SOURCE_REAUTH (async_step_reauth)
-            raise ConfigEntryAuthFailed from err
+            raise ConfigEntryAuthFailed(str(err)) from err
         except TimeoutError as err:
             self.error_count += 1
             i = MAX_RETRIES - self.error_count
