@@ -91,15 +91,18 @@ class _FakeApi:
         self._air_duct_exc = air_duct_exc
         self.air_duct_calls = 0
         self.consumption_calls = 0
+        self.dates = []
 
-    async def get_air_duct_energy(self, *_args):
+    async def get_air_duct_energy(self, *_args, date=None):
         self.air_duct_calls += 1
+        self.dates.append(date)
         if self._air_duct_exc is not None:
             raise self._air_duct_exc
         return self._air_duct
 
-    async def get_energy_consumption_curve(self, *_args):
+    async def get_energy_consumption_curve(self, *_args, date=None):
         self.consumption_calls += 1
+        self.dates.append(date)
         return self._consumption
 
 
@@ -168,6 +171,9 @@ async def test_coordinator_stores_results_per_device():
     assert result["ac"] is not None and result["ac"].electric_total == 2.0
     assert api.air_duct_calls == 1
     assert api.consumption_calls == 1
+    # Both fetch the period around HA's "today", not the host's.
+    assert len(api.dates) == 2
+    assert all(d is not None and d.tzinfo is not None for d in api.dates)
 
 
 async def test_coordinator_auth_error_breaks_remaining_devices():

@@ -81,12 +81,6 @@ properties:
       12: "1200"
       14: "1400"
 
-- property: Energy_estimate
-  # Estimates power consumption (0%-100%) for the selected program and options in 10 percentage steps, based on selected program options.
-  sensor:
-    device_class: power_factor
-#    unit: '%'
-
 - property: ExtraRinseNum
   select:
     options:

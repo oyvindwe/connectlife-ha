@@ -76,12 +76,11 @@ properties:
       unit: min
       read_only: true
   - property: Energy_estimate
+    # Relative energy estimate for the selected program and options, 0-100 % in 10 % steps.
     icon: mdi:lightning-bolt
     sensor:
-      device_class: energy
-      unit: kWh
+      unit: '%'
       read_only: true
-      state_class: total
   - property: Electricit_consumption
     icon: mdi:lightning-bolt
     sensor:

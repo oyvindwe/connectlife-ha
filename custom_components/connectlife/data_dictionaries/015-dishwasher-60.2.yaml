@@ -5,6 +5,8 @@
 #   Eco / Intensive: normal, speed, night
 #   Quick pro: normal, speed
 #   Time program: no mode; set duration via Time_program_set_duration_status instead
+#   Odor control: runs the fan at intervals for 72 hours; shown in the program
+#   list when Odor_control_setting is on
 #
 # Modes "none", "green", "intensive", "uv", "heat_boost", "storage" were
 # never offered by this device — excluded from the select.
@@ -20,6 +22,7 @@ properties:
         5: hygiene
         6: rinse_and_hold
         7: self_cleaning
+        8: odor_control
       command:
         name: Selected_program_id
   - property: Selected_program_mode
@@ -47,3 +50,16 @@ properties:
       command:
         name: Time_program_set_duration
         adjust: 1
+  - property: Rinse_aid_setting_status
+    select:
+      # No tab setting on this model.
+      options:
+        2: "0"
+        3: "1"
+        4: "2"
+        5: "3"
+        6: "4"
+        7: "5"
+  - property: Display_Brightness_setting_status
+    # Brightness is not adjustable on this model.
+    disable: true

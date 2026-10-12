@@ -105,16 +105,16 @@ opts in (see the `statistics` block in the
 The statistics are fetched from a separate cloud endpoint, polled every 10 minutes, and — unlike
 the regular status entities — they stay available even while the appliance is offline.
 
-## Service to set property values on sensors
+## Action to set property values on sensors
 
-Entity service `connectlife.set_value` can be used to set values. Use with caution, as there is **no** validation
+Entity action `connectlife.set_value` can be used to set values. Use with caution, as there is **no** validation
 if property is writeable or that the value is legal to set.
 
-1. The service can be accessed from [Developer tools - Services](https://my.home-assistant.io/redirect/developer_services/).
-2. Search for service name "ConnectLife: Set value"
+1. The action can be accessed from [Settings → Tools → Actions](https://my.home-assistant.io/redirect/developer_services/).
+2. Search for action name "ConnectLife: Set value"
 3. Select entity as target.
 4. Enter value
-5. Call service.
+5. Perform action.
 
 It is possible to guard against `set_value` by setting `read_only: true` in the data dictionary on the sensor, e.g.
 ```yaml
@@ -129,9 +129,11 @@ The integration polls the ConnectLife API every 60 seconds to avoid overloading 
 
 ## Issues
 
-When reporting an issue with a device, please attach its diagnostics: go to the device page, open the ⋮ menu, and
-select **Download diagnostics**. The file contains the device type and feature code, the raw status values, and which
-properties are not mapped. Device IDs, names and rooms are left out.
+When reporting an issue with a device, please attach its diagnostics: go to the device page and click **Download
+diagnostics** in the Device info card. The file contains the device type and feature code, the raw status values,
+which properties are not mapped, what ConnectLife reports about the device (the settings it supports, its firmware
+versions, its programs and their options, the faults it can report, its property list and today's hourly energy use),
+and the last energy statistics. Device IDs, names and rooms are left out.
 
 ### Climate entities
 

@@ -86,9 +86,9 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
             translation_domain=DOMAIN, translation_key="terms_not_accepted"
         ) from ex
     except LifeConnectAuthError as ex:
-        raise ConfigEntryAuthFailed from ex
+        raise ConfigEntryAuthFailed(str(ex)) from ex
     except LifeConnectError as ex:
-        raise ConfigEntryNotReady from ex
+        raise ConfigEntryNotReady(str(ex)) from ex
     terms_accepted(hass, entry)
     coordinator = ConnectLifeCoordinator(hass, api)
     await coordinator.async_config_entry_first_refresh()

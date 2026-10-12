@@ -7,9 +7,17 @@ from jschon import create_catalog, JSON, JSONSchema
 import yaml
 
 from homeassistant.components.climate import HVACAction
+from homeassistant.components.number import NumberDeviceClass
+from homeassistant.components.number.const import DEVICE_CLASS_UNITS as NUMBER_DEVICE_CLASS_UNITS
+from homeassistant.components.sensor import SensorDeviceClass
+from homeassistant.components.sensor.const import (
+    DEVICE_CLASS_STATE_CLASSES,
+    DEVICE_CLASS_UNITS as SENSOR_DEVICE_CLASS_UNITS,
+)
 
 from custom_components.connectlife.climate import HVAC_MODE_ALIASES, HVAC_MODE_VALUES
 from custom_components.connectlife.dictionaries import _merge_buttons, _merge_property
+from custom_components.connectlife.utils import normalize_temperature_unit
 
 PLATFORMS = ('binary_sensor', 'climate', 'humidifier', 'number', 'select',
              'sensor', 'switch', 'water_heater')
@@ -107,10 +115,61 @@ def _check_device_platform_pairing(filename, merged_entry):
     )
 
 
+DEVICE_CLASS_PLATFORMS = (
+    ('sensor', SensorDeviceClass, SENSOR_DEVICE_CLASS_UNITS),
+    ('number', NumberDeviceClass, NUMBER_DEVICE_CLASS_UNITS),
+)
+
+
+def _check_device_class_units(filename, merged_entry):
+    """A sensor or number ``device_class`` must exist, and its ``unit`` (and a
+    sensor's ``state_class``) must be one Home Assistant accepts for it. HA only
+    logs a warning at runtime for a mismatch, so catch it here. The tables come
+    from the installed Home Assistant, which is the minimum supported version, so
+    a unit added in a later release fails until the minimum is raised.
+
+    ``property.<name>`` units are resolved at runtime and are not checked."""
+    errors = []
+    for platform, device_class_enum, device_class_units in DEVICE_CLASS_PLATFORMS:
+        block = merged_entry.get(platform)
+        if not isinstance(block, dict) or not block.get('device_class'):
+            continue
+        device_class = block['device_class']
+        try:
+            device_class = device_class_enum(device_class)
+        except ValueError:
+            errors.append(f"unknown {platform} device_class '{device_class}'")
+            continue
+        unit = block.get('unit')
+        allowed_units = device_class_units.get(device_class)
+        if allowed_units is not None and not (isinstance(unit, str) and unit.startswith('property.')):
+            normalized = normalize_temperature_unit(unit) if unit is not None else None
+            if normalized not in allowed_units:
+                allowed = sorted(str(u) for u in allowed_units if u is not None)
+                errors.append(
+                    f"unit '{unit}' is not valid for {platform} device_class "
+                    f"'{device_class}'. Allowed: {allowed}"
+                )
+        state_class = block.get('state_class')
+        if platform == 'sensor' and state_class and device_class in DEVICE_CLASS_STATE_CLASSES:
+            allowed_state_classes = {str(s) for s in DEVICE_CLASS_STATE_CLASSES[device_class]}
+            if state_class not in allowed_state_classes:
+                errors.append(
+                    f"state_class '{state_class}' is not valid for device_class "
+                    f"'{device_class}'. Allowed: {sorted(allowed_state_classes)}"
+                )
+    if not errors:
+        return None
+    return "\n".join(
+        f"{filename}: property '{merged_entry['property']}': {error}" for error in errors
+    )
+
+
 CHECKS = (
     _check_entity_category_config_on_sensor,
     _check_hvac_option_values,
     _check_device_platform_pairing,
+    _check_device_class_units,
 )
 
 WRITABLE_PLATFORMS = ('climate', 'number', 'select', 'switch')

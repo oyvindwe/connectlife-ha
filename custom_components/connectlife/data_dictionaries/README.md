@@ -137,8 +137,17 @@ ConnectLife properties can be mapped to any of these entity types:
   This is a convention, not a guarantee: a `t_*` control is occasionally better surfaced read-only (e.g. `t_beep`
   as a status `binary_sensor`), and a device may advertise `t_*` controls it doesn't physically have — `disable`
   those in the feature override (see [Property inheritance in feature overrides](#property-inheritance-in-feature-overrides)).
-- Download diagnostics for the device (device page → ⋮ → **Download diagnostics**) to see all its properties,
-  their current values, and which ones are not mapped yet.
+- Download diagnostics for the device (device page → Device info → **Download diagnostics**) to see all its properties,
+  their current values, and which ones are not mapped yet. It also includes what ConnectLife reports about the
+  device, which helps narrow down a mapping for a feature code:
+  - `static_data`: the settings and values the device supports (e.g. `Rinse_aid_setting_tab: 0` means no
+    `tab` option), and its firmware versions.
+  - `system_data`: for dishwashers, the programs with their position, duration and which options each allows.
+  - `self_check`: the faults the device can report, with a description.
+  - `property_list`: the properties of the feature code, with value lists and ranges (empty for many devices).
+
+  Without Home Assistant, get the same data with `python -m connectlife.dump --query static` (or `system`,
+  `self-check`, `property-list`); see the [connectlife](https://pypi.org/project/connectlife/) README.
 - Generate a skeleton file using the [connectlife](https://pypi.org/project/connectlife/) package:
 
   ```bash
@@ -599,8 +608,16 @@ integration polls a separate ConnectLife cloud statistics endpoint (every 10 min
 exposes the daily totals. Because the data is cloud-side, these sensors stay available even
 when the appliance is offline.
 
-Set this block on the **base** device-type file (e.g. `015.yaml`), not on feature overrides.
-Omit the whole block for device types that have no statistics endpoint.
+Usually this block goes in the **base** device-type file (e.g. `015.yaml`). Omit the whole block for device types that
+have no statistics endpoint. A feature override with its own `statistics` block replaces the base's as a whole, so use one
+to turn the sensors off for a model that ConnectLife returns no statistics for:
+
+```yaml
+# 026-{feature}.yaml (override)
+statistics:
+  source: energy_consumption_curve
+  daily_energy_kwh: false
+```
 
 | Item                      | Type                                            | Description                                                                                                                                            |
 |---------------------------|-------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
