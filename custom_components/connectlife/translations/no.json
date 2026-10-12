@@ -447,6 +447,9 @@
       "alramemptywatertank": {
         "name": "T\u00f8m vanntank"
       },
+      "anti_legionella_s": {
+        "name": "Sterilisering"
+      },
       "auto_boost": {
         "name": "Automatisk boost"
       },
@@ -500,6 +503,12 @@
       },
       "control_failure_status": {
         "name": "Feilstatus for styring"
+      },
+      "defrost_dhw_s": {
+        "name": "Avriming varmtvann"
+      },
+      "defrost_spaceheat_s": {
+        "name": "Avriming romoppvarming"
       },
       "delay_start": {
         "name": "Utsatt start"
@@ -1115,6 +1124,9 @@
       },
       "interior_light_control_available": {
         "name": "Styring av interi\u00f8rlys tilgjengelig"
+      },
+      "iseleheatingturnon": {
+        "name": "Elektrisk varmeelement aktivt"
       },
       "light": {
         "name": "Lys"
@@ -2127,6 +2139,12 @@
       },
       "t_fanspeedcv": {
         "name": "Variabel viftehastighet"
+      },
+      "tdhws": {
+        "name": "Settpunkt varmtvann"
+      },
+      "ts_c1_water": {
+        "name": "Settpunkt turtemperatur"
       },
       "variation_max_temperature": {
         "name": "Maks variasjonstemperatur"
@@ -3174,6 +3192,9 @@
       "alarm_sound_volume": {
         "name": "Volum for alarmlyd"
       },
+      "alarmcode": {
+        "name": "Alarmkode"
+      },
       "almost_finished_notification_setting": {
         "name": "Varselinnstilling for nesten ferdig"
       },
@@ -4020,6 +4041,12 @@
       "ecomode": {
         "name": "Eco-modus"
       },
+      "eh1_power": {
+        "name": "Elektrisk varmeelement trinn 1"
+      },
+      "eh2_power": {
+        "name": "Elektrisk varmeelement trinn 2"
+      },
       "electric_current": {
         "name": "Elektrisk str\u00f8m"
       },
@@ -4553,6 +4580,15 @@
       },
       "filterclean_washflag": {
         "name": "Flagg for filterrens \u2013 vask"
+      },
+      "fixeddid16": {
+        "name": "Varmtvannstemperatur"
+      },
+      "fixeddid18": {
+        "name": "Turtemperatur"
+      },
+      "fixeddid30": {
+        "name": "Maks. varmtvannstemperatur"
       },
       "flexiblespintime_flag": {
         "name": "Flagg for fleksibel sentrifugetid"
@@ -7919,6 +7955,9 @@
       "support_preheat_state": {
         "name": "Tilstand for forvarmingsst\u00f8tte"
       },
+      "swj_ta": {
+        "name": "Utetemperatur"
+      },
       "synchro_start_level": {
         "name": "Synkroniseringsstartniv\u00e5"
       },
@@ -8508,6 +8547,9 @@
       }
     },
     "switch": {
+      "a2w_sw_on": {
+        "name": "Varmepumpe"
+      },
       "activemodelightstatus": {
         "name": "Lys i aktiv modus"
       },
@@ -8586,6 +8628,9 @@
       "buzzer_setting": {
         "name": "Summer"
       },
+      "c1_sw_on": {
+        "name": "Romoppvarming"
+      },
       "child_lock": {
         "name": "Barnesikring"
       },
@@ -8616,6 +8661,12 @@
       "color_sensor_setting_status": {
         "name": "Fargesensor"
       },
+      "controldid18": {
+        "name": "Nattmodus"
+      },
+      "controldid19": {
+        "name": "Stillemodus"
+      },
       "crisp_function_status": {
         "name": "Status for spr\u00f8-funksjon"
       },
@@ -8624,6 +8675,9 @@
       },
       "demo_mode_status": {
         "name": "Demomodus"
+      },
+      "dhw_sw_on": {
+        "name": "Varmtvann"
       },
       "display_standby": {
         "name": "Skjermstandby"

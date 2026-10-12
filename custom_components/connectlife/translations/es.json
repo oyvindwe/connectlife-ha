@@ -447,6 +447,9 @@
       "alramemptywatertank": {
         "name": "Vaciar el dep\u00f3sito de agua"
       },
+      "anti_legionella_s": {
+        "name": "Esterilizaci\u00f3n"
+      },
       "auto_boost": {
         "name": "Refuerzo autom\u00e1tico"
       },
@@ -500,6 +503,12 @@
       },
       "control_failure_status": {
         "name": "Estado de fallo del control"
+      },
+      "defrost_dhw_s": {
+        "name": "Desescarche ACS"
+      },
+      "defrost_spaceheat_s": {
+        "name": "Desescarche calefacci\u00f3n"
       },
       "delay_start": {
         "name": "Estado de inicio retrasado"
@@ -1115,6 +1124,9 @@
       },
       "interior_light_control_available": {
         "name": "Control de luz interior disponible"
+      },
+      "iseleheatingturnon": {
+        "name": "Resistencia el\u00e9ctrica activa"
       },
       "light": {
         "name": "Luz"
@@ -2127,6 +2139,12 @@
       },
       "t_fanspeedcv": {
         "name": "Velocidad de ventilador variable"
+      },
+      "tdhws": {
+        "name": "Consigna ACS"
+      },
+      "ts_c1_water": {
+        "name": "Consigna de temperatura de impulsi\u00f3n"
       },
       "variation_max_temperature": {
         "name": "Variaci\u00f3n temperatura m\u00e1xima"
@@ -3174,6 +3192,9 @@
       "alarm_sound_volume": {
         "name": "Volumen del sonido de alarma"
       },
+      "alarmcode": {
+        "name": "C\u00f3digo de alarma"
+      },
       "almost_finished_notification_setting": {
         "name": "Ajuste de notificaci\u00f3n de casi finalizado"
       },
@@ -4020,6 +4041,12 @@
       "ecomode": {
         "name": "Modo eco"
       },
+      "eh1_power": {
+        "name": "Resistencia el\u00e9ctrica etapa 1"
+      },
+      "eh2_power": {
+        "name": "Resistencia el\u00e9ctrica etapa 2"
+      },
       "electric_current": {
         "name": "Corriente el\u00e9ctrica"
       },
@@ -4553,6 +4580,15 @@
       },
       "filterclean_washflag": {
         "name": "Indicador de lavado para limpieza del filtro"
+      },
+      "fixeddid16": {
+        "name": "Temperatura ACS"
+      },
+      "fixeddid18": {
+        "name": "Temperatura de impulsi\u00f3n"
+      },
+      "fixeddid30": {
+        "name": "Temperatura m\u00e1xima ACS"
       },
       "flexiblespintime_flag": {
         "name": "Indicador de tiempo de centrifugado flexible"
@@ -7919,6 +7955,9 @@
       "support_preheat_state": {
         "name": "Estado de compatibilidad con precalentamiento"
       },
+      "swj_ta": {
+        "name": "Temperatura exterior"
+      },
       "synchro_start_level": {
         "name": "Nivel de inicio sincronizado"
       },
@@ -8508,6 +8547,9 @@
       }
     },
     "switch": {
+      "a2w_sw_on": {
+        "name": "Bomba de calor"
+      },
       "activemodelightstatus": {
         "name": "Luz de modo activo"
       },
@@ -8586,6 +8628,9 @@
       "buzzer_setting": {
         "name": "Zumbador"
       },
+      "c1_sw_on": {
+        "name": "Calefacci\u00f3n"
+      },
       "child_lock": {
         "name": "Bloqueo para ni\u00f1os"
       },
@@ -8616,6 +8661,12 @@
       "color_sensor_setting_status": {
         "name": "Sensor de color"
       },
+      "controldid18": {
+        "name": "Modo nocturno"
+      },
+      "controldid19": {
+        "name": "Modo silencioso"
+      },
       "crisp_function_status": {
         "name": "Estado de la funci\u00f3n Crisp"
       },
@@ -8624,6 +8675,9 @@
       },
       "demo_mode_status": {
         "name": "Modo demostraci\u00f3n"
+      },
+      "dhw_sw_on": {
+        "name": "Agua caliente sanitaria"
       },
       "display_standby": {
         "name": "Pantalla en espera"
