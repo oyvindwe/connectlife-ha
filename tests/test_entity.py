@@ -10,6 +10,7 @@ from connectlife.api import LifeConnectError
 from homeassistant.exceptions import ServiceValidationError
 
 from custom_components.connectlife.climate import ConnectLifeClimate
+from custom_components.connectlife.switch import ConnectLifeSwitch
 
 
 async def test_disable_beep_does_not_change_preset() -> None:
@@ -69,3 +70,20 @@ async def test_command_rejected_is_not_a_beep_failure() -> None:
     assert commands == [{"t_super": 1, "t_beep": 0}]
     assert climate._disable_beep_failure_count == 0
     assert climate._disable_beep
+
+
+def test_update_for_device_missing_from_data_writes_unavailable_state() -> None:
+    switch = ConnectLifeSwitch.__new__(ConnectLifeSwitch)
+    switch.device_id = "gone"
+    switch.status = "t_super"
+    switch._expose_offline_state = False
+    switch._unavailable_status = "t_super"
+    switch._unavailable_value = None
+    switch._available_when = {}
+    switch.coordinator = SimpleNamespace(last_update_success=True, data={"other": None})
+
+    with patch.object(ConnectLifeSwitch, "async_write_ha_state") as write:
+        switch._handle_coordinator_update()
+
+    write.assert_called_once()
+    assert not switch.available
