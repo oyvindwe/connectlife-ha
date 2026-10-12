@@ -121,7 +121,10 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
     @callback
     def _handle_coordinator_update(self) -> None:
         """Handle updated data from the coordinator."""
-        self._refresh_state()
+        # A device missing from the latest poll has no values to read, so skip the
+        # update. Writing the state still marks the entity unavailable.
+        if self.device_id in self.coordinator.data:
+            self._refresh_state()
         self.async_write_ha_state()
 
     async def async_update_device(
