@@ -446,6 +446,9 @@
       "alramemptywatertank": {
         "name": "Empty water tank"
       },
+      "anti_legionella_s": {
+        "name": "Sterilization"
+      },
       "auto_boost": {
         "name": "Auto boost"
       },
@@ -499,6 +502,12 @@
       },
       "control_failure_status": {
         "name": "Control failure status"
+      },
+      "defrost_dhw_s": {
+        "name": "DHW defrost"
+      },
+      "defrost_spaceheat_s": {
+        "name": "Space heating defrost"
       },
       "delay_start": {
         "name": "Delay start"
@@ -1048,6 +1057,9 @@
       },
       "interior_light_control_available": {
         "name": "Interior light control available"
+      },
+      "iseleheatingturnon": {
+        "name": "Electric heater active"
       },
       "light": {
         "name": "Light"
@@ -2060,6 +2072,12 @@
       "t_fanspeedcv": {
         "name": "Variable fan speed"
       },
+      "tdhws": {
+        "name": "DHW setpoint"
+      },
+      "ts_c1_water": {
+        "name": "Outlet temperature setpoint"
+      },
       "variation_max_temperature": {
         "name": "Variation max temperature"
       },
@@ -3071,6 +3089,9 @@
       "alarm_sound_volume": {
         "name": "Alarm sound volume"
       },
+      "alarmcode": {
+        "name": "Alarm code"
+      },
       "almost_finished_notification_setting": {
         "name": "Almost finished notification setting"
       },
@@ -3911,6 +3932,12 @@
       "ecomode": {
         "name": "Eco mode"
       },
+      "eh1_power": {
+        "name": "Electric heater stage 1"
+      },
+      "eh2_power": {
+        "name": "Electric heater stage 2"
+      },
       "electric_current": {
         "name": "Electric current"
       },
@@ -4510,6 +4537,15 @@
       },
       "filterclean_washflag": {
         "name": "Filter clean wash flag"
+      },
+      "fixeddid16": {
+        "name": "DHW temperature"
+      },
+      "fixeddid18": {
+        "name": "Outlet temperature"
+      },
+      "fixeddid30": {
+        "name": "DHW maximum temperature"
       },
       "flexiblespintime_flag": {
         "name": "Flexible spin time flag"
@@ -7884,6 +7920,9 @@
       "support_preheat_state": {
         "name": "Support preheat state"
       },
+      "swj_ta": {
+        "name": "Outdoor temperature"
+      },
       "synchro_start_level": {
         "name": "Synchro start level"
       },
@@ -8473,6 +8512,9 @@
       }
     },
     "switch": {
+      "a2w_sw_on": {
+        "name": "Heat pump"
+      },
       "activemodelightstatus": {
         "name": "Active mode light"
       },
@@ -8551,6 +8593,9 @@
       "buzzer_setting": {
         "name": "Buzzer"
       },
+      "c1_sw_on": {
+        "name": "Space heating"
+      },
       "child_lock": {
         "name": "Child lock"
       },
@@ -8581,6 +8626,12 @@
       "color_sensor_setting_status": {
         "name": "Color sensor"
       },
+      "controldid18": {
+        "name": "Night mode"
+      },
+      "controldid19": {
+        "name": "Silent mode"
+      },
       "crisp_function_status": {
         "name": "Crisp function status"
       },
@@ -8589,6 +8640,9 @@
       },
       "demo_mode_status": {
         "name": "Demo mode"
+      },
+      "dhw_sw_on": {
+        "name": "Domestic hot water"
       },
       "display_standby": {
         "name": "Display standby"

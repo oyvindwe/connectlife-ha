@@ -58,10 +58,10 @@ properties:
       state_class: measurement
 
   - property: fixedDid30
+    entity_category: diagnostic
     sensor:
       unit: °C
       device_class: temperature
-      entity_category: diagnostic
 
   - property: swj_Ta
     sensor:
@@ -70,9 +70,7 @@ properties:
       state_class: measurement
 
   - property: EH1_Power
-    sensor:
-      optional: true
+    optional: true
 
   - property: EH2_Power
-    sensor:
-      optional: true
+    optional: true
