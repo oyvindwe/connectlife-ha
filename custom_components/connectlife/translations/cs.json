@@ -447,6 +447,9 @@
       "alramemptywatertank": {
         "name": "Pr\u00e1zdn\u00e1 vodn\u00ed n\u00e1dr\u017e"
       },
+      "anti_legionella_s": {
+        "name": "Sterilizace"
+      },
       "auto_boost": {
         "name": "Automatick\u00e9 pos\u00edlen\u00ed"
       },
@@ -500,6 +503,12 @@
       },
       "control_failure_status": {
         "name": "Stav poruchy \u0159\u00edzen\u00ed"
+      },
+      "defrost_dhw_s": {
+        "name": "Odmrazov\u00e1n\u00ed TUV"
+      },
+      "defrost_spaceheat_s": {
+        "name": "Odmrazov\u00e1n\u00ed vyt\u00e1p\u011bn\u00ed"
       },
       "delay_start": {
         "name": "Opo\u017ed\u011bn\u00fd start"
@@ -1115,6 +1124,9 @@
       },
       "interior_light_control_available": {
         "name": "Ovl\u00e1d\u00e1n\u00ed vnit\u0159n\u00edho osv\u011btlen\u00ed dostupn\u00e9"
+      },
+      "iseleheatingturnon": {
+        "name": "Elektrick\u00fd oh\u0159\u00edva\u010d aktivn\u00ed"
       },
       "light": {
         "name": "Sv\u011btlo"
@@ -2127,6 +2139,12 @@
       },
       "t_fanspeedcv": {
         "name": "Rychlost variabiln\u00edho ventil\u00e1toru"
+      },
+      "tdhws": {
+        "name": "Po\u017eadovan\u00e1 teplota TUV"
+      },
+      "ts_c1_water": {
+        "name": "Po\u017eadovan\u00e1 v\u00fdstupn\u00ed teplota"
       },
       "variation_max_temperature": {
         "name": "Maxim\u00e1ln\u00ed teplota variabiln\u00edho prostoru"
@@ -3174,6 +3192,9 @@
       "alarm_sound_volume": {
         "name": "Hlasitost alarmu"
       },
+      "alarmcode": {
+        "name": "K\u00f3d alarmu"
+      },
       "almost_finished_notification_setting": {
         "name": "Nastaven\u00ed ozn\u00e1men\u00ed t\u00e9m\u011b\u0159 hotovo"
       },
@@ -4020,6 +4041,12 @@
       "ecomode": {
         "name": "ECO re\u017eim"
       },
+      "eh1_power": {
+        "name": "Elektrick\u00fd oh\u0159\u00edva\u010d stupe\u0148 1"
+      },
+      "eh2_power": {
+        "name": "Elektrick\u00fd oh\u0159\u00edva\u010d stupe\u0148 2"
+      },
       "electric_current": {
         "name": "Elektrick\u00fd proud"
       },
@@ -4553,6 +4580,15 @@
       },
       "filterclean_washflag": {
         "name": "P\u0159\u00edznak \u010di\u0161t\u011bn\u00ed filtru \u2013 pran\u00ed"
+      },
+      "fixeddid16": {
+        "name": "Teplota TUV"
+      },
+      "fixeddid18": {
+        "name": "V\u00fdstupn\u00ed teplota"
+      },
+      "fixeddid30": {
+        "name": "Maxim\u00e1ln\u00ed teplota TUV"
       },
       "flexiblespintime_flag": {
         "name": "P\u0159\u00edznak flexibiln\u00ed doby odst\u0159ed\u011bn\u00ed"
@@ -7919,6 +7955,9 @@
       "support_preheat_state": {
         "name": "Stav podpory p\u0159edeh\u0159evu"
       },
+      "swj_ta": {
+        "name": "Venkovn\u00ed teplota"
+      },
       "synchro_start_level": {
         "name": "\u00darove\u0148 synchroniza\u010dn\u00edho startu"
       },
@@ -8508,6 +8547,9 @@
       }
     },
     "switch": {
+      "a2w_sw_on": {
+        "name": "Tepeln\u00e9 \u010derpadlo"
+      },
       "activemodelightstatus": {
         "name": "Sv\u011btlo aktivn\u00edho re\u017eimu"
       },
@@ -8586,6 +8628,9 @@
       "buzzer_setting": {
         "name": "Bzu\u010d\u00e1k"
       },
+      "c1_sw_on": {
+        "name": "Vyt\u00e1p\u011bn\u00ed"
+      },
       "child_lock": {
         "name": "D\u011btsk\u00e1 pojistka"
       },
@@ -8616,6 +8661,12 @@
       "color_sensor_setting_status": {
         "name": "Barevn\u00fd senzor"
       },
+      "controldid18": {
+        "name": "No\u010dn\u00ed re\u017eim"
+      },
+      "controldid19": {
+        "name": "Tich\u00fd re\u017eim"
+      },
       "crisp_function_status": {
         "name": "Stav funkce Crisp"
       },
@@ -8624,6 +8675,9 @@
       },
       "demo_mode_status": {
         "name": "Demo re\u017eim"
+      },
+      "dhw_sw_on": {
+        "name": "Tepl\u00e1 u\u017eitkov\u00e1 voda"
       },
       "display_standby": {
         "name": "Pohotovost displeje"

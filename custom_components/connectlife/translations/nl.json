@@ -447,6 +447,9 @@
       "alramemptywatertank": {
         "name": "Waterreservoir leeg"
       },
+      "anti_legionella_s": {
+        "name": "Sterilisatie"
+      },
       "auto_boost": {
         "name": "Automatische boost"
       },
@@ -500,6 +503,12 @@
       },
       "control_failure_status": {
         "name": "Besturing storing"
+      },
+      "defrost_dhw_s": {
+        "name": "Ontdooien tapwater"
+      },
+      "defrost_spaceheat_s": {
+        "name": "Ontdooien ruimteverwarming"
       },
       "delay_start": {
         "name": "Uitgestelde start"
@@ -1115,6 +1124,9 @@
       },
       "interior_light_control_available": {
         "name": "Binnenverlichting bediening beschikbaar"
+      },
+      "iseleheatingturnon": {
+        "name": "Elektrisch verwarmingselement actief"
       },
       "light": {
         "name": "Verlichting"
@@ -2127,6 +2139,12 @@
       },
       "t_fanspeedcv": {
         "name": "Ventilatorsnelheid variabele ruimte"
+      },
+      "tdhws": {
+        "name": "Tapwater-setpoint"
+      },
+      "ts_c1_water": {
+        "name": "Aanvoertemperatuur-setpoint"
       },
       "variation_max_temperature": {
         "name": "Variatie max temperatuur"
@@ -3174,6 +3192,9 @@
       "alarm_sound_volume": {
         "name": "Alarmgeluid volume"
       },
+      "alarmcode": {
+        "name": "Alarmcode"
+      },
       "almost_finished_notification_setting": {
         "name": "Bijna voltooid notificatie"
       },
@@ -4020,6 +4041,12 @@
       "ecomode": {
         "name": "Ecomodus"
       },
+      "eh1_power": {
+        "name": "Elektrisch verwarmingselement trap 1"
+      },
+      "eh2_power": {
+        "name": "Elektrisch verwarmingselement trap 2"
+      },
       "electric_current": {
         "name": "Elektrische stroom"
       },
@@ -4553,6 +4580,15 @@
       },
       "filterclean_washflag": {
         "name": "Vlag filter reinigen wassen"
+      },
+      "fixeddid16": {
+        "name": "Tapwatertemperatuur"
+      },
+      "fixeddid18": {
+        "name": "Aanvoertemperatuur"
+      },
+      "fixeddid30": {
+        "name": "Maximale tapwatertemperatuur"
       },
       "flexiblespintime_flag": {
         "name": "Flexibele centrifugeertijd"
@@ -7919,6 +7955,9 @@
       "support_preheat_state": {
         "name": "Voorverwarmen ondersteund"
       },
+      "swj_ta": {
+        "name": "Buitentemperatuur"
+      },
       "synchro_start_level": {
         "name": "Synchro-startniveau"
       },
@@ -8508,6 +8547,9 @@
       }
     },
     "switch": {
+      "a2w_sw_on": {
+        "name": "Warmtepomp"
+      },
       "activemodelightstatus": {
         "name": "Verlichting actieve modus"
       },
@@ -8586,6 +8628,9 @@
       "buzzer_setting": {
         "name": "Zoemer"
       },
+      "c1_sw_on": {
+        "name": "Ruimteverwarming"
+      },
       "child_lock": {
         "name": "Kinderbeveiliging"
       },
@@ -8616,6 +8661,12 @@
       "color_sensor_setting_status": {
         "name": "Kleursensor"
       },
+      "controldid18": {
+        "name": "Nachtmodus"
+      },
+      "controldid19": {
+        "name": "Stille modus"
+      },
       "crisp_function_status": {
         "name": "Crisp-functie"
       },
@@ -8624,6 +8675,9 @@
       },
       "demo_mode_status": {
         "name": "Demomodus"
+      },
+      "dhw_sw_on": {
+        "name": "Warm tapwater"
       },
       "display_standby": {
         "name": "Display stand-by"

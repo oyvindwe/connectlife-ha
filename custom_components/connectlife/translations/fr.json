@@ -447,6 +447,9 @@
       "alramemptywatertank": {
         "name": "R\u00e9servoir d'eau vide"
       },
+      "anti_legionella_s": {
+        "name": "St\u00e9rilisation"
+      },
       "auto_boost": {
         "name": "Boost auto"
       },
@@ -500,6 +503,12 @@
       },
       "control_failure_status": {
         "name": "\u00c9tat d\u00e9faut contr\u00f4le"
+      },
+      "defrost_dhw_s": {
+        "name": "D\u00e9givrage ECS"
+      },
+      "defrost_spaceheat_s": {
+        "name": "D\u00e9givrage chauffage"
       },
       "delay_start": {
         "name": "DEPART DIFFERE"
@@ -1115,6 +1124,9 @@
       },
       "interior_light_control_available": {
         "name": "Commande d'\u00e9clairage int\u00e9rieur disponible"
+      },
+      "iseleheatingturnon": {
+        "name": "R\u00e9sistance \u00e9lectrique active"
       },
       "light": {
         "name": "\u00c9clairage"
@@ -2127,6 +2139,12 @@
       },
       "t_fanspeedcv": {
         "name": "Vitesse de ventilation variable"
+      },
+      "tdhws": {
+        "name": "Consigne ECS"
+      },
+      "ts_c1_water": {
+        "name": "Consigne de temp\u00e9rature de d\u00e9part"
       },
       "variation_max_temperature": {
         "name": "Temp\u00e9rature max zone variable"
@@ -3174,6 +3192,9 @@
       "alarm_sound_volume": {
         "name": "Volume alarme"
       },
+      "alarmcode": {
+        "name": "Code d'alarme"
+      },
       "almost_finished_notification_setting": {
         "name": "R\u00e9glage de la notification de fin imminente"
       },
@@ -4020,6 +4041,12 @@
       "ecomode": {
         "name": "Mode ECO"
       },
+      "eh1_power": {
+        "name": "R\u00e9sistance \u00e9lectrique \u00e9tage 1"
+      },
+      "eh2_power": {
+        "name": "R\u00e9sistance \u00e9lectrique \u00e9tage 2"
+      },
       "electric_current": {
         "name": "Courant \u00e9lectrique"
       },
@@ -4553,6 +4580,15 @@
       },
       "filterclean_washflag": {
         "name": "Indicateur nettoyage filtre"
+      },
+      "fixeddid16": {
+        "name": "Temp\u00e9rature ECS"
+      },
+      "fixeddid18": {
+        "name": "Temp\u00e9rature de d\u00e9part"
+      },
+      "fixeddid30": {
+        "name": "Temp\u00e9rature ECS maximale"
       },
       "flexiblespintime_flag": {
         "name": "Indicateur de dur\u00e9e d'essorage flexible"
@@ -7919,6 +7955,9 @@
       "support_preheat_state": {
         "name": "\u00c9tat de prise en charge du pr\u00e9chauffage"
       },
+      "swj_ta": {
+        "name": "Temp\u00e9rature ext\u00e9rieure"
+      },
       "synchro_start_level": {
         "name": "Niveau de d\u00e9marrage synchronis\u00e9"
       },
@@ -8508,6 +8547,9 @@
       }
     },
     "switch": {
+      "a2w_sw_on": {
+        "name": "Pompe \u00e0 chaleur"
+      },
       "activemodelightstatus": {
         "name": "Voyant du mode actif"
       },
@@ -8586,6 +8628,9 @@
       "buzzer_setting": {
         "name": "Signal sonore"
       },
+      "c1_sw_on": {
+        "name": "Chauffage"
+      },
       "child_lock": {
         "name": "Verrouillage enfant"
       },
@@ -8616,6 +8661,12 @@
       "color_sensor_setting_status": {
         "name": "Capteur de couleur"
       },
+      "controldid18": {
+        "name": "Mode nuit"
+      },
+      "controldid19": {
+        "name": "Mode silencieux"
+      },
       "crisp_function_status": {
         "name": "\u00c9tat de la fonction Crisp"
       },
@@ -8624,6 +8675,9 @@
       },
       "demo_mode_status": {
         "name": "Mode d\u00e9mo"
+      },
+      "dhw_sw_on": {
+        "name": "Eau chaude sanitaire"
       },
       "display_standby": {
         "name": "Veille de l'affichage"
