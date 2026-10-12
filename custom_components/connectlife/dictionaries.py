@@ -1,5 +1,6 @@
 import yaml
 from collections import defaultdict
+from collections.abc import Mapping
 from dataclasses import dataclass, field
 import logging
 import pkgutil
@@ -83,6 +84,20 @@ def _val(d: dict, key: str, default: Any = None) -> Any:
     if key in d and d[key] is not None:
         return d[key]
     return default
+
+
+def _available_when(entry: dict) -> dict[str, list[int]]:
+    """Parse an ``available_when`` map, normalizing single values to one-item lists."""
+    conditions = _val(entry, AVAILABLE_WHEN, {})
+    return {
+        name: list(allowed) if isinstance(allowed, list) else [allowed]
+        for name, allowed in conditions.items()
+    }
+
+
+def available_when_met(status_list: Mapping[str, Any], available_when: dict[str, list[int]]) -> bool:
+    """Return whether every property in ``available_when`` has one of its allowed values."""
+    return all(status_list.get(name) in allowed for name, allowed in available_when.items())
 
 
 class BinarySensor:
@@ -347,6 +362,7 @@ class Property:
     disable: bool
     optional: bool
     unavailable: int | None
+    available_when: dict[str, list[int]]
     entity_category: EntityCategory | None
     translation_key: str | None
     combine: list[CombineSource] | None
@@ -366,6 +382,7 @@ class Property:
         self.disable = bool(entry[DISABLE]) if DISABLE in entry else False
         self.optional = bool(entry[OPTIONAL]) if OPTIONAL in entry else False
         self.unavailable = _val(entry, UNAVAILABLE)
+        self.available_when = _available_when(entry)
         entity_category = _val(entry, ENTITY_CATEGORY)
         self.entity_category = (
             EntityCategory[entity_category.upper()] if entity_category is not None else None
@@ -404,18 +421,18 @@ class Button:
 
     Buttons are for write-only commands: a press writes ``write`` to the
     device. ``available_when`` gates the button on read-back property values
-    (all keys must match for the button to be available).
+    (every listed property must have one of its allowed values).
     """
 
     key: str
     icon: str | None
-    available_when: dict[str, int]
+    available_when: dict[str, list[int]]
     write: dict[str, int]
 
     def __init__(self, entry: dict):
         self.key = entry[KEY]
         self.icon = _val(entry, ICON) or None
-        self.available_when = _val(entry, AVAILABLE_WHEN, {})
+        self.available_when = _available_when(entry)
         write = _val(entry, WRITE)
         if not write:
             _LOGGER.warning("Button %s has no write map", self.key)

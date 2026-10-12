@@ -3,9 +3,11 @@
 from __future__ import annotations
 
 from custom_components.connectlife.dictionaries import (
+    Button,
     Property,
     Sensor,
     _merge_property,
+    available_when_met,
 )
 
 # Minimal property list so a parsed mapping is well-formed.
@@ -460,3 +462,48 @@ def test_statistics_block_replaced_by_feature_override(build_dictionary):
     )
     assert d.statistics_source == "energy_consumption_curve"
     assert d.statistics_sensors == {"daily_water_consumption": True}
+
+
+def test_available_when_normalizes_single_values_to_lists():
+    prop = Property(
+        {
+            "property": "t_super",
+            "switch": {},
+            "available_when": {"t_power": 1, "t_work_mode": [1, 2]},
+        }
+    )
+    assert prop.available_when == {"t_power": [1], "t_work_mode": [1, 2]}
+
+
+def test_available_when_absent_or_null_is_empty():
+    assert Property({"property": "t_super", "switch": {}}).available_when == {}
+    assert Property({"property": "t_super", "switch": {}, "available_when": None}).available_when == {}
+
+
+def test_available_when_inherited_and_replaced_as_whole():
+    base = {
+        "property": "t_eco",
+        "switch": {},
+        "available_when": {"t_power": 1, "t_work_mode": [0, 1, 2, 3]},
+    }
+    assert Property(_merge_property(base, {"property": "t_eco"})).available_when == {
+        "t_power": [1],
+        "t_work_mode": [0, 1, 2, 3],
+    }
+    override = {"property": "t_eco", "available_when": {"t_work_mode": [1, 2, 3]}}
+    assert Property(_merge_property(base, override)).available_when == {"t_work_mode": [1, 2, 3]}
+
+
+def test_button_available_when_accepts_lists():
+    button = Button({"key": "start", "write": {"Actions": 1}, "available_when": {"Status": [1, 2]}})
+    assert button.available_when == {"Status": [1, 2]}
+
+
+def test_available_when_met():
+    conditions = {"t_power": [1], "t_work_mode": [1, 2]}
+    assert available_when_met({"t_power": 1, "t_work_mode": 2}, conditions)
+    assert not available_when_met({"t_power": 0, "t_work_mode": 2}, conditions)
+    assert not available_when_met({"t_power": 1, "t_work_mode": 4}, conditions)
+    # A listed property the device doesn't report is not met.
+    assert not available_when_met({"t_power": 1}, conditions)
+    assert available_when_met({}, {})
