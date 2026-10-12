@@ -125,3 +125,4 @@
 | DHSE80-BEW001            | Tumble dryer             | 030              | 1wk080027e0w                |
 | DPNA83W                  | Tumble dryer             | 032              | 000                         |
 | Hisense RW3N122GSLF      | Wine cooler              | 034              | 1j0122z0035j                |
+| Hisense Hi-Therma II     | Heat pump                | 044              | 000                         |
