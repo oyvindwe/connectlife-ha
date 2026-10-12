@@ -2557,6 +2557,7 @@
           "bleaching": "Blanchiment",
           "clean": "Nettoyage",
           "color": "Couleurs",
+          "crystal_glass": "Cristal",
           "curtains": "Rideaux",
           "dark_clothes": "V\u00eatements fonc\u00e9s",
           "down_feathers": "Duvet",
@@ -2574,6 +2575,7 @@
           "kids_wear": "V\u00eatements enfants",
           "kitchen_towels": "Torchons",
           "lingerie": "Lingerie",
+          "lower_half": "Moiti\u00e9 inf\u00e9rieure",
           "mix_synthetic": "Mixte/Synth\u00e9tique",
           "new_clothes": "V\u00eatements neufs",
           "night": "Nuit",
@@ -2583,8 +2585,10 @@
           "pet_hair_removal": "\u00c9limination des poils d'animaux",
           "pets": "Animaux",
           "pillow": "Oreiller",
+          "plastic": "Plastique",
           "plush_toys": "Peluches",
           "power_39": "Power 39",
+          "preheated": "Pr\u00e9chauff\u00e9",
           "quick_pro": "Quick pro",
           "rinse_and_hold": "Rin\u00e7age et maintien",
           "rinsing_softening": "Rin\u00e7age et assouplissement",
@@ -2599,6 +2603,8 @@
           "swimwear": "Maillots de bain",
           "tights_stockings": "Collants/Bas",
           "time_program": "Programme minut\u00e9",
+          "universal": "Universel",
+          "upper_half": "Moiti\u00e9 sup\u00e9rieure",
           "waterproof": "Imperm\u00e9able",
           "white_cotton": "Coton blanc",
           "wool_manual": "Laine et manuel"
@@ -2616,10 +2622,13 @@
         "name": "Mode",
         "state": {
           "fast": "Rapide",
+          "green": "Vert",
+          "intensive": "Intensif",
           "night": "Nuit",
           "normal": "Normal",
           "not_available": "Non disponible",
-          "speed": "Vitesse"
+          "speed": "Vitesse",
+          "uv": "UV"
         }
       },
       "selected_program_mode2": {

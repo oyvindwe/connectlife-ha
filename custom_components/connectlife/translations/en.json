@@ -2559,6 +2559,7 @@
           "bleaching": "Bleaching",
           "clean": "Clean",
           "color": "Color",
+          "crystal_glass": "Crystal glass",
           "curtains": "Curtains",
           "dark_clothes": "Dark clothes",
           "down_feathers": "Down feathers",
@@ -2576,6 +2577,7 @@
           "kids_wear": "Kids wear",
           "kitchen_towels": "Kitchen towels",
           "lingerie": "Lingerie",
+          "lower_half": "Lower half",
           "mix_synthetic": "Mix/Synthetic",
           "new_clothes": "New clothes",
           "night": "Night",
@@ -2585,8 +2587,10 @@
           "pet_hair_removal": "Pet hair removal",
           "pets": "Pets",
           "pillow": "Pillow",
+          "plastic": "Plastic",
           "plush_toys": "Plush toys",
           "power_39": "Power 39",
+          "preheated": "Preheated",
           "quick_pro": "Quick pro",
           "rinse_and_hold": "Rinse and hold",
           "rinsing_softening": "Rinsing & Softening",
@@ -2601,6 +2605,8 @@
           "swimwear": "Swimwear",
           "tights_stockings": "Tights/Stockings",
           "time_program": "Time program",
+          "universal": "Universal",
+          "upper_half": "Upper half",
           "waterproof": "Waterproof",
           "white_cotton": "White Cotton",
           "wool_manual": "Wool & Manual"
@@ -2618,10 +2624,13 @@
         "name": "Mode",
         "state": {
           "fast": "Fast",
+          "green": "Green",
+          "intensive": "Intensive",
           "night": "Night",
           "normal": "Normal",
           "not_available": "Not available",
-          "speed": "Speed"
+          "speed": "Speed",
+          "uv": "UV"
         }
       },
       "selected_program_mode2": {

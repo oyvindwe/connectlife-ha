@@ -2557,6 +2557,7 @@
           "bleaching": "Blanqueo",
           "clean": "Limpieza",
           "color": "Color",
+          "crystal_glass": "Cristaler\u00eda",
           "curtains": "Cortinas",
           "dark_clothes": "Ropa oscura",
           "down_feathers": "Plum\u00f3n",
@@ -2574,6 +2575,7 @@
           "kids_wear": "Ropa infantil",
           "kitchen_towels": "Pa\u00f1os de cocina",
           "lingerie": "Lencer\u00eda",
+          "lower_half": "Mitad inferior",
           "mix_synthetic": "Mixto/Sint\u00e9ticos",
           "new_clothes": "Ropa nueva",
           "night": "Noche",
@@ -2583,8 +2585,10 @@
           "pet_hair_removal": "Eliminaci\u00f3n de pelo de mascotas",
           "pets": "Mascotas",
           "pillow": "Almohada",
+          "plastic": "Pl\u00e1sticos",
           "plush_toys": "Peluches",
           "power_39": "Power 39",
+          "preheated": "Precalentado",
           "quick_pro": "Quick pro",
           "rinse_and_hold": "Aclarar y esperar",
           "rinsing_softening": "Aclarado y suavizado",
@@ -2599,6 +2603,8 @@
           "swimwear": "Ropa de ba\u00f1o",
           "tights_stockings": "Medias",
           "time_program": "Programa temporizado",
+          "universal": "Universal",
+          "upper_half": "Mitad superior",
           "waterproof": "Impermeable",
           "white_cotton": "Algod\u00f3n blanco",
           "wool_manual": "Lana y manual"
@@ -2616,10 +2622,13 @@
         "name": "Modo programa",
         "state": {
           "fast": "R\u00e1pido",
+          "green": "Verde",
+          "intensive": "Intensivo",
           "night": "Noche",
           "normal": "Normal",
           "not_available": "No disponible",
-          "speed": "R\u00e1pido"
+          "speed": "R\u00e1pido",
+          "uv": "UV"
         }
       },
       "selected_program_mode2": {

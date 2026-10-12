@@ -2557,6 +2557,7 @@
           "bleaching": "Bleken",
           "clean": "Schoon",
           "color": "Kleur",
+          "crystal_glass": "Kristalglas",
           "curtains": "Gordijnen",
           "dark_clothes": "Donkere was",
           "down_feathers": "Donsveren",
@@ -2574,6 +2575,7 @@
           "kids_wear": "Kinderkleding",
           "kitchen_towels": "Keukendoeken",
           "lingerie": "Lingerie",
+          "lower_half": "Onderste helft",
           "mix_synthetic": "Mix/Synthetisch",
           "new_clothes": "Nieuwe kleding",
           "night": "Nacht",
@@ -2583,8 +2585,10 @@
           "pet_hair_removal": "Huisdierhaar verwijderen",
           "pets": "Huisdieren",
           "pillow": "Kussen",
+          "plastic": "Kunststof",
           "plush_toys": "Knuffels",
           "power_39": "Power 39",
+          "preheated": "Voorverwarmd",
           "quick_pro": "Quick pro",
           "rinse_and_hold": "Spoelen en wachten",
           "rinsing_softening": "Spoelen & verzachten",
@@ -2599,6 +2603,8 @@
           "swimwear": "Badkleding",
           "tights_stockings": "Panty\u2019s/Kousen",
           "time_program": "Tijdprogramma",
+          "universal": "Universeel",
+          "upper_half": "Bovenste helft",
           "waterproof": "Waterdicht",
           "white_cotton": "Wit katoen",
           "wool_manual": "Wol & Handmatig"
@@ -2616,10 +2622,13 @@
         "name": "Geselecteerde programmamodus",
         "state": {
           "fast": "Snel",
+          "green": "Groen",
+          "intensive": "Intensief",
           "night": "Nacht",
           "normal": "Normaal",
           "not_available": "Niet beschikbaar",
-          "speed": "Snel"
+          "speed": "Snel",
+          "uv": "UV"
         }
       },
       "selected_program_mode2": {
