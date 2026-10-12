@@ -1,7 +1,6 @@
 # ASKO dishwasher (DFI777UXXL family).
 #
-# Programs and allowed modes as reported in system data (#624). Programs 12
-# and 13 (Lower half / Upper half) are inferred and not yet confirmed.
+# Programs and allowed modes as reported in system data (#624).
 properties:
   - property: Selected_program_id_status
     select:
