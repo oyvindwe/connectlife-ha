@@ -448,7 +448,7 @@
         "name": "T\u00f8m vanntank"
       },
       "auto_boost": {
-        "name": "Auto boost"
+        "name": "Automatisk boost"
       },
       "auto_bridge": {
         "name": "Auto bro"
@@ -2774,9 +2774,9 @@
         "state": {
           "autobake": "AutoBake",
           "extrabake": "ExtraBake",
-          "extrabake_cleaning": "ExtraBake - Cleaning",
-          "extrabake_fastpreheat": "ExtraBake - Fast preheat",
-          "extrabake_warming": "ExtraBake - Warming",
+          "extrabake_cleaning": "ExtraBake - Rengj\u00f8ring",
+          "extrabake_fastpreheat": "ExtraBake - Hurtigforvarming",
+          "extrabake_warming": "ExtraBake - Oppvarming",
           "meatprobebake": "MeatProbeBake",
           "probake": "ProBake",
           "recipe": "Oppskrift",
