@@ -1,0 +1,41 @@
+# Hisense HWF8I1015BX / HWF8I1015B washer (025-1wfj1000018v), API model WF5i1015-QVB002.
+# Phases 0, 1, 2, 3, 4, 7, 10 and 11 observed on the machine; 5 (preheat) is never emitted.
+# Programs 6, 7 and 19 confirmed on the panel; the other IDs follow sibling 025 mappings.
+# Delay is a "finish by" time (Delay_end_time, hours), set on the panel only.
+properties:
+  - property: Current_program_phase
+    sensor:
+      read_only: true
+      device_class: enum
+      options:
+        0: not_available
+        1: weigh
+        2: prewash
+        3: wash
+        4: rinsing
+        7: spinning
+        10: finished
+        11: delay_start_waiting
+
+  - property: Selected_program_ID
+    sensor:
+      read_only: true
+      device_class: enum
+      options:
+        4: refresh
+        6: drum_clean
+        7: cotton
+        8: synthetic
+        10: wool
+        11: quick_15
+        14: spin
+        15: allergy_care
+        16: baby_care
+        18: sportswear
+        19: down
+        20: rinse_spin
+        42: auto
+        44: bedding
+        52: power_30
+        56: pets
+        57: full_load_49

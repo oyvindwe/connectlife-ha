@@ -14,6 +14,7 @@ properties:
         5: hygiene
         6: rinse_and_hold
         7: self_cleaning
+        8: odor_control
       command:
         name: Selected_program_id
   - property: Selected_program_mode

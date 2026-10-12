@@ -1,0 +1,39 @@
+# Gorenje WG486A21 (WM26 G400)
+properties:
+- property: Selected_program_id_status
+  select:
+    options:
+      0: eco_40_60
+      1: white_cotton
+      2: color
+      3: wool_manual
+      4: mix_synthetic
+      5: allergy_safe
+      6: speed_14
+      7: power_39
+      8: no_program_selected
+      9: sportswear
+      10: baby_care
+      11: pets
+      12: shirts
+      14: spinning_draining
+      16: rinsing_softening
+      18: drum_clean
+      26: pillow
+      27: jeans
+      28: new_clothes
+      29: dark_clothes
+      30: plush_toys
+      35: kids_wear
+      36: swimwear
+      37: waterproof
+      38: tights_stockings
+      39: lingerie
+      40: kitchen_towels
+      41: bleaching
+      42: activewear
+      43: curtains
+      46: bedding
+      47: shoes
+      50: steam_refresh
+      51: fabric_care
