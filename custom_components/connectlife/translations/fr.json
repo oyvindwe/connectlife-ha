@@ -831,6 +831,72 @@
       "error_9": {
         "name": "Erreur 9"
       },
+      "error_f10": {
+        "name": "F10 trop-plein d'eau 1"
+      },
+      "error_f11": {
+        "name": "F11 d\u00e9faut de vidange"
+      },
+      "error_f12": {
+        "name": "F12 d\u00e9faut d'arriv\u00e9e d'eau 1"
+      },
+      "error_f40": {
+        "name": "F40 fuite de la vanne d'arriv\u00e9e"
+      },
+      "error_f41": {
+        "name": "F41 d\u00e9faut de chauffage 1"
+      },
+      "error_f42": {
+        "name": "F42 d\u00e9faut de la sonde de temp\u00e9rature"
+      },
+      "error_f43": {
+        "name": "F43 d\u00e9faut du capteur de pression"
+      },
+      "error_f44": {
+        "name": "Erreur F44"
+      },
+      "error_f45": {
+        "name": "F45 d\u00e9faut du r\u00e9partiteur"
+      },
+      "error_f46": {
+        "name": "Erreur F46"
+      },
+      "error_f52": {
+        "name": "F52 d\u00e9faut de niveau d'eau"
+      },
+      "error_f54": {
+        "name": "F54 trop-plein d'eau 2"
+      },
+      "error_f56": {
+        "name": "F56 d\u00e9faut de la pompe de cyclage"
+      },
+      "error_f61": {
+        "name": "Erreur F61"
+      },
+      "error_f62": {
+        "name": "Erreur F62"
+      },
+      "error_f65": {
+        "name": "F65 d\u00e9faut de la carte d'affichage"
+      },
+      "error_f67": {
+        "name": "F67 d\u00e9faut d'arriv\u00e9e d'eau 2"
+      },
+      "error_f68": {
+        "name": "F68 d\u00e9faut de la pompe de vidange"
+      },
+      "error_f69": {
+        "name": "Erreur F69"
+      },
+      "error_f72": {
+        "name": "Erreur F72"
+      },
+      "error_f74": {
+        "name": "Erreur F74"
+      },
+      "error_f75": {
+        "name": "Erreur F75"
+      },
       "existing_fuzzy_mode": {
         "name": "Mode AI disponible"
       },
@@ -1914,7 +1980,8 @@
           "fan_mode": {
             "state": {
               "middle_high": "Moyen-\u00e9lev\u00e9",
-              "middle_low": "Moyen bas"
+              "middle_low": "Moyen bas",
+              "quiet": "Silencieux"
             }
           },
           "preset_mode": {
@@ -2447,18 +2514,20 @@
           "cotton": "Coton",
           "cotton_dry": "S\u00e9chage coton",
           "delicates": "D\u00e9licats",
-          "down": "Bas",
+          "down": "Duvet",
           "drum_clean": "Nettoyage du tambour",
           "duvet": "Couette",
           "eco": "\u00c9co",
           "eco_40_60": "Eco 40-60",
           "full_load_49": "Charge compl\u00e8te 49",
+          "full_load_59": "Charge compl\u00e8te 59",
           "hand_wash": "Lavage \u00e0 la main",
           "ion_refresh": "Rafra\u00eechissement ionique",
           "jeans": "Jeans",
           "mix": "Mixte",
           "pets": "Animaux",
           "power_30": "Power 30",
+          "power_39": "Power 39",
           "power_49": "Power 49",
           "quick_15": "Rapide 15",
           "quick_30": "Rapide 30",
@@ -2481,35 +2550,64 @@
       "selected_program_id_status": {
         "name": "Programme",
         "state": {
+          "activewear": "V\u00eatements techniques",
           "airtech": "AirTech",
+          "allergy_safe": "Anti-allergie",
           "auto": "Auto",
           "baby_care": "Soin b\u00e9b\u00e9",
+          "bedding": "Linge de lit",
+          "bleaching": "Blanchiment",
           "clean": "Nettoyage",
           "color": "Couleurs",
+          "crystal_glass": "Cristal",
+          "curtains": "Rideaux",
+          "dark_clothes": "V\u00eatements fonc\u00e9s",
           "down_feathers": "Duvet",
           "draining": "Vidange",
           "drum_clean": "Nettoyage du tambour",
           "eco": "\u00c9co",
           "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Hygi\u00e8ne suppl\u00e9mentaire",
+          "fabric_care": "Soin des textiles",
           "glass": "Verre",
           "hygiene": "Hygi\u00e8ne",
           "intensive": "Intensif",
           "intensive_59_32": "Intensif 59'/32'",
+          "jeans": "Jeans",
+          "kids_wear": "V\u00eatements enfants",
+          "kitchen_towels": "Torchons",
+          "lingerie": "Lingerie",
+          "lower_half": "Moiti\u00e9 inf\u00e9rieure",
           "mix_synthetic": "Mixte/Synth\u00e9tique",
+          "new_clothes": "V\u00eatements neufs",
           "night": "Nuit",
           "no_program_selected": "Aucun programme s\u00e9lectionn\u00e9",
+          "odor_control": "Contr\u00f4le des odeurs",
           "one_hour": "Une heure",
           "pet_hair_removal": "\u00c9limination des poils d'animaux",
+          "pets": "Animaux",
+          "pillow": "Oreiller",
+          "plastic": "Plastique",
+          "plush_toys": "Peluches",
+          "power_39": "Power 39",
+          "preheated": "Pr\u00e9chauff\u00e9",
           "quick_pro": "Quick pro",
           "rinse_and_hold": "Rin\u00e7age et maintien",
           "rinsing_softening": "Rin\u00e7age et assouplissement",
           "self_cleaning": "Autonettoyage",
           "shirts": "Chemises",
+          "shoes": "Chaussures",
+          "speed_14": "Rapide 14",
           "speed_20": "Speed 20",
           "spinning_draining": "Essorage et vidange",
           "sportswear": "V\u00eatements de sport",
+          "steam_refresh": "Rafra\u00eechir vapeur",
+          "swimwear": "Maillots de bain",
+          "tights_stockings": "Collants/Bas",
           "time_program": "Programme minut\u00e9",
+          "universal": "Universel",
+          "upper_half": "Moiti\u00e9 sup\u00e9rieure",
+          "waterproof": "Imperm\u00e9able",
           "white_cotton": "Coton blanc",
           "wool_manual": "Laine et manuel"
         }
@@ -2526,10 +2624,13 @@
         "name": "Mode",
         "state": {
           "fast": "Rapide",
+          "green": "Vert",
+          "intensive": "Intensif",
           "night": "Nuit",
           "normal": "Normal",
           "not_available": "Non disponible",
-          "speed": "Vitesse"
+          "speed": "Vitesse",
+          "uv": "UV"
         }
       },
       "selected_program_mode2": {
@@ -3548,7 +3649,10 @@
         "name": "Niveau de s\u00e9chage par d\u00e9faut"
       },
       "defaultspinspeed": {
-        "name": "Vitesse essorage par d\u00e9faut"
+        "name": "Vitesse essorage par d\u00e9faut",
+        "state": {
+          "none": "Aucun"
+        }
       },
       "delay_actions_flag": {
         "name": "Indicateur d'actions diff\u00e9r\u00e9es"
@@ -3899,7 +4003,10 @@
         "name": "Mode s\u00e9chage"
       },
       "dryopen_defaultspinspeed": {
-        "name": "Vitesse d'essorage par d\u00e9faut porte ouverte"
+        "name": "Vitesse d'essorage par d\u00e9faut porte ouverte",
+        "state": {
+          "none": "Aucun"
+        }
       },
       "duration_of_clock": {
         "name": "Dur\u00e9e de l'horloge"
@@ -4225,74 +4332,8 @@
           "unbalance_alarm": "Alarme d\u00e9s\u00e9quilibre"
         }
       },
-      "error_f10": {
-        "name": "Erreur f10"
-      },
-      "error_f11": {
-        "name": "Erreur f11"
-      },
-      "error_f12": {
-        "name": "Erreur f12"
-      },
-      "error_f40": {
-        "name": "Erreur f40"
-      },
-      "error_f41": {
-        "name": "Erreur f41"
-      },
-      "error_f42": {
-        "name": "Erreur f42"
-      },
-      "error_f43": {
-        "name": "Erreur f43"
-      },
-      "error_f44": {
-        "name": "Erreur f44"
-      },
-      "error_f45": {
-        "name": "Erreur f45"
-      },
-      "error_f46": {
-        "name": "Erreur f46"
-      },
-      "error_f52": {
-        "name": "Erreur f52"
-      },
-      "error_f54": {
-        "name": "Erreur f54"
-      },
-      "error_f56": {
-        "name": "Erreur f56"
-      },
-      "error_f61": {
-        "name": "Erreur f61"
-      },
-      "error_f62": {
-        "name": "Erreur f62"
-      },
-      "error_f65": {
-        "name": "Erreur f65"
-      },
-      "error_f67": {
-        "name": "Erreur f67"
-      },
-      "error_f68": {
-        "name": "Erreur f68"
-      },
-      "error_f69": {
-        "name": "Erreur f69"
-      },
       "error_f70": {
         "name": "Erreur f70"
-      },
-      "error_f72": {
-        "name": "Erreur f72"
-      },
-      "error_f74": {
-        "name": "Erreur f74"
-      },
-      "error_f75": {
-        "name": "Erreur f75"
       },
       "error_f76": {
         "name": "Erreur f76"
@@ -5667,14 +5708,19 @@
           "cotton": "Coton",
           "cotton_dry": "S\u00e9chage coton",
           "cotton_storage": "Coton pr\u00eat \u00e0 ranger",
+          "daily_wash": "Lavage quotidien",
+          "down": "Duvet",
           "drum_clean": "Nettoyage du tambour",
           "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Hygi\u00e8ne renforc\u00e9e",
           "fast89": "Fast89",
+          "full_load_49": "Charge compl\u00e8te 49",
           "iron": "Repassage",
           "jeans": "Jeans",
           "mix": "Mixte",
           "none": "Aucun",
+          "pets": "Animaux",
+          "power_30": "Power 30",
           "power_49": "Power 49",
           "quick_15": "Rapide 15",
           "refresh": "Rafra\u00eechir",
@@ -5745,19 +5791,6 @@
       },
       "selected_program_uv_function": {
         "name": "Fonction UV du programme s\u00e9lectionn\u00e9"
-      },
-      "selected_program_washing_spin_speed_rpm_status": {
-        "name": "Vitesse essorage",
-        "state": {
-          "0_rpm": "0",
-          "1000_rpm": "1000",
-          "1200_rpm": "1200",
-          "1400_rpm": "1400",
-          "400_rpm": "400",
-          "800_rpm": "800",
-          "no_spin": "Sans essorage",
-          "not_available": "Non disponible"
-        }
       },
       "selected_program_water_add": {
         "name": "Ajout d'eau du programme s\u00e9lectionn\u00e9"
@@ -8851,6 +8884,9 @@
     }
   },
   "exceptions": {
+    "command_rejected": {
+      "message": "L'appareil n'accepte pas cette commande dans son \u00e9tat actuel"
+    },
     "terms_not_accepted": {
       "message": "Les Conditions g\u00e9n\u00e9rales ConnectLife mises \u00e0 jour doivent \u00eatre accept\u00e9es dans l'application ConnectLife"
     }
@@ -8868,7 +8904,7 @@
             "title": "Effacer les statistiques \u00e0 long terme orphelines"
           },
           "init": {
-            "description": "{count} capteurs ConnectLife ont des statistiques \u00e0 long terme (LTS) enregistr\u00e9es mais ne rapportent plus de classe d'\u00e9tat. Home Assistant \u00e9met une r\u00e9paration distincte pour chacun.\n\nCela est d\u00fb \u00e0 une modification r\u00e9cente de l'int\u00e9gration : les propri\u00e9t\u00e9s num\u00e9riques ne sont plus d\u00e9finies par d\u00e9faut sur `state_class: measurement`, si bien que les codes d'\u00e9tat, les indicateurs de mode et les consignes ne sont plus enregistr\u00e9s en tant que LTS.\n\n**Effacer les statistiques orphelines** supprime en une seule fois les lignes LTS enregistr\u00e9es pour l'ensemble des {count} capteurs. Les donn\u00e9es historiques de ces capteurs dans Param\u00e8tres \u2192 Statistiques seront supprim\u00e9es et ne pourront pas \u00eatre r\u00e9cup\u00e9r\u00e9es. Les r\u00e9parations Home Assistant propres \u00e0 chaque entit\u00e9 dispara\u00eetront lors de la prochaine revalidation des statistiques par Home Assistant \u2014 ce qui se produit lorsque vous ouvrez Outils pour les d\u00e9veloppeurs \u2192 Statistiques. Cette r\u00e9paration group\u00e9e ne r\u00e9appara\u00eetra pas sur cette entr\u00e9e de configuration.\n\n**Ignorer** masque cette action group\u00e9e et laisse en place les r\u00e9parations propres \u00e0 chaque entit\u00e9 \u2014 corrigez ou ignorez chacune individuellement si vous souhaitez un contr\u00f4le plus fin des capteurs qui conservent leur historique. Vous pouvez revenir \u00e0 l'action group\u00e9e ult\u00e9rieurement en s\u00e9lectionnant \u00ab Afficher les r\u00e9parations ignor\u00e9es \u00bb dans le menu de d\u00e9bordement en haut \u00e0 droite de Param\u00e8tres \u2192 R\u00e9parations, puis en rouvrant cette r\u00e9paration.\n\nPour examiner les r\u00e9parations de chaque capteur avant de d\u00e9cider, fermez simplement cette fen\u00eatre \u2014 la r\u00e9paration group\u00e9e reste disponible telle quelle.\n\nRemarque : ce probl\u00e8me est marqu\u00e9 comme critique uniquement pour qu'il soit class\u00e9 au-dessus des r\u00e9parations de l'enregistreur propres \u00e0 chaque entit\u00e9. Il n'est pas urgent.",
+            "description": "{count} capteurs ConnectLife ont des statistiques \u00e0 long terme (LTS) enregistr\u00e9es mais ne rapportent plus de classe d'\u00e9tat. Home Assistant \u00e9met une r\u00e9paration distincte pour chacun.\n\nCela est d\u00fb \u00e0 une modification r\u00e9cente de l'int\u00e9gration : les propri\u00e9t\u00e9s num\u00e9riques ne sont plus d\u00e9finies par d\u00e9faut sur `state_class: measurement`, si bien que les codes d'\u00e9tat, les indicateurs de mode et les consignes ne sont plus enregistr\u00e9s en tant que LTS.\n\n**Effacer les statistiques orphelines** supprime en une seule fois les lignes LTS enregistr\u00e9es pour l'ensemble des {count} capteurs. Les donn\u00e9es historiques de ces capteurs dans Param\u00e8tres \u2192 Outils \u2192 Statistiques seront supprim\u00e9es et ne pourront pas \u00eatre r\u00e9cup\u00e9r\u00e9es. Les r\u00e9parations Home Assistant propres \u00e0 chaque entit\u00e9 dispara\u00eetront lors de la prochaine revalidation des statistiques par Home Assistant \u2014 ce qui se produit lorsque vous ouvrez Param\u00e8tres \u2192 Outils \u2192 Statistiques. Cette r\u00e9paration group\u00e9e ne r\u00e9appara\u00eetra pas sur cette entr\u00e9e de configuration.\n\n**Ignorer** masque cette action group\u00e9e et laisse en place les r\u00e9parations propres \u00e0 chaque entit\u00e9 \u2014 corrigez ou ignorez chacune individuellement si vous souhaitez un contr\u00f4le plus fin des capteurs qui conservent leur historique. Vous pouvez revenir \u00e0 l'action group\u00e9e ult\u00e9rieurement en s\u00e9lectionnant \u00ab Afficher les r\u00e9parations ignor\u00e9es \u00bb dans le menu de d\u00e9bordement en haut \u00e0 droite de Param\u00e8tres \u2192 Corrections, puis en rouvrant cette r\u00e9paration.\n\nPour examiner les r\u00e9parations de chaque capteur avant de d\u00e9cider, fermez simplement cette fen\u00eatre \u2014 la r\u00e9paration group\u00e9e reste disponible telle quelle.\n\nRemarque : ce probl\u00e8me est marqu\u00e9 comme critique uniquement pour qu'il soit class\u00e9 au-dessus des r\u00e9parations de l'enregistreur propres \u00e0 chaque entit\u00e9. Il n'est pas urgent.",
             "menu_options": {
               "clear": "Effacer les statistiques orphelines",
               "ignore": "Ignorer"

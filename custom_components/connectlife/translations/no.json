@@ -448,7 +448,7 @@
         "name": "T\u00f8m vanntank"
       },
       "auto_boost": {
-        "name": "Auto boost"
+        "name": "Automatisk boost"
       },
       "auto_bridge": {
         "name": "Auto bro"
@@ -830,6 +830,72 @@
       },
       "error_9": {
         "name": "Feil 9"
+      },
+      "error_f10": {
+        "name": "F10 overfylling av vann 1"
+      },
+      "error_f11": {
+        "name": "F11 feil p\u00e5 vannutl\u00f8p"
+      },
+      "error_f12": {
+        "name": "F12 feil p\u00e5 vanninntak 1"
+      },
+      "error_f40": {
+        "name": "F40 lekkasje i innl\u00f8psventil"
+      },
+      "error_f41": {
+        "name": "F41 feil p\u00e5 varmeelement 1"
+      },
+      "error_f42": {
+        "name": "F42 feil p\u00e5 temperatursensor"
+      },
+      "error_f43": {
+        "name": "F43 feil p\u00e5 trykksensor"
+      },
+      "error_f44": {
+        "name": "Feil F44"
+      },
+      "error_f45": {
+        "name": "F45 feil p\u00e5 fordeler"
+      },
+      "error_f46": {
+        "name": "Feil F46"
+      },
+      "error_f52": {
+        "name": "F52 feil p\u00e5 vanniv\u00e5"
+      },
+      "error_f54": {
+        "name": "F54 overfylling av vann 2"
+      },
+      "error_f56": {
+        "name": "F56 feil p\u00e5 sirkulasjonspumpe"
+      },
+      "error_f61": {
+        "name": "Feil F61"
+      },
+      "error_f62": {
+        "name": "Feil F62"
+      },
+      "error_f65": {
+        "name": "F65 feil p\u00e5 skjermkort"
+      },
+      "error_f67": {
+        "name": "F67 feil p\u00e5 vanninntak 2"
+      },
+      "error_f68": {
+        "name": "F68 feil p\u00e5 t\u00f8mmepumpe"
+      },
+      "error_f69": {
+        "name": "Feil F69"
+      },
+      "error_f72": {
+        "name": "Feil F72"
+      },
+      "error_f74": {
+        "name": "Feil F74"
+      },
+      "error_f75": {
+        "name": "Feil F75"
       },
       "existing_fuzzy_mode": {
         "name": "Eksisterende fuzzy-modus"
@@ -1914,7 +1980,8 @@
           "fan_mode": {
             "state": {
               "middle_high": "Middels h\u00f8y",
-              "middle_low": "Middels lav"
+              "middle_low": "Middels lav",
+              "quiet": "Stille"
             }
           },
           "preset_mode": {
@@ -2453,12 +2520,14 @@
           "eco": "Eco",
           "eco_40_60": "Eco 40 60",
           "full_load_49": "Full kapasitet 49",
+          "full_load_59": "Full kapasitet 59",
           "hand_wash": "H\u00e5ndvask",
           "ion_refresh": "Ione-oppfriskning",
           "jeans": "Jeans",
           "mix": "Mix",
           "pets": "Kj\u00e6ledyr",
           "power_30": "Power 30",
+          "power_39": "Power 39",
           "power_49": "Power 49",
           "quick_15": "Hurtig 15",
           "quick_30": "Hurtig 30",
@@ -2481,35 +2550,64 @@
       "selected_program_id_status": {
         "name": "Valgt program",
         "state": {
+          "activewear": "Aktivkl\u00e6r",
           "airtech": "AirTech",
+          "allergy_safe": "Allergi",
           "auto": "Auto",
           "baby_care": "Baby",
+          "bedding": "Senget\u00f8y",
+          "bleaching": "Bleking",
           "clean": "Rens",
           "color": "Farge",
+          "crystal_glass": "Krystallglass",
+          "curtains": "Gardiner",
+          "dark_clothes": "M\u00f8rke kl\u00e6r",
           "down_feathers": "Dun",
           "draining": "T\u00f8mmer vann",
           "drum_clean": "Trommelrens",
           "eco": "Eco",
           "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Ekstra hygiene",
+          "fabric_care": "Tekstilpleie",
           "glass": "Glass",
           "hygiene": "Hygiene",
           "intensive": "Intensiv",
           "intensive_59_32": "Intensiv 59'/32'",
+          "jeans": "Jeans",
+          "kids_wear": "Barnekl\u00e6r",
+          "kitchen_towels": "Kj\u00f8kkenh\u00e5ndkl\u00e6r",
+          "lingerie": "Undert\u00f8y",
+          "lower_half": "Nedre del",
           "mix_synthetic": "Mix/Syntet",
+          "new_clothes": "Nye kl\u00e6r",
           "night": "Natt",
           "no_program_selected": "Intet program valgt",
+          "odor_control": "Luktkontroll",
           "one_hour": "\u00c9n time",
           "pet_hair_removal": "Fjerning av kj\u00e6ledyrh\u00e5r",
+          "pets": "Kj\u00e6ledyr",
+          "pillow": "Pute",
+          "plastic": "Plast",
+          "plush_toys": "Kosedyr",
+          "power_39": "Power 39",
+          "preheated": "Forvarmet",
           "quick_pro": "Hurtig pro",
           "rinse_and_hold": "Skyll og hold",
           "rinsing_softening": "Skylling og myking",
           "self_cleaning": "Selvrens",
           "shirts": "Skjorter",
+          "shoes": "Sko",
+          "speed_14": "Hurtig 14",
           "speed_20": "Hurtig 20'",
           "spinning_draining": "Sentrifugering og t\u00f8mming",
           "sportswear": "Sport",
+          "steam_refresh": "Damputlufting",
+          "swimwear": "Badet\u00f8y",
+          "tights_stockings": "Str\u00f8mpebukser",
           "time_program": "Tidsprogram",
+          "universal": "Universal",
+          "upper_half": "\u00d8vre del",
+          "waterproof": "Vanntett",
           "white_cotton": "Hvit bomull",
           "wool_manual": "Ull og manuell"
         }
@@ -2526,10 +2624,13 @@
         "name": "Modus",
         "state": {
           "fast": "Hurtig",
+          "green": "Gr\u00f8nn",
+          "intensive": "Intensiv",
           "night": "Natt",
           "normal": "Normal",
           "not_available": "Ikke tilgjengelig",
-          "speed": "Hastighet"
+          "speed": "Hastighet",
+          "uv": "UV"
         }
       },
       "selected_program_mode2": {
@@ -2673,9 +2774,9 @@
         "state": {
           "autobake": "AutoBake",
           "extrabake": "ExtraBake",
-          "extrabake_cleaning": "ExtraBake - Cleaning",
-          "extrabake_fastpreheat": "ExtraBake - Fast preheat",
-          "extrabake_warming": "ExtraBake - Warming",
+          "extrabake_cleaning": "ExtraBake - Rengj\u00f8ring",
+          "extrabake_fastpreheat": "ExtraBake - Hurtigforvarming",
+          "extrabake_warming": "ExtraBake - Oppvarming",
           "meatprobebake": "MeatProbeBake",
           "probake": "ProBake",
           "recipe": "Oppskrift",
@@ -3548,7 +3649,10 @@
         "name": "Standard t\u00f8rkeniv\u00e5"
       },
       "defaultspinspeed": {
-        "name": "Standard sentrifugehastighet"
+        "name": "Standard sentrifugehastighet",
+        "state": {
+          "none": "Ingen"
+        }
       },
       "delay_actions_flag": {
         "name": "Flagg for forsinkede handlinger"
@@ -3899,7 +4003,10 @@
         "name": "T\u00f8rkemodell"
       },
       "dryopen_defaultspinspeed": {
-        "name": "Standard sentrifugehastighet ved t\u00f8rr\u00e5pning"
+        "name": "Standard sentrifugehastighet ved t\u00f8rr\u00e5pning",
+        "state": {
+          "none": "Ingen"
+        }
       },
       "duration_of_clock": {
         "name": "Klokkevarighet"
@@ -4225,74 +4332,8 @@
           "unbalance_alarm": "Ubalansealarm"
         }
       },
-      "error_f10": {
-        "name": "Feil f10"
-      },
-      "error_f11": {
-        "name": "Feil f11"
-      },
-      "error_f12": {
-        "name": "Feil f12"
-      },
-      "error_f40": {
-        "name": "Feil f40"
-      },
-      "error_f41": {
-        "name": "Feil f41"
-      },
-      "error_f42": {
-        "name": "Feil f42"
-      },
-      "error_f43": {
-        "name": "Feil f43"
-      },
-      "error_f44": {
-        "name": "Feil f44"
-      },
-      "error_f45": {
-        "name": "Feil f45"
-      },
-      "error_f46": {
-        "name": "Feil f46"
-      },
-      "error_f52": {
-        "name": "Feil f52"
-      },
-      "error_f54": {
-        "name": "Feil f54"
-      },
-      "error_f56": {
-        "name": "Feil f56"
-      },
-      "error_f61": {
-        "name": "Feil f61"
-      },
-      "error_f62": {
-        "name": "Feil f62"
-      },
-      "error_f65": {
-        "name": "Feil f65"
-      },
-      "error_f67": {
-        "name": "Feil f67"
-      },
-      "error_f68": {
-        "name": "Feil f68"
-      },
-      "error_f69": {
-        "name": "Feil f69"
-      },
       "error_f70": {
         "name": "Feil f70"
-      },
-      "error_f72": {
-        "name": "Feil f72"
-      },
-      "error_f74": {
-        "name": "Feil f74"
-      },
-      "error_f75": {
-        "name": "Feil f75"
       },
       "error_f76": {
         "name": "Feil f76"
@@ -5667,14 +5708,19 @@
           "cotton": "Bomull",
           "cotton_dry": "Bomull t\u00f8rk",
           "cotton_storage": "Bomull lagring",
+          "daily_wash": "Daglig vask",
+          "down": "Dun",
           "drum_clean": "Trommelrens",
           "eco_40_60": "Eco 40 60",
           "extra_hygiene": "Ekstra hygiene",
           "fast89": "Fast89",
+          "full_load_49": "Full kapasitet 49",
           "iron": "Stryking",
           "jeans": "Jeans",
           "mix": "Mix",
           "none": "Ingen",
+          "pets": "Kj\u00e6ledyr",
+          "power_30": "Power 30",
           "power_49": "Power 49",
           "quick_15": "Hurtig 15",
           "refresh": "Oppfrisk",
@@ -5745,19 +5791,6 @@
       },
       "selected_program_uv_function": {
         "name": "Valgt program \u2013 UV-funksjon"
-      },
-      "selected_program_washing_spin_speed_rpm_status": {
-        "name": "Sentrifugehastighet",
-        "state": {
-          "0_rpm": "0",
-          "1000_rpm": "1000",
-          "1200_rpm": "1200",
-          "1400_rpm": "1400",
-          "400_rpm": "400",
-          "800_rpm": "800",
-          "no_spin": "Ingen sentrifugering",
-          "not_available": "Ikke tilgjengelig"
-        }
       },
       "selected_program_water_add": {
         "name": "Valgt program \u2013 tilf\u00f8r vann"
@@ -8851,6 +8884,9 @@
     }
   },
   "exceptions": {
+    "command_rejected": {
+      "message": "Enheten godtar ikke denne kommandoen i n\u00e5v\u00e6rende tilstand"
+    },
     "terms_not_accepted": {
       "message": "Oppdaterte vilk\u00e5r for ConnectLife m\u00e5 godtas i ConnectLife-appen"
     }
@@ -8868,7 +8904,7 @@
             "title": "Slett foreldrel\u00f8se langtidsstatistikker"
           },
           "init": {
-            "description": "{count} ConnectLife-sensorer har lagrede langtidsstatistikker (LTS), men rapporterer ikke lenger en tilstandsklasse. Home Assistant oppretter en egen reparasjon for hver av dem.\n\nDette skyldes en nylig endring i integrasjonen: numeriske egenskaper bruker ikke lenger `state_class: measurement` som standard, s\u00e5 tilstandskoder, modusflagg og settpunkter registreres ikke lenger som LTS.\n\n**Slett foreldrel\u00f8se statistikker** fjerner de lagrede LTS-radene for alle {count} sensorene samtidig. De historiske dataene for disse sensorene under Innstillinger \u2192 Statistikk slettes og kan ikke gjenopprettes. De per-entitets Home Assistant-reparasjonene forsvinner neste gang Home Assistant validerer statistikkene p\u00e5 nytt \u2013 det skjer n\u00e5r du \u00e5pner Utviklerverkt\u00f8y \u2192 Statistikk. Denne samlede reparasjonen vil ikke vises igjen for denne konfigurasjonsoppf\u00f8ringen.\n\n**Ignorer** skjuler denne samlede handlingen og lar per-entitets-reparasjonene st\u00e5 \u2013 fiks eller ignorer dem enkeltvis hvis du \u00f8nsker mer detaljert kontroll over hvilke sensorer som beholder historikken sin. Du kan komme tilbake til den samlede handlingen senere ved \u00e5 velge \u00abVis ignorerte reparasjoner\u00bb i overl\u00f8psmenyen \u00f8verst til h\u00f8yre i Innstillinger \u2192 Reparasjoner, og s\u00e5 \u00e5pne denne reparasjonen igjen.\n\nFor \u00e5 se gjennom de enkelte sensorreparasjonene f\u00f8r du bestemmer deg, kan du bare lukke dette vinduet \u2013 den samlede reparasjonen forblir tilgjengelig som den er.\n\nMerk: denne saken er bare merket som kritisk for at den skal sorteres over per-entitets-reparasjonene fra opptakeren. Den er ikke akutt.",
+            "description": "{count} ConnectLife-sensorer har lagrede langtidsstatistikker (LTS), men rapporterer ikke lenger en tilstandsklasse. Home Assistant oppretter en egen reparasjon for hver av dem.\n\nDette skyldes en nylig endring i integrasjonen: numeriske egenskaper bruker ikke lenger `state_class: measurement` som standard, s\u00e5 tilstandskoder, modusflagg og settpunkter registreres ikke lenger som LTS.\n\n**Slett foreldrel\u00f8se statistikker** fjerner de lagrede LTS-radene for alle {count} sensorene samtidig. De historiske dataene for disse sensorene under Innstillinger \u2192 Tools \u2192 Statistics slettes og kan ikke gjenopprettes. De per-entitets Home Assistant-reparasjonene forsvinner neste gang Home Assistant validerer statistikkene p\u00e5 nytt \u2013 det skjer n\u00e5r du \u00e5pner Innstillinger \u2192 Tools \u2192 Statistics. Denne samlede reparasjonen vil ikke vises igjen for denne konfigurasjonsoppf\u00f8ringen.\n\n**Ignorer** skjuler denne samlede handlingen og lar per-entitets-reparasjonene st\u00e5 \u2013 fiks eller ignorer dem enkeltvis hvis du \u00f8nsker mer detaljert kontroll over hvilke sensorer som beholder historikken sin. Du kan komme tilbake til den samlede handlingen senere ved \u00e5 velge \u00abVis ignorerte reparasjoner\u00bb i overl\u00f8psmenyen \u00f8verst til h\u00f8yre i Innstillinger \u2192 Reparasjoner, og s\u00e5 \u00e5pne denne reparasjonen igjen.\n\nFor \u00e5 se gjennom de enkelte sensorreparasjonene f\u00f8r du bestemmer deg, kan du bare lukke dette vinduet \u2013 den samlede reparasjonen forblir tilgjengelig som den er.\n\nMerk: denne saken er bare merket som kritisk for at den skal sorteres over per-entitets-reparasjonene fra opptakeren. Den er ikke akutt.",
             "menu_options": {
               "clear": "Slett foreldrel\u00f8se statistikker",
               "ignore": "Ignorer"

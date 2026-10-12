@@ -8,14 +8,14 @@
       "cannot_connect": "Impossibile connettersi",
       "invalid_auth": "Autenticazione non valida",
       "terms_not_accepted": "ConnectLife richiede di accettare i Termini e Condizioni aggiornati. Imposta la lingua dell'app ConnectLife su inglese, forza la chiusura dell'app, riaprila, accetta i nuovi termini e riprova.",
-      "test_server_invalid": "Invalid test server URL",
+      "test_server_invalid": "URL del server di prova non valido",
       "test_server_required": "La modalit\u00e0 di sviluppo richiede l'URL del server di prova",
       "unknown": "Errore imprevisto"
     },
     "step": {
       "development": {
         "data": {
-          "test_server_url": "Test server URL"
+          "test_server_url": "URL del server di prova"
         },
         "data_description": {
           "test_server_url": "URL del server di prova con cui autenticarsi anzich\u00e9 con l'API ConnectLife."
@@ -830,6 +830,72 @@
       },
       "error_9": {
         "name": "Errore 9"
+      },
+      "error_f10": {
+        "name": "F10 troppa acqua 1"
+      },
+      "error_f11": {
+        "name": "F11 guasto scarico acqua"
+      },
+      "error_f12": {
+        "name": "F12 guasto carico acqua 1"
+      },
+      "error_f40": {
+        "name": "F40 perdita valvola di carico"
+      },
+      "error_f41": {
+        "name": "F41 guasto resistenza 1"
+      },
+      "error_f42": {
+        "name": "F42 guasto sensore di temperatura"
+      },
+      "error_f43": {
+        "name": "F43 guasto sensore di pressione"
+      },
+      "error_f44": {
+        "name": "Errore F44"
+      },
+      "error_f45": {
+        "name": "F45 guasto deviatore"
+      },
+      "error_f46": {
+        "name": "Errore F46"
+      },
+      "error_f52": {
+        "name": "F52 guasto livello acqua"
+      },
+      "error_f54": {
+        "name": "F54 troppa acqua 2"
+      },
+      "error_f56": {
+        "name": "F56 guasto pompa di circolazione"
+      },
+      "error_f61": {
+        "name": "Errore F61"
+      },
+      "error_f62": {
+        "name": "Errore F62"
+      },
+      "error_f65": {
+        "name": "F65 guasto scheda display"
+      },
+      "error_f67": {
+        "name": "F67 guasto carico acqua 2"
+      },
+      "error_f68": {
+        "name": "F68 guasto pompa di scarico"
+      },
+      "error_f69": {
+        "name": "Errore F69"
+      },
+      "error_f72": {
+        "name": "Errore F72"
+      },
+      "error_f74": {
+        "name": "Errore F74"
+      },
+      "error_f75": {
+        "name": "Errore F75"
       },
       "existing_fuzzy_mode": {
         "name": "Modalit\u00e0 fuzzy presente"
@@ -1914,7 +1980,8 @@
           "fan_mode": {
             "state": {
               "middle_high": "Medio alta",
-              "middle_low": "Medio bassa"
+              "middle_low": "Medio bassa",
+              "quiet": "Silenziosa"
             }
           },
           "preset_mode": {
@@ -2483,35 +2550,64 @@
       "selected_program_id_status": {
         "name": "Seleziona programma",
         "state": {
+          "activewear": "Abbigliamento tecnico",
           "airtech": "AirTech",
+          "allergy_safe": "Antiallergia",
           "auto": "Auto",
           "baby_care": "Bambino",
+          "bedding": "Lenzuola",
+          "bleaching": "Candeggio",
           "clean": "Pulizia",
           "color": "Colorati",
+          "crystal_glass": "Cristallo",
+          "curtains": "Tende",
+          "dark_clothes": "Capi scuri",
           "down_feathers": "Piumini d'oca",
           "draining": "Scarico",
           "drum_clean": "Pulizia cestello",
           "eco": "Eco",
           "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Igiene extra",
+          "fabric_care": "Cura dei tessuti",
           "glass": "Vetro",
           "hygiene": "Igiene",
           "intensive": "Intensivo",
           "intensive_59_32": "Intensivo 59'/32'",
+          "jeans": "Jeans",
+          "kids_wear": "Abbigliamento bambini",
+          "kitchen_towels": "Strofinacci",
+          "lingerie": "Lingerie",
+          "lower_half": "Met\u00e0 inferiore",
           "mix_synthetic": "Misti/Sintetici",
+          "new_clothes": "Capi nuovi",
           "night": "Notte",
           "no_program_selected": "Nessun programma selezionato",
+          "odor_control": "Controllo odori",
           "one_hour": "Un'ora",
           "pet_hair_removal": "Rimozione peli di animali",
+          "pets": "Animali domestici",
+          "pillow": "Cuscino",
+          "plastic": "Plastica",
+          "plush_toys": "Peluche",
+          "power_39": "Power 39",
+          "preheated": "Preriscaldato",
           "quick_pro": "Quick pro",
           "rinse_and_hold": "Risciacquo e attesa",
           "rinsing_softening": "Risciacquo e ammorbidente",
           "self_cleaning": "Autopulizia",
           "shirts": "Camice",
+          "shoes": "Scarpe",
+          "speed_14": "Rapido 14",
           "speed_20": "Speed 20",
           "spinning_draining": "Centrifuga e scarico",
           "sportswear": "Sport",
+          "steam_refresh": "Rinfresco a vapore",
+          "swimwear": "Costumi da bagno",
+          "tights_stockings": "Collant/Calze",
           "time_program": "Programma a tempo",
+          "universal": "Universale",
+          "upper_half": "Met\u00e0 superiore",
+          "waterproof": "Impermeabile",
           "white_cotton": "Cotone bianco",
           "wool_manual": "Lana e Manuale"
         }
@@ -2528,10 +2624,13 @@
         "name": "Modalit\u00e0",
         "state": {
           "fast": "Rapido",
+          "green": "Verde",
+          "intensive": "Intensivo",
           "night": "Notte",
           "normal": "Normale",
           "not_available": "Non disponibile",
-          "speed": "Velocit\u00e0"
+          "speed": "Velocit\u00e0",
+          "uv": "UV"
         }
       },
       "selected_program_mode2": {
@@ -2786,7 +2885,7 @@
         }
       },
       "t_fan_speed": {
-        "name": "Fan speed",
+        "name": "Velocit\u00e0 ventola",
         "state": {
           "auto": "Auto",
           "high": "High",
@@ -3550,7 +3649,10 @@
         "name": "Livello di asciugatura predefinito"
       },
       "defaultspinspeed": {
-        "name": "Velocit\u00e0 di centrifuga predefinita"
+        "name": "Velocit\u00e0 di centrifuga predefinita",
+        "state": {
+          "none": "Nessuno"
+        }
       },
       "delay_actions_flag": {
         "name": "Flag azioni ritardate"
@@ -3901,7 +4003,10 @@
         "name": "Modalit\u00e0 asciugatura"
       },
       "dryopen_defaultspinspeed": {
-        "name": "Velocit\u00e0 di centrifuga predefinita"
+        "name": "Velocit\u00e0 di centrifuga predefinita",
+        "state": {
+          "none": "Nessuno"
+        }
       },
       "duration_of_clock": {
         "name": "Durata visualizzazione orologio"
@@ -4227,74 +4332,8 @@
           "unbalance_alarm": "Allarme di squilibrio"
         }
       },
-      "error_f10": {
-        "name": "Errore f10"
-      },
-      "error_f11": {
-        "name": "Errore f11"
-      },
-      "error_f12": {
-        "name": "Errore f12"
-      },
-      "error_f40": {
-        "name": "Errore f40"
-      },
-      "error_f41": {
-        "name": "Errore f41"
-      },
-      "error_f42": {
-        "name": "Errore f42"
-      },
-      "error_f43": {
-        "name": "Errore f43"
-      },
-      "error_f44": {
-        "name": "Errore f44"
-      },
-      "error_f45": {
-        "name": "Errore f45"
-      },
-      "error_f46": {
-        "name": "Errore f46"
-      },
-      "error_f52": {
-        "name": "Errore f52"
-      },
-      "error_f54": {
-        "name": "Errore f54"
-      },
-      "error_f56": {
-        "name": "Errore f56"
-      },
-      "error_f61": {
-        "name": "Errore f61"
-      },
-      "error_f62": {
-        "name": "Errore f62"
-      },
-      "error_f65": {
-        "name": "Errore f65"
-      },
-      "error_f67": {
-        "name": "Errore f67"
-      },
-      "error_f68": {
-        "name": "Errore f68"
-      },
-      "error_f69": {
-        "name": "Errore f69"
-      },
       "error_f70": {
         "name": "Errore f70"
-      },
-      "error_f72": {
-        "name": "Errore f72"
-      },
-      "error_f74": {
-        "name": "Errore f74"
-      },
-      "error_f75": {
-        "name": "Errore f75"
       },
       "error_f76": {
         "name": "Errore f76"
@@ -5669,14 +5708,19 @@
           "cotton": "Cotone",
           "cotton_dry": "Cotone asciutto",
           "cotton_storage": "Conservazione cotone",
+          "daily_wash": "Lavaggio quotidiano",
+          "down": "Piumini",
           "drum_clean": "Pulizia cestello",
           "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Igiene extra",
           "fast89": "Veloce 89",
+          "full_load_49": "Carico completo 49",
           "iron": "Stiratura",
           "jeans": "Jeans",
           "mix": "Misto",
           "none": "Nessuno",
+          "pets": "Animali domestici",
+          "power_30": "Power 30",
           "power_49": "Power 49",
           "quick_15": "Rapido 15",
           "refresh": "Rinfresca",
@@ -5747,19 +5791,6 @@
       },
       "selected_program_uv_function": {
         "name": "Funzione UV programma selezionato"
-      },
-      "selected_program_washing_spin_speed_rpm_status": {
-        "name": "Velocit\u00e0 di centrifuga",
-        "state": {
-          "0_rpm": "0",
-          "1000_rpm": "1000",
-          "1200_rpm": "1200",
-          "1400_rpm": "1400",
-          "400_rpm": "400",
-          "800_rpm": "800",
-          "no_spin": "Nessuna centrifuga",
-          "not_available": "Non disponibile"
-        }
       },
       "selected_program_water_add": {
         "name": "Aggiunta acqua programma selezionato"
@@ -8473,7 +8504,7 @@
         "name": "ID programma Zibian"
       },
       "zone_number": {
-        "name": "Number of zones"
+        "name": "Numero di zone"
       }
     },
     "switch": {
@@ -8853,6 +8884,9 @@
     }
   },
   "exceptions": {
+    "command_rejected": {
+      "message": "Il dispositivo non accetta questo comando nello stato attuale"
+    },
     "terms_not_accepted": {
       "message": "I Termini e Condizioni aggiornati di ConnectLife devono essere accettati nell'app ConnectLife"
     }
@@ -8870,7 +8904,7 @@
             "title": "Cancella statistiche a lungo termine orfane"
           },
           "init": {
-            "description": "{count} sensori ConnectLife hanno statistiche a lungo termine (LTS) memorizzate ma non riportano pi\u00f9 una classe di stato. Home Assistant genera una riparazione separata per ciascuno di essi.\n\nQuesto \u00e8 causato da una modifica recente nell'integrazione: le propriet\u00e0 numeriche non impostano pi\u00f9 `state_class: measurement` come impostazione predefinita, quindi i codici di stato, i flag delle modalit\u00e0 e i valori impostati non vengono pi\u00f9 registrati come LTS.\n\n**Cancella statistiche orfane** rimuove in una sola volta le righe LTS memorizzate per tutti i {count} sensori. I dati storici di questi sensori in Impostazioni \u2192 Statistiche verranno eliminati e non potranno essere recuperati. Le riparazioni per singola entit\u00e0 di Home Assistant scompariranno la prossima volta che Home Assistant riconvalider\u00e0 le statistiche, cosa che avviene quando apri Strumenti per sviluppatori \u2192 Statistiche. Questa riparazione collettiva non ricomparir\u00e0 pi\u00f9 su questa voce di configurazione.\n\n**Ignora** nasconde questa azione collettiva e lascia in essere le riparazioni per singola entit\u00e0: correggi o ignora ciascuna individualmente se desideri un controllo pi\u00f9 preciso su quali sensori mantengono la loro cronologia. Puoi tornare all'azione collettiva in un secondo momento selezionando \"Mostra riparazioni ignorate\" nel menu a tendina in alto a destra in Impostazioni \u2192 Riparazioni, quindi riaprendo questa riparazione.\n\nPer esaminare le riparazioni dei singoli sensori prima di decidere, chiudi semplicemente questa finestra: la riparazione collettiva rimane disponibile cos\u00ec com'\u00e8.\n\nNota: questo problema \u00e8 contrassegnato come critico solo affinch\u00e9 venga ordinato sopra le riparazioni del recorder per singola entit\u00e0. Non \u00e8 urgente.",
+            "description": "{count} sensori ConnectLife hanno statistiche a lungo termine (LTS) memorizzate ma non riportano pi\u00f9 una classe di stato. Home Assistant genera una riparazione separata per ciascuno di essi.\n\nQuesto \u00e8 causato da una modifica recente nell'integrazione: le propriet\u00e0 numeriche non impostano pi\u00f9 `state_class: measurement` come impostazione predefinita, quindi i codici di stato, i flag delle modalit\u00e0 e i valori impostati non vengono pi\u00f9 registrati come LTS.\n\n**Cancella statistiche orfane** rimuove in una sola volta le righe LTS memorizzate per tutti i {count} sensori. I dati storici di questi sensori in Impostazioni \u2192 Strumenti \u2192 Statistiche verranno eliminati e non potranno essere recuperati. Le riparazioni per singola entit\u00e0 di Home Assistant scompariranno la prossima volta che Home Assistant riconvalider\u00e0 le statistiche, cosa che avviene quando apri Impostazioni \u2192 Strumenti \u2192 Statistiche. Questa riparazione collettiva non ricomparir\u00e0 pi\u00f9 su questa voce di configurazione.\n\n**Ignora** nasconde questa azione collettiva e lascia in essere le riparazioni per singola entit\u00e0: correggi o ignora ciascuna individualmente se desideri un controllo pi\u00f9 preciso su quali sensori mantengono la loro cronologia. Puoi tornare all'azione collettiva in un secondo momento selezionando \"Mostra riparazioni ignorate\" nel menu a tendina in alto a destra in Impostazioni \u2192 Riparazioni, quindi riaprendo questa riparazione.\n\nPer esaminare le riparazioni dei singoli sensori prima di decidere, chiudi semplicemente questa finestra: la riparazione collettiva rimane disponibile cos\u00ec com'\u00e8.\n\nNota: questo problema \u00e8 contrassegnato come critico solo affinch\u00e9 venga ordinato sopra le riparazioni del recorder per singola entit\u00e0. Non \u00e8 urgente.",
             "menu_options": {
               "clear": "Cancella statistiche orfane",
               "ignore": "Ignora"

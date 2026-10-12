@@ -263,6 +263,7 @@ properties:
         2: low
         3: medium
         4: high
+        5: quiet
   - property: t_fan_speed_s
     disable: true
   - property: t_fanspeedcv
