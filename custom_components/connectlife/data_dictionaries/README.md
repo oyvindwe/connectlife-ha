@@ -567,8 +567,16 @@ integration polls a separate ConnectLife cloud statistics endpoint (every 10 min
 exposes the daily totals. Because the data is cloud-side, these sensors stay available even
 when the appliance is offline.
 
-Set this block on the **base** device-type file (e.g. `015.yaml`), not on feature overrides.
-Omit the whole block for device types that have no statistics endpoint.
+Usually this block goes in the **base** device-type file (e.g. `015.yaml`). Omit the whole block for device types that
+have no statistics endpoint. A feature override with its own `statistics` block replaces the base's as a whole, so use one
+to turn the sensors off for a model that ConnectLife returns no statistics for:
+
+```yaml
+# 026-{feature}.yaml (override)
+statistics:
+  source: energy_consumption_curve
+  daily_energy_kwh: false
+```
 
 | Item                      | Type                                            | Description                                                                                                                                            |
 |---------------------------|-------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
