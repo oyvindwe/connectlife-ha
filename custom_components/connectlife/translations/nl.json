@@ -8882,6 +8882,9 @@
     }
   },
   "exceptions": {
+    "command_rejected": {
+      "message": "Het apparaat accepteert deze opdracht niet in de huidige toestand"
+    },
     "terms_not_accepted": {
       "message": "Bijgewerkte algemene voorwaarden van ConnectLife moeten in de ConnectLife-app worden geaccepteerd"
     }
