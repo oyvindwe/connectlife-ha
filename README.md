@@ -129,9 +129,9 @@ The integration polls the ConnectLife API every 60 seconds to avoid overloading 
 
 ## Issues
 
-When reporting an issue with a device, please attach its diagnostics: go to the device page, open the ⋮ menu, and
-select **Download diagnostics**. The file contains the device type and feature code, the raw status values, which
-properties are not mapped, what ConnectLife reports about the device (the settings it supports, its firmware
+When reporting an issue with a device, please attach its diagnostics: go to the device page and click **Download
+diagnostics** in the Device info card. The file contains the device type and feature code, the raw status values,
+which properties are not mapped, what ConnectLife reports about the device (the settings it supports, its firmware
 versions, its programs and their options, the faults it can report, its property list and today's hourly energy use),
 and the last energy statistics. Device IDs, names and rooms are left out.
 

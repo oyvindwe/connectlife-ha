@@ -136,7 +136,7 @@ ConnectLife properties can be mapped to any of these entity types:
   This is a convention, not a guarantee: a `t_*` control is occasionally better surfaced read-only (e.g. `t_beep`
   as a status `binary_sensor`), and a device may advertise `t_*` controls it doesn't physically have — `disable`
   those in the feature override (see [Property inheritance in feature overrides](#property-inheritance-in-feature-overrides)).
-- Download diagnostics for the device (device page → ⋮ → **Download diagnostics**) to see all its properties,
+- Download diagnostics for the device (device page → Device info → **Download diagnostics**) to see all its properties,
   their current values, and which ones are not mapped yet. It also includes what ConnectLife reports about the
   device, which helps narrow down a mapping for a feature code:
   - `static_data`: the settings and values the device supports (e.g. `Rinse_aid_setting_tab: 0` means no
