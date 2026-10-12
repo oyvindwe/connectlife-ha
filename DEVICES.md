@@ -105,6 +105,7 @@
 | WDSE1214-EVAJMW          | Washing machine          | 025              | 1wj120261v0w                |
 | WDSE1214-EVAJMW          | Washing machine          | 025              | 1wj120274v0w                |
 | WFSE1214-MVW002          | Washing machine          | 025              | 1wj120389v0b                |
+|                          | Washing machine          | 025              | 1wj120401v0f                |
 |                          | Washing machine          | 025              | 1wj120407v0w                |
 | WF3S1243BB3              | Washing machine          | 025              | 1wj120459v0f                |
 | WF3S1214-MVT002-001      | Washing machine          | 025              | 1wj120495v0t                |
@@ -139,5 +140,6 @@
 | DH5S102BB                | Tumble dryer             | 030              | 1wk100266v0f                |
 | DHSE80-BEW001            | Tumble dryer             | 030              | 1wk080027e0w                |
 |                          | Tumble dryer             | 030              | 1wk100163v0w                |
+|                          | Tumble dryer             | 030              | 1wk100248v0f                |
 | DPNA83W                  | Tumble dryer             | 032              | 000                         |
 | Hisense RW3N122GSLF      | Wine cooler              | 034              | 1j0122z0035j                |
