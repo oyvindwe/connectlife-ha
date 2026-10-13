@@ -22,6 +22,7 @@ from .const import (
     SW_VERSION_PROPERTY,
 )
 from .coordinator import ConnectLifeCoordinator
+from .dictionaries import Dictionaries
 
 _LOGGER = logging.getLogger(__name__)
 DISABLE_BEEP_FAILURE_THRESHOLD = 3
@@ -131,9 +132,18 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
             self,
             command: dict[str, int] | dict[str, int | float],
             properties: dict[str, int] | dict[str, int | float] | None = None,
+            include: list[str] | None = None,
     ):
         if properties is None:
             properties = command.copy()
+        # Send along the current values of the properties the mapping includes,
+        # e.g. options a program start needs. Copy, so a stored mapping keeps unchanged.
+        if appliance := self.coordinator.data.get(self.device_id):
+            included = Dictionaries.get_dictionary(appliance).included_values(
+                command, appliance.status_list, include
+            )
+            if included:
+                command = {**command, **included}
         try:
             if self._disable_beep:
                 # Copy, so callers passing a stored mapping (e.g. a preset) keep it unchanged.
