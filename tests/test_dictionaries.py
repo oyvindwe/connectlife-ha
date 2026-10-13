@@ -492,6 +492,12 @@ def test_button_include_replaces_as_whole(build_dictionary):
     assert d.buttons[0].write == {"Actions": 1}
 
 
+def test_available_when_accepts_value_or_list():
+    button = Button({"key": "start", "available_when": {"Status": [0, 4], "Remote": 1}, "write": {"Actions": 1}})
+    assert button.available_when == {"Status": [0, 4], "Remote": [1]}
+    assert Button({"key": "start", "write": {"Actions": 1}}).available_when == {}
+
+
 def test_command_value_uses_property_command():
     select = Property({"property": "Temp_status", "unavailable": 0, "select": {
         "options": {1: "cold", 4: "40_c"}, "unknown_value": 15,

@@ -441,19 +441,22 @@ class Button:
 
     Buttons are for write-only commands: a press writes ``write`` to the
     device. ``available_when`` gates the button on read-back property values
-    (all keys must match for the button to be available).
+    (every key must have one of its listed values for the button to be available).
     """
 
     key: str
     icon: str | None
-    available_when: dict[str, int]
+    available_when: dict[str, list[int]]
     include: list[str]
     write: dict[str, int]
 
     def __init__(self, entry: dict):
         self.key = entry[KEY]
         self.icon = _val(entry, ICON) or None
-        self.available_when = _val(entry, AVAILABLE_WHEN, {})
+        self.available_when = {
+            name: value if isinstance(value, list) else [value]
+            for name, value in _val(entry, AVAILABLE_WHEN, {}).items()
+        }
         self.include = _include(entry, f"button {self.key}")
         write = _val(entry, WRITE)
         if not write:
