@@ -3461,6 +3461,12 @@
       "compressor_frequency": {
         "name": "Fr\u00e9quence compresseur"
       },
+      "compressor_operating_max_frequency": {
+        "name": "Fr\u00e9quence de fonctionnement max. du compresseur"
+      },
+      "compressor_operating_min_frequency": {
+        "name": "Fr\u00e9quence de fonctionnement min. du compresseur"
+      },
       "condensed_watermode": {
         "name": "Mode eau condens\u00e9e"
       },
@@ -4813,6 +4819,9 @@
       "humdy_test_switch_state": {
         "name": "\u00c9tat test humidit\u00e9"
       },
+      "humidity_sensor_failure": {
+        "name": "D\u00e9faillance du capteur d'humidit\u00e9"
+      },
       "humiditysensor": {
         "name": "Capteur d'humidit\u00e9"
       },
@@ -4821,6 +4830,9 @@
       },
       "ice_make_room_switch": {
         "name": "Interrupteur compartiment glace"
+      },
+      "ice_maker_wash_state": {
+        "name": "\u00c9tat de lavage de la machine \u00e0 gla\u00e7ons"
       },
       "ice_making_fast_status": {
         "name": "Glace - mode rapide"
@@ -5965,6 +5977,9 @@
       },
       "shop_mode_setting": {
         "name": "R\u00e9glage du mode d\u00e9mo"
+      },
+      "shopping_mode_switch_status": {
+        "name": "\u00c9tat du mode courses"
       },
       "show_date_setting": {
         "name": "R\u00e9glage d'affichage de la date"
@@ -8060,6 +8075,12 @@
       },
       "text_size_setting": {
         "name": "R\u00e9glage de la taille du texte"
+      },
+      "thaw_control_switch_status": {
+        "name": "\u00c9tat du contr\u00f4le de d\u00e9cong\u00e9lation"
+      },
+      "thaw_finished_alarm": {
+        "name": "Alarme de d\u00e9cong\u00e9lation termin\u00e9e"
       },
       "theme_color": {
         "name": "Couleur du th\u00e8me"

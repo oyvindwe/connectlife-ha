@@ -3461,6 +3461,12 @@
       "compressor_frequency": {
         "name": "Compressor frequency"
       },
+      "compressor_operating_max_frequency": {
+        "name": "Compressor operating max frequency"
+      },
+      "compressor_operating_min_frequency": {
+        "name": "Compressor operating min frequency"
+      },
       "condensed_watermode": {
         "name": "Condensed water mode"
       },
@@ -4813,6 +4819,9 @@
       "humdy_test_switch_state": {
         "name": "Humidity test switch state"
       },
+      "humidity_sensor_failure": {
+        "name": "Humidity sensor failure"
+      },
       "humiditysensor": {
         "name": "Humidity sensor"
       },
@@ -4821,6 +4830,9 @@
       },
       "ice_make_room_switch": {
         "name": "Ice make room switch"
+      },
+      "ice_maker_wash_state": {
+        "name": "Ice maker wash state"
       },
       "ice_making_fast_status": {
         "name": "Ice making fast status"
@@ -5965,6 +5977,9 @@
       },
       "shop_mode_setting": {
         "name": "Shop mode setting"
+      },
+      "shopping_mode_switch_status": {
+        "name": "Shopping mode switch status"
       },
       "show_date_setting": {
         "name": "Show date setting"
@@ -8060,6 +8075,12 @@
       },
       "text_size_setting": {
         "name": "Text size setting"
+      },
+      "thaw_control_switch_status": {
+        "name": "Thaw control switch status"
+      },
+      "thaw_finished_alarm": {
+        "name": "Thaw finished alarm"
       },
       "theme_color": {
         "name": "Theme color"
