@@ -3461,6 +3461,12 @@
       "compressor_frequency": {
         "name": "Kompressorfrekvens"
       },
+      "compressor_operating_max_frequency": {
+        "name": "Maks driftsfrekvens for kompressor"
+      },
+      "compressor_operating_min_frequency": {
+        "name": "Min driftsfrekvens for kompressor"
+      },
       "condensed_watermode": {
         "name": "Kondensvannsmodus"
       },
@@ -4813,6 +4819,9 @@
       "humdy_test_switch_state": {
         "name": "Bryterstatus for fuktighetstest"
       },
+      "humidity_sensor_failure": {
+        "name": "Feil p\u00e5 fuktighetssensor"
+      },
       "humiditysensor": {
         "name": "Fuktighetssensor"
       },
@@ -4821,6 +4830,9 @@
       },
       "ice_make_room_switch": {
         "name": "Bryter for isproduksjonsrom"
+      },
+      "ice_maker_wash_state": {
+        "name": "Rengj\u00f8ring ismaskin"
       },
       "ice_making_fast_status": {
         "name": "Status for hurtig isproduksjon"
@@ -5965,6 +5977,9 @@
       },
       "shop_mode_setting": {
         "name": "Innstilling for butikkmodus"
+      },
+      "shopping_mode_switch_status": {
+        "name": "Handlemodus"
       },
       "show_date_setting": {
         "name": "Innstilling for \u00e5 vise dato"
@@ -8060,6 +8075,12 @@
       },
       "text_size_setting": {
         "name": "Innstilling for tekstst\u00f8rrelse"
+      },
+      "thaw_control_switch_status": {
+        "name": "Tining"
+      },
+      "thaw_finished_alarm": {
+        "name": "Tining ferdig"
       },
       "theme_color": {
         "name": "Temafarge"

@@ -3461,6 +3461,12 @@
       "compressor_frequency": {
         "name": "Frekvencija kompresora"
       },
+      "compressor_operating_max_frequency": {
+        "name": "Maksimalna radna frekvencija kompresora"
+      },
+      "compressor_operating_min_frequency": {
+        "name": "Minimalna radna frekvencija kompresora"
+      },
       "condensed_watermode": {
         "name": "Re\u017eim kondenzovane vode"
       },
@@ -4813,6 +4819,9 @@
       "humdy_test_switch_state": {
         "name": "Status prekida\u010da testa vla\u017enosti"
       },
+      "humidity_sensor_failure": {
+        "name": "Kvar senzora vla\u017enosti"
+      },
       "humiditysensor": {
         "name": "Senzor vla\u017enosti"
       },
@@ -4821,6 +4830,9 @@
       },
       "ice_make_room_switch": {
         "name": "Prekida\u010d komore za pravljenje leda"
+      },
+      "ice_maker_wash_state": {
+        "name": "Stanje pranja ledomata"
       },
       "ice_making_fast_status": {
         "name": "Status brzog pravljenja leda"
@@ -5965,6 +5977,9 @@
       },
       "shop_mode_setting": {
         "name": "Pode\u0161avanje re\u017eima prodavnice"
+      },
+      "shopping_mode_switch_status": {
+        "name": "Status re\u017eima kupovine"
       },
       "show_date_setting": {
         "name": "Pode\u0161avanje prikaza datuma"
@@ -8060,6 +8075,12 @@
       },
       "text_size_setting": {
         "name": "Pode\u0161avanje veli\u010dine teksta"
+      },
+      "thaw_control_switch_status": {
+        "name": "Status kontrole odmrzavanja"
+      },
+      "thaw_finished_alarm": {
+        "name": "Alarm \u2013 odmrzavanje zavr\u0161eno"
       },
       "theme_color": {
         "name": "Boja teme"

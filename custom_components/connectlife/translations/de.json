@@ -3461,6 +3461,12 @@
       "compressor_frequency": {
         "name": "Kompressorfrequenz"
       },
+      "compressor_operating_max_frequency": {
+        "name": "Maximale Betriebsfrequenz des Kompressors"
+      },
+      "compressor_operating_min_frequency": {
+        "name": "Minimale Betriebsfrequenz des Kompressors"
+      },
       "condensed_watermode": {
         "name": "Kondenswassermodus"
       },
@@ -4813,6 +4819,9 @@
       "humdy_test_switch_state": {
         "name": "Feuchtigkeitstest-Schalterstatus"
       },
+      "humidity_sensor_failure": {
+        "name": "Feuchtigkeitssensor-Fehler"
+      },
       "humiditysensor": {
         "name": "Luftfeuchtigkeitssensor"
       },
@@ -4821,6 +4830,9 @@
       },
       "ice_make_room_switch": {
         "name": "Schalter Eisbereiterfach"
+      },
+      "ice_maker_wash_state": {
+        "name": "Reinigungsstatus des Eisbereiters"
       },
       "ice_making_fast_status": {
         "name": "Status schnelle Eisbereitung"
@@ -5965,6 +5977,9 @@
       },
       "shop_mode_setting": {
         "name": "Einstellung Vorf\u00fchrmodus"
+      },
+      "shopping_mode_switch_status": {
+        "name": "Status Einkaufsmodus"
       },
       "show_date_setting": {
         "name": "Einstellung Datumsanzeige"
@@ -8060,6 +8075,12 @@
       },
       "text_size_setting": {
         "name": "Einstellung Schriftgr\u00f6\u00dfe"
+      },
+      "thaw_control_switch_status": {
+        "name": "Status Auftausteuerung"
+      },
+      "thaw_finished_alarm": {
+        "name": "Alarm Auftauen beendet"
       },
       "theme_color": {
         "name": "Themenfarbe"

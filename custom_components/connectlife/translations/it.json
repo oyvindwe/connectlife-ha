@@ -3461,6 +3461,12 @@
       "compressor_frequency": {
         "name": "Frequenza compressore"
       },
+      "compressor_operating_max_frequency": {
+        "name": "Frequenza operativa massima del compressore"
+      },
+      "compressor_operating_min_frequency": {
+        "name": "Frequenza operativa minima del compressore"
+      },
       "condensed_watermode": {
         "name": "Modalit\u00e0 acqua di condensa"
       },
@@ -4813,6 +4819,9 @@
       "humdy_test_switch_state": {
         "name": "Stato interruttore test umidit\u00e0"
       },
+      "humidity_sensor_failure": {
+        "name": "Guasto sensore di umidit\u00e0"
+      },
       "humiditysensor": {
         "name": "Sensore di umidit\u00e0"
       },
@@ -4821,6 +4830,9 @@
       },
       "ice_make_room_switch": {
         "name": "Interruttore vano produzione ghiaccio"
+      },
+      "ice_maker_wash_state": {
+        "name": "Stato lavaggio produttore di ghiaccio"
       },
       "ice_making_fast_status": {
         "name": "Stato produzione ghiaccio rapida"
@@ -5965,6 +5977,9 @@
       },
       "shop_mode_setting": {
         "name": "Impostazione modalit\u00e0 negozio"
+      },
+      "shopping_mode_switch_status": {
+        "name": "Stato modalit\u00e0 spesa"
       },
       "show_date_setting": {
         "name": "Impostazione visualizzazione data"
@@ -8060,6 +8075,12 @@
       },
       "text_size_setting": {
         "name": "Impostazione dimensione testo"
+      },
+      "thaw_control_switch_status": {
+        "name": "Stato controllo scongelamento"
+      },
+      "thaw_finished_alarm": {
+        "name": "Allarme scongelamento terminato"
       },
       "theme_color": {
         "name": "Colore tema"

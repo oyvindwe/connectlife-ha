@@ -3461,6 +3461,12 @@
       "compressor_frequency": {
         "name": "Compressorfrequentie"
       },
+      "compressor_operating_max_frequency": {
+        "name": "Maximale werkfrequentie compressor"
+      },
+      "compressor_operating_min_frequency": {
+        "name": "Minimale werkfrequentie compressor"
+      },
       "condensed_watermode": {
         "name": "Condenswatermodus"
       },
@@ -4813,6 +4819,9 @@
       "humdy_test_switch_state": {
         "name": "Status schakelaar vochtigheidstest"
       },
+      "humidity_sensor_failure": {
+        "name": "Storing vochtigheidssensor"
+      },
       "humiditysensor": {
         "name": "Vochtigheidssensor"
       },
@@ -4821,6 +4830,9 @@
       },
       "ice_make_room_switch": {
         "name": "Schakelaar ijsmaakruimte"
+      },
+      "ice_maker_wash_state": {
+        "name": "Spoelstatus ijsmaker"
       },
       "ice_making_fast_status": {
         "name": "Status snel ijs maken"
@@ -5965,6 +5977,9 @@
       },
       "shop_mode_setting": {
         "name": "Instelling winkelmodus"
+      },
+      "shopping_mode_switch_status": {
+        "name": "Status boodschappenmodus"
       },
       "show_date_setting": {
         "name": "Instelling datum tonen"
@@ -8060,6 +8075,12 @@
       },
       "text_size_setting": {
         "name": "Instelling tekstgrootte"
+      },
+      "thaw_control_switch_status": {
+        "name": "Status ontdooiregeling"
+      },
+      "thaw_finished_alarm": {
+        "name": "Alarm ontdooien voltooid"
       },
       "theme_color": {
         "name": "Themakleur"
