@@ -81,6 +81,7 @@
 |                          | Induction hob            | 020              | 63c45b513e1a4bf7            |
 |                          | Oven                     | 023              | 295608422d362be1            |
 | HWF8I1015BX              | Washing machine          | 025              | 1wfj1000018v                |
+| WD3S8043BW3              | Washing machine          | 025              | 1wfx0800019v                |
 | WD5I9043BBFS             | Washing machine          | 025              | 1wfx0900003v                |
 | WF5I8043BWF              | Washing machine          | 025              | 1wj0803f2v0w                |
 | WD3S8043BW3              | Washing machine          | 025              | 1wj080837v0w                |
