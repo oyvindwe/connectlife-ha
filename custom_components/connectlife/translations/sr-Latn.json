@@ -2,15 +2,22 @@
   "config": {
     "abort": {
       "already_configured": "Ure\u0111aj je ve\u0107 konfigurisan",
-      "reauth_successful": "Ponovna autentifikacija je uspe\u0161no zavr\u0161ena"
+      "already_configured_elsewhere": "Ure\u0111aji ovog naloga su ve\u0107 pode\u0161eni u drugom ConnectLife unosu. Da biste promenili na\u010din prijave tog unosa, izaberite Ponovo konfiguri\u0161i na njemu. Da biste ga zamenili novim unosom, prvo ga onemogu\u0107ite.",
+      "cannot_connect": "Neuspe\u0161no povezivanje",
+      "reauth_successful": "Ponovna autentifikacija je uspe\u0161no zavr\u0161ena",
+      "reconfigure_successful": "Ponovna konfiguracija je uspe\u0161no zavr\u0161ena"
     },
     "error": {
+      "already_configured_elsewhere": "Ure\u0111aji ovog naloga su ve\u0107 pode\u0161eni u drugom ConnectLife unosu. Da biste promenili na\u010din prijave tog unosa, izaberite Ponovo konfiguri\u0161i na njemu. Da biste ga zamenili novim unosom, prvo ga onemogu\u0107ite.",
       "cannot_connect": "Neuspe\u0161no povezivanje",
       "invalid_auth": "Neva\u017ee\u0107a autentifikacija",
       "terms_not_accepted": "ConnectLife zahteva da prihvatite a\u017eurirane Uslove kori\u0161\u0107enja. Promenite jezik aplikacije ConnectLife na English, potpuno zatvorite i ponovo otvorite aplikaciju, prihvatite nove uslove, zatim poku\u0161ajte ponovo.",
       "test_server_invalid": "Neva\u017ee\u0107i URL test servera",
       "test_server_required": "Re\u017eim razvoja zahteva URL test servera",
       "unknown": "Neo\u010dekivana gre\u0161ka"
+    },
+    "initiate_flow": {
+      "user": "Dodaj nalog"
     },
     "step": {
       "development": {
@@ -22,14 +29,7 @@
         },
         "description": "Unesite test server za povezivanje umesto ConnectLife API-ja."
       },
-      "reauth_confirm": {
-        "data": {
-          "password": "Lozinka",
-          "username": "Korisni\u010dko ime"
-        },
-        "description": "Ponovo unesite svoje ConnectLife akreditive."
-      },
-      "user": {
+      "password": {
         "data": {
           "development_mode": "Re\u017eim razvoja",
           "password": "Lozinka",
@@ -39,6 +39,39 @@
         "data_description": {
           "development_mode": "Povezivanje na lokalni test server umesto ConnectLife API-ja. Samo za razvoj.",
           "trir": "Omogu\u0107ite samo ako se prijavljujete putem ConnectLife.TRIR aplikacije koja se koristi u Rusiji/CIS. Eksperimentalno."
+        }
+      },
+      "reauth_confirm": {
+        "data": {
+          "password": "Lozinka",
+          "username": "Korisni\u010dko ime"
+        },
+        "description": "Ponovo unesite svoje ConnectLife akreditive."
+      },
+      "reauth_oauth": {
+        "description": "Va\u0161a ConnectLife prijava je istekla. Ponovo se prijavite na ConnectLife veb-sajtu, gde mo\u017eete i da prihvatite a\u017eurirane Uslove kori\u0161\u0107enja.",
+        "title": "Ponovna prijava"
+      },
+      "reconfigure": {
+        "menu_options": {
+          "pick_implementation": "Prijava na ConnectLife veb-sajtu (i Google, Apple, Facebook ili Microsoft nalozi)",
+          "reconfigure_password": "Unesite korisni\u010dko ime i lozinku"
+        }
+      },
+      "reconfigure_password": {
+        "data": {
+          "password": "Lozinka",
+          "trir": "ConnectLife.TRIR (Rusija/CIS) \u2014 eksperimentalno",
+          "username": "Korisni\u010dko ime"
+        },
+        "data_description": {
+          "trir": "Omogu\u0107ite samo ako se prijavljujete putem ConnectLife.TRIR aplikacije koja se koristi u Rusiji/CIS. Eksperimentalno."
+        }
+      },
+      "user": {
+        "menu_options": {
+          "password": "Unesite korisni\u010dko ime i lozinku",
+          "pick_implementation": "Prijava na ConnectLife veb-sajtu (i Google, Apple, Facebook ili Microsoft nalozi)"
         }
       }
     }

@@ -21,8 +21,10 @@ Download the `connectlife` directory and place in your `<config>/custom_componen
 
 After installing, you need to restart Home Assistant.
 
-Finally, add "ConnectLife" as an integration in the UI, and provide the username and password for your ConnectLife account.
-Users in Russia/CIS who sign in with the ConnectLife.TRIR app should enable the experimental "TRIR" option in the setup dialog.
+Finally, add "ConnectLife" as an integration in the UI, and choose how to sign in (see [Login](#login)):
+- **Sign in on the ConnectLife website**, also with a Google, Apple, Facebook or Microsoft account.
+- **Enter username and password** of your ConnectLife account. Users in Russia/CIS who sign in with the
+  ConnectLife.TRIR app must use this option and enable the experimental "TRIR" option.
 
 Your devices and all their properties should show up.
 
@@ -148,27 +150,22 @@ Missing features:
 
 ### Login
 
-Note that users in China can't log in using this integration. Users in Russia/CIS who use the
-ConnectLife.TRIR app can log in by enabling the experimental "TRIR" option when setting up the
-integration (see https://github.com/oyvindwe/connectlife-ha/issues/267). See also the earlier
-discussion in https://github.com/bilan/connectlife-api-connector/issues/25
+There are two ways to sign in:
 
-You have to create a ConnectLife account with username/password. Login with SSO using 3rd party identity providers
-(Google, Apple, etc.) is not supported (See https://github.com/oyvindwe/connectlife-ha/issues/99).
+- **Sign in on the ConnectLife website.** Home Assistant opens the ConnectLife login page, where you can sign in
+  with your ConnectLife password or with Google, Apple, Facebook or Microsoft, and accept updated Terms &
+  Conditions. Home Assistant doesn't store your password. This requires
+  [My Home Assistant](https://www.home-assistant.io/integrations/my/), which is part of the default configuration.
+  So far this has only been tested with accounts in Europe; please report how it works for you elsewhere.
+- **Enter username and password** of a ConnectLife account. The password is stored in Home Assistant.
 
-There are two workarounds if you have logged in using a 3rd party identity provider:
+Users in China can't sign in using this integration. Users in Russia/CIS who use the ConnectLife.TRIR app must
+enter username and password and enable the experimental "TRIR" option (see
+https://github.com/oyvindwe/connectlife-ha/issues/267). See also the earlier discussion in
+https://github.com/bilan/connectlife-api-connector/issues/25
 
-#### Set password on current user account
-
-1. In the ConnectLife mobile app select "Disconnect" and then "Forget password?"
-2. Set new password via reset link received via email.
-
-#### Using a second account
-
-1. In the ConnectLife mobile app, create a new account using an email and password (needs to be a different email to your SSO account as that is now occupied by that SSO).
-2. Still in the mobile app, switch accounts back to your SSO account, go to the device/s you have already setup in your SSO account, select them 1 by 1, scrolling to the bottom to get to the "Share Device" option and adding your new email to the shared accounts list.
-3. In the connectlife-ha integration within Home Assistant, use the email and password from the new account you set up, which will now have the device(s) shared with it.
-4. Forget your new email version of your account exists, you don't have to accept device shares or use that account for any other reason.
+Each ConnectLife account can only be added once. To change how an existing entry signs in, open it and select
+**⋮** → **Reconfigure**.
 
 ### Password works in the app but not in Home Assistant
 
@@ -186,7 +183,10 @@ silently become unavailable. Home Assistant shows this as the repair issue
 **Accept updated ConnectLife Terms & Conditions**. The integration retries every 15 minutes until the terms are
 accepted; select **Submit** in the repair to retry right away.
 
-To resolve this, you need to accept the new Terms & Conditions in the ConnectLife mobile app:
+If you sign in on the ConnectLife website, select **⋮** → **Reconfigure** on the entry and sign in again; the login
+page should ask you to accept the new terms.
+
+With username and password, you need to accept the new Terms & Conditions in the ConnectLife mobile app:
 
 1. Open the ConnectLife mobile app
 2. Go to Settings and **change the app language to English**
