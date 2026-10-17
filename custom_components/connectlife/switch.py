@@ -55,6 +55,7 @@ class ConnectLifeSwitch(ConnectLifeEntity, SwitchEntity):
         self.status = status
         self._unavailable_status = status
         self._unavailable_value = dd_entry.unavailable
+        self._available_when = dd_entry.available_when
         self.command_name = (
             dd_entry.switch.command_name if dd_entry.switch.command_name else status
         )

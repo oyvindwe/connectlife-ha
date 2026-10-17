@@ -22,7 +22,7 @@ from .const import (
     SW_VERSION_PROPERTY,
 )
 from .coordinator import ConnectLifeCoordinator
-from .dictionaries import Dictionaries
+from .dictionaries import Dictionaries, available_when_met
 
 _LOGGER = logging.getLogger(__name__)
 DISABLE_BEEP_FAILURE_THRESHOLD = 3
@@ -44,6 +44,7 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
     _expose_offline_state = False
     _unavailable_status: str | None = None
     _unavailable_value: int | None = None
+    _available_when: dict[str, list[int]] = {}
 
     def __init__(
             self,
@@ -89,7 +90,9 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
         #    of going unavailable;
         #  - the current value does not match the per-property `unavailable`
         #    sentinel (which marks the entity unavailable at runtime rather
-        #    than skipping it at creation time).
+        #    than skipping it at creation time);
+        #  - the device state meets the property's `available_when` conditions
+        #    (e.g. a switch the device only accepts while it's on).
         return (
             super().available
             and self.device_id in self.coordinator.data
@@ -98,6 +101,9 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
                 or self.coordinator.data[self.device_id].offline_state == 1
             )
             and not self._is_value_unavailable()
+            and available_when_met(
+                self.coordinator.data[self.device_id].status_list, self._available_when
+            )
         )
 
     def _is_value_unavailable(self) -> bool:
