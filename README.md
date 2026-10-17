@@ -165,8 +165,7 @@ https://github.com/oyvindwe/connectlife-ha/issues/267). See also the earlier dis
 https://github.com/bilan/connectlife-api-connector/issues/25
 
 Each ConnectLife account can only be added once. To change how an existing entry signs in, open it and select
-**⋮** → **Reconfigure**. Alternatively, disable the existing entry, add a new one and then delete the old one. As the
-devices are the same, entity IDs, names and history are kept.
+**⋮** → **Reconfigure**.
 
 ### Password works in the app but not in Home Assistant
 
