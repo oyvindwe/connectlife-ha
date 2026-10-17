@@ -33,12 +33,12 @@
         "data": {
           "development_mode": "V\u00fdvojov\u00fd re\u017eim",
           "password": "Heslo",
-          "trir": "ConnectLife.TRIR (Rusko/SNS) \u2014 experiment\u00e1ln\u00ed",
+          "trir": "ConnectLife.TRIR (Rusko/SNS)",
           "username": "U\u017eivatelsk\u00e9 jm\u00e9no"
         },
         "data_description": {
           "development_mode": "P\u0159ipojit k lok\u00e1ln\u00edmu testovac\u00edmu serveru nam\u00edsto ConnectLife API. Pouze pro v\u00fdvoj.",
-          "trir": "Povolte pouze pokud se p\u0159ihla\u0161ujete pomoc\u00ed aplikace ConnectLife.TRIR pou\u017e\u00edvan\u00e9 v Rusku/SNS. Experiment\u00e1ln\u00ed."
+          "trir": "Povolte pouze pokud se p\u0159ihla\u0161ujete pomoc\u00ed aplikace ConnectLife.TRIR pou\u017e\u00edvan\u00e9 v Rusku/SNS."
         }
       },
       "reauth_confirm": {
@@ -61,11 +61,11 @@
       "reconfigure_password": {
         "data": {
           "password": "Heslo",
-          "trir": "ConnectLife.TRIR (Rusko/SNS) \u2014 experiment\u00e1ln\u00ed",
+          "trir": "ConnectLife.TRIR (Rusko/SNS)",
           "username": "U\u017eivatelsk\u00e9 jm\u00e9no"
         },
         "data_description": {
-          "trir": "Povolte pouze pokud se p\u0159ihla\u0161ujete pomoc\u00ed aplikace ConnectLife.TRIR pou\u017e\u00edvan\u00e9 v Rusku/SNS. Experiment\u00e1ln\u00ed."
+          "trir": "Povolte pouze pokud se p\u0159ihla\u0161ujete pomoc\u00ed aplikace ConnectLife.TRIR pou\u017e\u00edvan\u00e9 v Rusku/SNS."
         }
       },
       "user": {

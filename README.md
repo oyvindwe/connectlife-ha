@@ -24,7 +24,7 @@ After installing, you need to restart Home Assistant.
 Finally, add "ConnectLife" as an integration in the UI, and choose how to sign in (see [Login](#login)):
 - **Sign in on the ConnectLife website**, also with a Google, Apple, Facebook or Microsoft account.
 - **Enter username and password** of your ConnectLife account. Users in Russia/CIS who sign in with the
-  ConnectLife.TRIR app must use this option and enable the experimental "TRIR" option.
+  ConnectLife.TRIR app must use this option and enable the "TRIR" option.
 
 Your devices and all their properties should show up.
 
@@ -32,31 +32,8 @@ Your devices and all their properties should show up.
 
 See [DEVICES.md](DEVICES.md) for the full list of supported devices.
 
-### Default device types
-
-Default mapping files are provided for the following device types:
-
-| Device type              | Device type code                                                |
-|--------------------------|-----------------------------------------------------------------|
-| Portable air conditioner | [006](custom_components/connectlife/data_dictionaries/006.yaml) |
-| Dehumidifier             | [007](custom_components/connectlife/data_dictionaries/007.yaml) |
-| Window air conditioner   | [008](custom_components/connectlife/data_dictionaries/008.yaml) |
-| Air conditioner          | [009](custom_components/connectlife/data_dictionaries/009.yaml) |
-| Hood                     | [012](custom_components/connectlife/data_dictionaries/012.yaml) |
-| Oven                     | [013](custom_components/connectlife/data_dictionaries/013.yaml) |
-| Dishwasher               | [015](custom_components/connectlife/data_dictionaries/015.yaml) |
-| Heat pump                | [016](custom_components/connectlife/data_dictionaries/016.yaml) |
-| Induction hob            | [020](custom_components/connectlife/data_dictionaries/020.yaml) |
-| Oven                     | [023](custom_components/connectlife/data_dictionaries/023.yaml) |
-| Washing machine          | [025](custom_components/connectlife/data_dictionaries/025.yaml) |
-| Refrigerator             | [026](custom_components/connectlife/data_dictionaries/026.yaml) |
-| Washing machine          | [027](custom_components/connectlife/data_dictionaries/027.yaml) |
-| Tumble dryer             | [030](custom_components/connectlife/data_dictionaries/030.yaml) |
-| Tumble dryer             | [032](custom_components/connectlife/data_dictionaries/032.yaml) |
-| Wine cooler              | [034](custom_components/connectlife/data_dictionaries/034.yaml) |
-
-Any devices of these types will use the default mapping file, but it may not be fully functional until a
-feature-specific mapping file is provided.
+Devices without a feature-specific mapping file use the default mapping file for their device type, but may not be
+fully functional until a feature-specific mapping file is provided.
 
 Any unmapped properties will show up as sensors with names based on their properties. As there are a lot of exposed
 properties, all unknown entities are disabled by default. Access the device or entity list to view sensors and enable.
@@ -160,7 +137,7 @@ There are two ways to sign in:
 - **Enter username and password** of a ConnectLife account. The password is stored in Home Assistant.
 
 Users in China can't sign in using this integration. Users in Russia/CIS who use the ConnectLife.TRIR app must
-enter username and password and enable the experimental "TRIR" option (see
+enter username and password and enable the "TRIR" option (see
 https://github.com/oyvindwe/connectlife-ha/issues/267). See also the earlier discussion in
 https://github.com/bilan/connectlife-api-connector/issues/25
 

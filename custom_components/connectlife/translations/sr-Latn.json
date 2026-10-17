@@ -33,12 +33,12 @@
         "data": {
           "development_mode": "Re\u017eim razvoja",
           "password": "Lozinka",
-          "trir": "ConnectLife.TRIR (Rusija/CIS) \u2014 eksperimentalno",
+          "trir": "ConnectLife.TRIR (Rusija/CIS)",
           "username": "Korisni\u010dko ime"
         },
         "data_description": {
           "development_mode": "Povezivanje na lokalni test server umesto ConnectLife API-ja. Samo za razvoj.",
-          "trir": "Omogu\u0107ite samo ako se prijavljujete putem ConnectLife.TRIR aplikacije koja se koristi u Rusiji/CIS. Eksperimentalno."
+          "trir": "Omogu\u0107ite samo ako se prijavljujete putem ConnectLife.TRIR aplikacije koja se koristi u Rusiji/CIS."
         }
       },
       "reauth_confirm": {
@@ -61,11 +61,11 @@
       "reconfigure_password": {
         "data": {
           "password": "Lozinka",
-          "trir": "ConnectLife.TRIR (Rusija/CIS) \u2014 eksperimentalno",
+          "trir": "ConnectLife.TRIR (Rusija/CIS)",
           "username": "Korisni\u010dko ime"
         },
         "data_description": {
-          "trir": "Omogu\u0107ite samo ako se prijavljujete putem ConnectLife.TRIR aplikacije koja se koristi u Rusiji/CIS. Eksperimentalno."
+          "trir": "Omogu\u0107ite samo ako se prijavljujete putem ConnectLife.TRIR aplikacije koja se koristi u Rusiji/CIS."
         }
       },
       "user": {
@@ -4714,6 +4714,9 @@
       "getcurrentcityinfoflag": {
         "name": "Oznaka dobijanja informacija o trenutnom gradu"
       },
+      "global_timer_remaining_time_in_minutes": {
+        "name": "Preostalo vreme glavnog tajmera"
+      },
       "gratin_total_allowed_time_in_minutes": {
         "name": "Gratin \u2013 ukupno dozvoljeno vreme"
       },
@@ -4902,6 +4905,24 @@
       },
       "idmachine": {
         "name": "ID ma\u0161ine"
+      },
+      "igbttemperatureg01": {
+        "name": "Temperatura modula napajanja G01"
+      },
+      "igbttemperatureg02": {
+        "name": "Temperatura modula napajanja G02"
+      },
+      "igbttemperatureg11": {
+        "name": "Temperatura modula napajanja G11"
+      },
+      "igbttemperatureg12": {
+        "name": "Temperatura modula napajanja G12"
+      },
+      "igbttemperatureg21": {
+        "name": "Temperatura modula napajanja G21"
+      },
+      "igbttemperatureg22": {
+        "name": "Temperatura modula napajanja G22"
       },
       "inactivity_timeout": {
         "name": "Vreme isteka neaktivnosti"
@@ -8207,6 +8228,12 @@
       },
       "totalprogramscycles": {
         "name": "Ukupni ciklusi programa"
+      },
+      "totaltimeofcookinginminutes": {
+        "name": "Ukupno vreme kuvanja"
+      },
+      "uitemperature": {
+        "name": "Temperatura kontrolne table"
       },
       "unfreeze_run_status": {
         "name": "Status rada odmrzavanja"
