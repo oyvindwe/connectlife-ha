@@ -1,0 +1,32 @@
+# Hisense BCD-628WP1BSGF1Z11/HC4(HAA) (deviceFeatureCode 1b0628z0223j)
+# No variable-temperature zone and no humidity sensor, although the fridge
+# reports values for both (#350).
+properties:
+  - property: environment_humidity
+    disable: true
+  - property: real_humidity
+    disable: true
+  - property: vari_evap_temp_sens_head_failure
+    disable: true
+  - property: vari_room_open
+    disable: true
+  - property: vari_temp_2_degree_above_starting_point
+    disable: true
+  - property: vari_temp_sens_head_failure
+    disable: true
+  - property: variable_fan_failure_status
+    disable: true
+  - property: variable_heater_failure_status
+    disable: true
+  - property: variation_door_open_time
+    disable: true
+  - property: variation_max_temperature
+    disable: true
+  - property: variation_min_temperature
+    disable: true
+  - property: variation_real_temperature
+    disable: true
+  - property: variation_sensor_real_temperature
+    disable: true
+  - property: variation_temperature
+    disable: true

@@ -6,6 +6,13 @@ ATTR_DEVICE = "device"
 ATTR_DESC = "desc"
 ATTR_KEY = "key"
 
+# How the entry signs in: browser OAuth, or username/password (the default for
+# entries created before browser sign-in existed).
+CONF_AUTH_TYPE = "auth_type"
+AUTH_TYPE_OAUTH = "oauth"
+AUTH_TYPE_PASSWORD = "password"
+CONF_SOURCE_ID = "source_id"
+
 CONF_DEVICES = "devices"
 CONF_DEVELOPMENT_MODE = "development_mode"
 CONF_DISABLE_BEEP = "disable_beep"

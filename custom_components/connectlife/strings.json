@@ -2,15 +2,30 @@
   "config": {
     "abort": {
       "already_configured": "[%key:common::config_flow::abort::already_configured_device%]",
-      "reauth_successful": "[%key:common::config_flow::abort::reauth_successful%]"
+      "already_configured_elsewhere": "The devices of this account are already set up in another ConnectLife entry. To change how that entry signs in, choose Reconfigure on it. To replace it with a new entry, disable it first.",
+      "authorize_url_timeout": "[%key:common::config_flow::abort::oauth2_authorize_url_timeout%]",
+      "cannot_connect": "[%key:common::config_flow::error::cannot_connect%]",
+      "missing_configuration": "[%key:common::config_flow::abort::oauth2_missing_configuration%]",
+      "no_url_available": "[%key:common::config_flow::abort::oauth2_no_url_available%]",
+      "oauth_error": "[%key:common::config_flow::abort::oauth2_error%]",
+      "oauth_failed": "[%key:common::config_flow::abort::oauth2_failed%]",
+      "oauth_timeout": "[%key:common::config_flow::abort::oauth2_timeout%]",
+      "oauth_unauthorized": "[%key:common::config_flow::abort::oauth2_unauthorized%]",
+      "reauth_successful": "[%key:common::config_flow::abort::reauth_successful%]",
+      "reconfigure_successful": "[%key:common::config_flow::abort::reconfigure_successful%]",
+      "user_rejected_authorize": "[%key:common::config_flow::abort::oauth2_user_rejected_authorize%]"
     },
     "error": {
+      "already_configured_elsewhere": "The devices of this account are already set up in another ConnectLife entry. To change how that entry signs in, choose Reconfigure on it. To replace it with a new entry, disable it first.",
       "cannot_connect": "[%key:common::config_flow::error::cannot_connect%]",
       "invalid_auth": "[%key:common::config_flow::error::invalid_auth%]",
       "terms_not_accepted": "ConnectLife requires you to accept updated Terms & Conditions. Change the ConnectLife app language to English, force close and reopen the app, accept the new terms, then try again.",
       "test_server_invalid": "Invalid test server URL",
       "test_server_required": "Development mode requires test server URL",
       "unknown": "[%key:common::config_flow::error::unknown%]"
+    },
+    "initiate_flow": {
+      "user": "[%key:common::config_flow::initiate_flow::account%]"
     },
     "step": {
       "development": {
@@ -22,6 +37,21 @@
         },
         "description": "Enter the test server to connect to instead of the ConnectLife API."
       },
+      "password": {
+        "data": {
+          "development_mode": "Development mode",
+          "password": "[%key:common::config_flow::data::password%]",
+          "trir": "ConnectLife.TRIR (Russia/CIS)",
+          "username": "[%key:common::config_flow::data::username%]"
+        },
+        "data_description": {
+          "development_mode": "Connect to a local test server instead of the ConnectLife API. For development only.",
+          "trir": "Enable only if you sign in with the ConnectLife.TRIR app used in Russia/CIS."
+        }
+      },
+      "pick_implementation": {
+        "title": "[%key:common::config_flow::title::oauth2_pick_implementation%]"
+      },
       "reauth_confirm": {
         "data": {
           "password": "[%key:common::config_flow::data::password%]",
@@ -29,16 +59,30 @@
         },
         "description": "Please re-enter your ConnectLife credentials."
       },
-      "user": {
+      "reauth_oauth": {
+        "description": "Your ConnectLife sign-in has expired. Sign in again on the ConnectLife website, where you can also accept updated Terms & Conditions.",
+        "title": "Sign in again"
+      },
+      "reconfigure": {
+        "menu_options": {
+          "pick_implementation": "Sign in on the ConnectLife website (also Google, Apple, Facebook or Microsoft accounts)",
+          "reconfigure_password": "Enter username and password"
+        }
+      },
+      "reconfigure_password": {
         "data": {
-          "development_mode": "Development mode",
           "password": "[%key:common::config_flow::data::password%]",
-          "trir": "ConnectLife.TRIR (Russia/CIS) \u2014 experimental",
+          "trir": "ConnectLife.TRIR (Russia/CIS)",
           "username": "[%key:common::config_flow::data::username%]"
         },
         "data_description": {
-          "development_mode": "Connect to a local test server instead of the ConnectLife API. For development only.",
-          "trir": "Enable only if you sign in with the ConnectLife.TRIR app used in Russia/CIS. Experimental."
+          "trir": "Enable only if you sign in with the ConnectLife.TRIR app used in Russia/CIS."
+        }
+      },
+      "user": {
+        "menu_options": {
+          "password": "Enter username and password",
+          "pick_implementation": "Sign in on the ConnectLife website (also Google, Apple, Facebook or Microsoft accounts)"
         }
       }
     }
@@ -2562,6 +2606,7 @@
           "time_dry": "Time dry",
           "towels": "Towels",
           "wash_and_dry_49": "Wash and dry 49",
+          "wash_and_dry_60": "Wash and dry 60",
           "wool": "Wool"
         }
       },
@@ -2583,6 +2628,7 @@
           "down_feathers": "Down feathers",
           "draining": "Draining",
           "drum_clean": "Drum clean",
+          "easy_care": "Easy care",
           "eco": "Eco",
           "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Extra Hygiene",
@@ -2600,6 +2646,7 @@
           "new_clothes": "New clothes",
           "night": "Night",
           "no_program_selected": "No program selected",
+          "normal_wash": "Normal wash",
           "odor_control": "Odor control",
           "one_hour": "One hour",
           "pet_hair_removal": "Pet hair removal",
@@ -3460,6 +3507,12 @@
       },
       "compressor_frequency": {
         "name": "Compressor frequency"
+      },
+      "compressor_operating_max_frequency": {
+        "name": "Compressor operating max frequency"
+      },
+      "compressor_operating_min_frequency": {
+        "name": "Compressor operating min frequency"
       },
       "condensed_watermode": {
         "name": "Condensed water mode"
@@ -4672,6 +4725,9 @@
       "getcurrentcityinfoflag": {
         "name": "Get current city info flag"
       },
+      "global_timer_remaining_time_in_minutes": {
+        "name": "Global timer remaining time"
+      },
       "gratin_total_allowed_time_in_minutes": {
         "name": "Gratin total allowed time"
       },
@@ -4813,6 +4869,9 @@
       "humdy_test_switch_state": {
         "name": "Humidity test switch state"
       },
+      "humidity_sensor_failure": {
+        "name": "Humidity sensor failure"
+      },
       "humiditysensor": {
         "name": "Humidity sensor"
       },
@@ -4821,6 +4880,9 @@
       },
       "ice_make_room_switch": {
         "name": "Ice make room switch"
+      },
+      "ice_maker_wash_state": {
+        "name": "Ice maker wash state"
       },
       "ice_making_fast_status": {
         "name": "Ice making fast status"
@@ -4854,6 +4916,24 @@
       },
       "idmachine": {
         "name": "Machine ID"
+      },
+      "igbttemperatureg01": {
+        "name": "Power module temperature G01"
+      },
+      "igbttemperatureg02": {
+        "name": "Power module temperature G02"
+      },
+      "igbttemperatureg11": {
+        "name": "Power module temperature G11"
+      },
+      "igbttemperatureg12": {
+        "name": "Power module temperature G12"
+      },
+      "igbttemperatureg21": {
+        "name": "Power module temperature G21"
+      },
+      "igbttemperatureg22": {
+        "name": "Power module temperature G22"
       },
       "inactivity_timeout": {
         "name": "Inactivity timeout"
@@ -5965,6 +6045,9 @@
       },
       "shop_mode_setting": {
         "name": "Shop mode setting"
+      },
+      "shopping_mode_switch_status": {
+        "name": "Shopping mode switch status"
       },
       "show_date_setting": {
         "name": "Show date setting"
@@ -8061,6 +8144,12 @@
       "text_size_setting": {
         "name": "Text size setting"
       },
+      "thaw_control_switch_status": {
+        "name": "Thaw control switch status"
+      },
+      "thaw_finished_alarm": {
+        "name": "Thaw finished alarm"
+      },
       "theme_color": {
         "name": "Theme color"
       },
@@ -8150,6 +8239,12 @@
       },
       "totalprogramscycles": {
         "name": "Total program cycles"
+      },
+      "totaltimeofcookinginminutes": {
+        "name": "Total cooking time"
+      },
+      "uitemperature": {
+        "name": "Control panel temperature"
       },
       "unfreeze_run_status": {
         "name": "Unfreeze run status"

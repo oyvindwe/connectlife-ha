@@ -4,6 +4,7 @@ from collections.abc import Mapping
 from dataclasses import dataclass, field
 import logging
 import pkgutil
+from collections.abc import Mapping
 from typing import Any, TypedDict
 
 from connectlife.appliance import ConnectLifeAppliance
@@ -39,6 +40,7 @@ SOURCE = "source"
 DISABLE = "disable"
 HIDE = "hide"
 ICON = "icon"
+INCLUDE = "include"
 KEY = "key"
 NAME = "name"
 OFF = "off"
@@ -98,6 +100,15 @@ def _available_when(entry: dict) -> dict[str, list[int]]:
 def available_when_met(status_list: Mapping[str, Any], available_when: dict[str, list[int]]) -> bool:
     """Return whether every property in ``available_when`` has one of its allowed values."""
     return all(status_list.get(name) in allowed for name, allowed in available_when.items())
+
+
+def _include(entry: dict, name: str) -> list[str]:
+    """Return the ``include`` list of ``entry``, or ``[]`` (with a warning) if it isn't a list of strings."""
+    include = _val(entry, INCLUDE, [])
+    if not isinstance(include, list) or not all(isinstance(i, str) for i in include):
+        _LOGGER.warning("Ignoring include on %s, must be a list of property names", name)
+        return []
+    return include
 
 
 class BinarySensor:
@@ -366,6 +377,7 @@ class Property:
     entity_category: EntityCategory | None
     translation_key: str | None
     combine: list[CombineSource] | None
+    include: list[str]
     binary_sensor: BinarySensor
     climate: Climate
     humidifier: Humidifier
@@ -389,6 +401,7 @@ class Property:
         )
         self.combine = _val(entry, COMBINE)
         self.translation_key = _val(entry, TRANSLATION_KEY)
+        self.include = _include(entry, self.name)
 
         # A property may carry one device-level platform (climate / humidifier /
         # water_heater) AND one per-property platform (binary_sensor / number /
@@ -415,6 +428,30 @@ class Property:
         elif not any(p in entry for p in PLATFORM_KEYS):
             self.sensor = Sensor(self.name, {})
 
+    @property
+    def command_name(self) -> str:
+        """The property written to when this property is changed."""
+        for platform in (Platform.SELECT, Platform.SWITCH, Platform.NUMBER):
+            if hasattr(self, platform):
+                return getattr(self, platform).command_name or self.name
+        return self.name
+
+    def command_value(self, value: int | float | None) -> tuple[str, int | float] | None:
+        """Convert a status value to the ``(name, value)`` that writes it back.
+
+        Returns None when there is no value to write back: the value is missing,
+        or matches the ``unavailable`` or ``unknown_value`` sentinel.
+        """
+        if value is None or value == self.unavailable:
+            return None
+        if hasattr(self, Platform.SELECT):
+            if value == self.select.unknown_value:
+                return None
+            return self.command_name, value - self.select.command_adjust
+        if hasattr(self, Platform.SWITCH):
+            return self.command_name, value - self.switch.command_adjust
+        return self.command_name, value
+
 
 class Button:
     """A button entity declared at the top level of a data dictionary.
@@ -427,12 +464,14 @@ class Button:
     key: str
     icon: str | None
     available_when: dict[str, list[int]]
+    include: list[str]
     write: dict[str, int]
 
     def __init__(self, entry: dict):
         self.key = entry[KEY]
         self.icon = _val(entry, ICON) or None
         self.available_when = _available_when(entry)
+        self.include = _include(entry, f"button {self.key}")
         write = _val(entry, WRITE)
         if not write:
             _LOGGER.warning("Button %s has no write map", self.key)
@@ -445,7 +484,7 @@ def _merge_buttons(base: list[dict], override: list[dict]) -> list[dict]:
     """Merge button lists by ``key``.
 
     Entries in ``override`` matching a key in ``base`` shallow-merge field by
-    field (override wins; ``available_when`` and ``write`` replace as a whole
+    field (override wins; ``available_when``, ``include`` and ``write`` replace as a whole
     since they're collections). Entries with keys not in ``base`` are
     appended. ``disable: true`` removes the merged entry from the result —
     use it to suppress an inherited button on a variant that doesn't support
@@ -484,6 +523,31 @@ class Dictionary:
     # Per-sensor flags from the `statistics` block (sensor key -> create?). A sensor is
     # created only when listed true here; omitted or false means not created.
     statistics_sensors: dict[str, bool] = field(default_factory=dict)
+
+    def included_values(
+            self,
+            command: Mapping[str, int | float],
+            status_list: Mapping[str, Any],
+            include: list[str] | None = None,
+    ) -> dict[str, int | float]:
+        """Return the writes for the properties to send along with ``command``.
+
+        These are ``include`` plus the ``include`` of every property ``command``
+        writes to. Each property is written back with its current status value,
+        converted with its ``command``. Properties without a value to write back,
+        or whose write is already in ``command``, are skipped.
+        """
+        names = list(include or [])
+        for prop in self.properties.values():
+            if prop.include and (prop.command_name in command or prop.name in command):
+                names.extend(prop.include)
+        values: dict[str, int | float] = {}
+        for name in names:
+            prop = self.properties[name] if name in self.properties else None
+            write = prop.command_value(status_list.get(name)) if prop else None
+            if write is not None and write[0] not in command:
+                values[write[0]] = write[1]
+        return values
 
 
 # Device-level platforms own a `target` and may coexist with a per-property

@@ -43,6 +43,7 @@ Collections replace as a whole — there is no per-key merging inside them:
 - `combine`
 - `command`
 - `available_when`
+- `include`
 - dict-valued `min_value` / `max_value`
 
 Set a field to `null` to explicitly unset what the base specified — useful for dropping a `unit:` set
@@ -179,6 +180,7 @@ Note that translation keys must be lowercase!
 |--------------------|------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `property`         | string                             | Name of status/property. Can also be a virtual name when used with `combine`.                                                                                                                                                                                                                       |
 | `combine`          | list of [CombineSource](#combine)  | Combine multiple source properties into a single sensor value. See [Combine](#combine).                                                                                                                                                                                                             |
+| `include`          | list of string                     | Properties whose current values are sent along whenever this property is written. See [Include](#include).                                                                                                                                                                                          |
 | `disable`          | `true`, `false`                    | If Home Assistant should not create an entity for this property. Defaults to `false`.                                                                                                                                                                                                               |
 | `hide`             | `true`, `false`                    | If Home Assistant should initially hide the entity for this property. Defaults to `false`, but is set to `true` for unknown properties.                                                                                                                                                             |
 | `optional`         | `true`, `false`                    | If the entity should be registered as disabled by default. The user can enable it from the Home Assistant UI. Use for rarely-useful properties (e.g., per-slot error codes). Defaults to `false`. Only applies to per-property platforms (`binary_sensor`, `number`, `select`, `sensor`, `switch`). |
@@ -529,6 +531,44 @@ reports `1 = off` and `2 = on` on the status property but expects `0 = off` and 
 
 The same mechanism works for [Select](#type-select): the value written is the integer key from `options` minus `adjust`.
 
+## Include
+
+Some devices only apply a setting when other properties are sent in the same command. `include` lists
+properties whose current values are sent along:
+
+- on a [property](#property), whenever that property is written, from any entity;
+- on a [button](#buttons), with the button's `write`.
+
+Each included property is written back with its own [Command](#command): the value sent to `command.name`
+is the current status value minus `command.adjust`. It is skipped when the device doesn't report it, when
+its value is the property's `unavailable` or `unknown_value`, or when the command already writes it.
+Included properties must be writable (`climate`, `number`, `select` or `switch`), which
+`validate_mappings` checks.
+
+For example, a washing machine that only uses the program options when they're sent with the start
+command:
+
+```yaml
+buttons:
+- key: start
+  include:
+    - Selected_program_id_status
+    - Selected_program_set_temperature_status   # skipped when 0 (program has no temperature option)
+    - Selected_program_washing_spin_speed_rpm_status
+  write:
+    Actions: 1
+```
+
+Or an air conditioner that turns fan mute off when powered on:
+
+```yaml
+- property: t_power
+  include:
+    - t_fan_mute
+  climate:
+    target: is_on
+```
+
 ## Buttons
 
 The top-level `buttons` section declares device-level button entities for write-only commands —
@@ -540,11 +580,12 @@ becomes one HA button entity. A press sends the `write` map to the device in a s
 | `key`            | string                          | Unique key for this button within the device. Used as the translation key, as part of the entity unique id, and as the merge identity when a feature override changes an inherited button.                                                  |
 | `icon`           | `mdi:play`, etc.                | Icon for the button.                                                                                                                                                                                                                         |
 | `available_when` | dictionary of string to integer or list of integers | Optional. The button is only available when every listed property currently has one of the listed values, as for [properties](#available-when). Use to gate buttons on the device state, e.g. start only while idle. |
+| `include`        | list of string                  | Optional. Properties whose current values are sent along with `write`. See [Include](#include).                                                                                                                                             |
 | `write`          | dictionary of string to integer | Required for non-disabled buttons. Map of property name to value to send when pressed. Multiple entries are sent in a single request — useful for combos like "set delay + start".                                                          |
 | `disable`        | `true`, `false`                 | If `true`, suppress this button. Use in a feature override to remove a button inherited from the base when a device variant doesn't support that action code. Defaults to `false`.                                                          |
 
 Feature overrides merge with the base by `key`: matching entries shallow-merge field by field
-(`available_when` and `write` replace as a whole), and entries with a new `key` are appended.
+(`available_when`, `include` and `write` replace as a whole), and entries with a new `key` are appended.
 A feature override carrying only the differences keeps the override file small.
 
 Remember to add [translation strings](#translation-strings) for button names under `entity.button.<key>.name`.

@@ -1,3 +1,12 @@
+buttons:
+- key: light_on
+  icon: mdi:lightbulb-on
+  write:
+    t_dimmer: 1
+- key: light_off
+  icon: mdi:lightbulb-off
+  write:
+    t_dimmer: 0
 climate:
   presets:
     - t_eco: 1

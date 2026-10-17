@@ -2,15 +2,22 @@
   "config": {
     "abort": {
       "already_configured": "El dispositivo ya est\u00e1 configurado",
-      "reauth_successful": "La reautenticaci\u00f3n se realiz\u00f3 correctamente"
+      "already_configured_elsewhere": "Los dispositivos de esta cuenta ya est\u00e1n configurados en otra entrada de ConnectLife. Para cambiar c\u00f3mo inicia sesi\u00f3n esa entrada, elige Reconfigurar en ella. Para sustituirla por una entrada nueva, desact\u00edvala primero.",
+      "cannot_connect": "Fallo al establecer la conexi\u00f3n",
+      "reauth_successful": "La reautenticaci\u00f3n se realiz\u00f3 correctamente",
+      "reconfigure_successful": "La reconfiguraci\u00f3n se ha realizado correctamente"
     },
     "error": {
+      "already_configured_elsewhere": "Los dispositivos de esta cuenta ya est\u00e1n configurados en otra entrada de ConnectLife. Para cambiar c\u00f3mo inicia sesi\u00f3n esa entrada, elige Reconfigurar en ella. Para sustituirla por una entrada nueva, desact\u00edvala primero.",
       "cannot_connect": "Fallo al establecer la conexi\u00f3n",
       "invalid_auth": "Autentificaci\u00f3n Fallida",
       "terms_not_accepted": "ConnectLife requiere que aceptes los T\u00e9rminos y Condiciones actualizados. Cambia el idioma de la app ConnectLife a ingl\u00e9s, fuerza el cierre de la app, vuelve a abrirla, acepta los nuevos t\u00e9rminos y vuelve a intentarlo.",
       "test_server_invalid": "Test server URL invalida",
       "test_server_required": "El modo desarrollo requiere una URL del Test Server",
       "unknown": "Error desconocido"
+    },
+    "initiate_flow": {
+      "user": "A\u00f1adir cuenta"
     },
     "step": {
       "development": {
@@ -22,6 +29,18 @@
         },
         "description": "Habilitar modo desarrollo para conectar al test server en vez de a ConnectLife API."
       },
+      "password": {
+        "data": {
+          "development_mode": "Modo desarrollo",
+          "password": "Contrase\u00f1a",
+          "trir": "ConnectLife.TRIR (Rusia/CEI)",
+          "username": "Nombre de usuario"
+        },
+        "data_description": {
+          "development_mode": "Conectar a un servidor de prueba local en lugar de a la API de ConnectLife. Solo para desarrollo.",
+          "trir": "Habil\u00edtalo solo si inicias sesi\u00f3n con la app ConnectLife.TRIR utilizada en Rusia/CEI."
+        }
+      },
       "reauth_confirm": {
         "data": {
           "password": "Contrase\u00f1a",
@@ -29,16 +48,30 @@
         },
         "description": "Vuelve a introducir tus credenciales de ConnectLife."
       },
-      "user": {
+      "reauth_oauth": {
+        "description": "Tu sesi\u00f3n de ConnectLife ha caducado. Vuelve a iniciar sesi\u00f3n en el sitio web de ConnectLife, donde tambi\u00e9n puedes aceptar los T\u00e9rminos y Condiciones actualizados.",
+        "title": "Volver a iniciar sesi\u00f3n"
+      },
+      "reconfigure": {
+        "menu_options": {
+          "pick_implementation": "Iniciar sesi\u00f3n en el sitio web de ConnectLife (tambi\u00e9n con cuentas de Google, Apple, Facebook o Microsoft)",
+          "reconfigure_password": "Introducir usuario y contrase\u00f1a"
+        }
+      },
+      "reconfigure_password": {
         "data": {
-          "development_mode": "Modo desarrollo",
           "password": "Contrase\u00f1a",
-          "trir": "ConnectLife.TRIR (Rusia/CEI) \u2014 experimental",
+          "trir": "ConnectLife.TRIR (Rusia/CEI)",
           "username": "Nombre de usuario"
         },
         "data_description": {
-          "development_mode": "Conectar a un servidor de prueba local en lugar de a la API de ConnectLife. Solo para desarrollo.",
-          "trir": "Habil\u00edtalo solo si inicias sesi\u00f3n con la app ConnectLife.TRIR utilizada en Rusia/CEI. Experimental."
+          "trir": "Habil\u00edtalo solo si inicias sesi\u00f3n con la app ConnectLife.TRIR utilizada en Rusia/CEI."
+        }
+      },
+      "user": {
+        "menu_options": {
+          "password": "Introducir usuario y contrase\u00f1a",
+          "pick_implementation": "Iniciar sesi\u00f3n en el sitio web de ConnectLife (tambi\u00e9n con cuentas de Google, Apple, Facebook o Microsoft)"
         }
       }
     }
@@ -447,6 +480,9 @@
       "alramemptywatertank": {
         "name": "Vaciar el dep\u00f3sito de agua"
       },
+      "anti_legionella_s": {
+        "name": "Esterilizaci\u00f3n"
+      },
       "auto_boost": {
         "name": "Refuerzo autom\u00e1tico"
       },
@@ -500,6 +536,12 @@
       },
       "control_failure_status": {
         "name": "Estado de fallo del control"
+      },
+      "defrost_dhw_s": {
+        "name": "Desescarche ACS"
+      },
+      "defrost_spaceheat_s": {
+        "name": "Desescarche calefacci\u00f3n"
       },
       "delay_start": {
         "name": "Estado de inicio retrasado"
@@ -1115,6 +1157,9 @@
       },
       "interior_light_control_available": {
         "name": "Control de luz interior disponible"
+      },
+      "iseleheatingturnon": {
+        "name": "Resistencia el\u00e9ctrica activa"
       },
       "light": {
         "name": "Luz"
@@ -2128,6 +2173,12 @@
       "t_fanspeedcv": {
         "name": "Velocidad de ventilador variable"
       },
+      "tdhws": {
+        "name": "Consigna ACS"
+      },
+      "ts_c1_water": {
+        "name": "Consigna de temperatura de impulsi\u00f3n"
+      },
       "variation_max_temperature": {
         "name": "Variaci\u00f3n temperatura m\u00e1xima"
       },
@@ -2544,6 +2595,7 @@
           "time_dry": "Tiempo de secado",
           "towels": "Toalas",
           "wash_and_dry_49": "Lavado y secado 49",
+          "wash_and_dry_60": "Lavado y secado 60",
           "wool": "Lana"
         }
       },
@@ -2565,6 +2617,7 @@
           "down_feathers": "Plum\u00f3n",
           "draining": "Desag\u00fce",
           "drum_clean": "Limpieza Tambor",
+          "easy_care": "Cuidado f\u00e1cil",
           "eco": "Eco",
           "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Higiene extra",
@@ -2582,6 +2635,7 @@
           "new_clothes": "Ropa nueva",
           "night": "Noche",
           "no_program_selected": "Ning\u00fan programa seleccionado",
+          "normal_wash": "Lavado normal",
           "odor_control": "Control de olores",
           "one_hour": "1 hora",
           "pet_hair_removal": "Eliminaci\u00f3n de pelo de mascotas",
@@ -3174,6 +3228,9 @@
       "alarm_sound_volume": {
         "name": "Volumen del sonido de alarma"
       },
+      "alarmcode": {
+        "name": "C\u00f3digo de alarma"
+      },
       "almost_finished_notification_setting": {
         "name": "Ajuste de notificaci\u00f3n de casi finalizado"
       },
@@ -3439,6 +3496,12 @@
       },
       "compressor_frequency": {
         "name": "Frecuencia del compresor"
+      },
+      "compressor_operating_max_frequency": {
+        "name": "Frecuencia m\u00e1xima de funcionamiento del compresor"
+      },
+      "compressor_operating_min_frequency": {
+        "name": "Frecuencia m\u00ednima de funcionamiento del compresor"
       },
       "condensed_watermode": {
         "name": "Modo de agua condensada"
@@ -4020,6 +4083,12 @@
       "ecomode": {
         "name": "Modo eco"
       },
+      "eh1_power": {
+        "name": "Resistencia el\u00e9ctrica etapa 1"
+      },
+      "eh2_power": {
+        "name": "Resistencia el\u00e9ctrica etapa 2"
+      },
       "electric_current": {
         "name": "Corriente el\u00e9ctrica"
       },
@@ -4554,6 +4623,15 @@
       "filterclean_washflag": {
         "name": "Indicador de lavado para limpieza del filtro"
       },
+      "fixeddid16": {
+        "name": "Temperatura ACS"
+      },
+      "fixeddid18": {
+        "name": "Temperatura de impulsi\u00f3n"
+      },
+      "fixeddid30": {
+        "name": "Temperatura m\u00e1xima ACS"
+      },
       "flexiblespintime_flag": {
         "name": "Indicador de tiempo de centrifugado flexible"
       },
@@ -4635,6 +4713,9 @@
       },
       "getcurrentcityinfoflag": {
         "name": "Indicador de obtenci\u00f3n de informaci\u00f3n de la ciudad actual"
+      },
+      "global_timer_remaining_time_in_minutes": {
+        "name": "Tiempo restante del temporizador general"
       },
       "gratin_total_allowed_time_in_minutes": {
         "name": "Tiempo total permitido de gratinado"
@@ -4777,6 +4858,9 @@
       "humdy_test_switch_state": {
         "name": "Estado del interruptor de prueba de humedad"
       },
+      "humidity_sensor_failure": {
+        "name": "Fallo del sensor de humedad"
+      },
       "humiditysensor": {
         "name": "Sensor humedad"
       },
@@ -4785,6 +4869,9 @@
       },
       "ice_make_room_switch": {
         "name": "Interruptor del compartimento de hielo"
+      },
+      "ice_maker_wash_state": {
+        "name": "Estado de lavado de la m\u00e1quina de hielo"
       },
       "ice_making_fast_status": {
         "name": "Estado de fabricaci\u00f3n r\u00e1pida de hielo"
@@ -4818,6 +4905,24 @@
       },
       "idmachine": {
         "name": "ID de la m\u00e1quina"
+      },
+      "igbttemperatureg01": {
+        "name": "Temperatura del m\u00f3dulo de potencia G01"
+      },
+      "igbttemperatureg02": {
+        "name": "Temperatura del m\u00f3dulo de potencia G02"
+      },
+      "igbttemperatureg11": {
+        "name": "Temperatura del m\u00f3dulo de potencia G11"
+      },
+      "igbttemperatureg12": {
+        "name": "Temperatura del m\u00f3dulo de potencia G12"
+      },
+      "igbttemperatureg21": {
+        "name": "Temperatura del m\u00f3dulo de potencia G21"
+      },
+      "igbttemperatureg22": {
+        "name": "Temperatura del m\u00f3dulo de potencia G22"
       },
       "inactivity_timeout": {
         "name": "Tiempo de espera por inactividad"
@@ -5929,6 +6034,9 @@
       },
       "shop_mode_setting": {
         "name": "Ajuste del modo tienda"
+      },
+      "shopping_mode_switch_status": {
+        "name": "Estado del modo compras"
       },
       "show_date_setting": {
         "name": "Ajuste de mostrar fecha"
@@ -7919,6 +8027,9 @@
       "support_preheat_state": {
         "name": "Estado de compatibilidad con precalentamiento"
       },
+      "swj_ta": {
+        "name": "Temperatura exterior"
+      },
       "synchro_start_level": {
         "name": "Nivel de inicio sincronizado"
       },
@@ -8022,6 +8133,12 @@
       "text_size_setting": {
         "name": "Ajuste del tama\u00f1o de texto"
       },
+      "thaw_control_switch_status": {
+        "name": "Estado del control de descongelaci\u00f3n"
+      },
+      "thaw_finished_alarm": {
+        "name": "Alarma de descongelaci\u00f3n terminada"
+      },
       "theme_color": {
         "name": "Color del tema"
       },
@@ -8111,6 +8228,12 @@
       },
       "totalprogramscycles": {
         "name": "Total de ciclos de programa"
+      },
+      "totaltimeofcookinginminutes": {
+        "name": "Tiempo total de cocci\u00f3n"
+      },
+      "uitemperature": {
+        "name": "Temperatura del panel de control"
       },
       "unfreeze_run_status": {
         "name": "Estado de funcionamiento de descongelaci\u00f3n"
@@ -8508,6 +8631,9 @@
       }
     },
     "switch": {
+      "a2w_sw_on": {
+        "name": "Bomba de calor"
+      },
       "activemodelightstatus": {
         "name": "Luz de modo activo"
       },
@@ -8586,6 +8712,9 @@
       "buzzer_setting": {
         "name": "Zumbador"
       },
+      "c1_sw_on": {
+        "name": "Calefacci\u00f3n"
+      },
       "child_lock": {
         "name": "Bloqueo para ni\u00f1os"
       },
@@ -8616,6 +8745,12 @@
       "color_sensor_setting_status": {
         "name": "Sensor de color"
       },
+      "controldid18": {
+        "name": "Modo nocturno"
+      },
+      "controldid19": {
+        "name": "Modo silencioso"
+      },
       "crisp_function_status": {
         "name": "Estado de la funci\u00f3n Crisp"
       },
@@ -8624,6 +8759,9 @@
       },
       "demo_mode_status": {
         "name": "Modo demostraci\u00f3n"
+      },
+      "dhw_sw_on": {
+        "name": "Agua caliente sanitaria"
       },
       "display_standby": {
         "name": "Pantalla en espera"

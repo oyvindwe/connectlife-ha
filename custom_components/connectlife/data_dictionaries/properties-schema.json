@@ -92,6 +92,10 @@
           },
           "description": "Combine multiple source properties into a single sensor value. The combined value is the sum of each source value times its multiplier."
         },
+        "include": {
+          "$ref": "#/$defs/Include",
+          "description": "Properties whose current values are sent along whenever this property is written, e.g. a setting the device resets when powered on. Each is written back with its own command name and adjust. Replaces the inherited value as a whole."
+        },
         "binary_sensor": {
           "$ref": "#/$defs/BinarySensor"
         },
@@ -187,6 +191,10 @@
         "available_when": {
           "$ref": "#/$defs/AvailableWhen",
           "description": "Map of property name to allowed value or list of allowed values. The button is only available when every listed property currently has an allowed value. Use to gate buttons on the device state, e.g. a start button only while the device is idle. Replaces the inherited value as a whole."
+        },
+        "include": {
+          "$ref": "#/$defs/Include",
+          "description": "Properties whose current values are sent along with write, e.g. the selected program and its options for a start button. Each is written back with its own command name and adjust. Replaces the inherited value as a whole."
         },
         "write": {
           "type": ["object", "null"],
@@ -457,6 +465,16 @@
           "description": "Map of integer to string or boolean. Required for targets current_operation (string), state (string), temperature_unit (string), and is_away_mode_on (boolean)."
         }
       }
+    },
+    "Include": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "uniqueItems": true,
+      "title": "Include",
+      "description": "Status property names. Properties without a current value, or whose value is the unavailable or unknown_value sentinel, are skipped."
     },
     "CombineSource": {
       "type": "object",
