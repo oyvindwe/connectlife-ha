@@ -12,6 +12,7 @@ from homeassistant.config_entries import (
     SOURCE_REAUTH,
     SOURCE_RECONFIGURE,
     ConfigEntry,
+    ConfigEntryState,
     ConfigFlowResult,
     OptionsFlow,
 )
@@ -425,6 +426,10 @@ class OptionsFlowHandler(OptionsFlow):
     _device_id: str | None = None
 
     async def async_step_init(self, user_input: dict[str, Any] | None = None) -> ConfigFlowResult:
+        # The devices come from the coordinator, which only exists once the entry is set up.
+        if self.config_entry.state is not ConfigEntryState.LOADED:
+            return self.async_abort(reason="not_loaded")
+
         # Select device to configure
         if user_input is not None:
             self._device_id = user_input["device"]
