@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import logging
 import time
 from datetime import timedelta
 
@@ -17,6 +18,8 @@ TERMS_NOT_ACCEPTED_RETRY_INTERVAL = timedelta(minutes=15)
 
 # hass.data key: entry_id -> time.monotonic() of the last rejected login.
 DATA_TERMS_NOT_ACCEPTED = f"{DOMAIN}_terms_not_accepted"
+
+_LOGGER = logging.getLogger(__name__)
 
 ISSUE_ID_PREFIX = "terms_not_accepted."
 
@@ -40,10 +43,17 @@ def clear_terms_retry_throttle(hass: HomeAssistant, entry_id: str) -> None:
 def terms_not_accepted(hass: HomeAssistant, entry: ConfigEntry) -> None:
     """Record a rejected login and create the repair issue explaining how to fix it."""
     hass.data.setdefault(DATA_TERMS_NOT_ACCEPTED, {})[entry.entry_id] = time.monotonic()
+    issue_id = f"{ISSUE_ID_PREFIX}{entry.entry_id}"
+    if ir.async_get(hass).async_get_issue(DOMAIN, issue_id) is None:
+        # Log once when the issue is raised, not on every retry.
+        _LOGGER.warning(
+            "ConnectLife rejects the login for %s until updated Terms & Conditions are accepted; see Repairs",
+            entry.title,
+        )
     ir.async_create_issue(
         hass,
         DOMAIN,
-        f"{ISSUE_ID_PREFIX}{entry.entry_id}",
+        issue_id,
         data={"entry_id": entry.entry_id, "title": entry.title},
         is_fixable=True,
         severity=ir.IssueSeverity.ERROR,

@@ -9063,7 +9063,7 @@
         },
         "step": {
           "confirm": {
-            "description": "ConnectLife rechaza el inicio de sesi\u00f3n de \"{title}\" hasta que se acepten los T\u00e9rminos y Condiciones actualizados. Volver a introducir la contrase\u00f1a no ayudar\u00e1.\n\n1. Abre la app ConnectLife y cambia el idioma de la app a **ingl\u00e9s**.\n2. Fuerza el cierre de la app (no solo en segundo plano) y vuelve a abrirla.\n3. Acepta los nuevos T\u00e9rminos y Condiciones cuando se te solicite.\n4. Selecciona **Enviar** para reintentar ahora. De lo contrario, la integraci\u00f3n lo reintenta cada 15 minutos.\n\nDespu\u00e9s puedes volver a cambiar el idioma de la app. El cambio de idioma es necesario porque la app puede omitir la solicitud si los t\u00e9rminos a\u00fan no est\u00e1n traducidos a tu idioma. [M\u00e1s informaci\u00f3n]({url})",
+            "description": "ConnectLife rechaza el inicio de sesi\u00f3n de \"{title}\" hasta que se acepten los T\u00e9rminos y Condiciones actualizados. Volver a introducir la contrase\u00f1a no ayudar\u00e1.\n\n1. Abre la app ConnectLife y cambia el idioma de la app a **ingl\u00e9s**.\n2. Fuerza el cierre de la app (no solo en segundo plano) y vuelve a abrirla.\n3. Acepta los nuevos T\u00e9rminos y Condiciones cuando se te solicite.\n4. Selecciona **Enviar** para reintentar ahora. De lo contrario, la integraci\u00f3n lo reintenta cada 15 minutos.\n\nDespu\u00e9s puedes volver a cambiar el idioma de la app. El cambio de idioma es necesario porque la app puede omitir la solicitud si los t\u00e9rminos a\u00fan no est\u00e1n traducidos a tu idioma. [M\u00e1s informaci\u00f3n]({url})\n\nIniciar sesi\u00f3n en el sitio web de ConnectLife tambi\u00e9n puede solucionarlo: abre la integraci\u00f3n ConnectLife y selecciona **\u22ee** \u2192 **Reconfigurar**.",
             "title": "Aceptar los T\u00e9rminos y Condiciones actualizados de ConnectLife"
           }
         }
@@ -9112,6 +9112,9 @@
     }
   },
   "options": {
+    "abort": {
+      "not_loaded": "ConnectLife a\u00fan no est\u00e1 configurado. Las opciones estar\u00e1n disponibles cuando la integraci\u00f3n se haya cargado."
+    },
     "step": {
       "configure_device": {
         "data": {
