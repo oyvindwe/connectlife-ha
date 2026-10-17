@@ -4714,6 +4714,9 @@
       "getcurrentcityinfoflag": {
         "name": "Kennung: Aktuelle Stadtinfo abrufen"
       },
+      "global_timer_remaining_time_in_minutes": {
+        "name": "Restzeit Haupttimer"
+      },
       "gratin_total_allowed_time_in_minutes": {
         "name": "Gratin erlaubte Gesamtzeit"
       },
@@ -4902,6 +4905,24 @@
       },
       "idmachine": {
         "name": "Ger\u00e4te-ID"
+      },
+      "igbttemperatureg01": {
+        "name": "Temperatur Leistungsmodul G01"
+      },
+      "igbttemperatureg02": {
+        "name": "Temperatur Leistungsmodul G02"
+      },
+      "igbttemperatureg11": {
+        "name": "Temperatur Leistungsmodul G11"
+      },
+      "igbttemperatureg12": {
+        "name": "Temperatur Leistungsmodul G12"
+      },
+      "igbttemperatureg21": {
+        "name": "Temperatur Leistungsmodul G21"
+      },
+      "igbttemperatureg22": {
+        "name": "Temperatur Leistungsmodul G22"
       },
       "inactivity_timeout": {
         "name": "Zeitlimit bei Inaktivit\u00e4t"
@@ -8207,6 +8228,12 @@
       },
       "totalprogramscycles": {
         "name": "Gesamtzahl der Programmzyklen"
+      },
+      "totaltimeofcookinginminutes": {
+        "name": "Gesamte Kochzeit"
+      },
+      "uitemperature": {
+        "name": "Temperatur des Bedienfelds"
       },
       "unfreeze_run_status": {
         "name": "Status Abtaubetrieb"

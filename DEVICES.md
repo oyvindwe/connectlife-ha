@@ -147,4 +147,5 @@
 |                          | Tumble dryer             | 030              | 1wk100248v0f                |
 | DPNA83W                  | Tumble dryer             | 032              | 000                         |
 | Hisense RW3N122GSLF      | Wine cooler              | 034              | 1j0122z0035j                |
+|                          | Induction hob            | 036              | hob-midi-gmi24-better       |
 | Hisense Hi-Therma II     | Heat pump                | 044              | 000                         |

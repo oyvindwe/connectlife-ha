@@ -4714,6 +4714,9 @@
       "getcurrentcityinfoflag": {
         "name": "Indicateur d'obtention des infos de la ville actuelle"
       },
+      "global_timer_remaining_time_in_minutes": {
+        "name": "Temps restant de la minuterie g\u00e9n\u00e9rale"
+      },
       "gratin_total_allowed_time_in_minutes": {
         "name": "Temps total autoris\u00e9 du gratin"
       },
@@ -4902,6 +4905,24 @@
       },
       "idmachine": {
         "name": "ID de la machine"
+      },
+      "igbttemperatureg01": {
+        "name": "Temp\u00e9rature du module de puissance G01"
+      },
+      "igbttemperatureg02": {
+        "name": "Temp\u00e9rature du module de puissance G02"
+      },
+      "igbttemperatureg11": {
+        "name": "Temp\u00e9rature du module de puissance G11"
+      },
+      "igbttemperatureg12": {
+        "name": "Temp\u00e9rature du module de puissance G12"
+      },
+      "igbttemperatureg21": {
+        "name": "Temp\u00e9rature du module de puissance G21"
+      },
+      "igbttemperatureg22": {
+        "name": "Temp\u00e9rature du module de puissance G22"
       },
       "inactivity_timeout": {
         "name": "D\u00e9lai d'inactivit\u00e9"
@@ -8207,6 +8228,12 @@
       },
       "totalprogramscycles": {
         "name": "Total des cycles de programme"
+      },
+      "totaltimeofcookinginminutes": {
+        "name": "Temps de cuisson total"
+      },
+      "uitemperature": {
+        "name": "Temp\u00e9rature du panneau de commande"
       },
       "unfreeze_run_status": {
         "name": "\u00c9tat d\u00e9givrage en cours"

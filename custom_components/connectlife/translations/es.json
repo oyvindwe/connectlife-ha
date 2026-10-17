@@ -4714,6 +4714,9 @@
       "getcurrentcityinfoflag": {
         "name": "Indicador de obtenci\u00f3n de informaci\u00f3n de la ciudad actual"
       },
+      "global_timer_remaining_time_in_minutes": {
+        "name": "Tiempo restante del temporizador general"
+      },
       "gratin_total_allowed_time_in_minutes": {
         "name": "Tiempo total permitido de gratinado"
       },
@@ -4902,6 +4905,24 @@
       },
       "idmachine": {
         "name": "ID de la m\u00e1quina"
+      },
+      "igbttemperatureg01": {
+        "name": "Temperatura del m\u00f3dulo de potencia G01"
+      },
+      "igbttemperatureg02": {
+        "name": "Temperatura del m\u00f3dulo de potencia G02"
+      },
+      "igbttemperatureg11": {
+        "name": "Temperatura del m\u00f3dulo de potencia G11"
+      },
+      "igbttemperatureg12": {
+        "name": "Temperatura del m\u00f3dulo de potencia G12"
+      },
+      "igbttemperatureg21": {
+        "name": "Temperatura del m\u00f3dulo de potencia G21"
+      },
+      "igbttemperatureg22": {
+        "name": "Temperatura del m\u00f3dulo de potencia G22"
       },
       "inactivity_timeout": {
         "name": "Tiempo de espera por inactividad"
@@ -8207,6 +8228,12 @@
       },
       "totalprogramscycles": {
         "name": "Total de ciclos de programa"
+      },
+      "totaltimeofcookinginminutes": {
+        "name": "Tiempo total de cocci\u00f3n"
+      },
+      "uitemperature": {
+        "name": "Temperatura del panel de control"
       },
       "unfreeze_run_status": {
         "name": "Estado de funcionamiento de descongelaci\u00f3n"

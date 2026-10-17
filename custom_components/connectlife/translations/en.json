@@ -4725,6 +4725,9 @@
       "getcurrentcityinfoflag": {
         "name": "Get current city info flag"
       },
+      "global_timer_remaining_time_in_minutes": {
+        "name": "Global timer remaining time"
+      },
       "gratin_total_allowed_time_in_minutes": {
         "name": "Gratin total allowed time"
       },
@@ -4913,6 +4916,24 @@
       },
       "idmachine": {
         "name": "Machine ID"
+      },
+      "igbttemperatureg01": {
+        "name": "Power module temperature G01"
+      },
+      "igbttemperatureg02": {
+        "name": "Power module temperature G02"
+      },
+      "igbttemperatureg11": {
+        "name": "Power module temperature G11"
+      },
+      "igbttemperatureg12": {
+        "name": "Power module temperature G12"
+      },
+      "igbttemperatureg21": {
+        "name": "Power module temperature G21"
+      },
+      "igbttemperatureg22": {
+        "name": "Power module temperature G22"
       },
       "inactivity_timeout": {
         "name": "Inactivity timeout"
@@ -8218,6 +8239,12 @@
       },
       "totalprogramscycles": {
         "name": "Total program cycles"
+      },
+      "totaltimeofcookinginminutes": {
+        "name": "Total cooking time"
+      },
+      "uitemperature": {
+        "name": "Control panel temperature"
       },
       "unfreeze_run_status": {
         "name": "Unfreeze run status"
