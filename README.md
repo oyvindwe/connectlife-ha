@@ -175,7 +175,7 @@ The app skips the acceptance prompt if the translated version for your language 
 backend still requires acceptance.
 
 Signing in once on the ConnectLife website (**⋮** → **Reconfigure** → **Sign in on the ConnectLife website**) may also
-fix it, also for entries that use username and password with the same account.
+fix it.
 
 ## Contributing
 
