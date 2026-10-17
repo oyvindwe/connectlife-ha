@@ -480,6 +480,9 @@
       "alramemptywatertank": {
         "name": "Wassertank leeren"
       },
+      "anti_legionella_s": {
+        "name": "Legionellenschutz"
+      },
       "auto_boost": {
         "name": "Auto-Boost"
       },
@@ -533,6 +536,12 @@
       },
       "control_failure_status": {
         "name": "Steuerungsausfallstatus"
+      },
+      "defrost_dhw_s": {
+        "name": "Abtauen Warmwasser"
+      },
+      "defrost_spaceheat_s": {
+        "name": "Abtauen Raumheizung"
       },
       "delay_start": {
         "name": "Verz\u00f6gerter Start"
@@ -1148,6 +1157,9 @@
       },
       "interior_light_control_available": {
         "name": "Innenbeleuchtungssteuerung verf\u00fcgbar"
+      },
+      "iseleheatingturnon": {
+        "name": "Elektroheizstab aktiv"
       },
       "light": {
         "name": "Licht"
@@ -2161,6 +2173,12 @@
       "t_fanspeedcv": {
         "name": "Variable L\u00fcftergeschwindigkeit"
       },
+      "tdhws": {
+        "name": "Warmwasser-Solltemperatur"
+      },
+      "ts_c1_water": {
+        "name": "Vorlauf-Solltemperatur"
+      },
       "variation_max_temperature": {
         "name": "Maximale Temperaturvariation"
       },
@@ -2577,6 +2595,7 @@
           "time_dry": "Zeittrocknung",
           "towels": "Handt\u00fccher",
           "wash_and_dry_49": "Waschen und Trocknen 49",
+          "wash_and_dry_60": "Waschen und Trocknen 60",
           "wool": "Wolle"
         }
       },
@@ -3207,6 +3226,9 @@
       "alarm_sound_volume": {
         "name": "Alarm-Lautst\u00e4rke"
       },
+      "alarmcode": {
+        "name": "Alarmcode"
+      },
       "almost_finished_notification_setting": {
         "name": "Benachrichtigungseinstellung Fast fertig"
       },
@@ -3472,6 +3494,12 @@
       },
       "compressor_frequency": {
         "name": "Kompressorfrequenz"
+      },
+      "compressor_operating_max_frequency": {
+        "name": "Maximale Betriebsfrequenz des Kompressors"
+      },
+      "compressor_operating_min_frequency": {
+        "name": "Minimale Betriebsfrequenz des Kompressors"
       },
       "condensed_watermode": {
         "name": "Kondenswassermodus"
@@ -4053,6 +4081,12 @@
       "ecomode": {
         "name": "Eco-Modus"
       },
+      "eh1_power": {
+        "name": "Elektroheizstab Stufe 1"
+      },
+      "eh2_power": {
+        "name": "Elektroheizstab Stufe 2"
+      },
       "electric_current": {
         "name": "Stromst\u00e4rke"
       },
@@ -4587,6 +4621,15 @@
       "filterclean_washflag": {
         "name": "Filterreinigung Waschkennzeichen"
       },
+      "fixeddid16": {
+        "name": "Warmwassertemperatur"
+      },
+      "fixeddid18": {
+        "name": "Vorlauftemperatur"
+      },
+      "fixeddid30": {
+        "name": "Maximale Warmwassertemperatur"
+      },
       "flexiblespintime_flag": {
         "name": "Flexible Schleuderzeit"
       },
@@ -4810,6 +4853,9 @@
       "humdy_test_switch_state": {
         "name": "Feuchtigkeitstest-Schalterstatus"
       },
+      "humidity_sensor_failure": {
+        "name": "Feuchtigkeitssensor-Fehler"
+      },
       "humiditysensor": {
         "name": "Luftfeuchtigkeitssensor"
       },
@@ -4818,6 +4864,9 @@
       },
       "ice_make_room_switch": {
         "name": "Schalter Eisbereiterfach"
+      },
+      "ice_maker_wash_state": {
+        "name": "Reinigungsstatus des Eisbereiters"
       },
       "ice_making_fast_status": {
         "name": "Status schnelle Eisbereitung"
@@ -5962,6 +6011,9 @@
       },
       "shop_mode_setting": {
         "name": "Einstellung Vorf\u00fchrmodus"
+      },
+      "shopping_mode_switch_status": {
+        "name": "Status Einkaufsmodus"
       },
       "show_date_setting": {
         "name": "Einstellung Datumsanzeige"
@@ -7952,6 +8004,9 @@
       "support_preheat_state": {
         "name": "Vorheizen-Status unterst\u00fctzt"
       },
+      "swj_ta": {
+        "name": "Au\u00dfentemperatur"
+      },
       "synchro_start_level": {
         "name": "Synchronstart-Stufe"
       },
@@ -8054,6 +8109,12 @@
       },
       "text_size_setting": {
         "name": "Einstellung Schriftgr\u00f6\u00dfe"
+      },
+      "thaw_control_switch_status": {
+        "name": "Status Auftausteuerung"
+      },
+      "thaw_finished_alarm": {
+        "name": "Alarm Auftauen beendet"
       },
       "theme_color": {
         "name": "Themenfarbe"
@@ -8541,6 +8602,9 @@
       }
     },
     "switch": {
+      "a2w_sw_on": {
+        "name": "W\u00e4rmepumpe"
+      },
       "activemodelightstatus": {
         "name": "Aktivmodus-Beleuchtung"
       },
@@ -8619,6 +8683,9 @@
       "buzzer_setting": {
         "name": "Summer"
       },
+      "c1_sw_on": {
+        "name": "Raumheizung"
+      },
       "child_lock": {
         "name": "Kindersicherung"
       },
@@ -8649,6 +8716,12 @@
       "color_sensor_setting_status": {
         "name": "Farbsensor"
       },
+      "controldid18": {
+        "name": "Nachtmodus"
+      },
+      "controldid19": {
+        "name": "Leisemodus"
+      },
       "crisp_function_status": {
         "name": "Knusperfunktion Status"
       },
@@ -8657,6 +8730,9 @@
       },
       "demo_mode_status": {
         "name": "Demo-Modus"
+      },
+      "dhw_sw_on": {
+        "name": "Warmwasser"
       },
       "display_standby": {
         "name": "Display Standby"

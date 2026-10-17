@@ -480,6 +480,9 @@
       "alramemptywatertank": {
         "name": "Pr\u00e1zdn\u00e1 vodn\u00ed n\u00e1dr\u017e"
       },
+      "anti_legionella_s": {
+        "name": "Sterilizace"
+      },
       "auto_boost": {
         "name": "Automatick\u00e9 pos\u00edlen\u00ed"
       },
@@ -533,6 +536,12 @@
       },
       "control_failure_status": {
         "name": "Stav poruchy \u0159\u00edzen\u00ed"
+      },
+      "defrost_dhw_s": {
+        "name": "Odmrazov\u00e1n\u00ed TUV"
+      },
+      "defrost_spaceheat_s": {
+        "name": "Odmrazov\u00e1n\u00ed vyt\u00e1p\u011bn\u00ed"
       },
       "delay_start": {
         "name": "Opo\u017ed\u011bn\u00fd start"
@@ -1148,6 +1157,9 @@
       },
       "interior_light_control_available": {
         "name": "Ovl\u00e1d\u00e1n\u00ed vnit\u0159n\u00edho osv\u011btlen\u00ed dostupn\u00e9"
+      },
+      "iseleheatingturnon": {
+        "name": "Elektrick\u00fd oh\u0159\u00edva\u010d aktivn\u00ed"
       },
       "light": {
         "name": "Sv\u011btlo"
@@ -2161,6 +2173,12 @@
       "t_fanspeedcv": {
         "name": "Rychlost variabiln\u00edho ventil\u00e1toru"
       },
+      "tdhws": {
+        "name": "Po\u017eadovan\u00e1 teplota TUV"
+      },
+      "ts_c1_water": {
+        "name": "Po\u017eadovan\u00e1 v\u00fdstupn\u00ed teplota"
+      },
       "variation_max_temperature": {
         "name": "Maxim\u00e1ln\u00ed teplota variabiln\u00edho prostoru"
       },
@@ -2577,6 +2595,7 @@
           "time_dry": "Su\u0161en\u00ed na \u010das",
           "towels": "Ru\u010dn\u00edky",
           "wash_and_dry_49": "Pran\u00ed a su\u0161en\u00ed 49",
+          "wash_and_dry_60": "Pran\u00ed a su\u0161en\u00ed 60",
           "wool": "Vlna"
         }
       },
@@ -3207,6 +3226,9 @@
       "alarm_sound_volume": {
         "name": "Hlasitost alarmu"
       },
+      "alarmcode": {
+        "name": "K\u00f3d alarmu"
+      },
       "almost_finished_notification_setting": {
         "name": "Nastaven\u00ed ozn\u00e1men\u00ed t\u00e9m\u011b\u0159 hotovo"
       },
@@ -3472,6 +3494,12 @@
       },
       "compressor_frequency": {
         "name": "Frekvence kompresoru"
+      },
+      "compressor_operating_max_frequency": {
+        "name": "Maxim\u00e1ln\u00ed provozn\u00ed frekvence kompresoru"
+      },
+      "compressor_operating_min_frequency": {
+        "name": "Minim\u00e1ln\u00ed provozn\u00ed frekvence kompresoru"
       },
       "condensed_watermode": {
         "name": "Re\u017eim kondenzovan\u00e9 vody"
@@ -4053,6 +4081,12 @@
       "ecomode": {
         "name": "ECO re\u017eim"
       },
+      "eh1_power": {
+        "name": "Elektrick\u00fd oh\u0159\u00edva\u010d stupe\u0148 1"
+      },
+      "eh2_power": {
+        "name": "Elektrick\u00fd oh\u0159\u00edva\u010d stupe\u0148 2"
+      },
       "electric_current": {
         "name": "Elektrick\u00fd proud"
       },
@@ -4587,6 +4621,15 @@
       "filterclean_washflag": {
         "name": "P\u0159\u00edznak \u010di\u0161t\u011bn\u00ed filtru \u2013 pran\u00ed"
       },
+      "fixeddid16": {
+        "name": "Teplota TUV"
+      },
+      "fixeddid18": {
+        "name": "V\u00fdstupn\u00ed teplota"
+      },
+      "fixeddid30": {
+        "name": "Maxim\u00e1ln\u00ed teplota TUV"
+      },
       "flexiblespintime_flag": {
         "name": "P\u0159\u00edznak flexibiln\u00ed doby odst\u0159ed\u011bn\u00ed"
       },
@@ -4810,6 +4853,9 @@
       "humdy_test_switch_state": {
         "name": "Stav p\u0159ep\u00edna\u010de testu vlhkosti"
       },
+      "humidity_sensor_failure": {
+        "name": "Porucha \u010didla vlhkosti"
+      },
       "humiditysensor": {
         "name": "Sn\u00edma\u010d vlhkosti"
       },
@@ -4818,6 +4864,9 @@
       },
       "ice_make_room_switch": {
         "name": "P\u0159ep\u00edna\u010d prostoru v\u00fdroby ledu"
+      },
+      "ice_maker_wash_state": {
+        "name": "Stav myt\u00ed v\u00fdrobn\u00edku ledu"
       },
       "ice_making_fast_status": {
         "name": "Stav rychl\u00e9 v\u00fdroby ledu"
@@ -5962,6 +6011,9 @@
       },
       "shop_mode_setting": {
         "name": "Nastaven\u00ed re\u017eimu prodejny"
+      },
+      "shopping_mode_switch_status": {
+        "name": "Stav re\u017eimu n\u00e1kupu"
       },
       "show_date_setting": {
         "name": "Nastaven\u00ed zobrazen\u00ed data"
@@ -7952,6 +8004,9 @@
       "support_preheat_state": {
         "name": "Stav podpory p\u0159edeh\u0159evu"
       },
+      "swj_ta": {
+        "name": "Venkovn\u00ed teplota"
+      },
       "synchro_start_level": {
         "name": "\u00darove\u0148 synchroniza\u010dn\u00edho startu"
       },
@@ -8054,6 +8109,12 @@
       },
       "text_size_setting": {
         "name": "Nastaven\u00ed velikosti textu"
+      },
+      "thaw_control_switch_status": {
+        "name": "Stav \u0159\u00edzen\u00ed rozmrazov\u00e1n\u00ed"
+      },
+      "thaw_finished_alarm": {
+        "name": "Alarm dokon\u010den\u00ed rozmrazov\u00e1n\u00ed"
       },
       "theme_color": {
         "name": "Barva motivu"
@@ -8541,6 +8602,9 @@
       }
     },
     "switch": {
+      "a2w_sw_on": {
+        "name": "Tepeln\u00e9 \u010derpadlo"
+      },
       "activemodelightstatus": {
         "name": "Sv\u011btlo aktivn\u00edho re\u017eimu"
       },
@@ -8619,6 +8683,9 @@
       "buzzer_setting": {
         "name": "Bzu\u010d\u00e1k"
       },
+      "c1_sw_on": {
+        "name": "Vyt\u00e1p\u011bn\u00ed"
+      },
       "child_lock": {
         "name": "D\u011btsk\u00e1 pojistka"
       },
@@ -8649,6 +8716,12 @@
       "color_sensor_setting_status": {
         "name": "Barevn\u00fd senzor"
       },
+      "controldid18": {
+        "name": "No\u010dn\u00ed re\u017eim"
+      },
+      "controldid19": {
+        "name": "Tich\u00fd re\u017eim"
+      },
       "crisp_function_status": {
         "name": "Stav funkce Crisp"
       },
@@ -8657,6 +8730,9 @@
       },
       "demo_mode_status": {
         "name": "Demo re\u017eim"
+      },
+      "dhw_sw_on": {
+        "name": "Tepl\u00e1 u\u017eitkov\u00e1 voda"
       },
       "display_standby": {
         "name": "Pohotovost displeje"

@@ -480,6 +480,9 @@
       "alramemptywatertank": {
         "name": "T\u00f8m vanntank"
       },
+      "anti_legionella_s": {
+        "name": "Sterilisering"
+      },
       "auto_boost": {
         "name": "Automatisk boost"
       },
@@ -533,6 +536,12 @@
       },
       "control_failure_status": {
         "name": "Feilstatus for styring"
+      },
+      "defrost_dhw_s": {
+        "name": "Avriming varmtvann"
+      },
+      "defrost_spaceheat_s": {
+        "name": "Avriming romoppvarming"
       },
       "delay_start": {
         "name": "Utsatt start"
@@ -1148,6 +1157,9 @@
       },
       "interior_light_control_available": {
         "name": "Styring av interi\u00f8rlys tilgjengelig"
+      },
+      "iseleheatingturnon": {
+        "name": "Elektrisk varmeelement aktivt"
       },
       "light": {
         "name": "Lys"
@@ -2161,6 +2173,12 @@
       "t_fanspeedcv": {
         "name": "Variabel viftehastighet"
       },
+      "tdhws": {
+        "name": "Settpunkt varmtvann"
+      },
+      "ts_c1_water": {
+        "name": "Settpunkt turtemperatur"
+      },
       "variation_max_temperature": {
         "name": "Maks variasjonstemperatur"
       },
@@ -2577,6 +2595,7 @@
           "time_dry": "Tidst\u00f8rk",
           "towels": "H\u00e5ndkl\u00e6r",
           "wash_and_dry_49": "Vask og t\u00f8rk 49",
+          "wash_and_dry_60": "Vask og t\u00f8rk 60",
           "wool": "Ull"
         }
       },
@@ -3207,6 +3226,9 @@
       "alarm_sound_volume": {
         "name": "Volum for alarmlyd"
       },
+      "alarmcode": {
+        "name": "Alarmkode"
+      },
       "almost_finished_notification_setting": {
         "name": "Varselinnstilling for nesten ferdig"
       },
@@ -3472,6 +3494,12 @@
       },
       "compressor_frequency": {
         "name": "Kompressorfrekvens"
+      },
+      "compressor_operating_max_frequency": {
+        "name": "Maks driftsfrekvens for kompressor"
+      },
+      "compressor_operating_min_frequency": {
+        "name": "Min driftsfrekvens for kompressor"
       },
       "condensed_watermode": {
         "name": "Kondensvannsmodus"
@@ -4053,6 +4081,12 @@
       "ecomode": {
         "name": "Eco-modus"
       },
+      "eh1_power": {
+        "name": "Elektrisk varmeelement trinn 1"
+      },
+      "eh2_power": {
+        "name": "Elektrisk varmeelement trinn 2"
+      },
       "electric_current": {
         "name": "Elektrisk str\u00f8m"
       },
@@ -4587,6 +4621,15 @@
       "filterclean_washflag": {
         "name": "Flagg for filterrens \u2013 vask"
       },
+      "fixeddid16": {
+        "name": "Varmtvannstemperatur"
+      },
+      "fixeddid18": {
+        "name": "Turtemperatur"
+      },
+      "fixeddid30": {
+        "name": "Maks. varmtvannstemperatur"
+      },
       "flexiblespintime_flag": {
         "name": "Flagg for fleksibel sentrifugetid"
       },
@@ -4810,6 +4853,9 @@
       "humdy_test_switch_state": {
         "name": "Bryterstatus for fuktighetstest"
       },
+      "humidity_sensor_failure": {
+        "name": "Feil p\u00e5 fuktighetssensor"
+      },
       "humiditysensor": {
         "name": "Fuktighetssensor"
       },
@@ -4818,6 +4864,9 @@
       },
       "ice_make_room_switch": {
         "name": "Bryter for isproduksjonsrom"
+      },
+      "ice_maker_wash_state": {
+        "name": "Rengj\u00f8ring ismaskin"
       },
       "ice_making_fast_status": {
         "name": "Status for hurtig isproduksjon"
@@ -5962,6 +6011,9 @@
       },
       "shop_mode_setting": {
         "name": "Innstilling for butikkmodus"
+      },
+      "shopping_mode_switch_status": {
+        "name": "Handlemodus"
       },
       "show_date_setting": {
         "name": "Innstilling for \u00e5 vise dato"
@@ -7952,6 +8004,9 @@
       "support_preheat_state": {
         "name": "Tilstand for forvarmingsst\u00f8tte"
       },
+      "swj_ta": {
+        "name": "Utetemperatur"
+      },
       "synchro_start_level": {
         "name": "Synkroniseringsstartniv\u00e5"
       },
@@ -8054,6 +8109,12 @@
       },
       "text_size_setting": {
         "name": "Innstilling for tekstst\u00f8rrelse"
+      },
+      "thaw_control_switch_status": {
+        "name": "Tining"
+      },
+      "thaw_finished_alarm": {
+        "name": "Tining ferdig"
       },
       "theme_color": {
         "name": "Temafarge"
@@ -8541,6 +8602,9 @@
       }
     },
     "switch": {
+      "a2w_sw_on": {
+        "name": "Varmepumpe"
+      },
       "activemodelightstatus": {
         "name": "Lys i aktiv modus"
       },
@@ -8619,6 +8683,9 @@
       "buzzer_setting": {
         "name": "Summer"
       },
+      "c1_sw_on": {
+        "name": "Romoppvarming"
+      },
       "child_lock": {
         "name": "Barnesikring"
       },
@@ -8649,6 +8716,12 @@
       "color_sensor_setting_status": {
         "name": "Fargesensor"
       },
+      "controldid18": {
+        "name": "Nattmodus"
+      },
+      "controldid19": {
+        "name": "Stillemodus"
+      },
       "crisp_function_status": {
         "name": "Status for spr\u00f8-funksjon"
       },
@@ -8657,6 +8730,9 @@
       },
       "demo_mode_status": {
         "name": "Demomodus"
+      },
+      "dhw_sw_on": {
+        "name": "Varmtvann"
       },
       "display_standby": {
         "name": "Skjermstandby"

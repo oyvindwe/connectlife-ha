@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from custom_components.connectlife.dictionaries import (
+    Button,
     Property,
     Sensor,
     _merge_property,
@@ -460,3 +461,74 @@ def test_statistics_block_replaced_by_feature_override(build_dictionary):
     )
     assert d.statistics_source == "energy_consumption_curve"
     assert d.statistics_sensors == {"daily_water_consumption": True}
+
+
+def test_include_parsed_on_property_and_button(build_dictionary):
+    d = build_dictionary(base={
+        "properties": [{"property": "t_power", "include": ["t_fan_mute"]}],
+        "buttons": [{"key": "start", "include": ["Program"], "write": {"Actions": 1}}],
+    })
+    assert d.properties["t_power"].include == ["t_fan_mute"]
+    assert d.buttons[0].include == ["Program"]
+
+
+def test_include_defaults_to_empty():
+    assert Property({"property": "p"}).include == []
+    assert Button({"key": "start", "write": {"Actions": 1}}).include == []
+
+
+def test_invalid_include_is_ignored(caplog):
+    assert Property({"property": "p", "include": "t_fan_mute"}).include == []
+    assert Button({"key": "start", "include": [1], "write": {"Actions": 1}}).include == []
+    assert "Ignoring include" in caplog.text
+
+
+def test_button_include_replaces_as_whole(build_dictionary):
+    d = build_dictionary(
+        base={"buttons": [{"key": "start", "include": ["A", "B"], "write": {"Actions": 1}}]},
+        sub={"buttons": [{"key": "start", "include": ["C"]}]},
+    )
+    assert d.buttons[0].include == ["C"]
+    assert d.buttons[0].write == {"Actions": 1}
+
+
+def test_command_value_uses_property_command():
+    select = Property({"property": "Temp_status", "unavailable": 0, "select": {
+        "options": {1: "cold", 4: "40_c"}, "unknown_value": 15,
+        "command": {"name": "Temp", "adjust": 1},
+    }})
+    assert select.command_value(4) == ("Temp", 3)
+    assert select.command_value(0) is None
+    assert select.command_value(15) is None
+    assert select.command_value(None) is None
+
+    switch = Property({"property": "Prewash_status", "switch": {
+        "off": 1, "on": 2, "command": {"name": "Prewash", "adjust": 1},
+    }})
+    assert switch.command_value(2) == ("Prewash", 1)
+
+    number = Property({"property": "Delay_status", "number": {"command": {"name": "Delay"}}})
+    assert number.command_value(4) == ("Delay", 4)
+
+    assert Property({"property": "t_fan_mute", "switch": {}}).command_value(1) == ("t_fan_mute", 1)
+    assert Property({"property": "raw"}).command_value(3) == ("raw", 3)
+
+
+def test_included_values(build_dictionary):
+    d = build_dictionary(base={"properties": [
+        {"property": "Mode_status", "include": ["Spin_status", "Missing"],
+         "select": {"options": {1: "a"}, "command": {"name": "Mode", "adjust": 1}}},
+        {"property": "Spin_status", "select": {"options": {8: "1200_rpm"}, "command": {"name": "Spin", "adjust": 1}}},
+        {"property": "t_fan_mute", "switch": {}},
+        {"property": "Missing", "switch": {}},
+    ]})
+    status = {"Mode_status": 1, "Spin_status": 8, "t_fan_mute": 1}
+
+    # Property include fires on a write to the property's command name.
+    assert d.included_values({"Mode": 0}, status) == {"Spin": 7}
+    # Explicit include (from a button); properties without a status value are skipped.
+    assert d.included_values({"Actions": 1}, status, ["t_fan_mute", "Missing"]) == {"t_fan_mute": 1}
+    # A write already in the command wins.
+    assert d.included_values({"Mode": 0, "Spin": 3}, status) == {}
+    # No include, nothing added.
+    assert d.included_values({"t_fan_mute": 0}, status) == {}

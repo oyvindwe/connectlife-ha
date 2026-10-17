@@ -81,6 +81,7 @@
 |                          | Induction hob            | 020              | 63c45b513e1a4bf7            |
 |                          | Oven                     | 023              | 295608422d362be1            |
 | HWF8I1015BX              | Washing machine          | 025              | 1wfj1000018v                |
+| WD3S8043BW3              | Washing machine          | 025              | 1wfx0800019v                |
 | WD5I9043BBFS             | Washing machine          | 025              | 1wfx0900003v                |
 | WF5I8043BWF              | Washing machine          | 025              | 1wj0803f2v0w                |
 | WD3S8043BW3              | Washing machine          | 025              | 1wj080837v0w                |
@@ -123,6 +124,7 @@
 | RS818N4TFE               | Refrigerator             | 026              | 1b0628z0049j                |
 | RS819N4ISU               | Refrigerator             | 026              | 1b0628z0075j                |
 | RS818N4TIE1              | Refrigerator             | 026              | 1b0628z0146j                |
+| Hisense BCD-628WP1BSGF1Z11 | Refrigerator             | 026              | 1b0628z0223j                |
 | Hisense BCD-668WP1BWF1R1 | Refrigerator             | 026              | 1b0668z0100j                |
 | Gorenje NRB620E61X4WFE   | Refrigerator             | 026              | 8b0413z0011j                |
 | Gorenje W-WaveEn-22      | Washing machine          | 027              | 000                         |
