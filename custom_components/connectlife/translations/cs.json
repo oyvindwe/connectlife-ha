@@ -2,15 +2,22 @@
   "config": {
     "abort": {
       "already_configured": "Za\u0159\u00edzen\u00ed je ji\u017e nakonfigurov\u00e1no",
-      "reauth_successful": "Op\u011btovn\u00e9 ov\u011b\u0159en\u00ed bylo \u00fasp\u011b\u0161n\u00e9"
+      "already_configured_elsewhere": "Za\u0159\u00edzen\u00ed tohoto \u00fa\u010dtu jsou ji\u017e nastavena v jin\u00e9 polo\u017ece ConnectLife. Chcete-li zm\u011bnit zp\u016fsob p\u0159ihl\u00e1\u0161en\u00ed t\u00e9to polo\u017eky, zvolte u n\u00ed P\u0159enastavit. Chcete-li ji nahradit novou polo\u017ekou, nejprve ji deaktivujte.",
+      "cannot_connect": "Nepoda\u0159ilo se p\u0159ipojit",
+      "reauth_successful": "Op\u011btovn\u00e9 ov\u011b\u0159en\u00ed bylo \u00fasp\u011b\u0161n\u00e9",
+      "reconfigure_successful": "P\u0159ekonfigurov\u00e1n\u00ed bylo \u00fasp\u011b\u0161n\u00e9"
     },
     "error": {
+      "already_configured_elsewhere": "Za\u0159\u00edzen\u00ed tohoto \u00fa\u010dtu jsou ji\u017e nastavena v jin\u00e9 polo\u017ece ConnectLife. Chcete-li zm\u011bnit zp\u016fsob p\u0159ihl\u00e1\u0161en\u00ed t\u00e9to polo\u017eky, zvolte u n\u00ed P\u0159enastavit. Chcete-li ji nahradit novou polo\u017ekou, nejprve ji deaktivujte.",
       "cannot_connect": "Nepoda\u0159ilo se p\u0159ipojit",
       "invalid_auth": "Neplatn\u00e9 ov\u011b\u0159en\u00ed",
       "terms_not_accepted": "ConnectLife vy\u017eaduje p\u0159ijet\u00ed aktualizovan\u00fdch obchodn\u00edch podm\u00ednek. P\u0159epn\u011bte jazyk aplikace ConnectLife na angli\u010dtinu, aplikaci vynucen\u011b ukon\u010dete a znovu otev\u0159ete, p\u0159ijm\u011bte nov\u00e9 podm\u00ednky a zkuste to znovu.",
       "test_server_invalid": "Neplatn\u00e1 URL testovac\u00edho serveru",
       "test_server_required": "V\u00fdvojov\u00fd re\u017eim vy\u017eaduje URL testovac\u00edho serveru",
       "unknown": "Neo\u010dek\u00e1van\u00e1 chyba"
+    },
+    "initiate_flow": {
+      "user": "P\u0159idat \u00fa\u010det"
     },
     "step": {
       "development": {
@@ -22,6 +29,18 @@
         },
         "description": "Zadejte testovac\u00ed server pro p\u0159ipojen\u00ed nam\u00edsto ConnectLife API."
       },
+      "password": {
+        "data": {
+          "development_mode": "V\u00fdvojov\u00fd re\u017eim",
+          "password": "Heslo",
+          "trir": "ConnectLife.TRIR (Rusko/SNS)",
+          "username": "U\u017eivatelsk\u00e9 jm\u00e9no"
+        },
+        "data_description": {
+          "development_mode": "P\u0159ipojit k lok\u00e1ln\u00edmu testovac\u00edmu serveru nam\u00edsto ConnectLife API. Pouze pro v\u00fdvoj.",
+          "trir": "Povolte pouze pokud se p\u0159ihla\u0161ujete pomoc\u00ed aplikace ConnectLife.TRIR pou\u017e\u00edvan\u00e9 v Rusku/SNS."
+        }
+      },
       "reauth_confirm": {
         "data": {
           "password": "Heslo",
@@ -29,16 +48,30 @@
         },
         "description": "Znovu zadejte sv\u00e9 p\u0159ihla\u0161ovac\u00ed \u00fadaje k ConnectLife."
       },
-      "user": {
+      "reauth_oauth": {
+        "description": "Va\u0161e p\u0159ihl\u00e1\u0161en\u00ed ke ConnectLife vypr\u0161elo. P\u0159ihlaste se znovu na webu ConnectLife, kde m\u016f\u017eete tak\u00e9 p\u0159ijmout aktualizovan\u00e9 obchodn\u00ed podm\u00ednky.",
+        "title": "P\u0159ihl\u00e1sit se znovu"
+      },
+      "reconfigure": {
+        "menu_options": {
+          "pick_implementation": "P\u0159ihl\u00e1sit se na webu ConnectLife (tak\u00e9 \u00fa\u010dty Google, Apple, Facebook nebo Microsoft)",
+          "reconfigure_password": "Zadat u\u017eivatelsk\u00e9 jm\u00e9no a heslo"
+        }
+      },
+      "reconfigure_password": {
         "data": {
-          "development_mode": "V\u00fdvojov\u00fd re\u017eim",
           "password": "Heslo",
-          "trir": "ConnectLife.TRIR (Rusko/SNS) \u2014 experiment\u00e1ln\u00ed",
+          "trir": "ConnectLife.TRIR (Rusko/SNS)",
           "username": "U\u017eivatelsk\u00e9 jm\u00e9no"
         },
         "data_description": {
-          "development_mode": "P\u0159ipojit k lok\u00e1ln\u00edmu testovac\u00edmu serveru nam\u00edsto ConnectLife API. Pouze pro v\u00fdvoj.",
-          "trir": "Povolte pouze pokud se p\u0159ihla\u0161ujete pomoc\u00ed aplikace ConnectLife.TRIR pou\u017e\u00edvan\u00e9 v Rusku/SNS. Experiment\u00e1ln\u00ed."
+          "trir": "Povolte pouze pokud se p\u0159ihla\u0161ujete pomoc\u00ed aplikace ConnectLife.TRIR pou\u017e\u00edvan\u00e9 v Rusku/SNS."
+        }
+      },
+      "user": {
+        "menu_options": {
+          "password": "Zadat u\u017eivatelsk\u00e9 jm\u00e9no a heslo",
+          "pick_implementation": "P\u0159ihl\u00e1sit se na webu ConnectLife (tak\u00e9 \u00fa\u010dty Google, Apple, Facebook nebo Microsoft)"
         }
       }
     }
@@ -447,6 +480,9 @@
       "alramemptywatertank": {
         "name": "Pr\u00e1zdn\u00e1 vodn\u00ed n\u00e1dr\u017e"
       },
+      "anti_legionella_s": {
+        "name": "Sterilizace"
+      },
       "auto_boost": {
         "name": "Automatick\u00e9 pos\u00edlen\u00ed"
       },
@@ -500,6 +536,12 @@
       },
       "control_failure_status": {
         "name": "Stav poruchy \u0159\u00edzen\u00ed"
+      },
+      "defrost_dhw_s": {
+        "name": "Odmrazov\u00e1n\u00ed TUV"
+      },
+      "defrost_spaceheat_s": {
+        "name": "Odmrazov\u00e1n\u00ed vyt\u00e1p\u011bn\u00ed"
       },
       "delay_start": {
         "name": "Opo\u017ed\u011bn\u00fd start"
@@ -1115,6 +1157,9 @@
       },
       "interior_light_control_available": {
         "name": "Ovl\u00e1d\u00e1n\u00ed vnit\u0159n\u00edho osv\u011btlen\u00ed dostupn\u00e9"
+      },
+      "iseleheatingturnon": {
+        "name": "Elektrick\u00fd oh\u0159\u00edva\u010d aktivn\u00ed"
       },
       "light": {
         "name": "Sv\u011btlo"
@@ -2130,6 +2175,12 @@
       "t_fanspeedcv": {
         "name": "Rychlost variabiln\u00edho ventil\u00e1toru"
       },
+      "tdhws": {
+        "name": "Po\u017eadovan\u00e1 teplota TUV"
+      },
+      "ts_c1_water": {
+        "name": "Po\u017eadovan\u00e1 v\u00fdstupn\u00ed teplota"
+      },
       "variation_max_temperature": {
         "name": "Maxim\u00e1ln\u00ed teplota variabiln\u00edho prostoru"
       },
@@ -2546,6 +2597,7 @@
           "time_dry": "Su\u0161en\u00ed na \u010das",
           "towels": "Ru\u010dn\u00edky",
           "wash_and_dry_49": "Pran\u00ed a su\u0161en\u00ed 49",
+          "wash_and_dry_60": "Pran\u00ed a su\u0161en\u00ed 60",
           "wool": "Vlna"
         }
       },
@@ -2567,6 +2619,7 @@
           "down_feathers": "Pe\u0159\u00ed",
           "draining": "Vypou\u0161t\u011bn\u00ed",
           "drum_clean": "\u010ci\u0161t\u011bn\u00ed bubnu",
+          "easy_care": "Snadn\u00e1 p\u00e9\u010de",
           "eco": "Eko",
           "eco_40_60": "Eko 40-60",
           "extra_hygiene": "Extra hygiena",
@@ -2584,6 +2637,7 @@
           "new_clothes": "Nov\u00e9 oble\u010den\u00ed",
           "night": "No\u010dn\u00ed",
           "no_program_selected": "Nevybr\u00e1n \u017e\u00e1dn\u00fd program",
+          "normal_wash": "B\u011b\u017en\u00e9 pran\u00ed",
           "odor_control": "Kontrola z\u00e1pachu",
           "one_hour": "Jedna hodina",
           "pet_hair_removal": "Odstra\u0148ov\u00e1n\u00ed chlup\u016f",
@@ -3452,6 +3506,12 @@
       "compressor_frequency": {
         "name": "Frekvence kompresoru"
       },
+      "compressor_operating_max_frequency": {
+        "name": "Maxim\u00e1ln\u00ed provozn\u00ed frekvence kompresoru"
+      },
+      "compressor_operating_min_frequency": {
+        "name": "Minim\u00e1ln\u00ed provozn\u00ed frekvence kompresoru"
+      },
       "condensed_watermode": {
         "name": "Re\u017eim kondenzovan\u00e9 vody"
       },
@@ -4032,6 +4092,12 @@
       "ecomode": {
         "name": "ECO re\u017eim"
       },
+      "eh1_power": {
+        "name": "Elektrick\u00fd oh\u0159\u00edva\u010d stupe\u0148 1"
+      },
+      "eh2_power": {
+        "name": "Elektrick\u00fd oh\u0159\u00edva\u010d stupe\u0148 2"
+      },
       "electric_current": {
         "name": "Elektrick\u00fd proud"
       },
@@ -4569,6 +4635,15 @@
       "filterclean_washflag": {
         "name": "P\u0159\u00edznak \u010di\u0161t\u011bn\u00ed filtru \u2013 pran\u00ed"
       },
+      "fixeddid16": {
+        "name": "Teplota TUV"
+      },
+      "fixeddid18": {
+        "name": "V\u00fdstupn\u00ed teplota"
+      },
+      "fixeddid30": {
+        "name": "Maxim\u00e1ln\u00ed teplota TUV"
+      },
       "flexiblespintime_flag": {
         "name": "P\u0159\u00edznak flexibiln\u00ed doby odst\u0159ed\u011bn\u00ed"
       },
@@ -4650,6 +4725,9 @@
       },
       "getcurrentcityinfoflag": {
         "name": "P\u0159\u00edznak z\u00edsk\u00e1n\u00ed informac\u00ed o aktu\u00e1ln\u00edm m\u011bst\u011b"
+      },
+      "global_timer_remaining_time_in_minutes": {
+        "name": "Zb\u00fdvaj\u00edc\u00ed \u010das hlavn\u00edho \u010dasova\u010de"
       },
       "gratin_total_allowed_time_in_minutes": {
         "name": "Celkov\u00fd povolen\u00fd \u010das gratinov\u00e1n\u00ed"
@@ -4792,6 +4870,9 @@
       "humdy_test_switch_state": {
         "name": "Stav p\u0159ep\u00edna\u010de testu vlhkosti"
       },
+      "humidity_sensor_failure": {
+        "name": "Porucha \u010didla vlhkosti"
+      },
       "humiditysensor": {
         "name": "Sn\u00edma\u010d vlhkosti"
       },
@@ -4800,6 +4881,9 @@
       },
       "ice_make_room_switch": {
         "name": "P\u0159ep\u00edna\u010d prostoru v\u00fdroby ledu"
+      },
+      "ice_maker_wash_state": {
+        "name": "Stav myt\u00ed v\u00fdrobn\u00edku ledu"
       },
       "ice_making_fast_status": {
         "name": "Stav rychl\u00e9 v\u00fdroby ledu"
@@ -4833,6 +4917,24 @@
       },
       "idmachine": {
         "name": "ID stroje"
+      },
+      "igbttemperatureg01": {
+        "name": "Teplota v\u00fdkonov\u00e9ho modulu G01"
+      },
+      "igbttemperatureg02": {
+        "name": "Teplota v\u00fdkonov\u00e9ho modulu G02"
+      },
+      "igbttemperatureg11": {
+        "name": "Teplota v\u00fdkonov\u00e9ho modulu G11"
+      },
+      "igbttemperatureg12": {
+        "name": "Teplota v\u00fdkonov\u00e9ho modulu G12"
+      },
+      "igbttemperatureg21": {
+        "name": "Teplota v\u00fdkonov\u00e9ho modulu G21"
+      },
+      "igbttemperatureg22": {
+        "name": "Teplota v\u00fdkonov\u00e9ho modulu G22"
       },
       "inactivity_timeout": {
         "name": "Timeout ne\u010dinnosti"
@@ -5944,6 +6046,9 @@
       },
       "shop_mode_setting": {
         "name": "Nastaven\u00ed re\u017eimu prodejny"
+      },
+      "shopping_mode_switch_status": {
+        "name": "Stav re\u017eimu n\u00e1kupu"
       },
       "show_date_setting": {
         "name": "Nastaven\u00ed zobrazen\u00ed data"
@@ -7934,6 +8039,9 @@
       "support_preheat_state": {
         "name": "Stav podpory p\u0159edeh\u0159evu"
       },
+      "swj_ta": {
+        "name": "Venkovn\u00ed teplota"
+      },
       "synchro_start_level": {
         "name": "\u00darove\u0148 synchroniza\u010dn\u00edho startu"
       },
@@ -8037,6 +8145,12 @@
       "text_size_setting": {
         "name": "Nastaven\u00ed velikosti textu"
       },
+      "thaw_control_switch_status": {
+        "name": "Stav \u0159\u00edzen\u00ed rozmrazov\u00e1n\u00ed"
+      },
+      "thaw_finished_alarm": {
+        "name": "Alarm dokon\u010den\u00ed rozmrazov\u00e1n\u00ed"
+      },
       "theme_color": {
         "name": "Barva motivu"
       },
@@ -8126,6 +8240,12 @@
       },
       "totalprogramscycles": {
         "name": "Celkov\u00fd po\u010det cykl\u016f programu"
+      },
+      "totaltimeofcookinginminutes": {
+        "name": "Celkov\u00e1 doba va\u0159en\u00ed"
+      },
+      "uitemperature": {
+        "name": "Teplota ovl\u00e1dac\u00edho panelu"
       },
       "unfreeze_run_status": {
         "name": "Stav b\u011bhu odmrazov\u00e1n\u00ed"
@@ -8523,6 +8643,9 @@
       }
     },
     "switch": {
+      "a2w_sw_on": {
+        "name": "Tepeln\u00e9 \u010derpadlo"
+      },
       "activemodelightstatus": {
         "name": "Sv\u011btlo aktivn\u00edho re\u017eimu"
       },
@@ -8601,6 +8724,9 @@
       "buzzer_setting": {
         "name": "Bzu\u010d\u00e1k"
       },
+      "c1_sw_on": {
+        "name": "Vyt\u00e1p\u011bn\u00ed"
+      },
       "child_lock": {
         "name": "D\u011btsk\u00e1 pojistka"
       },
@@ -8631,6 +8757,12 @@
       "color_sensor_setting_status": {
         "name": "Barevn\u00fd senzor"
       },
+      "controldid18": {
+        "name": "No\u010dn\u00ed re\u017eim"
+      },
+      "controldid19": {
+        "name": "Tich\u00fd re\u017eim"
+      },
       "crisp_function_status": {
         "name": "Stav funkce Crisp"
       },
@@ -8639,6 +8771,9 @@
       },
       "demo_mode_status": {
         "name": "Demo re\u017eim"
+      },
+      "dhw_sw_on": {
+        "name": "Tepl\u00e1 u\u017eitkov\u00e1 voda"
       },
       "display_standby": {
         "name": "Pohotovost displeje"

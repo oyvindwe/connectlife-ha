@@ -1,4 +1,16 @@
 # Gorenje WG486A21 (WM26 G400)
+buttons:
+# The machine only uses the program options when they are sent with the start
+# command (#655). Programs without a temperature or spin option report 0, which
+# is skipped.
+- key: start
+  # Starts from standby too, when program and options are sent along (#655).
+  available_when:
+    Status: [0, 4]  # Standby, program select
+  include:
+    - Selected_program_id_status
+    - Selected_program_set_temperature_status
+    - Selected_program_washing_spin_speed_rpm_status
 properties:
 - property: Selected_program_id_status
   select:
@@ -11,7 +23,7 @@ properties:
       5: allergy_safe
       6: speed_14
       7: power_39
-      8: no_program_selected
+      8: normal_wash
       9: sportswear
       10: baby_care
       11: pets
@@ -33,6 +45,7 @@ properties:
       41: bleaching
       42: activewear
       43: curtains
+      45: easy_care
       46: bedding
       47: shoes
       50: steam_refresh

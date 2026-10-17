@@ -2,15 +2,22 @@
   "config": {
     "abort": {
       "already_configured": "L\u2019appareil est d\u00e9j\u00e0 configur\u00e9",
-      "reauth_successful": "La r\u00e9-authentification a r\u00e9ussi"
+      "already_configured_elsewhere": "Les appareils de ce compte sont d\u00e9j\u00e0 configur\u00e9s dans une autre entr\u00e9e ConnectLife. Pour changer la m\u00e9thode de connexion de cette entr\u00e9e, choisissez Reconfigurer sur celle-ci. Pour la remplacer par une nouvelle entr\u00e9e, d\u00e9sactivez-la d'abord.",
+      "cannot_connect": "\u00c9chec de l\u2019\u00e9tablissement de la connexion",
+      "reauth_successful": "La r\u00e9-authentification a r\u00e9ussi",
+      "reconfigure_successful": "La reconfiguration a r\u00e9ussi"
     },
     "error": {
+      "already_configured_elsewhere": "Les appareils de ce compte sont d\u00e9j\u00e0 configur\u00e9s dans une autre entr\u00e9e ConnectLife. Pour changer la m\u00e9thode de connexion de cette entr\u00e9e, choisissez Reconfigurer sur celle-ci. Pour la remplacer par une nouvelle entr\u00e9e, d\u00e9sactivez-la d'abord.",
       "cannot_connect": "\u00c9chec de l\u2019\u00e9tablissement de la connexion",
       "invalid_auth": "\u00c9chec de l\u2019authentification",
       "terms_not_accepted": "ConnectLife exige l'acceptation de Conditions g\u00e9n\u00e9rales mises \u00e0 jour. Passez la langue de l'application ConnectLife en anglais, forcez la fermeture de l'application, rouvrez-la, acceptez les nouvelles conditions, puis r\u00e9essayez.",
       "test_server_invalid": "URL du serveur de test invalide",
       "test_server_required": "Le mode d\u00e9veloppement n\u00e9cessite une URL de serveur de test",
       "unknown": "Erreur inconnue"
+    },
+    "initiate_flow": {
+      "user": "Ajouter un compte"
     },
     "step": {
       "development": {
@@ -22,6 +29,18 @@
         },
         "description": "Activer le mode d\u00e9veloppement pour se connecter au serveur de test au lieu de l\u2019API ConnectLife."
       },
+      "password": {
+        "data": {
+          "development_mode": "Mode d\u00e9veloppement",
+          "password": "Mot de passe",
+          "trir": "ConnectLife.TRIR (Russie/CEI)",
+          "username": "Nom d\u2019utilisateur"
+        },
+        "data_description": {
+          "development_mode": "Se connecter \u00e0 un serveur de test local au lieu de l\u2019API ConnectLife. Pour le d\u00e9veloppement uniquement.",
+          "trir": "\u00c0 activer uniquement si vous vous connectez avec l\u2019application ConnectLife.TRIR utilis\u00e9e en Russie/CEI."
+        }
+      },
       "reauth_confirm": {
         "data": {
           "password": "Mot de passe",
@@ -29,16 +48,30 @@
         },
         "description": "Veuillez saisir \u00e0 nouveau vos identifiants ConnectLife."
       },
-      "user": {
+      "reauth_oauth": {
+        "description": "Votre connexion \u00e0 ConnectLife a expir\u00e9. Reconnectez-vous sur le site ConnectLife, o\u00f9 vous pouvez aussi accepter les Conditions g\u00e9n\u00e9rales mises \u00e0 jour.",
+        "title": "Se reconnecter"
+      },
+      "reconfigure": {
+        "menu_options": {
+          "pick_implementation": "Se connecter sur le site ConnectLife (aussi avec un compte Google, Apple, Facebook ou Microsoft)",
+          "reconfigure_password": "Saisir l'identifiant et le mot de passe"
+        }
+      },
+      "reconfigure_password": {
         "data": {
-          "development_mode": "Mode d\u00e9veloppement",
           "password": "Mot de passe",
-          "trir": "ConnectLife.TRIR (Russie/CEI) \u2014 exp\u00e9rimental",
+          "trir": "ConnectLife.TRIR (Russie/CEI)",
           "username": "Nom d\u2019utilisateur"
         },
         "data_description": {
-          "development_mode": "Se connecter \u00e0 un serveur de test local au lieu de l\u2019API ConnectLife. Pour le d\u00e9veloppement uniquement.",
-          "trir": "\u00c0 activer uniquement si vous vous connectez avec l\u2019application ConnectLife.TRIR utilis\u00e9e en Russie/CEI. Exp\u00e9rimental."
+          "trir": "\u00c0 activer uniquement si vous vous connectez avec l\u2019application ConnectLife.TRIR utilis\u00e9e en Russie/CEI."
+        }
+      },
+      "user": {
+        "menu_options": {
+          "password": "Saisir l'identifiant et le mot de passe",
+          "pick_implementation": "Se connecter sur le site ConnectLife (aussi avec un compte Google, Apple, Facebook ou Microsoft)"
         }
       }
     }
@@ -447,6 +480,9 @@
       "alramemptywatertank": {
         "name": "R\u00e9servoir d'eau vide"
       },
+      "anti_legionella_s": {
+        "name": "St\u00e9rilisation"
+      },
       "auto_boost": {
         "name": "Boost auto"
       },
@@ -500,6 +536,12 @@
       },
       "control_failure_status": {
         "name": "\u00c9tat d\u00e9faut contr\u00f4le"
+      },
+      "defrost_dhw_s": {
+        "name": "D\u00e9givrage ECS"
+      },
+      "defrost_spaceheat_s": {
+        "name": "D\u00e9givrage chauffage"
       },
       "delay_start": {
         "name": "DEPART DIFFERE"
@@ -1115,6 +1157,9 @@
       },
       "interior_light_control_available": {
         "name": "Commande d'\u00e9clairage int\u00e9rieur disponible"
+      },
+      "iseleheatingturnon": {
+        "name": "R\u00e9sistance \u00e9lectrique active"
       },
       "light": {
         "name": "\u00c9clairage"
@@ -2130,6 +2175,12 @@
       "t_fanspeedcv": {
         "name": "Vitesse de ventilation variable"
       },
+      "tdhws": {
+        "name": "Consigne ECS"
+      },
+      "ts_c1_water": {
+        "name": "Consigne de temp\u00e9rature de d\u00e9part"
+      },
       "variation_max_temperature": {
         "name": "Temp\u00e9rature max zone variable"
       },
@@ -2546,6 +2597,7 @@
           "time_dry": "S\u00e9chage minut\u00e9",
           "towels": "Serviettes",
           "wash_and_dry_49": "Lavage et s\u00e9chage 49",
+          "wash_and_dry_60": "Lavage et s\u00e9chage 60",
           "wool": "Laine"
         }
       },
@@ -2567,6 +2619,7 @@
           "down_feathers": "Duvet",
           "draining": "Vidange",
           "drum_clean": "Nettoyage du tambour",
+          "easy_care": "Entretien facile",
           "eco": "\u00c9co",
           "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Hygi\u00e8ne suppl\u00e9mentaire",
@@ -2584,6 +2637,7 @@
           "new_clothes": "V\u00eatements neufs",
           "night": "Nuit",
           "no_program_selected": "Aucun programme s\u00e9lectionn\u00e9",
+          "normal_wash": "Lavage normal",
           "odor_control": "Contr\u00f4le des odeurs",
           "one_hour": "Une heure",
           "pet_hair_removal": "\u00c9limination des poils d'animaux",
@@ -3452,6 +3506,12 @@
       "compressor_frequency": {
         "name": "Fr\u00e9quence compresseur"
       },
+      "compressor_operating_max_frequency": {
+        "name": "Fr\u00e9quence de fonctionnement max. du compresseur"
+      },
+      "compressor_operating_min_frequency": {
+        "name": "Fr\u00e9quence de fonctionnement min. du compresseur"
+      },
       "condensed_watermode": {
         "name": "Mode eau condens\u00e9e"
       },
@@ -4032,6 +4092,12 @@
       "ecomode": {
         "name": "Mode ECO"
       },
+      "eh1_power": {
+        "name": "R\u00e9sistance \u00e9lectrique \u00e9tage 1"
+      },
+      "eh2_power": {
+        "name": "R\u00e9sistance \u00e9lectrique \u00e9tage 2"
+      },
       "electric_current": {
         "name": "Courant \u00e9lectrique"
       },
@@ -4569,6 +4635,15 @@
       "filterclean_washflag": {
         "name": "Indicateur nettoyage filtre"
       },
+      "fixeddid16": {
+        "name": "Temp\u00e9rature ECS"
+      },
+      "fixeddid18": {
+        "name": "Temp\u00e9rature de d\u00e9part"
+      },
+      "fixeddid30": {
+        "name": "Temp\u00e9rature ECS maximale"
+      },
       "flexiblespintime_flag": {
         "name": "Indicateur de dur\u00e9e d'essorage flexible"
       },
@@ -4650,6 +4725,9 @@
       },
       "getcurrentcityinfoflag": {
         "name": "Indicateur d'obtention des infos de la ville actuelle"
+      },
+      "global_timer_remaining_time_in_minutes": {
+        "name": "Temps restant de la minuterie g\u00e9n\u00e9rale"
       },
       "gratin_total_allowed_time_in_minutes": {
         "name": "Temps total autoris\u00e9 du gratin"
@@ -4792,6 +4870,9 @@
       "humdy_test_switch_state": {
         "name": "\u00c9tat test humidit\u00e9"
       },
+      "humidity_sensor_failure": {
+        "name": "D\u00e9faillance du capteur d'humidit\u00e9"
+      },
       "humiditysensor": {
         "name": "Capteur d'humidit\u00e9"
       },
@@ -4800,6 +4881,9 @@
       },
       "ice_make_room_switch": {
         "name": "Interrupteur compartiment glace"
+      },
+      "ice_maker_wash_state": {
+        "name": "\u00c9tat de lavage de la machine \u00e0 gla\u00e7ons"
       },
       "ice_making_fast_status": {
         "name": "Glace - mode rapide"
@@ -4833,6 +4917,24 @@
       },
       "idmachine": {
         "name": "ID de la machine"
+      },
+      "igbttemperatureg01": {
+        "name": "Temp\u00e9rature du module de puissance G01"
+      },
+      "igbttemperatureg02": {
+        "name": "Temp\u00e9rature du module de puissance G02"
+      },
+      "igbttemperatureg11": {
+        "name": "Temp\u00e9rature du module de puissance G11"
+      },
+      "igbttemperatureg12": {
+        "name": "Temp\u00e9rature du module de puissance G12"
+      },
+      "igbttemperatureg21": {
+        "name": "Temp\u00e9rature du module de puissance G21"
+      },
+      "igbttemperatureg22": {
+        "name": "Temp\u00e9rature du module de puissance G22"
       },
       "inactivity_timeout": {
         "name": "D\u00e9lai d'inactivit\u00e9"
@@ -5944,6 +6046,9 @@
       },
       "shop_mode_setting": {
         "name": "R\u00e9glage du mode d\u00e9mo"
+      },
+      "shopping_mode_switch_status": {
+        "name": "\u00c9tat du mode courses"
       },
       "show_date_setting": {
         "name": "R\u00e9glage d'affichage de la date"
@@ -7934,6 +8039,9 @@
       "support_preheat_state": {
         "name": "\u00c9tat de prise en charge du pr\u00e9chauffage"
       },
+      "swj_ta": {
+        "name": "Temp\u00e9rature ext\u00e9rieure"
+      },
       "synchro_start_level": {
         "name": "Niveau de d\u00e9marrage synchronis\u00e9"
       },
@@ -8037,6 +8145,12 @@
       "text_size_setting": {
         "name": "R\u00e9glage de la taille du texte"
       },
+      "thaw_control_switch_status": {
+        "name": "\u00c9tat du contr\u00f4le de d\u00e9cong\u00e9lation"
+      },
+      "thaw_finished_alarm": {
+        "name": "Alarme de d\u00e9cong\u00e9lation termin\u00e9e"
+      },
       "theme_color": {
         "name": "Couleur du th\u00e8me"
       },
@@ -8126,6 +8240,12 @@
       },
       "totalprogramscycles": {
         "name": "Total des cycles de programme"
+      },
+      "totaltimeofcookinginminutes": {
+        "name": "Temps de cuisson total"
+      },
+      "uitemperature": {
+        "name": "Temp\u00e9rature du panneau de commande"
       },
       "unfreeze_run_status": {
         "name": "\u00c9tat d\u00e9givrage en cours"
@@ -8523,6 +8643,9 @@
       }
     },
     "switch": {
+      "a2w_sw_on": {
+        "name": "Pompe \u00e0 chaleur"
+      },
       "activemodelightstatus": {
         "name": "Voyant du mode actif"
       },
@@ -8601,6 +8724,9 @@
       "buzzer_setting": {
         "name": "Signal sonore"
       },
+      "c1_sw_on": {
+        "name": "Chauffage"
+      },
       "child_lock": {
         "name": "Verrouillage enfant"
       },
@@ -8631,6 +8757,12 @@
       "color_sensor_setting_status": {
         "name": "Capteur de couleur"
       },
+      "controldid18": {
+        "name": "Mode nuit"
+      },
+      "controldid19": {
+        "name": "Mode silencieux"
+      },
       "crisp_function_status": {
         "name": "\u00c9tat de la fonction Crisp"
       },
@@ -8639,6 +8771,9 @@
       },
       "demo_mode_status": {
         "name": "Mode d\u00e9mo"
+      },
+      "dhw_sw_on": {
+        "name": "Eau chaude sanitaire"
       },
       "display_standby": {
         "name": "Veille de l'affichage"

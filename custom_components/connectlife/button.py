@@ -56,7 +56,7 @@ class ConnectLifeButton(ConnectLifeEntity, ButtonEntity):
             return False
         status_list = self.coordinator.data[self.device_id].status_list
         for name, expected in self.button.available_when.items():
-            if status_list.get(name) != expected:
+            if status_list.get(name) not in expected:
                 return False
         return True
 
@@ -71,4 +71,4 @@ class ConnectLifeButton(ConnectLifeEntity, ButtonEntity):
         # like Actions never appear in status_list and would linger as
         # phantom values until the next poll.
         properties = {k: v for k, v in self.button.write.items() if k in status_list}
-        await self.async_update_device(dict(self.button.write), properties)
+        await self.async_update_device(dict(self.button.write), properties, self.button.include)

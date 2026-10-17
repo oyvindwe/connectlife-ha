@@ -2,15 +2,22 @@
   "config": {
     "abort": {
       "already_configured": "Apparaat is al geconfigureerd",
-      "reauth_successful": "Opnieuw authenticeren is gelukt"
+      "already_configured_elsewhere": "De apparaten van dit account zijn al ingesteld in een andere ConnectLife-vermelding. Kies Herconfigureer bij die vermelding om te wijzigen hoe die inlogt. Schakel die vermelding eerst uit om haar door een nieuwe te vervangen.",
+      "cannot_connect": "Verbinding mislukt",
+      "reauth_successful": "Opnieuw authenticeren is gelukt",
+      "reconfigure_successful": "Opnieuw configureren is gelukt"
     },
     "error": {
+      "already_configured_elsewhere": "De apparaten van dit account zijn al ingesteld in een andere ConnectLife-vermelding. Kies Herconfigureer bij die vermelding om te wijzigen hoe die inlogt. Schakel die vermelding eerst uit om haar door een nieuwe te vervangen.",
       "cannot_connect": "Verbinding mislukt",
       "invalid_auth": "Ongeldige authenticatie",
       "terms_not_accepted": "ConnectLife vereist dat je de bijgewerkte algemene voorwaarden accepteert. Zet de taal van de ConnectLife-app op Engels, sluit de app geforceerd af, open hem opnieuw, accepteer de nieuwe voorwaarden en probeer het daarna opnieuw.",
       "test_server_invalid": "Ongeldige test server URL",
       "test_server_required": "Ontwikkelingsmodus vereist test server URL",
       "unknown": "Onverwachte fout"
+    },
+    "initiate_flow": {
+      "user": "Account toevoegen"
     },
     "step": {
       "development": {
@@ -22,6 +29,18 @@
         },
         "description": "Schakel ontwikkelingsmodus in om verbinding te maken met de testserver in plaats van de ConnectLife API."
       },
+      "password": {
+        "data": {
+          "development_mode": "Ontwikkelingsmodus",
+          "password": "Wachtwoord",
+          "trir": "ConnectLife.TRIR (Rusland/GOS)",
+          "username": "Gebruikersnaam"
+        },
+        "data_description": {
+          "development_mode": "Verbinden met een lokale testserver in plaats van de ConnectLife API. Alleen voor ontwikkeling.",
+          "trir": "Alleen inschakelen als je inlogt met de ConnectLife.TRIR-app die in Rusland/GOS wordt gebruikt."
+        }
+      },
       "reauth_confirm": {
         "data": {
           "password": "Wachtwoord",
@@ -29,16 +48,30 @@
         },
         "description": "Voer je ConnectLife inloggegevens opnieuw in."
       },
-      "user": {
+      "reauth_oauth": {
+        "description": "Je ConnectLife-sessie is verlopen. Log opnieuw in op de ConnectLife-website, waar je ook de bijgewerkte algemene voorwaarden kunt accepteren.",
+        "title": "Opnieuw inloggen"
+      },
+      "reconfigure": {
+        "menu_options": {
+          "pick_implementation": "Inloggen op de ConnectLife-website (ook met een Google-, Apple-, Facebook- of Microsoft-account)",
+          "reconfigure_password": "Gebruikersnaam en wachtwoord invoeren"
+        }
+      },
+      "reconfigure_password": {
         "data": {
-          "development_mode": "Ontwikkelingsmodus",
           "password": "Wachtwoord",
-          "trir": "ConnectLife.TRIR (Rusland/GOS) \u2014 experimenteel",
+          "trir": "ConnectLife.TRIR (Rusland/GOS)",
           "username": "Gebruikersnaam"
         },
         "data_description": {
-          "development_mode": "Verbinden met een lokale testserver in plaats van de ConnectLife API. Alleen voor ontwikkeling.",
-          "trir": "Alleen inschakelen als je inlogt met de ConnectLife.TRIR-app die in Rusland/GOS wordt gebruikt. Experimenteel."
+          "trir": "Alleen inschakelen als je inlogt met de ConnectLife.TRIR-app die in Rusland/GOS wordt gebruikt."
+        }
+      },
+      "user": {
+        "menu_options": {
+          "password": "Gebruikersnaam en wachtwoord invoeren",
+          "pick_implementation": "Inloggen op de ConnectLife-website (ook met een Google-, Apple-, Facebook- of Microsoft-account)"
         }
       }
     }
@@ -447,6 +480,9 @@
       "alramemptywatertank": {
         "name": "Waterreservoir leeg"
       },
+      "anti_legionella_s": {
+        "name": "Sterilisatie"
+      },
       "auto_boost": {
         "name": "Automatische boost"
       },
@@ -500,6 +536,12 @@
       },
       "control_failure_status": {
         "name": "Besturing storing"
+      },
+      "defrost_dhw_s": {
+        "name": "Ontdooien tapwater"
+      },
+      "defrost_spaceheat_s": {
+        "name": "Ontdooien ruimteverwarming"
       },
       "delay_start": {
         "name": "Uitgestelde start"
@@ -1115,6 +1157,9 @@
       },
       "interior_light_control_available": {
         "name": "Binnenverlichting bediening beschikbaar"
+      },
+      "iseleheatingturnon": {
+        "name": "Elektrisch verwarmingselement actief"
       },
       "light": {
         "name": "Verlichting"
@@ -2130,6 +2175,12 @@
       "t_fanspeedcv": {
         "name": "Ventilatorsnelheid variabele ruimte"
       },
+      "tdhws": {
+        "name": "Tapwater-setpoint"
+      },
+      "ts_c1_water": {
+        "name": "Aanvoertemperatuur-setpoint"
+      },
       "variation_max_temperature": {
         "name": "Variatie max temperatuur"
       },
@@ -2546,6 +2597,7 @@
           "time_dry": "Tijddrogen",
           "towels": "Handdoeken",
           "wash_and_dry_49": "Wassen en drogen 49'",
+          "wash_and_dry_60": "Wassen en drogen 60'",
           "wool": "Wol"
         }
       },
@@ -2567,6 +2619,7 @@
           "down_feathers": "Donsveren",
           "draining": "Afpompen",
           "drum_clean": "Trommelreiniging",
+          "easy_care": "Kreukherstellend",
           "eco": "Eco",
           "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Extra hygi\u00ebne",
@@ -2584,6 +2637,7 @@
           "new_clothes": "Nieuwe kleding",
           "night": "Nacht",
           "no_program_selected": "Geen programma geselecteerd",
+          "normal_wash": "Normale was",
           "odor_control": "Geurbeheersing",
           "one_hour": "1 uur",
           "pet_hair_removal": "Huisdierhaar verwijderen",
@@ -3452,6 +3506,12 @@
       "compressor_frequency": {
         "name": "Compressorfrequentie"
       },
+      "compressor_operating_max_frequency": {
+        "name": "Maximale werkfrequentie compressor"
+      },
+      "compressor_operating_min_frequency": {
+        "name": "Minimale werkfrequentie compressor"
+      },
       "condensed_watermode": {
         "name": "Condenswatermodus"
       },
@@ -4032,6 +4092,12 @@
       "ecomode": {
         "name": "Ecomodus"
       },
+      "eh1_power": {
+        "name": "Elektrisch verwarmingselement trap 1"
+      },
+      "eh2_power": {
+        "name": "Elektrisch verwarmingselement trap 2"
+      },
       "electric_current": {
         "name": "Elektrische stroom"
       },
@@ -4569,6 +4635,15 @@
       "filterclean_washflag": {
         "name": "Vlag filter reinigen wassen"
       },
+      "fixeddid16": {
+        "name": "Tapwatertemperatuur"
+      },
+      "fixeddid18": {
+        "name": "Aanvoertemperatuur"
+      },
+      "fixeddid30": {
+        "name": "Maximale tapwatertemperatuur"
+      },
       "flexiblespintime_flag": {
         "name": "Flexibele centrifugeertijd"
       },
@@ -4650,6 +4725,9 @@
       },
       "getcurrentcityinfoflag": {
         "name": "Indicator huidige stadsinfo ophalen"
+      },
+      "global_timer_remaining_time_in_minutes": {
+        "name": "Resterende tijd hoofdtimer"
       },
       "gratin_total_allowed_time_in_minutes": {
         "name": "Maximale gratineertijd"
@@ -4792,6 +4870,9 @@
       "humdy_test_switch_state": {
         "name": "Status schakelaar vochtigheidstest"
       },
+      "humidity_sensor_failure": {
+        "name": "Storing vochtigheidssensor"
+      },
       "humiditysensor": {
         "name": "Vochtigheidssensor"
       },
@@ -4800,6 +4881,9 @@
       },
       "ice_make_room_switch": {
         "name": "Schakelaar ijsmaakruimte"
+      },
+      "ice_maker_wash_state": {
+        "name": "Spoelstatus ijsmaker"
       },
       "ice_making_fast_status": {
         "name": "Status snel ijs maken"
@@ -4833,6 +4917,24 @@
       },
       "idmachine": {
         "name": "Machine-ID"
+      },
+      "igbttemperatureg01": {
+        "name": "Temperatuur vermogensmodule G01"
+      },
+      "igbttemperatureg02": {
+        "name": "Temperatuur vermogensmodule G02"
+      },
+      "igbttemperatureg11": {
+        "name": "Temperatuur vermogensmodule G11"
+      },
+      "igbttemperatureg12": {
+        "name": "Temperatuur vermogensmodule G12"
+      },
+      "igbttemperatureg21": {
+        "name": "Temperatuur vermogensmodule G21"
+      },
+      "igbttemperatureg22": {
+        "name": "Temperatuur vermogensmodule G22"
       },
       "inactivity_timeout": {
         "name": "Time-out inactiviteit"
@@ -5944,6 +6046,9 @@
       },
       "shop_mode_setting": {
         "name": "Instelling winkelmodus"
+      },
+      "shopping_mode_switch_status": {
+        "name": "Status boodschappenmodus"
       },
       "show_date_setting": {
         "name": "Instelling datum tonen"
@@ -7934,6 +8039,9 @@
       "support_preheat_state": {
         "name": "Voorverwarmen ondersteund"
       },
+      "swj_ta": {
+        "name": "Buitentemperatuur"
+      },
       "synchro_start_level": {
         "name": "Synchro-startniveau"
       },
@@ -8037,6 +8145,12 @@
       "text_size_setting": {
         "name": "Instelling tekstgrootte"
       },
+      "thaw_control_switch_status": {
+        "name": "Status ontdooiregeling"
+      },
+      "thaw_finished_alarm": {
+        "name": "Alarm ontdooien voltooid"
+      },
       "theme_color": {
         "name": "Themakleur"
       },
@@ -8126,6 +8240,12 @@
       },
       "totalprogramscycles": {
         "name": "Totaal aantal programmacycli"
+      },
+      "totaltimeofcookinginminutes": {
+        "name": "Totale kooktijd"
+      },
+      "uitemperature": {
+        "name": "Temperatuur bedieningspaneel"
       },
       "unfreeze_run_status": {
         "name": "Status ontdooien"
@@ -8523,6 +8643,9 @@
       }
     },
     "switch": {
+      "a2w_sw_on": {
+        "name": "Warmtepomp"
+      },
       "activemodelightstatus": {
         "name": "Verlichting actieve modus"
       },
@@ -8601,6 +8724,9 @@
       "buzzer_setting": {
         "name": "Zoemer"
       },
+      "c1_sw_on": {
+        "name": "Ruimteverwarming"
+      },
       "child_lock": {
         "name": "Kinderbeveiliging"
       },
@@ -8631,6 +8757,12 @@
       "color_sensor_setting_status": {
         "name": "Kleursensor"
       },
+      "controldid18": {
+        "name": "Nachtmodus"
+      },
+      "controldid19": {
+        "name": "Stille modus"
+      },
       "crisp_function_status": {
         "name": "Crisp-functie"
       },
@@ -8639,6 +8771,9 @@
       },
       "demo_mode_status": {
         "name": "Demomodus"
+      },
+      "dhw_sw_on": {
+        "name": "Warm tapwater"
       },
       "display_standby": {
         "name": "Display stand-by"
