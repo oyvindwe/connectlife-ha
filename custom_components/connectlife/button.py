@@ -56,7 +56,7 @@ class ConnectLifeButton(ConnectLifeEntity, ButtonEntity):
             return False
         status_list = self.coordinator.data[self.device_id].status_list
         for name, expected in self.button.available_when.items():
-            if status_list.get(name) != expected:
+            if status_list.get(name) not in expected:
                 return False
         return True
 
