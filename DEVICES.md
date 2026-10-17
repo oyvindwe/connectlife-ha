@@ -119,6 +119,7 @@
 |                          | Refrigerator             | 026              | 1b0330z0079j                |
 | HRCD483TBW               | Refrigerator             | 026              | 1b0470z0012j                |
 | RQ5P470SEIE              | Refrigerator             | 026              | 1b0470z0026j                |
+| RQ760N4SASE              | Refrigerator             | 026              | 1b0522z0308j                |
 | RQ5X560SFLEF             | Refrigerator             | 026              | 1b0560z0452j                |
 | RF793N4SAFE              | Refrigerator             | 026              | 1b0610z0043j                |
 |                          | Refrigerator             | 026              | 1b0610z0049j                |
