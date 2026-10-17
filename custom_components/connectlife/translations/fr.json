@@ -33,12 +33,12 @@
         "data": {
           "development_mode": "Mode d\u00e9veloppement",
           "password": "Mot de passe",
-          "trir": "ConnectLife.TRIR (Russie/CEI) \u2014 exp\u00e9rimental",
+          "trir": "ConnectLife.TRIR (Russie/CEI)",
           "username": "Nom d\u2019utilisateur"
         },
         "data_description": {
           "development_mode": "Se connecter \u00e0 un serveur de test local au lieu de l\u2019API ConnectLife. Pour le d\u00e9veloppement uniquement.",
-          "trir": "\u00c0 activer uniquement si vous vous connectez avec l\u2019application ConnectLife.TRIR utilis\u00e9e en Russie/CEI. Exp\u00e9rimental."
+          "trir": "\u00c0 activer uniquement si vous vous connectez avec l\u2019application ConnectLife.TRIR utilis\u00e9e en Russie/CEI."
         }
       },
       "reauth_confirm": {
@@ -61,11 +61,11 @@
       "reconfigure_password": {
         "data": {
           "password": "Mot de passe",
-          "trir": "ConnectLife.TRIR (Russie/CEI) \u2014 exp\u00e9rimental",
+          "trir": "ConnectLife.TRIR (Russie/CEI)",
           "username": "Nom d\u2019utilisateur"
         },
         "data_description": {
-          "trir": "\u00c0 activer uniquement si vous vous connectez avec l\u2019application ConnectLife.TRIR utilis\u00e9e en Russie/CEI. Exp\u00e9rimental."
+          "trir": "\u00c0 activer uniquement si vous vous connectez avec l\u2019application ConnectLife.TRIR utilis\u00e9e en Russie/CEI."
         }
       },
       "user": {

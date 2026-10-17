@@ -33,12 +33,12 @@
         "data": {
           "development_mode": "Ontwikkelingsmodus",
           "password": "Wachtwoord",
-          "trir": "ConnectLife.TRIR (Rusland/GOS) \u2014 experimenteel",
+          "trir": "ConnectLife.TRIR (Rusland/GOS)",
           "username": "Gebruikersnaam"
         },
         "data_description": {
           "development_mode": "Verbinden met een lokale testserver in plaats van de ConnectLife API. Alleen voor ontwikkeling.",
-          "trir": "Alleen inschakelen als je inlogt met de ConnectLife.TRIR-app die in Rusland/GOS wordt gebruikt. Experimenteel."
+          "trir": "Alleen inschakelen als je inlogt met de ConnectLife.TRIR-app die in Rusland/GOS wordt gebruikt."
         }
       },
       "reauth_confirm": {
@@ -61,11 +61,11 @@
       "reconfigure_password": {
         "data": {
           "password": "Wachtwoord",
-          "trir": "ConnectLife.TRIR (Rusland/GOS) \u2014 experimenteel",
+          "trir": "ConnectLife.TRIR (Rusland/GOS)",
           "username": "Gebruikersnaam"
         },
         "data_description": {
-          "trir": "Alleen inschakelen als je inlogt met de ConnectLife.TRIR-app die in Rusland/GOS wordt gebruikt. Experimenteel."
+          "trir": "Alleen inschakelen als je inlogt met de ConnectLife.TRIR-app die in Rusland/GOS wordt gebruikt."
         }
       },
       "user": {

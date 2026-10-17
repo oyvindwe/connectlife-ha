@@ -33,12 +33,12 @@
         "data": {
           "development_mode": "Modo desarrollo",
           "password": "Contrase\u00f1a",
-          "trir": "ConnectLife.TRIR (Rusia/CEI) \u2014 experimental",
+          "trir": "ConnectLife.TRIR (Rusia/CEI)",
           "username": "Nombre de usuario"
         },
         "data_description": {
           "development_mode": "Conectar a un servidor de prueba local en lugar de a la API de ConnectLife. Solo para desarrollo.",
-          "trir": "Habil\u00edtalo solo si inicias sesi\u00f3n con la app ConnectLife.TRIR utilizada en Rusia/CEI. Experimental."
+          "trir": "Habil\u00edtalo solo si inicias sesi\u00f3n con la app ConnectLife.TRIR utilizada en Rusia/CEI."
         }
       },
       "reauth_confirm": {
@@ -61,11 +61,11 @@
       "reconfigure_password": {
         "data": {
           "password": "Contrase\u00f1a",
-          "trir": "ConnectLife.TRIR (Rusia/CEI) \u2014 experimental",
+          "trir": "ConnectLife.TRIR (Rusia/CEI)",
           "username": "Nombre de usuario"
         },
         "data_description": {
-          "trir": "Habil\u00edtalo solo si inicias sesi\u00f3n con la app ConnectLife.TRIR utilizada en Rusia/CEI. Experimental."
+          "trir": "Habil\u00edtalo solo si inicias sesi\u00f3n con la app ConnectLife.TRIR utilizada en Rusia/CEI."
         }
       },
       "user": {

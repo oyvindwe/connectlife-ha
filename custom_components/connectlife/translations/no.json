@@ -33,12 +33,12 @@
         "data": {
           "development_mode": "Utviklingsmodus",
           "password": "Passord",
-          "trir": "ConnectLife.TRIR (Russland/SUS) \u2014 eksperimentell",
+          "trir": "ConnectLife.TRIR (Russland/SUS)",
           "username": "Brukernavn"
         },
         "data_description": {
           "development_mode": "Koble til en lokal testserver i stedet for ConnectLife-API-et. Kun for utvikling.",
-          "trir": "Aktiver kun hvis du logger inn med ConnectLife.TRIR-appen som brukes i Russland/SUS. Eksperimentell."
+          "trir": "Aktiver kun hvis du logger inn med ConnectLife.TRIR-appen som brukes i Russland/SUS."
         }
       },
       "reauth_confirm": {
@@ -61,11 +61,11 @@
       "reconfigure_password": {
         "data": {
           "password": "Passord",
-          "trir": "ConnectLife.TRIR (Russland/SUS) \u2014 eksperimentell",
+          "trir": "ConnectLife.TRIR (Russland/SUS)",
           "username": "Brukernavn"
         },
         "data_description": {
-          "trir": "Aktiver kun hvis du logger inn med ConnectLife.TRIR-appen som brukes i Russland/SUS. Eksperimentell."
+          "trir": "Aktiver kun hvis du logger inn med ConnectLife.TRIR-appen som brukes i Russland/SUS."
         }
       },
       "user": {

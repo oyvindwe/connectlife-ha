@@ -33,12 +33,12 @@
         "data": {
           "development_mode": "Modalit\u00e0 di sviluppo",
           "password": "Password",
-          "trir": "ConnectLife.TRIR (Russia/CSI) \u2014 sperimentale",
+          "trir": "ConnectLife.TRIR (Russia/CSI)",
           "username": "Username"
         },
         "data_description": {
           "development_mode": "Connettersi a un server di prova locale anzich\u00e9 all'API ConnectLife. Solo per lo sviluppo.",
-          "trir": "Abilita solo se accedi con l'app ConnectLife.TRIR utilizzata in Russia/CSI. Sperimentale."
+          "trir": "Abilita solo se accedi con l'app ConnectLife.TRIR utilizzata in Russia/CSI."
         }
       },
       "reauth_confirm": {
@@ -61,11 +61,11 @@
       "reconfigure_password": {
         "data": {
           "password": "Password",
-          "trir": "ConnectLife.TRIR (Russia/CSI) \u2014 sperimentale",
+          "trir": "ConnectLife.TRIR (Russia/CSI)",
           "username": "Username"
         },
         "data_description": {
-          "trir": "Abilita solo se accedi con l'app ConnectLife.TRIR utilizzata in Russia/CSI. Sperimentale."
+          "trir": "Abilita solo se accedi con l'app ConnectLife.TRIR utilizzata in Russia/CSI."
         }
       },
       "user": {
