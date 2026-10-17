@@ -58,8 +58,52 @@
         "precision": {
           "enum": [0.1, 0.5, 1],
           "description": "Display precision of current and target temperature. Defaults to 1, or 0.1 if the target temperature step is below 1."
+        },
+        "hvac_modes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/HvacModeValues"
+          },
+          "description": "HVAC modes set by several properties, e.g. one on/off flag per mode. Used only if no property has target hvac_mode."
+        },
+        "fan_modes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/FanModeValues"
+          },
+          "description": "Fan modes set by several properties, e.g. one on/off flag per speed. Used only if no property has target fan_mode."
         }
       }
+    },
+    "HvacModeValues": {
+      "type": "object",
+      "properties": {
+        "hvac_mode": {
+          "enum": ["auto", "cool", "dry", "fan_only", "heat", "heat_cool"]
+        }
+      },
+      "required": [
+        "hvac_mode"
+      ],
+      "additionalProperties": {
+        "type": "integer"
+      },
+      "description": "HVAC mode and the device property values that select it."
+    },
+    "FanModeValues": {
+      "type": "object",
+      "properties": {
+        "fan_mode": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "fan_mode"
+      ],
+      "additionalProperties": {
+        "type": "integer"
+      },
+      "description": "Fan mode and the device property values that select it."
     },
     "Preset": {
       "type": "object",

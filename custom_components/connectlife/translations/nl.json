@@ -2064,6 +2064,8 @@
               "low": "Laag",
               "mid_high": "Midden-hoog",
               "mid_low": "Midden-laag",
+              "position_1": "Positie 1",
+              "position_2": "Positie 2",
               "swing": "Zwaaien",
               "top": "Boven"
             }
@@ -3113,6 +3115,13 @@
       },
       "activemodemotorlevel": {
         "name": "Motorniveau actieve modus"
+      },
+      "actualoperatingstate": {
+        "name": "Bedrijfstoestand",
+        "state": {
+          "idle": "Inactief",
+          "running": "In bedrijf"
+        }
       },
       "adapttech_setting": {
         "name": "Adapt Tech-instelling"
@@ -4433,6 +4442,9 @@
       },
       "error_read_out_3_status": {
         "name": "Foutstatus uitlezen 3"
+      },
+      "etwi": {
+        "name": "Secundaire temperatuur"
       },
       "extra_soft": {
         "name": "Extra zacht"

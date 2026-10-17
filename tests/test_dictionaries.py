@@ -463,6 +463,23 @@ def test_statistics_block_replaced_by_feature_override(build_dictionary):
     assert d.statistics_sensors == {"daily_water_consumption": True}
 
 
+def test_climate_block_in_base_is_inherited_per_key(build_dictionary):
+    """A base climate block applies to subtypes, and each key a subtype sets
+    replaces the base's as a whole."""
+    d = build_dictionary(
+        base={
+            "climate": {
+                "hvac_modes": [{"hvac_mode": "cool", "modeCool": 1, "modeHeat": 0}],
+                "fan_modes": [{"fan_mode": "auto", "autoFan": 1}],
+            },
+            "properties": _MINIMAL_PROPS,
+        },
+        sub={"climate": {"fan_modes": [{"fan_mode": "low", "autoFan": 0, "lowFan": 1}]}},
+    )
+    assert d.hvac_modes == {"cool": {"modeCool": 1, "modeHeat": 0}}
+    assert d.fan_modes == {"low": {"autoFan": 0, "lowFan": 1}}
+
+
 def test_include_parsed_on_property_and_button(build_dictionary):
     d = build_dictionary(base={
         "properties": [{"property": "t_power", "include": ["t_fan_mute"]}],

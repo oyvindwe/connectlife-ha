@@ -2064,6 +2064,8 @@
               "low": "Bajo",
               "mid_high": "Medio-alto",
               "mid_low": "Medio-bajo",
+              "position_1": "Posici\u00f3n 1",
+              "position_2": "Posici\u00f3n 2",
               "swing": "balanceo",
               "top": "Arriba"
             }
@@ -3113,6 +3115,13 @@
       },
       "activemodemotorlevel": {
         "name": "Nivel del motor en modo activo"
+      },
+      "actualoperatingstate": {
+        "name": "Estado de funcionamiento",
+        "state": {
+          "idle": "Inactivo",
+          "running": "En funcionamiento"
+        }
       },
       "adapttech_setting": {
         "name": "Ajuste AdaptTech"
@@ -4433,6 +4442,9 @@
       },
       "error_read_out_3_status": {
         "name": "Estado de lectura de error 3"
+      },
+      "etwi": {
+        "name": "Temperatura secundaria"
       },
       "extra_soft": {
         "name": "Extra suave"
