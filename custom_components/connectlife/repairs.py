@@ -95,6 +95,8 @@ class UnsupportedBeepRepairFlow(RepairsFlow):
                     devices[device_id] = {**devices[device_id], CONF_DISABLE_BEEP: False}
                     options[CONF_DEVICES] = devices
                     self.hass.config_entries.async_update_entry(entry, options=options)
+                    # The options are read at setup, so reload to apply them.
+                    self.hass.config_entries.async_schedule_reload(entry.entry_id)
         return self.async_create_entry(title="", data={})
 
     async def async_step_ignore(
