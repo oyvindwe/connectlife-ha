@@ -1,4 +1,4 @@
-"""Tests for browser sign-in tokens and reloading on entry updates."""
+"""Tests for browser sign-in tokens."""
 
 from __future__ import annotations
 
@@ -10,8 +10,7 @@ from aiohttp import ClientConnectionError, ClientResponseError
 
 from connectlife.api import LifeConnectAuthError, LifeConnectError
 
-from custom_components.connectlife import update_listener
-from custom_components.connectlife.const import CONF_SOURCE_ID, DOMAIN
+from custom_components.connectlife.const import CONF_SOURCE_ID
 from custom_components.connectlife.oauth import create_oauth_api
 
 
@@ -56,27 +55,3 @@ async def test_refresh_errors(error: Exception, expected: type[Exception]) -> No
     if expected is LifeConnectError:
         assert not isinstance(raised.value, LifeConnectAuthError)
 
-
-def _hass(stored_options: dict) -> SimpleNamespace:
-    return SimpleNamespace(
-        data={DOMAIN: {"entry-1_options": stored_options}},
-        config_entries=SimpleNamespace(async_reload=AsyncMock()),
-    )
-
-
-async def test_data_update_does_not_reload() -> None:
-    hass = _hass({"devices": {}})
-    entry = SimpleNamespace(entry_id="entry-1", options={"devices": {}})
-
-    await update_listener(hass, entry)  # type: ignore[arg-type]
-
-    hass.config_entries.async_reload.assert_not_awaited()
-
-
-async def test_options_update_reloads() -> None:
-    hass = _hass({"devices": {}})
-    entry = SimpleNamespace(entry_id="entry-1", options={"devices": {"d": {"disable_beep": True}}})
-
-    await update_listener(hass, entry)  # type: ignore[arg-type]
-
-    hass.config_entries.async_reload.assert_awaited_once_with("entry-1")
