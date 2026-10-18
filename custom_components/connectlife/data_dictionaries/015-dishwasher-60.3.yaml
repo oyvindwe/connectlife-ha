@@ -50,3 +50,14 @@ properties:
       command:
         name: Time_program_set_duration
         adjust: 1
+  - property: MDO_on_demand
+    unavailable: 0
+    switch:
+      "off": 1
+      "on": 2
+      command:
+        name: MDO_on_demand
+        adjust: 1
+    icon: mdi:door-open
+  - property: MDO_on_demand_allowed
+    hide: true
