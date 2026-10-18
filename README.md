@@ -6,18 +6,24 @@ ConnectLife integration for Home Assistant
 
 ## Installation
 
-You can install using HACS or download.
+### Marketplace (Home Assistant 2026.11 and later)
 
-### HACS
+Use the button below, or go to **Settings** → **Marketplace** and search for "ConnectLife":
 
-If you have HACS installed use the button below:
+[![Open your Home Assistant instance and open a repository in the Marketplace.](https://my.home-assistant.io/badges/marketplace_repository.svg)](https://my.home-assistant.io/redirect/marketplace_repository/?owner=oyvindwe&repository=connectlife-ha&category=integration)
+
+The first time you use the Marketplace, Home Assistant explains the risks of installing community-made items. Check
+**I understand the risks and agree** and select **Continue**. The install dialog also notes that ConnectLife is not
+reviewed or supported by the Home Assistant project: this is a community integration, so please report problems
+[here](https://github.com/oyvindwe/connectlife-ha/issues).
+
+### Older Home Assistant versions
+
+With HACS installed, use the button below:
 
 [![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=oyvindwe&repository=connectlife-ha&category=integration)
 
-
-### Download
-
-Download the `connectlife` directory and place in your `<config>/custom_components/`.
+Without HACS, download the `connectlife` directory and place it in your `<config>/custom_components/`.
 
 After installing, you need to restart Home Assistant.
 
