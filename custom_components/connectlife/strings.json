@@ -2368,9 +2368,6 @@
           "standard": "Standard"
         }
       },
-      "display_brightness_setting_status": {
-        "name": "Display brightness setting status"
-      },
       "detergent_amount_status": {
         "name": "Detergent amount",
         "state": {
@@ -2627,7 +2624,6 @@
           "bedding": "Bedding",
           "bleaching": "Bleaching",
           "clean": "Clean",
-          "crystal_glass": "Crystal glass",
           "color": "Color",
           "crystal_glass": "Crystal glass",
           "curtains": "Curtains",
@@ -2643,8 +2639,6 @@
           "glass": "Glass",
           "hygiene": "Hygiene",
           "intensive": "Intensive",
-          "intensivve": "Intensivve",
-          "lower_half": "Lower half",
           "intensive_59_32": "Intensive 59'/32'",
           "jeans": "Jeans",
           "kids_wear": "Kids wear",
@@ -2658,8 +2652,6 @@
           "normal_wash": "Normal wash",
           "odor_control": "Odor control",
           "one_hour": "One hour",
-          "plastic": "Plastic",
-          "preheated": "Preheated",
           "pet_hair_removal": "Pet hair removal",
           "pets": "Pets",
           "pillow": "Pillow",
@@ -2671,14 +2663,11 @@
           "rinse_and_hold": "Rinse and hold",
           "rinsing_softening": "Rinsing & Softening",
           "self_cleaning": "Self cleaning",
-          "universal": "Universal",
-          "upper_half": "Upper half",
           "shirts": "Shirts",
           "shoes": "Shoes",
           "speed_14": "Speed 14",
           "speed_20": "Speed 20",
           "spinning_draining": "Spinning & Draining",
-          "sport": "Sport",
           "sportswear": "Sportswear",
           "steam_refresh": "Steam refresh",
           "swimwear": "Swimwear",
@@ -5587,9 +5576,6 @@
       },
       "rgb_normal_mode_r_value": {
         "name": "RGB normal mode R value"
-      },
-      "rinse_aid_setting_status": {
-        "name": "Rinse aid setting status"
       },
       "rinse_flag": {
         "name": "Rinse flag"
@@ -8853,9 +8839,6 @@
       },
       "key_sound": {
         "name": "Key sound"
-      },
-      "mdo_on_demand": {
-        "name": "Mdo on demand"
       },
       "lightstatus": {
         "name": "Light"
