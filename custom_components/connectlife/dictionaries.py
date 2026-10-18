@@ -3,6 +3,7 @@ from collections import defaultdict
 from dataclasses import dataclass, field
 import logging
 import pkgutil
+from collections.abc import Mapping
 from typing import Any, TypedDict
 
 from connectlife.appliance import ConnectLifeAppliance
@@ -38,6 +39,7 @@ SOURCE = "source"
 DISABLE = "disable"
 HIDE = "hide"
 ICON = "icon"
+INCLUDE = "include"
 KEY = "key"
 NAME = "name"
 OFF = "off"
@@ -51,10 +53,12 @@ MAX_VALUE = "max_value"
 MIN_VALUE = "min_value"
 MULTIPLIER = "multiplier"
 OPTIONAL = "optional"
+PRECISION = "precision"
 PRIORITY = "priority"
 TARGET = "target"
 READ_ONLY = "read_only"
 STATE_CLASS = "state_class"
+STEP = "step"
 SWITCH = "switch"
 COMBINE = "combine"
 UNAVAILABLE = "unavailable"
@@ -83,6 +87,15 @@ def _val(d: dict, key: str, default: Any = None) -> Any:
     return default
 
 
+def _include(entry: dict, name: str) -> list[str]:
+    """Return the ``include`` list of ``entry``, or ``[]`` (with a warning) if it isn't a list of strings."""
+    include = _val(entry, INCLUDE, [])
+    if not isinstance(include, list) or not all(isinstance(i, str) for i in include):
+        _LOGGER.warning("Ignoring include on %s, must be a list of property names", name)
+        return []
+    return include
+
+
 class BinarySensor:
     device_class: BinarySensorDeviceClass | None
     options: dict[int, bool] = {0: False, 1: False, 2: True}
@@ -105,6 +118,7 @@ class Climate:
     unknown_value: int | None
     min_value: int | dict[str, int] | None
     max_value: int | dict[str, int] | None
+    step: float | None
     # Tie-break when several properties map to the same climate target. The
     # lowest-priority candidate that the device actually exposes wins the
     # target; the rest fall back to their per-property platform (if any). Lower
@@ -131,6 +145,10 @@ class Climate:
         self.unknown_value = _val(climate, UNKNOWN_VALUE)
         self.min_value = _val(climate, MIN_VALUE)
         self.max_value = _val(climate, MAX_VALUE)
+        self.step = _val(climate, STEP)
+        if self.step is not None and self.step <= 0:
+            _LOGGER.warning("Ignoring climate.step %s for %s, must be positive", self.step, name)
+            self.step = None
 
 
 class Humidifier:
@@ -343,6 +361,7 @@ class Property:
     entity_category: EntityCategory | None
     translation_key: str | None
     combine: list[CombineSource] | None
+    include: list[str]
     binary_sensor: BinarySensor
     climate: Climate
     humidifier: Humidifier
@@ -365,6 +384,7 @@ class Property:
         )
         self.combine = _val(entry, COMBINE)
         self.translation_key = _val(entry, TRANSLATION_KEY)
+        self.include = _include(entry, self.name)
 
         # A property may carry one device-level platform (climate / humidifier /
         # water_heater) AND one per-property platform (binary_sensor / number /
@@ -391,24 +411,53 @@ class Property:
         elif not any(p in entry for p in PLATFORM_KEYS):
             self.sensor = Sensor(self.name, {})
 
+    @property
+    def command_name(self) -> str:
+        """The property written to when this property is changed."""
+        for platform in (Platform.SELECT, Platform.SWITCH, Platform.NUMBER):
+            if hasattr(self, platform):
+                return getattr(self, platform).command_name or self.name
+        return self.name
+
+    def command_value(self, value: int | float | None) -> tuple[str, int | float] | None:
+        """Convert a status value to the ``(name, value)`` that writes it back.
+
+        Returns None when there is no value to write back: the value is missing,
+        or matches the ``unavailable`` or ``unknown_value`` sentinel.
+        """
+        if value is None or value == self.unavailable:
+            return None
+        if hasattr(self, Platform.SELECT):
+            if value == self.select.unknown_value:
+                return None
+            return self.command_name, value - self.select.command_adjust
+        if hasattr(self, Platform.SWITCH):
+            return self.command_name, value - self.switch.command_adjust
+        return self.command_name, value
+
 
 class Button:
     """A button entity declared at the top level of a data dictionary.
 
     Buttons are for write-only commands: a press writes ``write`` to the
     device. ``available_when`` gates the button on read-back property values
-    (all keys must match for the button to be available).
+    (every key must have one of its listed values for the button to be available).
     """
 
     key: str
     icon: str | None
-    available_when: dict[str, int]
+    available_when: dict[str, list[int]]
+    include: list[str]
     write: dict[str, int]
 
     def __init__(self, entry: dict):
         self.key = entry[KEY]
         self.icon = _val(entry, ICON) or None
-        self.available_when = _val(entry, AVAILABLE_WHEN, {})
+        self.available_when = {
+            name: value if isinstance(value, list) else [value]
+            for name, value in _val(entry, AVAILABLE_WHEN, {}).items()
+        }
+        self.include = _include(entry, f"button {self.key}")
         write = _val(entry, WRITE)
         if not write:
             _LOGGER.warning("Button %s has no write map", self.key)
@@ -421,7 +470,7 @@ def _merge_buttons(base: list[dict], override: list[dict]) -> list[dict]:
     """Merge button lists by ``key``.
 
     Entries in ``override`` matching a key in ``base`` shallow-merge field by
-    field (override wins; ``available_when`` and ``write`` replace as a whole
+    field (override wins; ``available_when``, ``include`` and ``write`` replace as a whole
     since they're collections). Entries with keys not in ``base`` are
     appended. ``disable: true`` removes the merged entry from the result —
     use it to suppress an inherited button on a variant that doesn't support
@@ -450,6 +499,9 @@ class Dictionary:
     # Presets parsed from the climate block, keyed by preset name with the name
     # stripped from the value so it can be matched against a device status list.
     presets: dict[str, dict[str, int]] = field(default_factory=dict)
+    # Display precision of the climate entity's temperatures (None = whole degrees,
+    # or tenths if the target temperature step is below 1).
+    precision: float | None = None
     # Cloud statistics endpoint for this device family (None = none): "air_duct_energy"
     # (air conditioners) or "energy_consumption_curve" (appliances). Dispatched via the
     # statistics_sources registry.
@@ -457,6 +509,31 @@ class Dictionary:
     # Per-sensor flags from the `statistics` block (sensor key -> create?). A sensor is
     # created only when listed true here; omitted or false means not created.
     statistics_sensors: dict[str, bool] = field(default_factory=dict)
+
+    def included_values(
+            self,
+            command: Mapping[str, int | float],
+            status_list: Mapping[str, Any],
+            include: list[str] | None = None,
+    ) -> dict[str, int | float]:
+        """Return the writes for the properties to send along with ``command``.
+
+        These are ``include`` plus the ``include`` of every property ``command``
+        writes to. Each property is written back with its current status value,
+        converted with its ``command``. Properties without a value to write back,
+        or whose write is already in ``command``, are skipped.
+        """
+        names = list(include or [])
+        for prop in self.properties.values():
+            if prop.include and (prop.command_name in command or prop.name in command):
+                names.extend(prop.include)
+        values: dict[str, int | float] = {}
+        for name in names:
+            prop = self.properties[name] if name in self.properties else None
+            write = prop.command_value(status_list.get(name)) if prop else None
+            if write is not None and write[0] not in command:
+                values[write[0]] = write[1]
+        return values
 
 
 # Device-level platforms own a `target` and may coexist with a per-property
@@ -635,11 +712,17 @@ class Dictionaries:
             for preset in _val(climate or {}, PRESETS, [])
         }
 
+        precision = _val(climate or {}, PRECISION)
+        if precision is not None and precision not in (0.1, 0.5, 1):
+            _LOGGER.warning("Ignoring climate.precision %s for %s, must be 0.1, 0.5 or 1", precision, key)
+            precision = None
+
         dictionary = Dictionary(
             climate=climate,
             properties=properties,
             buttons=buttons,
             presets=presets,
+            precision=precision,
             statistics_source=statistics_source,
             statistics_sensors=statistics_sensors,
         )

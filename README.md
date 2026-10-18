@@ -21,8 +21,10 @@ Download the `connectlife` directory and place in your `<config>/custom_componen
 
 After installing, you need to restart Home Assistant.
 
-Finally, add "ConnectLife" as an integration in the UI, and provide the username and password for your ConnectLife account.
-Users in Russia/CIS who sign in with the ConnectLife.TRIR app should enable the experimental "TRIR" option in the setup dialog.
+Finally, add "ConnectLife" as an integration in the UI, and choose how to sign in (see [Login](#login)):
+- **Sign in on the ConnectLife website**, also with a Google, Apple, Facebook or Microsoft account.
+- **Enter username and password** of your ConnectLife account. Users in Russia/CIS who sign in with the
+  ConnectLife.TRIR app must use this option and enable the "TRIR" option.
 
 Your devices and all their properties should show up.
 
@@ -30,31 +32,8 @@ Your devices and all their properties should show up.
 
 See [DEVICES.md](DEVICES.md) for the full list of supported devices.
 
-### Default device types
-
-Default mapping files are provided for the following device types:
-
-| Device type              | Device type code                                                |
-|--------------------------|-----------------------------------------------------------------|
-| Portable air conditioner | [006](custom_components/connectlife/data_dictionaries/006.yaml) |
-| Dehumidifier             | [007](custom_components/connectlife/data_dictionaries/007.yaml) |
-| Window air conditioner   | [008](custom_components/connectlife/data_dictionaries/008.yaml) |
-| Air conditioner          | [009](custom_components/connectlife/data_dictionaries/009.yaml) |
-| Hood                     | [012](custom_components/connectlife/data_dictionaries/012.yaml) |
-| Oven                     | [013](custom_components/connectlife/data_dictionaries/013.yaml) |
-| Dishwasher               | [015](custom_components/connectlife/data_dictionaries/015.yaml) |
-| Heat pump                | [016](custom_components/connectlife/data_dictionaries/016.yaml) |
-| Induction hob            | [020](custom_components/connectlife/data_dictionaries/020.yaml) |
-| Oven                     | [023](custom_components/connectlife/data_dictionaries/023.yaml) |
-| Washing machine          | [025](custom_components/connectlife/data_dictionaries/025.yaml) |
-| Refrigerator             | [026](custom_components/connectlife/data_dictionaries/026.yaml) |
-| Washing machine          | [027](custom_components/connectlife/data_dictionaries/027.yaml) |
-| Tumble dryer             | [030](custom_components/connectlife/data_dictionaries/030.yaml) |
-| Tumble dryer             | [032](custom_components/connectlife/data_dictionaries/032.yaml) |
-| Wine cooler              | [034](custom_components/connectlife/data_dictionaries/034.yaml) |
-
-Any devices of these types will use the default mapping file, but it may not be fully functional until a
-feature-specific mapping file is provided.
+Devices without a feature-specific mapping file use the default mapping file for their device type, but may not be
+fully functional until a feature-specific mapping file is provided.
 
 Any unmapped properties will show up as sensors with names based on their properties. As there are a lot of exposed
 properties, all unknown entities are disabled by default. Access the device or entity list to view sensors and enable.
@@ -105,16 +84,16 @@ opts in (see the `statistics` block in the
 The statistics are fetched from a separate cloud endpoint, polled every 10 minutes, and — unlike
 the regular status entities — they stay available even while the appliance is offline.
 
-## Service to set property values on sensors
+## Action to set property values on sensors
 
-Entity service `connectlife.set_value` can be used to set values. Use with caution, as there is **no** validation
+Entity action `connectlife.set_value` can be used to set values. Use with caution, as there is **no** validation
 if property is writeable or that the value is legal to set.
 
-1. The service can be accessed from [Developer tools - Services](https://my.home-assistant.io/redirect/developer_services/).
-2. Search for service name "ConnectLife: Set value"
+1. The action can be accessed from [Settings → Tools → Actions](https://my.home-assistant.io/redirect/developer_services/).
+2. Search for action name "ConnectLife: Set value"
 3. Select entity as target.
 4. Enter value
-5. Call service.
+5. Perform action.
 
 It is possible to guard against `set_value` by setting `read_only: true` in the data dictionary on the sensor, e.g.
 ```yaml
@@ -127,7 +106,13 @@ It is possible to guard against `set_value` by setting `read_only: true` in the 
 
 The integration polls the ConnectLife API every 60 seconds to avoid overloading the API and risking being banned. When a command is sent from Home Assistant, only the properties included in that command are updated immediately in the HA UI. Any side effects on other properties (e.g., turning on an AC may also change fan mode or current temperature) will not appear until the next poll. Changes made outside Home Assistant (e.g., from the ConnectLife mobile app or physical device controls) may also take up to 60 seconds to appear.
 
-## Issues
+## Troubleshooting
+
+When reporting an issue with a device, please attach its diagnostics: go to the device page and click **Download
+diagnostics** in the Device info card. The file contains the device type and feature code, the raw status values,
+which properties are not mapped, what ConnectLife reports about the device (the settings it supports, its firmware
+versions, its programs and their options, the faults it can report, its property list and today's hourly energy use),
+and the last energy statistics. Device IDs, names and rooms are left out.
 
 ### Climate entities
 
@@ -142,35 +127,40 @@ Missing features:
 
 ### Login
 
-Note that users in China can't log in using this integration. Users in Russia/CIS who use the
-ConnectLife.TRIR app can log in by enabling the experimental "TRIR" option when setting up the
-integration (see https://github.com/oyvindwe/connectlife-ha/issues/267). See also the earlier
-discussion in https://github.com/bilan/connectlife-api-connector/issues/25
+There are two ways to sign in:
 
-You have to create a ConnectLife account with username/password. Login with SSO using 3rd party identity providers
-(Google, Apple, etc.) is not supported (See https://github.com/oyvindwe/connectlife-ha/issues/99).
+- **Sign in on the ConnectLife website.** Home Assistant opens the ConnectLife login page, where you can sign in
+  with your ConnectLife password or with Google, Apple, Facebook or Microsoft. Home Assistant doesn't store your
+  password. This requires
+  [My Home Assistant](https://www.home-assistant.io/integrations/my/), which is part of the default configuration.
+  So far this has only been tested with accounts in Europe; please report how it works for you elsewhere.
+- **Enter username and password** of a ConnectLife account. The password is stored in Home Assistant.
 
-There are two workarounds is you have logged in using a 3rd party identity provider: 
+Users in China can't sign in using this integration. Users in Russia/CIS who use the ConnectLife.TRIR app must
+enter username and password and enable the "TRIR" option (see
+https://github.com/oyvindwe/connectlife-ha/issues/267). See also the earlier discussion in
+https://github.com/bilan/connectlife-api-connector/issues/25
 
-#### Set password on current user account
+Each ConnectLife account can only be added once. To change how an existing entry signs in, open it and select
+**⋮** → **Reconfigure**.
 
-1. In the ConnectLife mobile app select "Disconnect" and then "Forget password?"
-2. Set new password via reset link received via email.
+### Password works in the app but not in Home Assistant
 
-#### Using a second account
-
-1. In the ConnectLife mobile app, create a new account using an email and password (needs to be a different email to your SSO account as that is now occupied by that SSO).
-2. Still in the mobile app, switch accounts back to your SSO account, go to the device/s you have already setup in your SSO account, select them 1 by 1, scrolling to the bottom to get to the "Share Device" option and adding your new email to the shared accounts list.
-3. In the connectlife-ha integration within Home Assistant, use the email and password from the new account you set up, which will now have the device(s) shared with it.
-4. Forget your new email version of your account exists, you don't have to accept device shares or use that account for any other reason.
+If login fails with "Invalid authentication" and the log shows `Code: 403042 … invalid loginID or password`, although
+the same password works in the ConnectLife app, the password may be longer than the app accepts or contain special
+characters it doesn't allow. The app may silently cut off or change such a password, so Home Assistant sends a
+different one. Set a new, shorter password in the app (e.g. at most 20 characters, with letters, digits and common
+special characters) and use that.
 
 ### Updated Terms & Conditions
 
 ConnectLife periodically updates their Terms & Conditions. When this happens, the integration may stop working
 with errors like `Account Pending Registration` or `Missing required fields for registration`, or devices may
-silently become unavailable.
+silently become unavailable. Home Assistant shows this as the repair issue
+**Accept updated ConnectLife Terms & Conditions**. The integration retries every 15 minutes until the terms are
+accepted; select **Submit** in the repair to retry right away.
 
-To resolve this, you need to accept the new Terms & Conditions in the ConnectLife mobile app:
+Accept the new Terms & Conditions in the ConnectLife mobile app:
 
 1. Open the ConnectLife mobile app
 2. Go to Settings and **change the app language to English**
@@ -183,6 +173,9 @@ To resolve this, you need to accept the new Terms & Conditions in the ConnectLif
 The language change is needed because updated Terms & Conditions are often only available in English initially.
 The app skips the acceptance prompt if the translated version for your language doesn't exist yet, but the
 backend still requires acceptance.
+
+Signing in once on the ConnectLife website (**⋮** → **Reconfigure** → **Sign in on the ConnectLife website**) may also
+fix it.
 
 ## Contributing
 

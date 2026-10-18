@@ -1,3 +1,7 @@
+# ConnectLife reports no energy for this model (always 0), and the app shows none (#631, #642).
+statistics:
+  source: air_duct_energy
+  daily_energy_kwh: false
 buttons:
 # t_dimmer is write-only on this model (not reported in statusList), so it is
 # exposed as two buttons rather than a switch. Confirmed: 1 = LED on, 0 = LED off.

@@ -9,22 +9,38 @@ from typing import Any
 import voluptuous as vol
 
 from homeassistant.config_entries import (
+    SOURCE_REAUTH,
+    SOURCE_RECONFIGURE,
     ConfigEntry,
-    ConfigFlow,
+    ConfigEntryState,
     ConfigFlowResult,
     OptionsFlow,
 )
 from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
 from homeassistant.core import callback
 from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import issue_registry as ir
+from homeassistant.helpers import (
+    config_entry_oauth2_flow,
+    device_registry as dr,
+    issue_registry as ir,
+)
+from connectlife.api import (
+    LifeConnectAuthError,
+    LifeConnectError,
+    LifeConnectTermsNotAcceptedError,
+)
+from connectlife.oauth import OAuthConnectLifeApi, generate_source_id
 
 from .client import create_api
 from .const import (
+    AUTH_TYPE_OAUTH,
+    AUTH_TYPE_PASSWORD,
+    CONF_AUTH_TYPE,
     CONF_DEVICES,
     CONF_DEVELOPMENT_MODE,
     CONF_DISABLE_BEEP,
     CONF_EXPOSE_OFFLINE_STATE,
+    CONF_SOURCE_ID,
     CONF_TARGET_OVERRIDES,
     CONF_TEST_SERVER_URL,
     CONF_TRIR,
@@ -32,6 +48,8 @@ from .const import (
     OVERRIDE_AUTO,
 )
 from .dictionaries import Dictionaries
+from .oauth import ConnectLifeOAuth2Implementation
+from .terms import clear_terms_retry_throttle
 from .utils import contested_climate_targets
 
 _LOGGER = logging.getLogger(__name__)
@@ -50,6 +68,22 @@ STEP_USER_DATA_SCHEMA = STEP_REAUTH_DATA_SCHEMA.extend(
         vol.Optional(CONF_TRIR, default=False): bool,
         vol.Optional(CONF_DEVELOPMENT_MODE, default=False): bool,
     }
+)
+
+STEP_RECONFIGURE_PASSWORD_DATA_SCHEMA = STEP_REAUTH_DATA_SCHEMA.extend(
+    {
+        vol.Optional(CONF_TRIR, default=False): bool,
+    }
+)
+
+# Entry data that belongs to one sign-in method, replaced when reconfiguring.
+SIGN_IN_DATA_KEYS = (
+    CONF_AUTH_TYPE,
+    CONF_USERNAME,
+    CONF_PASSWORD,
+    CONF_TRIR,
+    "auth_implementation",
+    "token",
 )
 
 # Shown as a second step when development mode is selected, to collect the
@@ -75,22 +109,34 @@ async def validate_input(data: dict[str, Any]) -> dict[str, Any]:
         test_server_url=test_server_url,
     )
 
-    if not await api.authenticate():
-        raise InvalidAuth
-
-    # If you cannot connect:
-    # throw CannotConnect
-    # If the authentication is wrong:
-    # InvalidAuth
+    try:
+        await api.login()
+        appliances = await api.get_appliances()
+    except LifeConnectError as ex:
+        # The form only shows a generic error, so log the reason.
+        _LOGGER.warning("ConnectLife login failed: %s", ex)
+        if isinstance(ex, LifeConnectTermsNotAcceptedError):
+            raise TermsNotAccepted from ex
+        if isinstance(ex, LifeConnectAuthError):
+            raise InvalidAuth from ex
+        raise CannotConnect from ex
 
     # Return info that you want to store in the config entry.
-    return {"title": f"ConnectLife ({data[CONF_USERNAME]})"}
+    return {
+        "title": f"ConnectLife ({data[CONF_USERNAME]})",
+        "device_ids": [appliance.device_id for appliance in appliances],
+    }
 
 
-class ConnectLifeConfigFlow(ConfigFlow, domain=DOMAIN):
+class ConnectLifeConfigFlow(config_entry_oauth2_flow.AbstractOAuth2FlowHandler, domain=DOMAIN):
     """Handle a config flow for ConnectLife."""
 
+    DOMAIN = DOMAIN
     VERSION = 1
+
+    @property
+    def logger(self) -> logging.Logger:
+        return _LOGGER
 
     # Credentials carried from the user step to the development step when
     # development mode is selected (auth is deferred until we have the URL).
@@ -108,7 +154,92 @@ class ConnectLifeConfigFlow(ConfigFlow, domain=DOMAIN):
     async def async_step_user(
         self, user_input: dict[str, Any] | None = None
     ) -> ConfigFlowResult:
-        """Handle the initial step."""
+        """Choose how to sign in."""
+        return self.async_show_menu(
+            step_id="user", menu_options=["pick_implementation", "password"]
+        )
+
+    async def async_step_reconfigure(
+        self, user_input: dict[str, Any] | None = None
+    ) -> ConfigFlowResult:
+        """Choose how the entry signs in."""
+        return self.async_show_menu(
+            step_id="reconfigure",
+            menu_options=["pick_implementation", "reconfigure_password"],
+        )
+
+    def _configured_elsewhere(self, device_ids: list[str]) -> bool:
+        """Whether any of the devices belongs to another enabled ConnectLife entry.
+
+        Disabled entries don't count, so an entry can be replaced by disabling it
+        and adding a new one.
+        """
+        current = None
+        if self.source == SOURCE_REAUTH:
+            current = self._get_reauth_entry().entry_id
+        elif self.source == SOURCE_RECONFIGURE:
+            current = self._get_reconfigure_entry().entry_id
+        wanted = {(DOMAIN, device_id) for device_id in device_ids}
+        device_registry = dr.async_get(self.hass)
+        for entry in self.hass.config_entries.async_entries(DOMAIN):
+            if entry.entry_id == current or entry.disabled_by is not None:
+                continue
+            for device in dr.async_entries_for_config_entry(device_registry, entry.entry_id):
+                if device.identifiers & wanted:
+                    return True
+        return False
+
+    def _update_sign_in(self, entry: ConfigEntry, sign_in: dict[str, Any]) -> ConfigFlowResult:
+        """Replace the entry's sign-in data with ``sign_in``, keeping everything else."""
+        data = {k: v for k, v in entry.data.items() if k not in SIGN_IN_DATA_KEYS}
+        clear_terms_retry_throttle(self.hass, entry.entry_id)
+        return self.async_update_reload_and_abort(entry, data={**data, **sign_in})
+
+    async def async_step_pick_implementation(
+        self, user_input: dict | None = None
+    ) -> ConfigFlowResult:
+        """Sign in in the browser."""
+        # The integration may not be set up yet (no entries), so its async_setup
+        # hasn't registered the implementation.
+        config_entry_oauth2_flow.async_register_implementation(
+            self.hass, DOMAIN, ConnectLifeOAuth2Implementation(self.hass)
+        )
+        return await super().async_step_pick_implementation(user_input)
+
+    async def async_oauth_create_entry(self, data: dict[str, Any]) -> ConfigFlowResult:
+        """Create or update the entry after browser sign-in."""
+        token = data["token"]["access_token"]
+
+        async def access_token() -> str:
+            return token
+
+        try:
+            appliances = await OAuthConnectLifeApi(access_token).get_appliances()
+        except LifeConnectError:
+            return self.async_abort(reason="cannot_connect")
+        if self.source == SOURCE_REAUTH:
+            reauth_entry = self._get_reauth_entry()
+            return self.async_update_reload_and_abort(
+                reauth_entry, data={**reauth_entry.data, **data}
+            )
+        if self._configured_elsewhere([a.device_id for a in appliances]):
+            return self.async_abort(reason="already_configured_elsewhere")
+        if self.source == SOURCE_RECONFIGURE:
+            entry = self._get_reconfigure_entry()
+            return self._update_sign_in(entry, {
+                **data,
+                CONF_AUTH_TYPE: AUTH_TYPE_OAUTH,
+                CONF_SOURCE_ID: entry.data.get(CONF_SOURCE_ID) or generate_source_id(),
+            })
+        return self.async_create_entry(
+            title="ConnectLife",
+            data={**data, CONF_AUTH_TYPE: AUTH_TYPE_OAUTH, CONF_SOURCE_ID: generate_source_id()},
+        )
+
+    async def async_step_password(
+        self, user_input: dict[str, Any] | None = None
+    ) -> ConfigFlowResult:
+        """Sign in with username and password."""
         errors: dict[str, str] = {}
         if user_input is not None:
             if user_input.get(CONF_DEVELOPMENT_MODE):
@@ -122,18 +253,57 @@ class ConnectLifeConfigFlow(ConfigFlow, domain=DOMAIN):
                 errors["base"] = "cannot_connect"
             except InvalidAuth:
                 errors["base"] = "invalid_auth"
+            except TermsNotAccepted:
+                errors["base"] = "terms_not_accepted"
             except Exception:  # pylint: disable=broad-except
                 _LOGGER.exception("Unexpected exception")
                 errors["base"] = "unknown"
             else:
-                return self.async_create_entry(
-                    title=info["title"], data=self._entry_data(user_input)
-                )
+                if self._configured_elsewhere(info["device_ids"]):
+                    errors["base"] = "already_configured_elsewhere"
+                else:
+                    return self.async_create_entry(
+                        title=info["title"], data=self._entry_data(user_input)
+                    )
 
         return self.async_show_form(
-            step_id="user",
+            step_id="password",
             data_schema=self.add_suggested_values_to_schema(
                 STEP_USER_DATA_SCHEMA, user_input or {}
+            ),
+            errors=errors,
+        )
+
+    async def async_step_reconfigure_password(
+        self, user_input: dict[str, Any] | None = None
+    ) -> ConfigFlowResult:
+        """Switch the entry to signing in with username and password."""
+        errors: dict[str, str] = {}
+        if user_input is not None:
+            try:
+                info = await validate_input(user_input)
+            except CannotConnect:
+                errors["base"] = "cannot_connect"
+            except InvalidAuth:
+                errors["base"] = "invalid_auth"
+            except TermsNotAccepted:
+                errors["base"] = "terms_not_accepted"
+            except Exception:  # pylint: disable=broad-except
+                _LOGGER.exception("Unexpected exception")
+                errors["base"] = "unknown"
+            else:
+                if self._configured_elsewhere(info["device_ids"]):
+                    errors["base"] = "already_configured_elsewhere"
+                else:
+                    return self._update_sign_in(
+                        self._get_reconfigure_entry(),
+                        {**user_input, CONF_AUTH_TYPE: AUTH_TYPE_PASSWORD},
+                    )
+
+        return self.async_show_form(
+            step_id="reconfigure_password",
+            data_schema=self.add_suggested_values_to_schema(
+                STEP_RECONFIGURE_PASSWORD_DATA_SCHEMA, user_input or {}
             ),
             errors=errors,
         )
@@ -160,6 +330,8 @@ class ConnectLifeConfigFlow(ConfigFlow, domain=DOMAIN):
                     errors["base"] = "cannot_connect"
                 except InvalidAuth:
                     errors["base"] = "invalid_auth"
+                except TermsNotAccepted:
+                    errors["base"] = "terms_not_accepted"
                 except Exception:  # pylint: disable=broad-except
                     _LOGGER.exception("Unexpected exception")
                     errors["base"] = "unknown"
@@ -185,7 +357,17 @@ class ConnectLifeConfigFlow(ConfigFlow, domain=DOMAIN):
         self, entry_data: Mapping[str, Any]
     ) -> ConfigFlowResult:
         """Handle re-authentication when credentials become invalid."""
+        if entry_data.get(CONF_AUTH_TYPE) == AUTH_TYPE_OAUTH:
+            return await self.async_step_reauth_oauth()
         return await self.async_step_reauth_confirm()
+
+    async def async_step_reauth_oauth(
+        self, user_input: dict[str, Any] | None = None
+    ) -> ConfigFlowResult:
+        """Ask to sign in again in the browser."""
+        if user_input is None:
+            return self.async_show_form(step_id="reauth_oauth")
+        return await self.async_step_pick_implementation()
 
     async def async_step_reauth_confirm(
         self, user_input: dict[str, Any] | None = None
@@ -201,10 +383,14 @@ class ConnectLifeConfigFlow(ConfigFlow, domain=DOMAIN):
                 errors["base"] = "cannot_connect"
             except InvalidAuth:
                 errors["base"] = "invalid_auth"
+            except TermsNotAccepted:
+                errors["base"] = "terms_not_accepted"
             except Exception:  # pylint: disable=broad-except
                 _LOGGER.exception("Unexpected exception")
                 errors["base"] = "unknown"
             else:
+                # Login just succeeded, so don't let the throttle block the reload.
+                clear_terms_retry_throttle(self.hass, reauth_entry.entry_id)
                 return self.async_update_reload_and_abort(reauth_entry, data=data)
 
         return self.async_show_form(
@@ -230,12 +416,20 @@ class InvalidAuth(HomeAssistantError):
     """Error to indicate there is invalid auth."""
 
 
+class TermsNotAccepted(HomeAssistantError):
+    """Error to indicate updated Terms & Conditions must be accepted in the app."""
+
+
 class OptionsFlowHandler(OptionsFlow):
     """Handles options flow for the component."""
 
     _device_id: str | None = None
 
     async def async_step_init(self, user_input: dict[str, Any] | None = None) -> ConfigFlowResult:
+        # The devices come from the coordinator, which only exists once the entry is set up.
+        if self.config_entry.state is not ConfigEntryState.LOADED:
+            return self.async_abort(reason="not_loaded")
+
         # Select device to configure
         if user_input is not None:
             self._device_id = user_input["device"]

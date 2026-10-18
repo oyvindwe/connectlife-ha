@@ -1,0 +1,30 @@
+# Hisense RQ760N4SASE (026-1b0522z0308j)
+properties:
+  # ice_making_state follows the ice maker, also when toggled in the app;
+  # automatic_ice_making doesn't (#675).
+  - property: automatic_ice_making
+    hide: true
+    entity_category: diagnostic
+    binary_sensor:
+      options:
+        0: false
+        1: true
+  - property: ice_making_state
+    entity_category: config
+    switch:
+      device_class: switch
+      command:
+        name: SET_ICE_SWITCH
+  # Writes are rejected on this model.
+  - property: ice_making_b_switch_status
+    disable: true
+  - property: variation_temperature
+    hide: false
+    entity_category: config
+    number:
+      device_class: temperature
+      unit: °C
+      min_value: -20
+      max_value: 5
+      command:
+        name: SET_VARIATION_TEMPERATURE

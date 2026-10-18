@@ -1,0 +1,76 @@
+properties:
+
+  - property: A2W_SW_ON
+    switch: {}
+
+  - property: DHW_SW_ON
+    switch: {}
+
+  - property: c1_SW_ON
+    switch: {}
+
+  - property: controlDid18
+    switch: {}
+
+  - property: controlDid19
+    switch: {}
+
+  - property: Anti_Legionella_s
+    binary_sensor: {}
+
+  - property: isEleHeatingTurnon
+    binary_sensor:
+      device_class: power
+
+  - property: Defrost_DHW_s
+    binary_sensor: {}
+
+  - property: Defrost_Spaceheat_s
+    binary_sensor: {}
+
+  - property: alarmCode
+    sensor: {}
+
+  - property: fixedDid16
+    sensor:
+      unit: °C
+      device_class: temperature
+      state_class: measurement
+
+  - property: TDHWS
+    number:
+      unit: °C
+      device_class: temperature
+      min_value: 35
+      max_value: 60
+
+  - property: Ts_c1_water
+    number:
+      unit: °C
+      device_class: temperature
+      min_value: 20
+      max_value: 60
+
+  - property: fixedDid18
+    sensor:
+      unit: °C
+      device_class: temperature
+      state_class: measurement
+
+  - property: fixedDid30
+    entity_category: diagnostic
+    sensor:
+      unit: °C
+      device_class: temperature
+
+  - property: swj_Ta
+    sensor:
+      unit: °C
+      device_class: temperature
+      state_class: measurement
+
+  - property: EH1_Power
+    optional: true
+
+  - property: EH2_Power
+    optional: true

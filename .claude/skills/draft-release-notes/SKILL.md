@@ -1,8 +1,7 @@
 ---
-name: release-notes
+name: draft-release-notes
 description: Generate release notes for a new version by analyzing commits since the last git tag. Groups changes into categorized sections with contributor attribution.
 argument-hint: [version]
-disable-model-invocation: true
 allowed-tools: Bash(git *) Bash(gh *)
 ---
 
@@ -47,10 +46,11 @@ Generate release notes for this ConnectLife Home Assistant integration release.
 
 7. Come up with a cool release name.
 
-8. Format the release notes following this template. Do NOT include a `v` prefix on the version in the title line.
+8. Format the release notes following this template. The first line is the release title: the release name only,
+   without the version. HACS already shows the tag in front of it ("v0.52.0 - <release name>").
 
 ```markdown
-<version> <release name>
+<release name>
 
 ## Highlights
 

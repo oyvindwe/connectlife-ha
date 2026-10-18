@@ -307,3 +307,13 @@ def test_disabled_climate_property_is_not_exposed() -> None:
     # ... but the disabled swing axis is not exposed.
     assert "swing_mode" not in climate.target_map
     assert not climate._attr_supported_features & ClimateEntityFeature.SWING_MODE
+
+
+def test_round_temperature_follows_step() -> None:
+    climate = ConnectLifeClimate.__new__(ConnectLifeClimate)
+    climate._attr_target_temperature_step = 1
+    assert climate.round_temperature(21.4) == 21
+    climate._attr_target_temperature_step = 0.5
+    assert climate.round_temperature(21.4) == 21.5
+    assert climate.round_temperature(21.9) == 22
+    assert isinstance(climate.round_temperature(21.9), int)

@@ -2,14 +2,22 @@
   "config": {
     "abort": {
       "already_configured": "Enheten er allerede konfigurert",
-      "reauth_successful": "Re-autentisering var vellykket"
+      "already_configured_elsewhere": "Enhetene p\u00e5 denne kontoen er allerede satt opp i en annen ConnectLife-oppf\u00f8ring. Velg Rekonfigurer p\u00e5 den oppf\u00f8ringen for \u00e5 endre hvordan den logger inn. Deaktiver den f\u00f8rst for \u00e5 erstatte den med en ny oppf\u00f8ring.",
+      "cannot_connect": "Kunne ikke koble til",
+      "reauth_successful": "Re-autentisering var vellykket",
+      "reconfigure_successful": "Rekonfigureringen var vellykket"
     },
     "error": {
+      "already_configured_elsewhere": "Enhetene p\u00e5 denne kontoen er allerede satt opp i en annen ConnectLife-oppf\u00f8ring. Velg Rekonfigurer p\u00e5 den oppf\u00f8ringen for \u00e5 endre hvordan den logger inn. Deaktiver den f\u00f8rst for \u00e5 erstatte den med en ny oppf\u00f8ring.",
       "cannot_connect": "Kunne ikke koble til",
       "invalid_auth": "Ugyldig autentisering",
+      "terms_not_accepted": "ConnectLife krever at du godtar oppdaterte vilk\u00e5r. Bytt spr\u00e5k i ConnectLife-appen til engelsk, tving appen til \u00e5 lukkes, \u00e5pne den igjen, godta de nye vilk\u00e5rene og pr\u00f8v p\u00e5 nytt.",
       "test_server_invalid": "Ugyldig URL for testserver",
       "test_server_required": "Utviklingsmodus krever URL for testserver",
       "unknown": "Uventet feil"
+    },
+    "initiate_flow": {
+      "user": "Legg til konto"
     },
     "step": {
       "development": {
@@ -21,6 +29,18 @@
         },
         "description": "Aktiver utviklingsmodus for \u00e5 koble til testserveren i stedet for ConnectLife-API-et."
       },
+      "password": {
+        "data": {
+          "development_mode": "Utviklingsmodus",
+          "password": "Passord",
+          "trir": "ConnectLife.TRIR (Russland/SUS)",
+          "username": "Brukernavn"
+        },
+        "data_description": {
+          "development_mode": "Koble til en lokal testserver i stedet for ConnectLife-API-et. Kun for utvikling.",
+          "trir": "Aktiver kun hvis du logger inn med ConnectLife.TRIR-appen som brukes i Russland/SUS."
+        }
+      },
       "reauth_confirm": {
         "data": {
           "password": "Passord",
@@ -28,16 +48,30 @@
         },
         "description": "Skriv inn ConnectLife-p\u00e5loggingsinformasjonen din p\u00e5 nytt."
       },
-      "user": {
+      "reauth_oauth": {
+        "description": "ConnectLife-p\u00e5loggingen din har utl\u00f8pt. Logg inn p\u00e5 nytt p\u00e5 ConnectLife-nettstedet, der du ogs\u00e5 kan godta oppdaterte vilk\u00e5r.",
+        "title": "Logg inn p\u00e5 nytt"
+      },
+      "reconfigure": {
+        "menu_options": {
+          "pick_implementation": "Logg inn p\u00e5 ConnectLife-nettstedet (ogs\u00e5 med Google-, Apple-, Facebook- eller Microsoft-konto)",
+          "reconfigure_password": "Skriv inn brukernavn og passord"
+        }
+      },
+      "reconfigure_password": {
         "data": {
-          "development_mode": "Utviklingsmodus",
           "password": "Passord",
-          "trir": "ConnectLife.TRIR (Russland/SUS) \u2014 eksperimentell",
+          "trir": "ConnectLife.TRIR (Russland/SUS)",
           "username": "Brukernavn"
         },
         "data_description": {
-          "development_mode": "Koble til en lokal testserver i stedet for ConnectLife-API-et. Kun for utvikling.",
-          "trir": "Aktiver kun hvis du logger inn med ConnectLife.TRIR-appen som brukes i Russland/SUS. Eksperimentell."
+          "trir": "Aktiver kun hvis du logger inn med ConnectLife.TRIR-appen som brukes i Russland/SUS."
+        }
+      },
+      "user": {
+        "menu_options": {
+          "password": "Skriv inn brukernavn og passord",
+          "pick_implementation": "Logg inn p\u00e5 ConnectLife-nettstedet (ogs\u00e5 med Google-, Apple-, Facebook- eller Microsoft-konto)"
         }
       }
     }
@@ -446,8 +480,11 @@
       "alramemptywatertank": {
         "name": "T\u00f8m vanntank"
       },
+      "anti_legionella_s": {
+        "name": "Sterilisering"
+      },
       "auto_boost": {
-        "name": "Auto boost"
+        "name": "Automatisk boost"
       },
       "auto_bridge": {
         "name": "Auto bro"
@@ -499,6 +536,12 @@
       },
       "control_failure_status": {
         "name": "Feilstatus for styring"
+      },
+      "defrost_dhw_s": {
+        "name": "Avriming varmtvann"
+      },
+      "defrost_spaceheat_s": {
+        "name": "Avriming romoppvarming"
       },
       "delay_start": {
         "name": "Utsatt start"
@@ -830,6 +873,72 @@
       "error_9": {
         "name": "Feil 9"
       },
+      "error_f10": {
+        "name": "F10 overfylling av vann 1"
+      },
+      "error_f11": {
+        "name": "F11 feil p\u00e5 vannutl\u00f8p"
+      },
+      "error_f12": {
+        "name": "F12 feil p\u00e5 vanninntak 1"
+      },
+      "error_f40": {
+        "name": "F40 lekkasje i innl\u00f8psventil"
+      },
+      "error_f41": {
+        "name": "F41 feil p\u00e5 varmeelement 1"
+      },
+      "error_f42": {
+        "name": "F42 feil p\u00e5 temperatursensor"
+      },
+      "error_f43": {
+        "name": "F43 feil p\u00e5 trykksensor"
+      },
+      "error_f44": {
+        "name": "Feil F44"
+      },
+      "error_f45": {
+        "name": "F45 feil p\u00e5 fordeler"
+      },
+      "error_f46": {
+        "name": "Feil F46"
+      },
+      "error_f52": {
+        "name": "F52 feil p\u00e5 vanniv\u00e5"
+      },
+      "error_f54": {
+        "name": "F54 overfylling av vann 2"
+      },
+      "error_f56": {
+        "name": "F56 feil p\u00e5 sirkulasjonspumpe"
+      },
+      "error_f61": {
+        "name": "Feil F61"
+      },
+      "error_f62": {
+        "name": "Feil F62"
+      },
+      "error_f65": {
+        "name": "F65 feil p\u00e5 skjermkort"
+      },
+      "error_f67": {
+        "name": "F67 feil p\u00e5 vanninntak 2"
+      },
+      "error_f68": {
+        "name": "F68 feil p\u00e5 t\u00f8mmepumpe"
+      },
+      "error_f69": {
+        "name": "Feil F69"
+      },
+      "error_f72": {
+        "name": "Feil F72"
+      },
+      "error_f74": {
+        "name": "Feil F74"
+      },
+      "error_f75": {
+        "name": "Feil F75"
+      },
       "existing_fuzzy_mode": {
         "name": "Eksisterende fuzzy-modus"
       },
@@ -1048,6 +1157,9 @@
       },
       "interior_light_control_available": {
         "name": "Styring av interi\u00f8rlys tilgjengelig"
+      },
+      "iseleheatingturnon": {
+        "name": "Elektrisk varmeelement aktivt"
       },
       "light": {
         "name": "Lys"
@@ -1913,7 +2025,8 @@
           "fan_mode": {
             "state": {
               "middle_high": "Middels h\u00f8y",
-              "middle_low": "Middels lav"
+              "middle_low": "Middels lav",
+              "quiet": "Stille"
             }
           },
           "preset_mode": {
@@ -2059,6 +2172,12 @@
       },
       "t_fanspeedcv": {
         "name": "Variabel viftehastighet"
+      },
+      "tdhws": {
+        "name": "Settpunkt varmtvann"
+      },
+      "ts_c1_water": {
+        "name": "Settpunkt turtemperatur"
       },
       "variation_max_temperature": {
         "name": "Maks variasjonstemperatur"
@@ -2452,12 +2571,14 @@
           "eco": "Eco",
           "eco_40_60": "Eco 40 60",
           "full_load_49": "Full kapasitet 49",
+          "full_load_59": "Full kapasitet 59",
           "hand_wash": "H\u00e5ndvask",
           "ion_refresh": "Ione-oppfriskning",
           "jeans": "Jeans",
           "mix": "Mix",
           "pets": "Kj\u00e6ledyr",
           "power_30": "Power 30",
+          "power_39": "Power 39",
           "power_49": "Power 49",
           "quick_15": "Hurtig 15",
           "quick_30": "Hurtig 30",
@@ -2474,40 +2595,73 @@
           "time_dry": "Tidst\u00f8rk",
           "towels": "H\u00e5ndkl\u00e6r",
           "wash_and_dry_49": "Vask og t\u00f8rk 49",
+          "wash_and_dry_60": "Vask og t\u00f8rk 60",
           "wool": "Ull"
         }
       },
       "selected_program_id_status": {
         "name": "Valgt program",
         "state": {
+          "activewear": "Aktivkl\u00e6r",
+          "airtech": "AirTech",
+          "allergy_safe": "Allergi",
           "auto": "Auto",
           "baby_care": "Baby",
+          "bedding": "Senget\u00f8y",
+          "bleaching": "Bleking",
           "clean": "Rens",
           "color": "Farge",
+          "crystal_glass": "Krystallglass",
+          "curtains": "Gardiner",
+          "dark_clothes": "M\u00f8rke kl\u00e6r",
           "down_feathers": "Dun",
           "draining": "T\u00f8mmer vann",
           "drum_clean": "Trommelrens",
+          "easy_care": "Lettstell",
           "eco": "Eco",
           "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Ekstra hygiene",
+          "fabric_care": "Tekstilpleie",
           "glass": "Glass",
           "hygiene": "Hygiene",
           "intensive": "Intensiv",
           "intensive_59_32": "Intensiv 59'/32'",
+          "jeans": "Jeans",
+          "kids_wear": "Barnekl\u00e6r",
+          "kitchen_towels": "Kj\u00f8kkenh\u00e5ndkl\u00e6r",
+          "lingerie": "Undert\u00f8y",
+          "lower_half": "Nedre del",
           "mix_synthetic": "Mix/Syntet",
+          "new_clothes": "Nye kl\u00e6r",
           "night": "Natt",
           "no_program_selected": "Intet program valgt",
+          "normal_wash": "Normalvask",
+          "odor_control": "Luktkontroll",
           "one_hour": "\u00c9n time",
           "pet_hair_removal": "Fjerning av kj\u00e6ledyrh\u00e5r",
+          "pets": "Kj\u00e6ledyr",
+          "pillow": "Pute",
+          "plastic": "Plast",
+          "plush_toys": "Kosedyr",
+          "power_39": "Power 39",
+          "preheated": "Forvarmet",
           "quick_pro": "Hurtig pro",
           "rinse_and_hold": "Skyll og hold",
           "rinsing_softening": "Skylling og myking",
           "self_cleaning": "Selvrens",
           "shirts": "Skjorter",
+          "shoes": "Sko",
+          "speed_14": "Hurtig 14",
           "speed_20": "Hurtig 20'",
           "spinning_draining": "Sentrifugering og t\u00f8mming",
           "sportswear": "Sport",
+          "steam_refresh": "Damputlufting",
+          "swimwear": "Badet\u00f8y",
+          "tights_stockings": "Str\u00f8mpebukser",
           "time_program": "Tidsprogram",
+          "universal": "Universal",
+          "upper_half": "\u00d8vre del",
+          "waterproof": "Vanntett",
           "white_cotton": "Hvit bomull",
           "wool_manual": "Ull og manuell"
         }
@@ -2524,10 +2678,13 @@
         "name": "Modus",
         "state": {
           "fast": "Hurtig",
+          "green": "Gr\u00f8nn",
+          "intensive": "Intensiv",
           "night": "Natt",
           "normal": "Normal",
           "not_available": "Ikke tilgjengelig",
-          "speed": "Hastighet"
+          "speed": "Hastighet",
+          "uv": "UV"
         }
       },
       "selected_program_mode2": {
@@ -2671,9 +2828,9 @@
         "state": {
           "autobake": "AutoBake",
           "extrabake": "ExtraBake",
-          "extrabake_cleaning": "ExtraBake - Cleaning",
-          "extrabake_fastpreheat": "ExtraBake - Fast preheat",
-          "extrabake_warming": "ExtraBake - Warming",
+          "extrabake_cleaning": "ExtraBake - Rengj\u00f8ring",
+          "extrabake_fastpreheat": "ExtraBake - Hurtigforvarming",
+          "extrabake_warming": "ExtraBake - Oppvarming",
           "meatprobebake": "MeatProbeBake",
           "probake": "ProBake",
           "recipe": "Oppskrift",
@@ -3071,6 +3228,9 @@
       "alarm_sound_volume": {
         "name": "Volum for alarmlyd"
       },
+      "alarmcode": {
+        "name": "Alarmkode"
+      },
       "almost_finished_notification_setting": {
         "name": "Varselinnstilling for nesten ferdig"
       },
@@ -3337,6 +3497,12 @@
       "compressor_frequency": {
         "name": "Kompressorfrekvens"
       },
+      "compressor_operating_max_frequency": {
+        "name": "Maks driftsfrekvens for kompressor"
+      },
+      "compressor_operating_min_frequency": {
+        "name": "Min driftsfrekvens for kompressor"
+      },
       "condensed_watermode": {
         "name": "Kondensvannsmodus"
       },
@@ -3546,7 +3712,10 @@
         "name": "Standard t\u00f8rkeniv\u00e5"
       },
       "defaultspinspeed": {
-        "name": "Standard sentrifugehastighet"
+        "name": "Standard sentrifugehastighet",
+        "state": {
+          "none": "Ingen"
+        }
       },
       "delay_actions_flag": {
         "name": "Flagg for forsinkede handlinger"
@@ -3897,7 +4066,10 @@
         "name": "T\u00f8rkemodell"
       },
       "dryopen_defaultspinspeed": {
-        "name": "Standard sentrifugehastighet ved t\u00f8rr\u00e5pning"
+        "name": "Standard sentrifugehastighet ved t\u00f8rr\u00e5pning",
+        "state": {
+          "none": "Ingen"
+        }
       },
       "duration_of_clock": {
         "name": "Klokkevarighet"
@@ -3910,6 +4082,12 @@
       },
       "ecomode": {
         "name": "Eco-modus"
+      },
+      "eh1_power": {
+        "name": "Elektrisk varmeelement trinn 1"
+      },
+      "eh2_power": {
+        "name": "Elektrisk varmeelement trinn 2"
       },
       "electric_current": {
         "name": "Elektrisk str\u00f8m"
@@ -4223,74 +4401,8 @@
           "unbalance_alarm": "Ubalansealarm"
         }
       },
-      "error_f10": {
-        "name": "Feil f10"
-      },
-      "error_f11": {
-        "name": "Feil f11"
-      },
-      "error_f12": {
-        "name": "Feil f12"
-      },
-      "error_f40": {
-        "name": "Feil f40"
-      },
-      "error_f41": {
-        "name": "Feil f41"
-      },
-      "error_f42": {
-        "name": "Feil f42"
-      },
-      "error_f43": {
-        "name": "Feil f43"
-      },
-      "error_f44": {
-        "name": "Feil f44"
-      },
-      "error_f45": {
-        "name": "Feil f45"
-      },
-      "error_f46": {
-        "name": "Feil f46"
-      },
-      "error_f52": {
-        "name": "Feil f52"
-      },
-      "error_f54": {
-        "name": "Feil f54"
-      },
-      "error_f56": {
-        "name": "Feil f56"
-      },
-      "error_f61": {
-        "name": "Feil f61"
-      },
-      "error_f62": {
-        "name": "Feil f62"
-      },
-      "error_f65": {
-        "name": "Feil f65"
-      },
-      "error_f67": {
-        "name": "Feil f67"
-      },
-      "error_f68": {
-        "name": "Feil f68"
-      },
-      "error_f69": {
-        "name": "Feil f69"
-      },
       "error_f70": {
         "name": "Feil f70"
-      },
-      "error_f72": {
-        "name": "Feil f72"
-      },
-      "error_f74": {
-        "name": "Feil f74"
-      },
-      "error_f75": {
-        "name": "Feil f75"
       },
       "error_f76": {
         "name": "Feil f76"
@@ -4511,6 +4623,15 @@
       "filterclean_washflag": {
         "name": "Flagg for filterrens \u2013 vask"
       },
+      "fixeddid16": {
+        "name": "Varmtvannstemperatur"
+      },
+      "fixeddid18": {
+        "name": "Turtemperatur"
+      },
+      "fixeddid30": {
+        "name": "Maks. varmtvannstemperatur"
+      },
       "flexiblespintime_flag": {
         "name": "Flagg for fleksibel sentrifugetid"
       },
@@ -4592,6 +4713,9 @@
       },
       "getcurrentcityinfoflag": {
         "name": "Hent flagg for byinfo"
+      },
+      "global_timer_remaining_time_in_minutes": {
+        "name": "Gjenst\u00e5ende tid for hovedtidsur"
       },
       "gratin_total_allowed_time_in_minutes": {
         "name": "Total tillatt gratineringstid"
@@ -4734,6 +4858,9 @@
       "humdy_test_switch_state": {
         "name": "Bryterstatus for fuktighetstest"
       },
+      "humidity_sensor_failure": {
+        "name": "Feil p\u00e5 fuktighetssensor"
+      },
       "humiditysensor": {
         "name": "Fuktighetssensor"
       },
@@ -4742,6 +4869,9 @@
       },
       "ice_make_room_switch": {
         "name": "Bryter for isproduksjonsrom"
+      },
+      "ice_maker_wash_state": {
+        "name": "Rengj\u00f8ring ismaskin"
       },
       "ice_making_fast_status": {
         "name": "Status for hurtig isproduksjon"
@@ -4775,6 +4905,24 @@
       },
       "idmachine": {
         "name": "Maskin-ID"
+      },
+      "igbttemperatureg01": {
+        "name": "Temperatur i effektmodul G01"
+      },
+      "igbttemperatureg02": {
+        "name": "Temperatur i effektmodul G02"
+      },
+      "igbttemperatureg11": {
+        "name": "Temperatur i effektmodul G11"
+      },
+      "igbttemperatureg12": {
+        "name": "Temperatur i effektmodul G12"
+      },
+      "igbttemperatureg21": {
+        "name": "Temperatur i effektmodul G21"
+      },
+      "igbttemperatureg22": {
+        "name": "Temperatur i effektmodul G22"
       },
       "inactivity_timeout": {
         "name": "Tidsavbrudd ved inaktivitet"
@@ -5665,14 +5813,19 @@
           "cotton": "Bomull",
           "cotton_dry": "Bomull t\u00f8rk",
           "cotton_storage": "Bomull lagring",
+          "daily_wash": "Daglig vask",
+          "down": "Dun",
           "drum_clean": "Trommelrens",
           "eco_40_60": "Eco 40 60",
           "extra_hygiene": "Ekstra hygiene",
           "fast89": "Fast89",
+          "full_load_49": "Full kapasitet 49",
           "iron": "Stryking",
           "jeans": "Jeans",
           "mix": "Mix",
           "none": "Ingen",
+          "pets": "Kj\u00e6ledyr",
+          "power_30": "Power 30",
           "power_49": "Power 49",
           "quick_15": "Hurtig 15",
           "refresh": "Oppfrisk",
@@ -5743,19 +5896,6 @@
       },
       "selected_program_uv_function": {
         "name": "Valgt program \u2013 UV-funksjon"
-      },
-      "selected_program_washing_spin_speed_rpm_status": {
-        "name": "Sentrifugehastighet",
-        "state": {
-          "0_rpm": "0",
-          "1000_rpm": "1000",
-          "1200_rpm": "1200",
-          "1400_rpm": "1400",
-          "400_rpm": "400",
-          "800_rpm": "800",
-          "no_spin": "Ingen sentrifugering",
-          "not_available": "Ikke tilgjengelig"
-        }
       },
       "selected_program_water_add": {
         "name": "Valgt program \u2013 tilf\u00f8r vann"
@@ -5894,6 +6034,9 @@
       },
       "shop_mode_setting": {
         "name": "Innstilling for butikkmodus"
+      },
+      "shopping_mode_switch_status": {
+        "name": "Handlemodus"
       },
       "show_date_setting": {
         "name": "Innstilling for \u00e5 vise dato"
@@ -7884,6 +8027,9 @@
       "support_preheat_state": {
         "name": "Tilstand for forvarmingsst\u00f8tte"
       },
+      "swj_ta": {
+        "name": "Utetemperatur"
+      },
       "synchro_start_level": {
         "name": "Synkroniseringsstartniv\u00e5"
       },
@@ -7987,6 +8133,12 @@
       "text_size_setting": {
         "name": "Innstilling for tekstst\u00f8rrelse"
       },
+      "thaw_control_switch_status": {
+        "name": "Tining"
+      },
+      "thaw_finished_alarm": {
+        "name": "Tining ferdig"
+      },
       "theme_color": {
         "name": "Temafarge"
       },
@@ -8076,6 +8228,12 @@
       },
       "totalprogramscycles": {
         "name": "Totalt antall programsykluser"
+      },
+      "totaltimeofcookinginminutes": {
+        "name": "Total koketid"
+      },
+      "uitemperature": {
+        "name": "Temperatur i kontrollpanelet"
       },
       "unfreeze_run_status": {
         "name": "Kj\u00f8restatus for opptining"
@@ -8473,6 +8631,9 @@
       }
     },
     "switch": {
+      "a2w_sw_on": {
+        "name": "Varmepumpe"
+      },
       "activemodelightstatus": {
         "name": "Lys i aktiv modus"
       },
@@ -8551,6 +8712,9 @@
       "buzzer_setting": {
         "name": "Summer"
       },
+      "c1_sw_on": {
+        "name": "Romoppvarming"
+      },
       "child_lock": {
         "name": "Barnesikring"
       },
@@ -8581,6 +8745,12 @@
       "color_sensor_setting_status": {
         "name": "Fargesensor"
       },
+      "controldid18": {
+        "name": "Nattmodus"
+      },
+      "controldid19": {
+        "name": "Stillemodus"
+      },
       "crisp_function_status": {
         "name": "Status for spr\u00f8-funksjon"
       },
@@ -8589,6 +8759,9 @@
       },
       "demo_mode_status": {
         "name": "Demomodus"
+      },
+      "dhw_sw_on": {
+        "name": "Varmtvann"
       },
       "display_standby": {
         "name": "Skjermstandby"
@@ -8848,6 +9021,14 @@
       }
     }
   },
+  "exceptions": {
+    "command_rejected": {
+      "message": "Enheten godtar ikke denne kommandoen i n\u00e5v\u00e6rende tilstand"
+    },
+    "terms_not_accepted": {
+      "message": "Oppdaterte vilk\u00e5r for ConnectLife m\u00e5 godtas i ConnectLife-appen"
+    }
+  },
   "issues": {
     "orphaned_statistics": {
       "fix_flow": {
@@ -8861,7 +9042,7 @@
             "title": "Slett foreldrel\u00f8se langtidsstatistikker"
           },
           "init": {
-            "description": "{count} ConnectLife-sensorer har lagrede langtidsstatistikker (LTS), men rapporterer ikke lenger en tilstandsklasse. Home Assistant oppretter en egen reparasjon for hver av dem.\n\nDette skyldes en nylig endring i integrasjonen: numeriske egenskaper bruker ikke lenger `state_class: measurement` som standard, s\u00e5 tilstandskoder, modusflagg og settpunkter registreres ikke lenger som LTS.\n\n**Slett foreldrel\u00f8se statistikker** fjerner de lagrede LTS-radene for alle {count} sensorene samtidig. De historiske dataene for disse sensorene under Innstillinger \u2192 Statistikk slettes og kan ikke gjenopprettes. De per-entitets Home Assistant-reparasjonene forsvinner neste gang Home Assistant validerer statistikkene p\u00e5 nytt \u2013 det skjer n\u00e5r du \u00e5pner Utviklerverkt\u00f8y \u2192 Statistikk. Denne samlede reparasjonen vil ikke vises igjen for denne konfigurasjonsoppf\u00f8ringen.\n\n**Ignorer** skjuler denne samlede handlingen og lar per-entitets-reparasjonene st\u00e5 \u2013 fiks eller ignorer dem enkeltvis hvis du \u00f8nsker mer detaljert kontroll over hvilke sensorer som beholder historikken sin. Du kan komme tilbake til den samlede handlingen senere ved \u00e5 velge \u00abVis ignorerte reparasjoner\u00bb i overl\u00f8psmenyen \u00f8verst til h\u00f8yre i Innstillinger \u2192 Reparasjoner, og s\u00e5 \u00e5pne denne reparasjonen igjen.\n\nFor \u00e5 se gjennom de enkelte sensorreparasjonene f\u00f8r du bestemmer deg, kan du bare lukke dette vinduet \u2013 den samlede reparasjonen forblir tilgjengelig som den er.\n\nMerk: denne saken er bare merket som kritisk for at den skal sorteres over per-entitets-reparasjonene fra opptakeren. Den er ikke akutt.",
+            "description": "{count} ConnectLife-sensorer har lagrede langtidsstatistikker (LTS), men rapporterer ikke lenger en tilstandsklasse. Home Assistant oppretter en egen reparasjon for hver av dem.\n\nDette skyldes en nylig endring i integrasjonen: numeriske egenskaper bruker ikke lenger `state_class: measurement` som standard, s\u00e5 tilstandskoder, modusflagg og settpunkter registreres ikke lenger som LTS.\n\n**Slett foreldrel\u00f8se statistikker** fjerner de lagrede LTS-radene for alle {count} sensorene samtidig. De historiske dataene for disse sensorene under Innstillinger \u2192 Tools \u2192 Statistics slettes og kan ikke gjenopprettes. De per-entitets Home Assistant-reparasjonene forsvinner neste gang Home Assistant validerer statistikkene p\u00e5 nytt \u2013 det skjer n\u00e5r du \u00e5pner Innstillinger \u2192 Tools \u2192 Statistics. Denne samlede reparasjonen vil ikke vises igjen for denne konfigurasjonsoppf\u00f8ringen.\n\n**Ignorer** skjuler denne samlede handlingen og lar per-entitets-reparasjonene st\u00e5 \u2013 fiks eller ignorer dem enkeltvis hvis du \u00f8nsker mer detaljert kontroll over hvilke sensorer som beholder historikken sin. Du kan komme tilbake til den samlede handlingen senere ved \u00e5 velge \u00abVis ignorerte reparasjoner\u00bb i overl\u00f8psmenyen \u00f8verst til h\u00f8yre i Innstillinger \u2192 Reparasjoner, og s\u00e5 \u00e5pne denne reparasjonen igjen.\n\nFor \u00e5 se gjennom de enkelte sensorreparasjonene f\u00f8r du bestemmer deg, kan du bare lukke dette vinduet \u2013 den samlede reparasjonen forblir tilgjengelig som den er.\n\nMerk: denne saken er bare merket som kritisk for at den skal sorteres over per-entitets-reparasjonene fra opptakeren. Den er ikke akutt.",
             "menu_options": {
               "clear": "Slett foreldrel\u00f8se statistikker",
               "ignore": "Ignorer"
@@ -8871,6 +9052,23 @@
         }
       },
       "title": "Foreldrel\u00f8se langtidsstatistikker ({count} sensorer)"
+    },
+    "terms_not_accepted": {
+      "fix_flow": {
+        "abort": {
+          "entry_removed": "ConnectLife-oppf\u00f8ringen finnes ikke lenger."
+        },
+        "error": {
+          "still_not_accepted": "ConnectLife avviser fortsatt innloggingen. Sjekk at de nye vilk\u00e5rene er godtatt i appen, og pr\u00f8v igjen."
+        },
+        "step": {
+          "confirm": {
+            "description": "ConnectLife avviser innloggingen for \u00ab{title}\u00bb til de oppdaterte vilk\u00e5rene er godtatt. \u00c5 skrive inn passordet p\u00e5 nytt hjelper ikke.\n\n1. \u00c5pne ConnectLife-appen og bytt spr\u00e5k i appen til **engelsk**.\n2. Tving appen til \u00e5 lukkes (ikke bare legg den i bakgrunnen), og \u00e5pne den igjen.\n3. Godta de nye vilk\u00e5rene n\u00e5r du blir bedt om det.\n4. Velg **Send** for \u00e5 pr\u00f8ve igjen n\u00e5. Ellers pr\u00f8ver integrasjonen p\u00e5 nytt hvert 15. minutt.\n\nDu kan bytte tilbake spr\u00e5ket i appen etterp\u00e5. Spr\u00e5kbyttet er n\u00f8dvendig fordi appen kan hoppe over sp\u00f8rsm\u00e5let n\u00e5r vilk\u00e5rene enn\u00e5 ikke er oversatt til ditt spr\u00e5k. [Mer informasjon]({url})\n\nInnlogging p\u00e5 ConnectLife-nettstedet kan ogs\u00e5 l\u00f8se dette: \u00e5pne ConnectLife-integrasjonen og velg **\u22ee** \u2192 **Rekonfigurer**.",
+            "title": "Godta oppdaterte vilk\u00e5r for ConnectLife"
+          }
+        }
+      },
+      "title": "Godta oppdaterte vilk\u00e5r for ConnectLife"
     },
     "unavailable_device": {
       "fix_flow": {
@@ -8914,6 +9112,9 @@
     }
   },
   "options": {
+    "abort": {
+      "not_loaded": "ConnectLife er ikke satt opp enn\u00e5. Alternativene er tilgjengelige n\u00e5r integrasjonen er lastet."
+    },
     "step": {
       "configure_device": {
         "data": {

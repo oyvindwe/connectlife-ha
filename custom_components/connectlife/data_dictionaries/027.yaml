@@ -1,8 +1,8 @@
 # Washing machine
-# Remote action buttons via the Actions command. All require remote actions to
-# be active (Remote_control_monitoring_set_commands_actions: 1); the others are
-# additionally gated on the relevant Status / StopAddGoAllowed value so each
-# button only shows when the action is applicable.
+# Remote action buttons via the Actions command. Start, pause, resume and
+# stop_add_go are gated on the relevant Status / StopAddGoAllowed value so each
+# button only shows when the action is applicable. The remote control flags are
+# not used: they don't follow the remote control setting on the machine.
 #
 # EXPERIMENTAL: the Actions write codes and the gating status values have not
 # been confirmed on hardware. Pressing a button sends a real command, which may
@@ -11,40 +11,32 @@ buttons:
 - key: start
   icon: mdi:play
   available_when:
-    Remote_control_monitoring_set_commands_actions: 1
     Status: 4  # Program select
   write:
     Actions: 1
 - key: pause
   icon: mdi:pause
   available_when:
-    Remote_control_monitoring_set_commands_actions: 1
     Status: 6  # Running
   write:
     Actions: 7
 - key: resume
   icon: mdi:play-pause
   available_when:
-    Remote_control_monitoring_set_commands_actions: 1
     Status: 7  # Pause
   write:
     Actions: 4
 - key: stop
   icon: mdi:stop
-  available_when:
-    Remote_control_monitoring_set_commands_actions: 1
   write:
     Actions: 0
 - key: cancel
   icon: mdi:cancel
-  available_when:
-    Remote_control_monitoring_set_commands_actions: 1
   write:
     Actions: 2
 - key: stop_add_go
   icon: mdi:tshirt-crew
   available_when:
-    Remote_control_monitoring_set_commands_actions: 1
     StopAddGoAllowed: 2  # Active
   write:
     Actions: 5

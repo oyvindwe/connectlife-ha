@@ -102,6 +102,10 @@ properties:
       device_class: frequency
       unit: Hz
       state_class: measurement
+  - property: compressor_operating_max_frequency
+    optional: true
+  - property: compressor_operating_min_frequency
+    optional: true
   - property: condensation_fan_failure_status
     hide: true
     entity_category: diagnostic
@@ -434,6 +438,8 @@ properties:
       options:
         0: false
         1: true
+  - property: humidity_sensor_failure
+    optional: true
   - property: ice_machine_actual_temp
     optional: true
   - property: ice_make_room_alarm
@@ -445,6 +451,8 @@ properties:
         0: false
         1: true
   - property: ice_make_room_switch
+    optional: true
+  - property: ice_maker_wash_state
     optional: true
   - property: ice_making_b_switch_status
     entity_category: config
@@ -1037,6 +1045,8 @@ properties:
     optional: true
   - property: shelf_light_normal_on_time
     optional: true
+  - property: shopping_mode_switch_status
+    optional: true
   - property: show_mode
     optional: true
   - property: special_space
@@ -1084,6 +1094,10 @@ properties:
       options:
         0: celsius
         1: fahrenheit
+  - property: thaw_control_switch_status
+    optional: true
+  - property: thaw_finished_alarm
+    optional: true
   - property: theme_color
     optional: true
   - property: tx_failure

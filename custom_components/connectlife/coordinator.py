@@ -1,9 +1,15 @@
 import async_timeout
 import logging
-from collections.abc import Mapping
+from collections.abc import Iterable, Mapping
 from datetime import timedelta
 
-from connectlife.api import LifeConnectAuthError, LifeConnectError, ConnectLifeApi, EnergyResult
+from connectlife.api import (
+    ConnectLifeApi,
+    EnergyResult,
+    LifeConnectAuthError,
+    LifeConnectError,
+    LifeConnectTermsNotAcceptedError,
+)
 from connectlife.appliance import ConnectLifeAppliance
 from homeassistant.components.recorder import get_instance
 from homeassistant.components.recorder.statistics import list_statistic_ids
@@ -16,6 +22,7 @@ from .const import DATA_STATE_CLASS_MIGRATION_DONE, DOMAIN
 from .dictionaries import Dictionaries
 from .messages import format_retry_message
 from .statistics_sources import STATISTICS_SOURCES, enabled_sensors
+from .terms import terms_accepted, terms_not_accepted, terms_retry_throttled
 
 MAX_RETRIES = 3
 STATISTICS_UPDATE_INTERVAL = timedelta(minutes=10)
@@ -37,6 +44,9 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
         # toggling a per-device option — starts fresh and prunes entities that
         # are no longer created, such as the offline-state binary sensor.
         self.entities: dict[str, Platform] = {}
+        # Device IDs from the first poll. Entities are only created at setup, so a
+        # device that shows up later needs a reload of the config entry.
+        self._setup_device_ids: set[str] | None = None
         super().__init__(
             hass,
             _LOGGER,
@@ -46,6 +56,9 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
 
     async def _async_update_data(self):
         """Fetch data from API endpoint."""
+        if terms_retry_throttled(self.hass, self.config_entry):
+            _LOGGER.debug("Terms & Conditions not accepted recently, skipping update")
+            raise UpdateFailed(translation_domain=DOMAIN, translation_key="terms_not_accepted")
         try:
             # Note: aiohttp.ClientError is already handled by the data update
             # coordinator. TimeoutError is retried here so the UI gets the
@@ -53,10 +66,18 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
             async with async_timeout.timeout(30):
                 await self.api.get_appliances()
                 self.error_count = 0
+            terms_accepted(self.hass, self.config_entry)
+        except LifeConnectTermsNotAcceptedError as err:
+            # Not fixable by re-entering credentials, so don't start reauth. Keep
+            # polling (throttled) so the entry recovers once the terms are accepted.
+            terms_not_accepted(self.hass, self.config_entry)
+            raise UpdateFailed(
+                translation_domain=DOMAIN, translation_key="terms_not_accepted"
+            ) from err
         except LifeConnectAuthError as err:
             # Raising ConfigEntryAuthFailed will cancel future updates
             # and start a config flow with SOURCE_REAUTH (async_step_reauth)
-            raise ConfigEntryAuthFailed from err
+            raise ConfigEntryAuthFailed(str(err)) from err
         except TimeoutError as err:
             self.error_count += 1
             i = MAX_RETRIES - self.error_count
@@ -80,9 +101,34 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
                 )
             else:
                 raise UpdateFailed(format_retry_message(err)) from err
-        return {a.device_id: a for a in self.api.appliances}
+        data = {a.device_id: a for a in self.api.appliances}
+        if self._setup_device_ids is None:
+            self._setup_device_ids = set(data)
+        elif data.keys() != self.data.keys():
+            # Setup creates the repair issues; after that, update them when the device list changes.
+            self._update_unavailable_device_issues(data.keys())
+            new_device_ids = data.keys() - self._setup_device_ids
+            # A device that is back after being deleted in Home Assistant (e.g. from its
+            # repair) has no entities either.
+            deleted_device_ids = (data.keys() - self.data.keys() - new_device_ids) - self._registered_device_ids()
+            if reload_device_ids := new_device_ids | deleted_device_ids:
+                _LOGGER.info("New ConnectLife devices %s, reloading", ", ".join(sorted(reload_device_ids)))
+                # Only reload once; the reload creates a new coordinator.
+                self._setup_device_ids |= new_device_ids
+                self.hass.config_entries.async_schedule_reload(self.config_entry.entry_id)
+        return data
 
-    async def async_update_device(self, device_id: str, command: Mapping[str, int | str], properties: Mapping[str, int | str]):
+    def _registered_device_ids(self) -> set[str]:
+        """Return the IDs of the devices registered for this config entry."""
+        device_reg = dr.async_get(self.hass)
+        return {
+            device_id
+            for device in dr.async_entries_for_config_entry(device_reg, self.config_entry.entry_id)
+            for (domain, device_id) in device.identifiers
+            if domain == DOMAIN
+        }
+
+    async def async_update_device(self, device_id: str, command: Mapping[str, int | float | str], properties: Mapping[str, int | float | str]):
         """Updates the device, and sets the properties in local copy and notify to avoid refetching."""
         await self.api.update_appliance(self.data[device_id].puid, {k: str(v) for k, v in command.items()})
         self.data[device_id].status_list.update(properties)
@@ -120,10 +166,19 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
                         )
                         entity_reg.async_remove(entity.entity_id)
 
+        self._update_unavailable_device_issues(self.data.keys())
+
+    def _update_unavailable_device_issues(self, device_ids: Iterable[str]) -> None:
+        """Create a repair issue for each registered device missing from the device list.
+
+        Clears the issue again for devices that are back.
+        """
+        device_ids = set(device_ids)
+        device_reg = dr.async_get(self.hass)
         for device in dr.async_entries_for_config_entry(device_reg, self.config_entry.entry_id):
             for (domain, device_id) in device.identifiers:
                 if domain == DOMAIN:
-                    if device_id not in self.data:
+                    if device_id not in device_ids:
                         _LOGGER.warning("Unavailable device: %s", device.name)
                         ir.async_create_issue(
                             self.hass,

@@ -41,6 +41,7 @@ Collections replace as a whole — there is no per-key merging inside them:
 - `options`
 - `combine`
 - `command`
+- `include`
 - dict-valued `min_value` / `max_value`
 
 Set a field to `null` to explicitly unset what the base specified — useful for dropping a `unit:` set
@@ -92,7 +93,7 @@ or if you need help with the mapping, please open a PR on GitHub with the file!
 
 The file contains these top level items:
 
-- `climate`: top level [`Climate`](#presets) configuration.
+- `climate`: top level [`Climate`](#presets) configuration ([presets](#presets) and [precision](#precision)).
 - `properties`: list of [`Property`](#property)
 - `buttons`: list of [`Button`](#buttons) entities for write-only commands
 - `statistics`: opt the device type into [daily energy/water statistics](#statistics) sensors
@@ -136,6 +137,17 @@ ConnectLife properties can be mapped to any of these entity types:
   This is a convention, not a guarantee: a `t_*` control is occasionally better surfaced read-only (e.g. `t_beep`
   as a status `binary_sensor`), and a device may advertise `t_*` controls it doesn't physically have — `disable`
   those in the feature override (see [Property inheritance in feature overrides](#property-inheritance-in-feature-overrides)).
+- Download diagnostics for the device (device page → Device info → **Download diagnostics**) to see all its properties,
+  their current values, and which ones are not mapped yet. It also includes what ConnectLife reports about the
+  device, which helps narrow down a mapping for a feature code:
+  - `static_data`: the settings and values the device supports (e.g. `Rinse_aid_setting_tab: 0` means no
+    `tab` option), and its firmware versions.
+  - `system_data`: for dishwashers, the programs with their position, duration and which options each allows.
+  - `self_check`: the faults the device can report, with a description.
+  - `property_list`: the properties of the feature code, with value lists and ranges (empty for many devices).
+
+  Without Home Assistant, get the same data with `python -m connectlife.dump --query static` (or `system`,
+  `self-check`, `property-list`); see the [connectlife](https://pypi.org/project/connectlife/) README.
 - Generate a skeleton file using the [connectlife](https://pypi.org/project/connectlife/) package:
 
   ```bash
@@ -166,6 +178,7 @@ Note that translation keys must be lowercase!
 |--------------------|------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `property`         | string                             | Name of status/property. Can also be a virtual name when used with `combine`.                                                                                                                                                                                                                       |
 | `combine`          | list of [CombineSource](#combine)  | Combine multiple source properties into a single sensor value. See [Combine](#combine).                                                                                                                                                                                                             |
+| `include`          | list of string                     | Properties whose current values are sent along whenever this property is written. See [Include](#include).                                                                                                                                                                                          |
 | `disable`          | `true`, `false`                    | If Home Assistant should not create an entity for this property. Defaults to `false`.                                                                                                                                                                                                               |
 | `hide`             | `true`, `false`                    | If Home Assistant should initially hide the entity for this property. Defaults to `false`, but is set to `true` for unknown properties.                                                                                                                                                             |
 | `optional`         | `true`, `false`                    | If the entity should be registered as disabled by default. The user can enable it from the Home Assistant UI. Use for rarely-useful properties (e.g., per-slot error codes). Defaults to `false`. Only applies to per-property platforms (`binary_sensor`, `number`, `select`, `sensor`, `switch`). |
@@ -287,6 +300,7 @@ type `climate`, a climate entity is created for the appliance.
 | `unknown_value` | integer                                            | The value used by the API to signal unknown value.                                                                                                                                                                                                                                                                                         |
 | `min_value`     | [IntegerOrTemperature](#type-integerortemperature) | Minimum allowed value. Supported for `target_humidity` (integer) and `target_temperature` (temperature).                                                                                                                                                                                                                                   |
 | `max_value`     | [IntegerOrTemperature](#type-integerortemperature) | Maximum allowed value. Supported for `target_humidity` (integer) and `target_temperature` (temperature).                                                                                                                                                                                                                                   |
+| `step`          | number                                             | Target temperature step, e.g. `0.5`. Supported for `target_temperature`. Defaults to 1. If [`precision`](#precision) is not set, a step below 1 also shows temperatures with one decimal.                                                                                                                                                  |
 
 `temperature_unit` defaults to Celsius.
 
@@ -388,6 +402,17 @@ as the selected preset.
 
 Presets only has effect for devices with climate mappings.
 
+### Precision
+
+`precision` on the top level `climate` sets how temperatures are displayed: `0.1`, `0.5` or `1`. It applies to both
+current and target temperature. Defaults to `1`, or `0.1` if the target temperature [`step`](#type-climate) is below 1.
+Use it when the device reports decimal temperatures but only accepts whole-degree setpoints:
+
+```yaml
+climate:
+  precision: 0.1
+```
+
 ## Type `Humidifier`
 
 Domain `humidifier` can be used to map the property to a target property in a humidifier entity. If at least one property has
@@ -484,6 +509,44 @@ reports `1 = off` and `2 = on` on the status property but expects `0 = off` and 
 
 The same mechanism works for [Select](#type-select): the value written is the integer key from `options` minus `adjust`.
 
+## Include
+
+Some devices only apply a setting when other properties are sent in the same command. `include` lists
+properties whose current values are sent along:
+
+- on a [property](#property), whenever that property is written, from any entity;
+- on a [button](#buttons), with the button's `write`.
+
+Each included property is written back with its own [Command](#command): the value sent to `command.name`
+is the current status value minus `command.adjust`. It is skipped when the device doesn't report it, when
+its value is the property's `unavailable` or `unknown_value`, or when the command already writes it.
+Included properties must be writable (`climate`, `number`, `select` or `switch`), which
+`validate_mappings` checks.
+
+For example, a washing machine that only uses the program options when they're sent with the start
+command:
+
+```yaml
+buttons:
+- key: start
+  include:
+    - Selected_program_id_status
+    - Selected_program_set_temperature_status   # skipped when 0 (program has no temperature option)
+    - Selected_program_washing_spin_speed_rpm_status
+  write:
+    Actions: 1
+```
+
+Or an air conditioner that turns fan mute off when powered on:
+
+```yaml
+- property: t_power
+  include:
+    - t_fan_mute
+  climate:
+    target: is_on
+```
+
 ## Buttons
 
 The top-level `buttons` section declares device-level button entities for write-only commands —
@@ -494,12 +557,13 @@ becomes one HA button entity. A press sends the `write` map to the device in a s
 |------------------|---------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `key`            | string                          | Unique key for this button within the device. Used as the translation key, as part of the entity unique id, and as the merge identity when a feature override changes an inherited button.                                                  |
 | `icon`           | `mdi:play`, etc.                | Icon for the button.                                                                                                                                                                                                                         |
-| `available_when` | dictionary of string to integer | Optional. Map of property name to required value. The button is only available when every listed property currently has the listed value. Use to gate buttons behind a remote-control-allowed status property.                              |
+| `available_when` | dictionary of string to integer or list of integer | Optional. Map of property name to required value, or a list of allowed values. The button is only available when every listed property currently has the listed value (or one of them). Use to gate buttons behind a remote-control-allowed status property. |
+| `include`        | list of string                  | Optional. Properties whose current values are sent along with `write`. See [Include](#include).                                                                                                                                             |
 | `write`          | dictionary of string to integer | Required for non-disabled buttons. Map of property name to value to send when pressed. Multiple entries are sent in a single request — useful for combos like "set delay + start".                                                          |
 | `disable`        | `true`, `false`                 | If `true`, suppress this button. Use in a feature override to remove a button inherited from the base when a device variant doesn't support that action code. Defaults to `false`.                                                          |
 
 Feature overrides merge with the base by `key`: matching entries shallow-merge field by field
-(`available_when` and `write` replace as a whole), and entries with a new `key` are appended.
+(`available_when`, `include` and `write` replace as a whole), and entries with a new `key` are appended.
 A feature override carrying only the differences keeps the override file small.
 
 Remember to add [translation strings](#translation-strings) for button names under `entity.button.<key>.name`.
@@ -544,8 +608,16 @@ integration polls a separate ConnectLife cloud statistics endpoint (every 10 min
 exposes the daily totals. Because the data is cloud-side, these sensors stay available even
 when the appliance is offline.
 
-Set this block on the **base** device-type file (e.g. `015.yaml`), not on feature overrides.
-Omit the whole block for device types that have no statistics endpoint.
+Usually this block goes in the **base** device-type file (e.g. `015.yaml`). Omit the whole block for device types that
+have no statistics endpoint. A feature override with its own `statistics` block replaces the base's as a whole, so use one
+to turn the sensors off for a model that ConnectLife returns no statistics for:
+
+```yaml
+# 026-{feature}.yaml (override)
+statistics:
+  source: energy_consumption_curve
+  daily_energy_kwh: false
+```
 
 | Item                      | Type                                            | Description                                                                                                                                            |
 |---------------------------|-------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|

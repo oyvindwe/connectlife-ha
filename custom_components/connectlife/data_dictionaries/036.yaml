@@ -1,0 +1,721 @@
+# Induction hob. Same platform as 010; shared properties are mapped the same way.
+properties:
+  - property: BuiltIn_Hood_status
+    hide: true
+  - property: Circulation_mode
+    hide: true
+  - property: Demo_mode
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: Device_status
+    hide: true
+    sensor:
+      device_class: enum
+      options:
+        0: idle
+        1: service
+        2: production
+        3: demo_mode
+        4: iq
+        5: running
+        6: failure
+        7: stand_by
+        8: pause_mode
+        9: locked
+  - property: Global_timer_remaining_time_in_minutes
+    sensor:
+      read_only: true
+      device_class: duration
+      unit: min
+  - property: HardPairingStatus
+    entity_category: diagnostic
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: Hood_connected_via_RF
+    optional: true
+    entity_category: diagnostic
+  - property: Hood_total_used_hours
+    hide: true
+    entity_category: diagnostic
+    sensor:
+      device_class: duration
+      unit: h
+      state_class: total_increasing
+  - property: IGBTTemperatureG01
+    optional: true
+    entity_category: diagnostic
+    unavailable: 255
+    sensor:
+      read_only: true
+      device_class: temperature
+      unit: °C
+      state_class: measurement
+  - property: IGBTTemperatureG02
+    optional: true
+    entity_category: diagnostic
+    unavailable: 255
+    sensor:
+      read_only: true
+      device_class: temperature
+      unit: °C
+      state_class: measurement
+  - property: IGBTTemperatureG11
+    optional: true
+    entity_category: diagnostic
+    unavailable: 255
+    sensor:
+      read_only: true
+      device_class: temperature
+      unit: °C
+      state_class: measurement
+  - property: IGBTTemperatureG12
+    optional: true
+    entity_category: diagnostic
+    unavailable: 255
+    sensor:
+      read_only: true
+      device_class: temperature
+      unit: °C
+      state_class: measurement
+  - property: IGBTTemperatureG21
+    optional: true
+    entity_category: diagnostic
+    unavailable: 255
+    sensor:
+      read_only: true
+      device_class: temperature
+      unit: °C
+      state_class: measurement
+  - property: IGBTTemperatureG22
+    optional: true
+    entity_category: diagnostic
+    unavailable: 255
+    sensor:
+      read_only: true
+      device_class: temperature
+      unit: °C
+      state_class: measurement
+  - property: Position_of_tower
+    hide: true
+  - property: SL1_Active_timer
+    optional: true
+    sensor:
+      device_class: enum
+      options:
+        0: inactive
+        1: stopwatch
+        2: timer
+  - property: SL1_Bridge_function_active
+    optional: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL1_Cooking_method
+    optional: true
+    sensor:
+      device_class: enum
+      options:
+        0: none
+        1: method_1
+        2: method_2
+  - property: SL1_Pot_detected
+    optional: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL1_Power_level
+    # Zones the hob doesn't have report 255.
+    unavailable: 255
+    sensor:
+      device_class: enum
+      options:
+        0: "off"
+        1: "1"
+        2: "2"
+        3: "3"
+        4: "4"
+        5: "5"
+        6: "6"
+        7: "7"
+        8: "8"
+        9: "9"
+        10: "10"
+        11: "11"
+        12: "12"
+        13: boost
+  - property: SL1_Residual_heat_signal
+    optional: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL1_Sand_timer_paused_total_seconds
+    optional: true
+    entity_category: diagnostic
+    sensor:
+      device_class: duration
+      unit: s
+      state_class: measurement
+  - property: SL1_Sand_timer_status
+    optional: true
+    sensor:
+      device_class: enum
+      options:
+        0: paused
+        1: active
+        2: stopped
+        3: ended
+        4: inactive
+  - property: SL1_Status
+    optional: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL1_Stopwatch_paused_total_seconds
+    optional: true
+    entity_category: diagnostic
+    sensor:
+      device_class: duration
+      unit: s
+      state_class: measurement
+  - property: SL1_Stopwatch_status
+    optional: true
+    sensor:
+      device_class: enum
+      options:
+        0: hold
+        1: active
+        2: paused
+        3: inactive
+  - property: SL1_Temperature
+    optional: true
+    sensor:
+      read_only: true
+      state_class: measurement
+      device_class: temperature
+      unit: °C
+  - property: SL2_Active_timer
+    optional: true
+    sensor:
+      device_class: enum
+      options:
+        0: inactive
+        1: stopwatch
+        2: timer
+  - property: SL2_Bridge_function_active
+    optional: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL2_Cooking_method
+    optional: true
+    sensor:
+      device_class: enum
+      options:
+        0: none
+        1: method_1
+        2: method_2
+  - property: SL2_Pot_detected
+    optional: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL2_Power_level
+    # Zones the hob doesn't have report 255.
+    unavailable: 255
+    sensor:
+      device_class: enum
+      options:
+        0: "off"
+        1: "1"
+        2: "2"
+        3: "3"
+        4: "4"
+        5: "5"
+        6: "6"
+        7: "7"
+        8: "8"
+        9: "9"
+        10: "10"
+        11: "11"
+        12: "12"
+        13: boost
+  - property: SL2_Residual_heat_signal
+    optional: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL2_Sand_timer_paused_total_seconds
+    optional: true
+    entity_category: diagnostic
+    sensor:
+      device_class: duration
+      unit: s
+      state_class: measurement
+  - property: SL2_Sand_timer_status
+    optional: true
+    sensor:
+      device_class: enum
+      options:
+        0: paused
+        1: active
+        2: stopped
+        3: ended
+        4: inactive
+  - property: SL2_Status
+    optional: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL2_Stopwatch_paused_total_seconds
+    optional: true
+    entity_category: diagnostic
+    sensor:
+      device_class: duration
+      unit: s
+      state_class: measurement
+  - property: SL2_Stopwatch_status
+    optional: true
+    sensor:
+      device_class: enum
+      options:
+        0: hold
+        1: active
+        2: paused
+        3: inactive
+  - property: SL2_Temperature
+    optional: true
+    sensor:
+      read_only: true
+      state_class: measurement
+      device_class: temperature
+      unit: °C
+  - property: SL3_Active_timer
+    optional: true
+    sensor:
+      device_class: enum
+      options:
+        0: inactive
+        1: stopwatch
+        2: timer
+  - property: SL3_Bridge_function_active
+    optional: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL3_Cooking_method
+    optional: true
+    sensor:
+      device_class: enum
+      options:
+        0: none
+        1: method_1
+        2: method_2
+  - property: SL3_Pot_detected
+    optional: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL3_Power_level
+    # Zones the hob doesn't have report 255.
+    unavailable: 255
+    sensor:
+      device_class: enum
+      options:
+        0: "off"
+        1: "1"
+        2: "2"
+        3: "3"
+        4: "4"
+        5: "5"
+        6: "6"
+        7: "7"
+        8: "8"
+        9: "9"
+        10: "10"
+        11: "11"
+        12: "12"
+        13: boost
+  - property: SL3_Residual_heat_signal
+    optional: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL3_Sand_timer_paused_total_seconds
+    optional: true
+    entity_category: diagnostic
+    sensor:
+      device_class: duration
+      unit: s
+      state_class: measurement
+  - property: SL3_Sand_timer_status
+    optional: true
+    sensor:
+      device_class: enum
+      options:
+        0: paused
+        1: active
+        2: stopped
+        3: ended
+        4: inactive
+  - property: SL3_Status
+    optional: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL3_Stopwatch_paused_total_seconds
+    optional: true
+    entity_category: diagnostic
+    sensor:
+      device_class: duration
+      unit: s
+      state_class: measurement
+  - property: SL3_Stopwatch_status
+    optional: true
+    sensor:
+      device_class: enum
+      options:
+        0: hold
+        1: active
+        2: paused
+        3: inactive
+  - property: SL3_Temperature
+    optional: true
+    sensor:
+      read_only: true
+      state_class: measurement
+      device_class: temperature
+      unit: °C
+  - property: SL4_Active_timer
+    optional: true
+    sensor:
+      device_class: enum
+      options:
+        0: inactive
+        1: stopwatch
+        2: timer
+  - property: SL4_Bridge_function_active
+    optional: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL4_Cooking_method
+    optional: true
+    sensor:
+      device_class: enum
+      options:
+        0: none
+        1: method_1
+        2: method_2
+  - property: SL4_Pot_detected
+    optional: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL4_Power_level
+    # Zones the hob doesn't have report 255.
+    unavailable: 255
+    sensor:
+      device_class: enum
+      options:
+        0: "off"
+        1: "1"
+        2: "2"
+        3: "3"
+        4: "4"
+        5: "5"
+        6: "6"
+        7: "7"
+        8: "8"
+        9: "9"
+        10: "10"
+        11: "11"
+        12: "12"
+        13: boost
+  - property: SL4_Residual_heat_signal
+    optional: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL4_Sand_timer_paused_total_seconds
+    optional: true
+    entity_category: diagnostic
+    sensor:
+      device_class: duration
+      unit: s
+      state_class: measurement
+  - property: SL4_Sand_timer_status
+    optional: true
+    sensor:
+      device_class: enum
+      options:
+        0: paused
+        1: active
+        2: stopped
+        3: ended
+        4: inactive
+  - property: SL4_Status
+    optional: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL4_Stopwatch_paused_total_seconds
+    optional: true
+    entity_category: diagnostic
+    sensor:
+      device_class: duration
+      unit: s
+      state_class: measurement
+  - property: SL4_Stopwatch_status
+    optional: true
+    sensor:
+      device_class: enum
+      options:
+        0: hold
+        1: active
+        2: paused
+        3: inactive
+  - property: SL4_Temperature
+    optional: true
+    sensor:
+      read_only: true
+      state_class: measurement
+      device_class: temperature
+      unit: °C
+  - property: SL5_Active_timer
+    optional: true
+    sensor:
+      device_class: enum
+      options:
+        0: inactive
+        1: stopwatch
+        2: timer
+  - property: SL5_Bridge_function_active
+    optional: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL5_Cooking_method
+    optional: true
+    sensor:
+      device_class: enum
+      options:
+        0: none
+        1: method_1
+        2: method_2
+  - property: SL5_Pot_detected
+    optional: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL5_Power_level
+    # Zones the hob doesn't have report 255.
+    unavailable: 255
+    sensor:
+      device_class: enum
+      options:
+        0: "off"
+        1: "1"
+        2: "2"
+        3: "3"
+        4: "4"
+        5: "5"
+        6: "6"
+        7: "7"
+        8: "8"
+        9: "9"
+        10: "10"
+        11: "11"
+        12: "12"
+        13: boost
+  - property: SL5_Residual_heat_signal
+    optional: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL5_Sand_timer_paused_total_seconds
+    optional: true
+    entity_category: diagnostic
+    sensor:
+      device_class: duration
+      unit: s
+      state_class: measurement
+  - property: SL5_Sand_timer_status
+    optional: true
+    sensor:
+      device_class: enum
+      options:
+        0: paused
+        1: active
+        2: stopped
+        3: ended
+        4: inactive
+  - property: SL5_Status
+    optional: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL5_Stopwatch_paused_total_seconds
+    optional: true
+    entity_category: diagnostic
+    sensor:
+      device_class: duration
+      unit: s
+      state_class: measurement
+  - property: SL5_Stopwatch_status
+    optional: true
+    sensor:
+      device_class: enum
+      options:
+        0: hold
+        1: active
+        2: paused
+        3: inactive
+  - property: SL5_Temperature
+    optional: true
+    sensor:
+      read_only: true
+      state_class: measurement
+      device_class: temperature
+      unit: °C
+  - property: SL6_Active_timer
+    optional: true
+    sensor:
+      device_class: enum
+      options:
+        0: inactive
+        1: stopwatch
+        2: timer
+  - property: SL6_Bridge_function_active
+    optional: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL6_Cooking_method
+    optional: true
+    sensor:
+      device_class: enum
+      options:
+        0: none
+        1: method_1
+        2: method_2
+  - property: SL6_Pot_detected
+    optional: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL6_Power_level
+    # Zones the hob doesn't have report 255.
+    unavailable: 255
+    sensor:
+      device_class: enum
+      options:
+        0: "off"
+        1: "1"
+        2: "2"
+        3: "3"
+        4: "4"
+        5: "5"
+        6: "6"
+        7: "7"
+        8: "8"
+        9: "9"
+        10: "10"
+        11: "11"
+        12: "12"
+        13: boost
+  - property: SL6_Residual_heat_signal
+    optional: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL6_Sand_timer_paused_total_seconds
+    optional: true
+    entity_category: diagnostic
+    sensor:
+      device_class: duration
+      unit: s
+      state_class: measurement
+  - property: SL6_Sand_timer_status
+    optional: true
+    sensor:
+      device_class: enum
+      options:
+        0: paused
+        1: active
+        2: stopped
+        3: ended
+        4: inactive
+  - property: SL6_Status
+    optional: true
+    binary_sensor:
+      options:
+        0: off
+        1: on
+  - property: SL6_Stopwatch_paused_total_seconds
+    optional: true
+    entity_category: diagnostic
+    sensor:
+      device_class: duration
+      unit: s
+      state_class: measurement
+  - property: SL6_Stopwatch_status
+    optional: true
+    sensor:
+      device_class: enum
+      options:
+        0: hold
+        1: active
+        2: paused
+        3: inactive
+  - property: SL6_Temperature
+    optional: true
+    sensor:
+      read_only: true
+      state_class: measurement
+      device_class: temperature
+      unit: °C
+  - property: TotalTimeOfCookingInMinutes
+    entity_category: diagnostic
+    sensor:
+      read_only: true
+      device_class: duration
+      unit: min
+      state_class: total_increasing
+  - property: UITemperature
+    optional: true
+    entity_category: diagnostic
+    sensor:
+      read_only: true
+      device_class: temperature
+      unit: °C
+      state_class: measurement
+  - property: Window_status
+    optional: true
+    entity_category: diagnostic
