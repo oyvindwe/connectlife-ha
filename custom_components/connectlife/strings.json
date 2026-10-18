@@ -2014,6 +2014,9 @@
       "light_on": {
         "name": "Light on"
       },
+      "open_door": {
+        "name": "Open door"
+      },
       "pause": {
         "name": "Pause"
       },
