@@ -15,7 +15,7 @@ buttons:
   - key: open_door
     icon: mdi:door-open
     available_when:
-      MDO_on_demand_allowed: 1
+      MDO_on_demand_allowed: 2
     write:
       MDO_on_demand: 1
 properties:
