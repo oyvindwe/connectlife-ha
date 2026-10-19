@@ -317,6 +317,7 @@ properties:
         0: "off"
         1: standby
         2: running
+        3: paused
       read_only: true
   - property: mute
     icon: mdi:volume-off
