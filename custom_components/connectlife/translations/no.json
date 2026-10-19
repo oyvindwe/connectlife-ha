@@ -2003,6 +2003,9 @@
       "light_on": {
         "name": "Lys p\u00e5"
       },
+      "open_door": {
+        "name": "\u00c5pne d\u00f8r"
+      },
       "pause": {
         "name": "Pause"
       },

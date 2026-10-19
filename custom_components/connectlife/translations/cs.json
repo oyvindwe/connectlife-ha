@@ -2003,6 +2003,9 @@
       "light_on": {
         "name": "Zapnout sv\u011btlo"
       },
+      "open_door": {
+        "name": "Otev\u0159\u00edt dv\u00ed\u0159ka"
+      },
       "pause": {
         "name": "Pozastavit"
       },
