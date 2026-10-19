@@ -1,5 +1,5 @@
 # Hisense DH3S802BW3
-# Actions, ApplicationPermissions, machine_status 3 and Door_status verified on the device.
+# Actions, ApplicationPermissions, machine_status 3 (paused, in 030.yaml) and Door_status verified on the device.
 # Remote start must be enabled on the dryer (ApplicationPermissions: 3) for the buttons to work.
 # Enabling it resets the program to auto, and stop disables it again.
 buttons:
@@ -39,16 +39,6 @@ properties:
         1: on
         2: off
     icon: mdi:door
-  - property: machine_status
-    icon: mdi:tumble-dryer
-    sensor:
-      device_class: enum
-      options:
-        0: "off"
-        1: standby
-        2: running
-        3: paused
-      read_only: true
   - property: energy
     # Follows the selected program (e.g. 34 towels, 54 auto), not the energy used.
     hide: true
