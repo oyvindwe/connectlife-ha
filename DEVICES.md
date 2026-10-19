@@ -108,7 +108,7 @@ have a feature-specific mapping file.
 | Gorenje GS673B60W          | Dishwasher               | 015              | [dishwasher-50.2f](custom_components/connectlife/data_dictionaries/015-dishwasher-50.2f.yaml)                       |
 |                            | Dishwasher               | 015              | [dishwasher-50.2t](custom_components/connectlife/data_dictionaries/015-dishwasher-50.2t.yaml)                       |
 | W-DW50/60-22               | Dishwasher               | 015              | [dishwasher-60.2](custom_components/connectlife/data_dictionaries/015-dishwasher-60.2.yaml)                         |
-|                            | Dishwasher               | 015              | [dishwasher-60.3](custom_components/connectlife/data_dictionaries/015-dishwasher-60.3.yaml)                         |
+| Pelgrim GVWC391XL          | Dishwasher               | 015              | [dishwasher-60.3](custom_components/connectlife/data_dictionaries/015-dishwasher-60.3.yaml)                         |
 | Hisense WD16-E722BXi       | Dishwasher               | 015              | [1ux0s1005k15](custom_components/connectlife/data_dictionaries/015-1ux0s1005k15.yaml)                               |
 |                            | Heat pump                | 016              | [502](custom_components/connectlife/data_dictionaries/016-502.yaml)                                                 |
 |                            | Induction hob            | 020              | [63c45b513e1a4bf7](custom_components/connectlife/data_dictionaries/020-63c45b513e1a4bf7.yaml)                       |
