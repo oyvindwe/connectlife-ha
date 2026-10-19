@@ -2,8 +2,20 @@
 #
 # Programs and allowed modes as reported in system data (#624).
 buttons:
+  - key: stop
+    icon: mdi:stop
+    write:
+      Actions: 1
+  - key: start
+    icon: mdi:play
+    available_when:
+      Remote_control_monitoring_set_commands_actions: 2
+    write:
+      Actions: 2
   - key: open_door
     icon: mdi:door-open
+    available_when:
+      MDO_on_demand_allowed: 1
     write:
       MDO_on_demand: 1
 properties:
