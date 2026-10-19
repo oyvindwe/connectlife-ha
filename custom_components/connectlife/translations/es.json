@@ -2003,6 +2003,9 @@
       "light_on": {
         "name": "Luz encendida"
       },
+      "open_door": {
+        "name": "Abrir puerta"
+      },
       "pause": {
         "name": "Pausa"
       },

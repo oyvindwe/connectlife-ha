@@ -2003,6 +2003,9 @@
       "light_on": {
         "name": "Lumi\u00e8re allum\u00e9e"
       },
+      "open_door": {
+        "name": "Ouvrir la porte"
+      },
       "pause": {
         "name": "Pause"
       },
