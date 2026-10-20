@@ -2,6 +2,7 @@ import async_timeout
 import logging
 from collections.abc import Iterable, Mapping
 from datetime import timedelta
+from time import monotonic
 
 from connectlife.api import (
     ConnectLifeApi,
@@ -26,6 +27,9 @@ from .terms import terms_accepted, terms_not_accepted, terms_retry_throttled
 
 MAX_RETRIES = 3
 STATISTICS_UPDATE_INTERVAL = timedelta(minutes=10)
+# How long a device must be missing from the device list before raising a repair
+# issue. The cloud occasionally returns an incomplete list for a single poll.
+UNAVAILABLE_DEVICE_GRACE_PERIOD = timedelta(minutes=10)
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -47,6 +51,11 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
         # Device IDs from the first poll. Entities are only created at setup, so a
         # device that shows up later needs a reload of the config entry.
         self._setup_device_ids: set[str] | None = None
+        # When (monotonic time) each registered device was first seen missing from the
+        # device list.
+        self._missing_since: dict[str, float] = {}
+        # Consecutive polls each device has been missing from the device list.
+        self._missing_polls: dict[str, int] = {}
         super().__init__(
             hass,
             _LOGGER,
@@ -104,13 +113,25 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
         data = {a.device_id: a for a in self.api.appliances}
         if self._setup_device_ids is None:
             self._setup_device_ids = set(data)
-        elif data.keys() != self.data.keys():
-            # Setup creates the repair issues; after that, update them when the device list changes.
-            self._update_unavailable_device_issues(data.keys())
+            return data
+        # Setup starts tracking missing devices; after that, update every poll so the
+        # grace period can expire.
+        self._update_unavailable_device_issues(set(data))
+        # Keep the last known state through a short outage of the device list, the same
+        # number of polls as failed requests.
+        self._missing_polls = {
+            device_id: self._missing_polls.get(device_id, 0) + 1
+            for device_id in self.data.keys() - data.keys()
+        }
+        for device_id, missing_polls in self._missing_polls.items():
+            if missing_polls < MAX_RETRIES:
+                _LOGGER.debug("Device %s missing from device list, keeping last known state", device_id)
+                data[device_id] = self.data[device_id]
+        if data.keys() != self.data.keys():
             new_device_ids = data.keys() - self._setup_device_ids
             # A device that is back after being deleted in Home Assistant (e.g. from its
             # repair) has no entities either.
-            deleted_device_ids = (data.keys() - self.data.keys() - new_device_ids) - self._registered_device_ids()
+            deleted_device_ids = (data.keys() - self.data.keys() - new_device_ids) - self._registered_devices().keys()
             if reload_device_ids := new_device_ids | deleted_device_ids:
                 _LOGGER.info("New ConnectLife devices %s, reloading", ", ".join(sorted(reload_device_ids)))
                 # Only reload once; the reload creates a new coordinator.
@@ -118,11 +139,11 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
                 self.hass.config_entries.async_schedule_reload(self.config_entry.entry_id)
         return data
 
-    def _registered_device_ids(self) -> set[str]:
-        """Return the IDs of the devices registered for this config entry."""
+    def _registered_devices(self) -> dict[str, dr.DeviceEntry]:
+        """Return the devices registered for this config entry, keyed by ConnectLife device ID."""
         device_reg = dr.async_get(self.hass)
         return {
-            device_id
+            device_id: device
             for device in dr.async_entries_for_config_entry(device_reg, self.config_entry.entry_id)
             for (domain, device_id) in device.identifiers
             if domain == DOMAIN
@@ -169,35 +190,48 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
         self._update_unavailable_device_issues(self.data.keys())
 
     def _update_unavailable_device_issues(self, device_ids: Iterable[str]) -> None:
-        """Create a repair issue for each registered device missing from the device list.
+        """Create a repair issue for each registered device missing from the device list
+        for longer than UNAVAILABLE_DEVICE_GRACE_PERIOD.
 
         Clears the issue again for devices that are back.
         """
         device_ids = set(device_ids)
-        device_reg = dr.async_get(self.hass)
-        for device in dr.async_entries_for_config_entry(device_reg, self.config_entry.entry_id):
-            for (domain, device_id) in device.identifiers:
-                if domain == DOMAIN:
-                    if device_id not in device_ids:
-                        _LOGGER.warning("Unavailable device: %s", device.name)
-                        ir.async_create_issue(
-                            self.hass,
-                            DOMAIN,
-                            f"unavailable_device.{device_id}",
-                            data={
-                                "device_id": device.id,
-                                "device_name": device.name,
-                            },
-                            is_fixable=True,
-                            severity=ir.IssueSeverity.WARNING,
-                            translation_key="unavailable_device",
-                            translation_placeholders={
-                                "device_name": device.name or "",
-                            },
-                        )
-                    else:
-                        # Self repair
-                        ir.async_delete_issue(self.hass, DOMAIN, f"unavailable_device.{device_id}")
+        devices = self._registered_devices()
+        now = monotonic()
+        self._missing_since = {
+            device_id: self._missing_since.get(device_id, now)
+            for device_id in devices.keys() - device_ids
+        }
+        issue_reg = ir.async_get(self.hass)
+        for device_id, device in devices.items():
+            issue_id = f"unavailable_device.{device_id}"
+            issue = issue_reg.async_get_issue(DOMAIN, issue_id)
+            if device_id in device_ids:
+                if issue is not None:
+                    # Self repair
+                    ir.async_delete_issue(self.hass, DOMAIN, issue_id)
+                continue
+            if now - self._missing_since[device_id] < UNAVAILABLE_DEVICE_GRACE_PERIOD.total_seconds():
+                continue
+            # Issues restored at startup are inactive until created again.
+            if issue is not None and issue.active:
+                continue
+            _LOGGER.warning("Unavailable device: %s", device.name)
+            ir.async_create_issue(
+                self.hass,
+                DOMAIN,
+                issue_id,
+                data={
+                    "device_id": device.id,
+                    "device_name": device.name,
+                },
+                is_fixable=True,
+                severity=ir.IssueSeverity.WARNING,
+                translation_key="unavailable_device",
+                translation_placeholders={
+                    "device_name": device.name or "",
+                },
+            )
 
     async def find_orphaned_statistics(self) -> list[str]:
         """Return entity_ids of our sensors with stored LTS but no current ``state_class``.
