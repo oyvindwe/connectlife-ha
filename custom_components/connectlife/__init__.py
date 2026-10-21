@@ -137,3 +137,9 @@ async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         hass.data[DOMAIN].pop(f"{entry.entry_id}_statistics", None)
 
     return unload_ok
+
+
+async def async_remove_entry(hass: HomeAssistant, entry: ConfigEntry) -> None:
+    """Remove a config entry."""
+    # Status properties seen per device; kept across reloads (see coordinator).
+    hass.data.get(DOMAIN, {}).pop(f"{entry.entry_id}_status_keys", None)
