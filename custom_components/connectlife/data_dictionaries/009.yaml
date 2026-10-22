@@ -440,6 +440,8 @@ properties:
   - property: t_temp
     climate:
       target: target_temperature
+      # Reported in modes without a setpoint, e.g. dry (#772).
+      unknown_value: 0
       max_value:
         celsius: 32
         fahrenheit: 90

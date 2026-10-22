@@ -377,8 +377,15 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
         })
 
     def add_target_temperature(self, request: dict[str, int | float]) -> dict[str, int | float]:
-        if TARGET_TEMPERATURE in self.target_map and self._attr_target_temperature is not None:
-            request[self.target_map[TARGET_TEMPERATURE]] = self.round_temperature(self._attr_target_temperature)
+        # Some ACs report a target of 0 in modes without a setpoint (e.g. dry), and reject
+        # the whole command if it is sent back, so only send a target within the limits.
+        target = self._attr_target_temperature
+        if (
+            TARGET_TEMPERATURE in self.target_map
+            and target is not None
+            and self.min_temp <= target <= self.max_temp
+        ):
+            request[self.target_map[TARGET_TEMPERATURE]] = self.round_temperature(target)
         return request
 
     def round_temperature(self, temperature: float) -> int | float:
