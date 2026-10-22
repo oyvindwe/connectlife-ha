@@ -315,6 +315,10 @@ properties:
     switch:
       device_class: switch
     icon: mdi:snowflake-thermometer
+    # Only in heat mode.
+    available_when:
+      t_power: 1
+      t_work_mode: 1
   - property: t_beep
     binary_sensor:
       options:
@@ -335,10 +339,18 @@ properties:
     switch:
       device_class: switch
     icon: mdi:leaf
+    # Not in auto mode.
+    available_when:
+      t_power: 1
+      t_work_mode: [0, 1, 2, 3]
   - property: t_fan_mute
     switch:
       device_class: switch
     icon: mdi:volume-variant-off
+    # Not in dry or auto mode.
+    available_when:
+      t_power: 1
+      t_work_mode: [0, 1, 2]
   - property: t_fan_speed
     climate:
       target: fan_mode
@@ -391,6 +403,10 @@ properties:
     switch:
       device_class: switch
     icon: mdi:run-fast
+    # Only in heat or cool mode.
+    available_when:
+      t_power: 1
+      t_work_mode: [1, 2]
   - property: t_swing_follow
     select:
       options:
