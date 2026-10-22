@@ -1,1 +1,5 @@
 blank_issues_enabled: false
+contact_links:
+  - name: Question or help
+    url: https://github.com/oyvindwe/connectlife-ha/discussions/categories/q-a
+    about: Ask how to set up or use the integration.
