@@ -3,9 +3,17 @@
     "abort": {
       "already_configured": "L\u2019appareil est d\u00e9j\u00e0 configur\u00e9",
       "already_configured_elsewhere": "Les appareils de ce compte sont d\u00e9j\u00e0 configur\u00e9s dans une autre entr\u00e9e ConnectLife. Pour changer la m\u00e9thode de connexion de cette entr\u00e9e, choisissez Reconfigurer sur celle-ci. Pour la remplacer par une nouvelle entr\u00e9e, d\u00e9sactivez-la d'abord.",
+      "authorize_url_timeout": "D\u00e9lai d\u00e9pass\u00e9 lors de la g\u00e9n\u00e9ration de l'URL d'autorisation.",
       "cannot_connect": "\u00c9chec de l\u2019\u00e9tablissement de la connexion",
+      "missing_configuration": "Le composant n'est pas configur\u00e9. Veuillez suivre la documentation.",
+      "no_url_available": "Aucune URL disponible. Pour plus d'informations sur cette erreur, [consultez la section d'aide]({docs_url})",
+      "oauth_error": "Donn\u00e9es de jeton re\u00e7ues non valides.",
+      "oauth_failed": "Erreur lors de l'obtention du jeton d'acc\u00e8s.",
+      "oauth_timeout": "D\u00e9lai d\u00e9pass\u00e9 lors de l'obtention du jeton OAuth.",
+      "oauth_unauthorized": "Erreur d'autorisation OAuth lors de l'obtention du jeton d'acc\u00e8s.",
       "reauth_successful": "La r\u00e9-authentification a r\u00e9ussi",
-      "reconfigure_successful": "La reconfiguration a r\u00e9ussi"
+      "reconfigure_successful": "La reconfiguration a r\u00e9ussi",
+      "user_rejected_authorize": "Liaison du compte refus\u00e9e : {error}"
     },
     "error": {
       "already_configured_elsewhere": "Les appareils de ce compte sont d\u00e9j\u00e0 configur\u00e9s dans une autre entr\u00e9e ConnectLife. Pour changer la m\u00e9thode de connexion de cette entr\u00e9e, choisissez Reconfigurer sur celle-ci. Pour la remplacer par une nouvelle entr\u00e9e, d\u00e9sactivez-la d'abord.",
@@ -40,6 +48,9 @@
           "development_mode": "Se connecter \u00e0 un serveur de test local au lieu de l\u2019API ConnectLife. Pour le d\u00e9veloppement uniquement.",
           "trir": "\u00c0 activer uniquement si vous vous connectez avec l\u2019application ConnectLife.TRIR utilis\u00e9e en Russie/CEI."
         }
+      },
+      "pick_implementation": {
+        "title": "Choisir la m\u00e9thode d'authentification"
       },
       "reauth_confirm": {
         "data": {

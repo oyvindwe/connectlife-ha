@@ -3,9 +3,17 @@
     "abort": {
       "already_configured": "Apparaat is al geconfigureerd",
       "already_configured_elsewhere": "De apparaten van dit account zijn al ingesteld in een andere ConnectLife-vermelding. Kies Herconfigureer bij die vermelding om te wijzigen hoe die inlogt. Schakel die vermelding eerst uit om haar door een nieuwe te vervangen.",
+      "authorize_url_timeout": "Time-out bij het genereren van de autorisatie-URL.",
       "cannot_connect": "Verbinding mislukt",
+      "missing_configuration": "Het component is niet geconfigureerd. Volg de documentatie.",
+      "no_url_available": "Geen URL beschikbaar. Zie [de helpsectie]({docs_url}) voor informatie over deze fout.",
+      "oauth_error": "Ongeldige tokengegevens ontvangen.",
+      "oauth_failed": "Fout bij het ophalen van het toegangstoken.",
+      "oauth_timeout": "Time-out bij het ophalen van het OAuth-token.",
+      "oauth_unauthorized": "OAuth-autorisatiefout bij het ophalen van het toegangstoken.",
       "reauth_successful": "Opnieuw authenticeren is gelukt",
-      "reconfigure_successful": "Opnieuw configureren is gelukt"
+      "reconfigure_successful": "Opnieuw configureren is gelukt",
+      "user_rejected_authorize": "Accountkoppeling geweigerd: {error}"
     },
     "error": {
       "already_configured_elsewhere": "De apparaten van dit account zijn al ingesteld in een andere ConnectLife-vermelding. Kies Herconfigureer bij die vermelding om te wijzigen hoe die inlogt. Schakel die vermelding eerst uit om haar door een nieuwe te vervangen.",
@@ -40,6 +48,9 @@
           "development_mode": "Verbinden met een lokale testserver in plaats van de ConnectLife API. Alleen voor ontwikkeling.",
           "trir": "Alleen inschakelen als je inlogt met de ConnectLife.TRIR-app die in Rusland/GOS wordt gebruikt."
         }
+      },
+      "pick_implementation": {
+        "title": "Kies de authenticatiemethode"
       },
       "reauth_confirm": {
         "data": {

@@ -3,9 +3,17 @@
     "abort": {
       "already_configured": "Enheten er allerede konfigurert",
       "already_configured_elsewhere": "Enhetene p\u00e5 denne kontoen er allerede satt opp i en annen ConnectLife-oppf\u00f8ring. Velg Rekonfigurer p\u00e5 den oppf\u00f8ringen for \u00e5 endre hvordan den logger inn. Deaktiver den f\u00f8rst for \u00e5 erstatte den med en ny oppf\u00f8ring.",
+      "authorize_url_timeout": "Tidsavbrudd under generering av autoriserings-URL.",
       "cannot_connect": "Kunne ikke koble til",
+      "missing_configuration": "Komponenten er ikke konfigurert. F\u00f8lg dokumentasjonen.",
+      "no_url_available": "Ingen URL tilgjengelig. Se [hjelpeseksjonen]({docs_url}) for informasjon om denne feilen.",
+      "oauth_error": "Mottok ugyldige tokendata.",
+      "oauth_failed": "Feil ved henting av tilgangstoken.",
+      "oauth_timeout": "Tidsavbrudd ved henting av OAuth-token.",
+      "oauth_unauthorized": "OAuth-autoriseringsfeil ved henting av tilgangstoken.",
       "reauth_successful": "Re-autentisering var vellykket",
-      "reconfigure_successful": "Rekonfigureringen var vellykket"
+      "reconfigure_successful": "Rekonfigureringen var vellykket",
+      "user_rejected_authorize": "Kontokobling avvist: {error}"
     },
     "error": {
       "already_configured_elsewhere": "Enhetene p\u00e5 denne kontoen er allerede satt opp i en annen ConnectLife-oppf\u00f8ring. Velg Rekonfigurer p\u00e5 den oppf\u00f8ringen for \u00e5 endre hvordan den logger inn. Deaktiver den f\u00f8rst for \u00e5 erstatte den med en ny oppf\u00f8ring.",
@@ -40,6 +48,9 @@
           "development_mode": "Koble til en lokal testserver i stedet for ConnectLife-API-et. Kun for utvikling.",
           "trir": "Aktiver kun hvis du logger inn med ConnectLife.TRIR-appen som brukes i Russland/SUS."
         }
+      },
+      "pick_implementation": {
+        "title": "Velg autentiseringsmetode"
       },
       "reauth_confirm": {
         "data": {
