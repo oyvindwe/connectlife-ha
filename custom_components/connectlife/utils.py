@@ -107,6 +107,9 @@ def to_unit(unit: str | None, appliance: ConnectLifeAppliance, dictionary: Dicti
     if unit.startswith("property."):
         unit_property_name = unit[9:]
         if unit_property_name in dictionary.properties:
+            if unit_property_name not in appliance.status_list:
+                # Not reported (yet); a later status with it reloads the entry.
+                return None
             unit_value = appliance.status_list[unit_property_name]
             unit_property = dictionary.properties[unit_property_name]
             if has_platform(Platform.CLIMATE, unit_property):

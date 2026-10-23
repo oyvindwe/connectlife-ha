@@ -26,6 +26,7 @@ def _appliance(status_list: dict) -> SimpleNamespace:
         device_feature_name="Test feature",
         offline_state=1,
         status_list=status_list,
+        status_list_cached=True,
     )
 
 
@@ -82,6 +83,7 @@ async def test_appliance_diagnostics_reports_mapping_without_private_data(build_
     assert result["unmapped_properties"] == ["f_unknown", "mac"]
     assert result["options"] == {CONF_EXPOSE_OFFLINE_STATE: True}
     assert result["status_list"]["mac"] == "**REDACTED**"
+    assert result["status_list_cached"] is True
     for key in ("static_data", "system_data", "self_check", "hour_power", "property_list"):
         assert result[key] == {}
     text = repr(result)

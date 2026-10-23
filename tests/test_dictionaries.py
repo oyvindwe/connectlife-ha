@@ -2,6 +2,12 @@
 
 from __future__ import annotations
 
+from types import SimpleNamespace
+
+from homeassistant.const import UnitOfTemperature
+
+from custom_components.connectlife.utils import to_unit
+
 from custom_components.connectlife.dictionaries import (
     Button,
     Property,
@@ -538,3 +544,19 @@ def test_included_values(build_dictionary):
     assert d.included_values({"Mode": 0, "Spin": 3}, status) == {}
     # No include, nothing added.
     assert d.included_values({"t_fan_mute": 0}, status) == {}
+
+
+def test_to_unit_from_unreported_property_is_none(build_dictionary) -> None:
+    dictionary = build_dictionary(
+        base={
+            "properties": [
+                {"property": "t_temp", "sensor": {"unit": "property.t_temp_type"}},
+                {"property": "t_temp_type", "sensor": {"device_class": "enum", "options": {0: "°C", 1: "°F"}}},
+            ]
+        }
+    )
+    appliance = SimpleNamespace(status_list={"t_temp": 22})
+
+    assert to_unit("property.t_temp_type", appliance, dictionary) is None  # type: ignore[arg-type]
+    appliance.status_list["t_temp_type"] = 1
+    assert to_unit("property.t_temp_type", appliance, dictionary) == UnitOfTemperature.FAHRENHEIT  # type: ignore[arg-type]

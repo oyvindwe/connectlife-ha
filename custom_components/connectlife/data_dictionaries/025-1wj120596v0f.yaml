@@ -35,3 +35,12 @@ properties:
       8: drying
       10: finished
       11: delay_start_waiting
+- property: ApplicationPermissions
+  # Observed on this machine: 2 with remote control off, 3 with it on.
+  optional: false
+  sensor:
+    device_class: enum
+    options:
+      2: disabled
+      3: enabled
+    read_only: true

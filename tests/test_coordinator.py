@@ -9,7 +9,8 @@ import dataclasses
 from datetime import timedelta
 
 from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, issue_registry as ir
+from homeassistant.const import Platform
+from homeassistant.helpers import device_registry as dr, entity_registry as er, issue_registry as ir
 from pytest_homeassistant_custom_component.common import MockConfigEntry
 
 from custom_components.connectlife.const import DOMAIN
@@ -30,14 +31,17 @@ def _coordinator() -> tuple[ConnectLifeCoordinator, MagicMock]:
     coordinator.error_count = 0
     coordinator._setup_device_ids = None
     coordinator._missing_polls = {}
+    coordinator._setup_status_keys = {}
     schedule_reload = MagicMock()
     coordinator.hass = SimpleNamespace(data={}, config_entries=SimpleNamespace(async_schedule_reload=schedule_reload))
     coordinator.config_entry = SimpleNamespace(entry_id="entry-1")
     return coordinator, schedule_reload
 
 
-async def _poll(coordinator: ConnectLifeCoordinator, *device_ids: str):
-    coordinator.api.appliances = [SimpleNamespace(device_id=d) for d in device_ids]
+async def _poll(coordinator: ConnectLifeCoordinator, *device_ids: str, status: dict[str, dict[str, int]] | None = None):
+    coordinator.api.appliances = [
+        SimpleNamespace(device_id=d, status_list=(status or {}).get(d, {})) for d in device_ids
+    ]
     with patch("custom_components.connectlife.coordinator.terms_accepted"):
         # DataUpdateCoordinator stores the result as `data` after each refresh.
         coordinator.data = await coordinator._async_update_data()
@@ -178,3 +182,116 @@ async def test_inactive_unavailable_device_issue_is_created_again(hass: HomeAssi
 
     assert issue_reg.issues[key].active
     logger.warning.assert_called_once()
+
+
+async def test_new_status_property_schedules_one_reload() -> None:
+    coordinator, schedule_reload = _coordinator()
+
+    await _poll(coordinator, "a", status={"a": {"t_power": 1}})
+    await _poll(coordinator, "a", status={"a": {"t_power": 1, "t_work_mode": 2}})
+    schedule_reload.assert_called_once_with("entry-1")
+
+    # Partial status again, then the full status: already seen, so no new reload.
+    await _poll(coordinator, "a", status={"a": {"t_power": 1}})
+    await _poll(coordinator, "a", status={"a": {"t_power": 1, "t_work_mode": 2}})
+    schedule_reload.assert_called_once()
+
+
+async def test_partial_status_at_setup_after_reload_schedules_one_reload() -> None:
+    coordinator, schedule_reload = _coordinator()
+    await _poll(coordinator, "a", status={"a": {"t_power": 1, "t_work_mode": 2}})
+
+    # Reloaded for another reason, and set up from a partial status.
+    reloaded, _ = _coordinator()
+    reloaded.hass = coordinator.hass
+    await _poll(reloaded, "a", status={"a": {"t_power": 1}})
+    await _poll(reloaded, "a", status={"a": {"t_power": 1, "t_work_mode": 2}})
+    schedule_reload.assert_called_once_with("entry-1")
+
+    # Set up from a partial status again: the same status doesn't reload again.
+    reloaded_again, _ = _coordinator()
+    reloaded_again.hass = coordinator.hass
+    await _poll(reloaded_again, "a", status={"a": {"t_power": 1}})
+    await _poll(reloaded_again, "a", status={"a": {"t_power": 1, "t_work_mode": 2}})
+    schedule_reload.assert_called_once()
+
+
+async def test_varying_partial_status_reloads_once_complete() -> None:
+    coordinator, schedule_reload = _coordinator()
+
+    await _poll(coordinator, "a", status={"a": {"x": 1}})
+    await _poll(coordinator, "a", status={"a": {"y": 1}})
+    await _poll(coordinator, "a", status={"a": {"x": 1, "z": 1}})
+    schedule_reload.assert_not_called()
+
+    await _poll(coordinator, "a", status={"a": {"x": 1, "y": 1, "z": 1}})
+    schedule_reload.assert_called_once_with("entry-1")
+
+
+async def test_new_device_with_status_schedules_one_reload() -> None:
+    coordinator, schedule_reload = _coordinator()
+
+    await _poll(coordinator, "a", status={"a": {"t_power": 1}})
+    await _poll(coordinator, "a", "b", status={"a": {"t_power": 1}, "b": {"t_power": 1}})
+
+    schedule_reload.assert_called_once_with("entry-1")
+
+
+async def _cleanup(hass: HomeAssistant, build_dictionary, status_list: dict[str, int]) -> set[str]:
+    """Set up registry entities for device "a", run the cleanup, and return the unique IDs left."""
+    build_dictionary(
+        base={
+            "properties": [
+                {"property": "t_temp", "sensor": {}},
+                {"property": "t_mode", "sensor": {}},
+                {"property": "t_gone", "disable": True},
+            ]
+        }
+    )
+    entry = MockConfigEntry(domain=DOMAIN)
+    entry.add_to_hass(hass)
+    device = dr.async_get(hass).async_get_or_create(
+        config_entry_id=entry.entry_id, identifiers={(DOMAIN, "a")}, name="a"
+    )
+    entity_reg = er.async_get(hass)
+    for name in ("t_temp", "t_mode", "t_gone", "t_unknown", "daily_energy_kwh"):
+        entity_reg.async_get_or_create(
+            "sensor", DOMAIN, f"a-{name}", config_entry=entry, device_id=device.id
+        )
+    coordinator = ConnectLifeCoordinator.__new__(ConnectLifeCoordinator)
+    coordinator.hass = hass
+    coordinator.config_entry = entry
+    coordinator._missing_since = {}
+    # Entities created at setup: the mapped, reported properties.
+    coordinator.entities = {
+        f"a-{name}": Platform.SENSOR for name in ("t_temp", "t_mode") if name in status_list
+    }
+    coordinator.data = {
+        "a": SimpleNamespace(
+            device_type_code="999", device_feature_code="000", device_nickname="a",
+            status_list=status_list,
+        )
+    }
+
+    await coordinator.cleanup_removed_entities()
+
+    return {e.unique_id for e in er.async_entries_for_config_entry(entity_reg, entry.entry_id)}
+
+
+async def test_cleanup_removes_entities_no_longer_mapped(hass: HomeAssistant, build_dictionary) -> None:
+    # t_gone is disabled in the mapping, t_unknown is no longer created, and the
+    # statistics sensor is not enabled.
+    assert await _cleanup(
+        hass, build_dictionary, {"t_temp": 21, "t_mode": 1, "t_gone": 1, "t_unknown": 0}
+    ) == {"a-t_temp", "a-t_mode"}
+
+
+async def test_cleanup_keeps_entities_of_device_with_partial_status(hass: HomeAssistant, build_dictionary) -> None:
+    # t_mode is not reported, so the status is partial and nothing is removed.
+    assert await _cleanup(hass, build_dictionary, {"t_temp": 21, "t_gone": 1, "t_unknown": 0}) == {
+        "a-t_temp",
+        "a-t_mode",
+        "a-t_gone",
+        "a-t_unknown",
+        "a-daily_energy_kwh",
+    }
