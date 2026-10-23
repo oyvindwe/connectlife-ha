@@ -1,3 +1,4 @@
+device_type_name: Air conditioner
 statistics:
   source: air_duct_energy
   daily_energy_kwh: true

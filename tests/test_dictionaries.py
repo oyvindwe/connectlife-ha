@@ -12,6 +12,7 @@ from custom_components.connectlife.dictionaries import (
     Button,
     Property,
     Sensor,
+    _load_yaml,
     _merge_property,
 )
 
@@ -560,3 +561,48 @@ def test_to_unit_from_unreported_property_is_none(build_dictionary) -> None:
     assert to_unit("property.t_temp_type", appliance, dictionary) is None  # type: ignore[arg-type]
     appliance.status_list["t_temp_type"] = 1
     assert to_unit("property.t_temp_type", appliance, dictionary) == UnitOfTemperature.FAHRENHEIT  # type: ignore[arg-type]
+
+
+def test_device_type_name_read_from_base(build_dictionary):
+    dictionary = build_dictionary(
+        base={"device_type_name": "Washing machine", "properties": _MINIMAL_PROPS},
+    )
+
+    assert dictionary.device_type_name == "Washing machine"
+
+
+def test_device_type_name_overridden_by_feature_file(build_dictionary):
+    dictionary = build_dictionary(
+        base={"device_type_name": "Washing machine", "properties": _MINIMAL_PROPS},
+        sub={"device_type_name": "Washer dryer", "properties": _MINIMAL_PROPS},
+    )
+
+    assert dictionary.device_type_name == "Washer dryer"
+
+
+def test_device_type_name_absent(build_dictionary):
+    dictionary = build_dictionary(base={"properties": _MINIMAL_PROPS})
+
+    assert dictionary.device_type_name is None
+
+
+def test_default_mapping_files_carry_device_type_name():
+    """Every shipped base mapping file declares a generic device type name."""
+    from os import listdir
+    from os.path import dirname, join
+
+    import custom_components.connectlife.dictionaries as dictionaries_module
+
+    base_dir = join(dirname(dictionaries_module.__file__), "data_dictionaries")
+    base_files = sorted(
+        name for name in listdir(base_dir)
+        if name.endswith(".yaml") and "-" not in name.removesuffix(".yaml")
+    )
+    assert base_files
+    for name in base_files:
+        found, data = _load_yaml("data_dictionaries/" + name)
+        assert found, name
+        value = (data or {}).get("device_type_name")
+        assert isinstance(value, str) and value.strip(), (
+            name + ": missing non-empty top-level device_type_name"
+        )

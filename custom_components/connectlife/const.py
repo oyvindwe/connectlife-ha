@@ -51,28 +51,3 @@ TARGET_TEMPERATURE = "target_temperature"
 TEMPERATURE_UNIT = "temperature_unit"
 
 SW_VERSION_PROPERTY = "oem_host_version"
-
-# Generic English device type names by ConnectLife device type code, used as a
-# readable model fallback when the cloud reports a market name the user cannot
-# read. Codes and names follow DEVICES.md.
-DEVICE_TYPE_NAMES = {
-    "003": "Washing machine",
-    "004": "Tumble dryer",
-    "006": "Portable air conditioner",
-    "007": "Dehumidifier",
-    "008": "Air conditioner",
-    "009": "Air conditioner",
-    "010": "Induction hob",
-    "012": "Hood",
-    "013": "Oven",
-    "015": "Dishwasher",
-    "016": "Heat pump",
-    "020": "Induction hob",
-    "023": "Oven",
-    "025": "Washing machine",
-    "026": "Refrigerator",
-    "027": "Washing machine",
-    "030": "Tumble dryer",
-    "032": "Tumble dryer",
-    "034": "Wine cooler",
-}

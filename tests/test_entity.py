@@ -13,7 +13,7 @@ from homeassistant.exceptions import ServiceValidationError
 
 from custom_components.connectlife.button import ConnectLifeButton
 from custom_components.connectlife.climate import ConnectLifeClimate
-from custom_components.connectlife.dictionaries import Button
+from custom_components.connectlife.dictionaries import Button, Dictionary, Dictionaries
 from custom_components.connectlife.entity import ConnectLifeEntity, _contains_cjk
 from custom_components.connectlife.switch import ConnectLifeSwitch
 
@@ -150,18 +150,36 @@ def _entity(feature_name: str, type_code: str = "009", feature_code: str = "104"
     return _TestEntity(coordinator, appliance, "model-test", Platform.CLIMATE)
 
 
-def test_cjk_model_name_falls_back_to_device_type_name() -> None:
-    """A Chinese/Japanese market name becomes the generic English device type name."""
-    entity = _entity("104冷暖节能无功率")
+def _seed_dictionary(type_code: str, feature_code: str, **fields) -> str:
+    """Seed a stub Dictionary for the CJK fallback tests; returns the cache key."""
+    key = f'{type_code}-{feature_code}'
+    Dictionaries.dictionaries.pop(key, None)
+    Dictionaries.dictionaries[key] = Dictionary(
+        climate=None, properties={}, buttons=[], **fields
+    )
+    return key
 
-    assert entity._attr_device_info["model"] == "Air conditioner"
+
+def test_cjk_model_name_falls_back_to_device_type_name() -> None:
+    """A Chinese/Japanese market name becomes the device type's generic name."""
+    key = _seed_dictionary("009", "104", device_type_name="Air conditioner")
+    try:
+        entity = _entity("104冷暖节能无功率")
+
+        assert entity._attr_device_info["model"] == "Air conditioner"
+    finally:
+        Dictionaries.dictionaries.pop(key, None)
 
 
 def test_cjk_model_name_with_unknown_type_falls_back_to_connectlife_code() -> None:
-    """Type codes missing from DEVICE_TYPE_NAMES keep an identifier, without the raw market name."""
-    entity = _entity("冷暖無功率", type_code="099", feature_code="123")
+    """Types without a mapping keep an identifier, without the raw market name."""
+    key = _seed_dictionary("099", "123")
+    try:
+        entity = _entity("冷暖無功率", type_code="099", feature_code="123")
 
-    assert entity._attr_device_info["model"] == "ConnectLife 099"
+        assert entity._attr_device_info["model"] == "ConnectLife 099"
+    finally:
+        Dictionaries.dictionaries.pop(key, None)
 
 
 def test_non_cjk_model_name_is_kept() -> None:

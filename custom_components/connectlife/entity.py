@@ -18,7 +18,6 @@ from .const import (
     CONF_DEVICES,
     CONF_DISABLE_BEEP,
     CONF_EXPOSE_OFFLINE_STATE,
-    DEVICE_TYPE_NAMES,
     DOMAIN,
     SW_VERSION_PROPERTY,
 )
@@ -80,14 +79,12 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
         sw_version = appliance.status_list.get(SW_VERSION_PROPERTY)
         # Chinese/Japanese market names (e.g. an air conditioner reporting
         # '104冷暖节能无功率') make poor model names for most users. Fall back
-        # to the generic English device type name from DEVICES.md; the
-        # type/feature codes stay visible in hw_version.
+        # to the generic English device type name from the device type's
+        # mapping file; the type/feature codes stay visible in hw_version.
         model = appliance.device_feature_name
         if model and _contains_cjk(model):
-            model = DEVICE_TYPE_NAMES.get(
-                appliance.device_type_code,
-                f'ConnectLife {appliance.device_type_code}',
-            )
+            dictionary = Dictionaries.get_dictionary(appliance)
+            model = dictionary.device_type_name or f'ConnectLife {appliance.device_type_code}'
         self._attr_device_info = DeviceInfo(
             identifiers={(DOMAIN, appliance.device_id)},
             model=model,

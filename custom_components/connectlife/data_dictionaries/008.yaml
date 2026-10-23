@@ -1,4 +1,5 @@
 # Window air conditioner
+device_type_name: Window air conditioner
 statistics:
   source: air_duct_energy
   daily_energy_kwh: true

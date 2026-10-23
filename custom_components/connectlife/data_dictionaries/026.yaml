@@ -1,4 +1,5 @@
 # Refrigerator
+device_type_name: Refrigerator
 statistics:
   source: energy_consumption_curve
   daily_energy_kwh: true
