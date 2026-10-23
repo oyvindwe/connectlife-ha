@@ -2003,6 +2003,9 @@
       "light_on": {
         "name": "Zapnout sv\u011btlo"
       },
+      "open_door": {
+        "name": "Otev\u0159\u00edt dv\u00ed\u0159ka"
+      },
       "pause": {
         "name": "Pozastavit"
       },
@@ -9075,7 +9078,7 @@
         },
         "step": {
           "confirm": {
-            "description": "ConnectLife odm\u00edt\u00e1 p\u0159ihl\u00e1\u0161en\u00ed pro \u201e{title}\u201c, dokud nejsou p\u0159ijaty aktualizovan\u00e9 obchodn\u00ed podm\u00ednky. Op\u011btovn\u00e9 zad\u00e1n\u00ed hesla nepom\u016f\u017ee.\n\n1. Otev\u0159ete mobiln\u00ed aplikaci ConnectLife a p\u0159epn\u011bte jazyk aplikace na **angli\u010dtinu**.\n2. Aplikaci vynucen\u011b ukon\u010dete (nesta\u010d\u00ed ji jen poslat do pozad\u00ed) a znovu ji otev\u0159ete.\n3. Po vyzv\u00e1n\u00ed p\u0159ijm\u011bte nov\u00e9 obchodn\u00ed podm\u00ednky.\n4. Vyberte **Odeslat** pro okam\u017eit\u00fd nov\u00fd pokus. Jinak se integrace pokus\u00ed znovu ka\u017ed\u00fdch 15 minut.\n\nJazyk aplikace m\u016f\u017eete pot\u00e9 zm\u011bnit zp\u011bt. Zm\u011bna jazyka je nutn\u00e1, proto\u017ee aplikace m\u016f\u017ee v\u00fdzvu p\u0159esko\u010dit, pokud podm\u00ednky je\u0161t\u011b nejsou p\u0159elo\u017eeny do va\u0161eho jazyka. [V\u00edce informac\u00ed]({url})",
+            "description": "ConnectLife odm\u00edt\u00e1 p\u0159ihl\u00e1\u0161en\u00ed pro \u201e{title}\u201c, dokud nejsou p\u0159ijaty aktualizovan\u00e9 obchodn\u00ed podm\u00ednky. Op\u011btovn\u00e9 zad\u00e1n\u00ed hesla nepom\u016f\u017ee.\n\n1. Otev\u0159ete mobiln\u00ed aplikaci ConnectLife a p\u0159epn\u011bte jazyk aplikace na **angli\u010dtinu**.\n2. Aplikaci vynucen\u011b ukon\u010dete (nesta\u010d\u00ed ji jen poslat do pozad\u00ed) a znovu ji otev\u0159ete.\n3. Po vyzv\u00e1n\u00ed p\u0159ijm\u011bte nov\u00e9 obchodn\u00ed podm\u00ednky.\n4. Vyberte **Odeslat** pro okam\u017eit\u00fd nov\u00fd pokus. Jinak se integrace pokus\u00ed znovu ka\u017ed\u00fdch 15 minut.\n\nJazyk aplikace m\u016f\u017eete pot\u00e9 zm\u011bnit zp\u011bt. Zm\u011bna jazyka je nutn\u00e1, proto\u017ee aplikace m\u016f\u017ee v\u00fdzvu p\u0159esko\u010dit, pokud podm\u00ednky je\u0161t\u011b nejsou p\u0159elo\u017eeny do va\u0161eho jazyka. [V\u00edce informac\u00ed]({url})\n\nP\u0159ihl\u00e1\u0161en\u00ed na webu ConnectLife to m\u016f\u017ee tak\u00e9 vy\u0159e\u0161it: otev\u0159ete integraci ConnectLife a vyberte **\u22ee** \u2192 **P\u0159enastavit**.",
             "title": "P\u0159ijm\u011bte aktualizovan\u00e9 obchodn\u00ed podm\u00ednky ConnectLife"
           }
         }
@@ -9124,6 +9127,9 @@
     }
   },
   "options": {
+    "abort": {
+      "not_loaded": "ConnectLife je\u0161t\u011b nen\u00ed nastaveno. Mo\u017enosti jsou dostupn\u00e9, jakmile se integrace na\u010dte."
+    },
     "step": {
       "configure_device": {
         "data": {

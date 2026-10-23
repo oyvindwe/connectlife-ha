@@ -2003,6 +2003,9 @@
       "light_on": {
         "name": "Uklju\u010di svetlo"
       },
+      "open_door": {
+        "name": "Otvori vrata"
+      },
       "pause": {
         "name": "Pauza"
       },
@@ -9075,7 +9078,7 @@
         },
         "step": {
           "confirm": {
-            "description": "ConnectLife odbija prijavu za \"{title}\" dok se ne prihvate a\u017eurirani Uslovi kori\u0161\u0107enja. Ponovno uno\u0161enje lozinke ne\u0107e pomo\u0107i.\n\n1. Otvorite ConnectLife mobilnu aplikaciju i promenite jezik aplikacije na **English**.\n2. Potpuno zatvorite aplikaciju (ne samo u pozadini), zatim je ponovo otvorite.\n3. Prihvatite nove Uslove kori\u0161\u0107enja kada se pojave.\n4. Izaberite **Po\u0161alji** da poku\u0161ate ponovo sada. U suprotnom integracija poku\u0161ava svakih 15 minuta.\n\nKasnije mo\u017eete vratiti jezik aplikacije. Promena jezika je potrebna jer aplikacija mo\u017ee presko\u010diti obave\u0161tenje ako uslovi jo\u0161 nisu prevedeni na va\u0161 jezik. [Vi\u0161e informacija]({url})",
+            "description": "ConnectLife odbija prijavu za \"{title}\" dok se ne prihvate a\u017eurirani Uslovi kori\u0161\u0107enja. Ponovno uno\u0161enje lozinke ne\u0107e pomo\u0107i.\n\n1. Otvorite ConnectLife mobilnu aplikaciju i promenite jezik aplikacije na **English**.\n2. Potpuno zatvorite aplikaciju (ne samo u pozadini), zatim je ponovo otvorite.\n3. Prihvatite nove Uslove kori\u0161\u0107enja kada se pojave.\n4. Izaberite **Po\u0161alji** da poku\u0161ate ponovo sada. U suprotnom integracija poku\u0161ava svakih 15 minuta.\n\nKasnije mo\u017eete vratiti jezik aplikacije. Promena jezika je potrebna jer aplikacija mo\u017ee presko\u010diti obave\u0161tenje ako uslovi jo\u0161 nisu prevedeni na va\u0161 jezik. [Vi\u0161e informacija]({url})\n\nPrijava na ConnectLife veb-sajtu tako\u0111e mo\u017ee da re\u0161i ovo: otvorite ConnectLife integraciju i izaberite **\u22ee** \u2192 **Ponovo konfiguri\u0161i**.",
             "title": "Prihvatite a\u017eurirane ConnectLife Uslove kori\u0161\u0107enja"
           }
         }
@@ -9124,6 +9127,9 @@
     }
   },
   "options": {
+    "abort": {
+      "not_loaded": "ConnectLife jo\u0161 nije pode\u0161en. Opcije su dostupne kada se integracija u\u010dita."
+    },
     "step": {
       "configure_device": {
         "data": {

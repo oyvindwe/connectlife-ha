@@ -1,4 +1,5 @@
 # Induction hob. Same platform as 010; shared properties are mapped the same way.
+device_type_name: Induction hob
 properties:
   - property: BuiltIn_Hood_status
     hide: true

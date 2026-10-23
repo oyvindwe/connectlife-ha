@@ -355,3 +355,22 @@ async def test_mode_value_sets_read_and_write() -> None:
     ]
     # Sending a mode must not change the mapping.
     assert climate.fan_mode_values["low"] == {"autoFan": 0, "lowFan": 1}
+
+
+def _target_temperature_climate(target: float | None) -> ConnectLifeClimate:
+    climate = ConnectLifeClimate.__new__(ConnectLifeClimate)
+    climate.target_map = {"target_temperature": "t_temp"}
+    climate._attr_target_temperature = target
+    climate._attr_target_temperature_step = 1
+    climate._attr_min_temp = 16
+    climate._attr_max_temp = 32
+    return climate
+
+
+def test_add_target_temperature_sends_target_within_limits() -> None:
+    assert _target_temperature_climate(23).add_target_temperature({"t_power": 1}) == {"t_power": 1, "t_temp": 23}
+
+
+def test_add_target_temperature_skips_target_outside_limits() -> None:
+    assert _target_temperature_climate(0).add_target_temperature({"t_power": 1}) == {"t_power": 1}
+    assert _target_temperature_climate(None).add_target_temperature({"t_power": 1}) == {"t_power": 1}

@@ -130,8 +130,8 @@ Missing features:
 There are two ways to sign in:
 
 - **Sign in on the ConnectLife website.** Home Assistant opens the ConnectLife login page, where you can sign in
-  with your ConnectLife password or with Google, Apple, Facebook or Microsoft, and accept updated Terms &
-  Conditions. Home Assistant doesn't store your password. This requires
+  with your ConnectLife password or with Google, Apple, Facebook or Microsoft. Home Assistant doesn't store your
+  password. This requires
   [My Home Assistant](https://www.home-assistant.io/integrations/my/), which is part of the default configuration.
   So far this has only been tested with accounts in Europe; please report how it works for you elsewhere.
 - **Enter username and password** of a ConnectLife account. The password is stored in Home Assistant.
@@ -160,10 +160,7 @@ silently become unavailable. Home Assistant shows this as the repair issue
 **Accept updated ConnectLife Terms & Conditions**. The integration retries every 15 minutes until the terms are
 accepted; select **Submit** in the repair to retry right away.
 
-If you sign in on the ConnectLife website, select **⋮** → **Reconfigure** on the entry and sign in again; the login
-page should ask you to accept the new terms.
-
-With username and password, you need to accept the new Terms & Conditions in the ConnectLife mobile app:
+Accept the new Terms & Conditions in the ConnectLife mobile app:
 
 1. Open the ConnectLife mobile app
 2. Go to Settings and **change the app language to English**
@@ -176,6 +173,9 @@ With username and password, you need to accept the new Terms & Conditions in the
 The language change is needed because updated Terms & Conditions are often only available in English initially.
 The app skips the acceptance prompt if the translated version for your language doesn't exist yet, but the
 backend still requires acceptance.
+
+Signing in once on the ConnectLife website (**⋮** → **Reconfigure** → **Sign in on the ConnectLife website**) may also
+fix it.
 
 ## Contributing
 

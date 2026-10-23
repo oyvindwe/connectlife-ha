@@ -1,3 +1,4 @@
+device_type_name: Dishwasher
 statistics:
   source: energy_consumption_curve
   daily_energy_kwh: true
@@ -5,6 +6,7 @@ statistics:
 # stop (Actions: 1) and start (Actions: 2) are confirmed across most 015 models.
 # pause (Actions: 3) and open_door (Actions: 4) have no effect on the firmware
 # seen so far, so they are not exposed.
+# On dishwasher-60.3, MDO_on_demand opens the door (see that mapping).
 buttons:
   - key: stop
     icon: mdi:stop

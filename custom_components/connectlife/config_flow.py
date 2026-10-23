@@ -12,8 +12,9 @@ from homeassistant.config_entries import (
     SOURCE_REAUTH,
     SOURCE_RECONFIGURE,
     ConfigEntry,
+    ConfigEntryState,
     ConfigFlowResult,
-    OptionsFlow,
+    OptionsFlowWithReload,
 )
 from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
 from homeassistant.core import callback
@@ -402,7 +403,7 @@ class ConnectLifeConfigFlow(config_entry_oauth2_flow.AbstractOAuth2FlowHandler, 
     @callback
     def async_get_options_flow(
             config_entry: ConfigEntry,
-    ) -> OptionsFlow:
+    ) -> OptionsFlowHandler:
         """Get the options flow for this handler."""
         return OptionsFlowHandler()
 
@@ -419,12 +420,19 @@ class TermsNotAccepted(HomeAssistantError):
     """Error to indicate updated Terms & Conditions must be accepted in the app."""
 
 
-class OptionsFlowHandler(OptionsFlow):
-    """Handles options flow for the component."""
+class OptionsFlowHandler(OptionsFlowWithReload):
+    """Handles options flow for the component.
+
+    Home Assistant reloads the entry when the options change.
+    """
 
     _device_id: str | None = None
 
     async def async_step_init(self, user_input: dict[str, Any] | None = None) -> ConfigFlowResult:
+        # The devices come from the coordinator, which only exists once the entry is set up.
+        if self.config_entry.state is not ConfigEntryState.LOADED:
+            return self.async_abort(reason="not_loaded")
+
         # Select device to configure
         if user_input is not None:
             self._device_id = user_input["device"]

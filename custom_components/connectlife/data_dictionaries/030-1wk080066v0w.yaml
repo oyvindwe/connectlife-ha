@@ -1,1 +1,47 @@
-# Uses default mappings
+# Hisense DH3S802BW3
+# Actions, ApplicationPermissions, machine_status 3 (paused, in 030.yaml) and Door_status verified on the device.
+# Remote start must be enabled on the dryer (ApplicationPermissions: 3) for the buttons to work.
+# Enabling it resets the program to auto, and stop disables it again.
+buttons:
+  - key: start
+    icon: mdi:play
+    available_when:
+      ApplicationPermissions: 3
+    write:
+      Actions: 2
+  - key: pause
+    icon: mdi:pause
+    available_when:
+      ApplicationPermissions: 3
+    write:
+      Actions: 3
+  - key: stop
+    icon: mdi:stop
+    available_when:
+      ApplicationPermissions: 3
+    write:
+      Actions: 1
+properties:
+  - property: ApplicationPermissions
+    icon: mdi:remote
+    optional: false
+    sensor:
+      device_class: enum
+      options:
+        1: disabled
+        3: enabled
+      read_only: true
+  - property: Door_status
+    unavailable: 0
+    binary_sensor:
+      device_class: door
+      options:
+        1: on
+        2: off
+    icon: mdi:door
+  - property: energy
+    # Follows the selected program (e.g. 34 towels, 54 auto), not the energy used.
+    hide: true
+  - property: Selected_program_total_running_time_in_minutes
+    # Same value as Selected_program_total_time_in_minutes.
+    hide: true

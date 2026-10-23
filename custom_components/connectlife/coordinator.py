@@ -2,6 +2,7 @@ import async_timeout
 import logging
 from collections.abc import Iterable, Mapping
 from datetime import timedelta
+from time import monotonic
 
 from connectlife.api import (
     ConnectLifeApi,
@@ -18,7 +19,7 @@ from homeassistant.exceptions import ConfigEntryAuthFailed
 from homeassistant.helpers import device_registry as dr, entity_registry as er, issue_registry as ir
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
-from .const import DATA_STATE_CLASS_MIGRATION_DONE, DOMAIN
+from .const import DATA_STATE_CLASS_MIGRATION_DONE, DOMAIN, OFFLINE_STATE
 from .dictionaries import Dictionaries
 from .messages import format_retry_message
 from .statistics_sources import STATISTICS_SOURCES, enabled_sensors
@@ -26,6 +27,15 @@ from .terms import terms_accepted, terms_not_accepted, terms_retry_throttled
 
 MAX_RETRIES = 3
 STATISTICS_UPDATE_INTERVAL = timedelta(minutes=10)
+# How long a device must be missing from the device list before raising a repair
+# issue. The cloud occasionally returns an incomplete list for a single poll.
+UNAVAILABLE_DEVICE_GRACE_PERIOD = timedelta(minutes=10)
+# Platforms with one entity per status property, named after the property.
+STATUS_PLATFORMS = {Platform.BINARY_SENSOR, Platform.NUMBER, Platform.SELECT, Platform.SENSOR, Platform.SWITCH}
+# Entities on those platforms that are not created from a status property.
+NON_STATUS_ENTITY_NAMES = {OFFLINE_STATE} | {
+    sensor.key for source in STATISTICS_SOURCES.values() for sensor in source.sensors
+}
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -47,6 +57,13 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
         # Device IDs from the first poll. Entities are only created at setup, so a
         # device that shows up later needs a reload of the config entry.
         self._setup_device_ids: set[str] | None = None
+        # Status properties each device reported at setup (or when it first showed up).
+        self._setup_status_keys: dict[str, set[str]] = {}
+        # When (monotonic time) each registered device was first seen missing from the
+        # device list.
+        self._missing_since: dict[str, float] = {}
+        # Consecutive polls each device has been missing from the device list.
+        self._missing_polls: dict[str, int] = {}
         super().__init__(
             hass,
             _LOGGER,
@@ -102,27 +119,74 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
             else:
                 raise UpdateFailed(format_retry_message(err)) from err
         data = {a.device_id: a for a in self.api.appliances}
+        more_status_device_ids = self._devices_with_more_status(data)
         if self._setup_device_ids is None:
             self._setup_device_ids = set(data)
-        elif data.keys() != self.data.keys():
-            # Setup creates the repair issues; after that, update them when the device list changes.
-            self._update_unavailable_device_issues(data.keys())
+            return data
+        # Setup starts tracking missing devices; after that, update every poll so the
+        # grace period can expire.
+        self._update_unavailable_device_issues(set(data))
+        # Keep the last known state through a short outage of the device list, the same
+        # number of polls as failed requests.
+        self._missing_polls = {
+            device_id: self._missing_polls.get(device_id, 0) + 1
+            for device_id in self.data.keys() - data.keys()
+        }
+        for device_id, missing_polls in self._missing_polls.items():
+            if missing_polls < MAX_RETRIES:
+                _LOGGER.debug("Device %s missing from device list, keeping last known state", device_id)
+                data[device_id] = self.data[device_id]
+        reload = False
+        if data.keys() != self.data.keys():
             new_device_ids = data.keys() - self._setup_device_ids
             # A device that is back after being deleted in Home Assistant (e.g. from its
             # repair) has no entities either.
-            deleted_device_ids = (data.keys() - self.data.keys() - new_device_ids) - self._registered_device_ids()
+            deleted_device_ids = (data.keys() - self.data.keys() - new_device_ids) - self._registered_devices().keys()
             if reload_device_ids := new_device_ids | deleted_device_ids:
                 _LOGGER.info("New ConnectLife devices %s, reloading", ", ".join(sorted(reload_device_ids)))
                 # Only reload once; the reload creates a new coordinator.
                 self._setup_device_ids |= new_device_ids
-                self.hass.config_entries.async_schedule_reload(self.config_entry.entry_id)
+                reload = True
+        # Entities are created from the status at setup, so a device that reported only
+        # part of its status then is missing entities and climate modes.
+        if status_device_ids := more_status_device_ids & self._setup_device_ids:
+            _LOGGER.info("New status from ConnectLife devices %s, reloading", ", ".join(sorted(status_device_ids)))
+            reload = True
+        if reload:
+            self.hass.config_entries.async_schedule_reload(self.config_entry.entry_id)
         return data
 
-    def _registered_device_ids(self) -> set[str]:
-        """Return the IDs of the devices registered for this config entry."""
+    def _devices_with_more_status(self, data: Mapping[str, ConnectLifeAppliance]) -> set[str]:
+        """Return the devices that report more status properties than at setup.
+
+        Only counts a device once it reports all properties seen for it so far, so a
+        device sending a different part of its status each poll doesn't reload on every
+        poll. The properties seen, and those that triggered a reload, are kept in
+        hass.data so they survive reloads: each set of properties triggers at most one
+        reload, even if the status at the next setup is partial again.
+        """
+        status_keys = self.hass.data.setdefault(DOMAIN, {}).setdefault(
+            f"{self.config_entry.entry_id}_status_keys", {"seen": {}, "reloaded": {}}
+        )
+        seen: dict[str, set[str]] = status_keys["seen"]
+        reloaded: dict[str, set[str]] = status_keys["reloaded"]
+        result: set[str] = set()
+        for device_id, appliance in data.items():
+            keys = set(appliance.status_list)
+            seen.setdefault(device_id, set()).update(keys)
+            setup_keys = self._setup_status_keys.setdefault(device_id, keys)
+            if keys >= seen[device_id] and not keys <= setup_keys and not keys <= reloaded.get(device_id, set()):
+                result.add(device_id)
+                reloaded[device_id] = keys
+                # The reload creates a new coordinator; don't count this device again.
+                self._setup_status_keys[device_id] = keys
+        return result
+
+    def _registered_devices(self) -> dict[str, dr.DeviceEntry]:
+        """Return the devices registered for this config entry, keyed by ConnectLife device ID."""
         device_reg = dr.async_get(self.hass)
         return {
-            device_id
+            device_id: device
             for device in dr.async_entries_for_config_entry(device_reg, self.config_entry.entry_id)
             for (domain, device_id) in device.identifiers
             if domain == DOMAIN
@@ -148,56 +212,90 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
         device_reg = dr.async_get(self.hass)
         entity_reg = er.async_get(self.hass)
 
+        entities: list[tuple[er.RegistryEntry, str, str]] = []
         for entity in er.async_entries_for_config_entry(
                 entity_reg, self.config_entry.entry_id
         ):
+            if entity.device_id is None:
+                continue
+            device = device_reg.async_get(entity.device_id)
+            if device is None:
+                continue
+            for (domain, device_id) in device.identifiers:
+                if domain == DOMAIN and device_id in self.data:
+                    entities.append((entity, device_id, entity.unique_id.removeprefix(f"{device_id}-")))
+
+        # Status entities are only created for properties the device reports. If the
+        # device does not report all of them now (a partial or missing status list), the
+        # entities created may differ (e.g. which property controls the climate entity),
+        # so don't remove any of its entities.
+        partial_device_ids = {
+            device_id
+            for entity, device_id, name in entities
+            if entity.domain in STATUS_PLATFORMS
+            and name not in NON_STATUS_ENTITY_NAMES
+            and name not in self.data[device_id].status_list
+        }
+        for entity, device_id, name in entities:
+            if device_id in partial_device_ids:
+                continue
             if entity.unique_id not in self.entities or entity.domain != self.entities[entity.unique_id]:
-                if entity.device_id is None:
-                    continue
-                device = device_reg.async_get(entity.device_id)
-                if device is None:
-                    continue
-                for (domain, device_id) in device.identifiers:
-                    if domain == DOMAIN and device_id in self.data:
-                        _LOGGER.info(
-                            "Entity %s (%s) is no longer mapped, removing",
-                            entity.unique_id,
-                            entity.domain
-                        )
-                        entity_reg.async_remove(entity.entity_id)
+                _LOGGER.info(
+                    "Entity %s (%s) is no longer mapped, removing",
+                    entity.unique_id,
+                    entity.domain
+                )
+                entity_reg.async_remove(entity.entity_id)
+        for device_id in sorted(partial_device_ids):
+            _LOGGER.debug("Device %s does not report all its properties, keeping its entities", device_id)
 
         self._update_unavailable_device_issues(self.data.keys())
 
     def _update_unavailable_device_issues(self, device_ids: Iterable[str]) -> None:
-        """Create a repair issue for each registered device missing from the device list.
+        """Create a repair issue for each registered device missing from the device list
+        for longer than UNAVAILABLE_DEVICE_GRACE_PERIOD.
 
         Clears the issue again for devices that are back.
         """
         device_ids = set(device_ids)
-        device_reg = dr.async_get(self.hass)
-        for device in dr.async_entries_for_config_entry(device_reg, self.config_entry.entry_id):
-            for (domain, device_id) in device.identifiers:
-                if domain == DOMAIN:
-                    if device_id not in device_ids:
-                        _LOGGER.warning("Unavailable device: %s", device.name)
-                        ir.async_create_issue(
-                            self.hass,
-                            DOMAIN,
-                            f"unavailable_device.{device_id}",
-                            data={
-                                "device_id": device.id,
-                                "device_name": device.name,
-                            },
-                            is_fixable=True,
-                            severity=ir.IssueSeverity.WARNING,
-                            translation_key="unavailable_device",
-                            translation_placeholders={
-                                "device_name": device.name or "",
-                            },
-                        )
-                    else:
-                        # Self repair
-                        ir.async_delete_issue(self.hass, DOMAIN, f"unavailable_device.{device_id}")
+        devices = self._registered_devices()
+        now = monotonic()
+        self._missing_since = {
+            device_id: self._missing_since.get(device_id, now)
+            for device_id in devices.keys() - device_ids
+        }
+        issue_reg = ir.async_get(self.hass)
+        for device_id, device in devices.items():
+            issue_id = f"unavailable_device.{device_id}"
+            issue = issue_reg.async_get_issue(DOMAIN, issue_id)
+            if device_id in device_ids:
+                if issue is not None:
+                    # Self repair
+                    if issue.active:
+                        _LOGGER.info("Device available again: %s", device.name)
+                    ir.async_delete_issue(self.hass, DOMAIN, issue_id)
+                continue
+            if now - self._missing_since[device_id] < UNAVAILABLE_DEVICE_GRACE_PERIOD.total_seconds():
+                continue
+            # Issues restored at startup are inactive until created again.
+            if issue is not None and issue.active:
+                continue
+            _LOGGER.warning("Unavailable device: %s", device.name)
+            ir.async_create_issue(
+                self.hass,
+                DOMAIN,
+                issue_id,
+                data={
+                    "device_id": device.id,
+                    "device_name": device.name,
+                },
+                is_fixable=True,
+                severity=ir.IssueSeverity.WARNING,
+                translation_key="unavailable_device",
+                translation_placeholders={
+                    "device_name": device.name or "",
+                },
+            )
 
     async def find_orphaned_statistics(self) -> list[str]:
         """Return entity_ids of our sensors with stored LTS but no current ``state_class``.

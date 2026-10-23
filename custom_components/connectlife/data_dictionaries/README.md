@@ -15,6 +15,10 @@ will just be ignored for feature variants that don't expose that property.
 
 **Note:** The top level `climate` section is not supported in the default mapping files.
 
+A default mapping file may also declare a top-level `device_type_name` (e.g. `device_type_name: Washing machine`
+in `003.yaml`): a generic English device type name for that type, used by the integration as a readable device
+`model` when the cloud reports a Chinese/Japanese market model name. Feature files may override it.
+
 ### Property inheritance in feature overrides
 
 Any field in a property can be overridden in a feature file; unspecified fields are inherited from the

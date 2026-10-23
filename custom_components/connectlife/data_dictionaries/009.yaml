@@ -1,3 +1,4 @@
+device_type_name: Air conditioner
 statistics:
   source: air_duct_energy
   daily_energy_kwh: true
@@ -440,6 +441,8 @@ properties:
   - property: t_temp
     climate:
       target: target_temperature
+      # Reported in modes without a setpoint, e.g. dry (#772).
+      unknown_value: 0
       max_value:
         celsius: 32
         fahrenheit: 90

@@ -34,6 +34,7 @@ BUTTONS = "buttons"
 COMMAND = "command"
 DEVICE = "device"
 DEVICE_CLASS = "device_class"
+DEVICE_TYPE_NAME = "device_type_name"
 STATISTICS = "statistics"
 SOURCE = "source"
 DISABLE = "disable"
@@ -515,6 +516,9 @@ class Dictionary:
     # Per-sensor flags from the `statistics` block (sensor key -> create?). A sensor is
     # created only when listed true here; omitted or false means not created.
     statistics_sensors: dict[str, bool] = field(default_factory=dict)
+    # Generic English device type name (e.g. "Washing machine") from the mapping
+    # files' top-level `device_type_name`, used as a readable model fallback.
+    device_type_name: str | None = None
 
     def included_values(
             self,
@@ -668,6 +672,7 @@ class Dictionaries:
             return cls.dictionaries[key]
 
         climate: dict | None = None
+        device_type_name: str | None = None
         statistics: dict | None = None
         raw_entries: dict[str, dict] = {}
         raw_buttons: list[dict] = []
@@ -676,6 +681,7 @@ class Dictionaries:
             f"data_dictionaries/{appliance.device_type_code}.yaml"
         )
         if base_data is not None:
+            device_type_name = _val(base_data, DEVICE_TYPE_NAME, device_type_name)
             statistics = _val(base_data, STATISTICS, statistics)
             if base_data.get(Platform.CLIMATE) is not None:
                 climate = dict(base_data[Platform.CLIMATE])
@@ -693,6 +699,7 @@ class Dictionaries:
                 key,
             )
         if sub_data is not None:
+            device_type_name = _val(sub_data, DEVICE_TYPE_NAME, device_type_name)
             statistics = _val(sub_data, STATISTICS, statistics)
             if sub_data.get(Platform.CLIMATE) is not None:
                 # Each key (presets, hvac_modes, fan_modes) replaces the base's as a whole.
@@ -747,6 +754,7 @@ class Dictionaries:
             fan_modes=fan_modes,
             statistics_source=statistics_source,
             statistics_sensors=statistics_sensors,
+            device_type_name=device_type_name,
         )
         cls.dictionaries[key] = dictionary
         return dictionary

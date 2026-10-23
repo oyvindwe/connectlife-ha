@@ -106,6 +106,7 @@ The following have contributed to changes in this release — thank you very muc
 - Quote property names and field names in backticks (e.g., `DelayEndTime`, `state_class`)
 - Keep descriptions concise — one line per item
 - The Highlights section should give a quick overview: count of new devices, key fixes, notable features
+- Omit the Highlights section for patch releases (`x.y.Z` with Z > 0): with only a few entries it repeats them
 - Always read the PR body (via `gh pr view <num> --json body --jq '.body'`)
 - When a PR body calls out a breaking change is experimental, note that in the entry (e.g., "breaking changes ...")
 - When a PR body calls out that a change is experimental, speculative, or untested for certain models/devices, note that in the entry (e.g., "experimental for ...")

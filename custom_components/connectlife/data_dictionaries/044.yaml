@@ -1,3 +1,4 @@
+device_type_name: Heat pump
 properties:
 
   - property: A2W_SW_ON
