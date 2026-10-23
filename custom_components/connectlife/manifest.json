@@ -2,6 +2,7 @@
   "domain": "connectlife",
   "name": "ConnectLife",
   "after_dependencies": ["recorder"],
+  "categories": ["appliances_cleaning", "climate"],
   "codeowners": ["@oyvindwe"],
   "config_flow": true,
   "documentation": "https://github.com/oyvindwe/connectlife-ha",
