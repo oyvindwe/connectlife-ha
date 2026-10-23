@@ -20,8 +20,3 @@ climate:
       t_fan_speed: 0 # auto
       t_power: 1
       preset: mute
-properties:
-  # Powering on resets fan mute, so send its current value along (#213).
-  - property: t_power
-    include:
-      - t_fan_mute
