@@ -1,0 +1,30 @@
+# Washing machine WF5I9043BBFS, feature code 1wj090849v0f.
+# The base 025.yaml already covers every property this machine exposes, so this
+# override only turns Selected_program_ID into a select. The program ids match
+# 025-1wj0803f2v0w exactly (all 18 ids the machine reports, none extra).
+# Program names checked on the machine display (baby_care, pets, power_39 "Super 39",
+# full_load_59 "Full load 59"); the others follow the same id-to-name mapping.
+# Reading and writing use the raw program id on the same property (verified on the
+# device: selecting a program from Home Assistant changes the program on the machine).
+properties:
+  - property: Selected_program_ID
+    select:
+      options:
+        4: refresh
+        6: drum_clean
+        7: cotton
+        8: synthetic
+        9: eco_40_60
+        10: wool
+        11: quick_15
+        14: spin
+        15: allergy_care
+        16: baby_care
+        18: sportswear
+        19: down
+        20: rinse_spin
+        42: auto
+        44: bedding
+        52: power_39
+        56: pets
+        57: full_load_59
