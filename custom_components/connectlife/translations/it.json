@@ -3,9 +3,17 @@
     "abort": {
       "already_configured": "Il dispositivo \u00e8 gi\u00e0 configurato",
       "already_configured_elsewhere": "I dispositivi di questo account sono gi\u00e0 configurati in un'altra voce ConnectLife. Per cambiare il modo in cui quella voce accede, scegli Riconfigura su di essa. Per sostituirla con una nuova voce, disattivala prima.",
+      "authorize_url_timeout": "Scaduto il tempo per la generazione dell'URL di autorizzazione.",
       "cannot_connect": "Impossibile connettersi",
+      "missing_configuration": "Il componente non \u00e8 configurato. Prego seguire la documentazione.",
+      "no_url_available": "URL non disponibile. Per informazioni su questo errore, [consulta la sezione della guida]({docs_url})",
+      "oauth_error": "Sono stati ricevuti dati del token non validi.",
+      "oauth_failed": "Errore durante l'ottenimento del token di accesso.",
+      "oauth_timeout": "Timeout durante la risoluzione del token OAuth.",
+      "oauth_unauthorized": "Errore di autorizzazione OAuth durante l'ottenimento del token di accesso.",
       "reauth_successful": "La riautenticazione \u00e8 riuscita",
-      "reconfigure_successful": "La riconfigurazione \u00e8 stata completata"
+      "reconfigure_successful": "La riconfigurazione \u00e8 stata completata",
+      "user_rejected_authorize": "Collegamento dell'account rifiutato: {error}"
     },
     "error": {
       "already_configured_elsewhere": "I dispositivi di questo account sono gi\u00e0 configurati in un'altra voce ConnectLife. Per cambiare il modo in cui quella voce accede, scegli Riconfigura su di essa. Per sostituirla con una nuova voce, disattivala prima.",
@@ -40,6 +48,9 @@
           "development_mode": "Connettersi a un server di prova locale anzich\u00e9 all'API ConnectLife. Solo per lo sviluppo.",
           "trir": "Abilita solo se accedi con l'app ConnectLife.TRIR utilizzata in Russia/CSI."
         }
+      },
+      "pick_implementation": {
+        "title": "Scegli il metodo di autenticazione"
       },
       "reauth_confirm": {
         "data": {
