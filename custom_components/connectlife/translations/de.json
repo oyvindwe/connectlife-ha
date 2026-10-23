@@ -3,9 +3,17 @@
     "abort": {
       "already_configured": "Ger\u00e4t ist bereits konfiguriert",
       "already_configured_elsewhere": "Die Ger\u00e4te dieses Kontos sind bereits in einem anderen ConnectLife-Eintrag eingerichtet. Um die Anmeldung dieses Eintrags zu \u00e4ndern, w\u00e4hle dort Neu konfigurieren. Um ihn durch einen neuen Eintrag zu ersetzen, deaktiviere ihn zuerst.",
+      "authorize_url_timeout": "Zeit\u00fcberschreitung beim Erstellen der Autorisierungs-URL.",
       "cannot_connect": "Verbindung fehlgeschlagen",
+      "missing_configuration": "Die Komponente ist nicht konfiguriert. Bitte folge der Dokumentation.",
+      "no_url_available": "Keine URL verf\u00fcgbar. Informationen zu diesem Fehler findest du [im Hilfebereich]({docs_url})",
+      "oauth_error": "Ung\u00fcltige Token-Daten empfangen.",
+      "oauth_failed": "Fehler beim Abrufen des Zugriffstokens.",
+      "oauth_timeout": "Zeit\u00fcberschreitung beim Abrufen des OAuth-Tokens.",
+      "oauth_unauthorized": "OAuth-Autorisierungsfehler beim Abrufen des Zugriffstokens.",
       "reauth_successful": "Erneute Authentifizierung war erfolgreich",
-      "reconfigure_successful": "Die Neukonfiguration war erfolgreich"
+      "reconfigure_successful": "Die Neukonfiguration war erfolgreich",
+      "user_rejected_authorize": "Kontoverkn\u00fcpfung abgelehnt: {error}"
     },
     "error": {
       "already_configured_elsewhere": "Die Ger\u00e4te dieses Kontos sind bereits in einem anderen ConnectLife-Eintrag eingerichtet. Um die Anmeldung dieses Eintrags zu \u00e4ndern, w\u00e4hle dort Neu konfigurieren. Um ihn durch einen neuen Eintrag zu ersetzen, deaktiviere ihn zuerst.",
@@ -40,6 +48,9 @@
           "development_mode": "Mit einem lokalen Testserver anstelle der ConnectLife-API verbinden. Nur f\u00fcr die Entwicklung.",
           "trir": "Nur aktivieren, wenn du dich mit der ConnectLife.TRIR-App anmeldest, die in Russland/GUS verwendet wird."
         }
+      },
+      "pick_implementation": {
+        "title": "Authentifizierungsmethode w\u00e4hlen"
       },
       "reauth_confirm": {
         "data": {

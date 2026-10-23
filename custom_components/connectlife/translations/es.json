@@ -3,9 +3,17 @@
     "abort": {
       "already_configured": "El dispositivo ya est\u00e1 configurado",
       "already_configured_elsewhere": "Los dispositivos de esta cuenta ya est\u00e1n configurados en otra entrada de ConnectLife. Para cambiar c\u00f3mo inicia sesi\u00f3n esa entrada, elige Reconfigurar en ella. Para sustituirla por una entrada nueva, desact\u00edvala primero.",
+      "authorize_url_timeout": "Tiempo de espera agotado al generar la URL de autorizaci\u00f3n.",
       "cannot_connect": "Fallo al establecer la conexi\u00f3n",
+      "missing_configuration": "El componente no est\u00e1 configurado. Sigue la documentaci\u00f3n.",
+      "no_url_available": "No hay ninguna URL disponible. Para obtener informaci\u00f3n sobre este error, [consulta la secci\u00f3n de ayuda]({docs_url})",
+      "oauth_error": "Se recibieron datos de token no v\u00e1lidos.",
+      "oauth_failed": "Error al obtener el token de acceso.",
+      "oauth_timeout": "Tiempo de espera agotado al obtener el token OAuth.",
+      "oauth_unauthorized": "Error de autorizaci\u00f3n OAuth al obtener el token de acceso.",
       "reauth_successful": "La reautenticaci\u00f3n se realiz\u00f3 correctamente",
-      "reconfigure_successful": "La reconfiguraci\u00f3n se ha realizado correctamente"
+      "reconfigure_successful": "La reconfiguraci\u00f3n se ha realizado correctamente",
+      "user_rejected_authorize": "Vinculaci\u00f3n de cuenta rechazada: {error}"
     },
     "error": {
       "already_configured_elsewhere": "Los dispositivos de esta cuenta ya est\u00e1n configurados en otra entrada de ConnectLife. Para cambiar c\u00f3mo inicia sesi\u00f3n esa entrada, elige Reconfigurar en ella. Para sustituirla por una entrada nueva, desact\u00edvala primero.",
@@ -40,6 +48,9 @@
           "development_mode": "Conectar a un servidor de prueba local en lugar de a la API de ConnectLife. Solo para desarrollo.",
           "trir": "Habil\u00edtalo solo si inicias sesi\u00f3n con la app ConnectLife.TRIR utilizada en Rusia/CEI."
         }
+      },
+      "pick_implementation": {
+        "title": "Elige el m\u00e9todo de autenticaci\u00f3n"
       },
       "reauth_confirm": {
         "data": {
