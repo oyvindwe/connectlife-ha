@@ -7,11 +7,14 @@ from unittest.mock import patch
 
 import pytest
 from connectlife.api import LifeConnectError
+from homeassistant.const import Platform
+from homeassistant.core import callback
 from homeassistant.exceptions import ServiceValidationError
 
 from custom_components.connectlife.button import ConnectLifeButton
 from custom_components.connectlife.climate import ConnectLifeClimate
 from custom_components.connectlife.dictionaries import Button
+from custom_components.connectlife.entity import ConnectLifeEntity, _contains_cjk
 from custom_components.connectlife.switch import ConnectLifeSwitch
 
 
@@ -118,6 +121,62 @@ async def test_command_rejected_raises_readable_error() -> None:
         await climate.async_update_device({"t_super": 1})
 
     assert exc_info.value.translation_key == "command_rejected"
+
+
+def _entity(feature_name: str, type_code: str = "009", feature_code: str = "104") -> ConnectLifeEntity:
+    """A minimal concrete ConnectLifeEntity over a stubbed appliance."""
+    appliance = SimpleNamespace(
+        device_id="device",
+        device_type_code=type_code,
+        device_feature_code=feature_code,
+        device_nickname="test",
+        device_feature_name=feature_name,
+        room_name="Kitchen",
+        status_list={},
+    )
+    coordinator = SimpleNamespace(
+        data={"device": appliance},
+        config_entry=SimpleNamespace(options={}, entry_id="entry"),
+        hass=None,
+        last_update_success=True,
+        add_entity=lambda *args, **kwargs: None,
+    )
+
+    class _TestEntity(ConnectLifeEntity):
+        @callback
+        def update_state(self) -> None:
+            pass
+
+    return _TestEntity(coordinator, appliance, "model-test", Platform.CLIMATE)
+
+
+def test_cjk_model_name_falls_back_to_device_type_name() -> None:
+    """A Chinese/Japanese market name becomes the generic English device type name."""
+    entity = _entity("104冷暖节能无功率")
+
+    assert entity._attr_device_info["model"] == "Air conditioner"
+
+
+def test_cjk_model_name_with_unknown_type_falls_back_to_connectlife_code() -> None:
+    """Type codes missing from DEVICE_TYPE_NAMES keep an identifier, without the raw market name."""
+    entity = _entity("冷暖無功率", type_code="099", feature_code="123")
+
+    assert entity._attr_device_info["model"] == "ConnectLife 099"
+
+
+def test_non_cjk_model_name_is_kept() -> None:
+    """Only CJK names are rewritten: accented Latin names survive intact."""
+    entity = _entity("Çamaşır Makinesi")
+
+    assert entity._attr_device_info["model"] == "Çamaşır Makinesi"
+
+
+def test_contains_cjk() -> None:
+    assert _contains_cjk("エアコン")  # Katakana
+    assert _contains_cjk("１０４")  # Fullwidth digits
+    assert _contains_cjk("冷暖")  # Unified ideographs
+    assert not _contains_cjk("Air conditioner 104")
+    assert not _contains_cjk("")
 
 
 async def test_command_rejected_is_not_a_beep_failure() -> None:

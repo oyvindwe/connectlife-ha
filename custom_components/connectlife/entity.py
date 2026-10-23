@@ -18,6 +18,7 @@ from .const import (
     CONF_DEVICES,
     CONF_DISABLE_BEEP,
     CONF_EXPOSE_OFFLINE_STATE,
+    DEVICE_TYPE_NAMES,
     DOMAIN,
     SW_VERSION_PROPERTY,
 )
@@ -28,6 +29,26 @@ _LOGGER = logging.getLogger(__name__)
 DISABLE_BEEP_FAILURE_THRESHOLD = 3
 # The cloud rejects commands the device doesn't accept in its current state with this error.
 COMMAND_REJECTED_DESCRIPTION = "Command status mutex"
+
+# CJK Unicode blocks found in Chinese/Japanese market model names.
+_CJK_RANGES: tuple[tuple[int, int], ...] = (
+    (0x2E80, 0x2EFF),  # CJK Radicals Supplement
+    (0x3000, 0x303F),  # CJK Symbols and Punctuation
+    (0x3040, 0x30FF),  # Hiragana + Katakana
+    (0x3400, 0x4DBF),  # CJK Unified Ideographs Extension A
+    (0x4E00, 0x9FFF),  # CJK Unified Ideographs
+    (0xF900, 0xFAFF),  # CJK Compatibility Ideographs
+    (0xFF00, 0xFFEF),  # Halfwidth and Fullwidth Forms
+)
+
+
+def _contains_cjk(text: str) -> bool:
+    """Return True if text contains any CJK character."""
+    return any(
+        lo <= ord(character) <= hi
+        for character in text
+        for lo, hi in _CJK_RANGES
+    )
 
 
 def _is_command_rejected(err: LifeConnectError) -> bool:
@@ -57,9 +78,19 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
         self.nickname = appliance.device_nickname
         self._attr_unique_id = f'{appliance.device_id}-{entity_name}'
         sw_version = appliance.status_list.get(SW_VERSION_PROPERTY)
+        # Chinese/Japanese market names (e.g. an air conditioner reporting
+        # '104冷暖节能无功率') make poor model names for most users. Fall back
+        # to the generic English device type name from DEVICES.md; the
+        # type/feature codes stay visible in hw_version.
+        model = appliance.device_feature_name
+        if model and _contains_cjk(model):
+            model = DEVICE_TYPE_NAMES.get(
+                appliance.device_type_code,
+                f'ConnectLife {appliance.device_type_code}',
+            )
         self._attr_device_info = DeviceInfo(
             identifiers={(DOMAIN, appliance.device_id)},
-            model=appliance.device_feature_name,
+            model=model,
             hw_version=f'{appliance.device_type_code}-{appliance.device_feature_code}',
             name=appliance.device_nickname,
             suggested_area=appliance.room_name,
