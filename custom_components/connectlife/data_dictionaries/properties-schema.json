@@ -6,6 +6,10 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
+        "device_type_name": {
+          "type": "string",
+          "description": "Generic English device type name, e.g. Washing machine, used as the device model fallback for CJK market model names. Declared in the default device-type file; feature files may override it."
+        },
         "statistics": {
           "type": "object",
           "additionalProperties": false,
