@@ -1,5 +1,6 @@
 # Hisense Hi-Therma II Inner (VRF indoor unit via Hi-Mit II gateway).
 # Mode and fan speed are one on/off flag per value, see climate.hvac_modes/fan_modes.
+device_type_name: VRF indoor unit
 climate:
   hvac_modes:
     - hvac_mode: cool
