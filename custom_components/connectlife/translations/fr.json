@@ -3728,6 +3728,10 @@
       "defaultspinspeed": {
         "name": "Vitesse essorage par d\u00e9faut",
         "state": {
+          "1000": "1000 tr/min",
+          "1200": "1200 tr/min",
+          "1400": "1400 tr/min",
+          "800": "800 tr/min",
           "none": "Aucun"
         }
       },

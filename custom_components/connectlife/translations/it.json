@@ -3728,6 +3728,10 @@
       "defaultspinspeed": {
         "name": "Velocit\u00e0 di centrifuga predefinita",
         "state": {
+          "1000": "1000 giri/min",
+          "1200": "1200 giri/min",
+          "1400": "1400 giri/min",
+          "800": "800 giri/min",
           "none": "Nessuno"
         }
       },

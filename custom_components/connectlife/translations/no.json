@@ -3728,6 +3728,10 @@
       "defaultspinspeed": {
         "name": "Standard sentrifugehastighet",
         "state": {
+          "1000": "1000 o/min",
+          "1200": "1200 o/min",
+          "1400": "1400 o/min",
+          "800": "800 o/min",
           "none": "Ingen"
         }
       },
