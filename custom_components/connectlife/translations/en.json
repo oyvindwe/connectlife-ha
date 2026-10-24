@@ -3728,6 +3728,10 @@
       "defaultspinspeed": {
         "name": "Default spin speed",
         "state": {
+          "1000": "1000 RPM",
+          "1200": "1200 RPM",
+          "1400": "1400 RPM",
+          "800": "800 RPM",
           "none": "None"
         }
       },

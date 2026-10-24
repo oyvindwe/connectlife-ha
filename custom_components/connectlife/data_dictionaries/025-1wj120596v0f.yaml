@@ -45,3 +45,34 @@ properties:
       2: disabled
       3: enabled
     read_only: true
+- property: washing_program_kg
+  # Max load of the selected program in 0.1 kg: 20 quick_15, 40 bedding, 60 synthetic_dry, 120 full_load_49.
+  sensor:
+    multiplier: 0.1
+- property: washing_machine_type_max_speed
+  # 14 = 1400 rpm, same encoding as the Spin_speed_rpm select.
+  sensor:
+    multiplier: 100
+- property: DefaultSpinSpeed
+  # The program's starting spin: 3 quick_15 (800), 4 bedding (1000), 5 full_load_49 (1200), 6 eco_40_60 (1400), 0 drying.
+  sensor:
+    device_class: enum
+    unit: null
+    options:
+      0: none
+      3: "800"
+      4: "1000"
+      5: "1200"
+      6: "1400"
+- property: mainwashtime
+  # Same value as mian_wash_time.
+  hide: true
+- property: Temperature_Default_DefaultMainWashTime
+  # Same value as mian_wash_time.
+  hide: true
+- property: Selected_program_total_running_time_in_minutes
+  # Same value as Selected_program_total_time_in_minutes.
+  hide: true
+- property: washing_machine_type_kg
+  # Always 0 on this machine.
+  hide: true
