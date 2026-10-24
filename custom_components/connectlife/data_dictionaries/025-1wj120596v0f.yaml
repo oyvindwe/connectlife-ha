@@ -31,6 +31,7 @@ properties:
       2: prewash
       3: wash
       4: rinsing
+      6: anti_crease
       7: spinning
       8: drying
       10: finished
