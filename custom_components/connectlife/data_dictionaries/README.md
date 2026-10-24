@@ -612,7 +612,7 @@ integration polls a separate ConnectLife cloud statistics endpoint (every 10 min
 exposes the daily totals. Because the data is cloud-side, these sensors stay available even
 when the appliance is offline.
 
-Usually this block goes in the **base** device-type file (e.g. `015.yaml`). Omit the whole block for device types that
+Usually this block goes in the **base** device-type file (e.g. `025.yaml`). Omit the whole block for device types that
 have no statistics endpoint. A feature override with its own `statistics` block replaces the base's as a whole, so use one
 to turn the sensors off for a model that ConnectLife returns no statistics for:
 
@@ -632,10 +632,10 @@ statistics:
 Both sensor flags default to off, so each must be explicitly enabled with `true`.
 `daily_water_consumption` is only meaningful for the `energy_consumption_curve` source.
 
-Example for a dishwasher:
+Example for a washing machine:
 
 ```yaml
-# 015.yaml (base)
+# 025.yaml (base)
 statistics:
   source: energy_consumption_curve
   daily_energy_kwh: true
