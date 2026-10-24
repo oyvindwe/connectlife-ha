@@ -4,8 +4,6 @@
 # written via ConnectLife (verified: writing 8 switched the machine to Synthetics).
 properties:
   - property: Selected_program_ID
-    icon: mdi:tshirt-crew
-    translation_key: selected_program_id
     select:
       options:
         5: allergy_care
