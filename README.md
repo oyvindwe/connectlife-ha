@@ -73,9 +73,9 @@ for devices that expose more than one swing property.
 ## Daily energy and water consumption sensors
 
 For supported device types, the integration exposes a **daily energy** sensor (kWh) and, for
-wet appliances such as dishwashers and washing machines, a **daily water consumption** sensor (L).
+wet appliances such as washing machines, a **daily water consumption** sensor (L).
 Air conditioners report energy via the cloud `air_duct_energy` endpoint; other appliances
-(dishwashers, washing machines, dryers, ovens, …) report energy — and where applicable water —
+(washing machines, dryers, ovens, …) report energy — and where applicable water —
 via the `energyConsumptionCurve` endpoint.
 
 No configuration is needed: these sensors are created automatically for device types whose mapping
