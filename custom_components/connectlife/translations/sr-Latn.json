@@ -2078,6 +2078,8 @@
               "low": "Nisko",
               "mid_high": "Srednje-visoko",
               "mid_low": "Srednje-nisko",
+              "position_1": "Polo\u017eaj 1",
+              "position_2": "Polo\u017eaj 2",
               "swing": "Njihanje",
               "top": "Gore"
             }
@@ -3127,6 +3129,13 @@
       },
       "activemodemotorlevel": {
         "name": "Nivo motora u aktivnom re\u017eimu"
+      },
+      "actualoperatingstate": {
+        "name": "Radno stanje",
+        "state": {
+          "idle": "Mirovanje",
+          "running": "U radu"
+        }
       },
       "adapttech_setting": {
         "name": "Pode\u0161avanje adaptivne tehnologije"
@@ -4447,6 +4456,9 @@
       },
       "error_read_out_3_status": {
         "name": "Status gre\u0161ke o\u010ditavanje 3"
+      },
+      "etwi": {
+        "name": "Sekundarna temperatura"
       },
       "extra_soft": {
         "name": "Ekstra meko"

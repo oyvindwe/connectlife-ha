@@ -2078,6 +2078,8 @@
               "low": "Lav",
               "mid_high": "Middels h\u00f8y",
               "mid_low": "Middels lav",
+              "position_1": "Posisjon 1",
+              "position_2": "Posisjon 2",
               "swing": "Sving",
               "top": "\u00d8verst"
             }
@@ -3127,6 +3129,13 @@
       },
       "activemodemotorlevel": {
         "name": "Motorniv\u00e5 i aktiv modus"
+      },
+      "actualoperatingstate": {
+        "name": "Driftstilstand",
+        "state": {
+          "idle": "Inaktiv",
+          "running": "I drift"
+        }
       },
       "adapttech_setting": {
         "name": "Innstilling for tilpasset teknologi"
@@ -4447,6 +4456,9 @@
       },
       "error_read_out_3_status": {
         "name": "Feillesing 3 \u2013 status"
+      },
+      "etwi": {
+        "name": "Sekund\u00e6r temperatur"
       },
       "extra_soft": {
         "name": "Ekstra mykt"
