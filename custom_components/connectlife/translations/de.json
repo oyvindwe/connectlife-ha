@@ -3728,6 +3728,10 @@
       "defaultspinspeed": {
         "name": "Schleuderdrehzahl Standard",
         "state": {
+          "1000": "1000 U/min",
+          "1200": "1200 U/min",
+          "1400": "1400 U/min",
+          "800": "800 U/min",
           "none": "Keine"
         }
       },

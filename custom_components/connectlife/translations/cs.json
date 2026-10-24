@@ -3728,6 +3728,10 @@
       "defaultspinspeed": {
         "name": "V\u00fdchoz\u00ed rychlost odst\u0159ed\u011bn\u00ed",
         "state": {
+          "1000": "1000 ot./min",
+          "1200": "1200 ot./min",
+          "1400": "1400 ot./min",
+          "800": "800 ot./min",
           "none": "\u017d\u00e1dn\u00fd"
         }
       },

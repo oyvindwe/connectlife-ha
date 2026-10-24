@@ -3728,6 +3728,10 @@
       "defaultspinspeed": {
         "name": "Velocidad de centrifugado predeterminada",
         "state": {
+          "1000": "1000 rpm",
+          "1200": "1200 rpm",
+          "1400": "1400 rpm",
+          "800": "800 rpm",
           "none": "No centrifugar"
         }
       },
