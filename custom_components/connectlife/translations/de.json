@@ -4081,7 +4081,12 @@
         "name": "Trocknungsmodus-Flag"
       },
       "drymodel": {
-        "name": "Trocknungsmodus"
+        "name": "Trocknungsmodus",
+        "state": {
+          "dry": "Trocknen",
+          "wash": "Waschen",
+          "wash_and_dry": "Waschen und Trocknen"
+        }
       },
       "dryopen_defaultspinspeed": {
         "name": "Standard Schleudergeschwindigkeit",

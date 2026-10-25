@@ -4081,7 +4081,12 @@
         "name": "Indicatore modalit\u00e0 asciugatura"
       },
       "drymodel": {
-        "name": "Modalit\u00e0 asciugatura"
+        "name": "Modalit\u00e0 asciugatura",
+        "state": {
+          "dry": "Asciugatura",
+          "wash": "Lavaggio",
+          "wash_and_dry": "Lavaggio e asciugatura"
+        }
       },
       "dryopen_defaultspinspeed": {
         "name": "Velocit\u00e0 di centrifuga predefinita",

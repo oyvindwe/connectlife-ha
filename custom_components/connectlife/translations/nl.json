@@ -4081,7 +4081,12 @@
         "name": "Droogmodusvlag"
       },
       "drymodel": {
-        "name": "Droger model"
+        "name": "Droger model",
+        "state": {
+          "dry": "Drogen",
+          "wash": "Wassen",
+          "wash_and_dry": "Wassen en drogen"
+        }
       },
       "dryopen_defaultspinspeed": {
         "name": "Standaard centrifugesnelheid (open drogen)",

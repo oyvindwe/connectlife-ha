@@ -4081,7 +4081,12 @@
         "name": "Indicador de modo secado"
       },
       "drymodel": {
-        "name": "Modelo de secado"
+        "name": "Modelo de secado",
+        "state": {
+          "dry": "Secado",
+          "wash": "Lavado",
+          "wash_and_dry": "Lavado y secado"
+        }
       },
       "dryopen_defaultspinspeed": {
         "name": "Velocidad de centrifugado predeterminada de secado abierto",

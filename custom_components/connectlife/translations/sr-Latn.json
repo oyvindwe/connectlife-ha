@@ -4081,7 +4081,12 @@
         "name": "Oznaka re\u017eima su\u0161enja"
       },
       "drymodel": {
-        "name": "Model su\u0161enja"
+        "name": "Model su\u0161enja",
+        "state": {
+          "dry": "Su\u0161enje",
+          "wash": "Pranje",
+          "wash_and_dry": "Pranje i su\u0161enje"
+        }
       },
       "dryopen_defaultspinspeed": {
         "name": "Podrazumevana brzina centrifuge pri su\u0161enju",

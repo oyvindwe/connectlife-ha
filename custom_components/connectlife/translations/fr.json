@@ -4081,7 +4081,12 @@
         "name": "Indicateur de mode s\u00e9chage"
       },
       "drymodel": {
-        "name": "Mode s\u00e9chage"
+        "name": "Mode s\u00e9chage",
+        "state": {
+          "dry": "S\u00e9chage",
+          "wash": "Lavage",
+          "wash_and_dry": "Lavage et s\u00e9chage"
+        }
       },
       "dryopen_defaultspinspeed": {
         "name": "Vitesse d'essorage par d\u00e9faut porte ouverte",
