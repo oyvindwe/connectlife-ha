@@ -2,6 +2,12 @@
 # Program IDs verified by turning the program dial through all positions and
 # reading Selected_program_ID. In the "Remote" dial position the program can be
 # written via ConnectLife (verified: writing 8 switched the machine to Synthetics).
+#
+# Extra rinse: the machine supports 0-3 extra rinses (the "Extra rinse" button
+# cycles 1 -> 2 -> 3 -> off). The count is ExtraRinseNum; writing 0, 1, 2 or 3
+# in the "Remote" dial position is applied and shown on the display (each extra
+# rinse adds 18 min). Writing the Extra_Rinse switch is rejected by this model
+# (it flips back to off), so it is disabled here.
 properties:
   - property: Selected_program_ID
     select:
@@ -21,3 +27,12 @@ properties:
         24: shirts
         41: power_49
         42: auto
+  - property: ExtraRinseNum
+    select:
+      options:
+        0: none
+        1: "1"
+        2: "2"
+        3: "3"
+  - property: Extra_Rinse
+    disable: true
