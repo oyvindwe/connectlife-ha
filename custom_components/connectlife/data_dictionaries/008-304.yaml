@@ -5,3 +5,6 @@ climate:
       t_work_mode: 2
       t_fan_speed: 3
       t_temp: 64
+    - preset: eco
+      t_power: 1
+      t_work_mode: 5
