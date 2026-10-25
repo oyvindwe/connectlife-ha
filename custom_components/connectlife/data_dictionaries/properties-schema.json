@@ -152,6 +152,10 @@
           "type": ["integer", "null"],
           "description": "If the property has this value, it is not available on the device, and no entity is created."
         },
+        "available_when": {
+          "$ref": "#/$defs/AvailableWhen",
+          "description": "Map of property name to allowed value or list of allowed values. The entity is only available when every listed property currently has an allowed value. Use for controls the device only accepts in some states, e.g. a switch that only works while the device is on. Replaces the inherited value as a whole."
+        },
         "entity_category": {
           "type": ["string", "null"],
           "description": "https://developers.home-assistant.io/docs/core/entity/#registry-properties:~:text=automatic%20device%20registration.-,entity_category,-EntityCategory%20%7C%20None",
@@ -189,14 +193,8 @@
           "examples": ["mdi:play", "mdi:stop", "mdi:pause"]
         },
         "available_when": {
-          "type": ["object", "null"],
-          "additionalProperties": {
-            "oneOf": [
-              {"type": "integer"},
-              {"type": "array", "items": {"type": "integer"}, "minItems": 1}
-            ]
-          },
-          "description": "Map of property name to required value, or a list of allowed values. The button is only available when every listed property currently has the listed value (or one of them). Use to gate buttons behind a remote-control-allowed status property. Replaces the inherited value as a whole."
+          "$ref": "#/$defs/AvailableWhen",
+          "description": "Map of property name to allowed value or list of allowed values. The button is only available when every listed property currently has an allowed value. Use to gate buttons on the device state, e.g. a start button only while the device is idle. Replaces the inherited value as a whole."
         },
         "include": {
           "$ref": "#/$defs/Include",
@@ -729,6 +727,15 @@
       ],
       "title": "Water Heater target.",
       "description": "Target property of WaterHeaterEntity."
+    },
+    "AvailableWhen": {
+      "type": ["object", "null"],
+      "additionalProperties": {
+        "oneOf": [
+          {"type": "integer"},
+          {"type": "array", "items": {"type": "integer"}, "minItems": 1}
+        ]
+      }
     },
     "UnknownValue": {
       "type": ["integer", "null"],

@@ -37,6 +37,7 @@ The following top-level fields always inherit, even across platform changes:
 - `entity_category`
 - `translation_key`
 - `unavailable`
+- `available_when`
 - `combine` — if you change the platform and want to drop the base's combine sources, clear it with
   `combine: null`.
 
@@ -45,6 +46,7 @@ Collections replace as a whole — there is no per-key merging inside them:
 - `options`
 - `combine`
 - `command`
+- `available_when`
 - `include`
 - dict-valued `min_value` / `max_value`
 
@@ -188,6 +190,7 @@ Note that translation keys must be lowercase!
 | `optional`         | `true`, `false`                    | If the entity should be registered as disabled by default. The user can enable it from the Home Assistant UI. Use for rarely-useful properties (e.g., per-slot error codes). Defaults to `false`. Only applies to per-property platforms (`binary_sensor`, `number`, `select`, `sensor`, `switch`). |
 | `icon`             | `mdi:eye`, etc.                    | Icon to use for the entity.                                                                                                                                                                                                                                                                         |
 | `unavailable`      | integer                            | If the property has this value on the device, no entity is created for it. Use for properties that the device reports as "not available" with a sentinel value.                                                                                                                                     |
+| `available_when`   | dictionary of string to integer or list of integers | The entity is only available when every listed property currently has one of the listed values. Use for controls the device only accepts in some states, so the cloud doesn't reject the command. See [Available when](#available-when). Replaces the inherited value as a whole. Only applies to per-property platforms. |
 | `entity_category`  | `config`, `diagnostic`             | Whether the entity should be considered a diagnostics or config entity. Defaults to `None`. [More info in HA docs](https://developers.home-assistant.io/docs/core/entity/#registry-properties:~:text=automatic%20device%20registration.-,entity_category,-EntityCategory%20%7C%20None)              |
 | `translation_key`  | string                             | Custom translation key for the entity, used instead of the one derived from the property name. Lets a device-specific mapping name an entity (in `strings.json`/translations). Must be lowercase. Only applies to per-property platforms.                    |
 | `binary_sensor`    | [BinarySensor](#type-binarysensor) | Create a binary sensor of the property.                                                                                                                                                                                                                                                             |
@@ -203,6 +206,25 @@ If an entity mapping is not given, the property is mapped to a sensor entity.
 
 It is not necessary to include items with empty values. A [JSON schema](properties-schema.json) is provided so data dictionaries can be
 validated.
+
+### Available when
+
+Some devices reject a command in their current state, and the cloud then answers with "Command status mutex".
+For example, many air conditioners don't accept Super while they are off or in fan mode. `available_when` makes
+the entity unavailable in those states, so it can't be used:
+
+```yaml
+# 009.yaml (base)
+  - property: t_super
+    switch:
+      device_class: switch
+    # Only in heat or cool mode.
+    available_when:
+      t_power: 1
+      t_work_mode: [1, 2]
+```
+
+A listed property that the device doesn't report counts as not met.
 
 ## Combine
 
@@ -561,7 +583,7 @@ becomes one HA button entity. A press sends the `write` map to the device in a s
 |------------------|---------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `key`            | string                          | Unique key for this button within the device. Used as the translation key, as part of the entity unique id, and as the merge identity when a feature override changes an inherited button.                                                  |
 | `icon`           | `mdi:play`, etc.                | Icon for the button.                                                                                                                                                                                                                         |
-| `available_when` | dictionary of string to integer or list of integer | Optional. Map of property name to required value, or a list of allowed values. The button is only available when every listed property currently has the listed value (or one of them). Use to gate buttons behind a remote-control-allowed status property. |
+| `available_when` | dictionary of string to integer or list of integers | Optional. The button is only available when every listed property currently has one of the listed values, as for [properties](#available-when). Use to gate buttons on the device state, e.g. start only while idle. |
 | `include`        | list of string                  | Optional. Properties whose current values are sent along with `write`. See [Include](#include).                                                                                                                                             |
 | `write`          | dictionary of string to integer | Required for non-disabled buttons. Map of property name to value to send when pressed. Multiple entries are sent in a single request — useful for combos like "set delay + start".                                                          |
 | `disable`        | `true`, `false`                 | If `true`, suppress this button. Use in a feature override to remove a button inherited from the base when a device variant doesn't support that action code. Defaults to `false`.                                                          |
