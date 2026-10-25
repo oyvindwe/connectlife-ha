@@ -1,11 +1,21 @@
 # Washing machine, feature code 1wj0803f2v0w.
 # The model name is WF5I8043BWF but Home Assistant shows the cloud's device_feature_name "WF5i8014-FVW001" as the model instead.
 # Program names from the model's user manual.
-# The base 025.yaml already covers every property this machine exposes, so this
-# override only turns Selected_program_ID into a select. Reads and writes both
-# use the raw program ID on the same property (verified on the device), so no
-# command/adjust is needed.
+# The base 025.yaml already covers every property this machine exposes, so this override only names the program phases and turns Selected_program_ID into a select.
 properties:
+  - property: Current_program_phase
+    # All phases verified on the device. No drying: washer only.
+    sensor:
+      device_class: enum
+      options:
+        0: not_available
+        1: weigh
+        2: prewash
+        3: wash
+        4: rinsing
+        7: spinning
+        10: finished
+        11: delay_start_waiting
   - property: Selected_program_ID
     select:
       options:
