@@ -4081,7 +4081,12 @@
         "name": "T\u00f8rkemodusflagg"
       },
       "drymodel": {
-        "name": "T\u00f8rkemodell"
+        "name": "T\u00f8rkemodell",
+        "state": {
+          "dry": "T\u00f8rk",
+          "wash": "Vask",
+          "wash_and_dry": "Vask og t\u00f8rk"
+        }
       },
       "dryopen_defaultspinspeed": {
         "name": "Standard sentrifugehastighet ved t\u00f8rr\u00e5pning",

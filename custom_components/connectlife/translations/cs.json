@@ -4081,7 +4081,12 @@
         "name": "P\u0159\u00edznak re\u017eimu su\u0161en\u00ed"
       },
       "drymodel": {
-        "name": "Re\u017eim su\u0161en\u00ed"
+        "name": "Re\u017eim su\u0161en\u00ed",
+        "state": {
+          "dry": "Su\u0161en\u00ed",
+          "wash": "Pran\u00ed",
+          "wash_and_dry": "Pran\u00ed a su\u0161en\u00ed"
+        }
       },
       "dryopen_defaultspinspeed": {
         "name": "V\u00fdchoz\u00ed rychlost odst\u0159ed\u011bn\u00ed pro su\u0161en\u00ed",

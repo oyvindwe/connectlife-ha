@@ -1,0 +1,43 @@
+# Washer dryer, feature code 1wj080986v0w.
+# The model name is WD5I8043BWF but Home Assistant shows the cloud's device_feature_name "WD5i8014-FVW001" as the model instead.
+# Washer dryer version of 1wj0803f2v0w (WF5I8043BWF): shared programs have the same IDs.
+# Program IDs verified on the device by selecting each program on the knob and reading Selected_program_ID.
+properties:
+  - property: Selected_program_ID
+    select:
+      options:
+        1: cotton_dry
+        2: synthetic_dry
+        4: refresh
+        6: drum_clean
+        7: cotton
+        8: synthetic
+        9: eco_40_60
+        10: wool
+        11: quick_15
+        14: spin
+        15: allergy_care
+        16: baby_care
+        20: rinse_spin
+        22: wash_and_dry_49
+        42: auto
+        44: bedding
+        52: power_39
+        56: pets
+        57: full_load_59
+  - property: DryModel
+    # Mode shown above the program name on the display, set with the wash/dry button.
+    icon: mdi:tumble-dryer
+    optional: false
+    entity_category: null
+    sensor:
+      device_class: enum
+      read_only: true
+      options:
+        0: wash
+        1: wash_and_dry
+        2: dry
+  - property: washing_program_kg
+    # Max load of the selected program in 0.1 kg: 80 cotton, 50 with drying, 10 wash_and_dry_49.
+    sensor:
+      multiplier: 0.1

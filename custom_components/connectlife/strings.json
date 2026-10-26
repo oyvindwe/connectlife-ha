@@ -4081,7 +4081,12 @@
         "name": "Dry mode flag"
       },
       "drymodel": {
-        "name": "Dry model"
+        "name": "Dry model",
+        "state": {
+          "dry": "Dry",
+          "wash": "Wash",
+          "wash_and_dry": "Wash and dry"
+        }
       },
       "dryopen_defaultspinspeed": {
         "name": "Dry open default spin speed",
