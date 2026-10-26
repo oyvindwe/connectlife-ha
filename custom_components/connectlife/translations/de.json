@@ -2421,6 +2421,7 @@
           "none": "Keine",
           "off": "Aus",
           "pre-ironing": "Vor B\u00fcgeln",
+          "ready_to_wear": "Tragetrocken",
           "wardrobe": "Schranktrocken"
         }
       },
@@ -8815,6 +8816,9 @@
       },
       "fota_cmd": {
         "name": "Firmwareaktualisierung"
+      },
+      "gentle": {
+        "name": "Schonend"
       },
       "greasefilterstatus": {
         "name": "Fettfilter-Timer"
