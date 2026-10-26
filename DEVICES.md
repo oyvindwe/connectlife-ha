@@ -165,6 +165,7 @@ have a feature-specific mapping file.
 | Hisense BCD-628WP1BSGF1Z11 | Refrigerator             | 026              | [1b0628z0223j](custom_components/connectlife/data_dictionaries/026-1b0628z0223j.yaml)                               |
 | Hisense BCD-668WP1BWF1R1   | Refrigerator             | 026              | [1b0668z0100j](custom_components/connectlife/data_dictionaries/026-1b0668z0100j.yaml)                               |
 | Gorenje NRB620E61X4WFE     | Refrigerator             | 026              | [8b0413z0011j](custom_components/connectlife/data_dictionaries/026-8b0413z0011j.yaml)                               |
+| ATAG KSK8178ND             | Refrigerator             | 026              | [bb0287z0001j](custom_components/connectlife/data_dictionaries/026-bb0287z0001j.yaml)                               |
 | Gorenje W-WaveEn-22        | Washing machine          | 027              | [000](custom_components/connectlife/data_dictionaries/027-000.yaml)                                                 |
 | WPAM14A2T                  | Washing machine          | 027              | [washing-machine-wm22-b2plus](custom_components/connectlife/data_dictionaries/027-washing-machine-wm22-b2plus.yaml) |
 | WPNA84A2TSWIFI             | Washing machine          | 027              | [washing-machine-wm22](custom_components/connectlife/data_dictionaries/027-washing-machine-wm22.yaml)               |
