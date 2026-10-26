@@ -8,6 +8,14 @@
 # in the "Remote" dial position is applied and shown on the display (each extra
 # rinse adds 18 min). Writing the Extra_Rinse switch is rejected by this model
 # (it flips back to off), so it is disabled here.
+#
+# Options are only applied with the dial in the "Remote" position. Verified there
+# with Cotton 40 °C: Steam, Prewash, the "Quick" button (time_save), temperature,
+# spin speed (incl. drain without spin) and the delayed end time (DelayEndTime,
+# hours, 0 cancels) are applied and shown on the display.
+# Writing AntiCrease is rejected (flips back to off). The machine has no auto
+# dosing and no automatic tub clean setting (not in the manual, no button), so
+# those properties are disabled.
 properties:
   - property: Selected_program_ID
     select:
@@ -35,4 +43,28 @@ properties:
         2: "2"
         3: "3"
   - property: Extra_Rinse
+    disable: true
+  - property: DelayEndTime
+    number:
+      min_value: 0
+      max_value: 24
+      device_class: duration
+      unit: h
+  - property: AntiCrease
+    disable: true
+  - property: AutoDose
+    disable: true
+  - property: AutoTubClean
+    disable: true
+  - property: Detergent
+    disable: true
+  - property: Softener
+    disable: true
+  - property: Detergent_display
+    disable: true
+  - property: Detergent_state
+    disable: true
+  - property: Softer_display
+    disable: true
+  - property: Softener_state
     disable: true
