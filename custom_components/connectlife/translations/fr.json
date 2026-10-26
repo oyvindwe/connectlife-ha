@@ -2421,6 +2421,7 @@
           "none": "Aucun",
           "off": "Arr\u00eat",
           "pre-ironing": "Pr\u00e9repassage",
+          "ready_to_wear": "Pr\u00eat \u00e0 porter",
           "wardrobe": "Pr\u00eat \u00e0 ranger"
         }
       },
@@ -8815,6 +8816,9 @@
       },
       "fota_cmd": {
         "name": "Mise \u00e0 jour du micrologiciel"
+      },
+      "gentle": {
+        "name": "D\u00e9licat"
       },
       "greasefilterstatus": {
         "name": "Minuterie filtre \u00e0 graisse"

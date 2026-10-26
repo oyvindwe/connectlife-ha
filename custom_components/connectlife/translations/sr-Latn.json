@@ -2421,6 +2421,7 @@
           "none": "Ni\u0161ta",
           "off": "Isklju\u010deno",
           "pre-ironing": "Predpeglanje",
+          "ready_to_wear": "Spremno za no\u0161enje",
           "wardrobe": "Garderober"
         }
       },
@@ -8815,6 +8816,9 @@
       },
       "fota_cmd": {
         "name": "A\u017euriranje firmvera"
+      },
+      "gentle": {
+        "name": "Ne\u017eno"
       },
       "greasefilterstatus": {
         "name": "Tajmer filtera za masno\u0107u"

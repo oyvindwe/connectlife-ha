@@ -2421,6 +2421,7 @@
           "none": "No centrifugar",
           "off": "Apagado",
           "pre-ironing": "Plancha",
+          "ready_to_wear": "Listo para usar",
           "wardrobe": "Armario"
         }
       },
@@ -8815,6 +8816,9 @@
       },
       "fota_cmd": {
         "name": "Actualizaci\u00f3n de firmware"
+      },
+      "gentle": {
+        "name": "Suave"
       },
       "greasefilterstatus": {
         "name": "Temporizador de filtro de grasa"
