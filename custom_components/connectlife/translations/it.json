@@ -2421,6 +2421,7 @@
           "none": "Nessuno",
           "off": "Off",
           "pre-ironing": "Pre-stiratura",
+          "ready_to_wear": "Pronto da indossare",
           "wardrobe": "Armadio"
         }
       },
@@ -8815,6 +8816,9 @@
       },
       "fota_cmd": {
         "name": "Aggiornamento firmware"
+      },
+      "gentle": {
+        "name": "Delicato"
       },
       "greasefilterstatus": {
         "name": "Timer filtro grassi"

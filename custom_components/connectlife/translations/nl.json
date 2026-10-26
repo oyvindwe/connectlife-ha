@@ -2421,6 +2421,7 @@
           "none": "Geen",
           "off": "Uit",
           "pre-ironing": "Strijkdroog",
+          "ready_to_wear": "Draagdroog",
           "wardrobe": "Kastdroog"
         }
       },
@@ -8815,6 +8816,9 @@
       },
       "fota_cmd": {
         "name": "Firmware-update"
+      },
+      "gentle": {
+        "name": "Zacht"
       },
       "greasefilterstatus": {
         "name": "Vetfiltertimer"

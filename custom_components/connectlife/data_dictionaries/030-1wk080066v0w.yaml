@@ -2,6 +2,16 @@
 # Actions, ApplicationPermissions, machine_status 3 (paused, in 030.yaml) and Door_status verified on the device.
 # Remote start must be enabled on the dryer (ApplicationPermissions: 3) for the buttons to work.
 # Enabling it resets the program to auto, and stop disables it again.
+#
+# Verified with the dial in the "Remote" position (also seen on a DH3S80-DVW001 with this feature code):
+# - dry_time is the "Drying type" button for sensor programs: 1 ready to wear, 2 iron dry, 3 cupboard
+#   dry (Synthetics: 0:57, 0:48, 1:00). For the manual programs it holds the "Drying time +/-" value
+#   in minutes (Manual drying time 90 by default, Wool 30; writing 60 is applied).
+# - Dry_Level is the "Dryness" button (1-3 suns on the display).
+# - Natural_Dry is the "Gentle" button (gentle icon on the display).
+# - AntiCrease, Drum_Light and DelayEndTime_Hour are applied.
+# - Program 28 (eco) is not on the dial and is rejected (the dryer falls back to auto).
+# - Writing temperature resets Dry_Level, so it stays hidden.
 buttons:
   - key: start
     icon: mdi:play
@@ -45,3 +55,32 @@ properties:
   - property: Selected_program_total_running_time_in_minutes
     # Same value as Selected_program_total_time_in_minutes.
     hide: true
+  - property: Selected_program_ID
+    select:
+      options:
+        1: auto
+        2: allergy_care
+        3: refresh
+        4: sportswear
+        5: towels
+        7: time
+        8: cotton
+        9: baby_care
+        10: synthetic
+        11: wool
+        12: delicates
+        13: quick_30
+        17: shirts
+        18: bedding
+        19: down
+  - property: dry_time
+    select:
+      options:
+        1: ready_to_wear
+        2: iron
+        3: cupboard
+        30: 30_min
+        60: 60_min
+        90: 90_min
+  - property: Natural_Dry
+    translation_key: gentle

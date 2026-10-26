@@ -2421,6 +2421,7 @@
           "none": "None",
           "off": "Off",
           "pre-ironing": "Pre-ironing",
+          "ready_to_wear": "Ready to wear",
           "wardrobe": "Wardrobe"
         }
       },
@@ -8815,6 +8816,9 @@
       },
       "fota_cmd": {
         "name": "Firmware update"
+      },
+      "gentle": {
+        "name": "Gentle"
       },
       "greasefilterstatus": {
         "name": "Grease filter timer"

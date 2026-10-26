@@ -2421,6 +2421,7 @@
           "none": "\u017d\u00e1dn\u00fd",
           "off": "Vypnuto",
           "pre-ironing": "P\u0159ed \u017eehlen\u00edm",
+          "ready_to_wear": "P\u0159ipraveno k no\u0161en\u00ed",
           "wardrobe": "Do \u0161atn\u00edku"
         }
       },
@@ -8815,6 +8816,9 @@
       },
       "fota_cmd": {
         "name": "Aktualizace firmwaru"
+      },
+      "gentle": {
+        "name": "\u0160etrn\u00e9"
       },
       "greasefilterstatus": {
         "name": "\u010casova\u010d tukov\u00e9ho filtru"
