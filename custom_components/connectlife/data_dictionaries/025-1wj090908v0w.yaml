@@ -1,0 +1,150 @@
+# Freestanding washing-drying machine WD3S9043BW3 (WD3S9014-SVW003, 025-1wj090908v0w)
+# Based on 025-1wj090913v0f (WD3S9043BB3), which reports the same internal model WD3S9014-SVW003.
+# Value lists below are taken from this device's own ConnectLife property list where it publishes one.
+# Verified against the ConnectLife app (2026-10-29): every program ID, temperature, spin speed,
+# extra rinse and dry option, written from Home Assistant and read back in the app.
+properties:
+- property: ApplicationPermissions
+  # Device property list: 0 none, 1 monitoring, 2 monitoring & set commands, 3 monitoring & set commands & actions
+  hide: false
+  sensor:
+    read_only: true
+    device_class: enum
+    options:
+      1: "not_granted"
+      3: "granted"
+
+- property: Child_lock
+  switch:
+    device_class: switch
+
+- property: Current_program_phase
+  # Device property list: 0 NotAvailable, 1 weight, 2 Prewash, 3 Mainwash, 4 Rinse, 5 soften,
+  # 6 Anticrease, 7 Spin, 8 Dry, 9 Air, 10 Programend, 11 Delay
+  sensor:
+    device_class: enum
+    options:
+      0: not_available
+      1: weigh
+      2: prewash
+      3: wash
+      4: rinsing
+      5: softening
+      6: anti_crease
+      7: spinning
+      8: drying
+      9: ventilating
+      10: finished
+      11: delay
+
+- property: DefaultSpinSpeed
+  sensor:
+    device_class: enum
+    unit: null
+    options:
+      0: "off"
+      6: "600"
+      8: "800"
+      10: "1000"
+      12: "1200"
+      14: "1400"
+
+- property: DelayEndTime
+  select:
+    options:
+      0: "none"
+      1: "1_hour"
+      2: "2_hours"
+      3: "3_hours"
+      4: "4_hours"
+      5: "5_hours"
+      6: "6_hours"
+      7: "7_hours"
+      8: "8_hours"
+      9: "9_hours"
+      10: "10_hours"
+      11: "11_hours"
+      12: "12_hours"
+      13: "13_hours"
+      14: "14_hours"
+      15: "15_hours"
+      16: "16_hours"
+      17: "17_hours"
+      18: "18_hours"
+      19: "19_hours"
+      20: "20_hours"
+      21: "21_hours"
+      22: "22_hours"
+      23: "23_hours"
+      24: "24_hours"
+
+- property: DryOpen_DefaultSpinSpeed
+  sensor:
+    read_only: true
+    device_class: enum
+    options:
+      0: "off"
+      6: "600"
+      8: "800"
+      10: "1000"
+      12: "1200"
+      14: "1400"
+
+- property: ExtraRinseNum
+  select:
+    options:
+      0: "none"
+      1: "+1"
+      2: "+2"
+      3: "+3"
+
+- property: Selected_program_ID
+  # All 16 programs verified against the app.
+  select:
+    options:
+      1: "cotton_dry"
+      2: "synthetic_dry"
+      4: "refresh"
+      5: "allergy_care"
+      6: "drum_clean"
+      7: "cotton"
+      8: "synthetic"
+      9: "eco_40_60"
+      10: "wool"
+      11: "quick_15"
+      14: "spin"
+      16: "baby_care"
+      20: "rinse_spin"
+      22: "wash_and_dry_60"
+      41: "power_49"
+      42: "auto"
+
+- property: Spin_speed_rpm
+  select:
+    options:
+      0: "off"
+      6: "600"
+      8: "800"
+      10: "1000"
+      12: "1200"
+      14: "1400"
+
+- property: Steam
+  switch:
+    device_class: switch
+
+- property: dry_time
+  # Device property list: 0 close, 1 ironing, 2 wear, 3 save, 4 performance, other values = drying minutes.
+  # App labels verified: 0 Close, 1 Iron, 2 Cupboard, 3 Extra Dry. 4 is not offered by the app.
+  select:
+    options:
+      0: "off"
+      1: "iron"
+      2: "cupboard"
+      3: "extra_dry"
+      30: "30_min"
+      60: "60_min"
+      90: "90_min"
+      120: "120_min"
+      180: "180_min"
+      240: "240_min"
