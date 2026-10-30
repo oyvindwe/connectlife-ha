@@ -28,6 +28,7 @@ have a feature-specific mapping file.
 | Wine cooler              | [034](custom_components/connectlife/data_dictionaries/034.yaml) |
 | Induction hob            | [036](custom_components/connectlife/data_dictionaries/036.yaml) |
 | Heat pump                | [044](custom_components/connectlife/data_dictionaries/044.yaml) |
+| VRF indoor unit          | [045](custom_components/connectlife/data_dictionaries/045.yaml) |
 
 ## Feature-specific mapping files
 
@@ -187,3 +188,4 @@ have a feature-specific mapping file.
 | Hisense RW3N122GSLF        | Wine cooler              | 034              | [1j0122z0035j](custom_components/connectlife/data_dictionaries/034-1j0122z0035j.yaml)                               |
 |                            | Induction hob            | 036              | [hob-midi-gmi24-better](custom_components/connectlife/data_dictionaries/036-hob-midi-gmi24-better.yaml)             |
 | Hisense Hi-Therma II       | Heat pump                | 044              | [000](custom_components/connectlife/data_dictionaries/044-000.yaml)                                                 |
+| Hi-Therma II Inner         | VRF indoor unit          | 045              | [000](custom_components/connectlife/data_dictionaries/045-000.yaml)                                                 |
