@@ -11,5 +11,5 @@
   "issue_tracker": "https://github.com/oyvindwe/connectlife-ha/issues",
   "loggers": ["connectlife"],
   "requirements": ["connectlife==0.14.0"],
-  "version": "0.54.0"
+  "version": "0.55.0"
 }
