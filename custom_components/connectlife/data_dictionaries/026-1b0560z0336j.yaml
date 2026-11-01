@@ -1,0 +1,108 @@
+# Hisense RQ758N4SASE (026-1b0560z0336j, BCD-560WP2BWF1/HC4(HAD))
+# No ice maker or wine zones. MyFreshChoice is the variable temperature room.
+properties:
+  # Ranges offered by the ConnectLife app (#801)
+  - property: refrigerator_temperature
+    number:
+      min_value: 2
+      max_value: 8
+
+  - property: freeze_temperature
+    number:
+      min_value: -24
+      max_value: -14
+
+  # MyFreshChoice, same as RQ760N4SASE (026-1b0522z0308j)
+  - property: variation_temperature
+    hide: false
+    entity_category: config
+    number:
+      device_class: temperature
+      unit: °C
+      min_value: -20
+      max_value: 5
+      command:
+        name: SET_VARIATION_TEMPERATURE
+
+  # Not real readings (refrigerator 50 °C, variation -40 °C)
+  - property: refrigerator_sensor_real_temperature
+    disable: true
+
+  - property: variation_sensor_real_temperature
+    disable: true
+
+  # No holiday mode (existing_holiday_mode is 0)
+  - property: holiday_mode
+    disable: true
+
+  # No fruit and vegetable zone sensor (always reads 0)
+  - property: fruit_vegetables_temperature
+    disable: true
+
+  - property: real_humidity
+    disable: true
+
+  # No ice maker
+  - property: automatic_ice_making
+    disable: true
+
+  - property: ice_making_b_switch_status
+    disable: true
+
+  - property: ice_making_state
+    disable: true
+
+  - property: ice_making_stop_status
+    disable: true
+
+  - property: ice_make_room_alarm
+    disable: true
+
+  - property: ice_making_machine_failure
+    disable: true
+
+  - property: ice_sensor_failure_flag
+    disable: true
+
+  - property: ice_temperature_sensor_header_failure_flag
+    disable: true
+
+  # No wine zones
+  - property: low_wine_area_c_evaporator_fault
+    disable: true
+
+  - property: low_wine_area_c_fan_fault
+    disable: true
+
+  - property: low_wine_area_c_humdy_fault
+    disable: true
+
+  - property: low_wine_area_c_temp_fault
+    disable: true
+
+  - property: mid_wine_area_b_evaporator_fault
+    disable: true
+
+  - property: mid_wine_area_b_fan_fault
+    disable: true
+
+  - property: mid_wine_area_b_humdy_fault
+    disable: true
+
+  - property: mid_wine_area_b_temp_fault
+    disable: true
+
+  - property: up_wine_area_a_evaporator_fault
+    disable: true
+
+  - property: up_wine_area_a_fan_fault
+    disable: true
+
+  - property: up_wine_area_a_humdy_fault
+    disable: true
+
+  - property: up_wine_area_a_temp_fault
+    disable: true
+
+  - property: wine_sensor_failure_flag
+    disable: true
