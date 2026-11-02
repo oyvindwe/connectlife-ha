@@ -35,3 +35,5 @@ properties:
     disable: true
   - property: existing_sf_mode
     disable: true
+  - property: frize_temp_2_degree_above_starting_point
+    disable: true
