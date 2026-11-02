@@ -83,3 +83,10 @@ properties:
     disable: true
   - property: freeri_fan_speed
     disable: true
+
+  - property: cool_fan_speed
+    disable: true
+  - property: environment_humidity
+    disable: true
+  - property: power_value
+    disable: true
