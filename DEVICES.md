@@ -157,6 +157,7 @@ have a feature-specific mapping file.
 | HRCD483TBW                 | Refrigerator             | 026              | [1b0470z0012j](custom_components/connectlife/data_dictionaries/026-1b0470z0012j.yaml)                               |
 | RQ5P470SEIE                | Refrigerator             | 026              | [1b0470z0026j](custom_components/connectlife/data_dictionaries/026-1b0470z0026j.yaml)                               |
 | RQ760N4SASE                | Refrigerator             | 026              | [1b0522z0308j](custom_components/connectlife/data_dictionaries/026-1b0522z0308j.yaml)                               |
+| RQ758N4SASE                | Refrigerator             | 026              | [1b0560z0336j](custom_components/connectlife/data_dictionaries/026-1b0560z0336j.yaml)                               |
 | RQ5X560SFLEF               | Refrigerator             | 026              | [1b0560z0452j](custom_components/connectlife/data_dictionaries/026-1b0560z0452j.yaml)                               |
 | RF793N4SAFE                | Refrigerator             | 026              | [1b0610z0043j](custom_components/connectlife/data_dictionaries/026-1b0610z0043j.yaml)                               |
 |                            | Refrigerator             | 026              | [1b0610z0049j](custom_components/connectlife/data_dictionaries/026-1b0610z0049j.yaml)                               |
