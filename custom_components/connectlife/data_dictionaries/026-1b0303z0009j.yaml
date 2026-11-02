@@ -9,3 +9,12 @@ properties:
     number:
       min_value: 2
       max_value: 8
+
+  # Expose the supported modes as regular controls, not configuration entries.
+  # Keep the inherited SET_SR_MODE and SET_SAVE_MODE command mappings.
+  - property: sr_mode
+    entity_category: null
+    translation_key: hisense_super_cool
+  - property: save_mode
+    entity_category: null
+    translation_key: hisense_eco
