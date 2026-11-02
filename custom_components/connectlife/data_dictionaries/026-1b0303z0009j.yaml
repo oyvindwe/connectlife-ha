@@ -79,3 +79,7 @@ properties:
     disable: true
   - property: unfreeze_switch_status
     disable: true
+  - property: right_free_sensor_failure
+    disable: true
+  - property: freeri_fan_speed
+    disable: true
