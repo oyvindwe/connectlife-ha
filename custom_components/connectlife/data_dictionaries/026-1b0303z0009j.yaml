@@ -37,3 +37,45 @@ properties:
     disable: true
   - property: frize_temp_2_degree_above_starting_point
     disable: true
+  - property: free_defrosting_failure
+    disable: true
+  - property: free_evap_temp_sens_head_failure
+    disable: true
+  - property: free_fan_failure
+    disable: true
+  - property: free_key
+    disable: true
+  - property: free_room
+    disable: true
+  - property: free_room_open
+    disable: true
+  - property: free_room_open_2
+    disable: true
+  - property: free_room_over_temp_alarm_failure
+    disable: true
+  - property: free_temp_sens_head_failure
+    disable: true
+  - property: freeze_door_open_time
+    disable: true
+  - property: freeze_drawer_room_temp
+    disable: true
+  - property: freeze_fan_speed
+    disable: true
+  - property: freeze_poweroff_ad
+    disable: true
+  - property: freeze_poweron_ad
+    disable: true
+  - property: freezing_powerdown_temp_alarm
+    disable: true
+  - property: open_freeze_door_alarm
+    disable: true
+  - property: refrigerator_freeze_swith
+    disable: true
+  - property: refrigerator_freeze_swith_state
+    disable: true
+  - property: sf_sr_mutex_mode
+    disable: true
+  - property: unfreeze_run_status
+    disable: true
+  - property: unfreeze_switch_status
+    disable: true
