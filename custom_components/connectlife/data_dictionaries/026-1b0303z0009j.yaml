@@ -64,6 +64,16 @@ properties:
   - property: up_wine_area_a_temp_fault
     disable: true
 
+  # Child lock is not supported by this refrigerator model.
+  - property: child_lock_open_alarm
+    disable: true
+  - property: child_lock_open_door_sound_alarm
+    disable: true
+  - property: child_lock_switch_exist
+    disable: true
+  - property: child_lock_switch_status
+    disable: true
+
   # No wine-storage compartment is fitted on this refrigerator.
   - property: wine_sensor_failure_flag
     disable: true
