@@ -64,6 +64,20 @@ properties:
   - property: up_wine_area_a_temp_fault
     disable: true
 
+  # No variable compartment: suppress its unsupported diagnostic alarms.
+  - property: vari_evap_temp_sens_head_failure
+    disable: true
+  - property: vari_temp_sens_head_failure
+    disable: true
+  - property: variable_fan_failure_status
+    disable: true
+  - property: variable_heater_failure_status
+    disable: true
+  - property: var_room_over_temp_alarm
+    disable: true
+  - property: open_variation_door_alarm
+    disable: true
+
   # No variable-temperature compartment: door and temperature values are
   # placeholders, and writing variation_temperature is rejected by the API.
   - property: vari_room_open
