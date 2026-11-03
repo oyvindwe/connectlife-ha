@@ -19,6 +19,15 @@ properties:
     entity_category: null
     translation_key: hisense_eco
 
+  # Unsupported controls on this refrigerator-only model. Removing the
+  # mappings also lets the existing entity-registry cleanup prune old entries.
+  - property: automatic_ice_making
+    disable: true
+  - property: holiday_mode
+    disable: true
+  - property: ice_making_b_switch_status
+    disable: true
+
   # This model is a refrigerator-only appliance: suppress inherited freezer controls,
   # measurements, capability limits and the unsupported Super Freeze mode.
   - property: freeze_temperature
