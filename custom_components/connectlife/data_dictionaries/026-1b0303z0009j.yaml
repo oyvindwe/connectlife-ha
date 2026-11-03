@@ -28,6 +28,16 @@ properties:
   - property: ice_making_b_switch_status
     disable: true
 
+  # No ice maker is installed: suppress its active status and fault entities.
+  - property: ice_make_room_alarm
+    disable: true
+  - property: ice_making_machine_failure
+    disable: true
+  - property: ice_making_state
+    disable: true
+  - property: ice_making_stop_status
+    disable: true
+
   # No variable-temperature compartment: door and temperature values are
   # placeholders, and writing variation_temperature is rejected by the API.
   - property: vari_room_open
