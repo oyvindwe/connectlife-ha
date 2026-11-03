@@ -38,6 +38,32 @@ properties:
   - property: ice_making_stop_status
     disable: true
 
+  # No wine-storage zones A/B/C: suppress their unsupported fault sensors.
+  - property: low_wine_area_c_evaporator_fault
+    disable: true
+  - property: low_wine_area_c_fan_fault
+    disable: true
+  - property: low_wine_area_c_humdy_fault
+    disable: true
+  - property: low_wine_area_c_temp_fault
+    disable: true
+  - property: mid_wine_area_b_evaporator_fault
+    disable: true
+  - property: mid_wine_area_b_fan_fault
+    disable: true
+  - property: mid_wine_area_b_humdy_fault
+    disable: true
+  - property: mid_wine_area_b_temp_fault
+    disable: true
+  - property: up_wine_area_a_evaporator_fault
+    disable: true
+  - property: up_wine_area_a_fan_fault
+    disable: true
+  - property: up_wine_area_a_humdy_fault
+    disable: true
+  - property: up_wine_area_a_temp_fault
+    disable: true
+
   # No variable-temperature compartment: door and temperature values are
   # placeholders, and writing variation_temperature is rejected by the API.
   - property: vari_room_open
