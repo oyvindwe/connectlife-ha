@@ -64,6 +64,15 @@ properties:
   - property: up_wine_area_a_temp_fault
     disable: true
 
+  # No replaceable charcoal filter or filter-maintenance feature is documented
+  # for this refrigerator; suppress inherited filter diagnostics.
+  - property: charcoal_filter_expiration_alarm
+    disable: true
+  - property: charcoal_filter_surplus_time
+    disable: true
+  - property: charcoal_filter_time_reset
+    disable: true
+
   # Child lock is not supported by this refrigerator model.
   - property: child_lock_open_alarm
     disable: true
