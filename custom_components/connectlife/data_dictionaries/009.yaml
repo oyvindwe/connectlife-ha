@@ -369,8 +369,17 @@ properties:
       device_class: switch
     icon: mdi:weather-windy
   - property: t_left_right
+    # On/off horizontal swing. Used as the swing_horizontal_mode control on
+    # devices that expose t_left_right but not t_swing_direction; when both are
+    # present, t_swing_direction wins unless overridden per device (#580).
     switch:
       device_class: switch
+    climate:
+      target: swing_horizontal_mode
+      priority: 2
+      options:
+        0: "off"
+        1: "on"
     icon: mdi:arrow-left-right
   - property: t_power
     climate:
