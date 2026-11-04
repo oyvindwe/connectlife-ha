@@ -114,6 +114,7 @@ have a feature-specific mapping file.
 |                            | Induction hob            | 020              | [63c45b513e1a4bf7](custom_components/connectlife/data_dictionaries/020-63c45b513e1a4bf7.yaml)                       |
 |                            | Oven                     | 023              | [295608422d362be1](custom_components/connectlife/data_dictionaries/023-295608422d362be1.yaml)                       |
 | HWF8I1015BX                | Washing machine          | 025              | [1wfj1000018v](custom_components/connectlife/data_dictionaries/025-1wfj1000018v.yaml)                               |
+| WF5I1045BWQ                | Washing machine          | 025              | [1wfj1000101v](custom_components/connectlife/data_dictionaries/025-1wfj1000101v.yaml)                               |
 | WD3S8043BW3                | Washing machine          | 025              | [1wfx0800019v](custom_components/connectlife/data_dictionaries/025-1wfx0800019v.yaml)                               |
 | WD5I9043BBFS               | Washing machine          | 025              | [1wfx0900003v](custom_components/connectlife/data_dictionaries/025-1wfx0900003v.yaml)                               |
 | WF5I8043BWF                | Washing machine          | 025              | [1wj0803f2v0w](custom_components/connectlife/data_dictionaries/025-1wj0803f2v0w.yaml)                               |

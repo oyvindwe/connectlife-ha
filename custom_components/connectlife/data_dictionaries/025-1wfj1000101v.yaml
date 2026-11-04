@@ -1,0 +1,46 @@
+# Hisense WF5I1045BWQ washer (025-1wfj1000101v), API model WF5i1014-QVW102.
+# Phases 0, 1, 3, 4, 6, 7 and 10 observed on the machine. 2 and 11 (not observed) and all names
+# except 6 follow 025-1wfj1000018v.
+# 6 is anti-crease: with AntiCrease on, every program went from spinning to 6 and stayed there,
+# door closed, until the door was opened (then 10) or the machine was switched off.
+# Programs 6, 7, 8, 14, 19 and 52 confirmed on the panel; the other IDs follow 025-1wfj1000018v,
+# plus 9 (eco_40_60), which the machine reports after power-on. The list matches the user manual.
+properties:
+  - property: Current_program_phase
+    sensor:
+      read_only: true
+      device_class: enum
+      options:
+        0: not_available
+        1: weigh
+        2: prewash # not verified
+        3: wash
+        4: rinsing
+        6: anti_crease
+        7: spinning
+        10: finished
+        11: delay_start_waiting # not verified
+
+  - property: Selected_program_ID
+    sensor:
+      read_only: true
+      device_class: enum
+      options:
+        4: refresh
+        6: drum_clean
+        7: cotton
+        8: synthetic
+        9: eco_40_60
+        10: wool
+        11: quick_15
+        14: spin
+        15: allergy_care
+        16: baby_care
+        18: sportswear
+        19: down
+        20: rinse_spin
+        42: auto
+        44: bedding
+        52: power_30
+        56: pets
+        57: full_load_49
