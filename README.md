@@ -70,6 +70,9 @@ and click "Configure" → "Configure a device", select the device, and set "Swin
 your hardware actually responds to (leave it on "auto" to keep the automatic choice). This option only appears
 for devices that expose more than one swing property.
 
+Horizontal swing works the same way: if the left/right positions don't work, set "Horizontal swing mode control"
+to `t_left_right` for simple on/off swing.
+
 ## Daily energy and water consumption sensors
 
 For supported device types, the integration exposes a **daily energy** sensor (kWh) and, for
