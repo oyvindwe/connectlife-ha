@@ -174,6 +174,7 @@ have a feature-specific mapping file.
 | Gorenje WNA94ARWIFI        | Washing machine          | 027              | [washing-machine-wm22](custom_components/connectlife/data_dictionaries/027-washing-machine-wm22.yaml)               |
 | Gorenje WNS14A4ATS         | Washing machine          | 027              | [washing-machine-wm23-ads](custom_components/connectlife/data_dictionaries/027-washing-machine-wm23-ads.yaml)       |
 | Gorenje WG486A21           | Washing machine          | 027              | [washing-machine-wm26-g400](custom_components/connectlife/data_dictionaries/027-washing-machine-wm26-g400.yaml)     |
+| DH5I104BWCB                | Tumble dryer             | 030              | [1dhk1000057v](custom_components/connectlife/data_dictionaries/030-1dhk1000057v.yaml)                               |
 |                            | Tumble dryer             | 030              | [1wk080135v0w](custom_components/connectlife/data_dictionaries/030-1wk080135v0w.yaml)                               |
 | DH3S80-DVW006              | Tumble dryer             | 030              | [1wk080140v0w](custom_components/connectlife/data_dictionaries/030-1wk080140v0w.yaml)                               |
 | DH3S802BW3                 | Tumble dryer             | 030              | [1wk080066v0w](custom_components/connectlife/data_dictionaries/030-1wk080066v0w.yaml)                               |
