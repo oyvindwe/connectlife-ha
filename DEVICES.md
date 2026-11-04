@@ -138,6 +138,7 @@ have a feature-specific mapping file.
 | WFSE1114-LVW002            | Washing machine          | 025              | [1wj105219v0w](custom_components/connectlife/data_dictionaries/025-1wj105219v0w.yaml)                               |
 | WFSE1114-LVW002            | Washing machine          | 025              | [1wj105064v0w](custom_components/connectlife/data_dictionaries/025-1wj105064v0w.yaml)                               |
 | WF3S1114-LVW004            | Washing machine          | 025              | [1wj105246v0w](custom_components/connectlife/data_dictionaries/025-1wj105246v0w.yaml)                               |
+| WF3S1114-LVW004-000        | Washing machine          | 025              | [1wj105262v0f](custom_components/connectlife/data_dictionaries/025-1wj105262v0f.yaml)                               |
 |                            | Washing machine          | 025              | [1wj105418v0t](custom_components/connectlife/data_dictionaries/025-1wj105418v0t.yaml)                               |
 | WD5I1045BWQ                | Washing machine          | 025              | [1wj105552v0w](custom_components/connectlife/data_dictionaries/025-1wj105552v0w.yaml)                               |
 | WF5S1245BB                 | Washing machine          | 025              | [1wj120238v0b](custom_components/connectlife/data_dictionaries/025-1wj120238v0b.yaml)                               |
@@ -178,6 +179,7 @@ have a feature-specific mapping file.
 | DH5I104BWCB                | Tumble dryer             | 030              | [1dhk1000057v](custom_components/connectlife/data_dictionaries/030-1dhk1000057v.yaml)                               |
 |                            | Tumble dryer             | 030              | [1wk080135v0w](custom_components/connectlife/data_dictionaries/030-1wk080135v0w.yaml)                               |
 | DH3S80-DVW006              | Tumble dryer             | 030              | [1wk080140v0w](custom_components/connectlife/data_dictionaries/030-1wk080140v0w.yaml)                               |
+| DH3S80-DEW012-000          | Tumble dryer             | 030              | [1wk080167e0t](custom_components/connectlife/data_dictionaries/030-1wk080167e0t.yaml)                               |
 | DH3S802BW3                 | Tumble dryer             | 030              | [1wk080066v0w](custom_components/connectlife/data_dictionaries/030-1wk080066v0w.yaml)                               |
 | DH3S902BW3                 | Tumble dryer             | 030              | [1wk090106v0w](custom_components/connectlife/data_dictionaries/030-1wk090106v0w.yaml)                               |
 | DH5S102BW                  | Tumble dryer             | 030              | [1wk100028v0w](custom_components/connectlife/data_dictionaries/030-1wk100028v0w.yaml)                               |
