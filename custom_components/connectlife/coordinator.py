@@ -15,7 +15,7 @@ from connectlife.appliance import ConnectLifeAppliance
 from homeassistant.components.recorder import get_instance
 from homeassistant.components.recorder.statistics import list_statistic_ids
 from homeassistant.const import Platform
-from homeassistant.exceptions import ConfigEntryAuthFailed
+from homeassistant.exceptions import ConfigEntryAuthFailed, HomeAssistantError
 from homeassistant.helpers import device_registry as dr, entity_registry as er, issue_registry as ir
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
@@ -194,8 +194,18 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
 
     async def async_update_device(self, device_id: str, command: Mapping[str, int | float | str], properties: Mapping[str, int | float | str]):
         """Updates the device, and sets the properties in local copy and notify to avoid refetching."""
-        await self.api.update_appliance(self.data[device_id].puid, {k: str(v) for k, v in command.items()})
-        self.data[device_id].status_list.update(properties)
+        appliance = self.data.get(device_id)
+        if appliance is None:
+            # Missing from the latest polls, e.g. offline or no longer on the account.
+            device = self._registered_devices().get(device_id)
+            name = device and (device.name_by_user or device.name)
+            raise HomeAssistantError(
+                translation_domain=DOMAIN,
+                translation_key="device_not_available",
+                translation_placeholders={"device": name or device_id},
+            )
+        await self.api.update_appliance(appliance.puid, {k: str(v) for k, v in command.items()})
+        appliance.status_list.update(properties)
         self.async_update_listeners()
 
     def add_entity(self, entity_unique_id: str, platform: Platform):

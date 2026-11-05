@@ -9053,6 +9053,9 @@
     "command_rejected": {
       "message": "Ure\u0111aj ne prihvata ovu komandu u svom trenutnom stanju"
     },
+    "device_not_available": {
+      "message": "Ure\u0111aj {device} nije dostupan"
+    },
     "terms_not_accepted": {
       "message": "A\u017eurirani ConnectLife Uslovi kori\u0161\u0107enja moraju biti prihva\u0107eni u ConnectLife aplikaciji"
     }
