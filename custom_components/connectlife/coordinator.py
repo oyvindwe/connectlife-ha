@@ -25,22 +25,6 @@ from .messages import format_retry_message
 from .statistics_sources import STATISTICS_SOURCES, enabled_sensors
 from .terms import terms_accepted, terms_not_accepted, terms_retry_throttled
 
-# Targeted DEBUG logging for the Hisense refrigerator door/alarm test.
-# Avoid logging the full ConnectLife API payload (which may contain identifiers).
-HISENSE_FRIDGE_FEATURE_CODE = "1b0303z0009j"
-HISENSE_DOOR_DEBUG_PROPERTIES = (
-    "refr_room_open",
-    "refrigerator_door_open_time",
-    "open_refrigerator_door_alarm",
-    "open_the_door_alarm",
-    "door_open_ui_display_status",
-    "door_close_ui_display_status",
-    "door_open_light_status",
-    "door_close_light_status",
-    "child_lock_open_door_sound_alarm",
-    "refr_room_over_temp_alarm",
-)
-
 MAX_RETRIES = 3
 STATISTICS_UPDATE_INTERVAL = timedelta(minutes=10)
 # How long a device must be missing from the device list before raising a repair
@@ -135,16 +119,6 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
             else:
                 raise UpdateFailed(format_retry_message(err)) from err
         data = {a.device_id: a for a in self.api.appliances}
-        # Log only door/alarm values for this specific fridge, never credentials,
-        # device identifiers, or the complete multi-appliance response.
-        if _LOGGER.isEnabledFor(logging.DEBUG):
-            for appliance in data.values():
-                if appliance.device_id.startswith(HISENSE_FRIDGE_FEATURE_CODE):
-                    status = appliance.status_list
-                    _LOGGER.debug(
-                        "Hisense refrigerator door diagnostics: %s",
-                        {key: status.get(key) for key in HISENSE_DOOR_DEBUG_PROPERTIES},
-                    )
         more_status_device_ids = self._devices_with_more_status(data)
         if self._setup_device_ids is None:
             self._setup_device_ids = set(data)
