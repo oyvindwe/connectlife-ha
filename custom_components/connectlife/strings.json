@@ -8897,7 +8897,7 @@
         "name": "Sabbath mode"
       },
       "save_mode": {
-        "name": "Save mode"
+        "name": "Eco mode"
       },
       "selected_program_anticrease_status": {
         "name": "Anti-crease"
@@ -8921,7 +8921,7 @@
         "name": "Session pairing"
       },
       "sf_mode": {
-        "name": "SF mode"
+        "name": "Super freeze"
       },
       "sf_sr_mutex_mode": {
         "name": "SF SR mutex mode"
@@ -8942,7 +8942,7 @@
         "name": "Sound"
       },
       "sr_mode": {
-        "name": "SR mode"
+        "name": "Super cool"
       },
       "standby_mode_status": {
         "name": "Standby mode"

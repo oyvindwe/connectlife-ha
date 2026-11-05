@@ -8897,7 +8897,7 @@
         "name": "Modalit\u00e0 Sabbath"
       },
       "save_mode": {
-        "name": "Modalit\u00e0 risparmio"
+        "name": "Modalit\u00e0 eco"
       },
       "selected_program_anticrease_status": {
         "name": "Antipiega"
@@ -8921,7 +8921,7 @@
         "name": "Associazione sessione"
       },
       "sf_mode": {
-        "name": "Modalit\u00e0 SF"
+        "name": "Super freeze"
       },
       "sf_sr_mutex_mode": {
         "name": "Modalit\u00e0 mutex SF SR"
@@ -8942,7 +8942,7 @@
         "name": "Suono"
       },
       "sr_mode": {
-        "name": "Modalit\u00e0 SR"
+        "name": "Super cool"
       },
       "standby_mode_status": {
         "name": "Modalit\u00e0 standby"

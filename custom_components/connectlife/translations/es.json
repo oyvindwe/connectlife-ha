@@ -8897,7 +8897,7 @@
         "name": "Modo Sabbath"
       },
       "save_mode": {
-        "name": "Modo ahorro"
+        "name": "Modo eco"
       },
       "selected_program_anticrease_status": {
         "name": "Antiarrgas "
@@ -8921,7 +8921,7 @@
         "name": "Emparejamiento de sesi\u00f3n"
       },
       "sf_mode": {
-        "name": "Modo SF"
+        "name": "Supercongelaci\u00f3n"
       },
       "sf_sr_mutex_mode": {
         "name": "Modo exclusivo SF/SR"
@@ -8942,7 +8942,7 @@
         "name": "Sonido"
       },
       "sr_mode": {
-        "name": "Modo SR"
+        "name": "S\u00faper fr\u00edo"
       },
       "standby_mode_status": {
         "name": "Modo en espera"
