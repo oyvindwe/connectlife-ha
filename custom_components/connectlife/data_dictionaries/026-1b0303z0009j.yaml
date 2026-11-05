@@ -14,10 +14,8 @@ properties:
   # Keep the inherited SET_SR_MODE and SET_SAVE_MODE command mappings.
   - property: sr_mode
     entity_category: null
-    translation_key: hisense_super_cool
   - property: save_mode
     entity_category: null
-    translation_key: hisense_eco
 
   # Unsupported controls on this refrigerator-only model. Removing the
   # mappings also lets the existing entity-registry cleanup prune old entries.
