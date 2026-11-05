@@ -8,8 +8,11 @@ from unittest.mock import AsyncMock, MagicMock, patch
 import dataclasses
 from datetime import timedelta
 
+import pytest
+
 from homeassistant.core import HomeAssistant
 from homeassistant.const import Platform
+from homeassistant.exceptions import HomeAssistantError
 from homeassistant.helpers import device_registry as dr, entity_registry as er, issue_registry as ir
 from pytest_homeassistant_custom_component.common import MockConfigEntry
 
@@ -295,3 +298,19 @@ async def test_cleanup_keeps_entities_of_device_with_partial_status(hass: HomeAs
         "a-t_unknown",
         "a-daily_energy_kwh",
     }
+
+
+async def test_update_device_missing_from_poll_raises_not_available() -> None:
+    coordinator, _ = _coordinator()
+    coordinator.api.update_appliance = AsyncMock()
+    coordinator._registered_devices = MagicMock(
+        return_value={"a": SimpleNamespace(name="AC", name_by_user="Bedroom AC")}
+    )
+    await _poll(coordinator, "b")
+
+    with pytest.raises(HomeAssistantError) as exc:
+        await coordinator.async_update_device("a", {"t_power": 1}, {"t_power": 1})
+
+    assert exc.value.translation_key == "device_not_available"
+    assert exc.value.translation_placeholders == {"device": "Bedroom AC"}
+    coordinator.api.update_appliance.assert_not_awaited()

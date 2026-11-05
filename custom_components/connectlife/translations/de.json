@@ -9053,6 +9053,9 @@
     "command_rejected": {
       "message": "Das Ger\u00e4t nimmt diesen Befehl im aktuellen Zustand nicht an"
     },
+    "device_not_available": {
+      "message": "{device} ist nicht verf\u00fcgbar"
+    },
     "terms_not_accepted": {
       "message": "Aktualisierte ConnectLife-Nutzungsbedingungen m\u00fcssen in der ConnectLife-App akzeptiert werden"
     }

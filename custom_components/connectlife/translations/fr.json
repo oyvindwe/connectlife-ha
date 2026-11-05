@@ -9053,6 +9053,9 @@
     "command_rejected": {
       "message": "L'appareil n'accepte pas cette commande dans son \u00e9tat actuel"
     },
+    "device_not_available": {
+      "message": "{device} n'est pas disponible"
+    },
     "terms_not_accepted": {
       "message": "Les Conditions g\u00e9n\u00e9rales ConnectLife mises \u00e0 jour doivent \u00eatre accept\u00e9es dans l'application ConnectLife"
     }
