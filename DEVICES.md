@@ -151,7 +151,7 @@ have a feature-specific mapping file.
 | WF5i1214-RVW002            | Washing machine          | 025              | [1wj120560v0w](custom_components/connectlife/data_dictionaries/025-1wj120560v0w.yaml)                               |
 | WD5I1245BBR                | Washing machine          | 025              | [1wj120596v0f](custom_components/connectlife/data_dictionaries/025-1wj120596v0f.yaml)                               |
 | Gorenje WDG38014-PVW004    | Washing machine          | 025              | [vwj080553v0w](custom_components/connectlife/data_dictionaries/025-vwj080553v0w.yaml)                               |
-| BC-303WP2BWQ1              | Refrigerator             | 026              | [1b0303z0009j](custom_components/connectlife/data_dictionaries/026-1b0303z0009j.yaml)                               |
+| BC-303WP2BWQ1 / RL3B303SAWE | Refrigerator             | 026              | [1b0303z0009j](custom_components/connectlife/data_dictionaries/026-1b0303z0009j.yaml)                               |
 | BD/BC-310WP2BWF1           | Refrigerator             | 026              | [1b0310z0010j](custom_components/connectlife/data_dictionaries/026-1b0310z0010j.yaml)                               |
 |                            | Refrigerator             | 026              | [1b0330z0079j](custom_components/connectlife/data_dictionaries/026-1b0330z0079j.yaml)                               |
 | HRCD483TBW                 | Refrigerator             | 026              | [1b0470z0012j](custom_components/connectlife/data_dictionaries/026-1b0470z0012j.yaml)                               |
