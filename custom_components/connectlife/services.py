@@ -39,7 +39,13 @@ async def async_setup_services(hass: HomeAssistant) -> None:
             device = registry.async_get(target)
             if device:
                 device_entries = dict[str, ConfigEntry]()
-                for entry_id in device.config_entries:
+                # Home Assistant 2026.8 and later: a device belongs to a single config entry, and
+                # config_entries is deprecated (stops working in 2027.10).
+                if (config_entry_id := getattr(device, "config_entry_id", None)) is not None:
+                    entry_ids = {config_entry_id}
+                else:
+                    entry_ids = device.config_entries
+                for entry_id in entry_ids:
                     entry = hass.config_entries.async_get_entry(entry_id)
                     if entry and entry.domain == DOMAIN:
                         for domain, device_id in device.identifiers:
