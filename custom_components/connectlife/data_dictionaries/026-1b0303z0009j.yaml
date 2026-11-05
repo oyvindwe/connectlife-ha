@@ -192,3 +192,19 @@ properties:
     disable: true
   - property: power_value
     disable: true
+
+  # Unsupported mode flags verified on this refrigerator model.
+  - property: existing_holiday_mode
+    disable: true
+  - property: existing_lock_fresh_mode
+    disable: true
+
+  # Two aliases for the absent variable-compartment sensor diagnostic.
+  - property: refrigerator_var_room_sens_failure
+    disable: true
+  - property: refr_var_room_sens_failure
+    disable: true
+
+  # Constant 0% placeholder, not a usable humidity measurement.
+  - property: real_humidity
+    disable: true
