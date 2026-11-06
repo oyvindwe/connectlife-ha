@@ -26,14 +26,8 @@ buttons:
     Actions: 2
 properties:
 - property: Actions
-  select:
-    options:
-      0: start
-      1: pause
-      2: stop_finish
-      3: add_duration
-      4: add_gratin
-      5: steam_shot
+  # Replaced by the buttons.
+  disable: true
 - property: Adaptive_sense_setting
   unavailable: 0
   optional: true

@@ -2218,20 +2218,10 @@
       "actions": {
         "name": "Radnje",
         "state": {
-          "add_duration": "Dodaj trajanje",
-          "add_gratin": "Dodaj gratiniranje",
-          "cancel": "Otka\u017ei",
-          "direct_steam": "Direktna para",
           "none": "Ni\u0161ta",
           "pause": "Pauza",
-          "production_test": "Test proizvodnje",
-          "program_continue": "Nastavi program",
-          "reset_programs_to_default": "Resetuj programe na podrazumevano",
           "start": "Start",
-          "steam_shot": "Mlaz pare",
-          "steamer_water_tank_door_open": "Otvori vrata rezervoara za paru",
-          "stop": "Stop",
-          "stop_finish": "Stop \u2013 zavr\u0161etak"
+          "stop": "Stop"
         }
       },
       "ads_dirtiness_setting_status": {

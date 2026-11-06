@@ -2218,20 +2218,10 @@
       "actions": {
         "name": "Azioni",
         "state": {
-          "add_duration": "Aggiungi durata",
-          "add_gratin": "Aggiungi gratinatura",
-          "cancel": "Annulla",
-          "direct_steam": "Vapore diretto",
           "none": "Nessuno",
           "pause": "Pausa",
-          "production_test": "Test di produzione",
-          "program_continue": "Continua programma",
-          "reset_programs_to_default": "Ripristina i programmi predefiniti",
           "start": "Avvia",
-          "steam_shot": "Getto di vapore",
-          "steamer_water_tank_door_open": "Apri sportello serbatoio acqua vaporiera",
-          "stop": "Arresta",
-          "stop_finish": "Arresto a fine ciclo"
+          "stop": "Arresta"
         }
       },
       "ads_dirtiness_setting_status": {

@@ -2218,20 +2218,10 @@
       "actions": {
         "name": "Acciones",
         "state": {
-          "add_duration": "A\u00f1adir duraci\u00f3n",
-          "add_gratin": "A\u00f1adir gratinado",
-          "cancel": "Cancelar",
-          "direct_steam": "Vapor directo",
           "none": "No centrifugar",
           "pause": "Pausa",
-          "production_test": "Prueba de producci\u00f3n",
-          "program_continue": "Continuar programa",
-          "reset_programs_to_default": "Restablecer programas a los valores predeterminados",
           "start": "Iniciar",
-          "steam_shot": "Golpe de vapor",
-          "steamer_water_tank_door_open": "Abrir la puerta del dep\u00f3sito de agua del vaporizador",
-          "stop": "Detener",
-          "stop_finish": "Detener y finalizar"
+          "stop": "Detener"
         }
       },
       "ads_dirtiness_setting_status": {

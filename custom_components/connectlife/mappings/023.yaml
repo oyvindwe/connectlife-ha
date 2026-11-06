@@ -26,13 +26,8 @@ buttons:
       Actions: 1
 properties:
   - property: Actions
-    select:
-      options:
-        1: stop
-        2: start
-        3: pause
-        6: steamer_water_tank_door_open
-        7: direct_steam
+    # Replaced by the buttons.
+    disable: true
   - property: Alarm_alarm_time_reached
     icon: mdi:alarm
     binary_sensor:

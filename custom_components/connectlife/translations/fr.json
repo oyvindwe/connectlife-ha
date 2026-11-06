@@ -2218,20 +2218,10 @@
       "actions": {
         "name": "Actions",
         "state": {
-          "add_duration": "Prolonger la dur\u00e9e",
-          "add_gratin": "Ajouter gratin",
-          "cancel": "Annuler",
-          "direct_steam": "Vapeur directe",
           "none": "Aucun",
           "pause": "Pause",
-          "production_test": "Test de production",
-          "program_continue": "Reprendre le programme",
-          "reset_programs_to_default": "R\u00e9initialiser les programmes par d\u00e9faut",
           "start": "D\u00e9marrer",
-          "steam_shot": "Jet de vapeur",
-          "steamer_water_tank_door_open": "Ouvrir la trappe du r\u00e9servoir d'eau du cuiseur vapeur",
-          "stop": "Arr\u00eater",
-          "stop_finish": "Arr\u00eater \u00e0 la fin"
+          "stop": "Arr\u00eater"
         }
       },
       "ads_dirtiness_setting_status": {
