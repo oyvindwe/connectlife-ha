@@ -4138,9 +4138,6 @@
       "emptywatertank": {
         "name": "Wassertank leeren"
       },
-      "energy": {
-        "name": "Energie"
-      },
       "energy_consumption_in_running_program": {
         "name": "Energieverbrauch im laufenden Programm"
       },
@@ -5365,6 +5362,9 @@
       },
       "program_end_to_shutdown_time_in_minutes": {
         "name": "Zeit bis zum Herunterfahren nach Programmende"
+      },
+      "program_energy_estimate": {
+        "name": "Gesch\u00e4tzte Programmenergie"
       },
       "program_settingsdefault": {
         "name": "Programmeinstellungen Standard"

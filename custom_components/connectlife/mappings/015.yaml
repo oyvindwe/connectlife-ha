@@ -241,8 +241,8 @@ properties:
         2: on
     icon: mdi:door
   - property: Energy_consumption_in_running_program
+    # No state class: per program, so not offered in the Energy dashboard (use Total_energy_consumption).
     sensor:
-      state_class: total_increasing
       device_class: energy
       unit: kWh
       multiplier: 0.1
@@ -639,9 +639,9 @@ properties:
   - property: UV_mode_on_demand_allowed
     optional: true
   - property: Water_consumption_in_running_program
+    # No state class: per program, so not offered in the Energy dashboard (use Total_water_consumption).
     sensor:
       unknown_value: 65535
-      state_class: total_increasing
       device_class: water
       unit: L
     hide: true

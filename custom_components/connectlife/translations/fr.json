@@ -4138,9 +4138,6 @@
       "emptywatertank": {
         "name": "R\u00e9servoir d'eau vide"
       },
-      "energy": {
-        "name": "\u00c9nergie"
-      },
       "energy_consumption_in_running_program": {
         "name": "Consommation d'\u00e9nergie du programme en cours"
       },
@@ -5365,6 +5362,9 @@
       },
       "program_end_to_shutdown_time_in_minutes": {
         "name": "Temps entre fin de programme et arr\u00eat"
+      },
+      "program_energy_estimate": {
+        "name": "\u00c9nergie estim\u00e9e du programme"
       },
       "program_settingsdefault": {
         "name": "R\u00e9glages du programme par d\u00e9faut"
