@@ -1,0 +1,53 @@
+name: Stale issues
+
+# Issues labelled "waiting for reporter" get a reminder after 4 weeks without activity, and are
+# closed as not planned 4 weeks later. Issues labelled "awaiting confirmation" (fix released) get
+# the same reminder, and are closed as completed. Other issues and pull requests are never touched.
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"  # Mondays 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Waiting for reporter
+        uses: actions/stale@v11
+        with:
+          only-issue-labels: waiting for reporter
+          days-before-issue-stale: 28
+          days-before-issue-close: 28
+          days-before-pr-stale: -1
+          days-before-pr-close: -1
+          stale-issue-label: stale
+          close-issue-reason: not_planned
+          stale-issue-message: >
+            We haven't heard back for 4 weeks. Is this still happening on the latest version? If so,
+            please answer the question above, and attach diagnostics from the device page
+            (**Download diagnostics** in the Device info card) if you haven't yet.
+            This issue will be closed in 4 weeks if there's no reply.
+          close-issue-message: >
+            Closing this, as we haven't heard back. If this still happens on the latest version,
+            comment here and we'll reopen it.
+
+      - name: Awaiting confirmation
+        uses: actions/stale@v11
+        with:
+          only-issue-labels: awaiting confirmation
+          days-before-issue-stale: 28
+          days-before-issue-close: 28
+          days-before-pr-stale: -1
+          days-before-pr-close: -1
+          stale-issue-label: stale
+          close-issue-reason: completed
+          stale-issue-message: >
+            Did the fix work for you? If it's still not working on the latest version, please let us know.
+            This issue will be closed in 4 weeks if there's no reply.
+          close-issue-message: >
+            Closing this, as the fix has been released and we haven't heard otherwise.
+            If it still happens on the latest version, comment here and we'll reopen it.
