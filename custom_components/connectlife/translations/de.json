@@ -2222,7 +2222,6 @@
           "add_gratin": "Gratin hinzuf\u00fcgen",
           "cancel": "Abbrechen",
           "direct_steam": "Direktdampf",
-          "none": "Keine",
           "pause": "Pause",
           "production_test": "Produktionstest",
           "program_continue": "Programm fortsetzen",
@@ -3119,9 +3118,6 @@
       }
     },
     "sensor": {
-      "actions": {
-        "name": "Aktionen"
-      },
       "activemodelightbrightness": {
         "name": "Lichthelligkeit im Aktivmodus"
       },

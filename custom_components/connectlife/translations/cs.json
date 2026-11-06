@@ -2222,7 +2222,6 @@
           "add_gratin": "P\u0159idat gratin",
           "cancel": "Zru\u0161it",
           "direct_steam": "P\u0159\u00edm\u00e1 p\u00e1ra",
-          "none": "\u017d\u00e1dn\u00fd",
           "pause": "Pozastavit",
           "production_test": "V\u00fdrobn\u00ed test",
           "program_continue": "Pokra\u010dovat programu",
@@ -3119,9 +3118,6 @@
       }
     },
     "sensor": {
-      "actions": {
-        "name": "Akce"
-      },
       "activemodelightbrightness": {
         "name": "Jas sv\u011btla aktivn\u00edho re\u017eimu"
       },

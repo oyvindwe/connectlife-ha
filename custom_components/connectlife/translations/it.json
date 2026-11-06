@@ -2222,7 +2222,6 @@
           "add_gratin": "Aggiungi gratinatura",
           "cancel": "Annulla",
           "direct_steam": "Vapore diretto",
-          "none": "Nessuno",
           "pause": "Pausa",
           "production_test": "Test di produzione",
           "program_continue": "Continua programma",
@@ -3119,9 +3118,6 @@
       }
     },
     "sensor": {
-      "actions": {
-        "name": "Azioni"
-      },
       "activemodelightbrightness": {
         "name": "Luminosit\u00e0 luce modalit\u00e0 attiva"
       },

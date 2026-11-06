@@ -29,8 +29,8 @@ buttons:
       Actions: 1
 properties:
   - property: Actions
-    # Sample value: 0
-    optional: true
+    # Replaced by the start, pause and stop buttons; always reads 0.
+    disable: true
   - property: AntiCrease
     icon: mdi:iron
     switch:

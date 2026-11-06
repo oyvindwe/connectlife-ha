@@ -2222,7 +2222,6 @@
           "add_gratin": "Legg til gratinering",
           "cancel": "Avbryt",
           "direct_steam": "Direkte damp",
-          "none": "Ingen",
           "pause": "Pause",
           "production_test": "Produksjonstest",
           "program_continue": "Fortsett program",
@@ -3119,9 +3118,6 @@
       }
     },
     "sensor": {
-      "actions": {
-        "name": "Handlinger"
-      },
       "activemodelightbrightness": {
         "name": "Lysstyrke i aktiv modus"
       },

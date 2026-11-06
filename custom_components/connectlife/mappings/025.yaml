@@ -220,13 +220,8 @@ properties:
       read_only: true
     entity_category: diagnostic
   - property: Actions
-    icon: mdi:play-pause
-    select:
-      options:
-        0: none
-        1: stop
-        2: start
-        3: pause
+    # Replaced by the start, pause and stop buttons; always reads 0.
+    disable: true
   - property: Child_lock
     icon: mdi:lock
     entity_category: config

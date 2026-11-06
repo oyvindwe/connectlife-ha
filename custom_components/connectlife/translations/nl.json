@@ -2222,7 +2222,6 @@
           "add_gratin": "Gratin toevoegen",
           "cancel": "Annuleren",
           "direct_steam": "Directe stoom",
-          "none": "Geen",
           "pause": "Pauze",
           "production_test": "Productietest",
           "program_continue": "Programma hervatten",
@@ -3119,9 +3118,6 @@
       }
     },
     "sensor": {
-      "actions": {
-        "name": "Acties"
-      },
       "activemodelightbrightness": {
         "name": "Helderheid verlichting actieve modus"
       },
