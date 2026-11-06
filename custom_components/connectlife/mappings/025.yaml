@@ -4,6 +4,30 @@ statistics:
   source: energy_consumption_curve
   daily_energy_kwh: true
   daily_water_consumption: true
+# Draft: values as on the 030 dryer (#758): Actions 1 stop, 2 start, 3 pause. ApplicationPermissions 3 is assumed
+# to mean remote start is enabled, as on 030. machine_status: 1 standby, 2 running, 3 paused.
+buttons:
+  - key: start
+    icon: mdi:play
+    available_when:
+      ApplicationPermissions: 3
+      machine_status: [1, 3]
+    write:
+      Actions: 2
+  - key: pause
+    icon: mdi:pause
+    available_when:
+      ApplicationPermissions: 3
+      machine_status: 2
+    write:
+      Actions: 3
+  - key: stop
+    icon: mdi:stop
+    available_when:
+      ApplicationPermissions: 3
+      machine_status: [2, 3]
+    write:
+      Actions: 1
 properties:
   - property: Door_status
     icon: mdi:door
