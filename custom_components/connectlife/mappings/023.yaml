@@ -3,6 +3,27 @@ device_type_name: Oven
 statistics:
   source: energy_consumption_curve
   daily_energy_kwh: true
+# Unverified on a device: Actions 1 stop, 2 start, 3 pause. Device_status: 3011 idle, 3012/3017 running,
+# 3013 paused, 3015 delay time waiting.
+buttons:
+  - key: start
+    icon: mdi:play
+    available_when:
+      Device_status: [3011, 3013]  # Idle, paused
+    write:
+      Actions: 2
+  - key: pause
+    icon: mdi:pause
+    available_when:
+      Device_status: [3012, 3017]  # Running
+    write:
+      Actions: 3
+  - key: stop
+    icon: mdi:stop
+    available_when:
+      Device_status: [3012, 3013, 3015, 3017]  # Running, paused, delay time waiting
+    write:
+      Actions: 1
 properties:
   - property: Actions
     select:
