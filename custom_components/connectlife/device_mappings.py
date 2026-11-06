@@ -457,7 +457,7 @@ class Property:
 
 
 class Button:
-    """A button entity declared at the top level of a data dictionary.
+    """A button entity declared at the top level of a mapping.
 
     Buttons are for write-only commands: a press writes ``write`` to the
     device. ``available_when`` gates the button on read-back property values
@@ -506,8 +506,8 @@ def _merge_buttons(base: list[dict], override: list[dict]) -> list[dict]:
 
 
 @dataclass
-class Dictionary:
-    """Data dictionary for a ConnectLife appliance"""
+class DeviceMapping:
+    """Device mapping for a ConnectLife appliance"""
 
     # Todo: Refactor Climate dataclass
     climate: dict | None
@@ -663,7 +663,7 @@ def _load_yaml(path: str) -> tuple[bool, Any]:
 
     An empty file (a subtype file with only ``# Uses default mappings``) is
     ``(True, None)`` — present, no overrides — distinct from a missing file
-    ``(False, None)``, so callers don't emit spurious "no data dictionary
+    ``(False, None)``, so callers don't emit spurious "no mapping
     found" warnings for placeholder subtype files.
     """
     try:
@@ -675,15 +675,15 @@ def _load_yaml(path: str) -> tuple[bool, Any]:
     return True, yaml.safe_load(data)
 
 
-class Dictionaries:
+class DeviceMappings:
 
-    dictionaries: dict[str, Dictionary] = {}
+    mappings: dict[str, DeviceMapping] = {}
 
     @classmethod
-    def get_dictionary(cls, appliance: ConnectLifeAppliance) -> Dictionary:
+    def get_mapping(cls, appliance: ConnectLifeAppliance) -> DeviceMapping:
         key = f"{appliance.device_type_code}-{appliance.device_feature_code}"
-        if key in cls.dictionaries:
-            return cls.dictionaries[key]
+        if key in cls.mappings:
+            return cls.mappings[key]
 
         climate: dict | None = None
         device_type_name: str | None = None
@@ -692,7 +692,7 @@ class Dictionaries:
         raw_buttons: list[dict] = []
 
         _, base_data = _load_yaml(
-            f"data_dictionaries/{appliance.device_type_code}.yaml"
+            f"mappings/{appliance.device_type_code}.yaml"
         )
         if base_data is not None:
             device_type_name = _val(base_data, DEVICE_TYPE_NAME, device_type_name)
@@ -705,10 +705,10 @@ class Dictionaries:
             if BUTTONS in base_data and base_data[BUTTONS] is not None:
                 raw_buttons = list(base_data[BUTTONS])
 
-        sub_found, sub_data = _load_yaml(f"data_dictionaries/{key}.yaml")
+        sub_found, sub_data = _load_yaml(f"mappings/{key}.yaml")
         if not sub_found:
             _LOGGER.warning(
-                "No data dictionary found for %s (%s)",
+                "No mapping found for %s (%s)",
                 appliance.device_nickname,
                 key,
             )
@@ -758,7 +758,7 @@ class Dictionaries:
             _LOGGER.warning("Ignoring climate.precision %s for %s, must be 0.1, 0.5 or 1", precision, key)
             precision = None
 
-        dictionary = Dictionary(
+        mapping = DeviceMapping(
             climate=climate,
             properties=properties,
             buttons=buttons,
@@ -770,5 +770,5 @@ class Dictionaries:
             statistics_sensors=statistics_sensors,
             device_type_name=device_type_name,
         )
-        cls.dictionaries[key] = dictionary
-        return dictionary
+        cls.mappings[key] = mapping
+        return mapping

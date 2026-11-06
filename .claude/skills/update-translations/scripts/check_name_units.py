@@ -9,7 +9,7 @@ Reports two problems across all language files:
      renders the unit; drop the word from the name.
 
   B. UNIT ONLY IN NAME — a name contains a unit word but the property has NO
-     unit in its sensor/number block. Either set the unit in the data dictionary
+     unit in its sensor/number block. Either set the unit in the mapping
      (preferred, so HA renders it) or the name is the only place the unit shows.
 
 Unit detection is word-boundary based and per-language, and deliberately skips
@@ -39,7 +39,7 @@ import sys
 
 import yaml
 
-DD = "custom_components/connectlife/data_dictionaries"
+DD = "custom_components/connectlife/mappings"
 TR = "custom_components/connectlife/translations"
 LANGS = ["en", "de", "es", "fr", "it", "nl", "no"]
 

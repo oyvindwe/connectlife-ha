@@ -16,7 +16,7 @@ from homeassistant.components.sensor.const import (
 )
 
 from custom_components.connectlife.climate import HVAC_MODE_ALIASES, HVAC_MODE_VALUES
-from custom_components.connectlife.dictionaries import _merge_buttons, _merge_property
+from custom_components.connectlife.device_mappings import _merge_buttons, _merge_property
 from custom_components.connectlife.utils import normalize_temperature_unit
 
 PLATFORMS = ('binary_sensor', 'climate', 'humidifier', 'number', 'select',
@@ -205,7 +205,7 @@ def main(basedir):
     yaml.SafeLoader.construct_mapping_org = yaml.SafeLoader.construct_mapping
     yaml.SafeLoader.construct_mapping = my_construct_mapping
 
-    device_dir = f"{basedir}/data_dictionaries"
+    device_dir = f"{basedir}/mappings"
     create_catalog("2020-12")
     schema_file = f"{device_dir}/properties-schema.json"
     schema = JSONSchema.loadf(schema_file)

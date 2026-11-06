@@ -5,7 +5,7 @@ from homeassistant.const import Platform, UnitOfTemperature
 
 from connectlife.appliance import ConnectLifeAppliance
 from .const import CONF_DEVICES, CONF_TARGET_OVERRIDES, TEMPERATURE_UNIT
-from .dictionaries import Property, Dictionary
+from .device_mappings import Property, DeviceMapping
 
 
 def has_platform(platform: Platform, property: Property):
@@ -13,15 +13,15 @@ def has_platform(platform: Platform, property: Property):
 
 
 def _climate_candidates(
-    appliance: ConnectLifeAppliance, dictionary: Dictionary
+    appliance: ConnectLifeAppliance, mapping: DeviceMapping
 ) -> dict[str, list[tuple[int, str]]]:
     """Group the climate-target candidates the appliance actually exposes.
 
-    Returns ``{target: [(priority, property_name), ...]}`` in dictionary order,
+    Returns ``{target: [(priority, property_name), ...]}`` in mapping order,
     including only properties present in ``status_list`` and not disabled.
     """
     candidates: dict[str, list[tuple[int, str]]] = {}
-    for name, prop in dictionary.properties.items():
+    for name, prop in mapping.properties.items():
         if name not in appliance.status_list:
             continue
         if not has_platform(Platform.CLIMATE, prop):
@@ -35,7 +35,7 @@ def _climate_candidates(
 
 def climate_target_bindings(
     appliance: ConnectLifeAppliance,
-    dictionary: Dictionary,
+    mapping: DeviceMapping,
     overrides: Mapping[str, str] | None = None,
 ) -> dict[str, str]:
     """Resolve which property serves each climate target for this appliance.
@@ -44,7 +44,7 @@ def climate_target_bindings(
     ``t_swing_angle`` and ``t_up_down`` map to ``swing_mode``). Among the
     candidates the device actually exposes (present in ``status_list`` and not
     disabled), the one with the lowest ``priority`` wins the target; ties are
-    broken by dictionary order. Returns ``{target: property_name}``.
+    broken by mapping order. Returns ``{target: property_name}``.
 
     ``overrides`` (``{target: property_name}``) lets the user pin a specific
     candidate for a target — used when a device advertises a control it doesn't
@@ -54,7 +54,7 @@ def climate_target_bindings(
     """
     overrides = overrides or {}
     bindings: dict[str, str] = {}
-    for target, candidates in _climate_candidates(appliance, dictionary).items():
+    for target, candidates in _climate_candidates(appliance, mapping).items():
         names = [name for _, name in candidates]
         override = overrides.get(target)
         if override in names:
@@ -66,17 +66,17 @@ def climate_target_bindings(
 
 
 def contested_climate_targets(
-    appliance: ConnectLifeAppliance, dictionary: Dictionary
+    appliance: ConnectLifeAppliance, mapping: DeviceMapping
 ) -> dict[str, list[str]]:
     """Climate targets this appliance exposes more than one candidate for.
 
     These are the targets where the automatic binding makes a choice the user
-    may want to override. Returns ``{target: [property_name, ...]}`` (dictionary
+    may want to override. Returns ``{target: [property_name, ...]}`` (mapping
     order), only for targets with two or more candidates.
     """
     return {
         target: [name for _, name in candidates]
-        for target, candidates in _climate_candidates(appliance, dictionary).items()
+        for target, candidates in _climate_candidates(appliance, mapping).items()
         if len(candidates) > 1
     }
 
@@ -89,7 +89,7 @@ def device_target_overrides(config_entry, device_id: str) -> dict[str, str]:
 
 def climate_bound_properties(
     appliance: ConnectLifeAppliance,
-    dictionary: Dictionary,
+    mapping: DeviceMapping,
     overrides: Mapping[str, str] | None = None,
 ) -> set[str]:
     """Property names bound to a climate target for this appliance.
@@ -98,20 +98,20 @@ def climate_bound_properties(
     so its per-property platform (if any) must be suppressed to avoid a
     duplicate entity.
     """
-    return set(climate_target_bindings(appliance, dictionary, overrides).values())
+    return set(climate_target_bindings(appliance, mapping, overrides).values())
 
 
-def to_unit(unit: str | None, appliance: ConnectLifeAppliance, dictionary: Dictionary):
+def to_unit(unit: str | None, appliance: ConnectLifeAppliance, mapping: DeviceMapping):
     if unit is None:
         return None
     if unit.startswith("property."):
         unit_property_name = unit[9:]
-        if unit_property_name in dictionary.properties:
+        if unit_property_name in mapping.properties:
             if unit_property_name not in appliance.status_list:
                 # Not reported (yet); a later status with it reloads the entry.
                 return None
             unit_value = appliance.status_list[unit_property_name]
-            unit_property = dictionary.properties[unit_property_name]
+            unit_property = mapping.properties[unit_property_name]
             if has_platform(Platform.CLIMATE, unit_property):
                 unit_climate = unit_property.climate
                 if unit_climate.target == TEMPERATURE_UNIT and unit_value in unit_climate.options:

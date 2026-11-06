@@ -44,7 +44,7 @@ fully functional until a feature-specific mapping file is provided.
 Any unmapped properties will show up as sensors with names based on their properties. As there are a lot of exposed
 properties, all unknown entities are disabled by default. Access the device or entity list to view sensors and enable.
 
-Please contribute PRs with [mapping files](custom_components/connectlife/data_dictionaries) for your devices!
+Please contribute PRs with [mapping files](custom_components/connectlife/mappings) for your devices!
 
 ## Disable beeping
 
@@ -89,7 +89,7 @@ via the `energyConsumptionCurve` endpoint.
 
 No configuration is needed: these sensors are created automatically for device types whose mapping
 opts in (see the `statistics` block in the
-[data dictionary docs](custom_components/connectlife/data_dictionaries/README.md#statistics)).
+[mapping docs](custom_components/connectlife/mappings/README.md#statistics)).
 The statistics are fetched from a separate cloud endpoint, polled every 10 minutes, and — unlike
 the regular status entities — they stay available even while the appliance is offline.
 
@@ -104,7 +104,7 @@ if property is writeable or that the value is legal to set.
 4. Enter value
 5. Perform action.
 
-It is possible to guard against `set_value` by setting `read_only: true` in the data dictionary on the sensor, e.g.
+It is possible to guard against `set_value` by setting `read_only: true` in the mapping on the sensor, e.g.
 ```yaml
   - property: f_status 
     sensor:

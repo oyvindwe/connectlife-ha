@@ -20,7 +20,7 @@ from .const import (
     TARGET_HUMIDITY,
 )
 from .coordinator import ConnectLifeCoordinator
-from .dictionaries import Dictionaries, Dictionary
+from .device_mappings import DeviceMappings, DeviceMapping
 from .entity import ConnectLifeEntity
 from .utils import has_platform
 from connectlife.appliance import ConnectLifeAppliance
@@ -37,14 +37,14 @@ async def async_setup_entry(
     coordinator = hass.data[DOMAIN][config_entry.entry_id]
     entities = []
     for appliance in coordinator.data.values():
-        dictionary = Dictionaries.get_dictionary(appliance)
-        if is_humidifier(dictionary):
-            entities.append(ConnectLifeHumidifier(coordinator, appliance, dictionary))
+        mapping = DeviceMappings.get_mapping(appliance)
+        if is_humidifier(mapping):
+            entities.append(ConnectLifeHumidifier(coordinator, appliance, mapping))
     async_add_entities(entities)
 
 
-def is_humidifier(dictionary: Dictionary):
-    for prop in dictionary.properties.values():
+def is_humidifier(mapping: DeviceMapping):
+    for prop in mapping.properties.values():
         if has_platform(Platform.HUMIDIFIER, prop):
             return True
     return False
@@ -63,7 +63,7 @@ class ConnectLifeHumidifier(ConnectLifeEntity, HumidifierEntity):
             self,
             coordinator: ConnectLifeCoordinator,
             appliance: ConnectLifeAppliance,
-            data_dictionary: Dictionary,
+            mapping: DeviceMapping,
     ):
         """Initialize the entity."""
         super().__init__(coordinator, appliance, "humidifier", Platform.HUMIDIFIER)
@@ -74,7 +74,7 @@ class ConnectLifeHumidifier(ConnectLifeEntity, HumidifierEntity):
         self.action_map = {}
 
         device_class = None
-        for prop in data_dictionary.properties.values():
+        for prop in mapping.properties.values():
             if has_platform(Platform.HUMIDIFIER, prop):
                 if prop.humidifier.device_class is not None:
                     device_class = prop.humidifier.device_class
@@ -87,7 +87,7 @@ class ConnectLifeHumidifier(ConnectLifeEntity, HumidifierEntity):
             device_class=device_class,
         )
 
-        for dd_entry in data_dictionary.properties.values():
+        for dd_entry in mapping.properties.values():
             if has_platform(Platform.HUMIDIFIER, dd_entry) and dd_entry.name in appliance.status_list and dd_entry.humidifier.target is not None:
                 target = dd_entry.humidifier.target
                 if target in self.target_map:
@@ -101,20 +101,20 @@ class ConnectLifeHumidifier(ConnectLifeEntity, HumidifierEntity):
         for target, status in self.target_map.items():
             if target == ACTION:
                 actions = [action.value for action in HumidifierAction]
-                for (k, v) in data_dictionary.properties[status].humidifier.options.items():
+                for (k, v) in mapping.properties[status].humidifier.options.items():
                     if v in actions:
                         self.action_map[k] = HumidifierAction(v)
                     else:
                         _LOGGER.warning("Not mapping %d to unknown HumidifierAction %s", k, v)
             elif target == MODE:
-                self.mode_map = data_dictionary.properties[status].humidifier.options
+                self.mode_map = mapping.properties[status].humidifier.options
                 self.mode_reverse_map = {v: k for k, v in self.mode_map.items()}
                 self._attr_available_modes = list(self.mode_map.values())
                 self._attr_supported_features |= HumidifierEntityFeature.MODES
                 self._attr_mode = None
             elif target == TARGET_HUMIDITY:
-                self._attr_min_humidity = data_dictionary.properties[status].humidifier.min_value  # type: ignore[assignment]
-                self._attr_max_humidity = data_dictionary.properties[status].humidifier.max_value  # type: ignore[assignment]
+                self._attr_min_humidity = mapping.properties[status].humidifier.min_value  # type: ignore[assignment]
+                self._attr_max_humidity = mapping.properties[status].humidifier.max_value  # type: ignore[assignment]
 
         self.update_state()
 

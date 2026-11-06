@@ -240,9 +240,9 @@ async def test_new_device_with_status_schedules_one_reload() -> None:
     schedule_reload.assert_called_once_with("entry-1")
 
 
-async def _cleanup(hass: HomeAssistant, build_dictionary, status_list: dict[str, int]) -> set[str]:
+async def _cleanup(hass: HomeAssistant, build_mapping, status_list: dict[str, int]) -> set[str]:
     """Set up registry entities for device "a", run the cleanup, and return the unique IDs left."""
-    build_dictionary(
+    build_mapping(
         base={
             "properties": [
                 {"property": "t_temp", "sensor": {}},
@@ -281,17 +281,17 @@ async def _cleanup(hass: HomeAssistant, build_dictionary, status_list: dict[str,
     return {e.unique_id for e in er.async_entries_for_config_entry(entity_reg, entry.entry_id)}
 
 
-async def test_cleanup_removes_entities_no_longer_mapped(hass: HomeAssistant, build_dictionary) -> None:
+async def test_cleanup_removes_entities_no_longer_mapped(hass: HomeAssistant, build_mapping) -> None:
     # t_gone is disabled in the mapping, t_unknown is no longer created, and the
     # statistics sensor is not enabled.
     assert await _cleanup(
-        hass, build_dictionary, {"t_temp": 21, "t_mode": 1, "t_gone": 1, "t_unknown": 0}
+        hass, build_mapping, {"t_temp": 21, "t_mode": 1, "t_gone": 1, "t_unknown": 0}
     ) == {"a-t_temp", "a-t_mode"}
 
 
-async def test_cleanup_keeps_entities_of_device_with_partial_status(hass: HomeAssistant, build_dictionary) -> None:
+async def test_cleanup_keeps_entities_of_device_with_partial_status(hass: HomeAssistant, build_mapping) -> None:
     # t_mode is not reported, so the status is partial and nothing is removed.
-    assert await _cleanup(hass, build_dictionary, {"t_temp": 21, "t_gone": 1, "t_unknown": 0}) == {
+    assert await _cleanup(hass, build_mapping, {"t_temp": 21, "t_gone": 1, "t_unknown": 0}) == {
         "a-t_temp",
         "a-t_mode",
         "a-t_gone",

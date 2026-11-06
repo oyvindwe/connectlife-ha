@@ -9,7 +9,7 @@ from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
 from .const import DOMAIN
 from .coordinator import ConnectLifeCoordinator
-from .dictionaries import Dictionaries, Dictionary, Property
+from .device_mappings import DeviceMappings, DeviceMapping, Property
 from .entity import ConnectLifeEntity
 from connectlife.appliance import ConnectLifeAppliance
 from .utils import climate_bound_properties, device_target_overrides, has_platform, to_unit
@@ -25,19 +25,19 @@ async def async_setup_entry(
     """Set up ConnectLife number entities."""
     coordinator = hass.data[DOMAIN][config_entry.entry_id]
     for appliance in coordinator.data.values():
-        dictionary = Dictionaries.get_dictionary(appliance)
+        mapping = DeviceMappings.get_mapping(appliance)
         overrides = device_target_overrides(config_entry, appliance.device_id)
-        climate_bound = climate_bound_properties(appliance, dictionary, overrides)
+        climate_bound = climate_bound_properties(appliance, mapping, overrides)
         async_add_entities(
             ConnectLifeNumberEntity(
                 coordinator,
                 appliance,
                 s,
-                dictionary.properties[s],
-                dictionary,
+                mapping.properties[s],
+                mapping,
             )
             for s in appliance.status_list
-            if has_platform(Platform.NUMBER, dictionary.properties[s])
+            if has_platform(Platform.NUMBER, mapping.properties[s])
             and s not in climate_bound
         )
 
@@ -53,7 +53,7 @@ class ConnectLifeNumberEntity(ConnectLifeEntity, NumberEntity):
         appliance: ConnectLifeAppliance,
         status: str,
         dd_entry: Property,
-        dictionary: Dictionary,
+        mapping: DeviceMapping,
     ):
         """Initialize the entity."""
         super().__init__(coordinator, appliance, status, Platform.NUMBER)
@@ -75,7 +75,7 @@ class ConnectLifeNumberEntity(ConnectLifeEntity, NumberEntity):
             native_max_value=dd_entry.number.max_value,  # type: ignore[arg-type]
             native_min_value=dd_entry.number.min_value,  # type: ignore[arg-type]
             native_unit_of_measurement=to_unit(
-                dd_entry.number.unit, appliance=appliance, dictionary=dictionary
+                dd_entry.number.unit, appliance=appliance, mapping=mapping
             ),
             translation_key=self.to_translation_key(dd_entry.translation_key or status),
             entity_category=dd_entry.entity_category,

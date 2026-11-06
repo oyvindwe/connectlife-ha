@@ -1,6 +1,6 @@
 ---
 name: update-translations
-description: Fill missing translation keys in the ConnectLife language files using appliance-specific terminology, keep time units in the data dictionary (not baked into entity names), verify, and open one PR per language. Use when a language file is missing keys or when unit words need cleaning out of names.
+description: Fill missing translation keys in the ConnectLife language files using appliance-specific terminology, keep time units in the mapping (not baked into entity names), verify, and open one PR per language. Use when a language file is missing keys or when unit words need cleaning out of names.
 argument-hint: [lang ...]
 disable-model-invocation: true
 allowed-tools: Bash(uv *) Bash(git *) Bash(gh *) Bash(python3 *)
@@ -18,7 +18,7 @@ Read [CONVENTIONS.md](CONVENTIONS.md) first — it holds the locked terminology 
    ```bash
    uv run python -m scripts.check_translations [lang]
    ```
-   `en.json` is the reference; it is generated from the data dictionaries by `scripts.gen_strings` (which only *adds* missing keys and never overwrites existing text). Never invent keys — only fill keys that `check_translations` reports.
+   `en.json` is the reference; it is generated from the mappings by `scripts.gen_strings` (which only *adds* missing keys and never overwrites existing text). Never invent keys — only fill keys that `check_translations` reports.
 
 2. **Extract the work list with context.**
    ```bash
@@ -39,7 +39,7 @@ Read [CONVENTIONS.md](CONVENTIONS.md) first — it holds the locked terminology 
    ```
    `merge_translations.py` fills every missing key, reuses existing in-file translations for repeated English strings, and refuses to write if any `{placeholder}` parity check fails or any key is unfilled.
 
-5. **Keep units in the mapping, not in names.** If an entity name bakes in a time unit (`… in minutes`, `… used hours`, `(minuten)`, leading `Horas de …`), set `device_class: duration` + `unit` on the property's `sensor`/`number` block in the data dictionary and drop the unit word from the name in every language. Then verify both directions:
+5. **Keep units in the mapping, not in names.** If an entity name bakes in a time unit (`… in minutes`, `… used hours`, `(minuten)`, leading `Horas de …`), set `device_class: duration` + `unit` on the property's `sensor`/`number` block in the mapping and drop the unit word from the name in every language. Then verify both directions:
    ```bash
    # Scope to what this change introduces (recommended) — pass the last release tag:
    python3 .claude/skills/update-translations/scripts/check_name_units.py --base "$(git describe --tags --abbrev=0)"

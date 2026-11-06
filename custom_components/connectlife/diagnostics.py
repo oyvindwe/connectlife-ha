@@ -17,7 +17,7 @@ from connectlife.appliance import ConnectLifeAppliance
 
 from .const import CONF_DEVICES, DOMAIN
 from .coordinator import ConnectLifeCoordinator, ConnectLifeStatisticsCoordinator
-from .dictionaries import Dictionaries, _load_yaml
+from .device_mappings import DeviceMappings, _load_yaml
 from .statistics_sources import enabled_sensors
 
 # Identifiers and names are left out of the report altogether. This is a safety
@@ -75,13 +75,13 @@ async def _appliance_diagnostics(
     """Appliance status and how it is mapped, without device IDs or names."""
     type_code = appliance.device_type_code
     feature_code = appliance.device_feature_code
-    dictionary = Dictionaries.get_dictionary(appliance)
-    # Unmapped properties resolve to the dictionary's default entry, whose name
+    mapping = DeviceMappings.get_mapping(appliance)
+    # Unmapped properties resolve to the mapping's default entry, whose name
     # does not match the status key.
     unmapped = sorted(
         name
         for name in appliance.status_list
-        if (prop := dictionary.properties.get(name)) is None or prop.name != name
+        if (prop := mapping.properties.get(name)) is None or prop.name != name
     )
     return async_redact_data({
         "device_type_code": type_code,
@@ -90,15 +90,15 @@ async def _appliance_diagnostics(
         "device_feature_name": appliance.device_feature_name,
         "offline_state": appliance.offline_state,
         "mapping_files": {
-            f"{type_code}.yaml": _load_yaml(f"data_dictionaries/{type_code}.yaml")[0],
+            f"{type_code}.yaml": _load_yaml(f"mappings/{type_code}.yaml")[0],
             f"{type_code}-{feature_code}.yaml": _load_yaml(
-                f"data_dictionaries/{type_code}-{feature_code}.yaml"
+                f"mappings/{type_code}-{feature_code}.yaml"
             )[0],
         },
         "statistics_sensors": [
             sensor.key
             for sensor in enabled_sensors(
-                dictionary.statistics_source, dictionary.statistics_sensors
+                mapping.statistics_source, mapping.statistics_sensors
             )
         ],
         "options": entry.options.get(CONF_DEVICES, {}).get(appliance.device_id, {}),
@@ -111,7 +111,7 @@ async def _appliance_diagnostics(
         "self_check": await _device_request(appliance, lambda: api.get_self_check(appliance.puid)),
         "hour_power": await _device_request(appliance, lambda: api.get_hour_power(appliance.puid)),
         "property_list": await _property_list(api, appliance, {} if property_lists is None else property_lists),
-        "statistics": _statistics(hass, entry, appliance, dictionary.statistics_source),
+        "statistics": _statistics(hass, entry, appliance, mapping.statistics_source),
     }, TO_REDACT)
 
 

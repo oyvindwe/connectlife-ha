@@ -7,14 +7,14 @@ from unittest.mock import patch
 
 import pytest
 
-import custom_components.connectlife.dictionaries as dictmod
+import custom_components.connectlife.device_mappings as mappings_module
 
 
 @pytest.fixture
-def build_dictionary():
-    """Factory to build a ``Dictionary`` from inline mapping data.
+def build_mapping():
+    """Factory to build a ``DeviceMapping`` from inline mapping data.
 
-    Runs the real ``Dictionaries.get_dictionary`` parser/merge over data passed
+    Runs the real ``DeviceMappings.get_mapping`` parser/merge over data passed
     in-process instead of reading any shipped YAML file, so tests exercise the
     parsing and inheritance logic without coupling to specific device mappings.
 
@@ -27,9 +27,9 @@ def build_dictionary():
     def _build(*, base=None, sub=None, type_code="999", feature="000"):
         files: dict[str, object] = {}
         if base is not None:
-            files[f"data_dictionaries/{type_code}.yaml"] = base
+            files[f"mappings/{type_code}.yaml"] = base
         if sub is not None:
-            files[f"data_dictionaries/{type_code}-{feature}.yaml"] = sub
+            files[f"mappings/{type_code}-{feature}.yaml"] = sub
 
         def fake_load(path):
             if path in files:
@@ -37,10 +37,10 @@ def build_dictionary():
             return False, None
 
         key = f"{type_code}-{feature}"
-        dictmod.Dictionaries.dictionaries.pop(key, None)
+        mappings_module.DeviceMappings.mappings.pop(key, None)
         created.append(key)
-        with patch.object(dictmod, "_load_yaml", side_effect=fake_load):
-            return dictmod.Dictionaries.get_dictionary(
+        with patch.object(mappings_module, "_load_yaml", side_effect=fake_load):
+            return mappings_module.DeviceMappings.get_mapping(
                 SimpleNamespace(
                     device_type_code=type_code,
                     device_feature_code=feature,
@@ -50,4 +50,4 @@ def build_dictionary():
 
     yield _build
     for key in created:
-        dictmod.Dictionaries.dictionaries.pop(key, None)
+        mappings_module.DeviceMappings.mappings.pop(key, None)

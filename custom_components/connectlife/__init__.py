@@ -27,7 +27,7 @@ from .const import (
     DOMAIN,
 )
 from .coordinator import ConnectLifeCoordinator, ConnectLifeStatisticsCoordinator
-from .dictionaries import Dictionaries
+from .device_mappings import DeviceMappings
 from .oauth import ConnectLifeOAuth2Implementation, create_oauth_api
 from .services import async_setup_services
 from .statistics_sources import enabled_sensors
@@ -113,7 +113,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     has_statistics = any(
         enabled_sensors(d.statistics_source, d.statistics_sensors)
         for appliance in coordinator.data.values()
-        if (d := Dictionaries.get_dictionary(appliance))
+        if (d := DeviceMappings.get_mapping(appliance))
     )
     if has_statistics:
         statistics_coordinator = ConnectLifeStatisticsCoordinator(hass, api, coordinator)
