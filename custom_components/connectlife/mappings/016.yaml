@@ -25,6 +25,8 @@ properties:
       state_class: measurement
     hide: true
   - property: f_power_consumption
+    # Always 0 in known samples.
+    optional: true
     sensor:
       device_class: energy
       unit: kWh

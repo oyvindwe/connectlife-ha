@@ -4134,9 +4134,6 @@
       "emptywatertank": {
         "name": "Pr\u00e1zdn\u00e1 vodn\u00ed n\u00e1dr\u017e"
       },
-      "energy": {
-        "name": "Energie"
-      },
       "energy_consumption_in_running_program": {
         "name": "Spot\u0159eba energie v b\u011b\u017e\u00edc\u00edm programu"
       },
@@ -5361,6 +5358,9 @@
       },
       "program_end_to_shutdown_time_in_minutes": {
         "name": "Doba od konce programu do vypnut\u00ed"
+      },
+      "program_energy_estimate": {
+        "name": "Odhad energie programu"
       },
       "program_settingsdefault": {
         "name": "V\u00fdchoz\u00ed nastaven\u00ed programu"

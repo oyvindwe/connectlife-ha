@@ -4134,9 +4134,6 @@
       "emptywatertank": {
         "name": "T\u00f8m vanntank"
       },
-      "energy": {
-        "name": "Energi"
-      },
       "energy_consumption_in_running_program": {
         "name": "Energiforbruk i kj\u00f8rende program"
       },
@@ -5361,6 +5358,9 @@
       },
       "program_end_to_shutdown_time_in_minutes": {
         "name": "Tid fra programslutt til avslag"
+      },
+      "program_energy_estimate": {
+        "name": "Estimert energi for programmet"
       },
       "program_settingsdefault": {
         "name": "Standard programinnstillinger"

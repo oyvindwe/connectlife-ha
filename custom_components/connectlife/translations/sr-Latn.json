@@ -4134,9 +4134,6 @@
       "emptywatertank": {
         "name": "Prazan rezervoar za vodu"
       },
-      "energy": {
-        "name": "Energija"
-      },
       "energy_consumption_in_running_program": {
         "name": "Potro\u0161nja energije u aktivnom programu"
       },
@@ -5361,6 +5358,9 @@
       },
       "program_end_to_shutdown_time_in_minutes": {
         "name": "Vreme od zavr\u0161etka programa do ga\u0161enja"
+      },
+      "program_energy_estimate": {
+        "name": "Procenjena energija programa"
       },
       "program_settingsdefault": {
         "name": "Podrazumevana pode\u0161avanja programa"
