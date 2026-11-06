@@ -8776,6 +8776,9 @@
       "controldid19": {
         "name": "Silent mode"
       },
+      "controldid29": {
+        "name": "DHW boost"
+      },
       "crisp_function_status": {
         "name": "Crisp function status"
       },

@@ -8776,6 +8776,9 @@
       "controldid19": {
         "name": "Modo silencioso"
       },
+      "controldid29": {
+        "name": "Impulso de ACS"
+      },
       "crisp_function_status": {
         "name": "Estado de la funci\u00f3n Crisp"
       },

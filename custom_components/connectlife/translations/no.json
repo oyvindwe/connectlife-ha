@@ -8776,6 +8776,9 @@
       "controldid19": {
         "name": "Stillemodus"
       },
+      "controldid29": {
+        "name": "Varmtvannsboost"
+      },
       "crisp_function_status": {
         "name": "Status for spr\u00f8-funksjon"
       },
