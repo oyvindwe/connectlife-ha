@@ -1,8 +1,6 @@
 device_type_name: Heat pump
-# Experimental (#820): the app shows daily energy, but the hourly power endpoint returns 0.
-statistics:
-  source: energy_consumption_curve
-  daily_energy_kwh: true
+# ConnectLife returns no energy data for the Hi-Therma II (#820): energy_consumption_curve is empty and
+# hourly power is all 0, although the app shows daily energy.
 properties:
 
   - property: A2W_SW_ON
