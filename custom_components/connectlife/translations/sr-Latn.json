@@ -2222,7 +2222,6 @@
           "add_gratin": "Dodaj gratiniranje",
           "cancel": "Otka\u017ei",
           "direct_steam": "Direktna para",
-          "none": "Ni\u0161ta",
           "pause": "Pauza",
           "production_test": "Test proizvodnje",
           "program_continue": "Nastavi program",
@@ -3119,9 +3118,6 @@
       }
     },
     "sensor": {
-      "actions": {
-        "name": "Radnje"
-      },
       "activemodelightbrightness": {
         "name": "Osvetljenost svetla u aktivnom re\u017eimu"
       },
