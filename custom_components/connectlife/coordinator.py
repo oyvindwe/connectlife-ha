@@ -212,6 +212,22 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
         """Add known entity."""
         self.entities[entity_unique_id] = platform;
 
+    def _is_reported(self, device_id: str, name: str) -> bool:
+        """Return whether the device reports the property behind a status entity.
+
+        A combined sensor has no property of its own; like at setup, it counts as reported
+        when the device reports any of its sources.
+        """
+        appliance = self.data[device_id]
+        if name in appliance.status_list:
+            return True
+        prop = DeviceMappings.get_mapping(appliance).properties.get(name)
+        return bool(
+            prop is not None
+            and prop.combine
+            and any(source["property"] in appliance.status_list for source in prop.combine)
+        )
+
     async def cleanup_removed_entities(self) -> None:
         """
         Cleanup entity registry for entities converted to a different entity
@@ -244,7 +260,7 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
             for entity, device_id, name in entities
             if entity.domain in STATUS_PLATFORMS
             and name not in NON_STATUS_ENTITY_NAMES
-            and name not in self.data[device_id].status_list
+            and not self._is_reported(device_id, name)
         }
         for entity, device_id, name in entities:
             if device_id in partial_device_ids:
