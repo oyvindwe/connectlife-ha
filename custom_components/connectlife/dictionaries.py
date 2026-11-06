@@ -692,7 +692,7 @@ class Dictionaries:
         raw_buttons: list[dict] = []
 
         _, base_data = _load_yaml(
-            f"data_dictionaries/{appliance.device_type_code}.yaml"
+            f"mappings/{appliance.device_type_code}.yaml"
         )
         if base_data is not None:
             device_type_name = _val(base_data, DEVICE_TYPE_NAME, device_type_name)
@@ -705,7 +705,7 @@ class Dictionaries:
             if BUTTONS in base_data and base_data[BUTTONS] is not None:
                 raw_buttons = list(base_data[BUTTONS])
 
-        sub_found, sub_data = _load_yaml(f"data_dictionaries/{key}.yaml")
+        sub_found, sub_data = _load_yaml(f"mappings/{key}.yaml")
         if not sub_found:
             _LOGGER.warning(
                 "No data dictionary found for %s (%s)",

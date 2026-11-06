@@ -46,7 +46,7 @@
           "description": "Device-level buttons for write-only commands. A feature override replaces the base list as a whole."
         }
       },
-      "title": "ConnectLife Data Dictionary"
+      "title": "ConnectLife device mapping"
     },
     "ClimateDevice": {
       "type": "object",

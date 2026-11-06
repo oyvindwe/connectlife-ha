@@ -18,7 +18,7 @@ Read [CONVENTIONS.md](CONVENTIONS.md) first — it holds the locked terminology 
    ```bash
    uv run python -m scripts.check_translations [lang]
    ```
-   `en.json` is the reference; it is generated from the data dictionaries by `scripts.gen_strings` (which only *adds* missing keys and never overwrites existing text). Never invent keys — only fill keys that `check_translations` reports.
+   `en.json` is the reference; it is generated from the mappings by `scripts.gen_strings` (which only *adds* missing keys and never overwrites existing text). Never invent keys — only fill keys that `check_translations` reports.
 
 2. **Extract the work list with context.**
    ```bash

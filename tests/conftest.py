@@ -27,9 +27,9 @@ def build_dictionary():
     def _build(*, base=None, sub=None, type_code="999", feature="000"):
         files: dict[str, object] = {}
         if base is not None:
-            files[f"data_dictionaries/{type_code}.yaml"] = base
+            files[f"mappings/{type_code}.yaml"] = base
         if sub is not None:
-            files[f"data_dictionaries/{type_code}-{feature}.yaml"] = sub
+            files[f"mappings/{type_code}-{feature}.yaml"] = sub
 
         def fake_load(path):
             if path in files:

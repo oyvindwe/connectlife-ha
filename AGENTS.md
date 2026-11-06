@@ -13,10 +13,10 @@ Home Assistant custom component (HACS integration) for ConnectLife smart applian
 # Install dependencies (uses uv, not pip)
 uv sync
 
-# Validate data dictionary YAML files against JSON schema
+# Validate mapping YAML files against JSON schema
 uv run python -m scripts.validate_mappings
 
-# Regenerate strings.json and en.json from data dictionaries, sort all translations
+# Regenerate strings.json and en.json from the mappings, sort all translations
 uv run python -m scripts.gen_strings
 
 # Sort all translation files (without regenerating strings)
@@ -40,17 +40,17 @@ uv run pyright
 3. **Coordinators** (`coordinator.py`) — two `DataUpdateCoordinator` subclasses run side by side:
    - `ConnectLifeCoordinator` — the main coordinator; polls `api.get_appliances()` every 60s, returns `dict[str, ConnectLifeAppliance]` keyed by device_id. Drives all status-derived entities.
    - `ConnectLifeStatisticsCoordinator` — polls the cloud statistics endpoints every `STATISTICS_UPDATE_INTERVAL` (10 min) for the daily energy/water sensors; returns `dict[device_id, EnergyResult | None]`. See [Statistics](#statistics-daily-energywater-sensors) below.
-4. **Platform setup** — each platform iterates appliances, loads data dictionaries, creates entities for properties that match the platform
+4. **Platform setup** — each platform iterates appliances, loads device mappings, creates entities for properties that match the platform
 5. **Entity updates** — coordinator notifies entities via `_handle_coordinator_update()` → `update_state()` → `async_write_ha_state()`
 6. **Commands** — entity actions call `async_update_device()` on base entity → `coordinator.async_update_device()` → `api.update_appliance()`
 
-### Data Dictionary System (the core abstraction)
+### Device Mapping System (the core abstraction)
 
-YAML files in `custom_components/connectlife/data_dictionaries/` define how API properties map to HA entities. This is the most important part of the codebase.
+YAML files in `custom_components/connectlife/mappings/` define how API properties map to HA entities. This is the most important part of the codebase.
 
 For the YAML schema and authoring guidance, see:
-- `custom_components/connectlife/data_dictionaries/README.md` — user-facing field docs (all types, `command`/`adjust`, presets, units, translations)
-- `custom_components/connectlife/data_dictionaries/properties-schema.json` — authoritative JSON schema
+- `custom_components/connectlife/mappings/README.md` — user-facing field docs (all types, `command`/`adjust`, presets, units, translations)
+- `custom_components/connectlife/mappings/properties-schema.json` — authoritative JSON schema
 
 Code-level details not in those files:
 - Parsed by `Dictionaries` class (`dictionaries.py`) with a class-level cache.
@@ -76,7 +76,7 @@ A second coordinator, `ConnectLifeStatisticsCoordinator` (`coordinator.py`), run
 one and powers the daily energy/water consumption sensors. These are **not** derived from
 `status_list`; they come from separate ConnectLife cloud statistics endpoints.
 
-- **Opt-in via the data dictionary**: a top-level `statistics` block (`source` +
+- **Opt-in via the device mapping**: a top-level `statistics` block (`source` +
   per-sensor boolean flags `daily_energy_kwh` / `daily_water_consumption`) selects the endpoint
   and which sensors to create. Parsed in `dictionaries.py` onto `Dictionary.statistics_source` /
   `Dictionary.statistics_sensors`. Both flags default to off — explicit `true` is required.
@@ -105,7 +105,7 @@ The API library is published to PyPI as `connectlife` and developed in a separat
 
 ## Adding New Device Mappings
 
-See `custom_components/connectlife/data_dictionaries/README.md` for the authoring workflow (skeleton generation, tips, translation strings). After editing YAML, run `uv run python -m scripts.validate_mappings` and `uv run python -m scripts.gen_strings`.
+See `custom_components/connectlife/mappings/README.md` for the authoring workflow (skeleton generation, tips, translation strings). After editing YAML, run `uv run python -m scripts.validate_mappings` and `uv run python -m scripts.gen_strings`.
 
 Mappings are data, validated by `validate_mappings` (schema) and PR review — don't add unit tests asserting a specific mapping's *content*.
 

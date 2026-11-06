@@ -30,7 +30,7 @@ Generate release notes for this ConnectLife Home Assistant integration release.
    - For PR commits, get the GitHub username: `gh pr view <number> --json author --jq '.author.login'`
 
 5. Categorize each commit into sections based on its content:
-   - **New devices** — commits that add new device mappings (new YAML files in `data_dictionaries/`)
+   - **New devices** — commits that add new device mappings (new YAML files in `mappings/`)
    - **Improvements to existing devices** — commits that update existing device mappings
    - **Bug fixes** — commits with "fix" in the message
    - **Breaking changes** — commits that change existing entity behavior, rename entities, change defaults, or remove properties

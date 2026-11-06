@@ -205,7 +205,7 @@ def main(basedir):
     yaml.SafeLoader.construct_mapping_org = yaml.SafeLoader.construct_mapping
     yaml.SafeLoader.construct_mapping = my_construct_mapping
 
-    device_dir = f"{basedir}/data_dictionaries"
+    device_dir = f"{basedir}/mappings"
     create_catalog("2020-12")
     schema_file = f"{device_dir}/properties-schema.json"
     schema = JSONSchema.loadf(schema_file)

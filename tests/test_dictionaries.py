@@ -656,14 +656,14 @@ def test_default_mapping_files_carry_device_type_name():
 
     import custom_components.connectlife.dictionaries as dictionaries_module
 
-    base_dir = join(dirname(dictionaries_module.__file__), "data_dictionaries")
+    base_dir = join(dirname(dictionaries_module.__file__), "mappings")
     base_files = sorted(
         name for name in listdir(base_dir)
         if name.endswith(".yaml") and "-" not in name.removesuffix(".yaml")
     )
     assert base_files
     for name in base_files:
-        found, data = _load_yaml("data_dictionaries/" + name)
+        found, data = _load_yaml("mappings/" + name)
         assert found, name
         value = (data or {}).get("device_type_name")
         assert isinstance(value, str) and value.strip(), (

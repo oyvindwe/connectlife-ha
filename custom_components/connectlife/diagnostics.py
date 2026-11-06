@@ -90,9 +90,9 @@ async def _appliance_diagnostics(
         "device_feature_name": appliance.device_feature_name,
         "offline_state": appliance.offline_state,
         "mapping_files": {
-            f"{type_code}.yaml": _load_yaml(f"data_dictionaries/{type_code}.yaml")[0],
+            f"{type_code}.yaml": _load_yaml(f"mappings/{type_code}.yaml")[0],
             f"{type_code}-{feature_code}.yaml": _load_yaml(
-                f"data_dictionaries/{type_code}-{feature_code}.yaml"
+                f"mappings/{type_code}-{feature_code}.yaml"
             )[0],
         },
         "statistics_sensors": [

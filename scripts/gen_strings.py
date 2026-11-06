@@ -28,7 +28,7 @@ def _load_base_properties(basedir: str, filenames: list[str]) -> dict[str, dict[
         if not _is_base_file(filename):
             continue
         type_code = filename.removesuffix(".yaml")
-        with open(f"{basedir}/data_dictionaries/{filename}") as f:
+        with open(f"{basedir}/mappings/{filename}") as f:
             parsed = yaml.safe_load(f)
         if not parsed or "properties" not in parsed or parsed["properties"] is None:
             continue
@@ -60,12 +60,12 @@ def main(basedir):
     }
     valid_options = {}
 
-    device_dir = f'{basedir}/data_dictionaries'
+    device_dir = f'{basedir}/mappings'
     filenames = list(filter(lambda f: f[-5:] == ".yaml", [f for f in listdir(device_dir) if isfile(join(device_dir, f))]))
     bases = _load_base_properties(basedir, filenames)
     for filename in filenames:
         print(f"Generating strings from {filename}")
-        with (open(f'{basedir}/data_dictionaries/{filename}') as f):
+        with (open(f'{basedir}/mappings/{filename}') as f):
             appliance = yaml.safe_load(f)
         if appliance is not None:
             if "properties" in appliance and appliance["properties"] is not None:

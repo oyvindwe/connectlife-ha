@@ -74,7 +74,7 @@ async def test_appliance_diagnostics_reports_mapping_without_private_data(build_
     )
 
     def fake_load(path):
-        return path == "data_dictionaries/999.yaml", None
+        return path == "mappings/999.yaml", None
 
     with patch.object(diagmod, "_load_yaml", side_effect=fake_load):
         result = await diagmod._appliance_diagnostics(_hass(), entry, _FakeApi({}), appliance)
