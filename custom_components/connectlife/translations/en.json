@@ -4128,9 +4128,6 @@
       "emptywatertank": {
         "name": "Empty water tank"
       },
-      "energy": {
-        "name": "Energy"
-      },
       "energy_consumption_in_running_program": {
         "name": "Energy consumption in running program"
       },
@@ -5355,6 +5352,9 @@
       },
       "program_end_to_shutdown_time_in_minutes": {
         "name": "Program end to shutdown time"
+      },
+      "program_energy_estimate": {
+        "name": "Program energy estimate"
       },
       "program_settingsdefault": {
         "name": "Program settings default"

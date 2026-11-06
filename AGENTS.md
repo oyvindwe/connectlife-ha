@@ -109,6 +109,11 @@ See `custom_components/connectlife/mappings/README.md` for the authoring workflo
 
 Mappings are data, validated by `validate_mappings` (schema) and PR review — don't add unit tests asserting a specific mapping's *content*.
 
+## Versioning
+
+Classify changes (major, minor, patch; what counts as breaking) per
+[Versioning and breaking changes](CONTRIBUTING.md#versioning-and-breaking-changes).
+
 ## Git and pull requests
 
 - **Don't amend, drop, or squash commits on an open PR.** Once a branch has an

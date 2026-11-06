@@ -18,9 +18,9 @@ Bump the version of this ConnectLife Home Assistant integration.
         git log --oneline "$(git log --grep='^Version ' -n 1 --format=%H)..HEAD"
         ```
         (Falls back to `git log --oneline -n 20` if no prior version commit is found.)
-     3. Classify the bump based on the commit subjects and diffs. **Note:** this project is on `0.x.y`, where per semver the public API is considered unstable — breaking changes do **not** trigger a `1.0.0` release on their own, they bump MINOR. Reserve a MAJOR bump for a deliberate, user-driven `1.0.0` graduation.
-        - **MAJOR** (`X.0.0`): only when the user explicitly asks to graduate to `1.0.0` (or beyond). Do not infer this from commit contents alone while on `0.x.y`.
-        - **MINOR** (`0.X.0`): new functionality **or** breaking changes — new device mappings/registrations, new properties, new platforms, new entities, additive API changes, removed/renamed entities or options, incompatible config flow changes, minimum HA version raised.
+     3. Classify the bump based on the commit subjects and diffs. What counts as breaking is defined in [CONTRIBUTING.md](../../../CONTRIBUTING.md#versioning-and-breaking-changes): removing or changing something that works. Removing or fixing entities that were wrong or never had valid data is not breaking.
+        - **MAJOR** (`X.0.0`): on `1.x` and later, breaking changes. On `0.x.y`, only when the user explicitly asks to graduate to `1.0.0`; don't infer it from commit contents.
+        - **MINOR** (`0.X.0` / `1.X.0`): new functionality — new device mappings/registrations, new properties, new platforms, new entities, additive API changes, minimum HA version raised. On `0.x.y`, also breaking changes.
         - **PATCH** (`0.0.X`): backwards-compatible fixes only — bug fixes, translation-only changes, doc/readme tweaks, internal refactors with no user-visible change.
         When in doubt between MINOR and PATCH, pick MINOR.
      4. Compute the next version and show the user: the current version, the classification (major/minor/patch) with a one-line justification referencing the commits, and the proposed new version. Ask for confirmation before proceeding.

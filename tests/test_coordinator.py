@@ -300,6 +300,51 @@ async def test_cleanup_keeps_entities_of_device_with_partial_status(hass: HomeAs
     }
 
 
+async def test_cleanup_counts_combined_sensor_as_reported(hass: HomeAssistant, build_mapping) -> None:
+    """A combined sensor has no status property of its own; it must not make the status look partial."""
+    build_mapping(
+        base={
+            "properties": [
+                {"property": "t_temp", "sensor": {}},
+                {
+                    "property": "Energy",
+                    "sensor": {},
+                    "combine": [{"property": "Energy_int"}, {"property": "Energy_decimal", "multiplier": 0.01}],
+                },
+                {"property": "Actions", "disable": True},
+            ]
+        }
+    )
+    entry = MockConfigEntry(domain=DOMAIN)
+    entry.add_to_hass(hass)
+    device = dr.async_get(hass).async_get_or_create(
+        config_entry_id=entry.entry_id, identifiers={(DOMAIN, "a")}, name="a"
+    )
+    entity_reg = er.async_get(hass)
+    entity_reg.async_get_or_create("sensor", DOMAIN, "a-t_temp", config_entry=entry, device_id=device.id)
+    entity_reg.async_get_or_create("sensor", DOMAIN, "a-Energy", config_entry=entry, device_id=device.id)
+    entity_reg.async_get_or_create("select", DOMAIN, "a-Actions", config_entry=entry, device_id=device.id)
+    coordinator = ConnectLifeCoordinator.__new__(ConnectLifeCoordinator)
+    coordinator.hass = hass
+    coordinator.config_entry = entry
+    coordinator._missing_since = {}
+    coordinator.entities = {"a-t_temp": Platform.SENSOR, "a-Energy": Platform.SENSOR}
+    coordinator.data = {
+        "a": SimpleNamespace(
+            device_type_code="999", device_feature_code="000", device_nickname="a",
+            status_list={"t_temp": 21, "Energy_int": 1, "Energy_decimal": 50, "Actions": 0},
+        )
+    }
+
+    await coordinator.cleanup_removed_entities()
+
+    # The disabled Actions select is removed; the combined sensor is kept.
+    assert {e.unique_id for e in er.async_entries_for_config_entry(entity_reg, entry.entry_id)} == {
+        "a-t_temp",
+        "a-Energy",
+    }
+
+
 async def test_update_device_missing_from_poll_raises_not_available() -> None:
     coordinator, _ = _coordinator()
     coordinator.api.update_appliance = AsyncMock()

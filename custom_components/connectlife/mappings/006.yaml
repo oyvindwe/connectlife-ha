@@ -207,12 +207,8 @@ properties:
       target: current_humidity
       unknown_value: 128
   - property: f_power_consumption
-    sensor:
-      device_class: energy
-      unit: kWh
-      read_only: true
-      state_class: total_increasing
-    icon: mdi:lightning-bolt
+    # Not reported by current units, and always 0 where it was (#390, #540). Use Daily energy instead.
+    disable: true
   - property: f_power_display
     sensor:
       device_class: power

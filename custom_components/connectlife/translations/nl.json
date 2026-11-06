@@ -4128,9 +4128,6 @@
       "emptywatertank": {
         "name": "Waterreservoir leeg"
       },
-      "energy": {
-        "name": "Energie"
-      },
       "energy_consumption_in_running_program": {
         "name": "Energieverbruik in huidig programma"
       },
@@ -5355,6 +5352,9 @@
       },
       "program_end_to_shutdown_time_in_minutes": {
         "name": "Tijd programma-einde tot uitschakelen"
+      },
+      "program_energy_estimate": {
+        "name": "Geschatte programma-energie"
       },
       "program_settingsdefault": {
         "name": "Standaard programma-instellingen"

@@ -302,12 +302,14 @@ properties:
     # Sample value: 0
     hide: true
   - property: energy
+    # Follows the selected program (e.g. 34 towels, 54 auto, #758), not the energy used, so no state class:
+    # not offered in the Energy dashboard (use Daily energy).
     entity_category: diagnostic
+    translation_key: program_energy_estimate
     sensor:
       device_class: energy
       unit: Wh
       read_only: true
-      state_class: total_increasing
   - property: error_code
     # Sample value: 0
     optional: true

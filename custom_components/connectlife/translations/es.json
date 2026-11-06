@@ -4128,9 +4128,6 @@
       "emptywatertank": {
         "name": "Vaciar el dep\u00f3sito de agua"
       },
-      "energy": {
-        "name": "Energ\u00eda"
-      },
       "energy_consumption_in_running_program": {
         "name": "Energia consumida programa en curso"
       },
@@ -5355,6 +5352,9 @@
       },
       "program_end_to_shutdown_time_in_minutes": {
         "name": "Tiempo del fin del programa al apagado"
+      },
+      "program_energy_estimate": {
+        "name": "Energ\u00eda estimada del programa"
       },
       "program_settingsdefault": {
         "name": "Ajustes del programa por defecto"
