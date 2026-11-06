@@ -101,6 +101,7 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
         self.status = status
         self._unavailable_status = status
         self._unavailable_value = dd_entry.unavailable
+        self._available_when = dd_entry.available_when
         self.combine = dd_entry.combine
         self.read_only = True if self.combine else dd_entry.sensor.read_only
         self.multiplier = dd_entry.sensor.multiplier

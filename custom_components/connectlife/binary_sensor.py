@@ -68,6 +68,7 @@ class ConnectLifeBinaryStatusSensor(ConnectLifeEntity, BinarySensorEntity):
         self.status = status
         self._unavailable_status = status
         self._unavailable_value = dd_entry.unavailable
+        self._available_when = dd_entry.available_when
         self.options = dd_entry.binary_sensor.options
         self.entity_description = BinarySensorEntityDescription(
             key=self._attr_unique_id,

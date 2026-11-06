@@ -56,6 +56,7 @@ class ConnectLifeSelect(ConnectLifeEntity, SelectEntity):
         self.status = status
         self._unavailable_status = status
         self._unavailable_value = dd_entry.unavailable
+        self._available_when = dd_entry.available_when
         # Copy: unmapped values are added per-entity, avoid leaking to other appliances.
         self.options_map = dict(dd_entry.select.options)
         self.reverse_options_map = {v: k for k, v in self.options_map.items()}

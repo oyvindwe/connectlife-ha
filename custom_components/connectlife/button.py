@@ -10,7 +10,7 @@ from connectlife.appliance import ConnectLifeAppliance
 
 from .const import DOMAIN
 from .coordinator import ConnectLifeCoordinator
-from .dictionaries import Button, Dictionaries
+from .dictionaries import Button, Dictionaries, available_when_met
 from .entity import ConnectLifeEntity
 
 
@@ -54,11 +54,9 @@ class ConnectLifeButton(ConnectLifeEntity, ButtonEntity):
     def available(self) -> bool:
         if not super().available:
             return False
-        status_list = self.coordinator.data[self.device_id].status_list
-        for name, expected in self.button.available_when.items():
-            if status_list.get(name) not in expected:
-                return False
-        return True
+        return available_when_met(
+            self.coordinator.data[self.device_id].status_list, self.button.available_when
+        )
 
     @callback
     def update_state(self):

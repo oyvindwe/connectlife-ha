@@ -60,6 +60,7 @@ class ConnectLifeNumberEntity(ConnectLifeEntity, NumberEntity):
         self.status = status
         self._unavailable_status = status
         self._unavailable_value = dd_entry.unavailable
+        self._available_when = dd_entry.available_when
         self.command_name = (
             dd_entry.number.command_name if dd_entry.number.command_name else status
         )
