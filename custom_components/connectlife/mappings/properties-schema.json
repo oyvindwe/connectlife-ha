@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "#/$defs/ConnectLifeDataDictionary",
+  "$ref": "#/$defs/ConnectLifeDeviceMapping",
   "$defs": {
-    "ConnectLifeDataDictionary": {
+    "ConnectLifeDeviceMapping": {
       "type": "object",
       "additionalProperties": false,
       "properties": {

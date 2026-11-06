@@ -1,6 +1,6 @@
 # Washing Machine WFSE1114-LVW002: 025-1wj105064v0w
 # Derived from live dump_appliance sample and the existing WFSE1114-LVW002
-# dictionary 025-1wj105219v0w. Program names not directly observed in the
+# mapping 025-1wj105219v0w. Program names not directly observed in the
 # current dump keep the upstream "not verified" comments from that close model.
 properties:
 - property: Door_status
