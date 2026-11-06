@@ -188,4 +188,4 @@ fix it.
 
 ## Contributing
 
-See [DEVELOPMENT.md](DEVELOPMENT.md).
+See [CONTRIBUTING.md](CONTRIBUTING.md).
