@@ -117,3 +117,15 @@ Mappings are data, validated by `validate_mappings` (schema) and PR review — d
   pushed PR branch loses review context and can leave CI running against a stale
   merge ref.
 - Don't `git push` until the user explicitly asks for it.
+
+## Issues
+
+- When a comment asks the reporter for something (diagnostics, a test, an answer), add the
+  `waiting for reporter` label. Don't add it when we owe the next step.
+- When a comment tells the reporter a fix is released and asks them to confirm it, add
+  `awaiting confirmation` instead.
+- `.github/workflows/stale.yaml` pings issues with either label after 4 weeks without activity
+  (and adds `stale`), and closes them 4 weeks later: `waiting for reporter` as not planned,
+  `awaiting confirmation` as completed. `.github/workflows/reporter-replied.yaml` removes the
+  labels when the issue's author comments.
+- Close other issues only when a merged fix covers them.
