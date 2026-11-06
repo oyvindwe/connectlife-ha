@@ -1,0 +1,70 @@
+# Hisense WF3S8014 (ConnectLife device type 025, feature code 1wj080831v0w)
+# Program IDs verified by turning the program dial through all positions and
+# reading Selected_program_ID. In the "Remote" dial position the program can be
+# written via ConnectLife (verified: writing 8 switched the machine to Synthetics).
+#
+# Extra rinse: the machine supports 0-3 extra rinses (the "Extra rinse" button
+# cycles 1 -> 2 -> 3 -> off). The count is ExtraRinseNum; writing 0, 1, 2 or 3
+# in the "Remote" dial position is applied and shown on the display (each extra
+# rinse adds 18 min). Writing the Extra_Rinse switch is rejected by this model
+# (it flips back to off), so it is disabled here.
+#
+# Options are only applied with the dial in the "Remote" position. Verified there
+# with Cotton 40 °C: Steam, Prewash, the "Quick" button (time_save), temperature,
+# spin speed (incl. drain without spin) and the delayed end time (DelayEndTime,
+# hours, 0 cancels) are applied and shown on the display.
+# Writing AntiCrease is rejected (flips back to off). The machine has no auto
+# dosing and no automatic tub clean setting (not in the manual, no button), so
+# those properties are disabled.
+properties:
+  - property: Selected_program_ID
+    select:
+      options:
+        5: allergy_care
+        6: drum_clean
+        7: cotton
+        8: synthetic
+        9: eco_40_60
+        10: wool
+        11: quick_15
+        14: spin
+        16: baby_care
+        18: sportswear
+        19: down
+        20: rinse_spin
+        24: shirts
+        41: power_49
+        42: auto
+  - property: ExtraRinseNum
+    select:
+      options:
+        0: none
+        1: "1"
+        2: "2"
+        3: "3"
+  - property: Extra_Rinse
+    disable: true
+  - property: DelayEndTime
+    number:
+      min_value: 0
+      max_value: 24
+      device_class: duration
+      unit: h
+  - property: AntiCrease
+    disable: true
+  - property: AutoDose
+    disable: true
+  - property: AutoTubClean
+    disable: true
+  - property: Detergent
+    disable: true
+  - property: Softener
+    disable: true
+  - property: Detergent_display
+    disable: true
+  - property: Detergent_state
+    disable: true
+  - property: Softer_display
+    disable: true
+  - property: Softener_state
+    disable: true

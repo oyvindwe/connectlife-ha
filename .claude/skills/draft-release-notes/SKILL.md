@@ -44,7 +44,9 @@ Generate release notes for this ConnectLife Home Assistant integration release.
    git diff-tree --no-commit-id --name-only -r <hash>
    ```
 
-7. Come up with a cool release name.
+7. Come up with a cool release name that hasn't been used before. List the earlier names with
+   `gh release list --limit 300 --json name --jq '.[].name'` (older titles start with the version, e.g.
+   "0.47.0 Fine Print"), and pick one that doesn't match any of them, ignoring case.
 
 8. Format the release notes following this template. The first line is the release title: the release name only,
    without the version. HACS already shows the tag in front of it ("v0.52.0 - <release name>").

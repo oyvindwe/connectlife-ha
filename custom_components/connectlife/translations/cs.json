@@ -3,9 +3,17 @@
     "abort": {
       "already_configured": "Za\u0159\u00edzen\u00ed je ji\u017e nakonfigurov\u00e1no",
       "already_configured_elsewhere": "Za\u0159\u00edzen\u00ed tohoto \u00fa\u010dtu jsou ji\u017e nastavena v jin\u00e9 polo\u017ece ConnectLife. Chcete-li zm\u011bnit zp\u016fsob p\u0159ihl\u00e1\u0161en\u00ed t\u00e9to polo\u017eky, zvolte u n\u00ed P\u0159enastavit. Chcete-li ji nahradit novou polo\u017ekou, nejprve ji deaktivujte.",
+      "authorize_url_timeout": "Vypr\u0161el \u010dasov\u00fd limit p\u0159i generov\u00e1n\u00ed autoriza\u010dn\u00ed URL.",
       "cannot_connect": "Nepoda\u0159ilo se p\u0159ipojit",
+      "missing_configuration": "Komponenta nen\u00ed nastavena. Postupujte podle dokumentace.",
+      "no_url_available": "\u017d\u00e1dn\u00e1 URL nen\u00ed k dispozici. Informace o t\u00e9to chyb\u011b najdete [v n\u00e1pov\u011bd\u011b]({docs_url})",
+      "oauth_error": "Byla p\u0159ijata neplatn\u00e1 data tokenu.",
+      "oauth_failed": "Chyba p\u0159i z\u00edsk\u00e1v\u00e1n\u00ed p\u0159\u00edstupov\u00e9ho tokenu.",
+      "oauth_timeout": "Vypr\u0161el \u010dasov\u00fd limit p\u0159i z\u00edsk\u00e1v\u00e1n\u00ed tokenu OAuth.",
+      "oauth_unauthorized": "Chyba autorizace OAuth p\u0159i z\u00edsk\u00e1v\u00e1n\u00ed p\u0159\u00edstupov\u00e9ho tokenu.",
       "reauth_successful": "Op\u011btovn\u00e9 ov\u011b\u0159en\u00ed bylo \u00fasp\u011b\u0161n\u00e9",
-      "reconfigure_successful": "P\u0159ekonfigurov\u00e1n\u00ed bylo \u00fasp\u011b\u0161n\u00e9"
+      "reconfigure_successful": "P\u0159ekonfigurov\u00e1n\u00ed bylo \u00fasp\u011b\u0161n\u00e9",
+      "user_rejected_authorize": "Propojen\u00ed \u00fa\u010dtu bylo odm\u00edtnuto: {error}"
     },
     "error": {
       "already_configured_elsewhere": "Za\u0159\u00edzen\u00ed tohoto \u00fa\u010dtu jsou ji\u017e nastavena v jin\u00e9 polo\u017ece ConnectLife. Chcete-li zm\u011bnit zp\u016fsob p\u0159ihl\u00e1\u0161en\u00ed t\u00e9to polo\u017eky, zvolte u n\u00ed P\u0159enastavit. Chcete-li ji nahradit novou polo\u017ekou, nejprve ji deaktivujte.",
@@ -40,6 +48,9 @@
           "development_mode": "P\u0159ipojit k lok\u00e1ln\u00edmu testovac\u00edmu serveru nam\u00edsto ConnectLife API. Pouze pro v\u00fdvoj.",
           "trir": "Povolte pouze pokud se p\u0159ihla\u0161ujete pomoc\u00ed aplikace ConnectLife.TRIR pou\u017e\u00edvan\u00e9 v Rusku/SNS."
         }
+      },
+      "pick_implementation": {
+        "title": "Vyberte zp\u016fsob ov\u011b\u0159en\u00ed"
       },
       "reauth_confirm": {
         "data": {
@@ -2412,6 +2423,7 @@
           "none": "\u017d\u00e1dn\u00fd",
           "off": "Vypnuto",
           "pre-ironing": "P\u0159ed \u017eehlen\u00edm",
+          "ready_to_wear": "P\u0159ipraveno k no\u0161en\u00ed",
           "wardrobe": "Do \u0161atn\u00edku"
         }
       },
@@ -3591,6 +3603,7 @@
           "program_selected": "Program vybr\u00e1n",
           "rinsing": "M\u00e1ch\u00e1n\u00ed",
           "running": "B\u011b\u017e\u00ed",
+          "softening": "Aviv\u00e1\u017e",
           "spinning": "Odst\u0159edov\u00e1n\u00ed",
           "ventilating": "V\u011btr\u00e1n\u00ed",
           "wash": "Pran\u00ed",
@@ -3726,6 +3739,10 @@
       "defaultspinspeed": {
         "name": "V\u00fdchoz\u00ed rychlost odst\u0159ed\u011bn\u00ed",
         "state": {
+          "1000": "1000 ot./min",
+          "1200": "1200 ot./min",
+          "1400": "1400 ot./min",
+          "800": "800 ot./min",
           "none": "\u017d\u00e1dn\u00fd"
         }
       },
@@ -4075,7 +4092,12 @@
         "name": "P\u0159\u00edznak re\u017eimu su\u0161en\u00ed"
       },
       "drymodel": {
-        "name": "Re\u017eim su\u0161en\u00ed"
+        "name": "Re\u017eim su\u0161en\u00ed",
+        "state": {
+          "dry": "Su\u0161en\u00ed",
+          "wash": "Pran\u00ed",
+          "wash_and_dry": "Pran\u00ed a su\u0161en\u00ed"
+        }
       },
       "dryopen_defaultspinspeed": {
         "name": "V\u00fdchoz\u00ed rychlost odst\u0159ed\u011bn\u00ed pro su\u0161en\u00ed",
@@ -8766,6 +8788,9 @@
       "controldid19": {
         "name": "Tich\u00fd re\u017eim"
       },
+      "controldid29": {
+        "name": "Boost tepl\u00e9 vody"
+      },
       "crisp_function_status": {
         "name": "Stav funkce Crisp"
       },
@@ -8807,6 +8832,9 @@
       },
       "fota_cmd": {
         "name": "Aktualizace firmwaru"
+      },
+      "gentle": {
+        "name": "\u0160etrn\u00e9"
       },
       "greasefilterstatus": {
         "name": "\u010casova\u010d tukov\u00e9ho filtru"
@@ -8884,7 +8912,7 @@
         "name": "Sabatn\u00ed re\u017eim"
       },
       "save_mode": {
-        "name": "\u00dasporn\u00fd re\u017eim"
+        "name": "Eko re\u017eim"
       },
       "selected_program_anticrease_status": {
         "name": "Proti zma\u010dk\u00e1n\u00ed"
@@ -8908,7 +8936,7 @@
         "name": "P\u00e1rov\u00e1n\u00ed relace"
       },
       "sf_mode": {
-        "name": "SF re\u017eim"
+        "name": "Super freeze"
       },
       "sf_sr_mutex_mode": {
         "name": "Re\u017eim mutex SF/SR"
@@ -8929,7 +8957,7 @@
         "name": "Zvuk"
       },
       "sr_mode": {
-        "name": "SR re\u017eim"
+        "name": "Super cool"
       },
       "standby_mode_status": {
         "name": "Pohotovostn\u00ed re\u017eim"
@@ -9039,6 +9067,9 @@
   "exceptions": {
     "command_rejected": {
       "message": "Za\u0159\u00edzen\u00ed v aktu\u00e1ln\u00edm stavu tento p\u0159\u00edkaz nep\u0159ij\u00edm\u00e1"
+    },
+    "device_not_available": {
+      "message": "Za\u0159\u00edzen\u00ed {device} nen\u00ed dostupn\u00e9"
     },
     "terms_not_accepted": {
       "message": "Aktualizovan\u00e9 obchodn\u00ed podm\u00ednky ConnectLife je nutn\u00e9 p\u0159ijmout v aplikaci ConnectLife"

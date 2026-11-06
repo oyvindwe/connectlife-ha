@@ -2423,6 +2423,7 @@
           "none": "Nessuno",
           "off": "Off",
           "pre-ironing": "Pre-stiratura",
+          "ready_to_wear": "Pronto da indossare",
           "wardrobe": "Armadio"
         }
       },
@@ -3602,6 +3603,7 @@
           "program_selected": "Programma selezionato",
           "rinsing": "Risciacquo",
           "running": "In esecuzione",
+          "softening": "Ammorbidimento",
           "spinning": "Centrifuga",
           "ventilating": "Ventilazione",
           "wash": "Lavaggio",
@@ -3737,6 +3739,10 @@
       "defaultspinspeed": {
         "name": "Velocit\u00e0 di centrifuga predefinita",
         "state": {
+          "1000": "1000 giri/min",
+          "1200": "1200 giri/min",
+          "1400": "1400 giri/min",
+          "800": "800 giri/min",
           "none": "Nessuno"
         }
       },
@@ -4086,7 +4092,12 @@
         "name": "Indicatore modalit\u00e0 asciugatura"
       },
       "drymodel": {
-        "name": "Modalit\u00e0 asciugatura"
+        "name": "Modalit\u00e0 asciugatura",
+        "state": {
+          "dry": "Asciugatura",
+          "wash": "Lavaggio",
+          "wash_and_dry": "Lavaggio e asciugatura"
+        }
       },
       "dryopen_defaultspinspeed": {
         "name": "Velocit\u00e0 di centrifuga predefinita",
@@ -8777,6 +8788,9 @@
       "controldid19": {
         "name": "Modalit\u00e0 silenziosa"
       },
+      "controldid29": {
+        "name": "Boost ACS"
+      },
       "crisp_function_status": {
         "name": "Stato funzione Crisp"
       },
@@ -8818,6 +8832,9 @@
       },
       "fota_cmd": {
         "name": "Aggiornamento firmware"
+      },
+      "gentle": {
+        "name": "Delicato"
       },
       "greasefilterstatus": {
         "name": "Timer filtro grassi"
@@ -8895,7 +8912,7 @@
         "name": "Modalit\u00e0 Sabbath"
       },
       "save_mode": {
-        "name": "Modalit\u00e0 risparmio"
+        "name": "Modalit\u00e0 eco"
       },
       "selected_program_anticrease_status": {
         "name": "Antipiega"
@@ -8919,7 +8936,7 @@
         "name": "Associazione sessione"
       },
       "sf_mode": {
-        "name": "Modalit\u00e0 SF"
+        "name": "Super freeze"
       },
       "sf_sr_mutex_mode": {
         "name": "Modalit\u00e0 mutex SF SR"
@@ -8940,7 +8957,7 @@
         "name": "Suono"
       },
       "sr_mode": {
-        "name": "Modalit\u00e0 SR"
+        "name": "Super cool"
       },
       "standby_mode_status": {
         "name": "Modalit\u00e0 standby"
@@ -9050,6 +9067,9 @@
   "exceptions": {
     "command_rejected": {
       "message": "Il dispositivo non accetta questo comando nello stato attuale"
+    },
+    "device_not_available": {
+      "message": "{device} non \u00e8 disponibile"
     },
     "terms_not_accepted": {
       "message": "I Termini e Condizioni aggiornati di ConnectLife devono essere accettati nell'app ConnectLife"

@@ -11,6 +11,7 @@ from homeassistant.components.climate import (
 )
 
 from custom_components.connectlife.climate import (
+    TARGET_TEMPERATURE_ATTR,
     ConnectLifeClimate,
     _add_hvac_mode_mapping,
     _first_match,
@@ -360,7 +361,7 @@ async def test_mode_value_sets_read_and_write() -> None:
 def _target_temperature_climate(target: float | None) -> ConnectLifeClimate:
     climate = ConnectLifeClimate.__new__(ConnectLifeClimate)
     climate.target_map = {"target_temperature": "t_temp"}
-    climate._attr_target_temperature = target
+    setattr(climate, TARGET_TEMPERATURE_ATTR, target)
     climate._attr_target_temperature_step = 1
     climate._attr_min_temp = 16
     climate._attr_max_temp = 32

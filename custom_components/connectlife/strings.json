@@ -2423,6 +2423,7 @@
           "none": "None",
           "off": "Off",
           "pre-ironing": "Pre-ironing",
+          "ready_to_wear": "Ready to wear",
           "wardrobe": "Wardrobe"
         }
       },
@@ -3602,6 +3603,7 @@
           "program_selected": "Program selected",
           "rinsing": "Rinsing",
           "running": "Running",
+          "softening": "Softening",
           "spinning": "Spinning",
           "ventilating": "Ventilating",
           "wash": "Wash",
@@ -3737,6 +3739,10 @@
       "defaultspinspeed": {
         "name": "Default spin speed",
         "state": {
+          "1000": "1000 RPM",
+          "1200": "1200 RPM",
+          "1400": "1400 RPM",
+          "800": "800 RPM",
           "none": "None"
         }
       },
@@ -4086,7 +4092,12 @@
         "name": "Dry mode flag"
       },
       "drymodel": {
-        "name": "Dry model"
+        "name": "Dry model",
+        "state": {
+          "dry": "Dry",
+          "wash": "Wash",
+          "wash_and_dry": "Wash and dry"
+        }
       },
       "dryopen_defaultspinspeed": {
         "name": "Dry open default spin speed",
@@ -8777,6 +8788,9 @@
       "controldid19": {
         "name": "Silent mode"
       },
+      "controldid29": {
+        "name": "DHW boost"
+      },
       "crisp_function_status": {
         "name": "Crisp function status"
       },
@@ -8818,6 +8832,9 @@
       },
       "fota_cmd": {
         "name": "Firmware update"
+      },
+      "gentle": {
+        "name": "Gentle"
       },
       "greasefilterstatus": {
         "name": "Grease filter timer"
@@ -8895,7 +8912,7 @@
         "name": "Sabbath mode"
       },
       "save_mode": {
-        "name": "Save mode"
+        "name": "Eco mode"
       },
       "selected_program_anticrease_status": {
         "name": "Anti-crease"
@@ -8919,7 +8936,7 @@
         "name": "Session pairing"
       },
       "sf_mode": {
-        "name": "SF mode"
+        "name": "Super freeze"
       },
       "sf_sr_mutex_mode": {
         "name": "SF SR mutex mode"
@@ -8940,7 +8957,7 @@
         "name": "Sound"
       },
       "sr_mode": {
-        "name": "SR mode"
+        "name": "Super cool"
       },
       "standby_mode_status": {
         "name": "Standby mode"
@@ -9050,6 +9067,9 @@
   "exceptions": {
     "command_rejected": {
       "message": "The device doesn't accept this command in its current state"
+    },
+    "device_not_available": {
+      "message": "{device} is not available"
     },
     "terms_not_accepted": {
       "message": "Updated ConnectLife Terms & Conditions must be accepted in the ConnectLife app"

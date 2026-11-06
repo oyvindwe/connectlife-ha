@@ -3,9 +3,17 @@
     "abort": {
       "already_configured": "Enheten er allerede konfigurert",
       "already_configured_elsewhere": "Enhetene p\u00e5 denne kontoen er allerede satt opp i en annen ConnectLife-oppf\u00f8ring. Velg Rekonfigurer p\u00e5 den oppf\u00f8ringen for \u00e5 endre hvordan den logger inn. Deaktiver den f\u00f8rst for \u00e5 erstatte den med en ny oppf\u00f8ring.",
+      "authorize_url_timeout": "Tidsavbrudd under generering av autoriserings-URL.",
       "cannot_connect": "Kunne ikke koble til",
+      "missing_configuration": "Komponenten er ikke konfigurert. F\u00f8lg dokumentasjonen.",
+      "no_url_available": "Ingen URL tilgjengelig. Se [hjelpeseksjonen]({docs_url}) for informasjon om denne feilen.",
+      "oauth_error": "Mottok ugyldige tokendata.",
+      "oauth_failed": "Feil ved henting av tilgangstoken.",
+      "oauth_timeout": "Tidsavbrudd ved henting av OAuth-token.",
+      "oauth_unauthorized": "OAuth-autoriseringsfeil ved henting av tilgangstoken.",
       "reauth_successful": "Re-autentisering var vellykket",
-      "reconfigure_successful": "Rekonfigureringen var vellykket"
+      "reconfigure_successful": "Rekonfigureringen var vellykket",
+      "user_rejected_authorize": "Kontokobling avvist: {error}"
     },
     "error": {
       "already_configured_elsewhere": "Enhetene p\u00e5 denne kontoen er allerede satt opp i en annen ConnectLife-oppf\u00f8ring. Velg Rekonfigurer p\u00e5 den oppf\u00f8ringen for \u00e5 endre hvordan den logger inn. Deaktiver den f\u00f8rst for \u00e5 erstatte den med en ny oppf\u00f8ring.",
@@ -40,6 +48,9 @@
           "development_mode": "Koble til en lokal testserver i stedet for ConnectLife-API-et. Kun for utvikling.",
           "trir": "Aktiver kun hvis du logger inn med ConnectLife.TRIR-appen som brukes i Russland/SUS."
         }
+      },
+      "pick_implementation": {
+        "title": "Velg autentiseringsmetode"
       },
       "reauth_confirm": {
         "data": {
@@ -2412,6 +2423,7 @@
           "none": "Ingen",
           "off": "Av",
           "pre-ironing": "Forstryking",
+          "ready_to_wear": "Klar til bruk",
           "wardrobe": "Garderobe"
         }
       },
@@ -3591,6 +3603,7 @@
           "program_selected": "Program valgt",
           "rinsing": "Skylling",
           "running": "Kj\u00f8rer",
+          "softening": "T\u00f8ymykning",
           "spinning": "Sentrifuget\u00f8rk",
           "ventilating": "Ventilerer",
           "wash": "Vask",
@@ -3726,6 +3739,10 @@
       "defaultspinspeed": {
         "name": "Standard sentrifugehastighet",
         "state": {
+          "1000": "1000 o/min",
+          "1200": "1200 o/min",
+          "1400": "1400 o/min",
+          "800": "800 o/min",
           "none": "Ingen"
         }
       },
@@ -4075,7 +4092,12 @@
         "name": "T\u00f8rkemodusflagg"
       },
       "drymodel": {
-        "name": "T\u00f8rkemodell"
+        "name": "T\u00f8rkemodell",
+        "state": {
+          "dry": "T\u00f8rk",
+          "wash": "Vask",
+          "wash_and_dry": "Vask og t\u00f8rk"
+        }
       },
       "dryopen_defaultspinspeed": {
         "name": "Standard sentrifugehastighet ved t\u00f8rr\u00e5pning",
@@ -8766,6 +8788,9 @@
       "controldid19": {
         "name": "Stillemodus"
       },
+      "controldid29": {
+        "name": "Varmtvannsboost"
+      },
       "crisp_function_status": {
         "name": "Status for spr\u00f8-funksjon"
       },
@@ -8807,6 +8832,9 @@
       },
       "fota_cmd": {
         "name": "Fastvareoppdatering"
+      },
+      "gentle": {
+        "name": "Sk\u00e5nsom"
       },
       "greasefilterstatus": {
         "name": "Fettfiltertimer"
@@ -8884,7 +8912,7 @@
         "name": "Sabbatsmodus"
       },
       "save_mode": {
-        "name": "Sparemodus"
+        "name": "Eco-modus"
       },
       "selected_program_anticrease_status": {
         "name": "Anti-kr\u00f8ll"
@@ -8908,7 +8936,7 @@
         "name": "\u00d8ktparing"
       },
       "sf_mode": {
-        "name": "SF-modus"
+        "name": "Super freeze"
       },
       "sf_sr_mutex_mode": {
         "name": "SF/SR-mutex-modus"
@@ -8929,7 +8957,7 @@
         "name": "Lyd"
       },
       "sr_mode": {
-        "name": "SR-modus"
+        "name": "Super cool"
       },
       "standby_mode_status": {
         "name": "Hvilemodus"
@@ -9039,6 +9067,9 @@
   "exceptions": {
     "command_rejected": {
       "message": "Enheten godtar ikke denne kommandoen i n\u00e5v\u00e6rende tilstand"
+    },
+    "device_not_available": {
+      "message": "{device} er ikke tilgjengelig"
     },
     "terms_not_accepted": {
       "message": "Oppdaterte vilk\u00e5r for ConnectLife m\u00e5 godtas i ConnectLife-appen"

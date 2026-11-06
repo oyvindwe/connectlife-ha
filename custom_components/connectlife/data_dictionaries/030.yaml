@@ -48,12 +48,13 @@ properties:
     # Sample value: 0
     optional: true
   - property: Door_status
+    # 1 when the door is open, 2 when closed (#758, #821)
     unavailable: 0
     binary_sensor:
       device_class: door
       options:
-        1: off
-        2: on
+        1: on
+        2: off
     icon: mdi:door
   - property: DownLight_LightTime
     # Sample value: 0

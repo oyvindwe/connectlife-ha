@@ -920,7 +920,7 @@ properties:
       device_class: temperature
       unit: °C
       min_value: 0
-      max_value: 8
+      max_value: 9
       command:
         name: SET_REFRIGERATOR_TEMPERATURE
   - property: refrigerator_var_room_sens_failure

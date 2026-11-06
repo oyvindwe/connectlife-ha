@@ -1,8 +1,6 @@
 device_type_name: Dishwasher
-statistics:
-  source: energy_consumption_curve
-  daily_energy_kwh: true
-  daily_water_consumption: true
+# No statistics block: the cloud's daily energy and water figures are 0 or rounded to whole kWh
+# and miss cycles (#665). Use Total_energy_consumption and Total_water_consumption instead.
 # stop (Actions: 1) and start (Actions: 2) are confirmed across most 015 models.
 # pause (Actions: 3) and open_door (Actions: 4) have no effect on the firmware
 # seen so far, so they are not exposed.

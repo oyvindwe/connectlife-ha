@@ -1,0 +1,29 @@
+name: Reporter replied
+
+# Remove "waiting for reporter", "awaiting confirmation" and "stale" when the issue's author comments.
+
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  issues: write
+
+jobs:
+  unlabel:
+    if: >
+      !github.event.issue.pull_request &&
+      github.event.comment.user.login == github.event.issue.user.login &&
+      (contains(github.event.issue.labels.*.name, 'waiting for reporter') ||
+       contains(github.event.issue.labels.*.name, 'awaiting confirmation'))
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          NUMBER: ${{ github.event.issue.number }}
+        run: >
+          gh issue edit "$NUMBER"
+          --remove-label "waiting for reporter"
+          --remove-label "awaiting confirmation"
+          --remove-label stale

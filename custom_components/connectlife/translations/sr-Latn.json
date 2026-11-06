@@ -3,9 +3,17 @@
     "abort": {
       "already_configured": "Ure\u0111aj je ve\u0107 konfigurisan",
       "already_configured_elsewhere": "Ure\u0111aji ovog naloga su ve\u0107 pode\u0161eni u drugom ConnectLife unosu. Da biste promenili na\u010din prijave tog unosa, izaberite Ponovo konfiguri\u0161i na njemu. Da biste ga zamenili novim unosom, prvo ga onemogu\u0107ite.",
+      "authorize_url_timeout": "Isteklo je vreme pri generisanju URL-a za autorizaciju.",
       "cannot_connect": "Neuspe\u0161no povezivanje",
+      "missing_configuration": "Komponenta nije konfigurisana. Pratite dokumentaciju.",
+      "no_url_available": "Nema dostupnog URL-a. Za informacije o ovoj gre\u0161ci pogledajte [odeljak pomo\u0107i]({docs_url})",
+      "oauth_error": "Primljeni su neva\u017ee\u0107i podaci tokena.",
+      "oauth_failed": "Gre\u0161ka pri dobijanju pristupnog tokena.",
+      "oauth_timeout": "Isteklo je vreme pri dobijanju OAuth tokena.",
+      "oauth_unauthorized": "Gre\u0161ka OAuth autorizacije pri dobijanju pristupnog tokena.",
       "reauth_successful": "Ponovna autentifikacija je uspe\u0161no zavr\u0161ena",
-      "reconfigure_successful": "Ponovna konfiguracija je uspe\u0161no zavr\u0161ena"
+      "reconfigure_successful": "Ponovna konfiguracija je uspe\u0161no zavr\u0161ena",
+      "user_rejected_authorize": "Povezivanje naloga je odbijeno: {error}"
     },
     "error": {
       "already_configured_elsewhere": "Ure\u0111aji ovog naloga su ve\u0107 pode\u0161eni u drugom ConnectLife unosu. Da biste promenili na\u010din prijave tog unosa, izaberite Ponovo konfiguri\u0161i na njemu. Da biste ga zamenili novim unosom, prvo ga onemogu\u0107ite.",
@@ -40,6 +48,9 @@
           "development_mode": "Povezivanje na lokalni test server umesto ConnectLife API-ja. Samo za razvoj.",
           "trir": "Omogu\u0107ite samo ako se prijavljujete putem ConnectLife.TRIR aplikacije koja se koristi u Rusiji/CIS."
         }
+      },
+      "pick_implementation": {
+        "title": "Izaberite na\u010din autentifikacije"
       },
       "reauth_confirm": {
         "data": {
@@ -2412,6 +2423,7 @@
           "none": "Ni\u0161ta",
           "off": "Isklju\u010deno",
           "pre-ironing": "Predpeglanje",
+          "ready_to_wear": "Spremno za no\u0161enje",
           "wardrobe": "Garderober"
         }
       },
@@ -3591,6 +3603,7 @@
           "program_selected": "Program izabran",
           "rinsing": "Ispiranje",
           "running": "U radu",
+          "softening": "Omek\u0161avanje",
           "spinning": "Centrifuga",
           "ventilating": "Ventilacija",
           "wash": "Pranje",
@@ -3726,6 +3739,10 @@
       "defaultspinspeed": {
         "name": "Podrazumevana brzina centrifuge",
         "state": {
+          "1000": "1000 RPM",
+          "1200": "1200 RPM",
+          "1400": "1400 RPM",
+          "800": "800 RPM",
           "none": "Ni\u0161ta"
         }
       },
@@ -4075,7 +4092,12 @@
         "name": "Oznaka re\u017eima su\u0161enja"
       },
       "drymodel": {
-        "name": "Model su\u0161enja"
+        "name": "Model su\u0161enja",
+        "state": {
+          "dry": "Su\u0161enje",
+          "wash": "Pranje",
+          "wash_and_dry": "Pranje i su\u0161enje"
+        }
       },
       "dryopen_defaultspinspeed": {
         "name": "Podrazumevana brzina centrifuge pri su\u0161enju",
@@ -8766,6 +8788,9 @@
       "controldid19": {
         "name": "Tihi re\u017eim"
       },
+      "controldid29": {
+        "name": "Poja\u010danje tople vode"
+      },
       "crisp_function_status": {
         "name": "Status funkcije hrskavosti"
       },
@@ -8807,6 +8832,9 @@
       },
       "fota_cmd": {
         "name": "A\u017euriranje firmvera"
+      },
+      "gentle": {
+        "name": "Ne\u017eno"
       },
       "greasefilterstatus": {
         "name": "Tajmer filtera za masno\u0107u"
@@ -8884,7 +8912,7 @@
         "name": "Sabatni re\u017eim"
       },
       "save_mode": {
-        "name": "Re\u017eim u\u0161tede"
+        "name": "Eko re\u017eim"
       },
       "selected_program_anticrease_status": {
         "name": "Protiv gu\u017evanja"
@@ -8908,7 +8936,7 @@
         "name": "Uparivanje sesije"
       },
       "sf_mode": {
-        "name": "SF re\u017eim"
+        "name": "Super freeze"
       },
       "sf_sr_mutex_mode": {
         "name": "SF SR mutex re\u017eim"
@@ -8929,7 +8957,7 @@
         "name": "Zvuk"
       },
       "sr_mode": {
-        "name": "SR re\u017eim"
+        "name": "Super cool"
       },
       "standby_mode_status": {
         "name": "Re\u017eim pripravnosti"
@@ -9039,6 +9067,9 @@
   "exceptions": {
     "command_rejected": {
       "message": "Ure\u0111aj ne prihvata ovu komandu u svom trenutnom stanju"
+    },
+    "device_not_available": {
+      "message": "Ure\u0111aj {device} nije dostupan"
     },
     "terms_not_accepted": {
       "message": "A\u017eurirani ConnectLife Uslovi kori\u0161\u0107enja moraju biti prihva\u0107eni u ConnectLife aplikaciji"

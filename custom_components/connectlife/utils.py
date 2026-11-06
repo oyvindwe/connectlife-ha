@@ -142,3 +142,15 @@ def to_temperature_map(items: int | dict[str, int] | None) -> dict[str, int]:
     if isinstance(items, dict):
         return {normalize_temperature_unit(k): v for k, v in items.items()}
     return {}
+
+
+def native_attr(entity_class: type, name: str) -> str:
+    """Return the _attr_ shorthand for an entity attribute, preferring the native_ variant.
+
+    Home Assistant 2026.11 renamed the climate and water heater temperature attributes
+    (temperature_unit, current_temperature, target_temperature, ...) to native_*. The old
+    names stop working in 2027.11, and older versions only have the old names.
+    """
+    if hasattr(entity_class, f"native_{name}"):
+        return f"_attr_native_{name}"
+    return f"_attr_{name}"

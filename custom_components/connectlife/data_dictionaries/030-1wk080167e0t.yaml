@@ -1,0 +1,16 @@
+# Hisense DH3S80-DEW012-000 tumble dryer (030-1wk080167e0t).
+# The generic 030.yaml maps both 2 and 3 to the vague "running". 2 is drying: confirmed live
+# (2026-10-30) on this machine. 3 is left as "running" because it has not been observed yet.
+properties:
+  - property: Current_program_phase
+    icon: mdi:tumble-dryer
+    sensor:
+      device_class: enum
+      options:
+        0: idle
+        1: delay_start_waiting
+        2: drying
+        3: running
+        4: anti_crease
+        5: finished
+      read_only: true

@@ -30,10 +30,13 @@ from .const import (
 from .coordinator import ConnectLifeCoordinator
 from .dictionaries import Dictionaries, Dictionary
 from .entity import ConnectLifeEntity
-from .utils import has_platform, to_temperature_map, normalize_temperature_unit
+from .utils import has_platform, native_attr, to_temperature_map, normalize_temperature_unit
 from connectlife.appliance import ConnectLifeAppliance
 
 _LOGGER = logging.getLogger(__name__)
+
+TEMPERATURE_UNIT_ATTR = native_attr(WaterHeaterEntity, "temperature_unit")
+TARGET_TEMPERATURE_ATTR = native_attr(WaterHeaterEntity, TARGET_TEMPERATURE)
 
 
 class WaterHeaterEntityDescription(EntityDescription, frozen_or_thawed=True):
@@ -67,7 +70,6 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
 
     _attr_name = None
     _attr_precision = PRECISION_WHOLE
-    _attr_temperature_unit = UnitOfTemperature.CELSIUS
     unknown_values: dict[str, int | None]
     target_map: dict[str, str]
     is_on: bool
@@ -97,6 +99,7 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
             translation_key=DOMAIN
         )
 
+        setattr(self, TEMPERATURE_UNIT_ATTR, UnitOfTemperature.CELSIUS)
         self.target_map = {}
         self.operation_map = {}
         self.operation_reverse_map = {}
@@ -128,7 +131,7 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
                     self._attr_supported_features |= WaterHeaterEntityFeature.OPERATION_MODE
             elif target == TARGET_TEMPERATURE:
                 self._attr_supported_features |= WaterHeaterEntityFeature.TARGET_TEMPERATURE
-                self._attr_target_temperature = None
+                setattr(self, TARGET_TEMPERATURE_ATTR, None)
                 self.min_temperature_map = to_temperature_map(data_dictionary.properties[status].water_heater.min_value)
                 if min_temp := self.get_temperature_limit(self.min_temperature_map):
                     self._attr_min_temp = min_temp
@@ -191,7 +194,7 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
                         _LOGGER.warning("Got unexpected value %d for %s (%s)", value, status, self.nickname)
                 elif target == TEMPERATURE_UNIT:
                     if value in self.temperature_unit_map:
-                        self._attr_temperature_unit = self.temperature_unit_map[value]
+                        setattr(self, TEMPERATURE_UNIT_ATTR, self.temperature_unit_map[value])
                         if min_temp := self.get_temperature_limit(self.min_temperature_map):
                             self._attr_min_temp = min_temp
                         if max_temp := self.get_temperature_limit(self.max_temperature_map):
@@ -203,7 +206,7 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
                 else:
                     if value == self.unknown_values[status]:
                         value = None
-                    setattr(self, f"_attr_{target}", value)
+                    setattr(self, native_attr(WaterHeaterEntity, target), value)
 
         if self._attr_supported_features & WaterHeaterEntityFeature.ON_OFF:
             if not self.is_on:
@@ -212,8 +215,9 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
                 self._attr_current_operation = STATE_ON
 
     def get_temperature_limit(self, temperature_map: dict[str, int]) -> int | None:
-        if temperature_map and self._attr_temperature_unit in temperature_map:
-            return temperature_map[self._attr_temperature_unit]
+        unit = getattr(self, TEMPERATURE_UNIT_ATTR)
+        if temperature_map and unit in temperature_map:
+            return temperature_map[unit]
         else:
             return None
 

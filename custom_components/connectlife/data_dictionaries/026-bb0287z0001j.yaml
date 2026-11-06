@@ -1,0 +1,208 @@
+# ATAG KSK8178ND refrigerator (feature code bb0287z0001j, "Asko Cooler Icon Led")
+# Fridge-only model: no freezer, ice maker, wine zones or variable temperature room.
+
+properties:
+  # Range reported by refrigerator_min_temperature / refrigerator_max_temperature
+  - property: refrigerator_temperature
+    number:
+      min_value: 3
+      max_value: 9
+
+  # Holiday mode can't be set: writing holiday_mode is rejected and
+  # SET_HOLIDAY_MODE is ignored
+  - property: holiday_mode
+    disable: true
+
+  # No humidity sensor (always reads 0)
+  - property: environment_humidity
+    disable: true
+
+  - property: real_humidity
+    disable: true
+
+  # No fruit and vegetable zone sensor (always reads 0)
+  - property: fruit_vegetables_temperature
+    disable: true
+
+  # No child lock (child_lock_switch_exist is 0)
+  - property: child_lock_open_alarm
+    disable: true
+
+  - property: child_lock_open_door_sound_alarm
+    disable: true
+
+  - property: child_lock_switch_exist
+    disable: true
+
+  - property: child_lock_switch_status
+    disable: true
+
+  # Capability flags read 0, also for the modes the fridge supports
+  - property: existing_fuzzy_mode
+    disable: true
+
+  - property: existing_holiday_mode
+    disable: true
+
+  - property: existing_lock_fresh_mode
+    disable: true
+
+  - property: existing_save_mode
+    disable: true
+
+  - property: existing_sf_mode
+    disable: true
+
+  - property: existing_sr_mode
+    disable: true
+
+  # No freezer
+  - property: free_defrosting_failure
+    disable: true
+
+  - property: free_evap_temp_sens_head_failure
+    disable: true
+
+  - property: free_fan_failure
+    disable: true
+
+  - property: free_room_open
+    disable: true
+
+  - property: free_room_over_temp_alarm_failure
+    disable: true
+
+  - property: free_temp_sens_head_failure
+    disable: true
+
+  - property: freeze_door_open_time
+    disable: true
+
+  - property: freeze_max_temperature
+    disable: true
+
+  - property: freeze_min_temperature
+    disable: true
+
+  - property: freeze_real_temperature
+    disable: true
+
+  - property: freeze_sensor_real_temperature
+    disable: true
+
+  - property: freeze_temperature
+    disable: true
+
+  - property: open_freeze_door_alarm
+    disable: true
+
+  - property: right_free_sensor_failure
+    disable: true
+
+  - property: sf_mode
+    disable: true
+
+  # No ice maker
+  - property: automatic_ice_making
+    disable: true
+
+  - property: ice_make_room_alarm
+    disable: true
+
+  - property: ice_making_b_switch_status
+    disable: true
+
+  - property: ice_making_machine_failure
+    disable: true
+
+  - property: ice_making_state
+    disable: true
+
+  - property: ice_making_stop_status
+    disable: true
+
+  - property: ice_sensor_failure_flag
+    disable: true
+
+  - property: ice_temperature_sensor_header_failure_flag
+    disable: true
+
+  # No wine zones
+  - property: low_wine_area_c_evaporator_fault
+    disable: true
+
+  - property: low_wine_area_c_fan_fault
+    disable: true
+
+  - property: low_wine_area_c_humdy_fault
+    disable: true
+
+  - property: low_wine_area_c_temp_fault
+    disable: true
+
+  - property: mid_wine_area_b_evaporator_fault
+    disable: true
+
+  - property: mid_wine_area_b_fan_fault
+    disable: true
+
+  - property: mid_wine_area_b_humdy_fault
+    disable: true
+
+  - property: mid_wine_area_b_temp_fault
+    disable: true
+
+  - property: up_wine_area_a_evaporator_fault
+    disable: true
+
+  - property: up_wine_area_a_fan_fault
+    disable: true
+
+  - property: up_wine_area_a_humdy_fault
+    disable: true
+
+  - property: up_wine_area_a_temp_fault
+    disable: true
+
+  - property: wine_sensor_failure_flag
+    disable: true
+
+  # No variable temperature room (temperatures read -40)
+  - property: open_variation_door_alarm
+    disable: true
+
+  - property: var_room_over_temp_alarm
+    disable: true
+
+  - property: vari_evap_temp_sens_head_failure
+    disable: true
+
+  - property: vari_room_open
+    disable: true
+
+  - property: vari_temp_sens_head_failure
+    disable: true
+
+  - property: variable_fan_failure_status
+    disable: true
+
+  - property: variable_heater_failure_status
+    disable: true
+
+  - property: variation_door_open_time
+    disable: true
+
+  - property: variation_max_temperature
+    disable: true
+
+  - property: variation_min_temperature
+    disable: true
+
+  - property: variation_real_temperature
+    disable: true
+
+  - property: variation_sensor_real_temperature
+    disable: true
+
+  - property: variation_temperature
+    disable: true

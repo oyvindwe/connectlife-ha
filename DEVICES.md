@@ -115,13 +115,18 @@ have a feature-specific mapping file.
 |                            | Induction hob            | 020              | [63c45b513e1a4bf7](custom_components/connectlife/data_dictionaries/020-63c45b513e1a4bf7.yaml)                       |
 |                            | Oven                     | 023              | [295608422d362be1](custom_components/connectlife/data_dictionaries/023-295608422d362be1.yaml)                       |
 | HWF8I1015BX                | Washing machine          | 025              | [1wfj1000018v](custom_components/connectlife/data_dictionaries/025-1wfj1000018v.yaml)                               |
+| WF5I1045BWQ                | Washing machine          | 025              | [1wfj1000101v](custom_components/connectlife/data_dictionaries/025-1wfj1000101v.yaml)                               |
 | WD3S8043BW3                | Washing machine          | 025              | [1wfx0800019v](custom_components/connectlife/data_dictionaries/025-1wfx0800019v.yaml)                               |
 | WD5I9043BBFS               | Washing machine          | 025              | [1wfx0900003v](custom_components/connectlife/data_dictionaries/025-1wfx0900003v.yaml)                               |
 | WF5I8043BWF                | Washing machine          | 025              | [1wj0803f2v0w](custom_components/connectlife/data_dictionaries/025-1wj0803f2v0w.yaml)                               |
+| WF3S8014                   | Washing machine          | 025              | [1wj080831v0w](custom_components/connectlife/data_dictionaries/025-1wj080831v0w.yaml)                               |
 | WD3S8043BW3                | Washing machine          | 025              | [1wj080837v0w](custom_components/connectlife/data_dictionaries/025-1wj080837v0w.yaml)                               |
+| WD5I8043BWF                | Washing machine          | 025              | [1wj080986v0w](custom_components/connectlife/data_dictionaries/025-1wj080986v0w.yaml)                               |
 |                            | Washing machine          | 025              | [1wj090660v0w](custom_components/connectlife/data_dictionaries/025-1wj090660v0w.yaml)                               |
 | WF5S9045BW                 | Washing machine          | 025              | [1wj090728v0w](custom_components/connectlife/data_dictionaries/025-1wj090728v0w.yaml)                               |
 | WFSE9014-LVW002            | Washing machine          | 025              | [1wj090729v0w](custom_components/connectlife/data_dictionaries/025-1wj090729v0w.yaml)                               |
+| WF5I9043BBFS               | Washing machine          | 025              | [1wj090849v0f](custom_components/connectlife/data_dictionaries/025-1wj090849v0f.yaml)                               |
+| WD3S9043BW3                | Washing machine          | 025              | [1wj090908v0w](custom_components/connectlife/data_dictionaries/025-1wj090908v0w.yaml)                               |
 | WD3S9043BB3                | Washing machine          | 025              | [1wj090913v0f](custom_components/connectlife/data_dictionaries/025-1wj090913v0f.yaml)                               |
 | WF3S1014-SVW002            | Washing machine          | 025              | [1wj100404v0w](custom_components/connectlife/data_dictionaries/025-1wj100404v0w.yaml)                               |
 | WFQR1014                   | Washing machine          | 025              | [1wj100649v0t](custom_components/connectlife/data_dictionaries/025-1wj100649v0t.yaml)                               |
@@ -134,6 +139,7 @@ have a feature-specific mapping file.
 | WFSE1114-LVW002            | Washing machine          | 025              | [1wj105219v0w](custom_components/connectlife/data_dictionaries/025-1wj105219v0w.yaml)                               |
 | WFSE1114-LVW002            | Washing machine          | 025              | [1wj105064v0w](custom_components/connectlife/data_dictionaries/025-1wj105064v0w.yaml)                               |
 | WF3S1114-LVW004            | Washing machine          | 025              | [1wj105246v0w](custom_components/connectlife/data_dictionaries/025-1wj105246v0w.yaml)                               |
+| WF3S1114-LVW004-000        | Washing machine          | 025              | [1wj105262v0f](custom_components/connectlife/data_dictionaries/025-1wj105262v0f.yaml)                               |
 |                            | Washing machine          | 025              | [1wj105418v0t](custom_components/connectlife/data_dictionaries/025-1wj105418v0t.yaml)                               |
 | WD5I1045BWQ                | Washing machine          | 025              | [1wj105552v0w](custom_components/connectlife/data_dictionaries/025-1wj105552v0w.yaml)                               |
 | WF5S1245BB                 | Washing machine          | 025              | [1wj120238v0b](custom_components/connectlife/data_dictionaries/025-1wj120238v0b.yaml)                               |
@@ -148,12 +154,13 @@ have a feature-specific mapping file.
 | WF5i1214-RVW002            | Washing machine          | 025              | [1wj120560v0w](custom_components/connectlife/data_dictionaries/025-1wj120560v0w.yaml)                               |
 | WD5I1245BBR                | Washing machine          | 025              | [1wj120596v0f](custom_components/connectlife/data_dictionaries/025-1wj120596v0f.yaml)                               |
 | Gorenje WDG38014-PVW004    | Washing machine          | 025              | [vwj080553v0w](custom_components/connectlife/data_dictionaries/025-vwj080553v0w.yaml)                               |
-| BC-303WP2BWQ1              | Refrigerator             | 026              | [1b0303z0009j](custom_components/connectlife/data_dictionaries/026-1b0303z0009j.yaml)                               |
+| BC-303WP2BWQ1 / RL3B303SAWE | Refrigerator             | 026              | [1b0303z0009j](custom_components/connectlife/data_dictionaries/026-1b0303z0009j.yaml)                               |
 | BD/BC-310WP2BWF1           | Refrigerator             | 026              | [1b0310z0010j](custom_components/connectlife/data_dictionaries/026-1b0310z0010j.yaml)                               |
 |                            | Refrigerator             | 026              | [1b0330z0079j](custom_components/connectlife/data_dictionaries/026-1b0330z0079j.yaml)                               |
 | HRCD483TBW                 | Refrigerator             | 026              | [1b0470z0012j](custom_components/connectlife/data_dictionaries/026-1b0470z0012j.yaml)                               |
 | RQ5P470SEIE                | Refrigerator             | 026              | [1b0470z0026j](custom_components/connectlife/data_dictionaries/026-1b0470z0026j.yaml)                               |
 | RQ760N4SASE                | Refrigerator             | 026              | [1b0522z0308j](custom_components/connectlife/data_dictionaries/026-1b0522z0308j.yaml)                               |
+| RQ758N4SASE                | Refrigerator             | 026              | [1b0560z0336j](custom_components/connectlife/data_dictionaries/026-1b0560z0336j.yaml)                               |
 | RQ5X560SFLEF               | Refrigerator             | 026              | [1b0560z0452j](custom_components/connectlife/data_dictionaries/026-1b0560z0452j.yaml)                               |
 | RF793N4SAFE                | Refrigerator             | 026              | [1b0610z0043j](custom_components/connectlife/data_dictionaries/026-1b0610z0043j.yaml)                               |
 |                            | Refrigerator             | 026              | [1b0610z0049j](custom_components/connectlife/data_dictionaries/026-1b0610z0049j.yaml)                               |
@@ -163,14 +170,17 @@ have a feature-specific mapping file.
 | Hisense BCD-628WP1BSGF1Z11 | Refrigerator             | 026              | [1b0628z0223j](custom_components/connectlife/data_dictionaries/026-1b0628z0223j.yaml)                               |
 | Hisense BCD-668WP1BWF1R1   | Refrigerator             | 026              | [1b0668z0100j](custom_components/connectlife/data_dictionaries/026-1b0668z0100j.yaml)                               |
 | Gorenje NRB620E61X4WFE     | Refrigerator             | 026              | [8b0413z0011j](custom_components/connectlife/data_dictionaries/026-8b0413z0011j.yaml)                               |
+| ATAG KSK8178ND             | Refrigerator             | 026              | [bb0287z0001j](custom_components/connectlife/data_dictionaries/026-bb0287z0001j.yaml)                               |
 | Gorenje W-WaveEn-22        | Washing machine          | 027              | [000](custom_components/connectlife/data_dictionaries/027-000.yaml)                                                 |
 | WPAM14A2T                  | Washing machine          | 027              | [washing-machine-wm22-b2plus](custom_components/connectlife/data_dictionaries/027-washing-machine-wm22-b2plus.yaml) |
 | WPNA84A2TSWIFI             | Washing machine          | 027              | [washing-machine-wm22](custom_components/connectlife/data_dictionaries/027-washing-machine-wm22.yaml)               |
 | Gorenje WNA94ARWIFI        | Washing machine          | 027              | [washing-machine-wm22](custom_components/connectlife/data_dictionaries/027-washing-machine-wm22.yaml)               |
 | Gorenje WNS14A4ATS         | Washing machine          | 027              | [washing-machine-wm23-ads](custom_components/connectlife/data_dictionaries/027-washing-machine-wm23-ads.yaml)       |
 | Gorenje WG486A21           | Washing machine          | 027              | [washing-machine-wm26-g400](custom_components/connectlife/data_dictionaries/027-washing-machine-wm26-g400.yaml)     |
+| DH5I104BWCB                | Tumble dryer             | 030              | [1dhk1000057v](custom_components/connectlife/data_dictionaries/030-1dhk1000057v.yaml)                               |
 |                            | Tumble dryer             | 030              | [1wk080135v0w](custom_components/connectlife/data_dictionaries/030-1wk080135v0w.yaml)                               |
 | DH3S80-DVW006              | Tumble dryer             | 030              | [1wk080140v0w](custom_components/connectlife/data_dictionaries/030-1wk080140v0w.yaml)                               |
+| DH3S80-DEW012-000          | Tumble dryer             | 030              | [1wk080167e0t](custom_components/connectlife/data_dictionaries/030-1wk080167e0t.yaml)                               |
 | DH3S802BW3                 | Tumble dryer             | 030              | [1wk080066v0w](custom_components/connectlife/data_dictionaries/030-1wk080066v0w.yaml)                               |
 | DH3S902BW3                 | Tumble dryer             | 030              | [1wk090106v0w](custom_components/connectlife/data_dictionaries/030-1wk090106v0w.yaml)                               |
 | DH5S102BW                  | Tumble dryer             | 030              | [1wk100028v0w](custom_components/connectlife/data_dictionaries/030-1wk100028v0w.yaml)                               |

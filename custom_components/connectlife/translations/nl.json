@@ -3,9 +3,17 @@
     "abort": {
       "already_configured": "Apparaat is al geconfigureerd",
       "already_configured_elsewhere": "De apparaten van dit account zijn al ingesteld in een andere ConnectLife-vermelding. Kies Herconfigureer bij die vermelding om te wijzigen hoe die inlogt. Schakel die vermelding eerst uit om haar door een nieuwe te vervangen.",
+      "authorize_url_timeout": "Time-out bij het genereren van de autorisatie-URL.",
       "cannot_connect": "Verbinding mislukt",
+      "missing_configuration": "Het component is niet geconfigureerd. Volg de documentatie.",
+      "no_url_available": "Geen URL beschikbaar. Zie [de helpsectie]({docs_url}) voor informatie over deze fout.",
+      "oauth_error": "Ongeldige tokengegevens ontvangen.",
+      "oauth_failed": "Fout bij het ophalen van het toegangstoken.",
+      "oauth_timeout": "Time-out bij het ophalen van het OAuth-token.",
+      "oauth_unauthorized": "OAuth-autorisatiefout bij het ophalen van het toegangstoken.",
       "reauth_successful": "Opnieuw authenticeren is gelukt",
-      "reconfigure_successful": "Opnieuw configureren is gelukt"
+      "reconfigure_successful": "Opnieuw configureren is gelukt",
+      "user_rejected_authorize": "Accountkoppeling geweigerd: {error}"
     },
     "error": {
       "already_configured_elsewhere": "De apparaten van dit account zijn al ingesteld in een andere ConnectLife-vermelding. Kies Herconfigureer bij die vermelding om te wijzigen hoe die inlogt. Schakel die vermelding eerst uit om haar door een nieuwe te vervangen.",
@@ -40,6 +48,9 @@
           "development_mode": "Verbinden met een lokale testserver in plaats van de ConnectLife API. Alleen voor ontwikkeling.",
           "trir": "Alleen inschakelen als je inlogt met de ConnectLife.TRIR-app die in Rusland/GOS wordt gebruikt."
         }
+      },
+      "pick_implementation": {
+        "title": "Kies de authenticatiemethode"
       },
       "reauth_confirm": {
         "data": {
@@ -2412,6 +2423,7 @@
           "none": "Geen",
           "off": "Uit",
           "pre-ironing": "Strijkdroog",
+          "ready_to_wear": "Draagdroog",
           "wardrobe": "Kastdroog"
         }
       },
@@ -3591,6 +3603,7 @@
           "program_selected": "Programma geselecteerd",
           "rinsing": "Spoelen",
           "running": "Actief",
+          "softening": "Verzachten",
           "spinning": "Centrifugeren",
           "ventilating": "Ventileren",
           "wash": "Wassen",
@@ -3726,6 +3739,10 @@
       "defaultspinspeed": {
         "name": "Standaard centrifugesnelheid",
         "state": {
+          "1000": "1000 toeren",
+          "1200": "1200 toeren",
+          "1400": "1400 toeren",
+          "800": "800 toeren",
           "none": "Geen"
         }
       },
@@ -4075,7 +4092,12 @@
         "name": "Droogmodusvlag"
       },
       "drymodel": {
-        "name": "Droger model"
+        "name": "Droger model",
+        "state": {
+          "dry": "Drogen",
+          "wash": "Wassen",
+          "wash_and_dry": "Wassen en drogen"
+        }
       },
       "dryopen_defaultspinspeed": {
         "name": "Standaard centrifugesnelheid (open drogen)",
@@ -8766,6 +8788,9 @@
       "controldid19": {
         "name": "Stille modus"
       },
+      "controldid29": {
+        "name": "Warmwaterboost"
+      },
       "crisp_function_status": {
         "name": "Crisp-functie"
       },
@@ -8807,6 +8832,9 @@
       },
       "fota_cmd": {
         "name": "Firmware-update"
+      },
+      "gentle": {
+        "name": "Zacht"
       },
       "greasefilterstatus": {
         "name": "Vetfiltertimer"
@@ -8884,7 +8912,7 @@
         "name": "Sabbatmodus"
       },
       "save_mode": {
-        "name": "Spaarstand"
+        "name": "Eco-modus"
       },
       "selected_program_anticrease_status": {
         "name": "Anti-kreuk"
@@ -8908,7 +8936,7 @@
         "name": "Sessiepairing"
       },
       "sf_mode": {
-        "name": "SF-modus"
+        "name": "Supervriezen"
       },
       "sf_sr_mutex_mode": {
         "name": "SF SR mutex modus"
@@ -8929,7 +8957,7 @@
         "name": "Geluid"
       },
       "sr_mode": {
-        "name": "SR-modus"
+        "name": "Super koelen"
       },
       "standby_mode_status": {
         "name": "Stand-bymodus"
@@ -9039,6 +9067,9 @@
   "exceptions": {
     "command_rejected": {
       "message": "Het apparaat accepteert deze opdracht niet in de huidige toestand"
+    },
+    "device_not_available": {
+      "message": "{device} is niet beschikbaar"
     },
     "terms_not_accepted": {
       "message": "Bijgewerkte algemene voorwaarden van ConnectLife moeten in de ConnectLife-app worden geaccepteerd"

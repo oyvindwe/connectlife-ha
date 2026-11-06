@@ -90,7 +90,7 @@ def main(basedir):
                         elif property["climate"]["target"] == "swing_horizontal_mode":
                             for option in property["climate"]["options"].values():
                                 if (
-                                        option not in ["off", "auto", "fullrange"]
+                                        option not in ["off", "on", "auto", "fullrange"]
                                         and option not in strings["entity"]["climate"]["connectlife"]["state_attributes"]["swing_horizontal_mode"]["state"]
                                     ):
                                     if include_option(option, filename):

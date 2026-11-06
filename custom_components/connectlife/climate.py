@@ -33,12 +33,16 @@ from .utils import (
     climate_target_bindings,
     device_target_overrides,
     has_platform,
+    native_attr,
     to_temperature_map,
     normalize_temperature_unit,
 )
 from connectlife.appliance import ConnectLifeAppliance
 
 _LOGGER = logging.getLogger(__name__)
+
+TEMPERATURE_UNIT_ATTR = native_attr(ClimateEntity, "temperature_unit")
+TARGET_TEMPERATURE_ATTR = native_attr(ClimateEntity, TARGET_TEMPERATURE)
 
 HVAC_MODE_ALIASES = {
     "eco": HVACMode.COOL,
@@ -111,7 +115,6 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
     _attr_name = None
     _attr_precision = PRECISION_WHOLE
     _attr_target_temperature_step = 1
-    _attr_temperature_unit = UnitOfTemperature.CELSIUS
     _attr_hvac_mode = None
     unknown_values: dict[str, int | None]
     target_map: dict[str, str]
@@ -144,6 +147,7 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
             translation_key=DOMAIN
         )
 
+        setattr(self, TEMPERATURE_UNIT_ATTR, UnitOfTemperature.CELSIUS)
         self.fan_mode_map = {}
         self.fan_mode_reverse_map = {}
         self.hvac_action_map = {}
@@ -180,7 +184,7 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
                 self._attr_max_humidity = data_dictionary.properties[status].climate.max_value  # type: ignore[assignment]
             elif target == TARGET_TEMPERATURE:
                 self._attr_supported_features |= ClimateEntityFeature.TARGET_TEMPERATURE
-                self._attr_target_temperature = None
+                setattr(self, TARGET_TEMPERATURE_ATTR, None)
                 self.min_temperature_map = to_temperature_map(data_dictionary.properties[status].climate.min_value)
                 if min_temp := self.get_temperature_limit(self.min_temperature_map):
                     self._attr_min_temp = min_temp
@@ -313,7 +317,7 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
                         _LOGGER.warning("Got unexpected value %d for %s (%s)", value, status, self.nickname)
                 elif target == TEMPERATURE_UNIT:
                     if value in self.temperature_unit_map:
-                        self._attr_temperature_unit = self.temperature_unit_map[value]
+                        setattr(self, TEMPERATURE_UNIT_ATTR, self.temperature_unit_map[value])
                         if min_temp := self.get_temperature_limit(self.min_temperature_map):
                             self._attr_min_temp = min_temp
                         if max_temp := self.get_temperature_limit(self.max_temperature_map):
@@ -323,7 +327,7 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
                 else:
                     if value == self.unknown_values[status]:
                         value = None
-                    setattr(self, f"_attr_{target}", value)
+                    setattr(self, native_attr(ClimateEntity, target), value)
 
         status_list = self.coordinator.data[self.device_id].status_list
         if self.hvac_mode_values:
@@ -347,8 +351,9 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
         self._attr_hvac_mode = hvac_mode if is_on else HVACMode.OFF
 
     def get_temperature_limit(self, temperature_map: dict[str, int]) -> int | None:
-        if temperature_map and self._attr_temperature_unit in temperature_map:
-            return temperature_map[self._attr_temperature_unit]
+        unit = getattr(self, TEMPERATURE_UNIT_ATTR)
+        if temperature_map and unit in temperature_map:
+            return temperature_map[unit]
         else:
             return None
 
@@ -418,7 +423,7 @@ class ConnectLifeClimate(ConnectLifeEntity, ClimateEntity):
     def add_target_temperature(self, request: dict[str, int | float]) -> dict[str, int | float]:
         # Some ACs report a target of 0 in modes without a setpoint (e.g. dry), and reject
         # the whole command if it is sent back, so only send a target within the limits.
-        target = self._attr_target_temperature
+        target = getattr(self, TARGET_TEMPERATURE_ATTR)
         if (
             TARGET_TEMPERATURE in self.target_map
             and target is not None
