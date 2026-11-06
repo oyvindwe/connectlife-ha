@@ -120,9 +120,6 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         await statistics_coordinator.async_config_entry_first_refresh()
         hass.data[DOMAIN][f"{entry.entry_id}_statistics"] = statistics_coordinator
 
-    hass.data[DOMAIN][f"{entry.entry_id}_options"] = dict(entry.options)
-    entry.async_on_unload(entry.add_update_listener(update_listener))
-
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
 
     await coordinator.cleanup_removed_entities()
@@ -131,18 +128,6 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
 
     return True
 
-async def update_listener(hass: HomeAssistant, entry: ConfigEntry) -> None:
-    """Reload when the options change.
-
-    The listener also runs when the entry data changes, which for browser sign-in
-    happens on every token refresh; those must not reload the entry.
-    """
-    if hass.data[DOMAIN].get(f"{entry.entry_id}_options") == dict(entry.options):
-        return
-    _LOGGER.debug(f"Reloading ConnectLife")
-    await hass.config_entries.async_reload(entry.entry_id)
-
-
 async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     """Unload a config entry."""
     _LOGGER.debug(f"Unloading ConnectLife")
@@ -150,6 +135,11 @@ async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     if unload_ok := await hass.config_entries.async_unload_platforms(entry, PLATFORMS):
         hass.data[DOMAIN].pop(entry.entry_id)
         hass.data[DOMAIN].pop(f"{entry.entry_id}_statistics", None)
-        hass.data[DOMAIN].pop(f"{entry.entry_id}_options", None)
 
     return unload_ok
+
+
+async def async_remove_entry(hass: HomeAssistant, entry: ConfigEntry) -> None:
+    """Remove a config entry."""
+    # Status properties seen per device; kept across reloads (see coordinator).
+    hass.data.get(DOMAIN, {}).pop(f"{entry.entry_id}_status_keys", None)

@@ -15,6 +15,10 @@ will just be ignored for feature variants that don't expose that property.
 
 **Note:** The top level `climate` section is not supported in the default mapping files.
 
+A default mapping file may also declare a top-level `device_type_name` (e.g. `device_type_name: Washing machine`
+in `003.yaml`): a generic English device type name for that type, used by the integration as a readable device
+`model` when the cloud reports a Chinese/Japanese market model name. Feature files may override it.
+
 ### Property inheritance in feature overrides
 
 Any field in a property can be overridden in a feature file; unspecified fields are inherited from the
@@ -95,7 +99,8 @@ or if you need help with the mapping, please open a PR on GitHub with the file!
 
 The file contains these top level items:
 
-- `climate`: top level [`Climate`](#presets) configuration ([presets](#presets) and [precision](#precision)).
+- `climate`: top level [`Climate`](#presets) configuration ([presets](#presets), [precision](#precision), and
+  [HVAC and fan modes from several properties](#hvac-and-fan-modes-from-several-properties)).
 - `properties`: list of [`Property`](#property)
 - `buttons`: list of [`Button`](#buttons) entities for write-only commands
 - `statistics`: opt the device type into [daily energy/water statistics](#statistics) sensors
@@ -435,6 +440,43 @@ climate:
   precision: 0.1
 ```
 
+### HVAC and fan modes from several properties
+
+Some devices have no single property for HVAC mode or fan mode, but one on/off flag per mode instead. Map these on the
+top level `climate` with `hvac_modes` and `fan_modes`. Like presets, each entry is a map of device properties to their
+values for that mode. The first entry whose values all match the device status is shown, and selecting a mode sends all
+its values in one command. List every flag in every entry, so that selecting a mode also clears the other flags.
+
+E.g.:
+
+```yaml
+climate:
+  hvac_modes:
+    - hvac_mode: cool
+      modeRefrigeration: 1
+      modeHeating: 0
+    - hvac_mode: heat
+      modeRefrigeration: 0
+      modeHeating: 1
+  fan_modes:
+    - fan_mode: auto
+      setAutomatic: 1
+      setLowWind: 0
+      setHighWind: 0
+    - fan_mode: low
+      setAutomatic: 0
+      setLowWind: 1
+      setHighWind: 0
+    - fan_mode: high
+      setAutomatic: 0
+      setLowWind: 0
+      setHighWind: 1
+```
+
+`hvac_mode` must be one of `auto`, `cool`, `dry`, `fan_only`, `heat`, or `heat_cool`. `off` comes from the `is_on`
+target. `hvac_modes` and `fan_modes` are only used if no property has target `hvac_mode` or `fan_mode`. Remember to add
+[translation strings](#translation-strings) for new fan modes.
+
 ## Type `Humidifier`
 
 Domain `humidifier` can be used to map the property to a target property in a humidifier entity. If at least one property has
@@ -630,7 +672,7 @@ integration polls a separate ConnectLife cloud statistics endpoint (every 10 min
 exposes the daily totals. Because the data is cloud-side, these sensors stay available even
 when the appliance is offline.
 
-Usually this block goes in the **base** device-type file (e.g. `015.yaml`). Omit the whole block for device types that
+Usually this block goes in the **base** device-type file (e.g. `025.yaml`). Omit the whole block for device types that
 have no statistics endpoint. A feature override with its own `statistics` block replaces the base's as a whole, so use one
 to turn the sensors off for a model that ConnectLife returns no statistics for:
 
@@ -650,10 +692,10 @@ statistics:
 Both sensor flags default to off, so each must be explicitly enabled with `true`.
 `daily_water_consumption` is only meaningful for the `energy_consumption_curve` source.
 
-Example for a dishwasher:
+Example for a washing machine:
 
 ```yaml
-# 015.yaml (base)
+# 025.yaml (base)
 statistics:
   source: energy_consumption_curve
   daily_energy_kwh: true

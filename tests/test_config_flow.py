@@ -332,3 +332,13 @@ async def test_validate_input_logs_login_failure(caplog, error, expected) -> Non
 
     assert f"ConnectLife login failed: {error}" in caplog.text
     assert "secret" not in caplog.text
+
+
+async def test_options_abort_when_entry_not_loaded(hass: HomeAssistant) -> None:
+    entry = MockConfigEntry(domain=DOMAIN, data={"username": "user", "password": "pass"})
+    entry.add_to_hass(hass)
+
+    result = await hass.config_entries.options.async_init(entry.entry_id)
+
+    assert result["type"] is FlowResultType.ABORT
+    assert result["reason"] == "not_loaded"

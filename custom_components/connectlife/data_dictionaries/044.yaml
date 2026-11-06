@@ -1,3 +1,8 @@
+device_type_name: Heat pump
+# Experimental (#820): the app shows daily energy, but the hourly power endpoint returns 0.
+statistics:
+  source: energy_consumption_curve
+  daily_energy_kwh: true
 properties:
 
   - property: A2W_SW_ON
@@ -13,6 +18,10 @@ properties:
     switch: {}
 
   - property: controlDid19
+    switch: {}
+
+  # DHW boost, verified on/off (#820). DHW_Boost_s and isFastHotWater stay 0.
+  - property: controlDid29
     switch: {}
 
   - property: Anti_Legionella_s

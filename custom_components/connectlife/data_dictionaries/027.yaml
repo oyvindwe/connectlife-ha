@@ -7,6 +7,7 @@
 # EXPERIMENTAL: the Actions write codes and the gating status values have not
 # been confirmed on hardware. Pressing a button sends a real command, which may
 # be wrong until verified.
+device_type_name: Washing machine
 buttons:
 - key: start
   icon: mdi:play

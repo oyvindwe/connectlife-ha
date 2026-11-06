@@ -90,7 +90,7 @@ def main(basedir):
                         elif property["climate"]["target"] == "swing_horizontal_mode":
                             for option in property["climate"]["options"].values():
                                 if (
-                                        option not in ["off", "auto", "fullrange"]
+                                        option not in ["off", "on", "auto", "fullrange"]
                                         and option not in strings["entity"]["climate"]["connectlife"]["state_attributes"]["swing_horizontal_mode"]["state"]
                                     ):
                                     if include_option(option, filename):
@@ -161,6 +161,14 @@ def main(basedir):
                                     del(strings["entity"][entity_type][key]["state"])
 
             if "climate" in appliance:
+                for fan_mode in appliance["climate"].get("fan_modes") or []:
+                    fan_mode = fan_mode["fan_mode"]
+                    if (
+                            fan_mode not in ["off", "on", "auto", "low", "medium", "high", "top", "middle", "focus", "diffuse"]
+                            and fan_mode not in strings["entity"]["climate"]["connectlife"]["state_attributes"]["fan_mode"]["state"]
+                    ):
+                        if include_option(fan_mode, filename):
+                            strings["entity"]["climate"]["connectlife"]["state_attributes"]["fan_mode"]["state"][fan_mode] = pretty(fan_mode)
                 if "presets" in appliance["climate"]:
                     for preset in appliance["climate"]["presets"]:
                         preset = preset["preset"]

@@ -3,3 +3,9 @@
 statistics:
   source: energy_consumption_curve
   daily_energy_kwh: false
+properties:
+  # Range reported by refrigerator_min_temperature / refrigerator_max_temperature
+  - property: refrigerator_temperature
+    number:
+      min_value: 2
+      max_value: 8

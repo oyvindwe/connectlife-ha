@@ -2,10 +2,17 @@
 
 from __future__ import annotations
 
+from types import SimpleNamespace
+
+from homeassistant.const import UnitOfTemperature
+
+from custom_components.connectlife.utils import to_unit
+
 from custom_components.connectlife.dictionaries import (
     Button,
     Property,
     Sensor,
+    _load_yaml,
     _merge_property,
     available_when_met,
 )
@@ -509,6 +516,23 @@ def test_available_when_met():
     assert available_when_met({}, {})
 
 
+def test_climate_block_in_base_is_inherited_per_key(build_dictionary):
+    """A base climate block applies to subtypes, and each key a subtype sets
+    replaces the base's as a whole."""
+    d = build_dictionary(
+        base={
+            "climate": {
+                "hvac_modes": [{"hvac_mode": "cool", "modeCool": 1, "modeHeat": 0}],
+                "fan_modes": [{"fan_mode": "auto", "autoFan": 1}],
+            },
+            "properties": _MINIMAL_PROPS,
+        },
+        sub={"climate": {"fan_modes": [{"fan_mode": "low", "autoFan": 0, "lowFan": 1}]}},
+    )
+    assert d.hvac_modes == {"cool": {"modeCool": 1, "modeHeat": 0}}
+    assert d.fan_modes == {"low": {"autoFan": 0, "lowFan": 1}}
+
+
 def test_include_parsed_on_property_and_button(build_dictionary):
     d = build_dictionary(base={
         "properties": [{"property": "t_power", "include": ["t_fan_mute"]}],
@@ -584,3 +608,64 @@ def test_included_values(build_dictionary):
     assert d.included_values({"Mode": 0, "Spin": 3}, status) == {}
     # No include, nothing added.
     assert d.included_values({"t_fan_mute": 0}, status) == {}
+
+
+def test_to_unit_from_unreported_property_is_none(build_dictionary) -> None:
+    dictionary = build_dictionary(
+        base={
+            "properties": [
+                {"property": "t_temp", "sensor": {"unit": "property.t_temp_type"}},
+                {"property": "t_temp_type", "sensor": {"device_class": "enum", "options": {0: "°C", 1: "°F"}}},
+            ]
+        }
+    )
+    appliance = SimpleNamespace(status_list={"t_temp": 22})
+
+    assert to_unit("property.t_temp_type", appliance, dictionary) is None  # type: ignore[arg-type]
+    appliance.status_list["t_temp_type"] = 1
+    assert to_unit("property.t_temp_type", appliance, dictionary) == UnitOfTemperature.FAHRENHEIT  # type: ignore[arg-type]
+
+
+def test_device_type_name_read_from_base(build_dictionary):
+    dictionary = build_dictionary(
+        base={"device_type_name": "Washing machine", "properties": _MINIMAL_PROPS},
+    )
+
+    assert dictionary.device_type_name == "Washing machine"
+
+
+def test_device_type_name_overridden_by_feature_file(build_dictionary):
+    dictionary = build_dictionary(
+        base={"device_type_name": "Washing machine", "properties": _MINIMAL_PROPS},
+        sub={"device_type_name": "Washer dryer", "properties": _MINIMAL_PROPS},
+    )
+
+    assert dictionary.device_type_name == "Washer dryer"
+
+
+def test_device_type_name_absent(build_dictionary):
+    dictionary = build_dictionary(base={"properties": _MINIMAL_PROPS})
+
+    assert dictionary.device_type_name is None
+
+
+def test_default_mapping_files_carry_device_type_name():
+    """Every shipped base mapping file declares a generic device type name."""
+    from os import listdir
+    from os.path import dirname, join
+
+    import custom_components.connectlife.dictionaries as dictionaries_module
+
+    base_dir = join(dirname(dictionaries_module.__file__), "data_dictionaries")
+    base_files = sorted(
+        name for name in listdir(base_dir)
+        if name.endswith(".yaml") and "-" not in name.removesuffix(".yaml")
+    )
+    assert base_files
+    for name in base_files:
+        found, data = _load_yaml("data_dictionaries/" + name)
+        assert found, name
+        value = (data or {}).get("device_type_name")
+        assert isinstance(value, str) and value.strip(), (
+            name + ": missing non-empty top-level device_type_name"
+        )

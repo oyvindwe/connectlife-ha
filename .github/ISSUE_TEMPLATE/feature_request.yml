@@ -1,0 +1,30 @@
+name: Feature or device request
+description: Suggest a feature, or support for a device or property
+labels: [enhancement]
+body:
+  - type: checkboxes
+    attributes:
+      label: Similar issues
+      description: >
+        Search the [open issues](https://github.com/oyvindwe/connectlife-ha/issues) and the
+        [recently closed issues](https://github.com/oyvindwe/connectlife-ha/issues?q=is%3Aissue+is%3Aclosed+sort%3Aupdated-desc).
+        A closed issue may be done but not yet released. If you find one, comment there instead.
+      options:
+        - label: I have searched open and recently closed issues, and found none about this
+          required: true
+  - type: input
+    attributes:
+      label: Device
+      description: Brand, model and appliance type, if the request is about a device.
+  - type: textarea
+    attributes:
+      label: Request
+      description: What you would like, and why.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Diagnostics
+      description: >
+        For device requests, attach the device diagnostics: open the device page and click
+        **Download diagnostics** in the Device info card.

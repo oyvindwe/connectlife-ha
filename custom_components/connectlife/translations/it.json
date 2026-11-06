@@ -3,9 +3,17 @@
     "abort": {
       "already_configured": "Il dispositivo \u00e8 gi\u00e0 configurato",
       "already_configured_elsewhere": "I dispositivi di questo account sono gi\u00e0 configurati in un'altra voce ConnectLife. Per cambiare il modo in cui quella voce accede, scegli Riconfigura su di essa. Per sostituirla con una nuova voce, disattivala prima.",
+      "authorize_url_timeout": "Scaduto il tempo per la generazione dell'URL di autorizzazione.",
       "cannot_connect": "Impossibile connettersi",
+      "missing_configuration": "Il componente non \u00e8 configurato. Prego seguire la documentazione.",
+      "no_url_available": "URL non disponibile. Per informazioni su questo errore, [consulta la sezione della guida]({docs_url})",
+      "oauth_error": "Sono stati ricevuti dati del token non validi.",
+      "oauth_failed": "Errore durante l'ottenimento del token di accesso.",
+      "oauth_timeout": "Timeout durante la risoluzione del token OAuth.",
+      "oauth_unauthorized": "Errore di autorizzazione OAuth durante l'ottenimento del token di accesso.",
       "reauth_successful": "La riautenticazione \u00e8 riuscita",
-      "reconfigure_successful": "La riconfigurazione \u00e8 stata completata"
+      "reconfigure_successful": "La riconfigurazione \u00e8 stata completata",
+      "user_rejected_authorize": "Collegamento dell'account rifiutato: {error}"
     },
     "error": {
       "already_configured_elsewhere": "I dispositivi di questo account sono gi\u00e0 configurati in un'altra voce ConnectLife. Per cambiare il modo in cui quella voce accede, scegli Riconfigura su di essa. Per sostituirla con una nuova voce, disattivala prima.",
@@ -40,6 +48,9 @@
           "development_mode": "Connettersi a un server di prova locale anzich\u00e9 all'API ConnectLife. Solo per lo sviluppo.",
           "trir": "Abilita solo se accedi con l'app ConnectLife.TRIR utilizzata in Russia/CSI."
         }
+      },
+      "pick_implementation": {
+        "title": "Scegli il metodo di autenticazione"
       },
       "reauth_confirm": {
         "data": {
@@ -2003,6 +2014,9 @@
       "light_on": {
         "name": "Luce accesa"
       },
+      "open_door": {
+        "name": "Apri sportello"
+      },
       "pause": {
         "name": "Pausa"
       },
@@ -2064,6 +2078,8 @@
               "low": "Basso",
               "mid_high": "Medio-alto",
               "mid_low": "Medio-basso",
+              "position_1": "Posizione 1",
+              "position_2": "Posizione 2",
               "swing": "Oscillazione",
               "top": "In alto"
             }
@@ -2407,6 +2423,7 @@
           "none": "Nessuno",
           "off": "Off",
           "pre-ironing": "Pre-stiratura",
+          "ready_to_wear": "Pronto da indossare",
           "wardrobe": "Armadio"
         }
       },
@@ -3114,6 +3131,13 @@
       "activemodemotorlevel": {
         "name": "Livello motore modalit\u00e0 attiva"
       },
+      "actualoperatingstate": {
+        "name": "Stato operativo",
+        "state": {
+          "idle": "Inattivo",
+          "running": "In funzione"
+        }
+      },
       "adapttech_setting": {
         "name": "Impostazione AdaptTech"
       },
@@ -3579,6 +3603,7 @@
           "program_selected": "Programma selezionato",
           "rinsing": "Risciacquo",
           "running": "In esecuzione",
+          "softening": "Ammorbidimento",
           "spinning": "Centrifuga",
           "ventilating": "Ventilazione",
           "wash": "Lavaggio",
@@ -3714,6 +3739,10 @@
       "defaultspinspeed": {
         "name": "Velocit\u00e0 di centrifuga predefinita",
         "state": {
+          "1000": "1000 giri/min",
+          "1200": "1200 giri/min",
+          "1400": "1400 giri/min",
+          "800": "800 giri/min",
           "none": "Nessuno"
         }
       },
@@ -4063,7 +4092,12 @@
         "name": "Indicatore modalit\u00e0 asciugatura"
       },
       "drymodel": {
-        "name": "Modalit\u00e0 asciugatura"
+        "name": "Modalit\u00e0 asciugatura",
+        "state": {
+          "dry": "Asciugatura",
+          "wash": "Lavaggio",
+          "wash_and_dry": "Lavaggio e asciugatura"
+        }
       },
       "dryopen_defaultspinspeed": {
         "name": "Velocit\u00e0 di centrifuga predefinita",
@@ -4433,6 +4467,9 @@
       },
       "error_read_out_3_status": {
         "name": "Stato lettura errore 3"
+      },
+      "etwi": {
+        "name": "Temperatura secondaria"
       },
       "extra_soft": {
         "name": "Extra delicato"
@@ -8751,6 +8788,9 @@
       "controldid19": {
         "name": "Modalit\u00e0 silenziosa"
       },
+      "controldid29": {
+        "name": "Boost ACS"
+      },
       "crisp_function_status": {
         "name": "Stato funzione Crisp"
       },
@@ -8792,6 +8832,9 @@
       },
       "fota_cmd": {
         "name": "Aggiornamento firmware"
+      },
+      "gentle": {
+        "name": "Delicato"
       },
       "greasefilterstatus": {
         "name": "Timer filtro grassi"
@@ -8869,7 +8912,7 @@
         "name": "Modalit\u00e0 Sabbath"
       },
       "save_mode": {
-        "name": "Modalit\u00e0 risparmio"
+        "name": "Modalit\u00e0 eco"
       },
       "selected_program_anticrease_status": {
         "name": "Antipiega"
@@ -8893,7 +8936,7 @@
         "name": "Associazione sessione"
       },
       "sf_mode": {
-        "name": "Modalit\u00e0 SF"
+        "name": "Super freeze"
       },
       "sf_sr_mutex_mode": {
         "name": "Modalit\u00e0 mutex SF SR"
@@ -8914,7 +8957,7 @@
         "name": "Suono"
       },
       "sr_mode": {
-        "name": "Modalit\u00e0 SR"
+        "name": "Super cool"
       },
       "standby_mode_status": {
         "name": "Modalit\u00e0 standby"
@@ -9025,6 +9068,9 @@
     "command_rejected": {
       "message": "Il dispositivo non accetta questo comando nello stato attuale"
     },
+    "device_not_available": {
+      "message": "{device} non \u00e8 disponibile"
+    },
     "terms_not_accepted": {
       "message": "I Termini e Condizioni aggiornati di ConnectLife devono essere accettati nell'app ConnectLife"
     }
@@ -9063,7 +9109,7 @@
         },
         "step": {
           "confirm": {
-            "description": "ConnectLife rifiuta l'accesso per \"{title}\" finch\u00e9 non vengono accettati i Termini e Condizioni aggiornati. Reinserire la password non serve.\n\n1. Apri l'app ConnectLife e imposta la lingua dell'app su **inglese**.\n2. Forza la chiusura dell'app (non solo in background) e riaprila.\n3. Accetta i nuovi Termini e Condizioni quando richiesto.\n4. Seleziona **Invia** per riprovare subito. Altrimenti l'integrazione riprova ogni 15 minuti.\n\nIn seguito puoi reimpostare la lingua dell'app. Il cambio di lingua \u00e8 necessario perch\u00e9 l'app pu\u00f2 saltare la richiesta se i termini non sono ancora tradotti nella tua lingua. [Maggiori informazioni]({url})",
+            "description": "ConnectLife rifiuta l'accesso per \"{title}\" finch\u00e9 non vengono accettati i Termini e Condizioni aggiornati. Reinserire la password non serve.\n\n1. Apri l'app ConnectLife e imposta la lingua dell'app su **inglese**.\n2. Forza la chiusura dell'app (non solo in background) e riaprila.\n3. Accetta i nuovi Termini e Condizioni quando richiesto.\n4. Seleziona **Invia** per riprovare subito. Altrimenti l'integrazione riprova ogni 15 minuti.\n\nIn seguito puoi reimpostare la lingua dell'app. Il cambio di lingua \u00e8 necessario perch\u00e9 l'app pu\u00f2 saltare la richiesta se i termini non sono ancora tradotti nella tua lingua. [Maggiori informazioni]({url})\n\nAnche l'accesso sul sito web di ConnectLife pu\u00f2 risolvere il problema: apri l'integrazione ConnectLife e seleziona **\u22ee** \u2192 **Riconfigura**.",
             "title": "Accetta i Termini e Condizioni aggiornati di ConnectLife"
           }
         }
@@ -9112,6 +9158,9 @@
     }
   },
   "options": {
+    "abort": {
+      "not_loaded": "ConnectLife non \u00e8 ancora configurato. Le opzioni saranno disponibili quando l'integrazione sar\u00e0 caricata."
+    },
     "step": {
       "configure_device": {
         "data": {

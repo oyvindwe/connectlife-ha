@@ -3,3 +3,208 @@
 statistics:
   source: energy_consumption_curve
   daily_energy_kwh: false
+properties:
+  # Range reported by refrigerator_min_temperature / refrigerator_max_temperature
+  - property: refrigerator_temperature
+    number:
+      min_value: 2
+      max_value: 8
+
+  # Expose the supported modes as regular controls, not configuration entries.
+  # Keep the inherited SET_SR_MODE and SET_SAVE_MODE command mappings.
+  - property: sr_mode
+    entity_category: null
+  - property: save_mode
+    entity_category: null
+
+  # Unsupported controls on this refrigerator-only model. Removing the
+  # mappings also lets the existing entity-registry cleanup prune old entries.
+  - property: automatic_ice_making
+    disable: true
+  - property: holiday_mode
+    disable: true
+  - property: ice_making_b_switch_status
+    disable: true
+
+  # No ice maker is installed: suppress its active status and fault entities.
+  - property: ice_make_room_alarm
+    disable: true
+  - property: ice_making_machine_failure
+    disable: true
+  - property: ice_making_state
+    disable: true
+  - property: ice_making_stop_status
+    disable: true
+
+  # No wine-storage zones A/B/C: suppress their unsupported fault sensors.
+  - property: low_wine_area_c_evaporator_fault
+    disable: true
+  - property: low_wine_area_c_fan_fault
+    disable: true
+  - property: low_wine_area_c_humdy_fault
+    disable: true
+  - property: low_wine_area_c_temp_fault
+    disable: true
+  - property: mid_wine_area_b_evaporator_fault
+    disable: true
+  - property: mid_wine_area_b_fan_fault
+    disable: true
+  - property: mid_wine_area_b_humdy_fault
+    disable: true
+  - property: mid_wine_area_b_temp_fault
+    disable: true
+  - property: up_wine_area_a_evaporator_fault
+    disable: true
+  - property: up_wine_area_a_fan_fault
+    disable: true
+  - property: up_wine_area_a_humdy_fault
+    disable: true
+  - property: up_wine_area_a_temp_fault
+    disable: true
+
+  # No replaceable charcoal filter or filter-maintenance feature is documented
+  # for this refrigerator; suppress inherited filter diagnostics.
+  - property: charcoal_filter_expiration_alarm
+    disable: true
+  - property: charcoal_filter_surplus_time
+    disable: true
+  - property: charcoal_filter_time_reset
+    disable: true
+
+  # Child lock is not supported by this refrigerator model.
+  - property: child_lock_open_alarm
+    disable: true
+  - property: child_lock_open_door_sound_alarm
+    disable: true
+  - property: child_lock_switch_exist
+    disable: true
+  - property: child_lock_switch_status
+    disable: true
+
+  # No wine-storage compartment is fitted on this refrigerator.
+  - property: wine_sensor_failure_flag
+    disable: true
+
+  # Fruit/vegetable drawer exists, but its API temperature remains a fixed
+  # 0 C placeholder; no separate electronic sensor is documented for this model.
+  - property: fruit_vegetables_temperature
+    disable: true
+
+  # No variable compartment: suppress its unsupported diagnostic alarms.
+  - property: vari_evap_temp_sens_head_failure
+    disable: true
+  - property: vari_temp_sens_head_failure
+    disable: true
+  - property: variable_fan_failure_status
+    disable: true
+  - property: variable_heater_failure_status
+    disable: true
+  - property: var_room_over_temp_alarm
+    disable: true
+  - property: open_variation_door_alarm
+    disable: true
+
+  # No variable-temperature compartment: door and temperature values are
+  # placeholders, and writing variation_temperature is rejected by the API.
+  - property: vari_room_open
+    disable: true
+  - property: variation_door_open_time
+    disable: true
+  - property: variation_max_temperature
+    disable: true
+  - property: variation_min_temperature
+    disable: true
+  - property: variation_real_temperature
+    disable: true
+  - property: variation_sensor_real_temperature
+    disable: true
+  - property: variation_temperature
+    disable: true
+
+  # This model is a refrigerator-only appliance: suppress inherited freezer controls,
+  # measurements, capability limits and the unsupported Super Freeze mode.
+  - property: freeze_temperature
+    disable: true
+  - property: freeze_real_temperature
+    disable: true
+  - property: freeze_sensor_real_temperature
+    disable: true
+  - property: freeze_min_temperature
+    disable: true
+  - property: freeze_max_temperature
+    disable: true
+  - property: sf_mode
+    disable: true
+  - property: existing_sf_mode
+    disable: true
+  - property: frize_temp_2_degree_above_starting_point
+    disable: true
+  - property: free_defrosting_failure
+    disable: true
+  - property: free_evap_temp_sens_head_failure
+    disable: true
+  - property: free_fan_failure
+    disable: true
+  - property: free_key
+    disable: true
+  - property: free_room
+    disable: true
+  - property: free_room_open
+    disable: true
+  - property: free_room_open_2
+    disable: true
+  - property: free_room_over_temp_alarm_failure
+    disable: true
+  - property: free_temp_sens_head_failure
+    disable: true
+  - property: freeze_door_open_time
+    disable: true
+  - property: freeze_drawer_room_temp
+    disable: true
+  - property: freeze_fan_speed
+    disable: true
+  - property: freeze_poweroff_ad
+    disable: true
+  - property: freeze_poweron_ad
+    disable: true
+  - property: freezing_powerdown_temp_alarm
+    disable: true
+  - property: open_freeze_door_alarm
+    disable: true
+  - property: refrigerator_freeze_swith
+    disable: true
+  - property: refrigerator_freeze_swith_state
+    disable: true
+  - property: sf_sr_mutex_mode
+    disable: true
+  - property: unfreeze_run_status
+    disable: true
+  - property: unfreeze_switch_status
+    disable: true
+  - property: right_free_sensor_failure
+    disable: true
+  - property: freeri_fan_speed
+    disable: true
+
+  - property: cool_fan_speed
+    disable: true
+  - property: environment_humidity
+    disable: true
+  - property: power_value
+    disable: true
+
+  # Unsupported mode flags verified on this refrigerator model.
+  - property: existing_holiday_mode
+    disable: true
+  - property: existing_lock_fresh_mode
+    disable: true
+
+  # Two aliases for the absent variable-compartment sensor diagnostic.
+  - property: refrigerator_var_room_sens_failure
+    disable: true
+  - property: refr_var_room_sens_failure
+    disable: true
+
+  # Constant 0% placeholder, not a usable humidity measurement.
+  - property: real_humidity
+    disable: true

@@ -1,3 +1,4 @@
+device_type_name: Air conditioner
 statistics:
   source: air_duct_energy
   daily_energy_kwh: true
@@ -380,8 +381,17 @@ properties:
       device_class: switch
     icon: mdi:weather-windy
   - property: t_left_right
+    # On/off horizontal swing. Used as the swing_horizontal_mode control on
+    # devices that expose t_left_right but not t_swing_direction; when both are
+    # present, t_swing_direction wins unless overridden per device (#580).
     switch:
       device_class: switch
+    climate:
+      target: swing_horizontal_mode
+      priority: 2
+      options:
+        0: "off"
+        1: "on"
     icon: mdi:arrow-left-right
   - property: t_power
     climate:
@@ -456,6 +466,8 @@ properties:
   - property: t_temp
     climate:
       target: target_temperature
+      # Reported in modes without a setpoint, e.g. dry (#772).
+      unknown_value: 0
       max_value:
         celsius: 32
         fahrenheit: 90

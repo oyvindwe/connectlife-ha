@@ -1,4 +1,5 @@
 # Dehumidifier
+device_type_name: Dehumidifier
 statistics:
   source: energy_consumption_curve
   daily_energy_kwh: true

@@ -104,6 +104,8 @@ async def _appliance_diagnostics(
         "options": entry.options.get(CONF_DEVICES, {}).get(appliance.device_id, {}),
         "unmapped_properties": unmapped,
         "status_list": appliance.status_list,
+        # The cloud sent no status list, so this is the last one received.
+        "status_list_cached": appliance.status_list_cached,
         "static_data": await _device_request(appliance, lambda: api.query_static_data(appliance.puid)),
         "system_data": await _device_request(appliance, lambda: api.query_system_data(appliance.puid)),
         "self_check": await _device_request(appliance, lambda: api.get_self_check(appliance.puid)),

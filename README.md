@@ -6,18 +6,24 @@ ConnectLife integration for Home Assistant
 
 ## Installation
 
-You can install using HACS or download.
+### Marketplace (Home Assistant 2026.11 and later)
 
-### HACS
+Use the button below, or go to **Settings** → **Marketplace** and search for "ConnectLife":
 
-If you have HACS installed use the button below:
+[![Open your Home Assistant instance and open a repository in the Marketplace.](https://my.home-assistant.io/badges/marketplace_repository.svg)](https://my.home-assistant.io/redirect/marketplace_repository/?owner=oyvindwe&repository=connectlife-ha&category=integration)
+
+The first time you use the Marketplace, Home Assistant explains the risks of installing community-made items. Check
+**I understand the risks and agree** and select **Continue**. The install dialog also notes that ConnectLife is not
+reviewed or supported by the Home Assistant project: this is a community integration, so please report problems
+[here](https://github.com/oyvindwe/connectlife-ha/issues).
+
+### Older Home Assistant versions
+
+With HACS installed, use the button below:
 
 [![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=oyvindwe&repository=connectlife-ha&category=integration)
 
-
-### Download
-
-Download the `connectlife` directory and place in your `<config>/custom_components/`.
+Without HACS, download the `connectlife` directory and place it in your `<config>/custom_components/`.
 
 After installing, you need to restart Home Assistant.
 
@@ -70,12 +76,15 @@ and click "Configure" → "Configure a device", select the device, and set "Swin
 your hardware actually responds to (leave it on "auto" to keep the automatic choice). This option only appears
 for devices that expose more than one swing property.
 
+Horizontal swing works the same way: if the left/right positions don't work, set "Horizontal swing mode control"
+to `t_left_right` for simple on/off swing.
+
 ## Daily energy and water consumption sensors
 
 For supported device types, the integration exposes a **daily energy** sensor (kWh) and, for
-wet appliances such as dishwashers and washing machines, a **daily water consumption** sensor (L).
+wet appliances such as washing machines, a **daily water consumption** sensor (L).
 Air conditioners report energy via the cloud `air_duct_energy` endpoint; other appliances
-(dishwashers, washing machines, dryers, ovens, …) report energy — and where applicable water —
+(washing machines, dryers, ovens, …) report energy — and where applicable water —
 via the `energyConsumptionCurve` endpoint.
 
 No configuration is needed: these sensors are created automatically for device types whose mapping
@@ -130,8 +139,8 @@ Missing features:
 There are two ways to sign in:
 
 - **Sign in on the ConnectLife website.** Home Assistant opens the ConnectLife login page, where you can sign in
-  with your ConnectLife password or with Google, Apple, Facebook or Microsoft, and accept updated Terms &
-  Conditions. Home Assistant doesn't store your password. This requires
+  with your ConnectLife password or with Google, Apple, Facebook or Microsoft. Home Assistant doesn't store your
+  password. This requires
   [My Home Assistant](https://www.home-assistant.io/integrations/my/), which is part of the default configuration.
   So far this has only been tested with accounts in Europe; please report how it works for you elsewhere.
 - **Enter username and password** of a ConnectLife account. The password is stored in Home Assistant.
@@ -160,10 +169,7 @@ silently become unavailable. Home Assistant shows this as the repair issue
 **Accept updated ConnectLife Terms & Conditions**. The integration retries every 15 minutes until the terms are
 accepted; select **Submit** in the repair to retry right away.
 
-If you sign in on the ConnectLife website, select **⋮** → **Reconfigure** on the entry and sign in again; the login
-page should ask you to accept the new terms.
-
-With username and password, you need to accept the new Terms & Conditions in the ConnectLife mobile app:
+Accept the new Terms & Conditions in the ConnectLife mobile app:
 
 1. Open the ConnectLife mobile app
 2. Go to Settings and **change the app language to English**
@@ -176,6 +182,9 @@ With username and password, you need to accept the new Terms & Conditions in the
 The language change is needed because updated Terms & Conditions are often only available in English initially.
 The app skips the acceptance prompt if the translated version for your language doesn't exist yet, but the
 backend still requires acceptance.
+
+Signing in once on the ConnectLife website (**⋮** → **Reconfigure** → **Sign in on the ConnectLife website**) may also
+fix it.
 
 ## Contributing
 

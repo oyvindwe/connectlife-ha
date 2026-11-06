@@ -1,0 +1,47 @@
+name: Bug report
+description: Something doesn't work as expected
+labels: [bug]
+body:
+  - type: checkboxes
+    attributes:
+      label: Similar issues
+      description: >
+        Search the [open issues](https://github.com/oyvindwe/connectlife-ha/issues) and the
+        [recently closed issues](https://github.com/oyvindwe/connectlife-ha/issues?q=is%3Aissue+is%3Aclosed+sort%3Aupdated-desc).
+        A closed issue may be fixed but not yet released. If you find one, comment there instead.
+      options:
+        - label: I have searched open and recently closed issues, and found none about this
+          required: true
+  - type: input
+    attributes:
+      label: Integration version
+      placeholder: "0.53.0"
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Home Assistant version
+      placeholder: "2026.10.0"
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Device
+      description: Brand, model and appliance type, if the issue is about a device.
+  - type: textarea
+    attributes:
+      label: What happens
+      description: What you expected, and what happens instead.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Logs
+      description: Relevant log lines from Home Assistant.
+      render: text
+  - type: textarea
+    attributes:
+      label: Diagnostics
+      description: >
+        For device issues, attach the device diagnostics: open the device page and click
+        **Download diagnostics** in the Device info card.

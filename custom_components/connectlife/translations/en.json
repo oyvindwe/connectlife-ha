@@ -2014,6 +2014,9 @@
       "light_on": {
         "name": "Light on"
       },
+      "open_door": {
+        "name": "Open door"
+      },
       "pause": {
         "name": "Pause"
       },
@@ -2075,6 +2078,8 @@
               "low": "Low",
               "mid_high": "Mid-High",
               "mid_low": "Mid-Low",
+              "position_1": "Position 1",
+              "position_2": "Position 2",
               "swing": "Swing",
               "top": "Top"
             }
@@ -2418,6 +2423,7 @@
           "none": "None",
           "off": "Off",
           "pre-ironing": "Pre-ironing",
+          "ready_to_wear": "Ready to wear",
           "wardrobe": "Wardrobe"
         }
       },
@@ -3125,6 +3131,13 @@
       "activemodemotorlevel": {
         "name": "Active mode motor level"
       },
+      "actualoperatingstate": {
+        "name": "Operating state",
+        "state": {
+          "idle": "Idle",
+          "running": "Running"
+        }
+      },
       "adapttech_setting": {
         "name": "Adapt tech setting"
       },
@@ -3590,6 +3603,7 @@
           "program_selected": "Program selected",
           "rinsing": "Rinsing",
           "running": "Running",
+          "softening": "Softening",
           "spinning": "Spinning",
           "ventilating": "Ventilating",
           "wash": "Wash",
@@ -3725,6 +3739,10 @@
       "defaultspinspeed": {
         "name": "Default spin speed",
         "state": {
+          "1000": "1000 RPM",
+          "1200": "1200 RPM",
+          "1400": "1400 RPM",
+          "800": "800 RPM",
           "none": "None"
         }
       },
@@ -4074,7 +4092,12 @@
         "name": "Dry mode flag"
       },
       "drymodel": {
-        "name": "Dry model"
+        "name": "Dry model",
+        "state": {
+          "dry": "Dry",
+          "wash": "Wash",
+          "wash_and_dry": "Wash and dry"
+        }
       },
       "dryopen_defaultspinspeed": {
         "name": "Dry open default spin speed",
@@ -4444,6 +4467,9 @@
       },
       "error_read_out_3_status": {
         "name": "Error read out 3 status"
+      },
+      "etwi": {
+        "name": "Secondary temperature"
       },
       "extra_soft": {
         "name": "Extra soft"
@@ -8762,6 +8788,9 @@
       "controldid19": {
         "name": "Silent mode"
       },
+      "controldid29": {
+        "name": "DHW boost"
+      },
       "crisp_function_status": {
         "name": "Crisp function status"
       },
@@ -8803,6 +8832,9 @@
       },
       "fota_cmd": {
         "name": "Firmware update"
+      },
+      "gentle": {
+        "name": "Gentle"
       },
       "greasefilterstatus": {
         "name": "Grease filter timer"
@@ -8880,7 +8912,7 @@
         "name": "Sabbath mode"
       },
       "save_mode": {
-        "name": "Save mode"
+        "name": "Eco mode"
       },
       "selected_program_anticrease_status": {
         "name": "Anti-crease"
@@ -8904,7 +8936,7 @@
         "name": "Session pairing"
       },
       "sf_mode": {
-        "name": "SF mode"
+        "name": "Super freeze"
       },
       "sf_sr_mutex_mode": {
         "name": "SF SR mutex mode"
@@ -8925,7 +8957,7 @@
         "name": "Sound"
       },
       "sr_mode": {
-        "name": "SR mode"
+        "name": "Super cool"
       },
       "standby_mode_status": {
         "name": "Standby mode"
@@ -9036,6 +9068,9 @@
     "command_rejected": {
       "message": "The device doesn't accept this command in its current state"
     },
+    "device_not_available": {
+      "message": "{device} is not available"
+    },
     "terms_not_accepted": {
       "message": "Updated ConnectLife Terms & Conditions must be accepted in the ConnectLife app"
     }
@@ -9074,7 +9109,7 @@
         },
         "step": {
           "confirm": {
-            "description": "ConnectLife rejects the login for \"{title}\" until the updated Terms & Conditions are accepted. Re-entering your password will not help.\n\n1. Open the ConnectLife mobile app and change the app language to **English**.\n2. Force close the app (not just background it), then reopen it.\n3. Accept the new Terms & Conditions when prompted.\n4. Select **Submit** to retry now. Otherwise the integration retries every 15 minutes.\n\nYou can change the app language back afterwards. The language change is needed because the app may skip the prompt when the terms are not yet translated to your language. [More information]({url})",
+            "description": "ConnectLife rejects the login for \"{title}\" until the updated Terms & Conditions are accepted. Re-entering your password will not help.\n\n1. Open the ConnectLife mobile app and change the app language to **English**.\n2. Force close the app (not just background it), then reopen it.\n3. Accept the new Terms & Conditions when prompted.\n4. Select **Submit** to retry now. Otherwise the integration retries every 15 minutes.\n\nYou can change the app language back afterwards. The language change is needed because the app may skip the prompt when the terms are not yet translated to your language. [More information]({url})\n\nSigning in on the ConnectLife website may also fix this: open the ConnectLife integration and select **\u22ee** \u2192 **Reconfigure**.",
             "title": "Accept updated ConnectLife Terms & Conditions"
           }
         }
@@ -9084,11 +9119,11 @@
     "unavailable_device": {
       "fix_flow": {
         "abort": {
-          "issue_ignored": "Ignored \"{device_name} no longer available\". The device and all its entities will still be listed in the regiestry."
+          "issue_ignored": "Ignored \"{device_name} no longer available\". The device and all its entities will still be listed in the registry."
         },
         "step": {
           "init": {
-            "description": "The device \"{device_name}\" is now longer available in your ConnectLife account. If you no longer have this device, you can delete it from Home Assistant.",
+            "description": "The device \"{device_name}\" is no longer available in your ConnectLife account. If you no longer have this device, you can delete it from Home Assistant.",
             "menu_options": {
               "ignore": "Ignore",
               "remove": "Remove"
@@ -9123,6 +9158,9 @@
     }
   },
   "options": {
+    "abort": {
+      "not_loaded": "ConnectLife isn't set up yet. Options are available once it has loaded."
+    },
     "step": {
       "configure_device": {
         "data": {

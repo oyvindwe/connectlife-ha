@@ -1,4 +1,5 @@
 # Washing machine
+device_type_name: Washing machine
 statistics:
   source: energy_consumption_curve
   daily_energy_kwh: true

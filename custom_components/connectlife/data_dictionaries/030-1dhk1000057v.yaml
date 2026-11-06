@@ -1,0 +1,13 @@
+# Hisense DH5I104BWCB tumble dryer (030-1dhk1000057v), API model DH5I10-BVW105-000.
+# Natural_Dry is the "Gentle Dry" button on this dryer. It only changed while a program was set up
+# on the panel, never from Home Assistant.
+# Verified with the 030.yaml mappings:
+# - dry_time 1-3 (wardrobe, pre-ironing, extra_dry) match the panel's three drying types, cupboard,
+#   iron and extra dry. Cotton reports a total time of 211 min with 1 and 241 min with 3, and an
+#   Iron_Dry_Time of 166 min.
+# - For program 7 (time), dry_time holds the drying time in minutes, which is set freely on the panel
+#   (90 observed), so it is not mapped to options.
+# - machine_status 3 (paused).
+properties:
+  - property: Natural_Dry
+    translation_key: gentle

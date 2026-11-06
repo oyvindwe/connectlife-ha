@@ -1,0 +1,17 @@
+# Hisense WF3S1114-LVW004-000 washer (025-1wj105262v0f).
+# Current_program_phase names follow the sibling 025-1wj105050v0w, plus 11 (delay_start_waiting) as in
+# 025-1wfj1000101v. 2 and 11 have not been verified on this machine.
+properties:
+  - property: Current_program_phase
+    sensor:
+      device_class: enum
+      options:
+        0: not_available
+        1: weigh
+        2: prewash
+        3: wash
+        4: rinsing
+        7: spinning
+        8: drying
+        10: finished
+        11: delay_start_waiting

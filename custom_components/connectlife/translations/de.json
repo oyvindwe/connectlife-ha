@@ -3,9 +3,17 @@
     "abort": {
       "already_configured": "Ger\u00e4t ist bereits konfiguriert",
       "already_configured_elsewhere": "Die Ger\u00e4te dieses Kontos sind bereits in einem anderen ConnectLife-Eintrag eingerichtet. Um die Anmeldung dieses Eintrags zu \u00e4ndern, w\u00e4hle dort Neu konfigurieren. Um ihn durch einen neuen Eintrag zu ersetzen, deaktiviere ihn zuerst.",
+      "authorize_url_timeout": "Zeit\u00fcberschreitung beim Erstellen der Autorisierungs-URL.",
       "cannot_connect": "Verbindung fehlgeschlagen",
+      "missing_configuration": "Die Komponente ist nicht konfiguriert. Bitte folge der Dokumentation.",
+      "no_url_available": "Keine URL verf\u00fcgbar. Informationen zu diesem Fehler findest du [im Hilfebereich]({docs_url})",
+      "oauth_error": "Ung\u00fcltige Token-Daten empfangen.",
+      "oauth_failed": "Fehler beim Abrufen des Zugriffstokens.",
+      "oauth_timeout": "Zeit\u00fcberschreitung beim Abrufen des OAuth-Tokens.",
+      "oauth_unauthorized": "OAuth-Autorisierungsfehler beim Abrufen des Zugriffstokens.",
       "reauth_successful": "Erneute Authentifizierung war erfolgreich",
-      "reconfigure_successful": "Die Neukonfiguration war erfolgreich"
+      "reconfigure_successful": "Die Neukonfiguration war erfolgreich",
+      "user_rejected_authorize": "Kontoverkn\u00fcpfung abgelehnt: {error}"
     },
     "error": {
       "already_configured_elsewhere": "Die Ger\u00e4te dieses Kontos sind bereits in einem anderen ConnectLife-Eintrag eingerichtet. Um die Anmeldung dieses Eintrags zu \u00e4ndern, w\u00e4hle dort Neu konfigurieren. Um ihn durch einen neuen Eintrag zu ersetzen, deaktiviere ihn zuerst.",
@@ -40,6 +48,9 @@
           "development_mode": "Mit einem lokalen Testserver anstelle der ConnectLife-API verbinden. Nur f\u00fcr die Entwicklung.",
           "trir": "Nur aktivieren, wenn du dich mit der ConnectLife.TRIR-App anmeldest, die in Russland/GUS verwendet wird."
         }
+      },
+      "pick_implementation": {
+        "title": "Authentifizierungsmethode w\u00e4hlen"
       },
       "reauth_confirm": {
         "data": {
@@ -2003,6 +2014,9 @@
       "light_on": {
         "name": "Licht an"
       },
+      "open_door": {
+        "name": "T\u00fcr \u00f6ffnen"
+      },
       "pause": {
         "name": "Pause"
       },
@@ -2064,6 +2078,8 @@
               "low": "Niedrig",
               "mid_high": "Mittelhoch",
               "mid_low": "Mittelniedrig",
+              "position_1": "Position 1",
+              "position_2": "Position 2",
               "swing": "Schwenken",
               "top": "Oben"
             }
@@ -2407,6 +2423,7 @@
           "none": "Keine",
           "off": "Aus",
           "pre-ironing": "Vor B\u00fcgeln",
+          "ready_to_wear": "Tragetrocken",
           "wardrobe": "Schranktrocken"
         }
       },
@@ -3114,6 +3131,13 @@
       "activemodemotorlevel": {
         "name": "Motorstufe im Aktivmodus"
       },
+      "actualoperatingstate": {
+        "name": "Betriebszustand",
+        "state": {
+          "idle": "Leerlauf",
+          "running": "In Betrieb"
+        }
+      },
       "adapttech_setting": {
         "name": "AdaptTech-Einstellung"
       },
@@ -3579,6 +3603,7 @@
           "program_selected": "Programm ausgew\u00e4hlt",
           "rinsing": "Sp\u00fclen",
           "running": "L\u00e4uft",
+          "softening": "Weichsp\u00fclen",
           "spinning": "Schleudern",
           "ventilating": "L\u00fcften",
           "wash": "Waschen",
@@ -3714,6 +3739,10 @@
       "defaultspinspeed": {
         "name": "Schleuderdrehzahl Standard",
         "state": {
+          "1000": "1000 U/min",
+          "1200": "1200 U/min",
+          "1400": "1400 U/min",
+          "800": "800 U/min",
           "none": "Keine"
         }
       },
@@ -4063,7 +4092,12 @@
         "name": "Trocknungsmodus-Flag"
       },
       "drymodel": {
-        "name": "Trocknungsmodus"
+        "name": "Trocknungsmodus",
+        "state": {
+          "dry": "Trocknen",
+          "wash": "Waschen",
+          "wash_and_dry": "Waschen und Trocknen"
+        }
       },
       "dryopen_defaultspinspeed": {
         "name": "Standard Schleudergeschwindigkeit",
@@ -4433,6 +4467,9 @@
       },
       "error_read_out_3_status": {
         "name": "Fehlerauslesung 3 Status"
+      },
+      "etwi": {
+        "name": "Sekund\u00e4re Temperatur"
       },
       "extra_soft": {
         "name": "Extra sanft"
@@ -8751,6 +8788,9 @@
       "controldid19": {
         "name": "Leisemodus"
       },
+      "controldid29": {
+        "name": "Warmwasser-Boost"
+      },
       "crisp_function_status": {
         "name": "Knusperfunktion Status"
       },
@@ -8792,6 +8832,9 @@
       },
       "fota_cmd": {
         "name": "Firmwareaktualisierung"
+      },
+      "gentle": {
+        "name": "Schonend"
       },
       "greasefilterstatus": {
         "name": "Fettfilter-Timer"
@@ -8869,7 +8912,7 @@
         "name": "Sabbatmodus"
       },
       "save_mode": {
-        "name": "Sparmodus"
+        "name": "Eco-Modus"
       },
       "selected_program_anticrease_status": {
         "name": "Programmoption Anti-Knitter"
@@ -8893,7 +8936,7 @@
         "name": "Sitzungskopplung"
       },
       "sf_mode": {
-        "name": "SF-Modus"
+        "name": "SuperFreeze"
       },
       "sf_sr_mutex_mode": {
         "name": "SF-SR-Mutex-Modus"
@@ -8914,7 +8957,7 @@
         "name": "Ton"
       },
       "sr_mode": {
-        "name": "SR-Modus"
+        "name": "SuperCool"
       },
       "standby_mode_status": {
         "name": "Standby-Modus"
@@ -9025,6 +9068,9 @@
     "command_rejected": {
       "message": "Das Ger\u00e4t nimmt diesen Befehl im aktuellen Zustand nicht an"
     },
+    "device_not_available": {
+      "message": "{device} ist nicht verf\u00fcgbar"
+    },
     "terms_not_accepted": {
       "message": "Aktualisierte ConnectLife-Nutzungsbedingungen m\u00fcssen in der ConnectLife-App akzeptiert werden"
     }
@@ -9063,7 +9109,7 @@
         },
         "step": {
           "confirm": {
-            "description": "ConnectLife lehnt die Anmeldung f\u00fcr \"{title}\" ab, bis die aktualisierten Nutzungsbedingungen akzeptiert wurden. Das erneute Eingeben des Passworts hilft nicht.\n\n1. \u00d6ffne die ConnectLife-App und stelle die App-Sprache auf **Englisch**.\n2. Beende die App vollst\u00e4ndig (nicht nur in den Hintergrund) und \u00f6ffne sie erneut.\n3. Akzeptiere die neuen Nutzungsbedingungen, wenn du dazu aufgefordert wirst.\n4. W\u00e4hle **Absenden**, um es sofort erneut zu versuchen. Andernfalls versucht es die Integration alle 15 Minuten erneut.\n\nDanach kannst du die App-Sprache wieder zur\u00fcckstellen. Der Sprachwechsel ist n\u00f6tig, weil die App die Abfrage \u00fcberspringen kann, wenn die Bedingungen noch nicht in deine Sprache \u00fcbersetzt sind. [Weitere Informationen]({url})",
+            "description": "ConnectLife lehnt die Anmeldung f\u00fcr \"{title}\" ab, bis die aktualisierten Nutzungsbedingungen akzeptiert wurden. Das erneute Eingeben des Passworts hilft nicht.\n\n1. \u00d6ffne die ConnectLife-App und stelle die App-Sprache auf **Englisch**.\n2. Beende die App vollst\u00e4ndig (nicht nur in den Hintergrund) und \u00f6ffne sie erneut.\n3. Akzeptiere die neuen Nutzungsbedingungen, wenn du dazu aufgefordert wirst.\n4. W\u00e4hle **Absenden**, um es sofort erneut zu versuchen. Andernfalls versucht es die Integration alle 15 Minuten erneut.\n\nDanach kannst du die App-Sprache wieder zur\u00fcckstellen. Der Sprachwechsel ist n\u00f6tig, weil die App die Abfrage \u00fcberspringen kann, wenn die Bedingungen noch nicht in deine Sprache \u00fcbersetzt sind. [Weitere Informationen]({url})\n\nEine Anmeldung auf der ConnectLife-Website kann das ebenfalls beheben: \u00d6ffne die ConnectLife-Integration und w\u00e4hle **\u22ee** \u2192 **Neu konfigurieren**.",
             "title": "Aktualisierte ConnectLife-Nutzungsbedingungen akzeptieren"
           }
         }
@@ -9112,6 +9158,9 @@
     }
   },
   "options": {
+    "abort": {
+      "not_loaded": "ConnectLife ist noch nicht eingerichtet. Die Optionen sind verf\u00fcgbar, sobald die Integration geladen ist."
+    },
     "step": {
       "configure_device": {
         "data": {

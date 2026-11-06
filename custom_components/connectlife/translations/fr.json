@@ -3,9 +3,17 @@
     "abort": {
       "already_configured": "L\u2019appareil est d\u00e9j\u00e0 configur\u00e9",
       "already_configured_elsewhere": "Les appareils de ce compte sont d\u00e9j\u00e0 configur\u00e9s dans une autre entr\u00e9e ConnectLife. Pour changer la m\u00e9thode de connexion de cette entr\u00e9e, choisissez Reconfigurer sur celle-ci. Pour la remplacer par une nouvelle entr\u00e9e, d\u00e9sactivez-la d'abord.",
+      "authorize_url_timeout": "D\u00e9lai d\u00e9pass\u00e9 lors de la g\u00e9n\u00e9ration de l'URL d'autorisation.",
       "cannot_connect": "\u00c9chec de l\u2019\u00e9tablissement de la connexion",
+      "missing_configuration": "Le composant n'est pas configur\u00e9. Veuillez suivre la documentation.",
+      "no_url_available": "Aucune URL disponible. Pour plus d'informations sur cette erreur, [consultez la section d'aide]({docs_url})",
+      "oauth_error": "Donn\u00e9es de jeton re\u00e7ues non valides.",
+      "oauth_failed": "Erreur lors de l'obtention du jeton d'acc\u00e8s.",
+      "oauth_timeout": "D\u00e9lai d\u00e9pass\u00e9 lors de l'obtention du jeton OAuth.",
+      "oauth_unauthorized": "Erreur d'autorisation OAuth lors de l'obtention du jeton d'acc\u00e8s.",
       "reauth_successful": "La r\u00e9-authentification a r\u00e9ussi",
-      "reconfigure_successful": "La reconfiguration a r\u00e9ussi"
+      "reconfigure_successful": "La reconfiguration a r\u00e9ussi",
+      "user_rejected_authorize": "Liaison du compte refus\u00e9e : {error}"
     },
     "error": {
       "already_configured_elsewhere": "Les appareils de ce compte sont d\u00e9j\u00e0 configur\u00e9s dans une autre entr\u00e9e ConnectLife. Pour changer la m\u00e9thode de connexion de cette entr\u00e9e, choisissez Reconfigurer sur celle-ci. Pour la remplacer par une nouvelle entr\u00e9e, d\u00e9sactivez-la d'abord.",
@@ -40,6 +48,9 @@
           "development_mode": "Se connecter \u00e0 un serveur de test local au lieu de l\u2019API ConnectLife. Pour le d\u00e9veloppement uniquement.",
           "trir": "\u00c0 activer uniquement si vous vous connectez avec l\u2019application ConnectLife.TRIR utilis\u00e9e en Russie/CEI."
         }
+      },
+      "pick_implementation": {
+        "title": "Choisir la m\u00e9thode d'authentification"
       },
       "reauth_confirm": {
         "data": {
@@ -2003,6 +2014,9 @@
       "light_on": {
         "name": "Lumi\u00e8re allum\u00e9e"
       },
+      "open_door": {
+        "name": "Ouvrir la porte"
+      },
       "pause": {
         "name": "Pause"
       },
@@ -2064,6 +2078,8 @@
               "low": "Basse",
               "mid_high": "Moyen-\u00e9lev\u00e9",
               "mid_low": "Moyen-bas",
+              "position_1": "Position 1",
+              "position_2": "Position 2",
               "swing": "Oscillation",
               "top": "Haut"
             }
@@ -2407,6 +2423,7 @@
           "none": "Aucun",
           "off": "Arr\u00eat",
           "pre-ironing": "Pr\u00e9repassage",
+          "ready_to_wear": "Pr\u00eat \u00e0 porter",
           "wardrobe": "Pr\u00eat \u00e0 ranger"
         }
       },
@@ -3114,6 +3131,13 @@
       "activemodemotorlevel": {
         "name": "Niveau moteur en mode actif"
       },
+      "actualoperatingstate": {
+        "name": "\u00c9tat de fonctionnement",
+        "state": {
+          "idle": "Inactif",
+          "running": "En marche"
+        }
+      },
       "adapttech_setting": {
         "name": "R\u00e9glage AdaptTech"
       },
@@ -3579,6 +3603,7 @@
           "program_selected": "Programme s\u00e9lectionn\u00e9",
           "rinsing": "Rin\u00e7age",
           "running": "En marche",
+          "softening": "Adoucissement",
           "spinning": "Essorage",
           "ventilating": "Ventilation",
           "wash": "Lavage",
@@ -3714,6 +3739,10 @@
       "defaultspinspeed": {
         "name": "Vitesse essorage par d\u00e9faut",
         "state": {
+          "1000": "1000 tr/min",
+          "1200": "1200 tr/min",
+          "1400": "1400 tr/min",
+          "800": "800 tr/min",
           "none": "Aucun"
         }
       },
@@ -4063,7 +4092,12 @@
         "name": "Indicateur de mode s\u00e9chage"
       },
       "drymodel": {
-        "name": "Mode s\u00e9chage"
+        "name": "Mode s\u00e9chage",
+        "state": {
+          "dry": "S\u00e9chage",
+          "wash": "Lavage",
+          "wash_and_dry": "Lavage et s\u00e9chage"
+        }
       },
       "dryopen_defaultspinspeed": {
         "name": "Vitesse d'essorage par d\u00e9faut porte ouverte",
@@ -4433,6 +4467,9 @@
       },
       "error_read_out_3_status": {
         "name": "\u00c9tat du relev\u00e9 d'erreur 3"
+      },
+      "etwi": {
+        "name": "Temp\u00e9rature secondaire"
       },
       "extra_soft": {
         "name": "Extra doux"
@@ -8751,6 +8788,9 @@
       "controldid19": {
         "name": "Mode silencieux"
       },
+      "controldid29": {
+        "name": "Boost ECS"
+      },
       "crisp_function_status": {
         "name": "\u00c9tat de la fonction Crisp"
       },
@@ -8792,6 +8832,9 @@
       },
       "fota_cmd": {
         "name": "Mise \u00e0 jour du micrologiciel"
+      },
+      "gentle": {
+        "name": "D\u00e9licat"
       },
       "greasefilterstatus": {
         "name": "Minuterie filtre \u00e0 graisse"
@@ -9025,6 +9068,9 @@
     "command_rejected": {
       "message": "L'appareil n'accepte pas cette commande dans son \u00e9tat actuel"
     },
+    "device_not_available": {
+      "message": "{device} n'est pas disponible"
+    },
     "terms_not_accepted": {
       "message": "Les Conditions g\u00e9n\u00e9rales ConnectLife mises \u00e0 jour doivent \u00eatre accept\u00e9es dans l'application ConnectLife"
     }
@@ -9063,7 +9109,7 @@
         },
         "step": {
           "confirm": {
-            "description": "ConnectLife refuse la connexion pour \u00ab {title} \u00bb tant que les Conditions g\u00e9n\u00e9rales mises \u00e0 jour n'ont pas \u00e9t\u00e9 accept\u00e9es. Saisir \u00e0 nouveau votre mot de passe ne r\u00e9soudra pas le probl\u00e8me.\n\n1. Ouvrez l'application ConnectLife et passez la langue de l'application en **anglais**.\n2. Forcez la fermeture de l'application (pas seulement en arri\u00e8re-plan), puis rouvrez-la.\n3. Acceptez les nouvelles Conditions g\u00e9n\u00e9rales lorsque cela vous est demand\u00e9.\n4. S\u00e9lectionnez **Valider** pour r\u00e9essayer maintenant. Sinon, l'int\u00e9gration r\u00e9essaie toutes les 15 minutes.\n\nVous pouvez ensuite r\u00e9tablir la langue de l'application. Le changement de langue est n\u00e9cessaire car l'application peut ignorer la demande lorsque les conditions ne sont pas encore traduites dans votre langue. [Plus d'informations]({url})",
+            "description": "ConnectLife refuse la connexion pour \u00ab {title} \u00bb tant que les Conditions g\u00e9n\u00e9rales mises \u00e0 jour n'ont pas \u00e9t\u00e9 accept\u00e9es. Saisir \u00e0 nouveau votre mot de passe ne r\u00e9soudra pas le probl\u00e8me.\n\n1. Ouvrez l'application ConnectLife et passez la langue de l'application en **anglais**.\n2. Forcez la fermeture de l'application (pas seulement en arri\u00e8re-plan), puis rouvrez-la.\n3. Acceptez les nouvelles Conditions g\u00e9n\u00e9rales lorsque cela vous est demand\u00e9.\n4. S\u00e9lectionnez **Valider** pour r\u00e9essayer maintenant. Sinon, l'int\u00e9gration r\u00e9essaie toutes les 15 minutes.\n\nVous pouvez ensuite r\u00e9tablir la langue de l'application. Le changement de langue est n\u00e9cessaire car l'application peut ignorer la demande lorsque les conditions ne sont pas encore traduites dans votre langue. [Plus d'informations]({url})\n\nSe connecter sur le site web ConnectLife peut aussi r\u00e9soudre le probl\u00e8me : ouvrez l'int\u00e9gration ConnectLife et s\u00e9lectionnez **\u22ee** \u2192 **Reconfigurer**.",
             "title": "Accepter les Conditions g\u00e9n\u00e9rales ConnectLife mises \u00e0 jour"
           }
         }
@@ -9112,6 +9158,9 @@
     }
   },
   "options": {
+    "abort": {
+      "not_loaded": "ConnectLife n'est pas encore configur\u00e9. Les options seront disponibles une fois l'int\u00e9gration charg\u00e9e."
+    },
     "step": {
       "configure_device": {
         "data": {

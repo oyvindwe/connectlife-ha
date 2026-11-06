@@ -1,6 +1,23 @@
 # ASKO dishwasher (DFI777UXXL family).
 #
 # Programs and allowed modes as reported in system data (#624).
+buttons:
+  - key: stop
+    icon: mdi:stop
+    write:
+      Actions: 1
+  - key: start
+    icon: mdi:play
+    available_when:
+      Remote_control_monitoring_set_commands_actions: 2
+    write:
+      Actions: 2
+  - key: open_door
+    icon: mdi:door-open
+    available_when:
+      MDO_on_demand_allowed: 2
+    write:
+      MDO_on_demand: 1
 properties:
   - property: Selected_program_id_status
     select:
@@ -50,3 +67,7 @@ properties:
       command:
         name: Time_program_set_duration
         adjust: 1
+  - property: MDO_on_demand
+    hide: true
+  - property: MDO_on_demand_allowed
+    hide: true

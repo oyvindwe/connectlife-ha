@@ -44,7 +44,9 @@ Generate release notes for this ConnectLife Home Assistant integration release.
    git diff-tree --no-commit-id --name-only -r <hash>
    ```
 
-7. Come up with a cool release name.
+7. Come up with a cool release name that hasn't been used before. List the earlier names with
+   `gh release list --limit 300 --json name --jq '.[].name'` (older titles start with the version, e.g.
+   "0.47.0 Fine Print"), and pick one that doesn't match any of them, ignoring case.
 
 8. Format the release notes following this template. The first line is the release title: the release name only,
    without the version. HACS already shows the tag in front of it ("v0.52.0 - <release name>").
@@ -106,6 +108,7 @@ The following have contributed to changes in this release — thank you very muc
 - Quote property names and field names in backticks (e.g., `DelayEndTime`, `state_class`)
 - Keep descriptions concise — one line per item
 - The Highlights section should give a quick overview: count of new devices, key fixes, notable features
+- Omit the Highlights section for patch releases (`x.y.Z` with Z > 0): with only a few entries it repeats them
 - Always read the PR body (via `gh pr view <num> --json body --jq '.body'`)
 - When a PR body calls out a breaking change is experimental, note that in the entry (e.g., "breaking changes ...")
 - When a PR body calls out that a change is experimental, speculative, or untested for certain models/devices, note that in the entry (e.g., "experimental for ...")

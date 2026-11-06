@@ -41,6 +41,7 @@ properties:
     sensor:
       read_only: true
       device_class: enum
+      unit: null
       options:
         0: none
         4: "400"

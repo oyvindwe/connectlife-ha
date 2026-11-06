@@ -11,8 +11,10 @@ from homeassistant.components.climate import (
 )
 
 from custom_components.connectlife.climate import (
+    TARGET_TEMPERATURE_ATTR,
     ConnectLifeClimate,
     _add_hvac_mode_mapping,
+    _first_match,
     is_climate,
 )
 from custom_components.connectlife.const import (
@@ -317,3 +319,59 @@ def test_round_temperature_follows_step() -> None:
     assert climate.round_temperature(21.4) == 21.5
     assert climate.round_temperature(21.9) == 22
     assert isinstance(climate.round_temperature(21.9), int)
+
+
+async def test_mode_value_sets_read_and_write() -> None:
+    climate = ConnectLifeClimate.__new__(ConnectLifeClimate)
+    climate.target_map = {IS_ON: "power"}
+    climate.hvac_mode_values = {
+        HVACMode.COOL: {"modeCool": 1, "modeHeat": 0},
+        HVACMode.HEAT: {"modeCool": 0, "modeHeat": 1},
+    }
+    climate.fan_mode_values = {
+        "auto": {"autoFan": 1},
+        "low": {"autoFan": 0, "lowFan": 1},
+    }
+    climate._attr_supported_features = ClimateEntityFeature.TURN_ON
+    requests: list[dict[str, int]] = []
+
+    async def async_update_device(request: dict[str, int]) -> None:
+        requests.append(request)
+
+    climate.async_update_device = async_update_device
+    climate.add_target_temperature = lambda request: request
+
+    # Auto is listed first, so it wins even though lowFan is also set.
+    status = {"modeCool": 0, "modeHeat": 1, "autoFan": 1, "lowFan": 1}
+    assert _first_match(climate.hvac_mode_values, status) == HVACMode.HEAT
+    assert _first_match(climate.fan_mode_values, status) == "auto"
+    assert _first_match(climate.fan_mode_values, {"autoFan": 0, "lowFan": 0}) is None
+
+    await climate.async_set_hvac_mode(HVACMode.COOL)
+    await climate.async_set_fan_mode("low")
+
+    assert requests == [
+        {"power": 1, "modeCool": 1, "modeHeat": 0},
+        {"autoFan": 0, "lowFan": 1},
+    ]
+    # Sending a mode must not change the mapping.
+    assert climate.fan_mode_values["low"] == {"autoFan": 0, "lowFan": 1}
+
+
+def _target_temperature_climate(target: float | None) -> ConnectLifeClimate:
+    climate = ConnectLifeClimate.__new__(ConnectLifeClimate)
+    climate.target_map = {"target_temperature": "t_temp"}
+    setattr(climate, TARGET_TEMPERATURE_ATTR, target)
+    climate._attr_target_temperature_step = 1
+    climate._attr_min_temp = 16
+    climate._attr_max_temp = 32
+    return climate
+
+
+def test_add_target_temperature_sends_target_within_limits() -> None:
+    assert _target_temperature_climate(23).add_target_temperature({"t_power": 1}) == {"t_power": 1, "t_temp": 23}
+
+
+def test_add_target_temperature_skips_target_outside_limits() -> None:
+    assert _target_temperature_climate(0).add_target_temperature({"t_power": 1}) == {"t_power": 1}
+    assert _target_temperature_climate(None).add_target_temperature({"t_power": 1}) == {"t_power": 1}

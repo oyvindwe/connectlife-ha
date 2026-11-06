@@ -4,6 +4,7 @@
 # refrigerator_*, zone C = freeze_*. The upper/lower zone entities use custom
 # translation keys (wine_zone_upper_* / wine_zone_lower_*) so they read as zones
 # rather than refrigerator compartments.
+device_type_name: Wine cooler
 properties:
   - property: AIR_FRESHNESS
     disable: true
