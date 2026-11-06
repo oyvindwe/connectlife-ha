@@ -8776,6 +8776,9 @@
       "controldid19": {
         "name": "Mode silencieux"
       },
+      "controldid29": {
+        "name": "Boost ECS"
+      },
       "crisp_function_status": {
         "name": "\u00c9tat de la fonction Crisp"
       },

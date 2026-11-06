@@ -8776,6 +8776,9 @@
       "controldid19": {
         "name": "Stille modus"
       },
+      "controldid29": {
+        "name": "Warmwaterboost"
+      },
       "crisp_function_status": {
         "name": "Crisp-functie"
       },

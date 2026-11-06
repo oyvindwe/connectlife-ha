@@ -8776,6 +8776,9 @@
       "controldid19": {
         "name": "Leisemodus"
       },
+      "controldid29": {
+        "name": "Warmwasser-Boost"
+      },
       "crisp_function_status": {
         "name": "Knusperfunktion Status"
       },
