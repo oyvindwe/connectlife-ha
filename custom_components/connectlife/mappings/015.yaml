@@ -242,6 +242,8 @@ properties:
     icon: mdi:door
   - property: Energy_consumption_in_running_program
     # No state class: per program, so not offered in the Energy dashboard (use Total_energy_consumption).
+    entity_category: diagnostic
+    hide: true
     sensor:
       device_class: energy
       unit: kWh
@@ -640,6 +642,7 @@ properties:
     optional: true
   - property: Water_consumption_in_running_program
     # No state class: per program, so not offered in the Energy dashboard (use Total_water_consumption).
+    entity_category: diagnostic
     sensor:
       unknown_value: 65535
       device_class: water
