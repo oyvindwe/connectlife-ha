@@ -12,7 +12,7 @@ from connectlife.appliance import ConnectLifeAppliance
 
 from .const import DOMAIN
 from .coordinator import ConnectLifeCoordinator
-from .dictionaries import Dictionaries, Property
+from .device_mappings import DeviceMappings, Property
 from .entity import ConnectLifeEntity
 from .utils import climate_bound_properties, device_target_overrides, has_platform
 
@@ -27,15 +27,15 @@ async def async_setup_entry(
     """Set up ConnectLife sensors."""
     coordinator = hass.data[DOMAIN][config_entry.entry_id]
     for appliance in coordinator.data.values():
-        dictionary = Dictionaries.get_dictionary(appliance)
+        mapping = DeviceMappings.get_mapping(appliance)
         overrides = device_target_overrides(config_entry, appliance.device_id)
-        climate_bound = climate_bound_properties(appliance, dictionary, overrides)
+        climate_bound = climate_bound_properties(appliance, mapping, overrides)
         async_add_entities(
             ConnectLifeSwitch(
-                coordinator, appliance, s, dictionary.properties[s]
+                coordinator, appliance, s, mapping.properties[s]
             )
             for s in appliance.status_list
-            if has_platform(Platform.SWITCH, dictionary.properties[s])
+            if has_platform(Platform.SWITCH, mapping.properties[s])
             and s not in climate_bound
         )
 

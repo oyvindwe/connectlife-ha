@@ -47,7 +47,7 @@ from .const import (
     DOMAIN,
     OVERRIDE_AUTO,
 )
-from .dictionaries import Dictionaries
+from .device_mappings import DeviceMappings
 from .oauth import ConnectLifeOAuth2Implementation
 from .terms import clear_terms_retry_throttle
 from .utils import contested_climate_targets
@@ -460,7 +460,7 @@ class OptionsFlowHandler(OptionsFlowWithReload):
         coordinator = self.hass.data[DOMAIN][self.config_entry.entry_id]
         appliance = coordinator.data.get(self._device_id)
         contested = (
-            contested_climate_targets(appliance, Dictionaries.get_dictionary(appliance))
+            contested_climate_targets(appliance, DeviceMappings.get_mapping(appliance))
             if appliance
             else {}
         )

@@ -24,7 +24,7 @@ from custom_components.connectlife.const import (
     IS_ON,
     SWING_MODE,
 )
-from custom_components.connectlife.dictionaries import Dictionary, Property
+from custom_components.connectlife.device_mappings import DeviceMapping, Property
 from custom_components.connectlife.utils import (
     climate_bound_properties,
     contested_climate_targets,
@@ -45,10 +45,10 @@ def _override_options(device_id: str, target: str, property_name: str) -> dict:
     return {CONF_DEVICES: {device_id: {CONF_TARGET_OVERRIDES: {target: property_name}}}}
 
 
-def _swing_dictionary() -> Dictionary:
+def _swing_mapping() -> DeviceMapping:
     """t_swing_angle (priority 1) and t_up_down (switch + priority 2) both
     claim swing_mode, mirroring the hoisted 009.yaml mapping."""
-    return Dictionary(
+    return DeviceMapping(
         climate=None,
         properties={
             "t_power": Property(
@@ -95,47 +95,47 @@ def _swing_appliance(status_list: dict[str, int]) -> SimpleNamespace:
 def test_swing_mode_prefers_higher_priority_candidate() -> None:
     """When both axes are exposed, the lower-priority number (t_swing_angle)
     wins swing_mode and t_up_down falls back to its switch (issue #590)."""
-    dictionary = _swing_dictionary()
+    mapping = _swing_mapping()
     appliance = _swing_appliance({"t_power": 1, "t_swing_angle": 0, "t_up_down": 0})
-    climate = ConnectLifeClimate(_coordinator(appliance), appliance, dictionary)
+    climate = ConnectLifeClimate(_coordinator(appliance), appliance, mapping)
 
     assert climate.target_map[SWING_MODE] == "t_swing_angle"
     # t_up_down lost swing_mode, so it must remain available to the switch platform.
-    assert climate_bound_properties(appliance, dictionary) == {"t_swing_angle", "t_power"}
+    assert climate_bound_properties(appliance, mapping) == {"t_swing_angle", "t_power"}
 
 
 def test_swing_mode_falls_back_to_lower_priority_candidate() -> None:
     """A device exposing only t_up_down promotes it to swing_mode."""
-    dictionary = _swing_dictionary()
+    mapping = _swing_mapping()
     appliance = _swing_appliance({"t_power": 1, "t_up_down": 0})
-    climate = ConnectLifeClimate(_coordinator(appliance), appliance, dictionary)
+    climate = ConnectLifeClimate(_coordinator(appliance), appliance, mapping)
 
     assert climate.target_map[SWING_MODE] == "t_up_down"
-    assert "t_up_down" in climate_bound_properties(appliance, dictionary)
+    assert "t_up_down" in climate_bound_properties(appliance, mapping)
 
 
 def test_swing_mode_override_pins_configured_property() -> None:
     """A per-device override pins t_up_down as swing_mode even when the
     higher-priority t_swing_angle is also exposed (issue #607)."""
-    dictionary = _swing_dictionary()
+    mapping = _swing_mapping()
     appliance = _swing_appliance({"t_power": 1, "t_swing_angle": 0, "t_up_down": 0})
     options = _override_options(appliance.device_id, SWING_MODE, "t_up_down")
-    climate = ConnectLifeClimate(_coordinator(appliance, options), appliance, dictionary)
+    climate = ConnectLifeClimate(_coordinator(appliance, options), appliance, mapping)
 
     assert climate.target_map[SWING_MODE] == "t_up_down"
     # t_up_down now wins swing_mode, so it is no longer offered as a switch.
     overrides = options[CONF_DEVICES][appliance.device_id][CONF_TARGET_OVERRIDES]
-    bound = climate_bound_properties(appliance, dictionary, overrides)
+    bound = climate_bound_properties(appliance, mapping, overrides)
     assert bound == {"t_up_down", "t_power"}
 
 
 def test_swing_mode_override_ignored_when_property_absent() -> None:
     """An override naming a property the device doesn't expose is ignored,
     falling back to the automatic priority-based winner."""
-    dictionary = _swing_dictionary()
+    mapping = _swing_mapping()
     appliance = _swing_appliance({"t_power": 1, "t_swing_angle": 0, "t_up_down": 0})
     options = _override_options(appliance.device_id, SWING_MODE, "t_not_present")
-    climate = ConnectLifeClimate(_coordinator(appliance, options), appliance, dictionary)
+    climate = ConnectLifeClimate(_coordinator(appliance, options), appliance, mapping)
 
     assert climate.target_map[SWING_MODE] == "t_swing_angle"
 
@@ -143,28 +143,28 @@ def test_swing_mode_override_ignored_when_property_absent() -> None:
 def test_contested_targets_reports_only_multi_candidate_targets() -> None:
     """contested_climate_targets lists a target only when the device exposes
     more than one candidate for it — that's what the options flow offers."""
-    dictionary = _swing_dictionary()
+    mapping = _swing_mapping()
 
     both = _swing_appliance({"t_power": 1, "t_swing_angle": 0, "t_up_down": 0})
-    assert contested_climate_targets(both, dictionary) == {
+    assert contested_climate_targets(both, mapping) == {
         SWING_MODE: ["t_swing_angle", "t_up_down"]
     }
 
     single = _swing_appliance({"t_power": 1, "t_up_down": 0})
-    assert contested_climate_targets(single, dictionary) == {}
+    assert contested_climate_targets(single, mapping) == {}
 
 
-# Presets as parsed by Dictionaries: keyed by name, name stripped from the value
-# (see test_dictionaries for the parsing itself). Mirrors 009-100.yaml.
+# Presets as parsed by DeviceMappings: keyed by name, name stripped from the value
+# (see test_device_mappings for the parsing itself). Mirrors 009-100.yaml.
 _PRESETS = {
     "eco": {"t_eco": 1, "t_fan_mute": 0, "t_power": 1, "t_sleep": 0, "t_super": 0},
     "mute": {"t_eco": 0, "t_fan_mute": 1, "t_power": 1},
 }
 
 
-def _preset_dictionary() -> Dictionary:
+def _preset_mapping() -> DeviceMapping:
     """A climate device exposing `eco` and `mute` presets."""
-    return Dictionary(
+    return DeviceMapping(
         climate=None,
         properties={
             "t_power": Property(
@@ -195,12 +195,12 @@ def test_preset_mode_reads_back_active_preset() -> None:
     because the preset name key leaked into the value and never matched the
     device status list.
     """
-    dictionary = _preset_dictionary()
+    mapping = _preset_mapping()
     # Status list matching the `eco` preset exactly.
     appliance = _preset_appliance(
         {"t_power": 1, "t_eco": 1, "t_fan_mute": 0, "t_sleep": 0, "t_super": 0}
     )
-    climate = ConnectLifeClimate(_coordinator(appliance), appliance, dictionary)
+    climate = ConnectLifeClimate(_coordinator(appliance), appliance, mapping)
 
     assert climate._attr_preset_mode == "eco"
 
@@ -208,11 +208,11 @@ def test_preset_mode_reads_back_active_preset() -> None:
 def test_preset_modes_expose_parsed_names_plus_none() -> None:
     """The entity offers the parsed preset names plus PRESET_NONE, and enables
     the PRESET_MODE feature."""
-    dictionary = _preset_dictionary()
+    mapping = _preset_mapping()
     appliance = _preset_appliance({"t_power": 1, "t_eco": 0, "t_fan_mute": 0})
-    climate = ConnectLifeClimate(_coordinator(appliance), appliance, dictionary)
+    climate = ConnectLifeClimate(_coordinator(appliance), appliance, mapping)
 
-    assert climate.preset_map is dictionary.presets
+    assert climate.preset_map is mapping.presets
     assert set(climate._attr_preset_modes) == {"eco", "mute", PRESET_NONE}
     assert climate._attr_supported_features & ClimateEntityFeature.PRESET_MODE
 
@@ -265,7 +265,7 @@ def test_disabled_climate_property_is_not_exposed() -> None:
     still leaked onto the entity. (A ducted AC variant relies on this to
     suppress the swing controls inherited from its base mapping.)
     """
-    dictionary = Dictionary(
+    mapping = DeviceMapping(
         climate=None,
         properties={
             "t_power": Property(
@@ -286,7 +286,7 @@ def test_disabled_climate_property_is_not_exposed() -> None:
     )
 
     # Still a climate device (t_power is enabled) ...
-    assert is_climate(dictionary)
+    assert is_climate(mapping)
 
     appliance = SimpleNamespace(
         device_id="dev1",
@@ -304,7 +304,7 @@ def test_disabled_climate_property_is_not_exposed() -> None:
         last_update_success=True,
         add_entity=lambda *a, **k: None,
     )
-    climate = ConnectLifeClimate(coordinator, appliance, dictionary)
+    climate = ConnectLifeClimate(coordinator, appliance, mapping)
 
     # ... but the disabled swing axis is not exposed.
     assert "swing_mode" not in climate.target_map

@@ -22,7 +22,7 @@ from .const import (
     SW_VERSION_PROPERTY,
 )
 from .coordinator import ConnectLifeCoordinator
-from .dictionaries import Dictionaries, available_when_met
+from .device_mappings import DeviceMappings, available_when_met
 
 _LOGGER = logging.getLogger(__name__)
 DISABLE_BEEP_FAILURE_THRESHOLD = 3
@@ -84,8 +84,8 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
         # mapping file; the type/feature codes stay visible in hw_version.
         model = appliance.device_feature_name
         if model and _contains_cjk(model):
-            dictionary = Dictionaries.get_dictionary(appliance)
-            model = dictionary.device_type_name or f'ConnectLife {appliance.device_type_code}'
+            mapping = DeviceMappings.get_mapping(appliance)
+            model = mapping.device_type_name or f'ConnectLife {appliance.device_type_code}'
         self._attr_device_info = DeviceInfo(
             identifiers={(DOMAIN, appliance.device_id)},
             model=model,
@@ -173,7 +173,7 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
         # Send along the current values of the properties the mapping includes,
         # e.g. options a program start needs. Copy, so a stored mapping keeps unchanged.
         if appliance := self.coordinator.data.get(self.device_id):
-            included = Dictionaries.get_dictionary(appliance).included_values(
+            included = DeviceMappings.get_mapping(appliance).included_values(
                 command, appliance.status_list, include
             )
             if included:

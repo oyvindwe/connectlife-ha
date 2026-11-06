@@ -53,7 +53,7 @@ For the YAML schema and authoring guidance, see:
 - `custom_components/connectlife/mappings/properties-schema.json` — authoritative JSON schema
 
 Code-level details not in those files:
-- Parsed by `Dictionaries` class (`dictionaries.py`) with a class-level cache.
+- Parsed by the `DeviceMappings` class (`device_mappings.py`) with a class-level cache.
 - Each property maps to exactly one platform. Platform type is determined by `hasattr()` on the `Property` object — only the attribute for the assigned platform is set during `__init__`.
 
 ### Entity Creation Pattern
@@ -62,9 +62,9 @@ All per-property platforms (sensor, binary_sensor, number, select, switch) follo
 
 ```python
 for appliance in coordinator.data.values():
-    dictionary = Dictionaries.get_dictionary(appliance)
+    mapping = DeviceMappings.get_mapping(appliance)
     for s in appliance.status_list:
-        if has_platform(Platform.XXX, dictionary.properties[s]):
+        if has_platform(Platform.XXX, mapping.properties[s]):
             # create entity
 ```
 
@@ -78,8 +78,8 @@ one and powers the daily energy/water consumption sensors. These are **not** der
 
 - **Opt-in via the device mapping**: a top-level `statistics` block (`source` +
   per-sensor boolean flags `daily_energy_kwh` / `daily_water_consumption`) selects the endpoint
-  and which sensors to create. Parsed in `dictionaries.py` onto `Dictionary.statistics_source` /
-  `Dictionary.statistics_sensors`. Both flags default to off — explicit `true` is required.
+  and which sensors to create. Parsed in `device_mappings.py` onto `DeviceMapping.statistics_source` /
+  `DeviceMapping.statistics_sensors`. Both flags default to off — explicit `true` is required.
 - **Registry** (`statistics_sources.py`): maps each `source` (`air_duct_energy` for air
   conditioners, `energy_consumption_curve` for other appliances) to its endpoint fetch and its
   `StatisticsSensorDef`s. `enabled_sensors(source, flags)` returns only the explicitly-enabled

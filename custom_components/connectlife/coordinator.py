@@ -20,7 +20,7 @@ from homeassistant.helpers import device_registry as dr, entity_registry as er, 
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import DATA_STATE_CLASS_MIGRATION_DONE, DOMAIN, OFFLINE_STATE
-from .dictionaries import Dictionaries
+from .device_mappings import DeviceMappings
 from .messages import format_retry_message
 from .statistics_sources import STATISTICS_SOURCES, enabled_sensors
 from .terms import terms_accepted, terms_not_accepted, terms_retry_throttled
@@ -318,8 +318,8 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
         entity_reg = er.async_get(self.hass)
         candidates: list[str] = []
         for appliance in self.data.values():
-            dictionary = Dictionaries.get_dictionary(appliance)
-            for name, prop in dictionary.properties.items():
+            mapping = DeviceMappings.get_mapping(appliance)
+            for name, prop in mapping.properties.items():
                 if not hasattr(prop, Platform.SENSOR):
                     continue
                 if prop.sensor.state_class is not None:
@@ -374,7 +374,7 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
 
 class ConnectLifeStatisticsCoordinator(DataUpdateCoordinator[dict[str, EnergyResult | None]]):
     """ConnectLife statistics coordinator. Polls each appliance's statistics endpoint
-    (selected per device type via the data dictionary ``statistics_source``) every 10
+    (selected per device type via the mapping ``statistics_source``) every 10
     minutes. Stores the fetched result per device; sensors extract their datapoint."""
 
     def __init__(self, hass, api: ConnectLifeApi, appliance_coordinator: ConnectLifeCoordinator):
@@ -389,13 +389,13 @@ class ConnectLifeStatisticsCoordinator(DataUpdateCoordinator[dict[str, EnergyRes
         )
 
     async def _async_update_data(self) -> dict[str, EnergyResult | None]:
-        """Fetch statistics for appliances whose data dictionary opts into an endpoint."""
+        """Fetch statistics for appliances whose mapping opts into an endpoint."""
         result: dict[str, EnergyResult | None] = {}
         for device_id, appliance in self.appliance_coordinator.data.items():
-            dictionary = Dictionaries.get_dictionary(appliance)
-            source = STATISTICS_SOURCES.get(dictionary.statistics_source or "")
+            mapping = DeviceMappings.get_mapping(appliance)
+            source = STATISTICS_SOURCES.get(mapping.statistics_source or "")
             if source is None or not enabled_sensors(
-                dictionary.statistics_source, dictionary.statistics_sensors
+                mapping.statistics_source, mapping.statistics_sensors
             ):
                 continue
             try:

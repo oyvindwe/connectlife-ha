@@ -22,7 +22,7 @@ from .const import (
     SW_VERSION_PROPERTY,
 )
 from .coordinator import ConnectLifeCoordinator, ConnectLifeStatisticsCoordinator
-from .dictionaries import Dictionaries, Dictionary, Property
+from .device_mappings import DeviceMappings, DeviceMapping, Property
 from .entity import ConnectLifeEntity
 from .statistics_sources import StatisticsSensorDef, enabled_sensors
 from connectlife.appliance import ConnectLifeAppliance, MAX_DATETIME
@@ -42,23 +42,23 @@ async def async_setup_entry(
     coordinator = hass.data[DOMAIN][config_entry.entry_id]
     statistics_coordinator = hass.data[DOMAIN].get(f"{config_entry.entry_id}_statistics")
     for appliance in coordinator.data.values():
-        dictionary = Dictionaries.get_dictionary(appliance)
+        mapping = DeviceMappings.get_mapping(appliance)
         overrides = device_target_overrides(config_entry, appliance.device_id)
-        climate_bound = climate_bound_properties(appliance, dictionary, overrides)
+        climate_bound = climate_bound_properties(appliance, mapping, overrides)
         async_add_entities(
             ConnectLifeStatusSensor(
-                coordinator, appliance, s, dictionary.properties[s], dictionary
+                coordinator, appliance, s, mapping.properties[s], mapping
             )
             for s in appliance.status_list
             if s != SW_VERSION_PROPERTY
-            and has_platform(Platform.SENSOR, dictionary.properties[s])
+            and has_platform(Platform.SENSOR, mapping.properties[s])
             and s not in climate_bound
         )
         async_add_entities(
             ConnectLifeStatusSensor(
-                coordinator, appliance, name, prop, dictionary
+                coordinator, appliance, name, prop, mapping
             )
-            for name, prop in dictionary.properties.items()
+            for name, prop in mapping.properties.items()
             if prop.combine
             and name not in appliance.status_list
             and has_platform(Platform.SENSOR, prop)
@@ -69,11 +69,11 @@ async def async_setup_entry(
         )
     if statistics_coordinator is not None:
         for appliance in coordinator.data.values():
-            dictionary = Dictionaries.get_dictionary(appliance)
+            mapping = DeviceMappings.get_mapping(appliance)
             async_add_entities(
                 ConnectLifeStatisticsSensor(coordinator, statistics_coordinator, appliance, sensor)
                 for sensor in enabled_sensors(
-                    dictionary.statistics_source, dictionary.statistics_sensors
+                    mapping.statistics_source, mapping.statistics_sensors
                 )
             )
 
@@ -94,7 +94,7 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
         appliance: ConnectLifeAppliance,
         status: str,
         dd_entry: Property,
-        dictionary: Dictionary,
+        mapping: DeviceMapping,
     ):
         """Initialize the entity."""
         super().__init__(coordinator, appliance, status, Platform.SENSOR)
@@ -127,7 +127,7 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
             icon=dd_entry.icon,
             name=status.replace("_", " "),
             native_unit_of_measurement=to_unit(
-                dd_entry.sensor.unit, appliance=appliance, dictionary=dictionary
+                dd_entry.sensor.unit, appliance=appliance, mapping=mapping
             ),
             state_class=state_class,
             translation_key=self.to_translation_key(dd_entry.translation_key or status),
@@ -200,7 +200,7 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
 class ConnectLifeStatisticsSensor(CoordinatorEntity[ConnectLifeStatisticsCoordinator], SensorEntity):
     """Sensor derived from a ConnectLife statistics endpoint.
 
-    The endpoint (and the sensor set) is selected per device type via the data dictionary
+    The endpoint (and the sensor set) is selected per device type via the mapping
     ``statistics_source``; see :mod:`.statistics_sources`. The energy coordinator stores
     the fetched result per device and this sensor extracts its datapoint via ``sensor.value``.
     """

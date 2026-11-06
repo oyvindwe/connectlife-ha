@@ -10,7 +10,7 @@ from connectlife.appliance import ConnectLifeAppliance
 
 from .const import DOMAIN
 from .coordinator import ConnectLifeCoordinator
-from .dictionaries import Button, Dictionaries, available_when_met
+from .device_mappings import Button, DeviceMappings, available_when_met
 from .entity import ConnectLifeEntity
 
 
@@ -22,10 +22,10 @@ async def async_setup_entry(
     """Set up ConnectLife buttons."""
     coordinator = hass.data[DOMAIN][config_entry.entry_id]
     for appliance in coordinator.data.values():
-        dictionary = Dictionaries.get_dictionary(appliance)
+        mapping = DeviceMappings.get_mapping(appliance)
         async_add_entities(
             ConnectLifeButton(coordinator, appliance, button)
-            for button in dictionary.buttons
+            for button in mapping.buttons
         )
 
 

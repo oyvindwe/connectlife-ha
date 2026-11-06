@@ -1,9 +1,9 @@
-"""Registry mapping a data dictionary ``statistics_source`` to a cloud endpoint.
+"""Registry mapping a mapping ``statistics_source`` to a cloud endpoint.
 
 Each :class:`StatisticsSource` knows how to fetch from one ConnectLife statistics
 endpoint and which sensors to derive from it. Adding a new endpoint is: a new library
 method, a ``StatisticsSource`` entry here, and setting ``statistics_source`` in the
-relevant base data dictionaries — no coordinator/platform changes.
+relevant base mappings — no coordinator/platform changes.
 """
 
 from __future__ import annotations
@@ -44,7 +44,7 @@ class StatisticsSensorDef:
     """One sensor derived from a statistics endpoint result.
 
     ``key`` is both the translation key and the unique-id suffix (and the per-sensor key
-    in the data dictionary ``statistics`` block — a sensor is created only when the block
+    in the mapping ``statistics`` block — a sensor is created only when the block
     lists ``<key>: true``). ``value`` extracts the sensor's native value from the fetched
     result (an ``EnergyResult`` subclass).
     """
@@ -138,7 +138,7 @@ def enabled_sensors(
 ) -> list[StatisticsSensorDef]:
     """The sensor defs to create for a device.
 
-    ``enabled`` are the per-sensor booleans from the data dictionary ``statistics`` block
+    ``enabled`` are the per-sensor booleans from the mapping ``statistics`` block
     (key -> create?). A sensor is created only when listed ``true``; omitted or ``false``
     means not created.
     """

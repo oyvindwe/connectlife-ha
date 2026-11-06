@@ -65,8 +65,8 @@ class _FakeApi:
         return await self._answer("property_list", device_type_code, device_feature_code)
 
 
-async def test_appliance_diagnostics_reports_mapping_without_private_data(build_dictionary) -> None:
-    build_dictionary(base={"properties": [{"property": "t_power", "switch": {}}]})
+async def test_appliance_diagnostics_reports_mapping_without_private_data(build_mapping) -> None:
+    build_mapping(base={"properties": [{"property": "t_power", "switch": {}}]})
     appliance = _appliance({"t_power": 1, "f_unknown": 7, "mac": "aa:bb:cc"})
     entry = SimpleNamespace(
         entry_id="entry-1",

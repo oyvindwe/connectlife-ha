@@ -7,7 +7,7 @@ from os.path import isfile, join
 
 import yaml
 
-from custom_components.connectlife.dictionaries import _merge_property
+from custom_components.connectlife.device_mappings import _merge_property
 from scripts import check_translations, sort_translations
 
 

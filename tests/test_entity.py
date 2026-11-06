@@ -13,13 +13,13 @@ from homeassistant.exceptions import ServiceValidationError
 
 from custom_components.connectlife.button import ConnectLifeButton
 from custom_components.connectlife.climate import ConnectLifeClimate
-from custom_components.connectlife.dictionaries import Button, Dictionary, Dictionaries
+from custom_components.connectlife.device_mappings import Button, DeviceMapping, DeviceMappings
 from custom_components.connectlife.entity import ConnectLifeEntity, _contains_cjk
 from custom_components.connectlife.switch import ConnectLifeSwitch
 
 
 def _coordinator(commands: list[dict], status_list: dict | None = None) -> SimpleNamespace:
-    """A coordinator recording the commands sent, for a device using the 999-000 test dictionary."""
+    """A coordinator recording the commands sent, for a device using the 999-000 test mapping."""
 
     async def async_update_device(device_id, command, properties) -> None:
         commands.append({"command": dict(command), "properties": dict(properties)})
@@ -37,8 +37,8 @@ def _coordinator(commands: list[dict], status_list: dict | None = None) -> Simpl
     )
 
 
-async def test_disable_beep_does_not_change_preset(build_dictionary) -> None:
-    build_dictionary(base={"properties": []})
+async def test_disable_beep_does_not_change_preset(build_mapping) -> None:
+    build_mapping(base={"properties": []})
     climate = ConnectLifeClimate.__new__(ConnectLifeClimate)
     climate.device_id = "device"
     climate._disable_beep = True
@@ -53,8 +53,8 @@ async def test_disable_beep_does_not_change_preset(build_dictionary) -> None:
     assert climate.preset_map["eco"] == {"t_eco": 1, "t_power": 1}
 
 
-async def test_property_include_is_sent_with_command(build_dictionary) -> None:
-    build_dictionary(base={"properties": [
+async def test_property_include_is_sent_with_command(build_mapping) -> None:
+    build_mapping(base={"properties": [
         {"property": "t_power", "include": ["t_fan_mute"], "climate": {"target": "is_on"}},
         {"property": "t_fan_mute", "switch": {}},
     ]})
@@ -71,8 +71,8 @@ async def test_property_include_is_sent_with_command(build_dictionary) -> None:
     assert command == {"t_power": 1}
 
 
-async def test_button_include_is_sent_with_write(build_dictionary) -> None:
-    build_dictionary(base={"properties": [
+async def test_button_include_is_sent_with_write(build_mapping) -> None:
+    build_mapping(base={"properties": [
         {"property": "Program_status", "select": {
             "options": {0: "eco", 9: "sportswear"},
             "command": {"name": "Program"},
@@ -150,11 +150,11 @@ def _entity(feature_name: str, type_code: str = "009", feature_code: str = "104"
     return _TestEntity(coordinator, appliance, "model-test", Platform.CLIMATE)
 
 
-def _seed_dictionary(type_code: str, feature_code: str, **fields) -> str:
-    """Seed a stub Dictionary for the CJK fallback tests; returns the cache key."""
+def _seed_mapping(type_code: str, feature_code: str, **fields) -> str:
+    """Seed a stub DeviceMapping for the CJK fallback tests; returns the cache key."""
     key = f'{type_code}-{feature_code}'
-    Dictionaries.dictionaries.pop(key, None)
-    Dictionaries.dictionaries[key] = Dictionary(
+    DeviceMappings.mappings.pop(key, None)
+    DeviceMappings.mappings[key] = DeviceMapping(
         climate=None, properties={}, buttons=[], **fields
     )
     return key
@@ -162,24 +162,24 @@ def _seed_dictionary(type_code: str, feature_code: str, **fields) -> str:
 
 def test_cjk_model_name_falls_back_to_device_type_name() -> None:
     """A Chinese/Japanese market name becomes the device type's generic name."""
-    key = _seed_dictionary("009", "104", device_type_name="Air conditioner")
+    key = _seed_mapping("009", "104", device_type_name="Air conditioner")
     try:
         entity = _entity("104冷暖节能无功率")
 
         assert entity._attr_device_info["model"] == "Air conditioner"
     finally:
-        Dictionaries.dictionaries.pop(key, None)
+        DeviceMappings.mappings.pop(key, None)
 
 
 def test_cjk_model_name_with_unknown_type_falls_back_to_connectlife_code() -> None:
     """Types without a mapping keep an identifier, without the raw market name."""
-    key = _seed_dictionary("099", "123")
+    key = _seed_mapping("099", "123")
     try:
         entity = _entity("冷暖無功率", type_code="099", feature_code="123")
 
         assert entity._attr_device_info["model"] == "ConnectLife 099"
     finally:
-        Dictionaries.dictionaries.pop(key, None)
+        DeviceMappings.mappings.pop(key, None)
 
 
 def test_non_cjk_model_name_is_kept() -> None:

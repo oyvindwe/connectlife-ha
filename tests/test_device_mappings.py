@@ -1,4 +1,4 @@
-"""Tests for the property inheritance merge in dictionaries.py."""
+"""Tests for the property inheritance merge in device_mappings.py."""
 
 from __future__ import annotations
 
@@ -8,7 +8,7 @@ from homeassistant.const import UnitOfTemperature
 
 from custom_components.connectlife.utils import to_unit
 
-from custom_components.connectlife.dictionaries import (
+from custom_components.connectlife.device_mappings import (
     Button,
     Property,
     Sensor,
@@ -360,9 +360,9 @@ def test_translation_key_overridden_by_feature():
     assert merged["translation_key"] == "feature_key"
 
 
-def test_statistics_block_parsed(build_dictionary):
+def test_statistics_block_parsed(build_mapping):
     # A statistics block is parsed into source + per-sensor flags.
-    d = build_dictionary(
+    d = build_mapping(
         base={
             "statistics": {"source": "air_duct_energy", "daily_energy_kwh": True},
             "properties": _MINIMAL_PROPS,
@@ -372,16 +372,16 @@ def test_statistics_block_parsed(build_dictionary):
     assert d.statistics_sensors == {"daily_energy_kwh": True}
 
 
-def test_statistics_absent_defaults_to_none(build_dictionary):
+def test_statistics_absent_defaults_to_none(build_mapping):
     # No statistics block -> no endpoint and no sensors.
-    d = build_dictionary(base={"properties": _MINIMAL_PROPS})
+    d = build_mapping(base={"properties": _MINIMAL_PROPS})
     assert d.statistics_source is None
     assert d.statistics_sensors == {}
 
 
-def test_statistics_flag_false_is_kept_as_false(build_dictionary):
+def test_statistics_flag_false_is_kept_as_false(build_mapping):
     # An explicit false flag is preserved (not dropped), so the sensor is not created.
-    d = build_dictionary(
+    d = build_mapping(
         base={
             "statistics": {"source": "air_duct_energy", "daily_energy_kwh": False},
             "properties": _MINIMAL_PROPS,
@@ -390,9 +390,9 @@ def test_statistics_flag_false_is_kept_as_false(build_dictionary):
     assert d.statistics_sensors == {"daily_energy_kwh": False}
 
 
-def test_statistics_block_inherited_by_feature_override(build_dictionary):
+def test_statistics_block_inherited_by_feature_override(build_mapping):
     # A feature override with no statistics block inherits the base's.
-    d = build_dictionary(
+    d = build_mapping(
         base={
             "statistics": {
                 "source": "energy_consumption_curve",
@@ -410,11 +410,11 @@ def test_statistics_block_inherited_by_feature_override(build_dictionary):
     }
 
 
-def test_presets_parsed_into_name_keyed_map(build_dictionary):
+def test_presets_parsed_into_name_keyed_map(build_mapping):
     """A climate `presets` block is parsed into a name -> values map, with the
     `preset` name stripped from the value so it can be matched against a device
     status list (issue #627)."""
-    d = build_dictionary(
+    d = build_mapping(
         sub={
             "climate": {
                 "presets": [
@@ -431,30 +431,30 @@ def test_presets_parsed_into_name_keyed_map(build_dictionary):
     }
 
 
-def test_presets_absent_defaults_to_empty(build_dictionary):
+def test_presets_absent_defaults_to_empty(build_mapping):
     """No climate/presets block -> an empty preset map."""
-    d = build_dictionary(sub={"properties": _MINIMAL_PROPS})
+    d = build_mapping(sub={"properties": _MINIMAL_PROPS})
     assert d.presets == {}
 
 
-def test_presets_parse_does_not_mutate_source(build_dictionary):
+def test_presets_parse_does_not_mutate_source(build_mapping):
     """Parsing must not strip the name from the source presets, so a second
     parse (as on reload) still resolves the names (issue #77 reload)."""
     sub = {
         "climate": {"presets": [{"t_eco": 1, "t_power": 1, "preset": "eco"}]},
         "properties": _MINIMAL_PROPS,
     }
-    build_dictionary(sub=sub)
+    build_mapping(sub=sub)
     # Source presets still carry the name.
     assert sub["climate"]["presets"][0]["preset"] == "eco"
     # A second parse still resolves it.
-    d = build_dictionary(sub=sub)
+    d = build_mapping(sub=sub)
     assert set(d.presets) == {"eco"}
 
 
-def test_statistics_block_replaced_by_feature_override(build_dictionary):
+def test_statistics_block_replaced_by_feature_override(build_mapping):
     # A feature override with its own statistics block replaces the base's entirely.
-    d = build_dictionary(
+    d = build_mapping(
         base={
             "statistics": {"source": "air_duct_energy", "daily_energy_kwh": True},
             "properties": _MINIMAL_PROPS,
@@ -516,10 +516,10 @@ def test_available_when_met():
     assert available_when_met({}, {})
 
 
-def test_climate_block_in_base_is_inherited_per_key(build_dictionary):
+def test_climate_block_in_base_is_inherited_per_key(build_mapping):
     """A base climate block applies to subtypes, and each key a subtype sets
     replaces the base's as a whole."""
-    d = build_dictionary(
+    d = build_mapping(
         base={
             "climate": {
                 "hvac_modes": [{"hvac_mode": "cool", "modeCool": 1, "modeHeat": 0}],
@@ -533,8 +533,8 @@ def test_climate_block_in_base_is_inherited_per_key(build_dictionary):
     assert d.fan_modes == {"low": {"autoFan": 0, "lowFan": 1}}
 
 
-def test_include_parsed_on_property_and_button(build_dictionary):
-    d = build_dictionary(base={
+def test_include_parsed_on_property_and_button(build_mapping):
+    d = build_mapping(base={
         "properties": [{"property": "t_power", "include": ["t_fan_mute"]}],
         "buttons": [{"key": "start", "include": ["Program"], "write": {"Actions": 1}}],
     })
@@ -553,8 +553,8 @@ def test_invalid_include_is_ignored(caplog):
     assert "Ignoring include" in caplog.text
 
 
-def test_button_include_replaces_as_whole(build_dictionary):
-    d = build_dictionary(
+def test_button_include_replaces_as_whole(build_mapping):
+    d = build_mapping(
         base={"buttons": [{"key": "start", "include": ["A", "B"], "write": {"Actions": 1}}]},
         sub={"buttons": [{"key": "start", "include": ["C"]}]},
     )
@@ -590,8 +590,8 @@ def test_command_value_uses_property_command():
     assert Property({"property": "raw"}).command_value(3) == ("raw", 3)
 
 
-def test_included_values(build_dictionary):
-    d = build_dictionary(base={"properties": [
+def test_included_values(build_mapping):
+    d = build_mapping(base={"properties": [
         {"property": "Mode_status", "include": ["Spin_status", "Missing"],
          "select": {"options": {1: "a"}, "command": {"name": "Mode", "adjust": 1}}},
         {"property": "Spin_status", "select": {"options": {8: "1200_rpm"}, "command": {"name": "Spin", "adjust": 1}}},
@@ -610,8 +610,8 @@ def test_included_values(build_dictionary):
     assert d.included_values({"t_fan_mute": 0}, status) == {}
 
 
-def test_to_unit_from_unreported_property_is_none(build_dictionary) -> None:
-    dictionary = build_dictionary(
+def test_to_unit_from_unreported_property_is_none(build_mapping) -> None:
+    mapping = build_mapping(
         base={
             "properties": [
                 {"property": "t_temp", "sensor": {"unit": "property.t_temp_type"}},
@@ -621,32 +621,32 @@ def test_to_unit_from_unreported_property_is_none(build_dictionary) -> None:
     )
     appliance = SimpleNamespace(status_list={"t_temp": 22})
 
-    assert to_unit("property.t_temp_type", appliance, dictionary) is None  # type: ignore[arg-type]
+    assert to_unit("property.t_temp_type", appliance, mapping) is None  # type: ignore[arg-type]
     appliance.status_list["t_temp_type"] = 1
-    assert to_unit("property.t_temp_type", appliance, dictionary) == UnitOfTemperature.FAHRENHEIT  # type: ignore[arg-type]
+    assert to_unit("property.t_temp_type", appliance, mapping) == UnitOfTemperature.FAHRENHEIT  # type: ignore[arg-type]
 
 
-def test_device_type_name_read_from_base(build_dictionary):
-    dictionary = build_dictionary(
+def test_device_type_name_read_from_base(build_mapping):
+    mapping = build_mapping(
         base={"device_type_name": "Washing machine", "properties": _MINIMAL_PROPS},
     )
 
-    assert dictionary.device_type_name == "Washing machine"
+    assert mapping.device_type_name == "Washing machine"
 
 
-def test_device_type_name_overridden_by_feature_file(build_dictionary):
-    dictionary = build_dictionary(
+def test_device_type_name_overridden_by_feature_file(build_mapping):
+    mapping = build_mapping(
         base={"device_type_name": "Washing machine", "properties": _MINIMAL_PROPS},
         sub={"device_type_name": "Washer dryer", "properties": _MINIMAL_PROPS},
     )
 
-    assert dictionary.device_type_name == "Washer dryer"
+    assert mapping.device_type_name == "Washer dryer"
 
 
-def test_device_type_name_absent(build_dictionary):
-    dictionary = build_dictionary(base={"properties": _MINIMAL_PROPS})
+def test_device_type_name_absent(build_mapping):
+    mapping = build_mapping(base={"properties": _MINIMAL_PROPS})
 
-    assert dictionary.device_type_name is None
+    assert mapping.device_type_name is None
 
 
 def test_default_mapping_files_carry_device_type_name():
@@ -654,9 +654,9 @@ def test_default_mapping_files_carry_device_type_name():
     from os import listdir
     from os.path import dirname, join
 
-    import custom_components.connectlife.dictionaries as dictionaries_module
+    import custom_components.connectlife.device_mappings as device_mappings_module
 
-    base_dir = join(dirname(dictionaries_module.__file__), "mappings")
+    base_dir = join(dirname(device_mappings_module.__file__), "mappings")
     base_files = sorted(
         name for name in listdir(base_dir)
         if name.endswith(".yaml") and "-" not in name.removesuffix(".yaml")

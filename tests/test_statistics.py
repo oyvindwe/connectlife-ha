@@ -9,7 +9,7 @@ from connectlife.api import LifeConnectAuthError
 from homeassistant.util import dt as dt_util
 
 from custom_components.connectlife.coordinator import ConnectLifeStatisticsCoordinator
-from custom_components.connectlife.dictionaries import Dictionaries, Dictionary
+from custom_components.connectlife.device_mappings import DeviceMappings, DeviceMapping
 from custom_components.connectlife.sensor import ConnectLifeStatisticsSensor
 from custom_components.connectlife.statistics_sources import (
     AirDuctStatisticsSource,
@@ -125,15 +125,15 @@ def _coordinator(api, data: dict):
     return coord
 
 
-# Synthetic device codes, seeded with statistics dictionaries below so the
+# Synthetic device codes, seeded with statistics mappings below so the
 # coordinator's source lookup doesn't depend on any shipped mapping file.
 _AC = ("ac_type", "ac_feat")        # air_duct_energy
 _WM = ("wm_type", "wm_feat")        # energy_consumption_curve
 _NO_STATS = ("plain_type", "plain")  # no statistics endpoint
 
 
-def _dictionary(source, sensors):
-    return Dictionary(
+def _mapping(source, sensors):
+    return DeviceMapping(
         climate=None,
         properties={},
         buttons=[],
@@ -143,18 +143,18 @@ def _dictionary(source, sensors):
 
 
 @pytest.fixture(autouse=True)
-def _seed_dictionaries():
-    Dictionaries.dictionaries.clear()
-    Dictionaries.dictionaries[f"{_AC[0]}-{_AC[1]}"] = _dictionary(
+def _seed_mappings():
+    DeviceMappings.mappings.clear()
+    DeviceMappings.mappings[f"{_AC[0]}-{_AC[1]}"] = _mapping(
         "air_duct_energy", {"daily_energy_kwh": True}
     )
-    Dictionaries.dictionaries[f"{_WM[0]}-{_WM[1]}"] = _dictionary(
+    DeviceMappings.mappings[f"{_WM[0]}-{_WM[1]}"] = _mapping(
         "energy_consumption_curve",
         {"daily_energy_kwh": True, "daily_water_consumption": True},
     )
-    Dictionaries.dictionaries[f"{_NO_STATS[0]}-{_NO_STATS[1]}"] = _dictionary(None, {})
+    DeviceMappings.mappings[f"{_NO_STATS[0]}-{_NO_STATS[1]}"] = _mapping(None, {})
     yield
-    Dictionaries.dictionaries.clear()
+    DeviceMappings.mappings.clear()
 
 
 async def test_coordinator_stores_results_per_device():
@@ -204,7 +204,7 @@ async def test_coordinator_generic_error_yields_none_and_continues():
 
 async def test_coordinator_skips_device_without_statistics_source():
     api = _FakeApi()
-    data = {"x": _appliance("x", *_NO_STATS)}  # dictionary has no statistics source
+    data = {"x": _appliance("x", *_NO_STATS)}  # mapping has no statistics source
     result = await _coordinator(api, data)._async_update_data()
 
     assert result == {}
