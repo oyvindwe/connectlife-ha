@@ -2218,20 +2218,10 @@
       "actions": {
         "name": "Akce",
         "state": {
-          "add_duration": "P\u0159idat dobu",
-          "add_gratin": "P\u0159idat gratin",
-          "cancel": "Zru\u0161it",
-          "direct_steam": "P\u0159\u00edm\u00e1 p\u00e1ra",
           "none": "\u017d\u00e1dn\u00fd",
           "pause": "Pozastavit",
-          "production_test": "V\u00fdrobn\u00ed test",
-          "program_continue": "Pokra\u010dovat programu",
-          "reset_programs_to_default": "Obnovit v\u00fdchoz\u00ed programy",
           "start": "Spustit",
-          "steam_shot": "Parn\u00ed st\u0159ela",
-          "steamer_water_tank_door_open": "Otev\u0159\u00edt dv\u00ed\u0159ka vodn\u00ed n\u00e1dr\u017ee parn\u00edku",
-          "stop": "Zastavit",
-          "stop_finish": "Zastavit a dokon\u010dit"
+          "stop": "Zastavit"
         }
       },
       "ads_dirtiness_setting_status": {

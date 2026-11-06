@@ -3,17 +3,39 @@ device_type_name: Tumble dryer
 statistics:
   source: energy_consumption_curve
   daily_energy_kwh: true
+# Unverified on a device; same pattern as the Gorenje washer (027). Actions 0 stop, 1 start, 2 pause, 3 cancel,
+# 5 program continue. Appliance_status: 6 program select, 7 running, 8 pause.
+buttons:
+- key: start
+  icon: mdi:play
+  available_when:
+    Appliance_status: 6  # Program select
+  write:
+    Actions: 1
+- key: pause
+  icon: mdi:pause
+  available_when:
+    Appliance_status: 7  # Running
+  write:
+    Actions: 2
+- key: resume
+  icon: mdi:play-pause
+  available_when:
+    Appliance_status: 8  # Pause
+  write:
+    Actions: 5
+- key: stop
+  icon: mdi:stop
+  write:
+    Actions: 0
+- key: cancel
+  icon: mdi:cancel
+  write:
+    Actions: 3
 properties:
   - property: Actions
-    select:
-      options:
-        0: stop
-        1: start
-        2: pause
-        3: cancel
-        4: reset_programs_to_default
-        5: program_continue
-        6: production_test
+    # Replaced by the buttons.
+    disable: true
   - property: AdaptTech_setting
     # Example value: 2
   - property: Airing_program_Set_time
