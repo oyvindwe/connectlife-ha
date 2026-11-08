@@ -93,7 +93,7 @@ have a feature-specific mapping file.
 |                            | Air conditioner          | 009              | [125](custom_components/connectlife/mappings/009-125.yaml)                                                 |
 |                            | Air conditioner          | 009              | [126](custom_components/connectlife/mappings/009-126.yaml)                                                 |
 |                            | Air conditioner          | 009              | [127](custom_components/connectlife/mappings/009-127.yaml)                                                 |
-|                            | Air conditioner          | 009              | [128](custom_components/connectlife/mappings/009-128.yaml)                                                 |
+| ACT26UR4RCC8 / CF25YR4BG   | Air conditioner          | 009              | [128](custom_components/connectlife/mappings/009-128.yaml)                                                 |
 |                            | Air conditioner          | 009              | [129](custom_components/connectlife/mappings/009-129.yaml)                                                 |
 |                            | Air conditioner          | 009              | [199](custom_components/connectlife/mappings/009-199.yaml)                                                 |
 | HACZ01+HAAZ01              | Air conditioner          | 009              | [19901](custom_components/connectlife/mappings/009-19901.yaml)                                             |
