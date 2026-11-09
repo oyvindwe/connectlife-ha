@@ -504,6 +504,10 @@ properties:
     switch:
       "off": 1
       "on": 2
+      command:
+        # Sic: the command property is spelled Oder_control_setting.
+        name: Oder_control_setting
+        adjust: 1
   - property: Pressure_calibration_setting_status
     sensor:
       read_only: true

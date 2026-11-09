@@ -21,7 +21,3 @@ properties:
         1: true
   - property: ice_making_b_switch_status
     disable: true
-  - property: ice_making_state
-    switch:
-      command:
-        name: SET_ICE_SWITCH

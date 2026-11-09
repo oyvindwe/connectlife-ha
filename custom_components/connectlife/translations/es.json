@@ -1121,9 +1121,6 @@
       "grill_plate_status": {
         "name": "Estado de la placa del grill"
       },
-      "hard_pairing_status": {
-        "name": "Estado de emparejamiento dif\u00edcil"
-      },
       "hardpairingstatus": {
         "name": "Estado de emparejamiento dif\u00edcil"
       },
@@ -1145,14 +1142,14 @@
       "ice_make_room_alarm": {
         "name": "Alarma del compartimento del fabricador de hielo"
       },
+      "ice_making_b_switch_status": {
+        "name": "Estado del interruptor de producci\u00f3n de hielo B"
+      },
       "ice_making_machine_failure": {
         "name": "Fallo en maquina de hielo"
       },
       "ice_making_normal_status": {
         "name": "Estado normal de fabricaci\u00f3n de hielo"
-      },
-      "ice_making_state": {
-        "name": "Estado de fabricaci\u00f3n de hielo"
       },
       "ice_making_stop_status": {
         "name": "Estado de parada de fabricaci\u00f3n de hielo"
@@ -1267,6 +1264,9 @@
       },
       "preheat": {
         "name": "Precalentar"
+      },
+      "programoptionanticrease": {
+        "name": "Antiarrgas "
       },
       "quiet_mode_status": {
         "name": "Modo silencioso"
@@ -2141,20 +2141,8 @@
       "delayendtime_hour": {
         "name": "Hora de finalizaci\u00f3n diferida"
       },
-      "freeze_max_temperature": {
-        "name": "Congelador temperatura m\u00e1xima"
-      },
-      "freeze_min_temperature": {
-        "name": "Congelador temperatura m\u00ednima"
-      },
       "freeze_temperature": {
         "name": "Temperatura Congelador"
-      },
-      "gratin_from_below_functionset_time_in_seconds": {
-        "name": "Tiempo ajustado de la funci\u00f3n de gratinado inferior"
-      },
-      "gratin_function_set_time_in_seconds": {
-        "name": "Tiempo ajustado de la funci\u00f3n gratinar"
       },
       "greasefiltersetlifetimeinhours": {
         "name": "Vida \u00fatil del filtro antigrasa"
@@ -2174,12 +2162,6 @@
       "programtimesstartdelayhours": {
         "name": "Inicio diferido"
       },
-      "refrigerator_max_temperature": {
-        "name": "Frigorifico temperatura m\u00e1xima"
-      },
-      "refrigerator_min_temperature": {
-        "name": "Frigorifico temperatura m\u00ednima"
-      },
       "refrigerator_temperature": {
         "name": "Temperatura frigor\u00edfico"
       },
@@ -2194,12 +2176,6 @@
       },
       "ts_c1_water": {
         "name": "Consigna de temperatura de impulsi\u00f3n"
-      },
-      "variation_max_temperature": {
-        "name": "Variaci\u00f3n temperatura m\u00e1xima"
-      },
-      "variation_min_temperature": {
-        "name": "Variaci\u00f3n temperatura m\u00ednima"
       },
       "variation_temperature": {
         "name": "Temperatura variaci\u00f3n"
@@ -4746,6 +4722,12 @@
       },
       "global_timer_remaining_time_in_minutes": {
         "name": "Tiempo restante del temporizador general"
+      },
+      "gratin_from_below_functionset_time_in_seconds": {
+        "name": "Tiempo ajustado de la funci\u00f3n de gratinado inferior"
+      },
+      "gratin_function_set_time_in_seconds": {
+        "name": "Tiempo ajustado de la funci\u00f3n gratinar"
       },
       "gratin_total_allowed_time_in_minutes": {
         "name": "Tiempo total permitido de gratinado"
@@ -8736,9 +8718,6 @@
       "autodose": {
         "name": "Configuracion autodosificador"
       },
-      "automatic_ice_making": {
-        "name": "Fabricaci\u00f3n autom\u00e1tica de hielo"
-      },
       "autotubclean": {
         "name": "Autolimpieza del tambor"
       },
@@ -8850,9 +8829,6 @@
       "holiday_mode": {
         "name": "Modo vacaciones"
       },
-      "ice_making_b_switch_status": {
-        "name": "Estado del interruptor de producci\u00f3n de hielo B"
-      },
       "ice_making_state": {
         "name": "Estado de fabricaci\u00f3n de hielo"
       },
@@ -8895,9 +8871,6 @@
       "prewash": {
         "name": "Prelavado"
       },
-      "programoptionanticrease": {
-        "name": "Antiarrgas "
-      },
       "proximitysensorsetavalibility": {
         "name": "Sensor de proximidad disponible"
       },
@@ -8933,9 +8906,6 @@
       },
       "sf_mode": {
         "name": "Supercongelaci\u00f3n"
-      },
-      "sf_sr_mutex_mode": {
-        "name": "Modo exclusivo SF/SR"
       },
       "showmeasuredtemperature": {
         "name": "Mostrar temperatura medida"

@@ -33,8 +33,12 @@ properties:
         0: false
         1: true
   - property: automatic_ice_making
-    entity_category: config
-    switch: {}
+    # Read-only; models that control the ice maker use ice_making_state with SET_ICE_SWITCH.
+    entity_category: diagnostic
+    binary_sensor:
+      options:
+        0: false
+        1: true
   - property: camera_state
     optional: true
   - property: charcoal_filter_expiration_alarm
@@ -321,12 +325,18 @@ properties:
   - property: freeze_fan_speed
     optional: true
   - property: freeze_max_temperature
+    # Setpoint limit reported by the fridge; fixed per model.
+    hide: true
+    entity_category: diagnostic
     sensor:
       read_only: true
       device_class: temperature
       unit: °C
       state_class: measurement
   - property: freeze_min_temperature
+    # Setpoint limit reported by the fridge; fixed per model.
+    hide: true
+    entity_category: diagnostic
     sensor:
       read_only: true
       device_class: temperature
@@ -420,7 +430,9 @@ properties:
       state_class: measurement
   - property: holiday_mode
     entity_category: config
-    switch: {}
+    switch:
+      command:
+        name: SET_HOLIDAY_MODE
   - property: human_on_off_status
     optional: true
   - property: human_sense_light_status
@@ -457,8 +469,12 @@ properties:
   - property: ice_maker_wash_state
     optional: true
   - property: ice_making_b_switch_status
-    entity_category: config
-    switch: {}
+    # Read-only (writes are rejected on 026-1b0522z0308j).
+    entity_category: diagnostic
+    binary_sensor:
+      options:
+        0: false
+        1: true
   - property: ice_making_fast_status
     optional: true
   - property: ice_making_full_status
@@ -479,11 +495,12 @@ properties:
         0: false
         1: true
   - property: ice_making_state
-    entity_category: diagnostic
-    binary_sensor:
-      options:
-        0: false
-        1: true
+    # The ice maker on/off; written with SET_ICE_SWITCH (verified on 026-1b0522z0308j and 026-1b0628z0049j).
+    entity_category: config
+    switch:
+      device_class: switch
+      command:
+        name: SET_ICE_SWITCH
   - property: ice_making_stop_status
     entity_category: diagnostic
     binary_sensor:
@@ -864,12 +881,18 @@ properties:
   - property: refrigerator_key
     optional: true
   - property: refrigerator_max_temperature
+    # Setpoint limit reported by the fridge; fixed per model.
+    hide: true
+    entity_category: diagnostic
     sensor:
       read_only: true
       device_class: temperature
       unit: °C
       state_class: measurement
   - property: refrigerator_min_temperature
+    # Setpoint limit reported by the fridge; fixed per model.
+    hide: true
+    entity_category: diagnostic
     sensor:
       read_only: true
       device_class: temperature
@@ -1096,6 +1119,8 @@ properties:
       options:
         0: celsius
         1: fahrenheit
+      command:
+        name: SET_TEMPERATURE_UNIT
   - property: thaw_control_switch_status
     optional: true
   - property: thaw_finished_alarm
@@ -1231,6 +1256,8 @@ properties:
       device_class: duration
       unit: s
   - property: variation_max_temperature
+    # Setpoint limit reported by the fridge; fixed per model.
+    hide: true
     entity_category: diagnostic
     sensor:
       read_only: true
@@ -1238,6 +1265,8 @@ properties:
       unit: °C
       state_class: measurement
   - property: variation_min_temperature
+    # Setpoint limit reported by the fridge; fixed per model.
+    hide: true
     entity_category: diagnostic
     sensor:
       read_only: true
@@ -1266,6 +1295,8 @@ properties:
     number:
       device_class: temperature
       unit: °C
+      command:
+        name: SET_VARIATION_TEMPERATURE
   - property: vibration_alarm
     optional: true
     entity_category: diagnostic

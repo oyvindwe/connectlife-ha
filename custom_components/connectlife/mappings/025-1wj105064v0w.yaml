@@ -16,22 +16,22 @@ properties:
       2: other
       3: closed
 - property: Current_program_phase
+  # Phases as in this feature code's ConnectLife property list.
   sensor:
     device_class: enum
     options:
       0: not_available
-      1: weigh # not verified
-      2: prewash # not verified
+      1: weigh
+      2: prewash
       3: wash
       4: rinsing
-      5: preheat_finished # not verified
+      5: softening
+      6: anti_crease
       7: spinning
-      8: drying # not verified
+      8: drying
+      9: ventilating
       10: finished
-      11: idle # not verified
-      12: running # not verified
-      13: anti_crease # not verified
-      14: delay # not verified
+      11: delay
 - property: DefaultSpinSpeed
   sensor:
     multiplier: 100

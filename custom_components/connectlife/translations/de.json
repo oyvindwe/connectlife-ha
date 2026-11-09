@@ -579,7 +579,7 @@
         "name": "T\u00fcrverriegelung"
       },
       "door_status": {
-        "name": "T\u00fcrstatus"
+        "name": "T\u00fcr"
       },
       "doorstatus": {
         "name": "T\u00fcr"
@@ -1121,9 +1121,6 @@
       "grill_plate_status": {
         "name": "Grillplattenstatus"
       },
-      "hard_pairing_status": {
-        "name": "Status der festen Kopplung"
-      },
       "hardpairingstatus": {
         "name": "Status der festen Kopplung"
       },
@@ -1145,14 +1142,14 @@
       "ice_make_room_alarm": {
         "name": "Eisbereiter-Raumalarm"
       },
+      "ice_making_b_switch_status": {
+        "name": "Status der Eisherstellung B"
+      },
       "ice_making_machine_failure": {
         "name": "Fehler der Eisherstellungsmaschine"
       },
       "ice_making_normal_status": {
         "name": "Eisherstellung Normalzustand"
-      },
-      "ice_making_state": {
-        "name": "Status der Eisherstellung"
       },
       "ice_making_stop_status": {
         "name": "Status der gestoppten Eisherstellung"
@@ -1268,6 +1265,9 @@
       "preheat": {
         "name": "Vorheizen"
       },
+      "programoptionanticrease": {
+        "name": "Programmoption Knitterschutz"
+      },
       "quiet_mode_status": {
         "name": "Status des Leisemodus"
       },
@@ -1359,7 +1359,7 @@
         "name": "Sabbatmodus-Schalterstatus"
       },
       "selected_program_anticrease_status": {
-        "name": "Programmoption Anti-Knitter"
+        "name": "Programmoption Knitterschutz"
       },
       "selected_program_auto_door_open_function": {
         "name": "Automatische T\u00fcr\u00f6ffnung"
@@ -1368,7 +1368,7 @@
         "name": "Programmoption Desinfektion"
       },
       "selected_program_extradry_status": {
-        "name": "Programmoption Extra Trocken"
+        "name": "Programmoption Extra trocken"
       },
       "selected_program_steamfinish": {
         "name": "Programmoption Dampffinish"
@@ -2141,20 +2141,8 @@
       "delayendtime_hour": {
         "name": "Endzeitvorwahl Stunde"
       },
-      "freeze_max_temperature": {
-        "name": "Maximale Gefriertemperatur"
-      },
-      "freeze_min_temperature": {
-        "name": "Minimale Gefriertemperatur"
-      },
       "freeze_temperature": {
         "name": "Gefriertemperatur"
-      },
-      "gratin_from_below_functionset_time_in_seconds": {
-        "name": "Gratin von unten Zeiteinstellung"
-      },
-      "gratin_function_set_time_in_seconds": {
-        "name": "Gratin Zeiteinstellung"
       },
       "greasefiltersetlifetimeinhours": {
         "name": "Fettfilter-Lebensdauer"
@@ -2174,12 +2162,6 @@
       "programtimesstartdelayhours": {
         "name": "Startverz\u00f6gerung"
       },
-      "refrigerator_max_temperature": {
-        "name": "Maximale K\u00fchlschranktemperatur"
-      },
-      "refrigerator_min_temperature": {
-        "name": "Minimale K\u00fchlschranktemperatur"
-      },
       "refrigerator_temperature": {
         "name": "K\u00fchlschranktemperatur"
       },
@@ -2194,12 +2176,6 @@
       },
       "ts_c1_water": {
         "name": "Vorlauf-Solltemperatur"
-      },
-      "variation_max_temperature": {
-        "name": "Maximale Temperaturvariation"
-      },
-      "variation_min_temperature": {
-        "name": "Minimale Temperaturvariation"
       },
       "variation_temperature": {
         "name": "Temperaturvariation"
@@ -2242,7 +2218,7 @@
         }
       },
       "anticrease_setting": {
-        "name": "Anti-Knitter-Dauer",
+        "name": "Knitterschutz-Dauer",
         "state": {
           "1_hour": "1 Stunde",
           "2_hours": "2 Stunden",
@@ -2417,11 +2393,11 @@
           "60_min": "60 min",
           "90_min": "90 min",
           "cupboard": "Schranktrocken",
-          "extra_dry": "Extra Trocken",
+          "extra_dry": "Extra trocken",
           "iron": "B\u00fcgelfeucht",
           "none": "Keine",
           "off": "Aus",
-          "pre-ironing": "Vor B\u00fcgeln",
+          "pre-ironing": "Vorb\u00fcgeln",
           "ready_to_wear": "Tragetrocken",
           "wardrobe": "Schranktrocken"
         }
@@ -2586,19 +2562,19 @@
           "duvet": "Bettdecke",
           "eco": "Eco",
           "eco_40_60": "Eco 40-60",
-          "full_load_49": "Volle Ladung 49",
-          "full_load_59": "Volle Ladung 59",
+          "full_load_49": "Volle Beladung 49'",
+          "full_load_59": "Volle Beladung 59'",
           "hand_wash": "Handw\u00e4sche",
           "ion_refresh": "Ionen-Auffrischung",
           "jeans": "Jeans",
           "mix": "Mischgewebe",
           "pets": "Haustiere",
-          "power_30": "Power 30",
+          "power_30": "Power 30'",
           "power_39": "Power 39'",
           "power_49": "Power 49'",
           "quick_15": "Schnell 15'",
           "quick_30": "Schnell 30'",
-          "rack_dry": "Rosttrocknung",
+          "rack_dry": "Wollkorb",
           "refresh": "Auffrischen",
           "rinse_spin": "Sp\u00fclen & Schleudern",
           "shirts": "Hemdprogramm",
@@ -2610,8 +2586,8 @@
           "time": "Zeitprogramm",
           "time_dry": "Zeittrocknung",
           "towels": "Handt\u00fccher",
-          "wash_and_dry_49": "Waschen und Trocknen 49",
-          "wash_and_dry_60": "Waschen und Trocknen 60",
+          "wash_and_dry_49": "Waschen und Trocknen 49'",
+          "wash_and_dry_60": "Waschen und Trocknen 60'",
           "wool": "Wolle"
         }
       },
@@ -2819,7 +2795,7 @@
         }
       },
       "spin_speed_rpm": {
-        "name": "Schleudergeschwindigkeit",
+        "name": "Schleuderdrehzahl",
         "state": {
           "1000": "1000 U/min",
           "1200": "1200 U/min",
@@ -3334,14 +3310,14 @@
         "name": "Turm automatisch anheben"
       },
       "autodose_flag": {
-        "name": "Autodosierung Kennzeichen",
+        "name": "Kennzeichen automatische Dosierung",
         "state": {
           "available": "Verf\u00fcgbar",
           "unavailable": "Nicht verf\u00fcgbar"
         }
       },
       "autodosetype": {
-        "name": "Typ Automatikdosierung"
+        "name": "Typ automatische Dosierung"
       },
       "automatic_display_brightness_setting": {
         "name": "Automatische Anzeigehelligkeit"
@@ -3452,7 +3428,7 @@
         "name": "WLAN-Programm hochladbar"
       },
       "cancel_delayend_flag": {
-        "name": "Kennzeichen Startzeit abbrechen"
+        "name": "Kennzeichen Endzeitvorwahl abbrechen"
       },
       "cancle_delayend": {
         "name": "Endzeitvorwahl abbrechen"
@@ -3558,13 +3534,13 @@
         "name": "Waschmitteldosierung aktuelles Programm"
       },
       "curprogdetergentdosageno_auto": {
-        "name": "Aktuelles Programm Waschmitteldosierung nicht automatisch"
+        "name": "Waschmitteldosierung aktuelles Programm ohne Automatik"
       },
       "curprogsoftnerdosage": {
         "name": "Weichsp\u00fclerdosierung aktuelles Programm"
       },
       "curprogsoftnerdosageno_auto": {
-        "name": "Aktuelles Programm Weichsp\u00fclerdosierung nicht automatisch"
+        "name": "Weichsp\u00fclerdosierung aktuelles Programm ohne Automatik"
       },
       "current_baking_step": {
         "name": "Aktueller Backschritt",
@@ -3585,9 +3561,9 @@
       "current_program_phase": {
         "name": "Aktuelle Programmphase",
         "state": {
-          "anti_crease": "Anti-Knitter",
+          "anti_crease": "Knitterschutz",
           "delay": "Verz\u00f6gerung",
-          "delay_start_waiting": "Verz\u00f6gerter Start wartet",
+          "delay_start_waiting": "Wartet auf Start",
           "drying": "Trocknen",
           "finished": "Abgeschlossen",
           "idle": "Leerlauf",
@@ -3647,7 +3623,7 @@
         "state": {
           "add_cloth_drain": "Abpumpen f\u00fcr Kleidung hinzuf\u00fcgen",
           "add_cloth_drain_finish": "W\u00e4sche hinzuf\u00fcgen Abpumpen beendet",
-          "anti_crease": "Programmoption Anti-Knitter",
+          "anti_crease": "Knitterschutz",
           "coolend": "Abk\u00fchlung Ende",
           "cooling": "K\u00fchlung",
           "delay": "Verz\u00f6gerung",
@@ -3682,7 +3658,7 @@
         "name": "T\u00e4glicher Energieverbrauch"
       },
       "daily_energy_kwh": {
-        "name": "T\u00e4glicher Energieverbrauch in kWh"
+        "name": "T\u00e4glicher Energieverbrauch"
       },
       "daily_water_consumption": {
         "name": "T\u00e4glicher Wasserverbrauch"
@@ -3733,7 +3709,7 @@
         "name": "Standard-Trockengrad"
       },
       "defaultspinspeed": {
-        "name": "Schleuderdrehzahl Standard",
+        "name": "Standard-Schleuderdrehzahl",
         "state": {
           "1000": "1000 U/min",
           "1200": "1200 U/min",
@@ -3767,10 +3743,10 @@
         "name": "Schlie\u00dfverz\u00f6gerung-Kennung"
       },
       "delayendtime": {
-        "name": "Verz\u00f6gerungsendzeit"
+        "name": "Endzeitvorwahl"
       },
       "delayendtime_minute": {
-        "name": "Startzeitvorwahl (Minute)"
+        "name": "Endzeitvorwahl (Minute)"
       },
       "delaystart_delayend_duration_inminutes": {
         "name": "Verz\u00f6gerungsdauer"
@@ -3806,7 +3782,7 @@
         "name": "Waschmittelanzeige"
       },
       "detergent_leftml": {
-        "name": "Restwaschmittel"
+        "name": "Waschmittel-Restmenge"
       },
       "detergent_leftnum": {
         "name": "Verbleibende Waschmitteldosen"
@@ -3815,7 +3791,7 @@
         "name": "Einstellung Waschmittel/Weichsp\u00fcler"
       },
       "detergent_totalml": {
-        "name": "Gesamter Waschmittelverbrauch"
+        "name": "Waschmittel-Gesamtverbrauch"
       },
       "detergent_totalnum": {
         "name": "Verbrauchte Waschmitteldosen gesamt"
@@ -3827,7 +3803,7 @@
         "name": "Waschmittel Standarddosierung"
       },
       "detergentstandarddosage_flag": {
-        "name": "Standarddosierung Waschmittel"
+        "name": "Kennung Standarddosierung Waschmittel"
       },
       "device_status": {
         "name": "Ger\u00e4testatus",
@@ -3943,7 +3919,7 @@
         "name": "Einstellung T\u00fcrsensor"
       },
       "door_status": {
-        "name": "T\u00fcr",
+        "name": "T\u00fcrstatus",
         "state": {
           "closed": "Geschlossen",
           "locked": "Verriegelt",
@@ -3962,10 +3938,10 @@
         "name": "Dosierte Waschmittelmenge"
       },
       "dose_softener_amount": {
-        "name": "Weichsp\u00fcler-Dosiermenge"
+        "name": "Dosierte Weichsp\u00fclermenge"
       },
       "doseaid": {
-        "name": "DOSE AID"
+        "name": "Dosierhilfe"
       },
       "downlight": {
         "name": "Beleuchtung"
@@ -3977,7 +3953,7 @@
         "name": "Programm herunterladen"
       },
       "drumcleancycle_runsnumber": {
-        "name": "Anzahl Trommelreinigungszyklen"
+        "name": "Erinnerungsintervall Trommelreinigung"
       },
       "drumcleanflag": {
         "name": "Trommelreinigung-Flag"
@@ -3986,7 +3962,7 @@
         "name": "Schalter Trommelreinigung"
       },
       "drumcleanwashcount": {
-        "name": "Trommelreinigung Waschz\u00e4hler"
+        "name": "Waschg\u00e4nge seit Trommelreinigung"
       },
       "dry_level_show": {
         "name": "Anzeige Trockenstufe"
@@ -3998,16 +3974,16 @@
         "name": "Trocknungszeit"
       },
       "dryfilterremindflag": {
-        "name": "Erinnerung Filter trocknen"
+        "name": "Kennzeichen Erinnerung Trocknungsfilter"
       },
       "drying_linkage_order": {
-        "name": "Reihenfolge Trocknungsverkn\u00fcpfung"
+        "name": "Reihenfolge Trocknungskopplung"
       },
       "drying_linkage_preheat_time": {
         "name": "Vorheizzeit Trocknungskopplung"
       },
       "drying_linkage_programid": {
-        "name": "Trocknungsverkn\u00fcpfung-Programm-ID"
+        "name": "Programm-ID Trocknungskopplung"
       },
       "drying_washing_linkage_state": {
         "name": "Status Trocken-Wasch-Kopplung"
@@ -4096,7 +4072,7 @@
         }
       },
       "dryopen_defaultspinspeed": {
-        "name": "Standard Schleudergeschwindigkeit",
+        "name": "Standard-Schleuderdrehzahl mit Trocknen",
         "state": {
           "none": "Keine"
         }
@@ -4413,16 +4389,16 @@
           "error_f01": "F01 - Fehler Wasserzulauf",
           "error_f03": "F03 - Fehler Abpumpen",
           "error_f04": "F04 - Fehler Elektronikmodul",
-          "error_f05": "F05 - Fehler des Elektronikmoduls",
-          "error_f06": "F06 - Fehler des Elektronikmoduls",
-          "error_f07": "F07 - Fehler des Elektronikmoduls",
+          "error_f05": "F05 - Fehler Elektronikmodul",
+          "error_f06": "F06 - Fehler Elektronikmodul",
+          "error_f07": "F07 - Fehler Elektronikmodul",
           "error_f13": "F13 - Fehler T\u00fcrverriegelung",
           "error_f14": "F14 - Fehler T\u00fcrentriegelung",
           "error_f15": "F15 - Trocknungsst\u00f6rung",
           "error_f16": "F16 - Trocknungsst\u00f6rung",
           "error_f17": "F17 - Trocknungsst\u00f6rung",
           "error_f18": "F18 - Trocknungsst\u00f6rung",
-          "error_f23": "F23 - Fehler des Elektronikmoduls",
+          "error_f23": "F23 - Fehler Elektronikmodul",
           "error_f24": "F24 - Wasserstand-\u00dcberlauf",
           "none": "Kein Fehler",
           "unbalance_alarm": "Unwucht-Alarm"
@@ -4733,19 +4709,25 @@
         "name": "Frucht- und Gem\u00fcse-Temperatur"
       },
       "function1_useindex": {
-        "name": "Funktion 1 Verbrauchsindex"
+        "name": "Funktion 1 Nutzungsindex"
       },
       "gentle_dry": {
         "name": "Schonende Trocknung"
       },
       "gentledry_flag": {
-        "name": "Schongang-Flag"
+        "name": "Kennzeichen Schonendes Trocknen"
       },
       "getcurrentcityinfoflag": {
         "name": "Kennung: Aktuelle Stadtinfo abrufen"
       },
       "global_timer_remaining_time_in_minutes": {
         "name": "Restzeit Haupttimer"
+      },
+      "gratin_from_below_functionset_time_in_seconds": {
+        "name": "Gratin von unten Zeiteinstellung"
+      },
+      "gratin_function_set_time_in_seconds": {
+        "name": "Gratin Zeiteinstellung"
       },
       "gratin_total_allowed_time_in_minutes": {
         "name": "Gratin erlaubte Gesamtzeit"
@@ -4787,13 +4769,13 @@
         "name": "Halbe Beladung"
       },
       "hard_pairing_commond": {
-        "name": "Befehl Hard-Kopplung"
+        "name": "Befehl feste Kopplung"
       },
       "hard_pairing_status": {
-        "name": "Status der festen Kopplung"
+        "name": "Status feste Kopplung"
       },
       "hardpairingstatus": {
-        "name": "Hard-Kopplung Status",
+        "name": "Status feste Kopplung",
         "state": {
           "active": "Aktiv",
           "not_active": "Nicht aktiv",
@@ -4976,7 +4958,7 @@
         "name": "Ionen-Auffrischung"
       },
       "iron_dry_time": {
-        "name": "B\u00fcgeltrocken-Zeit"
+        "name": "Trocknungszeit b\u00fcgelfeucht"
       },
       "iscloudprogramflag": {
         "name": "Kennzeichen Cloud-Programm"
@@ -5198,7 +5180,7 @@
         "name": "Nachtmodus-Flag"
       },
       "no_autodoseswitch": {
-        "name": "Schalter Auto-Dosierung aus"
+        "name": "Schalter automatische Dosierung aus"
       },
       "normal_sound_size": {
         "name": "Normale Lautst\u00e4rke"
@@ -5252,7 +5234,7 @@
         "name": "Nur-Waschen-Modell"
       },
       "order_time_minimum_hour": {
-        "name": "Mindestbestellzeit"
+        "name": "K\u00fcrzeste Endzeitvorwahl"
       },
       "ota_num1": {
         "name": "OTA-Nummer 1"
@@ -5285,10 +5267,10 @@
         "name": "Kopplung aktiv"
       },
       "parse_lib_ota": {
-        "name": "Parse-Lib OTA"
+        "name": "Parser-Bibliothek OTA"
       },
       "parse_lib_ver": {
-        "name": "Bibliotheksversion analysieren"
+        "name": "Version der Parser-Bibliothek"
       },
       "party_mode_switch_status": {
         "name": "Partymodus-Schalter-Status"
@@ -5841,7 +5823,7 @@
         "state": {
           "allergy_care": "Allergiepflege",
           "auto": "Automatisch",
-          "baby_care": "Babymodus",
+          "baby_care": "Babyprogramm",
           "bedding": "Bettw\u00e4sche",
           "cotton": "Baumwolle",
           "cotton_dry": "Baumwolle trocken",
@@ -5852,13 +5834,13 @@
           "eco_40_60": "Eco 40-60",
           "extra_hygiene": "Extra Hygiene",
           "fast89": "Schnell 89",
-          "full_load_49": "Volle Ladung 49",
+          "full_load_49": "Volle Beladung 49'",
           "iron": "B\u00fcgeln",
           "jeans": "Jeans",
           "mix": "Mischprogramm",
           "none": "Kein Programm",
           "pets": "Haustiere",
-          "power_30": "Power 30",
+          "power_30": "Power 30'",
           "power_49": "Power 49'",
           "quick_15": "Schnell 15'",
           "refresh": "Auffrischen",
@@ -5868,7 +5850,7 @@
           "shirts": "Hemdprogramm",
           "silk_delicate": "Feinw\u00e4sche",
           "spin": "Schleudern",
-          "sportswear": "Sportmodus",
+          "sportswear": "Sportkleidung",
           "standard": "Standard",
           "synthetic": "Synthetik",
           "synthetic_dry": "Synthetik trocken",
@@ -5913,10 +5895,10 @@
         "name": "Intensivsp\u00fclen des gew\u00e4hlten Programms"
       },
       "selected_program_total_running_time": {
-        "name": "Programmdauer Gesamt"
+        "name": "Programmlaufzeit Gesamt"
       },
       "selected_program_total_running_time_in_minutes": {
-        "name": "Programmdauer Gesamt"
+        "name": "Programmlaufzeit Gesamt"
       },
       "selected_program_total_time": {
         "name": "Programmdauer Gesamt"
@@ -6954,7 +6936,7 @@
         "name": "Status Soft-Kopplung"
       },
       "softener_buynotifyswitch": {
-        "name": "Schalter Weichsp\u00fcler-Kaufhinweis"
+        "name": "Weichsp\u00fcler-Nachkaufhinweis"
       },
       "softener_compartment": {
         "name": "Weichsp\u00fclerfach"
@@ -6981,16 +6963,16 @@
         "name": "Weichsp\u00fclerfach-Kennung"
       },
       "softer_flag": {
-        "name": "Weichsp\u00fcler-Flag"
+        "name": "Kennung Weichsp\u00fcler"
       },
       "softner_useindex": {
-        "name": "Index Weichsp\u00fclernutzung"
+        "name": "Weichsp\u00fcler-Verbrauchsindex"
       },
       "softnerstandarddosage": {
         "name": "Weichsp\u00fcler Standarddosierung"
       },
       "softnerstandarddosage_flag": {
-        "name": "Standarddosierung Weichsp\u00fcler"
+        "name": "Kennung Standarddosierung Weichsp\u00fcler"
       },
       "softpairing": {
         "name": "Soft-Kopplung"
@@ -7020,7 +7002,7 @@
         "name": "Bedarfsabbuchung erlaubt"
       },
       "spin_speed_rpm": {
-        "name": "Schleudergeschwindigkeit (U/min)"
+        "name": "Schleuderdrehzahl (U/min)"
       },
       "spin_time": {
         "name": "Schleuderzeit"
@@ -7029,7 +7011,7 @@
         "name": "Schleuderbereich"
       },
       "spinspeeduseindex": {
-        "name": "Schleuderdrehzahl-Verbrauchsindex"
+        "name": "Schleuderdrehzahl-Nutzungsindex"
       },
       "spinstepfinishnotifyswitch": {
         "name": "Benachrichtigung Ende Schleuderphase"
@@ -7044,7 +7026,7 @@
         "name": "Schleuderzeit-Index"
       },
       "spintime_useindex": {
-        "name": "Schleuderzeit-Verbrauchsindex"
+        "name": "Schleuderzeit-Nutzungsindex"
       },
       "stage_lights_setting": {
         "name": "Einstellung Etagenbeleuchtung"
@@ -8368,7 +8350,7 @@
         "name": "Waschmaschinentyp (kg)"
       },
       "washing_machine_type_max_speed": {
-        "name": "Maximale Geschwindigkeit des Waschmaschinentyps"
+        "name": "Maximale Schleuderdrehzahl"
       },
       "washing_program_kg": {
         "name": "Waschprogramm-Gewicht"
@@ -8695,7 +8677,7 @@
         "name": "Umgebungslicht"
       },
       "anticrease": {
-        "name": "Anti-Knitter"
+        "name": "Knitterschutz"
       },
       "aus_zone1_power": {
         "name": "Zone 1"
@@ -8735,9 +8717,6 @@
       },
       "autodose": {
         "name": "Automatische Dosierung"
-      },
-      "automatic_ice_making": {
-        "name": "Automatische Eisherstellung"
       },
       "autotubclean": {
         "name": "Automatische Trommelreinigung"
@@ -8818,7 +8797,7 @@
         "name": "Warnung Trommelreinigungsprogramm"
       },
       "extra_rinse": {
-        "name": "Extra Sp\u00fclen"
+        "name": "Extra-Sp\u00fclen"
       },
       "extra_rinse_status": {
         "name": "Programmoption Extra-Sp\u00fclung"
@@ -8849,9 +8828,6 @@
       },
       "holiday_mode": {
         "name": "Urlaubsmodus"
-      },
-      "ice_making_b_switch_status": {
-        "name": "Status der Eisherstellung B"
       },
       "ice_making_state": {
         "name": "Status der Eisherstellung"
@@ -8895,9 +8871,6 @@
       "prewash": {
         "name": "Vorw\u00e4sche"
       },
-      "programoptionanticrease": {
-        "name": "Programmoption Anti-Knitter"
-      },
       "proximitysensorsetavalibility": {
         "name": "N\u00e4herungssensor verf\u00fcgbar"
       },
@@ -8911,7 +8884,7 @@
         "name": "Eco-Modus"
       },
       "selected_program_anticrease_status": {
-        "name": "Programmoption Anti-Knitter"
+        "name": "Programmoption Knitterschutz"
       },
       "selected_program_entry_steam_status": {
         "name": "Programmoption Dampf"
@@ -8933,9 +8906,6 @@
       },
       "sf_mode": {
         "name": "SuperFreeze"
-      },
-      "sf_sr_mutex_mode": {
-        "name": "SF-SR-Mutex-Modus"
       },
       "showmeasuredtemperature": {
         "name": "Gemessene Temperatur anzeigen"
