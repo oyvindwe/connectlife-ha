@@ -495,11 +495,12 @@ properties:
         0: false
         1: true
   - property: ice_making_state
-    entity_category: diagnostic
-    binary_sensor:
-      options:
-        0: false
-        1: true
+    # The ice maker on/off; written with SET_ICE_SWITCH (verified on 026-1b0522z0308j and 026-1b0628z0049j).
+    entity_category: config
+    switch:
+      device_class: switch
+      command:
+        name: SET_ICE_SWITCH
   - property: ice_making_stop_status
     entity_category: diagnostic
     binary_sensor:

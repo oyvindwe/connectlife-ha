@@ -1154,9 +1154,6 @@
       "ice_making_normal_status": {
         "name": "Norm\u00e1ln\u00ed stav v\u00fdroby ledu"
       },
-      "ice_making_state": {
-        "name": "Stav v\u00fdroby ledu"
-      },
       "ice_making_stop_status": {
         "name": "Stav zastaven\u00ed v\u00fdroby ledu"
       },

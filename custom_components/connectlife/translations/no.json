@@ -1154,9 +1154,6 @@
       "ice_making_normal_status": {
         "name": "Normalstatus for isproduksjon"
       },
-      "ice_making_state": {
-        "name": "Tilstand for isproduksjon"
-      },
       "ice_making_stop_status": {
         "name": "Stoppstatus for isproduksjon"
       },

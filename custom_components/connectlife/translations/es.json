@@ -1154,9 +1154,6 @@
       "ice_making_normal_status": {
         "name": "Estado normal de fabricaci\u00f3n de hielo"
       },
-      "ice_making_state": {
-        "name": "Estado de fabricaci\u00f3n de hielo"
-      },
       "ice_making_stop_status": {
         "name": "Estado de parada de fabricaci\u00f3n de hielo"
       },

@@ -1154,9 +1154,6 @@
       "ice_making_normal_status": {
         "name": "Stato normale produzione ghiaccio"
       },
-      "ice_making_state": {
-        "name": "Stato produzione ghiaccio"
-      },
       "ice_making_stop_status": {
         "name": "Stato arresto produzione ghiaccio"
       },

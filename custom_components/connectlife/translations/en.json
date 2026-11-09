@@ -1154,9 +1154,6 @@
       "ice_making_normal_status": {
         "name": "Ice making normal status"
       },
-      "ice_making_state": {
-        "name": "Ice making state"
-      },
       "ice_making_stop_status": {
         "name": "Ice making stop status"
       },

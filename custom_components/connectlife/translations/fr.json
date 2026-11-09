@@ -1154,9 +1154,6 @@
       "ice_making_normal_status": {
         "name": "Glace - \u00e9tat normal"
       },
-      "ice_making_state": {
-        "name": "\u00c9tat production de glace"
-      },
       "ice_making_stop_status": {
         "name": "Glace - arr\u00eat"
       },

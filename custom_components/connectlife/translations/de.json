@@ -1154,9 +1154,6 @@
       "ice_making_normal_status": {
         "name": "Eisherstellung Normalzustand"
       },
-      "ice_making_state": {
-        "name": "Status der Eisherstellung"
-      },
       "ice_making_stop_status": {
         "name": "Status der gestoppten Eisherstellung"
       },

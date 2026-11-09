@@ -3,10 +3,6 @@ properties:
     number:
       min_value: -24
       max_value: -14
-  - property: ice_making_state
-    switch:
-      command:
-        name: SET_ICE_SWITCH
   - property: refrigerator_temperature
     number:
       min_value: 2
