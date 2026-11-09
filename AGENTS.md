@@ -109,6 +109,18 @@ See `custom_components/connectlife/mappings/README.md` for the authoring workflo
 
 Mappings are data, validated by `validate_mappings` (schema) and PR review — don't add unit tests asserting a specific mapping's *content*.
 
+### Reviewing mappings
+
+- Check every new or changed mapping against the ConnectLife property list of its feature code: read-only (`R`)
+  properties must not get a writable platform (switch, select, number, writable climate target) unless a separate
+  `command` property is written, and option values and limits should match `propertyValueList`, `lowerLimit` and
+  `upperLimit`.
+- The list is in the diagnostics (`property_list`). If no diagnostics are attached, or they're from before 0.49.0,
+  fetch it: it's keyed by type and feature code only, so any account works
+  (`python -m connectlife.dump --query property-list --device-type-code <t> --device-feature-code <f>`).
+- When the list and observed device data disagree (e.g. a value the device reports that isn't in the list), trust the
+  device and note it in a comment in the mapping.
+
 ## Versioning
 
 Classify changes (major, minor, patch; what counts as breaking) per

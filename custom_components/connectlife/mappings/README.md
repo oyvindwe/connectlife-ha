@@ -152,6 +152,11 @@ ConnectLife properties can be mapped to any of these entity types:
   - `system_data`: for dishwashers, the programs with their position, duration and which options each allows.
   - `self_check`: the faults the device can report, with a description.
   - `property_list`: the properties of the feature code, with value lists and ranges (empty for many devices).
+    Use it to choose the entity type and options: `propertyRW` `R` means read-only (a `sensor` or `binary_sensor`),
+    `RW` means it can be written (`switch`, `select`, `number`, or a writable climate target). Option values and
+    `min_value`/`max_value` should come from `propertyValueList`, `lowerLimit` and `upperLimit`. If the device shows
+    something else (e.g. a value that isn't in the list), trust the device and add a comment. If the list is empty,
+    say so in the pull request.
 
   Without Home Assistant, get the same data with `python -m connectlife.dump --query static` (or `system`,
   `self-check`, `property-list`); see the [connectlife](https://pypi.org/project/connectlife/) README.
