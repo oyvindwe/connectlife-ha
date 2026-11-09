@@ -1,0 +1,22 @@
+# Hisense RQ5P470SMIE (026-1b0470z0038j, BCD-470WP3BWF1R1/HC4(HAA)) (#840)
+# MyFreshChoice is the variable temperature room.
+properties:
+  # MyFreshChoice, as on RQ758N4SASE (026-1b0560z0336j). Range as reported by
+  # variation_min_temperature / variation_max_temperature.
+  - property: variation_temperature
+    hide: false
+    entity_category: config
+    number:
+      device_class: temperature
+      unit: °C
+      min_value: -18
+      max_value: 5
+      command:
+        name: SET_VARIATION_TEMPERATURE
+
+  - property: variation_real_temperature
+    entity_category: null
+
+  # Not a reading (-40)
+  - property: variation_sensor_real_temperature
+    disable: true

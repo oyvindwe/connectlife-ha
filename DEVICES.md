@@ -160,6 +160,7 @@ have a feature-specific mapping file.
 |                            | Refrigerator             | 026              | [1b0330z0079j](custom_components/connectlife/mappings/026-1b0330z0079j.yaml)                               |
 | HRCD483TBW                 | Refrigerator             | 026              | [1b0470z0012j](custom_components/connectlife/mappings/026-1b0470z0012j.yaml)                               |
 | RQ5P470SEIE                | Refrigerator             | 026              | [1b0470z0026j](custom_components/connectlife/mappings/026-1b0470z0026j.yaml)                               |
+| RQ5P470SMIE                | Refrigerator             | 026              | [1b0470z0038j](custom_components/connectlife/mappings/026-1b0470z0038j.yaml)                               |
 | RQ760N4SASE                | Refrigerator             | 026              | [1b0522z0308j](custom_components/connectlife/mappings/026-1b0522z0308j.yaml)                               |
 | RQ758N4SASE                | Refrigerator             | 026              | [1b0560z0336j](custom_components/connectlife/mappings/026-1b0560z0336j.yaml)                               |
 | RQ5X560SFLEF               | Refrigerator             | 026              | [1b0560z0452j](custom_components/connectlife/mappings/026-1b0560z0452j.yaml)                               |
