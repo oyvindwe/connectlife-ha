@@ -16,7 +16,9 @@ import homeassistant.helpers.device_registry as dr
 
 from connectlife.api import LifeConnectError
 
+from .action_hints import log_hints
 from .coordinator import ConnectLifeCoordinator
+from .device_mappings import DeviceMappings
 from .const import DOMAIN
 
 ATTR_ACTION = "action"
@@ -69,7 +71,7 @@ async def async_setup_services(hass: HomeAssistant) -> None:
             coordinators[device_id] = hass.data[DOMAIN][config_entry.entry_id]
         return coordinators
 
-    async def _async_update(devices: list[str], data: dict[str, Any]) -> None:
+    async def _async_update(action: str, devices: list[str], data: dict[str, Any]) -> None:
         """Update properties on device."""
         coordinators = await collect_coordinators(devices)
         for device_id, coordinator in coordinators.items():
@@ -80,11 +82,21 @@ async def async_setup_services(hass: HomeAssistant) -> None:
                 await coordinator.async_update_device(device_id, data, {})
             except LifeConnectError as api_error:
                 raise ServiceValidationError(str(api_error)) from api_error
+            # Point to an existing control, or ask for feedback (see action_hints for the rules).
+            if appliance := coordinator.data.get(device_id):
+                log_hints(
+                    hass,
+                    action,
+                    DeviceMappings.get_mapping(appliance),
+                    device_id,
+                    f"{appliance.device_nickname} ({appliance.device_type_code}-{appliance.device_feature_code})",
+                    data,
+                )
 
     async def async_set_action(call: ServiceCall) -> None:
         """Set action on device."""
         await _async_update(
-            call.data[ATTR_DEVICE_ID], {"Actions": call.data[ATTR_ACTION]}
+            f"{DOMAIN}.{SERVICE_SET_ACTION}", call.data[ATTR_DEVICE_ID], {"Actions": call.data[ATTR_ACTION]}
         )
 
     hass.services.async_register(
@@ -103,7 +115,7 @@ async def async_setup_services(hass: HomeAssistant) -> None:
 
     async def async_update(call: ServiceCall) -> None:
         """Action handler for updating properties on device."""
-        await _async_update(call.data[ATTR_DEVICE_ID], call.data[ATTR_DATA])
+        await _async_update(f"{DOMAIN}.{SERVICE_UPDATE}", call.data[ATTR_DEVICE_ID], call.data[ATTR_DATA])
 
     hass.services.async_register(
         DOMAIN,

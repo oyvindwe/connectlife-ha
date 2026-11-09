@@ -21,6 +21,7 @@ from .const import (
     DOMAIN,
     SW_VERSION_PROPERTY,
 )
+from .action_hints import log_hints
 from .coordinator import ConnectLifeCoordinator, ConnectLifeStatisticsCoordinator
 from .device_mappings import DeviceMappings, DeviceMapping, Property
 from .entity import ConnectLifeEntity
@@ -186,15 +187,21 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
     async def async_set_value(self, value: int) -> None:
         """Set value for this sensor."""
         _LOGGER.debug("Setting %s to %d on %s", self.status, value, self.nickname)
-        if self.read_only is None:
-            _LOGGER.warning(
-                "%s may be read-only on %s", self.entity_description.name, self.nickname
-            )
-        elif self.read_only:
+        if self.read_only:
             raise ServiceValidationError(
                 f"{self.entity_description.name} is read-only on {self.nickname}"
             )
         await self.async_update_device({self.status: value})
+        # A sensor has no control, so this asks for feedback (see action_hints for the rules).
+        if appliance := self.coordinator.data.get(self.device_id):
+            log_hints(
+                self.hass,
+                f"{DOMAIN}.{SERVICE_SET_VALUE}",
+                DeviceMappings.get_mapping(appliance),
+                self.device_id,
+                f"{appliance.device_nickname} ({appliance.device_type_code}-{appliance.device_feature_code})",
+                {self.status: value},
+            )
 
 
 class ConnectLifeStatisticsSensor(CoordinatorEntity[ConnectLifeStatisticsCoordinator], SensorEntity):
