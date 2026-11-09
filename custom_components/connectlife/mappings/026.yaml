@@ -352,6 +352,7 @@ properties:
       unit: °C
       state_class: measurement
   - property: freeze_sensor_real_temperature
+    hide: true
     sensor:
       device_class: temperature
       unit: °C
