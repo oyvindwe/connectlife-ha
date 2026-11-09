@@ -1145,14 +1145,14 @@
       "ice_make_room_alarm": {
         "name": "Alarm prostoru v\u00fdroby ledu"
       },
+      "ice_making_b_switch_status": {
+        "name": "Stav p\u0159ep\u00edna\u010de v\u00fdroby ledu B"
+      },
       "ice_making_machine_failure": {
         "name": "Porucha stroje na v\u00fdrobu ledu"
       },
       "ice_making_normal_status": {
         "name": "Norm\u00e1ln\u00ed stav v\u00fdroby ledu"
-      },
-      "ice_making_state": {
-        "name": "Stav v\u00fdroby ledu"
       },
       "ice_making_stop_status": {
         "name": "Stav zastaven\u00ed v\u00fdroby ledu"
@@ -1267,6 +1267,9 @@
       },
       "preheat": {
         "name": "P\u0159edeh\u0159ev"
+      },
+      "programoptionanticrease": {
+        "name": "Proti zma\u010dk\u00e1n\u00ed"
       },
       "quiet_mode_status": {
         "name": "Stav tich\u00e9ho re\u017eimu"
@@ -2141,20 +2144,8 @@
       "delayendtime_hour": {
         "name": "Hodina ukon\u010den\u00ed zpo\u017ed\u011bn\u00ed"
       },
-      "freeze_max_temperature": {
-        "name": "Maxim\u00e1ln\u00ed teplota mrazni\u010dky"
-      },
-      "freeze_min_temperature": {
-        "name": "Minim\u00e1ln\u00ed teplota mrazni\u010dky"
-      },
       "freeze_temperature": {
         "name": "Teplota mrazni\u010dky"
-      },
-      "gratin_from_below_functionset_time_in_seconds": {
-        "name": "Doba nastaven\u00ed funkce gratinov\u00e1n\u00ed zespodu"
-      },
-      "gratin_function_set_time_in_seconds": {
-        "name": "Doba nastaven\u00ed funkce gratinov\u00e1n\u00ed"
       },
       "greasefiltersetlifetimeinhours": {
         "name": "\u017divotnost tukov\u00e9ho filtru"
@@ -2174,12 +2165,6 @@
       "programtimesstartdelayhours": {
         "name": "Zpo\u017ed\u011bn\u00ed startu"
       },
-      "refrigerator_max_temperature": {
-        "name": "Maxim\u00e1ln\u00ed teplota chladni\u010dky"
-      },
-      "refrigerator_min_temperature": {
-        "name": "Minim\u00e1ln\u00ed teplota chladni\u010dky"
-      },
       "refrigerator_temperature": {
         "name": "Teplota chladni\u010dky"
       },
@@ -2194,12 +2179,6 @@
       },
       "ts_c1_water": {
         "name": "Po\u017eadovan\u00e1 v\u00fdstupn\u00ed teplota"
-      },
-      "variation_max_temperature": {
-        "name": "Maxim\u00e1ln\u00ed teplota variabiln\u00edho prostoru"
-      },
-      "variation_min_temperature": {
-        "name": "Minim\u00e1ln\u00ed teplota variabiln\u00edho prostoru"
       },
       "variation_temperature": {
         "name": "Teplota variabiln\u00edho prostoru"
@@ -4746,6 +4725,12 @@
       },
       "global_timer_remaining_time_in_minutes": {
         "name": "Zb\u00fdvaj\u00edc\u00ed \u010das hlavn\u00edho \u010dasova\u010de"
+      },
+      "gratin_from_below_functionset_time_in_seconds": {
+        "name": "Doba nastaven\u00ed funkce gratinov\u00e1n\u00ed zespodu"
+      },
+      "gratin_function_set_time_in_seconds": {
+        "name": "Doba nastaven\u00ed funkce gratinov\u00e1n\u00ed"
       },
       "gratin_total_allowed_time_in_minutes": {
         "name": "Celkov\u00fd povolen\u00fd \u010das gratinov\u00e1n\u00ed"
@@ -8736,9 +8721,6 @@
       "autodose": {
         "name": "Automatick\u00e9 d\u00e1vkov\u00e1n\u00ed"
       },
-      "automatic_ice_making": {
-        "name": "Automatick\u00e1 v\u00fdroba ledu"
-      },
       "autotubclean": {
         "name": "Automatick\u00e9 \u010di\u0161t\u011bn\u00ed bubnu"
       },
@@ -8850,9 +8832,6 @@
       "holiday_mode": {
         "name": "Pr\u00e1zdninov\u00fd re\u017eim"
       },
-      "ice_making_b_switch_status": {
-        "name": "Stav p\u0159ep\u00edna\u010de v\u00fdroby ledu B"
-      },
       "ice_making_state": {
         "name": "Stav v\u00fdroby ledu"
       },
@@ -8895,9 +8874,6 @@
       "prewash": {
         "name": "P\u0159edp\u00edrka"
       },
-      "programoptionanticrease": {
-        "name": "Proti zma\u010dk\u00e1n\u00ed"
-      },
       "proximitysensorsetavalibility": {
         "name": "P\u0159ibli\u017eovac\u00ed senzor dostupn\u00fd"
       },
@@ -8933,9 +8909,6 @@
       },
       "sf_mode": {
         "name": "Super freeze"
-      },
-      "sf_sr_mutex_mode": {
-        "name": "Re\u017eim mutex SF/SR"
       },
       "showmeasuredtemperature": {
         "name": "Zobrazit nam\u011b\u0159enou teplotu"

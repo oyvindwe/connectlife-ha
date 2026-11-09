@@ -1145,14 +1145,14 @@
       "ice_make_room_alarm": {
         "name": "Eisbereiter-Raumalarm"
       },
+      "ice_making_b_switch_status": {
+        "name": "Status der Eisherstellung B"
+      },
       "ice_making_machine_failure": {
         "name": "Fehler der Eisherstellungsmaschine"
       },
       "ice_making_normal_status": {
         "name": "Eisherstellung Normalzustand"
-      },
-      "ice_making_state": {
-        "name": "Status der Eisherstellung"
       },
       "ice_making_stop_status": {
         "name": "Status der gestoppten Eisherstellung"
@@ -1267,6 +1267,9 @@
       },
       "preheat": {
         "name": "Vorheizen"
+      },
+      "programoptionanticrease": {
+        "name": "Programmoption Knitterschutz"
       },
       "quiet_mode_status": {
         "name": "Status des Leisemodus"
@@ -2141,20 +2144,8 @@
       "delayendtime_hour": {
         "name": "Endzeitvorwahl Stunde"
       },
-      "freeze_max_temperature": {
-        "name": "Maximale Gefriertemperatur"
-      },
-      "freeze_min_temperature": {
-        "name": "Minimale Gefriertemperatur"
-      },
       "freeze_temperature": {
         "name": "Gefriertemperatur"
-      },
-      "gratin_from_below_functionset_time_in_seconds": {
-        "name": "Gratin von unten Zeiteinstellung"
-      },
-      "gratin_function_set_time_in_seconds": {
-        "name": "Gratin Zeiteinstellung"
       },
       "greasefiltersetlifetimeinhours": {
         "name": "Fettfilter-Lebensdauer"
@@ -2174,12 +2165,6 @@
       "programtimesstartdelayhours": {
         "name": "Startverz\u00f6gerung"
       },
-      "refrigerator_max_temperature": {
-        "name": "Maximale K\u00fchlschranktemperatur"
-      },
-      "refrigerator_min_temperature": {
-        "name": "Minimale K\u00fchlschranktemperatur"
-      },
       "refrigerator_temperature": {
         "name": "K\u00fchlschranktemperatur"
       },
@@ -2194,12 +2179,6 @@
       },
       "ts_c1_water": {
         "name": "Vorlauf-Solltemperatur"
-      },
-      "variation_max_temperature": {
-        "name": "Maximale Temperaturvariation"
-      },
-      "variation_min_temperature": {
-        "name": "Minimale Temperaturvariation"
       },
       "variation_temperature": {
         "name": "Temperaturvariation"
@@ -4746,6 +4725,12 @@
       },
       "global_timer_remaining_time_in_minutes": {
         "name": "Restzeit Haupttimer"
+      },
+      "gratin_from_below_functionset_time_in_seconds": {
+        "name": "Gratin von unten Zeiteinstellung"
+      },
+      "gratin_function_set_time_in_seconds": {
+        "name": "Gratin Zeiteinstellung"
       },
       "gratin_total_allowed_time_in_minutes": {
         "name": "Gratin erlaubte Gesamtzeit"
@@ -8736,9 +8721,6 @@
       "autodose": {
         "name": "Automatische Dosierung"
       },
-      "automatic_ice_making": {
-        "name": "Automatische Eisherstellung"
-      },
       "autotubclean": {
         "name": "Automatische Trommelreinigung"
       },
@@ -8850,9 +8832,6 @@
       "holiday_mode": {
         "name": "Urlaubsmodus"
       },
-      "ice_making_b_switch_status": {
-        "name": "Status der Eisherstellung B"
-      },
       "ice_making_state": {
         "name": "Status der Eisherstellung"
       },
@@ -8895,9 +8874,6 @@
       "prewash": {
         "name": "Vorw\u00e4sche"
       },
-      "programoptionanticrease": {
-        "name": "Programmoption Knitterschutz"
-      },
       "proximitysensorsetavalibility": {
         "name": "N\u00e4herungssensor verf\u00fcgbar"
       },
@@ -8933,9 +8909,6 @@
       },
       "sf_mode": {
         "name": "SuperFreeze"
-      },
-      "sf_sr_mutex_mode": {
-        "name": "SF-SR-Mutex-Modus"
       },
       "showmeasuredtemperature": {
         "name": "Gemessene Temperatur anzeigen"

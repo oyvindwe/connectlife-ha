@@ -1145,14 +1145,14 @@
       "ice_make_room_alarm": {
         "name": "IJsmachineruimte alarm"
       },
+      "ice_making_b_switch_status": {
+        "name": "IJsmaker B schakelaar status"
+      },
       "ice_making_machine_failure": {
         "name": "IJsmachine storing"
       },
       "ice_making_normal_status": {
         "name": "Normale ijsproductiestatus"
-      },
-      "ice_making_state": {
-        "name": "IJsproductiestatus"
       },
       "ice_making_stop_status": {
         "name": "IJsproductie gestopt"
@@ -1267,6 +1267,9 @@
       },
       "preheat": {
         "name": "Voorverwarmen"
+      },
+      "programoptionanticrease": {
+        "name": "Anti-kreuk"
       },
       "quiet_mode_status": {
         "name": "Stille modus status"
@@ -2141,20 +2144,8 @@
       "delayendtime_hour": {
         "name": "Einduitstel uur"
       },
-      "freeze_max_temperature": {
-        "name": "Vriezer max temperatuur"
-      },
-      "freeze_min_temperature": {
-        "name": "Vriezer min temperatuur"
-      },
       "freeze_temperature": {
         "name": "Vriezer temperatuur"
-      },
-      "gratin_from_below_functionset_time_in_seconds": {
-        "name": "Gratin van onderaf insteltijd"
-      },
-      "gratin_function_set_time_in_seconds": {
-        "name": "Gratin-instellingstijd"
       },
       "greasefiltersetlifetimeinhours": {
         "name": "Vetfilter levensduur"
@@ -2174,12 +2165,6 @@
       "programtimesstartdelayhours": {
         "name": "Startuitstel"
       },
-      "refrigerator_max_temperature": {
-        "name": "Koelkast max temperatuur"
-      },
-      "refrigerator_min_temperature": {
-        "name": "Koelkast min temperatuur"
-      },
       "refrigerator_temperature": {
         "name": "Koelkast temperatuur"
       },
@@ -2194,12 +2179,6 @@
       },
       "ts_c1_water": {
         "name": "Aanvoertemperatuur-setpoint"
-      },
-      "variation_max_temperature": {
-        "name": "Variatie max temperatuur"
-      },
-      "variation_min_temperature": {
-        "name": "Variatie min temperatuur"
       },
       "variation_temperature": {
         "name": "Variatie temperatuur"
@@ -4746,6 +4725,12 @@
       },
       "global_timer_remaining_time_in_minutes": {
         "name": "Resterende tijd hoofdtimer"
+      },
+      "gratin_from_below_functionset_time_in_seconds": {
+        "name": "Gratin van onderaf insteltijd"
+      },
+      "gratin_function_set_time_in_seconds": {
+        "name": "Gratin-instellingstijd"
       },
       "gratin_total_allowed_time_in_minutes": {
         "name": "Maximale gratineertijd"
@@ -8736,9 +8721,6 @@
       "autodose": {
         "name": "Automatisch doseren"
       },
-      "automatic_ice_making": {
-        "name": "Automatisch ijs maken"
-      },
       "autotubclean": {
         "name": "Automatisch trommel reinigen"
       },
@@ -8850,9 +8832,6 @@
       "holiday_mode": {
         "name": "Vakantiemodus"
       },
-      "ice_making_b_switch_status": {
-        "name": "IJsmaker B schakelaar status"
-      },
       "ice_making_state": {
         "name": "IJsmaker status"
       },
@@ -8895,9 +8874,6 @@
       "prewash": {
         "name": "Voorwas"
       },
-      "programoptionanticrease": {
-        "name": "Anti-kreuk"
-      },
       "proximitysensorsetavalibility": {
         "name": "Nabijheidssensor beschikbaar"
       },
@@ -8933,9 +8909,6 @@
       },
       "sf_mode": {
         "name": "Supervriezen"
-      },
-      "sf_sr_mutex_mode": {
-        "name": "SF SR mutex modus"
       },
       "showmeasuredtemperature": {
         "name": "Gemeten temperatuur weergeven"

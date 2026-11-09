@@ -1145,14 +1145,14 @@
       "ice_make_room_alarm": {
         "name": "Alarm for isproduksjonsrom"
       },
+      "ice_making_b_switch_status": {
+        "name": "Bryterstatus for isproduksjon B"
+      },
       "ice_making_machine_failure": {
         "name": "Feil p\u00e5 ismaskin"
       },
       "ice_making_normal_status": {
         "name": "Normalstatus for isproduksjon"
-      },
-      "ice_making_state": {
-        "name": "Tilstand for isproduksjon"
       },
       "ice_making_stop_status": {
         "name": "Stoppstatus for isproduksjon"
@@ -1267,6 +1267,9 @@
       },
       "preheat": {
         "name": "Forvarming"
+      },
+      "programoptionanticrease": {
+        "name": "Anti-kr\u00f8ll"
       },
       "quiet_mode_status": {
         "name": "Status for stillemodus"
@@ -2141,20 +2144,8 @@
       "delayendtime_hour": {
         "name": "Utsatt sluttid (time)"
       },
-      "freeze_max_temperature": {
-        "name": "Maks frysertemperatur"
-      },
-      "freeze_min_temperature": {
-        "name": "Min frysertemperatur"
-      },
       "freeze_temperature": {
         "name": "Frysertemperatur"
-      },
-      "gratin_from_below_functionset_time_in_seconds": {
-        "name": "Innstilt tid for gratinering nedenfra"
-      },
-      "gratin_function_set_time_in_seconds": {
-        "name": "Innstilt tid for gratineringsfunksjon"
       },
       "greasefiltersetlifetimeinhours": {
         "name": "Fettfilterlevetid"
@@ -2174,12 +2165,6 @@
       "programtimesstartdelayhours": {
         "name": "Utsatt start"
       },
-      "refrigerator_max_temperature": {
-        "name": "Maks kj\u00f8leskapstemperatur"
-      },
-      "refrigerator_min_temperature": {
-        "name": "Min kj\u00f8leskapstemperatur"
-      },
       "refrigerator_temperature": {
         "name": "Kj\u00f8leskapstemperatur"
       },
@@ -2194,12 +2179,6 @@
       },
       "ts_c1_water": {
         "name": "Settpunkt turtemperatur"
-      },
-      "variation_max_temperature": {
-        "name": "Maks variasjonstemperatur"
-      },
-      "variation_min_temperature": {
-        "name": "Min variasjonstemperatur"
       },
       "variation_temperature": {
         "name": "Variasjonstemperatur"
@@ -4746,6 +4725,12 @@
       },
       "global_timer_remaining_time_in_minutes": {
         "name": "Gjenst\u00e5ende tid for hovedtidsur"
+      },
+      "gratin_from_below_functionset_time_in_seconds": {
+        "name": "Innstilt tid for gratinering nedenfra"
+      },
+      "gratin_function_set_time_in_seconds": {
+        "name": "Innstilt tid for gratineringsfunksjon"
       },
       "gratin_total_allowed_time_in_minutes": {
         "name": "Total tillatt gratineringstid"
@@ -8736,9 +8721,6 @@
       "autodose": {
         "name": "Autodosering"
       },
-      "automatic_ice_making": {
-        "name": "Automatisk isproduksjon"
-      },
       "autotubclean": {
         "name": "Automatisk trommelrens"
       },
@@ -8850,9 +8832,6 @@
       "holiday_mode": {
         "name": "Feriemodus"
       },
-      "ice_making_b_switch_status": {
-        "name": "Bryterstatus for isproduksjon B"
-      },
       "ice_making_state": {
         "name": "Tilstand for isproduksjon"
       },
@@ -8895,9 +8874,6 @@
       "prewash": {
         "name": "Forvask"
       },
-      "programoptionanticrease": {
-        "name": "Anti-kr\u00f8ll"
-      },
       "proximitysensorsetavalibility": {
         "name": "N\u00e6rhetssensor tilgjengelig"
       },
@@ -8933,9 +8909,6 @@
       },
       "sf_mode": {
         "name": "Super freeze"
-      },
-      "sf_sr_mutex_mode": {
-        "name": "SF/SR-mutex-modus"
       },
       "showmeasuredtemperature": {
         "name": "Vis m\u00e5lt temperatur"
