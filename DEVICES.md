@@ -127,9 +127,9 @@ have a feature-specific mapping file.
 | WFSE9014-LVW002            | Washing machine          | 025              | [1wj090729v0w](custom_components/connectlife/mappings/025-1wj090729v0w.yaml)                               |
 | WF5I9043BBFS               | Washing machine          | 025              | [1wj090849v0f](custom_components/connectlife/mappings/025-1wj090849v0f.yaml)                               |
 | WD3S9043BW3                | Washing machine          | 025              | [1wj090908v0w](custom_components/connectlife/mappings/025-1wj090908v0w.yaml)                               |
-| WD3S9043BW3                | Washing machine          | 025              | [1wj090932v0w](custom_components/connectlife/mappings/025-1wj090932v0w.yaml)                               |
 | WD3S9043BB3                | Washing machine          | 025              | [1wj090913v0f](custom_components/connectlife/mappings/025-1wj090913v0f.yaml)                               |
 | WD3S9043BW3                | Washing machine          | 025              | [1wj090916v0w](custom_components/connectlife/mappings/025-1wj090916v0w.yaml)                               |
+| WD3S9043BW3                | Washing machine          | 025              | [1wj090932v0w](custom_components/connectlife/mappings/025-1wj090932v0w.yaml)                               |
 | WF3S1014-SVW002            | Washing machine          | 025              | [1wj100404v0w](custom_components/connectlife/mappings/025-1wj100404v0w.yaml)                               |
 | WFQR1014                   | Washing machine          | 025              | [1wj100649v0t](custom_components/connectlife/mappings/025-1wj100649v0t.yaml)                               |
 | WF3S1043BW3                | Washing machine          | 025              | [1wj100722v0w](custom_components/connectlife/mappings/025-1wj100722v0w.yaml)                               |
