@@ -1121,9 +1121,6 @@
       "grill_plate_status": {
         "name": "Status for grillplate"
       },
-      "hard_pairing_status": {
-        "name": "Status for hard paring"
-      },
       "hardpairingstatus": {
         "name": "Status for hard paring"
       },

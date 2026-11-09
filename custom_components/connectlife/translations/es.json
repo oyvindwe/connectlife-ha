@@ -1121,9 +1121,6 @@
       "grill_plate_status": {
         "name": "Estado de la placa del grill"
       },
-      "hard_pairing_status": {
-        "name": "Estado de emparejamiento dif\u00edcil"
-      },
       "hardpairingstatus": {
         "name": "Estado de emparejamiento dif\u00edcil"
       },
