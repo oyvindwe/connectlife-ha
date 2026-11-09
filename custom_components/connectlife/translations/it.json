@@ -1268,6 +1268,9 @@
       "preheat": {
         "name": "Preriscaldamento"
       },
+      "programoptionanticrease": {
+        "name": "Antipiega"
+      },
       "quiet_mode_status": {
         "name": "Stato modalit\u00e0 silenziosa"
       },
@@ -2143,12 +2146,6 @@
       },
       "freeze_temperature": {
         "name": "Temperatura congelatore"
-      },
-      "gratin_from_below_functionset_time_in_seconds": {
-        "name": "Tempo impostato funzione gratin dal basso"
-      },
-      "gratin_function_set_time_in_seconds": {
-        "name": "Tempo impostato funzione gratin"
       },
       "greasefiltersetlifetimeinhours": {
         "name": "Durata filtro antigrasso"
@@ -4728,6 +4725,12 @@
       },
       "global_timer_remaining_time_in_minutes": {
         "name": "Tempo residuo del timer generale"
+      },
+      "gratin_from_below_functionset_time_in_seconds": {
+        "name": "Tempo impostato funzione gratin dal basso"
+      },
+      "gratin_function_set_time_in_seconds": {
+        "name": "Tempo impostato funzione gratin"
       },
       "gratin_total_allowed_time_in_minutes": {
         "name": "Tempo totale consentito gratin"
@@ -8870,9 +8873,6 @@
       },
       "prewash": {
         "name": "Prelavaggio"
-      },
-      "programoptionanticrease": {
-        "name": "Antipiega"
       },
       "proximitysensorsetavalibility": {
         "name": "Sensore di prossimit\u00e0 disponibile"
