@@ -1,25 +1,22 @@
 # Washing machine WF3S1043BW3
 properties:
 - property: Current_program_phase
+  # Phases as in this feature code's ConnectLife property list.
   sensor:
     device_class: enum
     options:
       0: not_available
-      1: program_not_selected
-      2: program_selected
-      3: delay_start_waiting
-      4: preheat
-      5: preheat_finished
-      6: prewash
-      7: wash
+      1: weigh
+      2: prewash
+      3: wash
+      4: rinsing
+      5: softening
+      6: anti_crease
+      7: spinning
       8: drying
-      9: finished
-      10: ventilating
-      11: idle
-      12: running
-      13: anti_crease
-      14: delay
-      15: finished
+      9: ventilating
+      10: finished
+      11: delay
 - property: Selected_program_ID
   sensor:
     read_only: true
