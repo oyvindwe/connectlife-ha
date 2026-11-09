@@ -1268,6 +1268,9 @@
       "preheat": {
         "name": "Forvarming"
       },
+      "programoptionanticrease": {
+        "name": "Anti-kr\u00f8ll"
+      },
       "quiet_mode_status": {
         "name": "Status for stillemodus"
       },
@@ -2143,12 +2146,6 @@
       },
       "freeze_temperature": {
         "name": "Frysertemperatur"
-      },
-      "gratin_from_below_functionset_time_in_seconds": {
-        "name": "Innstilt tid for gratinering nedenfra"
-      },
-      "gratin_function_set_time_in_seconds": {
-        "name": "Innstilt tid for gratineringsfunksjon"
       },
       "greasefiltersetlifetimeinhours": {
         "name": "Fettfilterlevetid"
@@ -4728,6 +4725,12 @@
       },
       "global_timer_remaining_time_in_minutes": {
         "name": "Gjenst\u00e5ende tid for hovedtidsur"
+      },
+      "gratin_from_below_functionset_time_in_seconds": {
+        "name": "Innstilt tid for gratinering nedenfra"
+      },
+      "gratin_function_set_time_in_seconds": {
+        "name": "Innstilt tid for gratineringsfunksjon"
       },
       "gratin_total_allowed_time_in_minutes": {
         "name": "Total tillatt gratineringstid"
@@ -8870,9 +8873,6 @@
       },
       "prewash": {
         "name": "Forvask"
-      },
-      "programoptionanticrease": {
-        "name": "Anti-kr\u00f8ll"
       },
       "proximitysensorsetavalibility": {
         "name": "N\u00e6rhetssensor tilgjengelig"
