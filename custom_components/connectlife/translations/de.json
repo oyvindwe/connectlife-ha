@@ -5913,10 +5913,10 @@
         "name": "Intensivsp\u00fclen des gew\u00e4hlten Programms"
       },
       "selected_program_total_running_time": {
-        "name": "Programmdauer Gesamt"
+        "name": "Programmlaufzeit Gesamt"
       },
       "selected_program_total_running_time_in_minutes": {
-        "name": "Programmdauer Gesamt"
+        "name": "Programmlaufzeit Gesamt"
       },
       "selected_program_total_time": {
         "name": "Programmdauer Gesamt"
