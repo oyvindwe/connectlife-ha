@@ -1145,14 +1145,14 @@
       "ice_make_room_alarm": {
         "name": "Alarme compartiment glace"
       },
+      "ice_making_b_switch_status": {
+        "name": "Interrupteur glace B"
+      },
       "ice_making_machine_failure": {
         "name": "D\u00e9faut machine \u00e0 glace"
       },
       "ice_making_normal_status": {
         "name": "Glace - \u00e9tat normal"
-      },
-      "ice_making_state": {
-        "name": "\u00c9tat production de glace"
       },
       "ice_making_stop_status": {
         "name": "Glace - arr\u00eat"
@@ -2141,12 +2141,6 @@
       "delayendtime_hour": {
         "name": "Heure de fin diff\u00e9r\u00e9e"
       },
-      "freeze_max_temperature": {
-        "name": "Temp\u00e9rature max cong\u00e9lateur"
-      },
-      "freeze_min_temperature": {
-        "name": "Temp\u00e9rature min cong\u00e9lateur"
-      },
       "freeze_temperature": {
         "name": "Temp\u00e9rature cong\u00e9lateur"
       },
@@ -2174,12 +2168,6 @@
       "programtimesstartdelayhours": {
         "name": "D\u00e9part diff\u00e9r\u00e9"
       },
-      "refrigerator_max_temperature": {
-        "name": "Temp\u00e9rature max frigo"
-      },
-      "refrigerator_min_temperature": {
-        "name": "Temp\u00e9rature min frigo"
-      },
       "refrigerator_temperature": {
         "name": "Temp\u00e9rature frigo"
       },
@@ -2194,12 +2182,6 @@
       },
       "ts_c1_water": {
         "name": "Consigne de temp\u00e9rature de d\u00e9part"
-      },
-      "variation_max_temperature": {
-        "name": "Temp\u00e9rature max zone variable"
-      },
-      "variation_min_temperature": {
-        "name": "Temp\u00e9rature min zone variable"
       },
       "variation_temperature": {
         "name": "Temp\u00e9rature zone variable"
@@ -8736,9 +8718,6 @@
       "autodose": {
         "name": "Dosage automatique"
       },
-      "automatic_ice_making": {
-        "name": "Production automatique de glace"
-      },
       "autotubclean": {
         "name": "Nettoyage automatique tambour"
       },
@@ -8850,9 +8829,6 @@
       "holiday_mode": {
         "name": "Mode vacances"
       },
-      "ice_making_b_switch_status": {
-        "name": "Interrupteur glace B"
-      },
       "ice_making_state": {
         "name": "Production de glace"
       },
@@ -8933,9 +8909,6 @@
       },
       "sf_mode": {
         "name": "Super-cong\u00e9lation"
-      },
-      "sf_sr_mutex_mode": {
-        "name": "Exclusion mutuelle Super-cong./Super-refr."
       },
       "showmeasuredtemperature": {
         "name": "Afficher la temp\u00e9rature mesur\u00e9e"

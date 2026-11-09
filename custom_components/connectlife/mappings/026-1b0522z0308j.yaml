@@ -9,12 +9,6 @@ properties:
       options:
         0: false
         1: true
-  - property: ice_making_state
-    entity_category: config
-    switch:
-      device_class: switch
-      command:
-        name: SET_ICE_SWITCH
   # Writes are rejected on this model.
   - property: ice_making_b_switch_status
     disable: true

@@ -1145,14 +1145,14 @@
       "ice_make_room_alarm": {
         "name": "Allarme vano produzione ghiaccio"
       },
+      "ice_making_b_switch_status": {
+        "name": "Stato interruttore produzione ghiaccio B"
+      },
       "ice_making_machine_failure": {
         "name": "Guasto del produttore di ghiaccio"
       },
       "ice_making_normal_status": {
         "name": "Stato normale produzione ghiaccio"
-      },
-      "ice_making_state": {
-        "name": "Stato produzione ghiaccio"
       },
       "ice_making_stop_status": {
         "name": "Stato arresto produzione ghiaccio"
@@ -2141,12 +2141,6 @@
       "delayendtime_hour": {
         "name": "Ora fine ritardo"
       },
-      "freeze_max_temperature": {
-        "name": "Temperatura massima congelatore"
-      },
-      "freeze_min_temperature": {
-        "name": "Temperatura minima congelatore"
-      },
       "freeze_temperature": {
         "name": "Temperatura congelatore"
       },
@@ -2174,12 +2168,6 @@
       "programtimesstartdelayhours": {
         "name": "Ritardo avvio"
       },
-      "refrigerator_max_temperature": {
-        "name": "Temperatura massima frigorifero"
-      },
-      "refrigerator_min_temperature": {
-        "name": "Temperatura minima frigorifero"
-      },
       "refrigerator_temperature": {
         "name": "Temperatura frigorifero"
       },
@@ -2194,12 +2182,6 @@
       },
       "ts_c1_water": {
         "name": "Setpoint temperatura di mandata"
-      },
-      "variation_max_temperature": {
-        "name": "Temperatura massima scomparto variabile"
-      },
-      "variation_min_temperature": {
-        "name": "Temperatura minima scomparto variabile"
       },
       "variation_temperature": {
         "name": "Variazione temperatura"
@@ -8736,9 +8718,6 @@
       "autodose": {
         "name": "Dosaggio automatico"
       },
-      "automatic_ice_making": {
-        "name": "Produzione automatica ghiaccio"
-      },
       "autotubclean": {
         "name": "Pulizia cestello automatica"
       },
@@ -8850,9 +8829,6 @@
       "holiday_mode": {
         "name": "Modalit\u00e0 vacanza"
       },
-      "ice_making_b_switch_status": {
-        "name": "Stato interruttore produzione ghiaccio B"
-      },
       "ice_making_state": {
         "name": "Stato produzione ghiaccio"
       },
@@ -8933,9 +8909,6 @@
       },
       "sf_mode": {
         "name": "Super freeze"
-      },
-      "sf_sr_mutex_mode": {
-        "name": "Modalit\u00e0 mutex SF SR"
       },
       "showmeasuredtemperature": {
         "name": "Mostra temperatura misurata"
