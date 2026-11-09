@@ -1145,6 +1145,9 @@
       "ice_make_room_alarm": {
         "name": "Ice maker room alarm"
       },
+      "ice_making_b_switch_status": {
+        "name": "Ice making B switch status"
+      },
       "ice_making_machine_failure": {
         "name": "Ice making machine failure"
       },
@@ -2141,12 +2144,6 @@
       "delayendtime_hour": {
         "name": "Delay end time hour"
       },
-      "freeze_max_temperature": {
-        "name": "Freezer max temperature"
-      },
-      "freeze_min_temperature": {
-        "name": "Freezer min temperature"
-      },
       "freeze_temperature": {
         "name": "Freezer temperature"
       },
@@ -2174,12 +2171,6 @@
       "programtimesstartdelayhours": {
         "name": "Start delay"
       },
-      "refrigerator_max_temperature": {
-        "name": "Refrigerator max temperature"
-      },
-      "refrigerator_min_temperature": {
-        "name": "Refrigerator min temperature"
-      },
       "refrigerator_temperature": {
         "name": "Refrigerator temperature"
       },
@@ -2194,12 +2185,6 @@
       },
       "ts_c1_water": {
         "name": "Outlet temperature setpoint"
-      },
-      "variation_max_temperature": {
-        "name": "Variation max temperature"
-      },
-      "variation_min_temperature": {
-        "name": "Variation min temperature"
       },
       "variation_temperature": {
         "name": "Variation temperature"
@@ -8736,9 +8721,6 @@
       "autodose": {
         "name": "Auto-dose"
       },
-      "automatic_ice_making": {
-        "name": "Automatic ice making"
-      },
       "autotubclean": {
         "name": "Auto tub clean"
       },
@@ -8850,9 +8832,6 @@
       "holiday_mode": {
         "name": "Holiday mode"
       },
-      "ice_making_b_switch_status": {
-        "name": "Ice making B switch status"
-      },
       "ice_making_state": {
         "name": "Ice making state"
       },
@@ -8933,9 +8912,6 @@
       },
       "sf_mode": {
         "name": "Super freeze"
-      },
-      "sf_sr_mutex_mode": {
-        "name": "SF SR mutex mode"
       },
       "showmeasuredtemperature": {
         "name": "Show measured temperature"

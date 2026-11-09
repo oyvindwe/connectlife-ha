@@ -1145,6 +1145,9 @@
       "ice_make_room_alarm": {
         "name": "Alarm for isproduksjonsrom"
       },
+      "ice_making_b_switch_status": {
+        "name": "Bryterstatus for isproduksjon B"
+      },
       "ice_making_machine_failure": {
         "name": "Feil p\u00e5 ismaskin"
       },
@@ -2141,12 +2144,6 @@
       "delayendtime_hour": {
         "name": "Utsatt sluttid (time)"
       },
-      "freeze_max_temperature": {
-        "name": "Maks frysertemperatur"
-      },
-      "freeze_min_temperature": {
-        "name": "Min frysertemperatur"
-      },
       "freeze_temperature": {
         "name": "Frysertemperatur"
       },
@@ -2174,12 +2171,6 @@
       "programtimesstartdelayhours": {
         "name": "Utsatt start"
       },
-      "refrigerator_max_temperature": {
-        "name": "Maks kj\u00f8leskapstemperatur"
-      },
-      "refrigerator_min_temperature": {
-        "name": "Min kj\u00f8leskapstemperatur"
-      },
       "refrigerator_temperature": {
         "name": "Kj\u00f8leskapstemperatur"
       },
@@ -2194,12 +2185,6 @@
       },
       "ts_c1_water": {
         "name": "Settpunkt turtemperatur"
-      },
-      "variation_max_temperature": {
-        "name": "Maks variasjonstemperatur"
-      },
-      "variation_min_temperature": {
-        "name": "Min variasjonstemperatur"
       },
       "variation_temperature": {
         "name": "Variasjonstemperatur"
@@ -8736,9 +8721,6 @@
       "autodose": {
         "name": "Autodosering"
       },
-      "automatic_ice_making": {
-        "name": "Automatisk isproduksjon"
-      },
       "autotubclean": {
         "name": "Automatisk trommelrens"
       },
@@ -8850,9 +8832,6 @@
       "holiday_mode": {
         "name": "Feriemodus"
       },
-      "ice_making_b_switch_status": {
-        "name": "Bryterstatus for isproduksjon B"
-      },
       "ice_making_state": {
         "name": "Tilstand for isproduksjon"
       },
@@ -8933,9 +8912,6 @@
       },
       "sf_mode": {
         "name": "Super freeze"
-      },
-      "sf_sr_mutex_mode": {
-        "name": "SF/SR-mutex-modus"
       },
       "showmeasuredtemperature": {
         "name": "Vis m\u00e5lt temperatur"

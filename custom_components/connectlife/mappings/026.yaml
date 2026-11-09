@@ -33,8 +33,12 @@ properties:
         0: false
         1: true
   - property: automatic_ice_making
-    entity_category: config
-    switch: {}
+    # Read-only; models that control the ice maker use ice_making_state with SET_ICE_SWITCH.
+    entity_category: diagnostic
+    binary_sensor:
+      options:
+        0: false
+        1: true
   - property: camera_state
     optional: true
   - property: charcoal_filter_expiration_alarm
@@ -420,7 +424,9 @@ properties:
       state_class: measurement
   - property: holiday_mode
     entity_category: config
-    switch: {}
+    switch:
+      command:
+        name: SET_HOLIDAY_MODE
   - property: human_on_off_status
     optional: true
   - property: human_sense_light_status
@@ -457,8 +463,12 @@ properties:
   - property: ice_maker_wash_state
     optional: true
   - property: ice_making_b_switch_status
-    entity_category: config
-    switch: {}
+    # Read-only (writes are rejected on 026-1b0522z0308j).
+    entity_category: diagnostic
+    binary_sensor:
+      options:
+        0: false
+        1: true
   - property: ice_making_fast_status
     optional: true
   - property: ice_making_full_status
@@ -1096,6 +1106,8 @@ properties:
       options:
         0: celsius
         1: fahrenheit
+      command:
+        name: SET_TEMPERATURE_UNIT
   - property: thaw_control_switch_status
     optional: true
   - property: thaw_finished_alarm
@@ -1266,6 +1278,8 @@ properties:
     number:
       device_class: temperature
       unit: °C
+      command:
+        name: SET_VARIATION_TEMPERATURE
   - property: vibration_alarm
     optional: true
     entity_category: diagnostic

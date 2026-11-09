@@ -1145,6 +1145,9 @@
       "ice_make_room_alarm": {
         "name": "Eisbereiter-Raumalarm"
       },
+      "ice_making_b_switch_status": {
+        "name": "Status der Eisherstellung B"
+      },
       "ice_making_machine_failure": {
         "name": "Fehler der Eisherstellungsmaschine"
       },
@@ -2141,12 +2144,6 @@
       "delayendtime_hour": {
         "name": "Endzeitvorwahl Stunde"
       },
-      "freeze_max_temperature": {
-        "name": "Maximale Gefriertemperatur"
-      },
-      "freeze_min_temperature": {
-        "name": "Minimale Gefriertemperatur"
-      },
       "freeze_temperature": {
         "name": "Gefriertemperatur"
       },
@@ -2174,12 +2171,6 @@
       "programtimesstartdelayhours": {
         "name": "Startverz\u00f6gerung"
       },
-      "refrigerator_max_temperature": {
-        "name": "Maximale K\u00fchlschranktemperatur"
-      },
-      "refrigerator_min_temperature": {
-        "name": "Minimale K\u00fchlschranktemperatur"
-      },
       "refrigerator_temperature": {
         "name": "K\u00fchlschranktemperatur"
       },
@@ -2194,12 +2185,6 @@
       },
       "ts_c1_water": {
         "name": "Vorlauf-Solltemperatur"
-      },
-      "variation_max_temperature": {
-        "name": "Maximale Temperaturvariation"
-      },
-      "variation_min_temperature": {
-        "name": "Minimale Temperaturvariation"
       },
       "variation_temperature": {
         "name": "Temperaturvariation"
@@ -8736,9 +8721,6 @@
       "autodose": {
         "name": "Automatische Dosierung"
       },
-      "automatic_ice_making": {
-        "name": "Automatische Eisherstellung"
-      },
       "autotubclean": {
         "name": "Automatische Trommelreinigung"
       },
@@ -8850,9 +8832,6 @@
       "holiday_mode": {
         "name": "Urlaubsmodus"
       },
-      "ice_making_b_switch_status": {
-        "name": "Status der Eisherstellung B"
-      },
       "ice_making_state": {
         "name": "Status der Eisherstellung"
       },
@@ -8933,9 +8912,6 @@
       },
       "sf_mode": {
         "name": "SuperFreeze"
-      },
-      "sf_sr_mutex_mode": {
-        "name": "SF-SR-Mutex-Modus"
       },
       "showmeasuredtemperature": {
         "name": "Gemessene Temperatur anzeigen"
