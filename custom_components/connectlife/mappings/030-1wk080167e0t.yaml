@@ -14,3 +14,26 @@ properties:
         4: anti_crease
         5: finished
       read_only: true
+  - property: Clean_Filter
+    # ConnectLife's self-check table for this dryer (diagnostics) lists Clean_Filter = 1
+    # as the "filter status" fault. The binary-sensor default reads 1 as off, so the
+    # alert could never show.
+    binary_sensor:
+      device_class: problem
+      options:
+        0: off
+        1: on
+        2: on
+  - property: Waterbox_Full
+    # The same table lists Waterbox_Full = 1 as the "water container" fault.
+    binary_sensor:
+      options:
+        0: off
+        1: on
+        2: on
+  - property: energy
+    # Follows the selected program, not the energy used (as on 030-1wk080066v0w).
+    hide: true
+  - property: Selected_program_total_running_time_in_minutes
+    # Same value as Selected_program_total_time_in_minutes.
+    hide: true
