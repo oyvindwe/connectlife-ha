@@ -1268,9 +1268,6 @@
       "preheat": {
         "name": "Predgrevanje"
       },
-      "programoptionanticrease": {
-        "name": "Protiv gu\u017evanja"
-      },
       "quiet_mode_status": {
         "name": "Status tihog re\u017eima"
       },
@@ -2146,6 +2143,12 @@
       },
       "freeze_temperature": {
         "name": "Temperatura zamrziva\u010da"
+      },
+      "gratin_from_below_functionset_time_in_seconds": {
+        "name": "Vreme pode\u0161avanja funkcije gratiniranja odozdo"
+      },
+      "gratin_function_set_time_in_seconds": {
+        "name": "Vreme pode\u0161avanja funkcije gratiniranja"
       },
       "greasefiltersetlifetimeinhours": {
         "name": "Vek trajanja filtera za masno\u0107u"
@@ -4725,12 +4728,6 @@
       },
       "global_timer_remaining_time_in_minutes": {
         "name": "Preostalo vreme glavnog tajmera"
-      },
-      "gratin_from_below_functionset_time_in_seconds": {
-        "name": "Vreme pode\u0161avanja funkcije gratiniranja odozdo"
-      },
-      "gratin_function_set_time_in_seconds": {
-        "name": "Vreme pode\u0161avanja funkcije gratiniranja"
       },
       "gratin_total_allowed_time_in_minutes": {
         "name": "Gratin \u2013 ukupno dozvoljeno vreme"
@@ -8873,6 +8870,9 @@
       },
       "prewash": {
         "name": "Predpranje"
+      },
+      "programoptionanticrease": {
+        "name": "Protiv gu\u017evanja"
       },
       "proximitysensorsetavalibility": {
         "name": "Dostupnost senzora blizine"

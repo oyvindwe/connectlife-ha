@@ -1268,9 +1268,6 @@
       "preheat": {
         "name": "P\u0159edeh\u0159ev"
       },
-      "programoptionanticrease": {
-        "name": "Proti zma\u010dk\u00e1n\u00ed"
-      },
       "quiet_mode_status": {
         "name": "Stav tich\u00e9ho re\u017eimu"
       },
@@ -2146,6 +2143,12 @@
       },
       "freeze_temperature": {
         "name": "Teplota mrazni\u010dky"
+      },
+      "gratin_from_below_functionset_time_in_seconds": {
+        "name": "Doba nastaven\u00ed funkce gratinov\u00e1n\u00ed zespodu"
+      },
+      "gratin_function_set_time_in_seconds": {
+        "name": "Doba nastaven\u00ed funkce gratinov\u00e1n\u00ed"
       },
       "greasefiltersetlifetimeinhours": {
         "name": "\u017divotnost tukov\u00e9ho filtru"
@@ -4725,12 +4728,6 @@
       },
       "global_timer_remaining_time_in_minutes": {
         "name": "Zb\u00fdvaj\u00edc\u00ed \u010das hlavn\u00edho \u010dasova\u010de"
-      },
-      "gratin_from_below_functionset_time_in_seconds": {
-        "name": "Doba nastaven\u00ed funkce gratinov\u00e1n\u00ed zespodu"
-      },
-      "gratin_function_set_time_in_seconds": {
-        "name": "Doba nastaven\u00ed funkce gratinov\u00e1n\u00ed"
       },
       "gratin_total_allowed_time_in_minutes": {
         "name": "Celkov\u00fd povolen\u00fd \u010das gratinov\u00e1n\u00ed"
@@ -8873,6 +8870,9 @@
       },
       "prewash": {
         "name": "P\u0159edp\u00edrka"
+      },
+      "programoptionanticrease": {
+        "name": "Proti zma\u010dk\u00e1n\u00ed"
       },
       "proximitysensorsetavalibility": {
         "name": "P\u0159ibli\u017eovac\u00ed senzor dostupn\u00fd"

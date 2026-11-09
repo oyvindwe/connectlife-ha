@@ -1268,9 +1268,6 @@
       "preheat": {
         "name": "Vorheizen"
       },
-      "programoptionanticrease": {
-        "name": "Programmoption Anti-Knitter"
-      },
       "quiet_mode_status": {
         "name": "Status des Leisemodus"
       },
@@ -2146,6 +2143,12 @@
       },
       "freeze_temperature": {
         "name": "Gefriertemperatur"
+      },
+      "gratin_from_below_functionset_time_in_seconds": {
+        "name": "Gratin von unten Zeiteinstellung"
+      },
+      "gratin_function_set_time_in_seconds": {
+        "name": "Gratin Zeiteinstellung"
       },
       "greasefiltersetlifetimeinhours": {
         "name": "Fettfilter-Lebensdauer"
@@ -4725,12 +4728,6 @@
       },
       "global_timer_remaining_time_in_minutes": {
         "name": "Restzeit Haupttimer"
-      },
-      "gratin_from_below_functionset_time_in_seconds": {
-        "name": "Gratin von unten Zeiteinstellung"
-      },
-      "gratin_function_set_time_in_seconds": {
-        "name": "Gratin Zeiteinstellung"
       },
       "gratin_total_allowed_time_in_minutes": {
         "name": "Gratin erlaubte Gesamtzeit"
@@ -8873,6 +8870,9 @@
       },
       "prewash": {
         "name": "Vorw\u00e4sche"
+      },
+      "programoptionanticrease": {
+        "name": "Programmoption Anti-Knitter"
       },
       "proximitysensorsetavalibility": {
         "name": "N\u00e4herungssensor verf\u00fcgbar"

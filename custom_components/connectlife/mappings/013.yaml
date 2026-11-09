@@ -700,8 +700,7 @@ properties:
   binary_sensor: {}
 - property: Gratin_from_below_functionSet_time_in_seconds
   optional: true
-  sensor:
-    read_only: true
+  number:
     device_class: duration
     unit: s
 - property: Gratin_from_below_function_allowed
@@ -714,8 +713,7 @@ properties:
   binary_sensor: {}
 - property: Gratin_function_Set_time_in_seconds
   optional: true
-  sensor:
-    read_only: true
+  number:
     device_class: duration
     unit: s
 - property: Gratin_status
