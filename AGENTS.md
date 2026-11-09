@@ -113,13 +113,18 @@ Mappings are data, validated by `validate_mappings` (schema) and PR review — d
 
 - Check every new or changed mapping against the ConnectLife property list of its feature code: read-only (`R`)
   properties must not get a writable platform (switch, select, number, writable climate target) unless a separate
-  `command` property is written, and option values and limits should match `propertyValueList`, `lowerLimit` and
-  `upperLimit`.
+  `command` property is written (look for one in the list: e.g. `SET_…` on refrigerators, `…_setting` next to
+  `…_setting_status` on dishwashers), and option values and limits should match `propertyValueList`, `lowerLimit`
+  and `upperLimit`. `uv run python -m scripts.check_property_list <diagnostics.json>` reports both
+  (`--feature <type>-<feature>` for a list from `connectlife.dump`).
 - The list is in the diagnostics (`property_list`). If no diagnostics are attached, or they're from before 0.49.0,
   fetch it: it's keyed by type and feature code only, so any account works
   (`python -m connectlife.dump --query property-list --device-type-code <t> --device-feature-code <f>`).
 - When the list and observed device data disagree (e.g. a value the device reports that isn't in the list), trust the
   device and note it in a comment in the mapping.
+- The lists aren't perfect: they can have typos, miss values the device reports, and use inconsistent formats
+  (full-width punctuation, notes in Chinese, e.g. that values from 5 up are a drying time). Check each finding
+  against the device instead of following the list blindly.
 
 ## Versioning
 
