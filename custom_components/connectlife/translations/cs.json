@@ -1121,9 +1121,6 @@
       "grill_plate_status": {
         "name": "Stav grilovac\u00ed desky"
       },
-      "hard_pairing_status": {
-        "name": "Stav pevn\u00e9ho p\u00e1rov\u00e1n\u00ed"
-      },
       "hardpairingstatus": {
         "name": "Stav pevn\u00e9ho p\u00e1rov\u00e1n\u00ed"
       },

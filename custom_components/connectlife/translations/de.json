@@ -1121,9 +1121,6 @@
       "grill_plate_status": {
         "name": "Grillplattenstatus"
       },
-      "hard_pairing_status": {
-        "name": "Status der festen Kopplung"
-      },
       "hardpairingstatus": {
         "name": "Status der festen Kopplung"
       },

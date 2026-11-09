@@ -1121,9 +1121,6 @@
       "grill_plate_status": {
         "name": "Grill plate status"
       },
-      "hard_pairing_status": {
-        "name": "Hard pairing status"
-      },
       "hardpairingstatus": {
         "name": "Hard pairing status"
       },

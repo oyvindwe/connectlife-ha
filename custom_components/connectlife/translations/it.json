@@ -1121,9 +1121,6 @@
       "grill_plate_status": {
         "name": "Stato piastra grill"
       },
-      "hard_pairing_status": {
-        "name": "Stato accoppiamento fisico"
-      },
       "hardpairingstatus": {
         "name": "Stato accoppiamento fisico"
       },

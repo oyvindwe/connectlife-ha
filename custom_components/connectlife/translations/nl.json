@@ -1121,9 +1121,6 @@
       "grill_plate_status": {
         "name": "Grillplaatstatus"
       },
-      "hard_pairing_status": {
-        "name": "Harde koppelingsstatus"
-      },
       "hardpairingstatus": {
         "name": "Harde koppeling status"
       },
@@ -4775,7 +4772,7 @@
         "name": "Opdracht harde koppeling"
       },
       "hard_pairing_status": {
-        "name": "Harde koppeling status"
+        "name": "Harde koppelingsstatus"
       },
       "hardpairingstatus": {
         "name": "Harde koppeling status",
