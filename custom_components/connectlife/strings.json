@@ -2222,7 +2222,6 @@
           "add_gratin": "Add gratin",
           "cancel": "Cancel",
           "direct_steam": "Direct steam",
-          "none": "None",
           "pause": "Pause",
           "production_test": "Production test",
           "program_continue": "Program continue",
@@ -3119,9 +3118,6 @@
       }
     },
     "sensor": {
-      "actions": {
-        "name": "Actions"
-      },
       "activemodelightbrightness": {
         "name": "Active mode light brightness"
       },

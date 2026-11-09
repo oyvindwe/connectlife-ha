@@ -2222,7 +2222,6 @@
           "add_gratin": "A\u00f1adir gratinado",
           "cancel": "Cancelar",
           "direct_steam": "Vapor directo",
-          "none": "No centrifugar",
           "pause": "Pausa",
           "production_test": "Prueba de producci\u00f3n",
           "program_continue": "Continuar programa",
@@ -3119,9 +3118,6 @@
       }
     },
     "sensor": {
-      "actions": {
-        "name": "Acciones"
-      },
       "activemodelightbrightness": {
         "name": "Brillo de la luz en modo activo"
       },
