@@ -325,12 +325,18 @@ properties:
   - property: freeze_fan_speed
     optional: true
   - property: freeze_max_temperature
+    # Setpoint limit reported by the fridge; fixed per model.
+    hide: true
+    entity_category: diagnostic
     sensor:
       read_only: true
       device_class: temperature
       unit: °C
       state_class: measurement
   - property: freeze_min_temperature
+    # Setpoint limit reported by the fridge; fixed per model.
+    hide: true
+    entity_category: diagnostic
     sensor:
       read_only: true
       device_class: temperature
@@ -874,12 +880,18 @@ properties:
   - property: refrigerator_key
     optional: true
   - property: refrigerator_max_temperature
+    # Setpoint limit reported by the fridge; fixed per model.
+    hide: true
+    entity_category: diagnostic
     sensor:
       read_only: true
       device_class: temperature
       unit: °C
       state_class: measurement
   - property: refrigerator_min_temperature
+    # Setpoint limit reported by the fridge; fixed per model.
+    hide: true
+    entity_category: diagnostic
     sensor:
       read_only: true
       device_class: temperature
@@ -1243,6 +1255,8 @@ properties:
       device_class: duration
       unit: s
   - property: variation_max_temperature
+    # Setpoint limit reported by the fridge; fixed per model.
+    hide: true
     entity_category: diagnostic
     sensor:
       read_only: true
@@ -1250,6 +1264,8 @@ properties:
       unit: °C
       state_class: measurement
   - property: variation_min_temperature
+    # Setpoint limit reported by the fridge; fixed per model.
+    hide: true
     entity_category: diagnostic
     sensor:
       read_only: true
