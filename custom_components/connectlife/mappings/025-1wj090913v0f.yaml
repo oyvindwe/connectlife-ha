@@ -1,7 +1,9 @@
 # Freestanding washing-drying machine WD3S9043BB3 (WD3S9014-SVW003, 025-1wj090913v0f)
+# Same internal model as the WD3S9043BW3 (025-1wj090908v0w): the ConnectLife property lists of both feature codes are
+# identical, so this uses the same mapping, which was verified against the ConnectLife app (2026-10-29).
 properties:
 - property: ApplicationPermissions
-  # 1 = not granted (No remote control allowed), 3 = granted (Remote control allowed) ?
+  # Device property list: 0 none, 1 monitoring, 2 monitoring & set commands, 3 monitoring & set commands & actions
   hide: false
   sensor:
     read_only: true
@@ -9,13 +11,14 @@ properties:
     options:
       1: "not_granted"
       3: "granted"
+
 - property: Child_lock
-  # 1 = active, 0 = inactive
   switch:
     device_class: switch
 
 - property: Current_program_phase
-  # Machine falls back to the first option from the selected program after machine is completed. Usually option 3 for washing program. 7 for spin-dry only program. 8 for drying only program. Dont know why.
+  # Device property list: 0 NotAvailable, 1 weight, 2 Prewash, 3 Mainwash, 4 Rinse, 5 soften,
+  # 6 Anticrease, 7 Spin, 8 Dry, 9 Air, 10 Programend, 11 Delay
   sensor:
     device_class: enum
     options:
@@ -24,9 +27,13 @@ properties:
       2: prewash
       3: wash
       4: rinsing
+      5: softening
+      6: anti_crease
       7: spinning
       8: drying
+      9: ventilating
       10: finished
+      11: delay
 
 - property: DefaultSpinSpeed
   sensor:
@@ -70,7 +77,6 @@ properties:
       24: "24_hours"
 
 - property: DryOpen_DefaultSpinSpeed
-  # Sample value: 14
   sensor:
     read_only: true
     device_class: enum
@@ -91,7 +97,7 @@ properties:
       3: "+3"
 
 - property: Selected_program_ID
-  # Sample value: 41 (Power 49')
+  # All 16 programs verified against the app.
   select:
     options:
       1: "cotton_dry"
@@ -107,12 +113,11 @@ properties:
       14: "spin"
       16: "baby_care"
       20: "rinse_spin"
-      22: "clean_dry_60"
+      22: "wash_and_dry_60"
       41: "power_49"
       42: "auto"
 
 - property: Spin_speed_rpm
-  # Sample value: 12 (1200 rpm)
   select:
     options:
       0: "off"
@@ -123,18 +128,18 @@ properties:
       14: "1400"
 
 - property: Steam
-  # Sample value: 0
   switch:
     device_class: switch
 
 - property: dry_time
-  # Sample value: 3
+  # Device property list: 0 close, 1 ironing, 2 wear, 3 save, 4 performance, other values = drying minutes.
+  # App labels verified: 0 Close, 1 Iron, 2 Cupboard, 3 Extra Dry. 4 is not offered by the app.
   select:
     options:
       0: "off"
-      1: "pre-ironing"
-      2: "extra_dry"
-      3: "wardrobe"
+      1: "iron"
+      2: "cupboard"
+      3: "extra_dry"
       30: "30_min"
       60: "60_min"
       90: "90_min"
