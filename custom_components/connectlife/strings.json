@@ -1121,9 +1121,6 @@
       "grill_plate_status": {
         "name": "Grill plate status"
       },
-      "hard_pairing_status": {
-        "name": "Hard pairing status"
-      },
       "hardpairingstatus": {
         "name": "Hard pairing status"
       },
@@ -1267,6 +1264,9 @@
       },
       "preheat": {
         "name": "Preheat"
+      },
+      "programoptionanticrease": {
+        "name": "Anti-crease"
       },
       "quiet_mode_status": {
         "name": "Quiet mode status"
@@ -2143,12 +2143,6 @@
       },
       "freeze_temperature": {
         "name": "Freezer temperature"
-      },
-      "gratin_from_below_functionset_time_in_seconds": {
-        "name": "Gratin from below function set time"
-      },
-      "gratin_function_set_time_in_seconds": {
-        "name": "Gratin function set time"
       },
       "greasefiltersetlifetimeinhours": {
         "name": "Grease filter lifetime"
@@ -4728,6 +4722,12 @@
       },
       "global_timer_remaining_time_in_minutes": {
         "name": "Global timer remaining time"
+      },
+      "gratin_from_below_functionset_time_in_seconds": {
+        "name": "Gratin from below function set time"
+      },
+      "gratin_function_set_time_in_seconds": {
+        "name": "Gratin function set time"
       },
       "gratin_total_allowed_time_in_minutes": {
         "name": "Gratin total allowed time"
@@ -8870,9 +8870,6 @@
       },
       "prewash": {
         "name": "Prewash"
-      },
-      "programoptionanticrease": {
-        "name": "Anti-crease"
       },
       "proximitysensorsetavalibility": {
         "name": "Proximity sensor available"

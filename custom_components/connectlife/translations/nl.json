@@ -1121,9 +1121,6 @@
       "grill_plate_status": {
         "name": "Grillplaatstatus"
       },
-      "hard_pairing_status": {
-        "name": "Harde koppelingsstatus"
-      },
       "hardpairingstatus": {
         "name": "Harde koppeling status"
       },
@@ -1267,6 +1264,9 @@
       },
       "preheat": {
         "name": "Voorverwarmen"
+      },
+      "programoptionanticrease": {
+        "name": "Anti-kreuk"
       },
       "quiet_mode_status": {
         "name": "Stille modus status"
@@ -2143,12 +2143,6 @@
       },
       "freeze_temperature": {
         "name": "Vriezer temperatuur"
-      },
-      "gratin_from_below_functionset_time_in_seconds": {
-        "name": "Gratin van onderaf insteltijd"
-      },
-      "gratin_function_set_time_in_seconds": {
-        "name": "Gratin-instellingstijd"
       },
       "greasefiltersetlifetimeinhours": {
         "name": "Vetfilter levensduur"
@@ -4729,6 +4723,12 @@
       "global_timer_remaining_time_in_minutes": {
         "name": "Resterende tijd hoofdtimer"
       },
+      "gratin_from_below_functionset_time_in_seconds": {
+        "name": "Gratin van onderaf insteltijd"
+      },
+      "gratin_function_set_time_in_seconds": {
+        "name": "Gratin-instellingstijd"
+      },
       "gratin_total_allowed_time_in_minutes": {
         "name": "Maximale gratineertijd"
       },
@@ -4772,7 +4772,7 @@
         "name": "Opdracht harde koppeling"
       },
       "hard_pairing_status": {
-        "name": "Harde koppeling status"
+        "name": "Harde koppelingsstatus"
       },
       "hardpairingstatus": {
         "name": "Harde koppeling status",
@@ -8870,9 +8870,6 @@
       },
       "prewash": {
         "name": "Voorwas"
-      },
-      "programoptionanticrease": {
-        "name": "Anti-kreuk"
       },
       "proximitysensorsetavalibility": {
         "name": "Nabijheidssensor beschikbaar"

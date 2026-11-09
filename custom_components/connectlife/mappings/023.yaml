@@ -136,11 +136,9 @@ properties:
         3041: off
         3042: on
   - property: Hard_pairing_status
+    # Values 9102–9106 are pairing states without known names.
     optional: true
-    binary_sensor:
-      options:
-        9106: off
-        9107: on
+    entity_category: diagnostic
   - property: Light
     binary_sensor:
       device_class: light

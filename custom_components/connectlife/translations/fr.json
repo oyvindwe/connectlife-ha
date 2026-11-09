@@ -1121,9 +1121,6 @@
       "grill_plate_status": {
         "name": "\u00c9tat de la plaque de gril"
       },
-      "hard_pairing_status": {
-        "name": "\u00c9tat de l'appairage mat\u00e9riel"
-      },
       "hardpairingstatus": {
         "name": "\u00c9tat de l'appairage mat\u00e9riel"
       },
@@ -1267,6 +1264,9 @@
       },
       "preheat": {
         "name": "Pr\u00e9chauffage"
+      },
+      "programoptionanticrease": {
+        "name": "Anti froissage"
       },
       "quiet_mode_status": {
         "name": "\u00c9tat mode silencieux"
@@ -2143,12 +2143,6 @@
       },
       "freeze_temperature": {
         "name": "Temp\u00e9rature cong\u00e9lateur"
-      },
-      "gratin_from_below_functionset_time_in_seconds": {
-        "name": "Dur\u00e9e r\u00e9gl\u00e9e de la fonction gratin par le bas"
-      },
-      "gratin_function_set_time_in_seconds": {
-        "name": "Dur\u00e9e r\u00e9gl\u00e9e fonction gratin"
       },
       "greasefiltersetlifetimeinhours": {
         "name": "Dur\u00e9e de vie du filtre \u00e0 graisses"
@@ -4728,6 +4722,12 @@
       },
       "global_timer_remaining_time_in_minutes": {
         "name": "Temps restant de la minuterie g\u00e9n\u00e9rale"
+      },
+      "gratin_from_below_functionset_time_in_seconds": {
+        "name": "Dur\u00e9e r\u00e9gl\u00e9e de la fonction gratin par le bas"
+      },
+      "gratin_function_set_time_in_seconds": {
+        "name": "Dur\u00e9e r\u00e9gl\u00e9e fonction gratin"
       },
       "gratin_total_allowed_time_in_minutes": {
         "name": "Temps total autoris\u00e9 du gratin"
@@ -8870,9 +8870,6 @@
       },
       "prewash": {
         "name": "Pr\u00e9lavage"
-      },
-      "programoptionanticrease": {
-        "name": "Anti froissage"
       },
       "proximitysensorsetavalibility": {
         "name": "Capteur de proximit\u00e9 disponible"

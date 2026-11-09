@@ -1,1 +1,9 @@
-# Window air conditioner — uses default mappings
+# Window air conditioner
+properties:
+  # Fan speeds in this feature code's ConnectLife property list (no auto), as on 008-301.
+  - property: t_fan_speed
+    climate:
+      options:
+        2: low
+        3: medium
+        4: high
