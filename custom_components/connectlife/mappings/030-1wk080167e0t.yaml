@@ -20,3 +20,38 @@ properties:
   - property: Selected_program_total_running_time_in_minutes
     # Same value as Selected_program_total_time_in_minutes.
     hide: true
+  - property: Selected_program_ID
+    # Every dial position checked on the machine on 10 Nov 2026: the base list without
+    # delicates (12). Remote/App reports 1 (auto).
+    select:
+      options:
+        1: auto
+        2: allergy_care
+        3: refresh
+        4: sportswear
+        5: towels
+        7: time
+        8: cotton
+        9: baby_care
+        10: synthetic
+        11: wool
+        13: quick_30
+        17: shirts
+        18: bedding
+        19: down
+        28: eco
+  - property: dry_time
+    # Dry Target button: Cupboard/Wardrobe, Iron, Extra Dry. Fixed-length programmes report
+    # their length here instead: Refresh 10, Wool 30, Time Dry 90, Allergy Care 180.
+    select:
+      options:
+        1: wardrobe
+        2: iron
+        3: extra_dry
+        10: 10_min
+        30: 30_min
+        90: 90_min
+        180: 180_min
+  - property: Natural_Dry
+    # Labelled "Gentle Dry" on the machine.
+    translation_key: gentle

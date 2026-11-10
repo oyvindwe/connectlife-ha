@@ -3,7 +3,8 @@
 # 1 -> 3 -> 4 -> 7 -> 10. Phase 1 lasts about a minute, 7 lasts 7-21 minutes, and 10
 # arrives on the same poll the remaining time reaches 0 and the door unlocks. About two
 # minutes later the phase falls back to 3 and the machine goes offline.
-# 0, 2 and 11 were not observed on this model; they are carried over from 025-1wfj1000018v.
+# 2 and 11 were confirmed in standby on 10 Nov 2026: the phase reads 2 while Prewash is
+# selected and 11 while Delay End is set. 0 is carried over from 025-1wfj1000018v.
 properties:
   - property: Current_program_phase
     sensor:
@@ -17,3 +18,33 @@ properties:
         7: spinning
         10: finished
         11: delay_start_waiting
+  - property: Selected_program_ID
+    # Every dial position checked on the machine on 10 Nov 2026. Remote/App reports 7 (cotton).
+    select:
+      options:
+        5: allergy_care
+        6: drum_clean
+        7: cotton
+        8: synthetic
+        9: eco_40_60
+        10: wool
+        11: quick_15
+        14: spin
+        16: baby_care
+        18: sportswear
+        19: down
+        20: rinse_spin
+        24: shirts
+        41: power_49
+        42: auto
+  - property: ExtraRinseNum
+    # The Extra Rinse button steps 1 -> 2 -> 3 -> off; this property follows it (checked on the
+    # machine). Extra_Rinse stayed on throughout, including after the button was switched off.
+    select:
+      options:
+        0: "none"
+        1: "+1"
+        2: "+2"
+        3: "+3"
+  - property: Extra_Rinse
+    disable: true
