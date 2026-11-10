@@ -116,7 +116,7 @@ have a feature-specific mapping file.
 |                            | Oven                     | 023              | [295608422d362be1](custom_components/connectlife/mappings/023-295608422d362be1.yaml)                       |
 | HWF8I1015BX                | Washing machine          | 025              | [1wfj1000018v](custom_components/connectlife/mappings/025-1wfj1000018v.yaml)                               |
 | WF5I1045BWQ                | Washing machine          | 025              | [1wfj1000101v](custom_components/connectlife/mappings/025-1wfj1000101v.yaml)                               |
-| WFSE1214-MVW002            | Washing machine          | 025              | [1wfj1200077v](custom_components/connectlife/mappings/025-1wfj1200077v.yaml)                               |
+| WF5S1245BB                 | Washing machine          | 025              | [1wfj1200077v](custom_components/connectlife/mappings/025-1wfj1200077v.yaml)                               |
 | WD3S8043BW3                | Washing machine          | 025              | [1wfx0800019v](custom_components/connectlife/mappings/025-1wfx0800019v.yaml)                               |
 | WD5I9043BBFS               | Washing machine          | 025              | [1wfx0900003v](custom_components/connectlife/mappings/025-1wfx0900003v.yaml)                               |
 | WF5I8043BWF                | Washing machine          | 025              | [1wj0803f2v0w](custom_components/connectlife/mappings/025-1wj0803f2v0w.yaml)                               |
