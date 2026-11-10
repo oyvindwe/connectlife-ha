@@ -8,6 +8,7 @@
 #
 # Program codes follow the 12 kg sibling mapping 025-1wj120238v0b (WF5S1245BB).
 # Confirmed on this machine: 42 auto; phases 3 wash, 4 rinsing, 7 spinning.
+# Phases 5, 6 and 11 are taken from the device property list in diagnostics.
 properties:
   - property: Selected_program_ID
     sensor:
@@ -43,5 +44,8 @@ properties:
         2: prewash
         3: wash
         4: rinsing
+        5: softening
+        6: anti_crease
         7: spinning
         10: finished
+        11: delay
