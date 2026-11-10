@@ -14,3 +14,9 @@ properties:
         4: anti_crease
         5: finished
       read_only: true
+  - property: energy
+    # Follows the selected program, not the energy used (as on 030-1wk080066v0w).
+    hide: true
+  - property: Selected_program_total_running_time_in_minutes
+    # Same value as Selected_program_total_time_in_minutes.
+    hide: true

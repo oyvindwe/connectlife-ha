@@ -1,0 +1,19 @@
+# Hisense WF3S9014 washing machine (WF3S9014-SVB002-000), feature code 1wj090856v0f.
+# Current_program_phase observed over six complete cycles (29 Oct - 5 Nov 2026):
+# 1 -> 3 -> 4 -> 7 -> 10. Phase 1 lasts about a minute, 7 lasts 7-21 minutes, and 10
+# arrives on the same poll the remaining time reaches 0 and the door unlocks. About two
+# minutes later the phase falls back to 3 and the machine goes offline.
+# 0, 2 and 11 were not observed on this model; they are carried over from 025-1wfj1000018v.
+properties:
+  - property: Current_program_phase
+    sensor:
+      device_class: enum
+      options:
+        0: not_available
+        1: weigh
+        2: prewash
+        3: wash
+        4: rinsing
+        7: spinning
+        10: finished
+        11: delay_start_waiting

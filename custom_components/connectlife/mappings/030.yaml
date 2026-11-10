@@ -49,7 +49,13 @@ properties:
     switch:
   - property: Clean_Filter
     icon: mdi:brush-variant
+    # The ConnectLife self-check table lists Clean_Filter = 1 as the "filter status" fault.
     binary_sensor:
+      device_class: problem
+      options:
+        0: off
+        1: on
+        2: on
   - property: Current_program_phase
     icon: mdi:tumble-dryer
     sensor:
@@ -289,8 +295,13 @@ properties:
     hide: true
   - property: Waterbox_Full
     icon: mdi:water-alert
+    # The ConnectLife self-check table lists Waterbox_Full = 1 as the "water container" fault.
     binary_sensor:
       device_class: problem
+      options:
+        0: off
+        1: on
+        2: on
   - property: Wear_Dry_Time
     # Sample value: 220
     hide: true
