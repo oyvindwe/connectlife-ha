@@ -1244,6 +1244,9 @@
       "motorspeednospinavailable": {
         "name": "Motor speed no spin available"
       },
+      "mute": {
+        "name": "Mute"
+      },
       "offline_state": {
         "name": "Connectivity"
       },
@@ -7002,7 +7005,10 @@
         "name": "Speed on demand allowed"
       },
       "spin_speed_rpm": {
-        "name": "Spin speed RPM"
+        "name": "Spin speed RPM",
+        "state": {
+          "none": "None"
+        }
       },
       "spin_time": {
         "name": "Spin time"
@@ -7046,8 +7052,20 @@
       "standardelectricitconsumption": {
         "name": "Standard electricity consumption"
       },
+      "standardelectricitconsumption_decimal": {
+        "name": "Standard electricity consumption decimal part"
+      },
+      "standardelectricitconsumption_int": {
+        "name": "Standard electricity consumption integer part"
+      },
       "standardwaterconsumption": {
         "name": "Standard water consumption"
+      },
+      "standardwaterconsumption_decimal": {
+        "name": "Standard water consumption decimal part"
+      },
+      "standardwaterconsumption_int": {
+        "name": "Standard water consumption integer part"
       },
       "standby_mode_state": {
         "name": "Standby mode state"
@@ -8085,7 +8103,10 @@
         "name": "Temperature wave flag"
       },
       "temperature": {
-        "name": "Temperature"
+        "name": "Temperature",
+        "state": {
+          "cold": "Cold"
+        }
       },
       "temperature_0_defaultmainwashtime": {
         "name": "Temperature 0 default main wash time"
