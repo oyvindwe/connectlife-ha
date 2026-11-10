@@ -93,7 +93,7 @@ have a feature-specific mapping file.
 |                            | Air conditioner          | 009              | [125](custom_components/connectlife/mappings/009-125.yaml)                                                 |
 |                            | Air conditioner          | 009              | [126](custom_components/connectlife/mappings/009-126.yaml)                                                 |
 |                            | Air conditioner          | 009              | [127](custom_components/connectlife/mappings/009-127.yaml)                                                 |
-|                            | Air conditioner          | 009              | [128](custom_components/connectlife/mappings/009-128.yaml)                                                 |
+| ACT26UR4RCC8 / CF25YR4BG   | Air conditioner          | 009              | [128](custom_components/connectlife/mappings/009-128.yaml)                                                 |
 |                            | Air conditioner          | 009              | [129](custom_components/connectlife/mappings/009-129.yaml)                                                 |
 |                            | Air conditioner          | 009              | [199](custom_components/connectlife/mappings/009-199.yaml)                                                 |
 | HACZ01+HAAZ01              | Air conditioner          | 009              | [19901](custom_components/connectlife/mappings/009-19901.yaml)                                             |
@@ -126,8 +126,11 @@ have a feature-specific mapping file.
 | WF5S9045BW                 | Washing machine          | 025              | [1wj090728v0w](custom_components/connectlife/mappings/025-1wj090728v0w.yaml)                               |
 | WFSE9014-LVW002            | Washing machine          | 025              | [1wj090729v0w](custom_components/connectlife/mappings/025-1wj090729v0w.yaml)                               |
 | WF5I9043BBFS               | Washing machine          | 025              | [1wj090849v0f](custom_components/connectlife/mappings/025-1wj090849v0f.yaml)                               |
+| WF3S9014                   | Washing machine          | 025              | [1wj090856v0f](custom_components/connectlife/mappings/025-1wj090856v0f.yaml)                               |
 | WD3S9043BW3                | Washing machine          | 025              | [1wj090908v0w](custom_components/connectlife/mappings/025-1wj090908v0w.yaml)                               |
 | WD3S9043BB3                | Washing machine          | 025              | [1wj090913v0f](custom_components/connectlife/mappings/025-1wj090913v0f.yaml)                               |
+| WD3S9043BW3                | Washing machine          | 025              | [1wj090916v0w](custom_components/connectlife/mappings/025-1wj090916v0w.yaml)                               |
+| WD3S9043BW3                | Washing machine          | 025              | [1wj090932v0w](custom_components/connectlife/mappings/025-1wj090932v0w.yaml)                               |
 | WF3S1014-SVW002            | Washing machine          | 025              | [1wj100404v0w](custom_components/connectlife/mappings/025-1wj100404v0w.yaml)                               |
 | WFQR1014                   | Washing machine          | 025              | [1wj100649v0t](custom_components/connectlife/mappings/025-1wj100649v0t.yaml)                               |
 | WF3S1043BW3                | Washing machine          | 025              | [1wj100722v0w](custom_components/connectlife/mappings/025-1wj100722v0w.yaml)                               |
@@ -159,6 +162,7 @@ have a feature-specific mapping file.
 |                            | Refrigerator             | 026              | [1b0330z0079j](custom_components/connectlife/mappings/026-1b0330z0079j.yaml)                               |
 | HRCD483TBW                 | Refrigerator             | 026              | [1b0470z0012j](custom_components/connectlife/mappings/026-1b0470z0012j.yaml)                               |
 | RQ5P470SEIE                | Refrigerator             | 026              | [1b0470z0026j](custom_components/connectlife/mappings/026-1b0470z0026j.yaml)                               |
+| RQ5P470SMIE                | Refrigerator             | 026              | [1b0470z0038j](custom_components/connectlife/mappings/026-1b0470z0038j.yaml)                               |
 | RQ760N4SASE                | Refrigerator             | 026              | [1b0522z0308j](custom_components/connectlife/mappings/026-1b0522z0308j.yaml)                               |
 | RQ758N4SASE                | Refrigerator             | 026              | [1b0560z0336j](custom_components/connectlife/mappings/026-1b0560z0336j.yaml)                               |
 | RQ5X560SFLEF               | Refrigerator             | 026              | [1b0560z0452j](custom_components/connectlife/mappings/026-1b0560z0452j.yaml)                               |

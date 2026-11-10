@@ -1121,9 +1121,6 @@
       "grill_plate_status": {
         "name": "Status gril plo\u010de"
       },
-      "hard_pairing_status": {
-        "name": "Status tvrdog uparivanja"
-      },
       "hardpairingstatus": {
         "name": "Status tvrdog uparivanja"
       },
@@ -1145,14 +1142,14 @@
       "ice_make_room_alarm": {
         "name": "Alarm komore za pravljenje leda"
       },
+      "ice_making_b_switch_status": {
+        "name": "Status prekida\u010da za pravljenje leda B"
+      },
       "ice_making_machine_failure": {
         "name": "Gre\u0161ka ma\u0161ine za pravljenje leda"
       },
       "ice_making_normal_status": {
         "name": "Normalan status pravljenja leda"
-      },
-      "ice_making_state": {
-        "name": "Stanje pravljenja leda"
       },
       "ice_making_stop_status": {
         "name": "Status zaustavljanja pravljenja leda"
@@ -1267,6 +1264,9 @@
       },
       "preheat": {
         "name": "Predgrevanje"
+      },
+      "programoptionanticrease": {
+        "name": "Protiv gu\u017evanja"
       },
       "quiet_mode_status": {
         "name": "Status tihog re\u017eima"
@@ -2141,20 +2141,8 @@
       "delayendtime_hour": {
         "name": "Sat odlo\u017eenog zavr\u0161etka"
       },
-      "freeze_max_temperature": {
-        "name": "Maksimalna temperatura zamrziva\u010da"
-      },
-      "freeze_min_temperature": {
-        "name": "Minimalna temperatura zamrziva\u010da"
-      },
       "freeze_temperature": {
         "name": "Temperatura zamrziva\u010da"
-      },
-      "gratin_from_below_functionset_time_in_seconds": {
-        "name": "Vreme pode\u0161avanja funkcije gratiniranja odozdo"
-      },
-      "gratin_function_set_time_in_seconds": {
-        "name": "Vreme pode\u0161avanja funkcije gratiniranja"
       },
       "greasefiltersetlifetimeinhours": {
         "name": "Vek trajanja filtera za masno\u0107u"
@@ -2174,12 +2162,6 @@
       "programtimesstartdelayhours": {
         "name": "Odlo\u017eeni start"
       },
-      "refrigerator_max_temperature": {
-        "name": "Maksimalna temperatura fri\u017eidera"
-      },
-      "refrigerator_min_temperature": {
-        "name": "Minimalna temperatura fri\u017eidera"
-      },
       "refrigerator_temperature": {
         "name": "Temperatura fri\u017eidera"
       },
@@ -2195,12 +2177,6 @@
       "ts_c1_water": {
         "name": "Pode\u0161ena izlazna temperatura vode"
       },
-      "variation_max_temperature": {
-        "name": "Maksimalna temperatura varijacije"
-      },
-      "variation_min_temperature": {
-        "name": "Minimalna temperatura varijacije"
-      },
       "variation_temperature": {
         "name": "Temperatura varijacije"
       },
@@ -2215,15 +2191,6 @@
       }
     },
     "select": {
-      "actions": {
-        "name": "Radnje",
-        "state": {
-          "none": "Ni\u0161ta",
-          "pause": "Pauza",
-          "start": "Start",
-          "stop": "Stop"
-        }
-      },
       "ads_dirtiness_setting_status": {
         "name": "Prljav\u0161tina",
         "state": {
@@ -3109,9 +3076,6 @@
       }
     },
     "sensor": {
-      "actions": {
-        "name": "Radnje"
-      },
       "activemodelightbrightness": {
         "name": "Osvetljenost svetla u aktivnom re\u017eimu"
       },
@@ -4740,6 +4704,12 @@
       },
       "global_timer_remaining_time_in_minutes": {
         "name": "Preostalo vreme glavnog tajmera"
+      },
+      "gratin_from_below_functionset_time_in_seconds": {
+        "name": "Vreme pode\u0161avanja funkcije gratiniranja odozdo"
+      },
+      "gratin_function_set_time_in_seconds": {
+        "name": "Vreme pode\u0161avanja funkcije gratiniranja"
       },
       "gratin_total_allowed_time_in_minutes": {
         "name": "Gratin \u2013 ukupno dozvoljeno vreme"
@@ -8730,9 +8700,6 @@
       "autodose": {
         "name": "Automatsko doziranje"
       },
-      "automatic_ice_making": {
-        "name": "Automatska proizvodnja leda"
-      },
       "autotubclean": {
         "name": "Automatsko \u010di\u0161\u0107enje bubnja"
       },
@@ -8844,9 +8811,6 @@
       "holiday_mode": {
         "name": "Re\u017eim odmora"
       },
-      "ice_making_b_switch_status": {
-        "name": "Status prekida\u010da za pravljenje leda B"
-      },
       "ice_making_state": {
         "name": "Stanje pravljenja leda"
       },
@@ -8889,9 +8853,6 @@
       "prewash": {
         "name": "Predpranje"
       },
-      "programoptionanticrease": {
-        "name": "Protiv gu\u017evanja"
-      },
       "proximitysensorsetavalibility": {
         "name": "Dostupnost senzora blizine"
       },
@@ -8927,9 +8888,6 @@
       },
       "sf_mode": {
         "name": "Super freeze"
-      },
-      "sf_sr_mutex_mode": {
-        "name": "SF SR mutex re\u017eim"
       },
       "showmeasuredtemperature": {
         "name": "Prika\u017ei izmerenu temperaturu"

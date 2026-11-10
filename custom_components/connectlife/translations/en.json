@@ -1121,9 +1121,6 @@
       "grill_plate_status": {
         "name": "Grill plate status"
       },
-      "hard_pairing_status": {
-        "name": "Hard pairing status"
-      },
       "hardpairingstatus": {
         "name": "Hard pairing status"
       },
@@ -1145,14 +1142,14 @@
       "ice_make_room_alarm": {
         "name": "Ice maker room alarm"
       },
+      "ice_making_b_switch_status": {
+        "name": "Ice making B switch status"
+      },
       "ice_making_machine_failure": {
         "name": "Ice making machine failure"
       },
       "ice_making_normal_status": {
         "name": "Ice making normal status"
-      },
-      "ice_making_state": {
-        "name": "Ice making state"
       },
       "ice_making_stop_status": {
         "name": "Ice making stop status"
@@ -1267,6 +1264,9 @@
       },
       "preheat": {
         "name": "Preheat"
+      },
+      "programoptionanticrease": {
+        "name": "Anti-crease"
       },
       "quiet_mode_status": {
         "name": "Quiet mode status"
@@ -2141,20 +2141,8 @@
       "delayendtime_hour": {
         "name": "Delay end time hour"
       },
-      "freeze_max_temperature": {
-        "name": "Freezer max temperature"
-      },
-      "freeze_min_temperature": {
-        "name": "Freezer min temperature"
-      },
       "freeze_temperature": {
         "name": "Freezer temperature"
-      },
-      "gratin_from_below_functionset_time_in_seconds": {
-        "name": "Gratin from below function set time"
-      },
-      "gratin_function_set_time_in_seconds": {
-        "name": "Gratin function set time"
       },
       "greasefiltersetlifetimeinhours": {
         "name": "Grease filter lifetime"
@@ -2174,12 +2162,6 @@
       "programtimesstartdelayhours": {
         "name": "Start delay"
       },
-      "refrigerator_max_temperature": {
-        "name": "Refrigerator max temperature"
-      },
-      "refrigerator_min_temperature": {
-        "name": "Refrigerator min temperature"
-      },
       "refrigerator_temperature": {
         "name": "Refrigerator temperature"
       },
@@ -2195,12 +2177,6 @@
       "ts_c1_water": {
         "name": "Outlet temperature setpoint"
       },
-      "variation_max_temperature": {
-        "name": "Variation max temperature"
-      },
-      "variation_min_temperature": {
-        "name": "Variation min temperature"
-      },
       "variation_temperature": {
         "name": "Variation temperature"
       },
@@ -2215,15 +2191,6 @@
       }
     },
     "select": {
-      "actions": {
-        "name": "Actions",
-        "state": {
-          "none": "None",
-          "pause": "Pause",
-          "start": "Start",
-          "stop": "Stop"
-        }
-      },
       "ads_dirtiness_setting_status": {
         "name": "Dirtiness",
         "state": {
@@ -3109,9 +3076,6 @@
       }
     },
     "sensor": {
-      "actions": {
-        "name": "Actions"
-      },
       "activemodelightbrightness": {
         "name": "Active mode light brightness"
       },
@@ -4740,6 +4704,12 @@
       },
       "global_timer_remaining_time_in_minutes": {
         "name": "Global timer remaining time"
+      },
+      "gratin_from_below_functionset_time_in_seconds": {
+        "name": "Gratin from below function set time"
+      },
+      "gratin_function_set_time_in_seconds": {
+        "name": "Gratin function set time"
       },
       "gratin_total_allowed_time_in_minutes": {
         "name": "Gratin total allowed time"
@@ -8730,9 +8700,6 @@
       "autodose": {
         "name": "Auto-dose"
       },
-      "automatic_ice_making": {
-        "name": "Automatic ice making"
-      },
       "autotubclean": {
         "name": "Auto tub clean"
       },
@@ -8844,9 +8811,6 @@
       "holiday_mode": {
         "name": "Holiday mode"
       },
-      "ice_making_b_switch_status": {
-        "name": "Ice making B switch status"
-      },
       "ice_making_state": {
         "name": "Ice making state"
       },
@@ -8889,9 +8853,6 @@
       "prewash": {
         "name": "Prewash"
       },
-      "programoptionanticrease": {
-        "name": "Anti-crease"
-      },
       "proximitysensorsetavalibility": {
         "name": "Proximity sensor available"
       },
@@ -8927,9 +8888,6 @@
       },
       "sf_mode": {
         "name": "Super freeze"
-      },
-      "sf_sr_mutex_mode": {
-        "name": "SF SR mutex mode"
       },
       "showmeasuredtemperature": {
         "name": "Show measured temperature"

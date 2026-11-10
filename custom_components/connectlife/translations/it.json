@@ -1121,9 +1121,6 @@
       "grill_plate_status": {
         "name": "Stato piastra grill"
       },
-      "hard_pairing_status": {
-        "name": "Stato accoppiamento fisico"
-      },
       "hardpairingstatus": {
         "name": "Stato accoppiamento fisico"
       },
@@ -1145,14 +1142,14 @@
       "ice_make_room_alarm": {
         "name": "Allarme vano produzione ghiaccio"
       },
+      "ice_making_b_switch_status": {
+        "name": "Stato interruttore produzione ghiaccio B"
+      },
       "ice_making_machine_failure": {
         "name": "Guasto del produttore di ghiaccio"
       },
       "ice_making_normal_status": {
         "name": "Stato normale produzione ghiaccio"
-      },
-      "ice_making_state": {
-        "name": "Stato produzione ghiaccio"
       },
       "ice_making_stop_status": {
         "name": "Stato arresto produzione ghiaccio"
@@ -1267,6 +1264,9 @@
       },
       "preheat": {
         "name": "Preriscaldamento"
+      },
+      "programoptionanticrease": {
+        "name": "Antipiega"
       },
       "quiet_mode_status": {
         "name": "Stato modalit\u00e0 silenziosa"
@@ -2141,20 +2141,8 @@
       "delayendtime_hour": {
         "name": "Ora fine ritardo"
       },
-      "freeze_max_temperature": {
-        "name": "Temperatura massima congelatore"
-      },
-      "freeze_min_temperature": {
-        "name": "Temperatura minima congelatore"
-      },
       "freeze_temperature": {
         "name": "Temperatura congelatore"
-      },
-      "gratin_from_below_functionset_time_in_seconds": {
-        "name": "Tempo impostato funzione gratin dal basso"
-      },
-      "gratin_function_set_time_in_seconds": {
-        "name": "Tempo impostato funzione gratin"
       },
       "greasefiltersetlifetimeinhours": {
         "name": "Durata filtro antigrasso"
@@ -2174,12 +2162,6 @@
       "programtimesstartdelayhours": {
         "name": "Ritardo avvio"
       },
-      "refrigerator_max_temperature": {
-        "name": "Temperatura massima frigorifero"
-      },
-      "refrigerator_min_temperature": {
-        "name": "Temperatura minima frigorifero"
-      },
       "refrigerator_temperature": {
         "name": "Temperatura frigorifero"
       },
@@ -2195,12 +2177,6 @@
       "ts_c1_water": {
         "name": "Setpoint temperatura di mandata"
       },
-      "variation_max_temperature": {
-        "name": "Temperatura massima scomparto variabile"
-      },
-      "variation_min_temperature": {
-        "name": "Temperatura minima scomparto variabile"
-      },
       "variation_temperature": {
         "name": "Variazione temperatura"
       },
@@ -2215,15 +2191,6 @@
       }
     },
     "select": {
-      "actions": {
-        "name": "Azioni",
-        "state": {
-          "none": "Nessuno",
-          "pause": "Pausa",
-          "start": "Avvia",
-          "stop": "Arresta"
-        }
-      },
       "ads_dirtiness_setting_status": {
         "name": "Grado di sporco",
         "state": {
@@ -3109,9 +3076,6 @@
       }
     },
     "sensor": {
-      "actions": {
-        "name": "Azioni"
-      },
       "activemodelightbrightness": {
         "name": "Luminosit\u00e0 luce modalit\u00e0 attiva"
       },
@@ -4740,6 +4704,12 @@
       },
       "global_timer_remaining_time_in_minutes": {
         "name": "Tempo residuo del timer generale"
+      },
+      "gratin_from_below_functionset_time_in_seconds": {
+        "name": "Tempo impostato funzione gratin dal basso"
+      },
+      "gratin_function_set_time_in_seconds": {
+        "name": "Tempo impostato funzione gratin"
       },
       "gratin_total_allowed_time_in_minutes": {
         "name": "Tempo totale consentito gratin"
@@ -8730,9 +8700,6 @@
       "autodose": {
         "name": "Dosaggio automatico"
       },
-      "automatic_ice_making": {
-        "name": "Produzione automatica ghiaccio"
-      },
       "autotubclean": {
         "name": "Pulizia cestello automatica"
       },
@@ -8844,9 +8811,6 @@
       "holiday_mode": {
         "name": "Modalit\u00e0 vacanza"
       },
-      "ice_making_b_switch_status": {
-        "name": "Stato interruttore produzione ghiaccio B"
-      },
       "ice_making_state": {
         "name": "Stato produzione ghiaccio"
       },
@@ -8889,9 +8853,6 @@
       "prewash": {
         "name": "Prelavaggio"
       },
-      "programoptionanticrease": {
-        "name": "Antipiega"
-      },
       "proximitysensorsetavalibility": {
         "name": "Sensore di prossimit\u00e0 disponibile"
       },
@@ -8927,9 +8888,6 @@
       },
       "sf_mode": {
         "name": "Super freeze"
-      },
-      "sf_sr_mutex_mode": {
-        "name": "Modalit\u00e0 mutex SF SR"
       },
       "showmeasuredtemperature": {
         "name": "Mostra temperatura misurata"

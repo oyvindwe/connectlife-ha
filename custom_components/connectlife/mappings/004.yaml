@@ -487,8 +487,12 @@ properties:
     optional: true
     entity_category: diagnostic
   - property: ProgramOptionAnticrease
+    # Read-only: set with the program.
     icon: mdi:iron
-    switch:
+    binary_sensor:
+      options:
+        0: false
+        1: true
   - property: ProgramTimesStartDelayHours
     icon: mdi:timer
     number:
