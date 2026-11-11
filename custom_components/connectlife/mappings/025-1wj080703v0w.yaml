@@ -1,0 +1,69 @@
+# Hisense WF3S8014 (WF3S8014-PVW001), feature code 1wj080703v0w.
+# The same model as 025-1wj080831v0w, and this machine reports the same programs, so the programs,
+# extra rinse, delayed end and disabled properties are copied from that mapping, where they were
+# verified on the machine (writes only apply with the dial in the "Remote" position).
+# The program phases are from the WF3S9014 (025-1wj090856v0f).
+properties:
+  - property: Current_program_phase
+    sensor:
+      device_class: enum
+      options:
+        0: not_available
+        1: weigh
+        2: prewash
+        3: wash
+        4: rinsing
+        7: spinning
+        10: finished
+        11: delay_start_waiting
+  - property: Selected_program_ID
+    select:
+      options:
+        5: allergy_care
+        6: drum_clean
+        7: cotton
+        8: synthetic
+        9: eco_40_60
+        10: wool
+        11: quick_15
+        14: spin
+        16: baby_care
+        18: sportswear
+        19: down
+        20: rinse_spin
+        24: shirts
+        41: power_49
+        42: auto
+  - property: ExtraRinseNum
+    select:
+      options:
+        0: none
+        1: "1"
+        2: "2"
+        3: "3"
+  - property: Extra_Rinse
+    disable: true
+  - property: DelayEndTime
+    number:
+      min_value: 0
+      max_value: 24
+      device_class: duration
+      unit: h
+  - property: AntiCrease
+    disable: true
+  - property: AutoDose
+    disable: true
+  - property: AutoTubClean
+    disable: true
+  - property: Detergent
+    disable: true
+  - property: Softener
+    disable: true
+  - property: Detergent_display
+    disable: true
+  - property: Detergent_state
+    disable: true
+  - property: Softer_display
+    disable: true
+  - property: Softener_state
+    disable: true
