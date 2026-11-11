@@ -2185,24 +2185,6 @@
       }
     },
     "select": {
-      "actions": {
-        "name": "Akcie",
-        "state": {
-          "add_duration": "Pred\u013a\u017ei\u0165 \u010das",
-          "add_gratin": "Prida\u0165 gratin",
-          "cancel": "Zru\u0161i\u0165",
-          "direct_steam": "Priama p\u00e1ra",
-          "pause": "Pozastavi\u0165",
-          "production_test": "V\u00fdrobn\u00fd test",
-          "program_continue": "Pokra\u010dova\u0165 v programe",
-          "reset_programs_to_default": "Obnovi\u0165 predvolen\u00e9 programy",
-          "start": "Spusti\u0165",
-          "steam_shot": "Parn\u00fd r\u00e1z",
-          "steamer_water_tank_door_open": "Otvori\u0165 dvierka n\u00e1dr\u017ee na vodu parn\u00edka",
-          "stop": "Zastavi\u0165",
-          "stop_finish": "Ukon\u010di\u0165 program"
-        }
-      },
       "ads_dirtiness_setting_status": {
         "name": "Zne\u010distenie",
         "state": {
@@ -2668,7 +2650,6 @@
           "intensive": "Intenz\u00edvny",
           "night": "No\u010dn\u00fd",
           "normal": "Norm\u00e1lny",
-          "not_available": "Nedostupn\u00e9",
           "speed": "R\u00fdchlostn\u00fd",
           "uv": "UV"
         }
@@ -3008,7 +2989,6 @@
           "2_h_30_min": "02:30",
           "30_min": "00:30",
           "45_min": "00:45",
-          "not_available": "Nedostupn\u00e9",
           "not_set": "Nenastaven\u00e9"
         }
       },
