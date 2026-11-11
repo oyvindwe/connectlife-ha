@@ -11,7 +11,7 @@ from connectlife.api import (
     LifeConnectError,
     LifeConnectTermsNotAcceptedError,
 )
-from connectlife.appliance import ConnectLifeAppliance
+from connectlife.appliance import ConnectLifeAppliance, convert
 from homeassistant.components.recorder import get_instance
 from homeassistant.components.recorder.statistics import list_statistic_ids
 from homeassistant.const import Platform
@@ -29,6 +29,9 @@ MAX_RETRIES = 3
 UPDATE_INTERVAL = timedelta(seconds=60)
 # While push updates are connected, poll only as a safety net.
 PUSH_UPDATE_INTERVAL = timedelta(minutes=15)
+# After a command, how long to ignore pushed values for its properties that differ from the commanded value: the
+# cloud may still push the device's status from before the command.
+COMMAND_SETTLE_TIME = timedelta(seconds=10)
 STATISTICS_UPDATE_INTERVAL = timedelta(minutes=10)
 # How long a device must be missing from the device list before raising a repair
 # issue. The cloud occasionally returns an incomplete list for a single poll.
@@ -69,6 +72,9 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
         self._missing_since: dict[str, float] = {}
         # Consecutive polls each device has been missing from the device list.
         self._missing_polls: dict[str, int] = {}
+        # Properties set by commands, per device: commanded value and until when (monotonic time) to keep it over
+        # a pushed value that differs.
+        self._commanded: dict[str, dict[str, tuple[object, float]]] = {}
         super().__init__(
             hass,
             _LOGGER,
@@ -95,6 +101,7 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
         if appliance is None:
             _LOGGER.debug("Push status for unknown device %s", puid)
             return
+        properties = self._without_stale_commanded(appliance.device_id, properties)
         if changed := appliance.update_status(properties):
             _LOGGER.debug(
                 "Push status for %s changed %s",
@@ -102,6 +109,29 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
                 {key: appliance.status_list[key] for key in sorted(changed)},
             )
             self.async_update_listeners()
+
+    def _without_stale_commanded(self, device_id: str, properties: Mapping[str, str]) -> Mapping[str, str]:
+        """Leave out pushed values that differ from a recent command's: they're from before the device applied it.
+
+        A pushed value that matches the command, or one after COMMAND_SETTLE_TIME, ends this for the property.
+        """
+        if not (commanded := self._commanded.get(device_id)):
+            return properties
+        now = monotonic()
+        result = dict(properties)
+        for key, (value, until) in list(commanded.items()):
+            if key not in properties:
+                if now >= until:
+                    del commanded[key]
+                continue
+            if convert(properties[key]) == value or now >= until:
+                del commanded[key]
+            else:
+                _LOGGER.debug("Ignoring pushed %s=%s, waiting for commanded %s", key, properties[key], value)
+                del result[key]
+        if not commanded:
+            del self._commanded[device_id]
+        return result
 
     def apply_push_online(self, puid: str, online: bool) -> None:
         """Apply a device going online or offline, pushed by the cloud."""
@@ -260,6 +290,8 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
             )
         await self.api.update_appliance(appliance.puid, {k: str(v) for k, v in command.items()})
         appliance.status_list.update(properties)
+        until = monotonic() + COMMAND_SETTLE_TIME.total_seconds()
+        self._commanded.setdefault(device_id, {}).update({k: (convert(v), until) for k, v in properties.items()})
         self.async_update_listeners()
 
     def add_entity(self, entity_unique_id: str, platform: Platform):

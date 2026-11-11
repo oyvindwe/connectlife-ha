@@ -24,6 +24,7 @@ def _coordinator(*appliances) -> ConnectLifeCoordinator:
     coordinator.data = {a.device_id: a for a in appliances}
     coordinator.api = MagicMock()
     coordinator.push_connected = False
+    coordinator._commanded = {}
     coordinator.update_interval = UPDATE_INTERVAL
     coordinator.async_update_listeners = MagicMock()
     coordinator.async_request_refresh = AsyncMock()
@@ -175,4 +176,63 @@ async def test_poll_logs_changes_push_missed(caplog: pytest.LogCaptureFixture) -
         coordinator._log_missed_pushes({"d1": new})
 
     assert "Poll found changes push missed for Washer: {'t_power': (0, 1)}" in caplog.text
+
+
+def _real_appliance() -> SimpleNamespace:
+    """An appliance whose status updates like the library's."""
+    status: dict = {"Selected_program_id_status": 0, "Curent_program_duration": 202}
+
+    def update_status(properties):
+        changed = {k for k, v in properties.items() if status.get(k) != int(v)}
+        status.update({k: int(v) for k, v in properties.items()})
+        return changed
+
+    return SimpleNamespace(
+        device_id="d1", puid="pu1", device_nickname="Dishwasher", status_list=status, update_status=update_status
+    )
+
+
+async def _command(coordinator: ConnectLifeCoordinator, now: float) -> None:
+    coordinator.api.update_appliance = AsyncMock()
+    with patch("custom_components.connectlife.coordinator.monotonic", return_value=now):
+        await coordinator.async_update_device(
+            "d1", {"Selected_program_id": 1}, {"Selected_program_id_status": 1}
+        )
+
+
+def _push(coordinator: ConnectLifeCoordinator, now: float, **properties: str) -> None:
+    with patch("custom_components.connectlife.coordinator.monotonic", return_value=now):
+        coordinator.apply_push_status("pu1", properties)
+
+
+async def test_push_from_before_a_command_is_ignored() -> None:
+    appliance = _real_appliance()
+    coordinator = _coordinator(appliance)
+
+    await _command(coordinator, 100)
+    _push(coordinator, 101, Selected_program_id_status="0", Curent_program_duration="210")
+
+    # The stale program is ignored, the other property applied.
+    assert appliance.status_list == {"Selected_program_id_status": 1, "Curent_program_duration": 210}
+
+    _push(coordinator, 103, Selected_program_id_status="1", Curent_program_duration="131")
+    assert appliance.status_list == {"Selected_program_id_status": 1, "Curent_program_duration": 131}
+    assert coordinator._commanded == {}
+
+    # Once confirmed, a later change (e.g. on the device) applies at once.
+    _push(coordinator, 104, Selected_program_id_status="0")
+    assert appliance.status_list["Selected_program_id_status"] == 0
+
+
+async def test_command_not_confirmed_gives_way_after_settle_time() -> None:
+    appliance = _real_appliance()
+    coordinator = _coordinator(appliance)
+
+    await _command(coordinator, 100)
+    _push(coordinator, 109, Selected_program_id_status="0")
+    assert appliance.status_list["Selected_program_id_status"] == 1
+
+    _push(coordinator, 110, Selected_program_id_status="0")
+    assert appliance.status_list["Selected_program_id_status"] == 0
+    assert coordinator._commanded == {}
 
