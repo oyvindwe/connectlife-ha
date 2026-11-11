@@ -2191,24 +2191,6 @@
       }
     },
     "select": {
-      "actions": {
-        "name": "Handlinger",
-        "state": {
-          "add_duration": "Legg til varighet",
-          "add_gratin": "Legg til gratinering",
-          "cancel": "Avbryt",
-          "direct_steam": "Direkte damp",
-          "pause": "Pause",
-          "production_test": "Produksjonstest",
-          "program_continue": "Fortsett program",
-          "reset_programs_to_default": "Tilbakestill programmer til standard",
-          "start": "Start",
-          "steam_shot": "Dampskudd",
-          "steamer_water_tank_door_open": "\u00c5pne luke til dampvanntank",
-          "stop": "Stopp",
-          "stop_finish": "Stopp og avslutt"
-        }
-      },
       "ads_dirtiness_setting_status": {
         "name": "Smussgrad",
         "state": {

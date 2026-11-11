@@ -2191,24 +2191,6 @@
       }
     },
     "select": {
-      "actions": {
-        "name": "Aktionen",
-        "state": {
-          "add_duration": "Dauer hinzuf\u00fcgen",
-          "add_gratin": "Gratin hinzuf\u00fcgen",
-          "cancel": "Abbrechen",
-          "direct_steam": "Direktdampf",
-          "pause": "Pause",
-          "production_test": "Produktionstest",
-          "program_continue": "Programm fortsetzen",
-          "reset_programs_to_default": "Programme auf Standard zur\u00fccksetzen",
-          "start": "Start",
-          "steam_shot": "Dampfsto\u00df",
-          "steamer_water_tank_door_open": "Wassertankklappe des Dampfgarers \u00f6ffnen",
-          "stop": "Stopp",
-          "stop_finish": "Stopp / Fertig"
-        }
-      },
       "ads_dirtiness_setting_status": {
         "name": "Verschmutzung",
         "state": {
