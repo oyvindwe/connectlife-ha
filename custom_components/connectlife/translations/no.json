@@ -9131,7 +9131,7 @@
           "push": "Push-oppdateringer (beta)"
         },
         "data_description": {
-          "push": "F\u00e5 endringer fra ConnectLife i l\u00f8pet av sekunder over en WebSocket-tilkobling, i stedet for \u00e5 sp\u00f8rre hvert minutt. Mens tilkoblingen er oppe, sp\u00f8r integrasjonen fortsatt hvert 15. minutt."
+          "push": "F\u00e5 endringer fra ConnectLife i l\u00f8pet av sekunder, i stedet for \u00e5 sp\u00f8rre hvert minutt. Mens tilkoblingen er oppe, sp\u00f8r integrasjonen ogs\u00e5 hvert 15. minutt. Sl\u00e5 av hvis oppdateringer slutter \u00e5 komme eller du ser tilkoblingsproblemer; integrasjonen sp\u00f8r da hvert minutt."
         },
         "description": "Konfigurer push-oppdateringer, eller velg en enhet \u00e5 konfigurere."
       }
