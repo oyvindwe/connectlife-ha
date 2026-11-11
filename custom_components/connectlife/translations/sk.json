@@ -1121,9 +1121,6 @@
       "grill_plate_status": {
         "name": "Stav grilovacej dosky"
       },
-      "hard_pairing_status": {
-        "name": "Stav trval\u00e9ho p\u00e1rovania"
-      },
       "hardpairingstatus": {
         "name": "Stav trval\u00e9ho p\u00e1rovania"
       },
@@ -1150,9 +1147,6 @@
       },
       "ice_making_normal_status": {
         "name": "Norm\u00e1lny stav v\u00fdroby \u013eadu"
-      },
-      "ice_making_state": {
-        "name": "Stav v\u00fdroby \u013eadu"
       },
       "ice_making_stop_status": {
         "name": "Stav zastavenia v\u00fdroby \u013eadu"
@@ -1246,9 +1240,6 @@
       },
       "motorspeednospinavailable": {
         "name": "R\u00fdchlos\u0165 motora bez odstre\u010fovania dostupn\u00e1"
-      },
-      "mute": {
-        "name": "St\u00ed\u0161enie"
       },
       "offline_state": {
         "name": "Pripojenie"
@@ -2144,20 +2135,8 @@
       "delayendtime_hour": {
         "name": "Hodina odlo\u017een\u00e9ho konca"
       },
-      "freeze_max_temperature": {
-        "name": "Maxim\u00e1lna teplota mrazni\u010dky"
-      },
-      "freeze_min_temperature": {
-        "name": "Minim\u00e1lna teplota mrazni\u010dky"
-      },
       "freeze_temperature": {
         "name": "Teplota mrazni\u010dky"
-      },
-      "gratin_from_below_functionset_time_in_seconds": {
-        "name": "\u010cas nastavenia funkcie gratinovania zospodu"
-      },
-      "gratin_function_set_time_in_seconds": {
-        "name": "\u010cas nastavenia funkcie gratinovania"
       },
       "greasefiltersetlifetimeinhours": {
         "name": "\u017divotnos\u0165 tukov\u00e9ho filtra"
@@ -2177,12 +2156,6 @@
       "programtimesstartdelayhours": {
         "name": "Oneskorenie \u0161tartu"
       },
-      "refrigerator_max_temperature": {
-        "name": "Maxim\u00e1lna teplota chladni\u010dky"
-      },
-      "refrigerator_min_temperature": {
-        "name": "Minim\u00e1lna teplota chladni\u010dky"
-      },
       "refrigerator_temperature": {
         "name": "Teplota chladni\u010dky"
       },
@@ -2197,12 +2170,6 @@
       },
       "ts_c1_water": {
         "name": "Po\u017eadovan\u00e1 v\u00fdstupn\u00e1 teplota"
-      },
-      "variation_max_temperature": {
-        "name": "Maxim\u00e1lna teplota variabiln\u00e9ho priestoru"
-      },
-      "variation_min_temperature": {
-        "name": "Minim\u00e1lna teplota variabiln\u00e9ho priestoru"
       },
       "variation_temperature": {
         "name": "Teplota variabiln\u00e9ho priestoru"
@@ -2225,7 +2192,6 @@
           "add_gratin": "Prida\u0165 gratin",
           "cancel": "Zru\u0161i\u0165",
           "direct_steam": "Priama p\u00e1ra",
-          "none": "\u017diadny",
           "pause": "Pozastavi\u0165",
           "production_test": "V\u00fdrobn\u00fd test",
           "program_continue": "Pokra\u010dova\u0165 v programe",
@@ -3122,9 +3088,6 @@
       }
     },
     "sensor": {
-      "actions": {
-        "name": "Akcie"
-      },
       "activemodelightbrightness": {
         "name": "Jas svetla akt\u00edvneho re\u017eimu"
       },
@@ -7027,10 +6990,7 @@
         "name": "R\u00fdchlos\u0165 na vy\u017eiadanie povolen\u00e1"
       },
       "spin_speed_rpm": {
-        "name": "Ot\u00e1\u010dky odstre\u010fovania",
-        "state": {
-          "none": "Bez odstre\u010fovania"
-        }
+        "name": "Ot\u00e1\u010dky odstre\u010fovania"
       },
       "spin_time": {
         "name": "\u010cas odstre\u010fovania"
@@ -7074,20 +7034,8 @@
       "standardelectricitconsumption": {
         "name": "\u0160tandardn\u00e1 spotreba elektriny"
       },
-      "standardelectricitconsumption_decimal": {
-        "name": "\u0160tandardn\u00e1 spotreba elektriny \u2013 desatinn\u00e1 \u010das\u0165"
-      },
-      "standardelectricitconsumption_int": {
-        "name": "\u0160tandardn\u00e1 spotreba elektriny \u2013 celo\u010d\u00edseln\u00e1 \u010das\u0165"
-      },
       "standardwaterconsumption": {
         "name": "\u0160tandardn\u00e1 spotreba vody"
-      },
-      "standardwaterconsumption_decimal": {
-        "name": "\u0160tandardn\u00e1 spotreba vody \u2013 desatinn\u00e1 \u010das\u0165"
-      },
-      "standardwaterconsumption_int": {
-        "name": "\u0160tandardn\u00e1 spotreba vody \u2013 celo\u010d\u00edseln\u00e1 \u010das\u0165"
       },
       "standby_mode_state": {
         "name": "Stav pohotovostn\u00e9ho re\u017eimu"
@@ -8125,10 +8073,7 @@
         "name": "Pr\u00edznak teplotnej vlny"
       },
       "temperature": {
-        "name": "Teplota",
-        "state": {
-          "cold": "Studen\u00e1"
-        }
+        "name": "Teplota"
       },
       "temperature_0_defaultmainwashtime": {
         "name": "Predvolen\u00fd \u010das hlavn\u00e9ho prania pre teplotu 0"
@@ -8761,9 +8706,6 @@
       "autodose": {
         "name": "Automatick\u00e9 d\u00e1vkovanie"
       },
-      "automatic_ice_making": {
-        "name": "Automatick\u00e1 v\u00fdroba \u013eadu"
-      },
       "autotubclean": {
         "name": "Automatick\u00e9 \u010distenie bubna"
       },
@@ -8875,9 +8817,6 @@
       "holiday_mode": {
         "name": "Dovolenkov\u00fd re\u017eim"
       },
-      "ice_making_b_switch_status": {
-        "name": "Stav prep\u00edna\u010da v\u00fdroby \u013eadu B"
-      },
       "ice_making_state": {
         "name": "Stav v\u00fdroby \u013eadu"
       },
@@ -8920,9 +8859,6 @@
       "prewash": {
         "name": "Predpieranie"
       },
-      "programoptionanticrease": {
-        "name": "Proti pokr\u010deniu"
-      },
       "proximitysensorsetavalibility": {
         "name": "Pribli\u017eovac\u00ed senzor dostupn\u00fd"
       },
@@ -8958,9 +8894,6 @@
       },
       "sf_mode": {
         "name": "Super mrazenie"
-      },
-      "sf_sr_mutex_mode": {
-        "name": "Re\u017eim mutex SF/SR"
       },
       "showmeasuredtemperature": {
         "name": "Zobrazi\u0165 nameran\u00fa teplotu"
