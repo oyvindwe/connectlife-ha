@@ -13,8 +13,9 @@ template has a checklist.
 
 ## Versioning and breaking changes
 
-From 1.0.0, versions follow semver:
-- **Major** for breaking changes.
+Versions follow [semver](https://semver.org):
+- **Major** for breaking changes. Before 1.0.0, breaking changes come in minor versions, as semver allows for
+  `0.x`, with a line in the release notes.
 - **Minor** for new features, new device mappings and raising the minimum Home Assistant version (we support the
   releases from the last 12 months; HACS and the Marketplace don't offer releases an installation can't run).
 - **Patch** for fixes.
@@ -35,4 +36,20 @@ Not breaking, but listed in the release notes with what users need to do:
 Deprecation: before a major that removes something, keep it working for at least one minor release where possible,
 with a log warning or repair issue that says what to use instead.
 
-Before 1.0.0, breaking changes are released in minor versions, with a line in the release notes.
+## Branches and releases
+
+- **`main` is the next release.** Pull requests target `main`. A release bumps the version in a `Version X.Y.Z`
+  pull request, then tags `vX.Y.Z` on `main` and publishes a GitHub release.
+- **Betas** (`X.Y.ZbN`, e.g. `1.0.0b1`) are also tagged on `main`, as GitHub pre-releases. Use them for releases
+  with breaking or risky changes, so users can try them first. The Marketplace (and HACS) offers pre-releases only
+  to users who turn on the integration's **Pre-release** switch (an entity on its Marketplace or HACS device,
+  disabled by default). Fixes go out as `b2`, `b3`, …; the stable release follows on `main`.
+- **While a beta of `main` is out**, merge only what should ship in that release: fixes and new device mappings,
+  no new breaking changes. Hold other pull requests until the stable release.
+- **Release branches only when needed**: to fix the current stable release while `main` holds changes that must not
+  ship yet (e.g. during a beta), branch `release/X.Y` from the `vX.Y.Z` tag, merge the fix there, tag `vX.Y.Z+1` on
+  that branch, and merge the fix into `main` too.
+- **Experimental features** live on a feature branch with their own betas, numbered after the next minor release
+  (e.g. `1.1.0b1` while `main` heads for `1.0.0`), so the Marketplace keeps their testers on the feature through
+  the next stable release. To give testers that release's fixes, merge `main` into the feature branch and tag a new
+  beta. Once the feature is proven, it's merged into `main` and ships with the next release.
