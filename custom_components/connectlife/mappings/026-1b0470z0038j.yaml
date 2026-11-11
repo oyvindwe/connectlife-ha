@@ -5,7 +5,7 @@ properties:
   # variation_min_temperature / variation_max_temperature.
   - property: variation_temperature
     hide: false
-    entity_category: config
+    entity_category: null
     number:
       device_class: temperature
       unit: °C
