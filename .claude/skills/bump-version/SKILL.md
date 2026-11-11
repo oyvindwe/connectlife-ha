@@ -10,7 +10,10 @@ Bump the version of this ConnectLife Home Assistant integration.
 ## Steps
 
 1. Determine the new version:
-   - If `$ARGUMENTS` is provided, it must be a valid semver version (e.g., `0.31.0`). Use it as the new version.
+   - If `$ARGUMENTS` is provided, it must be a version like `0.31.0`, or a beta like `1.0.0b1` (see
+     [Branches and releases](../../../CONTRIBUTING.md#branches-and-releases)). Use it as the new version.
+   - Base branch: `main`, unless the user names a release branch (`release/X.Y`) or a feature branch with its own
+     betas. Use that branch wherever these steps say `main`.
    - If not provided, determine the next version via semver by analyzing commits since the last release:
      1. Read the current version from `custom_components/connectlife/manifest.json`.
      2. List commits since the last version bump:
@@ -57,7 +60,7 @@ Bump the version of this ConnectLife Home Assistant integration.
 8. Push and create PR:
    ```
    git push -u origin version/<new_version>
-   gh pr create --title "Version <new_version>" --body "Bump version to <new_version>"
+   gh pr create --base <base branch> --title "Version <new_version>" --body "Bump version to <new_version>"
    ```
 
 9. Report the PR URL to the user.

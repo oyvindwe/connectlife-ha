@@ -130,6 +130,7 @@ Mappings are data, validated by `validate_mappings` (schema) and PR review — d
 
 Classify changes (major, minor, patch; what counts as breaking) per
 [Versioning and breaking changes](CONTRIBUTING.md#versioning-and-breaking-changes).
+Branches, betas and release branches: see [Branches and releases](CONTRIBUTING.md#branches-and-releases).
 
 ## Git and pull requests
 
