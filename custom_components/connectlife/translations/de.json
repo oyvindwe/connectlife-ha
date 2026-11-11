@@ -2656,7 +2656,6 @@
           "intensive": "Intensiv",
           "night": "Nacht",
           "normal": "Normal",
-          "not_available": "Nicht verf\u00fcgbar",
           "speed": "Schnell",
           "uv": "UV"
         }
@@ -2996,7 +2995,6 @@
           "2_h_30_min": "02:30",
           "30_min": "00:30",
           "45_min": "00:45",
-          "not_available": "Nicht verf\u00fcgbar",
           "not_set": "Nicht festgelegt"
         }
       },

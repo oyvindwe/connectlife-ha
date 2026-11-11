@@ -28,7 +28,6 @@ properties:
   - property: Selected_program_mode
     select:
       options:
-        0: "not_available"
         2: "normal"
         4: "speed"
         5: "night"
@@ -38,7 +37,6 @@ properties:
   - property: Time_program_set_duration_status
     select:
       options:
-        0: "not_available"
         1: "not_set"
         2: "15_min"
         3: "30_min"
