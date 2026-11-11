@@ -9127,9 +9127,13 @@
       },
       "init": {
         "data": {
-          "device": "Select device"
+          "device": "Select device",
+          "push": "Push updates (beta)"
         },
-        "description": "Configure a device."
+        "data_description": {
+          "push": "Get changes from ConnectLife within seconds over a WebSocket connection, instead of polling every minute. While connected, the integration still polls every 15 minutes."
+        },
+        "description": "Configure push updates, or select a device to configure."
       }
     }
   },

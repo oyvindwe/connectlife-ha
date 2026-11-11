@@ -26,6 +26,9 @@ from .statistics_sources import STATISTICS_SOURCES, enabled_sensors
 from .terms import terms_accepted, terms_not_accepted, terms_retry_throttled
 
 MAX_RETRIES = 3
+UPDATE_INTERVAL = timedelta(seconds=60)
+# While push updates are connected, poll only as a safety net.
+PUSH_UPDATE_INTERVAL = timedelta(minutes=15)
 STATISTICS_UPDATE_INTERVAL = timedelta(minutes=10)
 # How long a device must be missing from the device list before raising a repair
 # issue. The cloud occasionally returns an incomplete list for a single poll.
@@ -45,6 +48,8 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
 
     # We need initial data, so no retries for first request.
     error_count = MAX_RETRIES
+    # Whether push updates are connected (see push.py).
+    push_connected = False
 
     def __init__(self, hass, api: ConnectLifeApi):
         """Initialize coordinator."""
@@ -68,8 +73,42 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
             hass,
             _LOGGER,
             name=DOMAIN,
-            update_interval=timedelta(seconds=60),
+            update_interval=UPDATE_INTERVAL,
         )
+
+    async def async_set_push_connected(self, connected: bool) -> None:
+        """Poll slowly while push updates are connected, and every minute otherwise.
+
+        Polls once right away: when connecting, pushes from now on are newer than that poll; when disconnecting, it
+        catches up on what was missed.
+        """
+        self.push_connected = connected
+        self.update_interval = PUSH_UPDATE_INTERVAL if connected else UPDATE_INTERVAL
+        await self.async_request_refresh()
+
+    def _appliance_by_puid(self, puid: str) -> ConnectLifeAppliance | None:
+        return next((a for a in (self.data or {}).values() if a.puid == puid), None)
+
+    def apply_push_status(self, puid: str, properties: Mapping[str, str]) -> None:
+        """Apply a device status pushed by the cloud."""
+        appliance = self._appliance_by_puid(puid)
+        if appliance is None:
+            _LOGGER.debug("Push status for unknown device %s", puid)
+            return
+        if changed := appliance.update_status(properties):
+            _LOGGER.debug(
+                "Push status for %s changed %s",
+                appliance.device_nickname,
+                {key: appliance.status_list[key] for key in sorted(changed)},
+            )
+            self.async_update_listeners()
+
+    def apply_push_online(self, puid: str, online: bool) -> None:
+        """Apply a device going online or offline, pushed by the cloud."""
+        appliance = self._appliance_by_puid(puid)
+        if appliance is not None and appliance.update_online(online):
+            _LOGGER.debug("Push: %s is %s", appliance.device_nickname, "online" if online else "offline")
+            self.async_update_listeners()
 
     async def _async_update_data(self):
         """Fetch data from API endpoint."""
@@ -119,6 +158,8 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
             else:
                 raise UpdateFailed(format_retry_message(err)) from err
         data = {a.device_id: a for a in self.api.appliances}
+        if self.push_connected and self.data:
+            self._log_missed_pushes(data)
         more_status_device_ids = self._devices_with_more_status(data)
         if self._setup_device_ids is None:
             self._setup_device_ids = set(data)
@@ -155,6 +196,19 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
         if reload:
             self.hass.config_entries.async_schedule_reload(self.config_entry.entry_id)
         return data
+
+    def _log_missed_pushes(self, data: Mapping[str, ConnectLifeAppliance]) -> None:
+        """Log what a poll found changed while push updates were connected: changes push didn't deliver."""
+        for device_id, appliance in data.items():
+            if (old := self.data.get(device_id)) is None:
+                continue
+            missed = {
+                key: (old.status_list.get(key), value)
+                for key, value in appliance.status_list.items()
+                if old.status_list.get(key) != value
+            }
+            if missed:
+                _LOGGER.debug("Poll found changes push missed for %s: %s", appliance.device_nickname, missed)
 
     def _devices_with_more_status(self, data: Mapping[str, ConnectLifeAppliance]) -> set[str]:
         """Return the devices that report more status properties than at setup.

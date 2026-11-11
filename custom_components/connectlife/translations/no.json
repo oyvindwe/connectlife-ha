@@ -9127,9 +9127,13 @@
       },
       "init": {
         "data": {
-          "device": "Velg enhet"
+          "device": "Velg enhet",
+          "push": "Push-oppdateringer (beta)"
         },
-        "description": "Konfigurer en enhet."
+        "data_description": {
+          "push": "F\u00e5 endringer fra ConnectLife i l\u00f8pet av sekunder over en WebSocket-tilkobling, i stedet for \u00e5 sp\u00f8rre hvert minutt. Mens tilkoblingen er oppe, sp\u00f8r integrasjonen fortsatt hvert 15. minutt."
+        },
+        "description": "Konfigurer push-oppdateringer, eller velg en enhet \u00e5 konfigurere."
       }
     }
   },
