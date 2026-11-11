@@ -44,6 +44,9 @@ with a log warning or repair issue that says what to use instead.
   with breaking or risky changes, so users can try them first. The Marketplace (and HACS) offers pre-releases only
   to users who turn on the integration's **Pre-release** switch (an entity on its Marketplace or HACS device,
   disabled by default). Fixes go out as `b2`, `b3`, …; the stable release follows on `main`.
+  A beta is titled after its final release, with the beta number (e.g. "Opening Night b1" for `1.0.0b1`); its
+  notes list what changed since the previous beta, and the stable release's notes everything since the last stable
+  release.
 - **While a beta of `main` is out**, merge only what should ship in that release: fixes and new device mappings,
   no new breaking changes. Hold other pull requests until the stable release.
 - **Release branches only when needed**: to fix the current stable release while `main` holds changes that must not
