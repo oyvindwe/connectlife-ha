@@ -2191,24 +2191,6 @@
       }
     },
     "select": {
-      "actions": {
-        "name": "Acciones",
-        "state": {
-          "add_duration": "A\u00f1adir duraci\u00f3n",
-          "add_gratin": "A\u00f1adir gratinado",
-          "cancel": "Cancelar",
-          "direct_steam": "Vapor directo",
-          "pause": "Pausa",
-          "production_test": "Prueba de producci\u00f3n",
-          "program_continue": "Continuar programa",
-          "reset_programs_to_default": "Restablecer programas a los valores predeterminados",
-          "start": "Iniciar",
-          "steam_shot": "Golpe de vapor",
-          "steamer_water_tank_door_open": "Abrir la puerta del dep\u00f3sito de agua del vaporizador",
-          "stop": "Detener",
-          "stop_finish": "Detener y finalizar"
-        }
-      },
       "ads_dirtiness_setting_status": {
         "name": "Suciedad",
         "state": {
@@ -2674,7 +2656,6 @@
           "intensive": "Intensivo",
           "night": "Noche",
           "normal": "Normal",
-          "not_available": "No disponible",
           "speed": "R\u00e1pido",
           "uv": "UV"
         }
@@ -3014,7 +2995,6 @@
           "2_h_30_min": "02:30",
           "30_min": "00:30",
           "45_min": "00:45",
-          "not_available": "No disponible",
           "not_set": "Sin definir"
         }
       },

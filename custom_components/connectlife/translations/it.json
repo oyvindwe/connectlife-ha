@@ -2191,24 +2191,6 @@
       }
     },
     "select": {
-      "actions": {
-        "name": "Azioni",
-        "state": {
-          "add_duration": "Aggiungi durata",
-          "add_gratin": "Aggiungi gratinatura",
-          "cancel": "Annulla",
-          "direct_steam": "Vapore diretto",
-          "pause": "Pausa",
-          "production_test": "Test di produzione",
-          "program_continue": "Continua programma",
-          "reset_programs_to_default": "Ripristina i programmi predefiniti",
-          "start": "Avvia",
-          "steam_shot": "Getto di vapore",
-          "steamer_water_tank_door_open": "Apri sportello serbatoio acqua vaporiera",
-          "stop": "Arresta",
-          "stop_finish": "Arresto a fine ciclo"
-        }
-      },
       "ads_dirtiness_setting_status": {
         "name": "Grado di sporco",
         "state": {
@@ -2674,7 +2656,6 @@
           "intensive": "Intensivo",
           "night": "Notte",
           "normal": "Normale",
-          "not_available": "Non disponibile",
           "speed": "Velocit\u00e0",
           "uv": "UV"
         }
@@ -3014,7 +2995,6 @@
           "2_h_30_min": "02:30",
           "30_min": "00:30",
           "45_min": "00:45",
-          "not_available": "Non disponibile",
           "not_set": "Non impostato"
         }
       },

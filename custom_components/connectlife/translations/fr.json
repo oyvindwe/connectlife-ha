@@ -2191,24 +2191,6 @@
       }
     },
     "select": {
-      "actions": {
-        "name": "Actions",
-        "state": {
-          "add_duration": "Prolonger la dur\u00e9e",
-          "add_gratin": "Ajouter gratin",
-          "cancel": "Annuler",
-          "direct_steam": "Vapeur directe",
-          "pause": "Pause",
-          "production_test": "Test de production",
-          "program_continue": "Reprendre le programme",
-          "reset_programs_to_default": "R\u00e9initialiser les programmes par d\u00e9faut",
-          "start": "D\u00e9marrer",
-          "steam_shot": "Jet de vapeur",
-          "steamer_water_tank_door_open": "Ouvrir la trappe du r\u00e9servoir d'eau du cuiseur vapeur",
-          "stop": "Arr\u00eater",
-          "stop_finish": "Arr\u00eater \u00e0 la fin"
-        }
-      },
       "ads_dirtiness_setting_status": {
         "name": "Degr\u00e9 de salissure",
         "state": {
@@ -2674,7 +2656,6 @@
           "intensive": "Intensif",
           "night": "Nuit",
           "normal": "Normal",
-          "not_available": "Non disponible",
           "speed": "Vitesse",
           "uv": "UV"
         }
@@ -3014,7 +2995,6 @@
           "2_h_30_min": "02:30",
           "30_min": "00:30",
           "45_min": "00:45",
-          "not_available": "Non disponible",
           "not_set": "Non r\u00e9gl\u00e9"
         }
       },

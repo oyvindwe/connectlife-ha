@@ -565,6 +565,8 @@ properties:
     icon: mdi:clipboard-list
   - property: Selected_program_mode
     # Varies per model. Override as select in feature specific file.
+    # 0: the selected program has no modes.
+    unavailable: 0
     sensor:
     icon: mdi:cube-outline
   - property: Selected_program_storage_function
@@ -618,6 +620,8 @@ properties:
   - property: Temperature_unit_status
     optional: true
   - property: Time_program_set_duration_status
+    # 0: the selected program isn't the time program.
+    unavailable: 0
     icon: mdi:timer
   - property: Total_energy_consumption
     sensor:

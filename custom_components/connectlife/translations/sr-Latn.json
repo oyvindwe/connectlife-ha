@@ -2191,24 +2191,6 @@
       }
     },
     "select": {
-      "actions": {
-        "name": "Radnje",
-        "state": {
-          "add_duration": "Dodaj trajanje",
-          "add_gratin": "Dodaj gratiniranje",
-          "cancel": "Otka\u017ei",
-          "direct_steam": "Direktna para",
-          "pause": "Pauza",
-          "production_test": "Test proizvodnje",
-          "program_continue": "Nastavi program",
-          "reset_programs_to_default": "Resetuj programe na podrazumevano",
-          "start": "Start",
-          "steam_shot": "Mlaz pare",
-          "steamer_water_tank_door_open": "Otvori vrata rezervoara za paru",
-          "stop": "Stop",
-          "stop_finish": "Stop \u2013 zavr\u0161etak"
-        }
-      },
       "ads_dirtiness_setting_status": {
         "name": "Prljav\u0161tina",
         "state": {
@@ -2674,7 +2656,6 @@
           "intensive": "Intenzivno",
           "night": "No\u0107ni",
           "normal": "Normalno",
-          "not_available": "Nedostupno",
           "speed": "Brzina",
           "uv": "UV"
         }
@@ -3014,7 +2995,6 @@
           "2_h_30_min": "02:30",
           "30_min": "00:30",
           "45_min": "00:45",
-          "not_available": "Nedostupno",
           "not_set": "Nije pode\u0161eno"
         }
       },

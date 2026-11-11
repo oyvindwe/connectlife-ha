@@ -2191,24 +2191,6 @@
       }
     },
     "select": {
-      "actions": {
-        "name": "Actions",
-        "state": {
-          "add_duration": "Add duration",
-          "add_gratin": "Add gratin",
-          "cancel": "Cancel",
-          "direct_steam": "Direct steam",
-          "pause": "Pause",
-          "production_test": "Production test",
-          "program_continue": "Program continue",
-          "reset_programs_to_default": "Reset programs to default",
-          "start": "Start",
-          "steam_shot": "Steam shot",
-          "steamer_water_tank_door_open": "Open steamer water tank door",
-          "stop": "Stop",
-          "stop_finish": "Stop finish"
-        }
-      },
       "ads_dirtiness_setting_status": {
         "name": "Dirtiness",
         "state": {
@@ -2674,7 +2656,6 @@
           "intensive": "Intensive",
           "night": "Night",
           "normal": "Normal",
-          "not_available": "Not available",
           "speed": "Speed",
           "uv": "UV"
         }
@@ -3014,7 +2995,6 @@
           "2_h_30_min": "02:30",
           "30_min": "00:30",
           "45_min": "00:45",
-          "not_available": "Not available",
           "not_set": "Not set"
         }
       },

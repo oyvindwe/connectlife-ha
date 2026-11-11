@@ -18,6 +18,11 @@ Generate release notes for this ConnectLife Home Assistant integration release.
    git describe --tags --abbrev=0 HEAD
    ```
    If HEAD is already tagged, use `git describe --tags --abbrev=0 HEAD^` to find the previous tag.
+   - For a **beta** (`X.Y.ZbN`, see [Branches and releases](../../../CONTRIBUTING.md#branches-and-releases)) after
+     `b1`, the previous tag is the previous beta: the notes list only what changed since then.
+   - For `b1` and for a **stable** release, the previous tag is the previous stable release: skip beta tags
+     (`git describe --tags --abbrev=0 --exclude '*b*' HEAD`), so a stable release lists everything since the last
+     stable release, including what its betas had.
 
 3. Get all commits since that tag:
    ```
@@ -47,9 +52,18 @@ Generate release notes for this ConnectLife Home Assistant integration release.
 7. Come up with a cool release name that hasn't been used before. List the earlier names with
    `gh release list --limit 300 --json name --jq '.[].name'` (older titles start with the version, e.g.
    "0.47.0 Fine Print"), and pick one that doesn't match any of them, ignoring case.
+   - **Betas** are named after their final release, with the beta number: "<final name> bN" (e.g. "Opening Night b1"
+     for `1.0.0b1`). Pick the final name at `b1`; later betas and the stable release reuse it (the stable release
+     without the suffix). Find it from the earlier betas of the same version in the release list.
 
 8. Format the release notes following this template. The first line is the release title: the release name only,
    without the version. HACS already shows the tag in front of it ("v0.52.0 - <release name>").
+   For a beta, put this right after the title, before Highlights (link the previous beta's notes from `b2` on):
+
+   > **This is a beta of X.Y.Z.** <It includes breaking changes (see below).> To get it, turn on the integration's
+   > **Pre-release** switch: an entity on the ConnectLife device under the Marketplace (or HACS) integration,
+   > disabled by default, so enable the entity first. Please report problems in an issue and mention the beta.
+   > <From b2: Changes since bN-1; see the [bN-1 notes](<link>) for the rest.>
 
 ```markdown
 <release name>

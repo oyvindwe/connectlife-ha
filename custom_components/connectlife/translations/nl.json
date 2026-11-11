@@ -2191,24 +2191,6 @@
       }
     },
     "select": {
-      "actions": {
-        "name": "Acties",
-        "state": {
-          "add_duration": "Duur toevoegen",
-          "add_gratin": "Gratin toevoegen",
-          "cancel": "Annuleren",
-          "direct_steam": "Directe stoom",
-          "pause": "Pauze",
-          "production_test": "Productietest",
-          "program_continue": "Programma hervatten",
-          "reset_programs_to_default": "Programma's terugzetten naar standaard",
-          "start": "Start",
-          "steam_shot": "Stoom shot",
-          "steamer_water_tank_door_open": "Klep stoomwatertank openen",
-          "stop": "Stop",
-          "stop_finish": "Stop afronden"
-        }
-      },
       "ads_dirtiness_setting_status": {
         "name": "Vuilheid",
         "state": {
@@ -2674,7 +2656,6 @@
           "intensive": "Intensief",
           "night": "Nacht",
           "normal": "Normaal",
-          "not_available": "Niet beschikbaar",
           "speed": "Snel",
           "uv": "UV"
         }
@@ -3014,7 +2995,6 @@
           "2_h_30_min": "02:30",
           "30_min": "00:30",
           "45_min": "00:45",
-          "not_available": "Niet beschikbaar",
           "not_set": "Niet ingesteld"
         }
       },
