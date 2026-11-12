@@ -33,4 +33,4 @@ properties:
         4: rinsing
         7: spinning
         10: finished
-        11: delay
+        11: delay_start_waiting
