@@ -1,6 +1,6 @@
 # Hisense DH3S802BW3
 # Actions, ApplicationPermissions, machine_status 3 (paused, in 030.yaml) and Door_status (in 030.yaml) verified on the device.
-# Remote start must be enabled on the dryer (ApplicationPermissions: 3) for the buttons (in 030.yaml) to work.
+# The dryer accepts the buttons (in 030.yaml) only with remote start enabled (ApplicationPermissions: 3).
 # Enabling it resets the program to auto, and stop disables it again.
 #
 # Verified with the dial in the "Remote" position (also seen on a DH3S80-DVW001 with this feature code):
