@@ -8333,7 +8333,7 @@
         "name": "Maximale Schleuderdrehzahl"
       },
       "washing_program_kg": {
-        "name": "Waschprogramm-Gewicht"
+        "name": "Maximale Beladung des Programms"
       },
       "washingtime": {
         "name": "Waschzeit"

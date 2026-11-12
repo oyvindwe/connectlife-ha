@@ -931,11 +931,14 @@ properties:
     optional: true
     entity_category: diagnostic
   - property: washing_program_kg
+    # Max load of the selected program in 0.1 kg (e.g. 20 quick_15, 45 power_39, 80 cotton, 120 full_load_49); 0 on
+    # machines that report washing_machine_type_kg instead.
     icon: mdi:weight-kilogram
     entity_category: diagnostic
     sensor:
       device_class: weight
       unit: kg
+      multiplier: 0.1
       read_only: true
   - property: washingtime
     optional: true
