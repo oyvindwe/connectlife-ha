@@ -37,7 +37,3 @@ properties:
         0: wash
         1: wash_and_dry
         2: dry
-  - property: washing_program_kg
-    # Max load of the selected program in 0.1 kg: 80 cotton, 50 with drying, 10 wash_and_dry_49.
-    sensor:
-      multiplier: 0.1

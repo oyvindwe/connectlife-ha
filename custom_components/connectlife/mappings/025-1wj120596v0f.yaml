@@ -45,10 +45,6 @@ properties:
       2: disabled
       3: enabled
     read_only: true
-- property: washing_program_kg
-  # Max load of the selected program in 0.1 kg: 20 quick_15, 40 bedding, 60 synthetic_dry, 120 full_load_49.
-  sensor:
-    multiplier: 0.1
 - property: washing_machine_type_max_speed
   # 14 = 1400 rpm, same encoding as the Spin_speed_rpm select.
   sensor:
