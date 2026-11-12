@@ -104,6 +104,7 @@ have a feature-specific mapping file.
 |                            | Hood                     | 012              | [hood-aa-tactile](custom_components/connectlife/mappings/012-hood-aa-tactile.yaml)                         |
 |                            | Oven                     | 013              | [000](custom_components/connectlife/mappings/013-000.yaml)                                                 |
 | Bio21                      | Oven                     | 013              | [oven-bio21-iconledplus](custom_components/connectlife/mappings/013-oven-bio21-iconledplus.yaml)           |
+| BIO21 pizza oven           | Oven                     | 013              | [oven-bio21-pizza](custom_components/connectlife/mappings/013-oven-bio21-pizza.yaml)                       |
 | Hi8                        | Oven                     | 013              | [oven-hi8](custom_components/connectlife/mappings/013-oven-hi8.yaml)                                       |
 | W-DW50/60-22               | Dishwasher               | 015              | [000](custom_components/connectlife/mappings/015-000.yaml)                                                 |
 | Gorenje GS673B60W          | Dishwasher               | 015              | [dishwasher-50.2f](custom_components/connectlife/mappings/015-dishwasher-50.2f.yaml)                       |
