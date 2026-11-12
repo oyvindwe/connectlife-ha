@@ -8333,7 +8333,7 @@
         "name": "Velocit\u00e0 massima tipo lavatrice"
       },
       "washing_program_kg": {
-        "name": "Peso programma di lavaggio"
+        "name": "Carico massimo del programma"
       },
       "washingtime": {
         "name": "Tempo di lavaggio"

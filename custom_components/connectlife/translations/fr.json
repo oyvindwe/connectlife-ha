@@ -8333,7 +8333,7 @@
         "name": "Vitesse maximale selon le type de lave-linge"
       },
       "washing_program_kg": {
-        "name": "Poids du programme de lavage"
+        "name": "Charge maximale du programme"
       },
       "washingtime": {
         "name": "Dur\u00e9e de lavage"
