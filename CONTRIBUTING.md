@@ -14,8 +14,7 @@ template has a checklist.
 ## Versioning and breaking changes
 
 Versions follow [semver](https://semver.org):
-- **Major** for breaking changes. Before 1.0.0, breaking changes come in minor versions, as semver allows for
-  `0.x`, with a line in the release notes.
+- **Major** for breaking changes.
 - **Minor** for new features, new device mappings and raising the minimum Home Assistant version (we support the
   releases from the last 12 months; HACS and the Marketplace don't offer releases an installation can't run).
 - **Patch** for fixes.
