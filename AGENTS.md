@@ -5,7 +5,7 @@ repository. Claude Code loads this file via `CLAUDE.md`, which imports it.
 
 ## Project Overview
 
-Home Assistant custom component (HACS integration) for ConnectLife smart appliances. Polls the ConnectLife cloud API every 60 seconds and exposes appliances as HA entities across 8 platforms: binary_sensor, climate, humidifier, number, sensor, select, switch, water_heater.
+Home Assistant custom component (HACS integration) for ConnectLife smart appliances. Gets status pushes from the ConnectLife cloud over a WebSocket (polling every 60 seconds when push is off or disconnected) and exposes appliances as HA entities across 8 platforms: binary_sensor, climate, humidifier, number, sensor, select, switch, water_heater.
 
 ## Commands
 
@@ -38,7 +38,7 @@ uv run pyright
 1. **Config flow** (`config_flow.py`) — user provides credentials, validated via `ConnectLifeApi.authenticate()`
 2. **Entry setup** (`__init__.py`) — creates `ConnectLifeApi`, calls `login()` (4-step OAuth2 via Gigya), initializes `ConnectLifeCoordinator`, and — only if at least one appliance enables a statistics sensor — also a `ConnectLifeStatisticsCoordinator` (stored under `hass.data[DOMAIN][f"{entry_id}_statistics"]`)
 3. **Coordinators** (`coordinator.py`) — two `DataUpdateCoordinator` subclasses run side by side:
-   - `ConnectLifeCoordinator` — the main coordinator; polls `api.get_appliances()` every 60s, returns `dict[str, ConnectLifeAppliance]` keyed by device_id. Drives all status-derived entities.
+   - `ConnectLifeCoordinator` — the main coordinator; polls `api.get_appliances()` every 60s (every 15 min while push updates are connected; see `push.py`), returns `dict[str, ConnectLifeAppliance]` keyed by device_id. Drives all status-derived entities.
    - `ConnectLifeStatisticsCoordinator` — polls the cloud statistics endpoints every `STATISTICS_UPDATE_INTERVAL` (10 min) for the daily energy/water sensors; returns `dict[device_id, EnergyResult | None]`. See [Statistics](#statistics-daily-energywater-sensors) below.
 4. **Platform setup** — each platform iterates appliances, loads device mappings, creates entities for properties that match the platform
 5. **Entity updates** — coordinator notifies entities via `_handle_coordinator_update()` → `update_state()` → `async_write_ha_state()`
