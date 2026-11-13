@@ -104,6 +104,7 @@ have a feature-specific mapping file.
 |                            | Hood                     | 012              | [hood-aa-tactile](custom_components/connectlife/mappings/012-hood-aa-tactile.yaml)                         |
 |                            | Oven                     | 013              | [000](custom_components/connectlife/mappings/013-000.yaml)                                                 |
 | Bio21                      | Oven                     | 013              | [oven-bio21-iconledplus](custom_components/connectlife/mappings/013-oven-bio21-iconledplus.yaml)           |
+| BIO21 pizza oven           | Oven                     | 013              | [oven-bio21-pizza](custom_components/connectlife/mappings/013-oven-bio21-pizza.yaml)                       |
 | Hi8                        | Oven                     | 013              | [oven-hi8](custom_components/connectlife/mappings/013-oven-hi8.yaml)                                       |
 | W-DW50/60-22               | Dishwasher               | 015              | [000](custom_components/connectlife/mappings/015-000.yaml)                                                 |
 | Gorenje GS673B60W          | Dishwasher               | 015              | [dishwasher-50.2f](custom_components/connectlife/mappings/015-dishwasher-50.2f.yaml)                       |
@@ -121,11 +122,13 @@ have a feature-specific mapping file.
 | WD5I9043BBFS               | Washing machine          | 025              | [1wfx0900003v](custom_components/connectlife/mappings/025-1wfx0900003v.yaml)                               |
 | WF5I8043BWF                | Washing machine          | 025              | [1wj0803f2v0w](custom_components/connectlife/mappings/025-1wj0803f2v0w.yaml)                               |
 | WF3S8014                   | Washing machine          | 025              | [1wj080831v0w](custom_components/connectlife/mappings/025-1wj080831v0w.yaml)                               |
+|                            | Washing machine          | 025              | [1wj080703v0w](custom_components/connectlife/mappings/025-1wj080703v0w.yaml)                               |
 | WD3S8043BW3                | Washing machine          | 025              | [1wj080837v0w](custom_components/connectlife/mappings/025-1wj080837v0w.yaml)                               |
 | WD5I8043BWF                | Washing machine          | 025              | [1wj080986v0w](custom_components/connectlife/mappings/025-1wj080986v0w.yaml)                               |
 |                            | Washing machine          | 025              | [1wj090660v0w](custom_components/connectlife/mappings/025-1wj090660v0w.yaml)                               |
 | WF5S9045BW                 | Washing machine          | 025              | [1wj090728v0w](custom_components/connectlife/mappings/025-1wj090728v0w.yaml)                               |
 | WFSE9014-LVW002            | Washing machine          | 025              | [1wj090729v0w](custom_components/connectlife/mappings/025-1wj090729v0w.yaml)                               |
+| WF5i9014-FVB001-000        | Washing machine          | 025              | [1wj090824v0f](custom_components/connectlife/mappings/025-1wj090824v0f.yaml)                               |
 | WF5I9043BBFS               | Washing machine          | 025              | [1wj090849v0f](custom_components/connectlife/mappings/025-1wj090849v0f.yaml)                               |
 | WF3S9014                   | Washing machine          | 025              | [1wj090856v0f](custom_components/connectlife/mappings/025-1wj090856v0f.yaml)                               |
 | WD3S9043BW3                | Washing machine          | 025              | [1wj090908v0w](custom_components/connectlife/mappings/025-1wj090908v0w.yaml)                               |

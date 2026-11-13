@@ -8333,7 +8333,7 @@
         "name": "Wasmachine type maximale snelheid"
       },
       "washing_program_kg": {
-        "name": "Programmagewicht"
+        "name": "Maximale belading programma"
       },
       "washingtime": {
         "name": "Wastijd"

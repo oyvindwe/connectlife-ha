@@ -8333,7 +8333,7 @@
         "name": "Velocidad m\u00e1xima seg\u00fan tipo de lavadora"
       },
       "washing_program_kg": {
-        "name": "Peso del programa de lavado"
+        "name": "Carga m\u00e1xima del programa"
       },
       "washingtime": {
         "name": "Tiempo de lavado"

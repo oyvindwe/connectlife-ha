@@ -8333,7 +8333,7 @@
         "name": "Washing machine type max speed"
       },
       "washing_program_kg": {
-        "name": "Washing program weight"
+        "name": "Program max load"
       },
       "washingtime": {
         "name": "Washing time"

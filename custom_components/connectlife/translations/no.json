@@ -8333,7 +8333,7 @@
         "name": "Maks sentrifugehastighet for vaskemaskin"
       },
       "washing_program_kg": {
-        "name": "Vaskeprogramvekt"
+        "name": "Maks last for programmet"
       },
       "washingtime": {
         "name": "Vasketid"

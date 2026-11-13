@@ -15,7 +15,7 @@ properties:
   # MyFreshChoice, same as RQ760N4SASE (026-1b0522z0308j)
   - property: variation_temperature
     hide: false
-    entity_category: config
+    entity_category: null
     number:
       device_class: temperature
       unit: °C

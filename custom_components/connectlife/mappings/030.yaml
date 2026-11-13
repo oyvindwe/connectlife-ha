@@ -3,27 +3,29 @@ device_type_name: Tumble dryer
 statistics:
   source: energy_consumption_curve
   daily_energy_kwh: true
-# Actions 1 stop, 2 start/resume, 3 pause, verified on the DH3S802BW3 (030-1wk080066v0w, #758). Remote start must be
-# enabled on the dryer (ApplicationPermissions: 3). machine_status: 1 standby, 2 running, 3 paused.
+# Actions 1 stop, 2 start/resume, 3 pause, verified on the DH3S802BW3 (030-1wk080066v0w, #758). machine_status:
+# 1 standby, 2 running, 3 paused. ApplicationPermissions: 0 none, 1 monitoring only, 2 everything except starting,
+# 3 also starting (remote start enabled on the dryer). But the DHSE10-BVW113 (030-1wk100266v0f, #538) starts and
+# stops at 2, so the buttons show at 2 too; a dryer that rejects a command reports an error.
 buttons:
   - key: start
     icon: mdi:play
     available_when:
-      ApplicationPermissions: 3
+      ApplicationPermissions: [2, 3]
       machine_status: [1, 3]
     write:
       Actions: 2
   - key: pause
     icon: mdi:pause
     available_when:
-      ApplicationPermissions: 3
+      ApplicationPermissions: [2, 3]
       machine_status: 2
     write:
       Actions: 3
   - key: stop
     icon: mdi:stop
     available_when:
-      ApplicationPermissions: 3
+      ApplicationPermissions: [2, 3]
       machine_status: [2, 3]
     write:
       Actions: 1
