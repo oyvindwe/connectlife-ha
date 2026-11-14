@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import logging
+import uuid
 
 from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
 from homeassistant.config_entries import ConfigEntry
@@ -21,13 +22,16 @@ from .const import (
     AUTH_TYPE_OAUTH,
     CONF_AUTH_TYPE,
     CONF_DEVELOPMENT_MODE,
+    CONF_PUSH,
     CONF_TEST_SERVER_URL,
     CONF_TRIR,
+    DATA_PUSH_PHONE_CODE,
     DATA_STATE_CLASS_MIGRATION_DONE,
     DOMAIN,
 )
 from .coordinator import ConnectLifeCoordinator, ConnectLifeStatisticsCoordinator
 from .device_mappings import DeviceMappings
+from .push import PushListener
 from .oauth import ConnectLifeOAuth2Implementation, create_oauth_api
 from .services import async_setup_services
 from .statistics_sources import enabled_sensors
@@ -123,10 +127,22 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
 
     await coordinator.cleanup_removed_entities()
+    if entry.options.get(CONF_PUSH, True):
+        _start_push(hass, entry, coordinator)
     if not entry.data.get(DATA_STATE_CLASS_MIGRATION_DONE):
         await coordinator.update_orphaned_statistics_issue()
 
     return True
+
+def _start_push(hass: HomeAssistant, entry: ConfigEntry, coordinator: ConnectLifeCoordinator) -> None:
+    """Start push updates; the task is cancelled when the entry is unloaded."""
+    if not (phone_code := entry.data.get(DATA_PUSH_PHONE_CODE)):
+        phone_code = str(uuid.uuid4())
+        hass.config_entries.async_update_entry(entry, data={**entry.data, DATA_PUSH_PHONE_CODE: phone_code})
+    entry.async_create_background_task(
+        hass, PushListener(coordinator, phone_code).run(), f"{DOMAIN} push {entry.entry_id}"
+    )
+
 
 async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     """Unload a config entry."""

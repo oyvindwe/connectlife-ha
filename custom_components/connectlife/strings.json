@@ -9125,9 +9125,13 @@
       },
       "init": {
         "data": {
-          "device": "Select device"
+          "device": "Select device",
+          "push": "Push updates (beta)"
         },
-        "description": "Configure a device."
+        "data_description": {
+          "push": "Get changes from ConnectLife within seconds, instead of polling every minute. While connected, the integration also polls every 15 minutes. Turn off if updates stop arriving or you see connection problems; the integration then polls every minute."
+        },
+        "description": "Configure push updates, or select a device to configure."
       }
     }
   },

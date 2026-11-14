@@ -111,9 +111,16 @@ It is possible to guard against `set_value` by setting `read_only: true` in the 
       read_only: true
 ```
 
-## Polling delay
+## Updates
 
-The integration polls the ConnectLife API every 60 seconds to avoid overloading the API and risking being banned. When a command is sent from Home Assistant, only the properties included in that command are updated immediately in the HA UI. Any side effects on other properties (e.g., turning on an AC may also change fan mode or current temperature) will not appear until the next poll. Changes made outside Home Assistant (e.g., from the ConnectLife mobile app or physical device controls) may also take up to 60 seconds to appear.
+ConnectLife pushes changes to Home Assistant within seconds, including changes made from the ConnectLife app or on
+the device, and side effects of commands sent from Home Assistant (e.g. turning on an AC may also change fan mode).
+While push updates are connected, the integration also polls the ConnectLife API every 15 minutes as a safety net.
+
+Push updates are in beta. If the push connection is lost, or you turn **Push updates (beta)** off in the integration
+options, the integration polls every 60 seconds instead, and changes made outside Home Assistant can take up to a
+minute to appear. When a command is sent from Home Assistant, the properties in that command are updated in Home
+Assistant right away either way.
 
 ## Troubleshooting
 

@@ -342,3 +342,45 @@ async def test_options_abort_when_entry_not_loaded(hass: HomeAssistant) -> None:
 
     assert result["type"] is FlowResultType.ABORT
     assert result["reason"] == "not_loaded"
+
+
+def _loaded_entry(hass: HomeAssistant, options: dict | None = None) -> MockConfigEntry:
+    """An entry the options flow can configure: loaded, with one device."""
+    entry = MockConfigEntry(domain=DOMAIN, data={"username": "user", "password": "pass"}, options=options or {})
+    entry.add_to_hass(hass)
+    entry.mock_state(hass, config_entries.ConfigEntryState.LOADED)
+    device = SimpleNamespace(device_id="device-1", device_nickname="Washer")
+    hass.data.setdefault(DOMAIN, {})[entry.entry_id] = SimpleNamespace(data={"device-1": device})
+    return entry
+
+
+async def test_options_turn_push_off(hass: HomeAssistant) -> None:
+    entry = _loaded_entry(hass, {"devices": {"device-1": {"disable_beep": True}}})
+
+    result = await hass.config_entries.options.async_init(entry.entry_id)
+    assert result["type"] is FlowResultType.FORM
+    result = await hass.config_entries.options.async_configure(result["flow_id"], {"push": False})
+
+    assert result["type"] is FlowResultType.CREATE_ENTRY
+    assert entry.options == {"devices": {"device-1": {"disable_beep": True}}, "push": False}
+
+
+async def test_options_push_kept_when_configuring_a_device(hass: HomeAssistant) -> None:
+    entry = _loaded_entry(hass)
+
+    result = await hass.config_entries.options.async_init(entry.entry_id)
+    with (
+        patch("custom_components.connectlife.config_flow.DeviceMappings.get_mapping"),
+        patch("custom_components.connectlife.config_flow.contested_climate_targets", return_value={}),
+    ):
+        result = await hass.config_entries.options.async_configure(
+            result["flow_id"], {"push": False, "device": "device-1"}
+        )
+        assert result["step_id"] == "configure_device"
+        result = await hass.config_entries.options.async_configure(
+            result["flow_id"], {"disable_beep": False, "expose_offline_state": False}
+        )
+
+    assert result["type"] is FlowResultType.CREATE_ENTRY
+    assert entry.options["push"] is False
+    assert entry.options["devices"]["device-1"] == {"disable_beep": False, "expose_offline_state": False}

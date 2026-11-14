@@ -39,6 +39,7 @@ from .const import (
     CONF_DEVICES,
     CONF_DEVELOPMENT_MODE,
     CONF_DISABLE_BEEP,
+    CONF_PUSH,
     CONF_EXPOSE_OFFLINE_STATE,
     CONF_SOURCE_ID,
     CONF_TARGET_OVERRIDES,
@@ -427,16 +428,20 @@ class OptionsFlowHandler(OptionsFlowWithReload):
     """
 
     _device_id: str | None = None
+    _push: bool | None = None
 
     async def async_step_init(self, user_input: dict[str, Any] | None = None) -> ConfigFlowResult:
         # The devices come from the coordinator, which only exists once the entry is set up.
         if self.config_entry.state is not ConfigEntryState.LOADED:
             return self.async_abort(reason="not_loaded")
 
-        # Select device to configure
+        # Push updates, and the device to configure, if any
         if user_input is not None:
-            self._device_id = user_input["device"]
-            return await self.async_step_configure_device()
+            self._push = user_input[CONF_PUSH]
+            if device_id := user_input.get("device"):
+                self._device_id = device_id
+                return await self.async_step_configure_device()
+            return self.async_create_entry(title="", data={**self.config_entry.options, CONF_PUSH: self._push})
 
         coordinator = self.hass.data[DOMAIN][self.config_entry.entry_id]
         devices = {
@@ -446,6 +451,7 @@ class OptionsFlowHandler(OptionsFlowWithReload):
 
         schema = vol.Schema(
             {
+                vol.Optional(CONF_PUSH, default=self.config_entry.options.get(CONF_PUSH, True)): bool,
                 vol.Optional("device"): vol.In(devices),
             }
         )
@@ -468,6 +474,8 @@ class OptionsFlowHandler(OptionsFlowWithReload):
         # Configure the device
         if user_input is not None:
             data = self.config_entry.options.copy()
+            if self._push is not None:
+                data[CONF_PUSH] = self._push
             data[CONF_DEVICES] = data[CONF_DEVICES].copy() if CONF_DEVICES in data else {}
             overrides = {
                 target: user_input[self._override_key(target)]

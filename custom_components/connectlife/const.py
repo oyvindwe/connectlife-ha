@@ -20,6 +20,10 @@ CONF_EXPOSE_OFFLINE_STATE = "expose_offline_state"
 CONF_TARGET_OVERRIDES = "target_overrides"
 CONF_TEST_SERVER_URL = "test_server_url"
 CONF_TRIR = "trir"
+# Push updates over a WebSocket (beta); on unless turned off in the options.
+CONF_PUSH = "push"
+# Client ID registered for push messages, kept so the account doesn't collect a new one on every start.
+DATA_PUSH_PHONE_CODE = "push_phone_code"
 
 # Sentinel option value meaning "use the automatic, priority-based binding"
 # for a contested climate target (see utils.climate_target_bindings).
