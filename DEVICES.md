@@ -193,6 +193,7 @@ have a feature-specific mapping file.
 | DH3S902BW3                 | Tumble dryer             | 030              | [1wk090106v0w](custom_components/connectlife/mappings/030-1wk090106v0w.yaml)                               |
 | DH5S102BW                  | Tumble dryer             | 030              | [1wk100028v0w](custom_components/connectlife/mappings/030-1wk100028v0w.yaml)                               |
 | DHSE10                     | Tumble dryer             | 030              | [1wk100130v0f](custom_components/connectlife/mappings/030-1wk100130v0f.yaml)                               |
+| DHSE10-BVW113              | Tumble dryer             | 030              | [1wk100261v0w](custom_components/connectlife/mappings/030-1wk100261v0w.yaml)                               |
 | DH5S102BB                  | Tumble dryer             | 030              | [1wk100266v0f](custom_components/connectlife/mappings/030-1wk100266v0f.yaml)                               |
 | DHSE80-BEW001              | Tumble dryer             | 030              | [1wk080027e0w](custom_components/connectlife/mappings/030-1wk080027e0w.yaml)                               |
 |                            | Tumble dryer             | 030              | [1wk100163v0w](custom_components/connectlife/mappings/030-1wk100163v0w.yaml)                               |
