@@ -494,6 +494,81 @@
       "anti_legionella_s": {
         "name": "Sterilization"
       },
+      "asko_washer_error_e0": {
+        "name": "E0 incorrect settings"
+      },
+      "asko_washer_error_e1": {
+        "name": "E1 temperature sensor fault"
+      },
+      "asko_washer_error_e10": {
+        "name": "E10 water level sensor fault"
+      },
+      "asko_washer_error_e10_1": {
+        "name": "E10.1 water level sensor fault"
+      },
+      "asko_washer_error_e11": {
+        "name": "E11 overflow"
+      },
+      "asko_washer_error_e12": {
+        "name": "E12 motor fault"
+      },
+      "asko_washer_error_e13": {
+        "name": "E13 unbalanced load"
+      },
+      "asko_washer_error_e2": {
+        "name": "E2 door fault"
+      },
+      "asko_washer_error_e22": {
+        "name": "E22 door cannot be locked"
+      },
+      "asko_washer_error_e22_1": {
+        "name": "E22.1 door cannot be locked"
+      },
+      "asko_washer_error_e23": {
+        "name": "E23 door cannot be unlocked"
+      },
+      "asko_washer_error_e23_1": {
+        "name": "E23.1 door cannot be unlocked"
+      },
+      "asko_washer_error_e24": {
+        "name": "E24 door lock fault"
+      },
+      "asko_washer_error_e26": {
+        "name": "E26 door lock current exceeded"
+      },
+      "asko_washer_error_e3": {
+        "name": "E3 water filling fault"
+      },
+      "asko_washer_error_e36": {
+        "name": "E36 UI and PMCU communication fault"
+      },
+      "asko_washer_error_e37": {
+        "name": "E37 incompatible UI and PMCU software"
+      },
+      "asko_washer_error_e40": {
+        "name": "E40 supply voltage out of range"
+      },
+      "asko_washer_error_e48": {
+        "name": "E48 network connection fault"
+      },
+      "asko_washer_error_e6": {
+        "name": "E6 water heating fault"
+      },
+      "asko_washer_error_e7": {
+        "name": "E7 drain fault"
+      },
+      "asko_washer_error_e7_1": {
+        "name": "E7.1 reduced drain flow"
+      },
+      "asko_washer_error_e7_2": {
+        "name": "E7.2 too much detergent"
+      },
+      "asko_washer_error_e9": {
+        "name": "E9 water leak detected"
+      },
+      "asko_washer_error_e9_1": {
+        "name": "E9.1 water leak detected"
+      },
       "auto_boost": {
         "name": "Auto boost"
       },
@@ -2579,15 +2654,19 @@
           "activewear": "Activewear",
           "airtech": "AirTech",
           "allergy_safe": "Allergy safe",
+          "anti_allergy_cotton": "Anti-allergy cotton",
+          "anti_allergy_synthetic": "Anti-allergy synthetic",
           "auto": "Auto",
           "baby_care": "Baby care",
           "bedding": "Bedding",
           "bleaching": "Bleaching",
           "clean": "Clean",
           "color": "Color",
+          "cotton": "Cotton",
           "crystal_glass": "Crystal glass",
           "curtains": "Curtains",
           "dark_clothes": "Dark clothes",
+          "delicates": "Delicates",
           "down_feathers": "Down feathers",
           "draining": "Draining",
           "drum_clean": "Drum clean",
@@ -2598,6 +2677,7 @@
           "fabric_care": "Fabric care",
           "glass": "Glass",
           "hygiene": "Hygiene",
+          "impregnation": "Impregnation",
           "intensive": "Intensive",
           "intensive_59_32": "Intensive 59'/32'",
           "jeans": "Jeans",
@@ -2612,6 +2692,7 @@
           "normal_wash": "Normal wash",
           "odor_control": "Odor control",
           "one_hour": "One hour",
+          "outerwear": "Outerwear",
           "pet_hair_removal": "Pet hair removal",
           "pets": "Pets",
           "pillow": "Pillow",
@@ -2619,6 +2700,7 @@
           "plush_toys": "Plush toys",
           "power_39": "Power 39",
           "preheated": "Preheated",
+          "quick_intensive": "Quick intensive",
           "quick_pro": "Quick pro",
           "rinse_and_hold": "Rinse and hold",
           "rinsing_softening": "Rinsing & Softening",
@@ -2627,8 +2709,10 @@
           "shoes": "Shoes",
           "speed_14": "Speed 14",
           "speed_20": "Speed 20",
+          "spinning": "Spinning",
           "spinning_draining": "Spinning & Draining",
           "sportswear": "Sportswear",
+          "stain_program": "Stain program",
           "steam_refresh": "Steam refresh",
           "swimwear": "Swimwear",
           "tights_stockings": "Tights/Stockings",
@@ -3578,7 +3662,13 @@
         "name": "Current washing program phase 2"
       },
       "current_washing_program_phase_status": {
-        "name": "Current washing program phase status"
+        "name": "Current washing program phase status",
+        "state": {
+          "cooling_down": "Cooling down",
+          "final_spin": "Final spin",
+          "idle": "Idle",
+          "wash": "Wash"
+        }
       },
       "current_water_level": {
         "name": "Current water level"
