@@ -84,8 +84,10 @@ properties:
     icon: mdi:air-filter
     entity_category: diagnostic
   - property: f_cool_qvalue
+    # The unit's own estimate of its cooling output, in W (not BTU/h: #657).
     sensor:
-      unit: BTU/h
+      device_class: power
+      unit: W
       state_class: measurement
     icon: mdi:snowflake
   - property: f_e_arkgrille
@@ -280,8 +282,10 @@ properties:
       state_class: measurement
     hide: true
   - property: f_heat_qvalue
+    # The unit's own estimate of its heating output, in W (not BTU/h: #657).
     sensor:
-      unit: BTU/h
+      device_class: power
+      unit: W
       state_class: measurement
     icon: mdi:weather-sunny
   - property: f_humidity
