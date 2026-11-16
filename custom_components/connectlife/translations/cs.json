@@ -494,6 +494,81 @@
       "anti_legionella_s": {
         "name": "Sterilizace"
       },
+      "asko_washer_error_e0": {
+        "name": "E0 nespr\u00e1vn\u00e9 nastaven\u00ed"
+      },
+      "asko_washer_error_e1": {
+        "name": "E1 porucha teplotn\u00edho \u010didla"
+      },
+      "asko_washer_error_e10": {
+        "name": "E10 porucha \u010didla hladiny vody"
+      },
+      "asko_washer_error_e10_1": {
+        "name": "E10.1 porucha \u010didla hladiny vody"
+      },
+      "asko_washer_error_e11": {
+        "name": "E11 p\u0159ete\u010den\u00ed"
+      },
+      "asko_washer_error_e12": {
+        "name": "E12 porucha motoru"
+      },
+      "asko_washer_error_e13": {
+        "name": "E13 nevyv\u00e1\u017een\u00e1 n\u00e1pl\u0148"
+      },
+      "asko_washer_error_e2": {
+        "name": "E2 porucha dv\u00ed\u0159ek"
+      },
+      "asko_washer_error_e22": {
+        "name": "E22 dv\u00ed\u0159ka nelze zamknout"
+      },
+      "asko_washer_error_e22_1": {
+        "name": "E22.1 dv\u00ed\u0159ka nelze zamknout"
+      },
+      "asko_washer_error_e23": {
+        "name": "E23 dv\u00ed\u0159ka nelze odemknout"
+      },
+      "asko_washer_error_e23_1": {
+        "name": "E23.1 dv\u00ed\u0159ka nelze odemknout"
+      },
+      "asko_washer_error_e24": {
+        "name": "E24 porucha z\u00e1mku dv\u00ed\u0159ek"
+      },
+      "asko_washer_error_e26": {
+        "name": "E26 p\u0159ekro\u010den proud z\u00e1mku dv\u00ed\u0159ek"
+      },
+      "asko_washer_error_e3": {
+        "name": "E3 porucha napou\u0161t\u011bn\u00ed vody"
+      },
+      "asko_washer_error_e36": {
+        "name": "E36 porucha komunikace mezi ovl\u00e1dac\u00edm panelem a PMCU"
+      },
+      "asko_washer_error_e37": {
+        "name": "E37 nekompatibiln\u00ed software ovl\u00e1dac\u00edho panelu a PMCU"
+      },
+      "asko_washer_error_e40": {
+        "name": "E40 nap\u00e1jec\u00ed nap\u011bt\u00ed mimo rozsah"
+      },
+      "asko_washer_error_e48": {
+        "name": "E48 porucha s\u00ed\u0165ov\u00e9ho p\u0159ipojen\u00ed"
+      },
+      "asko_washer_error_e6": {
+        "name": "E6 porucha oh\u0159evu vody"
+      },
+      "asko_washer_error_e7": {
+        "name": "E7 porucha vypou\u0161t\u011bn\u00ed"
+      },
+      "asko_washer_error_e7_1": {
+        "name": "E7.1 sn\u00ed\u017een\u00fd odtok"
+      },
+      "asko_washer_error_e7_2": {
+        "name": "E7.2 p\u0159\u00edli\u0161 mnoho prac\u00edho prost\u0159edku"
+      },
+      "asko_washer_error_e9": {
+        "name": "E9 zji\u0161t\u011bn \u00fanik vody"
+      },
+      "asko_washer_error_e9_1": {
+        "name": "E9.1 zji\u0161t\u011bn \u00fanik vody"
+      },
       "auto_boost": {
         "name": "Automatick\u00e9 pos\u00edlen\u00ed"
       },
@@ -2579,15 +2654,19 @@
           "activewear": "Sportovn\u00ed oble\u010den\u00ed",
           "airtech": "AirTech",
           "allergy_safe": "Proti alergen\u016fm",
+          "anti_allergy_cotton": "Antialergick\u00fd bavlna",
+          "anti_allergy_synthetic": "Antialergick\u00fd syntetika",
           "auto": "Auto",
           "baby_care": "P\u00e9\u010de o miminko",
           "bedding": "Povle\u010den\u00ed",
           "bleaching": "B\u011blen\u00ed",
           "clean": "\u010ci\u0161t\u011bn\u00ed",
           "color": "Barevn\u00e9",
+          "cotton": "Bavlna",
           "crystal_glass": "K\u0159i\u0161\u0165\u00e1lov\u00e9 sklo",
           "curtains": "Z\u00e1clony",
           "dark_clothes": "Tmav\u00e9 pr\u00e1dlo",
+          "delicates": "Jemn\u00e9",
           "down_feathers": "Pe\u0159\u00ed",
           "draining": "Vypou\u0161t\u011bn\u00ed",
           "drum_clean": "\u010ci\u0161t\u011bn\u00ed bubnu",
@@ -2598,6 +2677,7 @@
           "fabric_care": "P\u00e9\u010de o textil",
           "glass": "Sklo",
           "hygiene": "Hygiena",
+          "impregnation": "Impregnace",
           "intensive": "Intenzivn\u00ed",
           "intensive_59_32": "Intenzivn\u00ed 59'/32'",
           "jeans": "D\u017e\u00edny",
@@ -2612,6 +2692,7 @@
           "normal_wash": "B\u011b\u017en\u00e9 pran\u00ed",
           "odor_control": "Kontrola z\u00e1pachu",
           "one_hour": "Jedna hodina",
+          "outerwear": "Svrchn\u00ed od\u011bvy",
           "pet_hair_removal": "Odstra\u0148ov\u00e1n\u00ed chlup\u016f",
           "pets": "Dom\u00e1c\u00ed mazl\u00ed\u010dci",
           "pillow": "Pol\u0161t\u00e1\u0159",
@@ -2619,6 +2700,7 @@
           "plush_toys": "Ply\u0161ov\u00e9 hra\u010dky",
           "power_39": "V\u00fdkon 39",
           "preheated": "P\u0159edeh\u0159\u00e1t\u00ed",
+          "quick_intensive": "Rychl\u00fd intenzivn\u00ed",
           "quick_pro": "Rychl\u00fd pro",
           "rinse_and_hold": "M\u00e1ch\u00e1n\u00ed a podr\u017een\u00ed",
           "rinsing_softening": "M\u00e1ch\u00e1n\u00ed a zm\u011bk\u010den\u00ed",
@@ -2627,8 +2709,10 @@
           "shoes": "Obuv",
           "speed_14": "Rychl\u00fd 14",
           "speed_20": "Rychlost 20",
+          "spinning": "Odst\u0159e\u010fov\u00e1n\u00ed",
           "spinning_draining": "Odst\u0159ed\u011bn\u00ed a vypou\u0161t\u011bn\u00ed",
           "sportswear": "Sportovn\u00ed oble\u010den\u00ed",
+          "stain_program": "Program na skvrny",
           "steam_refresh": "Osv\u011b\u017een\u00ed p\u00e1rou",
           "swimwear": "Plavky",
           "tights_stockings": "Pun\u010dochy",
@@ -3578,7 +3662,13 @@
         "name": "Aktu\u00e1ln\u00ed f\u00e1ze prac\u00edho programu 2"
       },
       "current_washing_program_phase_status": {
-        "name": "Stav aktu\u00e1ln\u00ed f\u00e1ze prac\u00edho programu"
+        "name": "Stav aktu\u00e1ln\u00ed f\u00e1ze prac\u00edho programu",
+        "state": {
+          "cooling_down": "Ochlazov\u00e1n\u00ed",
+          "final_spin": "Z\u00e1v\u011bre\u010dn\u00e9 odst\u0159e\u010fov\u00e1n\u00ed",
+          "idle": "Ne\u010dinn\u00fd",
+          "wash": "Pran\u00ed"
+        }
       },
       "current_water_level": {
         "name": "Aktu\u00e1ln\u00ed hladina vody"
@@ -9125,7 +9215,11 @@
       },
       "init": {
         "data": {
-          "device": "Vyberte za\u0159\u00edzen\u00ed"
+          "device": "Vyberte za\u0159\u00edzen\u00ed",
+          "push": "Push aktualizace (beta)"
+        },
+        "data_description": {
+          "push": "Z\u00edsk\u00e1v\u00e1 zm\u011bny z ConnectLife b\u011bhem n\u011bkolika sekund m\u00edsto dotazov\u00e1n\u00ed ka\u017edou minutu. B\u011bhem p\u0159ipojen\u00ed se integrace nav\u00edc dotazuje ka\u017ed\u00fdch 15 minut. Vypn\u011bte, pokud aktualizace p\u0159estanou p\u0159ich\u00e1zet nebo se objev\u00ed probl\u00e9my s p\u0159ipojen\u00edm; integrace se pak dotazuje ka\u017edou minutu."
         },
         "description": "Nakonfigurujte za\u0159\u00edzen\u00ed."
       }

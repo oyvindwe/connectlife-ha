@@ -494,6 +494,81 @@
       "anti_legionella_s": {
         "name": "St\u00e9rilisation"
       },
+      "asko_washer_error_e0": {
+        "name": "E0 param\u00e8tres incorrects"
+      },
+      "asko_washer_error_e1": {
+        "name": "E1 d\u00e9faut du capteur de temp\u00e9rature"
+      },
+      "asko_washer_error_e10": {
+        "name": "E10 d\u00e9faut du capteur de niveau d'eau"
+      },
+      "asko_washer_error_e10_1": {
+        "name": "E10.1 d\u00e9faut du capteur de niveau d'eau"
+      },
+      "asko_washer_error_e11": {
+        "name": "E11 d\u00e9bordement"
+      },
+      "asko_washer_error_e12": {
+        "name": "E12 d\u00e9faut moteur"
+      },
+      "asko_washer_error_e13": {
+        "name": "E13 charge d\u00e9s\u00e9quilibr\u00e9e"
+      },
+      "asko_washer_error_e2": {
+        "name": "E2 d\u00e9faut de porte"
+      },
+      "asko_washer_error_e22": {
+        "name": "E22 la porte ne peut pas \u00eatre verrouill\u00e9e"
+      },
+      "asko_washer_error_e22_1": {
+        "name": "E22.1 la porte ne peut pas \u00eatre verrouill\u00e9e"
+      },
+      "asko_washer_error_e23": {
+        "name": "E23 la porte ne peut pas \u00eatre d\u00e9verrouill\u00e9e"
+      },
+      "asko_washer_error_e23_1": {
+        "name": "E23.1 la porte ne peut pas \u00eatre d\u00e9verrouill\u00e9e"
+      },
+      "asko_washer_error_e24": {
+        "name": "E24 d\u00e9faut du verrou de porte"
+      },
+      "asko_washer_error_e26": {
+        "name": "E26 courant du verrou de porte d\u00e9pass\u00e9"
+      },
+      "asko_washer_error_e3": {
+        "name": "E3 d\u00e9faut de remplissage d'eau"
+      },
+      "asko_washer_error_e36": {
+        "name": "E36 d\u00e9faut de communication entre l'interface et le PMCU"
+      },
+      "asko_washer_error_e37": {
+        "name": "E37 logiciels de l'interface et du PMCU incompatibles"
+      },
+      "asko_washer_error_e40": {
+        "name": "E40 tension d'alimentation hors plage"
+      },
+      "asko_washer_error_e48": {
+        "name": "E48 d\u00e9faut de connexion r\u00e9seau"
+      },
+      "asko_washer_error_e6": {
+        "name": "E6 d\u00e9faut de chauffage de l'eau"
+      },
+      "asko_washer_error_e7": {
+        "name": "E7 d\u00e9faut de vidange"
+      },
+      "asko_washer_error_e7_1": {
+        "name": "E7.1 vidange r\u00e9duite"
+      },
+      "asko_washer_error_e7_2": {
+        "name": "E7.2 trop de d\u00e9tergent"
+      },
+      "asko_washer_error_e9": {
+        "name": "E9 fuite d'eau d\u00e9tect\u00e9e"
+      },
+      "asko_washer_error_e9_1": {
+        "name": "E9.1 fuite d'eau d\u00e9tect\u00e9e"
+      },
       "auto_boost": {
         "name": "Boost auto"
       },
@@ -2579,15 +2654,19 @@
           "activewear": "V\u00eatements techniques",
           "airtech": "AirTech",
           "allergy_safe": "Anti-allergie",
+          "anti_allergy_cotton": "Anti-allergie coton",
+          "anti_allergy_synthetic": "Anti-allergie synth\u00e9tique",
           "auto": "Auto",
           "baby_care": "Soin b\u00e9b\u00e9",
           "bedding": "Linge de lit",
           "bleaching": "Blanchiment",
           "clean": "Nettoyage",
           "color": "Couleurs",
+          "cotton": "Coton",
           "crystal_glass": "Cristal",
           "curtains": "Rideaux",
           "dark_clothes": "V\u00eatements fonc\u00e9s",
+          "delicates": "D\u00e9licats",
           "down_feathers": "Duvet",
           "draining": "Vidange",
           "drum_clean": "Nettoyage du tambour",
@@ -2598,6 +2677,7 @@
           "fabric_care": "Soin des textiles",
           "glass": "Verre",
           "hygiene": "Hygi\u00e8ne",
+          "impregnation": "Imperm\u00e9abilisation",
           "intensive": "Intensif",
           "intensive_59_32": "Intensif 59'/32'",
           "jeans": "Jeans",
@@ -2612,6 +2692,7 @@
           "normal_wash": "Lavage normal",
           "odor_control": "Contr\u00f4le des odeurs",
           "one_hour": "Une heure",
+          "outerwear": "V\u00eatements d'ext\u00e9rieur",
           "pet_hair_removal": "\u00c9limination des poils d'animaux",
           "pets": "Animaux",
           "pillow": "Oreiller",
@@ -2619,6 +2700,7 @@
           "plush_toys": "Peluches",
           "power_39": "Power 39",
           "preheated": "Pr\u00e9chauff\u00e9",
+          "quick_intensive": "Rapide intensif",
           "quick_pro": "Quick pro",
           "rinse_and_hold": "Rin\u00e7age et maintien",
           "rinsing_softening": "Rin\u00e7age et assouplissement",
@@ -2627,8 +2709,10 @@
           "shoes": "Chaussures",
           "speed_14": "Rapide 14",
           "speed_20": "Speed 20",
+          "spinning": "Essorage",
           "spinning_draining": "Essorage et vidange",
           "sportswear": "V\u00eatements de sport",
+          "stain_program": "Programme taches",
           "steam_refresh": "Rafra\u00eechir vapeur",
           "swimwear": "Maillots de bain",
           "tights_stockings": "Collants/Bas",
@@ -3578,7 +3662,13 @@
         "name": "Phase 2 du programme de lavage en cours"
       },
       "current_washing_program_phase_status": {
-        "name": "\u00c9tat de la phase du programme de lavage en cours"
+        "name": "\u00c9tat de la phase du programme de lavage en cours",
+        "state": {
+          "cooling_down": "Refroidissement",
+          "final_spin": "Essorage final",
+          "idle": "Inactif",
+          "wash": "Lavage"
+        }
       },
       "current_water_level": {
         "name": "Niveau d'eau actuel"
@@ -9125,7 +9215,11 @@
       },
       "init": {
         "data": {
-          "device": "S\u00e9lectionner un appareil"
+          "device": "S\u00e9lectionner un appareil",
+          "push": "Mises \u00e0 jour push (b\u00eata)"
+        },
+        "data_description": {
+          "push": "Re\u00e7oit les changements de ConnectLife en quelques secondes, au lieu d'interroger chaque minute. Pendant la connexion, l'int\u00e9gration interroge aussi toutes les 15 minutes. \u00c0 d\u00e9sactiver si les mises \u00e0 jour n'arrivent plus ou en cas de probl\u00e8mes de connexion ; l'int\u00e9gration interroge alors chaque minute."
         },
         "description": "Configurer un appareil."
       }

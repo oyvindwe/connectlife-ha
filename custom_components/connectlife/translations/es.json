@@ -494,6 +494,81 @@
       "anti_legionella_s": {
         "name": "Esterilizaci\u00f3n"
       },
+      "asko_washer_error_e0": {
+        "name": "E0 ajustes incorrectos"
+      },
+      "asko_washer_error_e1": {
+        "name": "E1 fallo del sensor de temperatura"
+      },
+      "asko_washer_error_e10": {
+        "name": "E10 fallo del sensor de nivel de agua"
+      },
+      "asko_washer_error_e10_1": {
+        "name": "E10.1 fallo del sensor de nivel de agua"
+      },
+      "asko_washer_error_e11": {
+        "name": "E11 desbordamiento"
+      },
+      "asko_washer_error_e12": {
+        "name": "E12 fallo del motor"
+      },
+      "asko_washer_error_e13": {
+        "name": "E13 carga desequilibrada"
+      },
+      "asko_washer_error_e2": {
+        "name": "E2 fallo de la puerta"
+      },
+      "asko_washer_error_e22": {
+        "name": "E22 la puerta no se puede bloquear"
+      },
+      "asko_washer_error_e22_1": {
+        "name": "E22.1 la puerta no se puede bloquear"
+      },
+      "asko_washer_error_e23": {
+        "name": "E23 la puerta no se puede desbloquear"
+      },
+      "asko_washer_error_e23_1": {
+        "name": "E23.1 la puerta no se puede desbloquear"
+      },
+      "asko_washer_error_e24": {
+        "name": "E24 fallo del bloqueo de la puerta"
+      },
+      "asko_washer_error_e26": {
+        "name": "E26 corriente del bloqueo de la puerta excedida"
+      },
+      "asko_washer_error_e3": {
+        "name": "E3 fallo de llenado de agua"
+      },
+      "asko_washer_error_e36": {
+        "name": "E36 fallo de comunicaci\u00f3n entre la interfaz y la PMCU"
+      },
+      "asko_washer_error_e37": {
+        "name": "E37 software de la interfaz y la PMCU incompatible"
+      },
+      "asko_washer_error_e40": {
+        "name": "E40 tensi\u00f3n de alimentaci\u00f3n fuera de rango"
+      },
+      "asko_washer_error_e48": {
+        "name": "E48 fallo de conexi\u00f3n de red"
+      },
+      "asko_washer_error_e6": {
+        "name": "E6 fallo de calentamiento del agua"
+      },
+      "asko_washer_error_e7": {
+        "name": "E7 fallo de desag\u00fce"
+      },
+      "asko_washer_error_e7_1": {
+        "name": "E7.1 desag\u00fce reducido"
+      },
+      "asko_washer_error_e7_2": {
+        "name": "E7.2 demasiado detergente"
+      },
+      "asko_washer_error_e9": {
+        "name": "E9 fuga de agua detectada"
+      },
+      "asko_washer_error_e9_1": {
+        "name": "E9.1 fuga de agua detectada"
+      },
       "auto_boost": {
         "name": "Refuerzo autom\u00e1tico"
       },
@@ -2579,15 +2654,19 @@
           "activewear": "Ropa deportiva",
           "airtech": "AirTech",
           "allergy_safe": "Antial\u00e9rgico",
+          "anti_allergy_cotton": "Antialergia algod\u00f3n",
+          "anti_allergy_synthetic": "Antialergia sint\u00e9ticos",
           "auto": "Auto",
           "baby_care": "Ropa beb\u00e9",
           "bedding": "Ropa de cama",
           "bleaching": "Blanqueo",
           "clean": "Limpieza",
           "color": "Color",
+          "cotton": "Algod\u00f3n",
           "crystal_glass": "Cristaler\u00eda",
           "curtains": "Cortinas",
           "dark_clothes": "Ropa oscura",
+          "delicates": "Delicados",
           "down_feathers": "Plum\u00f3n",
           "draining": "Desag\u00fce",
           "drum_clean": "Limpieza Tambor",
@@ -2598,6 +2677,7 @@
           "fabric_care": "Cuidado de tejidos",
           "glass": "Cristal",
           "hygiene": "Higiene",
+          "impregnation": "Impermeabilizaci\u00f3n",
           "intensive": "Intensivo",
           "intensive_59_32": "Intensivo 59'/32'",
           "jeans": "Jeans",
@@ -2612,6 +2692,7 @@
           "normal_wash": "Lavado normal",
           "odor_control": "Control de olores",
           "one_hour": "1 hora",
+          "outerwear": "Ropa de exterior",
           "pet_hair_removal": "Eliminaci\u00f3n de pelo de mascotas",
           "pets": "Mascotas",
           "pillow": "Almohada",
@@ -2619,6 +2700,7 @@
           "plush_toys": "Peluches",
           "power_39": "Power 39",
           "preheated": "Precalentado",
+          "quick_intensive": "R\u00e1pido intensivo",
           "quick_pro": "Quick pro",
           "rinse_and_hold": "Aclarar y esperar",
           "rinsing_softening": "Aclarado y suavizado",
@@ -2627,8 +2709,10 @@
           "shoes": "Zapatillas",
           "speed_14": "R\u00e1pido 14",
           "speed_20": "Speed 20",
+          "spinning": "Centrifugado",
           "spinning_draining": "Centrifugado y desag\u00fce",
           "sportswear": "Ropa deporte",
+          "stain_program": "Programa manchas",
           "steam_refresh": "Refresco con vapor",
           "swimwear": "Ropa de ba\u00f1o",
           "tights_stockings": "Medias",
@@ -3578,7 +3662,13 @@
         "name": "Fase 2 del programa de lavado actual"
       },
       "current_washing_program_phase_status": {
-        "name": "Estado de la fase actual del programa de lavado"
+        "name": "Estado de la fase actual del programa de lavado",
+        "state": {
+          "cooling_down": "Enfriamiento",
+          "final_spin": "Centrifugado final",
+          "idle": "Inactivo",
+          "wash": "Lavado"
+        }
       },
       "current_water_level": {
         "name": "Nivel de agua actual"
@@ -9125,7 +9215,11 @@
       },
       "init": {
         "data": {
-          "device": "Seleccionar dispositivo"
+          "device": "Seleccionar dispositivo",
+          "push": "Actualizaciones push (beta)"
+        },
+        "data_description": {
+          "push": "Recibe los cambios de ConnectLife en segundos, en lugar de consultar cada minuto. Mientras est\u00e1 conectada, la integraci\u00f3n tambi\u00e9n consulta cada 15 minutos. Desact\u00edvalo si dejan de llegar actualizaciones o ves problemas de conexi\u00f3n; la integraci\u00f3n consultar\u00e1 entonces cada minuto."
         },
         "description": "Configurar un dispositivo."
       }
