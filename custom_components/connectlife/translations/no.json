@@ -494,6 +494,81 @@
       "anti_legionella_s": {
         "name": "Sterilisering"
       },
+      "asko_washer_error_e0": {
+        "name": "E0 uriktige innstillinger"
+      },
+      "asko_washer_error_e1": {
+        "name": "E1 feil med temperatursensoren"
+      },
+      "asko_washer_error_e10": {
+        "name": "E10 feil med vannstandssensor"
+      },
+      "asko_washer_error_e10_1": {
+        "name": "E10.1 feil med vannstandssensor"
+      },
+      "asko_washer_error_e11": {
+        "name": "E11 oversv\u00f8mmelse"
+      },
+      "asko_washer_error_e12": {
+        "name": "E12 motorfeil"
+      },
+      "asko_washer_error_e13": {
+        "name": "E13 ujevnt fordelt t\u00f8y"
+      },
+      "asko_washer_error_e2": {
+        "name": "E2 feil p\u00e5 grunn av l\u00e5st d\u00f8r"
+      },
+      "asko_washer_error_e22": {
+        "name": "E22 d\u00f8ren kan ikke l\u00e5ses"
+      },
+      "asko_washer_error_e22_1": {
+        "name": "E22.1 d\u00f8ren kan ikke l\u00e5ses"
+      },
+      "asko_washer_error_e23": {
+        "name": "E23 d\u00f8ren kan ikke l\u00e5ses opp"
+      },
+      "asko_washer_error_e23_1": {
+        "name": "E23.1 d\u00f8ren kan ikke l\u00e5ses opp"
+      },
+      "asko_washer_error_e24": {
+        "name": "E24 feil p\u00e5 d\u00f8rl\u00e5s"
+      },
+      "asko_washer_error_e26": {
+        "name": "E26 overskredet l\u00e5sestr\u00f8m"
+      },
+      "asko_washer_error_e3": {
+        "name": "E3 vannp\u00e5fyllingsfeil"
+      },
+      "asko_washer_error_e36": {
+        "name": "E36 kommunikasjonsfeil mellom betjeningspanel og PMCU"
+      },
+      "asko_washer_error_e37": {
+        "name": "E37 inkompatibel programvare i betjeningspanel og PMCU"
+      },
+      "asko_washer_error_e40": {
+        "name": "E40 forsyningsspenning utenfor omr\u00e5de"
+      },
+      "asko_washer_error_e48": {
+        "name": "E48 feil p\u00e5 nettverkstilkobling"
+      },
+      "asko_washer_error_e6": {
+        "name": "E6 vannoppvarmingsfeil"
+      },
+      "asko_washer_error_e7": {
+        "name": "E7 vannt\u00f8mmingsfeil"
+      },
+      "asko_washer_error_e7_1": {
+        "name": "E7.1 alarm om vannt\u00f8mmingssystem"
+      },
+      "asko_washer_error_e7_2": {
+        "name": "E7.2 for mye vaskemiddel"
+      },
+      "asko_washer_error_e9": {
+        "name": "E9 vannlekkasje oppdaget"
+      },
+      "asko_washer_error_e9_1": {
+        "name": "E9.1 vannlekkasje oppdaget"
+      },
       "auto_boost": {
         "name": "Automatisk boost"
       },
@@ -2579,15 +2654,19 @@
           "activewear": "Aktivkl\u00e6r",
           "airtech": "AirTech",
           "allergy_safe": "Allergi",
+          "anti_allergy_cotton": "Allergi bomull",
+          "anti_allergy_synthetic": "Allergi syntetisk",
           "auto": "Auto",
           "baby_care": "Baby",
           "bedding": "Senget\u00f8y",
           "bleaching": "Bleking",
           "clean": "Rens",
           "color": "Farge",
+          "cotton": "Bomull",
           "crystal_glass": "Krystallglass",
           "curtains": "Gardiner",
           "dark_clothes": "M\u00f8rke kl\u00e6r",
+          "delicates": "Finvask",
           "down_feathers": "Dun",
           "draining": "T\u00f8mmer vann",
           "drum_clean": "Trommelrens",
@@ -2598,6 +2677,7 @@
           "fabric_care": "Tekstilpleie",
           "glass": "Glass",
           "hygiene": "Hygiene",
+          "impregnation": "Impregnering",
           "intensive": "Intensiv",
           "intensive_59_32": "Intensiv 59'/32'",
           "jeans": "Jeans",
@@ -2612,6 +2692,7 @@
           "normal_wash": "Normalvask",
           "odor_control": "Luktkontroll",
           "one_hour": "\u00c9n time",
+          "outerwear": "Yttert\u00f8y",
           "pet_hair_removal": "Fjerning av kj\u00e6ledyrh\u00e5r",
           "pets": "Kj\u00e6ledyr",
           "pillow": "Pute",
@@ -2619,6 +2700,7 @@
           "plush_toys": "Kosedyr",
           "power_39": "Power 39",
           "preheated": "Forvarmet",
+          "quick_intensive": "Hurtig intensiv",
           "quick_pro": "Hurtig pro",
           "rinse_and_hold": "Skyll og hold",
           "rinsing_softening": "Skylling og myking",
@@ -2627,8 +2709,10 @@
           "shoes": "Sko",
           "speed_14": "Hurtig 14",
           "speed_20": "Hurtig 20'",
+          "spinning": "Sentrifugering",
           "spinning_draining": "Sentrifugering og t\u00f8mming",
           "sportswear": "Sport",
+          "stain_program": "Flekkfjerningsprogram",
           "steam_refresh": "Damputlufting",
           "swimwear": "Badet\u00f8y",
           "tights_stockings": "Str\u00f8mpebukser",
@@ -3578,7 +3662,13 @@
         "name": "Vaskeprogramfase 2"
       },
       "current_washing_program_phase_status": {
-        "name": "Status for vaskeprogramfase"
+        "name": "Status for vaskeprogramfase",
+        "state": {
+          "cooling_down": "Avkj\u00f8ling",
+          "final_spin": "Sluttsentrifugering",
+          "idle": "Inaktiv",
+          "wash": "Vask"
+        }
       },
       "current_water_level": {
         "name": "N\u00e5v\u00e6rende vanniv\u00e5"

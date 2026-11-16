@@ -494,6 +494,81 @@
       "anti_legionella_s": {
         "name": "Legionellenschutz"
       },
+      "asko_washer_error_e0": {
+        "name": "E0 Falsche Einstellungen"
+      },
+      "asko_washer_error_e1": {
+        "name": "E1 Temperatursensorfehler"
+      },
+      "asko_washer_error_e10": {
+        "name": "E10 Wasserstandssensorfehler"
+      },
+      "asko_washer_error_e10_1": {
+        "name": "E10.1 Wasserstandssensorfehler"
+      },
+      "asko_washer_error_e11": {
+        "name": "E11 \u00dcberlauf"
+      },
+      "asko_washer_error_e12": {
+        "name": "E12 Motorfehler"
+      },
+      "asko_washer_error_e13": {
+        "name": "E13 Unwucht"
+      },
+      "asko_washer_error_e2": {
+        "name": "E2 T\u00fcrfehler"
+      },
+      "asko_washer_error_e22": {
+        "name": "E22 T\u00fcr kann nicht verriegelt werden"
+      },
+      "asko_washer_error_e22_1": {
+        "name": "E22.1 T\u00fcr kann nicht verriegelt werden"
+      },
+      "asko_washer_error_e23": {
+        "name": "E23 T\u00fcr kann nicht entriegelt werden"
+      },
+      "asko_washer_error_e23_1": {
+        "name": "E23.1 T\u00fcr kann nicht entriegelt werden"
+      },
+      "asko_washer_error_e24": {
+        "name": "E24 T\u00fcrschlossfehler"
+      },
+      "asko_washer_error_e26": {
+        "name": "E26 T\u00fcrschlossstrom \u00fcberschritten"
+      },
+      "asko_washer_error_e3": {
+        "name": "E3 Fehler beim Wassereinlauf"
+      },
+      "asko_washer_error_e36": {
+        "name": "E36 Kommunikationsfehler zwischen Bedienteil und PMCU"
+      },
+      "asko_washer_error_e37": {
+        "name": "E37 Inkompatible Software von Bedienteil und PMCU"
+      },
+      "asko_washer_error_e40": {
+        "name": "E40 Versorgungsspannung au\u00dferhalb des Bereichs"
+      },
+      "asko_washer_error_e48": {
+        "name": "E48 Netzwerkverbindungsfehler"
+      },
+      "asko_washer_error_e6": {
+        "name": "E6 Fehler bei der Wassererw\u00e4rmung"
+      },
+      "asko_washer_error_e7": {
+        "name": "E7 Abpumpfehler"
+      },
+      "asko_washer_error_e7_1": {
+        "name": "E7.1 Verringerter Wasserablauf"
+      },
+      "asko_washer_error_e7_2": {
+        "name": "E7.2 Zu viel Waschmittel"
+      },
+      "asko_washer_error_e9": {
+        "name": "E9 Wasserleck erkannt"
+      },
+      "asko_washer_error_e9_1": {
+        "name": "E9.1 Wasserleck erkannt"
+      },
       "auto_boost": {
         "name": "Auto-Boost"
       },
@@ -2579,15 +2654,19 @@
           "activewear": "Funktionskleidung",
           "airtech": "AirTech",
           "allergy_safe": "Allergiker",
+          "anti_allergy_cotton": "Anti-Allergie Baumwolle",
+          "anti_allergy_synthetic": "Anti-Allergie Synthetik",
           "auto": "Automatisch",
           "baby_care": "Baby",
           "bedding": "Bettw\u00e4sche",
           "bleaching": "Bleichen",
           "clean": "Reinigung",
           "color": "Farbig",
+          "cotton": "Baumwolle",
           "crystal_glass": "Kristallglas",
           "curtains": "Gardinen",
           "dark_clothes": "Dunkle W\u00e4sche",
+          "delicates": "Feinw\u00e4sche",
           "down_feathers": "Daunenfedern",
           "draining": "Abpumpen",
           "drum_clean": "Trommelreinigung",
@@ -2598,6 +2677,7 @@
           "fabric_care": "Textilpflege",
           "glass": "Glas",
           "hygiene": "Hygiene",
+          "impregnation": "Impr\u00e4gnieren",
           "intensive": "Intensiv",
           "intensive_59_32": "Intensiv 59'/32'",
           "jeans": "Jeans",
@@ -2612,6 +2692,7 @@
           "normal_wash": "Normalw\u00e4sche",
           "odor_control": "Geruchskontrolle",
           "one_hour": "1 Stunde",
+          "outerwear": "Outdoor",
           "pet_hair_removal": "Tierhaarentfernung",
           "pets": "Haustiere",
           "pillow": "Kopfkissen",
@@ -2619,6 +2700,7 @@
           "plush_toys": "Pl\u00fcschtiere",
           "power_39": "Power 39",
           "preheated": "Vorgew\u00e4rmt",
+          "quick_intensive": "Kurz intensiv",
           "quick_pro": "Quick pro",
           "rinse_and_hold": "Sp\u00fclen & Warten",
           "rinsing_softening": "Sp\u00fclen & Weichsp\u00fclen",
@@ -2627,8 +2709,10 @@
           "shoes": "Schuhe",
           "speed_14": "Schnell 14",
           "speed_20": "Schnell 20'",
+          "spinning": "Schleudern",
           "spinning_draining": "Schleudern & Abpumpen",
           "sportswear": "Sport",
+          "stain_program": "Fleckenprogramm",
           "steam_refresh": "Dampfauffrischung",
           "swimwear": "Badebekleidung",
           "tights_stockings": "Strumpfhosen",
@@ -3578,7 +3662,13 @@
         "name": "Aktuelle Waschprogrammphase 2"
       },
       "current_washing_program_phase_status": {
-        "name": "Status aktuelle Waschprogrammphase"
+        "name": "Status aktuelle Waschprogrammphase",
+        "state": {
+          "cooling_down": "Abk\u00fchlen",
+          "final_spin": "Endschleudern",
+          "idle": "Leerlauf",
+          "wash": "Waschen"
+        }
       },
       "current_water_level": {
         "name": "Aktueller Wasserstand"
@@ -9125,7 +9215,11 @@
       },
       "init": {
         "data": {
-          "device": "Ger\u00e4t ausw\u00e4hlen"
+          "device": "Ger\u00e4t ausw\u00e4hlen",
+          "push": "Push-Aktualisierungen (Beta)"
+        },
+        "data_description": {
+          "push": "Erh\u00e4lt \u00c4nderungen von ConnectLife innerhalb von Sekunden, statt jede Minute abzufragen. Solange die Verbindung besteht, fragt die Integration zus\u00e4tzlich alle 15 Minuten ab. Ausschalten, wenn keine Aktualisierungen mehr ankommen oder Verbindungsprobleme auftreten; die Integration fragt dann jede Minute ab."
         },
         "description": "Ein Ger\u00e4t konfigurieren."
       }

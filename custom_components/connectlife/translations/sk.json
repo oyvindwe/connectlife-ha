@@ -494,6 +494,81 @@
       "anti_legionella_s": {
         "name": "Steriliz\u00e1cia"
       },
+      "asko_washer_error_e0": {
+        "name": "E0 nespr\u00e1vne nastavenie"
+      },
+      "asko_washer_error_e1": {
+        "name": "E1 porucha teplotn\u00e9ho sn\u00edma\u010da"
+      },
+      "asko_washer_error_e10": {
+        "name": "E10 porucha sn\u00edma\u010da hladiny vody"
+      },
+      "asko_washer_error_e10_1": {
+        "name": "E10.1 porucha sn\u00edma\u010da hladiny vody"
+      },
+      "asko_washer_error_e11": {
+        "name": "E11 prete\u010denie"
+      },
+      "asko_washer_error_e12": {
+        "name": "E12 porucha motora"
+      },
+      "asko_washer_error_e13": {
+        "name": "E13 nevyv\u00e1\u017een\u00e1 n\u00e1pl\u0148"
+      },
+      "asko_washer_error_e2": {
+        "name": "E2 porucha dvierok"
+      },
+      "asko_washer_error_e22": {
+        "name": "E22 dvierka sa nedaj\u00fa zamkn\u00fa\u0165"
+      },
+      "asko_washer_error_e22_1": {
+        "name": "E22.1 dvierka sa nedaj\u00fa zamkn\u00fa\u0165"
+      },
+      "asko_washer_error_e23": {
+        "name": "E23 dvierka sa nedaj\u00fa odomkn\u00fa\u0165"
+      },
+      "asko_washer_error_e23_1": {
+        "name": "E23.1 dvierka sa nedaj\u00fa odomkn\u00fa\u0165"
+      },
+      "asko_washer_error_e24": {
+        "name": "E24 porucha z\u00e1mku dvierok"
+      },
+      "asko_washer_error_e26": {
+        "name": "E26 prekro\u010den\u00fd pr\u00fad z\u00e1mku dvierok"
+      },
+      "asko_washer_error_e3": {
+        "name": "E3 porucha nap\u00fa\u0161\u0165ania vody"
+      },
+      "asko_washer_error_e36": {
+        "name": "E36 porucha komunik\u00e1cie medzi ovl\u00e1dac\u00edm panelom a PMCU"
+      },
+      "asko_washer_error_e37": {
+        "name": "E37 nekompatibiln\u00fd softv\u00e9r ovl\u00e1dacieho panela a PMCU"
+      },
+      "asko_washer_error_e40": {
+        "name": "E40 nap\u00e1jacie nap\u00e4tie mimo rozsahu"
+      },
+      "asko_washer_error_e48": {
+        "name": "E48 porucha sie\u0165ov\u00e9ho pripojenia"
+      },
+      "asko_washer_error_e6": {
+        "name": "E6 porucha ohrevu vody"
+      },
+      "asko_washer_error_e7": {
+        "name": "E7 porucha vyp\u00fa\u0161\u0165ania"
+      },
+      "asko_washer_error_e7_1": {
+        "name": "E7.1 zn\u00ed\u017een\u00fd odtok"
+      },
+      "asko_washer_error_e7_2": {
+        "name": "E7.2 pr\u00edli\u0161 ve\u013ea pracieho prostriedku"
+      },
+      "asko_washer_error_e9": {
+        "name": "E9 zisten\u00fd \u00fanik vody"
+      },
+      "asko_washer_error_e9_1": {
+        "name": "E9.1 zisten\u00fd \u00fanik vody"
+      },
       "auto_boost": {
         "name": "Automatick\u00e9 posilnenie"
       },
@@ -1142,6 +1217,9 @@
       "ice_make_room_alarm": {
         "name": "Alarm priestoru v\u00fdroby \u013eadu"
       },
+      "ice_making_b_switch_status": {
+        "name": "Stav sp\u00edna\u010da v\u00fdroby \u013eadu B"
+      },
       "ice_making_machine_failure": {
         "name": "Porucha stroja na v\u00fdrobu \u013eadu"
       },
@@ -1261,6 +1339,9 @@
       },
       "preheat": {
         "name": "Predohrev"
+      },
+      "programoptionanticrease": {
+        "name": "Proti pokr\u010deniu"
       },
       "quiet_mode_status": {
         "name": "Stav tich\u00e9ho re\u017eimu"
@@ -2573,15 +2654,19 @@
           "activewear": "\u0160portov\u00e9 oble\u010denie",
           "airtech": "AirTech",
           "allergy_safe": "Proti alerg\u00e9nom",
+          "anti_allergy_cotton": "Antialergick\u00fd bavlna",
+          "anti_allergy_synthetic": "Antialergick\u00fd syntetika",
           "auto": "Auto",
           "baby_care": "Detsk\u00e1 bielize\u0148",
           "bedding": "Poste\u013en\u00e1 bielize\u0148",
           "bleaching": "Bielenie",
           "clean": "\u010cistenie",
           "color": "Farebn\u00e9",
+          "cotton": "Bavlna",
           "crystal_glass": "Kri\u0161t\u00e1\u013eov\u00e9 sklo",
           "curtains": "Z\u00e1clony",
           "dark_clothes": "Tmav\u00e1 bielize\u0148",
+          "delicates": "Jemn\u00e1 bielize\u0148",
           "down_feathers": "P\u00e1perie",
           "draining": "Vyp\u00fa\u0161\u0165anie",
           "drum_clean": "\u010cistenie bubna",
@@ -2592,6 +2677,7 @@
           "fabric_care": "Starostlivos\u0165 o textil",
           "glass": "Sklo",
           "hygiene": "Hygiena",
+          "impregnation": "Impregn\u00e1cia",
           "intensive": "Intenz\u00edvny",
           "intensive_59_32": "Intenz\u00edvny 59'/32'",
           "jeans": "D\u017e\u00ednsy",
@@ -2606,6 +2692,7 @@
           "normal_wash": "Be\u017en\u00e9 pranie",
           "odor_control": "Kontrola z\u00e1pachu",
           "one_hour": "Jedna hodina",
+          "outerwear": "Vrchn\u00e9 oble\u010denie",
           "pet_hair_removal": "Odstra\u0148ovanie chlpov",
           "pets": "Dom\u00e1ce zvierat\u00e1",
           "pillow": "Vank\u00fa\u0161",
@@ -2613,6 +2700,7 @@
           "plush_toys": "Ply\u0161ov\u00e9 hra\u010dky",
           "power_39": "Power 39",
           "preheated": "Predhriatie",
+          "quick_intensive": "R\u00fdchly intenz\u00edvny",
           "quick_pro": "Quick Pro",
           "rinse_and_hold": "Pl\u00e1kanie a podr\u017eanie",
           "rinsing_softening": "Pl\u00e1kanie a zm\u00e4k\u010denie",
@@ -2621,8 +2709,10 @@
           "shoes": "Obuv",
           "speed_14": "R\u00fdchly 14",
           "speed_20": "R\u00fdchlos\u0165 20",
+          "spinning": "Odstre\u010fovanie",
           "spinning_draining": "Odstre\u010fovanie a vyp\u00fa\u0161\u0165anie",
           "sportswear": "\u0160portov\u00e9 oble\u010denie",
+          "stain_program": "Program na \u0161kvrny",
           "steam_refresh": "Osvie\u017eenie p\u00e1rou",
           "swimwear": "Plavky",
           "tights_stockings": "Pan\u010duchy",
@@ -3572,7 +3662,13 @@
         "name": "Aktu\u00e1lna f\u00e1za pracieho programu 2"
       },
       "current_washing_program_phase_status": {
-        "name": "Stav aktu\u00e1lnej f\u00e1zy pracieho programu"
+        "name": "Stav aktu\u00e1lnej f\u00e1zy pracieho programu",
+        "state": {
+          "cooling_down": "Ochladzovanie",
+          "final_spin": "Z\u00e1vere\u010dn\u00e9 odstre\u010fovanie",
+          "idle": "Ne\u010dinn\u00fd",
+          "wash": "Pranie"
+        }
       },
       "current_water_level": {
         "name": "Aktu\u00e1lna hladina vody"
@@ -4696,6 +4792,12 @@
       },
       "global_timer_remaining_time_in_minutes": {
         "name": "Zost\u00e1vaj\u00faci \u010das hlavn\u00e9ho \u010dasova\u010da"
+      },
+      "gratin_from_below_functionset_time_in_seconds": {
+        "name": "Nastaven\u00fd \u010das gratinovania zospodu"
+      },
+      "gratin_function_set_time_in_seconds": {
+        "name": "Nastaven\u00fd \u010das funkcie gratinovania"
       },
       "gratin_total_allowed_time_in_minutes": {
         "name": "Celkov\u00fd povolen\u00fd \u010das gratinovania"
@@ -9113,7 +9215,11 @@
       },
       "init": {
         "data": {
-          "device": "Vyberte zariadenie"
+          "device": "Vyberte zariadenie",
+          "push": "Push aktualiz\u00e1cie (beta)"
+        },
+        "data_description": {
+          "push": "Z\u00edskava zmeny z ConnectLife v priebehu nieko\u013ek\u00fdch sek\u00fand namiesto dopytovania ka\u017ed\u00fa min\u00fatu. Po\u010das pripojenia sa integr\u00e1cia navy\u0161e dopytuje ka\u017ed\u00fdch 15 min\u00fat. Vypnite, ak aktualiz\u00e1cie prestan\u00fa prich\u00e1dza\u0165 alebo sa vyskytn\u00fa probl\u00e9my s pripojen\u00edm; integr\u00e1cia sa potom dopytuje ka\u017ed\u00fa min\u00fatu."
         },
         "description": "Nastavte zariadenie."
       }

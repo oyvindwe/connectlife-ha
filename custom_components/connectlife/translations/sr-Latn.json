@@ -494,6 +494,81 @@
       "anti_legionella_s": {
         "name": "Sterilizacija"
       },
+      "asko_washer_error_e0": {
+        "name": "E0 pogre\u0161na pode\u0161avanja"
+      },
+      "asko_washer_error_e1": {
+        "name": "E1 kvar senzora temperature"
+      },
+      "asko_washer_error_e10": {
+        "name": "E10 kvar senzora nivoa vode"
+      },
+      "asko_washer_error_e10_1": {
+        "name": "E10.1 kvar senzora nivoa vode"
+      },
+      "asko_washer_error_e11": {
+        "name": "E11 prelivanje"
+      },
+      "asko_washer_error_e12": {
+        "name": "E12 kvar motora"
+      },
+      "asko_washer_error_e13": {
+        "name": "E13 neuravnote\u017eeno punjenje"
+      },
+      "asko_washer_error_e2": {
+        "name": "E2 kvar vrata"
+      },
+      "asko_washer_error_e22": {
+        "name": "E22 vrata se ne mogu zaklju\u010dati"
+      },
+      "asko_washer_error_e22_1": {
+        "name": "E22.1 vrata se ne mogu zaklju\u010dati"
+      },
+      "asko_washer_error_e23": {
+        "name": "E23 vrata se ne mogu otklju\u010dati"
+      },
+      "asko_washer_error_e23_1": {
+        "name": "E23.1 vrata se ne mogu otklju\u010dati"
+      },
+      "asko_washer_error_e24": {
+        "name": "E24 kvar brave vrata"
+      },
+      "asko_washer_error_e26": {
+        "name": "E26 prekora\u010dena struja brave vrata"
+      },
+      "asko_washer_error_e3": {
+        "name": "E3 kvar punjenja vode"
+      },
+      "asko_washer_error_e36": {
+        "name": "E36 gre\u0161ka komunikacije izme\u0111u korisni\u010dkog panela i PMCU"
+      },
+      "asko_washer_error_e37": {
+        "name": "E37 nekompatibilan softver korisni\u010dkog panela i PMCU"
+      },
+      "asko_washer_error_e40": {
+        "name": "E40 napon napajanja van opsega"
+      },
+      "asko_washer_error_e48": {
+        "name": "E48 kvar mre\u017ene veze"
+      },
+      "asko_washer_error_e6": {
+        "name": "E6 kvar zagrevanja vode"
+      },
+      "asko_washer_error_e7": {
+        "name": "E7 kvar ispu\u0161tanja vode"
+      },
+      "asko_washer_error_e7_1": {
+        "name": "E7.1 smanjeno ispu\u0161tanje"
+      },
+      "asko_washer_error_e7_2": {
+        "name": "E7.2 previ\u0161e deterd\u017eenta"
+      },
+      "asko_washer_error_e9": {
+        "name": "E9 otkriveno curenje vode"
+      },
+      "asko_washer_error_e9_1": {
+        "name": "E9.1 otkriveno curenje vode"
+      },
       "auto_boost": {
         "name": "Automatsko poja\u010danje"
       },
@@ -2579,15 +2654,19 @@
           "activewear": "Sportska ode\u0107a",
           "airtech": "AirTech",
           "allergy_safe": "Bez alergena",
+          "anti_allergy_cotton": "Antialergijski pamuk",
+          "anti_allergy_synthetic": "Antialergijski sintetika",
           "auto": "Automatski",
           "baby_care": "Briga o bebama",
           "bedding": "Posteljina",
           "bleaching": "Izbeljivanje",
           "clean": "\u010ci\u0161\u0107enje",
           "color": "Obojena ode\u0107a",
+          "cotton": "Pamuk",
           "crystal_glass": "Kristalno staklo",
           "curtains": "Zavese",
           "dark_clothes": "Tamna ode\u0107a",
+          "delicates": "Delikatno",
           "down_feathers": "Perje",
           "draining": "Pra\u017enjenje",
           "drum_clean": "\u010ci\u0161\u0107enje bubnja",
@@ -2598,6 +2677,7 @@
           "fabric_care": "Briga o tkanini",
           "glass": "Staklo",
           "hygiene": "Higijena",
+          "impregnation": "Impregnacija",
           "intensive": "Intenzivno",
           "intensive_59_32": "Intenzivno 59'/32'",
           "jeans": "Farmerke",
@@ -2612,6 +2692,7 @@
           "normal_wash": "Normalno pranje",
           "odor_control": "Kontrola mirisa",
           "one_hour": "Jedan sat",
+          "outerwear": "Gornja ode\u0107a",
           "pet_hair_removal": "Uklanjanje dlaka ku\u0107nih ljubimaca",
           "pets": "Ku\u0107ni ljubimci",
           "pillow": "Jastuk",
@@ -2619,6 +2700,7 @@
           "plush_toys": "Pli\u0161ane igra\u010dke",
           "power_39": "Power 39",
           "preheated": "Predgrejano",
+          "quick_intensive": "Brzo intenzivno",
           "quick_pro": "Brzi pro",
           "rinse_and_hold": "Ispiranje i zadr\u017eavanje",
           "rinsing_softening": "Ispiranje i omek\u0161avanje",
@@ -2627,8 +2709,10 @@
           "shoes": "Obu\u0107a",
           "speed_14": "Brzina 14",
           "speed_20": "Brzina 20",
+          "spinning": "Centrifuga",
           "spinning_draining": "Centrifuga i pra\u017enjenje",
           "sportswear": "Sportska ode\u0107a",
+          "stain_program": "Program za mrlje",
           "steam_refresh": "Osvje\u017eavanje parom",
           "swimwear": "Kupa\u0107i kostimi",
           "tights_stockings": "Helanke/\u010carape",
@@ -3578,7 +3662,13 @@
         "name": "Trenutna faza programa pranja 2"
       },
       "current_washing_program_phase_status": {
-        "name": "Status trenutne faze programa pranja"
+        "name": "Status trenutne faze programa pranja",
+        "state": {
+          "cooling_down": "Hla\u0111enje",
+          "final_spin": "Zavr\u0161no centrifugiranje",
+          "idle": "Mirovanje",
+          "wash": "Pranje"
+        }
       },
       "current_water_level": {
         "name": "Trenutni nivo vode"
@@ -9125,7 +9215,11 @@
       },
       "init": {
         "data": {
-          "device": "Izaberite ure\u0111aj"
+          "device": "Izaberite ure\u0111aj",
+          "push": "Push a\u017euriranja (beta)"
+        },
+        "data_description": {
+          "push": "Prima promene iz ConnectLife u roku od nekoliko sekundi, umesto provere svakog minuta. Dok je veza aktivna, integracija proverava i na svakih 15 minuta. Isklju\u010dite ako a\u017euriranja prestanu da sti\u017eu ili primetite probleme sa vezom; integracija tada proverava svakog minuta."
         },
         "description": "Podesite ure\u0111aj."
       }

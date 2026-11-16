@@ -494,6 +494,81 @@
       "anti_legionella_s": {
         "name": "Sterilisatie"
       },
+      "asko_washer_error_e0": {
+        "name": "E0 onjuiste instellingen"
+      },
+      "asko_washer_error_e1": {
+        "name": "E1 storing temperatuursensor"
+      },
+      "asko_washer_error_e10": {
+        "name": "E10 storing waterniveausensor"
+      },
+      "asko_washer_error_e10_1": {
+        "name": "E10.1 storing waterniveausensor"
+      },
+      "asko_washer_error_e11": {
+        "name": "E11 overloop"
+      },
+      "asko_washer_error_e12": {
+        "name": "E12 motorstoring"
+      },
+      "asko_washer_error_e13": {
+        "name": "E13 onbalans"
+      },
+      "asko_washer_error_e2": {
+        "name": "E2 deurstoring"
+      },
+      "asko_washer_error_e22": {
+        "name": "E22 deur kan niet worden vergrendeld"
+      },
+      "asko_washer_error_e22_1": {
+        "name": "E22.1 deur kan niet worden vergrendeld"
+      },
+      "asko_washer_error_e23": {
+        "name": "E23 deur kan niet worden ontgrendeld"
+      },
+      "asko_washer_error_e23_1": {
+        "name": "E23.1 deur kan niet worden ontgrendeld"
+      },
+      "asko_washer_error_e24": {
+        "name": "E24 storing deurvergrendeling"
+      },
+      "asko_washer_error_e26": {
+        "name": "E26 stroom deurvergrendeling overschreden"
+      },
+      "asko_washer_error_e3": {
+        "name": "E3 storing bij watertoevoer"
+      },
+      "asko_washer_error_e36": {
+        "name": "E36 communicatiestoring tussen bedieningspaneel en PMCU"
+      },
+      "asko_washer_error_e37": {
+        "name": "E37 incompatibele software van bedieningspaneel en PMCU"
+      },
+      "asko_washer_error_e40": {
+        "name": "E40 voedingsspanning buiten bereik"
+      },
+      "asko_washer_error_e48": {
+        "name": "E48 storing netwerkverbinding"
+      },
+      "asko_washer_error_e6": {
+        "name": "E6 storing bij waterverwarming"
+      },
+      "asko_washer_error_e7": {
+        "name": "E7 afvoerstoring"
+      },
+      "asko_washer_error_e7_1": {
+        "name": "E7.1 verminderde afvoer"
+      },
+      "asko_washer_error_e7_2": {
+        "name": "E7.2 te veel wasmiddel"
+      },
+      "asko_washer_error_e9": {
+        "name": "E9 waterlek gedetecteerd"
+      },
+      "asko_washer_error_e9_1": {
+        "name": "E9.1 waterlek gedetecteerd"
+      },
       "auto_boost": {
         "name": "Automatische boost"
       },
@@ -2579,15 +2654,19 @@
           "activewear": "Sportkleding",
           "airtech": "AirTech",
           "allergy_safe": "Allergievrij",
+          "anti_allergy_cotton": "Anti-allergie katoen",
+          "anti_allergy_synthetic": "Anti-allergie synthetisch",
           "auto": "Auto",
           "baby_care": "Baby",
           "bedding": "Beddengoed",
           "bleaching": "Bleken",
           "clean": "Schoon",
           "color": "Kleur",
+          "cotton": "Katoen",
           "crystal_glass": "Kristalglas",
           "curtains": "Gordijnen",
           "dark_clothes": "Donkere was",
+          "delicates": "Delicaat",
           "down_feathers": "Donsveren",
           "draining": "Afpompen",
           "drum_clean": "Trommelreiniging",
@@ -2598,6 +2677,7 @@
           "fabric_care": "Textielverzorging",
           "glass": "Glas",
           "hygiene": "Hygi\u00ebne",
+          "impregnation": "Impregneren",
           "intensive": "Intensief",
           "intensive_59_32": "Intensief 59'/32'",
           "jeans": "Spijkerbroeken",
@@ -2612,6 +2692,7 @@
           "normal_wash": "Normale was",
           "odor_control": "Geurbeheersing",
           "one_hour": "1 uur",
+          "outerwear": "Buitenkleding",
           "pet_hair_removal": "Huisdierhaar verwijderen",
           "pets": "Huisdieren",
           "pillow": "Kussen",
@@ -2619,6 +2700,7 @@
           "plush_toys": "Knuffels",
           "power_39": "Power 39",
           "preheated": "Voorverwarmd",
+          "quick_intensive": "Snel intensief",
           "quick_pro": "Quick pro",
           "rinse_and_hold": "Spoelen en wachten",
           "rinsing_softening": "Spoelen & verzachten",
@@ -2627,8 +2709,10 @@
           "shoes": "Schoenen",
           "speed_14": "Snel 14",
           "speed_20": "Snel 20'",
+          "spinning": "Centrifugeren",
           "spinning_draining": "Centrifugeren & afpompen",
           "sportswear": "Sport",
+          "stain_program": "Vlekkenprogramma",
           "steam_refresh": "Stoomverfrissing",
           "swimwear": "Badkleding",
           "tights_stockings": "Panty\u2019s/Kousen",
@@ -3578,7 +3662,13 @@
         "name": "Huidig wasprogramma fase 2"
       },
       "current_washing_program_phase_status": {
-        "name": "Huidig wasprogramma fase status"
+        "name": "Huidig wasprogramma fase status",
+        "state": {
+          "cooling_down": "Afkoelen",
+          "final_spin": "Eindcentrifuge",
+          "idle": "Inactief",
+          "wash": "Wassen"
+        }
       },
       "current_water_level": {
         "name": "Huidig waterniveau"
@@ -9125,7 +9215,11 @@
       },
       "init": {
         "data": {
-          "device": "Selecteer apparaat"
+          "device": "Selecteer apparaat",
+          "push": "Pushupdates (b\u00e8ta)"
+        },
+        "data_description": {
+          "push": "Ontvangt wijzigingen van ConnectLife binnen enkele seconden, in plaats van elke minuut op te vragen. Zolang de verbinding actief is, vraagt de integratie ook elke 15 minuten op. Zet dit uit als er geen updates meer binnenkomen of als je verbindingsproblemen ziet; de integratie vraagt dan elke minuut op."
         },
         "description": "Configureer een apparaat."
       }
