@@ -1,0 +1,209 @@
+# ASKO washing machine, feature code washing-machine-wm86-style
+# ("Asko WM 86 style - global markets"). Tested on ASKO W7096XW (Steel Seal, 9 kg).
+#
+# The program ids differ from the Gorenje 027 machines. They match the machine's
+# own program table in system_data (Program_id_status = Program_selector_position,
+# 29 programs) and the order of the programs on the selector in the manual.
+# Default durations from system_data are noted per program.
+#
+# Current_washing_program_phase_status is not in property_list (empty for this
+# feature code), so the phases were mapped by watching cycles against the display.
+properties:
+- property: Selected_program_id_status
+  select:
+    options:
+      0: eco_40_60            # 211 min
+      1: white_cotton         # 75 min
+      2: color                # 83 min
+      3: mix_synthetic        # 153 min
+      4: delicates            # 62 min
+      5: wool_manual          # 63 min
+      6: cotton               # 193 min
+      7: sportswear           # 80 min
+      8: outerwear            # 70 min
+      9: time_program         # 45 min
+      10: jeans               # 70 min
+      11: shirts              # 57 min
+      12: bedding             # 169 min
+      13: down_feathers       # 82 min
+      14: steam_refresh       # 20 min, no spin
+      15: quick_intensive     # 45 min
+      16: stain_program       # 105 min
+      17: impregnation        # 24 min
+      18: anti_allergy_cotton     # 167 min
+      19: anti_allergy_synthetic  # 127 min
+      20: shoes               # 58 min, no spin
+      21: plush_toys          # 80 min
+      22: lingerie            # 99 min
+      23: swimwear            # 44 min
+      24: kids_wear           # 88 min
+      25: rinsing_softening   # 36 min
+      26: spinning            # 17 min
+      27: draining            # 1 min
+      28: drum_clean          # 126 min
+- property: Current_washing_program_phase_status
+  icon: 'mdi:progress-clock'
+  sensor:
+    device_class: enum
+    read_only: true
+    options:
+      # Confirmed against the display. Seen but not yet confirmed: 4 (after wash
+      # during drum clean, likely rinse), 5 (spin before the end of drum clean) and
+      # 11 (right before the door unlocks when pausing).
+      3: wash          # whole main wash, including the drain and spin after it
+      9: cooling_down  # after cancelling a hot program
+      13: final_spin
+      15: idle         # no program phase: finished, standby, or paused with the door open
+# Error codes from the manual (Fel: vad ska jag göra?). The flags report 1 when the
+# code exists and no error is active, and 0 for codes the machine doesn't use; an
+# active error is 2, the default for binary sensors (as for the Gorenje 027 machines).
+- property: Error_0
+  translation_key: asko_washer_error_e0
+  binary_sensor:
+    device_class: problem
+  icon: 'mdi:washing-machine-alert'
+  entity_category: diagnostic
+- property: Error_1
+  translation_key: asko_washer_error_e1
+  binary_sensor:
+    device_class: problem
+  icon: 'mdi:washing-machine-alert'
+  entity_category: diagnostic
+- property: Error_2
+  translation_key: asko_washer_error_e2
+  binary_sensor:
+    device_class: problem
+  icon: 'mdi:washing-machine-alert'
+  entity_category: diagnostic
+- property: Error_3
+  translation_key: asko_washer_error_e3
+  binary_sensor:
+    device_class: problem
+  icon: 'mdi:washing-machine-alert'
+  entity_category: diagnostic
+- property: Error_6
+  translation_key: asko_washer_error_e6
+  binary_sensor:
+    device_class: problem
+  icon: 'mdi:washing-machine-alert'
+  entity_category: diagnostic
+- property: Error_7
+  translation_key: asko_washer_error_e7
+  binary_sensor:
+    device_class: problem
+  icon: 'mdi:washing-machine-alert'
+  entity_category: diagnostic
+- property: Error_7_1
+  translation_key: asko_washer_error_e7_1
+  binary_sensor:
+    device_class: problem
+  icon: 'mdi:washing-machine-alert'
+  entity_category: diagnostic
+- property: Error_7_2
+  translation_key: asko_washer_error_e7_2
+  binary_sensor:
+    device_class: problem
+  icon: 'mdi:washing-machine-alert'
+  entity_category: diagnostic
+- property: Error_9
+  translation_key: asko_washer_error_e9
+  binary_sensor:
+    device_class: problem
+  icon: 'mdi:washing-machine-alert'
+  entity_category: diagnostic
+- property: Error_9_1
+  translation_key: asko_washer_error_e9_1
+  binary_sensor:
+    device_class: problem
+  icon: 'mdi:washing-machine-alert'
+  entity_category: diagnostic
+- property: Error_10
+  translation_key: asko_washer_error_e10
+  binary_sensor:
+    device_class: problem
+  icon: 'mdi:washing-machine-alert'
+  entity_category: diagnostic
+- property: Error10_1
+  translation_key: asko_washer_error_e10_1
+  binary_sensor:
+    device_class: problem
+  icon: 'mdi:washing-machine-alert'
+  entity_category: diagnostic
+- property: Error_11
+  translation_key: asko_washer_error_e11
+  binary_sensor:
+    device_class: problem
+  icon: 'mdi:washing-machine-alert'
+  entity_category: diagnostic
+- property: Error_12
+  translation_key: asko_washer_error_e12
+  binary_sensor:
+    device_class: problem
+  icon: 'mdi:washing-machine-alert'
+  entity_category: diagnostic
+- property: Error_13
+  translation_key: asko_washer_error_e13
+  binary_sensor:
+    device_class: problem
+  icon: 'mdi:washing-machine-alert'
+  entity_category: diagnostic
+- property: Error_22
+  translation_key: asko_washer_error_e22
+  binary_sensor:
+    device_class: problem
+  icon: 'mdi:washing-machine-alert'
+  entity_category: diagnostic
+- property: Error22_1
+  translation_key: asko_washer_error_e22_1
+  binary_sensor:
+    device_class: problem
+  icon: 'mdi:washing-machine-alert'
+  entity_category: diagnostic
+- property: Error_23
+  translation_key: asko_washer_error_e23
+  binary_sensor:
+    device_class: problem
+  icon: 'mdi:washing-machine-alert'
+  entity_category: diagnostic
+- property: Error23_1
+  translation_key: asko_washer_error_e23_1
+  binary_sensor:
+    device_class: problem
+  icon: 'mdi:washing-machine-alert'
+  entity_category: diagnostic
+- property: Error_24
+  translation_key: asko_washer_error_e24
+  binary_sensor:
+    device_class: problem
+  icon: 'mdi:washing-machine-alert'
+  entity_category: diagnostic
+- property: Error_26
+  translation_key: asko_washer_error_e26
+  binary_sensor:
+    device_class: problem
+  icon: 'mdi:washing-machine-alert'
+  entity_category: diagnostic
+- property: Error_36
+  translation_key: asko_washer_error_e36
+  binary_sensor:
+    device_class: problem
+  icon: 'mdi:washing-machine-alert'
+  entity_category: diagnostic
+- property: Error_37
+  translation_key: asko_washer_error_e37
+  binary_sensor:
+    device_class: problem
+  icon: 'mdi:washing-machine-alert'
+  entity_category: diagnostic
+- property: Error_40
+  translation_key: asko_washer_error_e40
+  binary_sensor:
+    device_class: problem
+  icon: 'mdi:washing-machine-alert'
+  entity_category: diagnostic
+- property: Error_48
+  translation_key: asko_washer_error_e48
+  binary_sensor:
+    device_class: problem
+  icon: 'mdi:washing-machine-alert'
+  entity_category: diagnostic
