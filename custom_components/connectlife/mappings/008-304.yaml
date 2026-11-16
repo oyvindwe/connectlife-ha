@@ -9,6 +9,8 @@ climate:
       t_power: 1
       t_work_mode: 5
 properties:
+  - property: t_fan_mute
+    disable: true
   # Fan speeds in this feature code's ConnectLife property list (no auto), as on 008-301.
   - property: t_fan_speed
     climate:
@@ -16,3 +18,5 @@ properties:
         2: low
         3: medium
         4: high
+  - property: t_super
+    disable: true
