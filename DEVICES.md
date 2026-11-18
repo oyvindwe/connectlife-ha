@@ -133,6 +133,7 @@ have a feature-specific mapping file.
 | WF3S9014                   | Washing machine          | 025              | [1wj090856v0f](custom_components/connectlife/mappings/025-1wj090856v0f.yaml)                               |
 | WD3S9043BW3                | Washing machine          | 025              | [1wj090908v0w](custom_components/connectlife/mappings/025-1wj090908v0w.yaml)                               |
 | WD3S9043BB3                | Washing machine          | 025              | [1wj090913v0f](custom_components/connectlife/mappings/025-1wj090913v0f.yaml)                               |
+| WD3S9014-SVW003            | Washing machine          | 025              | [1wj090914v0w](custom_components/connectlife/mappings/025-1wj090914v0w.yaml)                               |
 | WD3S9043BW3                | Washing machine          | 025              | [1wj090916v0w](custom_components/connectlife/mappings/025-1wj090916v0w.yaml)                               |
 | WD3S9043BW3                | Washing machine          | 025              | [1wj090932v0w](custom_components/connectlife/mappings/025-1wj090932v0w.yaml)                               |
 | WF3S1014-SVW002            | Washing machine          | 025              | [1wj100404v0w](custom_components/connectlife/mappings/025-1wj100404v0w.yaml)                               |
