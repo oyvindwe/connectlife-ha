@@ -3664,9 +3664,13 @@
       "current_washing_program_phase_status": {
         "name": "Stav aktu\u00e1ln\u00ed f\u00e1ze prac\u00edho programu",
         "state": {
+          "anti_crease": "Proti zma\u010dk\u00e1n\u00ed",
           "cooling_down": "Ochlazov\u00e1n\u00ed",
+          "delay": "Zpo\u017ed\u011bn\u00ed",
           "final_spin": "Z\u00e1v\u011bre\u010dn\u00e9 odst\u0159e\u010fov\u00e1n\u00ed",
           "idle": "Ne\u010dinn\u00fd",
+          "rinsing": "M\u00e1ch\u00e1n\u00ed",
+          "spinning": "Odst\u0159edov\u00e1n\u00ed",
           "wash": "Pran\u00ed"
         }
       },

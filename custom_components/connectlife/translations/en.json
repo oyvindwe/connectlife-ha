@@ -3664,9 +3664,13 @@
       "current_washing_program_phase_status": {
         "name": "Current washing program phase status",
         "state": {
+          "anti_crease": "Anti crease",
           "cooling_down": "Cooling down",
+          "delay": "Delay",
           "final_spin": "Final spin",
           "idle": "Idle",
+          "rinsing": "Rinsing",
+          "spinning": "Spinning",
           "wash": "Wash"
         }
       },

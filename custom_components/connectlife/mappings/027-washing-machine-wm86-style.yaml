@@ -47,12 +47,16 @@ properties:
     device_class: enum
     read_only: true
     options:
-      # Confirmed against the display. Seen but not yet confirmed: 4 (after wash
-      # during drum clean, likely rinse), 5 (spin before the end of drum clean) and
-      # 11 (right before the door unlocks when pausing).
-      3: wash          # whole main wash, including the drain and spin after it
+      # 3, 9, 13 and 15 confirmed against the display (#876); 1, 4, 5 and 6 observed
+      # over several washes against temperature, remaining time and delay start (#881).
+      # Seen but not yet confirmed: 11 (right before the door unlocks when pausing).
+      1: delay         # delayed start countdown
+      3: wash          # main wash: water intake, heating, holding temperature
+      4: rinsing
+      5: spinning
+      6: anti_crease   # only with anti-crease on
       9: cooling_down  # after cancelling a hot program
-      13: final_spin
+      13: final_spin   # #881 saw it while remaining time reached 0
       15: idle         # no program phase: finished, standby, or paused with the door open
 # Error codes from the manual (Fel: vad ska jag göra?). The flags report 1 when the
 # code exists and no error is active, and 0 for codes the machine doesn't use; an

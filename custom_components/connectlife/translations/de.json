@@ -3664,9 +3664,13 @@
       "current_washing_program_phase_status": {
         "name": "Status aktuelle Waschprogrammphase",
         "state": {
+          "anti_crease": "Knitterschutz",
           "cooling_down": "Abk\u00fchlen",
+          "delay": "Verz\u00f6gerung",
           "final_spin": "Endschleudern",
           "idle": "Leerlauf",
+          "rinsing": "Sp\u00fclen",
+          "spinning": "Schleudern",
           "wash": "Waschen"
         }
       },
