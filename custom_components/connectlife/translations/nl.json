@@ -3664,9 +3664,13 @@
       "current_washing_program_phase_status": {
         "name": "Huidig wasprogramma fase status",
         "state": {
+          "anti_crease": "Anti-kreuk",
           "cooling_down": "Afkoelen",
+          "delay": "Uitgesteld",
           "final_spin": "Eindcentrifuge",
           "idle": "Inactief",
+          "rinsing": "Spoelen",
+          "spinning": "Centrifugeren",
           "wash": "Wassen"
         }
       },

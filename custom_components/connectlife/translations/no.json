@@ -3664,9 +3664,13 @@
       "current_washing_program_phase_status": {
         "name": "Status for vaskeprogramfase",
         "state": {
+          "anti_crease": "Antikr\u00f8ll",
           "cooling_down": "Avkj\u00f8ling",
+          "delay": "Utsatt start",
           "final_spin": "Sluttsentrifugering",
           "idle": "Inaktiv",
+          "rinsing": "Skylling",
+          "spinning": "Sentrifugering",
           "wash": "Vask"
         }
       },

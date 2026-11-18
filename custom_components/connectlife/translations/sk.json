@@ -3664,9 +3664,13 @@
       "current_washing_program_phase_status": {
         "name": "Stav aktu\u00e1lnej f\u00e1zy pracieho programu",
         "state": {
+          "anti_crease": "Ochrana proti pokr\u010deniu",
           "cooling_down": "Ochladzovanie",
+          "delay": "Odlo\u017eenie",
           "final_spin": "Z\u00e1vere\u010dn\u00e9 odstre\u010fovanie",
           "idle": "Ne\u010dinn\u00fd",
+          "rinsing": "Pl\u00e1kanie",
+          "spinning": "Odstre\u010fovanie",
           "wash": "Pranie"
         }
       },

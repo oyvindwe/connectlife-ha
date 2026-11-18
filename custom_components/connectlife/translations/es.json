@@ -3664,9 +3664,13 @@
       "current_washing_program_phase_status": {
         "name": "Estado de la fase actual del programa de lavado",
         "state": {
+          "anti_crease": "Anti arrugas",
           "cooling_down": "Enfriamiento",
+          "delay": "Pospuesto",
           "final_spin": "Centrifugado final",
           "idle": "Inactivo",
+          "rinsing": "Aclarando",
+          "spinning": "Centrifugando",
           "wash": "Lavado"
         }
       },

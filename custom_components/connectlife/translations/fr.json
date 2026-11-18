@@ -3664,9 +3664,13 @@
       "current_washing_program_phase_status": {
         "name": "\u00c9tat de la phase du programme de lavage en cours",
         "state": {
+          "anti_crease": "Anti froissage",
           "cooling_down": "Refroidissement",
+          "delay": "D\u00e9part diff\u00e9r\u00e9",
           "final_spin": "Essorage final",
           "idle": "Inactif",
+          "rinsing": "Rin\u00e7age",
+          "spinning": "Essorage",
           "wash": "Lavage"
         }
       },

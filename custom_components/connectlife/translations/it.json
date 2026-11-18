@@ -3664,9 +3664,13 @@
       "current_washing_program_phase_status": {
         "name": "Stato fase programma di lavaggio corrente",
         "state": {
+          "anti_crease": "Antipiega",
           "cooling_down": "Raffreddamento",
+          "delay": "Ritardo",
           "final_spin": "Centrifuga finale",
           "idle": "Inattivo",
+          "rinsing": "Risciacquo",
+          "spinning": "Centrifuga",
           "wash": "Lavaggio"
         }
       },
