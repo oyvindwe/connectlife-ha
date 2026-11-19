@@ -128,10 +128,12 @@ async def test_unavailable_device_issue_after_grace_period(hass: HomeAssistant) 
     entry = MockConfigEntry(domain=DOMAIN)
     entry.add_to_hass(hass)
     device_reg = dr.async_get(hass)
-    for device_id in ("a", "b"):
+    connectlife_ids = {
         device_reg.async_get_or_create(
             config_entry_id=entry.entry_id, identifiers={(DOMAIN, device_id)}, name=device_id
-        )
+        ).id: device_id
+        for device_id in ("a", "b")
+    }
     coordinator = ConnectLifeCoordinator.__new__(ConnectLifeCoordinator)
     coordinator.hass = hass
     coordinator.config_entry = entry
@@ -143,8 +145,9 @@ async def test_unavailable_device_issue_after_grace_period(hass: HomeAssistant) 
         """Return the devices with an issue."""
         with patch("custom_components.connectlife.coordinator.monotonic", return_value=start + at.total_seconds()):
             coordinator._update_unavailable_device_issues(device_ids)
+        # Issue IDs use the HA device ID.
         return {
-            issue_id.removeprefix("unavailable_device.")
+            connectlife_ids[issue_id.removeprefix("unavailable_device.")]
             for (domain, issue_id) in issue_reg.issues
             if domain == DOMAIN
         }
@@ -165,7 +168,7 @@ async def test_unavailable_device_issue_after_grace_period(hass: HomeAssistant) 
 async def test_inactive_unavailable_device_issue_is_created_again(hass: HomeAssistant) -> None:
     entry = MockConfigEntry(domain=DOMAIN)
     entry.add_to_hass(hass)
-    dr.async_get(hass).async_get_or_create(
+    device = dr.async_get(hass).async_get_or_create(
         config_entry_id=entry.entry_id, identifiers={(DOMAIN, "a")}, name="a"
     )
     coordinator = ConnectLifeCoordinator.__new__(ConnectLifeCoordinator)
@@ -174,7 +177,7 @@ async def test_inactive_unavailable_device_issue_is_created_again(hass: HomeAssi
     # Missing since well before the grace period.
     coordinator._missing_since = {"a": -UNAVAILABLE_DEVICE_GRACE_PERIOD.total_seconds()}
     issue_reg = ir.async_get(hass)
-    key = (DOMAIN, "unavailable_device.a")
+    key = (DOMAIN, f"unavailable_device.{device.id}")
     coordinator._update_unavailable_device_issues(())
     # Simulate the issue restored inactive after a restart.
     issue_reg.issues[key] = dataclasses.replace(issue_reg.issues[key], active=False)
@@ -185,6 +188,29 @@ async def test_inactive_unavailable_device_issue_is_created_again(hass: HomeAssi
 
     assert issue_reg.issues[key].active
     logger.warning.assert_called_once()
+
+
+async def test_remove_old_issue_ids(hass: HomeAssistant) -> None:
+    """Issues with the ConnectLife device ID in their ID are deleted; others are kept."""
+    entry = MockConfigEntry(domain=DOMAIN)
+    entry.add_to_hass(hass)
+    device = dr.async_get(hass).async_get_or_create(
+        config_entry_id=entry.entry_id, identifiers={(DOMAIN, "a")}, name="a"
+    )
+    coordinator = ConnectLifeCoordinator.__new__(ConnectLifeCoordinator)
+    coordinator.hass = hass
+    coordinator.config_entry = entry
+    issue_ids = ("unavailable_device.a", "unsupported_beep.a", f"unavailable_device.{device.id}")
+    for issue_id in issue_ids:
+        ir.async_create_issue(
+            hass, DOMAIN, issue_id, is_fixable=True, severity=ir.IssueSeverity.WARNING, translation_key="x"
+        )
+
+    coordinator.remove_old_issue_ids()
+
+    assert {issue_id for (domain, issue_id) in ir.async_get(hass).issues if domain == DOMAIN} == {
+        f"unavailable_device.{device.id}"
+    }
 
 
 async def test_new_status_property_schedules_one_reload() -> None:

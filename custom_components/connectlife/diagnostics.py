@@ -26,6 +26,7 @@ TO_REDACT = {
     "deviceId",
     "device_id",
     "deviceNickName",
+    "f_matterUniqueId",
     "ip",
     "mac",
     "puid",

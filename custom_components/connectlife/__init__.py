@@ -127,6 +127,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
 
     await coordinator.cleanup_removed_entities()
+    coordinator.remove_old_issue_ids()
     if entry.options.get(CONF_PUSH, True):
         _start_push(hass, entry, coordinator)
     if not entry.data.get(DATA_STATE_CLASS_MIGRATION_DONE):
