@@ -5322,6 +5322,12 @@
       "oven_temperature": {
         "name": "Temperatura horno"
       },
+      "oven_temperature_unit": {
+        "name": "Unidad de temperatura del horno",
+        "state": {
+          "celsius": "Celsius"
+        }
+      },
       "oven_usage_value_alarm_limit": {
         "name": "L\u00edmite de alarma del valor de uso del horno"
       },

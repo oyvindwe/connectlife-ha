@@ -5322,6 +5322,12 @@
       "oven_temperature": {
         "name": "Temperatura rerne"
       },
+      "oven_temperature_unit": {
+        "name": "Jedinica temperature rerne",
+        "state": {
+          "celsius": "Celzijus"
+        }
+      },
       "oven_usage_value_alarm_limit": {
         "name": "Grani\u010dna vrednost alarma kori\u0161\u0107enja rerne"
       },

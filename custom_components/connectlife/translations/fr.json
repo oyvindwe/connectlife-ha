@@ -5322,6 +5322,12 @@
       "oven_temperature": {
         "name": "Temp\u00e9rature du four"
       },
+      "oven_temperature_unit": {
+        "name": "Unit\u00e9 de temp\u00e9rature du four",
+        "state": {
+          "celsius": "Celsius"
+        }
+      },
       "oven_usage_value_alarm_limit": {
         "name": "Limite d'alarme de la valeur d'utilisation du four"
       },
