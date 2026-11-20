@@ -5322,6 +5322,12 @@
       "oven_temperature": {
         "name": "Teplota trouby"
       },
+      "oven_temperature_unit": {
+        "name": "Jednotka teploty trouby",
+        "state": {
+          "celsius": "Celsia"
+        }
+      },
       "oven_usage_value_alarm_limit": {
         "name": "Limit alarmu pou\u017e\u00edv\u00e1n\u00ed trouby"
       },

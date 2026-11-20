@@ -5322,6 +5322,12 @@
       "oven_temperature": {
         "name": "Temperatura forno"
       },
+      "oven_temperature_unit": {
+        "name": "Unit\u00e0 temperatura forno",
+        "state": {
+          "celsius": "Celsius"
+        }
+      },
       "oven_usage_value_alarm_limit": {
         "name": "Limite allarme valore utilizzo forno"
       },

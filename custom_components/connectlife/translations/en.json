@@ -5322,6 +5322,12 @@
       "oven_temperature": {
         "name": "Oven temperature"
       },
+      "oven_temperature_unit": {
+        "name": "Oven temperature unit",
+        "state": {
+          "celsius": "Celsius"
+        }
+      },
       "oven_usage_value_alarm_limit": {
         "name": "Oven usage value alarm limit"
       },

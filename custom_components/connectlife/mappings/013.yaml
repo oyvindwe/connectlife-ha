@@ -330,6 +330,7 @@ properties:
 - property: Automatic_door_open_at_program_end_after_time_settingTimer_in_minutes
   optional: true
   sensor:
+    unknown_value: 255
     device_class: duration
     unit: min
 - property: Automatic_door_open_at_program_end_setting
@@ -716,6 +717,7 @@ properties:
 - property: Gratin_from_below_functionSet_time_in_seconds
   optional: true
   sensor:
+    unknown_value: 65535
     read_only: true
     device_class: duration
     unit: s
@@ -739,6 +741,7 @@ properties:
   binary_sensor: {}
 - property: Gratin_total_allowed_time_in_minutes
   sensor:
+    unknown_value: 65535
     device_class: duration
     unit: min
 - property: Gratin_total_passed_time_in_minutes
@@ -749,6 +752,7 @@ properties:
     unknown_value: 65535
 - property: Grill_plate_measured_temperature
   sensor:
+    unknown_value: 65535
     device_class: temperature
     unit: property.Oven_temperature_unit
     state_class: measurement
@@ -1283,6 +1287,7 @@ properties:
 - property: Step1_Steam_assistSet_time_in_minutes
   optional: true
   sensor:
+    unknown_value: 65535
     device_class: duration
     unit: min
 - property: Step1_Steam_assist_intensity
@@ -1318,6 +1323,7 @@ properties:
 - property: Step2_Steam_assistSet_time_in_minutes
   optional: true
   sensor:
+    unknown_value: 65535
     device_class: duration
     unit: min
 - property: Step2_Steam_assist_intensity
@@ -1353,6 +1359,7 @@ properties:
 - property: Step3_Steam_assistSet_time_in_minutes
   optional: true
   sensor:
+    unknown_value: 65535
     device_class: duration
     unit: min
 - property: Step3_Steam_assist_intensity
@@ -1386,6 +1393,7 @@ properties:
 - property: Step4Steam_assistSet_time_in_minutes
   optional: true
   sensor:
+    unknown_value: 65535
     device_class: duration
     unit: min
 - property: Step4Steam_assist_intensity
@@ -1431,6 +1439,7 @@ properties:
 - property: Step5Steam_assistSet_time_in_minutes
   optional: true
   sensor:
+    unknown_value: 65535
     device_class: duration
     unit: min
 - property: Step5Steam_assist_intensity

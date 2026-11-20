@@ -1,0 +1,11 @@
+# ATAG ovens with feature code oven-bio24-craft ("Bio24 Craft oven"), e.g. OXP8612D and CSX8412D (#880).
+# The property list is empty for this feature code.
+properties:
+- property: Oven_temperature_unit
+  # Reports 0 while set to °C; the European version can't be set to °F (#880).
+  unavailable: null
+  sensor:
+    device_class: enum
+    read_only: true
+    options:
+      0: celsius

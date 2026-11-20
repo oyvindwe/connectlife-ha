@@ -5322,6 +5322,12 @@
       "oven_temperature": {
         "name": "Teplota r\u00fary"
       },
+      "oven_temperature_unit": {
+        "name": "Jednotka teploty r\u00fary",
+        "state": {
+          "celsius": "Celzius"
+        }
+      },
       "oven_usage_value_alarm_limit": {
         "name": "Limit alarmu pou\u017e\u00edvanie r\u00fary"
       },
