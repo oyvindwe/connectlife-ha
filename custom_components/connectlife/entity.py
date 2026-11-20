@@ -207,21 +207,24 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
                     self._disable_beep_failure_count += 1
                     if self._disable_beep_failure_count >= DISABLE_BEEP_FAILURE_THRESHOLD:
                         self._disable_beep = False
-                        ir.async_create_issue(
-                            self.coordinator.hass,
-                            DOMAIN,
-                            f"unsupported_beep.{self.device_id}",
-                            is_fixable=True,
-                            severity=ir.IssueSeverity.WARNING,
-                            translation_key="unsupported_beep",
-                            translation_placeholders={
-                                "device_name": self.nickname or "",
-                            },
-                            data={
-                                "entry_id": self.coordinator.config_entry.entry_id,
-                                "device_id": self.device_id,
-                            },
-                        )
+                        # The HA device ID, not the ConnectLife one: issue IDs show up in diagnostics.
+                        ha_device_id = self.registry_entry.device_id if self.registry_entry else None
+                        if ha_device_id:
+                            ir.async_create_issue(
+                                self.coordinator.hass,
+                                DOMAIN,
+                                f"unsupported_beep.{ha_device_id}",
+                                is_fixable=True,
+                                severity=ir.IssueSeverity.WARNING,
+                                translation_key="unsupported_beep",
+                                translation_placeholders={
+                                    "device_name": self.nickname or "",
+                                },
+                                data={
+                                    "entry_id": self.coordinator.config_entry.entry_id,
+                                    "device_id": self.device_id,
+                                },
+                            )
             else:
                 await self.coordinator.async_update_device(self.device_id, command, properties)
         except LifeConnectError as api_error:

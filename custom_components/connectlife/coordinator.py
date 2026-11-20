@@ -266,6 +266,16 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
                 self._setup_status_keys[device_id] = keys
         return result
 
+    def remove_old_issue_ids(self) -> None:
+        """Delete repair issues with the ConnectLife device ID in their issue ID (before 1.1.0).
+
+        Issue IDs show up in diagnostics, so they now use the HA device ID. The issues are
+        raised again with the new ID when they still apply.
+        """
+        for device_id in self._registered_devices():
+            for prefix in ("unavailable_device.", "unsupported_beep."):
+                ir.async_delete_issue(self.hass, DOMAIN, f"{prefix}{device_id}")
+
     def _registered_devices(self) -> dict[str, dr.DeviceEntry]:
         """Return the devices registered for this config entry, keyed by ConnectLife device ID."""
         device_reg = dr.async_get(self.hass)
@@ -378,7 +388,8 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
         }
         issue_reg = ir.async_get(self.hass)
         for device_id, device in devices.items():
-            issue_id = f"unavailable_device.{device_id}"
+            # The HA device ID, not the ConnectLife one: issue IDs show up in diagnostics.
+            issue_id = f"unavailable_device.{device.id}"
             issue = issue_reg.async_get_issue(DOMAIN, issue_id)
             if device_id in device_ids:
                 if issue is not None:
