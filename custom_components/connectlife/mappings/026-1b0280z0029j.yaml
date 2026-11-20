@@ -1,0 +1,31 @@
+# Hisense BCD-280WP2BWQ1/HC4(HAA) refrigerator-freezer (#879).
+# ConnectLife returns no energy statistics for this model (all days 0, and none in the app).
+statistics:
+  source: energy_consumption_curve
+  daily_energy_kwh: false
+properties:
+  # Range reported by refrigerator_min_temperature / refrigerator_max_temperature
+  - property: refrigerator_temperature
+    number:
+      min_value: 2
+      max_value: 8
+
+  # No variable-temperature compartment: its temperatures report the -40 placeholder.
+  - property: open_variation_door_alarm
+    disable: true
+  - property: vari_room_open
+    disable: true
+  - property: vari_temp_2_degree_above_starting_point
+    disable: true
+  - property: variation_door_open_time
+    disable: true
+  - property: variation_max_temperature
+    disable: true
+  - property: variation_min_temperature
+    disable: true
+  - property: variation_real_temperature
+    disable: true
+  - property: variation_sensor_real_temperature
+    disable: true
+  - property: variation_temperature
+    disable: true
