@@ -3719,6 +3719,9 @@
       "custard_room": {
         "name": "Custard room"
       },
+      "cycles_until_next_cleaning": {
+        "name": "Cycles until next cleaning"
+      },
       "d1_program_id": {
         "name": "D 1 program ID"
       },
@@ -8621,6 +8624,9 @@
       },
       "water_tank_level": {
         "name": "Water tank level"
+      },
+      "water_tank_level_status": {
+        "name": "Water tank level status"
       },
       "waterlevel": {
         "name": "Water level"

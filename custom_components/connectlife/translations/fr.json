@@ -3719,6 +3719,9 @@
       "custard_room": {
         "name": "Compartiment flan"
       },
+      "cycles_until_next_cleaning": {
+        "name": "Cycles avant le prochain nettoyage"
+      },
       "d1_program_id": {
         "name": "ID programme D 1"
       },
@@ -8621,6 +8624,9 @@
       },
       "water_tank_level": {
         "name": "Niveau du r\u00e9servoir d'eau"
+      },
+      "water_tank_level_status": {
+        "name": "\u00c9tat du niveau du r\u00e9servoir d'eau"
       },
       "waterlevel": {
         "name": "Niveau d'eau"

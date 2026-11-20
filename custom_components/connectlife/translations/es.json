@@ -3719,6 +3719,9 @@
       "custard_room": {
         "name": "Compartimento de natillas"
       },
+      "cycles_until_next_cleaning": {
+        "name": "Ciclos hasta la pr\u00f3xima limpieza"
+      },
       "d1_program_id": {
         "name": "ID de programa D 1"
       },
@@ -8621,6 +8624,9 @@
       },
       "water_tank_level": {
         "name": "Nivel del dep\u00f3sito de agua"
+      },
+      "water_tank_level_status": {
+        "name": "Estado del nivel del dep\u00f3sito de agua"
       },
       "waterlevel": {
         "name": "Nivel de agua"

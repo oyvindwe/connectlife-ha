@@ -3719,6 +3719,9 @@
       "custard_room": {
         "name": "Vla-ruimte"
       },
+      "cycles_until_next_cleaning": {
+        "name": "Cycli tot volgende reiniging"
+      },
       "d1_program_id": {
         "name": "D 1 programma ID"
       },
@@ -8621,6 +8624,9 @@
       },
       "water_tank_level": {
         "name": "Niveau watertank"
+      },
+      "water_tank_level_status": {
+        "name": "Status niveau watertank"
       },
       "waterlevel": {
         "name": "Waterniveau"

@@ -3719,6 +3719,9 @@
       "custard_room": {
         "name": "Prostorija za krem"
       },
+      "cycles_until_next_cleaning": {
+        "name": "Ciklusi do slede\u0107eg \u010di\u0161\u0107enja"
+      },
       "d1_program_id": {
         "name": "ID programa D1"
       },
@@ -8621,6 +8624,9 @@
       },
       "water_tank_level": {
         "name": "Nivo rezervoara za vodu"
+      },
+      "water_tank_level_status": {
+        "name": "Status nivoa rezervoara za vodu"
       },
       "waterlevel": {
         "name": "Nivo vode"

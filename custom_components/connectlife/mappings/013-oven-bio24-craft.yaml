@@ -9,3 +9,6 @@ properties:
     read_only: true
     options:
       0: celsius
+- property: Language_status
+  # Reports 4, which the default mapping doesn't know (#880). The oven's display language isn't useful here.
+  disable: true
