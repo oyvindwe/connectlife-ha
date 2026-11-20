@@ -29,3 +29,51 @@ properties:
     disable: true
   - property: variation_temperature
     disable: true
+
+  # No ice maker (confirmed by the owner).
+  - property: automatic_ice_making
+    disable: true
+  - property: ice_machine_actual_temp
+    disable: true
+  - property: ice_make_room_alarm
+    disable: true
+  - property: ice_make_room_switch
+    disable: true
+  - property: ice_maker_wash_state
+    disable: true
+  - property: ice_making_b_switch_status
+    disable: true
+  - property: ice_making_fast_status
+    disable: true
+  - property: ice_making_full_status
+    disable: true
+  - property: ice_making_machine_failure
+    disable: true
+  - property: ice_making_normal_status
+    disable: true
+  - property: ice_making_state
+    disable: true
+  - property: ice_making_stop_status
+    disable: true
+  - property: ice_room_actual_temp
+    disable: true
+  - property: ice_sensor_failure_flag
+    disable: true
+  - property: ice_temperature_sensor_header_failure_flag
+    disable: true
+  - property: second_ice_maker_full_status
+    disable: true
+  - property: second_ice_maker_init_fault
+    disable: true
+  - property: second_ice_maker_sensor_fault
+    disable: true
+
+  # No holiday mode (confirmed by the owner).
+  - property: existing_holiday_mode
+    disable: true
+  - property: holiday_mode
+    disable: true
+
+  # The fruit and vegetable drawer has no temperature control of its own (confirmed by the owner).
+  - property: fruit_vegetables_temperature
+    disable: true
