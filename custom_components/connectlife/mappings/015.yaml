@@ -561,6 +561,8 @@ properties:
     optional: true
   - property: Selected_program_id_status
     # Varies per model. Override as select in feature specific file.
+    # 255 appears briefly while the program changes (seen with push updates on a program start).
+    unavailable: 255
     sensor:
     icon: mdi:clipboard-list
   - property: Selected_program_mode
