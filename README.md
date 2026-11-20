@@ -117,7 +117,7 @@ ConnectLife pushes changes to Home Assistant within seconds, including changes m
 the device, and side effects of commands sent from Home Assistant (e.g. turning on an AC may also change fan mode).
 While push updates are connected, the integration also polls the ConnectLife API every 15 minutes as a safety net.
 
-Push updates are in beta. If the push connection is lost, or you turn **Push updates (beta)** off in the integration
+If the push connection is lost, or you turn **Push updates** off in the integration
 options, the integration polls every 60 seconds instead, and changes made outside Home Assistant can take up to a
 minute to appear. When a command is sent from Home Assistant, the properties in that command are updated in Home
 Assistant right away either way.

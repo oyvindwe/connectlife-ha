@@ -9232,7 +9232,7 @@
       "init": {
         "data": {
           "device": "Ger\u00e4t ausw\u00e4hlen",
-          "push": "Push-Aktualisierungen (Beta)"
+          "push": "Push-Aktualisierungen"
         },
         "data_description": {
           "push": "Erh\u00e4lt \u00c4nderungen von ConnectLife innerhalb von Sekunden, statt jede Minute abzufragen. Solange die Verbindung besteht, fragt die Integration zus\u00e4tzlich alle 15 Minuten ab. Ausschalten, wenn keine Aktualisierungen mehr ankommen oder Verbindungsprobleme auftreten; die Integration fragt dann jede Minute ab."

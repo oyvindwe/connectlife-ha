@@ -9232,7 +9232,7 @@
       "init": {
         "data": {
           "device": "Selecteer apparaat",
-          "push": "Pushupdates (b\u00e8ta)"
+          "push": "Pushupdates"
         },
         "data_description": {
           "push": "Ontvangt wijzigingen van ConnectLife binnen enkele seconden, in plaats van elke minuut op te vragen. Zolang de verbinding actief is, vraagt de integratie ook elke 15 minuten op. Zet dit uit als er geen updates meer binnenkomen of als je verbindingsproblemen ziet; de integratie vraagt dan elke minuut op."

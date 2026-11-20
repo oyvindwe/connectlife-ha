@@ -9232,7 +9232,7 @@
       "init": {
         "data": {
           "device": "Izaberite ure\u0111aj",
-          "push": "Push a\u017euriranja (beta)"
+          "push": "Push a\u017euriranja"
         },
         "data_description": {
           "push": "Prima promene iz ConnectLife u roku od nekoliko sekundi, umesto provere svakog minuta. Dok je veza aktivna, integracija proverava i na svakih 15 minuta. Isklju\u010dite ako a\u017euriranja prestanu da sti\u017eu ili primetite probleme sa vezom; integracija tada proverava svakog minuta."
