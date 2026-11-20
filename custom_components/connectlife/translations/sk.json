@@ -3719,6 +3719,9 @@
       "custard_room": {
         "name": "Priestor na puding"
       },
+      "cycles_until_next_cleaning": {
+        "name": "Cykly do \u010fal\u0161ieho \u010distenia"
+      },
       "d1_program_id": {
         "name": "ID programu D1"
       },
@@ -8621,6 +8624,9 @@
       },
       "water_tank_level": {
         "name": "Hladina v n\u00e1dr\u017ei na vodu"
+      },
+      "water_tank_level_status": {
+        "name": "Stav hladiny v n\u00e1dr\u017ei na vodu"
       },
       "waterlevel": {
         "name": "Hladina vody"

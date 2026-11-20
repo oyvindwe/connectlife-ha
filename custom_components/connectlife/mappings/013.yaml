@@ -439,6 +439,11 @@ properties:
       6: special
 - property: Current_baking_step2
   optional: true
+- property: CyclesUntilNextCleaning
+  translation_key: cycles_until_next_cleaning
+  # Seen on ATAG ovens (#880). Meaning taken from the name.
+  entity_category: diagnostic
+  sensor:
 - property: Date_format_setting
   optional: true
 - property: Demo_mode
@@ -2334,6 +2339,11 @@ properties:
       2: present
 - property: Water_tank_level
   optional: true
+- property: Water_tank_level_status
+  # Seen on ATAG ovens (#880): 255 when there's no level to report; scale unknown.
+  unavailable: 255
+  entity_category: diagnostic
+  sensor:
 - property: Weight_unit_setting
   optional: true
 - property: Welcome

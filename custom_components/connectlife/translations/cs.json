@@ -3719,6 +3719,9 @@
       "custard_room": {
         "name": "M\u00edstnost pro custard"
       },
+      "cycles_until_next_cleaning": {
+        "name": "Cykly do p\u0159\u00ed\u0161t\u00edho \u010di\u0161t\u011bn\u00ed"
+      },
       "d1_program_id": {
         "name": "ID programu D1"
       },
@@ -8621,6 +8624,9 @@
       },
       "water_tank_level": {
         "name": "Hladina vodn\u00ed n\u00e1dr\u017ee"
+      },
+      "water_tank_level_status": {
+        "name": "Stav hladiny vodn\u00ed n\u00e1dr\u017ee"
       },
       "waterlevel": {
         "name": "Hladina vody"

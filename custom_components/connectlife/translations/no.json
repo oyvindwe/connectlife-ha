@@ -3719,6 +3719,9 @@
       "custard_room": {
         "name": "Vaniljerom"
       },
+      "cycles_until_next_cleaning": {
+        "name": "Sykluser til neste rengj\u00f8ring"
+      },
       "d1_program_id": {
         "name": "Program-ID D1"
       },
@@ -8621,6 +8624,9 @@
       },
       "water_tank_level": {
         "name": "Vanntankniv\u00e5"
+      },
+      "water_tank_level_status": {
+        "name": "Status for vanntankniv\u00e5"
       },
       "waterlevel": {
         "name": "Vanniv\u00e5"

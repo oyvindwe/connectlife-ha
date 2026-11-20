@@ -3719,6 +3719,9 @@
       "custard_room": {
         "name": "Pudding-Fach"
       },
+      "cycles_until_next_cleaning": {
+        "name": "Zyklen bis zur n\u00e4chsten Reinigung"
+      },
       "d1_program_id": {
         "name": "Programm-ID D 1"
       },
@@ -8621,6 +8624,9 @@
       },
       "water_tank_level": {
         "name": "Wassertankstand"
+      },
+      "water_tank_level_status": {
+        "name": "Wassertankstand-Status"
       },
       "waterlevel": {
         "name": "Wasserstand"

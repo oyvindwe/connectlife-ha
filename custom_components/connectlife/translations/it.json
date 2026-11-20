@@ -3719,6 +3719,9 @@
       "custard_room": {
         "name": "Vano crema pasticcera"
       },
+      "cycles_until_next_cleaning": {
+        "name": "Cicli alla prossima pulizia"
+      },
       "d1_program_id": {
         "name": "ID programma D 1"
       },
@@ -8621,6 +8624,9 @@
       },
       "water_tank_level": {
         "name": "Livello serbatoio acqua"
+      },
+      "water_tank_level_status": {
+        "name": "Stato livello serbatoio acqua"
       },
       "waterlevel": {
         "name": "Livello acqua"
