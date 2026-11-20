@@ -1,4 +1,4 @@
-"""Push updates from the ConnectLife cloud over a WebSocket (beta).
+"""Push updates from the ConnectLife cloud over a WebSocket.
 
 The cloud pushes a device's status within seconds of a change. While connected, the coordinator polls only as a
 safety net; when the connection is lost, it polls every minute again until reconnected.

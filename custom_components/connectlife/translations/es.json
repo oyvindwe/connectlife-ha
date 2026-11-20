@@ -9232,7 +9232,7 @@
       "init": {
         "data": {
           "device": "Seleccionar dispositivo",
-          "push": "Actualizaciones push (beta)"
+          "push": "Actualizaciones push"
         },
         "data_description": {
           "push": "Recibe los cambios de ConnectLife en segundos, en lugar de consultar cada minuto. Mientras est\u00e1 conectada, la integraci\u00f3n tambi\u00e9n consulta cada 15 minutos. Desact\u00edvalo si dejan de llegar actualizaciones o ves problemas de conexi\u00f3n; la integraci\u00f3n consultar\u00e1 entonces cada minuto."

@@ -9232,7 +9232,7 @@
       "init": {
         "data": {
           "device": "Select device",
-          "push": "Push updates (beta)"
+          "push": "Push updates"
         },
         "data_description": {
           "push": "Get changes from ConnectLife within seconds, instead of polling every minute. While connected, the integration also polls every 15 minutes. Turn off if updates stop arriving or you see connection problems; the integration then polls every minute."

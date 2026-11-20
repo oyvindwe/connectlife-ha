@@ -9232,7 +9232,7 @@
       "init": {
         "data": {
           "device": "Vyberte zariadenie",
-          "push": "Push aktualiz\u00e1cie (beta)"
+          "push": "Push aktualiz\u00e1cie"
         },
         "data_description": {
           "push": "Z\u00edskava zmeny z ConnectLife v priebehu nieko\u013ek\u00fdch sek\u00fand namiesto dopytovania ka\u017ed\u00fa min\u00fatu. Po\u010das pripojenia sa integr\u00e1cia navy\u0161e dopytuje ka\u017ed\u00fdch 15 min\u00fat. Vypnite, ak aktualiz\u00e1cie prestan\u00fa prich\u00e1dza\u0165 alebo sa vyskytn\u00fa probl\u00e9my s pripojen\u00edm; integr\u00e1cia sa potom dopytuje ka\u017ed\u00fa min\u00fatu."

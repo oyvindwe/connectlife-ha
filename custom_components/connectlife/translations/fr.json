@@ -9232,7 +9232,7 @@
       "init": {
         "data": {
           "device": "S\u00e9lectionner un appareil",
-          "push": "Mises \u00e0 jour push (b\u00eata)"
+          "push": "Mises \u00e0 jour push"
         },
         "data_description": {
           "push": "Re\u00e7oit les changements de ConnectLife en quelques secondes, au lieu d'interroger chaque minute. Pendant la connexion, l'int\u00e9gration interroge aussi toutes les 15 minutes. \u00c0 d\u00e9sactiver si les mises \u00e0 jour n'arrivent plus ou en cas de probl\u00e8mes de connexion ; l'int\u00e9gration interroge alors chaque minute."
