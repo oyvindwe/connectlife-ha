@@ -8,6 +8,9 @@ properties:
     number:
       min_value: 2
   - property: variation_temperature
+    # A user setting on this model (variable compartment), so a control rather than a hidden diagnostic (#895).
+    hide: false
+    entity_category: null
     number:
       min_value: -18
       max_value: -14
