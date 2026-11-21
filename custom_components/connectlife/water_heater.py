@@ -110,16 +110,16 @@ class ConnectLifeWaterHeater(ConnectLifeEntity, WaterHeaterEntity):
         self.max_temperature_map = {}
         self.unknown_values = {}
 
-        for dd_entry in mapping.properties.values():
-            if has_platform(Platform.WATER_HEATER, dd_entry) and dd_entry.name in appliance.status_list and dd_entry.water_heater.target is not None:
-                target = dd_entry.water_heater.target
+        for prop in mapping.properties.values():
+            if has_platform(Platform.WATER_HEATER, prop) and prop.name in appliance.status_list and prop.water_heater.target is not None:
+                target = prop.water_heater.target
                 if target in self.target_map:
                     _LOGGER.warning(
                         "%s and %s both map to water_heater %s for %s; using %s. "
                         "The device exposes more properties than its mapping expects — please report it.",
-                        self.target_map[target], dd_entry.name, target, self.nickname, dd_entry.name,
+                        self.target_map[target], prop.name, target, self.nickname, prop.name,
                     )
-                self.target_map[target] = dd_entry.name
+                self.target_map[target] = prop.name
 
         for target, status in self.target_map.items():
             if target == IS_ON:

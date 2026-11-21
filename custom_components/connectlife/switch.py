@@ -48,30 +48,30 @@ class ConnectLifeSwitch(ConnectLifeEntity, SwitchEntity):
         coordinator: ConnectLifeCoordinator,
         appliance: ConnectLifeAppliance,
         status: str,
-        dd_entry: Property,
+        prop: Property,
     ):
         """Initialize the entity."""
         super().__init__(coordinator, appliance, status, Platform.SWITCH)
         self.status = status
         self._unavailable_status = status
-        self._unavailable_value = dd_entry.unavailable
-        self._available_when = dd_entry.available_when
+        self._unavailable_value = prop.unavailable
+        self._available_when = prop.available_when
         self.command_name = (
-            dd_entry.switch.command_name if dd_entry.switch.command_name else status
+            prop.switch.command_name if prop.switch.command_name else status
         )
-        self.off = dd_entry.switch.off
-        self.on = dd_entry.switch.on
-        self.command_off = self.off - dd_entry.switch.command_adjust
-        self.command_on = self.on - dd_entry.switch.command_adjust
+        self.off = prop.switch.off
+        self.on = prop.switch.on
+        self.command_off = self.off - prop.switch.command_adjust
+        self.command_on = self.on - prop.switch.command_adjust
         self.entity_description = SwitchEntityDescription(
             key=self._attr_unique_id,
-            entity_registry_visible_default=not dd_entry.hide,
-            entity_registry_enabled_default=not dd_entry.optional,
-            icon=dd_entry.icon,
+            entity_registry_visible_default=not prop.hide,
+            entity_registry_enabled_default=not prop.optional,
+            icon=prop.icon,
             name=status.replace("_", " "),
-            translation_key=self.to_translation_key(dd_entry.translation_key or status),
-            device_class=dd_entry.switch.device_class,
-            entity_category=dd_entry.entity_category,
+            translation_key=self.to_translation_key(prop.translation_key or status),
+            device_class=prop.switch.device_class,
+            entity_category=prop.entity_category,
         )
         self._refresh_state()
 
