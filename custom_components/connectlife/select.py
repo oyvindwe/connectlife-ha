@@ -49,31 +49,31 @@ class ConnectLifeSelect(ConnectLifeEntity, SelectEntity):
         coordinator: ConnectLifeCoordinator,
         appliance: ConnectLifeAppliance,
         status: str,
-        dd_entry: Property,
+        prop: Property,
     ):
         """Initialize the entity."""
         super().__init__(coordinator, appliance, status, Platform.SELECT)
         self.status = status
         self._unavailable_status = status
-        self._unavailable_value = dd_entry.unavailable
-        self._available_when = dd_entry.available_when
+        self._unavailable_value = prop.unavailable
+        self._available_when = prop.available_when
         # Copy: unmapped values are added per-entity, avoid leaking to other appliances.
-        self.options_map = dict(dd_entry.select.options)
+        self.options_map = dict(prop.select.options)
         self.reverse_options_map = {v: k for k, v in self.options_map.items()}
-        self.unknown_value = dd_entry.select.unknown_value
+        self.unknown_value = prop.select.unknown_value
         self.command_name = (
-            dd_entry.select.command_name if dd_entry.select.command_name else status
+            prop.select.command_name if prop.select.command_name else status
         )
-        self.command_adjust = dd_entry.select.command_adjust
+        self.command_adjust = prop.select.command_adjust
         self._attr_options = list(self.options_map.values())
         self.entity_description = SelectEntityDescription(
             key=self._attr_unique_id,
-            entity_registry_visible_default=not dd_entry.hide,
-            entity_registry_enabled_default=not dd_entry.optional,
-            icon=dd_entry.icon,
+            entity_registry_visible_default=not prop.hide,
+            entity_registry_enabled_default=not prop.optional,
+            icon=prop.icon,
             name=status.replace("_", " "),
-            translation_key=self.to_translation_key(dd_entry.translation_key or status),
-            entity_category=dd_entry.entity_category,
+            translation_key=self.to_translation_key(prop.translation_key or status),
+            entity_category=prop.entity_category,
         )
         self._refresh_state()
 

@@ -94,45 +94,45 @@ class ConnectLifeStatusSensor(ConnectLifeEntity, SensorEntity):
         coordinator: ConnectLifeCoordinator,
         appliance: ConnectLifeAppliance,
         status: str,
-        dd_entry: Property,
+        prop: Property,
         mapping: DeviceMapping,
     ):
         """Initialize the entity."""
         super().__init__(coordinator, appliance, status, Platform.SENSOR)
         self.status = status
         self._unavailable_status = status
-        self._unavailable_value = dd_entry.unavailable
-        self._available_when = dd_entry.available_when
-        self.combine = dd_entry.combine
-        self.read_only = True if self.combine else dd_entry.sensor.read_only
-        self.multiplier = dd_entry.sensor.multiplier
-        self.unknown_value = dd_entry.sensor.unknown_value
+        self._unavailable_value = prop.unavailable
+        self._available_when = prop.available_when
+        self.combine = prop.combine
+        self.read_only = True if self.combine else prop.sensor.read_only
+        self.multiplier = prop.sensor.multiplier
+        self.unknown_value = prop.sensor.unknown_value
 
-        device_class = dd_entry.sensor.device_class
+        device_class = prop.sensor.device_class
         self.options_map: dict[int, str] | None = None
         current_value = self.coordinator.data[self.device_id].status_list.get(status)
-        if device_class == SensorDeviceClass.ENUM and dd_entry.sensor.options is not None:
+        if device_class == SensorDeviceClass.ENUM and prop.sensor.options is not None:
             # Copy: unmapped values are added per-entity, avoid leaking to other appliances.
-            self.options_map = dict(dd_entry.sensor.options)
+            self.options_map = dict(prop.sensor.options)
             self._attr_options = list(self.options_map.values())
         elif device_class is None and isinstance(current_value, datetime.datetime):
             device_class = SensorDeviceClass.TIMESTAMP
         if device_class == SensorDeviceClass.TIMESTAMP and self.unknown_value is None:
             self.unknown_value = MAX_DATETIME
-        state_class = dd_entry.sensor.state_class
+        state_class = prop.sensor.state_class
         self.entity_description = SensorEntityDescription(
             key=self._attr_unique_id,
             device_class=device_class,
-            entity_registry_visible_default=not dd_entry.hide,
-            entity_registry_enabled_default=not dd_entry.optional,
-            icon=dd_entry.icon,
+            entity_registry_visible_default=not prop.hide,
+            entity_registry_enabled_default=not prop.optional,
+            icon=prop.icon,
             name=status.replace("_", " "),
             native_unit_of_measurement=to_unit(
-                dd_entry.sensor.unit, appliance=appliance, mapping=mapping
+                prop.sensor.unit, appliance=appliance, mapping=mapping
             ),
             state_class=state_class,
-            translation_key=self.to_translation_key(dd_entry.translation_key or status),
-            entity_category=dd_entry.entity_category,
+            translation_key=self.to_translation_key(prop.translation_key or status),
+            entity_category=prop.entity_category,
         )
         self._refresh_state()
 

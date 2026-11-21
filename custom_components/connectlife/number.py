@@ -52,33 +52,33 @@ class ConnectLifeNumberEntity(ConnectLifeEntity, NumberEntity):
         coordinator: ConnectLifeCoordinator,
         appliance: ConnectLifeAppliance,
         status: str,
-        dd_entry: Property,
+        prop: Property,
         mapping: DeviceMapping,
     ):
         """Initialize the entity."""
         super().__init__(coordinator, appliance, status, Platform.NUMBER)
         self.status = status
         self._unavailable_status = status
-        self._unavailable_value = dd_entry.unavailable
-        self._available_when = dd_entry.available_when
+        self._unavailable_value = prop.unavailable
+        self._available_when = prop.available_when
         self.command_name = (
-            dd_entry.number.command_name if dd_entry.number.command_name else status
+            prop.number.command_name if prop.number.command_name else status
         )
-        device_class = dd_entry.number.device_class
+        device_class = prop.number.device_class
         self.entity_description = NumberEntityDescription(
             key=self._attr_unique_id,
             device_class=device_class,
-            entity_registry_visible_default=not dd_entry.hide,
-            entity_registry_enabled_default=not dd_entry.optional,
-            icon=dd_entry.icon,
+            entity_registry_visible_default=not prop.hide,
+            entity_registry_enabled_default=not prop.optional,
+            icon=prop.icon,
             name=status.replace("_", " "),
-            native_max_value=dd_entry.number.max_value,  # type: ignore[arg-type]
-            native_min_value=dd_entry.number.min_value,  # type: ignore[arg-type]
+            native_max_value=prop.number.max_value,  # type: ignore[arg-type]
+            native_min_value=prop.number.min_value,  # type: ignore[arg-type]
             native_unit_of_measurement=to_unit(
-                dd_entry.number.unit, appliance=appliance, mapping=mapping
+                prop.number.unit, appliance=appliance, mapping=mapping
             ),
-            translation_key=self.to_translation_key(dd_entry.translation_key or status),
-            entity_category=dd_entry.entity_category,
+            translation_key=self.to_translation_key(prop.translation_key or status),
+            entity_category=prop.entity_category,
         )
         self._refresh_state()
 
