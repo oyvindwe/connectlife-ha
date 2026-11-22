@@ -1,5 +1,5 @@
 # Hisense washer-dryer WDSE1114-LVW001, e.g. WD5S1045BB (#247).
-# Same property list as 025-1wj105091v0t (WD5S1045BT). Program ids not known yet.
+# Same property list as 025-1wj105091v0t (WD5S1045BT). Programs from the reporter's dial.
 properties:
 - property: Current_program_phase
   # Values from the property list.
@@ -18,3 +18,20 @@ properties:
       9: ventilating
       10: finished
       11: delay
+- property: Selected_program_ID
+  select:
+    options:
+      1: cotton_dry
+      2: synthetic_dry
+      4: refresh
+      5: allergy_care
+      6: drum_clean
+      7: cotton
+      8: synthetic
+      9: eco_40_60
+      10: wool
+      11: quick_15
+      14: spin
+      16: baby_care
+      22: wash_and_dry_60  # "Quick Wash & Dry 60" on the dial
+      41: power_49
