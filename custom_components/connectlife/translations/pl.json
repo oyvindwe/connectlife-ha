@@ -1,0 +1,481 @@
+{
+  "config": {
+    "abort": {
+      "already_configured": "To urządzenie jest już skonfigurowane.",
+      "already_configured_elsewhere": "Urządzenia z tego konta są już skonfigurowane w innym wpisie integracji ConnectLife. Aby zmienić sposób logowania, wybierz w nim opcję ponownej konfiguracji. Aby utworzyć nowy wpis zamiast istniejącego, najpierw go wyłącz.",
+      "authorize_url_timeout": "Przekroczono limit czasu podczas generowania adresu autoryzacji.",
+      "cannot_connect": "Nie udało się połączyć.",
+      "missing_configuration": "Integracja nie jest skonfigurowana. Postępuj zgodnie z dokumentacją.",
+      "no_url_available": "Brak dostępnego adresu URL. Więcej informacji znajdziesz w [sekcji pomocy]({docs_url}).",
+      "oauth_error": "Otrzymano nieprawidłowe dane tokenu.",
+      "oauth_failed": "Nie udało się uzyskać tokenu dostępu.",
+      "oauth_timeout": "Przekroczono limit czasu oczekiwania na token OAuth.",
+      "oauth_unauthorized": "Błąd autoryzacji OAuth podczas uzyskiwania tokenu dostępu.",
+      "reauth_successful": "Ponowne uwierzytelnianie zakończyło się pomyślnie.",
+      "reconfigure_successful": "Ponowna konfiguracja zakończyła się pomyślnie.",
+      "user_rejected_authorize": "Odrzucono łączenie konta: {error}"
+    },
+    "error": {
+      "already_configured_elsewhere": "Urządzenia z tego konta są już skonfigurowane w innym wpisie integracji ConnectLife. Aby zmienić sposób logowania, wybierz w nim opcję ponownej konfiguracji. Aby utworzyć nowy wpis zamiast istniejącego, najpierw go wyłącz.",
+      "cannot_connect": "Nie udało się połączyć.",
+      "invalid_auth": "Nieprawidłowe dane logowania.",
+      "terms_not_accepted": "ConnectLife wymaga zaakceptowania zaktualizowanego regulaminu. Zmień język aplikacji ConnectLife na angielski, całkowicie zamknij ją i uruchom ponownie, zaakceptuj nowy regulamin, a następnie spróbuj ponownie.",
+      "test_server_invalid": "Nieprawidłowy adres URL serwera testowego.",
+      "test_server_required": "Tryb programistyczny wymaga adresu URL serwera testowego.",
+      "unknown": "Nieoczekiwany błąd."
+    },
+    "initiate_flow": {
+      "user": "Dodaj konto"
+    },
+    "step": {
+      "development": {
+        "data": {
+          "test_server_url": "Adres URL serwera testowego"
+        },
+        "data_description": {
+          "test_server_url": "Adres URL serwera testowego używanego do uwierzytelniania zamiast API ConnectLife."
+        },
+        "description": "Podaj adres URL serwera testowego, z którym chcesz się połączyć zamiast API ConnectLife."
+      },
+      "password": {
+        "data": {
+          "development_mode": "Tryb programistyczny",
+          "password": "Hasło",
+          "trir": "ConnectLife.TRIR (Rosja/WNP)",
+          "username": "Nazwa użytkownika"
+        },
+        "data_description": {
+          "development_mode": "Połącz się z lokalnym serwerem testowym zamiast z API ConnectLife. Tylko do programowania.",
+          "trir": "Włącz tę opcję tylko wtedy, gdy logujesz się za pomocą aplikacji ConnectLife.TRIR używanej w Rosji i krajach WNP."
+        }
+      },
+      "pick_implementation": {
+        "title": "Wybierz metodę logowania"
+      },
+      "reauth_confirm": {
+        "data": {
+          "password": "Hasło",
+          "username": "Nazwa użytkownika"
+        },
+        "description": "Wprowadź ponownie dane logowania do ConnectLife."
+      },
+      "reauth_oauth": {
+        "description": "Sesja logowania do ConnectLife wygasła. Zaloguj się ponownie w witrynie ConnectLife. Możesz tam również zaakceptować zaktualizowany regulamin.",
+        "title": "Zaloguj się ponownie"
+      },
+      "reconfigure": {
+        "menu_options": {
+          "pick_implementation": "Zaloguj się w witrynie ConnectLife (także przez Google, Apple, Facebook lub Microsoft)",
+          "reconfigure_password": "Wprowadź nazwę użytkownika i hasło"
+        }
+      },
+      "reconfigure_password": {
+        "data": {
+          "password": "Hasło",
+          "trir": "ConnectLife.TRIR (Rosja/WNP)",
+          "username": "Nazwa użytkownika"
+        },
+        "data_description": {
+          "trir": "Włącz tę opcję tylko wtedy, gdy logujesz się za pomocą aplikacji ConnectLife.TRIR używanej w Rosji i krajach WNP."
+        }
+      },
+      "user": {
+        "menu_options": {
+          "password": "Wprowadź nazwę użytkownika i hasło",
+          "pick_implementation": "Zaloguj się w witrynie ConnectLife (także przez Google, Apple, Facebook lub Microsoft)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "detergent_display": {
+        "name": "Wskaźnik poziomu środka piorącego"
+      },
+      "detergent_state": {
+        "name": "Stan środka piorącego"
+      },
+      "softener_state": {
+        "name": "Stan płynu do płukania"
+      },
+      "softer_display": {
+        "name": "Wskaźnik poziomu płynu do płukania"
+      }
+    },
+    "button": {
+      "pause": {
+        "name": "Wstrzymaj"
+      },
+      "start": {
+        "name": "Uruchom"
+      },
+      "stop": {
+        "name": "Zatrzymaj"
+      }
+    },
+    "select": {
+      "detergent": {
+        "name": "Dozowanie środka piorącego",
+        "state": {
+          "auto": "Automatycznie",
+          "less": "Mniej",
+          "more": "Więcej",
+          "off": "Wyłączone",
+          "standard": "Standardowa dawka"
+        }
+      },
+      "dry_time": {
+        "name": "Ustawienie suszenia",
+        "state": {
+          "cupboard": "Do szafy",
+          "extra_dry": "Bardzo suche",
+          "iron": "Do prasowania",
+          "off": "Wyłączone"
+        }
+      },
+      "extrarinsenum": {
+        "name": "Liczba dodatkowych płukań"
+      },
+      "selected_program_id": {
+        "name": "Wybrany program",
+        "state": {
+          "allergy_care": "Program antyalergiczny",
+          "auto": "Automatyczny",
+          "baby_care": "Ubranka dziecięce",
+          "cotton": "Bawełna",
+          "cotton_dry": "Suszenie bawełny",
+          "drum_clean": "Czyszczenie bębna",
+          "eco_40_60": "Eco 40–60",
+          "power_49": "Power 49",
+          "quick_15": "Szybki 15 min",
+          "refresh": "Odświeżanie",
+          "rinse_spin": "Płukanie i wirowanie",
+          "spin": "Wirowanie",
+          "synthetic": "Syntetyki",
+          "synthetic_dry": "Suszenie syntetyków",
+          "wash_and_dry_60": "Pranie i suszenie 60 min",
+          "wool": "Wełna"
+        }
+      },
+      "softener": {
+        "name": "Dozowanie płynu do płukania",
+        "state": {
+          "auto": "Automatycznie",
+          "less": "Mniej",
+          "more": "Więcej",
+          "off": "Wyłączone",
+          "standard": "Standardowa dawka"
+        }
+      },
+      "spin_speed_rpm": {
+        "name": "Prędkość wirowania",
+        "state": {
+          "1000": "1000 obr./min",
+          "1200": "1200 obr./min",
+          "1400": "1400 obr./min",
+          "600": "600 obr./min",
+          "800": "800 obr./min",
+          "none": "Bez wirowania",
+          "off": "Wyłączone"
+        }
+      },
+      "temperature": {
+        "name": "Temperatura",
+        "state": {
+          "cold": "Zimna"
+        }
+      }
+    },
+    "sensor": {
+      "applicationpermissions": {
+        "name": "Uprawnienia aplikacji"
+      },
+      "autodose_flag": {
+        "name": "Dostępność automatycznego dozowania",
+        "state": {
+          "available": "Dostępne",
+          "unavailable": "Niedostępne"
+        }
+      },
+      "curprogdetergentdosage": {
+        "name": "Dawka środka piorącego dla bieżącego programu"
+      },
+      "current_program_phase": {
+        "name": "Etap programu",
+        "state": {
+          "anti_crease": "Ochrona przed zagnieceniami",
+          "delay": "Opóźnienie",
+          "drying": "Suszenie",
+          "finished": "Zakończono",
+          "not_available": "Brak danych",
+          "prewash": "Pranie wstępne",
+          "rinsing": "Płukanie",
+          "softening": "Płukanie z płynem",
+          "spinning": "Wirowanie",
+          "ventilating": "Przewietrzanie",
+          "wash": "Pranie",
+          "weigh": "Ważenie"
+        }
+      },
+      "daily_energy_kwh": {
+        "name": "Dzienne zużycie energii"
+      },
+      "daily_water_consumption": {
+        "name": "Dzienne zużycie wody"
+      },
+      "defaultspinspeed": {
+        "name": "Domyślna prędkość wirowania"
+      },
+      "delayendtime": {
+        "name": "Opóźnienie zakończenia programu"
+      },
+      "delayendtime_minute": {
+        "name": "Opóźnienie zakończenia programu (min)"
+      },
+      "detergent_leftml": {
+        "name": "Pozostała ilość środka piorącego"
+      },
+      "detergent_leftnum": {
+        "name": "Pozostała liczba dawek środka piorącego"
+      },
+      "detergent_totalml": {
+        "name": "Łączne zużycie środka piorącego"
+      },
+      "detergent_totalnum": {
+        "name": "Łączna liczba dawek środka piorącego"
+      },
+      "detergentstandarddosage": {
+        "name": "Standardowa dawka środka piorącego"
+      },
+      "door_status": {
+        "name": "Stan drzwi",
+        "state": {
+          "closed": "Zamknięte",
+          "locked": "Zablokowane",
+          "not_available": "Niedostępny",
+          "open": "Otwarte",
+          "other": "Inny"
+        }
+      },
+      "dose_detergent_amount": {
+        "name": "Ilość dozowanego środka piorącego"
+      },
+      "dose_softener_amount": {
+        "name": "Ilość dozowanego płynu do płukania"
+      },
+      "drumcleancycle_runsnumber": {
+        "name": "Liczba cykli czyszczenia bębna"
+      },
+      "drumcleanwashcount": {
+        "name": "Liczba prań do czyszczenia bębna"
+      },
+      "dry_time": {
+        "name": "Ustawienie suszenia"
+      },
+      "dryopen_defaultspinspeed": {
+        "name": "Domyślna prędkość wirowania w trybie suszenia"
+      },
+      "electricit_consumption": {
+        "name": "Zużycie energii elektrycznej"
+      },
+      "energy_estimate": {
+        "name": "Szacowane zużycie energii"
+      },
+      "error_code": {
+        "name": "Kod błędu",
+        "state": {
+          "error_f01": "F01 – błąd dopływu wody",
+          "error_f03": "F03 – błąd odpływu wody",
+          "error_f04": "F04 – błąd modułu elektronicznego",
+          "error_f05": "F05 – błąd modułu elektronicznego",
+          "error_f06": "F06 – błąd modułu elektronicznego",
+          "error_f07": "F07 – błąd modułu elektronicznego",
+          "error_f13": "F13 – błąd blokady drzwi",
+          "error_f14": "F14 – błąd odblokowania drzwi",
+          "error_f15": "F15 – błąd suszenia",
+          "error_f16": "F16 – błąd suszenia",
+          "error_f17": "F17 – błąd suszenia",
+          "error_f18": "F18 – błąd suszenia",
+          "error_f23": "F23 – błąd modułu elektronicznego",
+          "error_f24": "F24 – zbyt wysoki poziom wody",
+          "none": "Brak błędu",
+          "unbalance_alarm": "Alarm niewyważenia wsadu"
+        }
+      },
+      "extrarinsenum": {
+        "name": "Liczba dodatkowych płukań"
+      },
+      "favour_program_id": {
+        "name": "ID ulubionego programu"
+      },
+      "flexiblespintime_flag": {
+        "name": "Elastyczny czas wirowania"
+      },
+      "gentle_dry": {
+        "name": "Delikatne suszenie"
+      },
+      "half_load": {
+        "name": "Połowa wsadu"
+      },
+      "initializationprogramid": {
+        "name": "ID programu inicjalizacji"
+      },
+      "loadlevel": {
+        "name": "Poziom załadunku"
+      },
+      "machine_status": {
+        "name": "Stan urządzenia",
+        "state": {
+          "alarm": "Alarm",
+          "off": "Wyłączone",
+          "paused": "Wstrzymane",
+          "running": "Pracuje",
+          "standby": "Gotowe"
+        }
+      },
+      "mainwashtime": {
+        "name": "Czas prania zasadniczego"
+      },
+      "mainwashtimeuseindex": {
+        "name": "Indeks czasu prania zasadniczego"
+      },
+      "mian_wash_time": {
+        "name": "Czas prania zasadniczego"
+      },
+      "order_time_minimum_hour": {
+        "name": "Minimalne opóźnienie (godz.)"
+      },
+      "parse_lib_ver": {
+        "name": "Wersja biblioteki przetwarzania danych"
+      },
+      "program_end_to_shutdown_time_in_minutes": {
+        "name": "Czas od zakończenia programu do wyłączenia"
+      },
+      "programfunctionvalueid": {
+        "name": "ID wartości funkcji programu"
+      },
+      "quickermode": {
+        "name": "Tryb przyspieszony"
+      },
+      "remaining_time_of_selected_program": {
+        "name": "Pozostały czas programu"
+      },
+      "rinsenum": {
+        "name": "Liczba płukań"
+      },
+      "rinsenum_containextrarinse": {
+        "name": "Liczba płukań z uwzględnieniem dodatkowego płukania"
+      },
+      "screensavertime": {
+        "name": "Czas do wygaszenia ekranu"
+      },
+      "selected_program_id": {
+        "name": "Wybrany program"
+      },
+      "selected_program_remaining_time_in_minutes": {
+        "name": "Pozostały czas programu"
+      },
+      "selected_program_total_running_time_in_minutes": {
+        "name": "Całkowity czas pracy programu"
+      },
+      "selected_program_total_time_in_minutes": {
+        "name": "Całkowity czas programu"
+      },
+      "softener_compartment": {
+        "name": "Komora na płyn do płukania"
+      },
+      "softener_leftml": {
+        "name": "Pozostała ilość płynu do płukania"
+      },
+      "softener_leftnum": {
+        "name": "Pozostała liczba dawek płynu do płukania"
+      },
+      "softener_tank": {
+        "name": "Zbiornik na płyn do płukania"
+      },
+      "softener_totalml": {
+        "name": "Łączne zużycie płynu do płukania"
+      },
+      "softener_totalnum": {
+        "name": "Łączna liczba dawek płynu do płukania"
+      },
+      "spin_speed_rpm": {
+        "name": "Prędkość wirowania"
+      },
+      "spin_time": {
+        "name": "Czas wirowania"
+      },
+      "spintime_index": {
+        "name": "Indeks czasu wirowania"
+      },
+      "standardelectricitconsumption": {
+        "name": "Standardowe zużycie energii elektrycznej"
+      },
+      "standardwaterconsumption": {
+        "name": "Standardowe zużycie wody"
+      },
+      "temperature": {
+        "name": "Temperatura"
+      },
+      "temperature_default_defaultmainwashtime": {
+        "name": "Domyślny czas prania zasadniczego dla wybranej temperatury"
+      },
+      "washing_machine_type_kg": {
+        "name": "Kod pojemności pralki"
+      },
+      "washing_machine_type_max_speed": {
+        "name": "Maksymalna prędkość wirowania"
+      },
+      "washing_program_kg": {
+        "name": "Maksymalny wsad programu"
+      },
+      "washingtime": {
+        "name": "Czas prania"
+      },
+      "water_consumption": {
+        "name": "Zużycie wody"
+      },
+      "water_estimate": {
+        "name": "Szacowane zużycie wody"
+      },
+      "water_hardness_setting": {
+        "name": "Ustawienie twardości wody"
+      },
+      "waterlevel": {
+        "name": "Poziom wody"
+      },
+      "zibian_program_id": {
+        "name": "ID programu Zibian"
+      }
+    },
+    "switch": {
+      "anticrease": {
+        "name": "Ochrona przed zagnieceniami"
+      },
+      "autodose": {
+        "name": "Automatyczne dozowanie"
+      },
+      "autotubclean": {
+        "name": "Automatyczne czyszczenie bębna"
+      },
+      "child_lock": {
+        "name": "Blokada rodzicielska"
+      },
+      "extra_rinse": {
+        "name": "Dodatkowe płukanie"
+      },
+      "mute": {
+        "name": "Wyciszenie dźwięków"
+      },
+      "prewash": {
+        "name": "Pranie wstępne"
+      },
+      "steam": {
+        "name": "Para"
+      },
+      "time_save": {
+        "name": "Skrócenie czasu"
+      }
+    }
+  }
+}
