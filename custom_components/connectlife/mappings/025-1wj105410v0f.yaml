@@ -1,0 +1,20 @@
+# Hisense washer-dryer WDSE1114-LVW001, e.g. WD5S1045BB (#247).
+# Same property list as 025-1wj105091v0t (WD5S1045BT). Program ids not known yet.
+properties:
+- property: Current_program_phase
+  # Values from the property list.
+  sensor:
+    device_class: enum
+    options:
+      0: not_available
+      1: weigh
+      2: prewash
+      3: wash
+      4: rinsing
+      5: softening
+      6: anti_crease
+      7: spinning
+      8: drying
+      9: ventilating
+      10: finished
+      11: delay
