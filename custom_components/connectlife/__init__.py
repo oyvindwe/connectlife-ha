@@ -31,6 +31,7 @@ from .const import (
 )
 from .coordinator import ConnectLifeCoordinator, ConnectLifeStatisticsCoordinator
 from .device_mappings import DeviceMappings
+from .migrations import async_migrate_qvalue_units
 from .push import PushListener
 from .oauth import ConnectLifeOAuth2Implementation, create_oauth_api
 from .services import async_setup_services
@@ -124,6 +125,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         await statistics_coordinator.async_config_entry_first_refresh()
         hass.data[DOMAIN][f"{entry.entry_id}_statistics"] = statistics_coordinator
 
+    await async_migrate_qvalue_units(hass, entry)
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
 
     await coordinator.cleanup_removed_entities()
