@@ -150,6 +150,7 @@ have a feature-specific mapping file.
 | WFSE1114-LVW002            | Washing machine          | 025              | [1wj105064v0w](custom_components/connectlife/mappings/025-1wj105064v0w.yaml)                               |
 | WF3S1114-LVW004            | Washing machine          | 025              | [1wj105246v0w](custom_components/connectlife/mappings/025-1wj105246v0w.yaml)                               |
 | WF3S1114-LVW004-000        | Washing machine          | 025              | [1wj105262v0f](custom_components/connectlife/mappings/025-1wj105262v0f.yaml)                               |
+| WD5S1045BB                 | Washing machine          | 025              | [1wj105410v0f](custom_components/connectlife/mappings/025-1wj105410v0f.yaml)                               |
 |                            | Washing machine          | 025              | [1wj105418v0t](custom_components/connectlife/mappings/025-1wj105418v0t.yaml)                               |
 | WD5I1045BWQ                | Washing machine          | 025              | [1wj105552v0w](custom_components/connectlife/mappings/025-1wj105552v0w.yaml)                               |
 | WF5S1245BB                 | Washing machine          | 025              | [1wj120238v0b](custom_components/connectlife/mappings/025-1wj120238v0b.yaml)                               |
