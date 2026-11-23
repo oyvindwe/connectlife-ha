@@ -52,8 +52,6 @@ properties:
         1: iron
         2: cupboard
         3: extra_dry
-        # Reported by the property list; verify this option on the washer.
-        4: performance
         30: "30"
         40: "40"
         50: "50"
@@ -62,21 +60,6 @@ properties:
         120: "120"
         180: "180"
         240: "240"
-  # Values are reported by the property list and still need verification on this washer.
-  - property: Spin_speed_rpm
-    select:
-      options:
-        0: "off"
-        2: "200"
-        3: "300"
-        4: "400"
-        6: "600"
-        8: "800"
-        9: "900"
-        10: "1000"
-        12: "1200"
-        14: "1400"
-        16: "1600"
   - property: ExtraRinseNum
     select:
       options:
@@ -84,8 +67,6 @@ properties:
         1: "1"
         2: "2"
         3: "3"
-        4: "4"
-        5: "5"
   # These controls do not work on this model.
   - property: AntiCrease
     disable: true
