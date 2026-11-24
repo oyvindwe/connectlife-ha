@@ -1,0 +1,31 @@
+# ASKO washing machine, feature code washing-machine-wm86-classic
+# ("Asko WM 86 classic - global markets"). Reported on ASKO W30964RW (#898).
+#
+# Program ids observed by turning the dial (#898). Ids 0-15 match the WM 86 style machines
+# (027-washing-machine-wm86-style); this machine has fewer programs, so from 16 on they differ.
+# Delicates reported 25 and id 4 never appeared: to be confirmed with system_data.
+properties:
+- property: Selected_program_id_status
+  select:
+    options:
+      0: eco_40_60
+      1: white_cotton
+      2: color
+      3: mix_synthetic
+      5: wool_manual
+      6: cotton
+      7: sportswear
+      8: outerwear
+      9: time_program
+      10: jeans
+      11: shirts
+      12: bedding
+      13: down_feathers
+      14: steam_refresh
+      15: quick_intensive
+      16: impregnation
+      17: rinsing_softening
+      18: spinning
+      19: draining
+      20: drum_clean
+      25: delicates
