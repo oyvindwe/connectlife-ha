@@ -1,0 +1,74 @@
+# Hisense WD3S8045BT3 (ConnectLife WD3S8014-PVW003).
+# Phase values are from this device's property list; wash was confirmed during a cycle.
+properties:
+  - property: Current_program_phase
+    sensor:
+      read_only: true
+      device_class: enum
+      options:
+        0: not_available
+        1: weigh
+        2: prewash
+        3: wash
+        4: rinsing
+        5: softening
+        6: anti_crease
+        7: spinning
+        8: drying
+        9: ventilating
+        10: finished
+        11: delay
+  - property: DefaultSpinSpeed
+    sensor:
+      multiplier: 100
+  - property: DryOpen_DefaultSpinSpeed
+    sensor:
+      read_only: true
+      unit: rpm
+      multiplier: 100
+  - property: Selected_program_ID
+    select:
+      options:
+        1: cotton_dry
+        2: synthetic_dry
+        4: refresh
+        5: allergy_care
+        6: drum_clean
+        7: cotton
+        8: synthetic
+        9: eco_40_60
+        10: wool
+        11: quick_15
+        14: spin
+        16: baby_care
+        20: rinse_spin
+        22: wash_and_dry_60
+        41: power_49
+        42: auto
+  - property: dry_time
+    select:
+      options:
+        0: "off"
+        1: iron
+        2: cupboard
+        3: extra_dry
+        30: "30_min"
+        60: "60_min"
+        90: "90_min"
+        120: "120_min"
+        180: "180_min"
+        240: "240_min"
+  - property: ExtraRinseNum
+    select:
+      options:
+        0: "0"
+        1: "1"
+        2: "2"
+        3: "3"
+  # These controls do not work on this model.
+  - property: AntiCrease
+    disable: true
+  - property: AutoDose
+    disable: true
+  - property: AutoTubClean
+    disable: true
