@@ -1,1 +1,6 @@
-# Uses default mappings
+# Gorenje BSA6747DGWI and BPSA6747DGWI ovens (#874).
+# Stop (Actions 2) works. Start (Actions 0 or 1, with or without program settings) is accepted by the
+# cloud but never reaches the oven, even with REMOTE on, so the Start button is removed.
+buttons:
+- key: start
+  disable: true
