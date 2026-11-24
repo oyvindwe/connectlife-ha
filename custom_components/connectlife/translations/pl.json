@@ -1,0 +1,481 @@
+{
+  "config": {
+    "abort": {
+      "already_configured": "To urz\u0105dzenie jest ju\u017c skonfigurowane.",
+      "already_configured_elsewhere": "Urz\u0105dzenia z tego konta s\u0105 ju\u017c skonfigurowane w innym wpisie integracji ConnectLife. Aby zmieni\u0107 spos\u00f3b logowania, wybierz w nim opcj\u0119 ponownej konfiguracji. Aby utworzy\u0107 nowy wpis zamiast istniej\u0105cego, najpierw go wy\u0142\u0105cz.",
+      "authorize_url_timeout": "Przekroczono limit czasu podczas generowania adresu autoryzacji.",
+      "cannot_connect": "Nie uda\u0142o si\u0119 po\u0142\u0105czy\u0107.",
+      "missing_configuration": "Integracja nie jest skonfigurowana. Post\u0119puj zgodnie z dokumentacj\u0105.",
+      "no_url_available": "Brak dost\u0119pnego adresu URL. Wi\u0119cej informacji znajdziesz w [sekcji pomocy]({docs_url}).",
+      "oauth_error": "Otrzymano nieprawid\u0142owe dane tokenu.",
+      "oauth_failed": "Nie uda\u0142o si\u0119 uzyska\u0107 tokenu dost\u0119pu.",
+      "oauth_timeout": "Przekroczono limit czasu oczekiwania na token OAuth.",
+      "oauth_unauthorized": "B\u0142\u0105d autoryzacji OAuth podczas uzyskiwania tokenu dost\u0119pu.",
+      "reauth_successful": "Ponowne uwierzytelnianie zako\u0144czy\u0142o si\u0119 pomy\u015blnie.",
+      "reconfigure_successful": "Ponowna konfiguracja zako\u0144czy\u0142a si\u0119 pomy\u015blnie.",
+      "user_rejected_authorize": "Odrzucono \u0142\u0105czenie konta: {error}"
+    },
+    "error": {
+      "already_configured_elsewhere": "Urz\u0105dzenia z tego konta s\u0105 ju\u017c skonfigurowane w innym wpisie integracji ConnectLife. Aby zmieni\u0107 spos\u00f3b logowania, wybierz w nim opcj\u0119 ponownej konfiguracji. Aby utworzy\u0107 nowy wpis zamiast istniej\u0105cego, najpierw go wy\u0142\u0105cz.",
+      "cannot_connect": "Nie uda\u0142o si\u0119 po\u0142\u0105czy\u0107.",
+      "invalid_auth": "Nieprawid\u0142owe dane logowania.",
+      "terms_not_accepted": "ConnectLife wymaga zaakceptowania zaktualizowanego regulaminu. Zmie\u0144 j\u0119zyk aplikacji ConnectLife na angielski, ca\u0142kowicie zamknij j\u0105 i uruchom ponownie, zaakceptuj nowy regulamin, a nast\u0119pnie spr\u00f3buj ponownie.",
+      "test_server_invalid": "Nieprawid\u0142owy adres URL serwera testowego.",
+      "test_server_required": "Tryb programistyczny wymaga adresu URL serwera testowego.",
+      "unknown": "Nieoczekiwany b\u0142\u0105d."
+    },
+    "initiate_flow": {
+      "user": "Dodaj konto"
+    },
+    "step": {
+      "development": {
+        "data": {
+          "test_server_url": "Adres URL serwera testowego"
+        },
+        "data_description": {
+          "test_server_url": "Adres URL serwera testowego u\u017cywanego do uwierzytelniania zamiast API ConnectLife."
+        },
+        "description": "Podaj adres URL serwera testowego, z kt\u00f3rym chcesz si\u0119 po\u0142\u0105czy\u0107 zamiast API ConnectLife."
+      },
+      "password": {
+        "data": {
+          "development_mode": "Tryb programistyczny",
+          "password": "Has\u0142o",
+          "trir": "ConnectLife.TRIR (Rosja/WNP)",
+          "username": "Nazwa u\u017cytkownika"
+        },
+        "data_description": {
+          "development_mode": "Po\u0142\u0105cz si\u0119 z lokalnym serwerem testowym zamiast z API ConnectLife. Tylko do programowania.",
+          "trir": "W\u0142\u0105cz t\u0119 opcj\u0119 tylko wtedy, gdy logujesz si\u0119 za pomoc\u0105 aplikacji ConnectLife.TRIR u\u017cywanej w Rosji i krajach WNP."
+        }
+      },
+      "pick_implementation": {
+        "title": "Wybierz metod\u0119 logowania"
+      },
+      "reauth_confirm": {
+        "data": {
+          "password": "Has\u0142o",
+          "username": "Nazwa u\u017cytkownika"
+        },
+        "description": "Wprowad\u017a ponownie dane logowania do ConnectLife."
+      },
+      "reauth_oauth": {
+        "description": "Sesja logowania do ConnectLife wygas\u0142a. Zaloguj si\u0119 ponownie w witrynie ConnectLife. Mo\u017cesz tam r\u00f3wnie\u017c zaakceptowa\u0107 zaktualizowany regulamin.",
+        "title": "Zaloguj si\u0119 ponownie"
+      },
+      "reconfigure": {
+        "menu_options": {
+          "pick_implementation": "Zaloguj si\u0119 w witrynie ConnectLife (tak\u017ce przez Google, Apple, Facebook lub Microsoft)",
+          "reconfigure_password": "Wprowad\u017a nazw\u0119 u\u017cytkownika i has\u0142o"
+        }
+      },
+      "reconfigure_password": {
+        "data": {
+          "password": "Has\u0142o",
+          "trir": "ConnectLife.TRIR (Rosja/WNP)",
+          "username": "Nazwa u\u017cytkownika"
+        },
+        "data_description": {
+          "trir": "W\u0142\u0105cz t\u0119 opcj\u0119 tylko wtedy, gdy logujesz si\u0119 za pomoc\u0105 aplikacji ConnectLife.TRIR u\u017cywanej w Rosji i krajach WNP."
+        }
+      },
+      "user": {
+        "menu_options": {
+          "password": "Wprowad\u017a nazw\u0119 u\u017cytkownika i has\u0142o",
+          "pick_implementation": "Zaloguj si\u0119 w witrynie ConnectLife (tak\u017ce przez Google, Apple, Facebook lub Microsoft)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "detergent_display": {
+        "name": "Wska\u017anik poziomu \u015brodka pior\u0105cego"
+      },
+      "detergent_state": {
+        "name": "Stan \u015brodka pior\u0105cego"
+      },
+      "softener_state": {
+        "name": "Stan p\u0142ynu do p\u0142ukania"
+      },
+      "softer_display": {
+        "name": "Wska\u017anik poziomu p\u0142ynu do p\u0142ukania"
+      }
+    },
+    "button": {
+      "pause": {
+        "name": "Wstrzymaj"
+      },
+      "start": {
+        "name": "Uruchom"
+      },
+      "stop": {
+        "name": "Zatrzymaj"
+      }
+    },
+    "select": {
+      "detergent": {
+        "name": "Dozowanie \u015brodka pior\u0105cego",
+        "state": {
+          "auto": "Automatycznie",
+          "less": "Mniej",
+          "more": "Wi\u0119cej",
+          "off": "Wy\u0142\u0105czone",
+          "standard": "Standardowa dawka"
+        }
+      },
+      "dry_time": {
+        "name": "Ustawienie suszenia",
+        "state": {
+          "cupboard": "Do szafy",
+          "extra_dry": "Bardzo suche",
+          "iron": "Do prasowania",
+          "off": "Wy\u0142\u0105czone"
+        }
+      },
+      "extrarinsenum": {
+        "name": "Liczba dodatkowych p\u0142uka\u0144"
+      },
+      "selected_program_id": {
+        "name": "Wybrany program",
+        "state": {
+          "allergy_care": "Program antyalergiczny",
+          "auto": "Automatyczny",
+          "baby_care": "Ubranka dzieci\u0119ce",
+          "cotton": "Bawe\u0142na",
+          "cotton_dry": "Suszenie bawe\u0142ny",
+          "drum_clean": "Czyszczenie b\u0119bna",
+          "eco_40_60": "Eco 40\u201360",
+          "power_49": "Power 49",
+          "quick_15": "Szybki 15 min",
+          "refresh": "Od\u015bwie\u017canie",
+          "rinse_spin": "P\u0142ukanie i wirowanie",
+          "spin": "Wirowanie",
+          "synthetic": "Syntetyki",
+          "synthetic_dry": "Suszenie syntetyk\u00f3w",
+          "wash_and_dry_60": "Pranie i suszenie 60 min",
+          "wool": "We\u0142na"
+        }
+      },
+      "softener": {
+        "name": "Dozowanie p\u0142ynu do p\u0142ukania",
+        "state": {
+          "auto": "Automatycznie",
+          "less": "Mniej",
+          "more": "Wi\u0119cej",
+          "off": "Wy\u0142\u0105czone",
+          "standard": "Standardowa dawka"
+        }
+      },
+      "spin_speed_rpm": {
+        "name": "Pr\u0119dko\u015b\u0107 wirowania",
+        "state": {
+          "1000": "1000 obr./min",
+          "1200": "1200 obr./min",
+          "1400": "1400 obr./min",
+          "600": "600 obr./min",
+          "800": "800 obr./min",
+          "none": "Bez wirowania",
+          "off": "Wy\u0142\u0105czone"
+        }
+      },
+      "temperature": {
+        "name": "Temperatura",
+        "state": {
+          "cold": "Zimna"
+        }
+      }
+    },
+    "sensor": {
+      "applicationpermissions": {
+        "name": "Uprawnienia aplikacji"
+      },
+      "autodose_flag": {
+        "name": "Dost\u0119pno\u015b\u0107 automatycznego dozowania",
+        "state": {
+          "available": "Dost\u0119pne",
+          "unavailable": "Niedost\u0119pne"
+        }
+      },
+      "curprogdetergentdosage": {
+        "name": "Dawka \u015brodka pior\u0105cego dla bie\u017c\u0105cego programu"
+      },
+      "current_program_phase": {
+        "name": "Etap programu",
+        "state": {
+          "anti_crease": "Ochrona przed zagnieceniami",
+          "delay": "Op\u00f3\u017anienie",
+          "drying": "Suszenie",
+          "finished": "Zako\u0144czono",
+          "not_available": "Brak danych",
+          "prewash": "Pranie wst\u0119pne",
+          "rinsing": "P\u0142ukanie",
+          "softening": "P\u0142ukanie z p\u0142ynem",
+          "spinning": "Wirowanie",
+          "ventilating": "Przewietrzanie",
+          "wash": "Pranie",
+          "weigh": "Wa\u017cenie"
+        }
+      },
+      "daily_energy_kwh": {
+        "name": "Dzienne zu\u017cycie energii"
+      },
+      "daily_water_consumption": {
+        "name": "Dzienne zu\u017cycie wody"
+      },
+      "defaultspinspeed": {
+        "name": "Domy\u015blna pr\u0119dko\u015b\u0107 wirowania"
+      },
+      "delayendtime": {
+        "name": "Op\u00f3\u017anienie zako\u0144czenia programu"
+      },
+      "delayendtime_minute": {
+        "name": "Op\u00f3\u017anienie zako\u0144czenia programu (min)"
+      },
+      "detergent_leftml": {
+        "name": "Pozosta\u0142a ilo\u015b\u0107 \u015brodka pior\u0105cego"
+      },
+      "detergent_leftnum": {
+        "name": "Pozosta\u0142a liczba dawek \u015brodka pior\u0105cego"
+      },
+      "detergent_totalml": {
+        "name": "\u0141\u0105czne zu\u017cycie \u015brodka pior\u0105cego"
+      },
+      "detergent_totalnum": {
+        "name": "\u0141\u0105czna liczba dawek \u015brodka pior\u0105cego"
+      },
+      "detergentstandarddosage": {
+        "name": "Standardowa dawka \u015brodka pior\u0105cego"
+      },
+      "door_status": {
+        "name": "Stan drzwi",
+        "state": {
+          "closed": "Zamkni\u0119te",
+          "locked": "Zablokowane",
+          "not_available": "Niedost\u0119pny",
+          "open": "Otwarte",
+          "other": "Inny"
+        }
+      },
+      "dose_detergent_amount": {
+        "name": "Ilo\u015b\u0107 dozowanego \u015brodka pior\u0105cego"
+      },
+      "dose_softener_amount": {
+        "name": "Ilo\u015b\u0107 dozowanego p\u0142ynu do p\u0142ukania"
+      },
+      "drumcleancycle_runsnumber": {
+        "name": "Liczba cykli czyszczenia b\u0119bna"
+      },
+      "drumcleanwashcount": {
+        "name": "Liczba pra\u0144 do czyszczenia b\u0119bna"
+      },
+      "dry_time": {
+        "name": "Ustawienie suszenia"
+      },
+      "dryopen_defaultspinspeed": {
+        "name": "Domy\u015blna pr\u0119dko\u015b\u0107 wirowania w trybie suszenia"
+      },
+      "electricit_consumption": {
+        "name": "Zu\u017cycie energii elektrycznej"
+      },
+      "energy_estimate": {
+        "name": "Szacowane zu\u017cycie energii"
+      },
+      "error_code": {
+        "name": "Kod b\u0142\u0119du",
+        "state": {
+          "error_f01": "F01 \u2013 b\u0142\u0105d dop\u0142ywu wody",
+          "error_f03": "F03 \u2013 b\u0142\u0105d odp\u0142ywu wody",
+          "error_f04": "F04 \u2013 b\u0142\u0105d modu\u0142u elektronicznego",
+          "error_f05": "F05 \u2013 b\u0142\u0105d modu\u0142u elektronicznego",
+          "error_f06": "F06 \u2013 b\u0142\u0105d modu\u0142u elektronicznego",
+          "error_f07": "F07 \u2013 b\u0142\u0105d modu\u0142u elektronicznego",
+          "error_f13": "F13 \u2013 b\u0142\u0105d blokady drzwi",
+          "error_f14": "F14 \u2013 b\u0142\u0105d odblokowania drzwi",
+          "error_f15": "F15 \u2013 b\u0142\u0105d suszenia",
+          "error_f16": "F16 \u2013 b\u0142\u0105d suszenia",
+          "error_f17": "F17 \u2013 b\u0142\u0105d suszenia",
+          "error_f18": "F18 \u2013 b\u0142\u0105d suszenia",
+          "error_f23": "F23 \u2013 b\u0142\u0105d modu\u0142u elektronicznego",
+          "error_f24": "F24 \u2013 zbyt wysoki poziom wody",
+          "none": "Brak b\u0142\u0119du",
+          "unbalance_alarm": "Alarm niewywa\u017cenia wsadu"
+        }
+      },
+      "extrarinsenum": {
+        "name": "Liczba dodatkowych p\u0142uka\u0144"
+      },
+      "favour_program_id": {
+        "name": "ID ulubionego programu"
+      },
+      "flexiblespintime_flag": {
+        "name": "Elastyczny czas wirowania"
+      },
+      "gentle_dry": {
+        "name": "Delikatne suszenie"
+      },
+      "half_load": {
+        "name": "Po\u0142owa wsadu"
+      },
+      "initializationprogramid": {
+        "name": "ID programu inicjalizacji"
+      },
+      "loadlevel": {
+        "name": "Poziom za\u0142adunku"
+      },
+      "machine_status": {
+        "name": "Stan urz\u0105dzenia",
+        "state": {
+          "alarm": "Alarm",
+          "off": "Wy\u0142\u0105czone",
+          "paused": "Wstrzymane",
+          "running": "Pracuje",
+          "standby": "Gotowe"
+        }
+      },
+      "mainwashtime": {
+        "name": "Czas prania zasadniczego"
+      },
+      "mainwashtimeuseindex": {
+        "name": "Indeks czasu prania zasadniczego"
+      },
+      "mian_wash_time": {
+        "name": "Czas prania zasadniczego"
+      },
+      "order_time_minimum_hour": {
+        "name": "Minimalne op\u00f3\u017anienie (godz.)"
+      },
+      "parse_lib_ver": {
+        "name": "Wersja biblioteki przetwarzania danych"
+      },
+      "program_end_to_shutdown_time_in_minutes": {
+        "name": "Czas od zako\u0144czenia programu do wy\u0142\u0105czenia"
+      },
+      "programfunctionvalueid": {
+        "name": "ID warto\u015bci funkcji programu"
+      },
+      "quickermode": {
+        "name": "Tryb przyspieszony"
+      },
+      "remaining_time_of_selected_program": {
+        "name": "Pozosta\u0142y czas programu"
+      },
+      "rinsenum": {
+        "name": "Liczba p\u0142uka\u0144"
+      },
+      "rinsenum_containextrarinse": {
+        "name": "Liczba p\u0142uka\u0144 z uwzgl\u0119dnieniem dodatkowego p\u0142ukania"
+      },
+      "screensavertime": {
+        "name": "Czas do wygaszenia ekranu"
+      },
+      "selected_program_id": {
+        "name": "Wybrany program"
+      },
+      "selected_program_remaining_time_in_minutes": {
+        "name": "Pozosta\u0142y czas programu"
+      },
+      "selected_program_total_running_time_in_minutes": {
+        "name": "Ca\u0142kowity czas pracy programu"
+      },
+      "selected_program_total_time_in_minutes": {
+        "name": "Ca\u0142kowity czas programu"
+      },
+      "softener_compartment": {
+        "name": "Komora na p\u0142yn do p\u0142ukania"
+      },
+      "softener_leftml": {
+        "name": "Pozosta\u0142a ilo\u015b\u0107 p\u0142ynu do p\u0142ukania"
+      },
+      "softener_leftnum": {
+        "name": "Pozosta\u0142a liczba dawek p\u0142ynu do p\u0142ukania"
+      },
+      "softener_tank": {
+        "name": "Zbiornik na p\u0142yn do p\u0142ukania"
+      },
+      "softener_totalml": {
+        "name": "\u0141\u0105czne zu\u017cycie p\u0142ynu do p\u0142ukania"
+      },
+      "softener_totalnum": {
+        "name": "\u0141\u0105czna liczba dawek p\u0142ynu do p\u0142ukania"
+      },
+      "spin_speed_rpm": {
+        "name": "Pr\u0119dko\u015b\u0107 wirowania"
+      },
+      "spin_time": {
+        "name": "Czas wirowania"
+      },
+      "spintime_index": {
+        "name": "Indeks czasu wirowania"
+      },
+      "standardelectricitconsumption": {
+        "name": "Standardowe zu\u017cycie energii elektrycznej"
+      },
+      "standardwaterconsumption": {
+        "name": "Standardowe zu\u017cycie wody"
+      },
+      "temperature": {
+        "name": "Temperatura"
+      },
+      "temperature_default_defaultmainwashtime": {
+        "name": "Domy\u015blny czas prania zasadniczego dla wybranej temperatury"
+      },
+      "washing_machine_type_kg": {
+        "name": "Kod pojemno\u015bci pralki"
+      },
+      "washing_machine_type_max_speed": {
+        "name": "Maksymalna pr\u0119dko\u015b\u0107 wirowania"
+      },
+      "washing_program_kg": {
+        "name": "Maksymalny wsad programu"
+      },
+      "washingtime": {
+        "name": "Czas prania"
+      },
+      "water_consumption": {
+        "name": "Zu\u017cycie wody"
+      },
+      "water_estimate": {
+        "name": "Szacowane zu\u017cycie wody"
+      },
+      "water_hardness_setting": {
+        "name": "Ustawienie twardo\u015bci wody"
+      },
+      "waterlevel": {
+        "name": "Poziom wody"
+      },
+      "zibian_program_id": {
+        "name": "ID programu Zibian"
+      }
+    },
+    "switch": {
+      "anticrease": {
+        "name": "Ochrona przed zagnieceniami"
+      },
+      "autodose": {
+        "name": "Automatyczne dozowanie"
+      },
+      "autotubclean": {
+        "name": "Automatyczne czyszczenie b\u0119bna"
+      },
+      "child_lock": {
+        "name": "Blokada rodzicielska"
+      },
+      "extra_rinse": {
+        "name": "Dodatkowe p\u0142ukanie"
+      },
+      "mute": {
+        "name": "Wyciszenie d\u017awi\u0119k\u00f3w"
+      },
+      "prewash": {
+        "name": "Pranie wst\u0119pne"
+      },
+      "steam": {
+        "name": "Para"
+      },
+      "time_save": {
+        "name": "Skr\u00f3cenie czasu"
+      }
+    }
+  }
+}
