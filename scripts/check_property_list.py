@@ -1,6 +1,6 @@
 """Check a mapping against the ConnectLife property list of its feature code.
 
-The property list (in device diagnostics as `property_list`, or from
+The property list (in device or config entry diagnostics as `property_list`, or from
 `python -m connectlife.dump --query property-list ...`) says which properties are read-only and which values and
 ranges they take. This reports:
 
@@ -142,12 +142,27 @@ def check(type_code: str, feature: str, property_list: dict) -> list[tuple[str, 
     return findings
 
 
-def load(path: str, feature: str | None) -> tuple[str, str, dict]:
-    """Return (type code, feature code, property list) from a diagnostics or property list file."""
+def load(path: str, feature: str | None) -> list[tuple[str, str, dict]]:
+    """Return (type code, feature code, property list) per appliance in a diagnostics or property list file.
+
+    Device diagnostics hold one appliance, config entry diagnostics one per appliance (narrowed to `feature` if
+    given), and a property list from connectlife.dump is a single list.
+    """
     with open(path) as f:
         data = json.load(f, strict=False)
-    appliance = data.get("data") if isinstance(data.get("data"), dict) else data.get("appliance")
-    if isinstance(appliance, dict) and "property_list" in appliance:  # diagnostics
+    inner = data.get("data")
+    if isinstance(inner, dict) and isinstance(inner.get("appliances"), list):  # config entry diagnostics
+        lists = [(a["device_type_code"], a["device_feature_code"], a.get("property_list") or {})
+                 for a in inner["appliances"] if "property_list" in a]
+        if feature:
+            lists = [entry for entry in lists if f"{entry[0]}-{entry[1]}" == feature]
+            if not lists:
+                sys.exit(f"No appliance with feature {feature} in the diagnostics")
+        if not lists:
+            sys.exit("No property lists in the diagnostics (from before 0.49.0?)")
+        return lists
+    appliance = inner if isinstance(inner, dict) else data.get("appliance")
+    if isinstance(appliance, dict) and "property_list" in appliance:  # device diagnostics
         type_code, feature_code = appliance["device_type_code"], appliance["device_feature_code"]
         property_list = appliance["property_list"] or {}
     else:  # connectlife.dump --query property-list
@@ -158,28 +173,35 @@ def load(path: str, feature: str | None) -> tuple[str, str, dict]:
         type_code, feature_code = feature.split("-", 1)
     if not type_code or not feature_code:
         sys.exit("Can't tell the device type and feature code; pass --feature <type>-<feature>")
-    return type_code, feature_code, property_list
+    return [(type_code, feature_code, property_list)]
+
+
+def report(type_code: str, feature_code: str, property_list: dict, show_all: bool) -> bool:
+    """Print the findings for one property list; return whether any are OPTION, READONLY or RANGE."""
+    if not property_list.get("properties"):
+        print(f"{type_code}-{feature_code}: the property list is empty, nothing to check")
+        return False
+    findings = [f for f in check(type_code, feature_code, property_list) if show_all or f[0] in CLEAR]
+    print(f"{type_code}-{feature_code}: {len(property_list['properties'])} properties in the list")
+    for kind, name, detail in sorted(findings):
+        print(f"  {kind} {name}: {detail}")
+    if not findings:
+        print("  no findings")
+    return any(kind in CLEAR for kind, _, _ in findings)
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("file", help="Device diagnostics, or a property list from connectlife.dump")
+    parser.add_argument("file", help="Device or config entry diagnostics, or a property list from connectlife.dump")
     parser.add_argument("--feature", help="<type>-<feature> of the mapping to check, e.g. 025-1wj090908v0w")
     parser.add_argument("--all", action="store_true", help="Also show list values that aren't mapped")
     args = parser.parse_args()
 
-    type_code, feature_code, property_list = load(args.file, args.feature)
-    if not property_list.get("properties"):
-        print(f"{type_code}-{feature_code}: the property list is empty, nothing to check")
-        return
-    findings = [f for f in check(type_code, feature_code, property_list) if args.all or f[0] in CLEAR]
-    print(f"{type_code}-{feature_code}: {len(property_list['properties'])} properties in the list")
-    for kind, name, detail in sorted(findings):
-        print(f"  {kind} {name}: {detail}")
-    if any(kind in CLEAR for kind, _, _ in findings):
+    failed = False
+    for type_code, feature_code, property_list in load(args.file, args.feature):
+        failed |= report(type_code, feature_code, property_list, args.all)
+    if failed:
         sys.exit(1)
-    if not findings:
-        print("  no findings")
 
 
 if __name__ == "__main__":
