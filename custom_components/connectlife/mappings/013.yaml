@@ -3,7 +3,7 @@ device_type_name: Oven
 statistics:
   source: energy_consumption_curve
   daily_energy_kwh: true
-# Unverified on a device: Actions 0 start, 1 pause, 2 stop/finish. Status: 1 idle, 2 running, 3 pause,
+# Actions 0 start, 1 pause (both unverified on a device), 2 stop/finish (verified on oven-bio21-iconledplus, #874). Status: 1 idle, 2 running, 3 pause,
 # 5 delay time waiting.
 buttons:
 - key: start
