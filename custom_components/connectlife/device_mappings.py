@@ -43,6 +43,7 @@ HIDE = "hide"
 ICON = "icon"
 INCLUDE = "include"
 KEY = "key"
+LOCAL = "local"
 NAME = "name"
 OFF = "off"
 ON = "on"
@@ -381,6 +382,7 @@ class Property:
     translation_key: str | None
     combine: list[CombineSource] | None
     include: list[str]
+    local: bool
     binary_sensor: BinarySensor
     climate: Climate
     humidifier: Humidifier
@@ -405,6 +407,7 @@ class Property:
         self.combine = _val(entry, COMBINE)
         self.translation_key = _val(entry, TRANSLATION_KEY)
         self.include = _include(entry, self.name)
+        self.local = bool(entry[LOCAL]) if LOCAL in entry else False
 
         # A property may carry one device-level platform (climate / humidifier /
         # water_heater) AND one per-property platform (binary_sensor / number /
@@ -430,6 +433,10 @@ class Property:
             self.switch = Switch(self.name, entry[Platform.SWITCH])
         elif not any(p in entry for p in PLATFORM_KEYS):
             self.sensor = Sensor(self.name, {})
+
+        if self.local and not hasattr(self, Platform.NUMBER):
+            _LOGGER.warning("Ignoring local on %s, only supported on number", self.name)
+            self.local = False
 
     @property
     def command_name(self) -> str:

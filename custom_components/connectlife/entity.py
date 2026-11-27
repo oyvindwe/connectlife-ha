@@ -173,8 +173,9 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
         # Send along the current values of the properties the mapping includes,
         # e.g. options a program start needs. Copy, so a stored mapping keeps unchanged.
         if appliance := self.coordinator.data.get(self.device_id):
+            local_values = self.coordinator.local_values.get(self.device_id, {})
             included = DeviceMappings.get_mapping(appliance).included_values(
-                command, appliance.status_list, include
+                command, {**appliance.status_list, **local_values}, include
             )
             if included:
                 command = {**command, **included}

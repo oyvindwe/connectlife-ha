@@ -165,8 +165,16 @@ def _check_device_class_units(filename, merged_entry):
     )
 
 
+def _check_local(filename, merged_entry):
+    """``local`` is only supported on number entities; elsewhere it's ignored with a warning at runtime."""
+    if not merged_entry.get('local') or 'number' in merged_entry:
+        return None
+    return f"{filename}: property '{merged_entry['property']}' is local, which is only supported on number."
+
+
 CHECKS = (
     _check_entity_category_config_on_sensor,
+    _check_local,
     _check_hvac_option_values,
     _check_device_platform_pairing,
     _check_device_class_units,

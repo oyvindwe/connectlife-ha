@@ -182,6 +182,11 @@
           "description": "If Home Assistant should initially hide the entity for this property.",
           "default": false
         },
+        "local": {
+          "type": "boolean",
+          "description": "Keep the value in Home Assistant instead of reading it from the device. The entity is created from the mapping, setting it sends nothing, and its value is sent along with commands that include it. Only on number.",
+          "default": false
+        },
         "disable": {
           "type": "boolean",
           "description": "If Home Assistant should not create an entity for this property.",
