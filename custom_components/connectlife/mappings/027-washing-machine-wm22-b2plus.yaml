@@ -23,3 +23,26 @@ properties:
         1: normal
         3: fast
         4: extra_fast
+  # 29 is an app-only program (#649).
+  - property: Selected_program_id_status
+    select:
+      options:
+        0: eco_40_60
+        1: white_cotton
+        2: color
+        3: wool_manual
+        4: mix_synthetic
+        5: extra_hygiene
+        6: speed_20
+        7: intensive_59_32
+        8: no_program_selected
+        9: sportswear
+        10: baby_care
+        11: pet_hair_removal
+        12: shirts
+        13: drum_clean
+        14: spinning_draining
+        15: draining
+        16: rinsing_softening
+        17: down_feathers
+        29: dark_clothes
