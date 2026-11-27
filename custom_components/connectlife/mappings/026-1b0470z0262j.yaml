@@ -1,0 +1,23 @@
+# Hisense RQ5P470SEIE (026-1b0470z0262j, BCD-470WP3BWF1/HC4(HAF)) (#911)
+# MyFreshChoice is the variable temperature room. Setpoint ranges as reported by the fridge
+# (refrigerator_, freeze_ and variation_ min/max_temperature).
+properties:
+  - property: refrigerator_temperature
+    number:
+      min_value: 2
+      max_value: 9
+  - property: freeze_temperature
+    number:
+      min_value: -24
+      max_value: -13
+  - property: variation_temperature
+    hide: false
+    entity_category: null
+    number:
+      min_value: -18
+      max_value: 5
+  - property: variation_real_temperature
+    entity_category: null
+  # Not a reading (-40)
+  - property: variation_sensor_real_temperature
+    disable: true
