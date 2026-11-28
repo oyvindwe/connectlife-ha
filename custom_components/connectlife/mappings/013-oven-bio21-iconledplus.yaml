@@ -4,3 +4,48 @@
 buttons:
 - key: start
   disable: true
+# These ovens report the step times in minutes (Step_1_time_unit and Step_2_time_unit are 2, #874).
+# Step_3_time_unit is 0; assumed to be the same.
+properties:
+- property: Step_1_duration
+  sensor:
+    device_class: duration
+    unit: min
+- property: Step_1_passed_time
+  sensor:
+    device_class: duration
+    unit: min
+    unknown_value: 16777215
+- property: Step_1_remaining_time
+  sensor:
+    device_class: duration
+    unit: min
+    unknown_value: 16777215
+- property: Step_2_duration
+  sensor:
+    device_class: duration
+    unit: min
+- property: Step_2_passed_time
+  sensor:
+    device_class: duration
+    unit: min
+    unknown_value: 16777215
+- property: Step_2_remaining_time
+  sensor:
+    device_class: duration
+    unit: min
+- property: Step_3_duration
+  sensor:
+    device_class: duration
+    unit: min
+    unknown_value: 16777215
+- property: Step_3_passed_time
+  sensor:
+    device_class: duration
+    unit: min
+    unknown_value: 16777215
+- property: Step_3_remaining_time
+  sensor:
+    device_class: duration
+    unit: min
+    unknown_value: 16777215
