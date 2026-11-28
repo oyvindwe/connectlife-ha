@@ -15,6 +15,7 @@ from custom_components.connectlife.button import ConnectLifeButton
 from custom_components.connectlife.climate import ConnectLifeClimate
 from custom_components.connectlife.device_mappings import Button, DeviceMapping, DeviceMappings
 from custom_components.connectlife.entity import ConnectLifeEntity, _contains_cjk
+from custom_components.connectlife.number import ConnectLifeLocalNumberEntity
 from custom_components.connectlife.switch import ConnectLifeSwitch
 
 
@@ -34,6 +35,7 @@ def _coordinator(commands: list[dict], status_list: dict | None = None) -> Simpl
         async_update_device=async_update_device,
         data={"device": appliance},
         hass=None,
+        local_values={},
     )
 
 
@@ -125,6 +127,35 @@ async def test_command_extra_is_sent_with_write_and_include(build_mapping) -> No
         {"Delay": 0, "Delay_on": 0},
         {"Actions": 2, "Delay": 3, "Delay_on": 1},
     ]
+
+
+async def test_local_value_is_sent_with_button_only(build_mapping) -> None:
+    build_mapping(base={"properties": [
+        {"property": "Delay_minutes", "local": True, "number": {"min_value": 0, "max_value": 1440}},
+    ]})
+    commands: list[dict] = []
+    coordinator = _coordinator(commands, {"Status": 4})
+    number = ConnectLifeLocalNumberEntity.__new__(ConnectLifeLocalNumberEntity)
+    number.device_id = "device"
+    number.status = "Delay_minutes"
+    number.coordinator = coordinator
+    number.async_write_ha_state = lambda: None
+
+    await number.async_set_native_value(60)
+
+    assert commands == []
+    assert number.native_value == 60
+    assert coordinator.local_values == {"device": {"Delay_minutes": 60}}
+
+    button = ConnectLifeButton.__new__(ConnectLifeButton)
+    button.device_id = "device"
+    button._disable_beep = False
+    button.button = Button({"key": "start", "include": ["Delay_minutes"], "write": {"Actions": 1}})
+    button.coordinator = coordinator
+
+    await button.async_press()
+
+    assert commands == [{"command": {"Actions": 1, "Delay_minutes": 60}, "properties": {}}]
 
 
 MUTEX_ERROR = "Unexpected response from HijuConn gateway: code=160001 description='Command status mutex'"

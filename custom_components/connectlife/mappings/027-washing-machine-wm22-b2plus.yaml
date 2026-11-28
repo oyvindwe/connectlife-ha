@@ -6,13 +6,23 @@
 buttons:
 # The machine only uses the program options when they are sent with the start
 # command (#661). Programs without a temperature or spin option report 0, which
-# is skipped.
+# is skipped. The delay is also only used with the start command (#649).
 - key: start
   include:
     - Selected_program_id_status
     - Selected_program_set_temperature_status
     - Selected_program_washing_spin_speed_rpm_status
+    - Delaystart_delayend_mode_status
+    - Set_delaystart_delayend_remaining_time_in_minutes
 properties:
+  # Delay for delay start or delay end, sent with Start. The machine doesn't report it back (#649).
+  - property: Set_delaystart_delayend_remaining_time_in_minutes
+    local: true
+    icon: 'mdi:timer-edit'
+    number:
+      min_value: 0
+      max_value: 1440
+      unit: min
   - property: Selected_program_mode_status
     icon: 'mdi:tshirt-crew'
     sensor:

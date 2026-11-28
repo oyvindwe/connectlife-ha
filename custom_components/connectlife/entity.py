@@ -174,7 +174,10 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
         # e.g. options a program start needs. Copy, so a stored mapping keeps unchanged.
         if appliance := self.coordinator.data.get(self.device_id):
             mapping = DeviceMappings.get_mapping(appliance)
-            included = mapping.included_values(command, appliance.status_list, include)
+            local_values = self.coordinator.local_values.get(self.device_id, {})
+            included = mapping.included_values(
+                command, {**appliance.status_list, **local_values}, include
+            )
             if included:
                 command = {**command, **included}
             # Fixed properties some writes need in the same command, e.g. a flag that arms a delay.
