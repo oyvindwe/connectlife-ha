@@ -52,6 +52,9 @@ Some devices will beep on every configuration change. To disable this, go to the
 [ConnectLife integration](https://my.home-assistant.io/redirect/integration/?domain=connectlife)
 and click "Configure" → "Configure a device" and select the device you want to disable beeping for. 
 
+The option is hidden for devices that report they have no buzzer control, as they ignore it.
+If a device keeps rejecting commands with beeping disabled, the integration stops disabling it and creates a repair issue that turns the option off.
+
 ## Expose offline state
 
 By default, when a device goes offline all of its entities become unavailable in Home Assistant. If you would
