@@ -2210,6 +2210,9 @@
       "charcoal_filter_surplus_time": {
         "name": "\u010cas uhl\u00edkov\u00e9ho filtra"
       },
+      "delay_start_set_time": {
+        "name": "Nastaven\u00fd \u010das oneskoren\u00e9ho \u0161tartu"
+      },
       "delayendtime": {
         "name": "\u010cas odlo\u017een\u00e9ho konca"
       },
@@ -3809,9 +3812,6 @@
       },
       "delay_start_remaining_time_in_minutes": {
         "name": "Zost\u00e1vaj\u00faci \u010das do odlo\u017een\u00e9ho \u0161tartu"
-      },
-      "delay_start_set_time": {
-        "name": "Nastaven\u00fd \u010das oneskoren\u00e9ho \u0161tartu"
       },
       "delay_time_hour_min": {
         "name": "Oneskorenie v hodin\u00e1ch a min\u00fatach"

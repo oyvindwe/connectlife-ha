@@ -106,6 +106,29 @@ async def test_button_include_is_sent_with_write(build_mapping) -> None:
     assert button.button.write == {"Actions": 1}
 
 
+async def test_command_extra_is_sent_with_write_and_include(build_mapping) -> None:
+    build_mapping(base={"properties": [
+        {"property": "Delay_set", "number": {"command": {"name": "Delay", "extra": {
+            0: {"Delay_on": 0}, "default": {"Delay_on": 1},
+        }}}},
+    ]})
+    commands: list[dict] = []
+    coordinator = _coordinator(commands, {"Delay_set": 3})
+    button = ConnectLifeButton.__new__(ConnectLifeButton)
+    button.device_id = "device"
+    button._disable_beep = False
+    button.coordinator = coordinator
+
+    await button.async_update_device({"Delay": 0})
+    button.button = Button({"key": "start", "include": ["Delay_set"], "write": {"Actions": 2}})
+    await button.async_press()
+
+    assert [c["command"] for c in commands] == [
+        {"Delay": 0, "Delay_on": 0},
+        {"Actions": 2, "Delay": 3, "Delay_on": 1},
+    ]
+
+
 async def test_local_value_is_sent_with_button_only(build_mapping) -> None:
     build_mapping(base={"properties": [
         {"property": "Delay_minutes", "local": True, "number": {"min_value": 0, "max_value": 1440}},

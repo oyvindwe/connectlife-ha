@@ -196,12 +196,22 @@ properties:
       unit: min
     icon: mdi:timer
     optional: true
+  # The dishwasher only takes a delay with Delay_start_status in the same command: 1 arms it, 0 clears it (#665).
+  # The countdown starts with Start.
   - property: Delay_start_set_time
-    sensor:
+    number:
       device_class: duration
       unit: h
+      min_value: 0
+      max_value: 24
+      command:
+        name: Delay_start_time
+        extra:
+          0:
+            Delay_start_status: 0
+          default:
+            Delay_start_status: 1
     icon: mdi:timer-edit
-    optional: true
   - property: Demo_mode_status
     optional: true
   - property: Device_status

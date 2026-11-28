@@ -294,9 +294,26 @@
           "type": ["integer", "null"],
           "description": "When changing state, adjust the request value by substracting this value. Used when the command values are offset from the property values.",
           "default": 0
+        },
+        "extra": {
+          "$ref": "#/$defs/CommandExtra"
         }
       },
       "title": "Command"
+    },
+    "CommandExtra": {
+      "type": ["object", "null"],
+      "propertyNames": {
+        "pattern": "^(-?[0-9]+|default)$"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "integer"
+        }
+      },
+      "description": "Properties to send along with a write, keyed by the written value (after adjust), or default for any other value. E.g. a flag that arms a delay when the delay is set and clears it when it is set to 0.",
+      "title": "CommandExtra"
     },
     "Climate": {
       "type": ["object", "null"],
@@ -403,6 +420,9 @@
         "name": {
           "type": ["string", "null"],
           "description": "Use this property instead to change state."
+        },
+        "extra": {
+          "$ref": "#/$defs/CommandExtra"
         }
       },
       "title": "NumberCommand"

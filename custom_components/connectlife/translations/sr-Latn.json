@@ -2210,6 +2210,9 @@
       "charcoal_filter_surplus_time": {
         "name": "Vreme trajanja filtera sa ugljem"
       },
+      "delay_start_set_time": {
+        "name": "Pode\u0161eno vreme odlo\u017eenog starta"
+      },
       "delayendtime": {
         "name": "Vreme odlo\u017eenog zavr\u0161etka"
       },
@@ -3809,9 +3812,6 @@
       },
       "delay_start_remaining_time_in_minutes": {
         "name": "Preostalo vreme odlo\u017eenog starta"
-      },
-      "delay_start_set_time": {
-        "name": "Pode\u0161eno vreme odlo\u017eenog starta"
       },
       "delay_time_hour_min": {
         "name": "Odlo\u017eeno vreme \u2013 sat/minut"

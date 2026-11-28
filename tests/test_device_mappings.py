@@ -542,6 +542,43 @@ def test_include_parsed_on_property_and_button(build_mapping):
     assert d.buttons[0].include == ["Program"]
 
 
+def test_command_extra_by_written_value_or_default():
+    prop = Property({"property": "Delay_set", "number": {"command": {"name": "Delay", "extra": {
+        0: {"Delay_on": 0},
+        "default": {"Delay_on": 1},
+    }}}})
+    assert prop.command_extra(0) == {"Delay_on": 0}
+    assert prop.command_extra(5) == {"Delay_on": 1}
+
+
+def test_command_extra_without_default():
+    prop = Property({"property": "Mode", "select": {"options": {1: "a", 2: "b"}, "command": {
+        "adjust": 1, "extra": {1: {"Flag": 1}},
+    }}})
+    assert prop.command_extra(1) == {"Flag": 1}
+    assert prop.command_extra(0) == {}
+    assert Property({"property": "p", "switch": {}}).command_extra(1) == {}
+
+
+def test_invalid_command_extra_is_ignored(caplog):
+    prop = Property({"property": "p", "number": {"command": {"extra": {"x": {"Flag": 1}}}}})
+    assert prop.command_extra(1) == {}
+    assert "Ignoring command.extra" in caplog.text
+
+
+def test_extra_values(build_mapping):
+    d = build_mapping(base={"properties": [
+        {"property": "Delay_set", "number": {"command": {"name": "Delay", "extra": {
+            0: {"Delay_on": 0}, "default": {"Delay_on": 1},
+        }}}},
+    ]})
+    assert d.extra_values({"Delay": 3}) == {"Delay_on": 1}
+    assert d.extra_values({"Delay": 0}) == {"Delay_on": 0}
+    # Not overridden when the command writes it.
+    assert d.extra_values({"Delay": 3, "Delay_on": 0}) == {}
+    assert d.extra_values({"Other": 1}) == {}
+
+
 def test_local_parsed_on_number():
     assert Property({"property": "p", "local": True, "number": {}}).local is True
     assert Property({"property": "p", "number": {}}).local is False

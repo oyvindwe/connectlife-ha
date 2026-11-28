@@ -2210,6 +2210,9 @@
       "charcoal_filter_surplus_time": {
         "name": "Koolstoffiltertijd"
       },
+      "delay_start_set_time": {
+        "name": "Ingestelde tijd uitgestelde start"
+      },
       "delayendtime": {
         "name": "Eindtijd uitgesteld einde"
       },
@@ -3809,9 +3812,6 @@
       },
       "delay_start_remaining_time_in_minutes": {
         "name": "Resterende tijd uitgestelde start"
-      },
-      "delay_start_set_time": {
-        "name": "Ingestelde tijd uitgestelde start"
       },
       "delay_time_hour_min": {
         "name": "Uitstel tijd uur min"

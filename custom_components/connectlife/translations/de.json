@@ -2210,6 +2210,9 @@
       "charcoal_filter_surplus_time": {
         "name": "Kohlefilter-Zeit"
       },
+      "delay_start_set_time": {
+        "name": "Startverz\u00f6gerung"
+      },
       "delayendtime": {
         "name": "Startverz\u00f6gerung Endzeit"
       },
@@ -3809,9 +3812,6 @@
       },
       "delay_start_remaining_time_in_minutes": {
         "name": "Startverz\u00f6gerung Verbleibend"
-      },
-      "delay_start_set_time": {
-        "name": "Startverz\u00f6gerung"
       },
       "delay_time_hour_min": {
         "name": "Startzeitvorwahl Std./Min."

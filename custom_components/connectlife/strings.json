@@ -2210,6 +2210,9 @@
       "charcoal_filter_surplus_time": {
         "name": "Charcoal filter time"
       },
+      "delay_start_set_time": {
+        "name": "Delay start set time"
+      },
       "delayendtime": {
         "name": "Delay end time"
       },
@@ -3812,9 +3815,6 @@
       },
       "delay_start_remaining_time_in_minutes": {
         "name": "Delay start remaining time"
-      },
-      "delay_start_set_time": {
-        "name": "Delay start set time"
       },
       "delay_time_hour_min": {
         "name": "Delay time hour min"

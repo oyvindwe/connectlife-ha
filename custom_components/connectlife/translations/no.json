@@ -2210,6 +2210,9 @@
       "charcoal_filter_surplus_time": {
         "name": "Kullfiltertid"
       },
+      "delay_start_set_time": {
+        "name": "Innstilt tid for utsatt start"
+      },
       "delayendtime": {
         "name": "Utsatt sluttid"
       },
@@ -3809,9 +3812,6 @@
       },
       "delay_start_remaining_time_in_minutes": {
         "name": "Gjenst\u00e5ende tid for utsatt start"
-      },
-      "delay_start_set_time": {
-        "name": "Innstilt tid for utsatt start"
       },
       "delay_time_hour_min": {
         "name": "Forsinkelsestid (time/min)"

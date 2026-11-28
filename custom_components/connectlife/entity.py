@@ -173,12 +173,17 @@ class ConnectLifeEntity(CoordinatorEntity[ConnectLifeCoordinator]):
         # Send along the current values of the properties the mapping includes,
         # e.g. options a program start needs. Copy, so a stored mapping keeps unchanged.
         if appliance := self.coordinator.data.get(self.device_id):
+            mapping = DeviceMappings.get_mapping(appliance)
             local_values = self.coordinator.local_values.get(self.device_id, {})
-            included = DeviceMappings.get_mapping(appliance).included_values(
+            included = mapping.included_values(
                 command, {**appliance.status_list, **local_values}, include
             )
             if included:
                 command = {**command, **included}
+            # Fixed properties some writes need in the same command, e.g. a flag that arms a delay.
+            extra = mapping.extra_values(command)
+            if extra:
+                command = {**command, **extra}
         try:
             if self._disable_beep:
                 # Copy, so callers passing a stored mapping (e.g. a preset) keep it unchanged.

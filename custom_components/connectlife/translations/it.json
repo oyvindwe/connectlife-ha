@@ -2210,6 +2210,9 @@
       "charcoal_filter_surplus_time": {
         "name": "Durata del filtro a carbone"
       },
+      "delay_start_set_time": {
+        "name": "Orario impostato avvio ritardato"
+      },
       "delayendtime": {
         "name": "Fine ritardata"
       },
@@ -3809,9 +3812,6 @@
       },
       "delay_start_remaining_time_in_minutes": {
         "name": "Tempo residuo avvio ritardato"
-      },
-      "delay_start_set_time": {
-        "name": "Orario impostato avvio ritardato"
       },
       "delay_time_hour_min": {
         "name": "Tempo ritardo ore/min"
