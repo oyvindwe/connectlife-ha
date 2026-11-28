@@ -39,6 +39,8 @@ DEVICE_TYPE_NAME = "device_type_name"
 STATISTICS = "statistics"
 SOURCE = "source"
 DISABLE = "disable"
+DEFAULT = "default"
+EXTRA = "extra"
 HIDE = "hide"
 ICON = "icon"
 INCLUDE = "include"
@@ -112,6 +114,23 @@ def _include(entry: dict, name: str) -> list[str]:
         _LOGGER.warning("Ignoring include on %s, must be a list of property names", name)
         return []
     return include
+
+
+def _command_extra(command: dict, name: str) -> dict[int | str, dict[str, int]]:
+    """Return the ``command.extra`` map of ``command``, or ``{}`` (with a warning) if it isn't valid.
+
+    Keys are written values or ``default``; values are maps of property name to value.
+    """
+    extra = _val(command, EXTRA, {})
+    if not isinstance(extra, dict) or not all(
+        (isinstance(k, int) or k == DEFAULT)
+        and isinstance(v, dict)
+        and all(isinstance(n, str) and isinstance(x, int) for n, x in v.items())
+        for k, v in extra.items()
+    ):
+        _LOGGER.warning("Ignoring command.extra on %s, must map written values or default to property values", name)
+        return {}
+    return extra
 
 
 class BinarySensor:
@@ -200,6 +219,7 @@ class Number:
     device_class: NumberDeviceClass | None
     unit: str | None
     command_name: str | None
+    command_extra: dict[int | str, dict[str, int]]
 
     def __init__(self, name: str, number: dict | None):
         if number is None:
@@ -210,6 +230,7 @@ class Number:
         self.multiplier = _val(number, MULTIPLIER)
         command = _val(number, COMMAND, {})
         self.command_name = _val(command, NAME)
+        self.command_extra = _command_extra(command, name)
 
         device_class = None
         device_class_value = _val(number, DEVICE_CLASS)
@@ -238,6 +259,7 @@ class Select:
     unknown_value: int | None
     command_name: str | None
     command_adjust: int = 0
+    command_extra: dict[int | str, dict[str, int]]
 
     def __init__(self, name: str, select: dict | None):
         if select is None:
@@ -252,6 +274,7 @@ class Select:
         command = _val(select, COMMAND, {})
         self.command_name = _val(command, NAME)
         self.command_adjust = _val(command, ADJUST, 0)
+        self.command_extra = _command_extra(command, name)
 
 
 class Sensor:
@@ -322,6 +345,7 @@ class Switch:
     on: int
     command_name: str | None
     command_adjust: int = 0
+    command_extra: dict[int | str, dict[str, int]]
 
     def __init__(self, name: str, switch: dict | None):
         if switch is None:
@@ -335,6 +359,7 @@ class Switch:
         command = _val(switch, COMMAND, {})
         self.command_name = _val(command, NAME)
         self.command_adjust = _val(command, ADJUST, 0)
+        self.command_extra = _command_extra(command, name)
 
 
 class WaterHeater:
@@ -438,6 +463,14 @@ class Property:
             if hasattr(self, platform):
                 return getattr(self, platform).command_name or self.name
         return self.name
+
+    def command_extra(self, written: int | float) -> dict[str, int]:
+        """The fixed properties ``command.extra`` sends along when ``written`` is written to this property."""
+        for platform in (Platform.SELECT, Platform.SWITCH, Platform.NUMBER):
+            if hasattr(self, platform):
+                extra = getattr(self, platform).command_extra
+                return extra.get(written, extra.get(DEFAULT, {}))
+        return {}
 
     def command_value(self, value: int | float | None) -> tuple[str, int | float] | None:
         """Convert a status value to the ``(name, value)`` that writes it back.
@@ -557,6 +590,20 @@ class DeviceMapping:
             write = prop.command_value(status_list.get(name)) if prop else None
             if write is not None and write[0] not in command:
                 values[write[0]] = write[1]
+        return values
+
+    def extra_values(self, command: Mapping[str, int | float]) -> dict[str, int]:
+        """Return the fixed properties to send along with ``command``, from ``command.extra``.
+
+        Properties already in ``command`` are skipped.
+        """
+        values: dict[str, int] = {}
+        for prop in self.properties.values():
+            name = prop.command_name
+            if name in command:
+                for extra_name, extra_value in prop.command_extra(command[name]).items():
+                    if extra_name not in command:
+                        values[extra_name] = extra_value
         return values
 
 

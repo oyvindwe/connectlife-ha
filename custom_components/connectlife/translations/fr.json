@@ -2210,6 +2210,9 @@
       "charcoal_filter_surplus_time": {
         "name": "Dur\u00e9e du filtre \u00e0 charbon"
       },
+      "delay_start_set_time": {
+        "name": "Dur\u00e9e r\u00e9gl\u00e9e du d\u00e9part diff\u00e9r\u00e9"
+      },
       "delayendtime": {
         "name": "Fin diff\u00e9r\u00e9e"
       },
@@ -3809,9 +3812,6 @@
       },
       "delay_start_remaining_time_in_minutes": {
         "name": "Temps restant avant d\u00e9part diff\u00e9r\u00e9"
-      },
-      "delay_start_set_time": {
-        "name": "Dur\u00e9e r\u00e9gl\u00e9e du d\u00e9part diff\u00e9r\u00e9"
       },
       "delay_time_hour_min": {
         "name": "D\u00e9lai (h:min)"

@@ -2210,6 +2210,9 @@
       "charcoal_filter_surplus_time": {
         "name": "Tiempo del filtro de carb\u00f3n"
       },
+      "delay_start_set_time": {
+        "name": "Tiempo ajustado de inicio diferido"
+      },
       "delayendtime": {
         "name": "Finalizaci\u00f3n diferida"
       },
@@ -3809,9 +3812,6 @@
       },
       "delay_start_remaining_time_in_minutes": {
         "name": "Tiempo restante de inicio diferido"
-      },
-      "delay_start_set_time": {
-        "name": "Tiempo ajustado de inicio diferido"
       },
       "delay_time_hour_min": {
         "name": "Tiempo de retardo (h:min)"

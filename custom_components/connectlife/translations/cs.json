@@ -2210,6 +2210,9 @@
       "charcoal_filter_surplus_time": {
         "name": "\u010cas uhl\u00edkov\u00e9ho filtru"
       },
+      "delay_start_set_time": {
+        "name": "Nastaven\u00fd \u010das zpo\u017ed\u011bn\u00e9ho startu"
+      },
       "delayendtime": {
         "name": "\u010cas ukon\u010den\u00ed zpo\u017ed\u011bn\u00ed"
       },
@@ -3809,9 +3812,6 @@
       },
       "delay_start_remaining_time_in_minutes": {
         "name": "Zb\u00fdvaj\u00edc\u00ed \u010das do startu zpo\u017ed\u011bn\u00ed (min)"
-      },
-      "delay_start_set_time": {
-        "name": "Nastaven\u00fd \u010das zpo\u017ed\u011bn\u00e9ho startu"
       },
       "delay_time_hour_min": {
         "name": "Zpo\u017ed\u011bn\u00ed hodina/minuta"

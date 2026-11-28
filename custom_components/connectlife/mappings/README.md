@@ -560,13 +560,14 @@ For device class `enum`, remember to add [translation strings](#translation-stri
 
 The `command` field on [Select](#type-select) and [Switch](#type-switch) is used when the API property that reports
 state is not the same as the property used to change state, or when the two use different value encodings.
-[Number](#type-number) also supports `command.name` for the same redirect (but not `adjust` — number setpoints are
-expected to use the same encoding for reads and writes).
+[Number](#type-number) also supports `command.name` for the same redirect, and `extra` (but not `adjust` — number
+setpoints are expected to use the same encoding for reads and writes).
 
 | Item     | Type    | Description                                                                                                                             |
 |----------|---------|-----------------------------------------------------------------------------------------------------------------------------------------|
 | `name`   | string  | Property name to write to. If omitted, writes go to the status property.                                                                |
 | `adjust` | integer | Subtracted from the status-space value before writing: `written_value = status_value - adjust`. Defaults to `0`.                        |
+| `extra`  | dictionary of integer or `default` to dictionary of string to integer | Properties sent along with the write, keyed by the written value, or `default` for any other value. See [Extra](#extra). |
 
 Use `adjust` when the write property uses a value encoding offset from the read property. For example, an oven setting
 reports `1 = off` and `2 = on` on the status property but expects `0 = off` and `1 = on` on the write property:
@@ -582,6 +583,30 @@ reports `1 = off` and `2 = on` on the status property but expects `0 = off` and 
 ```
 
 The same mechanism works for [Select](#type-select): the value written is the integer key from `options` minus `adjust`.
+
+### Extra
+
+Some devices only accept a write together with other properties in the same command, with values that depend on
+the value written. `extra` maps a written value (after `adjust`) to the properties to send along; `default` applies
+to any other value. Properties the command already writes are not overridden. Extras are also sent when the property
+is sent by an [include](#include).
+
+For example, a dishwasher that only takes a delay with a flag that arms it, and clears the delay with the flag off:
+
+```yaml
+- property: Delay_start_set_time
+  number:
+    unit: h
+    min_value: 0
+    max_value: 24
+    command:
+      name: Delay_start_time
+      extra:
+        0:
+          Delay_start_status: 0
+        default:
+          Delay_start_status: 1
+```
 
 ## Include
 
