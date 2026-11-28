@@ -384,3 +384,50 @@ async def test_options_push_kept_when_configuring_a_device(hass: HomeAssistant) 
     assert result["type"] is FlowResultType.CREATE_ENTRY
     assert entry.options["push"] is False
     assert entry.options["devices"]["device-1"] == {"disable_beep": False, "expose_offline_state": False}
+
+
+async def _configure_device_form(hass: HomeAssistant, entry: MockConfigEntry, static_data) -> dict:
+    """Open the device form, with the coordinator's API returning static_data (or raising it)."""
+    coordinator = hass.data[DOMAIN][entry.entry_id]
+    coordinator.data["device-1"].puid = "puid-1"
+    coordinator.api = SimpleNamespace(
+        query_static_data=AsyncMock(
+            side_effect=static_data if isinstance(static_data, Exception) else None,
+            return_value=static_data,
+        )
+    )
+    result = await hass.config_entries.options.async_init(entry.entry_id)
+    with (
+        patch("custom_components.connectlife.config_flow.DeviceMappings.get_mapping"),
+        patch("custom_components.connectlife.config_flow.contested_climate_targets", return_value={}),
+    ):
+        return await hass.config_entries.options.async_configure(
+            result["flow_id"], {"push": True, "device": "device-1"}
+        )
+
+
+async def test_options_hide_disable_beep_without_buzzer_control(hass: HomeAssistant) -> None:
+    entry = _loaded_entry(hass, {"devices": {"device-1": {"disable_beep": True}}})
+
+    result = await _configure_device_form(hass, entry, {"data": {"buzzer_switch": "0"}})
+    assert "disable_beep" not in result["data_schema"].schema
+    with (
+        patch("custom_components.connectlife.config_flow.DeviceMappings.get_mapping"),
+        patch("custom_components.connectlife.config_flow.contested_climate_targets", return_value={}),
+    ):
+        result = await hass.config_entries.options.async_configure(
+            result["flow_id"], {"expose_offline_state": False}
+        )
+
+    assert entry.options["devices"]["device-1"] == {"disable_beep": False, "expose_offline_state": False}
+
+
+@pytest.mark.parametrize(
+    "static_data", [{"data": {"buzzer_switch": "1"}}, {"data": {}}, LifeConnectError("unsupported")]
+)
+async def test_options_show_disable_beep(hass: HomeAssistant, static_data) -> None:
+    entry = _loaded_entry(hass)
+
+    result = await _configure_device_form(hass, entry, static_data)
+
+    assert "disable_beep" in result["data_schema"].schema

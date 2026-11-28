@@ -429,6 +429,7 @@ class OptionsFlowHandler(OptionsFlowWithReload):
 
     _device_id: str | None = None
     _push: bool | None = None
+    _beep_supported: bool | None = None
 
     async def async_step_init(self, user_input: dict[str, Any] | None = None) -> ConfigFlowResult:
         # The devices come from the coordinator, which only exists once the entry is set up.
@@ -482,14 +483,15 @@ class OptionsFlowHandler(OptionsFlowWithReload):
                 for target in contested
                 if user_input.get(self._override_key(target), OVERRIDE_AUTO) != OVERRIDE_AUTO
             }
+            disable_beep = user_input.get(CONF_DISABLE_BEEP, False)
             device_options: dict[str, Any] = {
-                CONF_DISABLE_BEEP: user_input[CONF_DISABLE_BEEP],
+                CONF_DISABLE_BEEP: disable_beep,
                 CONF_EXPOSE_OFFLINE_STATE: user_input[CONF_EXPOSE_OFFLINE_STATE],
             }
             if overrides:
                 device_options[CONF_TARGET_OVERRIDES] = overrides
             data[CONF_DEVICES][self._device_id] = device_options
-            if not user_input[CONF_DISABLE_BEEP]:
+            if not disable_beep:
                 ir.async_delete_issue(self.hass, DOMAIN, f"unsupported_beep.{self._device_id}")
             return self.async_create_entry(title="", data=data)
 
@@ -498,10 +500,12 @@ class OptionsFlowHandler(OptionsFlowWithReload):
         disable_beep = device.get(CONF_DISABLE_BEEP, False)
         expose_offline_state = device.get(CONF_EXPOSE_OFFLINE_STATE, False)
         current_overrides = device.get(CONF_TARGET_OVERRIDES, {})
-        schema_dict: dict[Any, Any] = {
-            vol.Optional(CONF_DISABLE_BEEP, default=disable_beep): bool,
-            vol.Optional(CONF_EXPOSE_OFFLINE_STATE, default=expose_offline_state): bool,
-        }
+        if self._beep_supported is None:
+            self._beep_supported = await self._is_beep_supported(coordinator, appliance)
+        schema_dict: dict[Any, Any] = {}
+        if self._beep_supported:
+            schema_dict[vol.Optional(CONF_DISABLE_BEEP, default=disable_beep)] = bool
+        schema_dict[vol.Optional(CONF_EXPOSE_OFFLINE_STATE, default=expose_offline_state)] = bool
         for target, properties in contested.items():
             default = current_overrides.get(target, OVERRIDE_AUTO)
             if default not in properties:
@@ -515,6 +519,23 @@ class OptionsFlowHandler(OptionsFlowWithReload):
             data_schema=vol.Schema(schema_dict),
             description_placeholders={"device_name": device_name},
         )
+
+    @staticmethod
+    async def _is_beep_supported(coordinator: Any, appliance: Any) -> bool:
+        """False when the device's static data says it has no buzzer control (#915).
+
+        Such devices accept t_beep but ignore it. Shows the option when the static data
+        can't be read.
+        """
+        if appliance is None:
+            return True
+        try:
+            static_data = await coordinator.api.query_static_data(appliance.puid)
+        except Exception as err:  # pylint: disable=broad-except
+            _LOGGER.debug("Could not read static data for %s: %s", appliance.device_nickname, err)
+            return True
+        data = static_data.get("data") if isinstance(static_data, dict) else None
+        return not (isinstance(data, dict) and str(data.get("buzzer_switch")) == "0")
 
     @staticmethod
     def _override_key(target: str) -> str:
