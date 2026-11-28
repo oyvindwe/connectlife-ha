@@ -196,6 +196,7 @@ Note that translation keys must be lowercase!
 | `property`         | string                             | Name of status/property. Can also be a virtual name when used with `combine`.                                                                                                                                                                                                                       |
 | `combine`          | list of [CombineSource](#combine)  | Combine multiple source properties into a single sensor value. See [Combine](#combine).                                                                                                                                                                                                             |
 | `include`          | list of string                     | Properties whose current values are sent along whenever this property is written. See [Include](#include).                                                                                                                                                                                          |
+| `local`            | `true`, `false`                    | The value is kept in Home Assistant instead of read from the device, and is only sent along with commands that [include](#include) it. Use for settings the device only accepts together with another command and doesn't report back. Only on `number`. See [Local properties](#local-properties). Defaults to `false`. |
 | `disable`          | `true`, `false`                    | If Home Assistant should not create an entity for this property. Defaults to `false`.                                                                                                                                                                                                               |
 | `hide`             | `true`, `false`                    | If Home Assistant should initially hide the entity for this property. Defaults to `false`, but is set to `true` for unknown properties.                                                                                                                                                             |
 | `optional`         | `true`, `false`                    | If the entity should be registered as disabled by default. The user can enable it from the Home Assistant UI. Use for rarely-useful properties (e.g., per-slot error codes). Defaults to `false`. Only applies to per-property platforms (`binary_sensor`, `number`, `select`, `sensor`, `switch`). |
@@ -611,6 +612,8 @@ buttons:
     Actions: 1
 ```
 
+Included [local properties](#local-properties) are sent with the value set in Home Assistant.
+
 Or an air conditioner that turns fan mute off when powered on:
 
 ```yaml
@@ -619,6 +622,33 @@ Or an air conditioner that turns fan mute off when powered on:
     - t_fan_mute
   climate:
     target: is_on
+```
+
+### Local properties
+
+Some settings are only accepted together with another command, and the device doesn't report them back, so
+there's no status value to send along. With `local: true`, the entity is created from the mapping (even though the
+device doesn't report the property) and keeps its value in Home Assistant across restarts. Setting it sends nothing
+to the device; the value is sent when a command that includes it is sent. It starts at `min_value` (or 0).
+
+For example, a washing machine that only takes a start delay together with the start command:
+
+```yaml
+buttons:
+- key: start
+  include:
+    - Selected_program_id_status
+    - Delaystart_delayend_mode_status
+    - Set_delaystart_delayend_remaining_time_in_minutes
+  write:
+    Actions: 1
+properties:
+- property: Set_delaystart_delayend_remaining_time_in_minutes
+  local: true
+  number:
+    min_value: 0
+    max_value: 1440
+    unit: min
 ```
 
 ## Buttons

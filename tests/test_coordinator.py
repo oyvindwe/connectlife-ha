@@ -385,3 +385,44 @@ async def test_update_device_missing_from_poll_raises_not_available() -> None:
     assert exc.value.translation_key == "device_not_available"
     assert exc.value.translation_placeholders == {"device": "Bedroom AC"}
     coordinator.api.update_appliance.assert_not_awaited()
+
+
+async def test_cleanup_counts_local_property_as_reported(hass: HomeAssistant, build_mapping) -> None:
+    """A local property is never reported by the device; it must not make the status look partial."""
+    build_mapping(
+        base={
+            "properties": [
+                {"property": "t_temp", "sensor": {}},
+                {"property": "Delay", "local": True, "number": {}},
+                {"property": "Actions", "disable": True},
+            ]
+        }
+    )
+    entry = MockConfigEntry(domain=DOMAIN)
+    entry.add_to_hass(hass)
+    device = dr.async_get(hass).async_get_or_create(
+        config_entry_id=entry.entry_id, identifiers={(DOMAIN, "a")}, name="a"
+    )
+    entity_reg = er.async_get(hass)
+    entity_reg.async_get_or_create("sensor", DOMAIN, "a-t_temp", config_entry=entry, device_id=device.id)
+    entity_reg.async_get_or_create("number", DOMAIN, "a-Delay", config_entry=entry, device_id=device.id)
+    entity_reg.async_get_or_create("select", DOMAIN, "a-Actions", config_entry=entry, device_id=device.id)
+    coordinator = ConnectLifeCoordinator.__new__(ConnectLifeCoordinator)
+    coordinator.hass = hass
+    coordinator.config_entry = entry
+    coordinator._missing_since = {}
+    coordinator.entities = {"a-t_temp": Platform.SENSOR, "a-Delay": Platform.NUMBER}
+    coordinator.data = {
+        "a": SimpleNamespace(
+            device_type_code="999", device_feature_code="000", device_nickname="a",
+            status_list={"t_temp": 21, "Actions": 0},
+        )
+    }
+
+    await coordinator.cleanup_removed_entities()
+
+    # The disabled Actions select is removed; the local number is kept.
+    assert {e.unique_id for e in er.async_entries_for_config_entry(entity_reg, entry.entry_id)} == {
+        "a-t_temp",
+        "a-Delay",
+    }

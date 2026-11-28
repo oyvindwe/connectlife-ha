@@ -75,6 +75,9 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
         # Properties set by commands, per device: commanded value and until when (monotonic time) to keep it over
         # a pushed value that differs.
         self._commanded: dict[str, dict[str, tuple[object, float]]] = {}
+        # Values of local properties (`local: true` in the mapping), per device. They are kept in HA, not read
+        # from or written to the device on their own, and are sent along with commands that include them.
+        self.local_values: dict[str, dict[str, int | float]] = {}
         super().__init__(
             hass,
             _LOGGER,
@@ -312,12 +315,14 @@ class ConnectLifeCoordinator(DataUpdateCoordinator[dict[str, ConnectLifeApplianc
         """Return whether the device reports the property behind a status entity.
 
         A combined sensor has no property of its own; like at setup, it counts as reported
-        when the device reports any of its sources.
+        when the device reports any of its sources. A local property is kept in HA, so it always counts.
         """
         appliance = self.data[device_id]
         if name in appliance.status_list:
             return True
         prop = DeviceMappings.get_mapping(appliance).properties.get(name)
+        if prop is not None and prop.local:
+            return True
         return bool(
             prop is not None
             and prop.combine

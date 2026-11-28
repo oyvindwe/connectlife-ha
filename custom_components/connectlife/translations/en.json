@@ -2243,6 +2243,9 @@
       "selected_program_timedry_set_duration": {
         "name": "Time dry duration"
       },
+      "set_delaystart_delayend_remaining_time_in_minutes": {
+        "name": "Delay start/end time"
+      },
       "t_fanspeedcv": {
         "name": "Variable fan speed"
       },

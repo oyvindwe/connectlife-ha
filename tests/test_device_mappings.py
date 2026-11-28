@@ -542,6 +542,16 @@ def test_include_parsed_on_property_and_button(build_mapping):
     assert d.buttons[0].include == ["Program"]
 
 
+def test_local_parsed_on_number():
+    assert Property({"property": "p", "local": True, "number": {}}).local is True
+    assert Property({"property": "p", "number": {}}).local is False
+
+
+def test_local_ignored_without_number(caplog):
+    assert Property({"property": "p", "local": True, "select": {"options": {}}}).local is False
+    assert "Ignoring local" in caplog.text
+
+
 def test_include_defaults_to_empty():
     assert Property({"property": "p"}).include == []
     assert Button({"key": "start", "write": {"Actions": 1}}).include == []
